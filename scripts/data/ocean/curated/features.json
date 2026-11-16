@@ -3249,6 +3249,544 @@
         "https://www.nature.com/articles/s41467-022-31689-3"
       ],
       "gebco": 21173
+    },
+    {
+      "id": "kerguelen-plateau",
+      "name": {
+        "en": "Kerguelen Plateau",
+        "es": "Meseta de Kerguelen"
+      },
+      "kind": "plateau",
+      "lon": 75.285,
+      "lat": -54.924,
+      "depth_m": 1750,
+      "rank": 1,
+      "text": {
+        "en": "One of the largest volcanic plateaus on Earth stretches for more than 2,000 km in the southern Indian Ocean, and much of it lies less than 2,000 m down. The Kerguelen hotspot built it from about 120 million years ago, and the Kerguelen and Heard islands rise from it.",
+        "es": "Una de las mayores mesetas volcánicas de la Tierra se extiende más de 2 000 km por el sur del océano Índico, y gran parte de ella está a menos de 2 000 m de profundidad. La formó el punto caliente de Kerguelen desde hace unos 120 millones de años, y de ella emergen las islas Kerguelen y Heard."
+      },
+      "src": "https://www-odp.tamu.edu/publications/183_SR/VOLUME/SYNTH/SYNTH.PDF",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/22072"
+      ],
+      "gebco": 22072
+    },
+    {
+      "id": "ontong-java-plateau",
+      "name": {
+        "en": "Ontong Java Plateau",
+        "es": "Meseta de Ontong Java"
+      },
+      "kind": "plateau",
+      "lon": 157.789,
+      "lat": -3.031,
+      "depth_m": 1800,
+      "rank": 1,
+      "text": {
+        "en": "North of the Solomon Islands lies the largest volcanic plateau on Earth, covering about 2 million km². It was built by enormous eruptions on the seafloor about 120 million years ago and is named after the atoll of Ontong Java.",
+        "es": "Al norte de las islas Salomón está la mayor meseta volcánica de la Tierra, que cubre unos 2 millones de km². La formaron erupciones enormes en el fondo marino hace unos 120 millones de años y debe su nombre al atolón de Ontong Java."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/33144",
+      "src_more": [
+        "https://www-odp.tamu.edu/publications/192_IR/192TOC.HTM"
+      ],
+      "gebco": 33144
+    },
+    {
+      "id": "manihiki-plateau",
+      "name": {
+        "en": "Manihiki Plateau",
+        "es": "Meseta de Manihiki"
+      },
+      "kind": "plateau",
+      "lon": -162.5,
+      "lat": -11.0,
+      "depth_m": 2700,
+      "rank": 3,
+      "text": {
+        "en": "This large volcanic plateau in the central South Pacific, north of the Cook Islands, lies mostly 2,500 to 3,000 m down. It formed at about the same time as the Ontong Java Plateau and may once have been part of it.",
+        "es": "Esta gran meseta volcánica del Pacífico Sur central, al norte de las islas Cook, está casi toda entre 2 500 y 3 000 m de profundidad. Se formó más o menos al mismo tiempo que la meseta de Ontong Java y quizá fue parte de ella."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/14917",
+      "gebco": 14917
+    },
+    {
+      "id": "campbell-plateau",
+      "name": {
+        "en": "Campbell Plateau",
+        "es": "Meseta de Campbell"
+      },
+      "kind": "plateau",
+      "lon": 171.0,
+      "lat": -50.667,
+      "depth_m": 550,
+      "rank": 3,
+      "text": {
+        "en": "South of New Zealand, this broad shallow plateau, mostly less than 1,000 m deep, is part of Zealandia, a largely drowned continent. It is named after Campbell Island, which rises from it.",
+        "es": "Al sur de Nueva Zelanda, esta meseta amplia y poco profunda, casi toda a menos de 1 000 m, es parte de Zelandia, un continente casi todo sumergido. Debe su nombre a la isla Campbell, que emerge de ella."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/24140",
+      "gebco": 24140
+    },
+    {
+      "id": "exmouth-plateau",
+      "name": {
+        "en": "Exmouth Plateau",
+        "es": "Meseta de Exmouth"
+      },
+      "kind": "plateau",
+      "lon": 113.0,
+      "lat": -20.0,
+      "depth_m": 1000,
+      "rank": 3,
+      "text": {
+        "en": "Off northwest Australia, this plateau of stretched and sunken continental crust lies about 1,000 m down. It holds some of Australia's largest natural gas fields.",
+        "es": "Frente al noroeste de Australia, esta meseta de corteza continental estirada y hundida está a unos 1 000 m de profundidad. Guarda algunos de los mayores yacimientos de gas natural de Australia."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/13230",
+      "gebco": 13230
+    },
+    {
+      "id": "blake-plateau",
+      "name": {
+        "en": "Blake Plateau",
+        "es": "Meseta de Blake"
+      },
+      "kind": "plateau",
+      "lon": -78.5,
+      "lat": 29.5,
+      "depth_m": 830,
+      "rank": 3,
+      "text": {
+        "en": "Off Florida, Georgia and South Carolina, this wide underwater terrace lies about 800 m down beneath the Gulf Stream, and deep-sea corals build mounds on it. It is named after the US Coast Survey ship Blake.",
+        "es": "Frente a Florida, Georgia y Carolina del Sur, esta amplia terraza submarina está a unos 800 m de profundidad bajo la corriente del Golfo, y sobre ella los corales de aguas profundas forman montículos. Debe su nombre al buque Blake, del Servicio Costero de Estados Unidos."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28504",
+      "gebco": 28504
+    },
+    {
+      "id": "falkland-plateau",
+      "name": {
+        "en": "Falkland Plateau",
+        "es": "Meseta de las Malvinas"
+      },
+      "kind": "plateau",
+      "lon": -50.0,
+      "lat": -51.0,
+      "depth_m": 2500,
+      "rank": 2,
+      "text": {
+        "en": "This broad plateau stretches east from the Falkland Islands (Malvinas) into the South Atlantic, about 2,500 m down. GEBCO asks maps and charts to show the name Malvinas Plateau beneath Falkland Plateau.",
+        "es": "Esta amplia meseta se extiende hacia el este desde las islas Malvinas hasta el Atlántico Sur, a unos 2 500 m de profundidad. GEBCO pide que mapas y cartas muestren el nombre Meseta de las Malvinas bajo el de Falkland Plateau."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/21424",
+      "gebco": 21424
+    },
+    {
+      "id": "agulhas-plateau",
+      "name": {
+        "en": "Agulhas Plateau",
+        "es": "Meseta de las Agujas"
+      },
+      "kind": "plateau",
+      "lon": 26.0,
+      "lat": -40.0,
+      "depth_m": 2500,
+      "rank": 3,
+      "text": {
+        "en": "South of Africa, this volcanic plateau rises from the deep seafloor to about 2,500 m below the surface. It lies in the path of the Agulhas Current, after which it is named.",
+        "es": "Al sur de África, esta meseta volcánica se eleva desde el fondo profundo hasta unos 2 500 m bajo la superficie. Está en el camino de la corriente de las Agujas, que le da nombre."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/11606",
+      "gebco": 11606
+    },
+    {
+      "id": "mascarene-plateau",
+      "name": {
+        "en": "Mascarene Plateau",
+        "es": "Meseta de las Mascareñas"
+      },
+      "kind": "plateau",
+      "lon": 58.0,
+      "lat": -6.0,
+      "depth_m": 300,
+      "rank": 2,
+      "text": {
+        "en": "This long arc of submerged banks runs for about 2,000 km from the Seychelles towards Mauritius. Its northern part is a fragment of continent, while the south was built by the Réunion hotspot.",
+        "es": "Este largo arco de bancos sumergidos se extiende unos 2 000 km desde las Seychelles hacia Mauricio. Su parte norte es un fragmento de continente, y la parte sur la formó el punto caliente de La Reunión."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/14986",
+      "src_more": [
+        "https://doi.org/10.1126/science.aau2422"
+      ],
+      "gebco": 14986
+    },
+    {
+      "id": "romanche-fracture-zone",
+      "name": {
+        "en": "La Romanche Fracture Zone",
+        "es": "Zona de fractura de Romanche"
+      },
+      "kind": "fracture",
+      "lon": -19.964,
+      "lat": -0.353,
+      "line": [
+        [
+          -40.73,
+          -1.87
+        ],
+        [
+          -36.79,
+          -1.97
+        ],
+        [
+          -32.67,
+          -1.24
+        ],
+        [
+          -28.79,
+          -1.07
+        ],
+        [
+          -24.81,
+          -1.13
+        ],
+        [
+          -20.89,
+          -0.63
+        ],
+        [
+          -15.58,
+          0.57
+        ],
+        [
+          -11.08,
+          1.13
+        ],
+        [
+          -5.67,
+          2.41
+        ],
+        [
+          -2.89,
+          3.29
+        ],
+        [
+          -0.46,
+          4.47
+        ],
+        [
+          0.53,
+          5.19
+        ]
+      ],
+      "depth_m": 7700,
+      "rank": 2,
+      "text": {
+        "en": "Near the equator, this great fault shifts the Mid-Atlantic Ridge sideways by nearly 1,000 km. Its valley, more than 7,000 m deep, lets cold Antarctic Bottom Water flow into the eastern Atlantic. It is named after the French ship La Romanche, which sounded here in the 1880s.",
+        "es": "Cerca del ecuador, esta gran falla desplaza la dorsal mesoatlántica casi 1 000 km hacia un lado. Su valle, de más de 7 000 m de profundidad, deja pasar el Agua Antártica de Fondo hacia el Atlántico oriental. Debe su nombre al buque francés La Romanche, que hizo sondeos aquí en la década de 1880."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/29977",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/33206",
+        "https://nora.nerc.ac.uk/id/eprint/519199/1/Stewart%20and%20Jamieson_2018_habitat%20heterogeneity%20in%20hadal%20trenches.pdf"
+      ],
+      "gebco": 29977
+    },
+    {
+      "id": "clipperton-fracture-zone",
+      "name": {
+        "en": "Clipperton Fracture Zone",
+        "es": "Zona de fractura de Clipperton"
+      },
+      "kind": "fracture",
+      "lon": -125.0,
+      "lat": 8.0,
+      "line": [
+        [
+          -150.0,
+          3.0
+        ],
+        [
+          -125.0,
+          8.0
+        ],
+        [
+          -114.0,
+          10.0
+        ],
+        [
+          -107.0,
+          10.0
+        ]
+      ],
+      "depth_m": 4500,
+      "rank": 2,
+      "text": {
+        "en": "This long fracture zone runs west across the Pacific from off Central America and is named after Clipperton Atoll. Between it and the Clarion Fracture Zone lies the Clarion-Clipperton Zone, a vast deep plain covered with metal-rich nodules that mining companies want to collect.",
+        "es": "Esta larga zona de fractura cruza el Pacífico hacia el oeste desde frente a Centroamérica y debe su nombre al atolón de Clipperton. Entre ella y la zona de fractura de Clarión está la zona Clarión-Clipperton, una vasta llanura profunda cubierta de nódulos ricos en metales que las empresas mineras quieren recoger."
+      },
+      "src": "https://www.isa.org.jm/exploration-contracts/polymetallic-nodules/",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/21158"
+      ],
+      "gebco": 21158
+    },
+    {
+      "id": "clarion-fracture-zone",
+      "name": {
+        "en": "Clarion Fracture Zone",
+        "es": "Zona de fractura de Clarión"
+      },
+      "kind": "fracture",
+      "lon": -129.0,
+      "lat": 17.5,
+      "line": [
+        [
+          -155.0,
+          14.0
+        ],
+        [
+          -145.0,
+          14.5
+        ],
+        [
+          -129.0,
+          17.5
+        ],
+        [
+          -116.0,
+          18.25
+        ]
+      ],
+      "depth_m": 4700,
+      "rank": 3,
+      "text": {
+        "en": "This fracture zone runs west across the Pacific from off Mexico and is named after Clarion Island in the Revillagigedo Islands. It forms the northern edge of the nodule-rich Clarion-Clipperton Zone.",
+        "es": "Esta zona de fractura cruza el Pacífico hacia el oeste desde frente a México y debe su nombre a la isla Clarión, del archipiélago de Revillagigedo. Forma el borde norte de la zona Clarión-Clipperton, rica en nódulos."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/21155",
+      "src_more": [
+        "https://www.isa.org.jm/exploration-contracts/polymetallic-nodules/"
+      ],
+      "gebco": 21155
+    },
+    {
+      "id": "mendocino-fracture-zone",
+      "name": {
+        "en": "Mendocino Fracture Zone",
+        "es": "Zona de fractura de Mendocino"
+      },
+      "kind": "fracture",
+      "lon": -147.696,
+      "lat": 38.987,
+      "line": [
+        [
+          -168.0,
+          36.0
+        ],
+        [
+          -164.0,
+          37.11
+        ],
+        [
+          -159.72,
+          37.86
+        ],
+        [
+          -155.38,
+          38.37
+        ],
+        [
+          -150.92,
+          38.79
+        ],
+        [
+          -126.0,
+          40.33
+        ]
+      ],
+      "depth_m": 5000,
+      "rank": 2,
+      "text": {
+        "en": "This long scar runs west across the Pacific from Cape Mendocino in California. Scripps scientists mapped it from 1950, and it became the first feature to be called a fracture zone.",
+        "es": "Esta larga cicatriz cruza el Pacífico hacia el oeste desde el cabo Mendocino, en California. Científicos de Scripps la cartografiaron desde 1950, y fue el primer accidente al que se llamó zona de fractura."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22467",
+      "gebco": 22467
+    },
+    {
+      "id": "charlie-gibbs-fracture-zone",
+      "name": {
+        "en": "Charlie-Gibbs Fracture Zone",
+        "es": "Zona de fractura de Charlie-Gibbs"
+      },
+      "kind": "fracture",
+      "lon": -35.062,
+      "lat": 52.687,
+      "line": [
+        [
+          -45.0,
+          52.5
+        ],
+        [
+          -41.69,
+          52.76
+        ],
+        [
+          -39.89,
+          52.79
+        ],
+        [
+          -37.74,
+          52.78
+        ],
+        [
+          -36.22,
+          52.75
+        ],
+        [
+          -33.85,
+          52.64
+        ],
+        [
+          -31.36,
+          52.49
+        ],
+        [
+          -24.3,
+          52.14
+        ]
+      ],
+      "depth_m": 4300,
+      "rank": 2,
+      "text": {
+        "en": "At about 52° N, between Iceland and the Azores, this pair of great faults shifts the Mid-Atlantic Ridge sideways by about 350 km. Its name joins Ocean Weather Station Charlie and the US Navy ship Josiah Willard Gibbs.",
+        "es": "Hacia los 52° N, entre Islandia y las Azores, este par de grandes fallas desplaza la dorsal mesoatlántica unos 350 km hacia un lado. Su nombre une la estación meteorológica oceánica Charlie y el buque de la Marina de Estados Unidos Josiah Willard Gibbs."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/21124",
+      "gebco": 21124
+    },
+    {
+      "id": "vema-fracture-zone",
+      "name": {
+        "en": "Vema Fracture Zone",
+        "es": "Zona de fractura de Vema"
+      },
+      "kind": "fracture",
+      "lon": -46.0,
+      "lat": 11.0,
+      "depth_m": 5000,
+      "rank": 3,
+      "text": {
+        "en": "Near 11° N, this deep fault valley shifts the Mid-Atlantic Ridge sideways. It is named after the research vessel Vema of the Lamont-Doherty Earth Observatory, which worked at sea from 1953 to 1981.",
+        "es": "Hacia los 11° N, este profundo valle de falla desplaza la dorsal mesoatlántica hacia un lado. Debe su nombre al buque de investigación Vema, del Observatorio Terrestre Lamont-Doherty, que trabajó en el mar de 1953 a 1981."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/33619",
+      "gebco": 33619
+    },
+    {
+      "id": "eltanin-fracture-zone-system",
+      "name": {
+        "en": "Eltanin Fracture Zone System",
+        "es": "Sistema de zonas de fractura de Eltanin"
+      },
+      "kind": "fracture",
+      "lon": -138.776,
+      "lat": -52.405,
+      "depth_m": 4000,
+      "rank": 3,
+      "text": {
+        "en": "A set of long, closely spaced faults cuts across the Pacific-Antarctic Ridge in the far South Pacific. It is named after the US research ship Eltanin, which surveyed the Southern Ocean in the 1960s.",
+        "es": "Un conjunto de fallas largas y muy cercanas entre sí cruza la dorsal pacífico-antártica en el extremo sur del Pacífico. Debe su nombre al buque de investigación estadounidense Eltanin, que estudió el océano Austral en la década de 1960."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/21376",
+      "gebco": 21376
+    },
+    {
+      "id": "saint-paul-fracture-zone",
+      "name": {
+        "en": "Saint Paul Fracture Zone",
+        "es": "Zona de fractura de San Pablo"
+      },
+      "kind": "fracture",
+      "lon": -27.177,
+      "lat": 0.903,
+      "line": [
+        [
+          -44.57,
+          1.22
+        ],
+        [
+          -43.01,
+          1.08
+        ],
+        [
+          -38.39,
+          1.02
+        ],
+        [
+          -31.22,
+          0.63
+        ],
+        [
+          -28.71,
+          0.71
+        ],
+        [
+          -23.18,
+          1.33
+        ],
+        [
+          -19.78,
+          1.66
+        ],
+        [
+          -15.63,
+          2.43
+        ],
+        [
+          -13.27,
+          2.99
+        ],
+        [
+          -10.79,
+          3.69
+        ],
+        [
+          -9.8,
+          4.03
+        ]
+      ],
+      "depth_m": 3500,
+      "rank": 3,
+      "text": {
+        "en": "Near the equator, this system of faults shifts the Mid-Atlantic Ridge sideways. On it stand the Saint Peter and Saint Paul Archipelago, tiny Brazilian islets made of rock from Earth's mantle pushed up above the sea.",
+        "es": "Cerca del ecuador, este sistema de fallas desplaza la dorsal mesoatlántica hacia un lado. Sobre él está el archipiélago de San Pedro y San Pablo, pequeños islotes de Brasil formados por roca del manto terrestre que emergió sobre el mar."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/29778",
+      "gebco": 29778
+    },
+    {
+      "id": "atlantis-fracture-zone",
+      "name": {
+        "en": "Atlantis Fracture Zone",
+        "es": "Zona de fractura Atlantis"
+      },
+      "kind": "fracture",
+      "lon": -45.5,
+      "lat": 30.75,
+      "depth_m": 4000,
+      "rank": 3,
+      "text": {
+        "en": "Near 30° N, this fracture zone shifts the Mid-Atlantic Ridge sideways. Where it meets the ridge lies the Lost City hydrothermal field, discovered in 2000, whose tall white chimneys are fed by seawater reacting with mantle rock.",
+        "es": "Hacia los 30° N, esta zona de fractura desplaza la dorsal mesoatlántica hacia un lado. Donde se une a la dorsal está el campo hidrotermal Ciudad Perdida, descubierto en 2000, cuyas altas chimeneas blancas se alimentan de agua de mar que reacciona con roca del manto."
+      },
+      "src": "https://www.nature.com/articles/35084000",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/11992"
+      ],
+      "gebco": 11992
     }
   ]
 }

@@ -839,6 +839,639 @@
       "src_more": [
         "https://www.sealifebase.se/summary/Mesonychoteuthis-hamiltoni.html"
       ]
+    },
+    {
+      "id": "southern-elephant-seal",
+      "e": "🦭",
+      "name": {
+        "en": "Southern elephant seal",
+        "es": "Elefante marino del sur"
+      },
+      "sci": "Mirounga leonina",
+      "group": "mammal",
+      "depth": [
+        0,
+        2388
+      ],
+      "usual": 550,
+      "oceans": [
+        "southern",
+        "atlantic",
+        "indian"
+      ],
+      "lat": [
+        -78,
+        -40
+      ],
+      "text": {
+        "en": "Most dives last about 30 minutes and reach 300 to 800 m, but one went down to 2,388 m, the deepest dive known for any mammal until 2014.",
+        "es": "La mayoría de sus inmersiones duran unos 30 minutos y llegan a entre 300 y 800 m, pero una bajó a 2 388 m, la más profunda conocida en un mamífero hasta 2014."
+      },
+      "src": "https://www.csiro.au/en/news/all/articles/2023/april/deepest-diving-animals",
+      "src_more": [
+        "https://www.antarctica.gov.au/about-antarctica/animals/seals/elephant-seals/"
+      ]
+    },
+    {
+      "id": "weddell-seal",
+      "e": "🦭",
+      "name": {
+        "en": "Weddell seal",
+        "es": "Foca de Weddell"
+      },
+      "sci": "Leptonychotes weddellii",
+      "group": "mammal",
+      "depth": [
+        0,
+        720
+      ],
+      "usual": 300,
+      "oceans": [
+        "southern"
+      ],
+      "lat": [
+        -78,
+        -60
+      ],
+      "text": {
+        "en": "Hunts fish, squid and octopus beneath the Antarctic sea ice, staying under for up to 45 minutes and reaching 720 m. One seal was seen catching a fish of more than 40 kg.",
+        "es": "Caza peces, calamares y pulpos bajo el hielo marino antártico; aguanta hasta 45 minutos sumergida y llega a 720 m. Se vio a una foca atrapar un pez de más de 40 kg."
+      },
+      "src": "https://www.antarctica.gov.au/about-antarctica/animals/seals/weddell-seals/"
+    },
+    {
+      "id": "orca",
+      "e": "🐋",
+      "name": {
+        "en": "Orca (killer whale)",
+        "es": "Orca"
+      },
+      "sci": "Orcinus orca",
+      "group": "mammal",
+      "depth": [
+        0,
+        1087
+      ],
+      "usual": 50,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern",
+        "arctic"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -78,
+        80
+      ],
+      "text": {
+        "en": "An adult female taking toothfish from fishing lines near South Georgia dived to 1,087 m, the deepest dive known for a killer whale.",
+        "es": "Una hembra adulta que robaba austromerluzas de los palangres cerca de Georgia del Sur bajó a 1 087 m, la inmersión más profunda conocida de una orca."
+      },
+      "src": "https://hakaimagazine.com/news/a-record-breaking-dive-by-a-hungry-killer-whale/"
+    },
+    {
+      "id": "humpback-whale",
+      "e": "🐋",
+      "name": {
+        "en": "Humpback whale",
+        "es": "Ballena jorobada"
+      },
+      "sci": "Megaptera novaeangliae",
+      "group": "mammal",
+      "depth": [
+        0,
+        616
+      ],
+      "usual": 40,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern",
+        "arctic"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        -70,
+        75
+      ],
+      "text": {
+        "en": "Tags on whales off New Caledonia showed that most dives stay above 80 m, yet some went down to 616 m, including dives by mothers with calves.",
+        "es": "Marcas colocadas en ballenas frente a Nueva Caledonia mostraron que la mayoría de sus inmersiones no pasan de 80 m, pero algunas llegaron a 616 m, incluso de madres con crías."
+      },
+      "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7078318/"
+    },
+    {
+      "id": "blue-whale",
+      "e": "🐳",
+      "name": {
+        "en": "Blue whale",
+        "es": "Ballena azul"
+      },
+      "sci": "Balaenoptera musculus",
+      "group": "mammal",
+      "depth": [
+        0,
+        400
+      ],
+      "usual": 200,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -70,
+        70
+      ],
+      "text": {
+        "en": "The largest animal alive feeds on krill. Pygmy blue whales tagged off Western Australia were found feeding at about 100 to 400 m.",
+        "es": "El animal más grande que existe se alimenta de kril. Ballenas azules pigmeas marcadas frente a Australia Occidental se alimentaban a unos 100 a 400 m."
+      },
+      "src": "https://www.aims.gov.au/information-centre/news-and-stories/feeding-go-research-provides-new-insights-pygmy-blue-whale-foraging-behaviours"
+    },
+    {
+      "id": "narwhal",
+      "e": "🐋",
+      "name": {
+        "en": "Narwhal",
+        "es": "Narval"
+      },
+      "sci": "Monodon monoceros",
+      "group": "mammal",
+      "depth": [
+        0,
+        1200
+      ],
+      "usual": 500,
+      "oceans": [
+        "arctic",
+        "atlantic"
+      ],
+      "lat": [
+        60,
+        85
+      ],
+      "text": {
+        "en": "Feeds at or near the bottom in deep Arctic water, diving to about 1,200 m for up to 25 minutes and sucking in Arctic cod, turbot, squid and shrimp.",
+        "es": "Se alimenta en el fondo o cerca de él en aguas profundas del Ártico: baja a unos 1 200 m hasta 25 minutos y succiona bacalao ártico, fletán, calamares y camarones."
+      },
+      "src": "https://www.fisheries.noaa.gov/species/narwhal"
+    },
+    {
+      "id": "beluga",
+      "e": "🐋",
+      "name": {
+        "en": "Beluga",
+        "es": "Beluga"
+      },
+      "sci": "Delphinapterus leucas",
+      "group": "mammal",
+      "depth": [
+        0,
+        1000
+      ],
+      "usual": 20,
+      "oceans": [
+        "arctic",
+        "atlantic",
+        "pacific"
+      ],
+      "lat": [
+        47,
+        82
+      ],
+      "text": {
+        "en": "In summer it stays in shallow coasts and river mouths, but in other seasons it can dive to 1,000 m for up to 25 minutes, among Arctic ice floes.",
+        "es": "En verano se queda en costas poco profundas y desembocaduras de ríos, pero en otras estaciones puede bajar a 1 000 m hasta 25 minutos, entre témpanos del Ártico."
+      },
+      "src": "https://www.fisheries.noaa.gov/species/beluga-whale"
+    },
+    {
+      "id": "hooded-seal",
+      "e": "🦭",
+      "name": {
+        "en": "Hooded seal",
+        "es": "Foca capuchina"
+      },
+      "sci": "Cystophora cristata",
+      "group": "mammal",
+      "depth": [
+        0,
+        1000
+      ],
+      "usual": 350,
+      "oceans": [
+        "arctic",
+        "atlantic"
+      ],
+      "lat": [
+        45,
+        80
+      ],
+      "text": {
+        "en": "Usually dives 100 to 600 m for 13 to 15 minutes, but it can go beyond 1,000 m and stay down for an hour.",
+        "es": "Suele bajar a entre 100 y 600 m durante 13 a 15 minutos, pero puede pasar de 1 000 m y quedarse sumergida una hora."
+      },
+      "src": "https://www.fisheries.noaa.gov/species/hooded-seal"
+    },
+    {
+      "id": "hawaiian-monk-seal",
+      "e": "🦭",
+      "name": {
+        "en": "Hawaiian monk seal",
+        "es": "Foca monje de Hawái"
+      },
+      "sci": "Neomonachus schauinslandi",
+      "group": "mammal",
+      "depth": [
+        0,
+        550
+      ],
+      "usual": 40,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        18,
+        29
+      ],
+      "text": {
+        "en": "Usually forages on the seafloor less than 60 m down for about 6 minutes, but it can hold its breath for 20 minutes and dive deeper than 550 m.",
+        "es": "Suele buscar alimento en el fondo a menos de 60 m durante unos 6 minutos, pero puede aguantar la respiración 20 minutos y bajar a más de 550 m."
+      },
+      "src": "https://www.fisheries.noaa.gov/species/hawaiian-monk-seal"
+    },
+    {
+      "id": "short-finned-pilot-whale",
+      "e": "🐋",
+      "name": {
+        "en": "Short-finned pilot whale",
+        "es": "Calderón de aleta corta"
+      },
+      "sci": "Globicephala macrorhynchus",
+      "group": "mammal",
+      "depth": [
+        0,
+        1000
+      ],
+      "usual": 500,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        -40,
+        45
+      ],
+      "text": {
+        "en": "Called the cheetah of the deep: off Tenerife it dives to about 500 m, picks a target, then sprints after it to 1,000 m at up to 9 metres a second.",
+        "es": "Le dicen el guepardo de las profundidades: frente a Tenerife baja a unos 500 m, elige una presa y la persigue a toda velocidad hasta 1 000 m, a hasta 9 metros por segundo."
+      },
+      "src": "https://www.whoi.edu/press-room/news-release/cheetahs-of-the-deep"
+    },
+    {
+      "id": "bottlenose-dolphin",
+      "e": "🐬",
+      "name": {
+        "en": "Common bottlenose dolphin",
+        "es": "Delfín nariz de botella"
+      },
+      "sci": "Tursiops truncatus",
+      "group": "mammal",
+      "depth": [
+        0,
+        1000
+      ],
+      "usual": 50,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean",
+        "caribbean"
+      ],
+      "lat": [
+        -45,
+        60
+      ],
+      "text": {
+        "en": "Best known from shallow bays, but offshore dolphins tagged around Bermuda dived at night to 1,000 m, following prey that rises from the deep.",
+        "es": "Es más conocido en bahías poco profundas, pero delfines de mar abierto marcados alrededor de Bermudas bajaron de noche hasta 1 000 m, siguiendo a presas que suben de las profundidades."
+      },
+      "src": "https://www.argos-system.org/how-deep-bottlenose-dolphins-dive/"
+    },
+    {
+      "id": "walrus",
+      "e": "🦭",
+      "name": {
+        "en": "Walrus",
+        "es": "Morsa"
+      },
+      "sci": "Odobenus rosmarus",
+      "group": "mammal",
+      "depth": [
+        0,
+        500
+      ],
+      "usual": 50,
+      "oceans": [
+        "arctic",
+        "atlantic",
+        "pacific"
+      ],
+      "lat": [
+        55,
+        82
+      ],
+      "text": {
+        "en": "Most dives go 10 to 100 m down to the clams and other seafloor food it likes. Four dives deeper than 500 m in Smith Sound, between Greenland and Canada, are the deepest known.",
+        "es": "La mayoría de sus inmersiones van de 10 a 100 m, hasta las almejas y otros alimentos del fondo que prefiere. Cuatro inmersiones de más de 500 m en el estrecho de Smith, entre Groenlandia y Canadá, son las más profundas conocidas."
+      },
+      "src": "https://nammco.no/wp-content/uploads/2018/10/garde-et-al.-2018.pdf"
+    },
+    {
+      "id": "sea-otter",
+      "e": "🦦",
+      "name": {
+        "en": "Sea otter",
+        "es": "Nutria marina"
+      },
+      "sci": "Enhydra lutris",
+      "group": "mammal",
+      "depth": [
+        0,
+        100
+      ],
+      "usual": 15,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        34,
+        61
+      ],
+      "text": {
+        "en": "Dives to the seafloor for urchins, clams and crabs. In Alaska most of its foraging happens 2 to 30 m down, though some otters reach 100 m.",
+        "es": "Bucea hasta el fondo en busca de erizos, almejas y cangrejos. En Alaska casi toda su búsqueda de alimento ocurre entre 2 y 30 m, aunque algunas nutrias llegan a 100 m."
+      },
+      "src": "https://www.usgs.gov/publications/foraging-depths-sea-otters-and-implications-coastal-marine-communities"
+    },
+    {
+      "id": "dugong",
+      "e": "🐄",
+      "name": {
+        "en": "Dugong",
+        "es": "Dugongo"
+      },
+      "sci": "Dugong dugon",
+      "group": "mammal",
+      "depth": [
+        0,
+        36.5
+      ],
+      "usual": 3,
+      "oceans": [
+        "indian",
+        "pacific"
+      ],
+      "seas": [
+        "red-sea"
+      ],
+      "lat": [
+        -27,
+        27
+      ],
+      "text": {
+        "en": "A sea cow that grazes on seagrass and makes hundreds of short, shallow dives a day, mostly in water less than 5 m deep. The deepest dive recorded was 36.5 m.",
+        "es": "Una vaca marina que pasta pastos marinos y hace cientos de inmersiones cortas y poco profundas al día, casi siempre a menos de 5 m. La más profunda registrada fue de 36,5 m."
+      },
+      "src": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2026.1796201/full"
+    },
+    {
+      "id": "king-penguin",
+      "e": "🐧",
+      "name": {
+        "en": "King penguin",
+        "es": "Pingüino rey"
+      },
+      "sci": "Aptenodytes patagonicus",
+      "group": "bird",
+      "depth": [
+        0,
+        304
+      ],
+      "usual": 150,
+      "oceans": [
+        "southern",
+        "atlantic",
+        "indian"
+      ],
+      "lat": [
+        -60,
+        -45
+      ],
+      "text": {
+        "en": "The second-largest diving bird. In a study of 18,537 dives by 34 birds, the deepest reached 304 m.",
+        "es": "La segunda ave buceadora más grande. En un estudio de 18 537 inmersiones de 34 aves, la más profunda llegó a 304 m."
+      },
+      "src": "https://nora.nerc.ac.uk/id/eprint/518716/"
+    },
+    {
+      "id": "adelie-penguin",
+      "e": "🐧",
+      "name": {
+        "en": "Adélie penguin",
+        "es": "Pingüino de Adelia"
+      },
+      "sci": "Pygoscelis adeliae",
+      "group": "bird",
+      "depth": [
+        0,
+        175
+      ],
+      "usual": 35,
+      "oceans": [
+        "southern"
+      ],
+      "lat": [
+        -78,
+        -60
+      ],
+      "text": {
+        "en": "Usually feeds on krill and fish in the top 70 m of the water, but some birds dive as deep as 175 m.",
+        "es": "Suele comer kril y peces en los primeros 70 m del agua, pero algunas aves bajan hasta 175 m."
+      },
+      "src": "https://www.antarctica.gov.au/about-antarctica/animals/penguins/adelie-penguin/"
+    },
+    {
+      "id": "thick-billed-murre",
+      "e": "🐦",
+      "name": {
+        "en": "Thick-billed murre",
+        "es": "Arao de Brünnich"
+      },
+      "sci": "Uria lomvia",
+      "group": "bird",
+      "depth": [
+        0,
+        210
+      ],
+      "usual": 30,
+      "oceans": [
+        "arctic",
+        "atlantic",
+        "pacific"
+      ],
+      "lat": [
+        50,
+        82
+      ],
+      "text": {
+        "en": "Holds the record for the deepest dive by a bird that can fly: 210 m, descending at about 2 metres a second with its wings.",
+        "es": "Tiene el récord de la inmersión más profunda de un ave que vuela: 210 m, bajando a unos 2 metros por segundo con sus alas."
+      },
+      "src": "https://guinnessworldrecords.com/world-records/deepest-dive-by-a-bird-flying"
+    },
+    {
+      "id": "atlantic-puffin",
+      "e": "🐦",
+      "name": {
+        "en": "Atlantic puffin",
+        "es": "Frailecillo atlántico"
+      },
+      "sci": "Fratercula arctica",
+      "group": "bird",
+      "depth": [
+        0,
+        68
+      ],
+      "usual": 30,
+      "oceans": [
+        "atlantic",
+        "arctic"
+      ],
+      "lat": [
+        40,
+        80
+      ],
+      "text": {
+        "en": "Flies underwater with its wings to catch small fish. Puffins tracked off Newfoundland usually fed above 60 m, and one dived to 68 m.",
+        "es": "Vuela bajo el agua con las alas para atrapar peces pequeños. Los frailecillos estudiados frente a Terranova solían comer por encima de 60 m y uno bajó a 68 m."
+      },
+      "src": "https://sora.unm.edu/sites/default/files/journals/auk/v103n04/p0828-p0830.pdf"
+    },
+    {
+      "id": "leatherback-turtle",
+      "e": "🐢",
+      "name": {
+        "en": "Leatherback turtle",
+        "es": "Tortuga laúd"
+      },
+      "sci": "Dermochelys coriacea",
+      "group": "reptile",
+      "depth": [
+        0,
+        1280
+      ],
+      "usual": 25,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean",
+        "caribbean"
+      ],
+      "lat": [
+        -47,
+        71
+      ],
+      "text": {
+        "en": "The deepest-diving reptile: a satellite-tagged leatherback went down to 1,280 m south-west of Cape Verde in 2006. Most of its dives for jellyfish are far shallower.",
+        "es": "El reptil que bucea a mayor profundidad: una tortuga laúd con marca satelital bajó a 1 280 m al suroeste de Cabo Verde en 2006. La mayoría de sus inmersiones para cazar medusas son mucho menos profundas."
+      },
+      "src": "https://www.guinnessworldrecords.com/world-records/70255-deepest-dive-by-a-chelonian",
+      "src_more": [
+        "https://research.ucc.ie/en/publications/high-resolution-diving-data-collected-from-foraging-area-reveal-t/"
+      ],
+      "record": true
+    },
+    {
+      "id": "green-turtle",
+      "e": "🐢",
+      "name": {
+        "en": "Green turtle",
+        "es": "Tortuga verde"
+      },
+      "sci": "Chelonia mydas",
+      "group": "reptile",
+      "depth": [
+        0,
+        135
+      ],
+      "usual": 20,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean",
+        "caribbean",
+        "red-sea"
+      ],
+      "lat": [
+        -35,
+        40
+      ],
+      "text": {
+        "en": "Grazes on seagrass and algae in shallow water. Hawaiian green turtles migrating at night made the deepest dives ever recorded for the species, beyond 135 m.",
+        "es": "Pasta pastos marinos y algas en aguas poco profundas. Tortugas verdes de Hawái en migración nocturna hicieron las inmersiones más profundas registradas para la especie, de más de 135 m."
+      },
+      "src": "https://georgehbalazs.com/wp-content/uploads/2019/02/RiceBalazs_2010_HawaiianCMDiveRecordDepthsDuringOceanicMigrations_Symp28.pdf"
+    },
+    {
+      "id": "yellow-bellied-sea-snake",
+      "e": "🐍",
+      "name": {
+        "en": "Yellow-bellied sea snake",
+        "es": "Serpiente marina de vientre amarillo"
+      },
+      "sci": "Hydrophis platurus",
+      "group": "reptile",
+      "depth": [
+        0,
+        50
+      ],
+      "usual": 10,
+      "oceans": [
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -40,
+        35
+      ],
+      "text": {
+        "en": "Lives its whole life in the open ocean and spends about 87 percent of its time underwater, diving as deep as 50 m.",
+        "es": "Pasa toda su vida en mar abierto y cerca del 87 por ciento del tiempo bajo el agua, y bucea hasta 50 m."
+      },
+      "src": "https://doi.org/10.1242/jeb.127.1.27"
     }
   ]
 }
