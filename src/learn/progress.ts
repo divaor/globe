@@ -131,6 +131,8 @@ export const BADGES: Badge[] = [
   { id: 'app-naturalist', icon: '🔭', en: 'Naturalist', es: 'Naturalista', how: { en: 'Find 25 animals', es: 'Encuentra 25 animales' }, goal: 25, have: (p) => p.seen.animals.length },
   // v0.31.0: plants found (a plant's card opened, from the map, the finder, a garden or a famous tree).
   { id: 'app-botanist', icon: '🌿', en: 'Botanist', es: 'Botánico', how: { en: 'Find 25 plants', es: 'Encuentra 25 plantas' }, goal: 25, have: (p) => p.seen.plants?.length ?? 0 },
+  // v0.33.0: a dive below 6,000 m (Into the deep).
+  { id: 'app-diver', icon: '🤿', en: 'Diver', es: 'Buzo', how: { en: 'Dive below 6,000 m', es: 'Bucea a más de 6 000 m' }, goal: 1, have: (p) => Number(p.feats.includes('dive-6000')) },
   { id: 'play-daily-7', icon: '🔥', en: 'A week of routes', es: 'Una semana de rutas', how: { en: 'The daily route 7 days in a row', es: 'La ruta del día 7 días seguidos' }, goal: 7, have: (p) => p.play.daily.best },
   { id: 'tours-all', icon: '🌍', en: 'Globetrotter', es: 'Trotamundos', how: { en: `Follow all ${TOURS.length} tours to the end`, es: `Sigue las ${TOURS.length} visitas hasta el final` }, goal: TOURS.length, have: (p) => p.tours.length },
 ];
