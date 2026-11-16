@@ -20,6 +20,7 @@ let animalsP: Promise<SeaAnimal[]> | null = null;
 export const loadDeep = () => (deepP ??= loadJSON<Deep>('ocean/deep.json'));
 export const loadSeaAnimals = () => (animalsP ??= loadJSON<{ animals: SeaAnimal[] }>('ocean/animals.json').then((j) => j.animals));
 const T = (x?: { en: string; es: string }) => (x ? (es() ? x.es : x.en) : '');
+const cap = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
 
 /** The group's emoji for a sea creature OBIS names by its class. */
 const CLASS_E: Record<string, string> = { Mammalia: '🐋', Aves: '🐦', Reptilia: '🐢', Elasmobranchii: '🦈', Teleostei: '🐟', Actinopterygii: '🐟', Cephalopoda: '🐙', Malacostraca: '🦀', Gastropoda: '🐚', Bivalvia: '🦪', Anthozoa: '🪸', Scyphozoa: '🪼', Hydrozoa: '🪼', Echinoidea: '🦔', Asteroidea: '⭐', Holothuroidea: '🥒', Polychaeta: '🪱', Phaeophyceae: '🌿', Florideophyceae: '🌿' };
@@ -53,6 +54,16 @@ export class DeepSea {
       return true;
     });
     app.on('lang', () => { if (this.shell.sheet.isOpen('deep')) this.render(); });
+    // Where the reader dives: a pin on the globe while the panel is open.
+    app.renderer.overlays.add((rc) => {
+      if (!this.at || !this.shell.sheet.isOpen('deep')) return;
+      const p = rc.project(this.at[0], this.at[1]);
+      if (!p) return;
+      const { ctx } = rc;
+      ctx.beginPath(); ctx.arc(p[0], p[1], 6, 0, Math.PI * 2);
+      ctx.fillStyle = '#ffd43b'; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = '#1b1b1b'; ctx.stroke();
+      rc.labels.add({ text: '🤿', x: p[0], y: p[1] - 16, priority: 6000, size: 16, color: '#fff', halo: 'rgba(0,0,0,0.6)' });
+    });
   }
 
   async open(tab?: Tab) {
@@ -65,6 +76,7 @@ export class DeepSea {
   async diveAt(lon: number, lat: number) {
     this.at = [lon, lat];
     this.tab = 'dive';
+    this.app.renderer.requestRender();
     await this.open('dive');
     const d = depths ? seaDepthAt(depths, lon, lat) : 0;
     if (d > 6000) {
@@ -125,7 +137,7 @@ export class DeepSea {
         h('p', { class: 'muted small' }, L('Records within about 150 km, live from OBIS, the Ocean Biodiversity Information System.', 'Registros a unos 150 km, en vivo de OBIS, el Sistema de Información sobre Biodiversidad Oceánica.')));
     });
     return h('div', null,
-      h('p', { class: 'small' }, h('b', null, `🌊 ${OCEAN_NAMES[ocean]()} · ${coord}`), h('br'),
+      h('p', { class: 'small' }, h('b', null, `🌊 ${cap(OCEAN_NAMES[ocean]())} · ${coord}`), h('br'),
         floor - typical > 300
           ? L(`The sea here is about ${metres(typical)} deep, down to ${metres(floor)} at its deepest. You are in the ${zoneOf(floor).name().toLowerCase()} at the bottom.`, `Aquí el mar tiene unos ${metres(typical)} de profundidad, hasta ${metres(floor)} en lo más hondo. Al fondo estás en la ${zoneOf(floor).name().toLowerCase()}.`)
           : L(`The sea here is about ${metres(floor)} deep: its floor is in the ${zoneOf(floor).name().toLowerCase()}.`, `Aquí el mar tiene unos ${metres(floor)} de profundidad: su fondo está en la ${zoneOf(floor).name().toLowerCase()}.`)),

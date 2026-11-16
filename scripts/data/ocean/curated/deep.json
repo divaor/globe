@@ -1,0 +1,167 @@
+{
+  "zones": [
+    {
+      "id": "sunlit",
+      "top_m": 0,
+      "bottom_m": 200,
+      "name": {
+        "en": "Sunlit zone (epipelagic)",
+        "es": "Zona iluminada (epipelágica)"
+      },
+      "light": {
+        "en": "There is enough sunlight for algae and phytoplankton to grow. The light fades fast, and below about 200 m it is too weak for photosynthesis.",
+        "es": "Hay suficiente luz solar para que crezcan las algas y el fitoplancton. La luz se apaga rápido y por debajo de unos 200 m ya no alcanza para la fotosíntesis."
+      },
+      "temp": {
+        "en": "The warmest layer, heated by the Sun: from about −2 °C in polar seas to about 30 °C in the tropics.",
+        "es": "Es la capa más cálida, calentada por el Sol: de unos −2 °C en los mares polares a unos 30 °C en los trópicos."
+      },
+      "life": {
+        "en": "Phytoplankton, which make about half the oxygen we breathe, feed tiny zooplankton, and those feed fish, turtles, seals and whales. Most of the world's fishing happens here.",
+        "es": "El fitoplancton, que produce cerca de la mitad del oxígeno que respiramos, alimenta al zooplancton, y este a peces, tortugas, focas y ballenas. Aquí se concentra la mayor parte de la pesca del mundo."
+      },
+      "fact": {
+        "en": "Pressure rises by about 1 atmosphere every 10 m. At 200 m the water adds about 20 atmospheres, roughly 20 kg pressing on every square centimetre. This thin layer holds only 2 to 3 percent of the ocean's water.",
+        "es": "La presión sube cerca de 1 atmósfera cada 10 m. A 200 m el agua suma unas 20 atmósferas, unos 20 kg sobre cada centímetro cuadrado. Esta capa delgada tiene apenas del 2 al 3 % del agua del océano."
+      },
+      "src": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/sunlit-zone/",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/light-distributed/",
+        "https://oceanservice.noaa.gov/facts/light_travel.html",
+        "https://oceanservice.noaa.gov/facts/pressure.html"
+      ]
+    },
+    {
+      "id": "twilight",
+      "top_m": 200,
+      "bottom_m": 1000,
+      "name": {
+        "en": "Twilight zone (mesopelagic)",
+        "es": "Zona crepuscular (mesopelágica)"
+      },
+      "light": {
+        "en": "Only dim blue light comes down, too weak for plants. It fades with every metre, and by about 1,000 m sunlight is gone. Many animals make their own light.",
+        "es": "Solo llega una luz azul tenue, demasiado débil para las plantas. Se apaga metro a metro, y hacia los 1 000 m la luz del Sol desaparece. Muchos animales producen su propia luz."
+      },
+      "temp": {
+        "en": "Cold, and colder with depth: by 1,000 m the water is only about 4 °C.",
+        "es": "Frío, y cada vez más con la profundidad: a 1 000 m el agua está a solo unos 4 °C."
+      },
+      "life": {
+        "en": "Lanternfish, bristlemouths, squid, krill and jellies. Every night many of them swim up towards the surface to feed and sink back at dawn: the largest animal migration on Earth.",
+        "es": "Peces linterna, peces boca de cerdas, calamares, kril y medusas. Cada noche muchos suben hacia la superficie a comer y bajan de nuevo al amanecer: es la mayor migración animal del planeta."
+      },
+      "fact": {
+        "en": "At 1,000 m the pressure is about 100 atmospheres, like a heavy adult standing on every square centimetre. This zone may hold more fish, by weight, than all the rest of the ocean.",
+        "es": "A 1 000 m la presión es de unas 100 atmósferas, como si un adulto corpulento se parara sobre cada centímetro cuadrado. Esta zona podría tener más peces, en peso, que todo el resto del océano."
+      },
+      "src": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/twilight-zone/",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/light-distributed/",
+        "https://oceanservice.noaa.gov/facts/pressure.html"
+      ]
+    },
+    {
+      "id": "midnight",
+      "top_m": 1000,
+      "bottom_m": 4000,
+      "name": {
+        "en": "Midnight zone (bathypelagic)",
+        "es": "Zona de medianoche (batipelágica)"
+      },
+      "light": {
+        "en": "No sunlight at all. The only light is the glow that animals make themselves (bioluminescence).",
+        "es": "No llega nada de luz solar. La única luz es la que producen los propios animales (bioluminiscencia)."
+      },
+      "temp": {
+        "en": "A steady 4 °C or so, all year round.",
+        "es": "Unos 4 °C constantes durante todo el año."
+      },
+      "life": {
+        "en": "Anglerfish, dragonfish, gulper eels and sperm whales hunting squid. Many animals are red or black: with no red light down here, red looks black and hides them.",
+        "es": "Peces pescadores, peces dragón, anguilas pelícano y cachalotes que cazan calamares. Muchos animales son rojos o negros: aquí no hay luz roja, así que el rojo se ve negro y los esconde."
+      },
+      "fact": {
+        "en": "Pressure climbs from about 100 to 400 atmospheres. At 4,000 m it is about 400 kg on every square centimetre, roughly the weight of a grand piano. This is the largest habitat on Earth, with about 70 percent of all seawater.",
+        "es": "La presión sube de unas 100 a 400 atmósferas. A 4 000 m son unos 400 kg sobre cada centímetro cuadrado, más o menos el peso de un piano de cola. Es el hábitat más grande de la Tierra: tiene cerca del 70 % de toda el agua de mar."
+      },
+      "src": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/midnight-zone/",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/light-distributed/",
+        "https://oceanexplorer.noaa.gov/ocean-fact/red-color/",
+        "https://oceanservice.noaa.gov/facts/pressure.html"
+      ]
+    },
+    {
+      "id": "abyss",
+      "top_m": 4000,
+      "bottom_m": 6000,
+      "name": {
+        "en": "Abyss (abyssopelagic)",
+        "es": "Zona abisal (abisopelágica)"
+      },
+      "light": {
+        "en": "Complete darkness, apart from the faint glow of animals.",
+        "es": "Oscuridad total, salvo el tenue brillo de algunos animales."
+      },
+      "temp": {
+        "en": "Near freezing all year, only a few degrees above 0 °C.",
+        "es": "Casi helada todo el año, apenas unos grados sobre 0 °C."
+      },
+      "life": {
+        "en": "Sea cucumbers, brittle stars, sponges and tripod fish live on wide muddy plains, eating scraps that drift down from above. Parts of the floor are covered with metal-rich nodules.",
+        "es": "Pepinos de mar, ofiuras, esponjas y peces trípode viven en extensas llanuras de lodo y comen los restos que caen desde arriba. Partes del fondo están cubiertas de nódulos ricos en metales."
+      },
+      "fact": {
+        "en": "Pressure reaches about 400 to 600 atmospheres. At 6,000 m that is about 600 kg on every square centimetre, like a dairy cow standing on a fingertip. In most places the ocean floor lies at these depths.",
+        "es": "La presión llega a unas 400 a 600 atmósferas. A 6 000 m son unos 600 kg sobre cada centímetro cuadrado, como una vaca parada sobre la yema de un dedo. En la mayor parte del océano, el fondo está a estas profundidades."
+      },
+      "src": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/abyssal-zone/",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/light-distributed/",
+        "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/hadal-zone/",
+        "https://www.jamstec.go.jp/e/about/equipment/ships/shinkai6500.html"
+      ],
+      "note": {
+        "en": "Ranges differ between sources: NOAA puts the abyss at 4,000 to 6,000 m, while WHOI uses 3,000 to 6,500 m for the abyssal seafloor.",
+        "es": "Los rangos cambian según la fuente: la NOAA ubica la zona abisal entre 4 000 y 6 000 m, y el WHOI usa de 3 000 a 6 500 m para el fondo abisal."
+      }
+    },
+    {
+      "id": "hadal",
+      "top_m": 6000,
+      "bottom_m": 10935,
+      "name": {
+        "en": "Hadal zone (hadopelagic)",
+        "es": "Zona hadal (hadopelágica)"
+      },
+      "light": {
+        "en": "Darkness. These trenches are the deepest and least explored places on Earth.",
+        "es": "Oscuridad. Estas fosas son los lugares más profundos y menos explorados de la Tierra."
+      },
+      "temp": {
+        "en": "Just above freezing.",
+        "es": "Apenas por encima del punto de congelación."
+      },
+      "life": {
+        "en": "Snailfish, shrimp-like amphipods, sea cucumbers and tube worms. No fish has been seen deeper than 8,336 m, but tube worms and clams fed by seeping chemicals live as deep as 9,533 m.",
+        "es": "Peces caracol, anfípodos parecidos a camarones, pepinos de mar y gusanos de tubo. Nunca se ha visto un pez a más de 8 336 m, pero hay gusanos de tubo y almejas que viven de sustancias químicas que brotan del fondo hasta a 9 533 m."
+      },
+      "fact": {
+        "en": "At the bottom of the Challenger Deep the pressure is nearly 1,100 atmospheres: more than a tonne on every square centimetre. All the hadal trenches together cover an area about the size of Australia.",
+        "es": "En el fondo del abismo Challenger la presión es de casi 1 100 atmósferas: más de una tonelada sobre cada centímetro cuadrado. Todas las fosas hadales juntas ocupan un área más o menos del tamaño de Australia."
+      },
+      "src": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/hadal-zone/",
+      "src_more": [
+        "https://www.whoi.edu/press-room/news-tip/faq-nereus/",
+        "https://www.uwa.edu.au/news/article/2023/april/scientists-break-new-record-after-finding-worlds-deepest-fish",
+        "https://doi.org/10.1038/s41586-025-09317-z",
+        "https://oceanservice.noaa.gov/facts/oceandepth.html"
+      ],
+      "note": {
+        "en": "The bottom of the zone is the deepest point of the Challenger Deep, about 10,935 m; surveys give 10,920 to 10,935 m.",
+        "es": "El límite inferior es el punto más profundo del abismo Challenger, a unos 10 935 m; los estudios dan entre 10 920 y 10 935 m."
+      }
+    }
+  ]
+}

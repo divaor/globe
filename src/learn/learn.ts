@@ -1295,6 +1295,40 @@ export class Learn {
     return x.below === 'sea' ? L(`${v} below sea level`, `${v} bajo el nivel del mar`) : v;
   }
   /** Which of two goes deeper: pairs far enough apart (one at least a third deeper) to be fair. */
+  /** Name the sea feature (v0.33.0): a famous undersea feature under a pin; its name among four. */
+  private async seaFeatureQs(n: number): Promise<Q[]> {
+    type F = { id: string; name: { en: string; es: string }; kind: string; lon: number; lat: number; rank: number; text: { en: string; es: string } };
+    const fs = (await loadJSON<{ famous: F[] }>('ocean/features.json').catch(() => ({ famous: [] as F[] }))).famous.filter((f) => f.rank <= 2);
+    if (fs.length < 4) return [];
+    const labels = Object.fromEntries(fs.map((f) => [f.id, es() ? f.name.es : f.name.en]));
+    return shuffle(fs.slice()).slice(0, n).map((f) => {
+      // Wrong answers: far enough away that the pin tells them apart, of the same kind first.
+      const far = fs.filter((g) => g.id !== f.id && Math.hypot(g.lon - f.lon, g.lat - f.lat) > 12);
+      const wrong = [...shuffle(far.filter((g) => g.kind === f.kind)), ...shuffle(far.filter((g) => g.kind !== f.kind))].slice(0, 3).map((g) => g.id);
+      return { id: f.id, kind: 'seafeature' as QuizKind, options: shuffle([f.id, ...wrong]), sea: { at: [f.lon, f.lat] as [number, number], prompt: L('What is under the pin?', '¿Qué hay bajo el alfiler?'), labels, note: es() ? f.text.es : f.text.en } };
+    });
+  }
+  /** Which ocean zone? (v0.33.0): a sea animal; the zone it lives in most often. */
+  private async zoneQs(n: number): Promise<Q[]> {
+    type A = { id: string; e: string; name: { en: string; es: string }; depth: [number, number]; usual: number; text: { en: string; es: string } };
+    const as = (await loadJSON<{ animals: A[] }>('ocean/animals.json').catch(() => ({ animals: [] as A[] }))).animals;
+    if (as.length < 4) return [];
+    const zones: [string, number, string][] = [['sunlit', 200, L('Sunlit zone (0–200 m)', 'Zona iluminada (0–200 m)')], ['twilight', 1000, L('Twilight zone (200–1 000 m)', 'Penumbra (200–1 000 m)')], ['midnight', 4000, L('Midnight zone (1 000–4 000 m)', 'Zona de medianoche (1 000–4 000 m)')], ['abyss', 6000, L('Abyss (4 000–6 000 m)', 'Abismo (4 000–6 000 m)')], ['hadal', 1e9, L('The trenches (below 6 000 m)', 'Las fosas (más de 6 000 m)')]];
+    const zoneOf = (m: number) => zones.find((z) => m < z[1])![0];
+    const labels = Object.fromEntries(zones.map((z) => [z[0], z[2]]));
+    // Every zone gets its turn, the deep ones too.
+    const byZone = new Map<string, A[]>();
+    for (const a of shuffle(as.slice())) { const z = zoneOf(a.usual); byZone.set(z, [...(byZone.get(z) ?? []), a]); }
+    const pick: A[] = [];
+    while (pick.length < n && [...byZone.values()].some((l) => l.length)) for (const l of byZone.values()) if (l.length && pick.length < n) pick.push(l.shift()!);
+    return shuffle(pick).map((a) => {
+      const z = zoneOf(a.usual);
+      const wrong = shuffle(zones.map((x) => x[0]).filter((x) => x !== z)).slice(0, 3);
+      const fmt = (v: number) => `${fmtNumber(Math.round(v))} m`;
+      return { id: z, kind: 'zone' as QuizKind, options: [...zones.map((x) => x[0])].filter((x) => x === z || wrong.includes(x)), sea: { prompt: L('Where does it live most often?', '¿Dónde vive más a menudo?'), item: `${a.e} ${es() ? a.name.es : a.name.en}`, labels,
+        note: L(`${a.name.en}: most often about ${fmt(a.usual)} down, from ${fmt(a.depth[0])} to ${fmt(a.depth[1])}. ${a.text.en}`, `${a.name.es}: casi siempre a unos ${fmt(a.usual)}, de ${fmt(a.depth[0])} a ${fmt(a.depth[1])}. ${a.text.es}`) } };
+    });
+  }
   private async deepQs(n: number): Promise<Q[]> {
     const pool = (await this.loadDeep()).filter((x) => x.m < 20000);
     const out: Q[] = [];
