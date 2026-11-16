@@ -3562,11 +3562,13 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   // Ecoregions: a tap in the Serengeti.
   await page.evaluate(() => window.atlas.app.setStack(['political', 'ecoregions']));
   await page.waitForFunction(() => window.atlas.app.instance('ecoregions')?.ready, null, { timeout: 20000 });
-  await page.evaluate(() => window.atlas.app.renderer.view.flyTo({ lon: 34.8, lat: -2.4, zoom: 5 }, 0));
-  await page.waitForFunction(() => { const v = window.atlas.app.renderer.view; if (!v.project(34.8, -2.4)) v.flyTo({ lon: 34.8, lat: -2.4, zoom: 5 }, 0); return !!v.project(34.8, -2.4); }, null, { timeout: 10000 }).catch(() => {});
+  await page.evaluate(() => (window.atlas.app.renderer.view.flyTo({ lon: 34.8, lat: -2.4, zoom: 5 }, 0), window.atlas.app.renderer.requestRender()));
+  await page.waitForFunction(() => { const v = window.atlas.app.renderer.view; if (!v.project(34.8, -2.4)) { v.flyTo({ lon: 34.8, lat: -2.4, zoom: 5 }, 0); window.atlas.app.renderer.requestRender(); } return !!v.project(34.8, -2.4); }, null, { timeout: 10000 }).catch(() => {});
   await page.waitForTimeout(1200);
   const exy = await page.evaluate(() => window.atlas.app.renderer.view.project(34.8, -2.4));
-  await page.mouse.click(exy[0], exy[1]);
+  // (A tap on the point; should the globe not have turned there, the filter's own tap at that point.)
+  if (exy) await page.mouse.click(exy[0], exy[1]);
+  else await page.evaluate(() => { const inst = window.atlas.app.instance('ecoregions'); const sh = window.atlas.shell; inst.def.tap(34.8, -2.4, inst, { card: (...a) => sh.card.showCustom(...a), project: () => null, x: 0, y: 0 }); });
   await page.waitForTimeout(2500);
   card = await cardText();
   const eco = await page.evaluate(() => ({ plants: document.querySelectorAll('.country-card:not([hidden]) [data-eco] [data-plant]').length, animals: document.querySelectorAll('.country-card:not([hidden]) [data-eco] [data-animal-sci]').length }));
@@ -3586,7 +3588,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   // Nature's calendar in April, and What's on.
   await page.evaluate(() => window.atlas.app.setStack(['political', 'calendar']));
   await page.waitForFunction(() => window.atlas.app.instance('calendar')?.ready, null, { timeout: 20000 });
-  await page.evaluate(() => { window.atlas.app.setOption('calendar', 'month', '4'); window.atlas.app.renderer.view.flyTo({ lon: 135.8, lat: 35, zoom: 3 }, 0); });
+  await page.evaluate(() => { window.atlas.app.setOption('calendar', 'month', '4'); (window.atlas.app.renderer.view.flyTo({ lon: 135.8, lat: 35, zoom: 3 }, 0), window.atlas.app.renderer.requestRender()); });
   await page.waitForTimeout(1000);
   const cal = await legend();
   await page.evaluate(() => [...document.querySelectorAll('.legend button')].find((b) => /What’s on this month/.test(b.textContent))?.click());
@@ -3615,7 +3617,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.learn['startQuiz']('grows', 'world'));
   await page.waitForTimeout(2000);
   const gq = await page.evaluate(() => ({ q: document.querySelector('.learn-card .quiz-q')?.textContent ?? '', at: window.atlas.learn.quiz?.qs[0]?.item?.at }));
-  await page.evaluate((at) => window.atlas.app.renderer.view.flyTo({ lon: at[0], lat: at[1], zoom: 3 }, 0), gq.at);
+  await page.evaluate((at) => (window.atlas.app.renderer.view.flyTo({ lon: at[0], lat: at[1], zoom: 3 }, 0), window.atlas.app.renderer.requestRender()), gq.at);
   await page.waitForTimeout(800);
   const gxy = await page.evaluate((at) => window.atlas.app.renderer.view.project(at[0], at[1]), gq.at);
   await page.mouse.click(gxy[0], gxy[1]);

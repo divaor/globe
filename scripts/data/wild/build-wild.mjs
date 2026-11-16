@@ -19,7 +19,7 @@ const OUT = path.join(ROOT, 'public/data/wild');
 const read = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 const CHECK = process.argv.includes('--check');
 
-import { COLS, ROWS, DEG, cellOfHash, cellCenter, cellAt, neighbours, countriesOf, continentOf, circleCells, packCells, packCounts, unpackCells } from './grid.mjs';
+import { COLS, ROWS, DEG, cellOfHash, cellCenter, cellAt, neighbours, countriesOf, continentOf, circleCells, packCells, packCounts, unpackCells, dropStrays } from './grid.mjs';
 
 // ---- Names ----------------------------------------------------------------------------------------------------
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
@@ -88,6 +88,9 @@ for (const [k, v] of Object.entries(CURATED)) NAMES[k] = v;
 const ranges = read(path.join(RAW, 'ranges.json'));
 const extraBy = new Map(EXTRA.map((e) => [e.sci, e]));
 
+/** The squares that hold a zoo or an aquarium (Wikidata's, all of them): a lone square of sightings there is the zoo. */
+const ZOO_CELLS = new Set(read(path.join(RAW, 'places.json')).filter((p) => p.kind === 'zoo' || p.kind === 'aquarium').map((p) => cellAt(p.at[0], p.at[1])));
+
 /** An animal's squares, each with its sightings: strays dropped, introduced populations left out. */
 function cellsOf(a) {
   const e = extraBy.get(a.sci);
@@ -98,6 +101,8 @@ function cellsOf(a) {
   for (const [g, n] of Object.entries(raw)) { const k = n - (dom[g] ?? 0); if (k >= 2 || (k > 0 && !dom[g])) m.set(cellOfHash(g), k); }
   // A square with one or two sightings and no neighbour with any is a stray (a bird blown off course, a mistake).
   if (m.size >= 10) for (const [c, n] of [...m]) if (n <= 2 && !neighbours(c).some((k) => m.has(k))) m.delete(c);
+  // A lone square with a zoo in it, none of its range within two squares: the zoo.
+  dropStrays(m, ZOO_CELLS);
   const native = NATIVE[a.sci];
   if (native) for (const c of [...m.keys()]) { const cc = countriesOf(c); if (!cc.length || !cc.some((id) => native.includes(continentOf(id)))) m.delete(c); }
   // Animals that don't fly or swim the oceans: a continent with under 2% of their sightings is zoos, safari parks and

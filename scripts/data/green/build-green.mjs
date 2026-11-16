@@ -16,7 +16,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { geoDistance } from 'd3-geo';
 import { NATIVE, NAMES, emojiOf } from './choose-green.mjs';
-import { COLS, cellOfHash, cellAt, neighbours, countriesOf, continentOf, countryAt, meta, packCells, packCounts, unpackCells } from '../wild/grid.mjs';
+import { COLS, cellOfHash, cellAt, neighbours, countriesOf, continentOf, countryAt, meta, packCells, packCounts, unpackCells, dropStrays } from '../wild/grid.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 const HERE = path.join(ROOT, 'scripts/data/green');
@@ -60,6 +60,9 @@ const STATUS_RANK = { EX: 7, EW: 6, CR: 5, EN: 4, VU: 3, NT: 2, LC: 1, DD: 0 };
 const chosen = read(path.join(RAW, 'chosen.json'));
 const ranges = read(path.join(RAW, 'ranges.json'));
 
+/** The squares that hold a botanical garden or an arboretum (Wikidata's, all of them). */
+const GARDEN_CELLS = new Set((fs.existsSync(path.join(RAW, 'places.json')) ? read(path.join(RAW, 'places.json')) : []).filter((p) => p.kind === 'garden').map((p) => cellAt(p.at[0], p.at[1])));
+
 /** A plant's squares, each with its sightings: strays dropped, gardens and introduced populations left out. */
 function cellsOf(a) {
   const raw = ranges[a.id] ?? {};
@@ -67,6 +70,8 @@ function cellsOf(a) {
   for (const [g, n] of Object.entries(raw)) if (n >= 2) m.set(cellOfHash(g), n);
   // A square with two or three sightings and no neighbour with any is a stray (a garden plant, a mistake).
   if (m.size >= 10) for (const [c, n] of [...m]) if (n <= 3 && !neighbours(c).some((k) => m.has(k))) m.delete(c);
+  // A lone square with a garden in it, none of its range within two squares: the garden.
+  dropStrays(m, GARDEN_CELLS);
   const native = NATIVE[a.sci];
   if (native) for (const c of [...m.keys()]) { const cc = countriesOf(c); if (!cc.length || !cc.some((id) => native.includes(continentOf(id)))) m.delete(c); }
   // Plants are carried around the world in gardens and fields: a continent with under 5% of a plant's sightings is

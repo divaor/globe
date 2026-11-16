@@ -57,6 +57,28 @@ export function countriesOf(c) {
 }
 export const continentOf = (id) => meta[id]?.ct ?? null;
 
+/** The squares within `r` squares of a square (not itself). */
+export function around(c, r) {
+  const x = c % COLS, y = Math.floor(c / COLS), out = [];
+  for (let dy = -r; dy <= r; dy++) for (let dx = -r; dx <= r; dx++) {
+    if (!dx && !dy) continue;
+    const yy = y + dy; if (yy < 0 || yy >= ROWS) continue;
+    out.push(yy * COLS + ((x + dx + COLS) % COLS));
+  }
+  return out;
+}
+
+/**
+ * Zoos and gardens in a range of squares (Map square → sightings): a square with a zoo or a garden in it (`kept`: the
+ * squares of the zoos or gardens) and none of the range within two squares of it (about 300 km) is the zoo or the
+ * garden, unless it holds a quarter of the busiest square's sightings (a polar bear at Albuquerque's zoo).
+ */
+export function dropStrays(m, kept) {
+  if (m.size < 10) return;
+  const most = Math.max(...m.values());
+  for (const [c, n] of [...m]) if (kept.has(c) && n <= most * 0.25 && !around(c, 2).some((k) => m.has(k))) m.delete(c);
+}
+
 /** A circle of [lon, lat, km] as grid squares. */
 export function circleCells([lon, lat, km]) {
   const out = new Set([cellAt(lon, lat)]);
