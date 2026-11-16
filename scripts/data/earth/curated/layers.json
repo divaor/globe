@@ -1,0 +1,282 @@
+{
+  "source": "Boundaries and densities: PREM, Dziewonski & Anderson (1981), Physics of the Earth and Planetary Interiors 25, 297-356. PREM puts the transition-zone boundaries at 400 and 670 km; 410 and 660 km are the depths seen in modern seismology. Mantle temperatures: Katsura et al. (2010). Core temperatures: Anzellini et al. (2013). Pressures rounded from PREM.",
+  "layers": [
+    {
+      "id": "crust",
+      "top_km": 0,
+      "bottom_km": 35,
+      "name": {
+        "en": "Crust",
+        "es": "Corteza"
+      },
+      "temp_c": [
+        0,
+        900
+      ],
+      "pressure_gpa": [
+        0,
+        1
+      ],
+      "density": [
+        2.6,
+        2.9
+      ],
+      "state": {
+        "en": "Solid, brittle rock that breaks in earthquakes",
+        "es": "Roca sólida y quebradiza que se rompe en los sismos"
+      },
+      "made": {
+        "en": "Granite-like rock under the continents and dark basalt under the oceans, made mostly of oxygen, silicon and aluminium.",
+        "es": "Roca parecida al granito bajo los continentes y basalto oscuro bajo los océanos, formados sobre todo por oxígeno, silicio y aluminio."
+      },
+      "know": {
+        "en": "We can touch it, drill into it and date its rocks. Seismic waves show where it ends: about 35 km down under the continents, up to 70 km under high mountains, and only about 7 km under the ocean floor.",
+        "es": "Podemos tocarla, perforarla y fechar sus rocas. Las ondas sísmicas muestran dónde termina: a unos 35 km bajo los continentes, hasta 70 km bajo las montañas altas y solo a unos 7 km bajo el fondo del océano."
+      },
+      "fact": {
+        "en": "The deepest hole ever drilled, the Kola borehole in Russia, reached 12.3 km: only about a third of the way through the continental crust.",
+        "es": "El pozo más profundo jamás perforado, el de Kola, en Rusia, llegó a 12,3 km: apenas un tercio del espesor de la corteza continental."
+      },
+      "src": [
+        "https://doi.org/10.1016/0031-9201(81)90046-7",
+        "https://igppweb.ucsd.edu/~gabi/crust1.html",
+        "https://pubs.usgs.gov/gip/interior/",
+        "https://www.britannica.com/science/Mohorovicic-discontinuity",
+        "https://doi.org/10.1038/scientificamerican1284-98"
+      ]
+    },
+    {
+      "id": "upper-mantle",
+      "top_km": 35,
+      "bottom_km": 410,
+      "name": {
+        "en": "Upper mantle",
+        "es": "Manto superior"
+      },
+      "temp_c": [
+        500,
+        1500
+      ],
+      "pressure_gpa": [
+        1,
+        14
+      ],
+      "density": [
+        3.38,
+        3.54
+      ],
+      "state": {
+        "en": "Solid rock that flows very slowly, a few centimetres a year",
+        "es": "Roca sólida que fluye muy despacio, unos pocos centímetros al año"
+      },
+      "made": {
+        "en": "Peridotite, a dense greenish rock made mostly of the mineral olivine, the same mineral as the gem peridot.",
+        "es": "Peridotita, una roca densa y verdosa formada sobre todo por olivino, el mismo mineral de la gema llamada peridoto."
+      },
+      "know": {
+        "en": "Volcanoes and kimberlite pipes sometimes carry up chunks of mantle rock, called xenoliths. Seismic waves speed up below the Moho, as expected for peridotite.",
+        "es": "A veces los volcanes y las chimeneas de kimberlita traen a la superficie trozos de roca del manto, llamados xenolitos. Las ondas sísmicas se aceleran por debajo del Moho, como se espera de la peridotita."
+      },
+      "fact": {
+        "en": "The tectonic plates, made of crust plus the stiff top of the mantle, glide over softer, hotter mantle at about the speed your fingernails grow.",
+        "es": "Las placas tectónicas, formadas por la corteza y la parte rígida de arriba del manto, se deslizan sobre un manto más blando y caliente a más o menos la velocidad con que crecen las uñas."
+      },
+      "src": [
+        "https://doi.org/10.1016/0031-9201(81)90046-7",
+        "https://doi.org/10.1016/j.pepi.2010.07.001",
+        "https://pubs.usgs.gov/gip/interior/",
+        "https://pubs.usgs.gov/gip/dynamic/understanding.html"
+      ]
+    },
+    {
+      "id": "transition-zone",
+      "top_km": 410,
+      "bottom_km": 660,
+      "name": {
+        "en": "Transition zone",
+        "es": "Zona de transición"
+      },
+      "temp_c": [
+        1500,
+        1700
+      ],
+      "pressure_gpa": [
+        14,
+        24
+      ],
+      "density": [
+        3.72,
+        3.99
+      ],
+      "state": {
+        "en": "Solid rock whose minerals are squeezed into denser crystal forms",
+        "es": "Roca sólida cuyos minerales se comprimen en formas cristalinas más densas"
+      },
+      "made": {
+        "en": "The same kind of rock as above, but the pressure turns olivine into wadsleyite and then ringwoodite, minerals that can hold water in their crystals.",
+        "es": "El mismo tipo de roca que arriba, pero la presión transforma el olivino en wadsleyita y luego en ringwoodita, minerales que pueden guardar agua en sus cristales."
+      },
+      "know": {
+        "en": "Seismic waves change speed sharply at about 410 and 660 km, where lab experiments show these mineral changes happen. Specks of ringwoodite trapped in a diamond from Brazil came from this zone.",
+        "es": "Las ondas sísmicas cambian bruscamente de velocidad a unos 410 y 660 km, justo donde los experimentos de laboratorio muestran que ocurren estos cambios de mineral. Granos de ringwoodita atrapados en un diamante de Brasil vinieron de esta zona."
+      },
+      "fact": {
+        "en": "In 2014 that ringwoodite was found to hold about 1.5% water by weight; if the whole zone is like that, it could hold about as much water as all the oceans, locked inside crystals.",
+        "es": "En 2014 se descubrió que esa ringwoodita contiene cerca de 1,5 % de agua en peso; si toda la zona es así, podría guardar tanta agua como todos los océanos, atrapada dentro de cristales."
+      },
+      "src": [
+        "https://doi.org/10.1016/0031-9201(81)90046-7",
+        "https://doi.org/10.1038/nature13080",
+        "https://doi.org/10.1126/science.1253358",
+        "https://doi.org/10.1016/j.pepi.2010.07.001"
+      ]
+    },
+    {
+      "id": "lower-mantle",
+      "top_km": 660,
+      "bottom_km": 2891,
+      "name": {
+        "en": "Lower mantle",
+        "es": "Manto inferior"
+      },
+      "temp_c": [
+        1700,
+        3700
+      ],
+      "pressure_gpa": [
+        24,
+        136
+      ],
+      "density": [
+        4.38,
+        5.57
+      ],
+      "state": {
+        "en": "Solid rock that creeps very slowly in huge currents",
+        "es": "Roca sólida que se mueve muy despacio en corrientes enormes"
+      },
+      "made": {
+        "en": "Mostly bridgmanite, a dense magnesium-iron silicate, with some ferropericlase and davemaoite.",
+        "es": "Sobre todo bridgmanita, un silicato denso de magnesio y hierro, con algo de ferropericlasa y davemaoíta."
+      },
+      "know": {
+        "en": "Seismic tomography maps hot and cold regions here, much like a medical scan. Diamond-anvil experiments recreate its pressure, and in 2021 davemaoite was found inside a diamond that came from this depth.",
+        "es": "La tomografía sísmica cartografía sus zonas calientes y frías, como un escáner médico. Los experimentos con yunques de diamante reproducen su presión, y en 2021 se encontró davemaoíta dentro de un diamante que vino de esta profundidad."
+      },
+      "fact": {
+        "en": "The lower mantle fills more than half of Earth's volume, and its bridgmanite is the most common mineral on the planet, though it only got its name in 2014.",
+        "es": "El manto inferior ocupa más de la mitad del volumen de la Tierra, y su bridgmanita es el mineral más común del planeta, aunque no tuvo nombre oficial hasta 2014."
+      },
+      "src": [
+        "https://doi.org/10.1016/0031-9201(81)90046-7",
+        "https://doi.org/10.1016/j.pepi.2010.07.001",
+        "https://doi.org/10.1126/science.1259369",
+        "https://doi.org/10.1126/science.abl8568"
+      ]
+    },
+    {
+      "id": "outer-core",
+      "top_km": 2891,
+      "bottom_km": 5150,
+      "name": {
+        "en": "Outer core",
+        "es": "Núcleo externo"
+      },
+      "temp_c": [
+        3700,
+        5700
+      ],
+      "pressure_gpa": [
+        136,
+        329
+      ],
+      "density": [
+        9.9,
+        12.17
+      ],
+      "state": {
+        "en": "Liquid metal that flows and swirls",
+        "es": "Metal líquido que fluye y se arremolina"
+      },
+      "made": {
+        "en": "Molten iron with some nickel and a little of lighter elements such as oxygen, silicon or sulfur.",
+        "es": "Hierro fundido con algo de níquel y un poco de elementos más ligeros, como oxígeno, silicio o azufre."
+      },
+      "know": {
+        "en": "Shear (S) waves cannot cross a liquid, and they never pass through the core, which leaves a shadow zone on the far side of the planet. Earth's mass and iron meteorites show that the core must be mostly iron.",
+        "es": "Las ondas de corte (S) no atraviesan líquidos y nunca cruzan el núcleo, lo que deja una zona de sombra del otro lado del planeta. La masa de la Tierra y los meteoritos de hierro indican que el núcleo es casi todo hierro."
+      },
+      "fact": {
+        "en": "The moving iron works like a giant electric generator: it creates Earth's magnetic field, which turns compass needles and shields us from the solar wind.",
+        "es": "El hierro en movimiento funciona como un enorme generador eléctrico: crea el campo magnético de la Tierra, que orienta las brújulas y nos protege del viento solar."
+      },
+      "src": [
+        "https://doi.org/10.1016/0031-9201(81)90046-7",
+        "https://www.esrf.fr/news/general/Earth-Center-Hotter",
+        "https://doi.org/10.1126/science.1233514",
+        "https://pubs.usgs.gov/gip/interior/"
+      ]
+    },
+    {
+      "id": "inner-core",
+      "top_km": 5150,
+      "bottom_km": 6371,
+      "name": {
+        "en": "Inner core",
+        "es": "Núcleo interno"
+      },
+      "temp_c": [
+        5700,
+        6000
+      ],
+      "pressure_gpa": [
+        329,
+        364
+      ],
+      "density": [
+        12.76,
+        13.09
+      ],
+      "state": {
+        "en": "Solid metal: the pressure is so high that iron stays solid even at this heat",
+        "es": "Metal sólido: la presión es tan alta que el hierro sigue sólido aun con este calor"
+      },
+      "made": {
+        "en": "A ball of iron and nickel about 2,440 km across that grows slowly as the outer core cools and freezes onto it.",
+        "es": "Una esfera de hierro y níquel de unos 2 440 km de diámetro que crece despacio a medida que el núcleo externo se enfría y se solidifica sobre ella."
+      },
+      "know": {
+        "en": "In 1936 Inge Lehmann spotted faint waves inside the core's shadow zone that had bounced off a solid inner core. Lab experiments that melt iron at core pressures give its temperature.",
+        "es": "En 1936 Inge Lehmann detectó ondas débiles dentro de la zona de sombra del núcleo, que habían rebotado en un núcleo interno sólido. Los experimentos que funden hierro a la presión del núcleo permiten estimar su temperatura."
+      },
+      "fact": {
+        "en": "It is about 70% as wide as the Moon, and at roughly 6,000 °C it is about as hot as the surface of the Sun.",
+        "es": "Mide cerca del 70 % del ancho de la Luna y, a unos 6 000 °C, está casi tan caliente como la superficie del Sol."
+      },
+      "src": [
+        "https://doi.org/10.1016/0031-9201(81)90046-7",
+        "https://doi.org/10.1126/science.1233514",
+        "https://www.esrf.fr/news/general/Earth-Center-Hotter",
+        "https://www.amnh.org/learn-teach/curriculum-collections/earth-inside-and-out/inge-lehmann-discoverer-of-the-earth-s-inner-core"
+      ]
+    }
+  ],
+  "moho": {
+    "en": "The Mohorovičić discontinuity, or Moho, is the boundary between the crust and the mantle: in 1909 the Croatian seismologist Andrija Mohorovičić noticed that earthquake waves suddenly speed up below it.",
+    "es": "La discontinuidad de Mohorovičić, o Moho, es el límite entre la corteza y el manto: en 1909 el sismólogo croata Andrija Mohorovičić notó que las ondas de los sismos se aceleran de golpe por debajo de ella."
+  },
+  "lehmann": {
+    "en": "In 1936 the Danish seismologist Inge Lehmann showed that the core has a solid inner part, using faint earthquake waves that arrived where none were expected.",
+    "es": "En 1936 la sismóloga danesa Inge Lehmann demostró que el núcleo tiene una parte interna sólida, gracias a ondas sísmicas débiles que llegaban donde no se esperaba ninguna."
+  },
+  "fall_through": {
+    "minutes": 38,
+    "en": "A fall through a straight tunnel to the far side of the Earth, with no air and no friction, would take about 38 minutes. Gravity gets a little stronger on the way down towards the dense core, so the trip is quicker than the 42 minutes a uniform Earth would give.",
+    "es": "Una caída por un túnel recto hasta el otro lado de la Tierra, sin aire ni rozamiento, duraría unos 38 minutos. La gravedad aumenta un poco al bajar hacia el núcleo denso, así que el viaje es más corto que los 42 minutos que daría una Tierra de densidad uniforme.",
+    "src": "https://doi.org/10.1119/1.4898780"
+  },
+  "temperatures_note": {
+    "en": "Temperatures deep inside the Earth are estimates, not measurements. Mantle values follow Katsura et al. (2010). Core values come from experiments that melt iron at core pressures and are uncertain by about ±500 °C: Anzellini et al. (2013) put the inner-core boundary at about 6,000 °C. Crust values vary a lot from place to place.",
+    "es": "Las temperaturas del interior profundo de la Tierra son estimaciones, no mediciones. Los valores del manto siguen a Katsura et al. (2010). Los del núcleo vienen de experimentos que funden hierro a la presión del núcleo y tienen una incertidumbre de unos ±500 °C: Anzellini et al. (2013) sitúan el límite del núcleo interno en unos 6 000 °C. Los valores de la corteza cambian mucho de un lugar a otro."
+  }
+}

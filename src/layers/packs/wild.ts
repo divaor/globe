@@ -33,12 +33,15 @@ let focus: Focus | null = null;
 
 const showOf = (inst: LayerInstance) => String(inst.options.show ?? 'all') as 'all' | Group;
 const statusOf = (inst: LayerInstance) => String(inst.options.status ?? 'all') as 'all' | 'endangered' | 'gone';
+/** A view's own animals (an ambient playlist's: the Serengeti's), by scientific name, comma-separated. */
+const pickOf = (inst: LayerInstance) => String(inst.options.pick ?? '');
 function okFor(inst: LayerInstance): (a: Animal) => boolean {
-  const show = showOf(inst), status = statusOf(inst);
+  const show = showOf(inst), status = statusOf(inst), pick = pickOf(inst);
   if (focus?.animal) { const f = focus.animal; return (a) => a === f; }
+  if (pick) { const only = new Set(pick.split(',')); return (a) => only.has(a.sci); }
   return (a) => (status === 'gone' ? !!a.gone : !a.gone && (status === 'all' || threatened(a.st))) && (show === 'all' || a.g === show || a.g2 === show);
 }
-const keyOf = (inst: LayerInstance) => (focus ? `focus:${focus.id}` : `${showOf(inst)}|${statusOf(inst)}`);
+const keyOf = (inst: LayerInstance) => (focus ? `focus:${focus.id}` : `${showOf(inst)}|${statusOf(inst)}|${pickOf(inst)}`);
 
 /**
  * How much an animal stands for a place: its fame, a little less for birds and small creatures (seen almost

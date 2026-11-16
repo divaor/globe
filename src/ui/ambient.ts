@@ -29,6 +29,8 @@ export class Ambient {
   private run = 0;
   /** The place the globe sways around (a playlist view of a place), and when the sway started. */
   private place: { lon: number; lat: number; zoom: number; t0: number } | null = null;
+  /** Inside the Earth (v0.32.0): cuts the globe open for a playlist's view. */
+  cut: { showCut(o: { peel?: number; focus?: string; lon?: number }): void; hideCut(): void } | null = null;
   /** For tests: the playlist and the view shown, and what was read aloud. */
   info = { playlist: '', index: -1, title: '', words: '', views: 0 };
 
@@ -81,11 +83,15 @@ export class Ambient {
     if (app.ambient.names !== 'all') r.settings.labels = { ...r.settings.labels, countries: false, capitals: false, cities: false, seas: false };
     r.layerLabels = app.ambient.names !== 'none';
     r.regionLabels = app.ambient.names === 'all';
-    // Names keep off the caption (at the top of a phone's screen, over the map).
+    // Names keep off the caption (at the top of a phone's screen, over the map) and the clock.
     r.keepOut = () => {
-      if (this.captionEl.hidden) return [];
-      const c = this.captionEl.getBoundingClientRect(), m = r.canvasRect();
-      return c.width ? [[c.left - m.left - 4, c.top - m.top - 4, c.right - m.left + 4, c.bottom - m.top + 4]] : [];
+      const m = r.canvasRect(), out: [number, number, number, number][] = [];
+      for (const el of [this.captionEl, this.clockEl]) {
+        if (el.hidden) continue;
+        const c = el.getBoundingClientRect();
+        if (c.width) out.push([c.left - m.left - 4, c.top - m.top - 4, c.right - m.left + 4, c.bottom - m.top + 4]);
+      }
+      return out;
     };
     r.settings.labelScale = this.names.scale * 0.85;
     this.list = id ? playlist(id) : null;
@@ -127,7 +133,7 @@ export class Ambient {
     if (!ok(list.items[k])) return;
     this.idx = k;
     const it = list.items[k];
-    await this.show(it);
+    await this.show(it, me);
     if (me !== this.run || !this.app.ambient.on) return;
     const title = itemTitle(this.app, it), words = itemWords(this.app, it);
     this.info = { ...this.info, index: k, title, words, views: this.info.views + 1 };
@@ -145,13 +151,18 @@ export class Ambient {
   }
 
   /** Puts a view on the map: its filters and options, projection and place. */
-  private async show(it: PlayItem) {
+  private async show(it: PlayItem, me: number) {
     const app = this.app, view = app.renderer.view;
     const proj = it.projection ?? 'globe';
     if (app.projection !== proj) app.setProjection(proj);
     await app.setStack(it.stack);
+    // Another view was asked for while this one's filters loaded (a quick skip): that one is shown, not this.
+    if (me !== this.run || !app.ambient.on) return;
     // Each view's filters with its own options (and nothing left from the view before).
     for (const lid of it.stack) app.setOptions(lid, it.options?.[lid] ?? {});
+    // The Earth cut open (Inside the Earth), or not.
+    if (it.cut) this.cut?.showCut({ ...it.cut, lon: it.fly?.[0] ?? view.lon });
+    else this.cut?.hideCut();
     if (it.fly) {
       const [lon, lat, zoom] = it.fly;
       view.flyTo({ lon, lat, zoom }, 2600);
@@ -197,6 +208,7 @@ export class Ambient {
     clearInterval(this.clockTimer);
     clearTimeout(this.nextTimer);
     if (this.list) stopSpeaking();
+    this.cut?.hideCut();
     // A playlist changed the map: what was on it before comes back, and is saved again once it is back.
     const release = () => { if (!app.ambient.on) { app.held = null; app.save(); } };
     const changed = !!this.saved;

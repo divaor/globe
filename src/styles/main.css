@@ -1177,3 +1177,36 @@ textarea.trip-input { resize: vertical; }
 .wild-month.best .wild-month-bar { background: var(--accent, #e8590c); opacity: 1; }
 .wild-month-lab { font-size: 11px; color: var(--muted); margin-top: 3px; }
 .wild-month.best .wild-month-lab { color: inherit; font-weight: 700; }
+
+/* Inside the Earth (v0.32.0, earth/inside.ts): the chip while the Earth is cut open, the panel's layer list, the dig
+   column and the seismic waves. */
+.inside-chip-name { border: 0; background: none; color: var(--text); font: inherit; cursor: pointer; padding: 0; }
+.inside-tabs { margin-bottom: 12px; }
+.inside-layer { display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; margin: 4px 0; border: 1px solid var(--line);
+  border-radius: 12px; background: var(--chip); color: var(--text); font: inherit; text-align: left; cursor: pointer; }
+.inside-layer.on { border-color: var(--accent); }
+.inside-sw { flex: none; width: 18px; height: 18px; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.25); }
+.inside-ln { display: flex; flex-direction: column; min-width: 0; }
+.inside-ln small { color: var(--muted); font-size: 12px; }
+.inside-facts { padding: 4px 12px 8px 38px; font-size: 13px; line-height: 1.45; }
+.inside-facts p { margin: 6px 0; }
+.inside-peel-name { font-weight: 650; }
+.inside-rocks { margin: 6px 0 10px; }
+.inside-through { margin: 14px 0 6px; padding: 10px 12px; border-radius: 12px; background: var(--chip); }
+.dig-col { position: relative; }
+.dig-read { position: sticky; top: 0; z-index: 1; display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 8px 10px; margin: 4px 0 8px;
+  border-radius: 12px; background: var(--panel, rgba(10,18,34,.92)); border: 1px solid var(--line); font-size: 13px; }
+.dig-read b { flex: 1 0 100%; }
+.dig-svg { display: block; width: 100%; height: auto; touch-action: none; cursor: crosshair; }
+.dig-svg text { fill: var(--text); font-size: 11px; font-family: inherit; }
+.dig-svg .dig-band { fill: rgba(255,255,255,.9); font-size: 11px; font-weight: 700; }
+.dig-svg .dig-tick { fill: var(--muted); font-size: 10px; }
+.dig-svg .dig-mark { font-size: 10.5px; }
+.dig-scale, .dig-lead { stroke: var(--muted); stroke-width: 1; }
+.dig-dot { fill: #ffd43b; stroke: #1b1b1b; stroke-width: 1; }
+.dig-moho { stroke: #fff; stroke-width: 1.5; stroke-dasharray: 4 3; }
+.dig-cursor { stroke: #4dabf7; stroke-width: 2; }
+#app .waves-cv { position: static; display: block; margin: 6px auto; }
+.waves-clock { display: flex; flex-direction: column; gap: 2px; font-size: 13px; text-align: center; margin: 4px 0 8px; }
+.waves-key { display: flex; align-items: center; gap: 8px; font-size: 13px; margin: 3px 0; }
+.waves-sw { width: 22px; height: 5px; border-radius: 3px; flex: none; }

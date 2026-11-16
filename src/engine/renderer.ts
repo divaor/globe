@@ -91,6 +91,8 @@ export class Renderer {
   };
   tickers = new Set<Ticker>();
   overlays = new Set<Overlay>();
+  /** Drawn after the globe's shading and rim, before the names (the Earth cut open). */
+  afterShade = new Set<Overlay>();
   /** Called after every frame (UI can sync zoom readouts, etc). */
   onFrame: (() => void) | null = null;
   fps = 60;
@@ -103,6 +105,7 @@ export class Renderer {
   ) {
     this.bg = bgCanvas.getContext('2d')!;
     this.fg = fgCanvas.getContext('2d')!;
+    this.view.wake = () => this.requestRender();
     this.gl = GLRaster.create(glCanvas);
     glCanvas.style.display = 'none'; // offscreen target, composited into the map canvas
     this.path = geoPath(this.view.projection, this.fg);
@@ -609,6 +612,9 @@ export class Renderer {
       ctx.strokeStyle = th.dark ? 'rgba(140,200,255,0.35)' : 'rgba(60,90,130,0.45)';
       ctx.lineWidth = 1; ctx.stroke();
     }
+
+    // ---- drawn over the shaded globe (the cutaway of Inside the Earth)
+    for (const o of this.afterShade) { ctx.save(); o(rc); ctx.restore(); }
 
     // ---- labels
     if (this.baseMap) this.baseLabels(rc);

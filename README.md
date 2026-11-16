@@ -44,6 +44,18 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   Where does it grow? (tap where a plant grows wild) and When is it? (the best month for a spectacle); Pin it adds a
   Famous trees pack; two tours (Giants and ancients: the great trees; A year of blossoms); the Botanist badge (find 25
   plants); and a Green planet playlist for ambient mode.
+- **Inside the Earth (More → Inside the Earth):** the globe cut open to scale, an eighth taken out, turning with the
+  globe: the crust, the upper mantle, the transition zone, the lower mantle, the liquid outer core and the solid inner
+  core, their names on the cut and the map's names kept off the opening. Each layer's facts (what it is made of, how
+  hot and squeezed, how we know), a slider that peels the layers away down to the inner core, and Cut where I look.
+  Dig down: tap anywhere for a column to the centre on a stretched scale: how thick the crust is there (CRUST1.0), the
+  rocks under your feet (live from Macrostrat's geological map), 35 real things at their depths (the deepest mine, cave,
+  borehole and dive, the Titanic, the Challenger Deep, the deepest earthquake…), the temperature, pressure and density
+  wherever you touch it, and Dig through: where you would come out on the other side and how long the fall would take.
+  Seismic waves: a quake's P and S waves crossing the Earth minute by minute, and the shadows the liquid core casts.
+  Two quizzes, How deep? (which of two goes deeper) and Down to the core (put four in order, shallowest first), and
+  two tours: Journey to the centre of the Earth (Verne's novel against the real Earth, the cut opening on the way down)
+  and the Ring of Fire (ten stops, with earthquakes by depth under Tonga).
 - **Search:** countries, cities, states and provinces, coordinates ("40.4, -3.7"), and what the filters show: the
   people of Who was born here?, museums, masterpieces and their artists, buildings and their architects, World
   Heritage sites, inventions and your own places. The filters that are on come first; a filter that is off is searched
@@ -93,7 +105,16 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     nearest to the middle of the map first.
   - Where our food first grew: 57 crops where people first grew them, when, and how they spread around the world
     (arrows to where and when they arrived), each linked to its plant and to its step of the Food stories.
-  - Earth science: tectonic plates by boundary type, volcanoes, animated ocean currents.
+  - Earth science: tectonic plates by boundary type, with arrows for how each part moves today (NNR-MORVEL56; a tap
+    says how fast a place moves and which way: Madrid about 2.3 cm a year to the north-east); the Smithsonian's
+    1,214 volcanoes of the last 10,000 years by their last eruption (all, since 1900 or the famous ones; a tap gives
+    their type and last eruption; search finds them); animated ocean currents.
+  - Inside the Earth's filters: earthquakes by depth (the 26,650 of magnitude 5.5 or more since 1970, shallow to
+    700 km, with Draw a slice: two taps across a trench for the quakes within 150 km seen from the side, a sinking
+    plate traced in them); mantle hotspots (Hawaii, Yellowstone, Iceland, Réunion and five more, with their island
+    chains dated in millions of years); where a compass points (needles from NOAA's World Magnetic Model 2025 and the
+    magnetic poles' tracks since 1590; a tap gives the declination there); underground wonders (56 caves, geysers and
+    hot springs, impact craters and mines, each with its facts, found by search).
   - Economy & energy: GDP, income groups, top producers of 21 resources (oil, lithium, cobalt…), CO₂, renewables…
   - Culture & fun: flags on the map, national colours, driving side, calling codes, Olympic medals and more.
   - World Heritage: every site on UNESCO's World Heritage List after the July 2026 session (1,273, plus the 3
@@ -272,7 +293,8 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
   period, who won, guess the link between two country facts, which journey, which faith, which script, which
   language family, which epidemic, which disaster, what are you hearing, which book is it from, who made it, which World Heritage site, who invented it,
-  which world is this, who landed here, which constellation, where was this element made, which country in between),
+  which world is this, who landed here, which constellation, where was this element made, which country in between,
+  how deep?, down to the core),
   each ending with every answer and its picture; two games of time:
   Put them in order (four things from the stories, oldest first, then shown in order with their dates and pins on the
   map) and Time detective (a map of old borders with no names: which of four years is it from?); a daily challenge
@@ -288,7 +310,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   great libraries, masterpieces and where they are, sounds of the world, cities of music, Latin America's World
   Heritage, nature's wonders, lost and rebuilt, China's great inventions, from the telegraph to the Web, invented in
   Latin America, a grand tour of the solar system, footprints on the Moon, born in the stars, a night under the
-  Southern sky: each plays by itself from its first stop and stops at its last, where ↺ plays it again); "On this
+  Southern sky, journey to the centre of the Earth: each plays by itself from its first stop and stops at its last, where ↺ plays it again); "On this
   day", any day of the year: what the Time travel stories tell of it, each opening its
   step (the story's X comes back to the day), and Wikipedia's selection of events, linked to the story that tells
   the same event. A story opened from a card ("Open its story") or a list starts paused at its step with all its
@@ -419,11 +441,15 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   world, Green planet, People and cultures, or Around Latin America, each view with its title and a line about it,
   read aloud if you like; or make your own playlist from views of the map (filters and place) and share it as a link.
   Names on the map (in Settings and the screensaver's panel): only the view's own (the default: the filters' names, a
-  little smaller, without the map's countries, cities, states and seas), all, or none; they keep off the caption. A
-  playlist's view can light up a biome and show just the plants its caption names (the Green planet's deserts of North
-  America and Borneo's strange plants). What is saved while it plays is your map from before it.
+  little smaller, without the map's countries, cities, states and seas), all, or none; they keep off the caption and the clock. A
+  playlist's view shows the context its caption speaks of: the Green planet's deserts of North America and Borneo's
+  strange plants; the Serengeti's, the Amazon's and Borneo's own animals in their lit-up biome; the Amazon and the Nile
+  named among the rivers; the volcanoes a caption names; Latin America's Indigenous languages lit up by region and its
+  World Heritage sites picked out; and Restless Earth's plates moving, deep earthquakes under Tonga, the Hawaiian
+  hotspot and, last, the Earth cut open. What is saved while it plays is your map from before it.
 - **Steady names:** as the globe turns, a name keeps its place and its side of its dot; one that loses its place to a
-  neighbour fades out, and a new one fades in, instead of names blinking on and off.
+  neighbour fades out, and a new one fades in, instead of names blinking on and off. On a slow phone, where frames
+  come far apart, names still settle (v0.32.0: a name is matched to itself by frames, not by time).
 
 ## Development
 
@@ -520,6 +546,18 @@ for 2024 from GIBS (public domain), as twelve WebP pictures (`fetch-green.mjs nd
 (`calendar-plants.json`, `calendar-animals.json`) and the first crops (`crops.json`) were researched from park
 services, tourism boards, archaeobotany papers and FAO, each with its sources. When a plant flowers is read live from
 iNaturalist (sightings annotated as flowering).
+
+**Inside the Earth** (`scripts/data/earth/`: `fetch-earth.mjs` downloads once into `.cache/earth`;
+`build-earth.mjs` checks the curated files and builds the rest of `public/data/earth/` with no network). Earthquakes:
+USGS ANSS Comprehensive Catalog, magnitude 5.5 or more since 1970 (public domain). Volcanoes: the Smithsonian Global
+Volcanism Program's Volcanoes of the World (v5), its Holocene volcanoes, with their citation. Crust thickness:
+CRUST1.0 (Laske, Masters, Ma and Pasyanos 2013) on a 1° grid. The magnetic poles since 1590 and the World Magnetic
+Model 2025 (NOAA NCEI, public domain; the app's declination matches NOAA's twelve published test values). Plate
+motions: NNR-MORVEL56 (Argus, Gordon and DeMets 2011), a rotation pole per PB2002 plate. The rocks under your feet are
+read live from Macrostrat (CC BY 4.0). The layers' facts, the 35 things at their depths, the How deep? items, the
+hotspots and their dated chains, the underground wonders and the two tours (`curated/`) were researched from papers,
+surveys and park services, each with its sources; where sources disagree (the deepest cave, Mponeng's depth,
+Vredefort's size) the text says so or gives the safer figure. Layer temperatures are ±500 °C.
 
 **The map games' borders** (`scripts/data/play/build-borders.mjs` builds `public/data/play/borders.json`) come from
 the app's own 1:50m map, so a route on screen is a route in the game. Two countries are neighbours when their outlines

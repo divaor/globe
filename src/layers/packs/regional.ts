@@ -32,6 +32,7 @@ let anchors: { code: string; lon: number; lat: number; area: number }[] = [];
 const areaOf = new Map<string, number>(); // language -> area shown (legend order)
 
 const es = () => lang() === 'es';
+const pickOf = (inst: { options: Record<string, string | boolean> }) => (inst.options.pick ? new Set(String(inst.options.pick).split(',')) : null);
 const nameOf = (code: string) => {
   const n = D.languages[code] ?? names[code];
   return n ? (es() ? n.es : n.en) : code;
@@ -152,8 +153,10 @@ const regional: LayerDef = {
   keywords: 'regional languages minority dialect catalan basque galician cantonese maya quechua lenguas regionales minoritarias catalan euskera gallego cantones',
   credit: 'Regional languages compiled from Wikipedia and national census figures (CC BY-SA 4.0); regions: Natural Earth',
   load: async () => { await load(); },
-  drawFill(rc: RenderCtx) {
+  drawFill(rc: RenderCtx, inst) {
     const { ctx, path } = rc;
+    // A view of its own (an ambient playlist's) lights up a few languages (codes, comma-separated); the rest dimmed.
+    const pick = pickOf(inst);
     const groups = new Map<string, Shape<unknown>[]>();
     const add = (key: string, s: Shape<unknown>) => {
       let g = groups.get(key);
@@ -163,16 +166,21 @@ const regional: LayerDef = {
     for (const s of rc.visibleShapes(rc.level.countries)) {
       if (byCountry.has(s.id)) continue; // drawn region by region below
       const m = mainOf[s.id];
-      if (m) add(m, s);
+      if (m) add(pick && !pick.has(m) ? '' : m, s);
     }
     const visible = rc.visibleShapes(regions);
-    for (const r of visible) if (r.first) add(r.first, r);
+    for (const r of visible) {
+      if (!pick) { if (r.first) add(r.first, r); continue; }
+      const lit = r.langs.find((c) => pick.has(c));
+      add(lit ?? '', r);
+    }
     for (const [code, list] of groups) {
       ctx.beginPath();
       for (const s of list) path(s.feature as never);
-      ctx.fillStyle = colourOf(code);
+      ctx.fillStyle = code ? colourOf(code) : rc.theme.dark ? 'rgba(62,72,88,0.75)' : 'rgba(196,201,209,0.8)';
       ctx.fill();
     }
+    if (pick) return;
     // Stripes: another language widely spoken there (Catalan in Barcelona, Maya in Yucatán...).
     const also = new Map<string, Shape<unknown>[]>();
     for (const r of visible) if (r.also) { let g = also.get(r.also); if (!g) also.set(r.also, (g = [])); g.push(r); }
@@ -193,9 +201,11 @@ const regional: LayerDef = {
     ctx.stroke();
     ctx.setLineDash([]);
   },
-  labels(rc: RenderCtx) {
+  labels(rc: RenderCtx, inst) {
     const k = rc.view.pxPerRadian;
+    const pick = pickOf(inst);
     for (const a of anchors) {
+      if (pick && !pick.has(a.code)) continue;
       const px = Math.sqrt(a.area) * k; // rough on-screen size of the language's area
       if (px < 16) continue;
       const p = rc.project(a.lon, a.lat);

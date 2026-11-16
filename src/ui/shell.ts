@@ -235,6 +235,9 @@ export class Shell {
     this.toastTimer = window.setTimeout(() => (this.toastEl.hidden = true), ms);
   }
 
+  /** Takes a toast away before its time (what it asked for is done). */
+  hideToast() { clearTimeout(this.toastTimer); this.toastEl.hidden = true; }
+
   /**
    * A filter's search result: the filter turned on if it was off, the map flown close to it (its dot apart from its
    * neighbours), its dot ringed wherever the crowd moved it, and its card opened, as a tap on it would.

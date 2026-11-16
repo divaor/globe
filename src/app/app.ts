@@ -86,6 +86,8 @@ export class App {
 
   /** Filters requested before they were registered (packs that load in the background). */
   private pending = new Map<string, Partial<ActiveSpec>>();
+  /** Counts setStack calls: one overtaken by a newer one turns nothing more on. */
+  private stackSeq = 0;
 
   register(defs: LayerDef[]) {
     for (const d of defs) this.registry.set(d.id, d);
@@ -177,8 +179,14 @@ export class App {
 
   /** Replace the whole stack (used by tours, quizzes and ambient cycling). */
   async setStack(ids: string[]) {
+    const seq = ++this.stackSeq;
     for (const l of [...this.layers]) if (!ids.includes(l.def.id)) this.deactivate(l.def.id, false);
-    for (const id of ids) await this.activate(id);
+    // A filter that loads is waited for; if another stack was asked for meanwhile, that one wins.
+    for (const id of ids) {
+      if (seq !== this.stackSeq) return;
+      await this.activate(id);
+    }
+    if (seq !== this.stackSeq) return;
     this.emit('layers');
     this.renderer.requestRender();
   }
