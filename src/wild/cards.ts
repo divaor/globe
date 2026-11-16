@@ -3,6 +3,7 @@
 // the countries it lives in, and three buttons: where it lives, the best places to see it, and its relatives.
 import { h } from '../ui/dom';
 import { clipEl, type Clip } from '../ui/audio';
+import { planLink } from '../guide/plan';
 import { lang, fmtCompact } from '../app/i18n';
 import { recordSeen } from '../learn/progress';
 import { commons, commonsPage, commonsCredit, wikiOf } from '../artguide/data';
@@ -104,6 +105,7 @@ export function parkCard(card: CardFn, p: Park, d: WildData | null, x: WildLinks
   if (credit) extra.append(credit);
   const links: { label: string; href?: string; onClick?: () => void }[] = [
     { label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(p.at, nm(p)) },
+    planLink({ id: `park:${p.id}`, kind: 'park', n: p.n, at: p.at, url: wikiOf(p.id), ...(famous.length ? { why: [{ t: [famous.slice(0, 4).map((a) => a.n[0]).join(', '), famous.slice(0, 4).map((a) => a.n[1]).join(', ')] }] } : {}) }),
     { label: 'Wikipedia', href: wikiOf(p.id) },
   ];
   card(k.icon, nm(p), p.cc ? x.countryName(p.cc) : '', rows, links, [], p.img ? Promise.resolve(commons(p.img, 480)) : undefined, extra);
@@ -115,6 +117,7 @@ export function zooCard(card: CardFn, z: Zoo, x: WildLinks) {
   if (z.cc) rows.push({ label: L('Country', 'País'), value: x.countryName(z.cc), icon: '📍' });
   const links: { label: string; href?: string; onClick?: () => void }[] = [
     { label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(z.at, nm(z)) },
+    planLink({ id: `zoo:${z.id}`, kind: 'zoo', n: z.n, at: z.at, url: wikiOf(z.id) }),
     { label: 'Wikipedia', href: wikiOf(z.id) },
   ];
   const notes = [L('Which animals each zoo keeps isn’t shared as open data, so the card doesn’t list them.', 'Qué animales tiene cada zoológico no se comparte como datos abiertos, así que la ficha no los enumera.')];

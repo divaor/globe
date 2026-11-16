@@ -196,7 +196,7 @@ export class Shell {
 
   openSettings(force = false) {
     if (!force && this.sheet.isOpen('settings')) { this.sheet.close(); return; }
-    this.sheet.open('settings', t('settings'), settingsPanel(this.app, () => this.openSettings(true)));
+    this.sheet.open('settings', t('settings'), settingsPanel(this.app, () => this.openSettings(true), (m) => this.toast(m, 4000)));
   }
 
   openAbout(force = false) {

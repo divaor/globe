@@ -14,6 +14,7 @@ import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { InfoRow, LayerDef, LayerHit, LayerInstance, LayerTapUi, Legend, LegendPlayer, RenderCtx } from '../types';
 import { crowdOf, type Placed } from '../crowd';
+import { planLink } from '../../guide/plan';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -311,9 +312,11 @@ function siteCard(s: Site, ui: LayerTapUi) {
       rows.push({ label: now ? L('In danger', 'En peligro') : L('Was in danger', 'Estuvo en peligro'), value: spans, icon: '⚠️' });
     }
     const titles = { en: s.w[0], es: s.w[1] };
-    const links: { label: string; href?: string }[] = [];
+    const links: { label: string; href?: string; onClick?: () => void }[] = [];
     if (s.w[0] || s.w[1]) links.push({ label: 'Wikipedia', href: wikiHref(titles) });
     links.push({ label: 'UNESCO', href: `https://whc.unesco.org/${es() ? 'es' : 'en'}/list/${s.ref}` });
+    // ☆: into the trip, under the travel-guide city nearest to it.
+    if (gone(s) == null) links.push(planLink({ id: `whs:${s.ref}`, kind: 'whs', n: [s.n[0], s.n[1] || s.n[0]], at: s.at, url: `https://whc.unesco.org/${es() ? 'es' : 'en'}/list/${s.ref}`, why: [{ t: [`World Heritage since ${s.y}`, `Patrimonio Mundial desde ${s.y}`] }] }));
     const image = s.img ? Promise.resolve(commons(s.img)) : summary(titles).then((x) => x?.thumb ?? null);
     const name = siteName(s);
     const sub = [L('World Heritage', 'Patrimonio de la Humanidad'), s.cc.length === 1 ? countryName(s.cc[0]) : ''].filter(Boolean).join(' · ');

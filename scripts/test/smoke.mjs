@@ -3960,6 +3960,161 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 31. Trip planner and your data on another device (v0.31.2), on a phone. ☆ in Madrid's guide puts the Prado, Las
+// Meninas (in the Prado), a World Heritage site and a dish into the trip; a building's card does the same; the trip
+// panel lists each city's places, which move and go; Van Gogh's trail brings his museums with the works in each;
+// the trip's details; the plan copied for an AI assistant and downloaded as JSON; the share link carries the places;
+// the printed trip lists them. A backup brings everything to another device; one edited by hand brings the trip but
+// not the badges.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'], permissions: ['clipboard-read', 'clipboard-write'], acceptDownloads: true });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  await ctx.route(/wikidata\.org|wikimedia\.org|wikipedia\.org|wikivoyage\.org/, (r) => r.abort());
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political&c=-3.7,40.4,5&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(1000);
+  const places = () => page.evaluate(() => { try { return JSON.parse(localStorage.getItem('atlas-globe:trip-places') || '{}').places ?? {}; } catch { return {}; } });
+  const star = (sel) => page.evaluate((sel) => { const b = document.querySelector(sel); b?.click(); return !!b; }, sel);
+  // Madrid: the Prado (Museums), Las Meninas (Art), a World Heritage site (See), a dish (Eat).
+  await page.evaluate(() => window.atlas.guide.openCity('madrid', 'museums'));
+  await page.waitForSelector('[data-plan="museum:Q160112"]', { timeout: 20000 }).catch(() => {});
+  await star('[data-plan="museum:Q160112"]');
+  await page.waitForTimeout(400);
+  const on1 = await page.evaluate(() => document.querySelector('[data-plan="museum:Q160112"]')?.getAttribute('aria-pressed'));
+  await page.evaluate(() => window.atlas.guide.openCity('madrid', 'art'));
+  await page.waitForSelector('.guide-tab [data-work]', { timeout: 20000 }).catch(() => {});
+  const meninas = await page.evaluate(() => { const r = [...document.querySelectorAll('.guide-tab .guide-item-wrap')].find((w) => /Las Meninas/.test(w.textContent)); const b = r?.querySelector('.plan-star'); b?.click(); return b?.dataset.plan ?? ''; });
+  await page.waitForTimeout(400);
+  await page.evaluate(() => window.atlas.guide.openCity('madrid', 'see'));
+  await page.waitForSelector('.guide-tab [data-plan^="whs:"]', { timeout: 20000 }).catch(() => {});
+  await star('.guide-tab [data-plan^="whs:"]');
+  await page.evaluate(() => window.atlas.guide.openCity('madrid', 'eat'));
+  await page.waitForSelector('.guide-tab [data-plan^="dish:"]', { timeout: 20000 }).catch(() => {});
+  await star('.guide-tab [data-plan^="dish:"]');
+  await page.waitForTimeout(400);
+  let pl = await places();
+  const prado = (pl.madrid ?? []).find((p) => p.id === 'museum:Q160112');
+  check(on1 === 'true' && !!meninas && prado?.why?.some((w) => /Las Meninas/.test(w.t[0])) && (pl.madrid ?? []).some((p) => p.kind === 'whs') && (pl.madrid ?? []).some((p) => p.kind === 'dish'),
+    `☆ in Madrid's guide: the Prado, Las Meninas in it (${(prado?.why ?? []).map((w) => w.t[0]).join(', ')}), a World Heritage site and a dish (${(pl.madrid ?? []).map((p) => p.id).join(', ')})`);
+  // A building's card: ☆ Add to my trip, under its city (Barcelona joins the trip).
+  await page.evaluate(() => window.atlas.guide.openCity('barcelona', 'buildings'));
+  await page.waitForSelector('.guide-tab [data-building]', { timeout: 15000 }).catch(() => {});
+  await page.evaluate(() => document.querySelector('.guide-tab [data-building]')?.click());
+  await page.waitForTimeout(1200);
+  await page.evaluate(() => [...document.querySelectorAll('.country-card:not([hidden]) .card-actions .pill')].find((b) => /Add to my trip/.test(b.textContent))?.click());
+  await page.waitForTimeout(600);
+  const cardBtn = await page.evaluate(() => [...document.querySelectorAll('.country-card:not([hidden]) .card-actions .pill')].map((b) => b.textContent).find((t) => /my trip/.test(t)) ?? '');
+  pl = await places();
+  const trip1 = await page.evaluate(() => window.atlas.guide.info.trip);
+  check(/In my trip/.test(cardBtn) && (pl.barcelona ?? []).some((p) => p.kind === 'building') && trip1.includes('madrid') && trip1.includes('barcelona'), `a building's card: "${cardBtn}", under Barcelona, which joins the trip (${trip1.join(', ')})`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+  // The trip panel: each city's places; one moves down, one goes.
+  await page.evaluate(() => window.atlas.guide.open());
+  await page.waitForSelector('[data-trip-places="madrid"]', { timeout: 15000 }).catch(() => {});
+  const listed = await page.evaluate(() => [...document.querySelectorAll('[data-trip-places="madrid"] [data-trip-place]')].map((b) => b.dataset.tripPlace));
+  await page.evaluate(() => document.querySelector('[data-trip-places="madrid"] .guide-place-row [aria-label="Later"]')?.click());
+  await page.waitForTimeout(500);
+  const moved = await page.evaluate(() => [...document.querySelectorAll('[data-trip-places="madrid"] [data-trip-place]')].map((b) => b.dataset.tripPlace));
+  await page.evaluate(() => [...document.querySelectorAll('[data-trip-places="madrid"] .guide-place-row')].find((r) => /dish:/.test(r.querySelector('[data-trip-place]')?.dataset.tripPlace ?? ''))?.querySelector('[aria-label="Take it out"]')?.click());
+  await page.waitForTimeout(500);
+  const after = await page.evaluate(() => [...document.querySelectorAll('[data-trip-places="madrid"] [data-trip-place]')].map((b) => b.dataset.tripPlace));
+  check(listed.length === 3 && moved[0] === listed[1] && moved[1] === listed[0] && after.length === 2 && !after.some((x) => /^dish:/.test(x)), `the trip panel lists Madrid's places (${listed.join(', ')}); one moves down, the dish goes (${after.join(', ')})`);
+  // The trip's details.
+  await page.evaluate(() => { const d = document.querySelector('[data-guide="details"]'); if (d) d.open = true; });
+  const fill = async (sel, v) => { await page.fill(sel, v); await page.dispatchEvent(sel, 'change'); };
+  await fill('[data-trip-detail="start"]', '2027-04-10');
+  await fill('[data-trip-detail="passport"]', 'Mexico');
+  await fill('[data-trip-days="madrid"]', '3');
+  await page.selectOption('[data-trip-detail="pace"]', 'relaxed');
+  const det = await page.evaluate(() => JSON.parse(localStorage.getItem('atlas-globe:trip-details') || '{}'));
+  check(det.start === '2027-04-10' && det.passport === 'Mexico' && det.days?.madrid === 3 && det.pace === 'relaxed', `the trip's details are kept (${JSON.stringify(det)})`);
+  // The plan for an AI assistant, copied; and as JSON.
+  await page.evaluate(() => document.querySelector('[data-export="copy"]')?.click());
+  await page.waitForTimeout(600);
+  const md = await page.evaluate(() => navigator.clipboard.readText()).catch(() => '');
+  const dl = page.waitForEvent('download', { timeout: 10000 }).catch(() => null);
+  await page.evaluate(() => document.querySelector('[data-export="json"]')?.click());
+  const d1 = await dl;
+  const js = d1 ? JSON.parse(fs.readFileSync(await d1.path(), 'utf8')) : null;
+  check(/^# My trip: Madrid → Barcelona/.test(md) && /Museo del Prado/.test(md) && /Las Meninas/.test(md) && /Passport: Mexico/.test(md) && /\(3 days\)/.test(md) && /What I would like from you/.test(md) && /visa/.test(md)
+    && js?.cities?.[0]?.id === 'madrid' && js.cities[0].places.some((p) => p.id === 'museum:Q160112') && js.details?.passport === 'Mexico',
+    `the plan copied for an AI assistant (${md.split('\n').length} lines: the Prado with Las Meninas, the passport, the request) and as JSON (${js?.cities?.length} cities)`);
+  // The share link carries the places: opened on another phone, the same trip and places.
+  const link = await page.evaluate(() => window.atlas.guide.shareUrlWithPlaces());
+  const other = await browser.newContext({ ...devices['Pixel 7'] });
+  await other.route(/wikidata\.org|wikimedia\.org|wikipedia\.org|wikivoyage\.org/, (r) => r.abort());
+  const p2 = await other.newPage();
+  await p2.goto(link.replace(/^https?:\/\/[^/]+\/(globe\/)?/, url), { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await p2.waitForFunction(() => window.atlas, null, { timeout: 60000 });
+  await p2.waitForTimeout(3000);
+  const shared = await p2.evaluate(() => ({ trip: window.atlas.guide.info.trip, places: Object.fromEntries(Object.entries(JSON.parse(localStorage.getItem('atlas-globe:trip-places') || '{}').places ?? {}).map(([k, v]) => [k, v.map((p) => p.id)])) }));
+  await other.close();
+  check(/&tp=z/.test(link) && shared.trip.join() === 'madrid,barcelona' && shared.places.madrid?.includes('museum:Q160112') && shared.places.barcelona?.length === 1, `the share link carries the places (${link.length} characters): opened elsewhere, ${JSON.stringify(shared.places)}`);
+  // The printed trip lists them.
+  const printed = await page.evaluate(async () => (await window.atlas.guide.printView()).textContent);
+  check(/My places/.test(printed) && /Museo del Prado \(Las Meninas/.test(printed) && /3 days/.test(printed), `the printed trip lists each city's places (${/My places[^·]*/.exec(printed)?.[0].slice(0, 70)})`);
+  // Van Gogh's trail: Plan a trip brings his museums, with his works in each.
+  // (From an empty trip: Clear takes the cities and their places.)
+  await page.evaluate(() => window.atlas.guide.open());
+  await page.waitForSelector('[data-guide="clear"]', { timeout: 10000 }).catch(() => {});
+  await page.evaluate(() => document.querySelector('[data-guide="clear"]')?.click());
+  await page.waitForTimeout(500);
+  await page.evaluate(() => window.atlas.art.openArtist('Q5582'));
+  await page.waitForSelector('[data-art="plan"]', { timeout: 15000 }).catch(() => {});
+  await page.evaluate(() => document.querySelector('[data-art="plan"]')?.click());
+  await page.waitForTimeout(2500);
+  pl = await places();
+  const vg = Object.values(pl).flat();
+  const best = vg.sort((a, b) => (b.why?.length ?? 0) - (a.why?.length ?? 0))[0];
+  check(vg.length >= 10 && vg.every((p) => p.kind === 'museum') && (best?.why?.length ?? 0) >= 5 && Object.keys(pl).includes('amsterdam'), `Van Gogh's trail: ${vg.length} museums in ${Object.keys(pl).length} cities, ${best?.n?.[0]} with ${best?.why?.length} of his works (${(best?.why ?? []).slice(0, 2).map((w) => w.t[0]).join(', ')}…)`);
+  // A backup, brought to another device.
+  await page.evaluate(() => { const p = JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}'); p.badges = { ...(p.badges ?? {}), 'test-badge': '2026-11-16' }; localStorage.setItem('atlas-globe:progress', JSON.stringify(p)); });
+  await page.evaluate(() => window.atlas.shell.openSettings());
+  await page.waitForSelector('[data-backup="save"]', { timeout: 10000 }).catch(() => {});
+  const dl2 = page.waitForEvent('download', { timeout: 10000 }).catch(() => null);
+  await page.evaluate(() => document.querySelector('[data-backup="save"]')?.click());
+  const d2 = await dl2;
+  const file = d2 ? await d2.path() : null;
+  const backup = file ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
+  const restore = async (path) => {
+    const c = await browser.newContext({ ...devices['Pixel 7'] });
+    await c.route(/wikidata\.org|wikimedia\.org|wikipedia\.org|wikivoyage\.org/, (r) => r.abort());
+    const q = await c.newPage();
+    await q.goto(url + '#p=globe&l=political&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await q.waitForFunction(() => window.atlas, null, { timeout: 60000 });
+    await q.waitForTimeout(800);
+    await q.evaluate(() => window.atlas.shell.openSettings());
+    await q.waitForSelector('[data-backup="file"]', { state: 'attached', timeout: 10000 }).catch(() => {});
+    await q.setInputFiles('[data-backup="file"]', path);
+    await q.waitForSelector('[data-backup="replace"]', { timeout: 10000 }).catch(() => {});
+    const shown = await q.evaluate(() => ({ text: document.querySelector('.backup-status')?.textContent ?? '', unsealed: !!document.querySelector('[data-backup="unsealed"]') }));
+    await Promise.all([q.waitForEvent('load', { timeout: 15000 }).catch(() => {}), q.evaluate(() => document.querySelector('[data-backup="replace"]')?.click())]);
+    await q.waitForFunction(() => window.atlas, null, { timeout: 60000 });
+    await q.waitForTimeout(1500);
+    const got = await q.evaluate(() => ({ trip: window.atlas.guide.info.trip.length, places: Object.values(JSON.parse(localStorage.getItem('atlas-globe:trip-places') || '{}').places ?? {}).flat().length, badge: !!JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').badges?.['test-badge'] }));
+    await c.close();
+    return { shown, got };
+  };
+  const r1 = file ? await restore(file) : null;
+  check(!!backup?.seal && backup.data?.['atlas-globe:trip-places'] && r1 && !r1.shown.unsealed && /badge/.test(r1.shown.text) && r1.got.trip >= 5 && r1.got.places >= 10 && r1.got.badge,
+    `a backup (${Object.keys(backup?.data ?? {}).length} items, sealed) brought to another device: "${(r1?.shown.text ?? '').slice(0, 80)}"; its trip (${r1?.got.trip} cities, ${r1?.got.places} places) and badges are there`);
+  // Edited by hand to add a badge: the trip comes over, the badges don't.
+  let r2 = null;
+  if (backup) {
+    const t = JSON.parse(JSON.stringify(backup));
+    const p = JSON.parse(t.data['atlas-globe:progress']); p.badges['made-up'] = '2026-11-16'; t.data['atlas-globe:progress'] = JSON.stringify(p);
+    const tampered = file + '-edited.json';
+    fs.writeFileSync(tampered, JSON.stringify(t));
+    r2 = await restore(tampered);
+  }
+  check(r2 && r2.shown.unsealed && r2.got.trip >= 5 && !r2.got.badge, `a backup edited by hand: it says so; the trip comes over (${r2?.got.trip} cities), the badges don't (${r2?.got.badge ? 'there' : 'not there'})`);
+  check(!errors.length, `no page errors in the trip planner and the backup${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

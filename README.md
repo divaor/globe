@@ -364,6 +364,18 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   It is kept on this device, shared as a link (`#trip=lima,cuzco,la-paz`; `#guide=kyoto` opens one city) and prints
   as a page. Not in the guide: hotels, restaurants by name, prices, visas and safety advice, which change too often to
   keep right.
+  **Your places** (v0.31.2): a ☆ on every row of a city's guide (its World Heritage sites, great structures, museums
+  and the works in them, buildings, parks, nature's spectacles, dishes to try) and on the cards (a work, a museum, a
+  building, a World Heritage site, a park, a zoo, a botanical garden, a famous tree, a spectacle) puts the place in the
+  trip, under its city (the city joins the trip; a card's place goes under the guide city nearest to it); a work goes
+  in as its museum, with the work as the reason to go. Plan a trip from an artist's or architect's trail brings the
+  museums with the artist's works in each, or the buildings. The trip lists each city's places, nearest to its centre
+  first until you reorder them, draws them on the map as numbered dots and prints them; the share link carries them
+  (packed: `&tp=`). Optional **trip details** (dates, days in each city, where you start from, your passport, pace,
+  budget, interests, a note) go with them. **Take the plan anywhere:** copy it for an AI assistant (Markdown: each city
+  in order with its places and why, and a request for a day-by-day itinerary, getting between cities, entry and visa
+  rules, opening hours and tickets, where to stay, costs and advice, saying what it is not sure of), or download it as
+  Markdown or JSON. The app sends nothing anywhere: you paste or share it where you like.
 - **Art and architecture** (More → Art and architecture): which masterpieces and buildings you can see in which city.
   - **Masterpieces where they are now:** for 182 museums, their best-known works (2,226, ranked by how many
     Wikipedias write about them), with a picture, the artist and the date; each picture shows its licence and author,
@@ -394,6 +406,12 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   as a region, the human "computadoras" of Harvard and NASA). `npm run test:spain` applies them to all 52,616 Spanish
   texts, checks agreement ("el primer ordenador electrónico", "judías negras") and, with `--list`, prints every
   change for review. A share link carries the choice (`lang=es-ES`).
+- **Your data on another device** (Settings): one file with everything this device keeps (badges, streaks and scores,
+  your trip and its places, visited and Want to go countries, settings, playlists, your own data), saved, or sent
+  with the phone's share sheet, and brought back on a phone or another computer (it replaces what is there). Saved
+  offline areas stay on each device. The file is sealed (HMAC-SHA256 of its contents with a key in the app): one
+  edited by hand still brings the trip, places, lists and settings, but not badges, streaks and scores. The key is in
+  the app's code, so the seal keeps out casual edits, not a determined cheat.
 - **Ambient mode:** full-screen rotating globe, screen kept awake, clock. Show the filters on your map, or a
   screensaver playlist: Our planet, Night and day, Restless Earth, Water and weather, Life on Earth, People and
   cultures, or Around Latin America, each view with its title and a line about it, read aloud if you like; or make
