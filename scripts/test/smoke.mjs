@@ -2236,7 +2236,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }
   await page.evaluate(() => window.atlas.play.pin.next());
   const pd = await info('pin');
-  check(pinPanel.packs === 9 && pinPanel.back && !pinMap.names && pinMap.game && pinMap.card && tapped.pin && r1.results?.[0]?.km < 400 && /\d+ km/.test(pinCard) && pd.done && pd.done.score > 20000 && pd.done.stars === 3 && pd.done.badges.includes('play-sharp'),
+  check(pinPanel.packs === 10 && pinPanel.back && !pinMap.names && pinMap.game && pinMap.card && tapped.pin && r1.results?.[0]?.km < 400 && /\d+ km/.test(pinCard) && pd.done && pd.done.score > 20000 && pd.done.stars === 3 && pd.done.badges.includes('play-sharp'),
     `Pin it: ${pinPanel.packs} packs; names hidden; a tap on ${p0.place[0]} lands ${Math.round(r1.results?.[0]?.km)} km off; five rounds ${pd.done?.score} ${'★'.repeat(pd.done?.stars ?? 0)}; badges ${pd.done?.badges.join(', ')}`);
   await page.evaluate(() => window.atlas.play.pin.start({ pack: 'heritage', hard: true }));
   await page.waitForTimeout(600);
