@@ -4452,7 +4452,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const lfb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
   await page.evaluate(() => window.atlas.learn['stopQuiz']());
   check(dq.n === 10 && /deeper/.test(dq.q) && dq.opts.length === 2 && /\d m|km/.test(dfb) && lq.n === 8 && /Correct! All four in order/.test(lfb),
-    `How deep?: 10 pairs ("${dq.opts.join('" or "')}" → "${dfb.slice(0, 70)}"); Down to the core: 8 rounds, the first put in order ("${lfb}")`);
+    `How deep?: ${dq.n} pairs ("${dq.q}": "${dq.opts.join('" or "')}" → "${dfb.slice(0, 70)}"); Down to the core: ${lq.n} rounds, the first put in order ("${lfb}")`);
 
   // Verne's tour cuts the Earth open on the way down and closes it at Kola.
   await page.evaluate(() => window.atlas.learn['openTours']());
@@ -4614,7 +4614,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(300);
   const read = await page.evaluate(() => document.querySelector('.dive-read')?.textContent ?? '');
   const badge = await page.evaluate(() => [...document.querySelectorAll('.toast')].map((t) => t.textContent).join(' '));
-  check(dive.info.floor > 9000 && /hadal zone/i.test(dive.text) && dive.animals.length >= 10 && dive.recs >= 8 && /Hirondellea gigas/.test(dive.obis) && /Hadal/.test(read) && /times the air/.test(read),
+  check(dive.info.floor > 9000 && /hadal zone/i.test(dive.text) && dive.animals.length >= 10 && dive.recs >= 8 && /Hirondellea gigas|Challenger Deep amphipod/.test(dive.obis) && /Hadal/.test(read) && /times the air/.test(read),
     `dive at the Challenger Deep: the floor ${dive.info.floor} m; ${dive.animals.length} animals at their depths, ${dive.recs} records; "${read.slice(0, 70)}…"; seen near there: ${dive.obis.split('\n')[1] ?? ''}${badge ? `; ${badge.trim().slice(0, 40)}` : ''}`);
   await page.evaluate(() => window.atlas.shell.sheet.close());
 

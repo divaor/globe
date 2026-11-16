@@ -1272,7 +1272,7 @@ export class Learn {
     if (this.deepItems) return this.deepItems;
     type Raw = { id: string; depth_m: number; below: 'ground' | 'sea'; kind: string; name: { en: string; es: string }; place: { en: string; es: string } };
     const icon: Record<string, string> = { metro: '🚇', basement: '🏢', cave: '🕳️', mine: '⛏️', borehole: '🛢️', tunnel: '🚄', lake: '🏞️', trench: '🌊', wreck: '🚢', dive: '🤿', life: '🦠', quake: '💥', moho: '🪨', canyon: '🏜️', other: '📍' };
-    const conv = (x: Raw): DownThing => ({ id: x.id, e: icon[x.kind] ?? '📍', name: [x.name.en, x.name.es], place: [x.place.en, x.place.es], m: x.depth_m, below: x.below });
+    const conv = (x: Raw): DownThing => ({ id: x.id, e: x.kind === 'life' && /fish/.test(x.id) ? '🐟' : icon[x.kind] ?? '📍', name: [x.name.en, x.name.es], place: [x.place.en, x.place.es], m: x.depth_m, below: x.below });
     const [hd, ins] = await Promise.all([loadJSON<{ items: Raw[] }>('earth/howdeep.json').catch(() => ({ items: [] })), loadJSON<{ markers: Raw[] }>('earth/inside.json').catch(() => ({ markers: [] }))]);
     const by = new Map<string, DownThing>();
     for (const x of [...hd.items, ...ins.markers]) if (x.depth_m > 0 && !by.has(x.id)) by.set(x.id, conv(x));
@@ -1280,7 +1280,7 @@ export class Learn {
     type SA = { id: string; e: string; name: { en: string; es: string }; depth: [number, number] };
     type WR = { id: string; name: { en: string; es: string }; place: { en: string; es: string }; depth_m: number };
     const [sa, wr] = await Promise.all([loadJSON<{ animals: SA[] }>('ocean/animals.json').catch(() => ({ animals: [] as SA[] })), loadJSON<{ wrecks: WR[] }>('ocean/wrecks.json').catch(() => ({ wrecks: [] as WR[] }))]);
-    for (const a of sa.animals) if (a.depth[1] >= 50) by.set(`sea-${a.id}`, { id: `sea-${a.id}`, e: a.e, name: [L(`${a.name.en} (deepest dive or depth)`, a.name.en), `${a.name.es} (lo más hondo)`], place: ['Ocean', 'Océano'], m: a.depth[1], below: 'sea' });
+    for (const a of sa.animals) if (a.depth[1] >= 50) by.set(`sea-${a.id}`, { id: `sea-${a.id}`, e: a.e, name: [`${a.name.en}, at its deepest`, `${a.name.es}, a su mayor profundidad`], place: ['Ocean', 'Océano'], m: a.depth[1], below: 'sea' });
     for (const w of wr.wrecks) if (w.depth_m >= 50) by.set(`wreck-${w.id}`, { id: `wreck-${w.id}`, e: '⚓', name: [w.name.en, w.name.es], place: [w.place.en, w.place.es], m: w.depth_m, below: 'sea' });
     this.deepItems = [...by.values()];
     return this.deepItems;
@@ -1356,7 +1356,8 @@ export class Learn {
     const pool = [...things, ...layers];
     const out: Q[] = [];
     for (let k = 0; k < n * 6 && out.length < n; k++) {
-      const pick: DownThing[] = [];
+      // One of the Earth's layers in every round (the sea animals and wrecks would crowd them out), then three more.
+      const pick: DownThing[] = [shuffle(layers.slice())[0]];
       for (const x of shuffle(pool)) {
         if (pick.every((p) => Math.max(p.m, x.m) / Math.max(1, Math.min(p.m, x.m)) >= 1.5)) pick.push(x);
         if (pick.length === 4) break;
