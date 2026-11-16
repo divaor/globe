@@ -4057,8 +4057,11 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const printed = await page.evaluate(async () => (await window.atlas.guide.printView()).textContent);
   check(/My places/.test(printed) && /Museo del Prado \(Las Meninas/.test(printed) && /3 days/.test(printed), `the printed trip lists each city's places (${/My places[^·]*/.exec(printed)?.[0].slice(0, 70)})`);
   // Van Gogh's trail: Plan a trip brings his museums, with his works in each.
-  await page.evaluate(() => { localStorage.removeItem('atlas-globe:trip-places'); });
-  await page.evaluate(() => { window.atlas.guide.trip = []; });
+  // (From an empty trip: Clear takes the cities and their places.)
+  await page.evaluate(() => window.atlas.guide.open());
+  await page.waitForSelector('[data-guide="clear"]', { timeout: 10000 }).catch(() => {});
+  await page.evaluate(() => document.querySelector('[data-guide="clear"]')?.click());
+  await page.waitForTimeout(500);
   await page.evaluate(() => window.atlas.art.openArtist('Q5582'));
   await page.waitForSelector('[data-art="plan"]', { timeout: 15000 }).catch(() => {});
   await page.evaluate(() => document.querySelector('[data-art="plan"]')?.click());
@@ -4096,7 +4099,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     return { shown, got };
   };
   const r1 = file ? await restore(file) : null;
-  check(!!backup?.seal && backup.data?.['atlas-globe:trip-places'] && r1 && !r1.shown.unsealed && /badges/.test(r1.shown.text) && r1.got.trip >= 5 && r1.got.places >= 10 && r1.got.badge,
+  check(!!backup?.seal && backup.data?.['atlas-globe:trip-places'] && r1 && !r1.shown.unsealed && /badge/.test(r1.shown.text) && r1.got.trip >= 5 && r1.got.places >= 10 && r1.got.badge,
     `a backup (${Object.keys(backup?.data ?? {}).length} items, sealed) brought to another device: "${(r1?.shown.text ?? '').slice(0, 80)}"; its trip (${r1?.got.trip} cities, ${r1?.got.places} places) and badges are there`);
   // Edited by hand to add a badge: the trip comes over, the badges don't.
   let r2 = null;

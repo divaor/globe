@@ -73,10 +73,10 @@ export function summary(data: Record<string, string>): string {
   const out: string[] = [];
   const p = parse<{ badges?: Record<string, string>; daily?: { best?: number } }>('atlas-globe:progress');
   const nb = Object.keys(p?.badges ?? {}).length;
-  if (nb) out.push(L(`${nb} badges`, `${nb} insignias`));
+  if (nb) out.push(nb === 1 ? L('1 badge', '1 insignia') : L(`${nb} badges`, `${nb} insignias`));
   const trip = parse<string[]>('atlas-globe:trip') ?? [];
   const places = Object.values(parse<{ places?: Record<string, unknown[]> }>('atlas-globe:trip-places')?.places ?? {}).reduce((n, l) => n + l.length, 0);
-  if (trip.length) out.push(L(`a trip of ${trip.length} cities${places ? ` and ${places} places` : ''}`, `un viaje de ${trip.length} ciudades${places ? ` y ${places} lugares` : ''}`));
+  if (trip.length) out.push(L(`a trip of ${trip.length} ${trip.length === 1 ? 'city' : 'cities'}${places ? ` and ${places} ${places === 1 ? 'place' : 'places'}` : ''}`, `un viaje de ${trip.length} ${trip.length === 1 ? 'ciudad' : 'ciudades'}${places ? ` y ${places} ${places === 1 ? 'lugar' : 'lugares'}` : ''}`));
   const me = parse<{ visited?: string[]; wish?: string[] }>('atlas-globe:personal');
   if (me?.visited?.length) out.push(L(`${me.visited.length} countries visited`, `${me.visited.length} países visitados`));
   if (me?.wish?.length) out.push(L(`${me.wish.length} to go`, `${me.wish.length} por visitar`));
