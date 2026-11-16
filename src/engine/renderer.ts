@@ -46,6 +46,12 @@ export class Renderer {
   readonly labels = new LabelEngine();
   /** The filters' own names (ambient mode can hide them, with the map's, when names are off). */
   layerLabels = true;
+  /** The states' and provinces' names (ambient mode hides them with the map's other names). */
+  regionLabels = true;
+  /** Screen areas names keep off (ambient mode's caption), in CSS px. */
+  keepOut: (() => [number, number, number, number][]) | null = null;
+  /** Where the map's canvas is on the page (to turn a page element's place into the map's px). */
+  canvasRect(): DOMRect { return this.fgCanvas.getBoundingClientRect(); }
   readonly gl: GLRaster | null;
   private bg: CanvasRenderingContext2D;
   private fg: CanvasRenderingContext2D;
@@ -607,6 +613,7 @@ export class Renderer {
     // ---- labels
     if (this.baseMap) this.baseLabels(rc);
     if (this.layerLabels) for (const l of this.layers) if (l.ready && l.def.labels) l.def.labels(rc, l);
+    if (this.keepOut) for (const b of this.keepOut()) this.labels.reserve(b[0], b[1], b[2], b[3]);
     this.labels.draw(ctx);
     // A name is fading in: one more frame.
     if (this.labels.fading) this.requestRender();
@@ -712,7 +719,7 @@ export class Renderer {
     }
     // States and provinces: a name where the region is big enough on screen for it, the big ones first. They go
     // before a filter's marker names (Who was born here?), so you can tell which state a place is in.
-    const rg = mapView.regions && mapView.regionNames && !this.worldStyle ? regions() : null;
+    const rg = this.regionLabels && mapView.regions && mapView.regionNames && !this.worldStyle ? regions() : null;
     if (rg && wz >= 3) {
       const k = view.pxPerRadian;
       let shown = 0;

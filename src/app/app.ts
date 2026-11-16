@@ -50,6 +50,8 @@ export class App {
   /** Ambient mode (the screensaver): its playlist ('' for the filters on the map), seconds a view, reading aloud. */
   /** Ambient mode; `names`: the view's own names only (the map's countries, cities and seas hidden), all, or none. */
   ambient: { on: boolean; speed: number; cycle: boolean; clock: boolean; playlist: string; secs: number; narrate: boolean; names: AmbientNames } = { on: false, speed: 1, cycle: false, clock: true, playlist: '', secs: 40, narrate: false, names: 'view' };
+  /** While ambient mode plays (its playlist's filters, fewer names), what is saved is the map from before it. */
+  held: Saved | null = null;
   private listeners = new Map<string, Set<Listener>>();
   private saveTimer = 0;
   /** Modes such as 'timeline' or 'pangea' take over the map; null = normal exploring. */
@@ -185,6 +187,19 @@ export class App {
     const inst = this.instance(id);
     if (!inst) return;
     inst.opacity = v;
+    this.renderer.requestRender();
+    this.save();
+  }
+
+  /** Replaces a filter's options: its defaults, then these. */
+  setOptions(id: string, options: Record<string, string | boolean>) {
+    const inst = this.instance(id);
+    if (!inst) return;
+    const next: Record<string, string | boolean> = {};
+    for (const o of inst.def.options ?? []) next[o.id] = o.default;
+    inst.options = Object.assign(next, options);
+    inst.def.onOptionsChanged?.(inst);
+    this.emit('layers');
     this.renderer.requestRender();
     this.save();
   }
@@ -335,7 +350,7 @@ export class App {
   }
 
   // ---- persistence ------------------------------------------------------------------------
-  private snapshot(): Saved {
+  snapshot(): Saved {
     const r = this.renderer;
     return {
       lang: this.lang, es: this.spanish, theme: this.themeId, projection: this.projection,
@@ -351,7 +366,8 @@ export class App {
   save() {
     clearTimeout(this.saveTimer);
     this.saveTimer = window.setTimeout(() => {
-      const s = this.snapshot();
+      // Ambient mode's own settings are saved as they are now; the rest as before it started.
+      const s = this.held ? { ...this.held, ambient: this.snapshot().ambient } : this.snapshot();
       try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); } catch { /* private mode */ }
       if (!this.mode) history.replaceState(null, '', `#${this.shareHash(s)}`);
     }, 400);

@@ -84,7 +84,8 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     their park because their places are kept secret; and Wikidata's remarkable trees) and Botanical gardens (1,300
     gardens and arboretums, each with the plants that grow wild around it).
   - Ecoregions: RESOLVE's 846 ecoregions coloured by biome, each in its own colour, or by how much of it is protected;
-    a tap gives its biome, realm, area and protection and the plants and animals of ours that live in it.
+    a tap gives its biome, realm, area and protection and the plants and animals of ours that live in it. Highlight
+    lights up one biome (the deserts, the rainforests) and names only its ecoregions, the others dimmed.
   - The breathing planet: NASA's twelve monthly pictures of how green the land is (MODIS NDVI, 2024), playing as a year
     or one month at a time: spring sweeping north in April and May, and south in October.
   - Nature's calendar: 150 spectacles of plants and animals (cherry blossom, flowering deserts, autumn forests, the
@@ -309,7 +310,8 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   - **Border chain:** from a country, a neighbour, then its neighbour, never the same one twice, in 90 seconds.
     Crossing into another continent earns a bonus; a dead end stops the chain.
   - **Outline:** a country's shape, alone. Each wrong guess shows its neighbours around it (or, for an island, its
-    continent and first letter). Hard mode turns the shape.
+    continent and first letter). Hard mode turns the shape. The shape is framed on the country's main body: far-off
+    islands (the Netherlands' Caribbean, France's overseas departments, the Azores) are left out of the frame.
   - **Museum hop:** five of the world's best-known paintings and sculptures, each in another museum; see them all
     from the first one with the least travel (the Grand tour's best order, on the art guide).
   - **Climate detective:** a city's year of weather, its temperature and rain month by month (the travel guide's
@@ -413,9 +415,15 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   edited by hand still brings the trip, places, lists and settings, but not badges, streaks and scores. The key is in
   the app's code, so the seal keeps out casual edits, not a determined cheat.
 - **Ambient mode:** full-screen rotating globe, screen kept awake, clock. Show the filters on your map, or a
-  screensaver playlist: Our planet, Night and day, Restless Earth, Water and weather, Life on Earth, People and
-  cultures, or Around Latin America, each view with its title and a line about it, read aloud if you like; or make
-  your own playlist from views of the map (filters and place) and share it as a link.
+  screensaver playlist: Our planet, Night and day, Restless Earth, Water and weather, Life on Earth, Animals of the
+  world, Green planet, People and cultures, or Around Latin America, each view with its title and a line about it,
+  read aloud if you like; or make your own playlist from views of the map (filters and place) and share it as a link.
+  Names on the map (in Settings and the screensaver's panel): only the view's own (the default: the filters' names, a
+  little smaller, without the map's countries, cities, states and seas), all, or none; they keep off the caption. A
+  playlist's view can light up a biome and show just the plants its caption names (the Green planet's deserts of North
+  America and Borneo's strange plants). What is saved while it plays is your map from before it.
+- **Steady names:** as the globe turns, a name keeps its place and its side of its dot; one that loses its place to a
+  neighbour fades out, and a new one fades in, instead of names blinking on and off.
 
 ## Development
 

@@ -6,6 +6,7 @@ import { t, tx, LANGS, type Lang } from '../app/i18n';
 import type { App } from '../app/app';
 import { terrainSettings } from './terrain';
 import { backupSettings } from '../app/backup';
+import { ambientNamesField } from './playlists';
 
 declare const __APP_VERSION__: string;
 
@@ -73,6 +74,7 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     field(t('ambientSpeed'), slider(app.ambient.speed, 0.25, 4, 0.25, (v) => { app.ambient.speed = v; app.save(); })),
     h('div', { class: 'toggles' },
       toggle(app.ambient.clock, (v) => { app.ambient.clock = v; app.save(); }, t('ambientClock'))),
+    ambientNamesField(app),
     h('p', { class: 'muted small' }, app.lang === 'es'
       ? 'Las listas de reproducción del salvapantallas están en Más → Modo ambiente.'
       : 'The screensaver’s playlists are in More → Ambient mode.'),

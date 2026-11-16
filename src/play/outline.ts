@@ -1,7 +1,7 @@
 // Outline (v0.25.0): guess a country from its shape alone. Each wrong try shows one of its neighbours around it
 // (or, for an island, a clue: its continent, then its first letter); fewer tries score more. Five countries a
 // game; in hard mode the shapes are turned.
-import { geoPath, geoAzimuthalEqualArea, geoCentroid } from 'd3-geo';
+import { geoPath, geoAzimuthalEqualArea, geoCentroid, geoArea, geoBounds } from 'd3-geo';
 import { Share2, RotateCcw, SkipForward, Send } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
@@ -24,6 +24,25 @@ interface State {
   hard: boolean; day?: string; ids: string[]; i: number; tries: number; shown: string[]; clues: string[];
   results: { id: string; tries: number; pts: number }[]; answered: 'ok' | 'skip' | null; spin: number;
   done: { score: number; stars: 1 | 2 | 3; badges: Badge[] } | null; fold: boolean; miss: string | null;
+}
+
+/** The part of a country the Outline frames: its largest piece and the pieces near it. Far-off islands (the
+ *  Netherlands' Caribbean, France's overseas departments, the Azores) stay drawn but out of the frame; framing them
+ *  shrank the country to a speck. Near means within half the largest piece's size (at least 3°) of its bounds. */
+export function mainBody(f: GeoJSON.Feature): GeoJSON.Feature {
+  const g = f.geometry;
+  if (!g || g.type !== 'MultiPolygon' || g.coordinates.length < 2) return f;
+  const parts = g.coordinates.map((c) => ({ type: 'Polygon', coordinates: c }) as GeoJSON.Polygon);
+  const big = parts.reduce((a, b) => (geoArea(b) > geoArea(a) ? b : a));
+  const [[w, s], [e, n]] = geoBounds(big);
+  const width = e >= w ? e - w : e + 360 - w;
+  const mid = w + width / 2, margin = Math.max(3, Math.max(width, n - s) / 2);
+  const wrap = (x: number) => ((((x + 180) % 360) + 360) % 360) - 180;
+  const near = parts.filter((p) => {
+    const [lon, lat] = geoCentroid(p);
+    return Math.abs(wrap(lon - mid)) <= width / 2 + margin && lat >= s - margin && lat <= n + margin;
+  });
+  return near.length === parts.length ? f : { ...f, geometry: { type: 'MultiPolygon', coordinates: near.map((p) => p.coordinates) } };
 }
 
 export class Outline implements HostGame {
@@ -120,8 +139,9 @@ export class Outline implements HostGame {
     const f = level.byId.get(id)?.feature;
     if (!f) return cv;
     const w = size, hh = Math.round(size * 0.75);
-    const c = geoCentroid(f as never);
-    const proj = geoAzimuthalEqualArea().rotate([-c[0], -c[1], spin]).fitExtent([[12, 12], [w - 12, hh - 12]], f as never);
+    const body = mainBody(f as GeoJSON.Feature);
+    const c = geoCentroid(body as never);
+    const proj = geoAzimuthalEqualArea().rotate([-c[0], -c[1], spin]).fitExtent([[12, 12], [w - 12, hh - 12]], body as never);
     // With neighbours shown, the view widens a little to hold them.
     if (shown.length) proj.scale(proj.scale() * 0.72).translate([w / 2, hh / 2]);
     const path = geoPath(proj, ctx);
