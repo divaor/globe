@@ -24,28 +24,28 @@
       "src": "https://www.noaa.gov/office-of-general-counsel/gc-international-section/rms-titanic-history-and-significance"
     },
     {
-      "id": "endurance",
+      "id": "lusitania",
       "name": {
-        "en": "Endurance",
-        "es": "Endurance"
+        "en": "RMS Lusitania",
+        "es": "RMS Lusitania"
       },
-      "lon": -52.33,
-      "lat": -68.74,
-      "depth_m": 3008,
+      "lon": -8.55,
+      "lat": 51.42,
+      "depth_m": 93,
       "year": 1915,
-      "found": 2022,
+      "found": 1935,
       "era": "ww1",
-      "kind": "explorer",
+      "kind": "liner",
       "place": {
-        "en": "Weddell Sea, Antarctica",
-        "es": "mar de Weddell, Antártida"
+        "en": "Celtic Sea, about 18 km south of the Old Head of Kinsale, Ireland",
+        "es": "mar Céltico, a unos 18 km al sur del cabo Old Head of Kinsale, Irlanda"
       },
       "text": {
-        "en": "Ernest Shackleton's ship was trapped and crushed by pack ice and sank on 21 November 1915. All 28 men survived after an epic escape by boat to Elephant Island and South Georgia. The Endurance22 expedition found her on 5 March 2022 at 3,008 m, upright and very well preserved, with her name still clear on the stern.",
-        "es": "El barco de Ernest Shackleton quedó atrapado y aplastado por el hielo marino y se hundió el 21 de noviembre de 1915. Los 28 hombres sobrevivieron tras una huida épica en botes hasta la isla Elefante y Georgia del Sur. La expedición Endurance22 lo encontró el 5 de marzo de 2022 a 3 008 m, erguido y muy bien conservado, con su nombre todavía legible en la popa."
+        "en": "The German submarine U-20 torpedoed the Cunard liner on 7 May 1915, and she sank in about 18 minutes. Nearly 1,200 people died, and the sinking turned opinion in the United States against Germany. The wreck lies on her side at about 93 m and was first found in 1935.",
+        "es": "El submarino alemán U-20 torpedeó al transatlántico de la Cunard el 7 de mayo de 1915, que se hundió en unos 18 minutos. Murieron casi 1 200 personas, y el hundimiento volvió a la opinión pública de Estados Unidos en contra de Alemania. El pecio está de costado a unos 93 m y se localizó por primera vez en 1935."
       },
-      "src": "https://fmht.co.uk/news/fmht-announces-that-the-endurance22-expedition-has-located-the-wreck-of-endurance/",
-      "note": "Wreck at 68°44'21\"S 52°19'47\"W, a few nautical miles from the position logged by Frank Worsley (Journal of Navigation). Era set by date (1915); not a war loss."
+      "src": "https://www.rmslusitania.info/",
+      "note": "Death toll given as 1,195 to 1,198; depth as 91 to 100 m."
     },
     {
       "id": "bismarck",
@@ -72,28 +72,28 @@
       "note": "Published depths range from about 4,670 m (USNI, 1991) to 4,790 m. Search area about 200 square miles."
     },
     {
-      "id": "lusitania",
+      "id": "endurance",
       "name": {
-        "en": "RMS Lusitania",
-        "es": "RMS Lusitania"
+        "en": "Endurance",
+        "es": "Endurance"
       },
-      "lon": -8.55,
-      "lat": 51.42,
-      "depth_m": 93,
+      "lon": -52.33,
+      "lat": -68.74,
+      "depth_m": 3008,
       "year": 1915,
-      "found": 1935,
+      "found": 2022,
       "era": "ww1",
-      "kind": "liner",
+      "kind": "explorer",
       "place": {
-        "en": "Celtic Sea, about 18 km south of the Old Head of Kinsale, Ireland",
-        "es": "mar Céltico, a unos 18 km al sur del cabo Old Head of Kinsale, Irlanda"
+        "en": "Weddell Sea, Antarctica",
+        "es": "mar de Weddell, Antártida"
       },
       "text": {
-        "en": "The German submarine U-20 torpedoed the Cunard liner on 7 May 1915, and she sank in about 18 minutes. Nearly 1,200 people died, and the sinking turned opinion in the United States against Germany. The wreck lies on her side at about 93 m and was first found in 1935.",
-        "es": "El submarino alemán U-20 torpedeó al transatlántico de la Cunard el 7 de mayo de 1915, que se hundió en unos 18 minutos. Murieron casi 1 200 personas, y el hundimiento volvió a la opinión pública de Estados Unidos en contra de Alemania. El pecio está de costado a unos 93 m y se localizó por primera vez en 1935."
+        "en": "Ernest Shackleton's ship was trapped and crushed by pack ice and sank on 21 November 1915. All 28 men survived after an epic escape by boat to Elephant Island and South Georgia. The Endurance22 expedition found her on 5 March 2022 at 3,008 m, upright and very well preserved, with her name still clear on the stern.",
+        "es": "El barco de Ernest Shackleton quedó atrapado y aplastado por el hielo marino y se hundió el 21 de noviembre de 1915. Los 28 hombres sobrevivieron tras una huida épica en botes hasta la isla Elefante y Georgia del Sur. La expedición Endurance22 lo encontró el 5 de marzo de 2022 a 3 008 m, erguido y muy bien conservado, con su nombre todavía legible en la popa."
       },
-      "src": "https://www.rmslusitania.info/",
-      "note": "Death toll given as 1,195 to 1,198; depth as 91 to 100 m."
+      "src": "https://fmht.co.uk/news/fmht-announces-that-the-endurance22-expedition-has-located-the-wreck-of-endurance/",
+      "note": "Wreck at 68°44'21\"S 52°19'47\"W, a few nautical miles from the position logged by Frank Worsley (Journal of Navigation). Era set by date (1915); not a war loss."
     },
     {
       "id": "mary-rose",
@@ -192,6 +192,198 @@
       "note": "Date given as about 70 to 60 BC; depth 40 to 55 m."
     },
     {
+      "id": "mary-celeste",
+      "name": {
+        "en": "Mary Celeste",
+        "es": "Mary Celeste"
+      },
+      "lon": -73.2,
+      "lat": 18.63,
+      "depth_m": 0,
+      "year": 1885,
+      "found": null,
+      "era": "steam",
+      "kind": "merchant",
+      "place": {
+        "en": "Rochelois Bank reef, off Haiti",
+        "es": "arrecife del banco de Rochelois, frente a Haití"
+      },
+      "text": {
+        "en": "In December 1872 the brigantine was found drifting in good order between the Azores and Portugal with no one aboard, and her crew was never seen again. On 3 January 1885 her last captain deliberately ran her onto the Rochelois reef off Haiti in an insurance fraud. In 2001 a team led by the novelist Clive Cussler said it had found her remains there, but tree-ring tests later showed the timber was too young.",
+        "es": "En diciembre de 1872 el bergantín fue hallado a la deriva y en buen estado entre las Azores y Portugal, sin nadie a bordo, y su tripulación nunca volvió a aparecer. El 3 de enero de 1885 su último capitán lo hizo encallar a propósito en el arrecife de Rochelois, frente a Haití, en un fraude al seguro. En 2001 un equipo dirigido por el novelista Clive Cussler dijo haber encontrado allí sus restos, pero pruebas de anillos de los árboles mostraron después que la madera era demasiado joven."
+      },
+      "src": "https://www.maryceleste.net/wreck.htm",
+      "note": "Position is the reef where she was wrecked (gazetteer position of Banc de Rochelois). Her remains have not been confirmed (found: null); the 2001 NUMA claim was challenged by dendrochronology (Geological Survey of Canada)."
+    },
+    {
+      "id": "bounty",
+      "name": {
+        "en": "HMS Bounty",
+        "es": "HMS Bounty"
+      },
+      "lon": -130.09,
+      "lat": -25.07,
+      "depth_m": 5,
+      "year": 1790,
+      "found": 1957,
+      "era": "sail",
+      "kind": "other",
+      "place": {
+        "en": "Bounty Bay, Pitcairn Island",
+        "es": "bahía Bounty, isla Pitcairn"
+      },
+      "text": {
+        "en": "After the 1789 mutiny, Fletcher Christian and eight other mutineers, with men and women from Tahiti, hid on remote Pitcairn Island. On 23 January 1790 they burned the Bounty in what is now Bounty Bay so that she could not be seen or used to escape. In 1957 Luis Marden of National Geographic dived on her remains in shallow water; her rudder, raised in 1933, is in the Fiji Museum.",
+        "es": "Tras el motín de 1789, Fletcher Christian y otros ocho amotinados, con hombres y mujeres de Tahití, se ocultaron en la remota isla Pitcairn. El 23 de enero de 1790 quemaron la Bounty en lo que hoy es la bahía Bounty, para que no se viera ni sirviera para escapar. En 1957 Luis Marden, de National Geographic, buceó sobre sus restos en aguas poco profundas; su timón, rescatado en 1933, está en el Museo de Fiyi."
+      },
+      "src": "https://www.education.maritime-museum.org/training/north-gallery-2/british-history/hms-bounty/",
+      "note": "Depth not documented by a primary source; the remains lie in shallow water in Bounty Bay. Sources are mostly secondary."
+    },
+    {
+      "id": "costa-concordia",
+      "name": {
+        "en": "Costa Concordia",
+        "es": "Costa Concordia"
+      },
+      "lon": 10.92,
+      "lat": 42.37,
+      "depth_m": 0,
+      "year": 2012,
+      "found": null,
+      "era": "modern",
+      "kind": "liner",
+      "place": {
+        "en": "Isola del Giglio, Tuscany, Italy (raised and scrapped)",
+        "es": "isla del Giglio, Toscana, Italia (reflotado y desguazado)"
+      },
+      "text": {
+        "en": "The cruise ship hit rocks off the island of Giglio on 13 January 2012 and capsized close to the harbour; 32 people died and more than 4,000 were rescued. She lay on her side, half out of the water, for two and a half years. Salvors pulled her upright in September 2013, refloated her in July 2014 and towed her to Genoa to be scrapped.",
+        "es": "El crucero chocó con unas rocas frente a la isla del Giglio el 13 de enero de 2012 y volcó cerca del puerto; murieron 32 personas y más de 4 000 fueron rescatadas. Quedó de costado, medio fuera del agua, durante dos años y medio. Los equipos de rescate lo enderezaron en septiembre de 2013, lo reflotaron en julio de 2014 y lo remolcaron a Génova para desguazarlo."
+      },
+      "src": "https://www.britannica.com/event/Costa-Concordia-disaster",
+      "note": "Raised and scrapped; depth 0 because she lay half out of the water on a rocky ledge. Never lost (found: null)."
+    },
+    {
+      "id": "edmund-fitzgerald",
+      "name": {
+        "en": "SS Edmund Fitzgerald",
+        "es": "SS Edmund Fitzgerald"
+      },
+      "lon": -85.11,
+      "lat": 46.99,
+      "depth_m": 162,
+      "year": 1975,
+      "found": 1975,
+      "era": "modern",
+      "kind": "merchant",
+      "place": {
+        "en": "Lake Superior, Canadian waters off Whitefish Point",
+        "es": "lago Superior, aguas canadienses frente a Whitefish Point"
+      },
+      "text": {
+        "en": "The 222 m ore carrier sank in a violent storm on Lake Superior on 10 November 1975 with all 29 crew. She broke in two and lies at about 160 m in Canadian waters. Her loss, made famous by Gordon Lightfoot's song, is still the best-known shipwreck of the Great Lakes, and its cause is still debated.",
+        "es": "El carguero de mineral de 222 m se hundió en una violenta tormenta en el lago Superior el 10 de noviembre de 1975 con sus 29 tripulantes. Se partió en dos y está a unos 160 m en aguas canadienses. Su pérdida, que hizo famosa la canción de Gordon Lightfoot, sigue siendo el naufragio más conocido de los Grandes Lagos, y su causa aún se discute."
+      },
+      "src": "https://shipwreckmuseum.com/edmund-fitzgerald/",
+      "note": "Depth 530 ft (162 m), some sources 535 to 550 ft. Located by a Navy aircraft on 14 November 1975; filmed in May 1976."
+    },
+    {
+      "id": "andrea-doria",
+      "name": {
+        "en": "SS Andrea Doria",
+        "es": "SS Andrea Doria"
+      },
+      "lon": -69.85,
+      "lat": 40.49,
+      "depth_m": 75,
+      "year": 1956,
+      "found": 1956,
+      "era": "modern",
+      "kind": "liner",
+      "place": {
+        "en": "North Atlantic, about 80 km south of Nantucket, United States",
+        "es": "Atlántico Norte, a unos 80 km al sur de Nantucket, Estados Unidos"
+      },
+      "text": {
+        "en": "The Italian liner collided with the Swedish liner Stockholm in fog on the night of 25 July 1956 and sank about 11 hours later. Forty-six people on the Andrea Doria and five on the Stockholm died, but more than 1,600 were saved in one of the greatest rescues at sea. The wreck lies at about 75 m and is called the Mount Everest of wreck diving.",
+        "es": "El transatlántico italiano chocó con el transatlántico sueco Stockholm entre la niebla, la noche del 25 de julio de 1956, y se hundió unas 11 horas después. Murieron 46 personas en el Andrea Doria y cinco en el Stockholm, pero más de 1 600 se salvaron en uno de los mayores rescates en el mar. El pecio está a unos 75 m y lo llaman el Everest del buceo en naufragios."
+      },
+      "src": "https://www.history.com/this-day-in-history/july-25/ships-collide-off-nantucket",
+      "note": "Depth given as 240 to 250 ft (73 to 76 m)."
+    },
+    {
+      "id": "yamato",
+      "name": {
+        "en": "Yamato",
+        "es": "Yamato"
+      },
+      "lon": 128.07,
+      "lat": 30.37,
+      "depth_m": 340,
+      "year": 1945,
+      "found": 1985,
+      "era": "ww2",
+      "kind": "warship",
+      "place": {
+        "en": "East China Sea, south-west of Kyushu, Japan",
+        "es": "mar de China Oriental, al suroeste de Kyushu, Japón"
+      },
+      "text": {
+        "en": "With her sister Musashi, she was the largest battleship ever built. Sent on a one-way mission to Okinawa, she was sunk by US aircraft on 7 April 1945, and about 3,000 men died. She broke apart and lies at about 340 m; a Japanese expedition confirmed the wreck in 1985.",
+        "es": "Junto con su gemelo Musashi, fue el acorazado más grande jamás construido. Enviado en una misión sin regreso hacia Okinawa, fue hundido por aviones estadounidenses el 7 de abril de 1945, y murieron unos 3 000 hombres. Se partió y está a unos 340 m de profundidad; una expedición japonesa confirmó el pecio en 1985."
+      },
+      "src": "https://pacificwrecks.com/ship/ijn/yamato.html",
+      "note": "Depth given as about 340 m by most sources; Pacific Wrecks and Combined Fleet give about 430 m (1,410 ft). War grave; position approximate."
+    },
+    {
+      "id": "hms-hood",
+      "name": {
+        "en": "HMS Hood",
+        "es": "HMS Hood"
+      },
+      "lon": -31.8,
+      "lat": 63.3,
+      "depth_m": 2800,
+      "year": 1941,
+      "found": 2001,
+      "era": "ww2",
+      "kind": "warship",
+      "place": {
+        "en": "Denmark Strait, between Greenland and Iceland",
+        "es": "estrecho de Dinamarca, entre Groenlandia e Islandia"
+      },
+      "text": {
+        "en": "The Royal Navy's largest warship blew up within minutes of being hit by Bismarck on 24 May 1941, and only three of her 1,418 men survived. A team led by David Mearns found the wreck in July 2001 at about 2,800 m. She lies in three main pieces, and the exact cause of the explosion is still argued over.",
+        "es": "El mayor buque de guerra de la Marina Real británica explotó minutos después de ser alcanzado por el Bismarck el 24 de mayo de 1941, y solo tres de sus 1 418 hombres sobrevivieron. Un equipo dirigido por David Mearns encontró el pecio en julio de 2001 a unos 2 800 m. Está en tres grandes partes, y la causa exacta de la explosión todavía se discute."
+      },
+      "src": "https://www.britannica.com/topic/HMS-Hood",
+      "note": "War grave; position approximate. Depth given as about 2,800 to 2,850 m."
+    },
+    {
+      "id": "britannic",
+      "name": {
+        "en": "HMHS Britannic",
+        "es": "HMHS Britannic"
+      },
+      "lon": 24.28,
+      "lat": 37.7,
+      "depth_m": 120,
+      "year": 1916,
+      "found": 1975,
+      "era": "ww1",
+      "kind": "liner",
+      "place": {
+        "en": "Kea Channel, Aegean Sea, Greece",
+        "es": "canal de Kea, mar Egeo, Grecia"
+      },
+      "text": {
+        "en": "Titanic's younger sister was serving as a hospital ship when she struck a German mine near the island of Kea on 21 November 1916. She sank in about 55 minutes, and 30 of the roughly 1,066 people aboard died. The largest ship lost in the First World War, she was found by Jacques Cousteau in 1975 at about 120 m.",
+        "es": "La hermana menor del Titanic servía como buque hospital cuando chocó con una mina alemana cerca de la isla de Kea el 21 de noviembre de 1916. Se hundió en unos 55 minutos, y murieron 30 de las cerca de 1 066 personas a bordo. Fue el barco más grande perdido en la Primera Guerra Mundial, y Jacques Cousteau lo encontró en 1975 a unos 120 m."
+      },
+      "src": "https://divernet.com/scuba-news/wrecks/britannic-wreck-truth/",
+      "note": "Depth given as 119 to 122 m."
+    },
+    {
       "id": "san-jose",
       "name": {
         "en": "San José",
@@ -288,52 +480,28 @@
       "note": "Position approximate. The Sammy Kogvik detail comes from news coverage of the 2016 Arctic Research Foundation search."
     },
     {
-      "id": "yamato",
+      "id": "kursk",
       "name": {
-        "en": "Yamato",
-        "es": "Yamato"
+        "en": "Kursk",
+        "es": "Kursk"
       },
-      "lon": 128.07,
-      "lat": 30.37,
-      "depth_m": 340,
-      "year": 1945,
-      "found": 1985,
-      "era": "ww2",
-      "kind": "warship",
+      "lon": 37.6,
+      "lat": 69.6,
+      "depth_m": 108,
+      "year": 2000,
+      "found": 2000,
+      "era": "modern",
+      "kind": "submarine",
       "place": {
-        "en": "East China Sea, south-west of Kyushu, Japan",
-        "es": "mar de China Oriental, al suroeste de Kyushu, Japón"
+        "en": "Barents Sea, Russia (raised)",
+        "es": "mar de Barents, Rusia (reflotado)"
       },
       "text": {
-        "en": "With her sister Musashi, she was the largest battleship ever built. Sent on a one-way mission to Okinawa, she was sunk by US aircraft on 7 April 1945, and about 3,000 men died. She broke apart and lies at about 340 m; a Japanese expedition confirmed the wreck in 1985.",
-        "es": "Junto con su gemelo Musashi, fue el acorazado más grande jamás construido. Enviado en una misión sin regreso hacia Okinawa, fue hundido por aviones estadounidenses el 7 de abril de 1945, y murieron unos 3 000 hombres. Se partió y está a unos 340 m de profundidad; una expedición japonesa confirmó el pecio en 1985."
+        "en": "The Russian nuclear submarine sank in the Barents Sea on 12 August 2000 after a torpedo exploded and set off a far larger blast. All 118 men died; letters found later show that at least 23 survived for hours in the stern while rescue attempts failed. A Dutch salvage team raised most of the hull from about 108 m in October 2001, leaving the shattered bow behind.",
+        "es": "El submarino nuclear ruso se hundió en el mar de Barents el 12 de agosto de 2000 después de que un torpedo explotara y provocara una explosión mucho mayor. Murieron los 118 hombres; cartas halladas después muestran que al menos 23 sobrevivieron durante horas en la popa mientras fallaban los intentos de rescate. Un equipo de salvamento neerlandés reflotó la mayor parte del casco desde unos 108 m en octubre de 2001 y dejó atrás la proa destrozada."
       },
-      "src": "https://pacificwrecks.com/ship/ijn/yamato.html",
-      "note": "Depth given as about 340 m by most sources; Pacific Wrecks and Combined Fleet give about 430 m (1,410 ft). War grave; position approximate."
-    },
-    {
-      "id": "musashi",
-      "name": {
-        "en": "Musashi",
-        "es": "Musashi"
-      },
-      "lon": 122.5,
-      "lat": 13.1,
-      "depth_m": 1000,
-      "year": 1944,
-      "found": 2015,
-      "era": "ww2",
-      "kind": "warship",
-      "place": {
-        "en": "Sibuyan Sea, Philippines",
-        "es": "mar de Sibuyán, Filipinas"
-      },
-      "text": {
-        "en": "Yamato's sister ship was struck by many torpedoes and bombs during the Battle of Leyte Gulf and sank on 24 October 1944; more than 1,000 of her crew died. Paul Allen's research yacht found the wreck in March 2015 at about 1,000 m. The mount for the imperial chrysanthemum crest on her bow helped to identify her.",
-        "es": "El gemelo del Yamato recibió muchos torpedos y bombas durante la batalla del golfo de Leyte y se hundió el 24 de octubre de 1944; murieron más de 1 000 de sus tripulantes. El yate de investigación de Paul Allen encontró el pecio en marzo de 2015 a unos 1 000 m. El soporte del emblema imperial del crisantemo en la proa ayudó a identificarlo."
-      },
-      "src": "https://www.prnewswire.com/news-releases/paul-g-allen-locates-sunken-japanese-wwii-battleship-musashi-300045213.html",
-      "note": "War grave; position approximate (Sibuyan Sea). Deaths often given as 1,023."
+      "src": "https://www.cbsnews.com/news/kursk-returns-to-russia/",
+      "note": "Raised (except the bow). Depth given as 100 to 108 m. Position approximate."
     },
     {
       "id": "uss-indianapolis",
@@ -360,6 +528,30 @@
       "note": "War grave; exact position confidential, map position approximate. Crew given as 1,195 or 1,196; survivors 316 or 317."
     },
     {
+      "id": "wilhelm-gustloff",
+      "name": {
+        "en": "Wilhelm Gustloff",
+        "es": "Wilhelm Gustloff"
+      },
+      "lon": 17.42,
+      "lat": 55.07,
+      "depth_m": 45,
+      "year": 1945,
+      "found": null,
+      "era": "ww2",
+      "kind": "liner",
+      "place": {
+        "en": "Baltic Sea, off Łeba, Poland",
+        "es": "mar Báltico, frente a Łeba, Polonia"
+      },
+      "text": {
+        "en": "The German liner was packed with refugees, wounded soldiers and naval personnel fleeing the Soviet advance when the Soviet submarine S-13 hit her with three torpedoes on 30 January 1945. She sank in about an hour in icy water. Estimates of the dead range from about 5,000 to more than 9,000, which makes it probably the deadliest sinking of a single ship in history.",
+        "es": "El transatlántico alemán iba repleto de refugiados, soldados heridos y personal naval que huían del avance soviético cuando el submarino soviético S-13 lo alcanzó con tres torpedos el 30 de enero de 1945. Se hundió en aproximadamente una hora en aguas heladas. Las estimaciones de muertos van de unos 5 000 a más de 9 000, lo que lo convierte probablemente en el hundimiento de un solo barco más mortífero de la historia."
+      },
+      "src": "https://www.guinnessworldrecords.com/world-records/62795-highest-death-toll-from-a-single-ship-disaster-during-wartime",
+      "note": "War grave protected under Polish law; position approximate. Depth about 44 to 45 m from a single dive source. Guinness range 4,798 to about 9,400; Britannica about 9,000."
+    },
+    {
       "id": "uss-samuel-b-roberts",
       "name": {
         "en": "USS Samuel B. Roberts",
@@ -382,6 +574,30 @@
       },
       "src": "https://www.guinnessworldrecords.com/news/2022/7/worlds-deepest-shipwreck-found-almost-7-km-beneath-the-waves-710330",
       "note": "War grave; exact position secret, map position approximate. First reported as 6,895 m, revised to 6,865 m (Guinness)."
+    },
+    {
+      "id": "musashi",
+      "name": {
+        "en": "Musashi",
+        "es": "Musashi"
+      },
+      "lon": 122.5,
+      "lat": 13.1,
+      "depth_m": 1000,
+      "year": 1944,
+      "found": 2015,
+      "era": "ww2",
+      "kind": "warship",
+      "place": {
+        "en": "Sibuyan Sea, Philippines",
+        "es": "mar de Sibuyán, Filipinas"
+      },
+      "text": {
+        "en": "Yamato's sister ship was struck by many torpedoes and bombs during the Battle of Leyte Gulf and sank on 24 October 1944; more than 1,000 of her crew died. Paul Allen's research yacht found the wreck in March 2015 at about 1,000 m. The mount for the imperial chrysanthemum crest on her bow helped to identify her.",
+        "es": "El gemelo del Yamato recibió muchos torpedos y bombas durante la batalla del golfo de Leyte y se hundió el 24 de octubre de 1944; murieron más de 1 000 de sus tripulantes. El yate de investigación de Paul Allen encontró el pecio en marzo de 2015 a unos 1 000 m. El soporte del emblema imperial del crisantemo en la proa ayudó a identificarlo."
+      },
+      "src": "https://www.prnewswire.com/news-releases/paul-g-allen-locates-sunken-japanese-wwii-battleship-musashi-300045213.html",
+      "note": "War grave; position approximate (Sibuyan Sea). Deaths often given as 1,023."
     },
     {
       "id": "uss-johnston",
@@ -408,196 +624,28 @@
       "note": "War grave; map position approximate. Guinness gives the deepest part as 6,468.6 m. Losses given as 186 of 327 (NHHC ship history) or 184 of 329 (NHHC H-Gram). Found: debris seen by RV Petrel in 2019, main wreck confirmed 2021."
     },
     {
-      "id": "andrea-doria",
+      "id": "graf-spee",
       "name": {
-        "en": "SS Andrea Doria",
-        "es": "SS Andrea Doria"
+        "en": "Admiral Graf Spee",
+        "es": "Admiral Graf Spee"
       },
-      "lon": -69.85,
-      "lat": 40.49,
-      "depth_m": 75,
-      "year": 1956,
-      "found": 1956,
-      "era": "modern",
-      "kind": "liner",
-      "place": {
-        "en": "North Atlantic, about 80 km south of Nantucket, United States",
-        "es": "Atlántico Norte, a unos 80 km al sur de Nantucket, Estados Unidos"
-      },
-      "text": {
-        "en": "The Italian liner collided with the Swedish liner Stockholm in fog on the night of 25 July 1956 and sank about 11 hours later. Forty-six people on the Andrea Doria and five on the Stockholm died, but more than 1,600 were saved in one of the greatest rescues at sea. The wreck lies at about 75 m and is called the Mount Everest of wreck diving.",
-        "es": "El transatlántico italiano chocó con el transatlántico sueco Stockholm entre la niebla, la noche del 25 de julio de 1956, y se hundió unas 11 horas después. Murieron 46 personas en el Andrea Doria y cinco en el Stockholm, pero más de 1 600 se salvaron en uno de los mayores rescates en el mar. El pecio está a unos 75 m y lo llaman el Everest del buceo en naufragios."
-      },
-      "src": "https://www.history.com/this-day-in-history/july-25/ships-collide-off-nantucket",
-      "note": "Depth given as 240 to 250 ft (73 to 76 m)."
-    },
-    {
-      "id": "edmund-fitzgerald",
-      "name": {
-        "en": "SS Edmund Fitzgerald",
-        "es": "SS Edmund Fitzgerald"
-      },
-      "lon": -85.11,
-      "lat": 46.99,
-      "depth_m": 162,
-      "year": 1975,
-      "found": 1975,
-      "era": "modern",
-      "kind": "merchant",
-      "place": {
-        "en": "Lake Superior, Canadian waters off Whitefish Point",
-        "es": "lago Superior, aguas canadienses frente a Whitefish Point"
-      },
-      "text": {
-        "en": "The 222 m ore carrier sank in a violent storm on Lake Superior on 10 November 1975 with all 29 crew. She broke in two and lies at about 160 m in Canadian waters. Her loss, made famous by Gordon Lightfoot's song, is still the best-known shipwreck of the Great Lakes, and its cause is still debated.",
-        "es": "El carguero de mineral de 222 m se hundió en una violenta tormenta en el lago Superior el 10 de noviembre de 1975 con sus 29 tripulantes. Se partió en dos y está a unos 160 m en aguas canadienses. Su pérdida, que hizo famosa la canción de Gordon Lightfoot, sigue siendo el naufragio más conocido de los Grandes Lagos, y su causa aún se discute."
-      },
-      "src": "https://shipwreckmuseum.com/edmund-fitzgerald/",
-      "note": "Depth 530 ft (162 m), some sources 535 to 550 ft. Located by a Navy aircraft on 14 November 1975; filmed in May 1976."
-    },
-    {
-      "id": "costa-concordia",
-      "name": {
-        "en": "Costa Concordia",
-        "es": "Costa Concordia"
-      },
-      "lon": 10.92,
-      "lat": 42.37,
-      "depth_m": 0,
-      "year": 2012,
+      "lon": -56.3,
+      "lat": -34.95,
+      "depth_m": 9,
+      "year": 1939,
       "found": null,
-      "era": "modern",
-      "kind": "liner",
-      "place": {
-        "en": "Isola del Giglio, Tuscany, Italy (raised and scrapped)",
-        "es": "isla del Giglio, Toscana, Italia (reflotado y desguazado)"
-      },
-      "text": {
-        "en": "The cruise ship hit rocks off the island of Giglio on 13 January 2012 and capsized close to the harbour; 32 people died and more than 4,000 were rescued. She lay on her side, half out of the water, for two and a half years. Salvors pulled her upright in September 2013, refloated her in July 2014 and towed her to Genoa to be scrapped.",
-        "es": "El crucero chocó con unas rocas frente a la isla del Giglio el 13 de enero de 2012 y volcó cerca del puerto; murieron 32 personas y más de 4 000 fueron rescatadas. Quedó de costado, medio fuera del agua, durante dos años y medio. Los equipos de rescate lo enderezaron en septiembre de 2013, lo reflotaron en julio de 2014 y lo remolcaron a Génova para desguazarlo."
-      },
-      "src": "https://www.britannica.com/event/Costa-Concordia-disaster",
-      "note": "Raised and scrapped; depth 0 because she lay half out of the water on a rocky ledge. Never lost (found: null)."
-    },
-    {
-      "id": "wilhelm-gustloff",
-      "name": {
-        "en": "Wilhelm Gustloff",
-        "es": "Wilhelm Gustloff"
-      },
-      "lon": 17.42,
-      "lat": 55.07,
-      "depth_m": 45,
-      "year": 1945,
-      "found": null,
-      "era": "ww2",
-      "kind": "liner",
-      "place": {
-        "en": "Baltic Sea, off Łeba, Poland",
-        "es": "mar Báltico, frente a Łeba, Polonia"
-      },
-      "text": {
-        "en": "The German liner was packed with refugees, wounded soldiers and naval personnel fleeing the Soviet advance when the Soviet submarine S-13 hit her with three torpedoes on 30 January 1945. She sank in about an hour in icy water. Estimates of the dead range from about 5,000 to more than 9,000, which makes it probably the deadliest sinking of a single ship in history.",
-        "es": "El transatlántico alemán iba repleto de refugiados, soldados heridos y personal naval que huían del avance soviético cuando el submarino soviético S-13 lo alcanzó con tres torpedos el 30 de enero de 1945. Se hundió en aproximadamente una hora en aguas heladas. Las estimaciones de muertos van de unos 5 000 a más de 9 000, lo que lo convierte probablemente en el hundimiento de un solo barco más mortífero de la historia."
-      },
-      "src": "https://www.guinnessworldrecords.com/world-records/62795-highest-death-toll-from-a-single-ship-disaster-during-wartime",
-      "note": "War grave protected under Polish law; position approximate. Depth about 44 to 45 m from a single dive source. Guinness range 4,798 to about 9,400; Britannica about 9,000."
-    },
-    {
-      "id": "thistlegorm",
-      "name": {
-        "en": "SS Thistlegorm",
-        "es": "SS Thistlegorm"
-      },
-      "lon": 33.92,
-      "lat": 27.81,
-      "depth_m": 30,
-      "year": 1941,
-      "found": 1955,
-      "era": "ww2",
-      "kind": "merchant",
-      "place": {
-        "en": "Red Sea, Strait of Gubal, Egypt",
-        "es": "mar Rojo, estrecho de Gubal, Egipto"
-      },
-      "text": {
-        "en": "The British cargo ship was carrying lorries, motorcycles, ammunition and railway locomotives for the Allied army in North Africa when German bombers sank her at anchor on 6 October 1941; nine men died. Jacques Cousteau's team found her in 1955. Her holds still full of wartime vehicles at about 30 m, she is one of the world's most famous wreck dives.",
-        "es": "El carguero británico llevaba camiones, motocicletas, munición y locomotoras para el ejército aliado en el norte de África cuando bombarderos alemanes lo hundieron fondeado el 6 de octubre de 1941; murieron nueve hombres. El equipo de Jacques Cousteau lo encontró en 1955. Con sus bodegas todavía llenas de vehículos de la guerra, a unos 30 m, es uno de los buceos en naufragios más famosos del mundo."
-      },
-      "src": "https://www.scubadiving.com/history-red-sea-thistlegorm-shipwreck",
-      "note": "Sources are mainly diving press. Depth 16 to 32 m; Cousteau's find given as 1955 or the early 1950s."
-    },
-    {
-      "id": "batavia",
-      "name": {
-        "en": "Batavia",
-        "es": "Batavia"
-      },
-      "lon": 113.79,
-      "lat": -28.49,
-      "depth_m": 5,
-      "year": 1629,
-      "found": 1963,
-      "era": "sail",
-      "kind": "merchant",
-      "place": {
-        "en": "Morning Reef, Houtman Abrolhos, Western Australia",
-        "es": "arrecife Morning, islas Houtman Abrolhos, Australia Occidental"
-      },
-      "text": {
-        "en": "The Dutch East India Company ship ran onto Morning Reef on her maiden voyage on 4 June 1629. While the commander sailed to Java for help, mutineers led by Jeronimus Cornelisz murdered more than 100 of the survivors on the islands. A crayfisherman showed divers the wreck in 1963, and part of her stern is now shown in the Shipwreck Galleries in Fremantle.",
-        "es": "El barco de la Compañía Neerlandesa de las Indias Orientales chocó con el arrecife Morning en su viaje inaugural el 4 de junio de 1629. Mientras el comandante navegaba a Java en busca de ayuda, unos amotinados dirigidos por Jeronimus Cornelisz asesinaron a más de 100 de los sobrevivientes en las islas. Un pescador de langostas mostró el pecio a unos buzos en 1963, y parte de su popa se exhibe hoy en las Shipwreck Galleries de Fremantle."
-      },
-      "src": "https://museum.wa.gov.au/maritime-archaeology-db/wrecks/batavia",
-      "note": "Depth not given by the WA Museum; the reef site is shallow (a few metres). Murders given as 'more than 100', 125 or about 110 to 125."
-    },
-    {
-      "id": "hms-hood",
-      "name": {
-        "en": "HMS Hood",
-        "es": "HMS Hood"
-      },
-      "lon": -31.8,
-      "lat": 63.3,
-      "depth_m": 2800,
-      "year": 1941,
-      "found": 2001,
       "era": "ww2",
       "kind": "warship",
       "place": {
-        "en": "Denmark Strait, between Greenland and Iceland",
-        "es": "estrecho de Dinamarca, entre Groenlandia e Islandia"
+        "en": "Río de la Plata, off Montevideo, Uruguay",
+        "es": "Río de la Plata, frente a Montevideo, Uruguay"
       },
       "text": {
-        "en": "The Royal Navy's largest warship blew up within minutes of being hit by Bismarck on 24 May 1941, and only three of her 1,418 men survived. A team led by David Mearns found the wreck in July 2001 at about 2,800 m. She lies in three main pieces, and the exact cause of the explosion is still argued over.",
-        "es": "El mayor buque de guerra de la Marina Real británica explotó minutos después de ser alcanzado por el Bismarck el 24 de mayo de 1941, y solo tres de sus 1 418 hombres sobrevivieron. Un equipo dirigido por David Mearns encontró el pecio en julio de 2001 a unos 2 800 m. Está en tres grandes partes, y la causa exacta de la explosión todavía se discute."
+        "en": "After the Battle of the River Plate in December 1939, the damaged German pocket battleship took refuge in Montevideo. Rather than face the British ships he believed were waiting, Captain Hans Langsdorff had her scuttled outside the port on 17 December 1939. The wreck lies in shallow water a few kilometres off Montevideo; her rangefinder was raised in 2004 and her bronze eagle in 2006.",
+        "es": "Tras la batalla del Río de la Plata, en diciembre de 1939, el acorazado de bolsillo alemán, dañado, se refugió en Montevideo. En lugar de enfrentarse a los buques británicos que creía que lo esperaban, el capitán Hans Langsdorff lo hizo hundir fuera del puerto el 17 de diciembre de 1939. El pecio está en aguas poco profundas a pocos kilómetros de Montevideo; su telémetro se rescató en 2004 y su águila de bronce en 2006."
       },
-      "src": "https://www.britannica.com/topic/HMS-Hood",
-      "note": "War grave; position approximate. Depth given as about 2,800 to 2,850 m."
-    },
-    {
-      "id": "britannic",
-      "name": {
-        "en": "HMHS Britannic",
-        "es": "HMHS Britannic"
-      },
-      "lon": 24.28,
-      "lat": 37.7,
-      "depth_m": 120,
-      "year": 1916,
-      "found": 1975,
-      "era": "ww1",
-      "kind": "liner",
-      "place": {
-        "en": "Kea Channel, Aegean Sea, Greece",
-        "es": "canal de Kea, mar Egeo, Grecia"
-      },
-      "text": {
-        "en": "Titanic's younger sister was serving as a hospital ship when she struck a German mine near the island of Kea on 21 November 1916. She sank in about 55 minutes, and 30 of the roughly 1,066 people aboard died. The largest ship lost in the First World War, she was found by Jacques Cousteau in 1975 at about 120 m.",
-        "es": "La hermana menor del Titanic servía como buque hospital cuando chocó con una mina alemana cerca de la isla de Kea el 21 de noviembre de 1916. Se hundió en unos 55 minutos, y murieron 30 de las cerca de 1 066 personas a bordo. Fue el barco más grande perdido en la Primera Guerra Mundial, y Jacques Cousteau lo encontró en 1975 a unos 120 m."
-      },
-      "src": "https://divernet.com/scuba-news/wrecks/britannic-wreck-truth/",
-      "note": "Depth given as 119 to 122 m."
+      "src": "https://www.nbcnews.com/id/wbna4232336",
+      "note": "Site always known. Depth given as about 6 to 11 m. Position approximate."
     },
     {
       "id": "uss-monitor",
@@ -672,6 +720,78 @@
       "note": "Depth given as 14 to 30 ft (4 to 9 m) under several feet of sand. Position approximate (off Marconi Beach)."
     },
     {
+      "id": "queen-annes-revenge",
+      "name": {
+        "en": "Queen Anne's Revenge",
+        "es": "Queen Anne's Revenge"
+      },
+      "lon": -76.68,
+      "lat": 34.68,
+      "depth_m": 7,
+      "year": 1718,
+      "found": 1996,
+      "era": "sail",
+      "kind": "other",
+      "place": {
+        "en": "Beaufort Inlet, North Carolina, United States",
+        "es": "ensenada de Beaufort, Carolina del Norte, Estados Unidos"
+      },
+      "text": {
+        "en": "Blackbeard's flagship, a captured French slave ship, ran aground off Beaufort Inlet in June 1718 and was abandoned. A private research firm, Intersal, found the wreck in November 1996 in about 7 m of water. After years of study North Carolina confirmed her identity in 2011, and hundreds of thousands of objects, including many cannons, have been raised.",
+        "es": "El buque insignia de Barbanegra, un barco negrero francés capturado, encalló frente a la ensenada de Beaufort en junio de 1718 y fue abandonado. Una empresa privada de investigación, Intersal, encontró el pecio en noviembre de 1996 a unos 7 m de profundidad. Tras años de estudio, Carolina del Norte confirmó su identidad en 2011, y se han rescatado cientos de miles de objetos, entre ellos muchos cañones."
+      },
+      "src": "https://www.qaronline.org/history/discovery-shipwreck",
+      "note": "Depth given as 20 to 25 ft. Grounding sometimes dated May 1718. Position approximate."
+    },
+    {
+      "id": "batavia",
+      "name": {
+        "en": "Batavia",
+        "es": "Batavia"
+      },
+      "lon": 113.79,
+      "lat": -28.49,
+      "depth_m": 5,
+      "year": 1629,
+      "found": 1963,
+      "era": "sail",
+      "kind": "merchant",
+      "place": {
+        "en": "Morning Reef, Houtman Abrolhos, Western Australia",
+        "es": "arrecife Morning, islas Houtman Abrolhos, Australia Occidental"
+      },
+      "text": {
+        "en": "The Dutch East India Company ship ran onto Morning Reef on her maiden voyage on 4 June 1629. While the commander sailed to Java for help, mutineers led by Jeronimus Cornelisz murdered more than 100 of the survivors on the islands. A crayfisherman showed divers the wreck in 1963, and part of her stern is now shown in the Shipwreck Galleries in Fremantle.",
+        "es": "El barco de la Compañía Neerlandesa de las Indias Orientales chocó con el arrecife Morning en su viaje inaugural el 4 de junio de 1629. Mientras el comandante navegaba a Java en busca de ayuda, unos amotinados dirigidos por Jeronimus Cornelisz asesinaron a más de 100 de los sobrevivientes en las islas. Un pescador de langostas mostró el pecio a unos buzos en 1963, y parte de su popa se exhibe hoy en las Shipwreck Galleries de Fremantle."
+      },
+      "src": "https://museum.wa.gov.au/maritime-archaeology-db/wrecks/batavia",
+      "note": "Depth not given by the WA Museum; the reef site is shallow (a few metres). Murders given as 'more than 100', 125 or about 110 to 125."
+    },
+    {
+      "id": "thistlegorm",
+      "name": {
+        "en": "SS Thistlegorm",
+        "es": "SS Thistlegorm"
+      },
+      "lon": 33.92,
+      "lat": 27.81,
+      "depth_m": 30,
+      "year": 1941,
+      "found": 1955,
+      "era": "ww2",
+      "kind": "merchant",
+      "place": {
+        "en": "Red Sea, Strait of Gubal, Egypt",
+        "es": "mar Rojo, estrecho de Gubal, Egipto"
+      },
+      "text": {
+        "en": "The British cargo ship was carrying lorries, motorcycles, ammunition and railway locomotives for the Allied army in North Africa when German bombers sank her at anchor on 6 October 1941; nine men died. Jacques Cousteau's team found her in 1955. Her holds still full of wartime vehicles at about 30 m, she is one of the world's most famous wreck dives.",
+        "es": "El carguero británico llevaba camiones, motocicletas, munición y locomotoras para el ejército aliado en el norte de África cuando bombarderos alemanes lo hundieron fondeado el 6 de octubre de 1941; murieron nueve hombres. El equipo de Jacques Cousteau lo encontró en 1955. Con sus bodegas todavía llenas de vehículos de la guerra, a unos 30 m, es uno de los buceos en naufragios más famosos del mundo."
+      },
+      "src": "https://www.scubadiving.com/history-red-sea-thistlegorm-shipwreck",
+      "note": "Sources are mainly diving press. Depth 16 to 32 m; Cousteau's find given as 1955 or the early 1950s."
+    },
+    {
       "id": "uluburun",
       "name": {
         "en": "Uluburun shipwreck",
@@ -696,6 +816,78 @@
       "note": "Dated about 1320 to 1305 BC; year rounded. depth_m is a mid value for a site spread from 44 to 61 m."
     },
     {
+      "id": "empress-of-ireland",
+      "name": {
+        "en": "RMS Empress of Ireland",
+        "es": "RMS Empress of Ireland"
+      },
+      "lon": -68.41,
+      "lat": 48.62,
+      "depth_m": 45,
+      "year": 1914,
+      "found": null,
+      "era": "steam",
+      "kind": "liner",
+      "place": {
+        "en": "St Lawrence River, off Pointe-au-Père, Quebec, Canada",
+        "es": "río San Lorenzo, frente a Pointe-au-Père, Quebec, Canadá"
+      },
+      "text": {
+        "en": "The Canadian Pacific liner sank in about 14 minutes after the Norwegian collier Storstad rammed her in fog in the St Lawrence on 29 May 1914. Of the 1,477 people aboard, 1,012 died, the worst disaster at sea in Canada's history. The wreck lies 8 km offshore at about 45 m and is a national historic site of Canada.",
+        "es": "El transatlántico de la Canadian Pacific se hundió en unos 14 minutos después de que el carbonero noruego Storstad lo embistiera entre la niebla en el San Lorenzo, el 29 de mayo de 1914. De las 1 477 personas a bordo murieron 1 012, el peor desastre marítimo de la historia de Canadá. El pecio está a 8 km de la costa, a unos 45 m, y es sitio histórico nacional de Canadá."
+      },
+      "src": "https://www.pc.gc.ca/apps/dfhd/page_nhs_eng.aspx?id=12391",
+      "note": "Site known from the start (salvaged in 1914). Some sources give 40 m; the 1914 inquiry gave 1,014 dead. Lost before the First World War began, so era is steam."
+    },
+    {
+      "id": "central-america",
+      "name": {
+        "en": "SS Central America",
+        "es": "SS Central America"
+      },
+      "lon": -77.0,
+      "lat": 31.6,
+      "depth_m": 2200,
+      "year": 1857,
+      "found": 1988,
+      "era": "steam",
+      "kind": "liner",
+      "place": {
+        "en": "Atlantic, about 260 km off South Carolina, United States",
+        "es": "Atlántico, a unos 260 km de Carolina del Sur, Estados Unidos"
+      },
+      "text": {
+        "en": "The side-wheel steamer, carrying passengers and tonnes of California gold from Panama to New York, sank in a hurricane on 12 September 1857; 425 of the 578 people aboard died. The loss of the gold helped to set off the financial Panic of 1857. Tommy Thompson's team found her on 11 September 1988 at about 2,200 m and brought up the gold with a remotely operated vehicle.",
+        "es": "El vapor de ruedas laterales, que llevaba pasajeros y toneladas de oro de California de Panamá a Nueva York, se hundió en un huracán el 12 de septiembre de 1857; murieron 425 de las 578 personas a bordo. La pérdida del oro ayudó a desatar el pánico financiero de 1857. El equipo de Tommy Thompson lo encontró el 11 de septiembre de 1988 a unos 2 200 m y sacó el oro con un vehículo submarino operado a distancia."
+      },
+      "src": "https://www.nationalgeographic.com/history/article/shipwreck-ss-central-america-panic-1857",
+      "note": "Position approximate (about 160 miles off South Carolina). Gold given as about 15 tons (30,000 lb)."
+    },
+    {
+      "id": "estonia",
+      "name": {
+        "en": "MS Estonia",
+        "es": "MS Estonia"
+      },
+      "lon": 21.68,
+      "lat": 59.38,
+      "depth_m": 80,
+      "year": 1994,
+      "found": 1994,
+      "era": "modern",
+      "kind": "other",
+      "place": {
+        "en": "Baltic Sea, about 35 km south-east of Utö, Finland",
+        "es": "mar Báltico, a unos 35 km al sureste de Utö, Finlandia"
+      },
+      "text": {
+        "en": "The passenger ferry from Tallinn to Stockholm sank in a storm on the night of 28 September 1994, after her bow visor tore off and water flooded the car deck. Of the 989 people aboard, 852 died. The wreck, at about 80 m, is protected as a grave by Estonia, Finland and Sweden, and diving on it is banned.",
+        "es": "El ferri de pasajeros de Tallin a Estocolmo se hundió en una tormenta la noche del 28 de septiembre de 1994, después de que se arrancara su visera de proa y el agua inundara la cubierta de autos. De las 989 personas a bordo murieron 852. El pecio, a unos 80 m, está protegido como tumba por Estonia, Finlandia y Suecia, y está prohibido bucear en él."
+      },
+      "src": "https://estonia.shk.se/en/ship",
+      "note": "Depth 74 to 85 m along the hull. Position approximate."
+    },
+    {
       "id": "kronan",
       "name": {
         "en": "Kronan",
@@ -718,6 +910,678 @@
       },
       "src": "https://en.oland.se/regalskeppet-kronan-en-stormaktstidens-skatt-i-kalmarsund",
       "note": "About 6 km east of Hulterstad; position approximate."
+    },
+    {
+      "id": "hms-victory-1744",
+      "name": {
+        "en": "HMS Victory (1744)",
+        "es": "HMS Victory (1744)"
+      },
+      "lon": -3.7,
+      "lat": 49.7,
+      "depth_m": 75,
+      "year": 1744,
+      "found": 2008,
+      "era": "sail",
+      "kind": "warship",
+      "place": {
+        "en": "Western English Channel",
+        "es": "occidente del canal de la Mancha"
+      },
+      "text": {
+        "en": "One of the mightiest warships of her day, this earlier Victory was lost with Admiral Sir John Balchin and about 1,100 men in a storm on 5 October 1744. For centuries she was thought to have struck the Casquets rocks near Alderney. Odyssey Marine Exploration found her in 2008 more than 100 km to the west, at about 75 m, with dozens of bronze cannons.",
+        "es": "Uno de los buques de guerra más poderosos de su tiempo, este Victory anterior al de Nelson se perdió con el almirante Sir John Balchin y unos 1 100 hombres en una tormenta el 5 de octubre de 1744. Durante siglos se creyó que había chocado con las rocas Casquets, cerca de Alderney. Odyssey Marine Exploration lo encontró en 2008 a más de 100 km al oeste, a unos 75 m, con decenas de cañones de bronce."
+      },
+      "src": "http://www.victory1744.org/discovery.html",
+      "note": "Position approximate (about 100 km west of the Casquets). Odyssey gives about 75 m (2013 paper) and about 100 m (2009 report). 41 bronze cannon recorded."
+    },
+    {
+      "id": "mars",
+      "name": {
+        "en": "Mars",
+        "es": "Mars"
+      },
+      "lon": 17.3,
+      "lat": 57.5,
+      "depth_m": 75,
+      "year": 1564,
+      "found": 2011,
+      "era": "sail",
+      "kind": "warship",
+      "place": {
+        "en": "Baltic Sea, north-east of Öland, Sweden",
+        "es": "mar Báltico, al noreste de Öland, Suecia"
+      },
+      "text": {
+        "en": "The Swedish flagship Mars, one of the largest ships of her time, caught fire and blew up in a battle with a Danish and Lübeck fleet on 31 May 1564. Some 800 to 900 men died. Divers from Ocean Discovery found her in 2011 at about 75 m, and because shipworm cannot live in the brackish Baltic, much of her hull and many bronze guns survive.",
+        "es": "El buque insignia sueco Mars, uno de los barcos más grandes de su época, se incendió y explotó en una batalla contra una flota danesa y de Lübeck el 31 de mayo de 1564. Murieron entre 800 y 900 hombres. Buzos de Ocean Discovery lo encontraron en 2011 a unos 75 m, y como la broma, el molusco que devora la madera, no vive en las aguas salobres del Báltico, se conservan gran parte del casco y muchos cañones de bronce."
+      },
+      "src": "https://www.vrak.se/en/wrecks-and-remains/mars/",
+      "note": "Position approximate (about 12 nautical miles north-east of Öland's northern tip). Depth 70 to 75 m."
+    },
+    {
+      "id": "black-sea-ship",
+      "name": {
+        "en": "Black Sea Greek ship",
+        "es": "Barco griego del mar Negro"
+      },
+      "lon": 28.5,
+      "lat": 42.4,
+      "depth_m": 2000,
+      "year": -400,
+      "found": 2018,
+      "era": "ancient",
+      "kind": "ancient",
+      "place": {
+        "en": "Black Sea, about 80 km off Burgas, Bulgaria",
+        "es": "mar Negro, a unos 80 km de Burgas, Bulgaria"
+      },
+      "text": {
+        "en": "A Greek trading ship sank in the Black Sea around 400 BC and settled more than 2 km down. Below about 150 m the Black Sea has no oxygen, so creatures that eat wood cannot live there, and she still has her mast, rudders and rowing benches. The Black Sea Maritime Archaeology Project announced her in 2018 as the oldest intact shipwreck known.",
+        "es": "Un barco mercante griego se hundió en el mar Negro hacia el año 400 a. C. y quedó a más de 2 km de profundidad. Por debajo de unos 150 m el mar Negro no tiene oxígeno, así que no pueden vivir allí los animales que comen madera, y todavía conserva su mástil, sus timones y sus bancos de remeros. El Proyecto de Arqueología Marítima del Mar Negro lo presentó en 2018 como el naufragio intacto más antiguo conocido."
+      },
+      "src": "https://www.southampton.ac.uk/news/2018/10/oldest-intact-shipwreck-found.page",
+      "note": "Position approximate. Found during the 2015 to 2017 surveys and announced in October 2018 (found set to the announcement year). Radiocarbon dated to at least 2,400 years old."
+    },
+    {
+      "id": "esmeralda",
+      "name": {
+        "en": "Esmeralda",
+        "es": "Esmeralda"
+      },
+      "lon": -70.16,
+      "lat": -20.2,
+      "depth_m": 40,
+      "year": 1879,
+      "found": null,
+      "era": "steam",
+      "kind": "warship",
+      "place": {
+        "en": "Bay of Iquique, Chile",
+        "es": "bahía de Iquique, Chile"
+      },
+      "text": {
+        "en": "In the Battle of Iquique on 21 May 1879, during the War of the Pacific, the old Chilean corvette fought the Peruvian ironclad Huáscar for hours until she was rammed and sunk. Her captain, Arturo Prat, died leading a boarding attack and became Chile's great naval hero. The wreck lies at about 40 m off Iquique and has been a national monument since 1973.",
+        "es": "En el combate naval de Iquique, el 21 de mayo de 1879, durante la guerra del Pacífico, la vieja corbeta chilena combatió durante horas contra el monitor peruano Huáscar hasta que fue embestida y hundida. Su capitán, Arturo Prat, murió al encabezar un abordaje y se convirtió en el gran héroe naval de Chile. El pecio está a unos 40 m frente a Iquique y es monumento nacional desde 1973."
+      },
+      "src": "https://www.armada.cl/noticias-navales/armada-recuperara-restos-de-la-gloriosa-corbeta-esmeralda",
+      "note": "Site always known (marked by a buoy). Depth given as 36 to 42.5 m."
+    },
+    {
+      "id": "mercedes",
+      "name": {
+        "en": "Nuestra Señora de las Mercedes",
+        "es": "Nuestra Señora de las Mercedes"
+      },
+      "lon": -7.9,
+      "lat": 36.5,
+      "depth_m": 1100,
+      "year": 1804,
+      "found": 2007,
+      "era": "sail",
+      "kind": "warship",
+      "place": {
+        "en": "Atlantic, off the Algarve, Portugal",
+        "es": "Atlántico, frente al Algarve, Portugal"
+      },
+      "text": {
+        "en": "The Spanish frigate was carrying silver and gold coins from South America when a British squadron attacked her off Cape Santa Maria on 5 October 1804; her magazine exploded and about 250 people died. In 2007 the US company Odyssey Marine Exploration took about 17 tonnes of coins from the wreck, at about 1,100 m. After a five-year court case the treasure went back to Spain in 2012 and is now in the National Museum of Underwater Archaeology in Cartagena.",
+        "es": "La fragata española llevaba monedas de plata y oro de América del Sur cuando una escuadra británica la atacó frente al cabo de Santa María el 5 de octubre de 1804; su santabárbara explotó y murieron unas 250 personas. En 2007 la empresa estadounidense Odyssey Marine Exploration sacó unas 17 toneladas de monedas del pecio, a unos 1 100 m. Tras un juicio de cinco años, el tesoro volvió a España en 2012 y hoy está en el Museo Nacional de Arqueología Subacuática, en Cartagena."
+      },
+      "src": "https://www.cultura.gob.es/fragatamercedes/en/litigio/regreso-bienes-culturales.html",
+      "note": "Position approximate (reported about 30 nautical miles south of the Algarve). Depth given as 1,000 to 1,138 m. Deaths given as about 200 to 275."
+    },
+    {
+      "id": "uss-lexington",
+      "name": {
+        "en": "USS Lexington",
+        "es": "USS Lexington"
+      },
+      "lon": 155.6,
+      "lat": -15.3,
+      "depth_m": 3000,
+      "year": 1942,
+      "found": 2018,
+      "era": "ww2",
+      "kind": "warship",
+      "place": {
+        "en": "Coral Sea, off Queensland, Australia",
+        "es": "mar del Coral, frente a Queensland, Australia"
+      },
+      "text": {
+        "en": "The aircraft carrier was badly damaged by Japanese torpedoes and bombs in the Battle of the Coral Sea, the first battle between aircraft carriers, and was scuttled by a US destroyer on 8 May 1942; 216 of her crew died. Paul Allen's research ship Petrel found her on 4 March 2018 at about 3,000 m, more than 800 km off Australia. Several of her aircraft lie nearby on the seabed.",
+        "es": "El portaaviones quedó muy dañado por torpedos y bombas japoneses en la batalla del mar del Coral, la primera entre portaaviones, y fue hundido por un destructor estadounidense el 8 de mayo de 1942; murieron 216 de sus tripulantes. El barco de investigación Petrel, de Paul Allen, lo encontró el 4 de marzo de 2018 a unos 3 000 m, a más de 800 km de Australia. Varios de sus aviones están cerca, en el fondo marino."
+      },
+      "src": "https://news.usni.org/2018/03/05/video-billionaire-paul-allen-finds-lost-world-war-ii-carrier-uss-lexington",
+      "note": "War grave; position approximate. NHHC gives 430 nautical miles off Queensland; press releases say more than 500 miles."
+    },
+    {
+      "id": "hmas-sydney",
+      "name": {
+        "en": "HMAS Sydney",
+        "es": "HMAS Sydney"
+      },
+      "lon": 111.2,
+      "lat": -26.2,
+      "depth_m": 2468,
+      "year": 1941,
+      "found": 2008,
+      "era": "ww2",
+      "kind": "warship",
+      "place": {
+        "en": "Indian Ocean, west of Shark Bay, Western Australia",
+        "es": "océano Índico, al oeste de bahía Shark, Australia Occidental"
+      },
+      "text": {
+        "en": "The Australian cruiser and the disguised German raider Kormoran sank each other in a battle off Western Australia on 19 November 1941. All 645 men on Sydney died, while most of Kormoran's crew survived. After 66 years of mystery, the Finding Sydney Foundation found Kormoran on 12 March 2008 and Sydney four days later, at about 2,500 m.",
+        "es": "El crucero australiano y el corsario alemán disfrazado Kormoran se hundieron mutuamente en un combate frente a Australia Occidental el 19 de noviembre de 1941. Murieron los 645 hombres del Sydney, mientras que la mayor parte de la tripulación del Kormoran sobrevivió. Tras 66 años de misterio, la Finding Sydney Foundation encontró el Kormoran el 12 de marzo de 2008 y el Sydney cuatro días después, a unos 2 500 m."
+      },
+      "src": "https://museum.wa.gov.au/explore/sydney/history-hmas-sydney-ii/finding-hmas-sydney-ii",
+      "note": "War grave; position approximate. Depth reported as 2,468 m; debris field 2,220 to 2,480 m."
+    },
+    {
+      "id": "kyrenia",
+      "name": {
+        "en": "Kyrenia ship",
+        "es": "Barco de Kyrenia"
+      },
+      "lon": 33.32,
+      "lat": 35.35,
+      "depth_m": 30,
+      "year": -300,
+      "found": 1965,
+      "era": "ancient",
+      "kind": "ancient",
+      "place": {
+        "en": "Off Kyrenia, Cyprus (now in Kyrenia Castle)",
+        "es": "frente a Kyrenia, Chipre (hoy en el castillo de Kyrenia)"
+      },
+      "text": {
+        "en": "A small Greek merchant ship sank off the north coast of Cyprus in the late 4th century BC with a cargo of wine jars and almonds. A local diver, Andreas Cariolou, found her in 1965 at about 30 m. A University of Pennsylvania Museum team raised her hull piece by piece in 1968 and 1969, and it is now shown in Kyrenia Castle.",
+        "es": "Un pequeño barco mercante griego se hundió frente a la costa norte de Chipre a fines del siglo IV a. C. con un cargamento de ánforas de vino y almendras. Un buzo de la zona, Andreas Cariolou, lo encontró en 1965 a unos 30 m. Un equipo del Museo de la Universidad de Pensilvania reflotó el casco pieza por pieza en 1968 y 1969, y hoy se exhibe en el castillo de Kyrenia."
+      },
+      "src": "https://www.penn.museum/sites/expedition/the-kyrenia-shipwreck/",
+      "note": "Raised. Depth given as about 27 m (90 ft, Penn Museum) to 33 m. Year rounded (late 4th century BC). Position approximate."
+    },
+    {
+      "id": "mahdia",
+      "name": {
+        "en": "Mahdia shipwreck",
+        "es": "Naufragio de Mahdia"
+      },
+      "lon": 11.1,
+      "lat": 35.5,
+      "depth_m": 40,
+      "year": -70,
+      "found": 1907,
+      "era": "ancient",
+      "kind": "ancient",
+      "place": {
+        "en": "Off Mahdia, Tunisia",
+        "es": "frente a Mahdia, Túnez"
+      },
+      "text": {
+        "en": "A large ship carrying Greek marble columns, bronze and marble statues and fine furniture was blown off course and sank off the African coast in the early 1st century BC, probably on its way from Athens to Italy. Sponge divers found it in June 1907 at about 40 m, and salvage went on until 1913. Many of its treasures are now in the Bardo Museum in Tunis.",
+        "es": "Un gran barco que llevaba columnas griegas de mármol, estatuas de bronce y mármol y muebles finos se desvió en una tormenta y se hundió frente a la costa africana a comienzos del siglo I a. C., probablemente camino de Atenas a Italia. Unos buzos de esponjas lo encontraron en junio de 1907 a unos 40 m, y el rescate duró hasta 1913. Muchos de sus tesoros están hoy en el Museo del Bardo, en Túnez."
+      },
+      "src": "https://oxrep.classics.ox.ac.uk/databases/sites/tunisia/mahdia/2516_mahdia/",
+      "note": "Dated about 80 to 60 BC, or late 2nd to early 1st century BC. Depth 36 to 40 m. Position approximate."
+    },
+    {
+      "id": "gribshunden",
+      "name": {
+        "en": "Gribshunden",
+        "es": "Gribshunden"
+      },
+      "lon": 15.3,
+      "lat": 56.16,
+      "depth_m": 10,
+      "year": 1495,
+      "found": 1971,
+      "era": "sail",
+      "kind": "warship",
+      "place": {
+        "en": "Off Stora Ekön, near Ronneby, Sweden",
+        "es": "frente a Stora Ekön, cerca de Ronneby, Suecia"
+      },
+      "text": {
+        "en": "The flagship of King Hans of Denmark and Norway caught fire and sank in 1495 while at anchor off Ronneby, on the way to a meeting in Kalmar. Local sport divers found her in 1971 at about 10 m, and tree-ring dating confirmed her identity in 2013. She is one of the best-preserved ships from the time of Columbus, and her carved sea-monster figurehead was raised in 2015.",
+        "es": "El buque insignia del rey Hans de Dinamarca y Noruega se incendió y se hundió en 1495 mientras estaba fondeado frente a Ronneby, camino a una reunión en Kalmar. Unos buzos deportivos de la zona lo encontraron en 1971 a unos 10 m, y la datación por anillos de los árboles confirmó su identidad en 2013. Es uno de los barcos mejor conservados de la época de Colón, y su mascarón de proa en forma de monstruo marino se rescató en 2015."
+      },
+      "src": "https://www.cec.lu.se/research/ongoing-research-projects/focus-hanobukten/gribshunden-shipwreck",
+      "note": "Cause given as fire or a gunpowder explosion. Identification dated 2002 by some sources and 2013 (dendrochronology) by others. Figurehead raised 2015 (thehistoryblog, 2015)."
+    },
+    {
+      "id": "amsterdam",
+      "name": {
+        "en": "Amsterdam",
+        "es": "Amsterdam"
+      },
+      "lon": 0.53,
+      "lat": 50.85,
+      "depth_m": 0,
+      "year": 1749,
+      "found": 1969,
+      "era": "sail",
+      "kind": "merchant",
+      "place": {
+        "en": "Bulverhythe beach, Hastings, England",
+        "es": "playa de Bulverhythe, Hastings, Inglaterra"
+      },
+      "text": {
+        "en": "The Dutch East India Company ship lost her rudder in a storm on her maiden voyage and ran aground near Hastings on 26 January 1749. She sank deep into the soft clay and sand, which preserved much of her hull. Rediscovered at a low spring tide in 1969, her timbers can still be seen on the beach at the lowest tides.",
+        "es": "El barco de la Compañía Neerlandesa de las Indias Orientales perdió el timón en una tormenta en su viaje inaugural y encalló cerca de Hastings el 26 de enero de 1749. Se hundió en la arcilla y la arena blandas, que conservaron gran parte del casco. Redescubierto con una marea viva muy baja en 1969, sus maderas todavía se ven en la playa en las mareas más bajas."
+      },
+      "src": "https://historicengland.org.uk/listing/the-list/list-entry/1000055",
+      "note": "Beached wreck; depth 0. Protected wreck since 1974."
+    },
+    {
+      "id": "la-belle",
+      "name": {
+        "en": "La Belle",
+        "es": "La Belle"
+      },
+      "lon": -96.4,
+      "lat": 28.6,
+      "depth_m": 4,
+      "year": 1686,
+      "found": 1995,
+      "era": "sail",
+      "kind": "explorer",
+      "place": {
+        "en": "Matagorda Bay, Texas, United States (now in the Bullock Museum, Austin)",
+        "es": "bahía de Matagorda, Texas, Estados Unidos (hoy en el Museo Bullock, Austin)"
+      },
+      "text": {
+        "en": "La Belle carried settlers and supplies for René-Robert Cavelier de La Salle, who hoped to found a French colony at the mouth of the Mississippi but landed in Texas instead. She sank in a storm in Matagorda Bay in 1686. Texas archaeologists found her in 1995 in about 4 m of water, pumped the site dry inside a cofferdam to dig her out, and her rebuilt hull is now in the Bullock Texas State History Museum.",
+        "es": "La Belle llevaba colonos y provisiones para René-Robert Cavelier de La Salle, que quería fundar una colonia francesa en la desembocadura del Misisipi pero desembarcó en Texas. Se hundió en una tormenta en la bahía de Matagorda en 1686. Arqueólogos de Texas la encontraron en 1995 a unos 4 m de profundidad, vaciaron el agua del sitio con una ataguía para excavarla en seco, y su casco reconstruido está hoy en el Museo de Historia del Estado de Texas Bullock."
+      },
+      "src": "https://thc.texas.gov/learn/archeological-spotlight/la-salle-archeology-projects",
+      "note": "Raised. Depth given as 12 to 13 ft (about 4 m); one source says 20 ft. Position approximate."
+    },
+    {
+      "id": "nanhai-one",
+      "name": {
+        "en": "Nanhai One",
+        "es": "Nanhai I"
+      },
+      "lon": 111.7,
+      "lat": 21.5,
+      "depth_m": 24,
+      "year": 1183,
+      "found": 1987,
+      "era": "sail",
+      "kind": "merchant",
+      "place": {
+        "en": "South China Sea, off Yangjiang, Guangdong, China (now in the Maritime Silk Road Museum)",
+        "es": "mar de China Meridional, frente a Yangjiang, Cantón, China (hoy en el Museo de la Ruta Marítima de la Seda)"
+      },
+      "text": {
+        "en": "This Chinese merchant ship sank in the late 12th century, during the Southern Song dynasty, loaded mostly with porcelain for markets overseas. Found by chance in 1987, she was lifted whole inside a giant steel box in 2007, a world first. She was excavated in a glass hall at the Maritime Silk Road Museum on Hailing Island, and about 180,000 objects have come out of her.",
+        "es": "Este barco mercante chino se hundió a fines del siglo XII, durante la dinastía Song del Sur, cargado sobre todo con porcelana para mercados de ultramar. Encontrado por casualidad en 1987, fue izado entero dentro de una enorme caja de acero en 2007, algo nunca hecho antes. Se excavó en una sala de vidrio del Museo de la Ruta Marítima de la Seda, en la isla de Hailing, y de él han salido unos 180 000 objetos."
+      },
+      "src": "https://epress.nus.edu.sg/sitereports/samis/content/6.%20Nanhai-One/",
+      "note": "Raised whole. Year: a jar inscription dated 1183 places the voyage in or after the early 1180s. Depth given as 20 to 25 m. Position approximate."
+    },
+    {
+      "id": "belitung",
+      "name": {
+        "en": "Belitung shipwreck",
+        "es": "Naufragio de Belitung"
+      },
+      "lon": 107.6,
+      "lat": -2.6,
+      "depth_m": 17,
+      "year": 830,
+      "found": 1998,
+      "era": "sail",
+      "kind": "merchant",
+      "place": {
+        "en": "Java Sea, off Belitung, Indonesia",
+        "es": "mar de Java, frente a Belitung, Indonesia"
+      },
+      "text": {
+        "en": "An Arab-style ship, its planks sewn together with coconut-fibre rope, sank off Belitung around 830 with about 60,000 pieces of Tang dynasty Chinese pottery and gold and silver. Sea-cucumber divers found it in 1998 in about 17 m of water. It shows that ships sailed directly between China and the Middle East in the 9th century, but its fast commercial salvage was widely criticised.",
+        "es": "Un barco de tipo árabe, con las tablas cosidas con cuerda de fibra de coco, se hundió frente a Belitung hacia el año 830 con unas 60 000 piezas de cerámica china de la dinastía Tang, además de oro y plata. Unos buzos que buscaban pepinos de mar lo encontraron en 1998 a unos 17 m de profundidad. Muestra que en el siglo IX había barcos que navegaban directamente entre China y Oriente Medio, pero su rápido rescate comercial fue muy criticado."
+      },
+      "src": "https://traffickingculture.org/encyclopedia/case-studies/biletung-shipwreck/",
+      "note": "Dated about 826 to 830; position approximate (off the north-west coast of Belitung)."
+    },
+    {
+      "id": "sinan",
+      "name": {
+        "en": "Sinan shipwreck",
+        "es": "Naufragio de Sinan"
+      },
+      "lon": 126.1,
+      "lat": 35.05,
+      "depth_m": 20,
+      "year": 1323,
+      "found": 1975,
+      "era": "sail",
+      "kind": "merchant",
+      "place": {
+        "en": "Off Jeungdo, Sinan County, South Korea",
+        "es": "frente a Jeungdo, condado de Sinan, Corea del Sur"
+      },
+      "text": {
+        "en": "This large Chinese trading ship left Ningbo for Hakata in Japan in 1323 but sank off south-west Korea. In 1975 a fisherman pulled Chinese pottery up in his net. From 1976 to 1984 divers raised more than 20,000 ceramics and the hull, working at about 20 m in strong currents and almost no visibility, and they are now in Mokpo and Seoul.",
+        "es": "Este gran barco mercante chino zarpó de Ningbo hacia Hakata, en Japón, en 1323, pero se hundió frente al suroeste de Corea. En 1975 un pescador sacó cerámica china en su red. Entre 1976 y 1984 los buzos rescataron más de 20 000 piezas de cerámica y el casco, trabajando a unos 20 m con fuertes corrientes y casi sin visibilidad, y hoy están en Mokpo y Seúl."
+      },
+      "src": "https://www.ijkaa.org/v.5/0/105/102",
+      "note": "Raised. Depth given as 20 to 25 m. Position approximate."
+    },
+    {
+      "id": "takashima-mongol-fleet",
+      "name": {
+        "en": "Mongol fleet at Takashima",
+        "es": "Flota mongola de Takashima"
+      },
+      "lon": 129.77,
+      "lat": 33.35,
+      "depth_m": 20,
+      "year": 1281,
+      "found": 2011,
+      "era": "sail",
+      "kind": "warship",
+      "place": {
+        "en": "Off Takashima, Matsuura, Nagasaki, Japan",
+        "es": "frente a Takashima, Matsuura, Nagasaki, Japón"
+      },
+      "text": {
+        "en": "In 1281 Kublai Khan's second invasion fleet, thousands of ships carrying Mongol, Chinese and Korean troops, was wrecked by a typhoon off Takashima; the Japanese called it kamikaze, the divine wind. Archaeologists have found weapons, anchors and pottery here for decades. In 2011 a team led by Yoshifumi Ikeda found a long section of a ship's hull at about 20 to 25 m, and more wrecks have been found since.",
+        "es": "En 1281 la segunda flota de invasión de Kublai Kan, miles de barcos con tropas mongolas, chinas y coreanas, fue destruida por un tifón frente a Takashima; los japoneses lo llamaron kamikaze, el viento divino. Desde hace décadas los arqueólogos encuentran aquí armas, anclas y cerámica. En 2011 un equipo dirigido por Yoshifumi Ikeda encontró un largo tramo del casco de un barco a unos 20 a 25 m, y desde entonces se han hallado más naufragios."
+      },
+      "src": "https://www.nippon.com/en/japan-topics/c13704/",
+      "note": "Found is the year of the first near-complete hull (2011). Later wrecks reported at about 18 to 19 m. Position approximate."
+    },
+    {
+      "id": "uss-saratoga",
+      "name": {
+        "en": "USS Saratoga",
+        "es": "USS Saratoga"
+      },
+      "lon": 165.51,
+      "lat": 11.58,
+      "depth_m": 50,
+      "year": 1946,
+      "found": null,
+      "era": "modern",
+      "kind": "warship",
+      "place": {
+        "en": "Bikini Atoll lagoon, Marshall Islands",
+        "es": "laguna del atolón Bikini, Islas Marshall"
+      },
+      "text": {
+        "en": "The US aircraft carrier survived the Second World War, only to be used as a target in the Operation Crossroads atomic tests at Bikini Atoll. The underwater Baker blast on 25 July 1946 sank her. She sits upright at about 50 m in the lagoon, part of the Bikini Atoll Nuclear Test Site, a UNESCO World Heritage Site.",
+        "es": "El portaaviones estadounidense sobrevivió a la Segunda Guerra Mundial, pero fue usado como blanco en las pruebas atómicas de la Operación Crossroads en el atolón Bikini. La explosión submarina Baker, el 25 de julio de 1946, lo hundió. Está erguido a unos 50 m en la laguna, dentro del Sitio de Pruebas Nucleares del Atolón Bikini, Patrimonio Mundial de la UNESCO."
+      },
+      "src": "https://whc.unesco.org/en/list/1339/",
+      "note": "Site always known. Depth 51 to 54 m to the seabed. Bikini Atoll Nuclear Test Site inscribed 2010."
+    },
+    {
+      "id": "president-coolidge",
+      "name": {
+        "en": "SS President Coolidge",
+        "es": "SS President Coolidge"
+      },
+      "lon": 167.22,
+      "lat": -15.52,
+      "depth_m": 70,
+      "year": 1942,
+      "found": null,
+      "era": "ww2",
+      "kind": "liner",
+      "place": {
+        "en": "Segond Channel, Luganville, Espiritu Santo, Vanuatu",
+        "es": "canal Segond, Luganville, Espíritu Santo, Vanuatu"
+      },
+      "text": {
+        "en": "The American liner, serving as a troopship, struck American mines while entering the harbour at Espiritu Santo on 26 October 1942. Her captain ran her aground, and almost all of the more than 5,000 men aboard got ashore; two died. She slid down the slope and now lies from about 20 to 70 m, one of the largest wrecks that recreational divers can explore.",
+        "es": "El transatlántico estadounidense, que servía como transporte de tropas, chocó con minas estadounidenses al entrar en el puerto de Espíritu Santo el 26 de octubre de 1942. Su capitán lo hizo encallar, y casi todos los más de 5 000 hombres a bordo llegaron a tierra; murieron dos. Se deslizó por la pendiente y hoy yace entre unos 20 y 70 m, uno de los naufragios más grandes que pueden recorrer los buceadores recreativos."
+      },
+      "src": "https://whc.unesco.org/en/tentativelists/1972/",
+      "note": "Site always known. depth_m is the deep (stern) end; bow at about 20 m. On Vanuatu's UNESCO Tentative List."
+    },
+    {
+      "id": "fujikawa-maru",
+      "name": {
+        "en": "Fujikawa Maru",
+        "es": "Fujikawa Maru"
+      },
+      "lon": 151.89,
+      "lat": 7.35,
+      "depth_m": 34,
+      "year": 1944,
+      "found": null,
+      "era": "ww2",
+      "kind": "merchant",
+      "place": {
+        "en": "Chuuk Lagoon (Truk), Federated States of Micronesia",
+        "es": "laguna de Chuuk (Truk), Estados Federados de Micronesia"
+      },
+      "text": {
+        "en": "This Japanese aircraft transport was one of dozens of ships sunk at the Japanese base in Chuuk Lagoon during the US air raids of 17 and 18 February 1944, known as Operation Hailstone. She sits upright at about 34 m, with parts of Zero fighters still in her holds. The sunken fleet of Chuuk Lagoon is one of the world's great wreck-diving sites.",
+        "es": "Este transporte de aviones japonés fue uno de las decenas de barcos hundidos en la base japonesa de la laguna de Chuuk durante los ataques aéreos estadounidenses del 17 y 18 de febrero de 1944, conocidos como Operación Hailstone. Está erguido a unos 34 m, con partes de cazas Zero todavía en sus bodegas. La flota hundida de la laguna de Chuuk es uno de los grandes sitios de buceo en naufragios del mundo."
+      },
+      "src": "https://www.truk-lagoon.com/Fujikawa_History.html",
+      "note": "Sources are mainly diving guides. Depth 33 to 37 m. Number of aircraft in the holds varies by source. Position approximate."
+    },
+    {
+      "id": "birkenhead",
+      "name": {
+        "en": "HMS Birkenhead",
+        "es": "HMS Birkenhead"
+      },
+      "lon": 19.29,
+      "lat": -34.64,
+      "depth_m": 30,
+      "year": 1852,
+      "found": null,
+      "era": "steam",
+      "kind": "warship",
+      "place": {
+        "en": "Danger Point, near Gansbaai, South Africa",
+        "es": "punta Danger, cerca de Gansbaai, Sudáfrica"
+      },
+      "text": {
+        "en": "The British iron troopship struck a rock off Danger Point early on 26 February 1852 and broke up within minutes. The soldiers stood in ranks on deck while the women and children were put into the few boats, and all of them survived; about 445 men died. The Birkenhead drill made women and children first a rule of the sea.",
+        "es": "El transporte de tropas británico de hierro chocó con una roca frente a punta Danger en la madrugada del 26 de febrero de 1852 y se partió en pocos minutos. Los soldados se mantuvieron en formación en cubierta mientras las mujeres y los niños subían a los pocos botes, y todos ellos sobrevivieron; murieron unos 445 hombres. El simulacro del Birkenhead convirtió en regla del mar la frase primero las mujeres y los niños."
+      },
+      "src": "https://capeinfo.com/more/myths-legends-a-old-folks-stories/the-wreck-of-hm-steamer-qbirkenheadq-26-feb-1852",
+      "note": "Site always known. Depth about 30 m not confirmed (one source says 35 m on the west side of the rock). Deaths given as 445 to about 455."
+    },
+    {
+      "id": "mendi",
+      "name": {
+        "en": "SS Mendi",
+        "es": "SS Mendi"
+      },
+      "lon": -1.4,
+      "lat": 50.45,
+      "depth_m": 37,
+      "year": 1917,
+      "found": 1974,
+      "era": "ww1",
+      "kind": "other",
+      "place": {
+        "en": "English Channel, south-west of the Isle of Wight, England",
+        "es": "canal de la Mancha, al suroeste de la isla de Wight, Inglaterra"
+      },
+      "text": {
+        "en": "The troopship was carrying men of the South African Native Labour Corps to France when the much larger steamer Darro rammed her in fog on 21 February 1917. She sank within minutes, and about 646 people died, most of them Black South African volunteers. A local diver found the wreck in 1974 at about 37 m, and the sinking is remembered every year in South Africa.",
+        "es": "El transporte de tropas llevaba a Francia a hombres del Cuerpo Sudafricano de Trabajo Nativo cuando el vapor Darro, mucho más grande, lo embistió entre la niebla el 21 de febrero de 1917. Se hundió en pocos minutos y murieron unas 646 personas, la mayoría voluntarios sudafricanos negros. Un buzo de la zona encontró el pecio en 1974 a unos 37 m, y el hundimiento se recuerda cada año en Sudáfrica."
+      },
+      "src": "https://historicengland.org.uk/research/current/discover-and-understand/military/first-world-war-home-front/sea/ssmendi/",
+      "note": "About 11 nautical miles south-west of St Catherine's Point; position approximate. Depth 35 to 40 m (Wessex Archaeology). Protected Place under the Protection of Military Remains Act."
+    },
+    {
+      "id": "sao-jose-paquete-de-africa",
+      "name": {
+        "en": "São José Paquete de África",
+        "es": "São José Paquete de África"
+      },
+      "lon": 18.38,
+      "lat": -33.94,
+      "depth_m": 5,
+      "year": 1794,
+      "found": 2015,
+      "era": "sail",
+      "kind": "merchant",
+      "place": {
+        "en": "Off Clifton, Cape Town, South Africa",
+        "es": "frente a Clifton, Ciudad del Cabo, Sudáfrica"
+      },
+      "text": {
+        "en": "The Portuguese slave ship was carrying more than 400 enslaved people from Mozambique to Brazil when she broke up on rocks off Cape Town on 27 December 1794; more than 200 of them died. Divers found the wreck in the 1980s but took it for another ship. In 2015 the Slave Wrecks Project announced its identity: the first archaeological record of a ship lost with enslaved Africans aboard.",
+        "es": "El barco negrero portugués llevaba a más de 400 personas esclavizadas de Mozambique a Brasil cuando se despedazó contra las rocas frente a Ciudad del Cabo el 27 de diciembre de 1794; más de 200 de ellas murieron. Unos buzos encontraron el pecio en la década de 1980, pero lo confundieron con otro barco. En 2015 el Proyecto de Naufragios de Barcos Negreros anunció su identidad: el primer registro arqueológico de un barco perdido con africanos esclavizados a bordo."
+      },
+      "src": "https://slavery.iziko.org.za/2015/07/23/sao-jose-paquete-de-africa/",
+      "note": "Found set to the identification year (2015); first located by divers in the 1980s. Depth not published; the site is shallow, close to the rocks about 100 m offshore. Captives given as 512 or more than 400; deaths 212 or more than 200."
+    },
+    {
+      "id": "bom-jesus",
+      "name": {
+        "en": "Bom Jesus",
+        "es": "Bom Jesus"
+      },
+      "lon": 16.3,
+      "lat": -28.5,
+      "depth_m": 0,
+      "year": 1533,
+      "found": 2008,
+      "era": "sail",
+      "kind": "merchant",
+      "place": {
+        "en": "Diamond mining area near Oranjemund, Namibia",
+        "es": "zona de minas de diamantes cerca de Oranjemund, Namibia"
+      },
+      "text": {
+        "en": "The Portuguese ship was carrying gold coins, copper ingots and ivory for the spice trade in India when she was lost off the Namib coast in 1533. In 2008 geologists in a diamond mine near Oranjemund, where the sea had been held back behind sand walls, found her remains in the sand. With about 2,000 gold coins and tonnes of copper, she is one of the oldest and richest shipwrecks found in Africa.",
+        "es": "El barco portugués llevaba monedas de oro, lingotes de cobre y marfil para el comercio de especias en la India cuando se perdió frente a la costa del Namib en 1533. En 2008 unos geólogos de una mina de diamantes cerca de Oranjemund, donde el mar se había contenido tras muros de arena, encontraron sus restos en la arena. Con unas 2 000 monedas de oro y toneladas de cobre, es uno de los naufragios más antiguos y ricos hallados en África."
+      },
+      "src": "https://www.prm.ox.ac.uk/the-shipwreck-in-a-diamond-mine-analysing-the-ivory-cargo-of-a-16th-century-portuguese-merchant-ship",
+      "note": "Found on land inside a sea-walled mining area; depth 0. Copper given as about 17 to 22 tonnes. Position approximate."
+    },
+    {
+      "id": "la-perouse",
+      "name": {
+        "en": "Boussole and Astrolabe",
+        "es": "Boussole y Astrolabe"
+      },
+      "lon": 166.85,
+      "lat": -11.62,
+      "depth_m": 5,
+      "year": 1788,
+      "found": 1827,
+      "era": "sail",
+      "kind": "explorer",
+      "place": {
+        "en": "Reefs of Vanikoro, Solomon Islands",
+        "es": "arrecifes de Vanikoro, Islas Salomón"
+      },
+      "text": {
+        "en": "The French explorer Jean-François de La Pérouse sailed around the Pacific with two ships, Boussole and Astrolabe, until both vanished in 1788. In 1827 Peter Dillon found their remains on the reefs of Vanikoro, and Jules Verne later sent Captain Nemo there in Twenty Thousand Leagues Under the Seas. Divers have studied the wrecks since the 1950s, and a sextant found in 2005 helped tell the two ships apart.",
+        "es": "El explorador francés Jean-François de La Pérouse recorrió el Pacífico con dos barcos, Boussole y Astrolabe, hasta que ambos desaparecieron en 1788. En 1827 Peter Dillon encontró sus restos en los arrecifes de Vanikoro, y más tarde Julio Verne llevó allí al capitán Nemo en Veinte mil leguas de viaje submarino. Los buzos estudian los pecios desde la década de 1950, y un sextante hallado en 2005 ayudó a distinguir los dos barcos."
+      },
+      "src": "http://collections.anmm.gov.au/objects/33024",
+      "note": "Position approximate (Vanikoro reefs). Depth: a few metres (3 to 4 fathoms in Dumont d'Urville's account); not confirmed for both sites. Found: Dillon learned of the site at Tikopia in 1826 and reached Vanikoro in 1827."
+    },
+    {
+      "id": "hms-investigator",
+      "name": {
+        "en": "HMS Investigator",
+        "es": "HMS Investigator"
+      },
+      "lon": -118.1,
+      "lat": 74.1,
+      "depth_m": 11,
+      "year": 1853,
+      "found": 2010,
+      "era": "sail",
+      "kind": "explorer",
+      "place": {
+        "en": "Mercy Bay, Banks Island, Northwest Territories, Canada",
+        "es": "bahía Mercy, isla Banks, Territorios del Noroeste, Canadá"
+      },
+      "text": {
+        "en": "HMS Investigator sailed in 1850 to search for Franklin's lost expedition and was trapped in the ice of Mercy Bay for more than two years. Her crew, rescued in 1853, became the first to complete the Northwest Passage, partly on foot over the ice. Parks Canada found the ship in July 2010, upright in about 11 m of water.",
+        "es": "El HMS Investigator zarpó en 1850 para buscar la expedición perdida de Franklin y quedó atrapado en el hielo de la bahía Mercy durante más de dos años. Su tripulación, rescatada en 1853, fue la primera en completar el paso del Noroeste, en parte a pie sobre el hielo. Parks Canada encontró el barco en julio de 2010, erguido a unos 11 m de profundidad."
+      },
+      "src": "https://archive.archaeology.org/1101/topten/canada.html",
+      "note": "Abandoned 1853; sinking date unknown. Depth about 11 m (upper deck about 8 m). Position approximate."
+    },
+    {
+      "id": "quest",
+      "name": {
+        "en": "Quest",
+        "es": "Quest"
+      },
+      "lon": -55.3,
+      "lat": 52.3,
+      "depth_m": 390,
+      "year": 1962,
+      "found": 2024,
+      "era": "modern",
+      "kind": "explorer",
+      "place": {
+        "en": "Labrador Sea, off Battle Harbour, Canada",
+        "es": "mar de Labrador, frente a Battle Harbour, Canadá"
+      },
+      "text": {
+        "en": "Quest carried Ernest Shackleton's last expedition, and he died aboard her at South Georgia in January 1922. She later became a Norwegian sealing ship and sank off Labrador on 5 May 1962 after ice holed her hull; all of her crew survived. The Royal Canadian Geographical Society found her on 9 June 2024 at 390 m, upright and largely intact.",
+        "es": "El Quest llevó la última expedición de Ernest Shackleton, que murió a bordo en Georgia del Sur en enero de 1922. Más tarde fue un barco foquero noruego y se hundió frente a Labrador el 5 de mayo de 1962 después de que el hielo le abriera el casco; toda su tripulación sobrevivió. La Real Sociedad Geográfica Canadiense lo encontró el 9 de junio de 2024 a 390 m, erguido y casi intacto."
+      },
+      "src": "https://rcgs.org/about/news-releases/rcgs-finds-wreck-of-quest/",
+      "note": "Position approximate (east of Battle Harbour; distance offshore reported differently by outlets)."
+    },
+    {
+      "id": "scharnhorst",
+      "name": {
+        "en": "SMS Scharnhorst",
+        "es": "SMS Scharnhorst"
+      },
+      "lon": -56.0,
+      "lat": -52.8,
+      "depth_m": 1610,
+      "year": 1914,
+      "found": 2019,
+      "era": "ww1",
+      "kind": "warship",
+      "place": {
+        "en": "South Atlantic, about 180 km south-east of Stanley, Falkland Islands",
+        "es": "Atlántico Sur, a unos 180 km al sureste de Stanley, islas Malvinas (Falkland)"
+      },
+      "text": {
+        "en": "The flagship of Admiral Maximilian von Spee's East Asia Squadron was sunk by British battlecruisers at the Battle of the Falkland Islands on 8 December 1914, with von Spee and all of her crew. After a failed search in 2014 and 2015, the Falklands Maritime Heritage Trust found her in December 2019 at 1,610 m. The same trust went on to find Shackleton's Endurance in 2022.",
+        "es": "El buque insignia de la Escuadra de Asia Oriental del almirante Maximilian von Spee fue hundido por cruceros de batalla británicos en la batalla de las islas Malvinas (Falkland), el 8 de diciembre de 1914, con von Spee y toda su tripulación. Tras una búsqueda fallida en 2014 y 2015, el Falklands Maritime Heritage Trust lo encontró en diciembre de 2019 a 1 610 m. El mismo fondo encontró después el Endurance de Shackleton, en 2022."
+      },
+      "src": "https://www.prnewswire.com/news-releases/the-falklands-maritime-heritage-trust-discovery-of-ww1-german-battlecruiser-sms-scharnhorst-300969316.html",
+      "note": "War grave; position approximate (98 nautical miles south-east of Stanley). Crew about 800 to 860."
+    },
+    {
+      "id": "ara-san-juan",
+      "name": {
+        "en": "ARA San Juan",
+        "es": "ARA San Juan"
+      },
+      "lon": -59.8,
+      "lat": -45.9,
+      "depth_m": 907,
+      "year": 2017,
+      "found": 2018,
+      "era": "modern",
+      "kind": "submarine",
+      "place": {
+        "en": "South Atlantic, about 600 km east of Comodoro Rivadavia, Argentina",
+        "es": "Atlántico Sur, a unos 600 km al este de Comodoro Rivadavia, Argentina"
+      },
+      "text": {
+        "en": "The Argentine Navy submarine vanished in the South Atlantic on 15 November 2017 with all 44 crew, soon after reporting a fault in her batteries. A huge international search found nothing for a year. On 17 November 2018 the company Ocean Infinity found her broken hull in a seabed ravine at about 900 m.",
+        "es": "El submarino de la Armada Argentina desapareció en el Atlántico Sur el 15 de noviembre de 2017 con sus 44 tripulantes, poco después de informar una falla en sus baterías. Una enorme búsqueda internacional no encontró nada durante un año. El 17 de noviembre de 2018 la empresa Ocean Infinity halló su casco destrozado en una quebrada del fondo marino, a unos 900 m."
+      },
+      "src": "https://oceaninfinity.com/news/ocean-infinity-locates-the-missing-argentinian-submarine-ara-san-juan/",
+      "note": "Depth 907 m (Argentine Navy) or 920 m (Ocean Infinity). Position approximate."
     }
   ]
 }

@@ -61,6 +61,7 @@ const deep = read(path.join(CUR, 'deep.json'));
 if (deep) {
   for (const z of deep.zones) for (const k of ['name', 'light', 'temp', 'life', 'fact']) t2(z[k], `zone ${z.id}.${k}`);
   for (const mk of deep.markers) { t2(mk.name, `marker ${mk.id}.name`); t2(mk.text, `marker ${mk.id}.text`); if (mk.lon != null) at(mk.lon, mk.lat, `marker ${mk.id}`); }
+  deep.vents ??= []; deep.markers ??= [];
   for (const v of deep.vents) { t2(v.name, `vent ${v.id}.name`); t2(v.text, `vent ${v.id}.text`); at(v.lon, v.lat, `vent ${v.id}`); }
   write('deep.json', {
     zones: deep.zones.map(({ id, top_m, bottom_m, name, light, temp, life, fact }) => ({ id, top_m, bottom_m, name, light, temp, life, fact })),

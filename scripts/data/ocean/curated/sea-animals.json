@@ -1,0 +1,844 @@
+{
+  "src_note": "Curated for the 'Dive from here' column. depth = documented range in metres below the surface from the cited source (src, with src_more where a second source supplies a figure); usual = the typical depth given by the source, or, where the source gives none, a round figure inside the documented range (the middle of the range, or the depth where most sightings are reported). lat = approximate south and north limits of the species' range (from FishBase/SeaLifeBase where they give one, otherwise from the cited distribution). oceans uses the five world oceans; seas marks the Mediterranean, Caribbean and Red Sea where the animal lives there. record = holder of a depth record a reader would want marked. Wikipedia/Wikidata were not used.",
+  "animals": [
+    {
+      "id": "cuvier-beaked-whale",
+      "e": "🐋",
+      "name": {
+        "en": "Cuvier's beaked whale",
+        "es": "Ballena picuda de Cuvier"
+      },
+      "sci": "Ziphius cavirostris",
+      "group": "mammal",
+      "depth": [
+        0,
+        2992
+      ],
+      "usual": 1400,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -55,
+        60
+      ],
+      "text": {
+        "en": "Holds the deepest dive measured for any mammal: 2,992 m, off southern California. Its feeding dives average about 1,400 m, and one lasted 137.5 minutes.",
+        "es": "Tiene el récord de la inmersión más profunda medida en un mamífero: 2 992 m, frente al sur de California. Sus inmersiones para comer rondan los 1 400 m y una duró 137,5 minutos."
+      },
+      "src": "https://doi.org/10.1371/journal.pone.0092633",
+      "record": true
+    },
+    {
+      "id": "sperm-whale",
+      "e": "🐋",
+      "name": {
+        "en": "Sperm whale",
+        "es": "Cachalote"
+      },
+      "sci": "Physeter macrocephalus",
+      "group": "mammal",
+      "depth": [
+        0,
+        2250
+      ],
+      "usual": 1000,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "seas": [
+        "mediterranean",
+        "caribbean"
+      ],
+      "lat": [
+        -70,
+        70
+      ],
+      "text": {
+        "en": "The largest toothed whale regularly dives to about 1,000 m to hunt deep-sea squid, and can go beyond 2,200 m when it needs to.",
+        "es": "La ballena dentada más grande baja con frecuencia a unos 1 000 m para cazar calamares de las profundidades y puede superar los 2 200 m cuando lo necesita."
+      },
+      "src": "https://www.csiro.au/en/news/all/articles/2023/april/deepest-diving-animals"
+    },
+    {
+      "id": "emperor-penguin",
+      "e": "🐧",
+      "name": {
+        "en": "Emperor penguin",
+        "es": "Pingüino emperador"
+      },
+      "sci": "Aptenodytes forsteri",
+      "group": "bird",
+      "depth": [
+        0,
+        565
+      ],
+      "usual": 150,
+      "oceans": [
+        "southern"
+      ],
+      "lat": [
+        -78,
+        -64
+      ],
+      "text": {
+        "en": "The deepest-diving bird. Most of its dives reach 100 to 200 m, but one penguin went down to 565 m, and two dives lasted 22 minutes.",
+        "es": "El ave que bucea a mayor profundidad. La mayoría de sus inmersiones llegan a entre 100 y 200 m, pero un pingüino bajó a 565 m y dos inmersiones duraron 22 minutos."
+      },
+      "src": "https://www.antarctica.gov.au/about-antarctica/animals/penguins/emperor-penguin/how-deep-can-they-dive/",
+      "record": true
+    },
+    {
+      "id": "izu-ogasawara-snailfish",
+      "e": "🐟",
+      "name": {
+        "en": "Izu-Ogasawara snailfish",
+        "es": "Pez caracol de Izu-Ogasawara"
+      },
+      "sci": "Pseudoliparis sp.",
+      "group": "fish",
+      "depth": [
+        7500,
+        8336
+      ],
+      "usual": 7850,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        24,
+        35
+      ],
+      "text": {
+        "en": "The deepest fish ever filmed: a tiny juvenile snailfish seen by a baited camera at 8,336 m in the Izu-Ogasawara Trench, south of Japan, in 2022.",
+        "es": "El pez más profundo jamás filmado: un pequeño pez caracol juvenil captado por una cámara con cebo a 8 336 m en la fosa de Izu-Ogasawara, al sur de Japón, en 2022."
+      },
+      "src": "https://www.uwa.edu.au/news/article/2023/april/scientists-break-new-record-after-finding-worlds-deepest-fish",
+      "record": true
+    },
+    {
+      "id": "japan-trench-snailfish",
+      "e": "🐟",
+      "name": {
+        "en": "Japan Trench snailfish",
+        "es": "Pez caracol de la fosa de Japón"
+      },
+      "sci": "Pseudoliparis belyaevi",
+      "group": "fish",
+      "depth": [
+        6380,
+        8022
+      ],
+      "usual": 7700,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        36,
+        41
+      ],
+      "text": {
+        "en": "In 2022 two were caught in traps at 8,022 m in the Japan Trench, the first fish ever collected from deeper than 8,000 m.",
+        "es": "En 2022 se atraparon dos en trampas a 8 022 m en la fosa de Japón, los primeros peces recogidos a más de 8 000 m de profundidad."
+      },
+      "src": "https://www.uwa.edu.au/news/article/2023/april/scientists-break-new-record-after-finding-worlds-deepest-fish",
+      "src_more": [
+        "https://www.fishbase.se/summary/Pseudoliparis-belyaevi.html"
+      ],
+      "record": true
+    },
+    {
+      "id": "mariana-snailfish",
+      "e": "🐟",
+      "name": {
+        "en": "Mariana snailfish",
+        "es": "Pez caracol de las Marianas"
+      },
+      "sci": "Pseudoliparis swirei",
+      "group": "fish",
+      "depth": [
+        6198,
+        8178
+      ],
+      "usual": 7500,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        11,
+        24
+      ],
+      "text": {
+        "en": "Gathers at baits between 7,000 and 8,000 m in the Mariana Trench to eat swarms of amphipods. None has been seen below about 8,200 m, thought to be the limit for bony fish.",
+        "es": "Se reúne junto a los cebos entre 7 000 y 8 000 m en la fosa de las Marianas para comer enjambres de anfípodos. Nunca se ha visto uno por debajo de unos 8 200 m, que sería el límite para los peces óseos."
+      },
+      "src": "https://www.fishbase.se/summary/Pseudoliparis-swirei.html"
+    },
+    {
+      "id": "bigfin-squid",
+      "e": "🦑",
+      "name": {
+        "en": "Bigfin squid",
+        "es": "Calamar de aletas grandes"
+      },
+      "sci": "Magnapinna spp.",
+      "group": "cephalopod",
+      "depth": [
+        1600,
+        6212
+      ],
+      "usual": 3000,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -50,
+        50
+      ],
+      "text": {
+        "en": "Its arms and tentacles end in sticky, thread-like filaments up to 20 times its body length. One seen at 6,212 m in the Philippine Trench is the deepest squid on record.",
+        "es": "Sus brazos y tentáculos terminan en filamentos pegajosos como hilos de hasta 20 veces el largo de su cuerpo. Uno visto a 6 212 m en la fosa de Filipinas es el calamar más profundo registrado."
+      },
+      "src": "https://www.mbari.org/animal/bigfin-squid/",
+      "record": true
+    },
+    {
+      "id": "vampire-squid",
+      "e": "🦑",
+      "name": {
+        "en": "Vampire squid",
+        "es": "Calamar vampiro"
+      },
+      "sci": "Vampyroteuthis infernalis",
+      "group": "cephalopod",
+      "depth": [
+        600,
+        900
+      ],
+      "usual": 750,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -35,
+        44
+      ],
+      "text": {
+        "en": "Neither vampire nor squid, it drifts in the oxygen minimum zone eating marine snow caught on two sticky filaments. When threatened it turns its webbed arms inside out and its arm tips glow blue.",
+        "es": "No es vampiro ni calamar: flota en la zona de mínimo oxígeno y come nieve marina que atrapa con dos filamentos pegajosos. Si lo amenazan, voltea sus brazos palmeados y las puntas de sus brazos brillan en azul."
+      },
+      "src": "https://www.mbari.org/animal/vampire-squid/"
+    },
+    {
+      "id": "barreleye",
+      "e": "🐟",
+      "name": {
+        "en": "Barreleye",
+        "es": "Pez de cabeza transparente"
+      },
+      "sci": "Macropinna microstoma",
+      "group": "fish",
+      "depth": [
+        460,
+        800
+      ],
+      "usual": 600,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        21,
+        66
+      ],
+      "text": {
+        "en": "Its tubular, green-lensed eyes sit inside a transparent head and rotate to look up for the silhouettes of prey, then forward to eat.",
+        "es": "Sus ojos tubulares, de lentes verdes, están dentro de una cabeza transparente y giran para buscar arriba las siluetas de sus presas y luego mirar hacia adelante para comer."
+      },
+      "src": "https://www.mbari.org/animal/barreleye-fish/"
+    },
+    {
+      "id": "sea-pig",
+      "e": "🐷",
+      "name": {
+        "en": "Sea pig",
+        "es": "Cerdo de mar"
+      },
+      "sci": "Scotoplanes sp.",
+      "group": "echinoderm",
+      "depth": [
+        1000,
+        6000
+      ],
+      "usual": 4000,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -70,
+        60
+      ],
+      "text": {
+        "en": "A see-through sea cucumber that walks on stilt-like tube feet across abyssal mud, snuffling up fresh detritus. Large groups gather to feed at sunken whale carcasses.",
+        "es": "Un pepino de mar translúcido que camina sobre patas tubulares como zancos por el lodo abisal, buscando detritos frescos. Grandes grupos se reúnen a comer junto a cadáveres de ballenas hundidos."
+      },
+      "src": "https://www.mbari.org/animal/sea-pig/"
+    },
+    {
+      "id": "harp-sponge",
+      "e": "🧽",
+      "name": {
+        "en": "Harp sponge",
+        "es": "Esponja arpa"
+      },
+      "sci": "Chondrocladia lyra",
+      "group": "sponge",
+      "depth": [
+        3300,
+        3500
+      ],
+      "usual": 3400,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        30,
+        45
+      ],
+      "text": {
+        "en": "A meat-eating sponge: tiny hooks on its harp-shaped branches snare small crustaceans. It was discovered in 2012 off northern California.",
+        "es": "Una esponja carnívora: pequeños ganchos en sus ramas con forma de arpa atrapan crustáceos diminutos. Se descubrió en 2012 frente al norte de California."
+      },
+      "src": "https://www.mbari.org/animal/harp-sponge/"
+    },
+    {
+      "id": "pearl-octopus",
+      "e": "🐙",
+      "name": {
+        "en": "Pearl octopus",
+        "es": "Pulpo perla"
+      },
+      "sci": "Muusoctopus robustus",
+      "group": "cephalopod",
+      "depth": [
+        1200,
+        3900
+      ],
+      "usual": 3200,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        23,
+        46
+      ],
+      "text": {
+        "en": "Mothers brood their eggs at warm springs on Davidson Seamount off California, the largest known gathering of octopuses on Earth. The warm water speeds up the embryos' growth.",
+        "es": "Las madres incuban sus huevos junto a manantiales tibios en el monte submarino Davidson, frente a California, la mayor agrupación de pulpos conocida. El agua tibia acelera el desarrollo de los embriones."
+      },
+      "src": "https://www.mbari.org/animal/pearl-octopus/"
+    },
+    {
+      "id": "giant-tube-worm",
+      "e": "🪱",
+      "name": {
+        "en": "Giant tube worm",
+        "es": "Gusano tubícola gigante"
+      },
+      "sci": "Riftia pachyptila",
+      "group": "worm",
+      "depth": [
+        1900,
+        3600
+      ],
+      "usual": 2500,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        -20,
+        28
+      ],
+      "text": {
+        "en": "The world's heaviest worm does not eat: bacteria living inside its body turn sulfur from hot vent water into energy for it. Its red gills look like plumes about 30 cm long.",
+        "es": "El gusano más pesado del mundo no come: bacterias que viven dentro de su cuerpo convierten el azufre del agua de las fuentes hidrotermales en energía para él. Sus branquias rojas parecen plumas de unos 30 cm."
+      },
+      "src": "https://www.mbari.org/animal/giant-tubeworm/"
+    },
+    {
+      "id": "pompeii-worm",
+      "e": "🪱",
+      "name": {
+        "en": "Pompeii worm",
+        "es": "Gusano de Pompeya"
+      },
+      "sci": "Alvinella pompejana",
+      "group": "worm",
+      "depth": [
+        1500,
+        3500
+      ],
+      "usual": 2500,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        -50,
+        27
+      ],
+      "text": {
+        "en": "Lives in paper-thin tubes on hydrothermal vent chimneys whose base can reach 105 °C. A fleece-like coat of bacteria helps insulate it from the heat.",
+        "es": "Vive en tubos finos como papel sobre chimeneas hidrotermales cuya base puede llegar a 105 °C. Una capa de bacterias, como un vellón, lo ayuda a aislarse del calor."
+      },
+      "src": "https://www.mbari.org/animal/pompeii-worm/"
+    },
+    {
+      "id": "strawberry-squid",
+      "e": "🦑",
+      "name": {
+        "en": "Strawberry squid",
+        "es": "Calamar fresa"
+      },
+      "sci": "Histioteuthis heteropsis",
+      "group": "cephalopod",
+      "depth": [
+        200,
+        1000
+      ],
+      "usual": 600,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        -35,
+        45
+      ],
+      "text": {
+        "en": "Has one big eye that looks up for the silhouettes of prey and one small eye that looks down for flashes of light. By day it stays at 200 to 1,000 m and it rises at night.",
+        "es": "Tiene un ojo grande que mira hacia arriba en busca de siluetas de presas y un ojo pequeño que mira hacia abajo para detectar destellos. De día está entre 200 y 1 000 m y de noche sube."
+      },
+      "src": "https://www.mbari.org/animal/strawberry-squid/"
+    },
+    {
+      "id": "deep-sea-crown-jelly",
+      "e": "🪼",
+      "name": {
+        "en": "Deep-sea crown jelly",
+        "es": "Medusa corona de las profundidades"
+      },
+      "sci": "Atolla spp.",
+      "group": "cnidarian",
+      "depth": [
+        500,
+        5000
+      ],
+      "usual": 1600,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -70,
+        70
+      ],
+      "text": {
+        "en": "When attacked it sets off pinwheels of blue light, a burglar alarm that can draw in bigger predators and scare its attacker away.",
+        "es": "Cuando la atacan, lanza remolinos de luz azul, una alarma antirrobo que puede atraer a depredadores más grandes y ahuyentar a su atacante."
+      },
+      "src": "https://www.mbari.org/animal/deep-sea-crown-jelly/"
+    },
+    {
+      "id": "big-red-jelly",
+      "e": "🪼",
+      "name": {
+        "en": "Big red jelly",
+        "es": "Gran medusa roja"
+      },
+      "sci": "Tiburonia granrojo",
+      "group": "cnidarian",
+      "depth": [
+        600,
+        2100
+      ],
+      "usual": 1100,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        19,
+        40
+      ],
+      "text": {
+        "en": "A crimson jelly about a metre across that has thick, finger-like arms instead of tentacles. Something this big stayed unknown to science until the 1990s.",
+        "es": "Una medusa carmesí de cerca de un metro de diámetro, con brazos gruesos como dedos en lugar de tentáculos. Algo tan grande fue desconocido para la ciencia hasta la década de 1990."
+      },
+      "src": "https://www.mbari.org/animal/big-red-jelly/"
+    },
+    {
+      "id": "fangtooth",
+      "e": "🐟",
+      "name": {
+        "en": "Fangtooth",
+        "es": "Pez colmillo"
+      },
+      "sci": "Anoplogaster cornuta",
+      "group": "fish",
+      "depth": [
+        500,
+        2100
+      ],
+      "usual": 1000,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -46,
+        65
+      ],
+      "text": {
+        "en": "A small, fierce-looking ambush hunter with a gaping mouth. Its eyesight is thought to be poor, so it senses prey through a lateral line that feels the slightest movement.",
+        "es": "Un pequeño cazador al acecho, de aspecto feroz y boca enorme. Se cree que ve mal, así que detecta a sus presas con la línea lateral, que siente el más mínimo movimiento."
+      },
+      "src": "https://www.mbari.org/animal/fangtooth/"
+    },
+    {
+      "id": "ghost-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Ghost shark (ratfish)",
+        "es": "Quimera o tiburón fantasma"
+      },
+      "sci": "Hydrolagus spp.",
+      "group": "fish",
+      "depth": [
+        30,
+        3000
+      ],
+      "usual": 300,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -50,
+        60
+      ],
+      "text": {
+        "en": "Not a true shark but an ancient cousin of sharks and rays. It senses the electrical signals of animals buried in the mud and carries a venomous spine on its back.",
+        "es": "No es un tiburón verdadero, sino un antiguo pariente de tiburones y rayas. Percibe las señales eléctricas de animales enterrados en el lodo y lleva una espina venenosa en el lomo."
+      },
+      "src": "https://www.mbari.org/animal/ghost-shark/"
+    },
+    {
+      "id": "giant-phantom-jelly",
+      "e": "🪼",
+      "name": {
+        "en": "Giant phantom jelly",
+        "es": "Medusa fantasma gigante"
+      },
+      "sci": "Stygiomedusa gigantea",
+      "group": "cnidarian",
+      "depth": [
+        0,
+        6700
+      ],
+      "usual": 1000,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -70,
+        60
+      ],
+      "text": {
+        "en": "Its bell is more than a metre wide and its four ribbon-like arms can grow beyond 10 m. MBARI's robots have seen it only nine times in thousands of dives.",
+        "es": "Su campana mide más de un metro y sus cuatro brazos como cintas pueden pasar de 10 m. Los robots del MBARI solo la han visto nueve veces en miles de inmersiones."
+      },
+      "src": "https://www.mbari.org/animal/giant-phantom-jelly/"
+    },
+    {
+      "id": "giant-sea-spider",
+      "e": "🕷️",
+      "name": {
+        "en": "Giant sea spider",
+        "es": "Araña de mar gigante"
+      },
+      "sci": "Colossendeis sp.",
+      "group": "other",
+      "depth": [
+        2200,
+        4000
+      ],
+      "usual": 3000,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -75,
+        70
+      ],
+      "text": {
+        "en": "Can grow wider than a dinner plate. It spins no web: it stalks the seafloor on stilt-like legs and sucks the juices out of anemones with a tube-shaped proboscis.",
+        "es": "Puede ser más ancha que un plato. No teje telarañas: recorre el fondo sobre patas como zancos y sorbe los jugos de las anémonas con una probóscide en forma de tubo."
+      },
+      "src": "https://www.mbari.org/animal/giant-sea-spider/"
+    },
+    {
+      "id": "glass-squid",
+      "e": "🦑",
+      "name": {
+        "en": "Glass squid",
+        "es": "Calamar de cristal"
+      },
+      "sci": "Cranchiidae",
+      "group": "cephalopod",
+      "depth": [
+        0,
+        2000
+      ],
+      "usual": 500,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -60,
+        60
+      ],
+      "text": {
+        "en": "Almost see-through, it hides from predators and prey alike. Small light organs mask the shadow of its eyes, and a body cavity full of ammonium keeps it afloat.",
+        "es": "Casi transparente, se oculta de depredadores y presas por igual. Pequeños órganos de luz disimulan la sombra de sus ojos y una cavidad llena de amonio lo mantiene a flote."
+      },
+      "src": "https://www.mbari.org/animal/glass-squid/"
+    },
+    {
+      "id": "pacific-viperfish",
+      "e": "🐟",
+      "name": {
+        "en": "Pacific viperfish",
+        "es": "Pez víbora del Pacífico"
+      },
+      "sci": "Chauliodus macouni",
+      "group": "fish",
+      "depth": [
+        200,
+        1500
+      ],
+      "usual": 550,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        23,
+        66
+      ],
+      "text": {
+        "en": "Its needle-like front fangs jut up past its own eyes, and its jaws open wide enough to engulf prey. Each night it migrates up towards the surface to feed.",
+        "es": "Sus colmillos delanteros, como agujas, sobresalen más allá de sus propios ojos, y sus mandíbulas se abren lo bastante para engullir a sus presas. Cada noche sube hacia la superficie para comer."
+      },
+      "src": "https://www.mbari.org/animal/pacific-viperfish/"
+    },
+    {
+      "id": "seven-arm-octopus",
+      "e": "🐙",
+      "name": {
+        "en": "Seven-arm octopus",
+        "es": "Pulpo de siete brazos"
+      },
+      "sci": "Haliphron atlanticus",
+      "group": "cephalopod",
+      "depth": [
+        0,
+        1200
+      ],
+      "usual": 500,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -50,
+        60
+      ],
+      "text": {
+        "en": "A rarely seen giant: females can weigh 75 kg. It eats jellies, and males keep one arm tucked away under an eye, so it seems to have only seven.",
+        "es": "Un gigante que rara vez se ve: las hembras pueden pesar 75 kg. Come medusas, y los machos guardan un brazo plegado bajo un ojo, por eso parece tener solo siete."
+      },
+      "src": "https://www.mbari.org/animal/seven-arm-octopus/"
+    },
+    {
+      "id": "octopus-squid",
+      "e": "🦑",
+      "name": {
+        "en": "Octopus squid",
+        "es": "Calamar pulpo"
+      },
+      "sci": "Octopoteuthis deletron",
+      "group": "cephalopod",
+      "depth": [
+        300,
+        1000
+      ],
+      "usual": 550,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        23,
+        48
+      ],
+      "text": {
+        "en": "Adults lose their two feeding tentacles and keep eight arms. When attacked it can drop its glowing arm tips as a decoy, like a lizard shedding its tail.",
+        "es": "Los adultos pierden sus dos tentáculos de caza y se quedan con ocho brazos. Si lo atacan, puede soltar las puntas luminosas de sus brazos como señuelo, igual que una lagartija suelta la cola."
+      },
+      "src": "https://www.mbari.org/animal/octopus-squid/"
+    },
+    {
+      "id": "whalefish",
+      "e": "🐟",
+      "name": {
+        "en": "Whalefish",
+        "es": "Pez ballena"
+      },
+      "sci": "Cetomimidae",
+      "group": "fish",
+      "depth": [
+        1500,
+        3500
+      ],
+      "usual": 2300,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -50,
+        50
+      ],
+      "text": {
+        "en": "Its tiny eyes have no lenses and cannot form images. Instead it feels for prey with large sensory pores along its head and body.",
+        "es": "Sus ojos diminutos no tienen cristalino y no forman imágenes. En cambio, detecta a sus presas con grandes poros sensoriales en la cabeza y el cuerpo."
+      },
+      "src": "https://www.mbari.org/animal/whalefish/"
+    },
+    {
+      "id": "bubblegum-coral",
+      "e": "🪸",
+      "name": {
+        "en": "Bubblegum coral",
+        "es": "Coral chicle"
+      },
+      "sci": "Paragorgia arborea",
+      "group": "cnidarian",
+      "depth": [
+        50,
+        1800
+      ],
+      "usual": 300,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -60,
+        70
+      ],
+      "text": {
+        "en": "Can grow as tall as a horse but adds only about a centimetre a year, so the largest colonies may be hundreds or even thousands of years old.",
+        "es": "Puede crecer tan alto como un caballo, pero solo aumenta cerca de un centímetro al año, así que las colonias más grandes pueden tener cientos o incluso miles de años."
+      },
+      "src": "https://www.mbari.org/animal/bubblegum-coral/"
+    },
+    {
+      "id": "bamboo-coral",
+      "e": "🪸",
+      "name": {
+        "en": "Bamboo coral",
+        "es": "Coral bambú"
+      },
+      "sci": "Isididae",
+      "group": "cnidarian",
+      "depth": [
+        400,
+        4850
+      ],
+      "usual": 1400,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -70,
+        65
+      ],
+      "text": {
+        "en": "Grows just millimetres a year, forming ancient forests on seamounts. One kind flashes waves of blue light as a burglar alarm when something nibbles it.",
+        "es": "Crece apenas milímetros al año y forma bosques antiguos en los montes submarinos. Un tipo emite ondas de luz azul como alarma cuando algo lo mordisquea."
+      },
+      "src": "https://www.mbari.org/animal/bamboo-coral/"
+    },
+    {
+      "id": "colossal-squid",
+      "e": "🦑",
+      "name": {
+        "en": "Colossal squid",
+        "es": "Calamar colosal"
+      },
+      "sci": "Mesonychoteuthis hamiltoni",
+      "group": "cephalopod",
+      "depth": [
+        200,
+        1981
+      ],
+      "usual": 400,
+      "oceans": [
+        "southern"
+      ],
+      "lat": [
+        -78,
+        -33
+      ],
+      "text": {
+        "en": "The heaviest invertebrate on Earth, up to about 500 kg. It was first filmed alive in 2025: a 30 cm juvenile at 600 m near the South Sandwich Islands.",
+        "es": "El invertebrado más pesado de la Tierra, de hasta unos 500 kg. Se filmó vivo por primera vez en 2025: un juvenil de 30 cm a 600 m cerca de las islas Sandwich del Sur."
+      },
+      "src": "https://www.sciencedaily.com/releases/2025/04/250416152119.htm",
+      "src_more": [
+        "https://www.sealifebase.se/summary/Mesonychoteuthis-hamiltoni.html"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2217 @@
+{
+  "generic": {
+    "Abyssal Plain": "Llanura abisal",
+    "Apron": "Glacis",
+    "Bank": "Banco",
+    "Banks": "Bancos",
+    "Bars": "Barras",
+    "Basin": "Cuenca",
+    "Basin and Ridge Province": "Provincia de cuencas y dorsales",
+    "Borderland": "Borde continental",
+    "Caldera": "Caldera",
+    "Calderas": "Calderas",
+    "Canyon": "Cañón",
+    "Canyon Province": "Provincia de cañones",
+    "Canyons": "Cañones",
+    "Cap": "Banco",
+    "Channel": "Canal",
+    "Cone": "Cono",
+    "Continental Slope": "Talud continental",
+    "Deep": "Abismo",
+    "Deeps": "Abismos",
+    "Discordance": "Discordancia",
+    "Escarpment": "Escarpe",
+    "Fan": "Abanico",
+    "Finger": "Dedo",
+    "Fracture Zone": "Zona de fractura",
+    "Fracture Zone Province": "Provincia de zonas de fractura",
+    "Fracture Zone System": "Sistema de zonas de fractura",
+    "Gap": "Paso",
+    "Ground": "Banco",
+    "Guyot": "Guyot",
+    "Guyots": "Guyots",
+    "Hill": "Colina",
+    "Hill Province": "Provincia de colinas",
+    "Hills": "Colinas",
+    "Hole": "Agujero",
+    "Knoll": "Colina",
+    "Knolls": "Colinas",
+    "Levee": "Dique",
+    "Lobe": "Lóbulo",
+    "Mound": "Montículo",
+    "Mounds": "Montículos",
+    "Mud Volcano": "Volcán de lodo",
+    "Pass": "Paso",
+    "Passage": "Pasaje",
+    "Peak": "Pico",
+    "Pingos": "Pingos",
+    "Plain": "Llanura",
+    "Plateau": "Meseta",
+    "Promontory": "Promontorio",
+    "Province": "Provincia",
+    "Re-entrant": "Entrante",
+    "Reef": "Arrecife",
+    "Reefs": "Arrecifes",
+    "Ridge": "Dorsal",
+    "Ridges": "Dorsales",
+    "Rift": "Rift",
+    "Rise": "Elevación",
+    "Saddle": "Collado",
+    "Salt Dome Province": "Provincia de domos salinos",
+    "Sand Ridge Province": "Provincia de crestas de arena",
+    "Scarp": "Escarpe",
+    "Sea Channel": "Canal submarino",
+    "Sea Valley": "Valle submarino",
+    "Sea Valleys": "Valles submarinos",
+    "Seabight": "Ensenada submarina",
+    "Seachannel": "Canal submarino",
+    "Seamount": "Monte submarino",
+    "Seamount Chain": "Cadena de montes submarinos",
+    "Seamount Group": "Grupo de montes submarinos",
+    "Seamount Province": "Provincia de montes submarinos",
+    "Seamounts": "Montes submarinos",
+    "Shelf": "Plataforma",
+    "Shoal": "Bajo",
+    "Shoals": "Bajos",
+    "Sill": "Umbral",
+    "Slope": "Talud",
+    "Spur": "Espolón",
+    "Tablemount": "Monte tabular",
+    "Terrace": "Terraza",
+    "Trench": "Fosa",
+    "Trough": "Fosa",
+    "Valley": "Valle",
+    "Valleys": "Valles",
+    "Sand Ridge": "Cresta de arena",
+    "Salt Dome": "Domo salino",
+    "Pingo": "Pingo",
+    "Moat": "Foso",
+    "Tablemounts": "Montes tabulares",
+    "Troughs": "Fosas",
+    "Trenches": "Fosas",
+    "Rises": "Elevaciones",
+    "Spurs": "Espolones",
+    "Terraces": "Terrazas",
+    "Holes": "Agujeros",
+    "Escarpments": "Escarpes",
+    "Plateaus": "Mesetas",
+    "Basins": "Cuencas",
+    "Fans": "Abanicos",
+    "Gaps": "Pasos",
+    "Saddles": "Collados",
+    "Sills": "Umbrales",
+    "Peaks": "Picos",
+    "Channels": "Canales",
+    "Sea Channels": "Canales submarinos",
+    "Seachannels": "Canales submarinos",
+    "Mud Volcanoes": "Volcanes de lodo",
+    "Levees": "Diques"
+  },
+  "features": [
+    {
+      "id": "mariana-trench",
+      "name": {
+        "en": "Mariana Trench",
+        "es": "Fosa de las Marianas"
+      },
+      "kind": "trench",
+      "lon": 147.834,
+      "lat": 16.98,
+      "line": [
+        [
+          143.5,
+          24.5
+        ],
+        [
+          144.62,
+          23.32
+        ],
+        [
+          146.17,
+          22.17
+        ],
+        [
+          146.82,
+          21.3
+        ],
+        [
+          147.48,
+          19.76
+        ],
+        [
+          147.79,
+          18.12
+        ],
+        [
+          147.7,
+          15.71
+        ],
+        [
+          147.15,
+          14.26
+        ],
+        [
+          146.1,
+          12.92
+        ],
+        [
+          144.0,
+          11.67
+        ],
+        [
+          141.5,
+          11.0
+        ]
+      ],
+      "depth_m": 10935,
+      "rank": 1,
+      "text": {
+        "en": "The deepest trench on Earth runs for about 2,550 km east of the Mariana Islands, where the old Pacific plate sinks beneath the Philippine Sea plate. Near its southern end lies the Challenger Deep, about 10,935 m down.",
+        "es": "La fosa más profunda de la Tierra se extiende unos 2 550 km al este de las islas Marianas, donde la vieja placa del Pacífico se hunde bajo la placa del Mar de Filipinas. Cerca de su extremo sur está el abismo Challenger, a unos 10 935 m de profundidad."
+      },
+      "src": "https://nora.nerc.ac.uk/id/eprint/519199/1/Stewart%20and%20Jamieson_2018_habitat%20heterogeneity%20in%20hadal%20trenches.pdf",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/ocean-depth/"
+      ],
+      "gebco": 22408
+    },
+    {
+      "id": "challenger-deep",
+      "name": {
+        "en": "Challenger Deep",
+        "es": "Abismo Challenger"
+      },
+      "kind": "trench",
+      "lon": 142.592,
+      "lat": 11.373,
+      "depth_m": 10935,
+      "rank": 1,
+      "text": {
+        "en": "The deepest known point of the ocean is about 10,935 m down. Jacques Piccard and Don Walsh first reached it in the bathyscaphe Trieste in 1960. It is named after HMS Challenger, whose crew sounded the trench in 1875.",
+        "es": "El punto más profundo conocido del océano está a unos 10 935 m. Jacques Piccard y Don Walsh llegaron allí por primera vez en 1960, en el batiscafo Trieste. Debe su nombre al HMS Challenger, cuya tripulación sondeó la fosa en 1875."
+      },
+      "src": "https://oceanservice.noaa.gov/facts/oceandepth.html",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/21116",
+        "https://www.bgs.ac.uk/news/deepest-points-of-the-indian-ocean-and-southern-ocean-revealed/"
+      ],
+      "gebco": 21116
+    },
+    {
+      "id": "tonga-trench",
+      "name": {
+        "en": "Tonga Trench",
+        "es": "Fosa de Tonga"
+      },
+      "kind": "trench",
+      "lon": -173.221,
+      "lat": -20.366,
+      "line": [
+        [
+          -175.17,
+          -24.5
+        ],
+        [
+          -174.89,
+          -23.65
+        ],
+        [
+          -174.2,
+          -22.26
+        ],
+        [
+          -173.91,
+          -21.9
+        ],
+        [
+          -173.6,
+          -20.97
+        ],
+        [
+          -173.39,
+          -20.71
+        ],
+        [
+          -173.13,
+          -20.15
+        ],
+        [
+          -172.72,
+          -18.59
+        ],
+        [
+          -172.47,
+          -18.11
+        ],
+        [
+          -172.17,
+          -16.0
+        ]
+      ],
+      "depth_m": 10816,
+      "rank": 1,
+      "text": {
+        "en": "The second-deepest trench on Earth runs for about 1,300 km east of Tonga, where the Pacific plate dives beneath the Australian plate. Its Horizon Deep, about 10,816 m down, is the deepest point in the Southern Hemisphere.",
+        "es": "La segunda fosa más profunda de la Tierra se extiende unos 1 300 km al este de Tonga, donde la placa del Pacífico se hunde bajo la placa australiana. Su abismo Horizon, a unos 10 816 m, es el punto más profundo del hemisferio sur."
+      },
+      "src": "https://link.springer.com/article/10.1007/s11001-024-09550-7",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/23689"
+      ],
+      "gebco": 23689
+    },
+    {
+      "id": "horizon-deep",
+      "name": {
+        "en": "Horizon Deep",
+        "es": "Abismo Horizon"
+      },
+      "kind": "trench",
+      "lon": -174.74,
+      "lat": -23.27,
+      "depth_m": 10816,
+      "rank": 3,
+      "text": {
+        "en": "The deepest point of the Tonga Trench, about 10,816 m down, is second only to the Challenger Deep. It is named after the research vessel Horizon, which found it in 1952.",
+        "es": "El punto más profundo de la fosa de Tonga, a unos 10 816 m, solo es superado por el abismo Challenger. Debe su nombre al buque de investigación Horizon, que lo descubrió en 1952."
+      },
+      "src": "https://www.bgs.ac.uk/news/deepest-points-of-the-indian-ocean-and-southern-ocean-revealed/",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/21821"
+      ],
+      "gebco": 21821
+    },
+    {
+      "id": "kermadec-trench",
+      "name": {
+        "en": "Kermadec Trench",
+        "es": "Fosa de Kermadec"
+      },
+      "kind": "trench",
+      "lon": -176.144,
+      "lat": -29.269,
+      "line": [
+        [
+          -175.36,
+          -25.78
+        ],
+        [
+          -175.42,
+          -26.4
+        ],
+        [
+          -175.82,
+          -28.13
+        ],
+        [
+          -176.14,
+          -29.27
+        ],
+        [
+          -177.0,
+          -31.25
+        ],
+        [
+          -178.04,
+          -33.87
+        ],
+        [
+          -178.86,
+          -35.81
+        ],
+        [
+          179.85,
+          -37.75
+        ]
+      ],
+      "depth_m": 10106,
+      "rank": 2,
+      "text": {
+        "en": "About 1,200 km long, this trench north of New Zealand continues the Tonga Trench to the south. Its deepest point, the Scholl Deep, is about 10,100 m down.",
+        "es": "Esta fosa de unos 1 200 km, al norte de Nueva Zelanda, continúa hacia el sur la fosa de Tonga. Su punto más profundo, el abismo Scholl, está a unos 10 100 m."
+      },
+      "src": "https://link.springer.com/article/10.1007/s11001-024-09550-7",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/23261"
+      ],
+      "gebco": 32640
+    },
+    {
+      "id": "kuril-kamchatka-trench",
+      "name": {
+        "en": "Kuril-Kamchatka Trench",
+        "es": "Fosa de las Kuriles-Kamchatka"
+      },
+      "kind": "trench",
+      "lon": 155.295,
+      "lat": 47.3,
+      "line": [
+        [
+          145.0,
+          41.0
+        ],
+        [
+          147.63,
+          42.52
+        ],
+        [
+          149.75,
+          43.85
+        ],
+        [
+          152.0,
+          44.95
+        ],
+        [
+          153.79,
+          45.99
+        ],
+        [
+          155.29,
+          47.3
+        ],
+        [
+          156.84,
+          48.34
+        ],
+        [
+          157.61,
+          49.07
+        ],
+        [
+          158.89,
+          49.86
+        ],
+        [
+          161.8,
+          52.3
+        ],
+        [
+          163.17,
+          54.0
+        ]
+      ],
+      "depth_m": 9604,
+      "rank": 2,
+      "text": {
+        "en": "About 2,100 km long, this trench runs from off Hokkaido along the Kuril Islands to Kamchatka. Its greatest depth is about 9,600 m.",
+        "es": "Con unos 2 100 km de largo, esta fosa va desde la costa de Hokkaido, a lo largo de las islas Kuriles, hasta Kamchatka. Su profundidad máxima es de unos 9 600 m."
+      },
+      "src": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10398949/",
+      "gebco": 22217
+    },
+    {
+      "id": "japan-trench",
+      "name": {
+        "en": "Japan Trench",
+        "es": "Fosa de Japón"
+      },
+      "kind": "trench",
+      "lon": 143.993,
+      "lat": 37.92,
+      "line": [
+        [
+          142.83,
+          36.0
+        ],
+        [
+          143.11,
+          36.46
+        ],
+        [
+          143.54,
+          36.99
+        ],
+        [
+          143.74,
+          37.37
+        ],
+        [
+          143.99,
+          37.92
+        ],
+        [
+          144.18,
+          39.05
+        ],
+        [
+          144.35,
+          39.77
+        ],
+        [
+          144.5,
+          40.5
+        ]
+      ],
+      "depth_m": 8000,
+      "rank": 1,
+      "text": {
+        "en": "This trench off northeast Japan, about 8,000 m deep in places, is where the Pacific plate sinks beneath Japan. In 2011 the plate boundary here broke in the magnitude 9.1 Tōhoku earthquake, which caused a devastating tsunami.",
+        "es": "Esta fosa frente al noreste de Japón, de unos 8 000 m de profundidad en algunos puntos, es donde la placa del Pacífico se hunde bajo Japón. En 2011, el límite entre placas se rompió aquí en el sismo de Tōhoku, de magnitud 9,1, que causó un tsunami devastador."
+      },
+      "src": "https://earthquake.usgs.gov/earthquakes/eventpage/official20110311054624120_30/executive",
+      "src_more": [
+        "https://nora.nerc.ac.uk/id/eprint/519199/1/Stewart%20and%20Jamieson_2018_habitat%20heterogeneity%20in%20hadal%20trenches.pdf"
+      ],
+      "gebco": 21936
+    },
+    {
+      "id": "izu-ogasawara-trench",
+      "name": {
+        "en": "Izu-Ogasawara Trench",
+        "es": "Fosa de Izu-Ogasawara"
+      },
+      "kind": "trench",
+      "lon": 142.167,
+      "lat": 32.0,
+      "line": [
+        [
+          141.9,
+          34.0
+        ],
+        [
+          142.1,
+          33.2
+        ],
+        [
+          142.2,
+          31.2
+        ],
+        [
+          142.6,
+          29.8
+        ],
+        [
+          143.0,
+          28.8
+        ],
+        [
+          143.3,
+          27.4
+        ],
+        [
+          143.3,
+          25.2
+        ],
+        [
+          143.6,
+          24.3
+        ]
+      ],
+      "depth_m": 9700,
+      "rank": 2,
+      "text": {
+        "en": "This trench runs south from Japan towards the Mariana Trench and is about 9,700 m deep at its deepest. In 2022 a young snailfish was filmed here at 8,336 m, the deepest fish ever recorded.",
+        "es": "Esta fosa corre hacia el sur desde Japón hasta la fosa de las Marianas y llega a unos 9 700 m en su punto más profundo. En 2022 se filmó aquí un pez caracol joven a 8 336 m, el pez más profundo jamás registrado."
+      },
+      "src": "https://nora.nerc.ac.uk/id/eprint/519199/1/Stewart%20and%20Jamieson_2018_habitat%20heterogeneity%20in%20hadal%20trenches.pdf",
+      "src_more": [
+        "https://www.uwa.edu.au/news/article/2023/april/scientists-break-new-record-after-finding-worlds-deepest-fish"
+      ],
+      "gebco": 21921
+    },
+    {
+      "id": "philippine-trench",
+      "name": {
+        "en": "Philippine Trench",
+        "es": "Fosa de Filipinas"
+      },
+      "kind": "trench",
+      "lon": 127.183,
+      "lat": 8.633,
+      "line": [
+        [
+          124.05,
+          15.33
+        ],
+        [
+          125.07,
+          14.65
+        ],
+        [
+          125.87,
+          12.48
+        ],
+        [
+          127.18,
+          8.63
+        ],
+        [
+          127.32,
+          6.3
+        ],
+        [
+          128.33,
+          4.47
+        ]
+      ],
+      "depth_m": 10540,
+      "rank": 2,
+      "text": {
+        "en": "This trench runs along the east side of the Philippines, where the Philippine Sea plate sinks westwards. At about 10,540 m, its deepest point is the third-deepest place in the ocean.",
+        "es": "Esta fosa bordea el este de Filipinas, donde la placa del Mar de Filipinas se hunde hacia el oeste. Con unos 10 540 m, su punto más profundo es el tercer lugar más profundo del océano."
+      },
+      "src": "https://nora.nerc.ac.uk/id/eprint/519199/1/Stewart%20and%20Jamieson_2018_habitat%20heterogeneity%20in%20hadal%20trenches.pdf",
+      "gebco": 22961
+    },
+    {
+      "id": "puerto-rico-trench",
+      "name": {
+        "en": "Puerto Rico Trench",
+        "es": "Fosa de Puerto Rico"
+      },
+      "kind": "trench",
+      "lon": -65.393,
+      "lat": 19.921,
+      "line": [
+        [
+          -68.5,
+          19.5
+        ],
+        [
+          -65.99,
+          19.9
+        ],
+        [
+          -65.39,
+          19.92
+        ],
+        [
+          -64.23,
+          19.9
+        ],
+        [
+          -63.51,
+          19.81
+        ],
+        [
+          -62.73,
+          19.63
+        ],
+        [
+          -62.0,
+          19.25
+        ]
+      ],
+      "depth_m": 8378,
+      "rank": 1,
+      "text": {
+        "en": "The deepest trench in the Atlantic lies north of Puerto Rico, where the North American plate grinds past and beneath the Caribbean plate. Its Brownson Deep, about 8,378 m down, is the deepest point of the Atlantic Ocean.",
+        "es": "La fosa más profunda del Atlántico está al norte de Puerto Rico, donde la placa norteamericana roza la placa del Caribe y se hunde bajo ella. Su abismo Brownson, a unos 8 378 m, es el punto más profundo del océano Atlántico."
+      },
+      "src": "https://www.bgs.ac.uk/news/deepest-points-of-the-indian-ocean-and-southern-ocean-revealed/",
+      "gebco": 23024
+    },
+    {
+      "id": "south-sandwich-trench",
+      "name": {
+        "en": "South Sandwich Trench",
+        "es": "Fosa de las Sandwich del Sur"
+      },
+      "kind": "trench",
+      "lon": -27.183,
+      "lat": -55.117,
+      "line": [
+        [
+          -32.77,
+          -54.75
+        ],
+        [
+          -27.18,
+          -55.12
+        ],
+        [
+          -24.23,
+          -57.07
+        ],
+        [
+          -23.8,
+          -58.75
+        ],
+        [
+          -24.35,
+          -59.92
+        ],
+        [
+          -26.2,
+          -60.63
+        ]
+      ],
+      "depth_m": 8265,
+      "rank": 2,
+      "text": {
+        "en": "This curved trench east of the South Sandwich Islands is the only hadal trench where the water is below 0 °C. Its deepest point, the Meteor Deep at about 8,265 m, lies in Atlantic waters, while its southern end holds the deepest point of the Southern Ocean.",
+        "es": "Esta fosa curva, al este de las islas Sandwich del Sur, es la única fosa hadal con agua por debajo de 0 °C. Su punto más profundo, el abismo Meteor, a unos 8 265 m, está en aguas del Atlántico, y su extremo sur guarda el punto más profundo del océano Austral."
+      },
+      "src": "https://www.bgs.ac.uk/news/deepest-points-of-the-indian-ocean-and-southern-ocean-revealed/",
+      "gebco": 23435
+    },
+    {
+      "id": "factorian-deep",
+      "name": {
+        "en": "Factorian Deep",
+        "es": "Abismo Factorian"
+      },
+      "kind": "trench",
+      "lon": -25.545,
+      "lat": -60.479,
+      "depth_m": 7432,
+      "rank": 3,
+      "text": {
+        "en": "The deepest point of the Southern Ocean lies about 7,432 m down at the southern end of the South Sandwich Trench. It is named after the submersible Limiting Factor, which reached its floor in 2019.",
+        "es": "El punto más profundo del océano Austral está a unos 7 432 m, en el extremo sur de la fosa de las Sandwich del Sur. Debe su nombre al sumergible Limiting Factor, que llegó a su fondo en 2019."
+      },
+      "src": "https://www.bgs.ac.uk/news/deepest-points-of-the-indian-ocean-and-southern-ocean-revealed/",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/31561"
+      ],
+      "gebco": 31561
+    },
+    {
+      "id": "peru-chile-trench",
+      "name": {
+        "en": "Peru-Chile Trench",
+        "es": "Fosa de Perú-Chile"
+      },
+      "kind": "trench",
+      "lon": -71.9,
+      "lat": -27.0,
+      "line": [
+        [
+          -76.22,
+          -15.83
+        ],
+        [
+          -73.81,
+          -17.29
+        ],
+        [
+          -71.75,
+          -19.23
+        ],
+        [
+          -71.32,
+          -20.35
+        ],
+        [
+          -71.3,
+          -23.7
+        ],
+        [
+          -71.9,
+          -27.0
+        ],
+        [
+          -72.7,
+          -32.37
+        ],
+        [
+          -74.65,
+          -37.62
+        ]
+      ],
+      "depth_m": 8087,
+      "rank": 1,
+      "text": {
+        "en": "Also called the Atacama Trench, it runs along the Pacific coast of South America, where the Nazca plate sinks beneath the continent and lifts the Andes. It is more than 8,000 m deep off northern Chile, and in 1960 this plate boundary broke in the largest earthquake ever recorded, of magnitude 9.5, in southern Chile.",
+        "es": "También llamada fosa de Atacama, corre a lo largo de la costa pacífica de Sudamérica, donde la placa de Nazca se hunde bajo el continente y levanta los Andes. Supera los 8 000 m de profundidad frente al norte de Chile, y en 1960 este límite de placas se rompió en el mayor sismo jamás registrado, de magnitud 9,5, en el sur de Chile."
+      },
+      "src": "https://earthquake.usgs.gov/earthquakes/eventpage/official19600522191120_30/executive",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/32991"
+      ],
+      "gebco": 22948
+    },
+    {
+      "id": "atacama-deep",
+      "name": {
+        "en": "Atacama Deep",
+        "es": "Abismo de Atacama"
+      },
+      "kind": "trench",
+      "lon": -71.341,
+      "lat": -23.411,
+      "depth_m": 8087,
+      "rank": 3,
+      "text": {
+        "en": "The deepest part of the Peru-Chile Trench, about 8,000 m down, lies off the Atacama Desert, one of the driest places on Earth, after which it is named.",
+        "es": "La parte más profunda de la fosa de Perú-Chile, a unos 8 000 m, está frente al desierto de Atacama, uno de los lugares más secos de la Tierra, del que toma su nombre."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/32991",
+      "src_more": [
+        "https://nora.nerc.ac.uk/id/eprint/519199/1/Stewart%20and%20Jamieson_2018_habitat%20heterogeneity%20in%20hadal%20trenches.pdf"
+      ],
+      "gebco": 32991
+    },
+    {
+      "id": "sunda-trench",
+      "name": {
+        "en": "Sunda Trench",
+        "es": "Fosa de la Sonda"
+      },
+      "kind": "trench",
+      "lon": 109.182,
+      "lat": -10.21,
+      "line": [
+        [
+          100.0,
+          -4.5
+        ],
+        [
+          102.64,
+          -7.31
+        ],
+        [
+          107.36,
+          -9.77
+        ],
+        [
+          108.13,
+          -10.02
+        ],
+        [
+          112.97,
+          -10.75
+        ],
+        [
+          113.3,
+          -10.92
+        ],
+        [
+          115.57,
+          -11.27
+        ],
+        [
+          116.55,
+          -11.35
+        ],
+        [
+          119.0,
+          -11.17
+        ]
+      ],
+      "depth_m": 7187,
+      "rank": 1,
+      "text": {
+        "en": "Also called the Java Trench, it curves for more than 4,000 km south of Sumatra and Java. Its deepest point, about 7,187 m down, is the deepest place in the Indian Ocean, and in 2004 a magnitude 9.1 earthquake on this plate boundary set off the Indian Ocean tsunami.",
+        "es": "También llamada fosa de Java, se curva a lo largo de más de 4 000 km al sur de Sumatra y Java. Su punto más profundo, a unos 7 187 m, es el lugar más profundo del océano Índico, y en 2004 un sismo de magnitud 9,1 en este límite de placas desató el tsunami del océano Índico."
+      },
+      "src": "https://www.bgs.ac.uk/news/deepest-points-of-the-indian-ocean-and-southern-ocean-revealed/",
+      "src_more": [
+        "https://earthquake.usgs.gov/earthquakes/eventpage/official20041226005853450_30/executive"
+      ],
+      "gebco": 23543
+    },
+    {
+      "id": "aleutian-trench",
+      "name": {
+        "en": "Aleutian Trench",
+        "es": "Fosa de las Aleutianas"
+      },
+      "kind": "trench",
+      "lon": -170.0,
+      "lat": 51.25,
+      "line": [
+        [
+          -148.4,
+          57.3
+        ],
+        [
+          -153.3,
+          55.5
+        ],
+        [
+          -158.4,
+          53.9
+        ],
+        [
+          -163.4,
+          52.9
+        ],
+        [
+          -168.3,
+          51.7
+        ],
+        [
+          -172.9,
+          50.9
+        ],
+        [
+          -177.8,
+          50.4
+        ],
+        [
+          177.4,
+          50.65
+        ],
+        [
+          172.2,
+          51.9
+        ],
+        [
+          168.0,
+          53.4
+        ]
+      ],
+      "depth_m": 7679,
+      "rank": 2,
+      "text": {
+        "en": "This trench follows the Aleutian Islands for more than 3,000 km, from the Gulf of Alaska towards Kamchatka, and reaches about 7,679 m. Its eastern end broke in the magnitude 9.2 Alaska earthquake of 1964, the second largest ever recorded.",
+        "es": "Esta fosa sigue las islas Aleutianas a lo largo de más de 3 000 km, desde el golfo de Alaska hacia Kamchatka, y llega a unos 7 679 m. Su extremo oriental se rompió en el sismo de Alaska de 1964, de magnitud 9,2, el segundo mayor jamás registrado."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/20762",
+      "src_more": [
+        "https://earthquake.usgs.gov/earthquakes/eventpage/official19640328033616_30/executive"
+      ],
+      "gebco": 20762
+    },
+    {
+      "id": "middle-america-trench",
+      "name": {
+        "en": "Middle America Trench",
+        "es": "Fosa Mesoamericana"
+      },
+      "kind": "trench",
+      "lon": -95.667,
+      "lat": 15.25,
+      "line": [
+        [
+          -106.5,
+          21.25
+        ],
+        [
+          -106.47,
+          20.33
+        ],
+        [
+          -106.0,
+          19.41
+        ],
+        [
+          -104.5,
+          18.3
+        ],
+        [
+          -102.46,
+          17.25
+        ],
+        [
+          -99.31,
+          16.07
+        ],
+        [
+          -97.1,
+          15.43
+        ],
+        [
+          -95.67,
+          15.25
+        ],
+        [
+          -91.02,
+          12.68
+        ],
+        [
+          -88.66,
+          11.85
+        ],
+        [
+          -84.75,
+          8.75
+        ]
+      ],
+      "depth_m": 6547,
+      "rank": 1,
+      "text": {
+        "en": "Running along the Pacific coast from Mexico to Costa Rica, this trench marks where the Cocos plate sinks beneath the North American and Caribbean plates. Its deepest point, off southern Mexico, is more than 6,500 m deep.",
+        "es": "Corre a lo largo de la costa del Pacífico desde México hasta Costa Rica y marca donde la placa de Cocos se hunde bajo las placas Norteamericana y del Caribe. Su punto más profundo, frente al sur de México, supera los 6 500 m."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22489",
+      "src_more": [
+        "https://nora.nerc.ac.uk/id/eprint/519199/1/Stewart%20and%20Jamieson_2018_habitat%20heterogeneity%20in%20hadal%20trenches.pdf"
+      ],
+      "gebco": 22489
+    },
+    {
+      "id": "hellenic-trench",
+      "name": {
+        "en": "Hellenic Trench",
+        "es": "Fosa helénica"
+      },
+      "kind": "trench",
+      "lon": 23.756,
+      "lat": 34.644,
+      "line": [
+        [
+          20.25,
+          37.25
+        ],
+        [
+          21.71,
+          35.86
+        ],
+        [
+          22.29,
+          35.71
+        ],
+        [
+          23.37,
+          35.02
+        ],
+        [
+          23.76,
+          34.64
+        ],
+        [
+          24.3,
+          34.38
+        ],
+        [
+          24.94,
+          34.13
+        ],
+        [
+          25.73,
+          34.23
+        ],
+        [
+          26.16,
+          34.49
+        ],
+        [
+          26.61,
+          34.67
+        ],
+        [
+          27.24,
+          34.86
+        ],
+        [
+          28.0,
+          34.83
+        ]
+      ],
+      "depth_m": 5100,
+      "rank": 2,
+      "text": {
+        "en": "South of Greece and Crete, the African plate sinks beneath the Aegean along this chain of deep troughs. Off southwest Greece it holds the deepest point of the Mediterranean Sea, more than 5,000 m down.",
+        "es": "Al sur de Grecia y Creta, la placa africana se hunde bajo el Egeo a lo largo de esta cadena de fosas profundas. Frente al suroeste de Grecia guarda el punto más profundo del mar Mediterráneo, a más de 5 000 m."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28685",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/23808"
+      ],
+      "gebco": 28685
+    },
+    {
+      "id": "cayman-trench",
+      "name": {
+        "en": "Cayman Trench",
+        "es": "Fosa de las Caimán"
+      },
+      "kind": "trench",
+      "lon": -81.5,
+      "lat": 18.833,
+      "line": [
+        [
+          -86.2,
+          16.7
+        ],
+        [
+          -84.1,
+          17.8
+        ],
+        [
+          -82.9,
+          17.8
+        ],
+        [
+          -81.8,
+          18.7
+        ],
+        [
+          -79.6,
+          19.2
+        ],
+        [
+          -78.8,
+          19.3
+        ],
+        [
+          -76.7,
+          19.7
+        ],
+        [
+          -76.1,
+          19.6
+        ]
+      ],
+      "depth_m": 7100,
+      "rank": 2,
+      "text": {
+        "en": "This deep trough between the Cayman Islands and Jamaica marks where the Caribbean plate slides past the North American plate. It is more than 7,000 m deep, and its short spreading ridge is the deepest on Earth; vents found on it at about 4,960 m were the deepest known when they were reported in 2012.",
+        "es": "Esta fosa profunda entre las islas Caimán y Jamaica marca donde la placa del Caribe se desliza junto a la norteamericana. Supera los 7 000 m, y su corta dorsal es la más profunda de la Tierra; las fuentes hidrotermales halladas en ella a unos 4 960 m eran las más profundas conocidas cuando se dieron a conocer, en 2012."
+      },
+      "src": "https://www.nature.com/articles/ncomms1636",
+      "gebco": 12512
+    },
+    {
+      "id": "nankai-trough",
+      "name": {
+        "en": "Nankai Trough",
+        "es": "Fosa de Nankai"
+      },
+      "kind": "trench",
+      "lon": 136.0,
+      "lat": 32.58,
+      "depth_m": 4800,
+      "rank": 2,
+      "text": {
+        "en": "Off southwest Japan, the Philippine Sea plate sinks beneath Japan along this shallow trough, only about 4,800 m deep. The plate boundary under it has caused many great earthquakes and tsunamis.",
+        "es": "Frente al suroeste de Japón, la placa del Mar de Filipinas se hunde bajo Japón a lo largo de esta fosa poco profunda, de solo unos 4 800 m. El límite de placas bajo ella ha causado muchos grandes sismos y tsunamis."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22607",
+      "gebco": 22607
+    },
+    {
+      "id": "molloy-hole",
+      "name": {
+        "en": "Molloy Hole",
+        "es": "Fosa de Molloy"
+      },
+      "kind": "other",
+      "lon": 2.706,
+      "lat": 79.194,
+      "depth_m": 5551,
+      "rank": 2,
+      "text": {
+        "en": "The deepest point of the Arctic Ocean, about 5,551 m down, lies in the Fram Strait between Greenland and Svalbard. It is named after Arthur E. Molloy, a US Navy scientist who worked in the Arctic and the North Atlantic.",
+        "es": "El punto más profundo del océano Ártico, a unos 5 551 m, está en el estrecho de Fram, entre Groenlandia y Svalbard. Debe su nombre a Arthur E. Molloy, científico de la Marina de Estados Unidos que trabajó en el Ártico y el Atlántico Norte."
+      },
+      "src": "https://www.bgs.ac.uk/news/deepest-points-of-the-indian-ocean-and-southern-ocean-revealed/",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/28886"
+      ],
+      "gebco": 28886
+    },
+    {
+      "id": "mid-atlantic-ridge",
+      "name": {
+        "en": "Mid-Atlantic Ridge",
+        "es": "Dorsal mesoatlántica"
+      },
+      "kind": "ridge",
+      "lon": -21.474,
+      "lat": -0.319,
+      "line": [
+        [
+          -33.0,
+          52.5
+        ],
+        [
+          -29.07,
+          41.72
+        ],
+        [
+          -43.4,
+          28.37
+        ],
+        [
+          -46.52,
+          16.64
+        ],
+        [
+          -29.0,
+          1.75
+        ],
+        [
+          -12.33,
+          -4.82
+        ],
+        [
+          -11.47,
+          -20.98
+        ],
+        [
+          -17.68,
+          -36.45
+        ],
+        [
+          -14.92,
+          -45.75
+        ],
+        [
+          -1.75,
+          -54.5
+        ]
+      ],
+      "depth_m": 2500,
+      "rank": 1,
+      "text": {
+        "en": "This undersea mountain range runs down the middle of the Atlantic, where the Americas move away from Europe and Africa by 2 to 5 cm a year. Along its crest runs a rift valley about as deep and wide as the Grand Canyon, and in Iceland the ridge rises above the sea.",
+        "es": "Esta cordillera submarina recorre el centro del Atlántico, donde América se aleja de Europa y África entre 2 y 5 cm por año. A lo largo de su cresta corre un valle de rift tan profundo y ancho como el Gran Cañón, y en Islandia la dorsal emerge del mar."
+      },
+      "src": "https://oceanexplorer.noaa.gov/ocean-fact/mid-ocean-ridge/",
+      "gebco": 28883
+    },
+    {
+      "id": "east-pacific-rise",
+      "name": {
+        "en": "East Pacific Rise",
+        "es": "Dorsal del Pacífico oriental"
+      },
+      "kind": "ridge",
+      "lon": -113.16,
+      "lat": -17.43,
+      "line": [
+        [
+          -108.0,
+          23.0
+        ],
+        [
+          -103.59,
+          10.26
+        ],
+        [
+          -101.94,
+          3.0
+        ],
+        [
+          -102.75,
+          -2.07
+        ],
+        [
+          -111.34,
+          -12.02
+        ],
+        [
+          -114.82,
+          -23.06
+        ],
+        [
+          -111.94,
+          -31.27
+        ],
+        [
+          -111.94,
+          -43.09
+        ],
+        [
+          -113.5,
+          -47.45
+        ],
+        [
+          -118.72,
+          -53.57
+        ],
+        [
+          -121.79,
+          -54.73
+        ],
+        [
+          -130.0,
+          -54.5
+        ]
+      ],
+      "depth_m": 2500,
+      "rank": 1,
+      "text": {
+        "en": "This fast-spreading ridge runs up the eastern Pacific from near Antarctica to the Gulf of California, with plates moving apart by 6 to 16 cm a year. In 1979 the submersible Alvin saw the first black smokers on it, near the mouth of the Gulf of California.",
+        "es": "Esta dorsal de expansión rápida recorre el Pacífico oriental desde cerca de la Antártida hasta el golfo de California, y en ella las placas se separan entre 6 y 16 cm por año. En 1979, el sumergible Alvin vio en ella las primeras fumarolas negras, cerca de la boca del golfo de California."
+      },
+      "src": "https://oceanexplorer.noaa.gov/ocean-fact/mid-ocean-ridge/",
+      "src_more": [
+        "https://www.whoi.edu/feature/history-hydrothermal-vents/discovery/1979-2.html"
+      ],
+      "gebco": 21357
+    },
+    {
+      "id": "southwest-indian-ridge",
+      "name": {
+        "en": "Southwest Indian Ridge",
+        "es": "Dorsal índica suroccidental"
+      },
+      "kind": "ridge",
+      "lon": 34.346,
+      "lat": -45.943,
+      "line": [
+        [
+          66.5,
+          -27.0
+        ],
+        [
+          58.68,
+          -31.21
+        ],
+        [
+          52.48,
+          -36.75
+        ],
+        [
+          48.17,
+          -38.1
+        ],
+        [
+          34.35,
+          -45.94
+        ],
+        [
+          32.42,
+          -47.23
+        ],
+        [
+          25.03,
+          -53.59
+        ],
+        [
+          14.52,
+          -51.82
+        ],
+        [
+          11.84,
+          -52.0
+        ],
+        [
+          9.65,
+          -53.23
+        ],
+        [
+          6.95,
+          -54.0
+        ],
+        [
+          0.0,
+          -54.75
+        ]
+      ],
+      "depth_m": 3000,
+      "rank": 2,
+      "text": {
+        "en": "This ridge runs from the middle of the Indian Ocean southwest to near Bouvet Island, between Africa and Antarctica. It is an ultraslow-spreading ridge, where volcanism is patchy and rocks from the mantle reach the seafloor.",
+        "es": "Esta dorsal va desde el centro del océano Índico hacia el suroeste hasta cerca de la isla Bouvet, entre África y la Antártida. Es una dorsal de expansión ultralenta, con un volcanismo intermitente y rocas del manto que llegan al fondo marino."
+      },
+      "src": "https://www.nature.com/articles/nature02128",
+      "gebco": 16851
+    },
+    {
+      "id": "southeast-indian-ridge",
+      "name": {
+        "en": "Southeast Indian Ridge",
+        "es": "Dorsal índica suroriental"
+      },
+      "kind": "ridge",
+      "lon": 114.15,
+      "lat": -50.0,
+      "line": [
+        [
+          71.5,
+          -26.0
+        ],
+        [
+          77.38,
+          -31.1
+        ],
+        [
+          77.93,
+          -40.03
+        ],
+        [
+          83.32,
+          -42.83
+        ],
+        [
+          85.78,
+          -40.88
+        ],
+        [
+          102.6,
+          -48.2
+        ],
+        [
+          114.15,
+          -50.0
+        ],
+        [
+          139.47,
+          -50.28
+        ],
+        [
+          156.18,
+          -62.75
+        ],
+        [
+          161.0,
+          -61.5
+        ]
+      ],
+      "depth_m": 2500,
+      "rank": 2,
+      "text": {
+        "en": "This ridge runs southeast from the middle of the Indian Ocean to far south of New Zealand. It marks the boundary along which Australia drifts away from Antarctica.",
+        "es": "Esta dorsal va hacia el sureste desde el centro del océano Índico hasta muy al sur de Nueva Zelanda. Marca el límite a lo largo del cual Australia se aleja de la Antártida."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/26477",
+      "gebco": 26477
+    },
+    {
+      "id": "central-indian-ridge",
+      "name": {
+        "en": "Central Indian Ridge",
+        "es": "Dorsal índica central"
+      },
+      "kind": "ridge",
+      "lon": 66.235,
+      "lat": -12.879,
+      "line": [
+        [
+          67.5,
+          -1.0
+        ],
+        [
+          68.71,
+          -3.07
+        ],
+        [
+          68.36,
+          -5.6
+        ],
+        [
+          66.44,
+          -11.03
+        ],
+        [
+          66.23,
+          -12.88
+        ],
+        [
+          66.23,
+          -15.35
+        ],
+        [
+          65.12,
+          -17.9
+        ],
+        [
+          65.19,
+          -18.57
+        ],
+        [
+          66.13,
+          -20.1
+        ],
+        [
+          68.16,
+          -20.91
+        ],
+        [
+          69.45,
+          -22.33
+        ],
+        [
+          70.0,
+          -25.5
+        ]
+      ],
+      "depth_m": 2500,
+      "rank": 2,
+      "text": {
+        "en": "This ridge runs down the middle of the Indian Ocean from the Carlsberg Ridge to the point where it meets the Southwest and Southeast Indian ridges. Its hot springs are home to the scaly-foot snail, whose shell and scales contain iron sulphides.",
+        "es": "Esta dorsal recorre el centro del océano Índico desde la dorsal de Carlsberg hasta el punto donde se une a las dorsales índicas suroccidental y suroriental. En sus fuentes hidrotermales vive el caracol de pie escamoso, cuya concha y escamas contienen sulfuros de hierro."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/12540",
+      "src_more": [
+        "https://doi.org/10.1126/science.1087476"
+      ],
+      "gebco": 12540
+    },
+    {
+      "id": "gakkel-ridge",
+      "name": {
+        "en": "Gakkel Ridge",
+        "es": "Dorsal de Gakkel"
+      },
+      "kind": "ridge",
+      "lon": 62.317,
+      "lat": 87.133,
+      "line": [
+        [
+          -6.0,
+          83.5
+        ],
+        [
+          9.85,
+          85.5
+        ],
+        [
+          33.92,
+          86.58
+        ],
+        [
+          62.32,
+          87.13
+        ],
+        [
+          77.98,
+          86.55
+        ],
+        [
+          96.99,
+          85.61
+        ],
+        [
+          108.16,
+          84.77
+        ],
+        [
+          118.56,
+          83.7
+        ],
+        [
+          123.0,
+          81.0
+        ]
+      ],
+      "depth_m": 3500,
+      "rank": 2,
+      "text": {
+        "en": "The slowest-spreading mid-ocean ridge on Earth crosses the Arctic Ocean from north of Greenland towards the Laptev Sea. It is named after Yakov Gakkel, a Russian Arctic explorer who predicted it in 1948.",
+        "es": "La dorsal oceánica de expansión más lenta de la Tierra cruza el océano Ártico desde el norte de Groenlandia hacia el mar de Láptev. Debe su nombre a Yákov Gakkel, explorador ruso del Ártico que predijo su existencia en 1948."
+      },
+      "src": "https://www.nature.com/articles/nature01704",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/21534"
+      ],
+      "gebco": 21534
+    },
+    {
+      "id": "pacific-antarctic-ridge",
+      "name": {
+        "en": "Pacific-Antarctic Ridge",
+        "es": "Dorsal pacífico-antártica"
+      },
+      "kind": "ridge",
+      "lon": -137.149,
+      "lat": -55.173,
+      "line": [
+        [
+          161.0,
+          -61.5
+        ],
+        [
+          165.13,
+          -62.06
+        ],
+        [
+          168.8,
+          -62.78
+        ],
+        [
+          171.83,
+          -63.35
+        ],
+        [
+          177.72,
+          -65.09
+        ],
+        [
+          180.0,
+          -65.48
+        ],
+        [
+          -167.09,
+          -64.53
+        ],
+        [
+          -156.99,
+          -61.81
+        ],
+        [
+          -147.77,
+          -58.06
+        ],
+        [
+          -142.24,
+          -56.27
+        ],
+        [
+          -137.15,
+          -55.17
+        ],
+        [
+          -130.0,
+          -54.5
+        ]
+      ],
+      "depth_m": 2500,
+      "rank": 2,
+      "text": {
+        "en": "This ridge in the far South Pacific separates the Pacific and Antarctic plates, running from south of New Zealand towards the East Pacific Rise. Long fracture zones such as the Eltanin cut across it.",
+        "es": "Esta dorsal, en el extremo sur del Pacífico, separa las placas del Pacífico y Antártica y va desde el sur de Nueva Zelanda hasta la dorsal del Pacífico oriental. Largas zonas de fractura, como la de Eltanin, la cortan."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/29280",
+      "gebco": 29280
+    },
+    {
+      "id": "chile-rise",
+      "name": {
+        "en": "Chile Rise",
+        "es": "Dorsal de Chile"
+      },
+      "kind": "ridge",
+      "lon": -90.0,
+      "lat": -40.0,
+      "line": [
+        [
+          -109.5,
+          -35.5
+        ],
+        [
+          -104,
+          -37
+        ],
+        [
+          -98,
+          -38.5
+        ],
+        [
+          -93,
+          -39.5
+        ],
+        [
+          -88,
+          -41
+        ],
+        [
+          -83,
+          -43
+        ],
+        [
+          -78.5,
+          -45
+        ],
+        [
+          -75.8,
+          -46.4
+        ]
+      ],
+      "depth_m": 3000,
+      "rank": 2,
+      "text": {
+        "en": "This spreading ridge between the Nazca and Antarctic plates crosses the South Pacific eastwards to the coast of Chile. Near the Taitao Peninsula it meets the Peru-Chile Trench, one of the few places where an active ridge is sinking beneath a continent.",
+        "es": "Esta dorsal de expansión entre las placas de Nazca y Antártica cruza el Pacífico Sur hacia el este hasta la costa de Chile. Cerca de la península de Taitao se encuentra con la fosa de Perú-Chile: es uno de los pocos lugares donde una dorsal activa se hunde bajo un continente."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/12613",
+      "gebco": 12613
+    },
+    {
+      "id": "juan-de-fuca-ridge",
+      "name": {
+        "en": "Juan de Fuca Ridge",
+        "es": "Dorsal de Juan de Fuca"
+      },
+      "kind": "ridge",
+      "lon": -130.02,
+      "lat": 45.579,
+      "line": [
+        [
+          -130.33,
+          44.67
+        ],
+        [
+          -130.02,
+          45.58
+        ],
+        [
+          -129.72,
+          46.3
+        ],
+        [
+          -129.58,
+          46.54
+        ]
+      ],
+      "depth_m": 2200,
+      "rank": 2,
+      "text": {
+        "en": "This short ridge off Oregon, Washington and British Columbia creates the small Juan de Fuca plate, which then sinks beneath North America at the Cascadia Subduction Zone. Its Axial Seamount is one of the most closely watched undersea volcanoes.",
+        "es": "Esta dorsal corta, frente a Oregón, Washington y la Columbia Británica, forma la pequeña placa de Juan de Fuca, que luego se hunde bajo Norteamérica en la zona de subducción de Cascadia. Su monte submarino Axial es uno de los volcanes submarinos más vigilados."
+      },
+      "src": "https://www.pmel.noaa.gov/eoi/axial_blog.html",
+      "gebco": 18606
+    },
+    {
+      "id": "reykjanes-ridge",
+      "name": {
+        "en": "Reykjanes Ridge",
+        "es": "Dorsal de Reykjanes"
+      },
+      "kind": "ridge",
+      "lon": -29.0,
+      "lat": 60.0,
+      "line": [
+        [
+          -23.0,
+          63.5
+        ],
+        [
+          -25.0,
+          62.5
+        ],
+        [
+          -27.0,
+          61.3
+        ],
+        [
+          -29.0,
+          60.0
+        ],
+        [
+          -31.0,
+          58.8
+        ],
+        [
+          -33.0,
+          57.5
+        ],
+        [
+          -34.5,
+          56.0
+        ],
+        [
+          -35.0,
+          54.0
+        ]
+      ],
+      "depth_m": 1000,
+      "rank": 2,
+      "text": {
+        "en": "This part of the Mid-Atlantic Ridge runs southwest from the Reykjanes Peninsula of Iceland, after which it is named. Near Iceland its crest is only a few hundred metres deep.",
+        "es": "Este tramo de la dorsal mesoatlántica va hacia el suroeste desde la península de Reykjanes, en Islandia, de la que toma su nombre. Cerca de Islandia, su cresta está a solo unos cientos de metros de profundidad."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/16248",
+      "gebco": 16248
+    },
+    {
+      "id": "carlsberg-ridge",
+      "name": {
+        "en": "Carlsberg Ridge",
+        "es": "Dorsal de Carlsberg"
+      },
+      "kind": "ridge",
+      "lon": 61.607,
+      "lat": 5.59,
+      "line": [
+        [
+          57.5,
+          10.0
+        ],
+        [
+          58.15,
+          9.02
+        ],
+        [
+          59.09,
+          8.04
+        ],
+        [
+          59.94,
+          7.35
+        ],
+        [
+          60.79,
+          6.41
+        ],
+        [
+          61.61,
+          5.59
+        ],
+        [
+          62.41,
+          5.01
+        ],
+        [
+          63.37,
+          4.35
+        ],
+        [
+          64.34,
+          3.79
+        ],
+        [
+          65.19,
+          3.27
+        ],
+        [
+          65.88,
+          2.66
+        ],
+        [
+          66.5,
+          2.0
+        ]
+      ],
+      "depth_m": 2500,
+      "rank": 3,
+      "text": {
+        "en": "This ridge in the Arabian Sea separates the Indian and African plates and leads towards the Gulf of Aden. It is named after the Carlsberg Foundation of Denmark, which paid for the Dana round-the-world expedition of the late 1920s.",
+        "es": "Esta dorsal del mar Arábigo separa las placas india y africana y se dirige hacia el golfo de Adén. Debe su nombre a la Fundación Carlsberg, de Dinamarca, que financió la expedición Dana alrededor del mundo a fines de la década de 1920."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/21075",
+      "gebco": 21075
+    },
+    {
+      "id": "ninetyeast-ridge",
+      "name": {
+        "en": "Ninetyeast Ridge",
+        "es": "Dorsal del Noventa Este"
+      },
+      "kind": "ridge",
+      "lon": 88.469,
+      "lat": -13.47,
+      "line": [
+        [
+          90.0,
+          7.0
+        ],
+        [
+          90.43,
+          5.08
+        ],
+        [
+          90.22,
+          3.01
+        ],
+        [
+          89.85,
+          1.53
+        ],
+        [
+          89.48,
+          -1.12
+        ],
+        [
+          88.78,
+          -10.94
+        ],
+        [
+          87.67,
+          -20.63
+        ],
+        [
+          87.49,
+          -26.32
+        ],
+        [
+          87.7,
+          -28.24
+        ],
+        [
+          87.7,
+          -30.39
+        ],
+        [
+          87.49,
+          -32.02
+        ],
+        [
+          87.0,
+          -34.0
+        ]
+      ],
+      "depth_m": 2000,
+      "rank": 1,
+      "text": {
+        "en": "This remarkably straight ridge follows the 90° E meridian for about 5,000 km down the eastern Indian Ocean. It is a trail of old volcanoes left by the Kerguelen hotspot as India moved north; Marie Tharp and Bruce Heezen gave it its one-word name.",
+        "es": "Esta dorsal, notablemente recta, sigue el meridiano 90° E a lo largo de unos 5 000 km por el este del océano Índico. Es un rastro de antiguos volcanes que dejó el punto caliente de Kerguelen mientras la India avanzaba hacia el norte; Marie Tharp y Bruce Heezen le dieron su nombre."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22661",
+      "src_more": [
+        "https://www-odp.tamu.edu/publications/183_SR/VOLUME/SYNTH/SYNTH.PDF"
+      ],
+      "gebco": 22661
+    },
+    {
+      "id": "walvis-ridge",
+      "name": {
+        "en": "Walvis Ridge",
+        "es": "Dorsal de Walvis"
+      },
+      "kind": "ridge",
+      "lon": 3.409,
+      "lat": -27.86,
+      "line": [
+        [
+          1.75,
+          -32.83
+        ],
+        [
+          2.34,
+          -31.54
+        ],
+        [
+          3.19,
+          -30.17
+        ],
+        [
+          2.94,
+          -29.74
+        ],
+        [
+          3.17,
+          -28.97
+        ],
+        [
+          3.15,
+          -28.46
+        ],
+        [
+          3.41,
+          -27.86
+        ],
+        [
+          5.08,
+          -26.24
+        ],
+        [
+          5.76,
+          -25.92
+        ],
+        [
+          6.2,
+          -25.48
+        ],
+        [
+          6.32,
+          -24.75
+        ],
+        [
+          6.0,
+          -23.5
+        ]
+      ],
+      "depth_m": 1500,
+      "rank": 2,
+      "text": {
+        "en": "This ridge runs from the coast of Namibia southwest towards Tristan da Cunha. With the Rio Grande Rise off Brazil, it is a trail left by the Tristan hotspot as the South Atlantic opened.",
+        "es": "Esta dorsal va desde la costa de Namibia hacia el suroeste, en dirección a Tristán de Acuña. Junto con la elevación de Río Grande, frente a Brasil, es un rastro que dejó el punto caliente de Tristán mientras se abría el Atlántico Sur."
+      },
+      "src": "https://doi.org/10.1029/JB095iB11p17475",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/23887"
+      ],
+      "gebco": 23887
+    },
+    {
+      "id": "lomonosov-ridge",
+      "name": {
+        "en": "Lomonosov Ridge",
+        "es": "Dorsal de Lomonósov"
+      },
+      "kind": "ridge",
+      "lon": 150.0,
+      "lat": 87.5,
+      "line": [
+        [
+          143.0,
+          80.5
+        ],
+        [
+          148.0,
+          83.5
+        ],
+        [
+          149.6,
+          85.1
+        ],
+        [
+          142.1,
+          88.7
+        ],
+        [
+          -68.2,
+          88.5
+        ],
+        [
+          -58.6,
+          86.0
+        ],
+        [
+          -64.0,
+          85.0
+        ]
+      ],
+      "depth_m": 1000,
+      "rank": 2,
+      "text": {
+        "en": "This narrow ridge crosses the Arctic Ocean near the North Pole, from the New Siberian Islands to Greenland and Ellesmere Island. It is a sliver of continental crust that broke away from Eurasia, and it splits the deep Arctic into two halves.",
+        "es": "Esta estrecha dorsal cruza el océano Ártico cerca del polo norte, desde las islas de Nueva Siberia hasta Groenlandia y la isla de Ellesmere. Es una astilla de corteza continental que se separó de Eurasia y divide en dos mitades el Ártico profundo."
+      },
+      "src": "https://doi.org/10.1038/nature04800",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/25878"
+      ],
+      "gebco": 25878
+    },
+    {
+      "id": "nazca-ridge",
+      "name": {
+        "en": "Nazca Ridge",
+        "es": "Dorsal de Nazca"
+      },
+      "kind": "ridge",
+      "lon": -76.667,
+      "lat": -15.25,
+      "line": [
+        [
+          -76.67,
+          -15.25
+        ],
+        [
+          -78.3,
+          -17.27
+        ],
+        [
+          -79.92,
+          -19.29
+        ],
+        [
+          -81.55,
+          -21.31
+        ],
+        [
+          -83.17,
+          -23.33
+        ]
+      ],
+      "depth_m": 2000,
+      "rank": 2,
+      "text": {
+        "en": "This broad undersea ridge on the Nazca plate runs southwest from the coast of southern Peru, where it is sinking beneath South America. Scientists who mapped it during the International Geophysical Year of 1957-1958 named it after the town of Nazca.",
+        "es": "Esta amplia dorsal submarina de la placa de Nazca va hacia el suroeste desde la costa del sur de Perú, donde se hunde bajo Sudamérica. Los científicos que la cartografiaron durante el Año Geofísico Internacional de 1957-1958 le dieron el nombre de la ciudad de Nazca."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22622",
+      "gebco": 22622
+    },
+    {
+      "id": "carnegie-ridge",
+      "name": {
+        "en": "Carnegie Ridge",
+        "es": "Dorsal de Carnegie"
+      },
+      "kind": "ridge",
+      "lon": -89.0,
+      "lat": -1.0,
+      "line": [
+        [
+          -89.0,
+          -1.0
+        ],
+        [
+          -86.5,
+          -1.1
+        ],
+        [
+          -84.0,
+          -1.2
+        ],
+        [
+          -81.5,
+          -1.3
+        ]
+      ],
+      "depth_m": 1500,
+      "rank": 3,
+      "text": {
+        "en": "This ridge runs east from the Galápagos Islands towards Ecuador. It is a trail of old volcanoes built by the Galápagos hotspot on the Nazca plate.",
+        "es": "Esta dorsal va hacia el este desde las islas Galápagos hasta Ecuador. Es un rastro de antiguos volcanes que construyó el punto caliente de Galápagos sobre la placa de Nazca."
+      },
+      "src": "https://doi.org/10.1029/93JB02018",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/12477"
+      ],
+      "gebco": 12477
+    },
+    {
+      "id": "cocos-ridge",
+      "name": {
+        "en": "Cocos Ridge",
+        "es": "Dorsal de Cocos"
+      },
+      "kind": "ridge",
+      "lon": -86.451,
+      "lat": 4.838,
+      "line": [
+        [
+          -90.0,
+          2.5
+        ],
+        [
+          -88.93,
+          3.01
+        ],
+        [
+          -88.07,
+          3.52
+        ],
+        [
+          -86.45,
+          4.84
+        ],
+        [
+          -85.72,
+          5.67
+        ],
+        [
+          -85.24,
+          6.28
+        ],
+        [
+          -84.0,
+          7.5
+        ]
+      ],
+      "depth_m": 1000,
+      "rank": 3,
+      "text": {
+        "en": "This ridge runs northeast from the Galápagos to Costa Rica and was built by the Galápagos hotspot on the Cocos plate. Costa Rica's Cocos Island, which gives it its name, rises from it.",
+        "es": "Esta dorsal va hacia el noreste desde las Galápagos hasta Costa Rica; la formó el punto caliente de Galápagos sobre la placa de Cocos. De ella emerge la isla del Coco, de Costa Rica, que le da nombre."
+      },
+      "src": "https://doi.org/10.1029/93JB02018",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/12690"
+      ],
+      "gebco": 12690
+    },
+    {
+      "id": "salas-y-gomez-ridge",
+      "name": {
+        "en": "Salas y Gómez Ridge",
+        "es": "Dorsal de Salas y Gómez"
+      },
+      "kind": "ridge",
+      "lon": -102.0,
+      "lat": -26.0,
+      "line": [
+        [
+          -105.0,
+          -26.6
+        ],
+        [
+          -100.69,
+          -26.24
+        ],
+        [
+          -96.38,
+          -25.89
+        ],
+        [
+          -92.06,
+          -25.53
+        ],
+        [
+          -87.75,
+          -25.17
+        ]
+      ],
+      "depth_m": 2000,
+      "rank": 3,
+      "text": {
+        "en": "A chain of seamounts runs east from near Easter Island. Its only peak above the sea is the tiny Chilean islet of Salas y Gómez, named after two Spanish sailors who sighted it in 1793 and 1805.",
+        "es": "Una cadena de montes submarinos va hacia el este desde cerca de la isla de Pascua. Su único pico sobre el mar es el pequeño islote chileno Salas y Gómez, que lleva el nombre de dos marinos españoles que lo avistaron en 1793 y 1805."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/26357",
+      "gebco": 26357
+    },
+    {
+      "id": "chagos-laccadive-ridge",
+      "name": {
+        "en": "Chagos-Laccadive Ridge",
+        "es": "Dorsal de Chagos-Laquedivas"
+      },
+      "kind": "ridge",
+      "lon": 73.09,
+      "lat": 2.201,
+      "line": [
+        [
+          72.5,
+          13.5
+        ],
+        [
+          73.0,
+          9.42
+        ],
+        [
+          73.0,
+          4.37
+        ],
+        [
+          73.22,
+          -0.85
+        ],
+        [
+          72.72,
+          -4.4
+        ],
+        [
+          71.97,
+          -6.42
+        ],
+        [
+          70.5,
+          -9.0
+        ]
+      ],
+      "depth_m": 1500,
+      "rank": 3,
+      "text": {
+        "en": "This long ridge in the central Indian Ocean carries the atolls of the Laccadive Islands, the Maldives and the Chagos Archipelago. It is a trail left by the Réunion hotspot as India moved north.",
+        "es": "Esta larga dorsal del Índico central sostiene los atolones de las islas Laquedivas, las Maldivas y el archipiélago de Chagos. Es un rastro que dejó el punto caliente de La Reunión mientras la India avanzaba hacia el norte."
+      },
+      "src": "https://www-odp.tamu.edu/publications/115_SR/VOLUME/CHAPTERS/sr115_04.pdf",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/28541"
+      ],
+      "gebco": 28541
+    },
+    {
+      "id": "aves-ridge",
+      "name": {
+        "en": "Aves Ridge",
+        "es": "Dorsal de Aves"
+      },
+      "kind": "ridge",
+      "lon": -63.5,
+      "lat": 13.0,
+      "line": [
+        [
+          -63.8,
+          12.0
+        ],
+        [
+          -63.5,
+          13.0
+        ],
+        [
+          -63.5,
+          14.2
+        ],
+        [
+          -63.6,
+          15.4
+        ],
+        [
+          -63.9,
+          16.6
+        ]
+      ],
+      "depth_m": 1000,
+      "rank": 3,
+      "text": {
+        "en": "This ridge in the eastern Caribbean, west of the Lesser Antilles, is an old volcanic arc. Its only peak above the water is the tiny Venezuelan island of Isla de Aves, after which it is named.",
+        "es": "Esta dorsal del Caribe oriental, al oeste de las Antillas Menores, es un antiguo arco volcánico. Su único pico sobre el agua es la pequeña isla de Aves, de Venezuela, que le da nombre."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/12029",
+      "gebco": 12029
+    }
+  ]
+}

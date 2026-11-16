@@ -1,0 +1,1694 @@
+{
+  "id": "deep-ocean",
+  "name": {
+    "en": "Into the deep: exploring the ocean floor",
+    "es": "Hacia las profundidades: la exploración del fondo marino"
+  },
+  "icon": "🌊",
+  "era": "contemporary",
+  "region": {
+    "en": "The world's oceans",
+    "es": "Los océanos del mundo"
+  },
+  "start": "1521",
+  "end": "2026-04-20",
+  "summary": {
+    "en": "From Magellan's rope that found no bottom in 1521 to dives to the deepest point of every ocean and the race to map the whole sea floor by 2030: how people learned what lies under the sea.",
+    "es": "De la cuerda de Magallanes que no tocó fondo en 1521 a las inmersiones al punto más profundo de cada océano y la carrera por cartografiar todo el fondo marino antes de 2030: cómo aprendimos lo que hay bajo el mar."
+  },
+  "camera": {
+    "lon": -150.0,
+    "lat": 0.0,
+    "zoom": 1.2
+  },
+  "steps": [
+    {
+      "date": "1521",
+      "title": {
+        "en": "A rope with no bottom",
+        "es": "Una cuerda sin fondo"
+      },
+      "text": {
+        "en": "Early in 1521, crossing the Pacific near the Tuamotu Islands, Magellan's crew let down a weighted line about 730 m long. It found no bottom, and the ocean's depth stayed a mystery.",
+        "es": "A comienzos de 1521, al cruzar el Pacífico cerca de las islas Tuamotu, los hombres de Magallanes bajaron una cuerda con un peso, de unos 730 m. No tocó fondo, y la profundidad del océano siguió siendo un misterio."
+      },
+      "details": {
+        "en": "For centuries sailors measured depth with a lead weight on a rope, which worked well only near the coast. Out in the open Pacific, Ferdinand Magellan's fleet tried it in deep water, one of the first known attempts to sound the open ocean. Accounts give the line as about 400 fathoms, roughly 730 to 750 m, and it never touched the sea floor, which there lies several kilometres down. For more than 300 years after, sounding the deep ocean stayed slow and uncertain: a rope kilometres long took hours to let out, and currents pulled it sideways, so no one could be sure when the weight reached the bottom.",
+        "es": "Durante siglos, los marinos midieron la profundidad con un peso de plomo atado a una cuerda, algo que solo funcionaba bien cerca de la costa. En pleno Pacífico, la flota de Fernando de Magallanes lo intentó en aguas profundas, uno de los primeros intentos conocidos de sondear el océano abierto. Los relatos dicen que la cuerda medía unas 400 brazas, entre 730 y 750 m, y nunca tocó el fondo, que allí está a varios kilómetros. Durante más de 300 años, sondear el océano profundo siguió siendo lento e incierto: soltar kilómetros de cuerda llevaba horas y las corrientes la desviaban, así que nadie sabía con seguridad cuándo el peso llegaba al fondo."
+      },
+      "camera": {
+        "lon": -139.5,
+        "lat": -15.2,
+        "zoom": 3.5
+      },
+      "places": [
+        {
+          "id": "ferdinand-magellan",
+          "name": {
+            "en": "Ferdinand Magellan",
+            "es": "Fernando de Magallanes"
+          },
+          "at": [
+            -139.3,
+            -15.0
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1521",
+          "life": [
+            "1480",
+            "1521-04-27"
+          ],
+          "place": {
+            "en": "Pacific Ocean, near the Tuamotu Islands",
+            "es": "Océano Pacífico, cerca de las islas Tuamotu"
+          },
+          "text": {
+            "en": "The Portuguese navigator who led Spain's fleet around South America and across the Pacific. His crew's sounding in 1521 is one of the first known attempts to measure the depth of the open ocean.",
+            "es": "El navegante portugués que llevó la flota de España por el sur de América y a través del Pacífico. El sondeo de su tripulación en 1521 es uno de los primeros intentos conocidos de medir la profundidad del océano abierto."
+          },
+          "wiki": {
+            "en": "Ferdinand Magellan",
+            "es": "Fernando de Magallanes"
+          }
+        },
+        {
+          "id": "magellan-sounding",
+          "name": {
+            "en": "Magellan's sounding",
+            "es": "El sondeo de Magallanes"
+          },
+          "at": [
+            -139.7,
+            -15.4
+          ],
+          "cat": "discovery",
+          "icon": "🪢",
+          "type": "event",
+          "date": "1521",
+          "place": {
+            "en": "Near the Tuamotu Islands, French Polynesia",
+            "es": "Cerca de las islas Tuamotu, Polinesia Francesa"
+          },
+          "text": {
+            "en": "A line of about 400 fathoms, some 730 m, was lowered into the Pacific without touching bottom. Sources give slightly different lengths.",
+            "es": "Una cuerda de unas 400 brazas, unos 730 m, se bajó al Pacífico sin tocar fondo. Las fuentes dan largos algo distintos."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1854",
+      "title": {
+        "en": "Maury's map of the Atlantic",
+        "es": "El mapa del Atlántico de Maury"
+      },
+      "text": {
+        "en": "In 1854 Matthew Fontaine Maury of the US Navy published one of the first maps of an ocean's depths. From about 200 soundings, it showed a plateau across the North Atlantic, a good bed for a telegraph cable.",
+        "es": "En 1854, Matthew Fontaine Maury, de la Marina de Estados Unidos, publicó uno de los primeros mapas de la profundidad de un océano. Con unos 200 sondeos, mostraba una meseta en el Atlántico Norte, buena para tender un cable telegráfico."
+      },
+      "details": {
+        "en": "Maury ran the US Naval Observatory in Washington and gathered logbooks from ships all over the world to chart winds and currents. Navy crews sounded the deep Atlantic with an apparatus designed at the Observatory, and in 1853 they brought up the first samples of its floor. That year Lieutenant Otway Berryman, on USS Dolphin, made the first soundings over the Mid-Atlantic Ridge, north of the Azores. Maury's chart of 1854, published in his Wind and Current Charts, joined these points into a picture of the whole basin. He wrote that the plateau seemed placed there 'especially for the purpose of holding the wires of a submarine telegraph'. The shallow area was in fact part of the Mid-Atlantic Ridge, which no one yet understood.",
+        "es": "Maury dirigía el Observatorio Naval de Estados Unidos, en Washington, y reunía los diarios de navegación de barcos de todo el mundo para trazar mapas de vientos y corrientes. Las tripulaciones de la Marina sondearon el Atlántico profundo con un aparato diseñado en el Observatorio, y en 1853 sacaron las primeras muestras de su fondo. Ese año, el teniente Otway Berryman, en el USS Dolphin, hizo los primeros sondeos sobre la dorsal mesoatlántica, al norte de las Azores. La carta de Maury de 1854, publicada en sus Wind and Current Charts, unió esos puntos en una imagen de toda la cuenca. Escribió que la meseta parecía puesta allí «especialmente para sostener los cables de un telégrafo submarino». En realidad, esa zona poco profunda era parte de la dorsal mesoatlántica, que nadie entendía todavía."
+      },
+      "camera": {
+        "lon": -38.0,
+        "lat": 44.0,
+        "zoom": 2.2
+      },
+      "places": [
+        {
+          "id": "matthew-fontaine-maury",
+          "name": {
+            "en": "Matthew Fontaine Maury",
+            "es": "Matthew Fontaine Maury"
+          },
+          "at": [
+            -77.051,
+            38.895
+          ],
+          "cat": "discovery",
+          "type": "person",
+          "date": "1854",
+          "life": [
+            "1806-01-14",
+            "1873-02-01"
+          ],
+          "place": {
+            "en": "US Naval Observatory, Washington, D.C., United States",
+            "es": "Observatorio Naval de Estados Unidos, Washington D. C., Estados Unidos"
+          },
+          "text": {
+            "en": "American naval officer and head of the US Naval Observatory. He collected ships' logs and soundings to chart the winds, currents and depths of the sea.",
+            "es": "Oficial de marina estadounidense y director del Observatorio Naval de Estados Unidos. Reunió diarios de navegación y sondeos para trazar mapas de los vientos, las corrientes y las profundidades del mar."
+          },
+          "wiki": {
+            "en": "Matthew Fontaine Maury",
+            "es": "Matthew Fontaine Maury"
+          }
+        },
+        {
+          "id": "maury-depth-chart",
+          "name": {
+            "en": "Maury's depth chart of the North Atlantic",
+            "es": "Carta de profundidades del Atlántico Norte de Maury"
+          },
+          "at": [
+            -35.0,
+            48.0
+          ],
+          "cat": "book",
+          "icon": "🗺️",
+          "type": "work",
+          "date": "1854",
+          "place": {
+            "en": "North Atlantic Ocean",
+            "es": "Atlántico Norte"
+          },
+          "text": {
+            "en": "Published in Maury's Wind and Current Charts of 1854, it drew the depths of the North Atlantic from soundings, with a plateau in the middle of the ocean.",
+            "es": "Publicada en las Wind and Current Charts de Maury de 1854, dibujaba las profundidades del Atlántico Norte a partir de sondeos, con una meseta en medio del océano."
+          },
+          "by": {
+            "en": "Matthew Fontaine Maury",
+            "es": "Matthew Fontaine Maury"
+          }
+        },
+        {
+          "id": "berryman-soundings",
+          "name": {
+            "en": "Berryman's soundings",
+            "es": "Los sondeos de Berryman"
+          },
+          "at": [
+            -29.5,
+            42.0
+          ],
+          "cat": "discovery",
+          "icon": "📏",
+          "type": "event",
+          "date": "1853",
+          "place": {
+            "en": "North of the Azores, North Atlantic",
+            "es": "Al norte de las Azores, Atlántico Norte"
+          },
+          "text": {
+            "en": "In 1853 Lieutenant Otway Berryman, on USS Dolphin, made the first soundings over the Mid-Atlantic Ridge, north of the Azores.",
+            "es": "En 1853, el teniente Otway Berryman, en el USS Dolphin, hizo los primeros sondeos sobre la dorsal mesoatlántica, al norte de las Azores."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1872-12-21",
+      "title": {
+        "en": "Challenger sets sail",
+        "es": "Zarpa el Challenger"
+      },
+      "text": {
+        "en": "On 21 December 1872 HMS Challenger left Portsmouth to study the deep sea all around the world. The warship had most of its guns taken out to make room for laboratories.",
+        "es": "El 21 de diciembre de 1872, el HMS Challenger zarpó de Portsmouth para estudiar el mar profundo en todo el mundo. A este barco de guerra le habían quitado casi todos los cañones para hacer lugar a laboratorios."
+      },
+      "details": {
+        "en": "The voyage was the first large-scale exploration of the deep sea. Led by the naturalist Charles Wyville Thomson, its scientists studied the physics, chemistry and life of the oceans for almost three and a half years, over about 68,890 nautical miles (127,600 km). They made 374 deep-sea soundings, dredged the floor at 111 stations and trawled at 129. Each sounding meant letting out kilometres of rope with a heavy weight and watching for the moment it slowed. The ship came home to Spithead on 24 May 1876. The results filled the 50 volumes of the Challenger Report, published from 1880 to 1895, which described about 4,700 new species; sources give totals from about 4,000 to 5,000.",
+        "es": "El viaje fue la primera gran exploración del mar profundo. Dirigidos por el naturalista Charles Wyville Thomson, sus científicos estudiaron la física, la química y la vida de los océanos durante casi tres años y medio, a lo largo de unas 68 890 millas náuticas (127 600 km). Hicieron 374 sondeos de profundidad, dragaron el fondo en 111 estaciones y usaron redes de arrastre en 129. Cada sondeo exigía soltar kilómetros de cuerda con un peso y esperar el momento en que se frenaba. El barco volvió a Spithead el 24 de mayo de 1876. Los resultados llenaron los 50 tomos del Challenger Report, publicados entre 1880 y 1895, que describieron unas 4 700 especies nuevas; según la fuente, el total va de unas 4 000 a 5 000."
+      },
+      "camera": {
+        "lon": -10.0,
+        "lat": 30.0,
+        "zoom": 1.3
+      },
+      "places": [
+        {
+          "id": "hms-challenger",
+          "name": {
+            "en": "HMS Challenger",
+            "es": "HMS Challenger"
+          },
+          "at": [
+            -1.109,
+            50.799
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1872-12-21",
+          "end": "1876-05-24",
+          "place": {
+            "en": "Portsmouth, England",
+            "es": "Portsmouth, Inglaterra"
+          },
+          "text": {
+            "en": "A Royal Navy corvette turned into a floating laboratory. Between 1872 and 1876 it sailed around the world to study the deep ocean.",
+            "es": "Una corbeta de la Marina Real británica convertida en laboratorio flotante. Entre 1872 y 1876 dio la vuelta al mundo para estudiar el océano profundo."
+          }
+        },
+        {
+          "id": "charles-wyville-thomson",
+          "name": {
+            "en": "Charles Wyville Thomson",
+            "es": "Charles Wyville Thomson"
+          },
+          "at": [
+            -1.13,
+            50.81
+          ],
+          "cat": "discovery",
+          "type": "person",
+          "date": "1872-12-21",
+          "life": [
+            "1830-03-05",
+            "1882-03-10"
+          ],
+          "place": {
+            "en": "Aboard HMS Challenger",
+            "es": "A bordo del HMS Challenger"
+          },
+          "text": {
+            "en": "Scottish naturalist who led the expedition's scientists. His earlier dredging cruises had shown that animals live in very deep water.",
+            "es": "Naturalista escocés que dirigió a los científicos de la expedición. Sus campañas de dragado anteriores habían mostrado que hay animales en aguas muy profundas."
+          }
+        },
+        {
+          "id": "challenger-report",
+          "name": {
+            "en": "The Challenger Report",
+            "es": "El Challenger Report"
+          },
+          "at": [
+            -3.1883,
+            55.9533
+          ],
+          "cat": "book",
+          "icon": "📚",
+          "type": "work",
+          "date": "1880",
+          "end": "1895",
+          "place": {
+            "en": "Edinburgh, Scotland",
+            "es": "Edimburgo, Escocia"
+          },
+          "text": {
+            "en": "The expedition's results, written by many scientists in 50 volumes from 1880 to 1895. It laid the foundations of modern oceanography.",
+            "es": "Los resultados de la expedición, escritos por muchos científicos en 50 tomos entre 1880 y 1895. Sentó las bases de la oceanografía moderna."
+          },
+          "by": {
+            "en": "Many authors, edited by Charles Wyville Thomson and John Murray",
+            "es": "Muchos autores, bajo la dirección de Charles Wyville Thomson y John Murray"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1875-03-23",
+      "title": {
+        "en": "The deepest sounding",
+        "es": "El sondeo más profundo"
+      },
+      "text": {
+        "en": "On 23 March 1875, between Guam and Palau, Challenger's line ran out 4,475 fathoms, about 8,180 m, before it touched bottom. It was the deepest sounding yet: the place is now called the Challenger Deep.",
+        "es": "El 23 de marzo de 1875, entre Guam y Palaos, la cuerda del Challenger bajó 4 475 brazas, unos 8 180 m, antes de tocar fondo. Era el sondeo más profundo hasta entonces: el lugar se llama hoy abismo Challenger."
+      },
+      "details": {
+        "en": "Baffling winds had pushed the ship west of its course to Guam, over the southern end of what is now called the Mariana Trench. At station 225 the crew sounded twice to be sure. The line was marked every 25 fathoms, so the figure was only as precise as those marks, and the ship's position, worked out from the stars, was good to about two nautical miles. The spot was first called the Swire Deep; on a map of 1877 the German cartographer August Petermann named it the Challenger Deep. Modern sonar and dives put the deepest point about 10,935 m down, some 70 km to the west.",
+        "es": "Unos vientos caprichosos habían desviado el barco hacia el oeste de su rumbo a Guam, sobre el extremo sur de lo que hoy se llama fosa de las Marianas. En la estación 225, la tripulación sondeó dos veces para estar segura. La cuerda tenía marcas cada 25 brazas, así que la cifra solo era tan precisa como esas marcas, y la posición del barco, calculada por las estrellas, tenía un margen de unas dos millas náuticas. Al principio el lugar se llamó Swire Deep; en un mapa de 1877, el cartógrafo alemán August Petermann lo llamó abismo Challenger. El sonar y las inmersiones modernas sitúan el punto más hondo a unos 10 935 m, unos 70 km más al oeste."
+      },
+      "camera": {
+        "lon": 142.9,
+        "lat": 11.6,
+        "zoom": 6
+      },
+      "places": [
+        {
+          "id": "challenger-sounding",
+          "name": {
+            "en": "Challenger's sounding of 1875",
+            "es": "El sondeo del Challenger de 1875"
+          },
+          "at": [
+            143.2667,
+            11.4
+          ],
+          "cat": "discovery",
+          "icon": "📏",
+          "type": "event",
+          "date": "1875-03-23",
+          "place": {
+            "en": "Western Pacific, south-west of Guam",
+            "es": "Pacífico occidental, al suroeste de Guam"
+          },
+          "text": {
+            "en": "The record sounding of 4,475 fathoms, about 8,184 m, at station 225. It was the greatest depth known at the time.",
+            "es": "El sondeo récord de 4 475 brazas, unos 8 184 m, en la estación 225. Era la mayor profundidad conocida en su época."
+          }
+        },
+        {
+          "id": "challenger-deep",
+          "name": {
+            "en": "Challenger Deep",
+            "es": "Abismo Challenger"
+          },
+          "at": [
+            142.593,
+            11.373
+          ],
+          "cat": "nature",
+          "icon": "🕳️",
+          "type": "place",
+          "date": "1875-03-23",
+          "place": {
+            "en": "Mariana Trench, western Pacific",
+            "es": "Fosa de las Marianas, Pacífico occidental"
+          },
+          "text": {
+            "en": "The deepest known point of the ocean, about 10,935 m down at the southern end of the Mariana Trench. It is named after HMS Challenger.",
+            "es": "El punto más profundo conocido del océano, a unos 10 935 m, en el extremo sur de la fosa de las Marianas. Debe su nombre al HMS Challenger."
+          },
+          "details": {
+            "en": "Estimates of its depth range from about 10,920 to 10,935 m; a study published in 2021 gave 10,935 m, give or take 6 m. Mount Everest would fit inside with about 2 km of water to spare. It lies about 70 km west of the spot where Challenger made its record sounding in 1875.",
+            "es": "Las estimaciones de su profundidad van de unos 10 920 a 10 935 m; un estudio publicado en 2021 dio 10 935 m, con un margen de 6 m. El monte Everest cabría dentro y aún le quedarían unos 2 km de agua encima. Está a unos 70 km al oeste del punto donde el Challenger hizo su sondeo récord en 1875."
+          },
+          "wiki": {
+            "en": "Challenger Deep",
+            "es": "Abismo Challenger"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1927-06-02",
+      "title": {
+        "en": "Echoes from the sea floor",
+        "es": "Ecos del fondo del mar"
+      },
+      "text": {
+        "en": "From 1925 to 1927 the German research ship Meteor crossed the South Atlantic 14 times, timing echoes of sound from the sea floor. About 67,000 soundings showed a rugged mountain range down the middle of the ocean.",
+        "es": "Entre 1925 y 1927, el buque de investigación alemán Meteor cruzó el Atlántico Sur 14 veces midiendo el eco del sonido en el fondo marino. Unos 67 000 sondeos mostraron una abrupta cordillera en medio del océano."
+      },
+      "details": {
+        "en": "An echo sounder sends a pulse of sound down and times its return. Sound travels through seawater at about 1,500 m a second, so half the time, multiplied by that speed, gives the depth. A sounding that took hours with a rope now took seconds. The Meteor left Wilhelmshaven on 16 April 1925 and came back on 2 June 1927, after 777 days. Its leader, the oceanographer Alfred Merz, died in Buenos Aires on 16 August 1925, and Captain Fritz Spiess led the rest of the voyage. With a Behm echo sounder the crew drew 14 profiles across the ocean, the first clear picture of the Mid-Atlantic Ridge. The scientists also measured the water's temperature, saltiness and currents at many depths.",
+        "es": "Una ecosonda envía un pulso de sonido hacia abajo y mide cuánto tarda en volver. El sonido viaja en el agua de mar a unos 1 500 m por segundo, así que la mitad del tiempo, multiplicada por esa velocidad, da la profundidad. Un sondeo que con cuerda llevaba horas ahora tomaba segundos. El Meteor salió de Wilhelmshaven el 16 de abril de 1925 y volvió el 2 de junio de 1927, tras 777 días. Su jefe, el oceanógrafo Alfred Merz, murió en Buenos Aires el 16 de agosto de 1925, y el capitán Fritz Spiess dirigió el resto del viaje. Con una ecosonda Behm, la tripulación trazó 14 perfiles de un lado a otro del océano, la primera imagen clara de la dorsal mesoatlántica. Los científicos también midieron la temperatura, la salinidad y las corrientes del agua a muchas profundidades."
+      },
+      "camera": {
+        "lon": -20.0,
+        "lat": -18.0,
+        "zoom": 1.8
+      },
+      "places": [
+        {
+          "id": "meteor-ship",
+          "name": {
+            "en": "Meteor",
+            "es": "Meteor"
+          },
+          "at": [
+            8.135,
+            53.515
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1925-04-16",
+          "end": "1927-06-02",
+          "place": {
+            "en": "Wilhelmshaven, Germany",
+            "es": "Wilhelmshaven, Alemania"
+          },
+          "text": {
+            "en": "The German survey ship that carried the German Atlantic Expedition of 1925–1927, one of the first to map an ocean by echo sounding.",
+            "es": "El buque hidrográfico alemán de la Expedición Atlántica Alemana de 1925–1927, una de las primeras en cartografiar un océano con ecosonda."
+          }
+        },
+        {
+          "id": "alfred-merz",
+          "name": {
+            "en": "Alfred Merz",
+            "es": "Alfred Merz"
+          },
+          "at": [
+            -58.38,
+            -34.6
+          ],
+          "cat": "discovery",
+          "type": "person",
+          "date": "1925-08-16",
+          "place": {
+            "en": "Buenos Aires, Argentina",
+            "es": "Buenos Aires, Argentina"
+          },
+          "text": {
+            "en": "German oceanographer who planned and led the expedition until he died in Buenos Aires on 16 August 1925.",
+            "es": "Oceanógrafo alemán que planeó y dirigió la expedición hasta su muerte en Buenos Aires, el 16 de agosto de 1925."
+          }
+        },
+        {
+          "id": "mid-atlantic-ridge",
+          "name": {
+            "en": "Mid-Atlantic Ridge",
+            "es": "Dorsal mesoatlántica"
+          },
+          "at": [
+            -13.5,
+            -9.0
+          ],
+          "cat": "nature",
+          "icon": "⛰️",
+          "type": "place",
+          "date": "1927",
+          "place": {
+            "en": "South Atlantic Ocean",
+            "es": "Atlántico Sur"
+          },
+          "text": {
+            "en": "A chain of undersea mountains running the length of the Atlantic, where the plates on either side move apart. The Meteor's soundings gave the first clear picture of it.",
+            "es": "Una cadena de montañas submarinas que recorre todo el Atlántico, donde las placas de ambos lados se separan. Los sondeos del Meteor dieron la primera imagen clara de ella."
+          },
+          "wiki": {
+            "en": "Mid-Atlantic Ridge",
+            "es": "Dorsal mesoatlántica"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1957",
+      "title": {
+        "en": "Marie Tharp's rift valley",
+        "es": "El valle del rift de Marie Tharp"
+      },
+      "text": {
+        "en": "At Lamont, near New York, Marie Tharp drew maps from the soundings Bruce Heezen gathered at sea. In 1952 she found a valley along the crest of the Mid-Atlantic Ridge; their first map of the North Atlantic floor came out in 1957.",
+        "es": "En Lamont, cerca de Nueva York, Marie Tharp dibujaba mapas con los sondeos que Bruce Heezen reunía en el mar. En 1952 halló un valle a lo largo de la cresta de la dorsal mesoatlántica; su primer mapa del fondo del Atlántico Norte salió en 1957."
+      },
+      "details": {
+        "en": "Women were not allowed on Lamont's research ships at the time, so Tharp worked from the echo-sounding profiles on paper. Comparing three profiles across the Atlantic, she noticed a V-shaped notch in the centre of each: a rift valley. Heezen at first dismissed it as 'girl talk'. Then he saw that the centres of undersea earthquakes lined up along her valley. It was strong evidence that the sea floor was splitting apart and that the continents move, an idea most geologists then rejected. Much of the depth data was secret, so instead of contour lines they drew the floor as if seen from above, in a 'physiographic diagram'.",
+        "es": "En esa época no se permitía a las mujeres subir a los barcos de investigación de Lamont, así que Tharp trabajaba con los perfiles de las ecosondas en papel. Al comparar tres perfiles a través del Atlántico, vio una muesca en forma de V en el centro de cada uno: un valle de rift. Al principio, Heezen lo descartó como «charla de chicas». Luego vio que los focos de los terremotos submarinos se alineaban a lo largo de su valle. Era una prueba sólida de que el fondo marino se estaba abriendo y de que los continentes se mueven, una idea que entonces rechazaba la mayoría de los geólogos. Muchos datos de profundidad eran secretos, así que en lugar de curvas de nivel dibujaron el fondo como visto desde arriba, en un «diagrama fisiográfico»."
+      },
+      "camera": {
+        "lon": -45.0,
+        "lat": 38.0,
+        "zoom": 2.0
+      },
+      "places": [
+        {
+          "id": "marie-tharp",
+          "name": {
+            "en": "Marie Tharp",
+            "es": "Marie Tharp"
+          },
+          "at": [
+            -73.907,
+            41.004
+          ],
+          "cat": "discovery",
+          "type": "person",
+          "date": "1952",
+          "life": [
+            "1920-07-30",
+            "2006-08-23"
+          ],
+          "place": {
+            "en": "Lamont Geological Observatory, Palisades, New York, United States",
+            "es": "Observatorio Geológico Lamont, Palisades, Nueva York, Estados Unidos"
+          },
+          "text": {
+            "en": "American geologist and mapmaker. With Bruce Heezen she drew the first maps of the whole ocean floor and found the rift valley along the Mid-Atlantic Ridge.",
+            "es": "Geóloga y cartógrafa estadounidense. Con Bruce Heezen dibujó los primeros mapas de todo el fondo oceánico y descubrió el valle del rift a lo largo de la dorsal mesoatlántica."
+          },
+          "wiki": {
+            "en": "Marie Tharp",
+            "es": "Marie Tharp"
+          }
+        },
+        {
+          "id": "bruce-heezen",
+          "name": {
+            "en": "Bruce Heezen",
+            "es": "Bruce Heezen"
+          },
+          "at": [
+            -73.9,
+            41.012
+          ],
+          "cat": "discovery",
+          "type": "person",
+          "date": "1952",
+          "life": [
+            "1924",
+            "1977-06-21"
+          ],
+          "place": {
+            "en": "Lamont Geological Observatory, Palisades, New York, United States",
+            "es": "Observatorio Geológico Lamont, Palisades, Nueva York, Estados Unidos"
+          },
+          "text": {
+            "en": "American geologist at Lamont who gathered soundings at sea. He and Tharp worked together until his death in 1977.",
+            "es": "Geólogo estadounidense de Lamont que reunía sondeos en el mar. Él y Tharp trabajaron juntos hasta su muerte en 1977."
+          }
+        },
+        {
+          "id": "north-atlantic-diagram",
+          "name": {
+            "en": "Physiographic diagram of the North Atlantic",
+            "es": "Diagrama fisiográfico del Atlántico Norte"
+          },
+          "at": [
+            -45.0,
+            30.0
+          ],
+          "cat": "book",
+          "icon": "🗺️",
+          "type": "work",
+          "date": "1957",
+          "place": {
+            "en": "North Atlantic Ocean",
+            "es": "Atlántico Norte"
+          },
+          "text": {
+            "en": "Their first published map of the sea floor, drawn as a landscape seen from above. The Library of Congress now keeps the Heezen–Tharp maps.",
+            "es": "Su primer mapa publicado del fondo marino, dibujado como un paisaje visto desde arriba. Hoy la Biblioteca del Congreso guarda los mapas de Heezen y Tharp."
+          },
+          "by": {
+            "en": "Bruce Heezen and Marie Tharp",
+            "es": "Bruce Heezen y Marie Tharp"
+          }
+        },
+        {
+          "id": "mid-atlantic-rift-valley",
+          "name": {
+            "en": "Rift valley of the Mid-Atlantic Ridge",
+            "es": "Valle del rift de la dorsal mesoatlántica"
+          },
+          "at": [
+            -33.1,
+            36.8
+          ],
+          "cat": "nature",
+          "icon": "⛰️",
+          "type": "place",
+          "date": "1952",
+          "place": {
+            "en": "Mid-Atlantic Ridge, south-west of the Azores",
+            "es": "Dorsal mesoatlántica, al suroeste de las Azores"
+          },
+          "text": {
+            "en": "A deep valley along the crest of the ridge, where new sea floor forms as the plates move apart. Tharp found it in the soundings in 1952.",
+            "es": "Un valle profundo a lo largo de la cresta de la dorsal, donde se forma nuevo fondo marino al separarse las placas. Tharp lo descubrió en los sondeos en 1952."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1960-01-23",
+      "title": {
+        "en": "Trieste reaches the bottom",
+        "es": "El Trieste llega al fondo"
+      },
+      "text": {
+        "en": "On 23 January 1960 Jacques Piccard and Don Walsh took the bathyscaphe Trieste to the floor of the Challenger Deep, nearly 11 km down. The descent took almost five hours; they stayed about 20 minutes.",
+        "es": "El 23 de enero de 1960, Jacques Piccard y Don Walsh llevaron el batiscafo Trieste al fondo del abismo Challenger, a casi 11 km. El descenso duró casi cinco horas; se quedaron unos 20 minutos."
+      },
+      "details": {
+        "en": "A bathyscaphe works like an underwater balloon. The two men sat in a small steel sphere hung under a large float full of petrol, which is lighter than water, and iron ballast was dropped to come back up. The Trieste was designed by Jacques's father, the Swiss physicist Auguste Piccard, and was bought by the US Navy in 1958. The dive had to fit into daylight hours, so they could spend only about 20 minutes on the bottom before the long climb back. The Navy recorded a depth of about 35,800 feet, nearly 10,900 m. No one went back to the Challenger Deep for 52 years.",
+        "es": "Un batiscafo funciona como un globo submarino. Los dos hombres iban en una pequeña esfera de acero colgada bajo un gran flotador lleno de gasolina, más ligera que el agua, y para volver a subir soltaban lastre de hierro. El Trieste lo diseñó el padre de Jacques, el físico suizo Auguste Piccard, y la Marina de Estados Unidos lo compró en 1958. La inmersión tenía que caber en las horas de luz, así que solo pudieron pasar unos 20 minutos en el fondo antes del largo ascenso. La Marina registró una profundidad de unos 35 800 pies, casi 10 900 m. Nadie volvió al abismo Challenger durante 52 años."
+      },
+      "camera": {
+        "lon": 142.5,
+        "lat": 11.35,
+        "zoom": 8
+      },
+      "places": [
+        {
+          "id": "trieste",
+          "name": {
+            "en": "Trieste",
+            "es": "Trieste"
+          },
+          "at": [
+            142.47,
+            11.34
+          ],
+          "cat": "ship",
+          "icon": "🤿",
+          "type": "ship",
+          "date": "1960-01-23",
+          "place": {
+            "en": "Challenger Deep, Mariana Trench",
+            "es": "Abismo Challenger, fosa de las Marianas"
+          },
+          "text": {
+            "en": "A bathyscaphe designed by Auguste Piccard: a crew sphere under a float of petrol. In 1960 it made the first dive to the deepest point of the ocean.",
+            "es": "Un batiscafo diseñado por Auguste Piccard: una esfera para la tripulación bajo un flotador de gasolina. En 1960 hizo la primera inmersión al punto más profundo del océano."
+          },
+          "wiki": {
+            "en": "Trieste (bathyscaphe)",
+            "es": "Batiscafo Trieste"
+          }
+        },
+        {
+          "id": "jacques-piccard",
+          "name": {
+            "en": "Jacques Piccard",
+            "es": "Jacques Piccard"
+          },
+          "at": [
+            142.43,
+            11.37
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1960-01-23",
+          "life": [
+            "1922-07-28",
+            "2008-11-01"
+          ],
+          "place": {
+            "en": "Challenger Deep, Mariana Trench",
+            "es": "Abismo Challenger, fosa de las Marianas"
+          },
+          "text": {
+            "en": "Swiss oceanographer and engineer, son of Auguste Piccard. He piloted the Trieste with Don Walsh.",
+            "es": "Oceanógrafo e ingeniero suizo, hijo de Auguste Piccard. Pilotó el Trieste con Don Walsh."
+          },
+          "wiki": {
+            "en": "Jacques Piccard",
+            "es": "Jacques Piccard"
+          }
+        },
+        {
+          "id": "don-walsh",
+          "name": {
+            "en": "Don Walsh",
+            "es": "Don Walsh"
+          },
+          "at": [
+            142.51,
+            11.31
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1960-01-23",
+          "life": [
+            "1931-11-02",
+            "2023-11-12"
+          ],
+          "place": {
+            "en": "Challenger Deep, Mariana Trench",
+            "es": "Abismo Challenger, fosa de las Marianas"
+          },
+          "text": {
+            "en": "US Navy officer in charge of the Trieste, later an oceanographer. He was 28 at the time of the dive.",
+            "es": "Oficial de la Marina de Estados Unidos a cargo del Trieste, luego oceanógrafo. Tenía 28 años cuando hizo la inmersión."
+          },
+          "wiki": {
+            "en": "Don Walsh",
+            "es": "Don Walsh"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1977-02-17",
+      "title": {
+        "en": "Life without sunlight",
+        "es": "Vida sin luz del sol"
+      },
+      "text": {
+        "en": "On 17 February 1977 the submersible Alvin dived on the Galápagos Rift and found warm springs on the sea floor, about 2,500 m down. Around them lived giant clams and tube worms, fed by chemical energy, not sunlight.",
+        "es": "El 17 de febrero de 1977, el sumergible Alvin bajó al rift de las Galápagos y halló manantiales tibios en el fondo marino, a unos 2 500 m. A su alrededor vivían almejas gigantes y gusanos de tubo, alimentados por energía química, no por la luz del sol."
+      },
+      "details": {
+        "en": "The expedition had come to look for warm springs where the sea floor spreads apart. The towed camera sled ANGUS photographed beds of white clams where the water was slightly warmer, and within hours the ship carrying Alvin arrived. Using acoustic beacons, Jack Corliss, Tjeerd van Andel and the pilot Jack Donnelly dived to the spot, which they called the Clambake. Over the following days Alvin found four more vent sites, each crowded with life. Microbes there make food from chemicals in the vent water, such as hydrogen sulphide, a process called chemosynthesis. The discovery changed ideas about where life can exist, on Earth and perhaps on other worlds.",
+        "es": "La expedición había ido a buscar manantiales tibios donde el fondo marino se abre. El trineo remolcado de cámaras ANGUS fotografió lechos de almejas blancas donde el agua estaba un poco más tibia, y a las pocas horas llegó el barco que llevaba el Alvin. Guiados por balizas acústicas, Jack Corliss, Tjeerd van Andel y el piloto Jack Donnelly bajaron al lugar, al que llamaron Clambake. En los días siguientes, el Alvin halló otras cuatro fuentes, todas llenas de vida. Allí los microbios fabrican alimento con sustancias químicas del agua de las fuentes, como el sulfuro de hidrógeno, un proceso llamado quimiosíntesis. El hallazgo cambió las ideas sobre dónde puede existir la vida, en la Tierra y quizá en otros mundos."
+      },
+      "camera": {
+        "lon": -86.2,
+        "lat": 0.8,
+        "zoom": 7
+      },
+      "places": [
+        {
+          "id": "alvin",
+          "name": {
+            "en": "Alvin",
+            "es": "Alvin"
+          },
+          "at": [
+            -86.1,
+            0.83
+          ],
+          "cat": "ship",
+          "icon": "🤿",
+          "type": "ship",
+          "date": "1977-02-17",
+          "place": {
+            "en": "Galápagos Rift, Pacific Ocean",
+            "es": "Rift de las Galápagos, océano Pacífico"
+          },
+          "text": {
+            "en": "A research submersible owned by the US Navy and run by the Woods Hole Oceanographic Institution since 1964. It carries a pilot and two scientists.",
+            "es": "Un sumergible de investigación de la Marina de Estados Unidos que opera la Institución Oceanográfica Woods Hole desde 1964. Lleva un piloto y dos científicos."
+          }
+        },
+        {
+          "id": "clambake-vents",
+          "name": {
+            "en": "Clambake vents, Galápagos Rift",
+            "es": "Fuentes Clambake, rift de las Galápagos"
+          },
+          "at": [
+            -86.13,
+            0.8
+          ],
+          "cat": "discovery",
+          "icon": "♨️",
+          "type": "site",
+          "date": "1977-02-17",
+          "place": {
+            "en": "Galápagos Rift, north-east of the Galápagos Islands",
+            "es": "Rift de las Galápagos, al noreste de las islas Galápagos"
+          },
+          "text": {
+            "en": "The first deep-sea hydrothermal vents seen by people, about 2,500 m down. Warm water seeping from the floor fed beds of giant clams.",
+            "es": "Las primeras fuentes hidrotermales profundas vistas por el ser humano, a unos 2 500 m. El agua tibia que brotaba del fondo alimentaba lechos de almejas gigantes."
+          },
+          "wiki": {
+            "en": "Hydrothermal vent",
+            "es": "Fuente hidrotermal"
+          }
+        },
+        {
+          "id": "jack-corliss",
+          "name": {
+            "en": "Jack Corliss",
+            "es": "Jack Corliss"
+          },
+          "at": [
+            -86.16,
+            0.77
+          ],
+          "cat": "discovery",
+          "type": "person",
+          "date": "1977-02-17",
+          "place": {
+            "en": "Galápagos Rift, Pacific Ocean",
+            "es": "Rift de las Galápagos, océano Pacífico"
+          },
+          "text": {
+            "en": "American geologist from Oregon State University. With Tjeerd van Andel and the pilot Jack Donnelly he made the first dive to the vents.",
+            "es": "Geólogo estadounidense de la Universidad Estatal de Oregón. Con Tjeerd van Andel y el piloto Jack Donnelly hizo la primera inmersión a las fuentes."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1977-06-21",
+      "title": {
+        "en": "The whole ocean floor",
+        "es": "Todo el fondo del océano"
+      },
+      "text": {
+        "en": "Heezen and Tharp's map of the whole ocean floor, painted by the Austrian artist Heinrich Berann, is dated 1977. That June Heezen died aboard a research submarine near Iceland; Tharp lived until 2006.",
+        "es": "El mapa de todo el fondo oceánico de Heezen y Tharp, pintado por el artista austríaco Heinrich Berann, lleva la fecha de 1977. Ese junio, Heezen murió a bordo de un submarino de investigación cerca de Islandia; Tharp vivió hasta 2006."
+      },
+      "details": {
+        "en": "For two decades Tharp and Heezen gathered soundings from every ocean, with support from the US Navy's Office of Naval Research. Berann, known for his painted panoramas of the Alps, turned their maps into a picture of the sea floor as if the water had been drained away: ridges winding around the globe, trenches, fracture zones and seamounts. The first copies came off the press in 1978. On 21 June 1977 Heezen died of a heart attack on the Navy's research submarine NR-1, near the Reykjanes Ridge south-west of Iceland. Tharp's part in their work went unrecognised for years, and her name was left off key papers. Their maps are now kept at the Library of Congress.",
+        "es": "Durante dos décadas, Tharp y Heezen reunieron sondeos de todos los océanos, con apoyo de la Oficina de Investigación Naval de la Marina de Estados Unidos. Berann, conocido por sus panoramas pintados de los Alpes, convirtió sus mapas en una imagen del fondo marino como si se hubiera vaciado el agua: dorsales que dan la vuelta al globo, fosas, zonas de fractura y montes submarinos. Las primeras copias salieron de la imprenta en 1978. El 21 de junio de 1977, Heezen murió de un ataque al corazón en el submarino de investigación NR-1 de la Marina, cerca de la dorsal de Reykjanes, al suroeste de Islandia. El papel de Tharp no se reconoció durante años, y su nombre no figuró en artículos clave. Hoy sus mapas se guardan en la Biblioteca del Congreso."
+      },
+      "camera": {
+        "lon": -35.0,
+        "lat": 35.0,
+        "zoom": 1.2
+      },
+      "places": [
+        {
+          "id": "world-ocean-floor-map",
+          "name": {
+            "en": "World Ocean Floor map",
+            "es": "Mapa del fondo oceánico mundial"
+          },
+          "at": [
+            -73.912,
+            40.998
+          ],
+          "cat": "book",
+          "icon": "🗺️",
+          "type": "work",
+          "date": "1977",
+          "place": {
+            "en": "Lamont-Doherty, Palisades, New York, United States",
+            "es": "Lamont-Doherty, Palisades, Nueva York, Estados Unidos"
+          },
+          "text": {
+            "en": "A painted map of the whole sea floor, made with support from the US Navy's Office of Naval Research. It made the mid-ocean ridges and trenches familiar around the world.",
+            "es": "Un mapa pintado de todo el fondo marino, hecho con apoyo de la Oficina de Investigación Naval de la Marina de Estados Unidos. Hizo conocidas en todo el mundo las dorsales oceánicas y las fosas."
+          },
+          "by": {
+            "en": "Bruce Heezen and Marie Tharp, painted by Heinrich Berann",
+            "es": "Bruce Heezen y Marie Tharp, pintado por Heinrich Berann"
+          }
+        },
+        {
+          "id": "nr-1",
+          "name": {
+            "en": "NR-1 submarine",
+            "es": "Submarino NR-1"
+          },
+          "at": [
+            -26.0,
+            61.5
+          ],
+          "cat": "ship",
+          "icon": "⚓",
+          "type": "ship",
+          "date": "1977-06-21",
+          "place": {
+            "en": "Reykjanes Ridge, south-west of Iceland",
+            "es": "Dorsal de Reykjanes, al suroeste de Islandia"
+          },
+          "text": {
+            "en": "A small nuclear-powered US Navy research submarine. Bruce Heezen died aboard it of a heart attack on 21 June 1977, while studying the Reykjanes Ridge.",
+            "es": "Un pequeño submarino nuclear de investigación de la Marina de Estados Unidos. Bruce Heezen murió a bordo de un ataque al corazón el 21 de junio de 1977, mientras estudiaba la dorsal de Reykjanes."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1985-09-01",
+      "title": {
+        "en": "The Titanic found",
+        "es": "Hallazgo del Titanic"
+      },
+      "text": {
+        "en": "Just after 1 a.m. on 1 September 1985, the camera sled Argo, towed from the ship Knorr, showed one of the Titanic's boilers about 3,800 m down. Robert Ballard of WHOI and Jean-Louis Michel of IFREMER led the search.",
+        "es": "Poco después de la una de la mañana del 1 de septiembre de 1985, el trineo de cámaras Argo, remolcado por el barco Knorr, mostró una de las calderas del Titanic a unos 3 800 m. Robert Ballard, de WHOI, y Jean-Louis Michel, del IFREMER, dirigían la búsqueda."
+      },
+      "details": {
+        "en": "The liner sank on 15 April 1912 after hitting an iceberg, and more than 1,500 people died. Its wreck lies in two main pieces in international waters off Newfoundland. The French ship Le Suroît first searched the area with sonar; then the American team towed Argo, a new deep-sea camera vehicle on its first cruise, back and forth over the floor. The search was fitted into a secret US Navy mission: before looking for the Titanic, Ballard had to survey the wrecks of two lost nuclear submarines, Thresher and Scorpion. Since then, visits, salvage and decay have changed the wreck, and since 2012, a century after the sinking, it has been protected by UNESCO's convention on underwater heritage.",
+        "es": "El transatlántico se hundió el 15 de abril de 1912 tras chocar con un iceberg, y murieron más de 1 500 personas. Sus restos yacen en dos grandes partes en aguas internacionales frente a Terranova. El barco francés Le Suroît rastreó primero la zona con sonar; luego el equipo estadounidense remolcó el Argo, un nuevo vehículo de cámaras para grandes profundidades en su primera campaña, de un lado a otro sobre el fondo. La búsqueda se hizo dentro de una misión secreta de la Marina de Estados Unidos: antes de buscar el Titanic, Ballard tuvo que estudiar los restos de dos submarinos nucleares perdidos, el Thresher y el Scorpion. Desde entonces, las visitas, los rescates de objetos y el deterioro han cambiado el pecio, y desde 2012, un siglo después del naufragio, lo protege la convención de la UNESCO sobre el patrimonio subacuático."
+      },
+      "camera": {
+        "lon": -49.95,
+        "lat": 41.73,
+        "zoom": 7
+      },
+      "places": [
+        {
+          "id": "titanic-wreck",
+          "name": {
+            "en": "Wreck of the Titanic",
+            "es": "Restos del Titanic"
+          },
+          "at": [
+            -49.947,
+            41.733
+          ],
+          "cat": "event",
+          "icon": "🚢",
+          "type": "site",
+          "date": "1985-09-01",
+          "place": {
+            "en": "North Atlantic, off Newfoundland",
+            "es": "Atlántico Norte, frente a Terranova"
+          },
+          "text": {
+            "en": "The liner sank in 1912 after hitting an iceberg. Its wreck lies in two main pieces about 3,800 m down.",
+            "es": "El transatlántico se hundió en 1912 tras chocar con un iceberg. Sus restos yacen en dos grandes partes a unos 3 800 m."
+          },
+          "wiki": {
+            "en": "RMS Titanic",
+            "es": "RMS Titanic"
+          }
+        },
+        {
+          "id": "robert-ballard",
+          "name": {
+            "en": "Robert Ballard",
+            "es": "Robert Ballard"
+          },
+          "at": [
+            -49.9,
+            41.77
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1985-09-01",
+          "life": [
+            "1942-06-30",
+            null
+          ],
+          "place": {
+            "en": "North Atlantic, off Newfoundland",
+            "es": "Atlántico Norte, frente a Terranova"
+          },
+          "text": {
+            "en": "American oceanographer at Woods Hole who led the American side of the search. In 1977 he had also taken part in the expedition to the Galápagos vents.",
+            "es": "Oceanógrafo estadounidense de Woods Hole que dirigió la parte estadounidense de la búsqueda. En 1977 también había participado en la expedición a las fuentes de las Galápagos."
+          },
+          "wiki": {
+            "en": "Robert Ballard",
+            "es": "Robert Ballard"
+          }
+        },
+        {
+          "id": "jean-louis-michel",
+          "name": {
+            "en": "Jean-Louis Michel",
+            "es": "Jean-Louis Michel"
+          },
+          "at": [
+            -49.99,
+            41.7
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1985-09-01",
+          "place": {
+            "en": "North Atlantic, off Newfoundland",
+            "es": "Atlántico Norte, frente a Terranova"
+          },
+          "text": {
+            "en": "French engineer of IFREMER, France's ocean research institute, who led the French side of the search.",
+            "es": "Ingeniero francés del IFREMER, el instituto francés de investigación del mar, que dirigió la parte francesa de la búsqueda."
+          }
+        },
+        {
+          "id": "argo-sled",
+          "name": {
+            "en": "Argo",
+            "es": "Argo"
+          },
+          "at": [
+            -49.96,
+            41.75
+          ],
+          "cat": "discovery",
+          "icon": "📷",
+          "type": "invention",
+          "date": "1985",
+          "place": {
+            "en": "North Atlantic, off Newfoundland",
+            "es": "Atlántico Norte, frente a Terranova"
+          },
+          "text": {
+            "en": "WHOI's towed deep-sea camera vehicle, on its first deep-sea cruise. Its video cameras let the team watch the sea floor from the ship.",
+            "es": "El vehículo remolcado de cámaras para grandes profundidades de WHOI, en su primera campaña. Sus cámaras de video permitían al equipo ver el fondo desde el barco."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1995-03-24",
+      "title": {
+        "en": "A robot at 10,911 m",
+        "es": "Un robot a 10 911 m"
+      },
+      "text": {
+        "en": "On 24 March 1995 Japan's remotely operated vehicle Kaikō, steered by cable from a ship, reached 10,911 m in the Challenger Deep: the deepest dive by any uncrewed submersible. It was lost in a typhoon in 2003.",
+        "es": "El 24 de marzo de 1995, el vehículo japonés de control remoto Kaikō, guiado por cable desde un barco, llegó a 10 911 m en el abismo Challenger: la inmersión más profunda de un sumergible sin tripulación. Se perdió en un tifón en 2003."
+      },
+      "details": {
+        "en": "Kaikō, 'ocean trench' in Japanese, was built by JAMSTEC, Japan's marine science agency. It reached 10,911.4 m during its sea trials, the first remotely controlled craft to visit that depth. Over the following years it made more than 250 dives and brought back mud from the Challenger Deep in which scientists found many kinds of bacteria. On 29 May 2003, off the island of Shikoku, the cable that linked the robot to its launcher broke during Typhoon Chan-Hom, and Kaikō was never found. An inquiry blamed wear on the cable.",
+        "es": "Kaikō, «fosa oceánica» en japonés, lo construyó la JAMSTEC, la agencia japonesa de ciencias del mar. Llegó a 10 911,4 m en sus pruebas en el mar, el primer vehículo de control remoto que visitó esa profundidad. En los años siguientes hizo más de 250 inmersiones y trajo lodo del abismo Challenger en el que los científicos hallaron muchas clases de bacterias. El 29 de mayo de 2003, frente a la isla de Shikoku, el cable que unía el robot con su lanzador se rompió durante el tifón Chan-Hom, y el Kaikō nunca apareció. Una investigación culpó al desgaste del cable."
+      },
+      "camera": {
+        "lon": 142.55,
+        "lat": 11.4,
+        "zoom": 7
+      },
+      "places": [
+        {
+          "id": "kaiko",
+          "name": {
+            "en": "Kaikō",
+            "es": "Kaikō"
+          },
+          "at": [
+            142.56,
+            11.41
+          ],
+          "cat": "ship",
+          "icon": "🤖",
+          "type": "invention",
+          "date": "1995-03-24",
+          "until": "2003-05-29",
+          "place": {
+            "en": "Challenger Deep, Mariana Trench",
+            "es": "Abismo Challenger, fosa de las Marianas"
+          },
+          "text": {
+            "en": "A remotely operated vehicle of JAMSTEC built to reach the floor of the deepest trenches. It holds the depth record for uncrewed vehicles, 10,911.4 m.",
+            "es": "Un vehículo de control remoto de la JAMSTEC construido para llegar al fondo de las fosas más profundas. Tiene el récord de profundidad de los vehículos sin tripulación: 10 911,4 m."
+          }
+        },
+        {
+          "id": "jamstec",
+          "name": {
+            "en": "JAMSTEC",
+            "es": "JAMSTEC"
+          },
+          "at": [
+            139.6507,
+            35.3192
+          ],
+          "cat": "discovery",
+          "icon": "🏛️",
+          "type": "institution",
+          "date": "1971",
+          "place": {
+            "en": "Yokosuka, Japan",
+            "es": "Yokosuka, Japón"
+          },
+          "text": {
+            "en": "The Japan Agency for Marine-Earth Science and Technology, which runs research ships, submersibles and robots for the deep sea.",
+            "es": "La Agencia Japonesa de Ciencia y Tecnología Marina y Terrestre, que opera barcos de investigación, sumergibles y robots para el mar profundo."
+          }
+        },
+        {
+          "id": "challenger-deep",
+          "name": {
+            "en": "Challenger Deep",
+            "es": "Abismo Challenger"
+          },
+          "at": [
+            142.593,
+            11.373
+          ],
+          "cat": "nature",
+          "icon": "🕳️",
+          "type": "place",
+          "date": "1875-03-23",
+          "place": {
+            "en": "Mariana Trench, western Pacific",
+            "es": "Fosa de las Marianas, Pacífico occidental"
+          },
+          "text": {
+            "en": "The deepest known point of the ocean, about 10,935 m down at the southern end of the Mariana Trench. It is named after HMS Challenger.",
+            "es": "El punto más profundo conocido del océano, a unos 10 935 m, en el extremo sur de la fosa de las Marianas. Debe su nombre al HMS Challenger."
+          },
+          "details": {
+            "en": "Estimates of its depth range from about 10,920 to 10,935 m; a study published in 2021 gave 10,935 m, give or take 6 m. Mount Everest would fit inside with about 2 km of water to spare. It lies about 70 km west of the spot where Challenger made its record sounding in 1875.",
+            "es": "Las estimaciones de su profundidad van de unos 10 920 a 10 935 m; un estudio publicado en 2021 dio 10 935 m, con un margen de 6 m. El monte Everest cabría dentro y aún le quedarían unos 2 km de agua encima. Está a unos 70 km al oeste del punto donde el Challenger hizo su sondeo récord en 1875."
+          },
+          "wiki": {
+            "en": "Challenger Deep",
+            "es": "Abismo Challenger"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2012-03-26",
+      "title": {
+        "en": "Alone in the deep",
+        "es": "Solo en el abismo"
+      },
+      "text": {
+        "en": "On 26 March 2012 the film-maker James Cameron piloted Deepsea Challenger, a one-person submersible, to the floor of the Challenger Deep, about 10,900 m down. He was the first person to go there alone.",
+        "es": "El 26 de marzo de 2012, el cineasta James Cameron pilotó el Deepsea Challenger, un sumergible para una persona, hasta el fondo del abismo Challenger, a unos 10 900 m. Fue la primera persona en llegar allí solo."
+      },
+      "details": {
+        "en": "The dive was part of the DEEPSEA CHALLENGE expedition, with National Geographic and Rolex. The descent took 2 hours and 36 minutes. Cameron had planned to stay six hours on the bottom, but a hydraulic leak disabled the sub's arm and smeared its window, and he lost thrusters, so after about three hours he came back up, in about 70 minutes. He described the floor as desolate, like the Moon. Sources give the depth as 35,756 or 35,787 feet, about 10,900 m. In 2013 Cameron gave the submersible to the Woods Hole Oceanographic Institution. In the United States the date was still 25 March.",
+        "es": "La inmersión fue parte de la expedición DEEPSEA CHALLENGE, con National Geographic y Rolex. El descenso duró 2 horas y 36 minutos. Cameron pensaba quedarse seis horas en el fondo, pero una fuga hidráulica inutilizó el brazo del sumergible y ensució su ventana, y perdió propulsores, así que tras unas tres horas volvió a subir, en unos 70 minutos. Describió el fondo como desolado, como la Luna. Las fuentes dan una profundidad de 35 756 o 35 787 pies, unos 10 900 m. En 2013, Cameron donó el sumergible a la Institución Oceanográfica Woods Hole. En Estados Unidos todavía era 25 de marzo."
+      },
+      "camera": {
+        "lon": 142.6,
+        "lat": 11.37,
+        "zoom": 9
+      },
+      "places": [
+        {
+          "id": "deepsea-challenger",
+          "name": {
+            "en": "Deepsea Challenger",
+            "es": "Deepsea Challenger"
+          },
+          "at": [
+            142.62,
+            11.355
+          ],
+          "cat": "ship",
+          "icon": "🤿",
+          "type": "ship",
+          "date": "2012-03-26",
+          "place": {
+            "en": "Challenger Deep, Mariana Trench",
+            "es": "Abismo Challenger, fosa de las Marianas"
+          },
+          "text": {
+            "en": "A slim, upright one-person submersible built to dive to the deepest point of the ocean. It was given to WHOI in 2013.",
+            "es": "Un sumergible estrecho y vertical para una persona, construido para bajar al punto más profundo del océano. Se donó a WHOI en 2013."
+          }
+        },
+        {
+          "id": "james-cameron",
+          "name": {
+            "en": "James Cameron",
+            "es": "James Cameron"
+          },
+          "at": [
+            142.575,
+            11.39
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "2012-03-26",
+          "life": [
+            "1954-08-16",
+            null
+          ],
+          "place": {
+            "en": "Challenger Deep, Mariana Trench",
+            "es": "Abismo Challenger, fosa de las Marianas"
+          },
+          "text": {
+            "en": "Canadian film-maker of Titanic and Avatar, and a deep-sea explorer. He made the first solo dive to the Challenger Deep.",
+            "es": "Cineasta canadiense de Titanic y Avatar, y explorador del mar profundo. Hizo la primera inmersión en solitario al abismo Challenger."
+          },
+          "wiki": {
+            "en": "James Cameron",
+            "es": "James Cameron"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2019-08-24",
+      "title": {
+        "en": "Five oceans, five deeps",
+        "es": "Cinco océanos, cinco abismos"
+      },
+      "text": {
+        "en": "On 24 August 2019 Victor Vescovo reached the floor of the Molloy Deep, 5,550 m down in the Arctic. In the submersible Limiting Factor he had dived to the deepest point of all five oceans in eight months.",
+        "es": "El 24 de agosto de 2019, Victor Vescovo llegó al fondo del abismo de Molloy, a 5 550 m, en el Ártico. Con el sumergible Limiting Factor había bajado al punto más profundo de los cinco océanos en ocho meses."
+      },
+      "details": {
+        "en": "The Five Deeps Expedition began in the Puerto Rico Trench, the Atlantic's deepest, on 19 December 2018, at about 8,376 m. It went on to the South Sandwich Trench in the Southern Ocean in February 2019 (about 7,434 m), the Java Trench in the Indian Ocean in April (about 7,192 m) and the Challenger Deep on 28 April (about 10,925 m), where Vescovo spent about four hours on the floor. Limiting Factor, built by Triton Submarines, could dive again and again, unlike the Trieste. The support ship Pressure Drop mapped each trench with sonar, and scientists used the data to fix the depth and position of the deepest point of each ocean. The depths of the dives were given by the expedition; later studies differ by a few metres.",
+        "es": "La expedición Five Deeps empezó en la fosa de Puerto Rico, la más profunda del Atlántico, el 19 de diciembre de 2018, a unos 8 376 m. Siguió en la fosa de las Sandwich del Sur, en el océano Austral, en febrero de 2019 (unos 7 434 m), la fosa de Java, en el Índico, en abril (unos 7 192 m) y el abismo Challenger el 28 de abril (unos 10 925 m), donde Vescovo pasó unas cuatro horas en el fondo. El Limiting Factor, construido por Triton Submarines, podía bajar una y otra vez, a diferencia del Trieste. El barco de apoyo Pressure Drop cartografió cada fosa con sonar, y los científicos usaron los datos para fijar la profundidad y la posición del punto más hondo de cada océano. Las profundidades de las inmersiones son las que dio la expedición; estudios posteriores difieren en unos pocos metros."
+      },
+      "camera": {
+        "lon": 30.0,
+        "lat": 15.0,
+        "zoom": 1.0
+      },
+      "places": [
+        {
+          "id": "limiting-factor",
+          "name": {
+            "en": "Limiting Factor",
+            "es": "Limiting Factor"
+          },
+          "at": [
+            2.55,
+            79.05
+          ],
+          "cat": "ship",
+          "icon": "🤿",
+          "type": "ship",
+          "date": "2018-12-19",
+          "place": {
+            "en": "Molloy Deep, Fram Strait, Arctic Ocean",
+            "es": "Abismo de Molloy, estrecho de Fram, océano Ártico"
+          },
+          "text": {
+            "en": "A two-person submersible built by Triton Submarines in the United States and certified for repeated dives to the deepest ocean floor.",
+            "es": "Un sumergible para dos personas construido por Triton Submarines en Estados Unidos y certificado para bajar una y otra vez al fondo más profundo del océano."
+          }
+        },
+        {
+          "id": "victor-vescovo",
+          "name": {
+            "en": "Victor Vescovo",
+            "es": "Victor Vescovo"
+          },
+          "at": [
+            2.9,
+            79.3
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "2019-08-24",
+          "place": {
+            "en": "Molloy Deep, Fram Strait, Arctic Ocean",
+            "es": "Abismo de Molloy, estrecho de Fram, océano Ártico"
+          },
+          "text": {
+            "en": "American investor and explorer. In 2019 he became the first person to reach the deepest point of all five oceans.",
+            "es": "Inversor y explorador estadounidense. En 2019 fue la primera persona en llegar al punto más profundo de los cinco océanos."
+          }
+        },
+        {
+          "id": "molloy-deep",
+          "name": {
+            "en": "Molloy Deep",
+            "es": "Abismo de Molloy"
+          },
+          "at": [
+            2.706,
+            79.194
+          ],
+          "cat": "nature",
+          "icon": "🕳️",
+          "type": "place",
+          "date": "2019-08-24",
+          "place": {
+            "en": "Fram Strait, between Greenland and Svalbard",
+            "es": "Estrecho de Fram, entre Groenlandia y Svalbard"
+          },
+          "text": {
+            "en": "The deepest point of the Arctic Ocean, about 5,550 m down. Vescovo's dive there on 24 August 2019 was the first by people.",
+            "es": "El punto más profundo del océano Ártico, a unos 5 550 m. La inmersión de Vescovo del 24 de agosto de 2019 fue la primera de personas."
+          }
+        },
+        {
+          "id": "brownson-deep",
+          "name": {
+            "en": "Brownson Deep, Puerto Rico Trench",
+            "es": "Abismo Brownson, fosa de Puerto Rico"
+          },
+          "at": [
+            -67.311,
+            19.712
+          ],
+          "cat": "nature",
+          "icon": "🕳️",
+          "type": "place",
+          "date": "2018-12-19",
+          "place": {
+            "en": "North of Puerto Rico, Atlantic Ocean",
+            "es": "Al norte de Puerto Rico, océano Atlántico"
+          },
+          "text": {
+            "en": "The deepest point of the Atlantic, about 8,376 m down. The Five Deeps Expedition made its first dive here.",
+            "es": "El punto más profundo del Atlántico, a unos 8 376 m. La expedición Five Deeps hizo aquí su primera inmersión."
+          }
+        },
+        {
+          "id": "factorian-deep",
+          "name": {
+            "en": "Factorian Deep, South Sandwich Trench",
+            "es": "Abismo Factorian, fosa de las Sandwich del Sur"
+          },
+          "at": [
+            -25.5,
+            -60.5
+          ],
+          "cat": "nature",
+          "icon": "🕳️",
+          "type": "place",
+          "date": "2019-02",
+          "place": {
+            "en": "Southern end of the South Sandwich Trench, Southern Ocean",
+            "es": "Extremo sur de la fosa de las Sandwich del Sur, océano Austral"
+          },
+          "text": {
+            "en": "The deepest point of the Southern Ocean, about 7,434 m down, in water just below 0 °C.",
+            "es": "El punto más profundo del océano Austral, a unos 7 434 m, en agua apenas por debajo de 0 °C."
+          }
+        },
+        {
+          "id": "java-trench-deep",
+          "name": {
+            "en": "Deepest point of the Java Trench",
+            "es": "Punto más profundo de la fosa de Java"
+          },
+          "at": [
+            114.942,
+            -11.129
+          ],
+          "cat": "nature",
+          "icon": "🕳️",
+          "type": "place",
+          "date": "2019-04",
+          "place": {
+            "en": "Java Trench, south of Bali, Indian Ocean",
+            "es": "Fosa de Java, al sur de Bali, océano Índico"
+          },
+          "text": {
+            "en": "The deepest point of the Indian Ocean, about 7,192 m down. Vescovo's dive in April 2019 was the first by people.",
+            "es": "El punto más profundo del océano Índico, a unos 7 192 m. La inmersión de Vescovo de abril de 2019 fue la primera de personas."
+          }
+        },
+        {
+          "id": "challenger-deep",
+          "name": {
+            "en": "Challenger Deep",
+            "es": "Abismo Challenger"
+          },
+          "at": [
+            142.593,
+            11.373
+          ],
+          "cat": "nature",
+          "icon": "🕳️",
+          "type": "place",
+          "date": "1875-03-23",
+          "place": {
+            "en": "Mariana Trench, western Pacific",
+            "es": "Fosa de las Marianas, Pacífico occidental"
+          },
+          "text": {
+            "en": "The deepest known point of the ocean, about 10,935 m down at the southern end of the Mariana Trench. It is named after HMS Challenger.",
+            "es": "El punto más profundo conocido del océano, a unos 10 935 m, en el extremo sur de la fosa de las Marianas. Debe su nombre al HMS Challenger."
+          },
+          "details": {
+            "en": "Estimates of its depth range from about 10,920 to 10,935 m; a study published in 2021 gave 10,935 m, give or take 6 m. Mount Everest would fit inside with about 2 km of water to spare. It lies about 70 km west of the spot where Challenger made its record sounding in 1875.",
+            "es": "Las estimaciones de su profundidad van de unos 10 920 a 10 935 m; un estudio publicado en 2021 dio 10 935 m, con un margen de 6 m. El monte Everest cabría dentro y aún le quedarían unos 2 km de agua encima. Está a unos 70 km al oeste del punto donde el Challenger hizo su sondeo récord en 1875."
+          },
+          "wiki": {
+            "en": "Challenger Deep",
+            "es": "Abismo Challenger"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2022",
+      "title": {
+        "en": "The deepest fish",
+        "es": "El pez más profundo"
+      },
+      "text": {
+        "en": "In 2022 a camera lander dropped into the Izu-Ogasawara Trench, south of Japan, filmed a young snailfish at 8,336 m: the deepest fish ever seen. Fish seem unable to live much deeper than about 8,400 m.",
+        "es": "En 2022, una cámara lanzada a la fosa de Izu-Ogasawara, al sur de Japón, filmó un pez caracol joven a 8 336 m: el pez más profundo jamás visto. Al parecer, los peces no pueden vivir mucho más abajo de unos 8 400 m."
+      },
+      "details": {
+        "en": "The footage came from an expedition of the University of Western Australia and the Tokyo University of Marine Science and Technology, led by Alan Jamieson, and was shown to the world in April 2023. The cameras sat on landers, frames dropped to the sea floor with bait and then called back to the surface. The same team caught two snailfish of the species Pseudoliparis belyaevi at 8,022 m in the nearby Japan Trench, the deepest fish ever caught. Snailfish have no swim bladder, the gas-filled organ many fish use to float, which helps them cope with the crushing pressure. Sources differ on the exact day of the filming, in August or September 2022.",
+        "es": "Las imágenes vienen de una expedición de la Universidad de Australia Occidental y la Universidad de Ciencia y Tecnología Marina de Tokio, dirigida por Alan Jamieson, y se mostraron al mundo en abril de 2023. Las cámaras iban en módulos de aterrizaje, armazones que se dejan caer al fondo con cebo y luego se llaman de vuelta a la superficie. El mismo equipo capturó dos peces caracol de la especie Pseudoliparis belyaevi a 8 022 m en la cercana fosa de Japón, los peces más profundos jamás capturados. Los peces caracol no tienen vejiga natatoria, el órgano lleno de gas que muchos peces usan para flotar, lo que los ayuda a soportar la enorme presión. Las fuentes no coinciden en el día exacto de la filmación, en agosto o septiembre de 2022."
+      },
+      "camera": {
+        "lon": 143.0,
+        "lat": 33.5,
+        "zoom": 3.2
+      },
+      "places": [
+        {
+          "id": "snailfish-8336",
+          "name": {
+            "en": "Snailfish at 8,336 m",
+            "es": "Pez caracol a 8 336 m"
+          },
+          "at": [
+            142.6,
+            29.5
+          ],
+          "cat": "discovery",
+          "icon": "🐟",
+          "type": "species",
+          "date": "2022",
+          "place": {
+            "en": "Izu-Ogasawara Trench, south of Japan",
+            "es": "Fosa de Izu-Ogasawara, al sur de Japón"
+          },
+          "text": {
+            "en": "A small young snailfish filmed at 8,336 m, the deepest fish ever recorded. Its species is not known for sure.",
+            "es": "Un pez caracol pequeño y joven filmado a 8 336 m, el pez más profundo jamás registrado. No se sabe con seguridad de qué especie es."
+          }
+        },
+        {
+          "id": "pseudoliparis-belyaevi",
+          "name": {
+            "en": "Pseudoliparis belyaevi",
+            "es": "Pseudoliparis belyaevi"
+          },
+          "at": [
+            143.95,
+            37.8
+          ],
+          "cat": "discovery",
+          "icon": "🐟",
+          "type": "species",
+          "date": "2022",
+          "place": {
+            "en": "Japan Trench, off north-east Japan",
+            "es": "Fosa de Japón, frente al noreste de Japón"
+          },
+          "text": {
+            "en": "A snailfish of the trenches off Japan. Two caught at 8,022 m in 2022 are the deepest fish ever brought to the surface.",
+            "es": "Un pez caracol de las fosas frente a Japón. Dos capturados a 8 022 m en 2022 son los peces más profundos jamás subidos a la superficie."
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "title": {
+        "en": "Mapping the whole sea floor",
+        "es": "Cartografiar todo el fondo marino"
+      },
+      "text": {
+        "en": "On 20 April 2026 the Seabed 2030 project said 28.7% of the ocean floor had been mapped to modern standards, about 104 million km². In 2017 only 6% had been; the goal is the whole sea floor by 2030.",
+        "es": "El 20 de abril de 2026, el proyecto Seabed 2030 anunció que el 28,7 % del fondo oceánico estaba cartografiado con estándares modernos, unos 104 millones de km². En 2017 era solo el 6 %; la meta es todo el fondo marino para 2030."
+      },
+      "details": {
+        "en": "The Nippon Foundation–GEBCO Seabed 2030 project was launched at the UN Ocean Conference in New York on 6 June 2017. GEBCO is run by the International Hydrographic Organization and UNESCO's Intergovernmental Oceanographic Commission. Ships, research institutes, governments and companies share their sonar data, from 220 organisations so far, and all of it goes into the free GEBCO world grid. In the year before April 2026 almost five million km² were added, a record, up from 27.3% in June 2025. The rest of the sea floor is known only roughly, from satellites that measure small bumps in the sea surface. With nearly three quarters still to map, the work will have to speed up to finish by 2030.",
+        "es": "El proyecto Seabed 2030 de la Fundación Nippon y GEBCO se lanzó en la Conferencia de las Naciones Unidas sobre los Océanos, en Nueva York, el 6 de junio de 2017. GEBCO lo dirigen la Organización Hidrográfica Internacional y la Comisión Oceanográfica Intergubernamental de la UNESCO. Barcos, institutos de investigación, gobiernos y empresas comparten sus datos de sonar, de 220 organizaciones hasta ahora, y todos van a la cuadrícula mundial gratuita de GEBCO. En el año previo a abril de 2026 se sumaron casi cinco millones de km², un récord, frente al 27,3 % de junio de 2025. El resto del fondo marino solo se conoce a grandes rasgos, gracias a satélites que miden pequeñas lomas en la superficie del mar. Con casi tres cuartas partes por cartografiar, el trabajo tendrá que acelerarse para terminar en 2030."
+      },
+      "camera": {
+        "lon": -150.0,
+        "lat": 5.0,
+        "zoom": 1.0
+      },
+      "places": [
+        {
+          "id": "seabed-2030",
+          "name": {
+            "en": "Seabed 2030",
+            "es": "Seabed 2030"
+          },
+          "at": [
+            -73.968,
+            40.749
+          ],
+          "cat": "discovery",
+          "icon": "🗺️",
+          "type": "institution",
+          "date": "2017-06-06",
+          "place": {
+            "en": "Launched at the United Nations, New York",
+            "es": "Lanzado en las Naciones Unidas, Nueva York"
+          },
+          "text": {
+            "en": "A project of the Nippon Foundation and GEBCO to map the whole ocean floor by 2030. All the data it gathers are free to use.",
+            "es": "Un proyecto de la Fundación Nippon y GEBCO para cartografiar todo el fondo oceánico antes de 2030. Todos los datos que reúne son de uso libre."
+          }
+        },
+        {
+          "id": "international-hydrographic-organization",
+          "name": {
+            "en": "International Hydrographic Organization",
+            "es": "Organización Hidrográfica Internacional"
+          },
+          "at": [
+            7.4246,
+            43.7384
+          ],
+          "cat": "discovery",
+          "icon": "🏛️",
+          "type": "institution",
+          "date": "1921",
+          "place": {
+            "en": "Monaco",
+            "es": "Mónaco"
+          },
+          "text": {
+            "en": "The organisation of the world's hydrographic offices, based in Monaco, which runs GEBCO with UNESCO. Seabed 2030 announced its 2026 figure at its assembly there.",
+            "es": "La organización de los servicios hidrográficos del mundo, con sede en Mónaco, que dirige GEBCO junto con la UNESCO. Seabed 2030 anunció allí su cifra de 2026, en su asamblea."
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "In 500 years people went from a rope that could not find the bottom to sonar maps of whole ocean basins and dives to the deepest point of every ocean. The deep sea turned out to hold the longest mountain range on Earth, life fed by the Earth's own chemistry, and the evidence that continents move. Yet less than a third of the sea floor has been mapped in detail, so much of it is still unknown.",
+    "es": "En 500 años pasamos de una cuerda que no encontraba el fondo a mapas de sonar de cuencas oceánicas enteras y a inmersiones al punto más profundo de cada océano. El mar profundo resultó guardar la cordillera más larga de la Tierra, vida alimentada por la química del propio planeta y las pruebas de que los continentes se mueven. Pero menos de un tercio del fondo marino está cartografiado en detalle, así que gran parte sigue siendo desconocida."
+  },
+  "sources": [
+    {
+      "title": "The Unknown and the Unexplored: Pacific deep sea after NOAA CAPSTONE (Frontiers in Marine Science, 2019)",
+      "url": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2019.00480/full"
+    },
+    {
+      "title": "The oceans: Mapping the deep (The Open University)",
+      "url": "https://www.open.edu/openlearn/science-maths-technology/the-oceans/content-section-2.1"
+    },
+    {
+      "title": "Physiography (Springer)",
+      "url": "https://link.springer.com/chapter/10.1007/978-1-4612-5278-8_2"
+    },
+    {
+      "title": "Matthew Fontaine Maury: Benefactor of Mankind (Naval History and Heritage Command)",
+      "url": "https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/m/matthew-fontaine-maury-benefactor-of-mankind.html"
+    },
+    {
+      "title": "Maury's bathymetric charts of the North Atlantic (NOAA Photo Library)",
+      "url": "https://www.noaa.gov/noaa-collections/photo-library/map00002jpg"
+    },
+    {
+      "title": "Marie Tharp (WHOI)",
+      "url": "https://www.whoi.edu/news-insights/content/marie-tharp/"
+    },
+    {
+      "title": "HMS Challenger Expedition (Royal Museums Greenwich)",
+      "url": "https://www.rmg.co.uk/stories/maritime-history/hms-challenger-expedition-oceanography-trailblazer"
+    },
+    {
+      "title": "Challenger Deep: the deepest point in the ocean (Royal Museums Greenwich)",
+      "url": "https://www.rmg.co.uk/stories/ocean/challenger-deep-deepest-point-ocean"
+    },
+    {
+      "title": "The Challenger Expedition (WHOI Dive and Discover)",
+      "url": "https://divediscover.whoi.edu/history-of-oceanography/the-challenger-expedition/"
+    },
+    {
+      "title": "HMS Challenger: how a 150-year-old expedition still influences science (Natural History Museum)",
+      "url": "https://www.nhm.ac.uk/discover/news/2022/september/hms-challenger-how-150-year-old-expedition-still-influences-scientific-discoveries-today.html"
+    },
+    {
+      "title": "100 Years of Meteor Expedition (GEOMAR)",
+      "url": "https://www.geomar.de/en/discover/100-years-meteor-expedition"
+    },
+    {
+      "title": "The Scientific Programme of the Meteor Expedition (GEOMAR)",
+      "url": "https://www.geomar.de/en/discover/100-years-meteor-expedition/scientific-programme"
+    },
+    {
+      "title": "Mapping the Deep: Marie Tharp's Physiographic Diagram of the Atlantic Ocean (Library of Congress)",
+      "url": "https://blogs.loc.gov/maps/2025/07/mapping-the-deep-marie-tharps-physiographic-diagram-of-the-atlantic-ocean/"
+    },
+    {
+      "title": "Manuscript painting of the Heezen-Tharp World Ocean Floor map by Berann (Library of Congress)",
+      "url": "https://www.loc.gov/resource/g9096c.ct003148/"
+    },
+    {
+      "title": "1977: World Ocean Floor Map (University of Chicago Library)",
+      "url": "https://www.lib.uchicago.edu/collex/exhibits/marie-tharp-pioneering-oceanographer/1977-world-ocean-floor-map/"
+    },
+    {
+      "title": "Mapping the Deep Blue Oceans, R. G. Winther (PhilArchive)",
+      "url": "https://philarchive.org/archive/WINMTD-3"
+    },
+    {
+      "title": "Bathyscaphe Trieste (Naval History and Heritage Command)",
+      "url": "https://www.history.navy.mil/browse-by-topic/exploration-and-innovation/bathyscaph-trieste.html"
+    },
+    {
+      "title": "History-making oceanographer and retired Navy captain dies at 92 (US Navy)",
+      "url": "https://www.navy.mil/Press-Office/Press-Releases/display-pressreleases/Article/3591704/history-making-oceanographer-and-ret-navy-captain-dies-at-92/"
+    },
+    {
+      "title": "The Discovery of Hydrothermal Vents: 1977 (WHOI)",
+      "url": "https://www.whoi.edu/feature/history-hydrothermal-vents/discovery/1977.html"
+    },
+    {
+      "title": "Benchmarks: February 17, 1977: hydrothermal vents are discovered (EARTH Magazine)",
+      "url": "https://www.earthmagazine.org/article/benchmarks-february-17-1977-hydrothermal-vents-are-discovered"
+    },
+    {
+      "title": "Corliss, OSU to commemorate 40th anniversary of hydrothermal vents discovery (Oregon State University)",
+      "url": "https://news.oregonstate.edu/news/corliss-osu-commemorate-40th-anniversary-hydrothermal-vents-discovery"
+    },
+    {
+      "title": "1985 discovery of RMS Titanic (WHOI)",
+      "url": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/ocean-human-lives/underwater-archaeology/rms-titanic/1985-discovery-of-rms-titanic/"
+    },
+    {
+      "title": "R.M.S. Titanic: history and significance (NOAA)",
+      "url": "https://www.noaa.gov/office-of-general-counsel/gc-international-section/rms-titanic-history-and-significance"
+    },
+    {
+      "title": "Titanic was found during secret Cold War Navy mission (National Geographic)",
+      "url": "https://www.nationalgeographic.com/history/article/titanic-nuclear-submarine-scorpion-thresher-ballard"
+    },
+    {
+      "title": "Deepest remote-controlled device (Guinness World Records)",
+      "url": "https://www.guinnessworldrecords.com/world-records/381498-deepest-remote-controlled-device"
+    },
+    {
+      "title": "KAIREI cruise report KR08-05: sea trials of the deep ocean ROV ABISMO (JAMSTEC)",
+      "url": "https://www.godac.jamstec.go.jp/cr_catalog/external/metadata/KR08-05_leg1-2_all/file/KR08-05_leg1-2_all.pdf"
+    },
+    {
+      "title": "Loss of the full ocean depth ROV Kaiko (ISOPE 2004)",
+      "url": "https://onepetro.org/ISOPEIOPEC/proceedings-abstract/ISOPE04/ISOPE04/ISOPE-I-04-195/10285"
+    },
+    {
+      "title": "HOV DEEPSEA CHALLENGER (WHOI)",
+      "url": "https://www.whoi.edu/what-we-do/explore/underwater-vehicles/deepseachallenger/"
+    },
+    {
+      "title": "James Cameron on Earth's deepest spot: desolate, lunar-like (National Geographic)",
+      "url": "https://www.nationalgeographic.com/travel/article/120326-james-cameron-mariana-trench-challenger-deepest-lunar-sub-science"
+    },
+    {
+      "title": "Scripps delivers science to James Cameron's historic dive (Scripps Institution of Oceanography)",
+      "url": "https://scripps.ucsd.edu/news/research-highlight-scripps-delivers-science-james-camerons-historic-dive-abyss"
+    },
+    {
+      "title": "Cameron completes solo journey to the ocean floor (Scientific American)",
+      "url": "https://www.scientificamerican.com/blog/observations/cameron-completes-titanic-solo-journey-to-the-ocean-floor/"
+    },
+    {
+      "title": "Five Deeps Expedition is complete (press release, September 2019)",
+      "url": "https://fivedeeps.com/wp-content/uploads/2019/09/Molloy-Press-Release-final.pdf"
+    },
+    {
+      "title": "Deepest submarine dive in history (Five Deeps press release, May 2019)",
+      "url": "https://fivedeeps.com/wp-content/uploads/2019/05/FDE-Challenger-Release-FINAL-5132019.pdf"
+    },
+    {
+      "title": "First person to reach the lowest points of Earth's oceans (Guinness World Records)",
+      "url": "https://www.guinnessworldrecords.com/world-records/620890-first-person-to-reach-the-lowest-points-of-earths-oceans"
+    },
+    {
+      "title": "Deepest points of the Indian Ocean and Southern Ocean revealed (British Geological Survey)",
+      "url": "https://www.bgs.ac.uk/news/deepest-points-of-the-indian-ocean-and-southern-ocean-revealed/"
+    },
+    {
+      "title": "The five deeps: the location and depth of the deepest place in each of the world's oceans (Earth-Science Reviews, 2019)",
+      "url": "https://ui.adsabs.harvard.edu/abs/2019ESRv..19702896S"
+    },
+    {
+      "title": "High-resolution multibeam sonar bathymetry of the deepest place in each ocean (Geoscience Data Journal, 2022)",
+      "url": "https://rmets.onlinelibrary.wiley.com/doi/10.1002/gdj3.122"
+    },
+    {
+      "title": "How deep is the ocean? (NOAA)",
+      "url": "https://oceanservice.noaa.gov/facts/oceandepth.html"
+    },
+    {
+      "title": "Depth of the Challenger Deep (Deep-Sea Research I, 2021)",
+      "url": "https://doi.org/10.1016/j.dsr.2021.103644"
+    },
+    {
+      "title": "Scientists break new record after finding world's deepest fish (University of Western Australia)",
+      "url": "https://www.uwa.edu.au/news/article/2023/april/scientists-break-new-record-after-finding-worlds-deepest-fish"
+    },
+    {
+      "title": "Snailfish sink to new lows (Guinness World Records)",
+      "url": "https://www.guinnessworldrecords.com/news/2023/4/snailfish-sink-to-new-lows-to-extend-their-record-as-the-worlds-deepest-fish-743278"
+    },
+    {
+      "title": "New maximum depth record for bony fish (Deep-Sea Research I, 2023)",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0967063723001711"
+    },
+    {
+      "title": "Global seabed mapping reaches new milestone (Seabed 2030, 20 April 2026)",
+      "url": "https://seabed2030.org/2026/04/20/global-seabed-mapping-reaches-new-milestone-as-five-million-square-kilometres-added-in-a-year/"
+    },
+    {
+      "title": "Seabed 2030 announces new seafloor data on World Hydrography Day (Seabed 2030, June 2025)",
+      "url": "https://seabed2030.org/2025/06/21/seabed-2030-announces-millions-of-square-kilometers-of-new-seafloor-data-on-world-hydrography-day/"
+    },
+    {
+      "title": "Launch of the Nippon Foundation-GEBCO Seabed 2030 Project (GEBCO)",
+      "url": "https://www.gebco.net/news/launch-nippon-foundation-gebco-seabed-2030-project"
+    },
+    {
+      "title": "Announcing the launch of Seabed 2030 (The Nippon Foundation)",
+      "url": "https://en.nippon-foundation.or.jp/news/articles/2017/20170607-21181.html"
+    },
+    {
+      "title": "Nearly a fifth of world's ocean floor now mapped (UNESCO)",
+      "url": "https://www.unesco.org/en/articles/nearly-fifth-worlds-ocean-floor-now-mapped"
+    }
+  ]
+}
