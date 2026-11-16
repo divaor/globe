@@ -223,6 +223,21 @@ export class Learn {
   /** Closes the quiz or tour on screen (a map game is starting). */
   async closeAll() { this.stopTour(); await this.stopQuiz(); }
 
+  /** The filters on the map before a quiz began, put away while it is on (their names and dots would give answers
+   * away: World Heritage's "Acropolis, Athens" on "Where is Greece?") and put back when it ends, as the games do. */
+  private savedStack: string[] | null = null;
+  private visibleStack() { return this.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id); }
+  private async clearFilters() {
+    const now = this.visibleStack();
+    this.savedStack ??= now;
+    if (now.some((id) => id !== 'political')) await this.app.setStack(['political']);
+  }
+  private async restoreFilters() {
+    const saved = this.savedStack;
+    this.savedStack = null;
+    if (saved && saved.join() !== this.visibleStack().join()) await this.app.setStack(saved.length ? saved : ['political']);
+  }
+
   constructor(private app: App, private shell: Shell, private time: TimeTravel) {
     this.card = h('section', { class: 'learn-card glass', hidden: true });
     app.root.append(this.card);
@@ -412,8 +427,9 @@ export class Learn {
 
   /** Starts a quiz with its questions (any Time travel story is closed first). */
   private async begin(kind: QuizKind, region: string, qs: Q[], day?: string) {
-    if (this.quiz) await this.stopQuiz();
+    if (this.quiz) await this.stopQuiz(false);
     if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
+    await this.clearFilters();
     this.quiz = { kind, region, qs, i: 0, score: 0, answered: false, savedLabels: { ...this.app.renderer.settings.labels }, peek: false, run: 0, day };
     this.app.select(null);
     this.renderQuiz();
@@ -564,7 +580,8 @@ export class Learn {
       this.shell.toast(L('This quiz needs its map data; check your connection.', 'Este concurso necesita sus datos de mapa; revisa tu conexión.'));
       return;
     }
-    if (this.quiz) await this.stopQuiz();
+    if (this.quiz) await this.stopQuiz(false);
+    await this.clearFilters();
     const pick = shuffle(list.slice());
     const qs: Q[] = (all ? pick : pick.slice(0, 10)).map((r) => ({ id: r.id }));
     const labels = { ...this.app.renderer.settings.labels };
@@ -1558,8 +1575,7 @@ export class Learn {
       // Not in a daily challenge, which would end there.
       const story = q.kind === 'daily' || !it.story ? null : h('button', { type: 'button', class: 'pill sm' }, L('See it in the story', 'Verlo en la historia'));
       story?.addEventListener('click', () => {
-        void this.stopQuiz();
-        void this.time.stories[it.kind].open(it.story, it.step, { name: tx(it.name), at: it.at });
+        void this.stopQuiz().then(() => this.time.stories[it.kind].open(it.story, it.step, { name: tx(it.name), at: it.at }));
       });
       add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, story, this.nextButton()));
     }
@@ -1958,6 +1974,8 @@ export class Learn {
       const l = Math.random() < 0.5 ? p : { ...p, a: p.b, b: p.a };
       return { id: linkBucket(l.rho), options: [...LINK_ANSWERS], link: l };
     });
+    if (this.quiz) await this.stopQuiz(false);
+    await this.clearFilters();
     this.quiz = { kind: 'link', region: 'world', qs, i: 0, score: 0, answered: false, savedLabels: { ...this.app.renderer.settings.labels }, peek: false };
     this.app.select(null);
     this.renderQuiz();
@@ -2006,7 +2024,7 @@ export class Learn {
       const w = Math.min(520, window.innerWidth - 24) - 28;
       const why = LINK_WHY[`${k.a}|${k.b}`] ?? LINK_WHY[`${k.b}|${k.a}`];
       const see = h('button', { type: 'button', class: 'pill sm' }, L('See it on the map', 'Verlo en el mapa'));
-      see.addEventListener('click', () => { this.stopQuiz(); this.app.emit('compare', k.a, k.b); });
+      see.addEventListener('click', () => void this.stopQuiz().then(() => this.app.emit('compare', k.a, k.b)));
       add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text),
         h('div', { class: 'quiz-link-dir' }, direction(k.a, k.b, k.rho)),
         this.linkPlot(k, w, 120),
@@ -2024,7 +2042,7 @@ export class Learn {
       h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, `${tx(CM.fieldName(k.a))} × ${tx(CM.fieldName(k.b))}`),
         h('span', { class: 'quiz-sum-ans' }, [`${this.linkLabel(cur.id)} (ρ = ${fmtR(k.rho)})`, cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : ''].filter(Boolean).join(' · '))),
       h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
-    row.addEventListener('click', () => { this.stopQuiz(); this.app.emit('compare', k.a, k.b); });
+    row.addEventListener('click', () => void this.stopQuiz().then(() => this.app.emit('compare', k.a, k.b)));
     return row;
   }
 
@@ -2075,6 +2093,8 @@ export class Learn {
       return { id: f, lang: code, options: shuffle([f, ...wrong]) };
     });
     this.famData = { langs, fams, where };
+    if (this.quiz) await this.stopQuiz(false);
+    await this.clearFilters();
     this.quiz = { kind: 'family', region: 'world', qs, i: 0, score: 0, answered: false, savedLabels: { ...this.app.renderer.settings.labels }, peek: false };
     this.app.select(null);
     this.renderQuiz();
@@ -2107,8 +2127,8 @@ export class Learn {
   }
 
   /** The Languages filter by family, with the language's (first) country selected. */
-  private showFamilies(code: string) {
-    this.stopQuiz();
+  private async showFamilies(code: string) {
+    await this.stopQuiz();
     if (this.app.isActive('languages')) this.app.setOption('languages', 'view', 'family');
     else void this.app.activate('languages', { options: { view: 'family' } });
     const iso = this.famData?.where.get(code)?.[0];
@@ -2130,7 +2150,7 @@ export class Learn {
     add(this.card, opts);
     if (feedback) {
       const see = h('button', { type: 'button', class: 'pill sm' }, L('See the families on the map', 'Ver las familias en el mapa'));
-      see.addEventListener('click', () => this.showFamilies(code));
+      see.addEventListener('click', () => void this.showFamilies(code));
       add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, see, this.nextButton()));
     }
   }
@@ -2141,11 +2161,13 @@ export class Learn {
       h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, this.langName(cur.lang!)),
         h('span', { class: 'quiz-sum-ans' }, [this.famName(cur.id), cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : ''].filter(Boolean).join(' · '))),
       h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
-    row.addEventListener('click', () => this.showFamilies(cur.lang!));
+    row.addEventListener('click', () => void this.showFamilies(cur.lang!));
     return row;
   }
 
-  private async stopQuiz(): Promise<void> {
+  /** Ends the quiz on screen and puts the map back as it was (`restore` false: another quiz is starting and keeps the
+   * filters put away). */
+  private async stopQuiz(restore = true): Promise<void> {
     if (!this.quiz) return;
     stopClip(250, 'card');
     this.app.renderer.settings.labels = { ...this.quiz.savedLabels };
@@ -2164,6 +2186,7 @@ export class Learn {
     if (this.space?.active) await this.space.exit();
     if (this.skyQuiz) { this.sky?.close(); this.skyQuiz = false; }
     await this.time.history.quizMap(null);
+    if (restore) await this.restoreFilters();
   }
 
   // ---- Tours ----------------------------------------------------------------------------------
@@ -2422,6 +2445,8 @@ export class Learn {
   // ---- On this day ----------------------------------------------------------------------------
   /** The stories' dated steps and items, a month at a time (data/onthisday/MM.json, scripts/data/build-onthisday.mjs). */
   private otdMonths = new Map<number, OtdMonth>();
+  /** The day On this day shows, to go back to it from a story. */
+  private otdDay = new Date();
 
   private async otdMonth(m: number): Promise<OtdMonth | null> {
     if (!this.otdMonths.has(m)) {
@@ -2433,6 +2458,7 @@ export class Learn {
   /** A day of the year (today by default): what the stories tell of it, each opening its step, then Wikipedia's
    *  selection of events, with a link to the story that tells the same event. Arrows go to the day before or after. */
   private async openOnThisDay(day = new Date()) {
+    this.otdDay = day;
     const loc = es() ? 'es-ES' : 'en-GB';
     const label = day.toLocaleDateString(loc, { day: 'numeric', month: 'long' });
     const go = (k: number) => { const d = new Date(day.getFullYear(), day.getMonth(), day.getDate() + k); void this.openOnThisDay(d); };
@@ -2478,12 +2504,13 @@ export class Learn {
     }
   }
 
-  /** Opens a story at a step (from On this day), closing any quiz or tour. */
+  /** Opens a story at a step (from On this day), closing any quiz or tour; the story's X comes back to the day. */
   private async openStoryStep(key: string, step: number) {
     const [kind, id] = key.split('/') as [StoryKind, string];
+    const day = this.otdDay;
     this.stopTour();
     await this.stopQuiz();
-    this.app.emit('open-story', kind, id, step);
+    this.app.emit('open-story', kind, id, step, () => void this.openOnThisDay(day));
   }
 
   private async fillOtdWiki(el: HTMLElement, mm: number, dd: number, month: OtdMonth | null, entries: OtdEntry[]) {

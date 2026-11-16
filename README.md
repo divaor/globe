@@ -24,7 +24,9 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   when you zoom in). States and provinces (the first-level divisions of every country, 4,596 of them) show from
   country zoom with thin dashed lines and their names, on by default and each with its switch; a tap says which one
   ("State: Texas") and Who was born here? names a place's state.
-- **Navigation:** drag with fling, pinch, mouse wheel, double-tap, keyboard.
+- **Navigation:** drag with fling, pinch, mouse wheel, double-tap, keyboard. A card's or quiz's picture opens full
+  screen to pinch and zoom; a picture that may be see-through (a PNG, SVG or GIF: drawings, diagrams, glyphs) sits on
+  paper, so its dark lines show in the dark theme and full screen.
 - **Nature (More → Nature):** the animal finder, "Where can I see…?": any animal by its English, Spanish or Latin
   name. The 405 work offline; any other of GBIF's species is looked up live and its range is GBIF's live map of every
   sighting shared. For each, the best parks to see it (ranked by sightings), when to go (sightings by month, live from
@@ -94,7 +96,8 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   - Culture & fun: flags on the map, national colours, driving side, calling codes, Olympic medals and more.
   - World Heritage: every site on UNESCO's World Heritage List after the July 2026 session (1,273, plus the 3
     removed), by category or by year listed, with the 58 in danger ringed in red. "Watch the list grow" plays the
-    years from the first 12 sites of 1978; a tap on a site opens its picture, Wikipedia's summary, its year,
+    years from the first 12 sites of 1978, with play and pause, a slider to any year and one for the speed (half a
+    year to eight years a second); a tap on a site opens its picture, Wikipedia's summary, its year,
     criteria and UNESCO's page, and a country's card counts its sites.
   - Where things were invented: the inventions of the Inventions stories where they were made, by age and field.
   - Who was born here?: where 12,215 of the world's best-known people were born (or died), from Wikidata: a dot is a
@@ -271,7 +274,8 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   each ending with every answer and its picture; two games of time:
   Put them in order (four things from the stories, oldest first, then shown in order with their dates and pins on the
   map) and Time detective (a map of old borders with no names: which of four years is it from?); a daily challenge
-  of eight questions, the same for everyone each day, with a streak and a result to share; your progress, with right
+  of eight questions, the same for everyone each day, with a streak and a result to share (every quiz puts the
+  filters away while it is on, so their names give nothing away, and brings them back after); your progress, with right
   answers, day streaks and badges for six subjects, the daily challenge and the tours (kept in this browser);
   guided tours (our planet, twenty cities through time, from Athens, Baghdad and Xi'an to Buenos Aires, Rio de
   Janeiro and Cusco, history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five
@@ -283,7 +287,9 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   Heritage, nature's wonders, lost and rebuilt, China's great inventions, from the telegraph to the Web, invented in
   Latin America, a grand tour of the solar system, footprints on the Moon, born in the stars, a night under the
   Southern sky); "On this day", any day of the year: what the Time travel stories tell of it, each opening its
-  step, and Wikipedia's selection of events, linked to the story that tells the same event.
+  step (the story's X comes back to the day), and Wikipedia's selection of events, linked to the story that tells
+  the same event. A story opened from a card ("Open its story") or a list starts paused at its step with all its
+  controls; its X goes back to the map and filters there were.
 - **Map games** (More → Map games): twelve games played on the map, each with a new puzzle every day that is the
   same for everyone (the panel's Today list), a best score and badges. The map, its labels and filters come back as
   they were when a game ends.

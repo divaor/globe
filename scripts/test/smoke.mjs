@@ -3663,6 +3663,140 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 30. Fixes from the phone test (v0.31.1), on a phone. A see-through picture (the Maya Long Count's glyphs) sits on
+// paper on a dark card and full screen; the Long Count's card says 36 BC, as its story does, and "Open its story"
+// opens the story paused with all its controls, its X going back to the inventions map; World Heritage's "Watch the
+// list grow" has play and pause, a year slider (that stays put while the legend is redrawn) and a speed slider; a
+// story opened from On this day has its controls, and its X comes back to the day; a quiz and the daily challenge
+// put the filters away (no site names on "Where is…?") and bring them back after.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political,inventions&c=-93,16.7,6&lang=en&theme=dark');
+  await page.evaluate(() => window.atlas.app.setTheme('dark'));
+  await page.waitForFunction(() => /\d+ inventions/.test(document.querySelector('.legend')?.textContent ?? ''), null, { timeout: 30000 }).catch(() => {});
+
+  // Pictures: a see-through PNG on paper, a JPEG as it is.
+  // (A black ring on nothing, drawn by the page: a PNG keeps what is see-through, a JPEG fills it in.)
+  const drawn = (type) => page.evaluate((type) => { const c = document.createElement('canvas'); c.width = c.height = 64; const g = c.getContext('2d'); g.lineWidth = 6; g.beginPath(); g.arc(32, 32, 20, 0, 7); g.stroke(); return c.toDataURL(type); }, type);
+  const png = await drawn('image/png');
+  const pic = async (src) => {
+    await page.evaluate((src) => window.atlas.shell.card.showCustom('🖼️', 'Picture', '', [], [], [], Promise.resolve(src)), src);
+    await page.waitForFunction(() => { const i = document.querySelector('.country-card:not([hidden]) .card-img'); return i && !i.hidden; }, null, { timeout: 5000 }).catch(() => {});
+    return page.evaluate(() => { const i = document.querySelector('.country-card:not([hidden]) .card-img'); return i ? { cls: i.className, bg: getComputedStyle(i).backgroundColor } : null; });
+  };
+  const p1 = await pic(png);
+  await page.evaluate(() => document.querySelector('.country-card:not([hidden]) .card-img')?.click());
+  await page.waitForTimeout(500);
+  const z = await page.evaluate(() => { const i = document.querySelector('.zoom-img'); return i ? { cls: i.className, bg: getComputedStyle(i).backgroundColor } : null; });
+  await page.keyboard.press('Escape');
+  const jpg = await drawn('image/jpeg');
+  const p2 = await pic(jpg);
+  check(/see-through/.test(p1?.cls ?? '') && p1.bg === 'rgb(247, 244, 236)' && /see-through/.test(z?.cls ?? '') && z.bg === 'rgb(247, 244, 236)' && !/see-through/.test(p2?.cls ?? 'see-through'),
+    `a see-through picture sits on paper on a dark card (${p1?.bg}) and full screen (${z?.bg}); a JPEG does not (${p2?.cls})`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+
+  // The Long Count: 36 BC on its card, and its story opened with all its controls.
+  await page.evaluate(() => { window.atlas.app.renderer.view.flyTo({ lon: -93.004, lat: 16.7028, zoom: 7 }, 0); window.atlas.app.renderer.requestRender(); });
+  await page.waitForTimeout(1200);
+  const xy = await page.evaluate(() => window.atlas.app.renderer.view.project(-93.004, 16.7028));
+  if (xy) await page.touchscreen.tap(xy[0], xy[1]);
+  await page.waitForFunction(() => /Long Count/.test(document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? ''), null, { timeout: 8000 }).catch(() => {});
+  const card = await page.evaluate(() => document.querySelector('.country-card:not([hidden]) .rows')?.textContent ?? '');
+  check(/When\s*36 BC/.test(card), `the Long Count's card says 36 BC, as its story does (${/When[^W]*/.exec(card)?.[0] ?? card.slice(0, 40)})`);
+  await page.evaluate(() => [...document.querySelectorAll('.country-card:not([hidden]) button')].find((b) => /Open its story/.test(b.textContent))?.click());
+  await page.waitForSelector('.warbar', { timeout: 20000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const bar = await page.evaluate(() => {
+    const vis = (sel) => { const e = document.querySelector(sel); return !!e && getComputedStyle(e).display !== 'none' && e.getBoundingClientRect().width > 0; };
+    return { mode: window.atlas.app.mode, guided: !!document.querySelector('.warbar.guided'), exit: vis('.warbar .wb-exit'), play: vis('.warbar .tb-play'), nav: vis('.warbar .wb-nav'), paused: document.querySelector('.warbar .tb-play')?.getAttribute('aria-label'), title: document.querySelector('.warbar .wb-title')?.textContent ?? '' };
+  });
+  check(bar.mode === 'inventions' && !bar.guided && bar.exit && bar.play && bar.nav && bar.paused === 'Play', `"Open its story" opens the story paused with its play, steps and X (${bar.mode}: ${bar.title}; guided ${bar.guided}, X ${bar.exit}, play ${bar.play} "${bar.paused}", steps ${bar.nav})`);
+  await page.evaluate(() => document.querySelector('.warbar .wb-exit')?.click());
+  await page.waitForTimeout(1500);
+  await page.evaluate(() => { if (document.querySelector('.legend-body')?.hidden) document.querySelector('.legend-toggle')?.click(); });
+  const back = await page.evaluate(() => ({ mode: window.atlas.app.mode, bar: !!document.querySelector('.warbar'), stack: window.atlas.app.layers.map((l) => l.def.id).join(','), legend: document.querySelector('.legend')?.textContent ?? '' }));
+  check(!back.mode && !back.bar && /inventions/.test(back.stack) && /\d+ inventions/.test(back.legend), `its X goes back to the inventions map (${back.stack}; ${/\d+ inventions/.exec(back.legend)?.[0]})`);
+
+  // On this day: a story opened from the list has its controls, and its X comes back to the same day.
+  await page.evaluate(() => window.atlas.learn['openOnThisDay'](new Date(2026, 10, 14)));
+  await page.waitForSelector('.otd-story', { timeout: 30000 }).catch(() => {});
+  const otdStory = await page.evaluate(() => document.querySelector('.otd-story')?.dataset.story ?? '');
+  await page.evaluate(() => document.querySelector('.otd-story')?.click());
+  await page.waitForSelector('.warbar', { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const ob = await page.evaluate(() => {
+    const x = document.querySelector('.warbar .wb-exit');
+    return { mode: window.atlas.app.mode, guided: !!document.querySelector('.warbar.guided'), x: !!x && getComputedStyle(x).display !== 'none', label: x?.getAttribute('aria-label') ?? '' };
+  });
+  await page.evaluate(() => document.querySelector('.warbar .wb-exit')?.click());
+  await page.waitForTimeout(2000);
+  const od = await page.evaluate(() => ({ mode: window.atlas.app.mode, date: document.querySelector('.otd-date')?.textContent ?? '', open: !!document.querySelector('.otd-stories') }));
+  check(!!otdStory && ob.mode === otdStory.split('/')[0] && !ob.guided && ob.x && /back to the list/.test(ob.label) && !od.mode && od.open && /14 November/.test(od.date),
+    `On this day, 14 November: ${otdStory} opens with its controls, and its X ("${ob.label}") comes back to the list (${od.date})`);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'inventions']));
+
+  // World Heritage: play, pause, the year and speed sliders, back to today's list.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'heritage']));
+  await page.waitForFunction(() => /World Heritage sites/.test(document.querySelector('.legend')?.textContent ?? ''), null, { timeout: 30000 }).catch(() => {});
+  await page.evaluate(() => { if (document.querySelector('.legend-body')?.hidden) document.querySelector('.legend-toggle')?.click(); });
+  await page.evaluate(() => [...document.querySelectorAll('.legend button')].find((b) => /Watch the list grow/.test(b.textContent))?.click());
+  await page.waitForTimeout(1500);
+  const seek0 = await page.$('.lg-seek');
+  const y = () => page.evaluate(() => Number(/(\d{4}): [\d,]+ sites/.exec(document.querySelector('.legend')?.textContent ?? '')?.[1] ?? 0));
+  const y1 = await y();
+  await page.waitForTimeout(1500);
+  const y2 = await y();
+  const same = await page.evaluate((el) => el === document.querySelector('.lg-seek') && el.isConnected, seek0);
+  check(y1 >= 1978 && y2 > y1 && same, `"Watch the list grow" plays (${y1} → ${y2}) under a year slider that stays put as the legend is redrawn (${same})`);
+  await page.evaluate(() => document.querySelector('.lg-play')?.click());
+  const p0 = await y();
+  await page.waitForTimeout(1500);
+  const p1y = await y();
+  const play = await page.evaluate(() => document.querySelector('.lg-play')?.getAttribute('aria-label'));
+  check(p0 === p1y && play === 'Play', `⏸ pauses it (${p0} → ${p1y}; the button now says ${play})`);
+  await page.evaluate(() => { const s = document.querySelector('.lg-seek'); s.value = '2000'; s.dispatchEvent(new Event('input', { bubbles: true })); });
+  await page.waitForTimeout(500);
+  const at2000 = await page.evaluate(() => /2000: ([\d,]+) sites/.exec(document.querySelector('.legend')?.textContent ?? '')?.[1] ?? '');
+  await page.evaluate(() => { const s = document.querySelector('.lg-speed'); s.value = '0'; s.dispatchEvent(new Event('input', { bubbles: true })); });
+  await page.waitForTimeout(300);
+  const slow = await page.evaluate(() => document.querySelector('.lg-pace')?.textContent ?? '');
+  await page.evaluate(() => document.querySelector('.lg-play')?.click());
+  await page.waitForTimeout(2600);
+  const s1 = await y();
+  await page.evaluate(() => { const s = document.querySelector('.lg-speed'); s.value = s.max; s.dispatchEvent(new Event('input', { bubbles: true })); });
+  await page.waitForTimeout(300);
+  const fast = await page.evaluate(() => document.querySelector('.lg-pace')?.textContent ?? '');
+  await page.waitForTimeout(1500);
+  const s2 = await y();
+  check(Number(at2000.replace(/,/g, '')) > 500 && /0\.5 years a second/.test(slow) && s1 - 2000 <= 2 && /8 years a second/.test(fast) && s2 - s1 >= 6,
+    `the year slider goes to 2000 (${at2000} sites); slowest ${slow} (2000 → ${s1} in 2.6 s), fastest ${fast} (→ ${s2} in 1.5 s)`);
+  await page.evaluate(() => [...document.querySelectorAll('.legend button')].find((b) => /Back to today’s list/.test(b.textContent))?.click());
+  await page.waitForTimeout(600);
+  const today = await page.evaluate(() => ({ leg: document.querySelector('.legend')?.textContent ?? '', player: !!document.querySelector('.lg-player') }));
+  check(/[\d,]+ World Heritage sites/.test(today.leg) && /Watch the list grow/.test(today.leg) && !today.player, `"Back to today’s list" ends the timeline (${/[\d,]+ World Heritage sites/.exec(today.leg)?.[0]})`);
+
+  // A quiz puts the filters away and brings them back; so does the daily challenge.
+  await page.evaluate(() => window.atlas.learn['startQuiz']('find', 'world'));
+  await page.waitForFunction(() => window.atlas.learn.quiz?.kind === 'find', null, { timeout: 20000 }).catch(() => {});
+  await page.waitForTimeout(800);
+  const inQuiz = await page.evaluate(() => window.atlas.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id).join(','));
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  await page.waitForTimeout(1500);
+  const after = await page.evaluate(() => window.atlas.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id).join(','));
+  check(inQuiz === 'political' && after === 'political,heritage', `"Where is…?" puts the World Heritage filter away (${inQuiz}) and brings it back after (${after})`);
+  await page.evaluate(() => { try { for (const k of Object.keys(localStorage)) if (/daily/.test(k)) localStorage.removeItem(k); } catch {} });
+  await page.evaluate(() => window.atlas.learn['startQuiz']('daily', 'world'));
+  await page.waitForFunction(() => window.atlas.learn.quiz?.kind === 'daily', null, { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(800);
+  const daily = await page.evaluate(() => ({ kind: window.atlas.learn.quiz?.kind, stack: window.atlas.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id).join(',') }));
+  await page.evaluate(() => document.querySelector('.learn-card .tool-head button[aria-label="Close"]')?.click());
+  await page.waitForTimeout(1500);
+  const after2 = await page.evaluate(() => window.atlas.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id).join(','));
+  check(daily.kind === 'daily' && daily.stack === 'political' && after2 === 'political,heritage', `the daily challenge puts the filters away too (${daily.stack}) and its X brings them back (${after2})`);
+  check(!errors.length, `no page errors in the phone-test fixes${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

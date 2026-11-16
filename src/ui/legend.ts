@@ -5,7 +5,10 @@ import { ChevronDown, ChevronUp, X } from 'lucide';
 import { h, icon, clear, add, fillSelect } from './dom';
 import { t, tx } from '../app/i18n';
 import type { App } from '../app/app';
-import type { Legend, LayerInstance, LegendItem } from '../layers/types';
+import type { Legend, LayerInstance, LegendItem, LegendPlayer } from '../layers/types';
+
+/** A legend's timeline controls (layers/types.ts LegendPlayer), kept from one drawing of the legend to the next. */
+interface PlayerUi { el: HTMLElement; play: HTMLButtonElement; seek: HTMLInputElement; now: HTMLElement; speed: HTMLInputElement; pace: HTMLElement; p: LegendPlayer }
 
 export class LegendCard {
   readonly el: HTMLElement;
@@ -16,6 +19,11 @@ export class LegendCard {
   private activeItem: string | null = null;
   /** Shows the highlighted category's full name on the map, with a button to clear it. */
   private banner: HTMLElement;
+  /** The timelines' controls, by filter. */
+  private players = new Map<string, PlayerUi>();
+  /** A timeline's slider is held: the legend waits to be drawn again until it is let go (drawing it would end the drag). */
+  private holding = false;
+  private dirty = false;
 
   constructor(private app: App, root: HTMLElement) {
     this.collapsed = matchMedia('(max-width: 720px)').matches;
@@ -33,10 +41,15 @@ export class LegendCard {
     app.on('legend', () => this.render());
     // Time travel replaces today's map, so a highlight from today's filters would make no sense.
     app.on('mode', () => this.clearHighlight());
+    const release = () => { if (!this.holding) return; this.holding = false; if (this.dirty) { this.dirty = false; this.render(); } };
+    window.addEventListener('pointerup', release, true);
+    window.addEventListener('pointercancel', release, true);
     this.render();
   }
 
   render() {
+    if (this.holding) { this.dirty = true; return; }
+    const focused = document.activeElement;
     const layers = [...this.app.layers].reverse().filter((l) => l.ready && l.def.legend);
     this.el.hidden = !layers.length || this.app.ambient.on;
     const legends = layers.map((inst) => ({ inst, lg: inst.def.legend!(inst, this.app.lang) }));
@@ -59,6 +72,7 @@ export class LegendCard {
       const pickers = this.optionPickers(inst);
       if (pickers.length) sec.append(h('div', { class: 'lg-opts' }, pickers));
       sec.append(this.renderLegend(lg, inst.def.id, inst));
+      if (lg.player) sec.append(this.player(inst.def.id, lg.player));
       if (lg.note) sec.append(h('div', { class: 'lg-note' }, lg.note));
       const acts = [...(lg.actions ?? [])];
       // A country-facts filter can be compared with another one (Compare two filters).
@@ -74,6 +88,49 @@ export class LegendCard {
       }
       this.body.append(sec);
     }
+    for (const id of [...this.players.keys()]) if (!legends.some(({ inst, lg }) => inst.def.id === id && lg?.player)) this.players.delete(id);
+    // A timeline's button or slider keeps the keyboard's focus as the legend is drawn again.
+    if (focused instanceof HTMLElement && focused !== document.activeElement && this.body.contains(focused)) focused.focus({ preventScroll: true });
+  }
+
+  /** A timeline: play and pause, the slider through the years and the one for its speed (the same elements each time). */
+  private player(id: string, p: LegendPlayer): HTMLElement {
+    const es = this.app.lang === 'es';
+    let ui = this.players.get(id);
+    if (!ui) {
+      const play = h('button', { type: 'button', class: 'lg-play' }) as HTMLButtonElement;
+      const seek = h('input', { type: 'range', class: 'slider lg-seek', step: '1' }) as HTMLInputElement;
+      const now = h('span', { class: 'lg-play-now' });
+      const speed = h('input', { type: 'range', class: 'slider lg-speed', min: '0', step: '1' }) as HTMLInputElement;
+      const pace = h('span', { class: 'lg-pace' });
+      const el = h('div', { class: 'lg-player' },
+        h('div', { class: 'lg-play-row' }, play, seek, now),
+        h('div', { class: 'lg-play-row lg-speed-row' }, h('span', { class: 'lg-speed-end', 'aria-hidden': 'true' }, '🐢'), speed, h('span', { class: 'lg-speed-end', 'aria-hidden': 'true' }, '🐇'), pace));
+      const u: PlayerUi = { el, play, seek, now, speed, pace, p };
+      play.addEventListener('click', () => u.p.onToggle());
+      seek.addEventListener('input', () => { const v = Number(seek.value); now.textContent = u.p.label(v); u.p.onSeek(v); });
+      speed.addEventListener('input', () => { const v = u.p.speeds[Number(speed.value)] ?? u.p.speed; pace.textContent = u.p.speedLabel(v); u.p.onSpeed(v); });
+      for (const s of [seek, speed]) s.addEventListener('pointerdown', () => { this.holding = true; });
+      this.players.set(id, (ui = u));
+    }
+    ui.p = p;
+    ui.play.textContent = p.playing ? '⏸' : '▶';
+    ui.play.title = p.playing ? (es ? 'Pausa' : 'Pause') : (es ? 'Reproducir' : 'Play');
+    ui.play.setAttribute('aria-label', ui.play.title);
+    ui.play.classList.toggle('on', p.playing);
+    ui.seek.min = String(p.min); ui.seek.max = String(p.max);
+    ui.seek.value = String(Math.round(p.value));
+    ui.seek.setAttribute('aria-label', es ? 'Año' : 'Year');
+    ui.seek.setAttribute('aria-valuetext', p.label(p.value));
+    ui.now.textContent = p.label(p.value);
+    let k = 0;
+    p.speeds.forEach((v, i) => { if (Math.abs(v - p.speed) < Math.abs(p.speeds[k] - p.speed)) k = i; });
+    ui.speed.max = String(p.speeds.length - 1);
+    ui.speed.value = String(k);
+    ui.speed.setAttribute('aria-label', es ? 'Velocidad' : 'Speed');
+    ui.speed.setAttribute('aria-valuetext', p.speedLabel(p.speeds[k]));
+    ui.pace.textContent = p.speedLabel(p.speeds[k]);
+    return ui.el;
   }
 
   /**

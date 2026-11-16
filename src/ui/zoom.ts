@@ -21,11 +21,15 @@ function sources(src: string): string[] {
 
 let current: { close: () => void } | null = null;
 
+/** A PNG, SVG, GIF or WebP picture may be see-through: drawings, diagrams and glyphs in black lines (the Maya Long
+ * Count's glyphs) vanish on a dark card or the dark full-screen view, so these sit on paper (main.css). */
+export const seeThrough = (src: string) => /^data:image\/(?:svg|png|gif|webp)|\.(?:svg|png|gif|webp)(?:$|[?#])/i.test(src);
+
 /** Opens the picture full screen. A tap outside it, the X or Escape closes it. */
 export function openZoom(src: string, alt = '') {
   current?.close();
   const es = lang() === 'es';
-  const img = h('img', { class: 'zoom-img', src, alt, draggable: 'false' }) as HTMLImageElement;
+  const img = h('img', { class: `zoom-img${seeThrough(src) ? ' see-through' : ''}`, src, alt, draggable: 'false' }) as HTMLImageElement;
   const btn = h('button', { type: 'button', class: 'zoom-close', 'aria-label': es ? 'Cerrar' : 'Close' }, icon(X, 22));
   const hint = h('div', { class: 'zoom-hint' }, es ? 'Pellizca o toca dos veces para acercar' : 'Pinch or double-tap to zoom');
   const view = h('div', { class: 'zoom-view', role: 'dialog', 'aria-modal': 'true', 'aria-label': alt || (es ? 'Imagen' : 'Picture') }, img, btn, hint);
@@ -149,6 +153,7 @@ export function openZoom(src: string, alt = '') {
  * element to put in the card in place of the picture. */
 export function zoomable(img: HTMLImageElement): HTMLElement {
   img.classList.add('zoomable');
+  img.addEventListener('load', () => img.classList.toggle('see-through', seeThrough(img.currentSrc || img.src)));
   img.addEventListener('click', (e) => {
     if (!img.src) return;
     e.stopPropagation();

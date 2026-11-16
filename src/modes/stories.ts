@@ -414,6 +414,8 @@ export class StoryMode {
   private snaps: { year: number; astro: number; file: string }[] = [];
   private borders = new Map<string, Line[] | 'loading'>();
   private onKey = (e: KeyboardEvent) => this.key(e);
+  /** Where the bar's X goes back to, for a story opened from a list (On this day): that list, opened again. */
+  private back: (() => void) | null = null;
   private onResize = () => { this.fitText(); this.fitDate(); this.measureBar(); };
   /** The step text is shown whole (tapped open) rather than in three lines. */
   private textOpen = false;
@@ -498,15 +500,15 @@ export class StoryMode {
 
   private get sheetId() { return this.wars ? 'wars' : `story-${this.kind}`; }
 
-  /** Opens a story (at a step, from a shared link) and starts playing it; `focus` shows one item. */
-  async open(id: string, at = 0, focus?: { name: string; at: Pt }, guided = false) {
+  /** Opens a story (at a step, from a shared link) and starts playing it (`paused`: not yet); `focus` shows one item. */
+  async open(id: string, at = 0, focus?: { name: string; at: Pt }, guided = false, paused = false) {
     // Lives on the map: "a~b" is two lives side by side.
     if (this.kind === 'lives' && id.includes('~') && livesHook.openPair) return livesHook.openPair(id, at);
     this.shell.sheet.close();
     stopClip(300);
     await this.ensureIndex();
     const [c, topo] = await Promise.all([loadJSON<Conflict>(`${this.dir}/${id}.json`), loadJSON<Topology>(`${this.dir}/${id}-areas.json`)]);
-    await this.play(c, topo, at, focus, guided);
+    await this.play(c, topo, at, focus, guided, paused);
   }
 
   /** The collection's list of stories (and, for Lives on the map, its fields and the pairs worth comparing). */
@@ -519,7 +521,7 @@ export class StoryMode {
   get sheet() { return this.sheetId; }
 
   /** Plays a story that is already loaded (two lives side by side are put together in the browser; `topo` null: no areas). */
-  async play(c: Conflict, topo: Topology | null, at = 0, focus?: { name: string; at: Pt }, guided = false) {
+  async play(c: Conflict, topo: Topology | null, at = 0, focus?: { name: string; at: Pt }, guided = false, paused = false) {
     this.shell.sheet.close();
     stopClip(300);
     await this.ensureIndex();
@@ -530,6 +532,7 @@ export class StoryMode {
     }
     if (!this.active) await this.enterMode();
     this.stop();
+    this.back = null;
     this.c = c;
     // Markers may show a script's letter (𐤀, Ꭰ...): fetch its font, then draw again.
     const letters = (c.items ?? []).map((it) => it.icon).join('');
@@ -540,7 +543,7 @@ export class StoryMode {
     this.guided = guided;
     this.buildBar();
     this.go(this.step, { fly: !focus });
-    this.playing = !focus && !guided;
+    this.playing = !focus && !guided && !paused;
     if (this.playing) this.narrate(false);
     this.renderBar();
     this.app.emit('mode', this.kind);
@@ -578,7 +581,7 @@ export class StoryMode {
     this.offClip?.(); this.offClip = null;
     this.offVoice?.(); this.offVoice = null;
     this.bar?.remove();
-    this.bar = null; this.ui = null; this.c = null;
+    this.bar = null; this.ui = null; this.c = null; this.back = null;
     window.removeEventListener('keydown', this.onKey);
     window.removeEventListener('resize', this.onResize);
     app.renderer.view.insetBottom = 0;
@@ -1537,6 +1540,35 @@ export class StoryMode {
     this.measureBar();
   }
 
+  /** Opens a story at a step, paused, with all its controls (a card's "Open its story", On this day): its bar's X
+   * goes back to the map and the filters there were. */
+  async openAt(id: string, step: number, back?: () => void) {
+    if (this.active && this.c?.id === id) {
+      this.unguide();
+      this.shell.card.hide();
+      this.go(step, { user: true });
+    } else await this.open(id, step, undefined, false, true);
+    this.back = back ?? null;
+    this.exitLabel();
+    this.pause();
+    this.measureBar();
+  }
+
+  /** The X closes the story, and goes back to the list it was opened from, if any. */
+  private async close() {
+    const back = this.back;
+    await this.exit();
+    back?.();
+  }
+  /** The X says where it goes. */
+  private exitLabel() {
+    const x = this.bar?.querySelector('.wb-exit');
+    if (!x) return;
+    const label = this.back ? (lang() === 'es' ? 'Cerrar y volver a la lista' : 'Close and go back to the list') : t('close');
+    x.setAttribute('title', label);
+    x.setAttribute('aria-label', label);
+  }
+
   /** The tour that showed the story ended: the bar gets its own controls back. */
   unguide() {
     if (!this.guided) return;
@@ -1681,7 +1713,7 @@ export class StoryMode {
     const list = h('button', { type: 'button', class: 'icon-btn wb-list', title: allLabel, 'aria-label': allLabel }, icon(ListOrdered, 18));
     list.addEventListener('click', () => void this.pick());
     const exit = h('button', { type: 'button', class: 'icon-btn wb-exit', title: t('close'), 'aria-label': t('close') }, icon(X, 18));
-    exit.addEventListener('click', () => void this.exit());
+    exit.addEventListener('click', () => void this.close());
     const tools: HTMLElement[] = [list, exit];
     if (c.items) {
       const browse = h('button', { type: 'button', class: 'icon-btn wb-browse', title: t('storyBrowse'), 'aria-label': t('storyBrowse') }, icon(Search, 18));
