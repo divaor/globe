@@ -51,6 +51,7 @@ const skyTargets = () => {
 
 let errors = 0, warnings = 0;
 const err = (m) => { errors++; console.log(`ERROR ${m}`); };
+let GREEN = null;
 let WILD = null;
 const warn = (m) => { warnings++; console.log(`warn  ${m}`); };
 const names = new Set();
@@ -76,6 +77,17 @@ for (const tour of tours) {
         let c = -1; const cells = a.c.split('.').map((d) => (c += parseInt(d, 36)));
         const near = Math.min(...cells.map((k) => km([-180 + ((k % 256) + 0.5) * 1.40625, -90 + (Math.floor(k / 256) + 0.5) * 1.40625], s.fly)));
         if (near > 400) warn(`${at}: ${s.wild} lives ${Math.round(near)} km from where the stop flies`);
+      }
+    }
+    // Green planet (v0.31.0): the plant whose range the stop shows, which must grow near where the stop flies.
+    if (s.green) {
+      GREEN ??= JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/green/plants.json'), 'utf8')).plants;
+      const p = GREEN.find((x) => x.id === s.green);
+      if (!p) err(`${at}: no plant "${s.green}" in Plants of the world`);
+      else if (s.fly) {
+        let c = -1; const cells = p.c.split('.').map((d) => (c += parseInt(d, 36)));
+        const near = Math.min(...cells.map((k) => km([-180 + ((k % 256) + 0.5) * 1.40625, -90 + (Math.floor(k / 256) + 0.5) * 1.40625], s.fly)));
+        if (near > 400) warn(`${at}: ${s.green} grows ${Math.round(near)} km from where the stop flies`);
       }
     }
     for (const k of ['en', 'es']) if (s[k] && s[k].length > 280) warn(`${at}: the ${k} text is long (${s[k].length} characters)`);

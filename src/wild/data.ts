@@ -2,14 +2,12 @@
 // their ranges are kept on: GBIF's map squares, 256 columns × 128 rows of 1.40625° (about 150 km at the equator).
 import { loadJSON } from '../data/store';
 import { lang } from '../app/i18n';
+import { hasCell, unpackCells, unpackCounts } from '../layers/carpet';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
 
-export const COLS = 256, ROWS = 128, DEG = 360 / COLS;
-export const cellAt = (lon: number, lat: number) =>
-  Math.min(ROWS - 1, Math.max(0, Math.floor((lat + 90) / DEG))) * COLS + ((Math.floor((lon + 180) / DEG) % COLS) + COLS) % COLS;
-export const cellCenter = (c: number): [number, number] => [-180 + ((c % COLS) + 0.5) * DEG, -90 + (Math.floor(c / COLS) + 0.5) * DEG];
+export { COLS, ROWS, DEG, cellAt, cellCenter } from '../layers/carpet';
 
 export type Group = 'mammals' | 'birds' | 'reptiles' | 'sea' | 'small';
 export type Status = 'LC' | 'NT' | 'VU' | 'EN' | 'CR' | 'EW' | 'EX' | 'DD';
@@ -59,22 +57,12 @@ export const threatened = (s: Status | null) => s === 'VU' || s === 'EN' || s ==
 
 export const nm = (x: { n: [string, string] }) => (es() ? x.n[1] : x.n[0]);
 
-function unpack(s: string): Int32Array {
-  const parts = s ? s.split('.') : [];
-  const out = new Int32Array(parts.length);
-  let c = -1;
-  for (let i = 0; i < parts.length; i++) out[i] = c += parseInt(parts[i], 36);
-  return out;
-}
-
 let wild: Promise<WildData | null> | null = null;
 export function loadWild(): Promise<WildData | null> {
   wild ??= loadJSON<{ credit: string; animals: (Omit<Animal, 'i' | 'cells' | 'counts'> & { c: string; k: string })[] }>('wild/animals.json').then((d) => {
     const animals: Animal[] = d.animals.map((a, i) => {
       const { c, k, ...rest } = a;
-      const counts = new Uint8Array(k.length);
-      for (let j = 0; j < k.length; j++) counts[j] = k.charCodeAt(j) - 48;
-      return { ...rest, i, cells: unpack(c), counts };
+      return { ...rest, i, cells: unpackCells(c), counts: unpackCounts(k) };
     });
     animals.sort((a, b) => b.sl - a.sl).forEach((a, i) => { a.i = i; });
     const byCell = new Map<number, Animal[]>();
@@ -97,9 +85,7 @@ export function loadZoos(): Promise<Zoo[] | null> {
 
 /** Does it live in this square? */
 export function livesIn(a: Animal, c: number): boolean {
-  let lo = 0, hi = a.cells.length - 1;
-  while (lo <= hi) { const m = (lo + hi) >> 1; const v = a.cells[m]; if (v === c) return true; if (v < c) lo = m + 1; else hi = m - 1; }
-  return false;
+  return hasCell(a.cells, c);
 }
 
 /** Size, weight and lifespan as the card shows them ("120–250 kg", "up to 3.3 m"). */

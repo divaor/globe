@@ -100,6 +100,21 @@ export const PLAYLISTS: Playlist[] = [
     ],
   },
   {
+    // v0.31.0: Green planet.
+    id: 'green', icon: '🌿', name: T('Green planet', 'Planeta verde'), desc: T('Plants, great trees and the planet breathing through the seasons.', 'Plantas, grandes árboles y el planeta que respira con las estaciones.'),
+    items: [
+      { stack: ['greenness'], say: T('The breathing planet: how green the land is, month by month. Spring sweeps north, then south.', 'El planeta que respira: qué tan verde está la tierra mes a mes. La primavera sube al norte y luego baja al sur.') },
+      { stack: ['vegetation', 'plants'], say: T('About 300 plants, each where it grows wild: trees, flowers, cacti and the wild forms of our food.', 'Unas 300 plantas, cada una donde crece silvestre: árboles, flores, cactus y las formas silvestres de nuestros alimentos.') },
+      { stack: ['plants'], options: { plants: { show: 'cacti' } }, fly: [-110, 28, 3.4], title: T('The deserts of North America', 'Los desiertos de Norteamérica'), say: T('Saguaros, chollas, barrel cacti and agaves: the Sonoran and Chihuahuan deserts.', 'Saguaros, choyas, biznagas y agaves: los desiertos de Sonora y Chihuahua.') },
+      { stack: ['plants'], options: { plants: { show: 'strange' } }, say: T('Carnivorous and strange plants: flytraps, pitcher plants, sundews and the corpse flower.', 'Plantas carnívoras y extrañas: atrapamoscas, plantas jarro, droseras y la flor cadáver.') },
+      { stack: ['trees'], fly: [-120, 40, 3.2], title: T('Giants of California', 'Gigantes de California'), say: T('The tallest, the biggest and the oldest trees on Earth all grow in California.', 'Los árboles más altos, más grandes y más viejos de la Tierra crecen en California.') },
+      { stack: ['ecoregions'], say: T('846 ecoregions, each with its own mix of plants and animals, coloured by biome.', '846 ecorregiones, cada una con su propia mezcla de plantas y animales, coloreadas por bioma.') },
+      { stack: ['calendar'], say: T('Nature’s calendar: what is in bloom, turning gold or on the move this month.', 'El calendario de la naturaleza: qué está en flor, dorándose o en movimiento este mes.') },
+      { stack: ['crops'], options: { crops: { arrows: true } }, say: T('Where our food first grew, and how it travelled the world.', 'Dónde se cultivaron por primera vez nuestros alimentos, y cómo viajaron por el mundo.') },
+      { stack: ['gardens'], say: T('Botanical gardens and arboretums around the world.', 'Jardines botánicos y arboretos de todo el mundo.') },
+    ],
+  },
+  {
     id: 'people', icon: '👥', name: T('People and cultures', 'Pueblos y culturas'), desc: T('How many we are, where we live, what we speak.', 'Cuántos somos, dónde vivimos, qué hablamos.'),
     items: [
       { stack: ['population'], say: T('How many people live in each country.', 'Cuántas personas viven en cada país.') },

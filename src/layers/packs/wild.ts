@@ -1,13 +1,9 @@
 // Wild world (v0.30.0): Animals of the world, Wildlife parks, and Zoos and aquariums (public/data/wild).
 //
-// Animals of the world is a carpet of about 400 animals, each drawn where it lives (GBIF's sightings shared under
-// open licences, in squares of 1.40625°). At each zoom the globe is cut into a fixed grid whose squares are about
-// 56 px apart on the screen; each square shows its best-known animal that its neighbours don't already show, so the
-// carpet stays varied and keeps still while the map is dragged. Zoomed in past the data's own squares, each square
-// shows its best-known animals side by side. An animal's card can "show where it lives": its squares, darker where
-// more people saw it, with the carpet showing only it, and its best parks as numbered stars.
+// Animals of the world is a carpet of about 400 animals (../carpet.ts), each drawn where it lives (GBIF's sightings
+// shared under open licences, in squares of 1.40625°). An animal's card can "show where it lives": its squares,
+// darker where more people saw it, with the carpet showing only it, and its best parks as numbered stars.
 import { geoDistance } from 'd3-geo';
-import type { MultiPolygon } from 'geojson';
 import { lang, fmtCompact } from '../../app/i18n';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
@@ -15,8 +11,9 @@ import type { App } from '../../app/app';
 import type { Shell } from '../../ui/shell';
 import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, Legend, RenderCtx } from '../types';
 import { crowdOf } from '../crowd';
+import { Carpet, drawRange, glyph, pickDrawn, rangeView, distanceKm, type Drawn } from '../carpet';
 import {
-  COLS, ROWS, DEG, cellAt, cellCenter, loadWild, loadParks, loadZoos, livesIn, relatives, nm, groupName, statusName, threatened,
+  cellAt, cellCenter, loadWild, loadParks, loadZoos, livesIn, relatives, nm, groupName, statusName, threatened,
   GROUPS, STATUS, type Animal, type Park, type Zoo, type WildData, type Group,
 } from '../../wild/data';
 import { animalCard, parkCard, zooCard, statusBadge, placeIcon, type WildLinks, type CardFn } from '../../wild/cards';
@@ -43,192 +40,26 @@ function okFor(inst: LayerInstance): (a: Animal) => boolean {
 }
 const keyOf = (inst: LayerInstance) => (focus ? `focus:${focus.id}` : `${showOf(inst)}|${statusOf(inst)}`);
 
-interface Pick { a: Animal; lon: number; lat: number }
-/** How far apart the carpet's animals are on the screen: wider once their names show. */
-const spacingAt = (z: number) => (z >= 3.2 ? 86 : 56);
-/** A small, fixed shake for a square, so the carpet doesn't look like a chessboard (0..1). */
-const hash = (x: number, y: number, s = 0) => { let n = (x * 374761393 + y * 668265263 + s * 2147483647) | 0; n = (n ^ (n >>> 13)) * 1274126177; return ((n ^ (n >>> 16)) >>> 0) / 4294967296; };
-
 /**
  * How much an animal stands for a place: its fame, a little less for birds and small creatures (seen almost
  * everywhere), and more for animals of a small range than for those found on every continent.
  */
 const GROUP_WEIGHT: Record<Group, number> = { mammals: 1, reptiles: 0.9, sea: 0.85, birds: 0.6, small: 0.6 };
 const weightOf = (a: Animal) => a.sl * GROUP_WEIGHT[a.g] * Math.max(0.3, Math.min(1.6, Math.sqrt(400 / Math.max(1, a.cells.length))));
+const carpet = new Carpet<Animal>(weightOf);
 
-/** The carpet at grid level k (squares of 2^k data squares a side, wider towards the poles), for the whole globe. */
-function levelPicks(d: WildData, k: number, ok: (a: Animal) => boolean): Pick[] {
-  const size = 1 << k, out: Pick[] = [];
-  let prev: { x0: number; x1: number; id: string; e: string }[] = [];
-  for (let y0 = 0; y0 < ROWS; y0 += size) {
-    const latC = -90 + (y0 + size / 2) * DEG;
-    const stretch = 2 ** Math.round(Math.log2(1 / Math.max(Math.cos((latC * Math.PI) / 180), 0.06)));
-    const w = Math.min(COLS, size * stretch);
-    const row: { x0: number; x1: number; id: string; e: string }[] = [];
-    let west: Animal | null = null;
-    for (let x0 = 0; x0 < COLS; x0 += w) {
-      const m = new Map<Animal, [number, number, number]>();
-      let filled = 0;
-      for (let y = y0; y < Math.min(ROWS, y0 + size); y++) for (let x = x0; x < x0 + w; x++) {
-        const list = d.byCell.get(y * COLS + x);
-        if (!list) continue;
-        let any = false;
-        for (const a of list) {
-          if (!ok(a)) continue;
-          any = true;
-          const s = m.get(a);
-          if (s) { s[0]++; s[1] += x; s[2] += y; } else m.set(a, [1, x, y]);
-        }
-        if (any) filled++;
-      }
-      if (!m.size) { west = null; continue; }
-      // Its neighbours' animals, and their emoji: no two neighbours look the same.
-      const near = new Set<string>();
-      if (west) { near.add(west.id); near.add(west.e); }
-      for (const p of prev) if (p.x1 > x0 - w && p.x0 < x0 + 2 * w) { near.add(p.id); near.add(p.e); }
-      let best: Animal | null = null, bs = -1, first: Animal | null = null, fs = -1;
-      for (const [a, s] of m) {
-        const score = weightOf(a) * Math.sqrt(s[0] / filled);
-        if (score > fs) { fs = score; first = a; }
-        if (!near.has(a.id) && !near.has(a.e) && score > bs) { bs = score; best = a; }
-      }
-      const a = best ?? first!;
-      const s = m.get(a)!;
-      // Where it lives in this square (the middle of its own data squares), shaken a little.
-      const jx = (hash(x0, y0, 1) - 0.5) * 0.5 * Math.min(w, 2), jy = (hash(x0, y0, 2) - 0.5) * 0.5 * Math.min(size, 2);
-      out.push({ a, lon: -180 + (s[1] / s[0] + 0.5 + jx) * DEG, lat: Math.max(-89, Math.min(89, -90 + (s[2] / s[0] + 0.5 + jy) * DEG)) });
-      row.push({ x0, x1: x0 + w, id: a.id, e: a.e });
-      west = a;
-    }
-    prev = row;
-  }
-  return out;
-}
-
-const pickCache = new Map<string, Pick[]>();
-function picksAt(d: WildData, k: number, inst: LayerInstance): Pick[] {
-  const key = `${k}|${keyOf(inst)}`;
-  let p = pickCache.get(key);
-  if (!p) { if (pickCache.size > 24) pickCache.clear(); p = levelPicks(d, k, okFor(inst)); pickCache.set(key, p); }
-  return p;
-}
-
-/** Zoomed in past the data's squares: each visible square's best-known animals, `m` × `m` of them. */
-function slotPicks(d: WildData, rc: RenderCtx, m: number, inst: LayerInstance): Pick[] {
-  const ok = okFor(inst), out: Pick[] = [];
-  const [clon, clat] = rc.center;
-  const r = (rc.view.visibleRadius() * 180) / Math.PI;
-  const y0 = Math.max(0, Math.floor((clat - r + 90) / DEG)), y1 = Math.min(ROWS - 1, Math.floor((clat + r + 90) / DEG));
-  for (let y = y0; y <= y1; y++) {
-    const lat = -90 + (y + 0.5) * DEG;
-    const span = Math.min(180, r / Math.max(0.05, Math.cos((lat * Math.PI) / 180)) + DEG);
-    const x0 = Math.floor((clon - span + 180) / DEG), x1 = Math.floor((clon + span + 180) / DEG);
-    for (let xx = x0; xx <= x1; xx++) {
-      const x = ((xx % COLS) + COLS) % COLS;
-      const list = d.byCell.get(y * COLS + x);
-      if (!list) continue;
-      // Twice as many of its best-standing animals as it has room for (a different emoji each as far as they go),
-      // and of those a fixed mix for this square, so neighbours don't all show the same few.
-      const all = list.filter(ok).sort((p, q) => weightOf(q) - weightOf(p));
-      const emo = new Set<string>(), pool: Animal[] = [];
-      for (const a of all) if (pool.length < 2 * m * m && !emo.has(a.e)) { emo.add(a.e); pool.push(a); }
-      for (const a of all) if (pool.length < 2 * m * m && !pool.includes(a)) pool.push(a);
-      const shown = pool.length <= m * m ? pool : [pool[0], ...pool.slice(1).sort((p, q) => hash(x, y, p.i) - hash(x, y, q.i)).slice(0, m * m - 1)];
-      if (!shown.length) continue;
-      // The slots in a fixed shuffled order for this square, so the best known isn't always top left.
-      const slots = Array.from({ length: m * m }, (_, j) => j).sort((p, q) => hash(x, y, p) - hash(x, y, q));
-      shown.forEach((a, j) => {
-        const sx = slots[j] % m, sy = Math.floor(slots[j] / m);
-        const jx = (hash(x, y, 10 + j) - 0.5) * 0.45, jy = (hash(x, y, 20 + j) - 0.5) * 0.45;
-        out.push({ a, lon: -180 + (x + (sx + 0.5 + jx) / m) * DEG, lat: -90 + (y + (sy + 0.5 + jy) / m) * DEG });
-      });
-    }
-  }
-  return out;
-}
-
-// ---- Drawing --------------------------------------------------------------------------------------------------
-const glyphs = new Map<string, HTMLCanvasElement>();
-/** An emoji drawn once at a size, then copied: much faster than drawing text hundreds of times a frame. */
-function glyph(e: string, px: number, dpr: number): HTMLCanvasElement {
-  const s = Math.round(px * dpr), key = `${e}|${s}`;
-  let c = glyphs.get(key);
-  if (c) return c;
-  if (glyphs.size > 600) glyphs.clear();
-  c = document.createElement('canvas');
-  c.width = c.height = Math.ceil(s * 1.3);
-  const g = c.getContext('2d')!;
-  g.font = `${s}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
-  g.textAlign = 'center'; g.textBaseline = 'middle';
-  g.fillText(e, c.width / 2, c.height / 2 + s * 0.06);
-  glyphs.set(key, c);
-  return c;
-}
-const sizeAt = (z: number) => Math.max(17, Math.min(30, 13 + z * 2.6));
-
-interface Drawn { a: Animal; x: number; y: number; r: number }
 interface Star { p: Park; n: number; x: number; y: number }
-
-/** The squares of the focused range, as one shape per shade (cached per focus). */
-let rangeShapes: { id: string; bins: MultiPolygon[] } | null = null;
-function rangeOf(f: Focus) {
-  if (rangeShapes?.id === f.id) return rangeShapes.bins;
-  const bins: MultiPolygon[] = Array.from({ length: 10 }, () => ({ type: 'MultiPolygon', coordinates: [] }));
-  f.cells.forEach((c, i) => {
-    const x = c % COLS, y = Math.floor(c / COLS);
-    const w = -180 + x * DEG, s = -90 + y * DEG, e = w + DEG, n = s + DEG, mid = w + DEG / 2;
-    // Clockwise (west, north, east, south): on the sphere the other way round is everything but the square.
-    bins[Math.min(9, f.counts[i] ?? 0)].coordinates.push([[[w, s], [w, n], [mid, n], [e, n], [e, s], [mid, s], [w, s]]]);
-  });
-  rangeShapes = { id: f.id, bins };
-  return bins;
-}
-
-function drawRange(rc: RenderCtx, f: Focus) {
-  const { ctx, path } = rc;
-  const dark = rc.theme.dark;
-  // The map dims a little, so the squares stand out on any filter's colours.
-  ctx.beginPath(); path({ type: 'Sphere' });
-  ctx.fillStyle = dark ? 'rgba(6,10,20,0.42)' : 'rgba(255,255,255,0.5)'; ctx.fill();
-  rangeOf(f).forEach((mp, b) => {
-    if (!mp.coordinates.length) return;
-    ctx.beginPath(); path(mp);
-    ctx.fillStyle = dark ? `rgba(255,190,60,${0.5 + b * 0.05})` : `rgba(230,73,0,${0.42 + b * 0.055})`;
-    ctx.fill();
-  });
-}
 
 function drawCarpet(rc: RenderCtx, inst: LayerInstance) {
   if (!data) return;
-  const { ctx } = rc;
-  const pxPerDeg = (rc.view.pxPerRadian * Math.PI) / 180, base = DEG * pxPerDeg;
-  const S = spacingAt(rc.webZoom);
-  const list = base >= S * 2 ? slotPicks(data, rc, Math.min(4, Math.floor(base / S)), inst)
-    : picksAt(data, Math.max(0, Math.ceil(Math.log2(S / base))), inst);
-  const size = sizeAt(rc.webZoom), r = size * 0.62, status = statusOf(inst), dark = rc.theme.dark;
-  const [clon, clat] = rc.center, vr = rc.view.visibleRadius();
-  const drawn: Drawn[] = [];
-  const { w, h: hh } = rc.view;
-  for (const p of list) {
-    if (geoDistance([clon, clat], [p.lon, p.lat]) > vr) continue;
-    const xy = rc.project(p.lon, p.lat);
-    if (!xy || xy[0] < -r || xy[1] < -r || xy[0] > w + r || xy[1] > hh + r) continue;
-    const [x, y] = xy;
-    const st = p.a.st;
-    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2);
-    ctx.fillStyle = p.a.gone ? (dark ? 'rgba(40,40,46,0.8)' : 'rgba(225,222,215,0.85)') : dark ? 'rgba(10,20,40,0.5)' : 'rgba(255,255,255,0.66)';
-    ctx.fill();
-    if ((status === 'endangered' || focus) && st && STATUS[st] && threatened(st)) { ctx.lineWidth = 2.4; ctx.strokeStyle = STATUS[st].color; ctx.stroke(); }
-    else if (p.a.gone) { ctx.lineWidth = 1.6; ctx.strokeStyle = dark ? '#adb5bd' : '#495057'; ctx.stroke(); }
-    const g = glyph(p.a.e, size, rc.dpr), gs = g.width / rc.dpr;
-    const alpha = ctx.globalAlpha;
-    if (p.a.gone) ctx.globalAlpha = alpha * 0.8;
-    ctx.drawImage(g, x - gs / 2, y - gs / 2, gs, gs);
-    ctx.globalAlpha = alpha;
-    rc.labels.reserve(x - r, y - r, x + r, y + r);
-    drawn.push({ a: p.a, x, y, r });
-  }
-  inst.state.drawn = drawn;
+  const status = statusOf(inst), dark = rc.theme.dark;
+  inst.state.drawn = carpet.draw(rc, data.byCell, okFor(inst), keyOf(inst), (a) => {
+    const st = a.st;
+    const fill = a.gone ? (dark ? 'rgba(40,40,46,0.8)' : 'rgba(225,222,215,0.85)') : dark ? 'rgba(10,20,40,0.5)' : 'rgba(255,255,255,0.66)';
+    if ((status === 'endangered' || focus) && st && STATUS[st] && threatened(st)) return { fill, ring: STATUS[st].color, ringWidth: 2.4 };
+    if (a.gone) return { fill, ring: dark ? '#adb5bd' : '#495057', ringWidth: 1.6, alpha: 0.8 };
+    return { fill };
+  });
 }
 
 function drawStars(rc: RenderCtx, inst: LayerInstance) {
@@ -256,22 +87,12 @@ const cardFn: CardFn = (...a) => { APP?.select(null); SHELL?.card.showCustom(...
 export async function showFocus(f: Focus | null, fly = true) {
   if (!APP) return;
   focus = f;
-  pickCache.clear();
+  carpet.clear();
   if (f && !APP.isActive('wild')) await APP.activate('wild');
   if (f?.animal && !f.best) { parks ??= await loadParks(); f.best = (f.animal.best ?? []).map((id) => parks?.find((p) => p.id === id)).filter((p): p is Park => !!p).slice(0, 6); }
-  if (f && fly && f.cells.length) {
-    // Fly to the middle of its squares, weighted by sightings, close enough to see them all (but not too far out).
-    let x = 0, y = 0, z = 0, w = 180, e = -180, s = 90, n = -90;
-    const lon0 = cellCenter(f.cells[f.counts.indexOf(Math.max(...f.counts))] ?? f.cells[0])[0];
-    f.cells.forEach((c, i) => {
-      const [lon, lat] = cellCenter(c);
-      const l = ((lon - lon0 + 540) % 360) - 180 + lon0, wt = 1 + (f.counts[i] ?? 0);
-      x += l * wt; y += lat * wt; z += wt;
-      w = Math.min(w, l); e = Math.max(e, l); s = Math.min(s, lat); n = Math.max(n, lat);
-    });
-    const span = Math.max(e - w, (n - s) * 1.4, 4);
-    APP.flyTo(((x / z + 540) % 360) - 180, y / z, Math.max(1, Math.min(14, 120 / span)));
-  }
+  // Fly to the middle of its squares, weighted by sightings, close enough to see them all (but not too far out).
+  const v = f && fly ? rangeView(f) : null;
+  if (v) APP.flyTo(v.lon, v.lat, v.zoom);
   APP.renderer.requestRender();
   LC.notify?.();
   APP.emit('layers');
@@ -361,8 +182,8 @@ export const animalsOfTheWorld: LayerDef = {
     ] },
   ],
   async load() { data ??= await loadWild(); if (!data) throw new Error('no data'); void loadParks().then((p) => { parks = p; }); },
-  onOptionsChanged() { focus = null; pickCache.clear(); LC.requestRender(); },
-  onDeactivate() { focus = null; pickCache.clear(); },
+  onOptionsChanged() { focus = null; carpet.clear(); LC.requestRender(); },
+  onDeactivate() { focus = null; carpet.clear(); },
   drawOverlay(rc, inst) {
     if (!data) return;
     if (focus) drawRange(rc, focus);
@@ -370,7 +191,7 @@ export const animalsOfTheWorld: LayerDef = {
     drawStars(rc, inst);
   },
   labels(rc, inst) {
-    const drawn = (inst.state.drawn as Drawn[] | undefined) ?? [];
+    const drawn = (inst.state.drawn as Drawn<Animal>[] | undefined) ?? [];
     if (rc.webZoom >= 3.2 || focus) for (const d of drawn) rc.labels.add({ text: nm(d.a), x: d.x, y: d.y + d.r + 7, priority: 260 + Math.min(300, d.a.sl), size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
     for (const s of (inst.state.stars as Star[] | undefined) ?? []) rc.labels.add({ text: nm(s.p), x: s.x, y: s.y + 18, priority: 700 - s.n, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
   },
@@ -418,8 +239,7 @@ export const animalsOfTheWorld: LayerDef = {
   },
   tap(_lon, _lat, inst, ui: LayerTapUi) {
     for (const s of (inst.state.stars as Star[] | undefined) ?? []) if (Math.hypot(s.x - ui.x, s.y - ui.y) < 14) { parkCard(ui.card, s.p, data, links); return true; }
-    let best: Drawn | null = null, bd = Infinity;
-    for (const d of (inst.state.drawn as Drawn[] | undefined) ?? []) { const dd = Math.hypot(d.x - ui.x, d.y - ui.y); if (dd < Math.max(18, d.r + 3) && dd < bd) { bd = dd; best = d; } }
+    const best = pickDrawn(inst.state.drawn as Drawn<Animal>[] | undefined, ui.x, ui.y);
     if (!best) return false;
     animalCard(ui.card, best.a, links);
     return true;
@@ -537,15 +357,11 @@ export const wildZoos = placeLayer<Zoo>({
 
 /** An animal's range on any map (the quizzes): its squares, darker where more people saw it. */
 export function drawAnimalRange(rc: RenderCtx, a: Animal) {
-  drawRange(rc, { id: a.id, name: nm(a), e: a.e, cells: a.cells, counts: a.counts, animal: a });
+  drawRange(rc, a);
 }
 /** How far a point is from where an animal lives, in km: 0 inside one of its squares. */
 export function rangeKm(a: Animal, at: [number, number]): number {
-  if (livesIn(a, cellAt(at[0], at[1]))) return 0;
-  let best = Infinity;
-  for (const c of a.cells) { const d = geoDistance(cellCenter(c), at); if (d < best) best = d; }
-  // From the middle of the nearest square to its edge: about half a square.
-  return Math.max(0, best * 6371 - (DEG * 111) / 2);
+  return distanceKm(a.cells, at);
 }
 
 /** The animals that live in a place (our 400, offline): the best known first. */

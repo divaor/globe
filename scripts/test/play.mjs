@@ -90,7 +90,7 @@ check(pp[0] === 5000 && pp.every((v, i) => i === 0 || v < pp[i - 1]) && Math.abs
 const five = (d) => 5 * G.pinPoints(d);
 check(G.pinStars(five(0)) === 3 && G.pinStars(five(100)) === 3 && G.pinStars(five(600)) === 2 && G.pinStars(five(2500)) === 1, `Pin it stars: five pins 100 km off ${S.starText(G.pinStars(five(100)))}, 600 km ${S.starText(G.pinStars(five(600)))}, 2,500 km ${S.starText(G.pinStars(five(2500)))}`);
 const pins = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/play/pins.json'), 'utf8')).packs;
-const packNames = ['capitals', 'heritage', 'structures', 'dishes', 'inventions', 'museums', 'battles', 'masterpieces', 'animals'];
+const packNames = ['capitals', 'heritage', 'structures', 'dishes', 'inventions', 'museums', 'battles', 'masterpieces', 'animals', 'trees'];
 const badPin = Object.values(pins).flat().filter((p) => !p[0] || !p[1] || !(Math.abs(p[2]) <= 180) || !(Math.abs(p[3]) <= 90) || !p[4]);
 const quito = pins.capitals.find((p) => p[0] === 'Quito'), paris = pins.capitals.find((p) => p[0] === 'Paris');
 check(packNames.every((k) => pins[k]?.length >= 40) && !badPin.length && pins.capitals.length >= 190 && pins.capitals.length <= 200 && quito && G.km([quito[2], quito[3]], [-78.5, -0.2]) < 30 && paris && paris[5] === 'France' && paris[6] === 'Francia',
