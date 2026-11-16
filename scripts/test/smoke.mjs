@@ -1837,8 +1837,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.click('.ss .settings-actions .pill.primary');
   await page.waitForTimeout(300);
   const mine = await page.evaluate(() => JSON.parse(localStorage.getItem('atlas-playlist') || '[]'));
-  check(['', 'planet', 'night', 'restless', 'water', 'life', 'people', 'latam'].every((k) => pls.includes(k)) && mine.length === 1 && mine[0].stack.includes('political'),
-    `ambient mode offers 7 playlists and my own (${pls.length} cards); "Add this view" adds the map to my playlist`);
+  check(['', 'planet', 'night', 'restless', 'water', 'life', 'wild', 'people', 'latam'].every((k) => pls.includes(k)) && mine.length === 1 && mine[0].stack.includes('political'),
+    `ambient mode offers 8 playlists and my own (${pls.length} cards); "Add this view" adds the map to my playlist`);
   await page.evaluate(() => { window.__spoken.length = 0; window.atlas.app.ambient.secs = 4; window.atlas.app.ambient.narrate = true; });
   await page.click('[data-playlist="restless"]');
   // The view's filters load, the map arrives, then the voice reads its line.
@@ -3264,6 +3264,193 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(/Detective del clima/.test(esCard) && /¿Qué ciudad tiene este clima/.test(esCard) && /temperatura/.test(esCard), `en español: "${esCard.split('\n').slice(0, 2).join(' · ')}"`);
 
   check(!errors.length, `no page errors in v0.29.0's games${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 28. Wild world (v0.30.0), on a phone, with GBIF and iNaturalist answered from fixtures. Animals of the world over
+// the Serengeti: a varied carpet; a tap opens an animal's card (Red List badge, countries, the Naturalist count);
+// "Show where it lives" shows its squares and its best parks as numbered stars; "Best places to see it" lists parks and
+// a park's card; Endangered and Gone; the search finds the jaguar; More → Nature: the finder (ours, and any other
+// species from GBIF's live map with its months), What lives here?; Wildlife parks and Zoos and aquariums; Great
+// migrations by month; the two quizzes; a tour stop with an animal's range; the guide's Wildlife nearby; Spanish.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); localStorage.removeItem('atlas-globe:progress'); } catch {} });
+  await ctx.route(/wikidata\.org|wikimedia\.org|wikipedia\.org/, (route) => route.abort());
+  await ctx.route(/api\.gbif\.org\/v1\/species\/search/, (route) => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ results: [{ key: 5229380, nubKey: 5229380, canonicalName: 'Puffinus puffinus', scientificName: 'Puffinus puffinus (Brünnich, 1764)', class: 'Aves', family: 'Procellariidae', vernacularNames: [{ vernacularName: 'Manx shearwater', language: 'eng' }, { vernacularName: 'Pardela pichoneta', language: 'spa' }] }] }) }));
+  await ctx.route(/api\.gbif\.org\/v2\/map\/occurrence\/density\/0\/(\d)\/0\.mvt/, (route) => {
+    const x = /density\/0\/(\d)\/0/.exec(route.request().url())[1];
+    route.fulfill({ contentType: 'application/x-protobuf', body: fs.readFileSync(new URL(`./fixtures/gbif-manx-shearwater-0-${x}-0.mvt`, import.meta.url)) });
+  });
+  await ctx.route(/api\.inaturalist\.org\/v1\/taxa\?/, (route) => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ results: [{ id: 4567, name: 'Puffinus puffinus' }, { id: 41964, name: 'Panthera leo' }] }) }));
+  await ctx.route(/api\.inaturalist\.org\/v1\/observations\/histogram/, (route) => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ results: { month_of_year: { 1: 2, 2: 3, 3: 40, 4: 120, 5: 300, 6: 420, 7: 380, 8: 210, 9: 60, 10: 8, 11: 2, 12: 1 } } }) }));
+  await ctx.route(/api\.inaturalist\.org\/v1\/observations\/species_counts/, (route) => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ results: [
+    { count: 900, taxon: { id: 41964, name: 'Panthera leo', preferred_common_name: 'lion', iconic_taxon_name: 'Mammalia' } },
+    { count: 700, taxon: { id: 133061, name: 'Connochaetes taurinus', preferred_common_name: 'blue wildebeest', iconic_taxon_name: 'Mammalia' } },
+    { count: 50, taxon: { id: 1, name: 'Bucorvus leadbeateri', preferred_common_name: 'southern ground hornbill', iconic_taxon_name: 'Aves' } },
+  ] }) }));
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political,wild&c=35,-2.5,7&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas?.app?.instance('wild')?.ready && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(1500);
+  // (On a phone the legend starts folded: open it to read it.)
+  const legend = () => page.evaluate(() => { if (document.querySelector('.legend-body')?.hidden) document.querySelector('.legend-toggle')?.click(); return document.querySelector('.legend')?.innerText ?? ''; });
+  const cardText = () => page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  const drawn = () => page.evaluate(() => (window.atlas.app.instance('wild').state.drawn ?? []).map((d) => ({ id: d.a.id, e: d.a.e, x: d.x, y: d.y })));
+
+  // The carpet: many animals, many kinds, and the savanna's own.
+  let d = await drawn();
+  const kinds = new Set(d.map((x) => x.e));
+  check(d.length >= 20 && kinds.size >= 8 && d.some((x) => ['panthera-leo', 'loxodonta-africana', 'giraffa-camelopardalis', 'connochaetes-taurinus', 'equus-quagga'].includes(x.id)),
+    `Animals of the world over the Serengeti: ${d.length} animals, ${kinds.size} different emoji, among them the savanna's own`);
+
+  // An animal's card.
+  const W = await page.evaluate(() => [innerWidth, innerHeight]);
+  const pickOne = (list) => list.find((x) => x.id === 'panthera-leo' && x.x > 50 && x.x < W[0] - 50 && x.y > 120 && x.y < W[1] * 0.55) ?? list.find((x) => x.x > 50 && x.x < W[0] - 50 && x.y > 120 && x.y < W[1] * 0.55);
+  const one = pickOne(d);
+  await page.mouse.click(one.x, one.y);
+  await page.waitForTimeout(900);
+  let card = await cardText();
+  const seen = await page.evaluate(() => JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').seen?.animals ?? []);
+  check(/Group/.test(card) && /Lives in/.test(card) && /Show where it lives/.test(card) && /Its relatives/.test(card) && (/Red List/.test(card) || !/LC|NT|VU|EN|CR/.test(card)) && seen.includes(one.id),
+    `a tap opens ${one.id}'s card (group, Red List, where it lives, its buttons) and counts it for the Naturalist badge`);
+
+  // Where the lion lives, and its best parks.
+  await page.evaluate(() => window.atlas.app.instance('wild').def.searchLoad());
+  await page.evaluate(() => { const b = [...document.querySelectorAll('.country-card button, .country-card a')].find((x) => /Show where it lives/.test(x.textContent)); b?.click(); });
+  await page.waitForTimeout(2500);
+  const lg = await legend();
+  const focus = await page.evaluate(() => window.atlas.wild.info.focus);
+  const stars = await page.evaluate(() => (window.atlas.app.instance('wild').state.stars ?? []).length);
+  d = await drawn();
+  check(focus === one.id && /where it lives/i.test(lg) && /All animals/.test(lg) && d.every((x) => x.id === one.id),
+    `"Show where it lives": its squares, the carpet shows only it (${d.length} times), ${stars} best parks as stars; the legend offers all animals again`);
+  // Best places to see it: a list of parks; one opens its card.
+  // (Open the card again from the carpet, then its "Best places to see it".)
+  d = await drawn();
+  const again = d.find((x) => x.x > 30 && x.x < W[0] - 30 && x.y > 100 && x.y < W[1] * 0.6) ?? d[0];
+  await page.mouse.click(again.x, again.y);
+  await page.waitForTimeout(800);
+  await page.evaluate(() => { const b = [...document.querySelectorAll('.country-card button, .country-card a')].find((x) => /Best places to see it/.test(x.textContent)); b?.click(); });
+  await page.waitForTimeout(2500);
+  const parks = await page.evaluate(() => [...document.querySelectorAll('[data-wild="best"] [data-park]')].map((x) => x.textContent));
+  await page.evaluate(() => document.querySelector('[data-wild="best"] [data-park]')?.click());
+  await page.waitForTimeout(1500);
+  card = await cardText();
+  check(parks.length >= 3 && /(National park|Nature reserve)/.test(card) && /Plan a trip/.test(card),
+    `"Best places to see it": ${parks.length} parks (${parks.slice(0, 2).join('; ').slice(0, 80)}); a park's card with Plan a trip`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+
+  // Endangered and Gone.
+  await page.evaluate(() => window.atlas.app.setOption('wild', 'status', 'endangered'));
+  await page.waitForTimeout(800);
+  const en = await legend();
+  await page.evaluate(() => window.atlas.app.setOption('wild', 'status', 'gone'));
+  await page.waitForTimeout(800);
+  const gone = await legend();
+  check(/threatened animals/.test(en) && /Critically endangered/.test(en) && /gone since 1500/.test(gone) && /Dodo · 1662/.test(gone) && /Thylacine · 1936/.test(gone),
+    'Status: Endangered rings the threatened animals by Red List category; Gone lists the dodo (1662), the thylacine (1936)…');
+  await page.evaluate(() => window.atlas.app.setOption('wild', 'status', 'all'));
+
+  // The search finds the jaguar and shows where it lives.
+  await page.evaluate(() => window.atlas.shell.search.open());
+  await page.fill('.search-field', 'jaguar');
+  await page.waitForTimeout(800);
+  const hits = await page.evaluate(() => [...document.querySelectorAll('.search-item')].map((x) => x.querySelector('.si-label')?.textContent ?? ''));
+  await page.evaluate(() => [...document.querySelectorAll('.search-item')].find((x) => /^Jaguar$/.test(x.querySelector('.si-label')?.textContent ?? ''))?.click());
+  await page.waitForTimeout(3000);
+  const jf = await page.evaluate(() => ({ focus: window.atlas.wild.info.focus, title: document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '' }));
+  check(hits.includes('Jaguar') && jf.focus === 'panthera-onca' && jf.title === 'Jaguar', `the search finds the jaguar (${hits.slice(0, 3).join(', ')}): its range and its card`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+
+  // More → Nature: the finder, ours and GBIF's.
+  await page.evaluate(() => window.atlas.wild.open());
+  await page.waitForTimeout(800);
+  await page.fill('[data-wild="find"]', 'puffin');
+  await page.waitForTimeout(1500);
+  const finder = await page.evaluate(() => ({ ours: [...document.querySelectorAll('[data-wild="ours"] [data-animal]')].map((x) => x.getAttribute('data-animal')), live: [...document.querySelectorAll('[data-wild="live"] [data-gbif]')].map((x) => x.textContent) }));
+  await page.evaluate(() => document.querySelector('[data-wild="live"] [data-gbif]')?.click());
+  await page.waitForTimeout(3000);
+  const live = await page.evaluate(() => ({ focus: window.atlas.wild.info.focus, months: document.querySelectorAll('.wild-month').length, best: document.querySelectorAll('[data-wild="best"] [data-park]').length, head: document.querySelector('.wild-page-head')?.textContent ?? '' }));
+  check(finder.ours.includes('fratercula-arctica') && finder.live.some((t) => /Manx shearwater/.test(t)) && live.focus === 'gbif:5229380' && live.months === 12,
+    `the finder: our Atlantic puffin, and GBIF's Manx shearwater with its live map (${live.best} parks) and 12 months of sightings`);
+
+  // What lives here?
+  await page.evaluate(() => window.atlas.wild.whatLivesHere([34.83, -2.33]));
+  await page.waitForTimeout(1500);
+  const here = await page.evaluate(() => [...document.querySelectorAll('[data-wild="here-list"] .guide-item-title')].map((x) => x.textContent));
+  check(here.length === 3 && /🦁/.test(here[0]) && /Blue wildebeest/i.test(here[1]),
+    `What lives here?: iNaturalist's most-seen animals within 50 km, ours with their emoji (${here.join(', ')})`);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+
+  // Wildlife parks, and zoos and aquariums.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'wild-parks', 'wild-zoos']));
+  await page.waitForFunction(() => window.atlas.app.instance('wild-parks')?.ready && window.atlas.app.instance('wild-zoos')?.ready, null, { timeout: 20000 });
+  await page.waitForTimeout(800);
+  const places = await legend();
+  check(/National parks \(\d/.test(places) && /Aquariums \(\d/.test(places), 'Wildlife parks and Zoos and aquariums: their kinds in the legend');
+
+  // Great migrations by month.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'migrations']));
+  await page.waitForFunction(() => window.atlas.app.instance('migrations')?.ready, null, { timeout: 20000 });
+  await page.evaluate(() => window.atlas.app.setOption('migrations', 'month', '3'));
+  await page.evaluate(() => window.atlas.app.renderer.view.flyTo({ lon: 0, lat: 20, zoom: 1 }, 0));
+  await page.waitForTimeout(1200);
+  const mg = await legend();
+  const travellers = await page.evaluate(() => (window.atlas.app.instance('migrations').state.drawn ?? []).length);
+  check(/Migrations · March/.test(mg) && travellers >= 8 && /Play the year/.test(mg), `Great migrations in March: ${travellers} travellers on this side of the globe, the month's moments, ◀ ▶ and Play the year`);
+
+  // The quizzes: tap where an animal lives; which animal lives here.
+  await page.evaluate(() => window.atlas.app.setStack(['political']));
+  await page.evaluate(() => window.atlas.learn['startQuiz']('habitat', 'world'));
+  await page.waitForTimeout(2000);
+  const hq = await page.evaluate(() => ({ q: document.querySelector('.learn-card .quiz-q')?.textContent ?? '', at: window.atlas.learn.quiz?.qs[0]?.item?.at }));
+  await page.evaluate((at) => window.atlas.app.renderer.view.flyTo({ lon: at[0], lat: at[1], zoom: 3 }, 0), hq.at);
+  await page.waitForTimeout(800);
+  const xy = await page.evaluate((at) => window.atlas.app.renderer.view.project(at[0], at[1]), hq.at);
+  await page.mouse.click(xy[0], xy[1]);
+  await page.waitForTimeout(800);
+  const hfb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  await page.evaluate(() => window.atlas.learn['startQuiz']('lives', 'world'));
+  await page.waitForTimeout(2500);
+  const lq = await page.evaluate(() => ({ q: document.querySelector('.learn-card .quiz-q')?.textContent ?? '', opts: [...document.querySelectorAll('.learn-card .quiz-opt')].map((x) => x.textContent), id: window.atlas.learn.quiz?.qs[0]?.id }));
+  await page.evaluate(() => document.querySelector('.learn-card .quiz-opt')?.click());
+  await page.waitForTimeout(800);
+  const lfb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  check(/Where does this animal live/.test(hq.q) && /Correct!/.test(hfb) && /Which of these animals lives here/.test(lq.q) && lq.opts.length === 4 && /lives here/.test(lfb),
+    `Where does it live?: a tap where it lives scores ("${hfb.slice(0, 50)}"); Who lives here?: four animals, then "${lfb.slice(0, 50)}"`);
+
+  // A tour stop shows an animal's range.
+  await page.evaluate(() => window.atlas.learn['openTours']());
+  await page.waitForTimeout(600);
+  await page.evaluate(() => document.querySelector('[data-tour="The Big Five safari"]')?.click());
+  await page.waitForTimeout(3500);
+  await page.evaluate(() => [...document.querySelectorAll('.learn-card button')].find((x) => x.getAttribute('aria-label') === 'Next')?.click());
+  await page.waitForTimeout(3500);
+  const tour = await page.evaluate(() => ({ focus: window.atlas.wild.info.focus, wild: window.atlas.app.isActive('wild') }));
+  check(tour.wild && tour.focus === 'panthera-leo', `The Big Five safari: its lion stop shows where lions live (${tour.focus})`);
+  await page.evaluate(() => window.atlas.learn['stopTour']());
+
+  // The travel guide's Wildlife nearby.
+  await page.evaluate(() => window.atlas.guide.openCity('nairobi', 'see'));
+  await page.waitForTimeout(2500);
+  const nearby = await page.evaluate(() => ({ parks: [...document.querySelectorAll('[data-guide="wildlife"] [data-park]')].map((x) => x.textContent), animals: document.querySelectorAll('[data-guide="wildlife"] [data-animal]').length }));
+  check(nearby.parks.length >= 1 && nearby.parks.some((t) => /Nairobi National Park/.test(t)) && nearby.animals >= 3,
+    `Nairobi's See tab: Wildlife nearby (${nearby.parks.length} parks, Nairobi National Park among them; ${nearby.animals} animals)`);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+
+  // Spanish.
+  await page.evaluate(() => window.atlas.app.setLang('es'));
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'wild']));
+  await page.waitForFunction(() => window.atlas.app.instance('wild')?.ready, null, { timeout: 20000 });
+  await page.waitForTimeout(1000);
+  const es = await legend();
+  check(/animales donde viven/.test(es) && /Mamíferos/.test(es), 'Spanish: "animales donde viven", Mamíferos…');
+  check(!errors.length, `no page errors in Wild world${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

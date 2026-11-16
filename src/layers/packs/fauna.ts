@@ -4,7 +4,11 @@ import { geoArea, geoCircle, geoContains, geoDistance, geoInterpolate } from 'd3
 import type { Polygon } from 'geojson';
 import { lang } from '../../app/i18n';
 import type { App } from '../../app/app';
-import type { LayerDef, RenderCtx } from '../types';
+import type { LayerDef, LayerInstance, LayerTapUi, RenderCtx } from '../types';
+import { loadJSON } from '../../data/store';
+import { LC } from '../context';
+import { loadWild } from '../../wild/data';
+import { wildData, links as wildLinks } from './wild';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -186,74 +190,151 @@ const animals: LayerDef = {
   },
 };
 
-// ---- Migrations ------------------------------------------------------------------------------
-const MIGRATIONS: { emoji: string; en: string; es: string; km: string; path: [number, number][]; loop?: boolean }[] = [
-  { emoji: '🐦', en: 'Arctic tern', es: 'Charrán ártico', km: '70 000 km/yr', path: [[-40, 72], [-28, 50], [-20, 20], [-18, -10], [-10, -40], [0, -66]] },
-  { emoji: '🦋', en: 'Monarch butterfly', es: 'Mariposa monarca', km: '4 500 km', path: [[-80, 45], [-87, 38], [-95, 30], [-100, 22], [-100.3, 19.6]] },
-  { emoji: '🐃', en: 'Wildebeest (Great Migration)', es: 'Ñu (Gran Migración)', km: '800 km', loop: true, path: [[35, -3], [34.6, -2.4], [34.8, -1.8], [35.1, -1.5], [35.4, -2], [35.5, -2.8], [35, -3]] },
-  { emoji: '🐋', en: 'Humpback whale', es: 'Ballena jorobada', km: '8 000 km', path: [[-62, -64], [-75, -50], [-80, -30], [-81, -10], [-80, 2], [-79, 7]] },
-  { emoji: '🐳', en: 'Grey whale', es: 'Ballena gris', km: '20 000 km', path: [[-114, 27], [-120, 34], [-125, 42], [-132, 52], [-150, 58], [-165, 60], [-169, 64]] },
-  { emoji: '🐦', en: 'Bar-tailed godwit (non-stop)', es: 'Aguja colipinta (sin escalas)', km: '11 000 km', path: [[-162, 60], [-170, 40], [-178, 10], [175, -15], [174, -37]] },
-  { emoji: '🐦', en: 'White stork', es: 'Cigüeña blanca', km: '10 000 km', path: [[10, 52], [20, 47], [29, 41], [35, 32], [33, 20], [32, 0], [28, -15], [26, -26]] },
-  { emoji: '🦌', en: 'Caribou (Porcupine herd)', es: 'Caribú (manada Porcupine)', km: '2 400 km', loop: true, path: [[-141, 69.5], [-143, 67], [-138, 65.5], [-135, 67.5], [-141, 69.5]] },
-  { emoji: '🐟', en: 'Sockeye salmon', es: 'Salmón rojo', km: '1 600 km', path: [[-170, 50], [-150, 52], [-130, 51], [-123.5, 49.2], [-121, 50.5]] },
-  { emoji: '🐢', en: 'Leatherback turtle', es: 'Tortuga laúd', km: '16 000 km', path: [[132, -0.5], [160, 10], [-170, 25], [-140, 33], [-122, 36]] },
-  { emoji: '🐟', en: 'European eel', es: 'Anguila europea', km: '6 000 km', path: [[-60, 27], [-45, 35], [-25, 45], [-10, 48], [0, 50]] },
-];
+// ---- Migrations through the year (v0.30.0) -------------------------------------------------------
+// 31 journeys (public/data/wild/migrations.json, researched with sources): each traveller's route, where most of
+// them are in the middle of each month, and the year's key moments. All year, they move through the months together;
+// pick a month to see where each one is then, and what happens.
+interface Migration {
+  id: string; emoji: string; name: { en: string; es: string }; species: string; group: string; km: number; kmNote: { en: string; es: string };
+  loop: boolean; text: { en: string; es: string }; months: ([number, number] | null)[]; path: [number, number][];
+  moments: { month: number; text: { en: string; es: string } }[]; sources: string[];
+}
+let MIGRATIONS: Migration[] = [];
+const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const MONTHS_ES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+const monthName = (m: number) => (es() ? MONTHS_ES[m] : MONTHS_EN[m]);
+/** A year goes by in this many milliseconds while the journeys play. */
+const YEAR_MS = 36000;
 
-function along(path: [number, number][], u: number): [number, number] {
-  const seg: number[] = [];
-  let total = 0;
-  for (let i = 0; i < path.length - 1; i++) { const d = geoDistance(path[i], path[i + 1]); seg.push(d); total += d; }
-  let d = u * total;
-  for (let i = 0; i < seg.length; i++) {
-    if (d <= seg[i] || i === seg.length - 1) return geoInterpolate(path[i], path[i + 1])(Math.min(1, d / seg[i])) as [number, number];
-    d -= seg[i];
-  }
-  return path[path.length - 1];
+/** The month shown (0–11, with a fraction while playing). */
+function monthOf(inst: LayerInstance, now: number): number {
+  const m = String(inst.options.month ?? 'play');
+  if (m !== 'play') return Number(m) - 1;
+  return ((now % YEAR_MS) / YEAR_MS) * 12;
+}
+/** Where a traveller is at month `m` (a fraction between two months slides between their places). */
+function whereAt(mg: Migration, m: number): [number, number] | null {
+  const i = Math.floor(m) % 12, j = (i + 1) % 12, f = m - Math.floor(m);
+  const a = mg.months[i], b = mg.months[j];
+  if (!a) return null;
+  if (!b || f < 0.02) return a;
+  return geoInterpolate(a, b)(f) as [number, number];
+}
+
+function migrationCard(ui: LayerTapUi, mg: Migration) {
+  const rows = [
+    { label: L('Journey', 'Viaje'), value: `${mg.km.toLocaleString(lang())} km · ${es() ? mg.kmNote.es : mg.kmNote.en}`, icon: '🧭' },
+    { label: L('Species', 'Especie'), value: mg.species, icon: mg.emoji },
+  ];
+  const notes = [es() ? mg.text.es : mg.text.en, ...mg.moments.map((x) => `${monthName(x.month - 1)}: ${es() ? x.text.es : x.text.en}`)];
+  const links: { label: string; href?: string; onClick?: () => void }[] = [];
+  // One of Animals of the world's animals: its card.
+  const animal = wildData()?.animals.find((a) => a.sci === mg.species);
+  if (animal) links.push({ label: L('Its card', 'Su ficha'), onClick: () => wildLinks.openAnimal(animal) });
+  mg.sources.slice(0, 3).forEach((u, i) => { try { links.push({ label: `${L('Source', 'Fuente')} ${i + 1}: ${new URL(u).hostname.replace(/^www\./, '')}`, href: u }); } catch { /* not a link */ } });
+  ui.card(mg.emoji, es() ? mg.name.es : mg.name.en, L(`${mg.km.toLocaleString('en-GB')} km a year`, `${mg.km.toLocaleString('es-ES')} km al año`), rows, links, notes);
 }
 
 const migrations: LayerDef = {
-  id: 'migrations', category: 'fauna', icon: '🦋', kind: 'overlay', stackOrder: 5, animated: true,
+  id: 'migrations', category: 'fauna', icon: '🦋', kind: 'overlay', stackOrder: 5,
+  animated: (inst) => String(inst.options.month ?? 'play') === 'play',
   name: { en: 'Great migrations', es: 'Grandes migraciones' },
-  desc: { en: 'Animated journeys of terns, monarchs, whales, wildebeest, turtles and more.', es: 'Viajes animados de charranes, monarcas, ballenas, ñus, tortugas y más.' },
-  keywords: 'migration birds whales butterfly migracion aves ballenas mariposa',
-  credit: 'Compiled (schematic routes)',
-  drawOverlay(rc) {
+  desc: { en: '31 great journeys through the year: terns, monarchs, whales, wildebeest, turtles, eels, red crabs and more. Pick a month to see where each traveller is.', es: '31 grandes viajes a lo largo del año: charranes, monarcas, ballenas, ñus, tortugas, anguilas, cangrejos rojos y más. Elige un mes para ver dónde está cada viajero.' },
+  keywords: 'migration birds whales butterfly month year journey migracion aves ballenas mariposa mes año viaje',
+  credit: 'Compiled from scientific papers, tracking studies and park services (sources on each card)',
+  options: [{ id: 'month', label: { en: 'Month', es: 'Mes' }, type: 'select', default: 'play', choices: [
+    { value: 'play', label: { en: 'All year (playing)', es: 'Todo el año (en marcha)' }, icon: '▶️' },
+    ...MONTHS_EN.map((en, i) => ({ value: String(i + 1), label: { en, es: MONTHS_ES[i].charAt(0).toUpperCase() + MONTHS_ES[i].slice(1) } })),
+  ] }],
+  async load() {
+    if (!MIGRATIONS.length) MIGRATIONS = (await loadJSON<{ migrations: Migration[] }>('wild/migrations.json')).migrations;
+    void loadWild();
+  },
+  onOptionsChanged() { LC.requestRender(); LC.notify?.(); },
+  drawOverlay(rc, inst) {
     const { ctx, path } = rc;
-    for (const m of MIGRATIONS) {
-      ctx.beginPath(); path({ type: 'LineString', coordinates: m.path });
-      ctx.setLineDash([2, 6]); ctx.strokeStyle = rc.theme.dark ? 'rgba(255,255,255,0.7)' : 'rgba(30,40,60,0.6)'; ctx.lineWidth = 2; ctx.stroke();
-    }
+    ctx.setLineDash([2, 6]); ctx.strokeStyle = rc.theme.dark ? 'rgba(255,255,255,0.6)' : 'rgba(30,40,60,0.5)'; ctx.lineWidth = 2;
+    for (const m of MIGRATIONS) { ctx.beginPath(); path({ type: 'LineString', coordinates: m.path }); ctx.stroke(); }
     ctx.setLineDash([]);
+    if (String(inst.options.month ?? 'play') !== 'play') drawTravellers(rc, inst);
   },
-  drawFx(rc) {
-    const { ctx } = rc;
-    const size = Math.max(16, Math.min(30, 12 + rc.webZoom * 3));
-    ctx.font = `${size}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
-    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    MIGRATIONS.forEach((m, i) => {
-      const period = 14000 + i * 1300;
-      const u = ((rc.now + i * 2100) % period) / period;
-      const k = m.loop ? u : u < 0.5 ? u * 2 : 2 - u * 2; // there and back
-      const p = along(m.path, k);
-      const pt = rc.project(p[0], p[1]);
-      if (!pt) return;
-      ctx.fillText(m.emoji, pt[0], pt[1]);
-    });
+  drawFx(rc, inst) {
+    if (String(inst.options.month ?? 'play') !== 'play') return;
+    drawTravellers(rc, inst);
+    // The month in the legend's title, as the year plays.
+    const m = Math.floor(monthOf(inst, rc.now));
+    if (inst.state.shownMonth !== m) { inst.state.shownMonth = m; LC.notify?.(); }
   },
-  labels(rc) {
+  labels(rc, inst) {
     if (rc.webZoom < 2.6) return;
-    for (const m of MIGRATIONS) {
-      const mid = along(m.path, 0.5);
-      const pt = rc.project(mid[0], mid[1]);
-      if (pt) rc.labels.add({ text: es() ? m.es : m.en, sub: m.km, x: pt[0], y: pt[1] - 16, priority: 700, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
+    // While the year plays, the names stay at the middle of each route (the travellers move on their own canvas).
+    if (String(inst.options.month ?? 'play') === 'play') {
+      for (const mg of MIGRATIONS) {
+        const mid = mg.path[Math.floor(mg.path.length / 2)], p = rc.project(mid[0], mid[1]);
+        if (p) rc.labels.add({ text: es() ? mg.name.es : mg.name.en, sub: `${mg.km.toLocaleString(lang())} km`, x: p[0], y: p[1] - 16, priority: 700, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
+      }
+      return;
+    }
+    for (const d of (inst.state.drawn as { mg: Migration; x: number; y: number }[] | undefined) ?? []) {
+      rc.labels.add({ text: es() ? d.mg.name.es : d.mg.name.en, sub: `${d.mg.km.toLocaleString(lang())} km`, x: d.x, y: d.y + 20, priority: 700, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
     }
   },
-  legend() {
-    return { kind: 'categories', title: L('Migrations', 'Migraciones'), items: MIGRATIONS.map((m) => ({ color: 'transparent', icon: m.emoji, shape: 'emoji' as const, label: `${es() ? m.es : m.en} · ${m.km}` })) };
+  legend(inst) {
+    const playing = String(inst.options.month ?? 'play') === 'play';
+    const m = playing ? Math.floor(monthOf(inst, performance.now())) : Number(inst.options.month) - 1;
+    const now = MIGRATIONS.flatMap((mg) => mg.moments.filter((x) => x.month - 1 === m).map((x) => `${mg.emoji} ${es() ? x.text.es : x.text.en}`));
+    const step = (by: number) => { inst.state.shownMonth = -1; LC.notify?.(); window.atlas?.app.setOption('migrations', 'month', String(((m + by + 12) % 12) + 1)); };
+    return {
+      kind: 'categories', title: L(`Migrations · ${monthName(m)}`, `Migraciones · ${monthName(m)}`),
+      items: MIGRATIONS.map((mg) => ({ color: 'transparent', icon: mg.emoji, shape: 'emoji' as const, label: `${es() ? mg.name.es : mg.name.en} · ${mg.km.toLocaleString(lang())} km` })),
+      note: playing ? L('A year goes by in 36 seconds. Pick a month to stop and see what happens then; tap a traveller for its story.', 'Un año pasa en 36 segundos. Elige un mes para detenerte y ver qué pasa entonces; toca un viajero para ver su historia.')
+        : now.length ? `${L(`In ${monthName(m)}`, `En ${monthName(m)}`)}: ${now.slice(0, 4).join(' · ')}` : L(`Tap a traveller to see where it is in ${monthName(m)}.`, `Toca un viajero para ver dónde está en ${monthName(m)}.`),
+      actions: [
+        { label: '◀', onClick: () => step(-1) },
+        { label: '▶', onClick: () => step(1) },
+        ...(playing ? [] : [{ label: L('▶ Play the year', '▶ Reproducir el año'), onClick: () => window.atlas?.app.setOption('migrations', 'month', 'play'), primary: true }]),
+      ],
+    };
+  },
+  tap(_lon, _lat, inst, ui) {
+    let best: Migration | null = null, bd = 22;
+    for (const d of (inst.state.drawn as { mg: Migration; x: number; y: number }[] | undefined) ?? []) { const dd = Math.hypot(d.x - ui.x, d.y - ui.y); if (dd < bd) { bd = dd; best = d.mg; } }
+    if (!best) return false;
+    migrationCard(ui, best);
+    return true;
+  },
+  searchHint: { en: 'migrations', es: 'migraciones' },
+  async searchLoad() { if (!MIGRATIONS.length) MIGRATIONS = (await loadJSON<{ migrations: Migration[] }>('wild/migrations.json')).migrations; },
+  search(match, inst) {
+    const m = Math.floor(monthOf(inst, performance.now()));
+    return MIGRATIONS.map((mg) => {
+      const s = Math.max(match(mg.name.en), match(mg.name.es), match(mg.species) - 6);
+      const at = whereAt(mg, m) ?? mg.months.find(Boolean) ?? mg.path[0];
+      return { label: es() ? mg.name.es : mg.name.en, sub: `${mg.km.toLocaleString(lang())} km · ${L('migration', 'migración')}`, icon: mg.emoji, lon: at[0], lat: at[1], score: s, wz: 3,
+        open: (ui: LayerTapUi) => migrationCard(ui, mg) };
+    }).filter((x) => x.score > 0);
   },
 };
+
+/** The travellers where they are this month (or this moment of the year, while it plays). */
+function drawTravellers(rc: RenderCtx, inst: LayerInstance) {
+  const { ctx } = rc;
+  const m = monthOf(inst, rc.now);
+  const size = Math.max(18, Math.min(30, 13 + rc.webZoom * 3));
+  ctx.font = `${size}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  const drawn: { mg: Migration; x: number; y: number }[] = [];
+  for (const mg of MIGRATIONS) {
+    const at = whereAt(mg, m);
+    const p = at && rc.project(at[0], at[1]);
+    if (!p) continue;
+    ctx.beginPath(); ctx.arc(p[0], p[1], size * 0.62, 0, Math.PI * 2);
+    ctx.fillStyle = rc.theme.dark ? 'rgba(10,20,40,0.55)' : 'rgba(255,255,255,0.75)'; ctx.fill();
+    ctx.fillText(mg.emoji, p[0], p[1] + 1);
+    drawn.push({ mg, x: p[0], y: p[1] });
+  }
+  inst.state.drawn = drawn;
+}
 
 // ---- Biodiversity hotspots -------------------------------------------------------------------
 const HOTSPOTS: [string, string, number, number][] = [

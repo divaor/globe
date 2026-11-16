@@ -12,6 +12,7 @@ import type { TimeTravel } from '../modes';
 import type { Learn } from '../learn/learn';
 import type { RenderCtx } from '../layers/types';
 import type { ArtGuide } from '../artguide/artguide';
+import type { Wild } from '../wild/finder';
 import type { StoryKind } from '../modes/stories';
 import { storyKind } from '../modes/stories';
 import { TOURS } from '../learn/tours';
@@ -74,6 +75,8 @@ export class TravelGuide {
   private wv = new Map<string, Promise<{ paras: string[]; url: string; lang: string } | null>>();
   /** The art and architecture guide (v0.27.0): the Art and Buildings tabs. */
   art: ArtGuide | null = null;
+  /** Wild world (v0.30.0): the See tab's Wildlife nearby. */
+  wild: Wild | null = null;
   /** Lives on the map (v0.28.0): the People tab (who was born here, the lives that pass through). */
   lives: { peopleTab(el: HTMLElement, c: GuideCity, name: string): Promise<void> } | null = null;
   /** For the smoke test: what the guide shows. */
@@ -463,6 +466,8 @@ export class TravelGuide {
     this.section(el, L('Great structures', 'Grandes construcciones'), g.sights.map((r) => this.row(r[3], es() ? r[5] : r[4], [this.year(r[8]), r[9] >= 2 ? `${fmtNumber(Math.round(r[9]))} km` : ''].filter(Boolean).join(' · '),
       () => this.openStory(r[0], r[1], r[2], es() ? r[5] : r[4], [r[6], r[7]]), { 'data-sight': r[1] })));
     this.section(el, L('A day trip away', 'A una excursión de distancia'), g.trips.map((s) => site(s, true)));
+    // Wildlife nearby (v0.30.0): parks and reserves within reach, with the animals each is best for.
+    if (this.wild) { const box = h('div', { 'data-guide': 'wildlife' }); el.append(box); void this.wild.wildlifeNearby(box, c.at, this.cityName(c)); }
     if (!g.whs.length && !g.sights.length && !g.trips.length && !tour) el.append(h('p', { class: 'muted small' }, L('No World Heritage site or great structure of ours is near here; Wikivoyage (Read more) has what to see.', 'Ningún sitio del Patrimonio Mundial ni gran construcción nuestra está cerca; Wikivoyage (Más) tiene qué ver.')));
     else el.append(h('p', { class: 'muted small' }, L('Tap a site to see where it is; a structure opens its story.', 'Toca un sitio para ver dónde está; una construcción abre su historia.')));
   }

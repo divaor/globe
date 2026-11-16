@@ -1,8 +1,8 @@
 // Pin it's places (v0.25.0): what the game asks you to pin, gathered from the app's own data into one small file
-// (public/data/play/pins.json), so a phone does not load every story to play. Eight packs:
+// (public/data/play/pins.json), so a phone does not load every story to play. Nine packs:
 // capitals (the app's cities), World Heritage sites (the World Heritage list), great structures, battles (every
 // war in Time travel), dishes, inventions and museums (the stories' items), and masterpieces (the art guide's
-// best-known works where they hang today, v0.27.0). Each place: its name in English and
+// best-known works where they hang today, v0.27.0), and animals (each at the best park to see it, v0.30.0). Each place: its name in English and
 // Spanish, where it is, an icon, and what is said after the answer (its country, or the place and date).
 // Usage: node scripts/data/play/build-pins.mjs [--check]
 import fs from 'node:fs';
@@ -56,6 +56,15 @@ packs.museums = items('art', (x) => x.cat === 'museum' && x.type === 'institutio
     const m = a.museums[w[4]], c = city.get(m[5]);
     const mn = [m[1], m[2] || m[1]];
     return place([w[1], w[2] || w[1]], [m[3], m[4]], icon[w[3]] ?? '🖼️', [`${mn[0]}${c ? `, ${c[0]}` : ''}`, `${mn[1]}${c ? `, ${c[1]}` : ''}`]);
+  });
+}
+// Animals (v0.30.0): each of Wild world's animals at the best park to see it (else where it is seen most), with that
+// park and its country after the answer. Animals that are gone are left out.
+{
+  const w = read('wild/animals.json'), parks = new Map(read('wild/parks.json').parks.map((p) => [p.id, p]));
+  packs.animals = w.animals.filter((a) => !a.gone && a.sl >= 30 && a.best.length && parks.has(a.best[0])).map((a) => {
+    const p = parks.get(a.best[0]), c = p.cc ? country(p.cc) : null;
+    return place(a.n, p.at, a.e, [`${p.n[0]}${c ? `, ${c[0]}` : ''}`, `${p.n[1]}${c ? `, ${c[1]}` : ''}`]);
   });
 }
 // Battles: every war in Time travel, with the war and the year.
