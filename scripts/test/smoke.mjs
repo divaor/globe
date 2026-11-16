@@ -237,7 +237,7 @@ async function open(opts, hash) {
   await page.tap('[data-dock="filters"]');
   await page.waitForTimeout(700);
   const back = await where(b);
-  check(closed && Math.abs(back.top - b0.top) <= 2 && Math.abs(back.scroll - bt.loaded.scroll) <= 2, `filters list reopens where it was left (scroll ${bt.loaded.scroll} -> ${back.scroll})`);
+  check(closed && Math.abs(back.top - b0.top) <= 2 && Math.abs(back.scroll - bt.loaded.scroll) <= 2, `filters list reopens where it was left (scroll ${bt.loaded.scroll} -> ${back.scroll}, its filter at ${b0.top} -> ${back.top} px, the sheet ${closed ? 'closed' : 'still open'} after the map tap)`);
   check(!errors.length, `no page errors in the filters list${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
