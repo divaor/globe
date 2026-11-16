@@ -5,7 +5,8 @@ import { recordSeen } from '../learn/progress';
 import { h } from '../ui/dom';
 import { lang, fmtCompact } from '../app/i18n';
 import type { InfoRow } from '../layers/types';
-import { nm, yearText, commons, commonsPage, commonsCredit, wikiOf, kindIcon, KINDS, type Work, type Building, type Museum } from './data';
+import { nm, yearText, commons, commonsPage, commonsCredit, wikiOf, kindIcon, KINDS, museumPlace, workWhy, buildingPlace, type Work, type Building, type Museum } from './data';
+import { planLink } from '../guide/plan';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -34,6 +35,8 @@ export function workCard(card: CardFn, w: Work, cityName: string | null, openCit
   if (kind) rows.push({ label: L('Kind', 'Tipo'), value: es() ? kind.es : kind.en, icon: kindIcon(w.kind) });
   const links: { label: string; href?: string; onClick?: () => void }[] = [{ label: 'Wikipedia', href: wikiOf(w.id) }];
   if (showOnMap) links.unshift({ label: L('Show on the map', 'Ver en el mapa'), onClick: showOnMap });
+  // ☆: its museum into the trip, with this work as the reason to go.
+  links.push(planLink(museumPlace(w.museum), workWhy(w)));
   if (openCity) links.push({ label: L('The city’s art guide', 'Guía de arte de la ciudad'), onClick: () => openCity(w.museum.city) });
   card(kindIcon(w.kind), nm(w), [w.artist ? nm(w.artist) : '', yearText(w.year)].filter(Boolean).join(' · '), rows, links, [], w.img ? Promise.resolve(commons(w.img, 480)) : undefined, creditEl(w.img));
 }
@@ -45,6 +48,7 @@ export function museumCard(card: CardFn, m: Museum, works: Work[], cityName: str
   rows.push({ label: L('Best-known works here', 'Obras más conocidas aquí'), value: String(works.length), icon: '🖼️' });
   const links: { label: string; href?: string; onClick?: () => void }[] = [{ label: 'Wikipedia', href: wikiOf(m.id) }];
   if (showOnMap) links.unshift({ label: L('Show on the map', 'Ver en el mapa'), onClick: showOnMap });
+  links.push(planLink(museumPlace(m)));
   if (m.web) links.push({ label: L('Official site', 'Sitio oficial'), href: m.web });
   if (openCity) links.push({ label: L('The city’s art guide', 'Guía de arte de la ciudad'), onClick: () => openCity(m.city) });
   const top = works.slice(0, 6).map((w) => `${kindIcon(w.kind)} ${nm(w)}${w.artist ? ` (${nm(w.artist)})` : ''}`);
@@ -60,6 +64,7 @@ export function buildingCard(card: CardFn, b: Building, cityName: string | null,
   if (cityName) rows.push({ label: L('City', 'Ciudad'), value: cityName, icon: '📍' });
   const links: { label: string; href?: string; onClick?: () => void }[] = [{ label: 'Wikipedia', href: wikiOf(b.id) }];
   if (showOnMap) links.unshift({ label: L('Show on the map', 'Ver en el mapa'), onClick: showOnMap });
+  links.push(planLink(buildingPlace(b)));
   if (openCity && b.city) links.push({ label: L('The city’s guide', 'Guía de la ciudad'), onClick: () => openCity(b.city!) });
   card('🏛️', nm(b), [b.style ? nm(b.style) : '', yearText(b.year)].filter(Boolean).join(' · '), rows, links, [], b.img ? Promise.resolve(commons(b.img, 480)) : undefined, creditEl(b.img));
 }

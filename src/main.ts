@@ -127,7 +127,7 @@ async function boot() {
   // (Read from the address as it was opened: the app writes its own state to the address when it starts.)
   if (shared.get('hop')) setTimeout(() => void hop.startChallenge(`#${shared.toString()}`), 500);
   // A shared trip (#trip=lima,cusco) or a city's guide (#guide=kyoto).
-  if (shared.get('trip')) setTimeout(() => void guide.openShared(shared.get('trip')!), 500);
+  if (shared.get('trip')) setTimeout(() => void guide.openShared(shared.get('trip')!, shared.get('tp')), 500);
   else if (shared.get('guide')) setTimeout(() => void guide.openCity(shared.get('guide')!), 500);
   // A shared world: #world=moon&c=lon,lat,zoom (and &map=elev).
   const world = shared.get('world');
