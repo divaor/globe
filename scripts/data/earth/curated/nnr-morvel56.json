@@ -1,0 +1,559 @@
+{
+ "model": "NNR-MORVEL56",
+ "ref": "Argus, Gordon & DeMets (2011), G-cubed 12, Q11001, doi:10.1029/2011GC003751",
+ "src": "https://raw.githubusercontent.com/anowacki/seismo-fortran/33cfb64a45caa7bf9d263ac34d4f9c2a3dbbd73f/plate_motion/models/NNR-MORVEL56-tab-delimited.text",
+ "src_crosschecked": [
+  "https://raw.githubusercontent.com/alvarosantamariagomez/sari/master/www/NNR-MORVEL56.txt",
+  "https://raw.githubusercontent.com/GeoscienceAustralia/DynAdjust/master/sampleData/NNR-MORVEL56_poles.dat",
+  "https://raw.githubusercontent.com/insarlab/MintPy/main/src/mintpy/objects/euler_pole.py"
+ ],
+ "units": "pole lat/lon in degrees, omega in degrees per Myr (counter-clockwise positive)",
+ "frame": "no-net-rotation (NNR); velocities are relative to the NNR frame, which is close to ITRF/GPS velocities",
+ "codes_note": "Keys are PB2002 codes. NNR-MORVEL56 Table 1 writes the 25 MORVEL plates in lowercase and Bird's 31 plates in uppercase; lowercase codes are uppercased here except three that differ from PB2002: nb Nubia -> AF (PB2002 'Africa'), sm Somalia -> SO, yz Yangtze -> YA. Uppercase NB is North Bismarck (Bird), not Nubia. sc = SC Scotia and su = SU Sunda match PB2002; sr is Sur (part of PB2002 SA), not Scotia. Four MORVEL plates are not separate plates in PB2002 and carry pb2002:false: CP Capricorn and MQ Macquarie (inside PB2002 AU), LW Lwandle (inside PB2002 AF/SO), SR Sur (inside PB2002 SA). All 52 PB2002 codes have a pole. morvel_abbr is the code as printed in Table 1; omega_95 is the 95% confidence limit on omega.",
+ "checks_note": "Rigid-plate velocity v = omega x r on a sphere of radius 6371 km, at the given point, in the NNR frame; azimuth in degrees clockwise from north. plate is the PB2002 polygon containing the point. itrf2014_pmm_* is the same point under the GPS-derived ITRF2014 plate motion model (Altamimi et al. 2017, doi:10.1093/gji/ggx136) for comparison; expected_rough is the rough figure from the task brief. Sites near plate boundaries (e.g. Lima, above the Nazca subduction zone) also move elastically, which a rigid-plate model does not include.",
+ "plates": {
+  "AM": {
+   "name": "Amur",
+   "lat": 63.17,
+   "lon": -122.82,
+   "omega": 0.297,
+   "omega_95": 0.02,
+   "morvel_abbr": "am"
+  },
+  "AN": {
+   "name": "Antarctica",
+   "lat": 65.42,
+   "lon": -118.11,
+   "omega": 0.25,
+   "omega_95": 0.008,
+   "morvel_abbr": "an"
+  },
+  "AR": {
+   "name": "Arabia",
+   "lat": 48.88,
+   "lon": -8.49,
+   "omega": 0.559,
+   "omega_95": 0.016,
+   "morvel_abbr": "ar"
+  },
+  "AU": {
+   "name": "Australia",
+   "lat": 33.86,
+   "lon": 37.94,
+   "omega": 0.632,
+   "omega_95": 0.017,
+   "morvel_abbr": "au"
+  },
+  "CP": {
+   "name": "Capricorn",
+   "lat": 44.44,
+   "lon": 23.09,
+   "omega": 0.608,
+   "omega_95": 0.019,
+   "morvel_abbr": "cp",
+   "pb2002": false
+  },
+  "CA": {
+   "name": "Caribbean",
+   "lat": 35.2,
+   "lon": -92.62,
+   "omega": 0.286,
+   "omega_95": 0.023,
+   "morvel_abbr": "ca"
+  },
+  "CO": {
+   "name": "Cocos",
+   "lat": 26.93,
+   "lon": -124.31,
+   "omega": 1.198,
+   "omega_95": 0.045,
+   "morvel_abbr": "co"
+  },
+  "EU": {
+   "name": "Eurasia",
+   "lat": 48.85,
+   "lon": -106.5,
+   "omega": 0.223,
+   "omega_95": 0.009,
+   "morvel_abbr": "eu"
+  },
+  "IN": {
+   "name": "India",
+   "lat": 50.37,
+   "lon": -3.29,
+   "omega": 0.544,
+   "omega_95": 0.01,
+   "morvel_abbr": "in"
+  },
+  "JF": {
+   "name": "Juan de Fuca",
+   "lat": -38.31,
+   "lon": 60.04,
+   "omega": 0.951,
+   "omega_95": 0.256,
+   "morvel_abbr": "jf"
+  },
+  "LW": {
+   "name": "Lwandle",
+   "lat": 51.89,
+   "lon": -69.52,
+   "omega": 0.286,
+   "omega_95": 0.026,
+   "morvel_abbr": "lw",
+   "pb2002": false
+  },
+  "MQ": {
+   "name": "Macquarie",
+   "lat": 49.19,
+   "lon": 11.05,
+   "omega": 1.144,
+   "omega_95": 0.274,
+   "morvel_abbr": "mq",
+   "pb2002": false
+  },
+  "NZ": {
+   "name": "Nazca",
+   "lat": 46.23,
+   "lon": -101.06,
+   "omega": 0.696,
+   "omega_95": 0.029,
+   "morvel_abbr": "nz"
+  },
+  "NA": {
+   "name": "North America",
+   "lat": -4.85,
+   "lon": -80.64,
+   "omega": 0.209,
+   "omega_95": 0.013,
+   "morvel_abbr": "na"
+  },
+  "AF": {
+   "name": "Nubia",
+   "lat": 47.68,
+   "lon": -68.44,
+   "omega": 0.292,
+   "omega_95": 0.007,
+   "morvel_abbr": "nb"
+  },
+  "PA": {
+   "name": "Pacific",
+   "lat": -63.58,
+   "lon": 114.7,
+   "omega": 0.651,
+   "omega_95": 0.011,
+   "morvel_abbr": "pa"
+  },
+  "PS": {
+   "name": "Philippine Sea",
+   "lat": -46.02,
+   "lon": -31.36,
+   "omega": 0.91,
+   "omega_95": 0.05,
+   "morvel_abbr": "ps"
+  },
+  "RI": {
+   "name": "Rivera",
+   "lat": 20.25,
+   "lon": -107.29,
+   "omega": 4.536,
+   "omega_95": 0.63,
+   "morvel_abbr": "ri"
+  },
+  "SW": {
+   "name": "Sandwich",
+   "lat": -29.94,
+   "lon": -36.87,
+   "omega": 1.362,
+   "omega_95": 0.744,
+   "morvel_abbr": "sw"
+  },
+  "SC": {
+   "name": "Scotia",
+   "lat": 22.52,
+   "lon": -106.15,
+   "omega": 0.146,
+   "omega_95": 0.016,
+   "morvel_abbr": "sc"
+  },
+  "SO": {
+   "name": "Somalia",
+   "lat": 49.95,
+   "lon": -84.52,
+   "omega": 0.339,
+   "omega_95": 0.011,
+   "morvel_abbr": "sm"
+  },
+  "SA": {
+   "name": "South America",
+   "lat": -22.62,
+   "lon": -112.83,
+   "omega": 0.109,
+   "omega_95": 0.011,
+   "morvel_abbr": "sa"
+  },
+  "SU": {
+   "name": "Sunda",
+   "lat": 50.06,
+   "lon": -95.02,
+   "omega": 0.337,
+   "omega_95": 0.02,
+   "morvel_abbr": "su"
+  },
+  "SR": {
+   "name": "Sur",
+   "lat": -32.5,
+   "lon": -111.32,
+   "omega": 0.107,
+   "omega_95": 0.028,
+   "morvel_abbr": "sr",
+   "pb2002": false
+  },
+  "YA": {
+   "name": "Yangtze",
+   "lat": 63.03,
+   "lon": -116.62,
+   "omega": 0.334,
+   "omega_95": 0.013,
+   "morvel_abbr": "yz"
+  },
+  "AS": {
+   "name": "Aegean Sea",
+   "lat": 19.43,
+   "lon": 122.87,
+   "omega": 0.124,
+   "omega_95": 0.05,
+   "morvel_abbr": "AS"
+  },
+  "AP": {
+   "name": "Altiplano",
+   "lat": -6.58,
+   "lon": -83.98,
+   "omega": 0.488,
+   "omega_95": 0.053,
+   "morvel_abbr": "AP"
+  },
+  "AT": {
+   "name": "Anatolia",
+   "lat": 40.11,
+   "lon": 26.66,
+   "omega": 1.21,
+   "omega_95": 0.049,
+   "morvel_abbr": "AT"
+  },
+  "BR": {
+   "name": "Balmoral Reef",
+   "lat": -63.74,
+   "lon": 142.06,
+   "omega": 0.49,
+   "omega_95": 0.045,
+   "morvel_abbr": "BR"
+  },
+  "BS": {
+   "name": "Banda Sea",
+   "lat": -1.49,
+   "lon": 121.64,
+   "omega": 2.475,
+   "omega_95": 0.058,
+   "morvel_abbr": "BS"
+  },
+  "BH": {
+   "name": "Birds Head",
+   "lat": -40.0,
+   "lon": 100.5,
+   "omega": 0.799,
+   "omega_95": 0.089,
+   "morvel_abbr": "BH"
+  },
+  "BU": {
+   "name": "Burma",
+   "lat": -6.13,
+   "lon": -78.1,
+   "omega": 2.229,
+   "omega_95": 0.06,
+   "morvel_abbr": "BU"
+  },
+  "CL": {
+   "name": "Caroline",
+   "lat": -72.78,
+   "lon": 72.05,
+   "omega": 0.607,
+   "omega_95": 0.047,
+   "morvel_abbr": "CL"
+  },
+  "CR": {
+   "name": "Conway Reef",
+   "lat": -20.4,
+   "lon": 170.53,
+   "omega": 3.923,
+   "omega_95": 0.048,
+   "morvel_abbr": "CR"
+  },
+  "EA": {
+   "name": "Easter",
+   "lat": 24.97,
+   "lon": 67.53,
+   "omega": 11.334,
+   "omega_95": 0.081,
+   "morvel_abbr": "EA"
+  },
+  "FT": {
+   "name": "Futuna",
+   "lat": -16.33,
+   "lon": 178.07,
+   "omega": 5.101,
+   "omega_95": 0.047,
+   "morvel_abbr": "FT"
+  },
+  "GP": {
+   "name": "Galapagos",
+   "lat": 2.53,
+   "lon": 81.18,
+   "omega": 5.487,
+   "omega_95": 0.063,
+   "morvel_abbr": "GP"
+  },
+  "JZ": {
+   "name": "Juan Fernandez",
+   "lat": 34.25,
+   "lon": 70.74,
+   "omega": 22.368,
+   "omega_95": 0.087,
+   "morvel_abbr": "JZ"
+  },
+  "KE": {
+   "name": "Kermadec",
+   "lat": 39.99,
+   "lon": 6.46,
+   "omega": 2.347,
+   "omega_95": 0.048,
+   "morvel_abbr": "KE"
+  },
+  "MN": {
+   "name": "Manus",
+   "lat": -3.67,
+   "lon": 150.27,
+   "omega": 51.569,
+   "omega_95": 0.061,
+   "morvel_abbr": "MN"
+  },
+  "MO": {
+   "name": "Maoke",
+   "lat": 14.25,
+   "lon": 92.67,
+   "omega": 0.774,
+   "omega_95": 0.049,
+   "morvel_abbr": "MO"
+  },
+  "MA": {
+   "name": "Mariana",
+   "lat": 11.05,
+   "lon": 137.84,
+   "omega": 1.306,
+   "omega_95": 0.07,
+   "morvel_abbr": "MA"
+  },
+  "MS": {
+   "name": "Molucca Sea",
+   "lat": 2.15,
+   "lon": -56.09,
+   "omega": 3.566,
+   "omega_95": 0.058,
+   "morvel_abbr": "MS"
+  },
+  "NH": {
+   "name": "New Hebrides",
+   "lat": 0.57,
+   "lon": -6.6,
+   "omega": 2.469,
+   "omega_95": 0.045,
+   "morvel_abbr": "NH"
+  },
+  "NI": {
+   "name": "Niuafo'ou",
+   "lat": -3.29,
+   "lon": -174.49,
+   "omega": 3.314,
+   "omega_95": 0.067,
+   "morvel_abbr": "NI"
+  },
+  "ND": {
+   "name": "North Andes",
+   "lat": 17.73,
+   "lon": -122.68,
+   "omega": 0.116,
+   "omega_95": 0.051,
+   "morvel_abbr": "ND"
+  },
+  "NB": {
+   "name": "North Bismarck",
+   "lat": -45.04,
+   "lon": 127.64,
+   "omega": 0.856,
+   "omega_95": 0.045,
+   "morvel_abbr": "NB"
+  },
+  "OK": {
+   "name": "Okhotsk",
+   "lat": 30.3,
+   "lon": -92.28,
+   "omega": 0.229,
+   "omega_95": 0.051,
+   "morvel_abbr": "OK"
+  },
+  "ON": {
+   "name": "Okinawa",
+   "lat": 36.12,
+   "lon": 137.92,
+   "omega": 2.539,
+   "omega_95": 0.05,
+   "morvel_abbr": "ON"
+  },
+  "PM": {
+   "name": "Panama",
+   "lat": 31.35,
+   "lon": -113.9,
+   "omega": 0.317,
+   "omega_95": 0.055,
+   "morvel_abbr": "PM"
+  },
+  "SL": {
+   "name": "Shetland",
+   "lat": 50.71,
+   "lon": -143.47,
+   "omega": 0.268,
+   "omega_95": 0.048,
+   "morvel_abbr": "SL"
+  },
+  "SS": {
+   "name": "Solomon Sea",
+   "lat": -2.87,
+   "lon": 130.62,
+   "omega": 1.703,
+   "omega_95": 0.049,
+   "morvel_abbr": "SS"
+  },
+  "SB": {
+   "name": "South Bismarck",
+   "lat": 6.88,
+   "lon": -31.89,
+   "omega": 8.111,
+   "omega_95": 0.091,
+   "morvel_abbr": "SB"
+  },
+  "TI": {
+   "name": "Timor",
+   "lat": -4.44,
+   "lon": 113.5,
+   "omega": 1.864,
+   "omega_95": 0.067,
+   "morvel_abbr": "TI"
+  },
+  "TO": {
+   "name": "Tonga",
+   "lat": 25.87,
+   "lon": 4.48,
+   "omega": 8.942,
+   "omega_95": 0.1,
+   "morvel_abbr": "TO"
+  },
+  "WL": {
+   "name": "Woodlark",
+   "lat": 0.1,
+   "lon": 128.52,
+   "omega": 1.744,
+   "omega_95": 0.049,
+   "morvel_abbr": "WL"
+  }
+ },
+ "checks": [
+  {
+   "place": "Madrid",
+   "lon": -3.7,
+   "lat": 40.42,
+   "plate": "EU",
+   "cm_per_yr": 2.3,
+   "azimuth_deg": 46.1,
+   "east_mm_per_yr": 16.6,
+   "north_mm_per_yr": 15.9,
+   "itrf2014_pmm_cm_per_yr": 2.53,
+   "itrf2014_pmm_azimuth_deg": 49.1,
+   "expected_rough": "~2.4 cm/yr NE"
+  },
+  {
+   "place": "Honolulu",
+   "lon": -157.86,
+   "lat": 21.31,
+   "plate": "PA",
+   "cm_per_yr": 6.89,
+   "azimuth_deg": 297.8,
+   "east_mm_per_yr": -60.9,
+   "north_mm_per_yr": 32.2,
+   "itrf2014_pmm_cm_per_yr": 7.13,
+   "itrf2014_pmm_azimuth_deg": 299.2,
+   "expected_rough": "~7 cm/yr WNW-NW"
+  },
+  {
+   "place": "Sydney",
+   "lon": 151.21,
+   "lat": -33.87,
+   "plate": "AU",
+   "cm_per_yr": 5.71,
+   "azimuth_deg": 20.1,
+   "east_mm_per_yr": 19.7,
+   "north_mm_per_yr": 53.6,
+   "itrf2014_pmm_cm_per_yr": 5.74,
+   "itrf2014_pmm_azimuth_deg": 18.5,
+   "expected_rough": "~6.9 cm/yr N-NNE"
+  },
+  {
+   "place": "Lima",
+   "lon": -77.04,
+   "lat": -12.05,
+   "plate": "SA",
+   "cm_per_yr": 0.71,
+   "azimuth_deg": 337.8,
+   "east_mm_per_yr": -2.7,
+   "north_mm_per_yr": 6.5,
+   "itrf2014_pmm_cm_per_yr": 1.06,
+   "itrf2014_pmm_azimuth_deg": 345.0,
+   "expected_rough": "~1.5 cm/yr"
+  },
+  {
+   "place": "New York",
+   "lon": -74.01,
+   "lat": 40.71,
+   "plate": "NA",
+   "cm_per_yr": 1.67,
+   "azimuth_deg": 279.2,
+   "east_mm_per_yr": -16.5,
+   "north_mm_per_yr": 2.7,
+   "itrf2014_pmm_cm_per_yr": 1.59,
+   "itrf2014_pmm_azimuth_deg": 289.0,
+   "expected_rough": "~1.5 cm/yr WSW"
+  },
+  {
+   "place": "Cape Town",
+   "lon": 18.42,
+   "lat": -33.92,
+   "plate": "AF",
+   "cm_per_yr": 3.0,
+   "azimuth_deg": 43.3,
+   "east_mm_per_yr": 20.6,
+   "north_mm_per_yr": 21.8,
+   "itrf2014_pmm_cm_per_yr": 2.55,
+   "itrf2014_pmm_azimuth_deg": 42.0
+  },
+  {
+   "place": "Bengaluru",
+   "lon": 77.57,
+   "lat": 12.97,
+   "plate": "IN",
+   "cm_per_yr": 5.82,
+   "azimuth_deg": 49.1,
+   "east_mm_per_yr": 44.0,
+   "north_mm_per_yr": 38.1,
+   "itrf2014_pmm_cm_per_yr": 5.46,
+   "itrf2014_pmm_azimuth_deg": 50.4
+  }
+ ]
+}

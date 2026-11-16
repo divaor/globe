@@ -64,7 +64,11 @@ export class LabelEngine {
   /** The names fading out in the last frame (no room for them any more). */
   ghosts: string[] = [];
 
+  /** Names whose point fails this are not drawn (those over the opening of the Earth cut open); reset each frame. */
+  clip: ((x: number, y: number) => boolean) | null = null;
+
   begin(w: number, h: number) {
+    this.clip = null;
     this.items.length = 0;
     this.grid.clear();
     this.w = w; this.h = h;
@@ -73,6 +77,7 @@ export class LabelEngine {
   add(l: LabelSpec) {
     if (!l.text) return;
     if (l.x < -50 || l.y < -20 || l.x > this.w + 50 || l.y > this.h + 20) return;
+    if (this.clip && !this.clip(l.x, l.y)) return;
     this.items.push(l);
   }
 
