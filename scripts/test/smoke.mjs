@@ -235,7 +235,10 @@ async function open(opts, hash) {
   await page.waitForTimeout(600);
   const closed = await page.evaluate(() => document.querySelector('.sheet').hidden);
   await page.tap('[data-dock="filters"]');
-  await page.waitForTimeout(700);
+  // The sheet slides in from the next frame on; a slow frame (the globe redrawn) can hold that back, so measure once
+  // it is fully open.
+  await page.waitForFunction(() => { const s = document.querySelector('.sheet'); return s.classList.contains('open') && !s.getAnimations().some((a) => a.playState === 'running'); }, null, { timeout: 5000 }).catch(() => {});
+  await page.waitForTimeout(300);
   const back = await where(b);
   check(closed && Math.abs(back.top - b0.top) <= 2 && Math.abs(back.scroll - bt.loaded.scroll) <= 2, `filters list reopens where it was left (scroll ${bt.loaded.scroll} -> ${back.scroll}, its filter at ${b0.top} -> ${back.top} px, the sheet ${closed ? 'closed' : 'still open'} after the map tap)`);
   check(!errors.length, `no page errors in the filters list${errors.length ? ': ' + errors.join(' | ') : ''}`);
