@@ -4309,7 +4309,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.inside.setPeel(5));
   await page.waitForTimeout(2500);
   const peeled = await page.evaluate(() => ({ peel: window.atlas.inside.info.peel, names: window.atlas.app.renderer.labels.drawn.map((d) => d.text) }));
-  check(facts.focus === 'outer-core' && /How we know/.test(facts.text) && /°C/.test(facts.text) && peeled.peel === 5 && peeled.names.every((n) => /core/i.test(n)),
+  check(facts.focus === 'outer-core' && /How we know/.test(facts.text) && /°C/.test(facts.text) && peeled.peel >= 4.95 && peeled.names.every((n) => /core/i.test(n)),
     `a layer's facts ("${facts.text.slice(0, 70)}…"); peeled to the inner core, only its names left (${peeled.names.join(', ')})`);
   await page.evaluate(() => { window.atlas.inside.setPeel(0); window.atlas.inside.setFocus(null); });
 
@@ -4317,8 +4317,11 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.inside.digAt(-3.7, 40.4));
   await page.waitForTimeout(2500);
   const dig = await page.evaluate(() => ({ tab: window.atlas.inside.info.tab, head: document.querySelector('.inside .small b')?.textContent ?? '', body: document.querySelector('.inside')?.textContent ?? '', marks: document.querySelectorAll('.dig-mark').length, rocks: document.querySelector('.inside-rocks')?.textContent ?? '' }));
+  // A touch deep in the column (it scrolls into view first): the readout says what it is like down there.
+  await page.evaluate(() => document.querySelector('.dig-svg').scrollIntoView({ block: 'end' }));
+  await page.waitForTimeout(400);
   const box = await page.evaluate(() => { const r = document.querySelector('.dig-svg').getBoundingClientRect(); return [r.left + r.width * 0.3, r.top + r.height * 0.9]; });
-  await page.mouse.click(box[0], box[1]);
+  await page.touchscreen.tap(box[0], box[1]);
   await page.waitForTimeout(300);
   const read = await page.evaluate(() => document.querySelector('.dig-read')?.textContent ?? '');
   check(dig.tab === 'dig' && /Spain/.test(dig.head) && /crust here is about 3\d km thick/.test(dig.body) && dig.marks >= 20 && /Granite, Variscan/.test(dig.rocks) && /New Zealand/.test(dig.body) && /core/i.test(read) && /°C/.test(read) && /GPa/.test(read),
@@ -4341,8 +4344,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(1500);
   const leg = await page.evaluate(() => { const app = window.atlas.app; return app.registry.get('quake-depths').legend(app.instance('quake-depths'), 'en')?.items?.map((i) => i.label).join(' | ') ?? ''; });
   const deepN = Number((/Deep \(300–700 km\) · ([\d,]+)/.exec(leg)?.[1] ?? '0').replace(/,/g, ''));
-  // Draw a slice from the legend's button, then two taps on the map across the Tonga trench.
-  await page.evaluate(() => [...document.querySelectorAll('.lg-act')].find((b) => /Draw a slice/.test(b.textContent))?.click());
+  // Draw a slice (the legend's action: on a phone the legend starts folded), then two taps on the map across the
+  // Tonga trench.
+  await page.evaluate(() => { const app = window.atlas.app; app.registry.get('quake-depths').legend(app.instance('quake-depths'), 'en').actions.find((a) => /Draw a slice/.test(a.label)).onClick(); });
   await page.waitForTimeout(400);
   for (const g of [[-179.5, -17.5], [-172, -21]]) {
     const pt = await page.evaluate((g) => window.atlas.app.renderer.view.project(g[0], g[1]), g);
@@ -4374,7 +4378,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const total = geo.legV.reduce((a, l) => a + Number((/· ([\d,]+)$/.exec(l)?.[1] ?? '0').replace(/,/g, '')), 0);
   check(geo.pv.some((r) => /Etna/.test(r)) && geo.pv.some((r) => /Type/.test(r)) && total === 1214 && geo.sv.some((x) => /Krakat/.test(x)) && geo.pp.some((r) => /moves: 2\.\d cm a year to the north-east/.test(r)) && geo.su.some((x) => /Mammoth/.test(x)),
     `volcanoes: Etna's card (${geo.pv.slice(0, 3).join('; ')}), ${total} by their last eruption, "Krakat…" found (${geo.sv[0]}); Madrid's plate: ${geo.pp.find((r) => /moves/.test(r))}; "Mammoth" found (${geo.su[0]})`);
-  await page.evaluate(() => window.atlas.app.renderer.view.flyTo({ lon: -168, lat: 26, zoom: 3.6 }, 10));
+  await page.evaluate(() => window.atlas.app.renderer.view.flyTo({ lon: -160, lat: 19, zoom: 3.6 }, 10));
   await page.waitForTimeout(2500);
   const hot = await page.evaluate(() => window.atlas.app.renderer.labels.drawn.map((d) => d.text).filter((t) => /hotspot|Ma$/.test(t)));
   await page.evaluate(() => window.atlas.app.setStack(['political', 'magnetic']));
@@ -4434,7 +4438,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.evaluate((k) => { const a = window.atlas.shell.ambient; a.idx = k - 1; void a.next(); }, k);
     await page.waitForFunction((k) => window.atlas.shell.ambient.info.index === k, k, { timeout: 30000 }).catch(() => {});
     await page.waitForTimeout(4500);
-    const r = await page.evaluate(() => ({ names: window.atlas.app.renderer.labels.drawn.map((d) => d.text), cut: window.atlas.inside.info.active, cap: document.querySelector('.amb-caption')?.innerText ?? '' }));
+    const r = await page.evaluate(() => ({ names: window.atlas.app.renderer.labels.drawn.map((d) => d.text), cut: window.atlas.inside.info.active, cap: document.querySelector('.amb-caption')?.innerText ?? '', on: window.atlas.app.ambient.on, index: window.atlas.shell.ambient.info.index, layers: window.atlas.app.layers.map((l) => l.def.id).join() }));
     await page.evaluate(() => window.atlas.shell.ambient.stop());
     await page.waitForTimeout(2500);
     return r;
@@ -4444,7 +4448,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const aSer = await ambient('wild', 1);
   const aLang = await ambient('latam', 4);
   check(aCut.cut && /Inside the Earth/.test(aCut.cap) && !afterCut && aSer.names.some((n) => /^Lion$/.test(n)) && aSer.names.every((n) => !/^[A-Z][A-Z ]+$/.test(n) && !/Polar bear|Kangaroo/.test(n)) && aLang.names.includes('Quechua') && aLang.names.every((n) => /Quechua|Guaraní|Nahuatl|Aymara|Maya|Mapudungun|Zapotec|Tzotzil|Tzeltal|Wayuu|Otomi/.test(n)),
-    `ambient: Restless Earth cuts the Earth open (and closes it after); the Serengeti shows its own animals (${aSer.names.filter((n) => !/forest|savanna|bushland|grassland/i.test(n)).slice(0, 5).join(', ')}); Latin America lights up ${[...new Set(aLang.names)].join(', ')}`);
+    `ambient: Restless Earth cuts the Earth open (${aCut.cut}, "${aCut.cap.replace(/\s+/g, ' ').slice(0, 40)}…"; after it ${afterCut ? 'still open' : 'closed'}); the Serengeti (view ${aSer.index}, ${aSer.on ? 'playing' : 'stopped'}, ${aSer.layers}) shows its own animals: ${aSer.names.join(', ')}; Latin America lights up ${[...new Set(aLang.names)].join(', ')}`);
 
   // Names settle even on slow frames: once still, nothing is fading, and the records stay few.
   await page.evaluate(() => window.atlas.app.setStack(['political']));

@@ -49,6 +49,8 @@ export class View {
   morph: { start: number; duration: number } | null = null;
   private fly: { from: Camera; to: Camera; start: number; duration: number; arc: number } | null = null;
   private onDone: (() => void) | null = null;
+  /** Asks for a frame (the renderer sets it): a flight starts at once, whoever starts it. */
+  wake: (() => void) | null = null;
 
   readonly projection: GeoProjection;
   private mutate: (...args: unknown[]) => GeoProjection;
@@ -125,6 +127,7 @@ export class View {
     const arc = this.b.kind === 'flat' ? 0 : Math.min(0.6, dist / Math.PI);
     this.fly = { from, to: target, start: performance.now(), duration, arc };
     this.onDone = onDone ?? null;
+    this.wake?.();
   }
 
   stopAnimations(): void { this.fly = null; }

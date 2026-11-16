@@ -155,16 +155,39 @@ export function drawCut(rc: RenderCtx, st: CutState, space: string): Path2D | nu
   // The opening's rim.
   ctx.lineWidth = 1.2; ctx.strokeStyle = 'rgba(255,255,255,0.55)'; ctx.stroke(scaled);
 
-  // The layers' names on the wall that faces us most, along its middle; layers too thin to name are left to the panel.
-  if (st.names && visible.length) {
-    const wall = visible.filter((f) => f !== faces[2]).sort((a, b) => b.normal[2] - a.normal[2])[0];
-    const lonW = wall === faces[0] ? lon1 : lon2;
-    for (const l of LAYERS) {
+  // The layers' names along the middle of the walls, taking turns between the two that face us (the one facing us
+  // most first), so that on a small globe each has room; layers too thin to name are left to the panel.
+  const walls = visible.filter((f) => f !== faces[2] && f.normal[2] > 0.12).sort((a, b) => b.normal[2] - a.normal[2]);
+  if (!walls.length) { const w = visible.filter((f) => f !== faces[2]).sort((a, b) => b.normal[2] - a.normal[2])[0]; if (w) walls.push(w); }
+  if (st.names && walls.length) {
+    // Each name takes the first spot along its band (on either wall, at a few heights) that no name before it covers.
+    const size = R < 140 ? 10 : 11;
+    const px = size * rc.labels.scale;
+    ctx.font = `700 ${px}px system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif`;
+    const taken: [number, number, number, number][] = [];
+    // From the centre out: the inner core's name has nowhere else to go, the outer ones have room to move.
+    let n = 0;
+    for (const l of [...LAYERS].reverse()) {
       const ko = Math.min(k0, kOf(l.top)), ki = kOf(l.bottom);
       if (ko <= ki || (ko - ki) * R < 14) continue;
-      const k = (ko + ki) / 2;
-      const [x, y] = P.at(lonW, 40, k);
-      rc.labels.add({ text: st.name(l), x, y, priority: 5000 - LAYERS.indexOf(l), size: 11, weight: 700, color: '#ffffff', halo: 'rgba(0,0,0,0.75)' });
+      const text = st.name(l), w = ctx.measureText(text).width / 2 + 3, hh = px / 2 + 2;
+      const order = [walls[n % walls.length], ...walls.filter((x) => x !== walls[n % walls.length])];
+      n++;
+      let spot: [number, number] | null = null;
+      for (const f of [0.5, 0.7, 0.3]) {
+        const k = ki + (ko - ki) * f;
+        for (const wall of order) {
+          for (const t of [40, 65, 15, 80]) {
+            const [x, y] = P.at(wall === faces[0] ? lon1 : lon2, t, k);
+            if (!taken.some(([x0, y0, x1, y1]) => x + w > x0 && x - w < x1 && y + hh > y0 && y - hh < y1)) { spot = [x, y]; break; }
+          }
+          if (spot) break;
+        }
+        if (spot) break;
+      }
+      spot ??= P.at(order[0] === faces[0] ? lon1 : lon2, 40, (ko + ki) / 2);
+      taken.push([spot[0] - w, spot[1] - hh, spot[0] + w, spot[1] + hh]);
+      rc.labels.add({ text, x: spot[0], y: spot[1], priority: 5000 - LAYERS.indexOf(l), size, weight: 700, color: '#ffffff', halo: 'rgba(0,0,0,0.75)' });
     }
   }
   // Names of the map: none over the opening; none at all once the surface is peeled away.

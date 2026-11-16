@@ -129,7 +129,7 @@ export class Ambient {
     if (!ok(list.items[k])) return;
     this.idx = k;
     const it = list.items[k];
-    await this.show(it);
+    await this.show(it, me);
     if (me !== this.run || !this.app.ambient.on) return;
     const title = itemTitle(this.app, it), words = itemWords(this.app, it);
     this.info = { ...this.info, index: k, title, words, views: this.info.views + 1 };
@@ -147,11 +147,13 @@ export class Ambient {
   }
 
   /** Puts a view on the map: its filters and options, projection and place. */
-  private async show(it: PlayItem) {
+  private async show(it: PlayItem, me: number) {
     const app = this.app, view = app.renderer.view;
     const proj = it.projection ?? 'globe';
     if (app.projection !== proj) app.setProjection(proj);
     await app.setStack(it.stack);
+    // Another view was asked for while this one's filters loaded (a quick skip): that one is shown, not this.
+    if (me !== this.run || !app.ambient.on) return;
     // Each view's filters with its own options (and nothing left from the view before).
     for (const lid of it.stack) app.setOptions(lid, it.options?.[lid] ?? {});
     // The Earth cut open (Inside the Earth), or not.

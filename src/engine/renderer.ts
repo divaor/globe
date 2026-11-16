@@ -105,6 +105,7 @@ export class Renderer {
   ) {
     this.bg = bgCanvas.getContext('2d')!;
     this.fg = fgCanvas.getContext('2d')!;
+    this.view.wake = () => this.requestRender();
     this.gl = GLRaster.create(glCanvas);
     glCanvas.style.display = 'none'; // offscreen target, composited into the map canvas
     this.path = geoPath(this.view.projection, this.fg);
