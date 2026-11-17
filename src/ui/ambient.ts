@@ -1,7 +1,8 @@
 // Ambient mode (the screensaver): full-screen, slowly turning globe, the controls hidden and the screen kept awake.
 // It shows the filters on the map, or plays a playlist (ui/playlists.ts): one view after another, each with its
 // title and a line about it (read aloud when that is on), turning the globe or swaying gently around a place.
-import { h } from './dom';
+import { Volume2, VolumeX } from 'lucide';
+import { h, icon } from './dom';
 import { t, tx } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Ticker, RenderSettings } from '../engine/renderer';
@@ -14,6 +15,8 @@ export class Ambient {
   private wake: { release: () => Promise<void> } | null = null;
   private clockEl: HTMLElement;
   private hintEl: HTMLElement;
+  private toolsEl: HTMLElement;
+  private voiceBtn: HTMLElement;
   private captionEl: HTMLElement;
   private overlay: HTMLElement;
   private clockTimer = 0;
@@ -38,7 +41,11 @@ export class Ambient {
     this.clockEl = h('div', { class: 'amb-clock' });
     this.captionEl = h('div', { class: 'amb-caption', hidden: true });
     this.hintEl = h('div', { class: 'amb-hint glass' }, t('ambientExit'));
-    this.overlay = h('div', { class: 'amb-overlay', hidden: true }, this.clockEl, this.captionEl, this.hintEl);
+    // Read aloud or not (v0.33.2), shown with the hint while a playlist plays; a tap on it does not exit.
+    this.voiceBtn = h('button', { type: 'button', class: 'amb-voice glass', 'data-amb': 'voice' });
+    this.voiceBtn.addEventListener('click', (e) => { e.stopPropagation(); this.setVoice(!this.app.ambient.narrate); });
+    this.toolsEl = h('div', { class: 'amb-tools' }, this.voiceBtn);
+    this.overlay = h('div', { class: 'amb-overlay', hidden: true }, this.clockEl, this.captionEl, this.hintEl, this.toolsEl);
     this.overlay.addEventListener('click', () => this.onTap());
     root.append(this.overlay);
     document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && this.app.ambient.on) this.stop(); });
@@ -48,9 +55,32 @@ export class Ambient {
   private onTap() {
     if (this.hintEl.classList.contains('show')) { this.stop(); return; }
     this.hintEl.textContent = t('ambientExit');
+    this.showHint();
+  }
+
+  /** The exit hint, and with a playlist the button to read aloud or not, for a few seconds. */
+  private showHint() {
     this.hintEl.classList.add('show');
+    const voice = !!this.list && canSpeak();
+    if (voice) this.renderVoice();
+    this.toolsEl.classList.toggle('show', voice);
     clearTimeout(this.hintTimer);
-    this.hintTimer = window.setTimeout(() => this.hintEl.classList.remove('show'), 2600);
+    this.hintTimer = window.setTimeout(() => { this.hintEl.classList.remove('show'); this.toolsEl.classList.remove('show'); }, voice ? 4000 : 2600);
+  }
+
+  private renderVoice() {
+    const on = this.app.ambient.narrate, es = this.app.lang === 'es';
+    this.voiceBtn.setAttribute('aria-pressed', String(on));
+    this.voiceBtn.replaceChildren(icon(on ? Volume2 : VolumeX, 18), h('span', null, on ? (es ? 'Leyendo en voz alta' : 'Reading aloud') : (es ? 'Leer en voz alta' : 'Read aloud')));
+  }
+
+  /** Read each view aloud, or not: from the view on screen now. */
+  setVoice(on: boolean) {
+    this.app.ambient.narrate = on;
+    this.app.save();
+    if (on && this.info.words && canSpeak()) void speak(this.info.words, { lang: this.app.lang });
+    if (!on) stopSpeaking();
+    if (this.app.ambient.on) this.showHint();
   }
 
   private async lock() {

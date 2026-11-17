@@ -460,7 +460,9 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
 - **Ambient mode:** full-screen rotating globe, screen kept awake, clock. Show the filters on your map, or a
   screensaver playlist: Our planet, Night and day, Restless Earth, Into the deep, Water and weather, Life on Earth, Animals of the
   world, Green planet, People and cultures, or Around Latin America, each view with its title and a line about it,
-  read aloud if you like; or make your own playlist from views of the map (filters and place) and share it as a link.
+  read aloud if you like (off unless you turn it on: in Settings, in the screensaver's panel, or with the button a tap
+  shows while a playlist plays, next to the hint to exit); or make your own playlist from views of the map (filters
+  and place) and share it as a link.
   Names on the map (in Settings and the screensaver's panel): only the view's own (the default: the filters' names, a
   little smaller, without the map's countries, cities, states and seas), all, or none; they keep off the caption and the clock. A
   playlist's view shows the context its caption speaks of: the Green planet's deserts of North America and Borneo's

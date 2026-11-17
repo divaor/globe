@@ -29,7 +29,7 @@ interface Saved {
   quality?: 'auto' | 'high' | 'low';
   gpuMotion?: boolean;
   labelScale?: number;
-  ambient?: { speed: number; cycle: boolean; clock: boolean; playlist?: string; secs?: number; narrate?: boolean; names?: AmbientNames };
+  ambient?: { speed: number; cycle: boolean; clock: boolean; playlist?: string; secs?: number; narrate?: boolean; voice?: boolean; names?: AmbientNames };
   camera?: { lon: number; lat: number; zoom: number };
   /** The map style and the states and provinces (engine/style.ts). */
   view?: { style?: MapStyle; regions?: boolean; regionNames?: boolean };
@@ -365,7 +365,7 @@ export class App {
       active: this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options })),
       labels: r.settings.labels, graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
       labelScale: r.settings.labelScale,
-      ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, narrate: this.ambient.narrate, names: this.ambient.names },
+      ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, voice: this.ambient.narrate, names: this.ambient.names },
       camera: r.view.camera(),
       view: { ...mapView },
     };
@@ -444,7 +444,8 @@ export class App {
       if (typeof saved.view.regions === 'boolean') mapView.regions = saved.view.regions;
       if (typeof saved.view.regionNames === 'boolean') mapView.regionNames = saved.view.regionNames;
     }
-    if (saved.ambient) Object.assign(this.ambient, saved.ambient);
+    // Reading the views aloud is kept as "voice" since v0.33.2: an older "narrate" is not carried over, so it starts off.
+    if (saved.ambient) { const { narrate: _was, voice, ...rest } = saved.ambient; Object.assign(this.ambient, rest); this.ambient.narrate = voice === true; }
     // Before playlists, "cycle through filters" played the filters of what is now the playlist Our planet.
     if (saved.ambient?.cycle && saved.ambient.playlist === undefined) this.ambient.playlist = 'planet';
     if (saved.projection && PROJECTIONS[saved.projection]) r.view.setProjection(saved.projection, false);

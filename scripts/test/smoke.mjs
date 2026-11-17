@@ -1863,8 +1863,27 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const a2 = await page.evaluate(() => ({ ...window.atlas.shell.ambient.info, layers: window.atlas.app.layers.map((l) => l.def.id) }));
   check(a1.on && a1.playlist === 'restless' && a1.layers.join() === 'relief,plates' && /tectonic plates/.test(a1.cap) && /tectonic plates/.test(a1.spoken) && a2.index === 1 && a2.layers.includes('volcanoes'),
     `Restless Earth plays: the plates (caption and voice), then the volcanoes (${a2.layers.join(', ')})${a1.on && a1.layers.join() === 'relief,plates' && /tectonic plates/.test(a1.cap ?? '') && /tectonic plates/.test(a1.spoken) ? '' : ` [${JSON.stringify(a1).slice(0, 300)}]`}`);
+  // Read aloud or not (v0.33.2): a tap shows the exit hint and a button for the voice; the button does not exit, turns
+  // the voice off (and on again, reading the view on screen), and Settings has the same switch.
+  await page.click('.amb-overlay', { position: { x: 120, y: 320 } });
+  await page.waitForTimeout(300);
+  const vo1 = await page.evaluate(() => ({ shown: !!document.querySelector('.amb-tools.show'), pressed: document.querySelector('[data-amb="voice"]')?.getAttribute('aria-pressed') }));
+  await page.click('[data-amb="voice"]');
+  await page.waitForTimeout(300);
+  const vo2 = await page.evaluate(() => ({ on: window.atlas.app.ambient.on, narrate: window.atlas.app.ambient.narrate, pressed: document.querySelector('[data-amb="voice"]')?.getAttribute('aria-pressed'), saved: JSON.parse(localStorage.getItem('atlas-globe:vo1') || '{}').ambient?.voice }));
+  await page.evaluate(() => { window.__spoken.length = 0; });
+  await page.click('[data-amb="voice"]');
+  await page.waitForTimeout(600);
+  const vo3 = await page.evaluate(() => ({ on: window.atlas.app.ambient.on, narrate: window.atlas.app.ambient.narrate, spoke: window.__spoken.map((x) => x.text).join(' ').slice(0, 60), words: window.atlas.shell.ambient.info.words.slice(0, 30) }));
+  check(vo1.shown && vo1.pressed === 'true' && vo2.on && !vo2.narrate && vo2.pressed === 'false' && vo2.saved === false && vo3.on && vo3.narrate && vo3.spoke.startsWith(vo3.words.slice(0, 20)),
+    `ambient mode: a tap shows the voice button (on); a tap on it turns the voice off without leaving (saved: ${vo2.saved}), and on again reads the view on screen ("${vo3.spoke.slice(0, 40)}…")`);
   await page.evaluate(() => window.atlas.shell.ambient.stop());
   await page.waitForTimeout(1000);
+  await page.evaluate(() => window.atlas.shell.openSettings(true));
+  await page.waitForTimeout(400);
+  const setSwitch = await page.evaluate(() => [...document.querySelectorAll('.sheet label, .sheet .toggle')].some((x) => /Read each ambient view aloud/.test(x.textContent)));
+  await page.evaluate(() => { window.atlas.shell.sheet.close(); window.atlas.app.ambient.narrate = false; window.atlas.app.save(); });
+  check(setSwitch, 'Settings → Ambient mode has the switch to read each view aloud');
   const back = await page.evaluate(() => window.atlas.app.layers.map((l) => l.def.id).join());
   check(back === 'political', `stopping the screensaver puts the map back (${back})`);
 
@@ -4628,6 +4647,30 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const badge = await page.evaluate(() => [...document.querySelectorAll('.toast')].map((t) => t.textContent).join(' '));
   check(dive.info.floor > 9000 && /hadal zone/i.test(dive.text) && dive.animals.length >= 10 && dive.recs >= 8 && /Hirondellea gigas|Challenger Deep amphipod/.test(dive.obis) && /Hadal/.test(read) && /times the air/.test(read),
     `dive at the Challenger Deep: the floor ${dive.info.floor} m; ${dive.animals.length} animals at their depths, ${dive.recs} records; "${read.slice(0, 70)}…"; seen near there: ${dive.obis.split('\n')[1] ?? ''}${badge ? `; ${badge.trim().slice(0, 40)}` : ''}`);
+  // An animal tapped in the column (v0.33.2): its card shows above the panel, at the top of the screen, with no thick
+  // ring around the animal; in the light theme the records on the left read on the white panel.
+  await page.evaluate(() => document.querySelector('.dive-animal')?.scrollIntoView({ block: 'center' }));
+  await page.waitForTimeout(300);
+  const ab = await page.evaluate(() => { const r = document.querySelector('.dive-animal').getBoundingClientRect(); return [r.left + 20, r.top + r.height / 2]; });
+  await page.touchscreen.tap(ab[0], ab[1]);
+  await page.waitForTimeout(600);
+  const acard = await page.evaluate(() => {
+    const c = document.querySelector('.country-card:not([hidden])'), r = c?.getBoundingClientRect(), s = document.querySelector('.sheet').getBoundingClientRect();
+    const hit = r && document.elementFromPoint(r.left + r.width / 2, r.top + Math.min(40, r.height / 2));
+    const g = document.activeElement?.closest?.('.dive-animal') ?? document.querySelector('.dive-animal');
+    return { shown: !!c, title: c?.querySelector('h2, .card-title')?.textContent ?? '', onTop: !!(c && c.contains(hit)), top: r ? Math.round(r.top) : -1, sheetTop: Math.round(s.top), ring: getComputedStyle(g).outlineStyle + ' ' + getComputedStyle(g).outlineWidth };
+  });
+  await page.evaluate(() => window.atlas.app.setTheme('light'));
+  await page.waitForTimeout(300);
+  const recC = await page.evaluate(() => {
+    const rgb = (c) => (c.match(/[\d.]+/g) ?? []).slice(0, 3).map(Number);
+    const lum = ([r, g, b]) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+    const a = lum(rgb(getComputedStyle(document.querySelector('.dive-rec')).fill)), b = lum(rgb(getComputedStyle(document.querySelector('.sheet')).backgroundColor));
+    return Math.round(((Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05)) * 10) / 10;
+  });
+  await page.evaluate(() => { window.atlas.app.setTheme('dark'); window.atlas.shell.card.hide(); });
+  check(acard.shown && acard.onTop && acard.top < acard.sheetTop && !/solid/.test(acard.ring) && recC >= 3,
+    `an animal tapped in the dive column: its card (${acard.title}) shows above the panel at the top (${acard.top} px; the panel from ${acard.sheetTop}), no ring (${acard.ring}); the records read in the light theme (${recC}:1)`);
   await page.evaluate(() => window.atlas.shell.sheet.close());
 
   // Name the sea feature, Which ocean zone?, and How deep? with the sea.
