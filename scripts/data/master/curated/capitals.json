@@ -1,0 +1,299 @@
+{
+  "about": "Master the world (v0.34.0): the capitals that need a decision. 'cap' is the GeoNames id of the answer (the official capital); 'seats' are other seats of government, never offered as a wrong answer; 'note' is the line shown after the answer. 'name' overrides the city's name. Written from Wikidata's capital (P36) and seat-of-government statements and the countries' constitutions.",
+  "members": "AFG ALB DZA AND AGO ATG ARG ARM AUS AUT AZE BHS BHR BGD BRB BLR BEL BLZ BEN BTN BOL BIH BWA BRA BRN BGR BFA BDI CPV KHM CMR CAN CAF TCD CHL CHN COL COM COG CRI CIV HRV CUB CYP CZE PRK COD DNK DJI DMA DOM ECU EGY SLV GNQ ERI EST SWZ ETH FJI FIN FRA GAB GMB GEO DEU GHA GRC GRD GTM GIN GNB GUY HTI HND HUN ISL IND IDN IRN IRQ IRL ISR ITA JAM JPN JOR KAZ KEN KIR KWT KGZ LAO LVA LBN LSO LBR LBY LIE LTU LUX MDG MWI MYS MDV MLI MLT MHL MRT MUS MEX FSM MCO MNG MNE MAR MOZ MMR NAM NRU NPL NLD NZL NIC NER NGA MKD NOR OMN PAK PLW PAN PNG PRY PER PHL POL PRT QAT KOR MDA ROU RUS RWA KNA LCA VCT WSM SMR STP SAU SEN SRB SYC SLE SGP SVK SVN SLB SOM ZAF SSD ESP LKA SDN SUR SWE CHE SYR TJK TZA THA TLS TGO TON TTO TUN TUR TKM TUV UGA UKR ARE GBR USA URY UZB VUT VEN VNM YEM ZMB ZWE VAT PSE",
+  "capitals": {
+    "DNK": {
+      "cap": 2618425
+    },
+    "KIR": {
+      "cap": 2110257,
+      "name": {
+        "en": "South Tarawa",
+        "es": "Tarawa Sur"
+      }
+    },
+    "SWZ": {
+      "cap": 934985,
+      "seats": [
+        935048
+      ],
+      "note": {
+        "en": "Mbabane is the seat of the government; Lobamba, close by, is the royal and legislative capital.",
+        "es": "Mbabane es la sede del gobierno; Lobamba, muy cerca, es la capital real y legislativa."
+      }
+    },
+    "IDN": {
+      "cap": 1642911,
+      "note": {
+        "en": "Jakarta is still the capital; a new one, Nusantara, is being built on Borneo.",
+        "es": "Yakarta sigue siendo la capital; en Borneo se construye una nueva, Nusantara."
+      }
+    },
+    "PSE": {
+      "cap": 7303419,
+      "seats": [
+        282239,
+        281184
+      ],
+      "note": {
+        "en": "Palestine proclaims East Jerusalem its capital; its government sits in Ramallah.",
+        "es": "Palestina proclama Jerusalén Este como su capital; su gobierno está en Ramala."
+      },
+      "name": {
+        "en": "East Jerusalem",
+        "es": "Jerusalén Este"
+      }
+    },
+    "ISR": {
+      "cap": 281184,
+      "seats": [
+        293397
+      ],
+      "note": {
+        "en": "Israel's government and parliament sit in Jerusalem; most countries keep their embassies in Tel Aviv.",
+        "es": "El gobierno y el parlamento de Israel están en Jerusalén; la mayoría de los países tiene su embajada en Tel Aviv."
+      }
+    },
+    "YEM": {
+      "cap": 71137,
+      "seats": [
+        415189
+      ],
+      "note": {
+        "en": "Sanaa is the capital in law; since 2015 the internationally recognised government has sat in Aden.",
+        "es": "Saná es la capital por ley; desde 2015 el gobierno reconocido internacionalmente está en Adén."
+      }
+    },
+    "BOL": {
+      "cap": 3903987,
+      "seats": [
+        3911925
+      ],
+      "note": {
+        "en": "Sucre is the capital in the constitution; the government sits in La Paz.",
+        "es": "Sucre es la capital según la constitución; el gobierno está en La Paz."
+      }
+    },
+    "MYS": {
+      "cap": 1735161,
+      "seats": [
+        1996552
+      ],
+      "note": {
+        "en": "Kuala Lumpur is the capital; the government moved to Putrajaya, next to it.",
+        "es": "Kuala Lumpur es la capital; el gobierno se mudó a Putrajaya, a su lado."
+      }
+    },
+    "LKA": {
+      "cap": 1238992,
+      "seats": [
+        1248991
+      ],
+      "note": {
+        "en": "Sri Jayawardenepura Kotte, beside Colombo, is the capital and has the parliament; Colombo is the largest city and the seat of much of the government.",
+        "es": "Sri Jayawardenepura Kotte, junto a Colombo, es la capital y tiene el parlamento; Colombo es la ciudad más grande y la sede de buena parte del gobierno."
+      }
+    },
+    "NLD": {
+      "cap": 2759794,
+      "seats": [
+        2747373
+      ],
+      "note": {
+        "en": "Amsterdam is the capital in the constitution; the government, parliament and king work in The Hague.",
+        "es": "Ámsterdam es la capital según la constitución; el gobierno, el parlamento y el rey trabajan en La Haya."
+      }
+    },
+    "ZAF": {
+      "cap": 964137,
+      "seats": [
+        3369157,
+        1018725
+      ],
+      "note": {
+        "en": "South Africa has three capitals: Pretoria (the government), Cape Town (parliament) and Bloemfontein (the courts).",
+        "es": "Sudáfrica tiene tres capitales: Pretoria (el gobierno), Ciudad del Cabo (el parlamento) y Bloemfontein (los tribunales)."
+      }
+    },
+    "BEN": {
+      "cap": 2392087,
+      "seats": [
+        2394819
+      ],
+      "note": {
+        "en": "Porto-Novo is the capital; most of the government sits in Cotonou, the largest city.",
+        "es": "Porto Novo es la capital; la mayor parte del gobierno está en Cotonú, la ciudad más grande."
+      }
+    },
+    "CIV": {
+      "seats": [
+        2293538
+      ],
+      "note": {
+        "en": "Yamoussoukro has been the capital since 1983; much of the government is still in Abidjan, the largest city.",
+        "es": "Yamusukro es la capital desde 1983; buena parte del gobierno sigue en Abiyán, la ciudad más grande."
+      },
+      "cap": 2279755
+    },
+    "TZA": {
+      "seats": [
+        160263
+      ],
+      "note": {
+        "en": "Dodoma is the capital; many offices and embassies are still in Dar es Salaam, the largest city.",
+        "es": "Dodoma es la capital; muchas oficinas y embajadas siguen en Dar es-Salam, la ciudad más grande."
+      },
+      "cap": 160196
+    },
+    "BDI": {
+      "seats": [
+        425378
+      ],
+      "note": {
+        "en": "Gitega has been the political capital since 2019; Bujumbura is the economic capital.",
+        "es": "Gitega es la capital política desde 2019; Buyumbura es la capital económica."
+      },
+      "cap": 426272
+    },
+    "CHL": {
+      "seats": [
+        3868626
+      ],
+      "note": {
+        "en": "Santiago is the capital; the National Congress sits in Valparaíso.",
+        "es": "Santiago es la capital; el Congreso Nacional sesiona en Valparaíso."
+      }
+    },
+    "MNE": {
+      "seats": [
+        3202641
+      ],
+      "note": {
+        "en": "Podgorica is the capital; Cetinje, the old royal capital, is the seat of the president.",
+        "es": "Podgorica es la capital; Cetiña, la antigua capital real, es la sede del presidente."
+      }
+    },
+    "CHE": {
+      "note": {
+        "en": "Swiss law names no capital: Bern is the federal city, where the government and parliament sit.",
+        "es": "La ley suiza no nombra una capital: Berna es la ciudad federal, donde están el gobierno y el parlamento."
+      }
+    },
+    "NRU": {
+      "note": {
+        "en": "Nauru has no official capital; the government sits in Yaren.",
+        "es": "Nauru no tiene capital oficial; el gobierno está en Yaren."
+      }
+    },
+    "GNQ": {
+      "note": {
+        "en": "Malabo is the capital; a new one, Ciudad de la Paz, is being built on the mainland.",
+        "es": "Malabo es la capital; en el continente se construye una nueva, Ciudad de la Paz."
+      }
+    },
+    "VAT": {
+      "skip": "capitals",
+      "note": {
+        "en": "Vatican City is a city-state: the country and its capital are one.",
+        "es": "La Ciudad del Vaticano es una ciudad-estado: el país y su capital son lo mismo."
+      }
+    },
+    "MCO": {
+      "extra": [
+        {
+          "en": "Monte Carlo",
+          "es": "Montecarlo",
+          "at": [
+            7.4275,
+            43.7398
+          ]
+        },
+        {
+          "en": "La Condamine",
+          "es": "La Condamine",
+          "at": [
+            7.4194,
+            43.7342
+          ]
+        },
+        {
+          "en": "Fontvieille",
+          "es": "Fontvieille",
+          "at": [
+            7.4153,
+            43.7286
+          ]
+        }
+      ],
+      "note": {
+        "en": "Monaco is a city-state: its capital is Monaco itself, the old town on the Rock (Monaco-Ville), next to Monte Carlo, La Condamine and Fontvieille.",
+        "es": "Mónaco es una ciudad-estado: su capital es el propio Mónaco, el casco antiguo sobre la Roca (Mónaco-Ville), junto a Montecarlo, La Condamine y Fontvieille."
+      }
+    },
+    "MMR": {
+      "cap": 6611854,
+      "name": {
+        "en": "Naypyidaw",
+        "es": "Naipyidó"
+      },
+      "note": {
+        "en": "Naypyidaw, built in the forest, replaced Yangon as the capital in 2005; Yangon is still the largest city.",
+        "es": "Naipyidó, construida en la selva, reemplazó a Rangún como capital en 2005; Rangún sigue siendo la ciudad más grande."
+      }
+    },
+    "PLW": {
+      "cap": 8063361,
+      "name": {
+        "en": "Ngerulmud",
+        "es": "Ngerulmud"
+      },
+      "note": {
+        "en": "Ngerulmud, in Melekeok State, has been the capital since 2006; Koror is the largest town.",
+        "es": "Ngerulmud, en el estado de Melekeok, es la capital desde 2006; Koror es la ciudad más grande."
+      }
+    },
+    "KAZ": {
+      "cap": 1526273,
+      "name": {
+        "en": "Astana",
+        "es": "Astaná"
+      },
+      "note": {
+        "en": "Astana became the capital in 1997, taking over from Almaty, still the largest city.",
+        "es": "Astaná es la capital desde 1997, en lugar de Almaty, que sigue siendo la ciudad más grande."
+      }
+    },
+    "SGP": {
+      "cities": [
+        {
+          "en": "Woodlands",
+          "es": "Woodlands",
+          "at": [
+            103.789,
+            1.438
+          ]
+        },
+        {
+          "en": "Jurong West",
+          "es": "Jurong West",
+          "at": [
+            103.709,
+            1.34
+          ]
+        },
+        {
+          "en": "Tampines",
+          "es": "Tampines",
+          "at": [
+            103.957,
+            1.35
+          ]
+        }
+      ],
+      "note": {
+        "en": "Singapore is a city-state: the country and its capital are one city.",
+        "es": "Singapur es una ciudad-estado: el país y su capital son una misma ciudad."
+      }
+    }
+  }
+}
