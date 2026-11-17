@@ -4651,7 +4651,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const badge = await page.evaluate(() => [...document.querySelectorAll('.toast')].map((t) => t.textContent).join(' '));
   check(dive.info.floor > 9000 && /hadal zone/i.test(dive.text) && dive.animals.length >= 10 && dive.recs >= 8 && /Hirondellea gigas|Challenger Deep amphipod/.test(dive.obis) && /Hadal/.test(read) && /times the air/.test(read),
     `dive at the Challenger Deep: the floor ${dive.info.floor} m; ${dive.animals.length} animals at their depths, ${dive.recs} records; "${read.slice(0, 70)}…"; seen near there: ${dive.obis.split('\n')[1] ?? ''}${badge ? `; ${badge.trim().slice(0, 40)}` : ''}`);
-  // An animal tapped in the column (v0.33.2): its card shows above the panel, at the top of the screen, with no thick
+  // An animal tapped in the column (v0.33.2): its card shows just above the panel (not behind it, nor over it), with no thick
   // ring around the animal; in the light theme the records on the left read on the white panel.
   await page.evaluate(() => document.querySelector('.dive-animal')?.scrollIntoView({ block: 'center' }));
   await page.waitForTimeout(300);
@@ -4662,7 +4662,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     const c = document.querySelector('.country-card:not([hidden])'), r = c?.getBoundingClientRect(), s = document.querySelector('.sheet').getBoundingClientRect();
     const hit = r && document.elementFromPoint(r.left + r.width / 2, r.top + Math.min(40, r.height / 2));
     const g = document.activeElement?.closest?.('.dive-animal') ?? document.querySelector('.dive-animal');
-    return { shown: !!c, title: c?.querySelector('h2, .card-title')?.textContent ?? '', onTop: !!(c && c.contains(hit)), top: r ? Math.round(r.top) : -1, sheetTop: Math.round(s.top), ring: getComputedStyle(g).outlineStyle + ' ' + getComputedStyle(g).outlineWidth };
+    return { shown: !!c, title: c?.querySelector('h2, .card-title')?.textContent ?? '', onTop: !!(c && c.contains(hit)), top: r ? Math.round(r.top) : -1, bottom: r ? Math.round(r.bottom) : 9999, sheetTop: Math.round(s.top), ring: getComputedStyle(g).outlineStyle + ' ' + getComputedStyle(g).outlineWidth };
   });
   await page.evaluate(() => window.atlas.app.setTheme('light'));
   await page.waitForTimeout(300);
@@ -4673,8 +4673,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     return Math.round(((Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05)) * 10) / 10;
   });
   await page.evaluate(() => { window.atlas.app.setTheme('dark'); window.atlas.shell.card.hide(); });
-  check(acard.shown && acard.onTop && acard.top < acard.sheetTop && !/solid/.test(acard.ring) && recC >= 3,
-    `an animal tapped in the dive column: its card (${acard.title}) shows above the panel at the top (${acard.top} px; the panel from ${acard.sheetTop}), no ring (${acard.ring}); the records read in the light theme (${recC}:1)`);
+  check(acard.shown && acard.onTop && acard.bottom <= acard.sheetTop + 2 && !/solid/.test(acard.ring) && recC >= 3,
+    `an animal tapped in the dive column: its card (${acard.title}) shows just above the panel, not over it (${acard.top}–${acard.bottom} px; the panel from ${acard.sheetTop}), no ring (${acard.ring}); the records read in the light theme (${recC}:1)`);
   await page.evaluate(() => window.atlas.shell.sheet.close());
 
   // Name the sea feature, Which ocean zone?, and How deep? with the sea.

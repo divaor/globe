@@ -27,6 +27,13 @@ export class Sheet {
       this.bar,
       this.body);
     root.append(this.el);
+    // How tall the sheet stands (on phones, from the bottom), for what sits just above it (a card over the globe).
+    const publish = () => {
+      if (this.el.hidden) document.documentElement.style.removeProperty('--sheet-hpx');
+      else document.documentElement.style.setProperty('--sheet-hpx', `${this.el.offsetHeight}px`);
+    };
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(publish).observe(this.el);
+    window.addEventListener('resize', publish);
     // Remember where each panel was scrolled to, so it opens again at the same place.
     this.body.addEventListener('scroll', () => { if (this.current && !this.el.hidden) this.scrolls.set(this.current, this.body.scrollTop); }, { passive: true });
     // On a phone, dragging the grip or the header up or down makes the sheet taller or shorter (each panel keeps its
