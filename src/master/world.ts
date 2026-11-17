@@ -1,14 +1,15 @@
 // Your world (v0.34.0): a filter that paints what you know from Master the world. Each country in the colour of how
 // well you know it in a deck (or the least known of the three): still learning, known, mastered; the ones not yet
-// met keep the political map's colours. The legend counts them.
+// met in grey, so what you know stands out. The legend counts them.
 import type { LayerDef, LayerInstance, Legend } from '../layers/types';
 import type { App } from '../app/app';
 import { DECKS, type DeckId, type Level } from './srs';
-import { loadDeck, deckNow, levelOf, LEVEL_COLORS } from './data';
+import { loadDeck, deckNow, deckCountry, levelOf, LEVEL_COLORS } from './data';
 import { inScope } from './decks';
 import { master } from './store';
 
 export const WORLD_ID = 'master-world';
+const NEW_DARK = '#4a5262', NEW_LIGHT = '#c9ced6';
 const DECK_NAMES: Record<DeckId | 'all', { en: string; es: string }> = {
   all: { en: 'All three', es: 'Los tres' },
   capitals: { en: 'Capitals', es: 'Capitales' },
@@ -24,15 +25,19 @@ const LEVEL_NAMES: Record<Exclude<Level, 'new'>, { en: string; es: string }> = {
 export function yourWorldLayer(): LayerDef {
   const deckOf = (inst: LayerInstance) => String(inst.options.deck ?? 'all') as DeckId | 'all';
   return {
-    id: WORLD_ID, category: 'fun', icon: '🎓', kind: 'fill',
+    id: WORLD_ID, category: 'fun', icon: '🎓', kind: 'fill', defaultOpacity: 1,
     name: { en: 'Your world', es: 'Tu mundo' },
     desc: { en: 'What you know, from Master the world: each country by how well you know its capital, its flag or where it is.', es: 'Lo que sabes, según Domina el mundo: cada país según lo bien que conoces su capital, su bandera o dónde está.' },
     keywords: 'master learn know progress capitals flags countries dominar aprender saber progreso capitales banderas paises',
     options: [{ id: 'deck', type: 'select', label: { en: 'Deck', es: 'Mazo' }, default: 'all', choices: (['all', ...DECKS] as (DeckId | 'all')[]).map((d) => ({ value: d, label: DECK_NAMES[d] })) }],
     async load() { await loadDeck(); },
-    countryColor(id, inst) {
+    countryColor(id, inst, rc) {
       const l = levelOf(deckOf(inst), id);
-      return l === 'new' ? null : LEVEL_COLORS[l];
+      if (l !== 'new') return LEVEL_COLORS[l];
+      // Not met yet (in the deck): grey; what is not in it (a territory with that setting off) keeps the map's colours.
+      const c = deckCountry(id);
+      if (!c || (c.t && !master().settings.territories)) return null;
+      return rc?.theme?.dark === false ? NEW_LIGHT : NEW_DARK;
     },
     legend(inst, lang): Legend {
       const d = deckOf(inst);
@@ -44,8 +49,9 @@ export function yourWorldLayer(): LayerDef {
       const tx = (x: { en: string; es: string }) => (lang === 'es' ? x.es : x.en);
       return {
         kind: 'categories', title: `${tx({ en: 'Your world', es: 'Tu mundo' })} · ${tx(DECK_NAMES[d])}`,
-        items: (['mastered', 'known', 'learning'] as const).map((l) => ({ color: LEVEL_COLORS[l], label: `${tx(LEVEL_NAMES[l])}: ${by[l].length}`, ids: by[l] })),
-        note: lang === 'es' ? `${by.new.length} por conocer, de ${ids.length}` : `${by.new.length} still to meet, of ${ids.length}`,
+        items: [...(['mastered', 'known', 'learning'] as const).map((l) => ({ color: LEVEL_COLORS[l], label: `${tx(LEVEL_NAMES[l])}: ${by[l].length}`, ids: by[l] })),
+          { color: NEW_DARK, label: `${tx({ en: 'Still to meet', es: 'Por conocer' })}: ${by.new.length}`, ids: by.new }],
+        note: lang === 'es' ? `De ${ids.length} países` : `Of ${ids.length} countries`,
       };
     },
     info(id, inst, lang) {

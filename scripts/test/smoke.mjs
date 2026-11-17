@@ -4935,8 +4935,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await M(() => window.atlas.master.showWorld('capitals'));
   await page.waitForTimeout(900);
   const world = await M(() => { const inst = window.atlas.app.layers.find((l) => l.def.id === 'master-world'); if (!inst) return null; const lg = inst.def.legend(inst, 'en'); return { items: lg.items.map((x) => x.label), tuv: inst.def.countryColor('TUV', inst), col: inst.def.countryColor('COL', inst), bra: inst.def.countryColor('BRA', inst), nor: inst.def.countryColor('NOR', inst), game: !!window.atlas.master.info }; });
-  check(world && world.items.some((x) => /Mastered.*: 15$/.test(x)) && world.tuv === '#27ae60' && world.col === '#27ae60' && world.bra === '#f2c94c' && world.nor == null && !world.game,
-    `Your world: ${world?.items.join(' · ')} (Tuvalu and Colombia ${world?.tuv}, Brazil ${world?.bra}, Norway not met)`);
+  check(world && world.items.some((x) => /Mastered.*: 15$/.test(x)) && world.tuv === '#27ae60' && world.col === '#27ae60' && world.bra === '#f2c94c' && world.nor === '#4a5262' && world.items.some((x) => /Still to meet: \d+/.test(x)) && !world.game,
+    `Your world: ${world?.items.join(' · ')} (Tuvalu and Colombia ${world?.tuv}, Brazil ${world?.bra}, Norway not met: ${world?.nor})`);
   // Run: ten in a row win a power-up; it ends when the hearts run out.
   await M(() => window.atlas.master.start('run', { deck: 'capitals', scope: 'world' }));
   await page.waitForTimeout(800);
