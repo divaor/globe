@@ -28,7 +28,8 @@ await page.evaluate(() => window.atlas.learn['stopQuiz']());
 await page.evaluate(() => { const l = window.atlas.learn; return l['startTour'](l.constructor && (window.TOURS_FOR_TEST ?? null) || null); }).catch(() => {});
 await page.evaluate(() => { document.querySelector('[data-dock="more"]')?.click(); });
 await page.waitForTimeout(300);
-await page.evaluate(() => { [...document.querySelectorAll('.menu-item')].find((b) => /tour|visita/i.test(b.textContent))?.click(); });
+// (Guided tours is in the More menu's Learn and play group since v0.33.1: open the group first.)
+await page.evaluate(() => { const rows = () => [...document.querySelectorAll('.menu .menu-item')], own = () => rows().find((b) => !b.dataset.group && /tour|visita/i.test(b.textContent)); if (!own()) rows().find((b) => b.dataset.group && /tour|visita/i.test(b.textContent))?.click(); own()?.click(); });
 await page.waitForTimeout(500);
 await page.evaluate(() => { document.querySelectorAll('.mode-card')[1]?.click(); });
 await shot('tour', 4000);

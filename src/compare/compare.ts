@@ -79,7 +79,7 @@ export class Compare {
     new ResizeObserver(() => this.syncInset()).observe(this.card);
     // Wide screens show the card beside the map; narrower ones above it. Crossing over redraws it.
     WIDE.addEventListener('change', () => { if (this.open) this.renderCard(); else this.syncInset(); });
-    shell.addMenu({ id: 'compare-filters', icon: ChartScatter, label: () => L('Compare two filters', 'Comparar dos filtros'), order: 23, onClick: () => void this.start() });
+    shell.addMenu({ id: 'compare-filters', icon: ChartScatter, label: () => L('Compare two filters', 'Comparar dos filtros'), order: 23, group: 'tools', onClick: () => void this.start() });
     // From a filter's legend (A), the Filters panel (nothing) or the quiz (A and B).
     app.on('compare', (a, b) => void this.start(typeof a === 'string' ? a : undefined, typeof b === 'string' ? b : undefined));
     app.on('layers', () => { if (this.open) this.renderCard(); });

@@ -1,6 +1,6 @@
 // The app chrome: brand + search (top left), ambient/fullscreen (top right), zoom controls, the
 // active-filter chips and the dock (bottom), plus sheets, legend, card, tooltip and toasts.
-import { Layers, Layers2, Globe, Map as MapIcon, Ellipsis, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Share2, Settings, Info, X, Mountain } from 'lucide';
+import { Layers, Layers2, Globe, Map as MapIcon, Ellipsis, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Share2, Settings, Info, X, Mountain, Earth, Gamepad2, Wrench, Link, ChevronRight, ChevronLeft } from 'lucide';
 import { terrainActions } from '../layers/terrainActions';
 import { h, icon, button, clear, add } from './dom';
 import { t, tx } from '../app/i18n';
@@ -24,7 +24,15 @@ import type { App } from '../app/app';
 import type { IconNode } from 'lucide';
 
 export interface DockItem { id: string; icon: IconNode; label: () => string; onClick: () => void; order: number }
-export interface MenuItem { id: string; icon: IconNode; label: () => string; onClick: () => void; order: number }
+/** The More menu's groups (v0.33.1): each opens in place, with a row back; the rest stay at the top. */
+export type MenuGroup = 'explore' | 'learn' | 'tools' | 'share';
+export interface MenuItem { id: string; icon: IconNode; label: () => string; onClick: () => void; order: number; group?: MenuGroup }
+const MENU_GROUPS: { id: MenuGroup; icon: IconNode; key: string; order: number }[] = [
+  { id: 'explore', icon: Earth, key: 'menuExplore', order: 15 },
+  { id: 'learn', icon: Gamepad2, key: 'menuLearn', order: 16 },
+  { id: 'tools', icon: Wrench, key: 'menuTools', order: 17 },
+  { id: 'share', icon: Share2, key: 'menuShare', order: 60 },
+];
 
 export class Shell {
   readonly sheet: Sheet;
@@ -40,6 +48,8 @@ export class Shell {
   private dockItems: DockItem[] = [];
   private menuItems: MenuItem[] = [];
   private menu: HTMLElement;
+  /** The More menu's group open, or the top of the menu. */
+  private menuGroup: MenuGroup | null = null;
   private top: HTMLElement;
   private toastTimer = 0;
   private hoverId: string | null = null;
@@ -88,7 +98,7 @@ export class Shell {
     this.addDock({ id: 'projection', icon: Globe, label: () => t(`proj.${app.projection}`), order: 20, onClick: () => void this.openProjections() });
     this.addDock({ id: 'more', icon: Ellipsis, label: () => t('more'), order: 90, onClick: () => this.toggleMenu() });
     this.addMenu({ id: 'ambient', icon: MonitorPlay, label: () => t('ambient'), order: 10, onClick: () => this.openScreensaver() });
-    this.addMenu({ id: 'share', icon: Share2, label: () => t('share'), order: 80, onClick: () => void this.share() });
+    this.addMenu({ id: 'share', icon: Link, label: () => t('share'), order: 80, group: 'share', onClick: () => void this.share() });
     this.addMenu({ id: 'settings', icon: Settings, label: () => t('settings'), order: 90, onClick: () => this.openSettings() });
     this.addMenu({ id: 'about', icon: Info, label: () => t('about'), order: 95, onClick: () => this.openAbout() });
 
@@ -103,9 +113,12 @@ export class Shell {
     app.on('hover', (x, y) => this.onHover(x as number, y as number));
     app.on('interact', () => { this.menu.hidden = true; this.tooltip.hidden = true; });
     document.addEventListener('click', (e) => {
-      if (!this.menu.hidden && !this.menu.contains(e.target as Node) && !(e.target as HTMLElement).closest('[data-dock="more"]')) this.menu.hidden = true;
+      // (By the path at the time of the click: opening a group redraws the menu, so its row is gone by now.)
+      if (!this.menu.hidden && !e.composedPath().includes(this.menu) && !(e.target as HTMLElement).closest('[data-dock="more"]')) this.menu.hidden = true;
     });
     window.addEventListener('keydown', (e) => {
+      // Escape steps back out of a group of the More menu, then closes it.
+      if (e.key === 'Escape' && !this.menu.hidden) { if (this.menuGroup) this.openMenuGroup(null); else this.menu.hidden = true; return; }
       if (e.key === 'Escape') { if (app.ambient.on) this.ambient.stop(); else if (this.sheet.isOpen()) this.sheet.close(); else app.select(null); }
       if ((e.key === '/' || (e.key === 'k' && (e.ctrlKey || e.metaKey))) && !(e.target as HTMLElement)?.closest('input,textarea')) { e.preventDefault(); this.search.open(); }
     });
@@ -163,13 +176,48 @@ export class Shell {
 
   private toggleMenu() {
     if (!this.menu.hidden) { this.menu.hidden = true; return; }
-    clear(this.menu);
-    for (const it of this.menuItems) {
-      const b = h('button', { type: 'button', class: 'menu-item', role: 'menuitem' }, icon(it.icon, 18), h('span', null, it.label()));
-      b.addEventListener('click', () => { this.menu.hidden = true; it.onClick(); });
-      this.menu.append(b);
-    }
+    this.menuGroup = null;
+    this.renderMenu();
     this.menu.hidden = false;
+  }
+
+  /** Open a group of the More menu in place (null: back to the top), the keyboard's focus on its first row. */
+  openMenuGroup(g: MenuGroup | null) {
+    const from = this.menuGroup;
+    this.menuGroup = g;
+    this.renderMenu();
+    const focus = g ? this.menu.querySelector('.menu-item:not(.menu-back)') : from ? this.menu.querySelector(`[data-group="${from}"]`) : null;
+    (focus as HTMLElement | null)?.focus({ preventScroll: true });
+  }
+
+  /** The More menu: the groups (Explore, Learn and play, Tools, Save and share) with what is in them in small type,
+   *  and the rows of their own; or one group's rows under a row back. It scrolls when the screen is short. */
+  private renderMenu() {
+    clear(this.menu);
+    const row = (it: MenuItem) => {
+      const b = h('button', { type: 'button', class: 'menu-item', role: 'menuitem', 'data-menu': it.id }, icon(it.icon, 18), h('span', { class: 'menu-text' }, it.label()));
+      b.addEventListener('click', () => { this.menu.hidden = true; it.onClick(); });
+      return b;
+    };
+    const g = MENU_GROUPS.find((x) => x.id === this.menuGroup);
+    if (g) {
+      const back = h('button', { type: 'button', class: 'menu-item menu-back', 'data-back': g.id, 'aria-label': t('back') }, icon(ChevronLeft, 18), h('span', { class: 'menu-text' }, t(g.key)));
+      back.addEventListener('click', () => this.openMenuGroup(null));
+      this.menu.append(back, ...this.menuItems.filter((it) => it.group === g.id).map(row));
+    } else {
+      const rows: { order: number; el: HTMLElement }[] = this.menuItems.filter((it) => !it.group).map((it) => ({ order: it.order, el: row(it) }));
+      for (const gr of MENU_GROUPS) {
+        const inside = this.menuItems.filter((it) => it.group === gr.id);
+        if (!inside.length) continue;
+        const b = h('button', { type: 'button', class: 'menu-item menu-group', role: 'menuitem', 'aria-haspopup': 'menu', 'data-group': gr.id }, icon(gr.icon, 18),
+          h('span', { class: 'menu-text' }, h('span', null, t(gr.key)), h('small', { class: 'menu-sub' }, inside.map((it) => it.label()).join(' · '))),
+          h('span', { class: 'menu-chev', 'aria-hidden': 'true' }, icon(ChevronRight, 16)));
+        b.addEventListener('click', () => this.openMenuGroup(gr.id));
+        rows.push({ order: gr.order, el: b });
+      }
+      this.menu.append(...rows.sort((a, b) => a.order - b.order).map((r) => r.el));
+    }
+    this.menu.scrollTop = 0;
   }
 
   private reopenSheet() {

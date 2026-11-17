@@ -128,7 +128,7 @@ async function planTrip(at: [number, number], label: string) {
   for (const c of cities) { const d = geoDistance(c.at, at); if (d < bd) { bd = d; best = c; } }
   const km = Math.round(bd * 6371);
   g.add(best.id);
-  SHELL?.toast(L(`${g.cityName(best)} (${fmtCompact(km)} km from ${label}) is in your trip. More → Travel guide.`, `${g.cityName(best)} (a ${fmtCompact(km)} km de ${label}) está en tu viaje. Más → Guía de viaje.`), 5000);
+  SHELL?.toast(L(`${g.cityName(best)} (${fmtCompact(km)} km from ${label}) is in your trip. More → Explore → Travel guide.`, `${g.cityName(best)} (a ${fmtCompact(km)} km de ${label}) está en tu viaje. Más → Explorar → Guía de viaje.`), 5000);
 }
 
 function row(ic: string, title: string, sub: string, onClick: () => void, attrs: Record<string, string> = {}, badge?: HTMLElement | null): HTMLElement {

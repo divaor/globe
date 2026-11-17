@@ -30,8 +30,20 @@ const browser = await chromium.launch({ args: ['--disable-accelerated-2d-canvas'
 const failures = [];
 const check = (ok, msg) => { console.log(`${ok ? 'ok  ' : 'FAIL'} ${msg}`); if (!ok) failures.push(msg); };
 
+// The More menu (v0.33.1) keeps most entries in groups: window.__menu(re) taps the entry at the top, or opens the
+// group whose row names it and taps it there.
+const MENU_HELPER = () => {
+  window.__menu = (re) => {
+    const r = new RegExp(re), rows = () => [...document.querySelectorAll('.menu .menu-item')];
+    const own = () => rows().find((x) => !x.dataset.group && !x.dataset.back && r.test(x.textContent));
+    if (!own()) rows().find((x) => x.dataset.group && r.test(x.textContent))?.click();
+    own()?.click();
+  };
+};
+
 async function open(opts, hash) {
   const ctx = await browser.newContext(opts);
+  await ctx.addInitScript(MENU_HELPER);
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
@@ -954,7 +966,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const menu = async (re) => {
     await page.tap('[data-dock="more"]');
     await page.waitForTimeout(300);
-    await page.evaluate((re) => [...document.querySelectorAll('.menu-item')].find((x) => new RegExp(re).test(x.textContent))?.click(), re);
+    await page.evaluate((re) => window.__menu(re), re);
     await page.waitForTimeout(400);
   };
   const storyButton = () => page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /See it in the story/.test(b.textContent)));
@@ -1251,7 +1263,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const menu = async (re) => {
     await page.tap('[data-dock="more"]');
     await page.waitForTimeout(300);
-    await page.evaluate((re) => [...document.querySelectorAll('.menu-item')].find((x) => new RegExp(re).test(x.textContent))?.click(), re);
+    await page.evaluate((re) => window.__menu(re), re);
     await page.waitForTimeout(500);
   };
   const close = async () => { await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click()); await page.waitForTimeout(500); };
@@ -4648,6 +4660,84 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(1500);
   check(amb.info.title === 'The Ice Age seas' && amb.level === '-120' && amb.names.includes('Sundaland'), `the Into the deep playlist: "${amb.info.title}" (the sea at ${amb.level} m; ${amb.names.join(', ')})`);
   check(!errors.length, `no page errors in v0.33.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 35. The More menu (v0.33.1), on a phone: a few rows at the top (Ambient mode, Explore, Learn and play, Tools, Your
+// data, Save and share, Settings, About), each group saying in small type what is inside it; a group opens in place
+// with a row back (and Escape); an entry inside opens as before and closes the menu; every entry is in reach; a tap
+// outside closes it; on a short screen it scrolls; in Spanish.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
+  const rows = () => page.evaluate(() => [...document.querySelectorAll('.menu .menu-item')].map((b) => ({ text: (b.querySelector('.menu-text > span') ?? b.querySelector('.menu-text'))?.textContent ?? '', group: b.dataset.group ?? null, back: b.dataset.back ?? null, sub: b.querySelector('.menu-sub')?.textContent ?? '' })));
+  const menuOpen = () => page.evaluate(() => !document.querySelector('.menu').hidden);
+  await page.tap('[data-dock="more"]');
+  await page.waitForTimeout(300);
+  const top = await rows();
+  const fits = await page.evaluate(() => { const r = document.querySelector('.menu').getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight; });
+  await page.tap('.menu [data-group="learn"]');
+  await page.waitForTimeout(200);
+  const learn = await rows();
+  const learnOpen = await menuOpen();
+  await page.tap('.menu [data-back]');
+  await page.waitForTimeout(200);
+  const back = await rows();
+  await page.tap('.menu [data-group="tools"]');
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(150);
+  const escBack = await rows();
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(150);
+  const escClosed = !(await menuOpen());
+  // Every entry is within reach: the top's own, and each group's.
+  await page.tap('[data-dock="more"]');
+  await page.waitForTimeout(300);
+  const reach = await page.evaluate(() => {
+    const sh = window.atlas.shell, ids = sh['menuItems'].map((m) => m.id), seen = new Set();
+    const here = () => document.querySelectorAll('.menu [data-menu]').forEach((b) => seen.add(b.dataset.menu));
+    here();
+    for (const g of [...document.querySelectorAll('.menu [data-group]')].map((b) => b.dataset.group)) { sh.openMenuGroup(g); here(); sh.openMenuGroup(null); }
+    return { n: ids.length, missing: ids.filter((id) => !seen.has(id)) };
+  });
+  // A tap on the globe closes it.
+  await page.touchscreen.tap(60, 300);
+  await page.waitForTimeout(300);
+  const outsideClosed = !(await menuOpen());
+  // Explore → Into the deep opens its panel, and the menu closes.
+  await page.tap('[data-dock="more"]');
+  await page.waitForTimeout(300);
+  await page.tap('.menu [data-group="explore"]');
+  await page.waitForTimeout(200);
+  await page.tap('.menu [data-menu="deep"]');
+  await page.waitForTimeout(900);
+  const deep = await page.evaluate(() => ({ open: window.atlas.deep.info.open, menu: !document.querySelector('.menu').hidden }));
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+  await page.waitForTimeout(400);
+  check(top.length <= 9 && top.filter((r) => r.group).length === 4 && top.every((r) => !r.group || r.sub.length > 5) && fits
+    && learnOpen && learn[0]?.back === 'learn' && ['Quiz', 'Guided tours', 'Map games', 'On this day'].every((x) => learn.some((r) => r.text === x))
+    && back.length === top.length && escBack.length === top.length && escClosed && reach.missing.length === 0 && outsideClosed && deep.open && !deep.menu,
+    `the More menu on a phone: ${top.length} rows that fit (${top.map((r) => r.text + (r.group ? ' ›' : '')).join(', ')}); Learn and play opens in place (${learn.slice(1).map((r) => r.text).join(', ')}), back and Escape return; all ${reach.n} entries in reach${reach.missing.length ? ` (missing ${reach.missing.join(', ')})` : ''}; a tap outside closes it; Explore → Into the deep opens its panel (${deep.open})`);
+  // A short screen (the phone on its side): the menu scrolls instead of running off the top.
+  await page.setViewportSize({ width: 851, height: 393 });
+  await page.waitForTimeout(600);
+  await page.tap('[data-dock="more"]');
+  await page.waitForTimeout(300);
+  await page.tap('.menu [data-group="explore"]');
+  await page.waitForTimeout(200);
+  const short = await page.evaluate(() => { const m = document.querySelector('.menu'), r = m.getBoundingClientRect(); m.scrollTop = 9999; return { top: Math.round(r.top), bottom: Math.round(r.bottom), h: innerHeight, scrolls: m.scrollHeight > m.clientHeight, moved: m.scrollTop > 0 }; });
+  await page.keyboard.press('Escape');
+  await page.keyboard.press('Escape');
+  check(short.top >= 0 && short.bottom <= short.h && (!short.scrolls || short.moved), `a short screen (851×393): the menu stays on screen (${short.top}–${short.bottom} of ${short.h} px)${short.scrolls ? ' and scrolls' : ''}`);
+  // In Spanish.
+  await page.setViewportSize({ width: 412, height: 839 });
+  await page.goto(url + '?r=35#p=globe&l=political&lang=es', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.tap('[data-dock="more"]');
+  await page.waitForTimeout(300);
+  const es = await rows();
+  check(['Explorar', 'Aprender y jugar', 'Herramientas', 'Guardar y compartir'].every((x) => es.some((r) => r.text === x)) && es.find((r) => r.group === 'learn')?.sub.includes('Concurso'),
+    `en español: ${es.map((r) => r.text).join(', ')} (${es.find((r) => r.group === 'learn')?.sub})`);
+  check(!errors.length, `no page errors in v0.33.1's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

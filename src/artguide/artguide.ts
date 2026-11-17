@@ -30,7 +30,7 @@ export class ArtGuide {
   get info() { return { trail: this.trail ? { title: this.trail.title, n: this.trail.pts.length } : null }; }
 
   constructor(private app: App, private shell: Shell, private guide: TravelGuide) {
-    shell.addMenu({ id: 'art', icon: Palette, label: () => L('Art and architecture', 'Arte y arquitectura'), order: 28.5, onClick: () => void this.open() });
+    shell.addMenu({ id: 'art', icon: Palette, label: () => L('Art and architecture', 'Arte y arquitectura'), order: 28.5, group: 'explore', onClick: () => void this.open() });
     app.renderer.overlays.add((rc) => this.draw(rc));
     // A tap on a trail's dot opens its card (a museum and the artist's works there, or a building).
     shell.tapHandlers.unshift((x, y) => this.tap(x, y));
@@ -265,7 +265,7 @@ export class ArtGuide {
     const shown = all.filter((b) => this.styleFilter === 'all' || b.style?.key === this.styleFilter);
     el.append(h('div', { class: 'guide-list' }, ...shown.map((b) => this.row(this.thumb(b.img, '🏛️'), nm(b), [b.architects.map(nm).join(', '), b.style ? nm(b.style) : '', yearText(b.year)].filter(Boolean).join(' · '),
       () => { this.guide.showPlace(b.at, nm(b), 13); this.showBuilding(b); }, { 'data-building': b.id }, planStar({ ...buildingPlace(b), city: b.city ?? city })))));
-    el.append(h('p', { class: 'muted small' }, L('From Wikidata: buildings that name their architect, the best known first. More → Art and architecture has each architect’s trail.', 'De Wikidata: edificios que nombran a su arquitecto, los más conocidos primero. Más → Arte y arquitectura tiene la ruta de cada arquitecto.')));
+    el.append(h('p', { class: 'muted small' }, L('From Wikidata: buildings that name their architect, the best known first. More → Explore → Art and architecture has each architect’s trail.', 'De Wikidata: edificios que nombran a su arquitecto, los más conocidos primero. Más → Explorar → Arte y arquitectura tiene la ruta de cada arquitecto.')));
   }
 
   // ---- The map -----------------------------------------------------------------------------------------------------

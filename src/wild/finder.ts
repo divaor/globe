@@ -85,7 +85,7 @@ export class Wild {
   get info() { return { picking: this.picking, here: this.here, focus: currentFocus()?.id ?? null }; }
 
   constructor(private app: App, private shell: Shell) {
-    shell.addMenu({ id: 'nature', icon: PawPrint, label: () => L('Nature', 'Naturaleza'), order: 28.7, onClick: () => void this.open() });
+    shell.addMenu({ id: 'nature', icon: PawPrint, label: () => L('Nature', 'Naturaleza'), order: 28.7, group: 'explore', onClick: () => void this.open() });
     shell.tapHandlers.unshift((_x, _y, g) => {
       if (!this.picking || app.mode) return false;
       this.picking = false;

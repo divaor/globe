@@ -88,7 +88,7 @@ export class TravelGuide {
 
   constructor(private app: App, private shell: Shell, private time: TimeTravel, private learn: Learn) {
     try { const t = JSON.parse(localStorage.getItem(KEY) || '[]'); if (Array.isArray(t)) this.trip = t.filter((x) => typeof x === 'string'); } catch { /* private mode */ }
-    shell.addMenu({ id: 'guide', icon: Luggage, label: () => L('Travel guide', 'Guía de viaje'), order: 28, onClick: () => void this.open() });
+    shell.addMenu({ id: 'guide', icon: Luggage, label: () => L('Travel guide', 'Guía de viaje'), order: 28, group: 'explore', onClick: () => void this.open() });
     // "Plan a trip" on a country's card: the guide, searching that country's cities.
     shell.card.actions.push((id) => {
       const b = h('button', { type: 'button', class: 'pill', 'data-guide': 'plan' }, icon(Luggage, 16), L('Plan a trip', 'Planear un viaje'));

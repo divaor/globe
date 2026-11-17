@@ -67,7 +67,7 @@ export class MapGames {
     const borders = () => this.hop.borders();
     for (const g of [this.hop, this.pin, this.hilo, this.tour, this.names, this.chain, this.outline, this.museum, this.climate, this.explorer, this.sunrise, this.lives]) g.back = back;
     for (const g of [this.tour, this.names, this.chain, this.outline]) g.borders = borders;
-    shell.addMenu({ id: 'play', icon: Route, label: () => L('Map games', 'Juegos en el mapa'), order: 29, onClick: () => void this.openMenu() });
+    shell.addMenu({ id: 'play', icon: Route, label: () => L('Map games', 'Juegos en el mapa'), order: 29, group: 'learn', onClick: () => void this.openMenu() });
   }
 
   /** Starts today's puzzle of a game. */
