@@ -1868,14 +1868,17 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.click('.amb-overlay', { position: { x: 120, y: 320 } });
   await page.waitForTimeout(300);
   const vo1 = await page.evaluate(() => ({ shown: !!document.querySelector('.amb-tools.show'), pressed: document.querySelector('[data-amb="voice"]')?.getAttribute('aria-pressed') }));
-  await page.click('[data-amb="voice"]');
+  // Here the globe draws three or four frames a second (relief, plates and volcanoes in software), and waiting for the
+  // button to hold still outlasts the 4 s it stays on screen: the taps go straight to it (a real tap, which would leave
+  // ambient mode if the button were gone).
+  await page.click('[data-amb="voice"]', { force: true });
   await page.waitForTimeout(700); // (the settings are saved 400 ms after a change)
   const vo2 = await page.evaluate(() => ({ on: window.atlas.app.ambient.on, narrate: window.atlas.app.ambient.narrate, pressed: document.querySelector('[data-amb="voice"]')?.getAttribute('aria-pressed'), saved: JSON.parse(localStorage.getItem('atlas-globe:v1') || '{}').ambient?.voice }));
-  await page.evaluate(() => { window.__spoken.length = 0; });
-  await page.click('[data-amb="voice"]');
+  const shown2 = await page.evaluate(() => { window.__spoken.length = 0; return !!document.querySelector('.amb-tools.show'); });
+  await page.click('[data-amb="voice"]', { force: true });
   await page.waitForTimeout(600);
   const vo3 = await page.evaluate(() => ({ on: window.atlas.app.ambient.on, narrate: window.atlas.app.ambient.narrate, spoke: window.__spoken.map((x) => x.text).join(' ').slice(0, 60), words: window.atlas.shell.ambient.info.words.slice(0, 30) }));
-  check(vo1.shown && vo1.pressed === 'true' && vo2.on && !vo2.narrate && vo2.pressed === 'false' && vo2.saved === false && vo3.on && vo3.narrate && vo3.spoke.startsWith(vo3.words.slice(0, 20)),
+  check(vo1.shown && vo1.pressed === 'true' && vo2.on && !vo2.narrate && vo2.pressed === 'false' && vo2.saved === false && shown2 && vo3.on && vo3.narrate && vo3.spoke.startsWith(vo3.words.slice(0, 20)),
     `ambient mode: a tap shows the voice button (on); a tap on it turns the voice off without leaving (saved: ${vo2.saved}), and on again reads the view on screen ("${vo3.spoke.slice(0, 40)}…")`);
   await page.evaluate(() => window.atlas.shell.ambient.stop());
   await page.waitForTimeout(1000);
