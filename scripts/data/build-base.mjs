@@ -157,6 +157,8 @@ function englishName(p) {
   return ok ? en : p.NAME;
 }
 
+const RENAMED = { 'Nur-Sultan': ['Astana', 'Astaná'] };
+
 async function cities() {
   await countryIds();
   const fc = await readJSON(src('ne_10m_populated_places'));
@@ -168,7 +170,10 @@ async function cities() {
     const cap = p.ADM0CAP === 1 || /Admin-0 capital/.test(cls) ? 2 : /Admin-1 (region )?capital/.test(cls) ? 1 : 0;
     const flags = (p.MEGACITY ? 1 : 0) | (p.WORLDCITY ? 2 : 0) | (/alt/.test(cls) ? 4 : 0);
     const [lon, lat] = f.geometry.coordinates;
-    const name = englishName(p);
+    // Places renamed since Natural Earth's data (v0.34.0: Kazakhstan's capital is Astana again since 2022).
+    const re = RENAMED[englishName(p)];
+    const name = re ? re[0] : englishName(p);
+    if (re) p.NAME_ES = re[1];
     rows.push([round(lon), round(lat), name, p.NAME_ES && p.NAME_ES !== name ? p.NAME_ES : 0,
       p.POP_MAX || 0, Math.round((p.MIN_ZOOM || 10) * 10) / 10, cap, flags, countryId(p.ADM0_A3),
       p.TIMEZONE || 0, p.ADM1NAME || 0]);

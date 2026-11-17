@@ -51,6 +51,9 @@ export interface Progress {
    * three continents). */
   seen: { works: string[]; lives: string[]; animals: string[]; plants: string[] };
   feats: string[];
+  /** v0.34.0 Master the world: the best run of days the daily goal was reached, and countries relearned after they
+   * were forgotten (the rest of its badges are feats: a continent's capitals, every capital, the look-alike flags...). */
+  master?: { days: number; comebacks: number };
 }
 
 const emptyPlay = (): Progress['play'] => ({ rounds: 0, perfect: 0, light: 0, continents3: 0, best: {}, knowledge: [], daily: { last: '', streak: 0, best: 0, results: {} }, games: {}, dailies: {}, feats: [], stars: {} });
@@ -133,6 +136,18 @@ export const BADGES: Badge[] = [
   { id: 'app-botanist', icon: '🌿', en: 'Botanist', es: 'Botánico', how: { en: 'Find 25 plants', es: 'Encuentra 25 plantas' }, goal: 25, have: (p) => p.seen.plants?.length ?? 0 },
   // v0.33.0: a dive below 6,000 m (Into the deep).
   { id: 'app-diver', icon: '🤿', en: 'Diver', es: 'Buzo', how: { en: 'Dive below 6,000 m', es: 'Bucea a más de 6 000 m' }, goal: 1, have: (p) => Number(p.feats.includes('dive-6000')) },
+  // v0.34.0 Master the world.
+  ...(['EU', 'AS', 'AF', 'NA', 'SA', 'OC'] as const).map((ct): Badge => {
+    const n = { EU: ['Europe', 'Europa'], AS: ['Asia', 'Asia'], AF: ['Africa', 'África'], NA: ['North and Central America', 'Norte y Centroamérica'], SA: ['South America', 'Sudamérica'], OC: ['Oceania', 'Oceanía'] }[ct];
+    return { id: `master-cap-${ct}`, icon: '🏛️', en: `Capitals of ${n[0]}`, es: `Capitales de ${n[1]}`, how: { en: `Master every capital of ${n[0]}`, es: `Domina todas las capitales de ${n[1]}` }, goal: 1, have: (p) => Number(p.feats.includes(`master-cap-${ct}`)) };
+  }),
+  { id: 'master-cap-all', icon: '👑', en: 'Every capital', es: 'Todas las capitales', how: { en: 'Master every capital of the world', es: 'Domina todas las capitales del mundo' }, goal: 1, have: (p) => Number(p.feats.includes('master-cap-all')) },
+  { id: 'master-flags', icon: '🏳️', en: 'Flag spotter', es: 'Ojo para las banderas', how: { en: 'Tell every look-alike flag apart', es: 'Distingue todas las banderas parecidas' }, goal: 1, have: (p) => Number(p.feats.includes('master-flags')) },
+  { id: 'master-neighbours', icon: '🤝', en: 'Good neighbour', es: 'Buen vecino', how: { en: 'Master every country among its neighbours', es: 'Domina todos los países entre sus vecinos' }, goal: 1, have: (p) => Number(p.feats.includes('master-neighbours')) },
+  { id: 'master-marathon', icon: '🏃', en: 'Marathon', es: 'Maratón', how: { en: 'The whole world in a marathon, without a mistake', es: 'El mundo entero en un maratón, sin un error' }, goal: 1, have: (p) => Number(p.feats.includes('master-marathon')) },
+  { id: 'master-7', icon: '🔥', en: 'A week of learning', es: 'Una semana aprendiendo', how: { en: 'Reach the daily goal 7 days in a row', es: 'Cumple la meta diaria 7 días seguidos' }, goal: 7, have: (p) => p.master?.days ?? 0 },
+  { id: 'master-30', icon: '📚', en: 'A month of learning', es: 'Un mes aprendiendo', how: { en: 'Reach the daily goal 30 days in a row', es: 'Cumple la meta diaria 30 días seguidos' }, goal: 30, have: (p) => p.master?.days ?? 0 },
+  { id: 'master-comeback', icon: '🔄', en: 'Comeback', es: 'Remontada', how: { en: 'Relearn 20 countries you had forgotten', es: 'Vuelve a aprender 20 países que habías olvidado' }, goal: 20, have: (p) => p.master?.comebacks ?? 0 },
   { id: 'play-daily-7', icon: '🔥', en: 'A week of routes', es: 'Una semana de rutas', how: { en: 'The daily route 7 days in a row', es: 'La ruta del día 7 días seguidos' }, goal: 7, have: (p) => p.play.daily.best },
   { id: 'tours-all', icon: '🌍', en: 'Globetrotter', es: 'Trotamundos', how: { en: `Follow all ${TOURS.length} tours to the end`, es: `Sigue las ${TOURS.length} visitas hasta el final` }, goal: TOURS.length, have: (p) => p.tours.length },
 ];
@@ -237,6 +252,15 @@ export function recordSeen(kind: 'works' | 'lives' | 'animals' | 'plants', id: s
   return award();
 }
 /** Something done once around the app (a trip across three continents). */
+/** Master the world (v0.34.0): the best run of days the daily goal was reached and the comebacks; a day the goal is
+ * reached also keeps the daily challenge's streak going (one streak for both). */
+export function recordMaster(o: { days: number; comebacks: number; goalToday?: boolean }): Badge[] {
+  const p = progress();
+  p.master = { days: Math.max(p.master?.days ?? 0, o.days), comebacks: Math.max(p.master?.comebacks ?? 0, o.comebacks) };
+  if (o.goalToday) p.daily = { ...bump(p.daily), results: p.daily.results };
+  return award();
+}
+
 export function recordFeat(id: string): Badge[] {
   const p = progress();
   if (p.feats.includes(id)) return [];
@@ -247,9 +271,12 @@ export function recordFeat(id: string): Badge[] {
 /** Today's puzzle of a map game, if played. */
 export const gameDaily = (game: string, day = dayKey()) => (game === 'hop' ? progress().play.daily.results[day] : progress().play.dailies[day]?.[game]);
 
+/** Called when progress is reset (Master the world forgets what it knows too). */
+export const onReset: (() => void)[] = [];
 export function resetProgress() {
   cache = empty();
   save();
+  for (const f of onReset) f();
 }
 
 const fmt = (n: number) => n.toLocaleString(es() ? 'es-ES' : 'en-GB');

@@ -1868,14 +1868,17 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.click('.amb-overlay', { position: { x: 120, y: 320 } });
   await page.waitForTimeout(300);
   const vo1 = await page.evaluate(() => ({ shown: !!document.querySelector('.amb-tools.show'), pressed: document.querySelector('[data-amb="voice"]')?.getAttribute('aria-pressed') }));
-  await page.click('[data-amb="voice"]');
+  // Here the globe draws three or four frames a second (relief, plates and volcanoes in software), and waiting for the
+  // button to hold still outlasts the 4 s it stays on screen: the taps go straight to it (a real tap, which would leave
+  // ambient mode if the button were gone).
+  await page.click('[data-amb="voice"]', { force: true });
   await page.waitForTimeout(700); // (the settings are saved 400 ms after a change)
   const vo2 = await page.evaluate(() => ({ on: window.atlas.app.ambient.on, narrate: window.atlas.app.ambient.narrate, pressed: document.querySelector('[data-amb="voice"]')?.getAttribute('aria-pressed'), saved: JSON.parse(localStorage.getItem('atlas-globe:v1') || '{}').ambient?.voice }));
-  await page.evaluate(() => { window.__spoken.length = 0; });
-  await page.click('[data-amb="voice"]');
+  const shown2 = await page.evaluate(() => { window.__spoken.length = 0; return !!document.querySelector('.amb-tools.show'); });
+  await page.click('[data-amb="voice"]', { force: true });
   await page.waitForTimeout(600);
   const vo3 = await page.evaluate(() => ({ on: window.atlas.app.ambient.on, narrate: window.atlas.app.ambient.narrate, spoke: window.__spoken.map((x) => x.text).join(' ').slice(0, 60), words: window.atlas.shell.ambient.info.words.slice(0, 30) }));
-  check(vo1.shown && vo1.pressed === 'true' && vo2.on && !vo2.narrate && vo2.pressed === 'false' && vo2.saved === false && vo3.on && vo3.narrate && vo3.spoke.startsWith(vo3.words.slice(0, 20)),
+  check(vo1.shown && vo1.pressed === 'true' && vo2.on && !vo2.narrate && vo2.pressed === 'false' && vo2.saved === false && shown2 && vo3.on && vo3.narrate && vo3.spoke.startsWith(vo3.words.slice(0, 20)),
     `ambient mode: a tap shows the voice button (on); a tap on it turns the voice off without leaving (saved: ${vo2.saved}), and on again reads the view on screen ("${vo3.spoke.slice(0, 40)}…")`);
   await page.evaluate(() => window.atlas.shell.ambient.stop());
   await page.waitForTimeout(1000);
@@ -4785,6 +4788,204 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(['Explorar', 'Aprender y jugar', 'Herramientas', 'Guardar y compartir'].every((x) => es.some((r) => r.text === x)) && es.find((r) => r.group === 'learn')?.sub.includes('Concurso'),
     `en español: ${es.map((r) => r.text).join(', ')} (${es.find((r) => r.group === 'learn')?.sub})`);
   check(!errors.length, `no page errors in v0.33.1's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 36. Master the world (v0.34.0), on a phone. More → Learn and play → Master the world opens its panel: today's goal,
+// the three decks, progress by level and continent. Learn asks the countries due today first, then new ones: a known
+// capital is tapped on the map among four dots with no names, a well known one typed (accents and a typo forgiven), a
+// new one picked from four; Bolivia's answer is Sucre and La Paz is explained, never offered. A miss comes back three
+// questions later; the answer stays while the card is held; a right answer moves on by itself. A flag missed for its
+// look-alike shows the two side by side and how to tell them; a country is tapped on a map with no state names. The
+// last capital of Oceania mastered earns its badge. A run ends when the hearts do, a marathon on its first miss; 20
+// answers reach the daily goal and keep the Daily challenge's streak; Your world paints what is known; the Daily
+// challenge adds a capital to review; the Capitals quiz says Astana; sharing makes a picture; in Spanish.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
+  // What is known already: Oceania's capitals but Tuvalu's mastered; Brazil's capital right yesterday, Colombia's on
+  // two days; Romania's flag and Brazil and Chile on the map right yesterday.
+  await page.evaluate(() => {
+    const day = (n) => { const t = new Date(); t.setDate(t.getDate() + n); return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`; };
+    const card = (days, due, mastered) => ({ seen: days.length + 1, right: days.length, wrong: 0, days, ivl: days.length, due, lapses: 0, ...(mastered ? { mastered: true } : {}) });
+    const caps = {};
+    for (const id of ['AUS', 'FJI', 'KIR', 'MHL', 'FSM', 'NRU', 'NZL', 'PLW', 'PNG', 'WSM', 'SLB', 'TON', 'VUT']) caps[id] = card([day(-9), day(-5), day(-2)], day(6), true);
+    caps.TUV = card([day(-3), day(-1)], day(0));
+    caps.BRA = card([day(-1)], day(0));
+    caps.COL = card([day(-3), day(-1)], day(0));
+    localStorage.setItem('atlas-globe:master', JSON.stringify({
+      cards: { capitals: caps, flags: { ROU: card([day(-1)], day(0)) }, countries: { BRA: card([day(-1)], day(0)), CHL: card([day(-1)], day(0)) } },
+      settings: { deck: 'capitals', scope: 'world', order: 'fixed', speed: 'normal', typing: true, territories: false, sound: false },
+    }));
+  });
+  await page.reload({ waitUntil: 'networkidle' }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(800);
+  const M = (fn, arg) => page.evaluate(fn, arg);
+  const info = () => M(() => window.atlas.master.info);
+  // The panel, from the menu.
+  await page.tap('[data-dock="more"]');
+  await page.waitForTimeout(300);
+  await page.tap('.menu [data-group="learn"]');
+  await page.waitForTimeout(200);
+  const inMenu = await M(() => !!document.querySelector('.menu [data-menu="master"]'));
+  await page.tap('.menu [data-menu="master"]');
+  await page.waitForTimeout(1200);
+  const panel = await M(() => ({
+    open: !!document.querySelector('.mw-panel'), today: document.querySelector('[data-master="today"]')?.textContent ?? '',
+    decks: [...document.querySelectorAll('[data-master="deck"] .seg-btn')].map((b) => b.textContent), legend: document.querySelector('.mw-legend')?.textContent ?? '',
+    conts: [...document.querySelectorAll('.mw-cont')].map((r) => r.textContent), modes: [...document.querySelectorAll('[data-master^="mode-"]')].map((b) => b.dataset.master),
+  }));
+  check(inMenu && panel.open && /0 of 20/.test(panel.today) && panel.decks.length === 3 && /13 mastered/.test(panel.legend) && panel.conts.length === 6 && panel.conts.some((c) => /Oceania.*13\/14/.test(c)) && panel.modes.length === 3,
+    `Master the world from More → Learn and play: the panel (${panel.today.trim()}; ${panel.decks.join(' / ')}; ${panel.legend}; ${panel.conts.find((c) => /Oceania/.test(c))}; ${panel.modes.join(', ')})`);
+  // Learn, South America: Brazil (known: tapped), Argentina (new), Colombia (well known: typed), Bolivia (new)…
+  await M(() => window.atlas.master.start('learn', { scope: 'SA', reverse: false }));
+  await page.waitForTimeout(2200);
+  let i = await info();
+  const q1 = i.q;
+  const dot = await M(() => { const m = window.atlas.master.info, v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const at = m.q.places[0].at; const p = v.project(at[0], at[1]); return p && [r.left + p[0], r.top + p[1]]; });
+  const noStates = await M(() => window.atlas.app.renderer.regionLabels === false);
+  if (dot) await page.touchscreen.tap(dot[0], dot[1]);
+  await page.waitForTimeout(400);
+  i = await info();
+  const fb1 = await M(() => document.querySelector('[data-master="feedback"]')?.textContent ?? '');
+  const tapped = { ok: i.ok, days: i.card?.days.length };
+  await page.waitForTimeout(3000);
+  i = await info();
+  check(q1.id === 'BRA' && q1.step === 'tap' && !q1.reverse && dot && tapped.ok === true && tapped.days === 2 && /Brasília/.test(fb1) && i.q.id === 'ARG' && !i.answered && noStates,
+    `a known capital is tapped among four dots with no names (Brazil, ${q1.step}: ${fb1}); the next question comes by itself (${i.q.id}); no state names on the map`);
+  // A miss: the right one marked, back three questions later; held, the answer stays.
+  const n0 = i.n;
+  const wrong = i.q.order.map(String).find((v) => v !== i.right);
+  await page.tap(`[data-master="opt"][data-value="${wrong}"]`);
+  await page.waitForTimeout(300);
+  i = await info();
+  const marks = await M(() => ({ ok: document.querySelector('.quiz-opt.ok')?.textContent, bad: document.querySelector('.quiz-opt.bad')?.textContent }));
+  const queue = await M(() => window.atlas.master['s'].queue.slice());
+  await M(() => document.querySelector('.play-card').dispatchEvent(new PointerEvent('pointerdown', { bubbles: true })));
+  await page.waitForTimeout(5800);
+  const held = await info();
+  await M(() => document.querySelector('.play-card').dispatchEvent(new PointerEvent('pointerup', { bubbles: true })));
+  const resumed = (await info()).paused === false;
+  check(i.ok === false && marks.ok === 'Buenos Aires' && marks.bad && i.n === n0 + 1 && queue.lastIndexOf('ARG') === 1 + 1 + 3 && held.answered && held.paused && resumed,
+    `a miss marks the right answer (${marks.ok}) and comes back three questions later (${queue.join(' ')}); held, the answer stays (${held.answered}), let go, it goes on`);
+  await page.tap('[data-master="next"]');
+  await page.waitForTimeout(1800);
+  // Colombia, typed without its accent.
+  i = await info();
+  const typedQ = i.q;
+  await page.fill('[data-master="type"]', 'bogota');
+  await page.press('[data-master="type"]', 'Enter');
+  await page.waitForTimeout(300);
+  i = await info();
+  check(typedQ.id === 'COL' && typedQ.step === 'type' && i.ok === true, `a well known capital is typed: "bogota" for Bogotá (${typedQ.id}, ${typedQ.step}, ${i.ok})`);
+  await M(() => window.atlas.master.next());
+  await page.waitForTimeout(1500);
+  // Bolivia: Sucre, La Paz explained but not among the four.
+  i = await info();
+  const bol = i.q;
+  await page.tap(`[data-master="opt"][data-value="0"]`);
+  await page.waitForTimeout(300);
+  const note = await M(() => document.querySelector('[data-master="note"]')?.textContent ?? '');
+  const optsText = await M(() => [...document.querySelectorAll('.quiz-opt')].map((b) => b.textContent));
+  check(bol.id === 'BOL' && bol.places[0].en === 'Sucre' && !optsText.includes('La Paz') && /La Paz/.test(note),
+    `two seats: Bolivia's answer is Sucre (${optsText.join(', ')}); ${note}`);
+  // Tuvalu, the last capital of Oceania: mastered, and the badge.
+  await M(() => window.atlas.master.start('learn', { scope: 'OC', reverse: false }));
+  await page.waitForTimeout(1500);
+  i = await info();
+  const tuv = i.q?.id;
+  await M(() => window.atlas.master.choose('0'));
+  await page.waitForTimeout(300);
+  const mastered = await M(() => ({ text: [...document.querySelectorAll('.play-card .hop-stats')].map((x) => x.textContent).join(' '), feats: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').feats ?? [] }));
+  check(tuv === 'TUV' && /Mastered/.test(mastered.text) && mastered.feats.includes('master-cap-OC'), `right on a third day: Tuvalu mastered, and the Capitals of Oceania badge (${mastered.feats.filter((f) => f.startsWith('master')).join(', ')})`);
+  // A flag missed for its look-alike: the two side by side, and how to tell them apart.
+  await M(() => window.atlas.master.start('learn', { deck: 'flags', scope: 'world', reverse: false }));
+  await page.waitForTimeout(1500);
+  i = await info();
+  const fq = i.q;
+  const flagImgs = await M(() => document.querySelectorAll('[data-master="opt"] img.mw-flag').length);
+  await page.tap('[data-master="opt"][data-value="TCD"]').catch(() => {});
+  await page.waitForTimeout(300);
+  const pair = await M(() => ({ n: document.querySelectorAll('[data-master="pair"] figure').length, caps: [...document.querySelectorAll('[data-master="pair"] figcaption')].map((x) => x.textContent), note: document.querySelector('[data-master="pair"] + .mw-note')?.textContent ?? '' }));
+  check(fq.id === 'ROU' && fq.options.includes('TCD') && flagImgs === 4 && pair.n === 2 && /indigo/.test(pair.note),
+    `a known flag among its look-alikes (${fq.options.join(', ')}): Chad picked for Romania, the two side by side (${pair.caps.join(' / ')}): ${pair.note}`);
+  // Countries: Brazil tapped on a map with no names; Chile missed by tapping Argentina.
+  await M(() => window.atlas.master.start('learn', { deck: 'countries', scope: 'SA' }));
+  await page.waitForTimeout(2200);
+  const tapCountry = async (id) => { const pt = await M((id) => { const m = window.atlas.app.data.meta[id], v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(m.lx, m.ly); return p && [r.left + p[0], r.top + p[1]]; }, id); if (pt) await page.touchscreen.tap(pt[0], pt[1]); return !!pt; };
+  i = await info();
+  const cq = i.q;
+  const names = await M(() => window.atlas.app.renderer.settings.labels.countries);
+  await tapCountry('BRA');
+  await page.waitForTimeout(300);
+  const braOk = (await info()).ok;
+  await M(() => window.atlas.master.next());
+  await page.waitForTimeout(1600);
+  await M(() => window.atlas.master.choose(window.atlas.master.info.right));
+  await M(() => window.atlas.master.next());
+  await page.waitForTimeout(2200);
+  i = await info();
+  const chl = i.q;
+  await tapCountry('ARG');
+  await page.waitForTimeout(300);
+  const missFb = await M(() => document.querySelector('[data-master="feedback"]')?.textContent ?? '');
+  check(cq.id === 'BRA' && cq.step === 'tap' && !names && braOk === true && chl.id === 'CHL' && /That is Argentina/.test(missFb),
+    `a country tapped on a map with no names (Brazil: ${braOk}); Chile missed: "${missFb}"`);
+  // Your world: what is known, painted.
+  await M(() => window.atlas.master.showWorld('capitals'));
+  await page.waitForTimeout(900);
+  const world = await M(() => { const inst = window.atlas.app.layers.find((l) => l.def.id === 'master-world'); if (!inst) return null; const lg = inst.def.legend(inst, 'en'); return { items: lg.items.map((x) => x.label), tuv: inst.def.countryColor('TUV', inst), col: inst.def.countryColor('COL', inst), bra: inst.def.countryColor('BRA', inst), nor: inst.def.countryColor('NOR', inst), game: !!window.atlas.master.info }; });
+  check(world && world.items.some((x) => /Mastered.*: 15$/.test(x)) && world.tuv === '#27ae60' && world.col === '#27ae60' && world.bra === '#f2c94c' && world.nor === '#4a5262' && world.items.some((x) => /Still to meet: \d+/.test(x)) && !world.game,
+    `Your world: ${world?.items.join(' · ')} (Tuvalu and Colombia ${world?.tuv}, Brazil ${world?.bra}, Norway not met: ${world?.nor})`);
+  // Run: ten in a row win a power-up; it ends when the hearts run out.
+  await M(() => window.atlas.master.start('run', { deck: 'capitals', scope: 'world' }));
+  await page.waitForTimeout(800);
+  const run10 = await M(() => { const m = window.atlas.master; for (let k = 0; k < 10; k++) { m.choose(m.info.right); m.next(); } return m.info.run; });
+  const over = await M(() => { const m = window.atlas.master; for (let k = 0; k < 6 && !m.info.done; k++) { const i = m.info; const v = (i.q.order ?? i.q.options ?? []).map(String).find((x) => x !== i.right); if (v != null) m.choose(v); else m.giveUp(); m.next(); } return { done: m.info.done, text: document.querySelector('[data-master="done"]')?.textContent ?? '', best: JSON.parse(localStorage.getItem('atlas-globe:master')).runs.capitals.best }; });
+  check(run10.combo === 10 && run10.score >= 150 && (run10.powers.length + run10.hearts) === 4 && over.done === 'over' && /Out of hearts/.test(over.text) && over.best === run10.score,
+    `Run: ten in a row score ${run10.score} and win a power-up (${run10.powers.join(', ') || `a heart: ${run10.hearts}`}); "${over.text}"; best kept (${over.best})`);
+  // Marathon: two right, then a miss starts it over.
+  await M(() => window.atlas.master.start('marathon', { deck: 'countries', scope: 'OC' }));
+  await page.waitForTimeout(800);
+  const mar = await M(() => { const m = window.atlas.master; m.choose(m.info.right); m.next(); m.choose(m.info.right); m.next(); const i = m.info; m.choose((i.q.options ?? []).find((x) => x !== i.right) ?? ''); m.next(); return { done: m.info.done, text: document.querySelector('[data-master="done"]')?.textContent ?? '', record: JSON.parse(localStorage.getItem('atlas-globe:master')).marathon.countries.record }; });
+  check(mar.done === 'miss' && /2 in a row/.test(mar.text) && mar.record === 2, `Marathon: "${mar.text}" (record ${mar.record})`);
+  // The daily goal: 20 answers today, and the Daily challenge's streak kept by it.
+  const goal = await M(() => { const st = JSON.parse(localStorage.getItem('atlas-globe:master')), p = JSON.parse(localStorage.getItem('atlas-globe:progress')); return { n: st.goal.n, days: st.days, daily: p.daily?.last, master: p.master }; });
+  const today = await M(() => { const t = new Date(); return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`; });
+  check(goal.n >= 20 && goal.days.streak === 1 && goal.days.last === today && goal.daily === today && goal.master?.days === 1,
+    `the daily goal: ${goal.n} answers today, a streak of ${goal.days.streak}, and the Daily challenge's streak kept (${goal.daily})`);
+  // The Daily challenge: one capital to review, outside the shared score; the Capitals quiz names Astana.
+  await M(() => window.atlas.learn['startQuiz']('daily', 'world'));
+  await page.waitForTimeout(2500);
+  const daily = await M(() => { const q = window.atlas.learn['quiz']; return q ? { n: q.qs.length, last: q.qs[q.qs.length - 1], shared: q.qs.filter((x) => !x.review).length } : null; });
+  const astana = await M(() => [window.atlas.learn['capital']('KAZ'), window.atlas.learn['capital']('TZA')]);
+  await M(() => window.atlas.learn.closeAll?.());
+  check(daily && daily.last.review === true && daily.last.kind === 'capital' && daily.last.options.includes(daily.last.id) && daily.shared === daily.n - 1 && astana[0] === 'Astana' && astana[1] === 'Dodoma',
+    `the Daily challenge adds your review (${daily?.last.id}, ${daily?.shared} shared questions + 1); the Capitals quiz says ${astana.join(' and ')}`);
+  // Sharing: a picture of your progress.
+  const shared = await M(async () => {
+    let got = null;
+    navigator.canShare = () => true;
+    navigator.share = async (d) => { got = { text: d.text, files: (d.files ?? []).map((f) => ({ name: f.name, type: f.type, size: f.size })) }; };
+    await window.atlas.master.share();
+    return got;
+  });
+  check(shared && /Master the world/.test(shared.text) && /Capitals: \d+\/194/.test(shared.text) && shared.files[0]?.type === 'image/png' && shared.files[0].size > 20000,
+    `share: a picture (${shared?.files[0]?.size} bytes) and "${shared?.text.split('\n').slice(0, 2).join(' / ')}"`);
+  // In Spanish.
+  await page.goto(url + '?r=36#p=globe&l=political&lang=es', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await M(() => window.atlas.master.openPanel());
+  await page.waitForTimeout(800);
+  const esPanel = await M(() => ({ title: document.querySelector('.sheet:not([hidden]) h2, .sheet:not([hidden]) .sheet-title')?.textContent ?? '', decks: [...document.querySelectorAll('[data-master="deck"] .seg-btn')].map((b) => b.textContent).join(' / '), learn: document.querySelector('[data-master="mode-learn"] .mode-title')?.textContent }));
+  await M(() => window.atlas.master.start('learn', { deck: 'capitals', scope: 'world' }));
+  await page.waitForTimeout(1500);
+  const esQ = await M(() => document.querySelector('[data-master="question"]')?.textContent ?? '');
+  const fits = await M(() => { const r = document.querySelector('.play-card').getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight * 0.75; });
+  check(/Domina el mundo/.test(esPanel.title) && esPanel.decks.includes('Capitales') && esPanel.learn === 'Aprender' && /^(¿|Toca|Escribe|.+ es la capital de)/.test(esQ) && fits,
+    `en español: ${esPanel.title} (${esPanel.decks}; ${esPanel.learn}); "${esQ}"; the card leaves room for the globe`);
+  await M(() => window.atlas.master.stop());
+  check(!errors.length, `no page errors in v0.34.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

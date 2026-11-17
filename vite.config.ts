@@ -42,7 +42,9 @@ export default defineConfig({
       workbox: {
         // App shell + the data needed for the first view are precached; everything else is cached on first use.
         globPatterns: ['**/*.{js,css,html,svg,webmanifest}', 'icons/*.png', 'data/base/countries-110m.json', 'data/base/countries-50m.json',
-          'data/base/countries-meta.json', 'data/base/cities.json', 'data/base/land-110m.json', 'data/layers/marine.json', 'data/layers/physical-50m.json'],
+          'data/base/countries-meta.json', 'data/base/cities.json', 'data/base/land-110m.json', 'data/layers/marine.json', 'data/layers/physical-50m.json',
+          // Master the world (v0.34.0) works offline: its deck is kept with the app (its flags once the panel has opened).
+          'data/master/deck.json'],
         globIgnores: ['flags/**'],
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
         navigateFallback: 'index.html',

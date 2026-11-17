@@ -36,6 +36,8 @@ import { drawPlantRange, plantRangeKm, focusPlant } from '../layers/packs/green'
 import { monthsText } from '../green/cards';
 import { loadArt, nm as artName, yearText, commons as commonsUrl, type ArtData } from '../artguide/data';
 import type { RenderCtx } from '../layers/types';
+import type { Master } from '../master/master';
+import { loadDeck, deckCapital } from '../master/data';
 import { recordAnswer, recordQuiz, recordDaily, recordDailySubjects, recordTour, dailyResult, dayKey, current, progress, progressPanel, BADGES, type Badge } from './progress';
 
 const es = () => lang() === 'es';
@@ -81,6 +83,8 @@ interface Q {
   deep?: { a: string; b: string };
   /** Down to the core (v0.32.0): four things at their depths, and the player's order so far (their ids). */
   down?: DownThing[]; downPicked?: string[];
+  /** v0.34.0: the Daily challenge's review question, a capital due in Master the world (it is not in the shared score). */
+  review?: boolean;
 }
 /** Something at a depth below our feet (a layer's top, a mine, a cave, the deepest quake…). */
 interface DownThing { id: string; e: string; name: [string, string]; place: [string, string]; m: number; below: 'ground' | 'sea' }
@@ -133,7 +137,9 @@ const MAP_QUIZZES: QuizKind[] = ['find', 'where', 'region', 'detective', 'hop', 
 const DAILY_FIRST = Date.UTC(2026, 10, 13);
 const dailyNumber = (day: string) => { const [y, m, d] = day.split('-').map(Number); return Math.round((Date.UTC(y, m - 1, d) - DAILY_FIRST) / 864e5) + 1; };
 const DAILY_ROTATE: QuizKind[] = ['site', 'inventor', 'artist', 'habitat', 'dish', 'champion', 'era', 'civ', 'lives', 'journey', 'faith', 'plague', 'disaster', 'habitat', 'script', 'opening', 'period', 'lives', 'grows', 'season'];
-const marksOf = (qs: { ok?: boolean }[]) => qs.map((x) => (x.ok ? '🟩' : '🟥')).join('');
+const marksOf = (qs: { ok?: boolean; review?: boolean }[]) => qs.filter((x) => !x.review).map((x) => (x.ok ? '🟩' : '🟥')).join('');
+/** The questions everyone gets (the Daily challenge's review question is the reader's own). */
+const shared = <T extends { review?: boolean }>(qs: T[]) => qs.filter((x) => !x.review);
 /** "1 day in a row", "3 días seguidos". */
 const inARow = (n: number) => (es() ? `${n} ${n === 1 ? 'día seguido' : 'días seguidos'}` : `${n} ${n === 1 ? 'day' : 'days'} in a row`);
 
@@ -228,6 +234,8 @@ export class Learn {
   elements: Elements | null = null;
   /** Inside the Earth (v0.32.0): the globe cut open at a tour's stop. */
   inside: { showCut(o: { peel?: number; focus?: string; lon?: number }): void; hideCut(): void } | null = null;
+  /** Master the world (v0.34.0): its panel, and the Daily challenge's review question. */
+  master: Master | null = null;
   orrery: { show: (jd: number, scale?: 'inner' | 'planets' | 'outer', speed?: number) => void } | null = null;
   /** Called before a quiz or a tour starts, so a map game (play/hop.ts, set in main.ts) leaves the map to it. */
   beforeStart: (() => void) | null = null;
@@ -304,6 +312,7 @@ export class Learn {
   /** Counts an answer: the score, right answers in a row, and the subject's progress (a toast for a new badge). */
   private scored(ok: boolean) {
     const q = this.quiz!;
+    if (q.qs[q.i]?.review) return;
     if (ok) { q.score++; q.run = (q.run ?? 0) + 1; } else q.run = 0;
     this.badgeToast(recordAnswer(this.qk(), ok));
   }
@@ -373,7 +382,7 @@ export class Learn {
     return r ? `${r[1]} ${r[2]}` : kind;
   }
 
-  private openQuizMenu() {
+  openQuizMenu() {
     const regions: [string, string][] = [['world', L('World', 'Mundo')], ['AF', t('cont.AF')], ['AS', t('cont.AS')], ['EU', t('cont.EU')], ['NA', t('cont.NA')], ['SA', t('cont.SA')], ['OC', t('cont.OC')]];
     let region = 'world';
     const regionRow = h('div', { class: 'chip-row' });
@@ -420,7 +429,11 @@ export class Learn {
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Your progress', 'Tu progreso')),
         h('span', { class: 'mode-desc' }, L(`Streaks and badges for each subject · ${earned} of ${BADGES.length} badges`, `Rachas e insignias por tema · ${earned} de ${BADGES.length} insignias`))));
     prog.addEventListener('click', () => this.openProgress());
-    return h('div', { class: 'mode-list' }, daily, prog);
+    const mw = h('button', { type: 'button', class: 'mode-card', 'data-panel': 'master' }, h('span', { class: 'mode-icon' }, '🌍'),
+      h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Master the world', 'Domina el mundo')),
+        h('span', { class: 'mode-desc' }, L('Every capital, flag and country, learned for good: a little each day', 'Todas las capitales, banderas y países, aprendidos para siempre: un poco cada día'))));
+    mw.addEventListener('click', () => void this.master?.openPanel());
+    return h('div', { class: 'mode-list' }, daily, ...(this.master ? [mw] : []), prog);
   }
 
   private openProgress() {
@@ -434,6 +447,7 @@ export class Learn {
     if (kind === 'region') { await this.startRegionQuiz(region, false); return; }
     if (kind === 'link') { await this.startLinkQuiz(); return; }
     if (kind === 'family') { await this.startFamilyQuiz(); return; }
+    if (kind === 'capital' || kind === 'daily') await loadDeck();
     if (kind === 'daily') { await this.startDaily(); return; }
     const qs = kind === 'world' ? await this.worldQs(10) : kind === 'landed' ? await this.landedQs(10) : kind === 'constellation' ? await this.constellationQs(10) : kind === 'element' ? await this.elementQs(10) : kind === 'order' ? await this.orderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : kind === 'hop' ? await this.hopQs(10, region) : kind === 'museum' ? await this.museumQs(10) : kind === 'habitat' ? await this.habitatQs(10) : kind === 'lives' ? await this.livesQs(10) : kind === 'grows' ? await this.growsQs(10) : kind === 'season' ? await this.seasonQs(10) : kind === 'seafeature' ? await this.seaFeatureQs(10) : kind === 'zone' ? await this.zoneQs(10) : kind === 'deep' ? await this.deepQs(10) : kind === 'layers' ? await this.downQs(8) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
     if (!qs?.length) { this.needsData(kind === 'detective' ? L('This game needs its maps; check your connection.', 'Este juego necesita sus mapas; revisa tu conexión.') : kind === 'hop' ? L('This quiz needs the border data; check your connection.', 'Este concurso necesita los datos de fronteras; revisa tu conexión.') : kind === 'museum' ? L('This quiz needs the art guide; check your connection.', 'Este concurso necesita la guía de arte; revisa tu conexión.') : kind === 'habitat' || kind === 'lives' ? L('This quiz needs the animal data; check your connection.', 'Este concurso necesita los datos de animales; revisa tu conexión.') : kind === 'grows' || kind === 'season' ? L('This quiz needs the plant data; check your connection.', 'Este concurso necesita los datos de plantas; revisa tu conexión.') : undefined); return; }
@@ -1435,6 +1449,8 @@ export class Learn {
       qs = parts.flatMap((x) => x ?? []);
     } finally { rand = Math.random; }
     if (qs.length < 5) { this.needsData(); return; }
+    const rv = await this.master?.reviewQuestion().catch(() => null);
+    if (rv) qs.push({ id: rv.id, kind: 'capital', options: rv.options, review: true });
     await this.begin('daily', 'world', qs, day);
   }
 
@@ -1616,6 +1632,8 @@ export class Learn {
   }
 
   private capital(id: string) {
+    const d = deckCapital(id, lang());
+    if (d) return d;
     const c = this.app.data.cities.find((x) => x.country === id && x.capital === 2 && !(x.flags & 4));
     return c ? (es() && c.es ? c.es : c.name) : '?';
   }
@@ -1670,7 +1688,7 @@ export class Learn {
       return;
     }
     // In a daily challenge, each question says which quiz it is from.
-    if (q.kind === 'daily') add(this.card, h('div', { class: 'quiz-kind' }, this.quizName(kind)));
+    if (q.kind === 'daily') add(this.card, h('div', { class: 'quiz-kind' }, cur.review ? `🔁 ${L('Your review · Master the world', 'Tu repaso · Domina el mundo')}` : this.quizName(kind)));
     if (cur.space) { this.renderSpaceQuestion(kind, cur, feedback); return; }
     if (cur.sky) { this.renderSkyQuestion(kind, cur, feedback); return; }
     if (cur.item) { this.renderItemQuestion(kind, cur, feedback); return; }
@@ -1762,6 +1780,7 @@ export class Learn {
     const ok = o === cur.id;
     this.scored(ok);
     cur.ok = ok; cur.pick = o;
+    if (cur.review && this.master) this.badgeToast(this.master.review(cur.id, ok));
     cur.given = cur.item || cur.space || cur.sky ? this.optionLabel(kind, o, cur) : kind === 'capital' ? this.capital(o) : kind === 'museum' ? this.museumLabel(o) : kind === 'lives' ? this.animalLabel(o) : kind === 'season' ? this.monthLabel(o) : this.app.data.name(o, lang());
     b.classList.add(ok ? 'ok' : 'bad');
     if (cur.sea) {
@@ -1879,7 +1898,7 @@ export class Learn {
     let best = 0;
     if (q.kind === 'daily') {
       // The streaks of the subjects it touched, then the challenge itself (only the day's first play counts).
-      this.badgeToast([...recordDailySubjects(q.qs.map((x) => x.kind ?? 'daily')), ...recordDaily(q.score, q.qs.length, q.qs.map((x) => (x.ok ? 'y' : 'n')).join(''))]);
+      this.badgeToast([...recordDailySubjects(shared(q.qs).map((x) => x.kind ?? 'daily')), ...recordDaily(q.score, shared(q.qs).length, shared(q.qs).map((x) => (x.ok ? 'y' : 'n')).join(''))]);
     } else {
       const key = q.kind === 'region' ? `atlas-quiz-best:region-${q.region}${q.all ? '-all' : ''}` : `atlas-quiz-best:${q.kind}`;
       try { best = Number(localStorage.getItem(key) ?? 0); if (q.score > best) localStorage.setItem(key, String(q.score)); } catch { /* ignore */ }
@@ -1912,7 +1931,8 @@ export class Learn {
   private renderDailyResult() {
     const q = this.quiz!;
     const day = q.day ?? dayKey();
-    add(this.card, this.quizHead(`🗓️ ${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)}`, `${q.score}/${q.qs.length}`));
+    const n = shared(q.qs).length;
+    add(this.card, this.quizHead(`🗓️ ${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)}`, `${q.score}/${n}`));
     if (q.peek) return;
     const marks = marksOf(q.qs);
     const done = h('button', { type: 'button', class: 'pill sm' }, L('Done', 'Terminar'));
@@ -1920,9 +1940,9 @@ export class Learn {
     const list = h('div', { class: 'quiz-sum', role: 'list' });
     for (const cur of q.qs) list.append(this.resultRow(cur.kind ?? q.kind, cur));
     const streak = current(progress().daily);
-    add(this.card, h('div', { class: 'quiz-q daily-marks' }, `${q.score}/${q.qs.length} ${marks}`),
+    add(this.card, h('div', { class: 'quiz-q daily-marks' }, `${q.score}/${n} ${marks}`),
       h('div', { class: 'tool-hint' }, `🔥 ${inARow(streak)} · ${L('A new challenge tomorrow.', 'Mañana hay un reto nuevo.')}`),
-      list, h('div', { class: 'tool-actions' }, this.shareButton(day, q.score, q.qs.length, marks), done));
+      list, h('div', { class: 'tool-actions' }, this.shareButton(day, q.score, n, marks), done));
   }
 
   /** One question in the result: picture, what it was, the right answer and, if wrong, yours. */

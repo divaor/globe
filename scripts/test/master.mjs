@@ -1,0 +1,93 @@
+// Checks Master the world's spaced repetition (src/master/srs.ts, v0.34.0) with Node: when a country comes back,
+// when it is known and mastered (right on 3 different days), what a miss does (and a comeback), how it is asked as
+// it gets better known, the Learn queue (due first, five new at most, fewer while many are shaky, a miss back three
+// questions later), the orders, Run's hearts, combo and power-ups, and Marathon's skipping.
+// Usage: node scripts/test/master.mjs
+import path from 'node:path';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
+const { rolldown } = await import('rolldown');
+const bundle = await rolldown({ input: path.join(ROOT, 'src/master/srs.ts'), platform: 'neutral', logLevel: 'silent' });
+const { output } = await bundle.generate({ format: 'esm' });
+const S = await import(`data:text/javascript;base64,${Buffer.from(output[0].code).toString('base64')}`);
+
+let failed = 0;
+const check = (ok, msg) => { console.log(`${ok ? 'ok  ' : 'FAIL'} ${msg}`); if (!ok) failed++; };
+const D = (n) => S.addDays('2026-11-17', n);
+
+// The schedule: right on day 0 → back the next day; then in 3 days; then 2.5 times as long.
+let c, g;
+g = S.grade(undefined, true, D(0)); c = g.card;
+check(c.due === D(1) && S.level(c) === 'known' && !g.mastered, `right the first time: known, back tomorrow (${c.due})`);
+g = S.grade(c, true, D(1)); c = g.card;
+check(c.due === D(4) && c.ivl === 3, `right the next day: back in 3 days (${c.due})`);
+g = S.grade(c, true, D(4)); c = g.card;
+check(g.mastered && S.level(c) === 'mastered' && c.ivl === 8 && c.due === D(12), `right on a third day: mastered, back in 8 days (${c.due})`);
+// Right twice the same day counts once.
+let t = S.grade(undefined, true, D(0)).card; t = S.grade(t, true, D(0)).card;
+check(t.days.length === 1 && t.ivl === 1, 'right twice the same day: one day of credit');
+// Ten in a row the same day is not mastery.
+let ten = undefined; for (let i = 0; i < 10; i++) ten = S.grade(ten, true, D(0)).card;
+check(!ten.mastered && S.level(ten) === 'known', 'ten right in one sitting: known, not mastered');
+
+// A miss: back today, one day of credit lost; a mastered one missed is forgotten, and relearning it is a comeback.
+g = S.grade(c, false, D(12)); let m = g.card;
+check(g.forgot && m.forgot && !m.mastered && m.due === D(12) && m.days.length === 1 && m.lapses === 1, `a mastered country missed: forgotten, back today, ${m.days.length} day of credit left`);
+g = S.grade(m, true, D(12)); m = g.card;
+check(!g.comeback && !m.mastered && m.due === D(13), 'right again the same day: known, back tomorrow');
+g = S.grade(m, true, D(13)); m = g.card;
+check(g.comeback && m.mastered && !m.forgot, 'right the next day: mastered again, a comeback');
+let n = S.grade(undefined, false, D(0)).card;
+check(S.level(n) === 'learning' && n.lapses === 0 && n.due === D(0), 'missed the first time: learning, due today, not a lapse');
+
+// How it is asked.
+const card = (days) => ({ ...S.blank(D(0)), seen: 3, days });
+check(S.step(undefined, false) === 'pick' && S.step(card([D(0)]), false) === 'tap' && S.step(card([D(0), D(1)]), false) === 'tap' && S.step(card([D(0), D(1)]), true) === 'type',
+  'asked: picked when new, tapped once known, typed (if wanted) after two days');
+
+// The Learn queue.
+const ids = Array.from({ length: 30 }, (_, i) => `C${i}`);
+const cards = {};
+for (let i = 0; i < 6; i++) cards[`C${i}`] = { ...S.blank(D(0)), seen: 2, days: [D(-1)], due: D(0) };
+cards.C6 = { ...S.blank(D(0)), seen: 2, days: [D(-1)], due: D(5) };
+let q = S.learnQueue(ids, cards, D(0));
+check(q.due.length === 6 && q.fresh.length === 5 && q.fresh[0] === 'C7' && q.queue.length === 11 && !q.queue.includes('C6'),
+  `Learn: the 6 due today and 5 new (${q.queue.join(' ')}); not the one due later`);
+const shaky = {};
+for (let i = 0; i < 9; i++) shaky[`C${i}`] = { ...S.blank(D(0)), seen: 2, days: [], due: D(0) };
+q = S.learnQueue(ids, shaky, D(0));
+check(q.fresh.length === 0, 'Learn: no new ones while 8 or more are still shaky');
+const rq = S.requeue(['A', 'B', 'C', 'D', 'E', 'F'], 0, 'A');
+check(rq.indexOf('A', 1) === 4, `a miss comes back three questions later (${rq.join(' ')})`);
+
+// The orders.
+const list = Array.from({ length: 12 }, (_, i) => ({ id: `K${i}`, name: String.fromCharCode(90 - i), ct: i % 2 ? 'EU' : 'AF', fame: 12 - i, pop: i * 10 }));
+const bal = S.ordered(list, 'balanced');
+check(bal.slice(0, 4).join() === 'K0,K1,K2,K6' && bal.length === 12 && new Set(bal).size === 12, `balanced: three well known, then a lesser known (${bal.join(' ')})`);
+check(S.ordered(list, 'people')[0] === 'K11' && S.ordered(list, 'fixed')[0] === 'K11' && S.ordered(list, 'continent')[0] === 'K1', 'most populous, A to Z and by continent (Europe first)');
+check(S.ordered(list, 'random', 7).join() === S.ordered(list, 'random', 7).join() && S.ordered(list, 'random', 7).join() !== S.ordered(list, 'random', 8).join(), 'random: the same for the same seed');
+
+// Run.
+let run = S.newRun(), gained = 0, power = null;
+for (let i = 0; i < 10; i++) ({ run, gained, power } = S.runAnswer(run, true, () => 0.5));
+check(run.combo === 10 && run.score === 10 * 4 + 20 * 5 + 30 && power === 'heart' && run.hearts === 4, `Run: ten in a row score ${run.score}, a power-up (${power})`);
+({ run } = S.runAnswer(run, false));
+({ run } = S.runAnswer(run, false));
+({ run } = S.runAnswer(run, false));
+const last = S.runAnswer(run, false);
+check(last.over && last.run.combo === 0 && last.run.best === 10, 'Run: over when the hearts run out; the best combo is kept');
+
+// Marathon.
+check(S.marathonList(['A', 'B', 'C'], { A: 10, B: 9 }).join() === 'B,C', 'Marathon: a country right ten times in a row is skipped');
+
+// The deck itself.
+const deck = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/master/deck.json'), 'utf8'));
+const all = deck.countries, cs = all.filter((x) => !x.t);
+check(cs.length === 195 && cs.filter((x) => x.cap && !x.skip).length === 194 && cs.filter((x) => x.cities.length === 3).length >= 193, `the deck: ${cs.length} countries, ${cs.filter((x) => x.cap && !x.skip).length} capitals, three other cities for ${cs.filter((x) => x.cities.length === 3).length}`);
+check(cs.every((x) => x.like.length >= 3 && x.land.length + x.near.length >= 3), 'every country has three look-alike flags and three neighbours');
+check(all.length - cs.length >= 15 && all.filter((x) => x.t).every((x) => x.like.length >= 3), `and ${all.length - cs.length} territories, for the setting that adds them`);
+
+console.log(failed ? `\n${failed} check(s) failed` : '\nmaster checks passed');
+process.exit(failed ? 1 : 0);

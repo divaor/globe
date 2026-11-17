@@ -26,7 +26,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   ("State: Texas") and Who was born here? names a place's state.
 - **The More menu:** Ambient mode, Your data, Settings and About sit at the top, with four groups that open in
   place, each row saying what is inside it in small type: **Explore** (Travel guide, Art and architecture, Nature,
-  Inside the Earth, Into the deep), **Learn and play** (Map games, Quiz, Guided tours, On this day), **Tools**
+  Inside the Earth, Into the deep), **Learn and play** (Master the world, Map games, Quiz, Guided tours, On this day), **Tools**
   (Measure distance, Compare countries, True size of countries, Compare two filters) and **Save and share** (Save
   image, the 4K and phone wallpapers, Share view). A row at the top of a group (or Escape) goes back, and the menu
   scrolls on a short screen.
@@ -337,6 +337,28 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   the same event. A story opened from a card ("Open its story") or a list starts paused at its step with all its
   controls; its X goes back to the map and filters there were. While a tour, a story or the years of a timeline
   play by themselves (or are read aloud), the screen is kept on, where the browser can (the Screen Wake Lock).
+- **Master the world** (More → Learn and play → Master the world, or the Quiz panel): every capital, flag and country
+  learned for good, a little each day. Three decks (the 193 UN members plus Vatican City and Palestine; territories
+  such as Greenland or Hong Kong as a setting) and three ways to play: **Learn** (spaced repetition: the countries due
+  today first, then up to five new ones; one you miss comes back three questions later, one you get right comes back
+  the next day, then in 3 days, then about 2.5 times as long each time; right on 3 different days and it is mastered),
+  **Run** (three hearts, a combo, a power-up every 10 in a row: fifty-fifty, a heart or a peek) and **Marathon** (the
+  whole deck; a miss starts it over, and a country right 10 times running is skipped). Each question is on the globe:
+  the country outlined and the rest dimmed, four of its cities as dots with no names (picked from a list, then tapped
+  once known, then typed if you like, accents and small typos forgiven); after the answer the names appear, the
+  capital gets a gold star, and the card says which of the four is biggest. Where a country has two seats of
+  government the official capital is the answer and the other is explained (Bolivia: Sucre and La Paz), never
+  offered as a wrong one. Flags are picked among four of the continent, then among their look-alikes; miss one for
+  its look-alike and the two are shown side by side with how to tell them apart (Romania and Chad, Indonesia and
+  Monaco, Ireland and Côte d'Ivoire…). Countries are picked among their neighbours, then tapped on a map with no names
+  (no state names either). The card moves on by itself (fast, normal or slow), waits longer after a miss, and stays
+  while you press and hold it; the keys 1 to 4 pick and Enter goes on. New countries come in the order you choose
+  (balanced, best known first, most people first, by continent, A to Z or random), from the world or one continent.
+  A daily goal of 20 answers keeps a streak that also keeps the Daily challenge's, which in turn adds one capital of
+  yours to review. Progress by level and continent, badges (each continent's capitals, every capital, every look-alike
+  flag told apart, every country among its neighbours, a marathon without a mistake, a week and a month of daily
+  goals, 20 comebacks), a picture to share, sounds and buzz (a setting), and it works offline. **Your world**, a
+  filter (Fun), paints each country by how well you know it: learning, known, mastered.
 - **Map games** (More → Learn and play → Map games): twelve games played on the map, each with a new puzzle every day that is the
   same for everyone (the panel's Today list), a best score and badges. The map, its labels and filters come back as
   they were when a game ends.
@@ -594,6 +616,21 @@ dive is read live from OBIS (CC0 / CC BY). The coastal cities' heights are GeoNa
 `rise-heights.mjs`). The zones, the records at their depths, the vents, the sea animals' depths, the famous features,
 kelp forests, garbage patches, the tours and the story were researched from NOAA, WHOI, MBARI, the Schmidt Ocean
 Institute, InterRidge, museums and papers, each with its sources; where sources disagree the text says "about".
+
+**Master the world** (`scripts/data/master/`: `fetch-master.mjs` asks Wikidata through QLever, CC0, for the countries'
+ISO codes, how many Wikipedias have an article on each and the Spanish names of the cities; `build-master.mjs` builds
+`public/data/master/deck.json`; `flags.mjs` compares the flags). The deck holds the 193 UN members (a fixed list:
+Wikidata's misses Denmark and lists a few that are not members today), Vatican City, Palestine and 16 territories. Each
+capital and three other cities come from Natural Earth's populated places (public domain), ranked by their scale rank
+and population, kept within reach of the capital and apart from each other; GeoNames' cities500 (CC BY 4.0) fills in
+the smallest countries. Capitals that differ from Natural Earth's are set by hand in `curated/capitals.json` with the
+reason (Dodoma, Gitega, Astana, Ngerulmud; Côte d'Ivoire's, Myanmar's and Bolivia's two seats explained; Monaco's and
+Singapore's districts). How well known a country is (the balanced order) mixes its people, its economy and how many
+Wikipedias write about it. Look-alike flags are found by drawing the flags of flag-icons (MIT) small and comparing
+their colours (CIELAB), with hand-made groups and notes on how to tell them apart (`curated/flags.json`); neighbours
+are land borders first, then the nearest countries. `npm run test:master` checks the spaced repetition, the Learn
+queue, the orders, Run and Marathon, and the deck. Places renamed since Natural Earth's data (Astana) are renamed on
+the map too (`scripts/data/build-base.mjs`).
 
 **The map games' borders** (`scripts/data/play/build-borders.mjs` builds `public/data/play/borders.json`) come from
 the app's own 1:50m map, so a route on screen is a route in the game. Two countries are neighbours when their outlines
