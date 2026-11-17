@@ -488,7 +488,12 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
   .menu { left: auto; right: 10px; transform: none; bottom: calc(80px + var(--safe-b)); }
   .sheet { top: auto; left: 0; right: 0; bottom: 0; width: 100%; max-height: 78vh; height: 78vh; border-radius: 22px 22px 0 0; transform: translateY(24px); padding-bottom: var(--safe-b); }
   .sheet.open { transform: none; }
-  .sheet-grip { display: block; width: 44px; height: 5px; border-radius: 3px; background: var(--line-strong); margin: 8px auto 0; }
+  .sheet-grip { display: block; width: 44px; height: 5px; border-radius: 3px; background: var(--line-strong); background-clip: content-box; padding: 8px 40px 6px; margin: 0 auto; box-sizing: content-box; cursor: ns-resize; touch-action: none; }
+  .sheet-head { touch-action: none; }
+  /* Panels that sit over the globe start lower, so the globe shows above them (the reader can drag them taller). */
+  .sheet[data-sheet='inside'], .sheet[data-sheet='deep'] { height: 56vh; }
+  /* The height the reader dragged it to (the grip), kept for each panel. */
+  .sheet.sized { height: var(--sheet-h); max-height: none; }
   .country-card { left: 8px; right: 8px; top: auto; bottom: calc(80px + var(--safe-b)); width: auto; max-height: 52vh; z-index: 3; }
   .country-card.compact { max-height: none; }
   /* While the compact strip is up, the filter chips step aside and the legend and zoom buttons sit above it. */
@@ -1195,9 +1200,9 @@ textarea.trip-input { resize: vertical; }
 .inside-through { margin: 14px 0 6px; padding: 10px 12px; border-radius: 12px; background: var(--chip); }
 .dig-col { position: relative; }
 .dig-read { position: sticky; top: 0; z-index: 1; display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 8px 10px; margin: 4px 0 8px;
-  border-radius: 12px; background: var(--panel, rgba(10,18,34,.92)); border: 1px solid var(--line); font-size: 13px; }
+  border-radius: 12px; background: var(--glass-strong); color: var(--text); border: 1px solid var(--line); font-size: 13px; }
 .dig-read b { flex: 1 0 100%; }
-.dig-svg { display: block; width: 100%; height: auto; touch-action: none; cursor: crosshair; }
+.dig-svg { display: block; width: 100%; height: auto; touch-action: pan-y; cursor: crosshair; }
 .dig-svg text { fill: var(--text); font-size: 11px; font-family: inherit; }
 .dig-svg .dig-band { fill: rgba(255,255,255,.9); font-size: 11px; font-weight: 700; }
 .dig-svg .dig-tick { fill: var(--muted); font-size: 10px; }
@@ -1206,6 +1211,31 @@ textarea.trip-input { resize: vertical; }
 .dig-dot { fill: #ffd43b; stroke: #1b1b1b; stroke-width: 1; }
 .dig-moho { stroke: #fff; stroke-width: 1.5; stroke-dasharray: 4 3; }
 .dig-cursor { stroke: #4dabf7; stroke-width: 2; }
+/* Into the deep (v0.33.0): the dive column and its panel. */
+.deep .seg { margin-bottom: 12px; }
+.dive-col { position: relative; }
+.dive-read { position: sticky; top: 0; z-index: 1; display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 8px 10px; margin: 4px 0 8px;
+  border-radius: 12px; background: var(--glass-strong); color: var(--text); border: 1px solid var(--line); font-size: 12.5px; }
+.dive-read b { flex: 1 0 100%; }
+.dive-svg { display: block; width: 100%; height: auto; touch-action: pan-y; cursor: crosshair; }
+.dive-svg text { fill: var(--text); font-size: 11px; font-family: inherit; }
+.dive-svg .dive-band { fill: rgba(255,255,255,.85); font-size: 11px; font-weight: 700; }
+.dive-svg .dive-tick { fill: var(--muted); font-size: 10px; }
+.dive-svg .dive-rec { font-size: 10px; fill: #ffd43b; }
+.dive-svg .dive-floor-label { font-size: 10.5px; font-weight: 700; fill: #e8c48a; }
+.dive-svg .dive-emoji { font-size: 13px; }
+.dive-svg .dive-name { font-size: 10.5px; }
+.dive-animal { cursor: pointer; }
+.dive-animal:hover .dive-name, .dive-animal:focus .dive-name { text-decoration: underline; }
+.dive-lead { stroke: var(--muted); stroke-width: 1; }
+.dive-rock { fill: #5c4a33; }
+.dive-floor { stroke: #e8c48a; stroke-width: 2; }
+.dive-cursor { stroke: #ffd43b; stroke-width: 2; }
+.deep-obis { margin: 12px 0 6px; padding: 10px 12px; border-radius: 12px; background: var(--chip); font-size: 13px; }
+.deep-obis-list { display: flex; flex-wrap: wrap; gap: 6px 12px; margin: 8px 0 4px; }
+.deep-obis-item small { color: var(--muted); }
+.deep-zone { margin: 10px 0; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); }
+.deep-zone p { margin: 6px 0; }
 #app .waves-cv { position: static; display: block; margin: 6px auto; }
 .waves-clock { display: flex; flex-direction: column; gap: 2px; font-size: 13px; text-align: center; margin: 4px 0 8px; }
 .waves-key { display: flex; align-items: center; gap: 8px; font-size: 13px; margin: 3px 0; }

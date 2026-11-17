@@ -4330,6 +4330,46 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(dig.tab === 'dig' && /Spain/.test(dig.head) && /crust here is about 3\d km thick/.test(dig.body) && dig.marks >= 20 && /Granite, Variscan/.test(dig.rocks) && /New Zealand/.test(dig.body) && /core/i.test(read) && /°C/.test(read) && /GPa/.test(read),
     `dig down from Madrid: ${dig.head}; crust ${/about (\d+) km thick/.exec(dig.body)?.[1]} km; ${dig.marks} things at their depths; "${dig.rocks.slice(0, 60)}…"; deep down: "${read.slice(0, 60)}"; the other side: New Zealand`);
 
+  // The panel on a phone (v0.33.0, from a phone test): the readout is readable in the light theme, a swipe on the
+  // column scrolls the panel (it used to read the depth instead), and dragging the grip makes the panel taller (the
+  // globe centres above it, and the panel remembers it); dragged to the bottom, it closes.
+  await page.evaluate(() => { window.atlas.app.setTheme('light'); document.querySelector('.sheet-body').scrollTop = 0; });
+  await page.waitForTimeout(400);
+  const startH = await page.evaluate(() => Math.round(document.querySelector('.sheet').getBoundingClientRect().height / innerHeight * 100));
+  const contrast = await page.evaluate(() => {
+    const rgb = (c) => (c.match(/[\d.]+/g) ?? []).slice(0, 3).map(Number);
+    const lum = ([r, g, b]) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+    const cs = getComputedStyle(document.querySelector('.dig-read')), a = lum(rgb(cs.backgroundColor)), b = lum(rgb(cs.color));
+    return Math.round(((Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05)) * 10) / 10;
+  });
+  const cdp = await ctx.newCDPSession(page);
+  const swipe = async (x, y0, y1) => {
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x, y: y0 }] });
+    for (let i = 1; i <= 10; i++) { await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x, y: y0 + ((y1 - y0) * i) / 10 }] }); await page.waitForTimeout(16); }
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await page.waitForTimeout(500);
+  };
+  const colAt = await page.evaluate(() => { const r = document.querySelector('.dig-svg').getBoundingClientRect(), b = document.querySelector('.sheet-body').getBoundingClientRect(); return [Math.round(r.left + r.width * 0.3), Math.round(Math.min(b.bottom - 30, r.top + 120))]; });
+  await swipe(colAt[0], colAt[1], colAt[1] - 220);
+  const scrolled = await page.evaluate(() => document.querySelector('.sheet-body').scrollTop);
+  const grip = await page.locator('.sheet-grip').boundingBox();
+  const gx = grip.x + grip.width / 2, gy = grip.y + grip.height / 2;
+  await page.mouse.move(gx, gy); await page.mouse.down(); await page.mouse.move(gx, gy - 100, { steps: 5 }); await page.mouse.move(gx, gy - 200, { steps: 5 }); await page.mouse.up();
+  await page.waitForTimeout(600);
+  const taller = await page.evaluate(() => ({ h: Math.round(document.querySelector('.sheet').getBoundingClientRect().height / innerHeight * 100), inset: window.atlas.app.renderer.view.insetBottom, sheet: Math.round(document.querySelector('.sheet').getBoundingClientRect().height), kept: JSON.parse(localStorage.getItem('atlas-globe:sheet-heights') || '{}').inside }));
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+  await page.waitForTimeout(500);
+  await page.evaluate(() => window.atlas.inside.open('dig'));
+  await page.waitForTimeout(800);
+  const again = await page.evaluate(() => Math.round(document.querySelector('.sheet').getBoundingClientRect().height / innerHeight * 100));
+  const g2 = await page.locator('.sheet-grip').boundingBox();
+  await page.mouse.move(g2.x + g2.width / 2, g2.y + 5); await page.mouse.down(); await page.mouse.move(g2.x + g2.width / 2, 700, { steps: 8 }); await page.mouse.move(g2.x + g2.width / 2, 820, { steps: 4 }); await page.mouse.up();
+  await page.waitForTimeout(700);
+  const closed = await page.evaluate(() => !window.atlas.inside.info.open);
+  await page.evaluate(() => { window.atlas.app.setTheme('dark'); try { localStorage.removeItem('atlas-globe:sheet-heights'); } catch {} });
+  check(contrast >= 4.5 && startH >= 50 && startH <= 60 && scrolled > 100 && taller.h >= startH + 15 && Math.abs(taller.inset - taller.sheet) <= 2 && taller.kept > 0.6 && Math.abs(again - taller.h) <= 1 && closed,
+    `the panel on a phone: readout contrast ${contrast}:1 in the light theme; opens at ${startH}% of the screen; a swipe on the column scrolls it ${scrolled} px; the grip drags it to ${taller.h}% (globe centred above it, kept: ${taller.kept}), ${again}% when opened again; dragged down, it ${closed ? 'closes' : 'stays open'}`);
+
   // Seismic waves.
   await page.evaluate(() => window.atlas.inside.open('waves'));
   await page.waitForTimeout(500);
@@ -4412,7 +4452,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const lfb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
   await page.evaluate(() => window.atlas.learn['stopQuiz']());
   check(dq.n === 10 && /deeper/.test(dq.q) && dq.opts.length === 2 && /\d m|km/.test(dfb) && lq.n === 8 && /Correct! All four in order/.test(lfb),
-    `How deep?: 10 pairs ("${dq.opts.join('" or "')}" → "${dfb.slice(0, 70)}"); Down to the core: 8 rounds, the first put in order ("${lfb}")`);
+    `How deep?: ${dq.n} pairs ("${dq.q}": "${dq.opts.join('" or "')}" → "${dfb.slice(0, 70)}"); Down to the core: ${lq.n} rounds, the first put in order ("${lfb}")`);
 
   // Verne's tour cuts the Earth open on the way down and closes it at Kola.
   await page.evaluate(() => window.atlas.learn['openTours']());
@@ -4459,6 +4499,155 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const settle = await page.evaluate(() => { const L = window.atlas.app.renderer.labels; return { fading: L.fading, records: [...L.seen.values()].flat().length, drawn: L.drawn.length }; });
   check(!settle.fading && settle.records < 400 && settle.drawn > 10, `names settle: nothing fading once still, ${settle.records} records for ${settle.drawn} names`);
   check(!errors.length, `no page errors in v0.32.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 34. Into the deep (v0.33.0), on a phone, with OBIS answered from a fixture. The sea floor by depth zone, a tap on
+// the sea for its depth; drain the oceans (the Ice Age land bridges at −120 m) and the sea rising (cities under
+// water); GEBCO's undersea names and the famous ones; hydrothermal vents; shipwrecks (search, the deepest); the living
+// ocean by month; mangroves and kelp; the garbage patches; Dive from here at the Challenger Deep (the animals at their
+// depths, the readout, what lives near there, the Diver badge); the two sea quizzes and How deep? with sea animals
+// and wrecks; the Into the deep playlist.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  await ctx.route(/wikidata\.org|wikimedia\.org|wikipedia\.org|wikivoyage\.org/, (r) => r.abort());
+  await ctx.route(/api\.obis\.org/, (route) => route.fulfill({ contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
+    body: JSON.stringify({ total: 2, results: [{ scientificName: 'Hirondellea gigas', taxonRank: 'Species', records: 37, class: 'Malacostraca' }, { scientificName: 'Pseudoliparis swirei', taxonRank: 'Species', records: 12, class: 'Teleostei' }] }) }));
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political&c=142,12,1.5&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(1000);
+  const cam = (lon, lat, zoom) => page.evaluate(([a, b, c]) => window.atlas.app.renderer.view.flyTo({ lon: a, lat: b, zoom: c }, 0), [lon, lat, zoom]);
+  const tapAt = async (lon, lat) => { const p = await page.evaluate(([a, b]) => window.atlas.app.renderer.view.project(a, b), [lon, lat]); if (p) await page.touchscreen.tap(p[0], p[1]); await page.waitForTimeout(600); return !!p; };
+  const cardText = () => page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  const legendOf = (id) => page.evaluate((id) => { const a = window.atlas.app, inst = a.instance(id), l = inst?.def.legend?.(inst, 'en'); return l ? [l.title ?? '', ...(l.items ?? []).map((x) => x.label), l.note ?? ''].join(' | ') : ''; }, id);
+
+  // The sea floor by zone: five zones; a tap on the Philippine Sea gives its depth and zone.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'seafloor']));
+  await page.waitForFunction(() => window.atlas.app.instance('seafloor')?.ready, null, { timeout: 30000 }).catch(() => {});
+  await cam(132, 18, 2.5);
+  await page.waitForTimeout(1500);
+  const floorLeg = await legendOf('seafloor');
+  await tapAt(132, 18);
+  const floorCard = await cardText();
+  await page.evaluate(() => window.atlas.shell.card.hide());
+  check(/Sunlit zone/.test(floorLeg) && /Hadal zone/.test(floorLeg) && /Seabed 2030/.test(floorLeg) && /m deep/.test(floorCard) && /(Abyss|Midnight)/.test(floorCard) && /Dive here/.test(floorCard),
+    `the sea floor by zone (${floorLeg.split(' | ').length - 2} zones); the Philippine Sea: "${floorCard.replace(/\s+/g, ' ').slice(0, 80)}"`);
+
+  // Drain the oceans: at −120 m Sundaland and Sahul are named; at +70 m low cities are under the sea.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'sealevel']));
+  await page.waitForFunction(() => window.atlas.app.instance('sealevel')?.ready, null, { timeout: 30000 }).catch(() => {});
+  await cam(120, 0, 1.6);
+  await page.waitForTimeout(2500);
+  const drain = await page.evaluate(() => ({ names: window.atlas.app.renderer.labels.drawn.map((d) => d.text), level: window.atlas.app.instance('sealevel').state.level }));
+  const drainLeg = await legendOf('sealevel');
+  await page.evaluate(() => window.atlas.app.setOption('sealevel', 'level', '70'));
+  await cam(105, 15, 1.8);
+  await page.waitForTimeout(2500);
+  const rise = await page.evaluate(() => ({ names: window.atlas.app.renderer.labels.drawn.map((d) => d.text).filter((t) => t.startsWith('🌊')), level: window.atlas.app.instance('sealevel').state.level }));
+  const riseLeg = await legendOf('sealevel');
+  check(Math.round(drain.level) === -120 && drain.names.includes('Sundaland') && /Ice Age/.test(drainLeg) && Math.round(rise.level) === 70 && rise.names.length >= 3 && /not a flood forecast/.test(riseLeg) && /big cities/.test(riseLeg),
+    `drain the oceans to −120 m: ${drain.names.filter((n) => /Sundaland|Sahul|Beringia|Doggerland/.test(n)).join(', ')}; the sea +70 m: ${rise.names.slice(0, 4).join(', ')}… ("${riseLeg.split(' | ')[1]}")`);
+
+  // Undersea names: the famous ones from afar, GEBCO's close up; search; a famous one's card.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'sea-features']));
+  await page.waitForFunction(() => window.atlas.app.instance('sea-features')?.ready, null, { timeout: 30000 }).catch(() => {});
+  await cam(150, 20, 1.6);
+  await page.waitForTimeout(2000);
+  const far = await page.evaluate(() => window.atlas.app.renderer.labels.drawn.map((d) => d.text));
+  await cam(141, 33, 9);
+  await page.waitForTimeout(2000);
+  const near = await page.evaluate(() => window.atlas.app.renderer.labels.drawn.map((d) => d.text).filter((t) => /Seamount|Knoll|Canyon|Trough|Basin|Ridge|Bank|Spur|Hill|Hole|Valley|Plateau/.test(t) && !/Trench/.test(t)));
+  const featHits = await page.evaluate(async () => { const d = window.atlas.app.registry.get('sea-features'); await d.searchLoad(); return d.search((t) => (/mariana/i.test(t ?? '') ? 90 : 0), window.atlas.app.instance('sea-features'), 'en').map((x) => x.label); });
+  const mar = await page.evaluate(async () => (await (await fetch('data/ocean/features.json')).json()).famous.find((f) => /^Mariana Trench$/.test(f.name.en)) ?? null);
+  if (mar) { await cam(mar.lon, mar.lat, 2.5); await page.waitForTimeout(1500); await tapAt(mar.lon, mar.lat); }
+  const marCard = await cardText();
+  check(far.some((n) => /Mariana Trench/.test(n)) && near.length >= 5 && featHits.some((x) => /Mariana Trench/.test(x)) && /Mariana Trench/.test(marCard) && /Undersea feature/.test(marCard),
+    `undersea names: from afar ${far.filter((n) => /Trench|Ridge|Rise/.test(n)).slice(0, 4).join(', ')}; close to Japan ${near.length} of GEBCO's (${near.slice(0, 3).join(', ')}); "mariana" finds ${featHits[0]}; its card: "${marCard.replace(/\s+/g, ' ').slice(0, 60)}…"`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+
+  // Vents and wrecks.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'vents', 'wrecks']));
+  await page.waitForFunction(() => window.atlas.app.instance('wrecks')?.ready && window.atlas.app.instance('vents')?.ready, null, { timeout: 30000 }).catch(() => {});
+  const ventLeg = await legendOf('vents');
+  const wreckLeg = await legendOf('wrecks');
+  const wreckHits = await page.evaluate(async () => { const d = window.atlas.app.registry.get('wrecks'); return d.search((t) => (/titanic/i.test(t ?? '') ? 90 : 0), window.atlas.app.instance('wrecks'), 'en').map((x) => x.label); });
+  await page.evaluate(() => { const a = window.atlas.app; a.registry.get('wrecks').legend(a.instance('wrecks'), 'en').actions[0].onClick(); });
+  await page.waitForTimeout(1200);
+  const deepest = await cardText();
+  await page.evaluate(() => window.atlas.shell.card.hide());
+  const ventN = Number(/(\d+) vent fields/.exec(ventLeg)?.[1] ?? 0), famousN = Number(/(\d+) famous wrecks/.exec(wreckLeg)?.[1] ?? 0), moreN = Number((/and ([\d,]+) more/.exec(wreckLeg)?.[1] ?? '0').replace(/,/g, ''));
+  check(ventN >= 20 && famousN >= 40 && moreN >= 500 && wreckHits.some((x) => /Titanic/.test(x)) && /Samuel B\. Roberts/.test(deepest) && /6,865 m/.test(deepest),
+    `${ventN} vent fields; ${famousN} famous wrecks and ${moreN} more; "titanic" finds ${wreckHits[0]}; the deepest: "${deepest.replace(/\s+/g, ' ').slice(0, 70)}"`);
+
+  // The living ocean, mangroves and kelp, the garbage patches.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'living-ocean', 'coastal-forests', 'garbage-patches']));
+  await page.evaluate(() => window.atlas.app.setOptions('living-ocean', { show: 'plankton', month: '5' }));
+  await page.waitForFunction(() => ['living-ocean', 'coastal-forests', 'garbage-patches'].every((id) => window.atlas.app.instance(id)?.ready), null, { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const plank = await legendOf('living-ocean');
+  await page.evaluate(() => window.atlas.app.setOption('living-ocean', 'show', 'ice'));
+  await page.waitForTimeout(800);
+  const ice = await legendOf('living-ocean');
+  const coast = await legendOf('coastal-forests');
+  await cam(-140, 32, 2.2);
+  await page.waitForTimeout(1200);
+  await tapAt(-140, 32);
+  const patch = await cardText();
+  await page.evaluate(() => window.atlas.shell.card.hide());
+  const mang = Number(/Mangroves · (\d+)/.exec(coast)?.[1] ?? 0), kelp = Number(/Kelp forests · (\d+)/.exec(coast)?.[1] ?? 0);
+  check(/Plankton · May/.test(plank) && /Sea ice/.test(ice) && mang >= 10 && kelp >= 12 && /Garbage patch/.test(patch) && /approximate/i.test(patch),
+    `the living ocean: "${plank.split(' | ')[0]}", "${ice.split(' | ')[0]}"; ${mang} mangrove ecoregions and ${kelp} kelp forests; a tap in the North Pacific: "${patch.replace(/\s+/g, ' ').slice(0, 60)}…"`);
+
+  // Dive from here at the Challenger Deep.
+  await page.evaluate(() => window.atlas.app.setStack(['political']));
+  await page.evaluate(() => window.atlas.deep.diveAt(142.2, 11.35));
+  await page.waitForTimeout(3500);
+  const dive = await page.evaluate(() => ({ info: window.atlas.deep.info, text: document.querySelector('.deep')?.innerText ?? '', animals: [...document.querySelectorAll('.dive-animal')].map((g) => g.dataset.animal), recs: document.querySelectorAll('.dive-svg .dive-rec').length, obis: document.querySelector('.deep-obis')?.innerText ?? '', feats: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').feats ?? null }));
+  await page.evaluate(() => document.querySelector('.dive-svg').scrollIntoView({ block: 'end' }));
+  await page.waitForTimeout(400);
+  const box = await page.evaluate(() => { const r = document.querySelector('.dive-svg').getBoundingClientRect(); return [r.left + r.width * 0.42, r.top + r.height * 0.88]; });
+  await page.touchscreen.tap(box[0], box[1]);
+  await page.waitForTimeout(300);
+  const read = await page.evaluate(() => document.querySelector('.dive-read')?.textContent ?? '');
+  const badge = await page.evaluate(() => [...document.querySelectorAll('.toast')].map((t) => t.textContent).join(' '));
+  check(dive.info.floor > 9000 && /hadal zone/i.test(dive.text) && dive.animals.length >= 10 && dive.recs >= 8 && /Hirondellea gigas|Challenger Deep amphipod/.test(dive.obis) && /Hadal/.test(read) && /times the air/.test(read),
+    `dive at the Challenger Deep: the floor ${dive.info.floor} m; ${dive.animals.length} animals at their depths, ${dive.recs} records; "${read.slice(0, 70)}…"; seen near there: ${dive.obis.split('\n')[1] ?? ''}${badge ? `; ${badge.trim().slice(0, 40)}` : ''}`);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+
+  // Name the sea feature, Which ocean zone?, and How deep? with the sea.
+  const quiz = async (kind) => {
+    await page.evaluate((k) => window.atlas.learn['startQuiz'](k, 'world'), kind);
+    await page.waitForTimeout(2000);
+    const r = await page.evaluate(() => ({ n: window.atlas.learn.quiz?.qs.length, q: document.querySelector('.learn-card .quiz-q')?.textContent ?? '', opts: [...document.querySelectorAll('.learn-card .quiz-opt')].map((b) => b.textContent), pin: window.atlas.learn['pin'] }));
+    await page.evaluate(() => document.querySelector('.learn-card .quiz-opt')?.click());
+    await page.waitForTimeout(600);
+    r.fb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
+    await page.evaluate(() => window.atlas.learn['stopQuiz']());
+    await page.waitForTimeout(400);
+    return r;
+  };
+  const qf = await quiz('seafeature');
+  const qz = await quiz('zone');
+  const seaPool = await page.evaluate(async () => (await window.atlas.learn['loadDeep']()).filter((x) => /^(sea|wreck)-/.test(x.id)).length);
+  check(qf.n === 10 && qf.opts.length === 4 && qf.pin?.text === '?' && qf.fb.length > 20 && qz.n === 10 && qz.opts.length === 4 && /m/.test(qz.fb) && seaPool >= 100,
+    `Name the sea feature: ${qf.n} pins ("${qf.opts.join('", "')}" → "${qf.fb.slice(0, 50)}…"); Which ocean zone?: ${qz.n} animals ("${qz.q}", → "${qz.fb.slice(0, 50)}…"); How deep? adds ${seaPool} sea animals and wrecks`);
+
+  // The Into the deep playlist: the Ice Age seas.
+  await page.evaluate(() => { const a = window.atlas.app.ambient; a.secs = 300; a.narrate = false; a.names = 'view'; });
+  await page.evaluate(() => window.atlas.shell.ambient.start('deep'));
+  await page.waitForTimeout(600);
+  await page.evaluate(() => { const a = window.atlas.shell.ambient; a.idx = 0; void a.next(); });
+  await page.waitForFunction(() => window.atlas.shell.ambient.info.index === 1, null, { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(4000);
+  const amb = await page.evaluate(() => ({ info: window.atlas.shell.ambient.info, level: window.atlas.app.instance('sealevel')?.options.level, names: window.atlas.app.renderer.labels.drawn.map((d) => d.text) }));
+  await page.evaluate(() => window.atlas.shell.ambient.stop());
+  await page.waitForTimeout(1500);
+  check(amb.info.title === 'The Ice Age seas' && amb.level === '-120' && amb.names.includes('Sundaland'), `the Into the deep playlist: "${amb.info.title}" (the sea at ${amb.level} m; ${amb.names.join(', ')})`);
+  check(!errors.length, `no page errors in v0.33.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

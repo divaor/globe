@@ -56,6 +56,15 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   Two quizzes, How deep? (which of two goes deeper) and Down to the core (put four in order, shallowest first), and
   two tours: Journey to the centre of the Earth (Verne's novel against the real Earth, the cut opening on the way down)
   and the Ring of Fire (ten stops, with earthquakes by depth under Tonga).
+- **Into the deep (More → Into the deep):** Dive from here: tap the sea anywhere for a column from its surface down to
+  11,000 m, the sea floor of that place drawn in (the deepest point of the cell, so a trench reads true): the zones
+  (sunlit, twilight, midnight, the abyss, the trenches), the light, the temperature and the pressure wherever you
+  touch it, the sea animals of that ocean and latitude at their depths (tap one for its story), the records (the
+  deepest freedive and scuba dive, the Trieste, the Titanic, the Challenger Deep…), and what has been seen near there,
+  live from OBIS. A dive below 6,000 m earns the Diver badge. The zones tab says what each depth is like. Two quizzes,
+  Name the sea feature (a pin under the sea, four names) and Which ocean zone? (a sea animal, five zones), and How
+  deep? now with sea animals and wrecks; two tours, Wonders of the deep and Famous shipwrecks; the Time travel story
+  Into the deep: exploring the ocean floor; and an Into the deep playlist for ambient mode.
 - **Search:** countries, cities, states and provinces, coordinates ("40.4, -3.7"), and what the filters show: the
   people of Who was born here?, museums, masterpieces and their artists, buildings and their architects, World
   Heritage sites, inventions and your own places. The filters that are on come first; a filter that is off is searched
@@ -109,6 +118,12 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     says how fast a place moves and which way: Madrid about 2.3 cm a year to the north-east); the Smithsonian's
     1,214 volcanoes of the last 10,000 years by their last eruption (all, since 1900 or the famous ones; a tap gives
     their type and last eruption; search finds them); animated ocean currents.
+  - The oceans: the sea floor by depth zone (a tap gives the depth there); Drain the oceans, a slider from +70 m
+    (all the ice melted, the big coastal cities under water, heights only, not a forecast) down to −11,000 m (the
+    Ice Age land bridges at −120 m, then the shelves, the ridges and at last the trenches); undersea mountains and
+    trenches (GEBCO's 5,400 names, the famous ones first, with how a feature got its name); hydrothermal vents;
+    shipwrecks (66 famous ones with their stories and about 1,000 more, by era, search, the deepest); the living
+    ocean (plankton and sea ice month by month, 2024); mangroves and kelp forests; the ocean garbage patches.
   - Inside the Earth's filters: earthquakes by depth (the 26,650 of magnitude 5.5 or more since 1970, shallow to
     700 km, with Draw a slice: two taps across a trench for the quakes within 150 km seen from the side, a sinking
     plate traced in them); mantle hotspots (Hawaii, Yellowstone, Iceland, Réunion and five more, with their island
@@ -294,7 +309,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   period, who won, guess the link between two country facts, which journey, which faith, which script, which
   language family, which epidemic, which disaster, what are you hearing, which book is it from, who made it, which World Heritage site, who invented it,
   which world is this, who landed here, which constellation, where was this element made, which country in between,
-  how deep?, down to the core),
+  how deep?, down to the core, name the sea feature, which ocean zone?),
   each ending with every answer and its picture; two games of time:
   Put them in order (four things from the stories, oldest first, then shown in order with their dates and pins on the
   map) and Time detective (a map of old borders with no names: which of four years is it from?); a daily challenge
@@ -310,7 +325,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   great libraries, masterpieces and where they are, sounds of the world, cities of music, Latin America's World
   Heritage, nature's wonders, lost and rebuilt, China's great inventions, from the telegraph to the Web, invented in
   Latin America, a grand tour of the solar system, footprints on the Moon, born in the stars, a night under the
-  Southern sky, journey to the centre of the Earth: each plays by itself from its first stop and stops at its last, where ↺ plays it again); "On this
+  Southern sky, journey to the centre of the Earth, wonders of the deep, famous shipwrecks: each plays by itself from its first stop and stops at its last, where ↺ plays it again); "On this
   day", any day of the year: what the Time travel stories tell of it, each opening its
   step (the story's X comes back to the day), and Wikipedia's selection of events, linked to the story that tells
   the same event. A story opened from a card ("Open its story") or a list starts paused at its step with all its
@@ -437,7 +452,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   edited by hand still brings the trip, places, lists and settings, but not badges, streaks and scores. The key is in
   the app's code, so the seal keeps out casual edits, not a determined cheat.
 - **Ambient mode:** full-screen rotating globe, screen kept awake, clock. Show the filters on your map, or a
-  screensaver playlist: Our planet, Night and day, Restless Earth, Water and weather, Life on Earth, Animals of the
+  screensaver playlist: Our planet, Night and day, Restless Earth, Into the deep, Water and weather, Life on Earth, Animals of the
   world, Green planet, People and cultures, or Around Latin America, each view with its title and a line about it,
   read aloud if you like; or make your own playlist from views of the map (filters and place) and share it as a link.
   Names on the map (in Settings and the screensaver's panel): only the view's own (the default: the filters' names, a
@@ -558,6 +573,19 @@ read live from Macrostrat (CC BY 4.0). The layers' facts, the 35 things at their
 hotspots and their dated chains, the underground wonders and the two tours (`curated/`) were researched from papers,
 surveys and park services, each with its sources; where sources disagree (the deepest cave, Mponeng's depth,
 Vredefort's size) the text says so or gives the safer figure. Layer temperatures are ±500 °C.
+
+**Into the deep** (`scripts/data/ocean/`: `fetch-ocean.mjs` downloads once into `.cache/ocean`; `build-ocean.mjs`
+checks the curated files and builds `public/data/ocean/`). Depths: NOAA NCEI's ETOPO 2022 (public domain), read at
+1/12° through NCEI's OPeNDAP server and kept per 0.25° cell as its mean height and its deepest point, in one PNG
+(`depth.png`). Undersea feature names: the IHO-IOC GEBCO Gazetteer of Undersea Feature Names (through NOAA NCEI),
+with Spanish generic terms. Plankton: NASA GIBS's MODIS Aqua chlorophyll a, each month of 2024 made from every other
+day (each spot keeping its latest clear reading); sea ice: GIBS's AMSR2 sea ice concentration on the 15th of each
+month of 2024 (both public domain). Mangroves are RESOLVE's mangrove ecoregions (CC BY 4.0). Shipwrecks: 66 famous
+ones written from museums, navies and surveys, and the others from Wikidata (CC0, through QLever). What lives near a
+dive is read live from OBIS (CC0 / CC BY). The coastal cities' heights are GeoNames' (CC BY 4.0;
+`rise-heights.mjs`). The zones, the records at their depths, the vents, the sea animals' depths, the famous features,
+kelp forests, garbage patches, the tours and the story were researched from NOAA, WHOI, MBARI, the Schmidt Ocean
+Institute, InterRidge, museums and papers, each with its sources; where sources disagree the text says "about".
 
 **The map games' borders** (`scripts/data/play/build-borders.mjs` builds `public/data/play/borders.json`) come from
 the app's own 1:50m map, so a route on screen is a route in the game. Two countries are neighbours when their outlines

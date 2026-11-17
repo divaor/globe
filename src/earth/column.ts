@@ -102,7 +102,9 @@ export function digColumn(o: { crustKm: number; markers: Marker[]; onDepth?: (km
   let down = false;
   svg.addEventListener('pointerdown', (e) => { down = true; at(e); });
   svg.addEventListener('pointermove', (e) => { if (down) at(e); });
+  // A vertical swipe scrolls the panel (the browser takes it over and cancels the pointer); a tap reads the depth.
   window.addEventListener('pointerup', () => { down = false; });
+  svg.addEventListener('pointercancel', () => { down = false; });
   show(o.crustKm);
   return h('div', { class: 'dig-col' }, read, svg);
 }

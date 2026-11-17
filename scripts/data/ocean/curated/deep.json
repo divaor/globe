@@ -1,0 +1,1954 @@
+{
+  "zones": [
+    {
+      "id": "sunlit",
+      "top_m": 0,
+      "bottom_m": 200,
+      "name": {
+        "en": "Sunlit zone (epipelagic)",
+        "es": "Zona iluminada (epipelágica)"
+      },
+      "light": {
+        "en": "There is enough sunlight for algae and phytoplankton to grow. The light fades fast, and below about 200 m it is too weak for photosynthesis.",
+        "es": "Hay suficiente luz solar para que crezcan las algas y el fitoplancton. La luz se apaga rápido y por debajo de unos 200 m ya no alcanza para la fotosíntesis."
+      },
+      "temp": {
+        "en": "The warmest layer, heated by the Sun: from about −2 °C in polar seas to about 30 °C in the tropics.",
+        "es": "Es la capa más cálida, calentada por el Sol: de unos −2 °C en los mares polares a unos 30 °C en los trópicos."
+      },
+      "life": {
+        "en": "Phytoplankton, which make about half the oxygen we breathe, feed tiny zooplankton, and those feed fish, turtles, seals and whales. Most of the world's fishing happens here.",
+        "es": "El fitoplancton, que produce cerca de la mitad del oxígeno que respiramos, alimenta al zooplancton, y este a peces, tortugas, focas y ballenas. Aquí se concentra la mayor parte de la pesca del mundo."
+      },
+      "fact": {
+        "en": "Pressure rises by about 1 atmosphere every 10 m. At 200 m the water adds about 20 atmospheres, roughly 20 kg pressing on every square centimetre. This thin layer holds only 2 to 3 percent of the ocean's water.",
+        "es": "La presión sube cerca de 1 atmósfera cada 10 m. A 200 m el agua suma unas 20 atmósferas, unos 20 kg sobre cada centímetro cuadrado. Esta capa delgada tiene apenas del 2 al 3 % del agua del océano."
+      },
+      "src": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/sunlit-zone/",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/light-distributed/",
+        "https://oceanservice.noaa.gov/facts/light_travel.html",
+        "https://oceanservice.noaa.gov/facts/pressure.html"
+      ]
+    },
+    {
+      "id": "twilight",
+      "top_m": 200,
+      "bottom_m": 1000,
+      "name": {
+        "en": "Twilight zone (mesopelagic)",
+        "es": "Zona crepuscular (mesopelágica)"
+      },
+      "light": {
+        "en": "Only dim blue light comes down, too weak for plants. It fades with every metre, and by about 1,000 m sunlight is gone. Many animals make their own light.",
+        "es": "Solo llega una luz azul tenue, demasiado débil para las plantas. Se apaga metro a metro, y hacia los 1 000 m la luz del Sol desaparece. Muchos animales producen su propia luz."
+      },
+      "temp": {
+        "en": "Cold, and colder with depth: by 1,000 m the water is only about 4 °C.",
+        "es": "Frío, y cada vez más con la profundidad: a 1 000 m el agua está a solo unos 4 °C."
+      },
+      "life": {
+        "en": "Lanternfish, bristlemouths, squid, krill and jellies. Every night many of them swim up towards the surface to feed and sink back at dawn: the largest animal migration on Earth.",
+        "es": "Peces linterna, peces boca de cerdas, calamares, kril y medusas. Cada noche muchos suben hacia la superficie a comer y bajan de nuevo al amanecer: es la mayor migración animal del planeta."
+      },
+      "fact": {
+        "en": "At 1,000 m the pressure is about 100 atmospheres, like a heavy adult standing on every square centimetre. This zone may hold more fish, by weight, than all the rest of the ocean.",
+        "es": "A 1 000 m la presión es de unas 100 atmósferas, como si un adulto corpulento se parara sobre cada centímetro cuadrado. Esta zona podría tener más peces, en peso, que todo el resto del océano."
+      },
+      "src": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/twilight-zone/",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/light-distributed/",
+        "https://oceanservice.noaa.gov/facts/pressure.html"
+      ]
+    },
+    {
+      "id": "midnight",
+      "top_m": 1000,
+      "bottom_m": 4000,
+      "name": {
+        "en": "Midnight zone (bathypelagic)",
+        "es": "Zona de medianoche (batipelágica)"
+      },
+      "light": {
+        "en": "No sunlight at all. The only light is the glow that animals make themselves (bioluminescence).",
+        "es": "No llega nada de luz solar. La única luz es la que producen los propios animales (bioluminiscencia)."
+      },
+      "temp": {
+        "en": "A steady 4 °C or so, all year round.",
+        "es": "Unos 4 °C constantes durante todo el año."
+      },
+      "life": {
+        "en": "Anglerfish, dragonfish, gulper eels and sperm whales hunting squid. Many animals are red or black: with no red light down here, red looks black and hides them.",
+        "es": "Peces pescadores, peces dragón, anguilas pelícano y cachalotes que cazan calamares. Muchos animales son rojos o negros: aquí no hay luz roja, así que el rojo se ve negro y los esconde."
+      },
+      "fact": {
+        "en": "Pressure climbs from about 100 to 400 atmospheres. At 4,000 m it is about 400 kg on every square centimetre, roughly the weight of a grand piano. This is the largest habitat on Earth, with about 70 percent of all seawater.",
+        "es": "La presión sube de unas 100 a 400 atmósferas. A 4 000 m son unos 400 kg sobre cada centímetro cuadrado, más o menos el peso de un piano de cola. Es el hábitat más grande de la Tierra: tiene cerca del 70 % de toda el agua de mar."
+      },
+      "src": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/midnight-zone/",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/light-distributed/",
+        "https://oceanexplorer.noaa.gov/ocean-fact/red-color/",
+        "https://oceanservice.noaa.gov/facts/pressure.html"
+      ]
+    },
+    {
+      "id": "abyss",
+      "top_m": 4000,
+      "bottom_m": 6000,
+      "name": {
+        "en": "Abyss (abyssopelagic)",
+        "es": "Zona abisal (abisopelágica)"
+      },
+      "light": {
+        "en": "Complete darkness, apart from the faint glow of animals.",
+        "es": "Oscuridad total, salvo el tenue brillo de algunos animales."
+      },
+      "temp": {
+        "en": "Near freezing all year, only a few degrees above 0 °C.",
+        "es": "Casi helada todo el año, apenas unos grados sobre 0 °C."
+      },
+      "life": {
+        "en": "Sea cucumbers, brittle stars, sponges and tripod fish live on wide muddy plains, eating scraps that drift down from above. Parts of the floor are covered with metal-rich nodules.",
+        "es": "Pepinos de mar, ofiuras, esponjas y peces trípode viven en extensas llanuras de lodo y comen los restos que caen desde arriba. Partes del fondo están cubiertas de nódulos ricos en metales."
+      },
+      "fact": {
+        "en": "Pressure reaches about 400 to 600 atmospheres. At 6,000 m that is about 600 kg on every square centimetre, like a dairy cow standing on a fingertip. In most places the ocean floor lies at these depths.",
+        "es": "La presión llega a unas 400 a 600 atmósferas. A 6 000 m son unos 600 kg sobre cada centímetro cuadrado, como una vaca parada sobre la yema de un dedo. En la mayor parte del océano, el fondo está a estas profundidades."
+      },
+      "src": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/abyssal-zone/",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/light-distributed/",
+        "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/hadal-zone/",
+        "https://www.jamstec.go.jp/e/about/equipment/ships/shinkai6500.html"
+      ],
+      "note": {
+        "en": "Ranges differ between sources: NOAA puts the abyss at 4,000 to 6,000 m, while WHOI uses 3,000 to 6,500 m for the abyssal seafloor.",
+        "es": "Los rangos cambian según la fuente: la NOAA ubica la zona abisal entre 4 000 y 6 000 m, y el WHOI usa de 3 000 a 6 500 m para el fondo abisal."
+      }
+    },
+    {
+      "id": "hadal",
+      "top_m": 6000,
+      "bottom_m": 10935,
+      "name": {
+        "en": "Hadal zone (hadopelagic)",
+        "es": "Zona hadal (hadopelágica)"
+      },
+      "light": {
+        "en": "Darkness. These trenches are the deepest and least explored places on Earth.",
+        "es": "Oscuridad. Estas fosas son los lugares más profundos y menos explorados de la Tierra."
+      },
+      "temp": {
+        "en": "Just above freezing: the water was 1.51 °C at 6,957 m in the Java Trench.",
+        "es": "Apenas por encima del punto de congelación: el agua estaba a 1,51 °C a 6 957 m en la fosa de Java."
+      },
+      "life": {
+        "en": "Snailfish, shrimp-like amphipods, sea cucumbers and tube worms. No fish has been seen deeper than 8,336 m, but tube worms and clams fed by seeping chemicals live as deep as 9,533 m.",
+        "es": "Peces caracol, anfípodos parecidos a camarones, pepinos de mar y gusanos de tubo. Nunca se ha visto un pez a más de 8 336 m, pero hay gusanos de tubo y almejas que viven de sustancias químicas que brotan del fondo hasta a 9 533 m."
+      },
+      "fact": {
+        "en": "At the bottom of the Challenger Deep the pressure is nearly 1,100 atmospheres: more than a tonne on every square centimetre. All the hadal trenches together cover an area about the size of Australia.",
+        "es": "En el fondo del abismo Challenger la presión es de casi 1 100 atmósferas: más de una tonelada sobre cada centímetro cuadrado. Todas las fosas hadales juntas ocupan un área más o menos del tamaño de Australia."
+      },
+      "src": "https://www.whoi.edu/ocean-learning-hub/ocean-topics/how-the-ocean-works/ocean-zones/hadal-zone/",
+      "src_more": [
+        "https://www.whoi.edu/press-room/news-tip/faq-nereus/",
+        "https://www.uwa.edu.au/news/article/2023/april/scientists-break-new-record-after-finding-worlds-deepest-fish",
+        "https://doi.org/10.1038/s41586-025-09317-z",
+        "https://www.guinnessworldrecords.com/world-records/83167-deepest-octopus",
+        "https://oceanservice.noaa.gov/facts/oceandepth.html"
+      ],
+      "note": {
+        "en": "The bottom of the zone is the deepest point of the Challenger Deep, about 10,935 m; surveys give 10,920 to 10,935 m.",
+        "es": "El límite inferior es el punto más profundo del abismo Challenger, a unos 10 935 m; los estudios dan entre 10 920 y 10 935 m."
+      }
+    }
+  ],
+  "markers": [
+    {
+      "id": "lusitania",
+      "depth_m": 93,
+      "kind": "wreck",
+      "name": {
+        "en": "RMS Lusitania",
+        "es": "RMS Lusitania"
+      },
+      "place": {
+        "en": "Celtic Sea, off the Old Head of Kinsale, Ireland",
+        "es": "Mar Céltico, frente al cabo Old Head of Kinsale, Irlanda"
+      },
+      "lon": -8.55,
+      "lat": 51.41,
+      "year": 1935,
+      "text": {
+        "en": "A German submarine sank the liner in 18 minutes in May 1915, and 1,193 people died. Its wreck lies about 93 m down, 11.5 nautical miles off the Irish coast.",
+        "es": "Un submarino alemán hundió el transatlántico en 18 minutos en mayo de 1915, y murieron 1 193 personas. Sus restos yacen a unos 93 m, a 11,5 millas náuticas de la costa irlandesa."
+      },
+      "note": {
+        "en": "Found in 1935; that year a diver in a metal armoured suit reached it. Coordinates approximate.",
+        "es": "Se halló en 1935; ese año un buzo con un traje blindado de metal llegó hasta él. Coordenadas aproximadas."
+      },
+      "src": "https://www.infomar.ie/rd-and-education/publications/rms-lusitania",
+      "src_more": [
+        "https://shipwrecks.hist.sites.carleton.edu/lusitania/discovery-exploration-and-archeology-of-rms-lusitania/"
+      ]
+    },
+    {
+      "id": "sunlit-limit",
+      "depth_m": 200,
+      "kind": "light",
+      "name": {
+        "en": "End of the sunlit zone",
+        "es": "Fin de la zona iluminada"
+      },
+      "place": {
+        "en": "World ocean",
+        "es": "Océano mundial"
+      },
+      "text": {
+        "en": "Below about 200 m there is rarely enough light for photosynthesis. Almost all plant life in the ocean grows above this line.",
+        "es": "Por debajo de unos 200 m casi nunca hay luz suficiente para la fotosíntesis. Casi toda la vida vegetal del océano crece por encima de esta línea."
+      },
+      "src": "https://oceanservice.noaa.gov/facts/light_travel.html",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/light-distributed/"
+      ]
+    },
+    {
+      "id": "nitsch-freedive",
+      "depth_m": 214,
+      "kind": "record",
+      "name": {
+        "en": "Deepest free dive",
+        "es": "Inmersión en apnea más profunda"
+      },
+      "place": {
+        "en": "Spetses, Greece",
+        "es": "Spetses, Grecia"
+      },
+      "lon": 23.155,
+      "lat": 37.262,
+      "year": 2007,
+      "text": {
+        "en": "Herbert Nitsch rode a weighted sled to 214 m and back on a single breath, the deepest free dive ratified by AIDA.",
+        "es": "Herbert Nitsch bajó en un trineo con lastre hasta 214 m y volvió con una sola bocanada de aire: la apnea más profunda homologada por AIDA."
+      },
+      "note": {
+        "en": "No-limits discipline. His 253 m dive in 2012 was not ratified; he was badly hurt on the way up.",
+        "es": "Disciplina sin límites. Su inmersión de 253 m en 2012 no fue homologada; sufrió lesiones graves al subir."
+      },
+      "src": "https://herbertnitsch.com/freediver.html",
+      "src_more": [
+        "https://www.deeperblue.com/freediving-world-records/"
+      ]
+    },
+    {
+      "id": "deepest-algae",
+      "depth_m": 268,
+      "kind": "light",
+      "name": {
+        "en": "Deepest known plant life",
+        "es": "La vida vegetal más profunda conocida"
+      },
+      "place": {
+        "en": "Uncharted seamount off San Salvador, Bahamas",
+        "es": "Monte submarino sin cartografiar frente a San Salvador, Bahamas"
+      },
+      "lon": -74.6,
+      "lat": 24.1,
+      "year": 1985,
+      "text": {
+        "en": "Scientists in a submersible found a purple, crust-forming red alga growing at 268 m, where only a tiny trace of sunlight remains. Plant life had been thought to stop at about 200 m.",
+        "es": "Científicos a bordo de un sumergible hallaron un alga roja púrpura en forma de costra que crecía a 268 m, donde solo queda un rastro mínimo de luz solar. Se creía que la vida vegetal terminaba hacia los 200 m."
+      },
+      "note": {
+        "en": "Reported in 1985. Coordinates approximate.",
+        "es": "Se dio a conocer en 1985. Coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1126/science.227.4682.57"
+    },
+    {
+      "id": "gabr-scuba",
+      "depth_m": 332.35,
+      "kind": "record",
+      "name": {
+        "en": "Deepest scuba dive",
+        "es": "Buceo autónomo más profundo"
+      },
+      "place": {
+        "en": "Dahab, Egypt (Red Sea)",
+        "es": "Dahab, Egipto (mar Rojo)"
+      },
+      "lon": 34.52,
+      "lat": 28.49,
+      "year": 2014,
+      "text": {
+        "en": "Ahmed Gabr reached 332.35 m breathing from tanks, then spent many hours coming back up slowly to avoid decompression sickness.",
+        "es": "Ahmed Gabr llegó a 332,35 m respirando de tanques y luego pasó muchas horas subiendo despacio para evitar la enfermedad por descompresión."
+      },
+      "note": {
+        "en": "Guinness reviewed the record after anonymous claims in 2020 and kept it.",
+        "es": "Guinness revisó el récord tras denuncias anónimas en 2020 y lo mantuvo."
+      },
+      "src": "https://www.guinnessworldrecords.com/news/2014/9/ahmed-gabr-breaks-record-for-deepest-scuba-dive-at-more-than-1000-feet-60537",
+      "src_more": [
+        "https://www.guinnessworldrecords.com/news/announcement/deepest-scuba-dive"
+      ]
+    },
+    {
+      "id": "hydra-8",
+      "depth_m": 534,
+      "kind": "record",
+      "name": {
+        "en": "Deepest working dive in the open sea",
+        "es": "Inmersión de trabajo más profunda en mar abierto"
+      },
+      "place": {
+        "en": "Mediterranean Sea, off Marseille, France",
+        "es": "Mar Mediterráneo, frente a Marsella, Francia"
+      },
+      "lon": 5.25,
+      "lat": 42.95,
+      "year": 1988,
+      "text": {
+        "en": "In the Hydra 8 operation, Comex and French Navy divers worked at 534 m on a seabed pipeline, breathing a mix of hydrogen, helium and oxygen. Between dives they lived in a pressurised chamber.",
+        "es": "En la operación Hydra 8, buzos de Comex y de la Marina francesa trabajaron a 534 m en una tubería del fondo marino, respirando una mezcla de hidrógeno, helio y oxígeno. Entre inmersiones vivían en una cámara presurizada."
+      },
+      "note": {
+        "en": "In 1992 Hydra 10 reached a simulated 701 m, but in a chamber on land, not in the sea. The exact site is not published; coordinates approximate.",
+        "es": "En 1992 Hydra 10 llegó a 701 m simulados, pero en una cámara en tierra, no en el mar. El sitio exacto no se ha publicado; coordenadas aproximadas."
+      },
+      "src": "https://comex.fr/en/news-en/hydrogen-mastering-pressures-creating-the-future/",
+      "src_more": [
+        "https://www.rolex.com/en-au/oyster-story/living-laboratory/comex-hydra-viii"
+      ]
+    },
+    {
+      "id": "emperor-penguin",
+      "depth_m": 564,
+      "kind": "record",
+      "name": {
+        "en": "Deepest emperor penguin dive",
+        "es": "Inmersión más profunda de un pingüino emperador"
+      },
+      "place": {
+        "en": "Off the Mawson Coast, East Antarctica",
+        "es": "Frente a la costa Mawson, Antártida Oriental"
+      },
+      "lon": 63.0,
+      "lat": -67.0,
+      "text": {
+        "en": "Depth tags on 93 emperor penguins recorded more than 137,000 dives. The deepest reached 564 m.",
+        "es": "Sensores de profundidad colocados en 93 pingüinos emperador registraron más de 137 000 inmersiones. La más profunda llegó a 564 m."
+      },
+      "note": {
+        "en": "Reported in 2007 from birds tagged in 1988, 1993 and 1994. Coordinates approximate.",
+        "es": "Se publicó en 2007 con datos de aves marcadas en 1988, 1993 y 1994. Coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1007/s00300-006-0168-8"
+    },
+    {
+      "id": "ads-2000",
+      "depth_m": 610,
+      "kind": "record",
+      "name": {
+        "en": "Deepest dive in a hard suit",
+        "es": "Inmersión más profunda con traje rígido"
+      },
+      "place": {
+        "en": "Pacific Ocean, off La Jolla, California, USA",
+        "es": "Océano Pacífico, frente a La Jolla, California, EE. UU."
+      },
+      "lon": -117.4,
+      "lat": 32.85,
+      "year": 2006,
+      "text": {
+        "en": "US Navy diver Daniel Jackson went down 2,000 ft (610 m) in the Hardsuit 2000. The suit keeps surface pressure inside, so the diver needs no decompression.",
+        "es": "El buzo de la Marina de EE. UU. Daniel Jackson bajó a 2 000 pies (610 m) con el Hardsuit 2000. El traje mantiene adentro la presión de la superficie, así que el buzo no necesita descompresión."
+      },
+      "note": {
+        "en": "Coordinates approximate.",
+        "es": "Coordenadas aproximadas."
+      },
+      "src": "https://www.guinnessworldrecords.com/world-records/457348-deepest-dive-using-an-atmospheric-diving-suit"
+    },
+    {
+      "id": "giant-squid",
+      "depth_m": 900,
+      "kind": "other",
+      "name": {
+        "en": "First giant squid seen alive in the deep",
+        "es": "Primer calamar gigante visto vivo en las profundidades"
+      },
+      "place": {
+        "en": "Off Chichijima, Ogasawara Islands, Japan",
+        "es": "Frente a Chichijima, islas Ogasawara, Japón"
+      },
+      "lon": 142.1,
+      "lat": 27.0,
+      "year": 2004,
+      "text": {
+        "en": "A camera on a baited line photographed a giant squid about 8 m long attacking the bait about 900 m down. It was the first time anyone had seen one alive in its home.",
+        "es": "Una cámara en una línea con carnada fotografió a un calamar gigante de unos 8 m de largo atacando el cebo a unos 900 m de profundidad. Fue la primera vez que alguien vio uno vivo en su hábitat."
+      },
+      "note": {
+        "en": "Photographed in September 2004, published in 2005. Coordinates approximate.",
+        "es": "Fotografiado en septiembre de 2004 y publicado en 2005. Coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1098/rspb.2005.3158",
+      "src_more": [
+        "https://www.aljazeera.com/news/2005/9/28/japanese-catch-giant-squid-on-film"
+      ]
+    },
+    {
+      "id": "bathysphere",
+      "depth_m": 923,
+      "kind": "vehicle",
+      "name": {
+        "en": "Bathysphere",
+        "es": "Batisfera"
+      },
+      "place": {
+        "en": "Off Nonsuch Island, Bermuda",
+        "es": "Frente a la isla Nonsuch, Bermudas"
+      },
+      "lon": -64.6,
+      "lat": 32.25,
+      "year": 1934,
+      "text": {
+        "en": "William Beebe and Otis Barton were lowered on a steel cable, inside a hollow steel ball 1.45 m wide, to 3,028 ft (923 m). From a small window they watched glowing deep-sea animals.",
+        "es": "William Beebe y Otis Barton bajaron colgados de un cable de acero, dentro de una esfera hueca de acero de 1,45 m de ancho, hasta 3 028 pies (923 m). Desde una pequeña ventana observaron animales abisales luminosos."
+      },
+      "note": {
+        "en": "The record stood until 1949. Coordinates approximate.",
+        "es": "El récord se mantuvo hasta 1949. Coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1038/135263a0",
+      "src_more": [
+        "https://divingmuseum.org/atoa/bathysphere/"
+      ]
+    },
+    {
+      "id": "last-sunlight",
+      "depth_m": 1000,
+      "kind": "light",
+      "name": {
+        "en": "Last trace of sunlight",
+        "es": "Último rastro de luz solar"
+      },
+      "place": {
+        "en": "World ocean",
+        "es": "Océano mundial"
+      },
+      "text": {
+        "en": "In very clear water, a faint trace of sunlight can reach about 1,000 m. Below this, no light from the surface arrives at all.",
+        "es": "En aguas muy claras, un débil rastro de luz solar puede llegar a unos 1 000 m. Más abajo no llega nada de luz de la superficie."
+      },
+      "src": "https://oceanservice.noaa.gov/facts/light_travel.html",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/light-distributed/"
+      ]
+    },
+    {
+      "id": "komsomolets",
+      "depth_m": 1020,
+      "kind": "vehicle",
+      "name": {
+        "en": "Komsomolets submarine",
+        "es": "Submarino Komsomolets"
+      },
+      "place": {
+        "en": "Norwegian Sea, south-west of Bear Island",
+        "es": "Mar de Noruega, al suroeste de la isla del Oso"
+      },
+      "lon": 13.27,
+      "lat": 73.72,
+      "year": 1984,
+      "text": {
+        "en": "This Soviet submarine, with a titanium hull, dived to about 1,020 m in 1984, the deepest known dive by a military submarine. It sank after a fire in 1989 and now lies almost 1,700 m down.",
+        "es": "Este submarino soviético, con casco de titanio, bajó a unos 1 020 m en 1984: la inmersión más profunda conocida de un submarino militar. Se hundió tras un incendio en 1989 y hoy yace a casi 1 700 m."
+      },
+      "note": {
+        "en": "The real depth limits of military submarines are secret. The 1984 dive is reported as 1,020 to 1,027 m. Coordinates (of the wreck) approximate.",
+        "es": "Los límites reales de profundidad de los submarinos militares son secretos. La inmersión de 1984 se informa entre 1 020 y 1 027 m. Coordenadas (del naufragio) aproximadas."
+      },
+      "src": "https://www.hi.no/en/hi/news/2019/july/researchers-discovered-leak-from-komsomolets",
+      "src_more": [
+        "https://nationalinterest.org/blog/reboot/titanium-and-turmoil-legacy-russias-k-278-komsomolets-submarine-210191",
+        "https://www.rbth.com/history/329045-biggest-deepest-fastest-soviet-subs"
+      ]
+    },
+    {
+      "id": "benthoscope",
+      "depth_m": 1372,
+      "kind": "vehicle",
+      "name": {
+        "en": "Benthoscope",
+        "es": "Bentoscopio"
+      },
+      "place": {
+        "en": "Pacific Ocean, off California, USA",
+        "es": "Océano Pacífico, frente a California, EE. UU."
+      },
+      "year": 1949,
+      "text": {
+        "en": "Otis Barton beat his own bathysphere record in a new steel ball, the Benthoscope, reaching 4,500 ft (about 1,370 m).",
+        "es": "Otis Barton superó su propio récord de la batisfera con una nueva esfera de acero, el bentoscopio, y llegó a 4 500 pies (unos 1 370 m)."
+      },
+      "note": {
+        "en": "The exact dive site is not given in the sources used, so no coordinates.",
+        "es": "Las fuentes usadas no dan el sitio exacto de la inmersión, así que no hay coordenadas."
+      },
+      "src": "https://divingmuseum.org/pioneering-diving-technology/otis-barton-engineer-of-the-bathysphere/"
+    },
+    {
+      "id": "octopus-brooding",
+      "depth_m": 1397,
+      "kind": "other",
+      "name": {
+        "en": "Longest-known egg brooding",
+        "es": "La incubación de huevos más larga conocida"
+      },
+      "place": {
+        "en": "Monterey Canyon, California, USA",
+        "es": "Cañón de Monterey, California, EE. UU."
+      },
+      "lon": -122.05,
+      "lat": 36.75,
+      "text": {
+        "en": "Scientists visited a deep-sea octopus guarding her eggs on a rock face at 1,397 m. She stayed with them for 53 months, from 2007 to 2011, the longest brooding known for any animal.",
+        "es": "Unos científicos visitaron a una hembra de pulpo abisal que cuidaba sus huevos en una pared de roca a 1 397 m. Se quedó con ellos 53 meses, de 2007 a 2011: la incubación más larga conocida en cualquier animal."
+      },
+      "note": {
+        "en": "Reported in 2014. Coordinates approximate.",
+        "es": "Se publicó en 2014. Coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1371/journal.pone.0103437"
+    },
+    {
+      "id": "vent-light",
+      "depth_m": 2391,
+      "kind": "light",
+      "name": {
+        "en": "Photosynthesis without the Sun",
+        "es": "Fotosíntesis sin el Sol"
+      },
+      "place": {
+        "en": "Black smoker on the East Pacific Rise",
+        "es": "Fumarola negra en la dorsal del Pacífico Oriental"
+      },
+      "lon": -104.29,
+      "lat": 9.84,
+      "year": 2005,
+      "text": {
+        "en": "A green sulphur bacterium taken from the plume of a black smoker at 2,391 m seems to live on the faint glow of the hot vent, not on sunlight.",
+        "es": "Una bacteria verde del azufre tomada del penacho de una fumarola negra a 2 391 m parece vivir del tenue brillo de la chimenea caliente y no de la luz solar."
+      },
+      "note": {
+        "en": "Hot vents give off a dim glow too faint for people to see. Coordinates approximate.",
+        "es": "Las fuentes calientes emiten un brillo tan tenue que las personas no lo ven. Coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1073/pnas.0503674102"
+    },
+    {
+      "id": "cuvier-whale",
+      "depth_m": 2992,
+      "kind": "record",
+      "name": {
+        "en": "Deepest dive by a mammal",
+        "es": "Inmersión más profunda de un mamífero"
+      },
+      "place": {
+        "en": "Off Southern California, USA",
+        "es": "Frente al sur de California, EE. UU."
+      },
+      "lon": -118.5,
+      "lat": 32.9,
+      "year": 2014,
+      "text": {
+        "en": "Tagged Cuvier's beaked whales dived as deep as 2,992 m and stayed down as long as 137.5 minutes. Both are records for mammals.",
+        "es": "Zifios de Cuvier con sensores bajaron hasta 2 992 m y aguantaron sumergidos hasta 137,5 minutos. Ambos son récords entre los mamíferos."
+      },
+      "note": {
+        "en": "Reported in 2014. Coordinates approximate.",
+        "es": "Se publicó en 2014. Coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1371/journal.pone.0092633"
+    },
+    {
+      "id": "endurance",
+      "depth_m": 3008,
+      "kind": "wreck",
+      "name": {
+        "en": "Endurance",
+        "es": "Endurance"
+      },
+      "place": {
+        "en": "Weddell Sea, Antarctica",
+        "es": "Mar de Weddell, Antártida"
+      },
+      "lon": -52.44,
+      "lat": -68.72,
+      "year": 2022,
+      "text": {
+        "en": "Ernest Shackleton's ship was crushed by sea ice and sank in 1915. It was found in 2022 at 3,008 m, upright and remarkably well preserved.",
+        "es": "El barco de Ernest Shackleton fue aplastado por el hielo marino y se hundió en 1915. Se halló en 2022 a 3 008 m, erguido y muy bien conservado."
+      },
+      "note": {
+        "en": "Found about 6.4 km south of the position recorded by its captain, Frank Worsley. Coordinates approximate.",
+        "es": "Se halló a unos 6,4 km al sur de la posición que anotó su capitán, Frank Worsley. Coordenadas aproximadas."
+      },
+      "src": "https://www.prnewswire.com/news-releases/endurance-is-found-301498505.html",
+      "src_more": [
+        "https://ukaht.org/places/endurance-shipwreck/"
+      ]
+    },
+    {
+      "id": "octopus-garden",
+      "depth_m": 3200,
+      "kind": "place",
+      "name": {
+        "en": "Octopus Garden",
+        "es": "Jardín de los Pulpos"
+      },
+      "place": {
+        "en": "Davidson Seamount, off central California, USA",
+        "es": "Monte submarino Davidson, frente al centro de California, EE. UU."
+      },
+      "lon": -122.7,
+      "lat": 35.75,
+      "year": 2018,
+      "text": {
+        "en": "Thousands of pearl octopus nest here, the largest known gathering of octopus. Warm water seeping from the seafloor helps their eggs hatch in less than two years instead of five to eight.",
+        "es": "Miles de pulpos perla anidan aquí: es la mayor agrupación de pulpos conocida. El agua tibia que brota del fondo ayuda a que sus huevos eclosionen en menos de dos años, en lugar de cinco a ocho."
+      },
+      "note": {
+        "en": "First seen in 2018. Coordinates approximate.",
+        "es": "Se vio por primera vez en 2018. Coordenadas aproximadas."
+      },
+      "src": "https://www.mbari.org/project/the-octopus-garden/",
+      "src_more": [
+        "https://doi.org/10.1126/sciadv.adg3247"
+      ]
+    },
+    {
+      "id": "average-ocean",
+      "depth_m": 3682,
+      "kind": "place",
+      "name": {
+        "en": "Average depth of the ocean",
+        "es": "Profundidad media del océano"
+      },
+      "place": {
+        "en": "World ocean",
+        "es": "Océano mundial"
+      },
+      "text": {
+        "en": "The ocean is about 3,682 m deep on average, roughly 3.7 km. Much of the seafloor is a cold, dark plain at around this depth.",
+        "es": "El océano tiene en promedio unos 3 682 m de profundidad, cerca de 3,7 km. Gran parte del fondo marino es una llanura fría y oscura a más o menos esa profundidad."
+      },
+      "src": "https://oceanservice.noaa.gov/facts/oceandepth.html"
+    },
+    {
+      "id": "titanic",
+      "depth_m": 3800,
+      "kind": "wreck",
+      "name": {
+        "en": "RMS Titanic",
+        "es": "RMS Titanic"
+      },
+      "place": {
+        "en": "North Atlantic, off Newfoundland",
+        "es": "Atlántico Norte, frente a Terranova"
+      },
+      "lon": -49.947,
+      "lat": 41.733,
+      "year": 1985,
+      "text": {
+        "en": "The liner sank in 1912 after hitting an iceberg. Its wreck, found in 1985, lies in two main pieces about 3,800 m down.",
+        "es": "El transatlántico se hundió en 1912 tras chocar con un iceberg. Sus restos, hallados en 1985, yacen en dos grandes partes a unos 3 800 m."
+      },
+      "src": "https://www.noaa.gov/office-of-general-counsel/gc-international-section/rms-titanic-history-and-significance"
+    },
+    {
+      "id": "bismarck",
+      "depth_m": 4790,
+      "kind": "wreck",
+      "name": {
+        "en": "Battleship Bismarck",
+        "es": "Acorazado Bismarck"
+      },
+      "place": {
+        "en": "North Atlantic, west of Brest, France",
+        "es": "Atlántico Norte, al oeste de Brest, Francia"
+      },
+      "lon": -16.2,
+      "lat": 48.167,
+      "year": 1989,
+      "text": {
+        "en": "Sunk by the British in May 1941, the German battleship was found by Robert Ballard in 1989, resting on its keel about 4,790 m down.",
+        "es": "Hundido por los británicos en mayo de 1941, el acorazado alemán fue hallado por Robert Ballard en 1989, asentado sobre su quilla a unos 4 790 m."
+      },
+      "src": "https://www.kbismarck.com/wreck.html"
+    },
+    {
+      "id": "beebe-vents",
+      "depth_m": 4957,
+      "kind": "place",
+      "name": {
+        "en": "Deepest known hot vents",
+        "es": "Las fuentes hidrotermales más profundas conocidas"
+      },
+      "place": {
+        "en": "Beebe Vent Field, Cayman Trough, Caribbean Sea",
+        "es": "Campo hidrotermal Beebe, fosa de las Caimán, mar Caribe"
+      },
+      "lon": -81.7182,
+      "lat": 18.5466,
+      "year": 2010,
+      "text": {
+        "en": "The deepest hydrothermal vents known gush water at up to 398 °C about 4,960 m down. Thousands of shrimp crowd onto the chimneys.",
+        "es": "Las fuentes hidrotermales más profundas que se conocen expulsan agua de hasta 398 °C a unos 4 960 m de profundidad. Miles de camarones se amontonan en las chimeneas."
+      },
+      "src": "https://doi.org/10.1038/ncomms1636",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "calypso-deep",
+      "depth_m": 5109,
+      "kind": "place",
+      "name": {
+        "en": "Calypso Deep",
+        "es": "Abismo Calipso"
+      },
+      "place": {
+        "en": "Hellenic Trench, Ionian Sea, off Greece",
+        "es": "Fosa Helénica, mar Jónico, frente a Grecia"
+      },
+      "lon": 21.13,
+      "lat": 36.57,
+      "text": {
+        "en": "The deepest point of the Mediterranean Sea is about 5,109 m down. A crewed dive measured it in 2020 and found plastic bags and cans on the bottom.",
+        "es": "El punto más profundo del mar Mediterráneo está a unos 5 109 m. Una inmersión tripulada lo midió en 2020 y encontró bolsas de plástico y latas en el fondo."
+      },
+      "note": {
+        "en": "First reached in 1965 by the French bathyscaphe Archimède, which reported 5,110 m. Coordinates approximate.",
+        "es": "El batiscafo francés Archimède llegó por primera vez en 1965 e informó 5 110 m. Coordenadas aproximadas."
+      },
+      "src": "https://caladanoceanic.com/expeditions/calypso/pressrelease/"
+    },
+    {
+      "id": "indianapolis",
+      "depth_m": 5500,
+      "kind": "wreck",
+      "name": {
+        "en": "USS Indianapolis",
+        "es": "USS Indianapolis"
+      },
+      "place": {
+        "en": "Philippine Sea, western Pacific",
+        "es": "Mar de Filipinas, Pacífico occidental"
+      },
+      "lon": 134.8,
+      "lat": 12.03,
+      "year": 2017,
+      "text": {
+        "en": "A Japanese submarine sank the US cruiser in 12 minutes in July 1945; only 317 of the 1,196 people on board survived. The wreck was found in 2017 about 5,500 m down.",
+        "es": "Un submarino japonés hundió el crucero estadounidense en 12 minutos en julio de 1945; de las 1 196 personas a bordo solo sobrevivieron 317. Sus restos se hallaron en 2017 a unos 5 500 m."
+      },
+      "note": {
+        "en": "The US Navy keeps the exact position secret; coordinates approximate.",
+        "es": "La Marina de EE. UU. mantiene en secreto la posición exacta; coordenadas aproximadas."
+      },
+      "src": "https://www.prnewswire.com/news-releases/wreckage-from-the-uss-indianapolis-located-in-the-philippine-sea-72-years-after-it-was-torpedoed-and-sunk-during-final-days-of-world-war-ii-300506832.html",
+      "src_more": [
+        "https://news.usni.org/2017/08/19/uss-indianapolis-wreckage-found"
+      ]
+    },
+    {
+      "id": "molloy-hole",
+      "depth_m": 5551,
+      "kind": "place",
+      "name": {
+        "en": "Molloy Hole",
+        "es": "Abismo Molloy"
+      },
+      "place": {
+        "en": "Fram Strait, Arctic Ocean",
+        "es": "Estrecho de Fram, océano Ártico"
+      },
+      "lon": 2.706,
+      "lat": 79.194,
+      "text": {
+        "en": "The deepest point of the Arctic Ocean is about 5,551 m down, between Greenland and Svalbard. Victor Vescovo dived there in 2019.",
+        "es": "El punto más profundo del océano Ártico está a unos 5 551 m, entre Groenlandia y Svalbard. Victor Vescovo bajó hasta allí en 2019."
+      },
+      "note": {
+        "en": "Also called Molloy Deep. Sonar gives 5,551 ± 14 m.",
+        "es": "También se le llama abismo o fosa de Molloy. El sonar da 5 551 ± 14 m."
+      },
+      "src": "https://doi.org/10.1002/gdj3.122",
+      "src_more": [
+        "https://www.guinnessworldrecords.com/world-records/deepest-descent-in-the-sea-by-a-manned-vessel"
+      ]
+    },
+    {
+      "id": "uss-johnston",
+      "depth_m": 6469,
+      "kind": "wreck",
+      "name": {
+        "en": "USS Johnston",
+        "es": "USS Johnston"
+      },
+      "place": {
+        "en": "Philippine Sea, off Samar, Philippines",
+        "es": "Mar de Filipinas, frente a Samar, Filipinas"
+      },
+      "lon": 126.6,
+      "lat": 11.6,
+      "year": 2021,
+      "text": {
+        "en": "This US destroyer sank in the Battle off Samar in 1944. In 2021 a crewed submersible confirmed it at about 6,469 m, then the deepest wreck ever dived.",
+        "es": "Este destructor estadounidense se hundió en la batalla frente a Samar en 1944. En 2021 un sumergible tripulado lo confirmó a unos 6 469 m: entonces era el naufragio más profundo jamás visitado."
+      },
+      "note": {
+        "en": "Probably located in 2019 and identified in 2021. Its exact position is not public; coordinates approximate.",
+        "es": "Probablemente se localizó en 2019 y se identificó en 2021. Su posición exacta no es pública; coordenadas aproximadas."
+      },
+      "src": "https://www.guinnessworldrecords.com/world-records/deepest-shipwreck",
+      "src_more": [
+        "https://caladanoceanic.com/expeditions/samar/"
+      ]
+    },
+    {
+      "id": "alvin",
+      "depth_m": 6500,
+      "kind": "vehicle",
+      "name": {
+        "en": "Alvin",
+        "es": "Alvin"
+      },
+      "place": {
+        "en": "Run by WHOI, USA",
+        "es": "Operado por el WHOI, EE. UU."
+      },
+      "year": 2022,
+      "text": {
+        "en": "In service since 1964, this submersible for a pilot and two scientists found the first deep-sea hot vents in 1977 and visited the Titanic in 1986. Since 2022 it can dive to 6,500 m, which reaches 99 percent of the seafloor.",
+        "es": "En servicio desde 1964, este sumergible para un piloto y dos científicos halló las primeras fuentes hidrotermales profundas en 1977 y visitó el Titanic en 1986. Desde 2022 puede bajar a 6 500 m, lo que le da acceso al 99 % del fondo marino."
+      },
+      "note": {
+        "en": "Before the upgrade its limit was 4,500 m.",
+        "es": "Antes de la mejora su límite era de 4 500 m."
+      },
+      "src": "https://www.whoi.edu/what-we-do/explore/underwater-vehicles/hov-alvin/",
+      "src_more": [
+        "https://ndsf.whoi.edu/alvin/",
+        "https://doi.org/10.1126/science.203.4385.1073"
+      ]
+    },
+    {
+      "id": "shinkai-6500",
+      "depth_m": 6500,
+      "kind": "vehicle",
+      "name": {
+        "en": "Shinkai 6500",
+        "es": "Shinkai 6500"
+      },
+      "place": {
+        "en": "Run by JAMSTEC, Japan",
+        "es": "Operado por JAMSTEC, Japón"
+      },
+      "year": 1991,
+      "text": {
+        "en": "Japan's research submersible carries two pilots and one scientist to 6,500 m, where the pressure is about 681 atmospheres. Its titanium hull is 73.5 mm thick.",
+        "es": "El sumergible de investigación de Japón lleva a dos pilotos y un científico hasta 6 500 m, donde la presión es de unas 681 atmósferas. Su casco de titanio mide 73,5 mm de espesor."
+      },
+      "note": {
+        "en": "Began its research dives in 1991.",
+        "es": "Empezó sus inmersiones de investigación en 1991."
+      },
+      "src": "https://www.jamstec.go.jp/e/about/equipment/ships/shinkai6500.html"
+    },
+    {
+      "id": "samuel-b-roberts",
+      "depth_m": 6865,
+      "kind": "wreck",
+      "name": {
+        "en": "USS Samuel B. Roberts",
+        "es": "USS Samuel B. Roberts"
+      },
+      "place": {
+        "en": "Philippine Sea, off Samar, Philippines",
+        "es": "Mar de Filipinas, frente a Samar, Filipinas"
+      },
+      "lon": 126.6,
+      "lat": 11.6,
+      "year": 2022,
+      "text": {
+        "en": "The deepest shipwreck ever found is this US destroyer escort, sunk in 1944 and located in 2022 at 6,865 m.",
+        "es": "El naufragio más profundo jamás hallado es este destructor de escolta estadounidense, hundido en 1944 y localizado en 2022 a 6 865 m."
+      },
+      "note": {
+        "en": "First reported as 6,895 m, then corrected to 6,865 m. Exact position kept secret (war grave); coordinates approximate.",
+        "es": "Primero se informó 6 895 m y luego se corrigió a 6 865 m. La posición exacta es secreta (tumba de guerra); coordenadas aproximadas."
+      },
+      "src": "https://www.guinnessworldrecords.com/world-records/deepest-shipwreck",
+      "src_more": [
+        "https://www.navy.mil/Press-Office/Press-Releases/display-pressreleases/Article/3075891/navy-confirms-wrecksite-off-philippines-coast-that-of-uss-samuel-b-roberts/"
+      ]
+    },
+    {
+      "id": "dumbo-octopus",
+      "depth_m": 6957,
+      "kind": "record",
+      "name": {
+        "en": "Deepest octopus",
+        "es": "El pulpo más profundo"
+      },
+      "place": {
+        "en": "Java Trench, Indian Ocean",
+        "es": "Fosa de Java, océano Índico"
+      },
+      "lon": 114.9283,
+      "lat": -11.12,
+      "year": 2019,
+      "text": {
+        "en": "A dumbo octopus about 20 cm long was filmed foraging at 6,957 m, in water at 1.51 °C. It is the deepest octopus ever seen.",
+        "es": "Se filmó a un pulpo dumbo de unos 20 cm buscando alimento a 6 957 m, en agua a 1,51 °C. Es el pulpo más profundo jamás visto."
+      },
+      "src": "https://www.guinnessworldrecords.com/world-records/83167-deepest-octopus",
+      "src_more": [
+        "https://doi.org/10.1007/s00227-020-03701-1"
+      ]
+    },
+    {
+      "id": "java-trench",
+      "depth_m": 7187,
+      "kind": "place",
+      "name": {
+        "en": "Java Trench deep",
+        "es": "Abismo de la fosa de Java"
+      },
+      "place": {
+        "en": "Java (Sunda) Trench, Indian Ocean, south of Bali",
+        "es": "Fosa de Java (o de la Sonda), océano Índico, al sur de Bali"
+      },
+      "lon": 114.942,
+      "lat": -11.129,
+      "text": {
+        "en": "The deepest known point of the Indian Ocean is about 7,190 m down, in the Java (Sunda) Trench. Victor Vescovo dived there in 2019.",
+        "es": "El punto más profundo conocido del océano Índico está a unos 7 190 m, en la fosa de Java (o de la Sonda). Victor Vescovo bajó hasta allí en 2019."
+      },
+      "note": {
+        "en": "Sonar gives 7,187 ± 13 m; the 2019 crewed dive measured 7,192 m.",
+        "es": "El sonar da 7 187 ± 13 m; la inmersión tripulada de 2019 midió 7 192 m."
+      },
+      "src": "https://doi.org/10.1002/gdj3.122",
+      "src_more": [
+        "https://www.guinnessworldrecords.com/world-records/deepest-descent-in-the-sea-by-a-manned-vessel"
+      ]
+    },
+    {
+      "id": "factorian-deep",
+      "depth_m": 7432,
+      "kind": "place",
+      "name": {
+        "en": "Factorian Deep",
+        "es": "Abismo Factorian"
+      },
+      "place": {
+        "en": "South Sandwich Trench, Southern Ocean",
+        "es": "Fosa de las Sandwich del Sur, océano Austral"
+      },
+      "lon": -25.542,
+      "lat": -60.479,
+      "text": {
+        "en": "The deepest point of the Southern Ocean, south of 60° S, is about 7,432 m down. It was found and first visited in 2019.",
+        "es": "El punto más profundo del océano Austral, al sur de los 60° S, está a unos 7 432 m. Se descubrió y se visitó por primera vez en 2019."
+      },
+      "note": {
+        "en": "The trench's deepest point overall, Meteor Deep, lies further north, in the Atlantic.",
+        "es": "El punto más profundo de toda la fosa, el abismo Meteor, está más al norte, en el Atlántico."
+      },
+      "src": "https://doi.org/10.1002/gdj3.122",
+      "src_more": [
+        "https://www.guinnessworldrecords.com/world-records/deepest-descent-in-the-sea-by-a-manned-vessel"
+      ]
+    },
+    {
+      "id": "snailfish-caught",
+      "depth_m": 8022,
+      "kind": "record",
+      "name": {
+        "en": "Deepest fish ever caught",
+        "es": "El pez más profundo jamás capturado"
+      },
+      "place": {
+        "en": "Japan Trench, off northern Japan",
+        "es": "Fosa de Japón, frente al norte de Japón"
+      },
+      "lon": 143.9,
+      "lat": 37.9,
+      "year": 2022,
+      "text": {
+        "en": "Two snailfish (Pseudoliparis belyaevi) were caught in traps at 8,022 m, the first fish ever collected from deeper than 8,000 m.",
+        "es": "Se capturaron en trampas dos peces caracol (Pseudoliparis belyaevi) a 8 022 m: los primeros peces recogidos a más de 8 000 m."
+      },
+      "note": {
+        "en": "Coordinates approximate.",
+        "es": "Coordenadas aproximadas."
+      },
+      "src": "https://www.uwa.edu.au/news/article/2023/april/scientists-break-new-record-after-finding-worlds-deepest-fish"
+    },
+    {
+      "id": "meteor-deep",
+      "depth_m": 8265,
+      "kind": "place",
+      "name": {
+        "en": "Meteor Deep",
+        "es": "Abismo Meteor"
+      },
+      "place": {
+        "en": "South Sandwich Trench, South Atlantic",
+        "es": "Fosa de las Sandwich del Sur, Atlántico Sur"
+      },
+      "lon": -26.173,
+      "lat": -55.23,
+      "text": {
+        "en": "The deepest part of the South Sandwich Trench is about 8,265 m down. It lies north of 60° S, so it counts as part of the Atlantic, not the Southern Ocean.",
+        "es": "La parte más profunda de la fosa de las Sandwich del Sur está a unos 8 265 m. Queda al norte de los 60° S, así que cuenta como parte del Atlántico y no del océano Austral."
+      },
+      "src": "https://doi.org/10.1002/gdj3.122"
+    },
+    {
+      "id": "snailfish-filmed",
+      "depth_m": 8336,
+      "kind": "record",
+      "name": {
+        "en": "Deepest fish ever filmed",
+        "es": "El pez más profundo jamás filmado"
+      },
+      "place": {
+        "en": "Izu-Ogasawara Trench, south of Japan",
+        "es": "Fosa de Izu-Ogasawara, al sur de Japón"
+      },
+      "lon": 142.6,
+      "lat": 29.5,
+      "year": 2022,
+      "text": {
+        "en": "A young snailfish of the genus Pseudoliparis was filmed at 8,336 m. No fish has ever been seen deeper.",
+        "es": "Se filmó a un pez caracol joven del género Pseudoliparis a 8 336 m. Nunca se ha visto un pez a mayor profundidad."
+      },
+      "note": {
+        "en": "Coordinates approximate.",
+        "es": "Coordenadas aproximadas."
+      },
+      "src": "https://www.uwa.edu.au/news/article/2023/april/scientists-break-new-record-after-finding-worlds-deepest-fish"
+    },
+    {
+      "id": "puerto-rico-trench",
+      "depth_m": 8378,
+      "kind": "place",
+      "name": {
+        "en": "Puerto Rico Trench (Milwaukee Deep)",
+        "es": "Fosa de Puerto Rico (abismo Milwaukee)"
+      },
+      "place": {
+        "en": "North of Puerto Rico, Atlantic Ocean",
+        "es": "Al norte de Puerto Rico, océano Atlántico"
+      },
+      "lon": -67.311,
+      "lat": 19.712,
+      "text": {
+        "en": "The deepest point of the Atlantic Ocean is about 8,378 m down, in the Puerto Rico Trench. Its deepest area is often called the Milwaukee Deep.",
+        "es": "El punto más profundo del océano Atlántico está a unos 8 378 m, en la fosa de Puerto Rico. Su zona más profunda suele llamarse abismo Milwaukee."
+      },
+      "note": {
+        "en": "A 2018 sonar survey gave 8,378 ± 5 m and named the exact spot Brownson Deep. Older estimates went up to about 8,600 m.",
+        "es": "Un estudio con sonar de 2018 dio 8 378 ± 5 m y llamó al punto exacto abismo Brownson. Estimaciones anteriores llegaban a unos 8 600 m."
+      },
+      "src": "https://doi.org/10.1002/gdj3.122",
+      "src_more": [
+        "https://www.guinnessworldrecords.com/world-records/deepest-descent-in-the-sea-by-a-manned-vessel"
+      ]
+    },
+    {
+      "id": "horizon-deep",
+      "depth_m": 10816,
+      "kind": "place",
+      "name": {
+        "en": "Horizon Deep",
+        "es": "Abismo Horizon"
+      },
+      "place": {
+        "en": "Tonga Trench, South Pacific",
+        "es": "Fosa de Tonga, Pacífico Sur"
+      },
+      "lon": -174.74,
+      "lat": -23.27,
+      "text": {
+        "en": "The second-deepest known point of the Pacific Ocean is about 10,816 m down, in the Tonga Trench.",
+        "es": "El segundo punto más profundo conocido del océano Pacífico está a unos 10 816 m, en la fosa de Tonga."
+      },
+      "src": "https://doi.org/10.1002/gdj3.122"
+    },
+    {
+      "id": "plastic-bag",
+      "depth_m": 10898,
+      "kind": "other",
+      "name": {
+        "en": "Deepest plastic bag",
+        "es": "La bolsa de plástico más profunda"
+      },
+      "place": {
+        "en": "Mariana Trench, western Pacific",
+        "es": "Fosa de las Marianas, Pacífico occidental"
+      },
+      "lon": 142.4,
+      "lat": 11.35,
+      "year": 1998,
+      "text": {
+        "en": "In 1998 the robot Kaikō photographed a plastic bag on the floor of the Mariana Trench at 10,898 m. It is the deepest item in a database of deep-sea litter.",
+        "es": "En 1998 el robot Kaikō fotografió una bolsa de plástico en el fondo de la fosa de las Marianas, a 10 898 m. Es el registro más profundo de una base de datos de basura en las profundidades."
+      },
+      "note": {
+        "en": "Reported in 2018. Coordinates approximate.",
+        "es": "Se publicó en 2018. Coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1016/j.marpol.2018.03.022"
+    },
+    {
+      "id": "nereus",
+      "depth_m": 10902,
+      "kind": "vehicle",
+      "name": {
+        "en": "Nereus",
+        "es": "Nereus"
+      },
+      "place": {
+        "en": "Challenger Deep, Mariana Trench",
+        "es": "Abismo Challenger, fosa de las Marianas"
+      },
+      "lon": 142.59,
+      "lat": 11.37,
+      "year": 2009,
+      "text": {
+        "en": "This WHOI robot, which could work on a cable or swim free, reached 10,902 m in 2009. It was lost in 2014 at 9,990 m in the Kermadec Trench, probably crushed by the pressure.",
+        "es": "Este robot del WHOI, que podía trabajar con cable o nadar libre, llegó a 10 902 m en 2009. Se perdió en 2014 a 9 990 m en la fosa de Kermadec, probablemente aplastado por la presión."
+      },
+      "note": {
+        "en": "Coordinates approximate (Challenger Deep).",
+        "es": "Coordenadas aproximadas (abismo Challenger)."
+      },
+      "src": "https://www.whoi.edu/press-room/news-tip/faq-nereus/"
+    },
+    {
+      "id": "deepsea-challenger",
+      "depth_m": 10908,
+      "kind": "vehicle",
+      "name": {
+        "en": "Deepsea Challenger",
+        "es": "Deepsea Challenger"
+      },
+      "place": {
+        "en": "Challenger Deep, Mariana Trench",
+        "es": "Abismo Challenger, fosa de las Marianas"
+      },
+      "lon": 142.59,
+      "lat": 11.37,
+      "year": 2012,
+      "text": {
+        "en": "Film director James Cameron made the first solo dive to the bottom of the Challenger Deep in this submersible, reaching a reported 10,908 m.",
+        "es": "El cineasta James Cameron hizo en este sumergible la primera inmersión en solitario hasta el fondo del abismo Challenger y llegó, según se informó, a 10 908 m."
+      },
+      "note": {
+        "en": "Coordinates approximate (Challenger Deep).",
+        "es": "Coordenadas aproximadas (abismo Challenger)."
+      },
+      "src": "https://www.guinnessworldrecords.com/world-records/deepest-descent-in-the-sea-by-a-manned-vessel"
+    },
+    {
+      "id": "fendouzhe",
+      "depth_m": 10909,
+      "kind": "vehicle",
+      "name": {
+        "en": "Fendouzhe (Striver)",
+        "es": "Fendouzhe (Striver)"
+      },
+      "place": {
+        "en": "Challenger Deep, Mariana Trench",
+        "es": "Abismo Challenger, fosa de las Marianas"
+      },
+      "lon": 142.59,
+      "lat": 11.37,
+      "year": 2020,
+      "text": {
+        "en": "China's crewed submersible reached 10,909 m in the Challenger Deep. In 2024 it found the deepest known seep communities, at 9,533 m.",
+        "es": "El sumergible tripulado de China llegó a 10 909 m en el abismo Challenger. En 2024 halló las comunidades de filtraciones frías más profundas conocidas, a 9 533 m."
+      },
+      "note": {
+        "en": "Coordinates approximate (Challenger Deep).",
+        "es": "Coordenadas aproximadas (abismo Challenger)."
+      },
+      "src": "https://english.cas.cn/newsroom/cas_media/202011/t20201111_249059.shtml",
+      "src_more": [
+        "https://doi.org/10.1038/s41586-025-09317-z"
+      ]
+    },
+    {
+      "id": "kaiko",
+      "depth_m": 10911,
+      "kind": "vehicle",
+      "name": {
+        "en": "Kaikō",
+        "es": "Kaikō"
+      },
+      "place": {
+        "en": "Challenger Deep, Mariana Trench",
+        "es": "Abismo Challenger, fosa de las Marianas"
+      },
+      "lon": 142.59,
+      "lat": 11.37,
+      "year": 1995,
+      "text": {
+        "en": "This Japanese remotely operated vehicle reached 10,911.4 m in 1995 and later brought up mud, microbes and amphipods from the bottom. It was lost in 2003 when its cable broke.",
+        "es": "Este vehículo japonés operado a distancia llegó a 10 911,4 m en 1995 y después subió lodo, microbios y anfípodos del fondo. Se perdió en 2003, cuando se rompió su cable."
+      },
+      "note": {
+        "en": "Coordinates approximate (Challenger Deep).",
+        "es": "Coordenadas aproximadas (abismo Challenger)."
+      },
+      "src": "https://www.jamstec.go.jp/e/about/equipment/ships/kaiko.html"
+    },
+    {
+      "id": "trieste",
+      "depth_m": 10916,
+      "kind": "vehicle",
+      "name": {
+        "en": "Trieste",
+        "es": "Trieste"
+      },
+      "place": {
+        "en": "Challenger Deep, Mariana Trench",
+        "es": "Abismo Challenger, fosa de las Marianas"
+      },
+      "lon": 142.59,
+      "lat": 11.37,
+      "year": 1960,
+      "text": {
+        "en": "Jacques Piccard and Don Walsh made the first dive to the bottom of the Challenger Deep in this bathyscaphe on 23 January 1960, at about 10,916 m.",
+        "es": "Jacques Piccard y Don Walsh hicieron en este batiscafo la primera inmersión hasta el fondo del abismo Challenger, el 23 de enero de 1960, a unos 10 916 m."
+      },
+      "note": {
+        "en": "Reported depths range from about 10,911 to 10,916 m (35,800 to 35,814 ft). Coordinates approximate.",
+        "es": "Las profundidades informadas van de unos 10 911 a 10 916 m (35 800 a 35 814 pies). Coordenadas aproximadas."
+      },
+      "src": "https://www.usni.org/magazines/naval-history-magazine/2020/february/triestes-deepest-dive",
+      "src_more": [
+        "https://www.history.navy.mil/browse-by-topic/exploration-and-innovation/bathyscaph-trieste.html",
+        "https://www.guinnessworldrecords.com/world-records/deepest-descent-in-the-sea-by-a-manned-vessel"
+      ]
+    },
+    {
+      "id": "limiting-factor",
+      "depth_m": 10925,
+      "kind": "vehicle",
+      "name": {
+        "en": "Limiting Factor (Five Deeps)",
+        "es": "Limiting Factor (Five Deeps)"
+      },
+      "place": {
+        "en": "Challenger Deep, Mariana Trench",
+        "es": "Abismo Challenger, fosa de las Marianas"
+      },
+      "lon": 142.587,
+      "lat": 11.369,
+      "year": 2019,
+      "text": {
+        "en": "In 2018 and 2019 Victor Vescovo piloted this submersible to the deepest point of all five oceans, the Five Deeps Expedition. His Challenger Deep dive reached about 10,925 m.",
+        "es": "Entre 2018 y 2019 Victor Vescovo pilotó este sumergible hasta el punto más profundo de los cinco océanos, en la expedición Five Deeps. Su inmersión al abismo Challenger llegó a unos 10 925 m."
+      },
+      "note": {
+        "en": "It was the first submersible certified for repeated dives to full ocean depth. Guinness later raised the depth of the spot to 10,934 m with new data.",
+        "es": "Fue el primer sumergible certificado para bajar una y otra vez a la máxima profundidad del océano. Más tarde Guinness elevó la profundidad del lugar a 10 934 m con datos nuevos."
+      },
+      "src": "https://www.guinnessworldrecords.com/world-records/deepest-descent-in-the-sea-by-a-manned-vessel",
+      "src_more": [
+        "https://caladanoceanic.com/home/technology/sub/"
+      ]
+    },
+    {
+      "id": "challenger-deep",
+      "depth_m": 10935,
+      "kind": "place",
+      "name": {
+        "en": "Challenger Deep",
+        "es": "Abismo Challenger"
+      },
+      "place": {
+        "en": "Mariana Trench, western Pacific",
+        "es": "Fosa de las Marianas, Pacífico occidental"
+      },
+      "lon": 142.587,
+      "lat": 11.369,
+      "text": {
+        "en": "The deepest known point of the ocean is about 10,935 m down. Mount Everest would fit inside with about 2 km of water to spare.",
+        "es": "El punto más profundo conocido del océano está a unos 10 935 m. El monte Everest cabría dentro y aún le quedarían unos 2 km de agua encima."
+      },
+      "note": {
+        "en": "The figure varies by survey, from about 10,920 to 10,935 m.",
+        "es": "La cifra cambia según el estudio, de unos 10 920 a 10 935 m."
+      },
+      "src": "https://oceanservice.noaa.gov/facts/oceandepth.html",
+      "src_more": [
+        "https://doi.org/10.1002/gdj3.122",
+        "https://www.guinnessworldrecords.com/world-records/deepest-descent-in-the-sea-by-a-manned-vessel"
+      ]
+    }
+  ],
+  "vents": [
+    {
+      "id": "galapagos-rift",
+      "kind": "white-smoker",
+      "name": {
+        "en": "Galápagos Rift (Rose Garden)",
+        "es": "Rift de las Galápagos (Rose Garden)"
+      },
+      "lon": -86.2267,
+      "lat": 0.8058,
+      "depth_m": 2550,
+      "year": 1977,
+      "text": {
+        "en": "The first deep-sea hot springs ever found. In 1977 scientists in Alvin saw warm water shimmering out of the seafloor, surrounded by giant tube worms, clams and mussels: a whole ecosystem living without sunlight.",
+        "es": "Las primeras fuentes termales profundas jamás halladas. En 1977, científicos a bordo del Alvin vieron agua tibia que brotaba del fondo, rodeada de gusanos de tubo gigantes, almejas y mejillones: todo un ecosistema que vive sin luz solar."
+      },
+      "note": {
+        "en": "These vents release warm water (up to about 22 °C), not black smoke; they are grouped with the white smokers here. Depth 2,450 to 2,550 m.",
+        "es": "Estas fuentes liberan agua tibia (hasta unos 22 °C) y no humo negro; aquí se agrupan con las fumarolas blancas. Profundidad de 2 450 a 2 550 m."
+      },
+      "src": "https://doi.org/10.1126/science.203.4385.1073",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "epr-21n",
+      "kind": "black-smoker",
+      "name": {
+        "en": "East Pacific Rise, 21° N",
+        "es": "Dorsal del Pacífico Oriental, 21° N"
+      },
+      "lon": -109.0833,
+      "lat": 20.8333,
+      "depth_m": 2600,
+      "year": 1979,
+      "text": {
+        "en": "Here, in 1979, Alvin found the first black smokers: chimneys gushing water at about 350 °C, blackened by metal sulphides.",
+        "es": "Aquí, en 1979, el Alvin halló las primeras fumarolas negras: chimeneas que expulsan agua a unos 350 °C, ennegrecida por sulfuros metálicos."
+      },
+      "src": "https://doi.org/10.1126/science.207.4438.1421",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "lost-city",
+      "kind": "alkaline",
+      "name": {
+        "en": "Lost City",
+        "es": "Lost City (Ciudad Perdida)"
+      },
+      "lon": -42.1183,
+      "lat": 30.125,
+      "depth_m": 800,
+      "year": 2000,
+      "text": {
+        "en": "Pale carbonate towers rise from an undersea massif 15 km from the Mid-Atlantic Ridge. The water is only 40 to 90 °C and alkaline, probably heated by reactions between seawater and mantle rock rather than by magma.",
+        "es": "Torres claras de carbonato se alzan sobre un macizo submarino a 15 km de la dorsal Mesoatlántica. El agua sale a solo 40 a 90 °C y es alcalina; probablemente la calientan reacciones entre el agua de mar y las rocas del manto, no el magma."
+      },
+      "note": {
+        "en": "Depth 720 to 800 m.",
+        "es": "Profundidad de 720 a 800 m."
+      },
+      "src": "https://doi.org/10.1038/35084000",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "tag",
+      "kind": "black-smoker",
+      "name": {
+        "en": "TAG (Trans-Atlantic Geotraverse)",
+        "es": "TAG (Trans-Atlantic Geotraverse)"
+      },
+      "lon": -44.8267,
+      "lat": 26.1367,
+      "depth_m": 3670,
+      "year": 1985,
+      "text": {
+        "en": "The first high-temperature vents found on the Mid-Atlantic Ridge. Fluids up to about 369 °C pour from a large mound of metal sulphides, and shrimp swarm over the chimneys.",
+        "es": "Las primeras fuentes de alta temperatura halladas en la dorsal Mesoatlántica. Fluidos de hasta unos 369 °C brotan de un gran montículo de sulfuros metálicos, y los camarones pululan sobre las chimeneas."
+      },
+      "note": {
+        "en": "Depth 3,436 to 3,670 m.",
+        "es": "Profundidad de 3 436 a 3 670 m."
+      },
+      "src": "https://doi.org/10.1038/321033a0",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "snake-pit",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Snake Pit",
+        "es": "Snake Pit"
+      },
+      "lon": -44.95,
+      "lat": 23.3683,
+      "depth_m": 3500,
+      "year": 1985,
+      "text": {
+        "en": "Black smokers up to about 366 °C stand on a volcanic ridge in the middle of the Mid-Atlantic rift valley. It was the first active vent deposit ever drilled.",
+        "es": "Fumarolas negras de hasta unos 366 °C se alzan sobre una cresta volcánica en medio del valle del rift mesoatlántico. Fue el primer depósito hidrotermal activo que se perforó."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "rainbow",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Rainbow",
+        "es": "Rainbow"
+      },
+      "lon": -33.902,
+      "lat": 36.23,
+      "depth_m": 2320,
+      "year": 1997,
+      "text": {
+        "en": "Hot, acidic fluids up to about 362 °C rise through mantle rock laid bare by faults, south-west of the Azores. Dense swarms of Rimicaris shrimp cover its chimneys.",
+        "es": "Fluidos calientes y ácidos, de hasta unos 362 °C, suben a través de rocas del manto que las fallas dejaron al descubierto, al suroeste de las Azores. Densos enjambres de camarones Rimicaris cubren sus chimeneas."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "menez-gwen",
+      "kind": "white-smoker",
+      "name": {
+        "en": "Menez Gwen",
+        "es": "Menez Gwen"
+      },
+      "lon": -31.525,
+      "lat": 37.8417,
+      "depth_m": 865,
+      "year": 1994,
+      "text": {
+        "en": "On the summit of a young volcano near the Azores, small white chimneys of anhydrite vent fluids at up to 281 °C. Mussels cover the rocks, and deep-sea fish and crabs come visiting.",
+        "es": "En la cima de un volcán joven cerca de las Azores, pequeñas chimeneas blancas de anhidrita expulsan fluidos de hasta 281 °C. Los mejillones cubren las rocas, y peces y cangrejos de aguas profundas llegan de visita."
+      },
+      "note": {
+        "en": "Depth 840 to 865 m.",
+        "es": "Profundidad de 840 a 865 m."
+      },
+      "src": "https://doi.org/10.1038/377201a0",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "lucky-strike",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Lucky Strike",
+        "es": "Lucky Strike"
+      },
+      "lon": -32.2733,
+      "lat": 37.2933,
+      "depth_m": 1740,
+      "year": 1993,
+      "text": {
+        "en": "One of the largest vent fields known, with about 21 chimneys around a solidified lava lake on top of a big undersea volcano near the Azores. Mussels dominate its animal life.",
+        "es": "Uno de los campos hidrotermales más grandes conocidos, con unas 21 chimeneas alrededor de un lago de lava solidificado en la cima de un gran volcán submarino cerca de las Azores. Los mejillones dominan su fauna."
+      },
+      "note": {
+        "en": "Depth 1,600 to 1,740 m.",
+        "es": "Profundidad de 1 600 a 1 740 m."
+      },
+      "src": "https://doi.org/10.1016/S0012-821X(97)00027-7",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "beebe",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Beebe Vent Field",
+        "es": "Campo hidrotermal Beebe"
+      },
+      "lon": -81.7182,
+      "lat": 18.5466,
+      "depth_m": 4957,
+      "year": 2010,
+      "text": {
+        "en": "The deepest hydrothermal vents known, about 4,960 m down in the Cayman Trough. Water gushes out at up to 398 °C, and more than 2,000 shrimp can crowd onto a single square metre.",
+        "es": "Las fuentes hidrotermales más profundas conocidas, a unos 4 960 m en la fosa de las Caimán. El agua brota a hasta 398 °C, y más de 2 000 camarones pueden amontonarse en un solo metro cuadrado."
+      },
+      "src": "https://doi.org/10.1038/ncomms1636",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "lokis-castle",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Loki's Castle",
+        "es": "Castillo de Loki"
+      },
+      "lon": 8.15,
+      "lat": 73.55,
+      "depth_m": 2400,
+      "year": 2008,
+      "text": {
+        "en": "The first black smokers found on the Arctic Mid-Ocean Ridge, between Norway and Greenland. Four chimneys up to 13 m tall vent fluids at 310 to 320 °C. Microbes found nearby were named Lokiarchaeota after it.",
+        "es": "Las primeras fumarolas negras halladas en la dorsal mesoceánica del Ártico, entre Noruega y Groenlandia. Cuatro chimeneas de hasta 13 m de alto expulsan fluidos a 310–320 °C. Unos microbios hallados cerca recibieron el nombre de Lokiarchaeota por este lugar."
+      },
+      "src": "https://doi.org/10.1038/ncomms1124",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "champagne",
+      "kind": "white-smoker",
+      "name": {
+        "en": "Champagne vent (NW Eifuku)",
+        "es": "Fuente Champagne (NW Eifuku)"
+      },
+      "lon": 144.043,
+      "lat": 21.485,
+      "depth_m": 1604,
+      "year": 2004,
+      "text": {
+        "en": "On a volcano in the Mariana Arc, white smokers at about 105 °C release droplets of liquid carbon dioxide that rise like bubbles in champagne. It was the first time liquid CO2 was seen venting from bare rock on an arc volcano.",
+        "es": "En un volcán del arco de las Marianas, fumarolas blancas a unos 105 °C liberan gotitas de dióxido de carbono líquido que suben como burbujas de champán. Fue la primera vez que se vio CO2 líquido brotar de roca desnuda en un volcán de arco."
+      },
+      "note": {
+        "en": "Depth 1,573 to 1,604 m.",
+        "es": "Profundidad de 1 573 a 1 604 m."
+      },
+      "src": "https://doi.org/10.1029/2005GC001152",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "kairei",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Kairei",
+        "es": "Kairei"
+      },
+      "lon": 70.04,
+      "lat": -25.3195,
+      "depth_m": 2460,
+      "year": 2000,
+      "text": {
+        "en": "The first vent field seen directly in the Indian Ocean, found by the robot Kaikō. It is home to the scaly-foot snail, whose foot is covered in scales made with iron sulphide.",
+        "es": "El primer campo hidrotermal observado directamente en el océano Índico, hallado por el robot Kaikō. Allí vive el caracol de pie escamoso, cuyo pie está cubierto de escamas hechas con sulfuro de hierro."
+      },
+      "note": {
+        "en": "Depth 2,415 to 2,460 m.",
+        "es": "Profundidad de 2 415 a 2 460 m."
+      },
+      "src": "https://doi.org/10.2108/zsj.18.717",
+      "src_more": [
+        "https://doi.org/10.1126/science.1087696",
+        "https://www.jamstec.go.jp/e/about/equipment/ships/kaiko.html",
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "endeavour",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Endeavour Segment (Main Endeavour Field)",
+        "es": "Segmento Endeavour (campo principal)"
+      },
+      "lon": -129.0981,
+      "lat": 47.9487,
+      "depth_m": 2220,
+      "year": 1984,
+      "text": {
+        "en": "About 250 km south-west of Vancouver Island, large sulphide chimneys 20 to 30 m tall vent fluids up to about 400 °C. In 2003 the vents became the first marine protected area under Canada's Oceans Act.",
+        "es": "A unos 250 km al suroeste de la isla de Vancouver, grandes chimeneas de sulfuros de 20 a 30 m de alto expulsan fluidos de hasta unos 400 °C. En 2003 las fuentes se convirtieron en la primera área marina protegida según la Ley de Océanos de Canadá."
+      },
+      "note": {
+        "en": "Since 2024 the area is part of a larger protected area. Twelve species living here are known nowhere else.",
+        "es": "Desde 2024 la zona forma parte de un área protegida más grande. Doce especies que viven aquí no se conocen en ningún otro lugar."
+      },
+      "src": "https://www.dfo-mpo.gc.ca/oceans/mpa-zpm/endeavour/index-eng.html",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "guaymas-basin",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Guaymas Basin",
+        "es": "Cuenca de Guaymas"
+      },
+      "lon": -111.4109,
+      "lat": 27.0148,
+      "depth_m": 2000,
+      "year": 1982,
+      "text": {
+        "en": "In the Gulf of California, fluids up to about 359 °C rise through thick seafloor mud and cook its organic matter into petroleum. Tube worms and thick bacterial mats grow on the sediment.",
+        "es": "En el golfo de California, fluidos de hasta unos 359 °C atraviesan gruesas capas de lodo del fondo y convierten su materia orgánica en petróleo. Gusanos de tubo y gruesos tapetes de bacterias crecen sobre el sedimento."
+      },
+      "src": "https://doi.org/10.1016/0012-821X(85)90070-6",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "ashadze-1",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Ashadze-1",
+        "es": "Ashadze-1"
+      },
+      "lon": -44.8633,
+      "lat": 12.9733,
+      "depth_m": 4200,
+      "year": 2003,
+      "text": {
+        "en": "Black smokers on mantle rock about 4,100 to 4,200 m down on the Mid-Atlantic Ridge. Until the Beebe field was found in 2010, they were the deepest known.",
+        "es": "Fumarolas negras sobre roca del manto, a unos 4 100 a 4 200 m en la dorsal Mesoatlántica. Hasta que se halló el campo Beebe en 2010, eran las más profundas conocidas."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "logatchev-1",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Logatchev-1",
+        "es": "Logatchev-1"
+      },
+      "lon": -44.9785,
+      "lat": 14.752,
+      "depth_m": 3050,
+      "year": 1994,
+      "text": {
+        "en": "The first vent field found on mantle rock instead of volcanic crust. Fluids up to about 370 °C pour from craters and chimneys on the wall of the Mid-Atlantic rift valley.",
+        "es": "El primer campo hidrotermal hallado sobre roca del manto y no sobre corteza volcánica. Fluidos de hasta unos 370 °C brotan de cráteres y chimeneas en la pared del valle del rift mesoatlántico."
+      },
+      "note": {
+        "en": "First seen in 1993–94; depth 2,925 to 3,050 m.",
+        "es": "Visto por primera vez en 1993–94; profundidad de 2 925 a 3 050 m."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "longqi",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Longqi (Dragon)",
+        "es": "Longqi (Dragón)"
+      },
+      "lon": 49.6494,
+      "lat": -37.7838,
+      "depth_m": 2785,
+      "year": 2007,
+      "text": {
+        "en": "The first black smokers found on an ultraslow-spreading ridge, the Southwest Indian Ridge, where the plates part by only about 1.2 cm a year. Fluids reach about 379 °C.",
+        "es": "Las primeras fumarolas negras halladas en una dorsal de expansión ultralenta, la dorsal Suroeste de la India, donde las placas se separan solo unos 1,2 cm al año. Los fluidos llegan a unos 379 °C."
+      },
+      "src": "https://doi.org/10.1130/G32389.1",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "aurora",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Aurora",
+        "es": "Aurora"
+      },
+      "lon": -6.25,
+      "lat": 82.8833,
+      "depth_m": 4100,
+      "year": 2001,
+      "text": {
+        "en": "Far north, under the Arctic sea ice near 83° N on the Gakkel Ridge. Signs of venting were first detected in 2001, and in 2014 a towed camera found the active vents.",
+        "es": "Muy al norte, bajo el hielo marino del Ártico, cerca de los 83° N en la dorsal de Gakkel. En 2001 se detectaron las primeras señales de actividad, y en 2014 una cámara remolcada halló las fuentes activas."
+      },
+      "note": {
+        "en": "Depth 3,900 to 4,100 m. The database used gives no vent temperature; it is listed as a black smoker because sulphide chimneys were found.",
+        "es": "Profundidad de 3 900 a 4 100 m. La base de datos usada no da temperatura; se clasifica como fumarola negra porque se hallaron chimeneas de sulfuros."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "axial-ashes",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Axial Seamount (ASHES)",
+        "es": "Monte submarino Axial (ASHES)"
+      },
+      "lon": -130.014,
+      "lat": 45.9333,
+      "depth_m": 1540,
+      "year": 1984,
+      "text": {
+        "en": "Inside the caldera of Axial Seamount, an active undersea volcano on the Juan de Fuca Ridge off Oregon, chimneys vent fluids at up to about 348 °C.",
+        "es": "Dentro de la caldera del monte submarino Axial, un volcán submarino activo en la dorsal de Juan de Fuca frente a Oregón, las chimeneas expulsan fluidos de hasta unos 348 °C."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "pacmanus",
+      "kind": "black-smoker",
+      "name": {
+        "en": "PACMANUS",
+        "es": "PACMANUS"
+      },
+      "lon": 151.67,
+      "lat": -3.725,
+      "depth_m": 1800,
+      "year": 1991,
+      "text": {
+        "en": "Chimneys on a ridge of light-coloured volcanic rock in the Manus Basin, off Papua New Guinea. Its metal-rich deposits have drawn interest from deep-sea mining companies.",
+        "es": "Chimeneas sobre una cresta de roca volcánica clara en la cuenca de Manus, frente a Papúa Nueva Guinea. Sus depósitos ricos en metales han atraído el interés de empresas de minería submarina."
+      },
+      "note": {
+        "en": "Depth 1,650 to 1,800 m.",
+        "es": "Profundidad de 1 650 a 1 800 m."
+      },
+      "src": "https://doi.org/10.2113/gsecongeo.88.8.2226",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "iheya-north",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Iheya North",
+        "es": "Iheya Norte"
+      },
+      "lon": 126.8966,
+      "lat": 27.7908,
+      "depth_m": 1100,
+      "year": 1995,
+      "text": {
+        "en": "In the Okinawa Trough near Okinawa, Japan, fluids at up to 317 °C have been measured boiling at the seafloor. Mussels, tube worms and squat lobsters crowd the vents.",
+        "es": "En la depresión de Okinawa, cerca de Okinawa (Japón), se han medido fluidos de hasta 317 °C que hierven en el fondo marino. Mejillones, gusanos de tubo y langostillas se apiñan junto a las fuentes."
+      },
+      "note": {
+        "en": "Depth 970 to 1,100 m.",
+        "es": "Profundidad de 970 a 1 100 m."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "brothers-volcano",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Brothers volcano",
+        "es": "Volcán Brothers"
+      },
+      "lon": 179.0667,
+      "lat": -34.8667,
+      "depth_m": 1800,
+      "year": 1998,
+      "text": {
+        "en": "A submarine volcano on the Kermadec Arc, north-east of New Zealand, with black smokers on the walls of its caldera. It was the first high-temperature venting found along this arc.",
+        "es": "Un volcán submarino del arco de Kermadec, al noreste de Nueva Zelanda, con fumarolas negras en las paredes de su caldera. Fue la primera actividad hidrotermal de alta temperatura hallada en este arco."
+      },
+      "note": {
+        "en": "Depth 1,150 to 1,800 m.",
+        "es": "Profundidad de 1 150 a 1 800 m."
+      },
+      "src": "https://doi.org/10.2113/gsecongeo.100.6.1097",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "east-scotia-e9",
+      "kind": "black-smoker",
+      "name": {
+        "en": "East Scotia Ridge (E9)",
+        "es": "Dorsal de Escocia Oriental (E9)"
+      },
+      "lon": -29.93,
+      "lat": -60.05,
+      "depth_m": 2402,
+      "year": 2009,
+      "text": {
+        "en": "When found, these were the most southerly black smokers known, in the Southern Ocean near the South Sandwich Islands. A new species of yeti crab crowds the vents, with stalked barnacles, snails and a predatory sea star.",
+        "es": "Cuando se hallaron, eran las fumarolas negras más australes conocidas, en el océano Austral cerca de las islas Sandwich del Sur. Una nueva especie de cangrejo yeti abunda junto a las fuentes, con percebes de pedúnculo, caracoles y una estrella de mar depredadora."
+      },
+      "note": {
+        "en": "First seen by towed camera in 2009, sampled in 2010.",
+        "es": "Vistas por primera vez con una cámara remolcada en 2009 y muestreadas en 2010."
+      },
+      "src": "https://doi.org/10.1371/journal.pbio.1001234",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "kolumbo",
+      "kind": "white-smoker",
+      "name": {
+        "en": "Kolumbo volcano",
+        "es": "Volcán Kolumbo"
+      },
+      "lon": 25.4833,
+      "lat": 36.525,
+      "depth_m": 500,
+      "year": 2006,
+      "text": {
+        "en": "In the crater of an undersea volcano 7 km north-east of Santorini, chimneys up to 4 m tall vent fluids at up to about 220 °C. Red and orange bacterial mats cover the crater floor.",
+        "es": "En el cráter de un volcán submarino a 7 km al noreste de Santorini, chimeneas de hasta 4 m de alto expulsan fluidos de hasta unos 220 °C. Tapetes de bacterias rojos y anaranjados cubren el fondo del cráter."
+      },
+      "note": {
+        "en": "Grouped with the white smokers because its fluids are cooler than typical black smokers.",
+        "es": "Se agrupa con las fumarolas blancas porque sus fluidos son más fríos que los de una fumarola negra típica."
+      },
+      "src": "https://doi.org/10.1029/2006EO340001",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "white-lady",
+      "kind": "white-smoker",
+      "name": {
+        "en": "White Lady",
+        "es": "White Lady (Dama Blanca)"
+      },
+      "lon": 173.9167,
+      "lat": -16.9833,
+      "depth_m": 2000,
+      "year": 1988,
+      "text": {
+        "en": "In the North Fiji Basin, white anhydrite chimneys release clear fluids at about 265 to 285 °C. Snails, mussels, worms and barnacles live around them.",
+        "es": "En la cuenca Norte de Fiyi, chimeneas blancas de anhidrita liberan fluidos transparentes a unos 265 a 285 °C. A su alrededor viven caracoles, mejillones, gusanos y percebes."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "brine-pool",
+      "kind": "seep",
+      "name": {
+        "en": "Brine Pool (NR1)",
+        "es": "Lago de salmuera (NR1)"
+      },
+      "lon": -91.28,
+      "lat": 27.72,
+      "depth_m": 650,
+      "year": 1990,
+      "text": {
+        "en": "An underwater lake of brine nearly four times as salty as seawater, ringed by mussels that live off methane with the help of bacteria. The brine is so dense that a submersible can float on it.",
+        "es": "Un lago submarino de salmuera casi cuatro veces más salada que el agua de mar, rodeado de mejillones que viven del metano gracias a unas bacterias. La salmuera es tan densa que un sumergible puede flotar sobre ella."
+      },
+      "note": {
+        "en": "Gulf of Mexico, south of Louisiana. Described in 1990. Coordinates approximate.",
+        "es": "Golfo de México, al sur de Luisiana. Se describió en 1990. Coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1126/science.248.4959.1096",
+      "src_more": [
+        "https://archive.oceanexplorer.noaa.gov/explorations/06mexico/background/plan/plan.html"
+      ]
+    },
+    {
+      "id": "florida-escarpment",
+      "kind": "seep",
+      "name": {
+        "en": "Florida Escarpment seeps",
+        "es": "Filtraciones del escarpe de Florida"
+      },
+      "lon": -84.92,
+      "lat": 26.03,
+      "depth_m": 3300,
+      "year": 1984,
+      "text": {
+        "en": "The first cold seeps found, at the foot of a huge limestone cliff in the Gulf of Mexico. Salty, sulphide-rich water oozes out at the temperature of the seafloor and feeds tube worms and mussels like those at hot vents.",
+        "es": "Las primeras filtraciones frías halladas, al pie de un enorme acantilado de piedra caliza en el golfo de México. Agua salada y rica en sulfuro brota a la temperatura del fondo y alimenta gusanos de tubo y mejillones parecidos a los de las fuentes calientes."
+      },
+      "note": {
+        "en": "Depth and coordinates approximate.",
+        "es": "Profundidad y coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1126/science.226.4677.965"
+    },
+    {
+      "id": "hydrate-ridge",
+      "kind": "seep",
+      "name": {
+        "en": "Hydrate Ridge",
+        "es": "Hydrate Ridge (cresta de hidratos)"
+      },
+      "lon": -125.1468,
+      "lat": 44.5699,
+      "depth_m": 775,
+      "text": {
+        "en": "Off Oregon, methane ice lies on and under the seafloor, and streams of bubbles rise hundreds of metres. Microbes that eat methane without oxygen were described from here in 2000.",
+        "es": "Frente a Oregón hay hielo de metano sobre y bajo el fondo marino, y columnas de burbujas suben cientos de metros. Aquí se describieron en 2000 microbios que consumen metano sin oxígeno."
+      },
+      "src": "https://oceanobservatories.org/site/rs01sum2/",
+      "src_more": [
+        "https://doi.org/10.1038/35036572"
+      ]
+    },
+    {
+      "id": "hakon-mosby",
+      "kind": "seep",
+      "name": {
+        "en": "Håkon Mosby mud volcano",
+        "es": "Volcán de lodo Håkon Mosby"
+      },
+      "lon": 14.733,
+      "lat": 72.0,
+      "depth_m": 1250,
+      "text": {
+        "en": "A mud volcano off northern Norway that pushes warm, methane-rich mud up through the seafloor. Tube worms and bacterial mats live on it, and its microbes eat part of the methane before it escapes.",
+        "es": "Un volcán de lodo frente al norte de Noruega que empuja lodo tibio y rico en metano a través del fondo marino. Sobre él viven gusanos de tubo y tapetes de bacterias, y sus microbios consumen parte del metano antes de que escape."
+      },
+      "src": "https://doi.org/10.1038/nature05227"
+    },
+    {
+      "id": "kuril-kamchatka-seeps",
+      "kind": "seep",
+      "name": {
+        "en": "Kuril–Kamchatka Trench seeps",
+        "es": "Filtraciones de la fosa de las Kuriles-Kamchatka"
+      },
+      "lon": 151.7,
+      "lat": 45.0,
+      "depth_m": 9533,
+      "year": 2024,
+      "text": {
+        "en": "The deepest seep communities known. In 2024 the submersible Fendouzhe found dense fields of thin tube worms and clams along 2,500 km of trench floor, as deep as 9,533 m.",
+        "es": "Las comunidades de filtraciones más profundas conocidas. En 2024 el sumergible Fendouzhe halló densos campos de gusanos de tubo delgados y almejas a lo largo de 2 500 km de fondo de fosa, hasta a 9 533 m."
+      },
+      "note": {
+        "en": "Published in 2025; communities span 5,800 to 9,533 m in the Kuril–Kamchatka and western Aleutian trenches. The paper gives no position for the deepest site; coordinates approximate.",
+        "es": "Se publicó en 2025; las comunidades van de 5 800 a 9 533 m en las fosas de las Kuriles-Kamchatka y el oeste de las Aleutianas. El artículo no da la posición del sitio más profundo; coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1038/s41586-025-09317-z"
+    }
+  ]
+}

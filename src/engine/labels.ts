@@ -51,6 +51,8 @@ export class LabelEngine {
   /** The names drawn lately: as the map turns they keep their place and side, and new ones fade in (no flicker). */
   /** By name: several things can share one (three saguaros), each matched to the nearest seen a moment ago. */
   private seen = new Map<string, Seen[]>();
+  /** When the names gone for a while were last forgotten. */
+  private pruned = 0;
   /** Frames drawn so far: "a moment ago" is the last few frames, however slowly they come (a busy phone). */
   private frame = 0;
   /** A name is still fading in or out: the renderer draws another frame. */
@@ -297,10 +299,14 @@ export class LabelEngine {
     }
     (ctx as unknown as { letterSpacing: string }).letterSpacing = '0px';
     ctx.globalAlpha = baseAlpha;
-    // Names gone for a while (two seconds and a hundred frames) are forgotten, every hundred frames.
-    if (this.frame % 100 === 0) for (const [key, list] of this.seen) {
-      const keep = list.filter((m) => now - m.last <= 2000 || this.frame - m.f <= 100);
-      if (keep.length) this.seen.set(key, keep); else this.seen.delete(key);
+    // Names gone for a while (two seconds and a hundred frames) are forgotten, every hundred frames or two seconds
+    // (a still map draws few frames).
+    if (this.frame % 100 === 0 || now - this.pruned > 2000) {
+      this.pruned = now;
+      for (const [key, list] of this.seen) {
+        const keep = list.filter((m) => now - m.last <= 2000 || this.frame - m.f <= 100);
+        if (keep.length) this.seen.set(key, keep); else this.seen.delete(key);
+      }
     }
   }
 
