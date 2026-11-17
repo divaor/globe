@@ -316,6 +316,13 @@ html.map-light .brand-name { color: #1d2433; text-shadow: 0 0 6px rgba(255,255,2
 .amb-layer { font-size: clamp(12px, 1.2vw, 16px); opacity: .65; margin-top: 6px; }
 .amb-hint { position: absolute; top: calc(20px + var(--safe-t)); left: 50%; transform: translate(-50%, -10px); padding: 10px 18px; border-radius: 16px; font-size: 14px; font-weight: 600; opacity: 0; transition: opacity .2s, transform .2s; pointer-events: none; }
 .amb-hint.show { opacity: 1; transform: translate(-50%, 0); }
+/* Read aloud or not (v0.33.2): a small button shown with the hint while a playlist plays. */
+.amb-tools { position: absolute; top: calc(118px + var(--safe-t)); left: 50%; transform: translate(-50%, -10px); opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
+.amb-tools.show { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+.amb-voice { display: flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 16px; border: 1px solid var(--line); font-size: 14.5px; font-weight: 600; cursor: pointer; background: var(--glass-strong); box-shadow: 0 6px 24px rgba(0,0,0,.35); }
+/* The hint and the button stay readable over the caption: solid, not see-through. */
+.amb-hint { background: var(--glass-strong); box-shadow: 0 6px 24px rgba(0,0,0,.35); }
+.amb-voice[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); }
 html.ambient #ui > *:not(.amb-overlay) { opacity: 0; pointer-events: none !important; transition: opacity .6s; }
 
 /* ---------- splash */
@@ -503,6 +510,11 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
   .sheet.sized { height: var(--sheet-h); max-height: none; }
   .country-card { left: 8px; right: 8px; top: auto; bottom: calc(80px + var(--safe-b)); width: auto; max-height: 52vh; z-index: 3; }
   .country-card.compact { max-height: none; }
+  /* Inside the Earth and Into the deep leave the globe above their panel: a card opened there (an animal tapped in the
+     dive column, a place on the map) sits just above the panel, never over it, however tall the reader made it. */
+  html:not(.mode-story):has(.sheet[data-sheet='inside']:not([hidden]), .sheet[data-sheet='deep']:not([hidden])) .country-card {
+    z-index: 6; top: auto; bottom: calc(var(--sheet-hpx, 56vh) + 8px);
+    max-height: max(170px, calc(100dvh - var(--sheet-hpx, 56vh) - 76px - var(--safe-t))); }
   /* While the compact strip is up, the filter chips step aside and the legend and zoom buttons sit above it. */
   html.has-cc .chips { display: none; }
   html.has-cc .legend, html.has-cc .zoombar { bottom: calc(88px + var(--cc-h, 64px) + var(--safe-b)); }
@@ -1234,10 +1246,16 @@ textarea.trip-input { resize: vertical; }
 .dive-svg .dive-name { font-size: 10.5px; }
 .dive-animal { cursor: pointer; }
 .dive-animal:hover .dive-name, .dive-animal:focus .dive-name { text-decoration: underline; }
+.dive-animal:focus { outline: none; }
+.dive-animal:focus-visible { outline: 1.5px solid var(--accent); outline-offset: 1px; border-radius: 4px; }
 .dive-lead { stroke: var(--muted); stroke-width: 1; }
 .dive-rock { fill: #5c4a33; }
 .dive-floor { stroke: #e8c48a; stroke-width: 2; }
 .dive-cursor { stroke: #ffd43b; stroke-width: 2; }
+:root[data-theme='light'] .dive-svg .dive-rec { fill: #9a5b00; }
+:root[data-theme='light'] .dive-svg .dive-floor-label { fill: #7a4f12; }
+:root[data-theme='light'] .dive-floor { stroke: #a8762c; }
+:root[data-theme='light'] .dive-cursor { stroke: #d97706; }
 .deep-obis { margin: 12px 0 6px; padding: 10px 12px; border-radius: 12px; background: var(--chip); font-size: 13px; }
 .deep-obis-list { display: flex; flex-wrap: wrap; gap: 6px 12px; margin: 8px 0 4px; }
 .deep-obis-item small { color: var(--muted); }

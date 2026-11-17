@@ -73,6 +73,8 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     h('h3', { class: 'sec-title' }, t('ambient')),
     field(t('ambientSpeed'), slider(app.ambient.speed, 0.25, 4, 0.25, (v) => { app.ambient.speed = v; app.save(); })),
     h('div', { class: 'toggles' },
+      // Off unless turned on (here, in More → Ambient mode, or with the button shown on a tap while a playlist plays).
+      ...(canSpeak() ? [toggle(app.ambient.narrate, (v) => { app.ambient.narrate = v; app.save(); }, app.lang === 'es' ? 'Leer cada vista del modo ambiente en voz alta' : 'Read each ambient view aloud')] : []),
       toggle(app.ambient.clock, (v) => { app.ambient.clock = v; app.save(); }, t('ambientClock'))),
     ambientNamesField(app),
     h('p', { class: 'muted small' }, app.lang === 'es'
