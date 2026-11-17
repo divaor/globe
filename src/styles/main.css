@@ -317,9 +317,11 @@ html.map-light .brand-name { color: #1d2433; text-shadow: 0 0 6px rgba(255,255,2
 .amb-hint { position: absolute; top: calc(20px + var(--safe-t)); left: 50%; transform: translate(-50%, -10px); padding: 10px 18px; border-radius: 16px; font-size: 14px; font-weight: 600; opacity: 0; transition: opacity .2s, transform .2s; pointer-events: none; }
 .amb-hint.show { opacity: 1; transform: translate(-50%, 0); }
 /* Read aloud or not (v0.33.2): a small button shown with the hint while a playlist plays. */
-.amb-tools { position: absolute; top: calc(70px + var(--safe-t)); left: 50%; transform: translate(-50%, -10px); opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
+.amb-tools { position: absolute; top: calc(118px + var(--safe-t)); left: 50%; transform: translate(-50%, -10px); opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
 .amb-tools.show { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
-.amb-voice { display: flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 16px; border: 1px solid var(--line); font-size: 14px; font-weight: 600; cursor: pointer; }
+.amb-voice { display: flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 16px; border: 1px solid var(--line); font-size: 14.5px; font-weight: 600; cursor: pointer; background: var(--glass-strong); box-shadow: 0 6px 24px rgba(0,0,0,.35); }
+/* The hint and the button stay readable over the caption: solid, not see-through. */
+.amb-hint { background: var(--glass-strong); box-shadow: 0 6px 24px rgba(0,0,0,.35); }
 .amb-voice[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); }
 html.ambient #ui > *:not(.amb-overlay) { opacity: 0; pointer-events: none !important; transition: opacity .6s; }
 
