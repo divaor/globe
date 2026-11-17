@@ -1869,8 +1869,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(300);
   const vo1 = await page.evaluate(() => ({ shown: !!document.querySelector('.amb-tools.show'), pressed: document.querySelector('[data-amb="voice"]')?.getAttribute('aria-pressed') }));
   await page.click('[data-amb="voice"]');
-  await page.waitForTimeout(300);
-  const vo2 = await page.evaluate(() => ({ on: window.atlas.app.ambient.on, narrate: window.atlas.app.ambient.narrate, pressed: document.querySelector('[data-amb="voice"]')?.getAttribute('aria-pressed'), saved: JSON.parse(localStorage.getItem('atlas-globe:vo1') || '{}').ambient?.voice }));
+  await page.waitForTimeout(700); // (the settings are saved 400 ms after a change)
+  const vo2 = await page.evaluate(() => ({ on: window.atlas.app.ambient.on, narrate: window.atlas.app.ambient.narrate, pressed: document.querySelector('[data-amb="voice"]')?.getAttribute('aria-pressed'), saved: JSON.parse(localStorage.getItem('atlas-globe:v1') || '{}').ambient?.voice }));
   await page.evaluate(() => { window.__spoken.length = 0; });
   await page.click('[data-amb="voice"]');
   await page.waitForTimeout(600);
