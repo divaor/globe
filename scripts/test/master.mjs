@@ -84,9 +84,10 @@ check(S.marathonList(['A', 'B', 'C'], { A: 10, B: 9 }).join() === 'B,C', 'Marath
 
 // The deck itself.
 const deck = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/master/deck.json'), 'utf8'));
-const cs = deck.countries;
+const all = deck.countries, cs = all.filter((x) => !x.t);
 check(cs.length === 195 && cs.filter((x) => x.cap && !x.skip).length === 194 && cs.filter((x) => x.cities.length === 3).length >= 193, `the deck: ${cs.length} countries, ${cs.filter((x) => x.cap && !x.skip).length} capitals, three other cities for ${cs.filter((x) => x.cities.length === 3).length}`);
 check(cs.every((x) => x.like.length >= 3 && x.land.length + x.near.length >= 3), 'every country has three look-alike flags and three neighbours');
+check(all.length - cs.length >= 15 && all.filter((x) => x.t).every((x) => x.like.length >= 3), `and ${all.length - cs.length} territories, for the setting that adds them`);
 
 console.log(failed ? `\n${failed} check(s) failed` : '\nmaster checks passed');
 process.exit(failed ? 1 : 0);

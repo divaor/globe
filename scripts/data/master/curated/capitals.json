@@ -294,6 +294,46 @@
         "en": "Singapore is a city-state: the country and its capital are one city.",
         "es": "Singapur es una ciudad-estado: el país y su capital son una misma ciudad."
       }
+    },
+    "HKG": {
+      "skip": "capitals",
+      "note": {
+        "en": "Hong Kong is a city: a special administrative region of China.",
+        "es": "Hong Kong es una ciudad: una región administrativa especial de China."
+      }
+    },
+    "MAC": {
+      "skip": "capitals",
+      "note": {
+        "en": "Macau is a city: a special administrative region of China.",
+        "es": "Macao es una ciudad: una región administrativa especial de China."
+      }
+    },
+    "GIB": {
+      "skip": "capitals",
+      "note": {
+        "en": "Gibraltar is a British overseas territory of one town.",
+        "es": "Gibraltar es un territorio británico de ultramar de una sola ciudad."
+      }
+    },
+    "ESH": {
+      "note": {
+        "en": "Western Sahara is disputed: most of it is held by Morocco; the Sahrawi Republic claims it with Laayoune as its capital.",
+        "es": "El Sáhara Occidental está en disputa: Marruecos controla la mayor parte; la República Saharaui lo reclama con El Aaiún como capital."
+      },
+      "cap": 2462881,
+      "name": {
+        "en": "Laayoune",
+        "es": "El Aaiún"
+      }
+    },
+    "FLK": {
+      "skip": "capitals",
+      "note": {
+        "en": "Stanley is the only town of the Falkland Islands.",
+        "es": "Puerto Argentino/Stanley es la única ciudad de las islas Malvinas."
+      }
     }
-  }
+  },
+  "territories": "XKX TWN ESH GRL PRI HKG MAC FRO NCL PYF BMU GUM CUW ABW FLK GIB"
 }

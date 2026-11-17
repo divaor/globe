@@ -94,6 +94,8 @@ export interface RenderCtx {
   fillCountry(id: string, color: string): void;
   /** Fills several countries (current LOD) with one colour in one go; their outlines are projected once per frame. */
   fillCountries(ids: Iterable<string>, color: string): void;
+  /** Draws a country's outline (v0.34.0: Master the world's country, outlined). */
+  strokeCountry(id: string, color: string, width: number): void;
 }
 
 /** What a filter gets when the reader taps the map (see LayerDef.tap). */

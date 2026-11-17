@@ -52,9 +52,12 @@ const neFor = (g, list) => list.find((p) => p.id === g.id) ?? list.find((p) => k
 
 // ---- The countries and their capitals
 const members = cur.members.split(/\s+/);
+// The territories a setting adds (Kosovo, Taiwan, Western Sahara, the dependencies people know best).
+const territories = (cur.territories ?? '').split(/\s+/).filter(Boolean);
 const wd = await countries();
 const deck = [];
-for (const id of members) {
+for (const id of [...members, ...territories]) {
+  const terr = territories.includes(id);
   const m = meta[id];
   if (!m) { problems.push(`${id}: not on the map`); continue; }
   const c = cur.capitals[id] ?? {};
@@ -72,7 +75,7 @@ for (const id of members) {
   if (cap && !c.cap && wdNames.length && !wdNames.some((n) => alike(n, cap.name))) console.log(`check ${id}: ${cap.name}; Wikidata ${wdNames.join(' / ')}`);
   const seats = (c.seats ?? []).map((s) => byId.get(s)).filter(Boolean);
   const area = borders.countries[id]?.area ?? 1000;
-  deck.push({ id, m, c, cap, seats, area, places });
+  deck.push({ id, m, c, cap, seats, area, places, terr });
 }
 
 // ---- Three other cities: the largest (by their metro areas), far enough from the capital and from each other;
@@ -164,13 +167,13 @@ for (const [k, v] of Object.entries(fl.notes)) {
 
 // ---- Check and write
 for (const d of deck) {
-  if (d.cap && d.cities.length < 2 && d.c.skip !== 'capitals') problems.push(`${d.id}: only ${d.cities.length} other cities`);
+  if (d.cap && d.cities.length < 2 && d.c.skip !== 'capitals') (d.terr ? console.log : (x) => problems.push(x))(`${d.id}: only ${d.cities.length} other cities`);
 }
 const out = {
   about: 'Master the world: each country with its capital, three other cities (GeoNames, CC BY 4.0; names from Wikidata, CC0), how well known it is, its neighbours.',
   countries: deck.map((d) => ({
-    id: d.id, a2: d.m.a2, ct: d.m.ct, fame: d.fame, pop: d.m.pop,
-    ...(d.cap ? { cap: { ...names(d.cap, d.c.name), at: [r3(d.cap.lon), r3(d.cap.lat)] } } : {}),
+    id: d.id, a2: d.m.a2, ct: d.m.ct, fame: d.fame, pop: d.m.pop, ...(d.terr ? { t: 1 } : {}),
+    ...(d.cap ? { cap: { ...names(d.cap, d.c.name), at: [r3(d.cap.lon), r3(d.cap.lat)], pop: d.cap.pop } } : {}),
     cities: d.cities.map((p) => ({ ...names(p, p.over), at: [r3(p.lon), r3(p.lat)], pop: p.pop })),
     ...(d.seats.length ? { seats: d.seats.map((p) => names(neFor(p, d.places) ?? p)) } : {}),
     ...(d.c.note ? { note: d.c.note } : {}),

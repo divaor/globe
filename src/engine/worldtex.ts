@@ -46,6 +46,7 @@ export function paintWorld(canvas: HTMLCanvasElement, o: WorldPaint) {
     project: (lon, lat) => proj([lon, lat]) as [number, number] | null,
     fillCountry: (id, color) => { const s = o.level.byId.get(id); if (!s) return; ctx.beginPath(); path(s.feature as never); ctx.fillStyle = color; ctx.fill(); },
     fillCountries: (ids, color) => { ctx.beginPath(); for (const id of ids) { const s = o.level.byId.get(id); if (s) path(s.feature as never); } ctx.fillStyle = color; ctx.fill(); },
+    strokeCountry: (id, color, width) => { const s = o.level.byId.get(id); if (!s) return; ctx.beginPath(); path(s.feature as never); ctx.strokeStyle = color; ctx.lineWidth = width; ctx.stroke(); },
   };
   for (const l of o.layers) {
     if (l.def.drawFill) {
