@@ -24,6 +24,7 @@ import { Elements } from './sky/elements';
 import { worldHook } from './modes/stories';
 import { spainView } from './ui/spainview';
 import { MapGames } from './play/menu';
+import { Master } from './master/master';
 import type { BorderHop } from './play/hop';
 import { TravelGuide } from './guide/guide';
 import { ArtGuide } from './artguide/artguide';
@@ -33,7 +34,7 @@ import { Plants } from './green/finder';
 import { InsideEarth } from './earth/inside';
 import { DeepSea } from './ocean/deep';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -75,6 +76,10 @@ async function boot() {
   play.host.beforeStart = () => learn.closeAll();
   play.host.exitMode = async () => { await time.modes.find((m) => m.id === app.mode)?.exit(); };
   learn.beforeStart = () => void play.host.close();
+  // Master the world (v0.34.0): on the games' card and map; Learn's Quiz panel links to it and back.
+  const master = new Master(app, shell, play.host);
+  master.openQuiz = () => learn.openQuizMenu();
+  learn.master = master;
   // The travel guide (v0.26.0).
   const guide = new TravelGuide(app, shell, time, learn);
   // Art and architecture (v0.27.0): its trails, and the guide's Art and Buildings tabs.
@@ -102,7 +107,7 @@ async function boot() {
   app.on('mydata', openMyData);
   shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, onClick: openMyData });
   void myData.init();
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };

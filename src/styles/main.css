@@ -1265,3 +1265,48 @@ textarea.trip-input { resize: vertical; }
 .waves-clock { display: flex; flex-direction: column; gap: 2px; font-size: 13px; text-align: center; margin: 4px 0 8px; }
 .waves-key { display: flex; align-items: center; gap: 8px; font-size: 13px; margin: 3px 0; }
 .waves-sw { width: 22px; height: 5px; border-radius: 3px; flex: none; }
+
+/* v0.34.0 Master the world: its panel (the goal ring, progress by level and continent, settings) and its card */
+.mw-panel .seg { width: 100%; }
+.mw-panel .seg-btn { flex: 1; }
+.mw-today { display: flex; gap: 14px; align-items: center; padding: 12px 14px; border-radius: 16px; border: 1px solid var(--line); background: var(--chip); }
+.mw-ring { position: relative; width: 52px; height: 52px; flex: none; }
+.mw-ring svg { display: block; }
+.mw-ring b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 16px; }
+.mw-today-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.mw-today-text span { font-size: 13px; color: var(--muted); }
+.mw-progress { margin-top: 12px; }
+.mw-levels { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--line); }
+.mw-seg { display: block; height: 100%; }
+.mw-mastered { background: #27ae60; }
+.mw-known { background: #f2c94c; }
+.mw-learning { background: #e8833a; }
+.mw-new { background: var(--line-strong); }
+.mw-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 6px; font-size: 12.5px; color: var(--muted); }
+.mw-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
+.mw-conts { display: grid; gap: 6px; margin-top: 12px; }
+.mw-cont { display: grid; grid-template-columns: minmax(0, 10em) 1fr auto; gap: 10px; align-items: center; font-size: 12.5px; }
+.mw-cont .mw-levels { height: 8px; }
+.mw-cont-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); }
+.mw-cont-n { font-variant-numeric: tabular-nums; color: var(--muted); }
+.mw-row { margin: 10px 0; }
+.mw-field { display: flex; flex-direction: column; gap: 6px; margin: 8px 0 12px; font-size: 13px; color: var(--muted); }
+.mw-select { width: 100%; }
+.mw-foot { margin-top: 16px; }
+.mw-card { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.mw-card input { -webkit-user-select: text; user-select: text; }
+.quiz-opts.mw-flags { grid-template-columns: 1fr 1fr; }
+.mw-flags .quiz-opt { flex-direction: column; gap: 4px; padding: 8px; min-height: 64px; }
+.mw-flag { display: block; width: 100%; max-width: 120px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 5px; box-shadow: 0 0 0 1px var(--line-strong); }
+.mw-flag-name { font-size: 12px; }
+.mw-flag-big { width: 160px; height: 120px; }
+.quiz-opt.mw-gone { opacity: .35; }
+.mw-note { margin-top: 8px; padding: 8px 10px; border-radius: 10px; background: var(--chip); font-size: 13px; line-height: 1.4; }
+.mw-pair { display: flex; gap: 12px; margin-top: 10px; }
+.mw-pair figure { margin: 0; flex: 1; text-align: center; font-size: 12px; }
+.mw-pair img { display: block; width: 100%; max-width: 130px; margin: 0 auto 4px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; box-shadow: 0 0 0 1px var(--line-strong); }
+.mw-bar { height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; margin-top: 10px; }
+.mw-bar span { display: block; height: 100%; width: 100%; background: var(--accent); }
+.mw-paused .mw-bar span { background: var(--muted); }
+.mw-hold { font-size: 11.5px; color: var(--muted); margin-top: 6px; }
+.mw-powers { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
