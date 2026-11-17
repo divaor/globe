@@ -254,9 +254,9 @@ export class Learn {
     app.root.append(this.card);
     // The map centres below the card, so what a tour or an answer shows is not behind it.
     new ResizeObserver(() => this.syncInset()).observe(this.card);
-    shell.addMenu({ id: 'quiz', icon: GraduationCap, label: () => L('Quiz', 'Concurso'), order: 30, onClick: () => this.openQuizMenu() });
-    shell.addMenu({ id: 'tours', icon: Compass, label: () => L('Guided tours', 'Visitas guiadas'), order: 31, onClick: () => this.openTours() });
-    shell.addMenu({ id: 'onthisday', icon: CalendarDays, label: () => L('On this day', 'Tal día como hoy'), order: 32, onClick: () => void this.openOnThisDay() });
+    shell.addMenu({ id: 'quiz', icon: GraduationCap, label: () => L('Quiz', 'Concurso'), order: 30, group: 'learn', onClick: () => this.openQuizMenu() });
+    shell.addMenu({ id: 'tours', icon: Compass, label: () => L('Guided tours', 'Visitas guiadas'), order: 31, group: 'learn', onClick: () => this.openTours() });
+    shell.addMenu({ id: 'onthisday', icon: CalendarDays, label: () => L('On this day', 'Tal día como hoy'), order: 32, group: 'learn', onClick: () => void this.openOnThisDay() });
     shell.tapHandlers.unshift((_x, _y, g) => {
       const q = this.quiz;
       if (!q || q.done) return false;

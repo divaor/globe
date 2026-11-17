@@ -51,7 +51,7 @@ export class InsideEarth {
   get info() { return { active: this.active, lon1: this.st.lon1, peel: this.st.peel, focus: this.st.focus, dig: this.dig, tab: this.tab, open: this.shell.sheet.isOpen('inside') }; }
 
   constructor(private app: App, private shell: Shell) {
-    shell.addMenu({ id: 'inside', icon: Pickaxe, label: () => L('Inside the Earth', 'El interior de la Tierra'), order: 28.8, onClick: () => void this.open() });
+    shell.addMenu({ id: 'inside', icon: Pickaxe, label: () => L('Inside the Earth', 'El interior de la Tierra'), order: 28.8, group: 'explore', onClick: () => void this.open() });
     app.renderer.afterShade.add((rc) => this.draw(rc));
     // While the Earth is cut open, a tap on the globe digs down there.
     shell.tapHandlers.unshift((_x, _y, g) => {

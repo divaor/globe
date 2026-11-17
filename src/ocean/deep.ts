@@ -46,7 +46,7 @@ export class DeepSea {
   get info() { return { open: this.shell.sheet.isOpen('deep'), tab: this.tab, at: this.at, floor: this.at && depths ? seaDepthAt(depths, this.at[0], this.at[1]) : null }; }
 
   constructor(private app: App, private shell: Shell) {
-    shell.addMenu({ id: 'deep', icon: Waves, label: () => L('Into the deep', 'A las profundidades'), order: 28.9, onClick: () => void this.open() });
+    shell.addMenu({ id: 'deep', icon: Waves, label: () => L('Into the deep', 'A las profundidades'), order: 28.9, group: 'explore', onClick: () => void this.open() });
     // While the panel is open, a tap on the sea dives there.
     shell.tapHandlers.unshift((_x, _y, g) => {
       if (!this.shell.sheet.isOpen('deep') || app.mode || !g) return false;
