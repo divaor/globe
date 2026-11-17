@@ -4613,6 +4613,10 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const ventN = Number(/(\d+) vent fields/.exec(ventLeg)?.[1] ?? 0), famousN = Number(/(\d+) famous wrecks/.exec(wreckLeg)?.[1] ?? 0), moreN = Number((/and ([\d,]+) more/.exec(wreckLeg)?.[1] ?? '0').replace(/,/g, ''));
   check(ventN >= 20 && famousN >= 40 && moreN >= 500 && wreckHits.some((x) => /Titanic/.test(x)) && /Samuel B\. Roberts/.test(deepest) && /6,865 m/.test(deepest),
     `${ventN} vent fields; ${famousN} famous wrecks and ${moreN} more; "titanic" finds ${wreckHits[0]}; the deepest: "${deepest.replace(/\s+/g, ' ').slice(0, 70)}"`);
+  // Searching "deepest" (v0.33.2) finds the deepest wrecks first, then the deepest place in the ocean.
+  const deepQ = async (q) => { await page.evaluate((q) => window.atlas.shell.search.search(q), q); await page.waitForTimeout(1500); return page.evaluate((q) => window.atlas.shell.search.search(q).slice(0, 4).map((h) => h.label), q); };
+  const dq1 = await deepQ('deepest');
+  check(dq1[0] === 'USS Samuel B. Roberts' && dq1.includes('Mariana Trench'), `search "deepest": ${dq1.join(', ')}`);
 
   // The living ocean, mangroves and kelp, the garbage patches.
   await page.evaluate(() => window.atlas.app.setStack(['political', 'living-ocean', 'coastal-forests', 'garbage-patches']));

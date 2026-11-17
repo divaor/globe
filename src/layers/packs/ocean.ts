@@ -35,6 +35,15 @@ function pickNear<X>(items: X[], at: (x: X) => [number, number], ui: LayerTapUi,
   return best;
 }
 
+
+/** How strongly a search asks for "the deepest" (0: it does not): the best of the phrases it starts or matches. */
+function deepestAsked(match: (s: string) => number, phrases: string[]): number {
+  // Not for the start of a word ("deep", "más"): only once it says "deepest", "más prof…".
+  if (['d', 'de', 'dee', 'deep', 'deepe', 'm', 'ma', 'mas', 'el', 'el mas', 'lo', 'lo mas', 'b', 'ba', 'p', 'pe', 'n', 'na'].some((x) => match(x) === 100)) return 0;
+  const best = Math.max(...phrases.map((p) => match(p)));
+  return best >= 75 ? best : 0;
+}
+
 // ---- The depth grid as pictures: a canvas the GPU draws, made again when the water level changes ---------------
 const W = 1440, H = 720;
 function paint(d: Depths, colour: (mean: number, i: number) => number | null): HTMLCanvasElement {
@@ -274,6 +283,10 @@ export const seaFeatures: LayerDef = {
   async searchLoad() { await loadFeatures(); },
   search(match) {
     const out: LayerHit[] = [];
+    // "Deepest" (and "lo más hondo"...) finds the deepest place in the ocean (v0.33.2).
+    const deep = deepestAsked(match, ['deepest point', 'deepest place', 'deepest trench', 'deepest ocean', 'deepest sea', 'punto mas profundo', 'lugar mas profundo', 'fosa mas profunda', 'lo mas hondo', 'lo mas profundo']);
+    const bottom = deep ? [...(feats?.famous ?? [])].filter((f) => f.depth_m).sort((a, b) => (b.depth_m ?? 0) - (a.depth_m ?? 0))[0] : null;
+    if (bottom) out.push({ label: T(bottom.name), sub: L(`⬇️ The deepest place in the ocean: ${fmtNumber(bottom.depth_m!)} m`, `⬇️ El lugar más profundo del océano: ${fmtNumber(bottom.depth_m!)} m`), icon: '⛰️', lon: bottom.lon, lat: bottom.lat, score: deep + 15, wz: 4 });
     for (const f of feats?.famous ?? []) {
       const sc = Math.max(match(f.name.en), match(f.name.es));
       if (sc >= 50) out.push({ label: T(f.name), sub: L('Undersea feature', 'Forma submarina'), icon: '⛰️', lon: f.lon, lat: f.lat, score: sc + 10, wz: 4 });
@@ -410,6 +423,9 @@ export const wrecksLayer: LayerDef = {
   async searchLoad() { await wrecksLayer.load!({} as never, {} as never); },
   search(match) {
     const out: LayerHit[] = [];
+    // "Deepest" (and "el más profundo"...) finds the deepest wrecks found (v0.33.2), the deepest first.
+    const deep = deepestAsked(match, ['deepest shipwreck', 'deepest wreck', 'deepest ship', 'naufragio mas profundo', 'barco mas profundo', 'pecio mas profundo', 'el mas profundo', 'mas profundo']);
+    if (deep) [...wrecks].sort((a, b) => b.depth_m - a.depth_m).slice(0, 3).forEach((w, i) => out.push({ label: T(w.name), sub: i === 0 ? L(`⚓ The deepest wreck found: ${fmtNumber(w.depth_m)} m`, `⚓ El naufragio más profundo hallado: ${fmtNumber(w.depth_m)} m`) : L(`⚓ ${fmtNumber(w.depth_m)} m down`, `⚓ A ${fmtNumber(w.depth_m)} m`), icon: '⚓', lon: w.lon, lat: w.lat, score: deep + 25 - i, wz: 6, open: (ui) => wreckCard(ui, w) }));
     for (const w of wrecks) { const sc = Math.max(match(w.name.en), match(w.name.es)); if (sc >= 50) out.push({ label: T(w.name), sub: `⚓ ${T(w.place)}`, icon: '⚓', lon: w.lon, lat: w.lat, score: sc + 10, wz: 6, open: (ui) => wreckCard(ui, w) }); }
     for (const w of moreWrecks) { const sc = Math.max(match(w.n[0]), match(w.n[1])); if (sc >= 60) out.push({ label: es() ? w.n[1] : w.n[0], sub: L('⚓ Shipwreck', '⚓ Naufragio'), icon: '⚓', lon: w.at[0], lat: w.at[1], score: sc, wz: 7 }); }
     return out.sort((a, b) => b.score - a.score).slice(0, 6);
