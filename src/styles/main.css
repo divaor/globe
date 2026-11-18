@@ -1354,3 +1354,20 @@ textarea.trip-input { resize: vertical; }
 .onmap-placing .onmap-item .onmap-name { white-space: normal; overflow: visible; text-overflow: clip; line-height: 1.25; }
 .onmap-placing-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .onmap-placing-row .pill { flex: none; }
+
+/* Today (v0.37.0): a dot on the bottom bar's button while something is left today. */
+.dock-dot { position: absolute; top: 7px; right: calc(50% - 16px); width: 9px; height: 9px; border-radius: 50%; background: #ff6b6b; box-shadow: 0 0 0 2px var(--dock-bg, rgba(10,16,28,0.9)); }
+.today-head { display: grid; gap: 6px; padding: 12px 14px; border-radius: 16px; border: 1px solid var(--line); background: var(--chip); }
+.today-date { font-size: 13px; color: var(--muted); }
+.today-count { font-size: 15px; }
+.today-bar { height: 8px; }
+.today-head .hop-actions { margin-top: 2px; }
+/* The map games' puzzles: small tiles, three or four a row. */
+.today-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; }
+.today-tile { display: grid; justify-items: center; gap: 2px; padding: 10px 6px; border-radius: 14px; border: 1px solid var(--line); background: var(--chip); color: inherit; font: inherit; cursor: pointer; text-align: center; }
+.today-tile:hover { border-color: var(--line-strong); }
+.today-tile-icon { font-size: 24px; line-height: 1.1; }
+.today-tile-name { font-size: 12px; font-weight: 650; line-height: 1.2; }
+.today-tile-mark { font-size: 11.5px; color: var(--muted); font-weight: 700; }
+.today-tile.done { border-color: #27ae60; background: color-mix(in srgb, #27ae60 14%, var(--chip)); }
+.today-tile.done .today-tile-mark { color: #27ae60; }

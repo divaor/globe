@@ -24,9 +24,15 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   when you zoom in). States and provinces (the first-level divisions of every country, 4,596 of them) show from
   country zoom with thin dashed lines and their names, on by default and each with its switch; a tap says which one
   ("State: Texas") and Who was born here? names a place's state.
-- **The More menu:** Ambient mode, Your data, Settings and About sit at the top, with four groups that open in
+- **Today** (the bottom bar, between Globe and Time; a dot while something is left): every daily thing in one place.
+  Your day ("5 of 16 done", the streak, Your progress, **Share my day**: all of today's results in one message), then
+  the Daily challenge, Master the world's goal (with the cards to review), Fill the map's region of the day, Put it on
+  the map's puzzle of the day, the 12 map games' puzzles as tiles (ticked with today's score) and On this day. Each
+  line opens its game; each game keeps its own "today" card in its own panel too.
+- **The More menu:** Ambient mode, Your data, Settings and About sit at the top, with five groups that open in
   place, each row saying what is inside it in small type: **Explore** (Travel guide, Art and architecture, Nature,
-  Inside the Earth, Into the deep), **Learn and play** (Master the world, Fill the map, Put it on the map, Map games, Quiz, Guided tours, On this day), **Tools**
+  Inside the Earth, Into the deep), **Learn** (Master the world, Quiz, Guided tours, On this day), **Play** (Map games,
+  Fill the map, Put it on the map; the Map games panel lists all 14 games), **Tools**
   (Measure distance, Compare countries, True size of countries, Compare two filters) and **Save and share** (Save
   image, the 4K and phone wallpapers, Share view). A row at the top of a group (or Escape) goes back, and the menu
   scrolls on a short screen.
@@ -337,7 +343,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   the same event. A story opened from a card ("Open its story") or a list starts paused at its step with all its
   controls; its X goes back to the map and filters there were. While a tour, a story or the years of a timeline
   play by themselves (or are read aloud), the screen is kept on, where the browser can (the Screen Wake Lock).
-- **Master the world** (More → Learn and play → Master the world, or the Quiz panel): every capital, flag and country
+- **Master the world** (More → Learn → Master the world, or the Quiz panel): every capital, flag and country
   learned for good, a little each day. Three decks (the 193 UN members plus Vatican City and Palestine; territories
   such as Greenland or Hong Kong as a setting) and three ways to play: **Learn** (spaced repetition: the countries due
   today first, then up to five new ones; one you miss comes back three questions later, one you get right comes back
@@ -359,7 +365,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   flag told apart, every country among its neighbours, a marathon without a mistake, a week and a month of daily
   goals, 20 comebacks), a picture to share, sounds and buzz (a setting), and it works offline. **Your world**, a
   filter (Fun), paints each country by how well you know it: learning, known, mastered.
-- **Fill the map** (More → Learn and play → Fill the map): a world map coloured in country by country. Fill it with
+- **Fill the map** (More → Play → Fill the map): a world map coloured in country by country. Fill it with
   **countries** ("Tap Bolivia"), **capitals** ("Tap the country whose capital is Sucre"), **flags**, the **most people
   first** or the **largest first** (the biggest country left each time, so the map fills in order), **clues** (a ladder
   from hard to easy, one more after each miss: a national animal, dish or export, then a famous person or the highest
@@ -371,7 +377,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   countries shown to try again. Tiny countries get a ring to tap. Every answer counts toward Master the world's daily
   goal, and countries, capitals and flags in its decks too. A **region of the day**, the same for everyone, is in the
   Map games panel; badges for a continent, a perfect continent, the world and every map; a picture of your map to share.
-- **Put it on the map** (More → Learn and play → Put it on the map): a Wordle-style puzzle. Six things from a country
+- **Put it on the map** (More → Play → Put it on the map): a Wordle-style puzzle. Six things from a country
   or a region (a river, a lake, a mountain range, a desert, a peak or volcano, a city, a heritage site or famous
   building, a national park) to put where they are: tap a name, then one of the grey places of its kind (the rivers
   there as grey lines, the ranges as grey areas, the cities as dots...); on a computer a name can also be dragged onto
@@ -382,7 +388,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   country one day, a region the next), is in the Map games panel and is shared as a grid of coloured squares. On a
   phone the card shrinks to the name being placed, so the map has room. Badges for a puzzle solved, all six at the
   first check, and a week of puzzles of the day.
-- **Map games** (More → Learn and play → Map games): twelve games played on the map, each with a new puzzle every day that is the
+- **Map games** (More → Play → Map games): twelve games played on the map, each with a new puzzle every day that is the
   same for everyone (the panel's Today list), a best score and badges. The map, its labels and filters come back as
   they were when a game ends.
   - **Pin it:** drop a pin where a place is, five rounds. A pin on the spot scores 5,000; 1,500 km off scores about

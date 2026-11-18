@@ -1,6 +1,6 @@
 // The app chrome: brand + search (top left), ambient/fullscreen (top right), zoom controls, the
 // active-filter chips and the dock (bottom), plus sheets, legend, card, tooltip and toasts.
-import { Layers, Layers2, Globe, Map as MapIcon, Ellipsis, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Share2, Settings, Info, X, Mountain, Earth, Gamepad2, Wrench, Link, ChevronRight, ChevronLeft } from 'lucide';
+import { Layers, Layers2, Globe, Map as MapIcon, Ellipsis, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Share2, Settings, Info, X, Mountain, Earth, Gamepad2, GraduationCap, Wrench, Link, ChevronRight, ChevronLeft } from 'lucide';
 import { terrainActions } from '../layers/terrainActions';
 import { h, icon, button, clear, add } from './dom';
 import { t, tx } from '../app/i18n';
@@ -23,13 +23,16 @@ import type { LayerDef, LayerHit, LayerInstance } from '../layers/types';
 import type { App } from '../app/app';
 import type { IconNode } from 'lucide';
 
-export interface DockItem { id: string; icon: IconNode; label: () => string; onClick: () => void; order: number }
+/** `dot`: a small dot on the button (v0.37.0: Today, while something is left today). */
+export interface DockItem { id: string; icon: IconNode; label: () => string; onClick: () => void; order: number; dot?: () => boolean }
 /** The More menu's groups (v0.33.1): each opens in place, with a row back; the rest stay at the top. */
-export type MenuGroup = 'explore' | 'learn' | 'tools' | 'share';
+export type MenuGroup = 'explore' | 'learn' | 'play' | 'tools' | 'share';
 export interface MenuItem { id: string; icon: IconNode; label: () => string; onClick: () => void; order: number; group?: MenuGroup }
 const MENU_GROUPS: { id: MenuGroup; icon: IconNode; key: string; order: number }[] = [
   { id: 'explore', icon: Earth, key: 'menuExplore', order: 15 },
-  { id: 'learn', icon: Gamepad2, key: 'menuLearn', order: 16 },
+  // v0.37.0: Learn and play split in two: what you learn, and the games you play.
+  { id: 'learn', icon: GraduationCap, key: 'menuLearn', order: 16 },
+  { id: 'play', icon: Gamepad2, key: 'menuPlay', order: 16.5 },
   { id: 'tools', icon: Wrench, key: 'menuTools', order: 17 },
   { id: 'share', icon: Share2, key: 'menuShare', order: 60 },
 ];
@@ -145,6 +148,9 @@ export class Shell {
     );
   }
 
+  /** Draws the bottom bar again (a dot that changed). */
+  refreshDock() { this.renderDock(); }
+
   private renderDock() {
     clear(this.dock);
     const active = this.app.layers.length;
@@ -152,7 +158,8 @@ export class Shell {
       const ic = it.id === 'projection' ? (this.app.renderer.view.current.kind === 'globe' ? Globe : MapIcon) : it.icon;
       const b = h('button', { type: 'button', class: `dock-btn${this.sheet.current === it.id ? ' on' : ''}`, 'data-dock': it.id },
         icon(ic, 22), h('span', { class: 'dock-label' }, it.label()),
-        it.id === 'filters' && active ? h('span', { class: 'dock-badge' }, String(active)) : null);
+        it.id === 'filters' && active ? h('span', { class: 'dock-badge' }, String(active)) : null,
+        it.dot?.() ? h('span', { class: 'dock-dot', 'aria-hidden': 'true' }) : null);
       b.addEventListener('click', (e) => { e.stopPropagation(); it.onClick(); });
       this.dock.append(b);
     }
@@ -190,7 +197,7 @@ export class Shell {
     (focus as HTMLElement | null)?.focus({ preventScroll: true });
   }
 
-  /** The More menu: the groups (Explore, Learn and play, Tools, Save and share) with what is in them in small type,
+  /** The More menu: the groups (Explore, Learn, Play, Tools, Save and share) with what is in them in small type,
    *  and the rows of their own; or one group's rows under a row back. It scrolls when the screen is short. */
   private renderMenu() {
     clear(this.menu);

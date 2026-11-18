@@ -437,7 +437,20 @@ export class Learn {
     return h('div', { class: 'mode-list' }, daily, ...(this.master ? [mw] : []), prog);
   }
 
-  private openProgress() {
+  /** Today (v0.37.0): the Daily challenge as one line: done or not, its result, how to start it, its share line. */
+  todayDaily(): { done: boolean; title: string; desc: string; line: string | null; open: () => void } {
+    const day = dayKey(), done = dailyResult(day), n = dailyNumber(day);
+    const marks = done ? done.m.replace(/y/g, '🟩').replace(/n/g, '🟥') : '';
+    return {
+      done: !!done,
+      title: `${L('Daily challenge', 'Reto del día')} #${n}`,
+      desc: done ? `${L('Done', 'Hecho')}: ${done.s}/${done.n} ${marks}` : L('Eight questions, the same for everyone today', 'Ocho preguntas, las mismas para todos hoy'),
+      line: done ? `🗓️ ${L('Daily challenge', 'Reto del día')} #${n}: ${done.s}/${done.n} ${marks}` : null,
+      open: () => void (done ? this.showDailyDone() : this.startQuiz('daily', 'world')),
+    };
+  }
+
+  openProgress() {
     this.shell.openPanel('progress', L('Your progress', 'Tu progreso'), progressPanel(() => this.openProgress()));
   }
 
@@ -2688,7 +2701,7 @@ export class Learn {
 
   /** A day of the year (today by default): what the stories tell of it, each opening its step, then Wikipedia's
    *  selection of events, with a link to the story that tells the same event. Arrows go to the day before or after. */
-  private async openOnThisDay(day = new Date()) {
+  async openOnThisDay(day = new Date()) {
     this.otdDay = day;
     const loc = appLocale();
     const label = day.toLocaleDateString(loc, { day: 'numeric', month: 'long' });
