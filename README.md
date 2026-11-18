@@ -29,6 +29,16 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   the Daily challenge, Master the world's goal (with the cards to review), Fill the map's region of the day, Put it on
   the map's puzzle of the day, the 12 map games' puzzles as tiles (ticked with today's score) and On this day. Each
   line opens its game; each game keeps its own "today" card in its own panel too.
+- **Reminders** (🔔, optional, off until you turn one on): a **Remind me** switch in each daily game: the Daily
+  challenge, Master the world (one per deck: capitals, flags, countries), Fill the map's region of the day, Put it on
+  the map's puzzle of the day and the Map games panel. The first switch asks the time (19:00 at first). **One
+  reminder a day at most**, only if something you chose is not done yet, each day about a different one ("🏛️
+  Capitals: 6 to review today · 🔥 keep your 12-day streak"); it makes no sound, replaces yesterday's and opens
+  Today. Atlas has no server, so it uses what the device offers: where Atlas is installed on Android (Chrome), the
+  phone wakes it in the background now and then and the notification comes **around** your time; elsewhere
+  (iPhone, computers) the switch adds a **daily calendar reminder** at the exact time instead (an .ics file your
+  calendar adds once; tapping it opens Today). Today shows your reminders and their time; Settings has one switch for
+  all of them and the time.
 - **The More menu:** Ambient mode, Your data, Settings and About sit at the top, with five groups that open in
   place, each row saying what is inside it in small type: **Explore** (Travel guide, Art and architecture, Nature,
   Inside the Earth, Into the deep), **Learn** (Master the world, Quiz, Guided tours, On this day), **Play** (Map games,
@@ -540,6 +550,10 @@ npm run build      # type-check + production build (with service worker) into di
 
 Browser checks (Playwright, pre-installed in CI images):
 `node scripts/test/shot.mjs <url> out.png`, `scripts/test/hero-shots.mjs`, `phone.mjs`, `live-mock.mjs` (live APIs mocked).
+
+The service worker is the one vite-plugin-pwa writes, plus `public/reminders-sw.js` (imported into it): the daily
+reminder's choice, its notification and its tap. The page leaves what it reads in Cache Storage (`atlas-reminders`).
+`npm run test:reminders` checks the choice and the calendar file with Node.
 
 ## Adding a filter
 

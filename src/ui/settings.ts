@@ -22,6 +22,9 @@ export async function install() {
   return true;
 }
 
+/** More sections, added by main.ts (Reminders, v0.37.1): a title and its controls, before the backup. */
+export const settingsExtras: { title: () => string; body: () => HTMLElement }[] = [];
+
 const field = (label: string, control: HTMLElement, hint?: string) =>
   h('div', { class: 'field' }, h('div', { class: 'field-label' }, label, hint ? h('span', { class: 'field-hint' }, hint) : null), control);
 
@@ -86,6 +89,7 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     h('p', { class: 'muted small' }, app.lang === 'es'
       ? 'Las listas de reproducción del salvapantallas están en Más → Modo ambiente.'
       : 'The screensaver’s playlists are in More → Ambient mode.'),
+    ...settingsExtras.flatMap((x) => [h('h3', { class: 'sec-title' }, x.title()), x.body()]),
     // Your data on another device (v0.31.2): a backup to bring everything back on a phone or another computer.
     h('h3', { class: 'sec-title' }, app.lang === 'es' ? 'Tus datos en otro dispositivo' : 'Your data on another device'),
     backupSettings(toast),

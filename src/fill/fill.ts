@@ -24,6 +24,7 @@ import type { Country } from '../master/decks';
 import { CATS, CONTS, TRIES, THEMES, continentOf, dailyPick, hash, inScope, ladder, langPrompt, nextRegion, order, regionsOf, rng, starsFor, type Clue, type FillCat, type Region, type Theme, type Unit } from './logic';
 import { fillState, saveFill, resetFill, resetFillMap } from './store';
 import { pickCountry, isTiny } from '../play/pick';
+import { bell } from '../today/reminders';
 
 /** A sentence starts with a capital ("the world" → "The world"). */
 const cap = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
@@ -548,6 +549,8 @@ export class FillMap implements HostGame {
     const st = fillState(), set = st.settings, cat = set.cat;
     const out: HTMLElement[] = [];
     out.push(this.dailyCard());
+    const b = bell('fill');
+    if (b) out.push(b);
     // The category.
     const chips = h('div', { class: 'chip-row', 'data-fill': 'cats' });
     for (const c of CATS) {
@@ -601,6 +604,15 @@ export class FillMap implements HostGame {
     out.push(h('div', { class: 'hop-actions mw-foot' }, share, reset, ...(this.openMaster ? [mw] : [])),
       h('p', { class: 'tool-hint' }, L('Each country you find is painted in with its name: right at the first try ★★★, the second ★★, the third ★; after three misses it is shown in orange. Every answer counts toward Master the world\'s daily goal.', 'Cada país que encuentras se colorea con su nombre: a la primera ★★★, a la segunda ★★, a la tercera ★; tras tres fallos se muestra en naranja. Cada respuesta cuenta para la meta diaria de Domina el mundo.')));
     return out;
+  }
+
+  /** A day's region and category, for its reminder (v0.37.1), or null before the data is here. */
+  dayWhat(day: string): string | null {
+    // (Its regions as the panel last made them: not remade under a game being played.)
+    if (!this.regions.length && this.allUnits?.length) this.refreshUnits();
+    if (!this.regions.length) return null;
+    const pick = dailyPick(day, this.regions);
+    return pick ? `${this.scopeName(pick.scope)} · ${this.catName(pick.cat)}` : null;
   }
 
   /** The region of the day (also in the Map games panel). */

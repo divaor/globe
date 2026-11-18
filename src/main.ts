@@ -12,10 +12,13 @@ import { gameDaily, dayKey } from './learn/progress';
 import { fillState } from './fill/store';
 import { onmapState } from './onmap/store';
 import { Today } from './today/today';
+import { Reminders } from './today/reminders';
+import { settingsExtras } from './ui/settings';
+import { DECKS } from './master/srs';
 import { TimeTravel } from './modes';
 import { STORY_KINDS, storyHashKey } from './modes/stories';
 import { Tools } from './tools/tools';
-import { Learn } from './learn/learn';
+import { Learn, dailyNumber } from './learn/learn';
 import { registerScriptFonts } from './app/scriptFonts';
 import { PersonalMaps } from './personal/personal';
 import { Compare } from './compare/compare';
@@ -41,7 +44,7 @@ import { Plants } from './green/finder';
 import { InsideEarth } from './earth/inside';
 import { DeepSea } from './ocean/deep';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap; today: Today } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -137,6 +140,35 @@ async function boot() {
     id: 'onthisday', order: 10,
     card: () => today.line('onthisday', '📅', L('On this day', 'Tal día como hoy'), L('What happened on this day: events, births and deaths', 'Lo que pasó un día como hoy: hechos, nacimientos y muertes'), false, () => void learn.openOnThisDay()),
   });
+  // Reminders (v0.37.1): a 🔔 switch in each daily game, one gentle notification a day (or a calendar reminder).
+  const reminders = new Reminders(shell);
+  today.remindLine = () => reminders.todayLine();
+  settingsExtras.push({ title: () => L('Reminders', 'Recordatorios'), body: () => reminders.settings() });
+  reminders.add({
+    id: 'daily', order: 10, icon: '🗓️', name: () => L('Daily challenge', 'Reto del día'),
+    label: () => L('Remind me of the Daily challenge', 'Recuérdame el Reto del día'), done: () => learn.todayDaily().done,
+    words: (day) => ({ t: `🗓️ ${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)}`, b: L('Eight questions, the same for everyone today', 'Ocho preguntas, las mismas para todos hoy') }),
+  });
+  DECKS.forEach((deck, k) => reminders.add({
+    id: `master:${deck}`, order: 20 + k, icon: master.deckIcon(deck), name: () => master.deckName(deck),
+    label: () => L(`Remind me to practise ${master.deckName(deck).toLowerCase()}`, `Recuérdame practicar ${master.deckName(deck).toLowerCase()}`),
+    done: () => master.deckToday(deck), words: (day) => master.deckWords(deck, day),
+  }));
+  reminders.add({
+    id: 'fill', order: 30, icon: '🖍️', name: () => L('Region of the day', 'Región del día'),
+    label: () => L('Remind me of the region of the day', 'Recuérdame la región del día'), done: () => !!fillState().dailies[dayKey()], prepare: () => fill.ready(),
+    words: (day) => ({ t: `🖍️ ${L('Fill the map: the region of the day', 'Llena el mapa: la región del día')}`, b: fill.dayWhat(day) ?? L('A new region to fill in today', 'Una nueva región para colorear hoy') }),
+  });
+  reminders.add({
+    id: 'onmap', order: 40, icon: '📍', name: () => L('Put it on the map', 'Ponlo en el mapa'),
+    label: () => L('Remind me of the puzzle of the day', 'Recuérdame el reto del día'), done: () => !!onmapState().dailies[dayKey()], prepare: () => onmap.ready(),
+    words: (day) => { const w = onmap.dayScope(day); return { t: `📍 ${L('Put it on the map: today', 'Ponlo en el mapa: hoy')}`, b: w ? L(`Six places in ${w} to put on the map`, `Seis lugares de ${w} para poner en el mapa`) : L('Six places to put on the map', 'Seis lugares para poner en el mapa') }; },
+  });
+  reminders.add({
+    id: 'games', order: 50, icon: '🎮', name: () => L('Map games', 'Juegos en el mapa'),
+    label: () => L('Remind me of the map games’ puzzles', 'Recuérdame los retos de los juegos en el mapa'), done: () => play.todayGames().some((g) => !!g.result),
+    words: () => { const gs = play.todayGames(); const some = gs.slice(0, 3).map((g) => g.name).join(', '); return { t: `🎮 ${L('Map games', 'Juegos en el mapa')}`, b: L(`${gs.length} puzzles today: ${some}…`, `${gs.length} retos hoy: ${some}…`) }; },
+  });
   // The travel guide (v0.26.0).
   const guide = new TravelGuide(app, shell, time, learn);
   // Art and architecture (v0.27.0): its trails, and the guide's Art and Buildings tabs.
@@ -164,7 +196,7 @@ async function boot() {
   app.on('mydata', openMyData);
   shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, onClick: openMyData });
   void myData.init();
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill, onmap, today };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill, onmap, today, reminders };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };
@@ -184,7 +216,10 @@ async function boot() {
     shell.toast(app.lang === 'es' ? 'Arrastra para girar · pellizca para acercar · toca un país' : 'Drag to spin · pinch to zoom · tap a country', 5000);
     try { localStorage.setItem('atlas-globe:hinted', '1'); } catch { /* ignore */ }
   }
-  registerSW(shell);
+  void registerSW(shell).then(() => reminders.init());
+  // A reminder tapped: Today (in the app open already, or opened with #today=1).
+  navigator.serviceWorker?.addEventListener('message', (e) => { if ((e.data as { type?: string } | null)?.type === 'atlas-open-today') void today.openPanel(); });
+  if (shared.get('today')) setTimeout(() => void today.openPanel(), 500);
   // Home-screen shortcut: open straight into ambient mode.
   // A playlist link (#ambient=1&playlist=planet, or the reader's own in #mine=...).
   if (/ambient=1/.test(location.hash)) {

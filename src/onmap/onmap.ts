@@ -24,6 +24,7 @@ import {
   regionEntries, rng, spanOf, type Cand, type Kind, type Mark, type Mix, type PlaceRow,
 } from './logic';
 import { onmapState, saveOnmap, resetOnmap } from './store';
+import { bell } from '../today/reminders';
 
 const KIND: Record<Kind, { icon: string; en: string; es: string }> = {
   river: { icon: '🌊', en: 'River', es: 'Río' },
@@ -531,6 +532,8 @@ export class PutOnMap implements HostGame {
     const out: HTMLElement[] = [];
     out.push(h('p', { class: 'muted small' }, L('Six places from a country or a region: tap a name, then its place among the grey ones. Green is right; yellow to red, how far off. Five checks.', 'Seis lugares de un país o una región: toca un nombre y luego su lugar entre los grises. Verde es correcto; de amarillo a rojo, qué tan lejos. Cinco comprobaciones.')));
     out.push(this.dailyCard());
+    const rb = bell('onmap');
+    if (rb) out.push(rb);
     // The mix.
     const mixes = h('div', { class: 'chip-row', 'data-onmap': 'mixes' });
     for (const m of MIXES) {
@@ -568,6 +571,12 @@ export class PutOnMap implements HostGame {
     out.push(h('h3', { class: 'sec-title' }, L('A continent or a region', 'Un continente o una región')), regs);
     out.push(h('p', { class: 'muted small', 'data-onmap': 'stats' }, L(`Played ${st.played} · solved ${st.solved} · at the first check ${st.first}`, `Jugados ${st.played} · resueltos ${st.solved} · a la primera ${st.first}`)));
     return out;
+  }
+
+  /** A day's puzzle, for its reminder (v0.37.1): where, or null before the data is here. */
+  dayScope(day: string): string | null {
+    const scope = this.loaded ? dailyScope(day, this.okCountries.get('all') ?? [], this.okRegions.map((r) => `r:${r}`)) : null;
+    return scope ? this.scopeName(scope) : null;
   }
 
   dailyCard(): HTMLElement {

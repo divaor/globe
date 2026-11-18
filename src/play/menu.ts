@@ -18,6 +18,7 @@ import { WhoseLife } from './lifeguess';
 import { starText } from './score';
 import { GAMES, type GameId } from './logic';
 import { gameDaily, progress, dayKey } from '../learn/progress';
+import { bell } from '../today/reminders';
 
 const GAME_TEXT: Record<GameId, { icon: string; en: string; es: string; desc: { en: string; es: string } }> = {
   hop: { icon: '🧭', en: 'Border hop', es: 'Salto de fronteras', desc: { en: 'From one country to a far one across land borders.', es: 'De un país a otro lejano cruzando fronteras terrestres.' } },
@@ -121,7 +122,7 @@ export class MapGames {
     for (const x of this.extraGames) games.append(this.card(x.icon, x.title(), x.desc(), { 'data-game-open': x.id }, x.open));
     body.append(
       h('p', { class: 'muted small' }, L('Games you play on the map, scored against the best result the app can find. A new puzzle of each game every day, the same for everyone.', 'Juegos en el mapa, puntuados frente al mejor resultado que encuentra la app. Cada día, un nuevo reto de cada juego, el mismo para todos.')),
-      h('h3', { class: 'sec-title' }, `${L('Today', 'Hoy')} · ${played}/${GAMES.length}`), daily,
+      h('h3', { class: 'sec-title' }, `${L('Today', 'Hoy')} · ${played}/${GAMES.length}`), daily, ...[bell('games')].filter((x): x is HTMLElement => !!x),
       h('h3', { class: 'sec-title' }, `${L('Games', 'Juegos')} · ${GAMES.length + this.extraGames.length}`), games);
     this.shell.openPanel('play', L('Map games', 'Juegos en el mapa'), body);
   }
