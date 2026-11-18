@@ -22,6 +22,7 @@ import { loadDeck, levelOf, LEVEL_COLORS } from './data';
 import { yourWorldLayer, refreshYourWorld, WORLD_ID } from './world';
 import { appLocale } from '../app/i18n';
 import { pickCountry } from '../play/pick';
+import { bell } from '../today/reminders';
 
 type Mode = 'learn' | 'run' | 'marathon';
 type Done = 'end' | 'empty' | 'over' | 'miss' | 'won';
@@ -126,6 +127,26 @@ export class Master implements HostGame {
     for (const cards of Object.values(st.cards)) for (const c of Object.values(cards ?? {})) if (c && c.seen > 0 && c.due <= today) due++;
     const streak = st.days.streak && st.days.last >= addDays(today, -1) ? st.days.streak : 0;
     return { n, goal: GOAL, due, streak };
+  }
+  /** A deck's reminder (v0.37.1): practised today (a card answered right today), and its words for a day. */
+  deckToday(deck: DeckId): boolean {
+    const today = this.today();
+    return Object.values(master().cards[deck] ?? {}).some((c) => c?.days?.includes(today));
+  }
+  deckName(deck: DeckId) { return this.nm(DECK_TEXT[deck]); }
+  deckIcon(deck: DeckId) { return DECK_TEXT[deck].icon; }
+  deckWords(deck: DeckId, day: string): { t: string; b: string } {
+    let due = 0, seen = 0;
+    for (const c of Object.values(master().cards[deck] ?? {})) { if (!c || c.seen <= 0) continue; seen++; if (c.due <= day) due++; }
+    const name = this.deckName(deck);
+    const lower = name.toLocaleLowerCase(appLocale());
+    const fem = deck !== 'countries'; // las capitales, las banderas; los países
+    return {
+      t: `${DECK_TEXT[deck].icon} ${L('Master the world', 'Domina el mundo')}: ${name}`,
+      b: due ? L(`${due} ${lower} to review today`, `${due} ${lower} por repasar hoy`)
+        : seen ? L(`A few new ${lower} today, toward your goal of ${GOAL}`, fem ? `Unas cuantas ${lower} nuevas hoy, para tu meta de ${GOAL}` : `Unos cuantos ${lower} nuevos hoy, para tu meta de ${GOAL}`)
+          : L(`Start learning the ${lower}: a few each day`, fem ? `Empieza a aprender las ${lower}: unas cuantas cada día` : `Empieza a aprender los ${lower}: unos cuantos cada día`),
+    };
   }
   private country(id: string) { return this.s?.allowed.get(id) ?? this.data?.countries.find((c) => c.id === id); }
 
@@ -838,6 +859,9 @@ export class Master implements HostGame {
     const decks = segmented(deck, DECKS.map((d) => ({ value: d, label: `${DECK_TEXT[d].icon} ${this.nm(DECK_TEXT[d])}` })), (v) => { set.deck = v; save(); });
     decks.dataset.master = 'deck';
     out.push(h('h3', { class: 'sec-title' }, L('Deck', 'Mazo')), decks);
+    // Its reminder (v0.37.1): one switch per deck.
+    const rb = bell(`master:${deck}`);
+    if (rb) out.push(rb);
     // Progress: the world, then each continent.
     const all = this.counts(deck, 'world');
     out.push(h('div', { class: 'mw-progress', 'data-master': 'progress' }, this.levelBar(all),

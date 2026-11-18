@@ -1371,3 +1371,15 @@ textarea.trip-input { resize: vertical; }
 .today-tile-mark { font-size: 11.5px; color: var(--muted); font-weight: 700; }
 .today-tile.done { border-color: #27ae60; background: color-mix(in srgb, #27ae60 14%, var(--chip)); }
 .today-tile.done .today-tile-mark { color: #27ae60; }
+/* Reminders (v0.37.1): a game's 🔔 switch, the first time's question, Today's line. */
+.remind-row { display: grid; gap: 6px; padding: 10px 12px; border-radius: 14px; border: 1px dashed var(--line-strong); }
+.remind-row .switch-label { font-size: 13.5px; }
+.remind-hint { display: grid; gap: 4px; justify-items: start; }
+.remind-hint .tool-hint, p.remind-hint { margin: 0; }
+.remind-link { border: 0; background: none; padding: 0; color: var(--accent); font: inherit; font-weight: 650; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.remind-ask { display: grid; gap: 6px; }
+.remind-ask-q { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 650; }
+.remind-time { width: auto; min-width: 110px; }
+.remind-list { display: grid; gap: 8px; }
+.remind-settings { display: grid; gap: 8px; }
+.today-remind { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 10px; width: 100%; padding: 6px 0 0; border: 0; border-top: 1px solid var(--line); background: none; color: inherit; font: inherit; font-size: 13px; text-align: left; cursor: pointer; }

@@ -35,6 +35,8 @@ export class Today {
   private reads: TodayRead[] = [];
   /** Opens Your progress (Learn's panel of badges and streaks). */
   openProgress: (() => void) | null = null;
+  /** The reminders' line (v0.37.1). */
+  remindLine: (() => HTMLElement) | null = null;
 
   constructor(private shell: Shell) {
     shell.addDock({ id: ID, icon: CalendarCheck, label: () => L('Today', 'Hoy'), order: 25, onClick: () => void this.toggle(), dot: () => this.left() > 0 });
@@ -78,7 +80,8 @@ export class Today {
       h('div', { class: 'today-date' }, date),
       h('div', { class: 'today-count' }, h('strong', null, L(`${done} of ${total} done`, `${done} de ${total} hechos`)),
         streak ? h('span', null, ` · 🔥 ${L(`${streak} ${streak === 1 ? 'day' : 'days'} in a row`, `${streak} ${streak === 1 ? 'día' : 'días'} seguidos`)}`) : null),
-      bar, h('div', { class: 'hop-actions' }, share, prog)));
+      bar, h('div', { class: 'hop-actions' }, share, prog),
+      this.remindLine ? safe(() => this.remindLine!(), null) : null));
     // The challenges.
     const main = h('div', { class: 'mode-list', 'data-today': 'main' });
     for (const it of this.items.filter((x) => x.section === 'main')) {

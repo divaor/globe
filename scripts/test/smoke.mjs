@@ -41,8 +41,8 @@ const MENU_HELPER = () => {
   };
 };
 
-async function open(opts, hash) {
-  const ctx = await browser.newContext(opts);
+async function open(opts, hash, via = browser) {
+  const ctx = await via.newContext(opts);
   await ctx.addInitScript(MENU_HELPER);
   const page = await ctx.newPage();
   const errors = [];
@@ -5410,6 +5410,146 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(es.title === 'Hoy' && es.dock === 'Hoy' && /2 de 16 hechos/.test(es.head) && /^[A-ZÁÉÍÓÚ]/.test(es.head) && !/ De /.test(es.head) && es.secs.some((x) => /Los retos de hoy/.test(x)) && es.secs.some((x) => /Juegos en el mapa · 1\/12/.test(x)),
     `en español: ${es.title}; "${es.head.replace(/Compartir mi día.*/, '').trim()}"; ${es.secs.join(' / ')}`);
   await ctx.close();
+}
+
+// 41. Reminders (v0.37.1), on a phone: a 🔔 switch in each daily game. The first one asks the time (19:00 at
+// first, here 18:30); here (not an installed Android app) the reminder is a daily calendar event, downloaded as an
+// .ics file. The next switch does not ask again. Today shows them; the service worker (imported into the app's)
+// reads what the page leaves in Cache Storage and shows one quiet notification about one not done yet, then not
+// again that day; a tap opens Today (#today=1, or a message to the open app). Settings turns them all off. In Spanish.
+{
+  // Notifications need the full Chromium (in its new headless mode): the headless shell has none.
+  const full = await chromium.launch({ channel: 'chromium', args: ['--disable-accelerated-2d-canvas'] });
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en', full);
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const row = (id) => `[data-remind="${id}"]`;
+  // Master the world: one switch per deck.
+  await F(() => window.atlas.master.openPanel());
+  await page.waitForTimeout(1500);
+  const m0 = await F(() => ({ cap: !!document.querySelector('[data-remind="master:capitals"]'), on: document.querySelector('[data-remind="master:capitals"] .switch-input')?.checked, label: document.querySelector('[data-remind="master:capitals"] .switch-label')?.textContent }));
+  await page.tap(`${row('master:capitals')} .switch`);
+  await page.waitForTimeout(400);
+  const ask = await F(() => ({ q: document.querySelector('.remind-ask-q')?.textContent ?? '', time: document.querySelector('[data-remind="time"]')?.value }));
+  await page.fill('[data-remind="time"]', '18:30');
+  await page.tap('[data-remind="ok"]');
+  await page.waitForTimeout(800);
+  const m1 = await F(() => ({ on: document.querySelector('[data-remind="master:capitals"] .switch-input')?.checked, cal: document.querySelector('[data-remind="master:capitals"] [data-remind="calendar"]')?.textContent ?? '', route: window.atlas.reminders.route, st: JSON.parse(localStorage.getItem('atlas-globe:reminders') || '{}') }));
+  check(m0.cap && !m0.on && /Remind me to practise capitals/.test(m0.label) && /At what time/.test(ask.q) && ask.time === '19:00' && m1.on && m1.route === 'cal' && /Add to my calendar \(6:30\sPM\)/.test(m1.cal) && m1.st.time === '18:30' && m1.st.chosen.join() === 'master:capitals',
+    `Master the world: "${m0.label}"; the first one asks "${ask.q}" (${ask.time} at first); on at 18:30, and here it offers "${m1.cal}"`);
+  // The calendar file.
+  const [dl] = await Promise.all([page.waitForEvent('download', { timeout: 10000 }).catch(() => null), page.tap('[data-remind="calendar"]')]);
+  const icsText = dl ? fs.readFileSync(await dl.path(), 'utf8') : '';
+  await page.waitForTimeout(400);
+  const hint = await F(() => document.querySelector('[data-remind="master:capitals"] .remind-hint')?.textContent ?? '');
+  const flat = icsText.replace(/\r\n /g, '');
+  check(dl?.suggestedFilename() === 'atlas-reminder.ics' && /RRULE:FREQ=DAILY/.test(flat) && /DTSTART:\d{8}T183000\r\n/.test(flat) && /TRIGGER:PT0M/.test(flat) && /DESCRIPTION:Capitals\\n/.test(flat) && /URL:\S+#today=1/.test(flat) && /In your calendar, every day at 6:30\sPM/.test(hint),
+    `the calendar reminder: ${dl?.suggestedFilename()}, every day at 18:30 with an alert and the link to Today; then "${hint.replace(/ · change$/, '')}"`);
+  // The next switch, in Fill the map: no question this time.
+  await F(() => window.atlas.fill.openPanel());
+  await page.waitForTimeout(1500);
+  await page.tap(`${row('fill')} .switch`);
+  await page.waitForTimeout(800);
+  const f1 = await F(() => ({ on: document.querySelector('[data-remind="fill"] .switch-input')?.checked, ask: !!document.querySelector('[data-remind="fill"] .remind-ask'), hint: document.querySelector('[data-remind="fill"] .remind-hint')?.textContent ?? '' }));
+  const others = await F(async () => {
+    const out = {};
+    await window.atlas.onmap.openPanel(); await new Promise((r) => setTimeout(r, 800)); out.onmap = !!document.querySelector('[data-remind="onmap"]');
+    await window.atlas.play.openMenu(); await new Promise((r) => setTimeout(r, 800)); out.games = !!document.querySelector('[data-remind="games"]');
+    window.atlas.learn.openQuizMenu(); await new Promise((r) => setTimeout(r, 800)); out.daily = !!document.querySelector('[data-remind="daily"]');
+    return out;
+  });
+  check(f1.on && !f1.ask && /In your calendar/.test(f1.hint) && others.onmap && others.games && others.daily,
+    `Fill the map's switch turns on without asking again (${f1.hint.replace(/ · change$/, '')}); switches in Put it on the map, Map games and the Daily challenge too`);
+  // Today.
+  await F(() => window.atlas.shell.sheet.close());
+  await page.waitForTimeout(300);
+  await page.tap('[data-dock="today"]');
+  await page.waitForTimeout(2500);
+  const line = await F(() => document.querySelector('[data-today="reminders"]')?.textContent ?? '');
+  // What the service worker reads.
+  await page.waitForTimeout(500);
+  const snap = await F(async () => { await window.atlas.reminders.sync(); const c = await caches.open('atlas-reminders'); const r = await c.match('reminders.json'); return r ? r.json() : null; });
+  const today = await F(() => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; });
+  const days = Object.keys(snap?.days ?? {});
+  check(/Capitals, Region of the day · 6:30\sPM/.test(line) && snap && snap.time === '18:30' && snap.chosen.join() === 'master:capitals,fill' && !snap.off && days.length === 8 && days[0] === today
+    && /Fill the map/.test(snap.days[today]?.fill?.t ?? '') && /·/.test(snap.days[today]?.fill?.b ?? '') && /Capitals/.test(snap.days[today]?.['master:capitals']?.t ?? '') && /#today=1$/.test(snap.url),
+    `Today: "${line}"; the worker's copy: ${snap?.chosen?.join(', ')} at ${snap?.time}, words for ${days.length} days ("${snap?.days?.[today]?.fill?.t}: ${snap?.days?.[today]?.fill?.b}")`);
+  // The reminders' panel, from Today's line: every switch, and how they reach you said once (one calendar event).
+  await page.tap('[data-today="reminders"]');
+  await page.waitForTimeout(1200);
+  const pnl = await F(() => ({ open: window.atlas.shell.sheet.isOpen('reminders'), rows: [...document.querySelectorAll('.remind-panel .remind-row')].map((r) => `${r.dataset.remind}${r.querySelector('.switch-input')?.checked ? '+' : ''}`), how: document.querySelectorAll('.remind-panel [data-remind="how"]').length, inRows: document.querySelectorAll('.remind-panel .remind-row .remind-hint').length, change: document.querySelectorAll('.remind-panel [data-remind="change"]').length, text: document.querySelector('.remind-panel [data-remind="how"]')?.textContent ?? '' }));
+  check(pnl.open && pnl.rows.join() === 'daily,master:capitals+,master:flags,master:countries,fill+,onmap,games' && pnl.how === 1 && pnl.inRows === 0 && pnl.change === 0 && /In your calendar, every day at 6:30\sPM$/.test(pnl.text),
+    `the reminders' panel from Today: ${pnl.rows.join(', ')} (+ on); how they reach you said once: "${pnl.text}"`);
+  await F(() => window.atlas.shell.sheet.close());
+  // The service worker: one quiet notification, then none again today.
+  await ctx.grantPermissions(['notifications']);
+  await F(async () => { await navigator.serviceWorker?.ready; });
+  const sw = ctx.serviceWorkers()[0] ?? await ctx.waitForEvent('serviceworker', { timeout: 20000 }).catch(() => null);
+  const shown = sw ? await sw.evaluate(async () => {
+    const R = self.atlasReminders;
+    if (!R) return { has: false };
+    const d = new Date(); d.setHours(18, 40, 0, 0);
+    const a = await R.remind(d), b = await R.remind(d);
+    const list = await self.registration.getNotifications({ tag: R.TAG });
+    return { has: true, a: a && { id: a.id, title: a.title, body: a.body }, b, n: list.length, title: list[0]?.title, silent: list[0]?.silent };
+  }).catch((e) => ({ err: String(e) })) : { none: true };
+  check(shown.has && shown.a?.id === 'master:capitals' && !shown.b && shown.n === 1 && shown.silent === true,
+    `the service worker: "${shown.a?.title}: ${shown.a?.body}"; quiet; not a second one today${shown.has ? '' : ` (${JSON.stringify(shown)})`}`);
+  // Played today: done for the worker too; then it picks one not done. (A third reminder, Put it on the map, stays
+  // undone: the region of the day's answers can count for a Master the world deck too, as practising it.)
+  await F(() => window.atlas.onmap.openPanel());
+  await page.waitForTimeout(1200);
+  await page.tap(`${row('onmap')} .switch`);
+  await page.waitForTimeout(500);
+  await F(() => window.atlas.shell.sheet.close());
+  await F(() => window.atlas.fill.startDaily());
+  await page.waitForTimeout(2500);
+  await F(async () => { const f = window.atlas.fill; for (let k = 0; k < 40 && !f.info?.done; k++) { if (f.info.ans) f.next(); else f.answer(f.info.cur.id); } });
+  await F(() => window.atlas.fill.stop());
+  const after = await F(async () => { await window.atlas.reminders.sync(); const c = await caches.open('atlas-reminders'); return (await c.match('reminders.json')).json(); });
+  const next = sw ? await sw.evaluate((st) => { const d = new Date(); d.setHours(19, 0, 0, 0); return self.atlasReminders.choose(st, d, null)?.id ?? null; }, after) : null;
+  const left = (after.chosen ?? []).filter((id) => after.done?.[id] !== today);
+  check(after.chosen?.join() === 'master:capitals,fill,onmap' && after.done?.fill === today && !after.done?.onmap && next === left[0] && next !== 'fill',
+    `the region of the day played: done for the worker (${JSON.stringify(after.done)}); it reminds of ${next} instead (not done: ${left.join(', ')})`);
+  // A tap: the open app is told to open Today; a link opens it too.
+  await F(() => window.atlas.shell.sheet.close());
+  await page.waitForTimeout(300);
+  const told = sw ? await sw.evaluate(async () => { const all = await self.clients.matchAll({ type: 'window' }); all.forEach((c) => c.postMessage({ type: 'atlas-open-today' })); return all.length; }) : 0;
+  await page.waitForTimeout(2500);
+  const viaMsg = await F(() => window.atlas.shell.sheet.isOpen('today'));
+  await page.goto(url + '?r=41#today=1&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(3000);
+  const viaLink = await F(() => window.atlas.shell.sheet.isOpen('today'));
+  check(told > 0 && viaMsg && viaLink, `a tap on the notification opens Today: in the open app (${told} told) and from the link (#today=1)`);
+  // Settings: one switch for all.
+  await F(() => window.atlas.shell.openSettings(true));
+  await page.waitForTimeout(800);
+  const set0 = await F(() => document.querySelector('[data-settings="reminders"]')?.textContent ?? '');
+  await page.tap('[data-settings="reminders"] .switch');
+  await page.waitForTimeout(600);
+  const offSnap = await F(async () => { const c = await caches.open('atlas-reminders'); return (await c.match('reminders.json')).json(); });
+  await F(() => window.atlas.shell.sheet.close());
+  await page.waitForTimeout(300);
+  await page.tap('[data-dock="today"]');
+  await page.waitForTimeout(2500);
+  const offLine = await F(() => document.querySelector('[data-today="reminders"]')?.textContent ?? '');
+  const offChoice = sw ? await sw.evaluate((st) => { const d = new Date(); d.setHours(19, 0, 0, 0); return self.atlasReminders.choose(st, d, null); }, offSnap) : 'no worker';
+  check(/Reminders \(🔔 in each game\)/.test(set0) && /Capitals, Region of the day, Put it on the map/.test(set0) && offSnap.off === true && offChoice === null && /Reminders are off/.test(offLine),
+    `Settings: one switch (${set0.slice(0, 60)}…); off, the worker shows nothing and Today says "${offLine.replace(/change$/, '').trim()}"`);
+  check(!errors.length, `no page errors in the reminders' checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+  // In Spanish, a new phone: the first switch asks, in Spanish.
+  const es = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&lang=es', full);
+  await es.page.evaluate(() => window.atlas.master.openPanel());
+  await es.page.waitForTimeout(1500);
+  await es.page.tap('[data-remind^="master:"] .switch').catch(() => {});
+  const lbl = await es.page.evaluate(() => ({ cap: document.querySelector('[data-remind^="master:"] .switch-label')?.textContent ?? '', q: document.querySelector('.remind-ask-q')?.textContent ?? '', ok: document.querySelector('[data-remind="ok"]')?.textContent ?? '' }));
+  await es.page.tap('[data-remind="cancel"]').catch(() => {});
+  await es.page.waitForTimeout(300);
+  const stillOff = await es.page.evaluate(() => !document.querySelector('[data-remind^="master:"] .switch-input')?.checked && !JSON.parse(localStorage.getItem('atlas-globe:reminders') || '{"chosen":[]}').chosen.length);
+  check(/Recuérdame practicar/.test(lbl.cap) && /¿A qué hora\?/.test(lbl.q) && lbl.ok === 'Recuérdamelo' && stillOff, `en español: "${lbl.cap}"; "${lbl.q}" · ${lbl.ok}; «Ahora no» leaves it off`);
+  await es.ctx.close();
+  await full.close();
 }
 
 await browser.close();

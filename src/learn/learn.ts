@@ -40,6 +40,7 @@ import type { Master } from '../master/master';
 import { loadDeck, deckCapital } from '../master/data';
 import { recordAnswer, recordQuiz, recordDaily, recordDailySubjects, recordTour, dailyResult, dayKey, current, progress, progressPanel, BADGES, type Badge } from './progress';
 import { appLocale } from '../app/i18n';
+import { bell } from '../today/reminders';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -136,7 +137,7 @@ const MAP_QUIZZES: QuizKind[] = ['find', 'where', 'region', 'detective', 'hop', 
 
 /** The daily challenge: the same eight questions for everyone on a day (by the local date); the eighth's quiz changes daily. */
 const DAILY_FIRST = Date.UTC(2026, 10, 13);
-const dailyNumber = (day: string) => { const [y, m, d] = day.split('-').map(Number); return Math.round((Date.UTC(y, m - 1, d) - DAILY_FIRST) / 864e5) + 1; };
+export const dailyNumber = (day: string) => { const [y, m, d] = day.split('-').map(Number); return Math.round((Date.UTC(y, m - 1, d) - DAILY_FIRST) / 864e5) + 1; };
 const DAILY_ROTATE: QuizKind[] = ['site', 'inventor', 'artist', 'habitat', 'dish', 'champion', 'era', 'civ', 'lives', 'journey', 'faith', 'plague', 'disaster', 'habitat', 'script', 'opening', 'period', 'lives', 'grows', 'season'];
 const marksOf = (qs: { ok?: boolean; review?: boolean }[]) => qs.filter((x) => !x.review).map((x) => (x.ok ? '🟩' : '🟥')).join('');
 /** The questions everyone gets (the Daily challenge's review question is the reader's own). */
@@ -434,7 +435,7 @@ export class Learn {
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Master the world', 'Domina el mundo')),
         h('span', { class: 'mode-desc' }, L('Every capital, flag and country, learned for good: a little each day', 'Todas las capitales, banderas y países, aprendidos para siempre: un poco cada día'))));
     mw.addEventListener('click', () => void this.master?.openPanel());
-    return h('div', { class: 'mode-list' }, daily, ...(this.master ? [mw] : []), prog);
+    return h('div', { class: 'mode-list' }, daily, bell('daily'), ...(this.master ? [mw] : []), prog);
   }
 
   /** Today (v0.37.0): the Daily challenge as one line: done or not, its result, how to start it, its share line. */
