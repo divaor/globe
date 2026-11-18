@@ -67,5 +67,42 @@ const size = regions.find((r) => r.id === d1.scope).ids.length;
 check(JSON.stringify(d1) === JSON.stringify(d2) && ['countries', 'capitals', 'flags'].includes(d1.cat) && size >= 5 && size <= 15 && JSON.stringify(d1) !== JSON.stringify(d3),
   `the region of the day: the same for everyone (${d1.scope.slice(2)}, ${d1.cat}; tomorrow ${d3.scope.slice(2)}, ${d3.cat})`);
 
+
+// ---- Fill the states (v0.38.0): src/fill/states-logic.ts and public/data/states/states.json.
+{
+  const b2 = await rolldown({ input: path.join(ROOT, 'src/fill/states-logic.ts'), platform: 'neutral', logLevel: 'silent' });
+  const { output: o2 } = await b2.generate({ format: 'esm' });
+  const S = await import(`data:text/javascript;base64,${Buffer.from(o2[0].code).toString('base64')}`);
+  const data = J('public/data/states/states.json').countries;
+  const index = J('public/data/regions/index.json').countries;
+  check(S.WITH_FACTS.length === 12 && S.WITH_FACTS.every((a3) => data[a3] && index.some((c) => c.id === a3)) && Object.keys(data).length === 12,
+    `twelve countries with capitals, area and people, each one of the ${index.length} of the States and provinces quiz`);
+  check(S.catsOf('MEX', data).join() === 'names,capitals,people,area' && S.catsOf('FRA', data).join() === 'names',
+    'Mexico by name, capital and biggest first; France by name only');
+  const mx = data.MEX, ids = Object.keys(mx);
+  const caps = S.eligible('capitals', ids, mx);
+  check(ids.length === 32 && caps.length === 31 && !caps.includes('MX-DIF') && S.eligible('names', ids, mx).length === 32,
+    `Mexico: 32 states by name, 31 by capital (Mexico City is a city of its own)`);
+  const ppl = S.stateOrder('people', ids, mx, F.rng(1)), area = S.stateOrder('area', ids, mx, F.rng(1));
+  check(ppl[0] === 'MX-MEX' && area[0] === 'MX-CHH' && mx[ppl[0]].p >= mx[ppl[1]].p,
+    `biggest first: the State of Mexico by people (${(mx['MX-MEX'].p / 1e6).toFixed(1)} million), Chihuahua by area (${mx['MX-CHH'].a.toLocaleString('en')} km²)`);
+  check(mx['MX-MEX'].c[0] === 'Toluca' && mx['MX-MEX'].b?.[0] === 'Ecatepec' && mx['MX-JAL'].c[0] === 'Guadalajara' && data.USA['US-CA'].c[0] === 'Sacramento' && data.USA['US-CA'].b?.[0] === 'Los Angeles'
+    && data.ESP['ES-CanaryIs'].c[5]?.[0]?.includes('Las Palmas') && data.DEU['DE-BE'].s === 1 && data.IND['IN-MH'].c[0] === 'Mumbai',
+    'the capitals: Toluca (Ecatepec the biggest), Guadalajara, Sacramento (Los Angeles), Santa Cruz shared with Las Palmas, Berlin a city of its own, Mumbai');
+  let bad = [];
+  for (const [a3, st] of Object.entries(data)) for (const [id, x] of Object.entries(st)) {
+    if (!x.c?.[0] || !(x.a > 0) || !(x.p > 0) || Math.abs(x.c[2]) > 180 || Math.abs(x.c[3]) > 90) bad.push(`${a3}/${id}`);
+    for (const o of x.o) if (!o[0] || o[0] === x.c[0]) bad.push(`${a3}/${id} ${o[0]}`);
+  }
+  check(!bad.length, `every state of the twelve has a capital with a point, area and people, and other cities not its capital${bad.length ? `: ${bad.slice(0, 5).join(', ')}` : ''}`);
+  check(S.direction([-117, 32], [[-118, 14], [-86, 33]]) === 'nw' && S.direction([-88, 20], [[-118, 14], [-86, 33]]) === 'se' && S.direction([-102, 23], [[-118, 14], [-86, 33]]) === 'c',
+    'the hint after a miss: Baja California in the north-west, Yucatán in the south-east, Zacatecas in the middle');
+  const d1 = S.dailyCountry('2026-11-18'), d2 = S.dailyCountry('2026-11-18');
+  const days = new Set(Array.from({ length: 30 }, (_, k) => S.dailyCountry(`2026-12-${String(k + 1).padStart(2, '0')}`).a3));
+  check(JSON.stringify(d1) === JSON.stringify(d2) && S.WITH_FACTS.includes(d1.a3) && ['names', 'capitals'].includes(d1.cat) && days.size >= 8,
+    `the country of the day: the same for everyone (${d1.a3}, ${d1.cat}); ${days.size} of the twelve in a month`);
+  check(S.nextCountry(['MEX', 'USA', 'BRA'], 'MEX', (a3) => a3 === 'USA') === 'BRA' && S.nextCountry(['MEX', 'USA'], 'MEX', () => true) === null, 'the next country: the first after it not full; none when all are');
+}
+
 console.log(failed ? `\n${failed} check(s) failed` : '\nfill checks passed');
 process.exit(failed ? 1 : 0);

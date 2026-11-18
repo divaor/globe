@@ -5328,7 +5328,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 }
 
 // 40. Today (v0.37.0), on a phone: every daily in one place. The bottom bar has Today (with a dot while something is
-// left today) among Filters, Globe, Time, Space and More. Its panel: today's date, "0 of 16 done", the Daily
+// left today) among Filters, Globe, Time, Space and More. Its panel: today's date, "0 of 17 done" (16 before v0.38.0's
+// country of the day), the Daily
 // challenge, Master the world's goal, Fill the map's region of the day, Put it on the map's puzzle of the day, the 12
 // map games' puzzles as tiles, On this day. A map game's puzzle played from its tile and the region of the day filled
 // from its line are marked done; Share my day puts them in one message. The Map games panel lists all 14 games. In
@@ -5351,7 +5352,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     share: !document.querySelector('[data-today="share"]')?.disabled,
   }));
   let t = await read();
-  check(t.open && /0 of 16 done/.test(t.head) && t.main.join() === 'daily,master,fill,onmap' && t.tiles.length === 12 && t.tiles.every((x) => !x.done) && t.read && !t.share,
+  check(t.open && /0 of 17 done/.test(t.head) && t.main.join() === 'daily,master,fill,states,onmap' && t.tiles.length === 12 && t.tiles.every((x) => !x.done) && t.read && !t.share,
     `Today: "${t.head.replace(/Share my day.*/, '').trim()}"; ${t.main.join(', ')}; ${t.tiles.length} map games; On this day; Share my day waits for something done`);
   // A map game's puzzle from its tile: Climate detective, a pin on each city.
   await page.tap('[data-today-item="game-climate"]');
@@ -5379,9 +5380,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const fillDone = await F(() => document.querySelector('[data-today-item="fill"]')?.classList.contains('done'));
   const dot = await F(() => !!document.querySelector('[data-dock="today"] .dock-dot'));
   const text = await F(() => window.atlas.today.shareText());
-  check(climateDay && climate?.done && /✓/.test(climate.mark) && fillDone && /2 of 16 done/.test(t.head) && t.share && dot
-    && /2\/16/.test(text) && /Region of the day: ★ \d+\/\d+/.test(text) && /🎮 \S+ \d/.test(text),
-    `played from Today${[climateDay, climate?.done, fillDone, t.share, dot].every(Boolean) ? '' : ` (${JSON.stringify({ climateDay, tile: climate?.done, fillDone, share: t.share, dot })})`}: Climate detective (${climate?.mark}) and the region of the day, both ticked; "${t.head.replace(/Share my day.*/, '').trim()}"; the dot stays (14 left); Share my day: "${text.split('\n').slice(0, 3).join(' / ')}"`);
+  check(climateDay && climate?.done && /✓/.test(climate.mark) && fillDone && /2 of 17 done/.test(t.head) && t.share && dot
+    && /2\/17/.test(text) && /Region of the day: ★ \d+\/\d+/.test(text) && /🎮 \S+ \d/.test(text),
+    `played from Today${[climateDay, climate?.done, fillDone, t.share, dot].every(Boolean) ? '' : ` (${JSON.stringify({ climateDay, tile: climate?.done, fillDone, share: t.share, dot })})`}: Climate detective (${climate?.mark}) and the region of the day, both ticked; "${t.head.replace(/Share my day.*/, '').trim()}"; the dot stays (15 left); Share my day: "${text.split('\n').slice(0, 3).join(' / ')}"`);
   // On this day opens from its card; Your progress from the head.
   await page.tap('[data-today-item="onthisday"]');
   await page.waitForTimeout(1500);
@@ -5407,7 +5408,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.tap('[data-dock="today"]');
   await page.waitForTimeout(2500);
   const es = await F(() => ({ title: document.querySelector('.sheet:not([hidden]) .sheet-title')?.textContent ?? '', head: document.querySelector('[data-today="head"]')?.textContent ?? '', secs: [...document.querySelectorAll('.today-panel .sec-title')].map((x) => x.textContent), dock: document.querySelector('[data-dock="today"]')?.textContent ?? '' }));
-  check(es.title === 'Hoy' && es.dock === 'Hoy' && /2 de 16 hechos/.test(es.head) && /^[A-ZÁÉÍÓÚ]/.test(es.head) && !/ De /.test(es.head) && es.secs.some((x) => /Los retos de hoy/.test(x)) && es.secs.some((x) => /Juegos en el mapa · 1\/12/.test(x)),
+  check(es.title === 'Hoy' && es.dock === 'Hoy' && /2 de 17 hechos/.test(es.head) && /^[A-ZÁÉÍÓÚ]/.test(es.head) && !/ De /.test(es.head) && es.secs.some((x) => /Los retos de hoy/.test(x)) && es.secs.some((x) => /Juegos en el mapa · 1\/12/.test(x)),
     `en español: ${es.title}; "${es.head.replace(/Compartir mi día.*/, '').trim()}"; ${es.secs.join(' / ')}`);
   await ctx.close();
 }
@@ -5477,7 +5478,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.tap('[data-today="reminders"]');
   await page.waitForTimeout(1200);
   const pnl = await F(() => ({ open: window.atlas.shell.sheet.isOpen('reminders'), rows: [...document.querySelectorAll('.remind-panel .remind-row')].map((r) => `${r.dataset.remind}${r.querySelector('.switch-input')?.checked ? '+' : ''}`), how: document.querySelectorAll('.remind-panel [data-remind="how"]').length, inRows: document.querySelectorAll('.remind-panel .remind-row .remind-hint').length, change: document.querySelectorAll('.remind-panel [data-remind="change"]').length, text: document.querySelector('.remind-panel [data-remind="how"]')?.textContent ?? '' }));
-  check(pnl.open && pnl.rows.join() === 'daily,master:capitals+,master:flags,master:countries,fill+,onmap,games' && pnl.how === 1 && pnl.inRows === 0 && pnl.change === 0 && /In your calendar, every day at 6:30\sPM$/.test(pnl.text),
+  check(pnl.open && pnl.rows.join() === 'daily,master:capitals+,master:flags,master:countries,fill+,states,onmap,games' && pnl.how === 1 && pnl.inRows === 0 && pnl.change === 0 && /In your calendar, every day at 6:30\sPM$/.test(pnl.text),
     `the reminders' panel from Today: ${pnl.rows.join(', ')} (+ on); how they reach you said once: "${pnl.text}"`);
   await F(() => window.atlas.shell.sheet.close());
   // The service worker: one quiet notification, then none again today.
@@ -5550,6 +5551,101 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(/Recuérdame practicar/.test(lbl.cap) && /¿A qué hora\?/.test(lbl.q) && lbl.ok === 'Recuérdamelo' && stillOff, `en español: "${lbl.cap}"; "${lbl.q}" · ${lbl.ok}; «Ahora no» leaves it off`);
   await es.ctx.close();
   await full.close();
+}
+
+// 42. Fill the states (v0.38.0), on a phone: Fill the map's panel has The world and States. Under States: the country
+// of the day, a country (the twelve with capitals first), and what to fill it with (names; capitals and biggest
+// first for the twelve: Mexico 32, 31 by capital; France by name only). Mexico by capital: the map's own state names
+// hidden, a miss says which state it was and where in Mexico the one asked is, then a circle; a real tap on the
+// next; filled to the end, the map kept, Next country, the badges. The country of the day from Today. In Spanish.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  await F(() => window.atlas.fill.openPanel());
+  await page.waitForTimeout(1500);
+  await page.tap('[data-fill="mode"] .seg-btn:nth-child(2)');
+  await page.waitForTimeout(1500);
+  const p0 = await F(() => ({
+    daily: !!document.querySelector('[data-states="daily"]'), bell: !!document.querySelector('[data-remind="states"]'),
+    country: document.querySelector('[data-states="country"]')?.value, n: document.querySelectorAll('[data-states="country"] option').length,
+    groups: [...document.querySelectorAll('[data-states="country"] optgroup')].map((g) => g.children.length),
+    cats: [...document.querySelectorAll('[data-scat]')].map((b) => `${b.dataset.scat}:${b.querySelector('.mw-cont-n')?.textContent}`),
+  }));
+  await page.selectOption('[data-states="country"]', 'FRA');
+  await page.waitForTimeout(1500);
+  const fra = await F(() => [...document.querySelectorAll('[data-scat]')].map((b) => b.dataset.scat).join());
+  await page.selectOption('[data-states="country"]', 'MEX');
+  await page.waitForTimeout(1200);
+  check(p0.daily && p0.bell && p0.country === 'MEX' && p0.n === 48 && p0.groups.join() === '12,36' && p0.cats.join() === 'names:0/32,capitals:0/31,people:0/32,area:0/32' && fra === 'names',
+    `States in Fill the map: the country of the day (and its 🔔), ${p0.n} countries (${p0.groups.join(' with capitals, ')} by name), Mexico: ${p0.cats.join(', ')}; France: ${fra}`);
+  // Mexico by capital.
+  await page.tap('[data-scat="capitals"]');
+  await page.waitForTimeout(2500);
+  const g0 = await F(() => ({ info: window.atlas.fill.states.info, labels: window.atlas.app.renderer.regionLabels, title: document.querySelector('.play-card .tool-head strong')?.textContent ?? '' }));
+  const cur = g0.info.cur.id;
+  const wrong = g0.info.ids.filter((x) => x !== cur);
+  await F((w) => window.atlas.fill.states.answer(w), wrong[0]);
+  await page.waitForTimeout(300);
+  const m1 = await F(() => ({ miss: document.querySelector('[data-states="miss"]')?.textContent ?? '', hint: document.querySelector('[data-states="hint"]')?.textContent ?? '' }));
+  await F((w) => window.atlas.fill.states.answer(w), wrong[1]);
+  await page.waitForTimeout(300);
+  const m2 = await F(() => document.querySelector('[data-states="hint"]')?.textContent ?? '');
+  await F((id) => window.atlas.fill.states.answer(id), cur);
+  await page.waitForTimeout(300);
+  const a1 = await F(() => ({ ans: window.atlas.fill.states.info.ans, fb: document.querySelector('[data-states="feedback"]')?.textContent ?? '' }));
+  check(g0.info.cat === 'capitals' && g0.info.ids.length === 31 && /Tap the state whose capital is \S/.test(g0.info.prompt) && g0.labels === false && /Capitals · .*Mexico/.test(g0.title)
+    && /^That is /.test(m1.miss) && /It is in (the (north|south|east|west|middle|north-east|north-west|south-east|south-west)) of Mexico/.test(m1.hint) && /inside the circle/.test(m2)
+    && a1.ans?.ok && a1.ans.stars === 1 && /🏛️/.test(a1.fb),
+    `Mexico by capital: "${g0.info.prompt}" (the map's own state names hidden); a miss: "${m1.miss}" ${m1.hint}; then ${m2.replace('💡 ', '')}; right at the third: "${a1.fb}"`);
+  // A real tap on the next one.
+  await F(() => window.atlas.fill.states.next());
+  await page.waitForTimeout(1500);
+  const n1 = await F(() => window.atlas.fill.states.info);
+  const pt = await F((at) => window.atlas.app.renderer.view.project(at[0], at[1]), n1.at[n1.cur.id]);
+  if (pt) await page.touchscreen.tap(pt[0], pt[1]);
+  await page.waitForTimeout(500);
+  const n2 = await F(() => window.atlas.fill.states.info);
+  check(n2.ans?.id === n1.cur.id && n2.ans?.ok && n2.ans.stars === 3, `a real tap on ${n1.cur.name} fills it in, ★★★`);
+  // To the end.
+  await F(async () => { const g = window.atlas.fill.states; for (let k = 0; k < 80 && !g.info.done; k++) { if (g.info.ans) g.next(); else g.answer(g.info.cur.id); } });
+  await page.waitForTimeout(1500);
+  const d = await F(() => ({
+    done: document.querySelector('[data-states="done"]')?.textContent ?? '', next: document.querySelector('[data-states="next-country"]')?.textContent ?? '',
+    saved: Object.keys(JSON.parse(localStorage.getItem('atlas-globe:fill') || '{}').states?.['MEX:capitals'] ?? {}).length,
+    feats: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').feats ?? [],
+  }));
+  await F(() => window.atlas.fill.states.stop());
+  await page.waitForTimeout(500);
+  const back = await F(() => window.atlas.app.renderer.regionLabels);
+  check(/Mexico is filled in!/.test(d.done) && /Next: United States/.test(d.next) && d.saved === 31 && d.feats.includes('states-country') && d.feats.includes('states-capitals') && back === true,
+    `filled to the end: "${d.done}", ${d.next}; the map kept (${d.saved} states); badges ${d.feats.filter((x) => x.startsWith('states')).join(', ')}; the map's state names back after`);
+  // The country of the day, from Today.
+  await page.tap('[data-dock="today"]');
+  await page.waitForTimeout(2500);
+  const line = await F(() => document.querySelector('[data-today-item="states"]')?.textContent ?? '');
+  await page.tap('[data-today-item="states"]');
+  await page.waitForTimeout(3000);
+  const dy = await F(() => window.atlas.fill.states.info);
+  await F(async () => { const g = window.atlas.fill.states; for (let k = 0; k < 80 && !g.info.done; k++) { if (g.info.ans) g.next(); else g.answer(g.info.cur.id); } });
+  await page.waitForTimeout(800);
+  const today = await F(() => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; });
+  const rec = await F((t) => JSON.parse(localStorage.getItem('atlas-globe:fill') || '{}').stateDailies?.[t] ?? null, today);
+  await F(() => window.atlas.fill.states.stop());
+  await page.waitForTimeout(400);
+  await page.tap('[data-dock="today"]');
+  await page.waitForTimeout(2500);
+  const doneLine = await F(() => document.querySelector('[data-today-item="states"]')?.classList.contains('done'));
+  check(/Country of the day/.test(line) && dy?.daily === today && rec && rec.a3 === dy.a3 && rec.n === dy.ids.length * 3 && doneLine,
+    `the country of the day from Today ("${line.replace(/\s+/g, ' ').trim()}"): ${dy?.a3} by ${dy?.cat}, ${dy?.ids.length} states, kept (★ ${rec?.s}/${rec?.n}) and ticked`);
+  check(!errors.length, `no page errors in Fill the states${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+  // In Spanish: Argentina by capital.
+  const es = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&lang=es');
+  await es.page.evaluate(() => window.atlas.fill.states.start({ a3: 'ARG', cat: 'capitals' }));
+  await es.page.waitForTimeout(2500);
+  const esq = await es.page.evaluate(() => ({ prompt: window.atlas.fill.states.info?.prompt ?? '', n: window.atlas.fill.states.info?.ids.length }));
+  check(/^Toca la provincia cuya capital es \S/.test(esq.prompt) && esq.n === 23, `en español: "${esq.prompt}" (${esq.n} provincias: la Ciudad de Buenos Aires es una ciudad propia)`);
+  await es.ctx.close();
 }
 
 await browser.close();

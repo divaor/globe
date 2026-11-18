@@ -10,7 +10,7 @@ import { geoEqualEarth, geoPath } from 'd3-geo';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
-import { h, icon, clear } from '../ui/dom';
+import { h, icon, clear, segmented } from '../ui/dom';
 import { fmtNumber, appLocale, subregion, t } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
 import { L, es, type PlayHost, type HostGame } from '../play/host';
@@ -25,6 +25,7 @@ import { CATS, CONTS, TRIES, THEMES, continentOf, dailyPick, hash, inScope, ladd
 import { fillState, saveFill, resetFill, resetFillMap } from './store';
 import { pickCountry, isTiny } from '../play/pick';
 import { bell } from '../today/reminders';
+import { FillStates } from './states';
 
 /** A sentence starts with a capital ("the world" → "The world"). */
 const cap = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
@@ -74,8 +75,12 @@ export class FillMap implements HostGame {
   private loaded: Promise<boolean> | null = null;
   /** Opens Master the world's panel (main.ts). */
   openMaster: (() => void) | null = null;
+  /** Fill the states (v0.38.0): Fill the map inside a country. */
+  readonly states: FillStates;
 
   constructor(private app: App, private shell: Shell, private host: PlayHost, private mw: Master) {
+    this.states = new FillStates(app, shell, host, mw);
+    this.states.openPanel = () => void this.openPanel();
     shell.addMenu({ id: 'fill', icon: PaintBucket, label: () => L('Fill the map', 'Llena el mapa'), order: 28.5, group: 'play', onClick: () => void this.openPanel() });
     onReset.push(() => resetFill());
   }
@@ -527,6 +532,7 @@ export class FillMap implements HostGame {
   async openPanel() {
     if (!(await this.load())) { this.shell.toast(L('Fill the map needs its data; check your connection.', 'Llena el mapa necesita sus datos; revisa tu conexión.')); return; }
     this.refreshUnits();
+    if (fillState().settings.mode === 'states') await this.states.prepare(fillState().settings.a3);
     const root = h('div', { class: 'fill-panel' });
     const draw = () => { clear(root); root.append(...this.panel(draw)); };
     draw();
@@ -548,6 +554,14 @@ export class FillMap implements HostGame {
   private panel(redraw: () => void): HTMLElement[] {
     const st = fillState(), set = st.settings, cat = set.cat;
     const out: HTMLElement[] = [];
+    // The world, or one country's states (v0.38.0).
+    const mode = segmented<'world' | 'states'>(set.mode, [{ value: 'world', label: L('🌍 The world', '🌍 El mundo') }, { value: 'states', label: L('🧩 States', '🧩 Estados') }], (v) => {
+      set.mode = v; saveFill();
+      if (v === 'states') void this.states.prepare(set.a3).then(redraw); else redraw();
+    });
+    mode.dataset.fill = 'mode';
+    out.push(mode);
+    if (set.mode === 'states') { out.push(...this.states.panel(redraw)); return out; }
     out.push(this.dailyCard());
     const b = bell('fill');
     if (b) out.push(b);

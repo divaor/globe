@@ -95,6 +95,7 @@ async function boot() {
   fill.openMaster = () => void master.openPanel();
   play.extraToday.push(async () => ((await fill.ready()) ? fill.dailyCard() : null));
   const onmap = new PutOnMap(app, shell, play.host);
+  play.extraToday.push(async () => ((await fill.states.ready()) ? fill.states.dailyCard() : null));
   play.extraToday.push(async () => ((await onmap.ready()) ? onmap.dailyCard() : null));
   // Both are games too, in the Map games panel's list (v0.37.0), with their own panels.
   play.extraGames.push(
@@ -122,6 +123,12 @@ async function boot() {
     id: 'fill', order: 30, section: 'main', done: () => !!fillState().dailies[dayKey()],
     card: async () => ((await fill.ready()) ? fill.dailyCard() : null),
     share: () => { const d = fillState().dailies[dayKey()]; return d ? `🖍️ ${L('Region of the day', 'Región del día')}: ★ ${d.s}/${d.n}` : null; },
+  });
+  // Fill the states' country of the day (v0.38.0).
+  today.add({
+    id: 'states', order: 35, section: 'main', done: () => !!fillState().stateDailies[dayKey()],
+    card: async () => ((await fill.states.ready()) ? fill.states.dailyCard() : null),
+    share: () => { const d = fillState().stateDailies[dayKey()]; return d ? `🗺️ ${L('Country of the day', 'País del día')}: ★ ${d.s}/${d.n}` : null; },
   });
   today.add({
     id: 'onmap', order: 40, section: 'main', done: () => !!onmapState().dailies[dayKey()],
@@ -158,6 +165,11 @@ async function boot() {
     id: 'fill', order: 30, icon: '🖍️', name: () => L('Region of the day', 'Región del día'),
     label: () => L('Remind me of the region of the day', 'Recuérdame la región del día'), done: () => !!fillState().dailies[dayKey()], prepare: () => fill.ready(),
     words: (day) => ({ t: `🖍️ ${L('Fill the map: the region of the day', 'Llena el mapa: la región del día')}`, b: fill.dayWhat(day) ?? L('A new region to fill in today', 'Una nueva región para colorear hoy') }),
+  });
+  reminders.add({
+    id: 'states', order: 35, icon: '🗺️', name: () => L('Country of the day', 'País del día'),
+    label: () => L('Remind me of the country of the day', 'Recuérdame el país del día'), done: () => !!fillState().stateDailies[dayKey()], prepare: () => fill.states.ready(),
+    words: (day) => ({ t: `🗺️ ${L('Fill the states: the country of the day', 'Llena los estados: el país del día')}`, b: fill.states.dayWhat(day) }),
   });
   reminders.add({
     id: 'onmap', order: 40, icon: '📍', name: () => L('Put it on the map', 'Ponlo en el mapa'),
