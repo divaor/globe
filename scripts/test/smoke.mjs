@@ -5220,14 +5220,24 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const kinds = new Set(i.items.map((x) => x.k));
   check(i.scope === 'MEX' && i.items.length === 6 && kinds.size >= 4 && i.items.every((x) => i.cands[x.k].length >= 3 && i.cands[x.k].some((c) => c.i === x.i)) && i.active === 0 && placing.one && !placing.list && placing.h < 260,
     `Mexico: ${i.items.map((x) => `${x.k} ${x.name}`).join(', ')}; each among ${Math.min(...i.items.map((x) => i.cands[x.k].length))}+ grey places of its kind; on a phone the card is one line (${placing.h}px) while placing`);
-  // The first one with a real tap on its place.
-  await tapPlace(i.items[0].at);
+  // One with a real tap on its place: the first whose place is open map (not under the card or the zoom buttons).
+  const reach = await F(() => {
+    const o = window.atlas.onmap, inf = o.info, v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect();
+    for (let n = 0; n < inf.items.length; n++) {
+      o.pick(n);
+      const p = v.project(inf.items[n].at[0], inf.items[n].at[1]);
+      if (p && document.elementFromPoint(r.left + p[0], r.top + p[1]) instanceof HTMLCanvasElement) return n;
+    }
+    return 0;
+  });
+  await page.waitForTimeout(300);
+  await tapPlace(i.items[reach].at);
   await page.waitForTimeout(500);
   i = await info();
-  const firstOk = i.items[0].given === i.items[0].i && i.active === 1;
+  const firstOk = i.items[reach].given === i.items[reach].i && i.active !== reach;
   // The rest: two on another place of their kind, the others right.
-  const wrongs = [2, 4];
-  await F((wrongs) => { const o = window.atlas.onmap, inf = o.info; inf.items.forEach((it, n) => { if (n === 0) return; o.pick(n); o.place(wrongs.includes(n) ? inf.cands[it.k].find((c) => c.i !== it.i && !inf.items.some((x) => x.i === c.i)).i : it.i); }); }, wrongs);
+  const wrongs = [0, 1, 2, 3, 4, 5].filter((n) => n !== reach).slice(1, 3);
+  await F(([wrongs, reach]) => { const o = window.atlas.onmap, inf = o.info; inf.items.forEach((it, n) => { if (n === reach) return; o.pick(n); o.place(wrongs.includes(n) ? inf.cands[it.k].find((c) => c.i !== it.i && !inf.items.some((x) => x.i === c.i)).i : it.i); }); }, [wrongs, reach]);
   await page.waitForTimeout(400);
   const ready = await F(() => !document.querySelector('[data-onmap="check"]')?.disabled);
   await page.tap('[data-onmap="check"]');
@@ -5237,7 +5247,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const stillOff = await F(() => document.querySelector('[data-onmap="check"]')?.disabled);
   check(firstOk && ready && i.rows.length === 1 && i.rows[0].split('').filter((m) => m === 'g').length === 4 && wrongs.every((n) => i.items[n].mark !== 'g' && !i.items[n].locked) && i.items.filter((x) => x.locked).length === 4
     && chips.filter((c) => /\bg\b/.test(c.cls)).length === 4 && wrongs.every((n) => /\d+ km/.test(chips[n].text) && /\b[yor]\b/.test(chips[n].cls)) && stillOff,
-    `a real tap places ${i.items[0].name}; the first check: ${i.rows[0]} (${wrongs.map((n) => chips[n].text.trim()).join('; ')}); the greens stay; Check waits for a move`);
+    `a real tap places ${i.items[reach].name}; the first check: ${i.rows[0]} (${wrongs.map((n) => chips[n].text.trim()).join('; ')}); the greens stay; Check waits for a move`);
   // A green one cannot be moved; the two others put right; solved at the second check.
   await F(() => window.atlas.onmap.pick(0));
   const lockedStays = (await info()).active !== 0;
@@ -5305,7 +5315,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await s.page.waitForTimeout(2500);
   const esCard = await s.page.evaluate(() => ({ text: window.atlas.play.host.card.textContent, items: window.atlas.onmap.info.items.map((x) => x.name) }));
   await s.page.evaluate(() => window.atlas.onmap.stop());
-  check(/Ponlo en el mapa/.test(esPanel.title) && /Naturaleza/.test(esPanel.mixes) && /Toca su lugar entre los grises/.test(esCard.text) && /México/.test(esCard.text), `en español: ${esPanel.title} (${esPanel.mixes}); "${esCard.text.slice(0, 90)}…"`);
+  check(/Ponlo en el mapa/.test(esPanel.title) && /Naturaleza/.test(esPanel.mixes) && /toca su lugar entre los grises/i.test(esCard.text) && /México/.test(esCard.text), `en español: ${esPanel.title} (${esPanel.mixes}); "${esCard.text.slice(0, 90)}…"`);
   check(!s.errors.length && !d.errors.length, `no page errors on a computer or in Spanish${[...s.errors, ...d.errors].length ? ': ' + [...s.errors, ...d.errors].join(' | ') : ''}`);
   await s.ctx.close();
 }
