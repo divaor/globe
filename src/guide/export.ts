@@ -5,6 +5,7 @@ import { ClipboardCopy, Download, FileJson } from 'lucide';
 import { h, icon } from '../ui/dom';
 import { lang } from '../app/i18n';
 import { tripDetails, setTripDetails, PLACE_ICONS, type Place, type PlaceKind, type TripDetails } from './plan';
+import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -48,7 +49,7 @@ export function tripMarkdown(t: TripOut, d: TripDetails = tripDetails()): string
   t.cities.forEach((c, i) => {
     const days = d.days?.[c.id];
     out.push(`## ${i + 1}. ${c.name}, ${c.country}${days ? ` (${days} ${days === 1 ? L('day', 'día') : L('days', 'días')})` : ''}`);
-    if (c.km) out.push(L(`From ${t.cities[i - 1].name}: about ${c.km.toLocaleString('en')} km in a straight line.`, `Desde ${t.cities[i - 1].name}: unos ${c.km.toLocaleString('es')} km en línea recta.`));
+    if (c.km) out.push(L(`From ${t.cities[i - 1].name}: about ${c.km.toLocaleString(appLocale())} km in a straight line.`, `Desde ${t.cities[i - 1].name}: unos ${c.km.toLocaleString(appLocale())} km en línea recta.`));
     out.push(`${L('Where', 'Dónde')}: ${fix(c.at[1])}, ${fix(c.at[0])}${c.wiki ? ` · ${c.wiki}` : ''}`);
     if (c.places.length) {
       out.push('', `${L('Places I want to see', 'Lugares que quiero ver')}:`);

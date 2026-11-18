@@ -9,6 +9,7 @@ import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { LayerDef, LayerInstance, RenderCtx } from '../types';
 import type { RasterTexture } from '../../engine/gl';
+import { appLocale } from '../../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -35,7 +36,7 @@ function statusNote(inst: LayerInstance): string | undefined {
   const err = inst.state.error as string | undefined;
   const at = inst.state.updated as number | undefined;
   if (err) return L(`Live data unavailable (${err}). Retrying…`, `Datos en vivo no disponibles (${err}). Reintentando…`);
-  if (at) return L(`Updated ${new Date(at).toLocaleTimeString()}`, `Actualizado ${new Date(at).toLocaleTimeString('es-ES')}`);
+  if (at) return L(`Updated ${new Date(at).toLocaleTimeString(appLocale())}`, `Actualizado ${new Date(at).toLocaleTimeString(appLocale())}`);
   return L('Loading live data…', 'Cargando datos en vivo…');
 }
 
@@ -130,7 +131,7 @@ const earthquakes: LayerDef = {
     if (!best) return null;
     return [
       { label: L('Earthquake', 'Terremoto'), value: `M${best.mag.toFixed(1)} · ${best.place}`, icon: '🫨' },
-      { label: L('When', 'Cuándo'), value: `${ago(Date.now() - best.time)} (${new Date(best.time).toLocaleString(es() ? 'es-ES' : 'en-GB')})` },
+      { label: L('When', 'Cuándo'), value: `${ago(Date.now() - best.time)} (${new Date(best.time).toLocaleString(appLocale())})` },
       { label: L('Depth', 'Profundidad'), value: `${fmtNumber(best.depth, 0)} km` },
       ...(best.tsunami ? [{ label: L('Tsunami', 'Tsunami'), value: L('warning issued', 'alerta emitida'), icon: '🌊' }] : []),
     ];

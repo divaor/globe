@@ -4,6 +4,7 @@ import { h } from '../ui/dom';
 import { lang } from '../app/i18n';
 import { TOURS } from './tours';
 import { GAMES } from '../play/logic';
+import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -147,6 +148,11 @@ export const BADGES: Badge[] = [
   { id: 'master-marathon', icon: '🏃', en: 'Marathon', es: 'Maratón', how: { en: 'The whole world in a marathon, without a mistake', es: 'El mundo entero en un maratón, sin un error' }, goal: 1, have: (p) => Number(p.feats.includes('master-marathon')) },
   { id: 'master-7', icon: '🔥', en: 'A week of learning', es: 'Una semana aprendiendo', how: { en: 'Reach the daily goal 7 days in a row', es: 'Cumple la meta diaria 7 días seguidos' }, goal: 7, have: (p) => p.master?.days ?? 0 },
   { id: 'master-30', icon: '📚', en: 'A month of learning', es: 'Un mes aprendiendo', how: { en: 'Reach the daily goal 30 days in a row', es: 'Cumple la meta diaria 30 días seguidos' }, goal: 30, have: (p) => p.master?.days ?? 0 },
+  // v0.35.0 Fill the map.
+  { id: 'fill-continent', icon: '🖍️', en: 'Continent filled', es: 'Continente coloreado', how: { en: 'Fill a whole continent in Fill the map', es: 'Colorea un continente entero en Llena el mapa' }, goal: 1, have: (p) => Number(p.feats.includes('fill-continent')) },
+  { id: 'fill-perfect', icon: '🌟', en: 'Perfect continent', es: 'Continente perfecto', how: { en: 'Fill a continent with every country right at the first try', es: 'Colorea un continente acertando cada país a la primera' }, goal: 1, have: (p) => Number(p.feats.includes('fill-perfect')) },
+  { id: 'fill-world', icon: '🌍', en: 'The world filled', es: 'El mundo coloreado', how: { en: 'Fill the whole world in one category of Fill the map', es: 'Colorea el mundo entero en una categoría de Llena el mapa' }, goal: 1, have: (p) => Number(p.feats.includes('fill-world')) },
+  { id: 'fill-every', icon: '🗺️', en: 'Every map', es: 'Todos los mapas', how: { en: 'Fill the whole world in every category of Fill the map', es: 'Colorea el mundo entero en cada categoría de Llena el mapa' }, goal: 1, have: (p) => Number(p.feats.includes('fill-every')) },
   { id: 'master-comeback', icon: '🔄', en: 'Comeback', es: 'Remontada', how: { en: 'Relearn 20 countries you had forgotten', es: 'Vuelve a aprender 20 países que habías olvidado' }, goal: 20, have: (p) => p.master?.comebacks ?? 0 },
   { id: 'play-daily-7', icon: '🔥', en: 'A week of routes', es: 'Una semana de rutas', how: { en: 'The daily route 7 days in a row', es: 'La ruta del día 7 días seguidos' }, goal: 7, have: (p) => p.play.daily.best },
   { id: 'tours-all', icon: '🌍', en: 'Globetrotter', es: 'Trotamundos', how: { en: `Follow all ${TOURS.length} tours to the end`, es: `Sigue las ${TOURS.length} visitas hasta el final` }, goal: TOURS.length, have: (p) => p.tours.length },
@@ -279,9 +285,9 @@ export function resetProgress() {
   for (const f of onReset) f();
 }
 
-const fmt = (n: number) => n.toLocaleString(es() ? 'es-ES' : 'en-GB');
+const fmt = (n: number) => n.toLocaleString(appLocale());
 /** "13 Nov 2026" from 2026-11-13. */
-const fmtDay = (k: string) => { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d).toLocaleDateString(es() ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); };
+const fmtDay = (k: string) => { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d).toLocaleDateString(appLocale(), { day: 'numeric', month: 'short', year: 'numeric' }); };
 
 /** The progress panel: each subject with its level, right answers and day streak; the daily challenge; tours; badges. */
 export function progressPanel(onReset: () => void): HTMLElement {
@@ -300,7 +306,7 @@ export function progressPanel(onReset: () => void): HTMLElement {
   for (let k = 6; k >= 0; k--) {
     const d = new Date(); d.setDate(d.getDate() - k);
     const r = p.daily.results[dayKey(d)];
-    days.push(h('span', { class: `day-dot${r ? (r.s === r.n ? ' perfect' : ' done') : ''}`, title: `${dayKey(d)}${r ? ` · ${r.s}/${r.n}` : ''}` }, d.toLocaleDateString(es() ? 'es-ES' : 'en-GB', { weekday: 'narrow' })));
+    days.push(h('span', { class: `day-dot${r ? (r.s === r.n ? ' perfect' : ' done') : ''}`, title: `${dayKey(d)}${r ? ` · ${r.s}/${r.n}` : ''}` }, d.toLocaleDateString(appLocale(), { weekday: 'narrow' })));
   }
   body.append(h('h3', { class: 'sec-title' }, `🗓️ ${L('Daily challenge', 'Reto del día')}`),
     h('div', { class: 'prog-row' }, h('span', null, `🔥 ${L('Streak', 'Racha')}: ${fmt(current(p.daily))} · ${L('best', 'mejor')}: ${fmt(p.daily.best)}`), h('span', { class: 'day-dots' }, ...days)),

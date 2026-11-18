@@ -22,6 +22,7 @@ import { loadJSON } from '../data/store';
 import { km, bestMonths, monthRanges, sunTimes, tzOffset, hhmm, flightHours, hoursText, bestOrder, tripKm, tripHash, readTrip, type Climate } from './logic';
 import { planHooks, planStar, placesOf, allPlaces, movePlace, removePlace, dropCity, setPlan, tripDetails, PLACE_ICONS, type Place, type PlaceSpec } from './plan';
 import { tripPanelExtras, packPlaces, unpackPlaces } from './export';
+import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -608,7 +609,7 @@ export class TravelGuide {
       const now = new Date();
       const there = tzOffset(c.tz, now), mine = -now.getTimezoneOffset();
       const diff = (there - mine) / 60;
-      const local = now.toLocaleTimeString(es() ? 'es-ES' : 'en-GB', { timeZone: c.tz, hour: '2-digit', minute: '2-digit' });
+      const local = now.toLocaleTimeString(appLocale(), { timeZone: c.tz, hour: '2-digit', minute: '2-digit' });
       rows.push(['🕐', L('Time there now', 'Hora allí ahora'), `${local} · ${diff === 0 ? L('the same as yours', 'la misma que la tuya') : L(`${Math.abs(diff)} h ${diff > 0 ? 'ahead of' : 'behind'} you`, `${Math.abs(diff)} h ${diff > 0 ? 'más' : 'menos'} que tú`)}`]);
       const sun = sunTimes(now, c.at[1], c.at[0]);
       rows.push(['🌅', L('Sunrise and sunset today', 'Amanecer y atardecer hoy'), 'polar' in sun ? (sun.polar === 'day' ? L('the sun does not set', 'el sol no se pone') : L('the sun does not rise', 'el sol no sale')) : `${hhmm(sun.rise + there)} · ${hhmm(sun.set + there)}`]);

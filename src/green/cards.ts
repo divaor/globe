@@ -16,6 +16,7 @@ import {
   PLANT_GROUPS, plantGroupName, plantFacts, nm, tt, monthName, yearText, biomeName, realmName, PROTECTION, BIOMES,
   type Plant, type Garden, type FamousTree, type Spectacle, type Crop, type GreenData,
 } from './data';
+import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -110,7 +111,7 @@ export function treeCard(card: CardFn, t: FamousTree, x: GreenLinks) {
   if (t.sp) rows.push({ label: L('Species', 'Especie'), value: `${es() ? t.sp[1] : t.sp[0]} · ${t.sp[2]}`, icon: '🌳' });
   if (t.rec) rows.push({ label: L('Record', 'Récord'), value: tt(t.rec), icon: '🏆' });
   if (t.age) rows.push({ label: L('Age', 'Edad'), value: tt(t.age), icon: '⏳' });
-  if (t.h) rows.push({ label: L('Height', 'Altura'), value: `${t.h.toLocaleString(lang(), { maximumFractionDigits: 1 })} m`, icon: '📏' });
+  if (t.h) rows.push({ label: L('Height', 'Altura'), value: `${t.h.toLocaleString(appLocale(), { maximumFractionDigits: 1 })} m`, icon: '📏' });
   if (t.since && !t.age) rows.push({ label: L('Planted', 'Plantado'), value: yearText(t.since), icon: '📅' });
   if (t.place) rows.push({ label: L('Where', 'Dónde'), value: tt(t.place), icon: '📍' });
   else if (t.cc) rows.push({ label: L('Country', 'País'), value: x.countryName(t.cc), icon: '📍' });

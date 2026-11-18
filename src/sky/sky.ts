@@ -12,6 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { Space } from '../space/space';
 import type { InfoRow } from '../layers/types';
 import type { Hit } from '../ui/search';
+import { appLocale } from '../app/i18n';
 
 type Frame = 'horizon' | 'celestial';
 interface Place { lon: number; lat: number; label: string }
@@ -37,7 +38,7 @@ const COMPASS = [
 const CARDINAL = [{ en: 'N', es: 'N' }, { en: 'NE', es: 'NE' }, { en: 'E', es: 'E' }, { en: 'SE', es: 'SE' }, { en: 'S', es: 'S' }, { en: 'SW', es: 'SO' }, { en: 'W', es: 'O' }, { en: 'NW', es: 'NO' }];
 const fmtLat = (v: number) => `${Math.abs(v).toFixed(1)}° ${v >= 0 ? 'N' : 'S'}`;
 const fmtLon = (v: number) => `${Math.abs(v).toFixed(1)}° ${v >= 0 ? 'E' : L('W', 'O')}`;
-const num = (v: number, d = 0) => v.toLocaleString(L('en-GB', 'es-ES'), { maximumFractionDigits: d });
+const num = (v: number, d = 0) => v.toLocaleString(appLocale(), { maximumFractionDigits: d });
 
 /** What a tap found. */
 type Pick = { kind: 'star'; star: Star } | { kind: 'object'; obj: SkyObject } | { kind: 'body'; id: string } | { kind: 'con'; con: Constellation };
@@ -534,7 +535,7 @@ export class Sky {
     const dt = new Date((this.jd - 2440587.5) * 86400000);
     ui.place.textContent = `📍 ${this.place.label ? `${this.place.label} · ` : ''}${fmtLat(this.place.lat)}`;
     ui.place.title = `${fmtLat(this.place.lat)}, ${fmtLon(this.place.lon)}`;
-    ui.time.textContent = this.live ? `${L('Now', 'Ahora')} · ${dt.toLocaleTimeString(L('en-GB', 'es-ES'), { hour: '2-digit', minute: '2-digit' })}` : dt.toLocaleString(L('en-GB', 'es-ES'), { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+    ui.time.textContent = this.live ? `${L('Now', 'Ahora')} · ${dt.toLocaleTimeString(appLocale(), { hour: '2-digit', minute: '2-digit' })}` : dt.toLocaleString(appLocale(), { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
     if (document.activeElement !== ui.input && dt.getFullYear() > 0 && dt.getFullYear() < 10000) {
       const pad = (n: number) => String(n).padStart(2, '0');
       ui.input.value = `${String(dt.getFullYear()).padStart(4, '0')}-${pad(dt.getMonth() + 1)}-${pad(dt.getDate())}T${pad(dt.getHours())}:${pad(dt.getMinutes())}`;

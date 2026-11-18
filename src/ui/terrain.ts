@@ -8,6 +8,7 @@ import { terrainActions } from '../layers/terrainActions';
 import { lang } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Shell } from './shell';
+import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -17,7 +18,7 @@ const MAX_TILES = 20000;
 /** "about 38 m": the ground size of a tile pixel of zoom z at a latitude. */
 const groundSize = (z: number, lat: number) => {
   const m = (40075016.686 * Math.cos((lat * Math.PI) / 180)) / (256 * 2 ** z);
-  return m >= 1000 ? `${(m / 1000).toLocaleString(es() ? 'es-ES' : 'en-GB', { maximumFractionDigits: 1 })} km` : `${Math.round(m)} m`;
+  return m >= 1000 ? `${(m / 1000).toLocaleString(appLocale(), { maximumFractionDigits: 1 })} km` : `${Math.round(m)} m`;
 };
 
 export class TerrainUI {
@@ -89,8 +90,8 @@ export class TerrainUI {
       const p = plan(box, z0(), top, [...sources]);
       const n = p.list.length;
       est.textContent = n > MAX_TILES
-        ? L(`Too large: ${n.toLocaleString('en-GB')} tiles. Zoom in, or choose less detail.`, `Demasiado grande: ${n.toLocaleString('es-ES')} mosaicos. Acércate o elige menos detalle.`)
-        : L(`${n.toLocaleString('en-GB')} tiles, about ${fmtBytes(p.estimate)}.`, `${n.toLocaleString('es-ES')} mosaicos, unos ${fmtBytes(p.estimate, true)}.`);
+        ? L(`Too large: ${n.toLocaleString(appLocale())} tiles. Zoom in, or choose less detail.`, `Demasiado grande: ${n.toLocaleString(appLocale())} mosaicos. Acércate o elige menos detalle.`)
+        : L(`${n.toLocaleString(appLocale())} tiles, about ${fmtBytes(p.estimate)}.`, `${n.toLocaleString(appLocale())} mosaicos, unos ${fmtBytes(p.estimate, true)}.`);
       est.classList.toggle('bad', n > MAX_TILES || !n);
       save.disabled = n > MAX_TILES || !n;
     };
@@ -122,7 +123,7 @@ export class TerrainUI {
       clear(prog); prog.append(bar, txt, h('div', { class: 'tool-actions' }, cancel));
       const res = await saveArea({ name, box, z0: z0(), z1: top, sources: [...sources] }, (p) => {
         (bar.firstChild as HTMLElement).style.width = `${Math.round((p.done / Math.max(1, p.total)) * 100)}%`;
-        txt.textContent = L(`Saving ${p.done.toLocaleString('en-GB')} of ${p.total.toLocaleString('en-GB')} tiles · ${fmtBytes(p.bytes)}`, `Guardando ${p.done.toLocaleString('es-ES')} de ${p.total.toLocaleString('es-ES')} mosaicos · ${fmtBytes(p.bytes, true)}`);
+        txt.textContent = L(`Saving ${p.done.toLocaleString(appLocale())} of ${p.total.toLocaleString(appLocale())} tiles · ${fmtBytes(p.bytes)}`, `Guardando ${p.done.toLocaleString(appLocale())} de ${p.total.toLocaleString(appLocale())} mosaicos · ${fmtBytes(p.bytes, true)}`);
       }, ctrl.signal);
       if (!res) { this.shell.toast(L('Saving cancelled.', 'Guardado cancelado.')); this.openSave(); return; }
       this.shell.toast(L(`Saved: ${res.name.en} (${fmtBytes(res.bytes)})`, `Guardada: ${res.name.es} (${fmtBytes(res.bytes, true)})`), 4000);
@@ -158,7 +159,7 @@ export function savedList(app: App, refresh: () => void): HTMLElement {
     const what = [a.sources.includes(TERRAIN.id) ? L('heights', 'alturas') : '', a.sources.includes(SENTINEL.id) ? L('satellite', 'satélite') : ''].filter(Boolean).join(' + ');
     el.append(h('div', { class: 'saved-area', 'data-area': a.id },
       h('div', { class: 'saved-text' }, h('strong', null, es() ? a.name.es : a.name.en),
-        h('span', { class: 'muted small' }, `${what} · ${fmtBytes(a.bytes, es())} · ${a.tiles.toLocaleString(es() ? 'es-ES' : 'en-GB')} ${L('tiles', 'mosaicos')} · ${a.date}`)),
+        h('span', { class: 'muted small' }, `${what} · ${fmtBytes(a.bytes, es())} · ${a.tiles.toLocaleString(appLocale())} ${L('tiles', 'mosaicos')} · ${a.date}`)),
       h('div', { class: 'saved-btns' }, show, del)));
   }
   return el;

@@ -20,6 +20,7 @@ import { inScope, question, flagNote, neighbours, typedRight, SCOPES, type Count
 import { master, saveMaster, resetMaster, GOAL, type Speed } from './store';
 import { loadDeck, levelOf, LEVEL_COLORS } from './data';
 import { yourWorldLayer, refreshYourWorld, WORLD_ID } from './world';
+import { appLocale } from '../app/i18n';
 
 type Mode = 'learn' | 'run' | 'marathon';
 type Done = 'end' | 'empty' | 'over' | 'miss' | 'won';
@@ -922,7 +923,7 @@ export class Master implements HostGame {
     g.font = '800 72px system-ui, sans-serif';
     g.fillText(`🌍 ${L('Master the world', 'Domina el mundo')}`, 80, 170);
     g.font = '500 34px system-ui, sans-serif'; g.fillStyle = 'rgba(255,255,255,0.75)';
-    g.fillText(new Date().toLocaleDateString(es() ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' }), 80, 230);
+    g.fillText(new Date().toLocaleDateString(appLocale(), { day: 'numeric', month: 'long', year: 'numeric' }), 80, 230);
     rows.forEach(({ d, c }, i) => {
       const y = 360 + i * 190;
       g.fillStyle = '#fff'; g.font = '700 46px system-ui, sans-serif';
@@ -945,6 +946,23 @@ export class Master implements HostGame {
     g.font = '500 30px system-ui, sans-serif'; g.fillStyle = 'rgba(255,255,255,0.7)'; g.textAlign = 'right';
     g.fillText('Atlas Globe', W - 80, 1010);
     return new Promise((res) => cv.toBlob((b) => res(b), 'image/png'));
+  }
+
+  // ---- Other games' answers (Fill the map, v0.35.0)
+  /** An answer from another game: toward the daily goal, and graded in a deck when it asks what a deck does. */
+  async external(deck: DeckId | null, id: string, ok: boolean): Promise<Badge[]> {
+    await this.load();
+    const st = master(), badges: Badge[] = [];
+    if (deck && this.data?.countries.some((c) => c.id === id)) {
+      const g = grade(st.cards[deck][id], ok, this.today());
+      st.cards[deck][id] = g.card;
+      if (g.comeback) { st.comebacks++; badges.push(...recordMaster({ days: st.days.best, comebacks: st.comebacks })); }
+      if (g.mastered) badges.push(...this.feats(deck, id));
+    }
+    badges.push(...this.tally());
+    saveMaster();
+    refreshYourWorld(this.app);
+    return badges;
   }
 
   // ---- The Daily challenge's review question (learn.ts)

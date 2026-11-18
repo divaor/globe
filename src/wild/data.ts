@@ -3,6 +3,7 @@
 import { loadJSON } from '../data/store';
 import { lang } from '../app/i18n';
 import { hasCell, unpackCells, unpackCounts } from '../layers/carpet';
+import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -91,7 +92,7 @@ export function livesIn(a: Animal, c: number): boolean {
 /** Size, weight and lifespan as the card shows them ("120–250 kg", "up to 3.3 m"). */
 export function factRows(a: Animal): { label: string; value: string; icon: string }[] {
   const f = a.f ?? {};
-  const num = (x: number) => x.toLocaleString(lang(), { maximumFractionDigits: x < 1 ? 2 : x < 10 ? 1 : 0 });
+  const num = (x: number) => x.toLocaleString(appLocale(), { maximumFractionDigits: x < 1 ? 2 : x < 10 ? 1 : 0 });
   const span = (v: number[] | undefined, unit: (x: number) => string) => (v ? (v.length > 1 ? `${unit(v[0]).replace(/\s?\S+$/, '')}–${unit(v[1])}` : unit(v[0])) : null);
   const kg = (x: number) => (x >= 1000 ? `${num(x / 1000)} t` : x < 1 ? `${num(x * 1000)} g` : `${num(x)} kg`);
   const m = (x: number) => (x < 1 ? `${num(x * 100)} cm` : `${num(x)} m`);

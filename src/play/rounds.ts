@@ -225,7 +225,21 @@ interface KoppenClass { group: string; en: string; es: string; color: string }
 let zones: Promise<{ k: string; f: GeoJSON.Feature }[]> | null = null;
 const loadZones = () => (zones ??= loadJSON<Topology>('layers/koppen.json').then((t) =>
   (feature(t, t.objects.koppen as GeometryCollection) as unknown as GeoJSON.FeatureCollection).features.map((f) => ({ k: (f.properties as { k: string }).k, f }))));
-const zoneAt = (zs: { k: string; f: GeoJSON.Feature }[], p: [number, number]) => zs.find((z) => geoContains(z.f, p))?.k ?? null;
+/**
+ * The zone a point is in. A city on the coast (Rio, Lagos, Stockholm, Dubai…) is often just outside the zones'
+ * simplified shores: then the zone of the nearest land within about 50 km, so a pin on it scores its zone.
+ */
+const zoneAt = (zs: { k: string; f: GeoJSON.Feature }[], p: [number, number]) => {
+  const at = (q: [number, number]) => zs.find((z) => geoContains(z.f, q))?.k ?? null;
+  const here = at(p);
+  if (here) return here;
+  const c = Math.max(0.2, Math.cos((p[1] * Math.PI) / 180));
+  for (const r of [0.1, 0.2, 0.35, 0.5]) for (let a = 0; a < 360; a += 45) {
+    const k = at([p[0] + (r * Math.cos((a * Math.PI) / 180)) / c, p[1] + r * Math.sin((a * Math.PI) / 180)]);
+    if (k) return k;
+  }
+  return null;
+};
 
 /** A city's year: rain as blue bars, the temperature as a red line, month by month. */
 function climateChart(t: number[], p: number[]): HTMLElement {

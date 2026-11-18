@@ -9,6 +9,7 @@ import { WORLDS, worldById, loadNames, loadFacts, tr, L, TYPE_NAMES, BIG_TYPES, 
 import type { App } from '../app/app';
 import type { LayerDef, RenderCtx, InfoRow } from '../layers/types';
 import type { RasterTexture } from '../engine/gl';
+import { appLocale } from '../app/i18n';
 
 export interface Landing {
   id: string; world: string; name: Text; craft?: Text; at: [number, number]; date: string; end?: string;
@@ -38,7 +39,7 @@ const fmtDate = (d: string) => {
   const [y, m, dd] = d.split('-').map(Number);
   if (!m) return String(y);
   const dt = new Date(Date.UTC(y, m - 1, dd || 1));
-  return dt.toLocaleDateString(L('en-GB', 'es-ES'), { year: 'numeric', month: 'long', day: dd ? 'numeric' : undefined, timeZone: 'UTC' });
+  return dt.toLocaleDateString(appLocale(), { year: 'numeric', month: 'long', day: dd ? 'numeric' : undefined, timeZone: 'UTC' });
 };
 
 export class WorldSurface {
@@ -249,7 +250,7 @@ export class WorldSurface {
     if (l.site) rows.push({ icon: '📍', label: L('Where', 'Dónde'), value: `${tr(l.site)} (${fmtLatLon(l.at)})` });
     if (l.crew?.length) rows.push({ icon: '🧑‍🚀', label: L('On the surface', 'En la superficie'), value: l.crew.join(', ') });
     if (l.craft) rows.push({ icon: '🛰️', label: L('Craft', 'Nave'), value: tr(l.craft) });
-    if (l.rover) rows.push({ icon: '🚙', label: tr(l.rover.name), value: l.rover.km != null ? `${l.rover.km.toLocaleString(L('en-GB', 'es-ES'), { maximumFractionDigits: 2 })} km` : '' });
+    if (l.rover) rows.push({ icon: '🚙', label: tr(l.rover.name), value: l.rover.km != null ? `${l.rover.km.toLocaleString(appLocale(), { maximumFractionDigits: 2 })} km` : '' });
     if (l.firsts) rows.push({ icon: '🥇', label: L('First', 'Primero'), value: tr(l.firsts) });
     return rows;
   }
@@ -264,7 +265,7 @@ export class WorldSurface {
     const w = this.def!, r = this.names!.rows[i];
     const [lon, lat, name, type, km, oi] = r;
     const rows: InfoRow[] = [{ icon: '🏷️', label: L('Kind', 'Tipo'), value: tr(TYPE_NAMES[type]) || type }];
-    if (km > 0) rows.push({ icon: '📏', label: L('Size', 'Tamaño'), value: `${km.toLocaleString(L('en-GB', 'es-ES'), { maximumFractionDigits: km < 10 ? 1 : 0 })} km` });
+    if (km > 0) rows.push({ icon: '📏', label: L('Size', 'Tamaño'), value: `${km.toLocaleString(appLocale(), { maximumFractionDigits: km < 10 ? 1 : 0 })} km` });
     rows.push({ icon: '📍', label: L('Where', 'Dónde'), value: fmtLatLon([lon, lat]) });
     const origin = oi >= 0 ? (L('en', 'es') === 'es' ? this.names!.origins.es[oi] ?? null : this.names!.origins.en[oi]) : null;
     if (origin) rows.push({ icon: '✍️', label: L('Named after', 'En honor de'), value: namedAfter(name, origin) });
@@ -277,7 +278,7 @@ export class WorldSurface {
 }
 
 export function fmtLatLon([lon, lat]: [number, number]): string {
-  const f = (v: number) => Math.abs(v).toLocaleString(L('en-GB', 'es-ES'), { maximumFractionDigits: 2 });
+  const f = (v: number) => Math.abs(v).toLocaleString(appLocale(), { maximumFractionDigits: 2 });
   return `${f(lat)}° ${lat >= 0 ? 'N' : 'S'}, ${f(lon)}° ${lon >= 0 ? 'E' : L('W', 'O')}`;
 }
 

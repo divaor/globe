@@ -15,6 +15,7 @@ import type { App } from '../../app/app';
 import type { InfoRow, LayerDef, LayerHit, LayerInstance, LayerTapUi, Legend, LegendPlayer, RenderCtx } from '../types';
 import { crowdOf, type Placed } from '../crowd';
 import { planLink } from '../../guide/plan';
+import { appLocale } from '../../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -243,7 +244,7 @@ export const heritage: LayerDef = {
     const player: LegendPlayer | undefined = year == null ? undefined : {
       min: FIRST, max: LAST, value: year, playing: st.playing, speeds: SPEEDS, speed: st.speed,
       label: (v) => String(v),
-      speedLabel: (v) => { const n = v.toLocaleString(lang()); return v === 1 ? L('1 year a second', '1 año por segundo') : L(`${n} years a second`, `${n} años por segundo`); },
+      speedLabel: (v) => { const n = v.toLocaleString(appLocale()); return v === 1 ? L('1 year a second', '1 año por segundo') : L(`${n} years a second`, `${n} años por segundo`); },
       onToggle: () => togglePlay(inst), onSeek: (v) => seek(inst, v), onSpeed: (v) => { st.speed = v; },
     };
     const title = year != null

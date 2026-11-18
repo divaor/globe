@@ -18,6 +18,8 @@ export interface ActiveSpec { id: string; opacity: number; options?: Record<stri
 
 interface Saved {
   lang?: Lang;
+  /** The language was picked in Settings (v0.35.0); until then the app follows the phone's language. */
+  langPicked?: boolean;
   /** Which Spanish (Latin America's, or Spain's words). */
   es?: Spanish;
   theme?: 'dark' | 'light';
@@ -45,6 +47,8 @@ export class App {
   readonly registry = new Map<string, LayerDef>();
   lang: Lang = detectLang();
   spanish: Spanish = detectSpanish();
+  /** Picked in Settings; otherwise the phone's language is followed at each start (v0.35.0). */
+  langPicked = false;
   themeId: 'dark' | 'light' = 'dark';
   selection: string | null = null;
   /** Ambient mode (the screensaver): its playlist ('' for the filters on the map), seconds a view, reading aloud. */
@@ -243,8 +247,10 @@ export class App {
 
   get projection(): ProjectionId { return this.renderer.view.current.id; }
 
-  /** The language, and for Spanish which Spanish ('latam' or 'spain'). */
-  setLang(l: Lang, spanish: Spanish = this.spanish) {
+  /** The language, and for Spanish which Spanish ('latam' or 'spain'), picked in Settings; null follows the phone. */
+  setLang(l: Lang | null, spanish: Spanish = this.spanish) {
+    this.langPicked = l != null;
+    if (l == null) { l = detectLang(); spanish = detectSpanish(); }
     this.lang = l;
     this.spanish = spanish;
     setSpanish(spanish);
@@ -361,7 +367,7 @@ export class App {
   snapshot(): Saved {
     const r = this.renderer;
     return {
-      lang: this.lang, es: this.spanish, theme: this.themeId, projection: this.projection,
+      lang: this.lang, es: this.spanish, langPicked: this.langPicked, theme: this.themeId, projection: this.projection,
       active: this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options })),
       labels: r.settings.labels, graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
       labelScale: r.settings.labelScale,
@@ -430,8 +436,15 @@ export class App {
       };
     }
     const r = this.renderer;
-    if (saved.lang === 'en' || saved.lang === 'es') this.lang = saved.lang;
-    if (saved.es === 'latam' || saved.es === 'spain') this.spanish = saved.es;
+    // The language: a share link's, or the one picked in Settings, or the phone's (v0.35.0). A language saved before
+    // v0.35.0 counts as picked when it is not the phone's.
+    const fromLink = (hash.get('l') !== null || !!hash.get('p')) && !!hash.get('lang');
+    const picked = saved.langPicked ?? (!!saved.lang && (saved.lang !== this.lang || (saved.lang === 'es' && !!saved.es && saved.es !== this.spanish)));
+    this.langPicked = !!saved.langPicked || (!fromLink && picked);
+    if (fromLink || this.langPicked) {
+      if (saved.lang === 'en' || saved.lang === 'es') this.lang = saved.lang;
+      if (saved.es === 'latam' || saved.es === 'spain') this.spanish = saved.es;
+    }
     if (saved.theme) this.themeId = saved.theme;
     if (saved.labels) r.settings.labels = { ...r.settings.labels, ...saved.labels };
     if (saved.graticule !== undefined) r.settings.graticule = saved.graticule;

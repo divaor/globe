@@ -9,6 +9,7 @@ import { julian, positionOf, orbitPath, dist, BODY_IDS } from './orbits';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { InfoRow } from '../layers/types';
+import { appLocale } from '../app/i18n';
 
 interface Body { id: string; color: string; r: number; name: { en: string; es: string }; small?: boolean }
 const BODIES: Body[] = [
@@ -49,8 +50,8 @@ function fmtJd(jd: number, short = false): string {
   const d = new Date((jd - 2440587.5) * 86400000);
   const y = d.getUTCFullYear();
   const month = short ? 'short' : 'long';
-  if (y > 0) return d.toLocaleDateString(L('en-GB', 'es-ES'), { day: 'numeric', month, year: 'numeric', timeZone: 'UTC' });
-  const md = d.toLocaleDateString(L('en-GB', 'es-ES'), { day: 'numeric', month, timeZone: 'UTC' });
+  if (y > 0) return d.toLocaleDateString(appLocale(), { day: 'numeric', month, year: 'numeric', timeZone: 'UTC' });
+  const md = d.toLocaleDateString(appLocale(), { day: 'numeric', month, timeZone: 'UTC' });
   return `${md} ${1 - y} ${L('BC', 'a. C.')}`;
 }
 
@@ -309,7 +310,7 @@ export class Orrery {
 
   async card(id: string) {
     const p = positionOf(id, this.jd), e = positionOf('earth', this.jd);
-    const n = (v: number, dd = 2) => v.toLocaleString(L('en-GB', 'es-ES'), { maximumFractionDigits: dd });
+    const n = (v: number, dd = 2) => v.toLocaleString(appLocale(), { maximumFractionDigits: dd });
     const rows: InfoRow[] = [];
     if (p) {
       const r = Math.hypot(...p);

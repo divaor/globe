@@ -10,6 +10,7 @@ import { lang } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Shell } from './shell';
 import type { TerrainUI } from './terrain';
+import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -428,7 +429,7 @@ export class Terrain3D {
     slider.min = String(Math.min(1, kx));
     slider.max = String(Math.round(maxK * 10) / 10);
     slider.value = String(kx);
-    const showK = () => { kLabel.textContent = `×${kx.toLocaleString(es() ? 'es-ES' : 'en-GB', { maximumFractionDigits: 1 })}`; };
+    const showK = () => { kLabel.textContent = `×${kx.toLocaleString(appLocale(), { maximumFractionDigits: 1 })}`; };
     showK();
     slider.addEventListener('input', () => {
       kx = Number(slider.value);

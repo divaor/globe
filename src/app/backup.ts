@@ -9,6 +9,7 @@
 import { Download, Upload, Share2 } from 'lucide';
 import { h, icon, clear, add } from '../ui/dom';
 import { lang } from './i18n';
+import { appLocale } from './i18n';
 
 declare const __APP_VERSION__: string;
 const es = () => lang() === 'es';
@@ -17,8 +18,8 @@ const L = (en: string, sp: string) => (es() ? sp : en);
 /** Kept only where they were made: saved offline areas (their tiles live in this device's cache) and first-run hints. */
 const LOCAL_ONLY = new Set(['atlas-globe:saved-areas', 'atlas-saved-tiles', 'atlas-globe:hinted']);
 /** What is earned: badges, streaks and scores. Brought over only from a file whose seal matches. */
-// (Master the world's progress, v0.34.0, is earned too: what you know, the streaks and the records.)
-const earned = (k: string) => k === 'atlas-globe:progress' || k === 'atlas-globe:master' || k.startsWith('atlas-quiz-best:');
+// (Master the world's progress, v0.34.0, and Fill the map's maps, v0.35.0, are earned too.)
+const earned = (k: string) => k === 'atlas-globe:progress' || k === 'atlas-globe:master' || k === 'atlas-globe:fill' || k.startsWith('atlas-quiz-best:');
 const ours = (k: string) => /^atlas/.test(k) && !LOCAL_ONLY.has(k);
 
 export interface Backup { app: 'Atlas Globe'; kind: 'backup'; v: 1; version: string; made: string; data: Record<string, string>; seal: string }
@@ -122,7 +123,7 @@ export function backupSettings(toast: (m: string) => void): HTMLElement {
     const got = await readBackup(await f.text());
     clear(status);
     if (!got) { status.append(h('p', { class: 'backup-warn' }, L('This is not an Atlas Globe backup.', 'Este no es un respaldo de Atlas Globe.'))); return; }
-    const when = new Date(got.b.made).toLocaleString(lang(), { dateStyle: 'medium', timeStyle: 'short' });
+    const when = new Date(got.b.made).toLocaleString(appLocale(), { dateStyle: 'medium', timeStyle: 'short' });
     const yes = h('button', { type: 'button', class: 'pill sm primary', 'data-backup': 'replace' }, L('Replace this device’s data', 'Reemplazar los datos de este dispositivo'));
     const no = h('button', { type: 'button', class: 'pill sm', 'data-backup': 'cancel' }, L('Cancel', 'Cancelar'));
     no.addEventListener('click', () => clear(status));

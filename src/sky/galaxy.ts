@@ -12,6 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { Space } from '../space/space';
 import type { Sky } from './sky';
 import type { InfoRow } from '../layers/types';
+import { appLocale } from '../app/i18n';
 
 interface Nearby { id: string; name: Text; ra: number; dec: number; ly: number; kind?: Text; hip?: number; planets?: Text; text?: Text; wiki?: Text }
 interface Feature { id: string; kind: 'centre' | 'arm' | 'feature'; name: Text; l?: number; b?: number; ly?: number; text?: Text; wiki?: Text }
@@ -30,7 +31,7 @@ const SCALES: { id: string; r: number; at: [number, number]; label: Text }[] = [
   { id: 'galaxy', r: 62000, at: [14000, 0], label: { en: 'The Milky Way', es: 'La Vía Láctea' } },
   { id: 'local', r: 2.6e6, at: [400000, -500000], label: { en: 'The Local Group', es: 'El Grupo Local' } },
 ];
-const num = (v: number, d = 0) => v.toLocaleString(L('en-GB', 'es-ES'), { maximumFractionDigits: d });
+const num = (v: number, d = 0) => v.toLocaleString(appLocale(), { maximumFractionDigits: d });
 /** "26,700 light-years", "2.5 million light-years". */
 export function lightYears(ly: number): string {
   if (ly >= 1e6) return `${num(ly / 1e6, ly < 1e7 ? 2 : 1)} ${L('million light-years', 'millones de años luz')}`;
