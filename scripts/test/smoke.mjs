@@ -41,8 +41,8 @@ const MENU_HELPER = () => {
   };
 };
 
-async function open(opts, hash) {
-  const ctx = await browser.newContext(opts);
+async function open(opts, hash, via = browser) {
+  const ctx = await via.newContext(opts);
   await ctx.addInitScript(MENU_HELPER);
   const page = await ctx.newPage();
   const errors = [];
@@ -5418,7 +5418,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 // reads what the page leaves in Cache Storage and shows one quiet notification about one not done yet, then not
 // again that day; a tap opens Today (#today=1, or a message to the open app). Settings turns them all off. In Spanish.
 {
-  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
+  // Notifications need the full Chromium (in its new headless mode): the headless shell has none.
+  const full = await chromium.launch({ channel: 'chromium', args: ['--disable-accelerated-2d-canvas'] });
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en', full);
   const F = (fn, arg) => page.evaluate(fn, arg);
   const row = (id) => `[data-remind="${id}"]`;
   // Master the world: one switch per deck.
@@ -5485,7 +5487,12 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }).catch((e) => ({ err: String(e) })) : { none: true };
   check(shown.has && shown.a?.id === 'master:capitals' && !shown.b && shown.n === 1 && shown.silent === true,
     `the service worker: "${shown.a?.title}: ${shown.a?.body}"; quiet; not a second one today${shown.has ? '' : ` (${JSON.stringify(shown)})`}`);
-  // Played today: done for the worker too; then it picks the other.
+  // Played today: done for the worker too; then it picks one not done. (A third reminder, Put it on the map, stays
+  // undone: the region of the day's answers can count for a Master the world deck too, as practising it.)
+  await F(() => window.atlas.onmap.openPanel());
+  await page.waitForTimeout(1200);
+  await page.tap(`${row('onmap')} .switch`);
+  await page.waitForTimeout(500);
   await F(() => window.atlas.shell.sheet.close());
   await F(() => window.atlas.fill.startDaily());
   await page.waitForTimeout(2500);
@@ -5493,7 +5500,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await F(() => window.atlas.fill.stop());
   const after = await F(async () => { await window.atlas.reminders.sync(); const c = await caches.open('atlas-reminders'); return (await c.match('reminders.json')).json(); });
   const next = sw ? await sw.evaluate((st) => { const d = new Date(); d.setHours(19, 0, 0, 0); return self.atlasReminders.choose(st, d, null)?.id ?? null; }, after) : null;
-  check(after.done?.fill === today && !after.done?.['master:capitals'] && next === 'master:capitals', `the region of the day played: done for the worker (${JSON.stringify(after.done)}); it reminds of ${next} instead`);
+  const left = (after.chosen ?? []).filter((id) => after.done?.[id] !== today);
+  check(after.chosen?.join() === 'master:capitals,fill,onmap' && after.done?.fill === today && !after.done?.onmap && next === left[0] && next !== 'fill',
+    `the region of the day played: done for the worker (${JSON.stringify(after.done)}); it reminds of ${next} instead (not done: ${left.join(', ')})`);
   // A tap: the open app is told to open Today; a link opens it too.
   await F(() => window.atlas.shell.sheet.close());
   await page.waitForTimeout(300);
@@ -5518,21 +5527,22 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(2500);
   const offLine = await F(() => document.querySelector('[data-today="reminders"]')?.textContent ?? '');
   const offChoice = sw ? await sw.evaluate((st) => { const d = new Date(); d.setHours(19, 0, 0, 0); return self.atlasReminders.choose(st, d, null); }, offSnap) : 'no worker';
-  check(/Reminders \(🔔 in each game\)/.test(set0) && /Capitals, Region of the day/.test(set0) && offSnap.off === true && offChoice === null && /Reminders are off/.test(offLine),
+  check(/Reminders \(🔔 in each game\)/.test(set0) && /Capitals, Region of the day, Put it on the map/.test(set0) && offSnap.off === true && offChoice === null && /Reminders are off/.test(offLine),
     `Settings: one switch (${set0.slice(0, 60)}…); off, the worker shows nothing and Today says "${offLine.replace(/change$/, '').trim()}"`);
   check(!errors.length, `no page errors in the reminders' checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
   // In Spanish, a new phone: the first switch asks, in Spanish.
-  const es = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&lang=es');
+  const es = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&lang=es', full);
   await es.page.evaluate(() => window.atlas.master.openPanel());
   await es.page.waitForTimeout(1500);
-  await es.page.tap('[data-remind="master:flags"] .switch').catch(() => {});
+  await es.page.tap('[data-remind^="master:"] .switch').catch(() => {});
   const lbl = await es.page.evaluate(() => ({ cap: document.querySelector('[data-remind^="master:"] .switch-label')?.textContent ?? '', q: document.querySelector('.remind-ask-q')?.textContent ?? '', ok: document.querySelector('[data-remind="ok"]')?.textContent ?? '' }));
   await es.page.tap('[data-remind="cancel"]').catch(() => {});
   await es.page.waitForTimeout(300);
   const stillOff = await es.page.evaluate(() => !document.querySelector('[data-remind^="master:"] .switch-input')?.checked && !JSON.parse(localStorage.getItem('atlas-globe:reminders') || '{"chosen":[]}').chosen.length);
   check(/Recuérdame practicar/.test(lbl.cap) && /¿A qué hora\?/.test(lbl.q) && lbl.ok === 'Recuérdamelo' && stillOff, `en español: "${lbl.cap}"; "${lbl.q}" · ${lbl.ok}; «Ahora no» leaves it off`);
   await es.ctx.close();
+  await full.close();
 }
 
 await browser.close();
