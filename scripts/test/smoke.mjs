@@ -5024,6 +5024,131 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     `a language picked in Settings stays after a reload (${seen.kept?.lang}); "Like my phone" goes back to the phone's (${seen.back?.lang})`);
 }
 
+// 38. Fill the map (v0.35.0), on a phone. More → Learn and play → Fill the map: seven categories, the world, each
+// continent and its regions with how full each is. Capitals of South America: a country tapped right is painted in
+// with three stars, kept, and counted toward Master the world (its daily goal and its capitals deck); a wrong tap
+// says which country it was and gives a hint (its neighbours, then a circle), and after three it is shown in orange;
+// a country already filled costs nothing; a tiny island is found by tapping near it. A region filled offers the next
+// one and the ones shown again. Most people first starts with Brazil; Clues come hard to easy; Languages take any
+// country that speaks it. The region of the day is in the Map games panel. A picture to share. In Spanish.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const info = () => F(() => window.atlas.fill.info);
+  const tapAt = async (id) => { const pt = await F((id) => { const m = window.atlas.app.data.meta[id], v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(m.lx, m.ly); return p && [r.left + p[0], r.top + p[1]]; }, id); if (pt) await page.touchscreen.tap(pt[0], pt[1]); return !!pt; };
+  await page.tap('[data-dock="more"]');
+  await page.waitForTimeout(300);
+  await page.evaluate(() => window.__menu('Fill the map'));
+  await page.waitForTimeout(1500);
+  const panel = await F(() => ({ open: !!document.querySelector('.fill-panel'), cats: document.querySelectorAll('[data-fill="cats"] .chip').length, world: document.querySelector('[data-fill="world"]')?.textContent ?? '', conts: document.querySelectorAll('.fill-cont').length, regions: document.querySelectorAll('.fill-region').length, daily: document.querySelector('.fill-panel [data-fill="daily"]')?.textContent ?? '' }));
+  check(panel.open && panel.cats === 7 && /0 of 195 filled/.test(panel.world) && panel.conts === 6 && panel.regions === 22 && /Region of the day/.test(panel.daily),
+    `Fill the map from More → Learn and play: ${panel.cats} categories, ${panel.world.trim()}, ${panel.conts} continents and ${panel.regions} regions; ${panel.daily.trim()}`);
+  // Capitals of South America: one right with a real tap.
+  await page.tap('[data-fill="cats"] [data-cat="capitals"]');
+  await page.waitForTimeout(300);
+  await page.tap('.fill-scope[data-scope="r:South America"]');
+  await page.waitForTimeout(2600);
+  let i = await info();
+  const first = i.cur.id;
+  const prompt = await F(() => document.querySelector('[data-fill="prompt"]')?.textContent ?? '');
+  await tapAt(first);
+  await page.waitForTimeout(400);
+  i = await info();
+  const saved = await F(() => ({ map: JSON.parse(localStorage.getItem('atlas-globe:fill')).maps.capitals, mw: JSON.parse(localStorage.getItem('atlas-globe:master') || '{}') }));
+  const card = saved.mw.cards?.capitals?.[first];
+  check(i.cat === 'capitals' && i.ids.length === 12 && /Tap the country whose capital is/.test(prompt) && i.ans?.ok && i.ans.stars === 3 && saved.map[first] === 3 && saved.mw.goal?.n === 1 && card?.days.length === 1,
+    `a capital found with a tap: "${prompt}" → ${first} ★★★, kept, and counted in Master the world (goal ${saved.mw.goal?.n}, its capitals deck: right on ${card?.days.length} day)`);
+  // Three misses: which country it was, the neighbours, the circle, then shown in orange; a filled one costs nothing.
+  await page.waitForTimeout(1500);
+  i = await info();
+  const target = i.cur.id;
+  const wrong = i.ids.find((x) => x !== target && x !== first);
+  await F((id) => window.atlas.fill.answer(id), first);
+  const free = await info();
+  await F((id) => window.atlas.fill.answer(id), wrong);
+  const m1 = await F(() => ({ miss: document.querySelector('[data-fill="miss"]')?.textContent ?? '', hint: document.querySelector('[data-fill="hint"]')?.textContent ?? '' }));
+  await F((id) => window.atlas.fill.answer(id), wrong);
+  const m2 = await F(() => document.querySelector('[data-fill="hint"]')?.textContent ?? '');
+  await F((id) => window.atlas.fill.answer(id), wrong);
+  await page.waitForTimeout(300);
+  i = await info();
+  const shownMap = await F(() => JSON.parse(localStorage.getItem('atlas-globe:fill')).maps.capitals);
+  const fb = await F(() => document.querySelector('[data-fill="feedback"]')?.textContent ?? '');
+  check(free.cur.misses === 0 && /already filled/.test(free.note) && /That is /.test(m1.miss) && /borders|It is in/.test(m1.hint) && /circle/.test(m2) && i.ans && !i.ans.ok && shownMap[target] === 0 && /It is /.test(fb),
+    `a filled country costs nothing ("${free.note}"); misses: "${m1.miss}" "${m1.hint}", then "${m2}"; after three ${target} is shown in orange ("${fb}")`);
+  // The rest right: the region is full, and the next region is offered, and the one shown again.
+  await F(async () => { const f = window.atlas.fill; for (let k = 0; k < 40 && !f.info.done; k++) { if (f.info.ans) f.next(); else f.answer(f.info.cur.id); } });
+  await page.waitForTimeout(400);
+  const done = await F(() => ({ text: document.querySelector('[data-fill="done"]')?.textContent ?? '', next: document.querySelector('[data-fill="next-region"]')?.textContent ?? '', retry: document.querySelector('[data-fill="retry"]')?.textContent ?? '' }));
+  check(/South America is filled in/.test(done.text) && /Next: (Caribbean|Central America)/.test(done.next) && /Try the 1 shown again/.test(done.retry), `"${done.text}"; ${done.next}; ${done.retry}`);
+  // A tiny island, found with a tap near it.
+  await F(() => window.atlas.fill.start({ cat: 'countries', scope: 'r:Caribbean' }));
+  await page.waitForTimeout(2600);
+  const tiny = ['GRD', 'LCA', 'VCT', 'ATG', 'KNA', 'DMA', 'BRB'];
+  for (let k = 0; k < 13; k++) { i = await info(); if (tiny.includes(i.cur.id)) break; await F(() => { const f = window.atlas.fill; f.answer(f.info.cur.id); f.next(); }); }
+  i = await info();
+  const island = i.cur.id;
+  await tapAt(island);
+  await page.waitForTimeout(400);
+  i = await info();
+  check(tiny.includes(island) && i.ans?.ok && i.ans.id === island, `a tiny island found by tapping near it (${island}: ${i.ans?.ok})`);
+  // Most people first, clues and languages.
+  await F(() => window.atlas.fill.start({ cat: 'people', scope: 'r:South America' }));
+  await page.waitForTimeout(1500);
+  const ppl = (await info()).cur.id;
+  await F(() => window.atlas.fill.answer('BRA'));
+  const pplFb = await F(() => document.querySelector('[data-fill="feedback"]')?.textContent ?? '');
+  await F(() => window.atlas.fill.start({ cat: 'clues', scope: 'r:Western Europe', theme: 'all' }));
+  await page.waitForTimeout(1500);
+  const c0 = await F(() => document.querySelectorAll('[data-fill="clues"] li').length);
+  await F(() => { const i = window.atlas.fill.info; window.atlas.fill.answer(i.ids.find((x) => x !== i.cur.id)); });
+  const c1 = await F(() => document.querySelectorAll('[data-fill="clues"] li').length);
+  await F(() => window.atlas.fill.start({ cat: 'languages', scope: 'r:South America' }));
+  await page.waitForTimeout(1500);
+  i = await info();
+  const langPrompt = await F(() => document.querySelector('[data-fill="prompt"]')?.textContent ?? '');
+  const other = i.cur.ids[i.cur.ids.length - 1];
+  await F((id) => window.atlas.fill.answer(id), other);
+  const langOk = (await info()).ans?.ok;
+  check(ppl === 'BRA' && /million people/.test(pplFb) && c0 === 1 && c1 === 2 && /is spoken/.test(langPrompt) && langOk,
+    `most people first: ${ppl} ("${pplFb}"); clues: ${c0}, then ${c1} after a miss; "${langPrompt}": ${other} is right too`);
+  // The region of the day, from the Map games panel.
+  await F(() => window.atlas.fill.stop());
+  await F(() => window.atlas.play.openMenu());
+  await page.waitForTimeout(1200);
+  const inGames = await F(() => !!document.querySelector('.play-daily [data-fill="daily"]'));
+  await page.tap('.play-daily [data-fill="daily"]');
+  await page.waitForTimeout(2200);
+  i = await info();
+  await F(async () => { const f = window.atlas.fill; for (let k = 0; k < 60 && !f.info.done; k++) { if (f.info.ans) f.next(); else f.answer(f.info.cur.id); } });
+  await page.waitForTimeout(300);
+  const daily = await F(() => { const d = JSON.parse(localStorage.getItem('atlas-globe:fill')).dailies; const k = Object.keys(d)[0]; return { k, v: d[k] }; });
+  check(inGames && i.daily && i.ids.length >= 5 && daily.v && daily.v.s === daily.v.n && daily.v.m.length === i.ids.length, `the region of the day from the Map games panel (${i.scope.slice(2)}, ${i.cat}): ★ ${daily.v?.s}/${daily.v?.n}`);
+  // Share: a picture of the map.
+  const shared = await F(async () => {
+    let got = null;
+    navigator.canShare = () => true;
+    navigator.share = async (d) => { got = { text: d.text, files: (d.files ?? []).map((f) => ({ type: f.type, size: f.size })) }; };
+    await window.atlas.fill.share('capitals');
+    return got;
+  });
+  check(shared && /Fill the map/.test(shared.text) && /Capitals: \d+\/19\d/.test(shared.text) && shared.files[0]?.type === 'image/png' && shared.files[0].size > 15000, `share: a picture (${shared?.files[0]?.size} bytes) and "${shared?.text.split('\n')[0]}"`);
+  await F(() => window.atlas.fill.stop());
+  // In Spanish.
+  await page.goto(url + '?r=38#p=globe&l=political&lang=es', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await F(() => window.atlas.fill.openPanel());
+  await page.waitForTimeout(1200);
+  const esPanel = await F(() => ({ title: document.querySelector('.sheet:not([hidden]) .sheet-title')?.textContent ?? '', cats: [...document.querySelectorAll('[data-fill="cats"] .chip')].map((b) => b.textContent).join(' / '), sa: document.querySelector('.fill-scope[data-scope="r:South America"]')?.textContent ?? '' }));
+  await F(() => window.atlas.fill.start({ cat: 'capitals', scope: 'r:Central America' }));
+  await page.waitForTimeout(1500);
+  const esQ = await F(() => document.querySelector('[data-fill="prompt"]')?.textContent ?? '');
+  check(/Llena el mapa/.test(esPanel.title) && /Capitales/.test(esPanel.cats) && /América del Sur|Sudamérica/.test(esPanel.sa) && /^Toca el país cuya capital es/.test(esQ), `en español: ${esPanel.title} (${esPanel.cats.slice(0, 40)}…; ${esPanel.sa}); "${esQ}"`);
+  await F(() => window.atlas.fill.stop());
+  check(!errors.length, `no page errors in Fill the map's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

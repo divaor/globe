@@ -26,7 +26,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   ("State: Texas") and Who was born here? names a place's state.
 - **The More menu:** Ambient mode, Your data, Settings and About sit at the top, with four groups that open in
   place, each row saying what is inside it in small type: **Explore** (Travel guide, Art and architecture, Nature,
-  Inside the Earth, Into the deep), **Learn and play** (Master the world, Map games, Quiz, Guided tours, On this day), **Tools**
+  Inside the Earth, Into the deep), **Learn and play** (Master the world, Fill the map, Map games, Quiz, Guided tours, On this day), **Tools**
   (Measure distance, Compare countries, True size of countries, Compare two filters) and **Save and share** (Save
   image, the 4K and phone wallpapers, Share view). A row at the top of a group (or Escape) goes back, and the menu
   scrolls on a short screen.
@@ -359,6 +359,18 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   flag told apart, every country among its neighbours, a marathon without a mistake, a week and a month of daily
   goals, 20 comebacks), a picture to share, sounds and buzz (a setting), and it works offline. **Your world**, a
   filter (Fun), paints each country by how well you know it: learning, known, mastered.
+- **Fill the map** (More → Learn and play → Fill the map): a world map coloured in country by country. Fill it with
+  **countries** ("Tap Bolivia"), **capitals** ("Tap the country whose capital is Sucre"), **flags**, the **most people
+  first** or the **largest first** (the biggest country left each time, so the map fills in order), **clues** (a ladder
+  from hard to easy, one more after each miss: a national animal, dish or export, then a famous person or the highest
+  point, then a World Heritage site; themes Nature, Culture, People or all) or **languages** (any country that speaks
+  it is right). Pick where: the whole world, a continent or one of its 22 regions. Each country found is painted in its
+  own colour with its name: ★★★ at the first try, ★★ the second, ★ the third; a wrong tap says which country it was
+  and brings a hint (its neighbours, then a circle where it is), and after three misses it is shown in orange. One map
+  per category is kept (start one over when you like); a full region offers the nearest one not yet full and the
+  countries shown to try again. Tiny countries get a ring to tap. Every answer counts toward Master the world's daily
+  goal, and countries, capitals and flags in its decks too. A **region of the day**, the same for everyone, is in the
+  Map games panel; badges for a continent, a perfect continent, the world and every map; a picture of your map to share.
 - **Map games** (More → Learn and play → Map games): twelve games played on the map, each with a new puzzle every day that is the
   same for everyone (the panel's Today list), a best score and badges. The map, its labels and filters come back as
   they were when a game ends.
@@ -465,6 +477,11 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   next stop or step waits for the voice, and music turns down while it reads. Choose the voice and speed in Settings.
   A guided tour that stops at a story shows one set of controls (the tour's play, back and next); the story's own
   come back when the tour ends.
+- **Like your phone:** the app speaks your phone's language (the first of English, Spanish from Latin America or
+  Spanish from Spain in its list; es-ES, or a phone in Catalan, Galician or Basque, gets Spain's) and follows it until
+  you pick a language in Settings (📱 Like my phone goes back). Numbers, dates and times are written your phone's way
+  when it speaks the app's language: es-MX 10,935.5 and 5:30 p.m., es-ES or es-AR 10.935,5 and 17:30, en-US May 3;
+  otherwise Latin America's, Spain's or Britain's way. Settings shows the format in use with an example.
 - **Two Spanishes:** Settings → Language offers English, Español (Latinoamérica) and Español (España). The texts are
   written once in Latin American Spanish; Spain's Spanish shows them with the words used in Spain (ordenador, patata,
   zumo, móvil, coche, vídeo, judías, gafas, añadir, penalti, prórroga, piso, quotations with vosotros…), on the page,
@@ -616,6 +633,14 @@ dive is read live from OBIS (CC0 / CC BY). The coastal cities' heights are GeoNa
 `rise-heights.mjs`). The zones, the records at their depths, the vents, the sea animals' depths, the famous features,
 kelp forests, garbage patches, the tours and the story were researched from NOAA, WHOI, MBARI, the Schmidt Ocean
 Institute, InterRidge, museums and papers, each with its sources; where sources disagree the text says "about".
+
+**Fill the map's clues** (`scripts/data/fill/build-clues.mjs` builds `public/data/fill/clues.json` from the app's own
+data): national animals, flowers or trees, dishes, main exports, languages, highest and lowest points (from the country
+facts), World Heritage sites (UNESCO, by how many Wikipedias write about each) and the best-known people born in each
+country (Who was born here?, Wikidata, CC0, with their field rather than their description, which often names their
+nationality). A clue that names its country is left out. Clues for the 16 countries the data says too little about are
+written by hand in `curated-clues.json` (Vatican City, Tuvalu, Monaco, Palau…). `npm run test:fill` checks that every
+country has three clues or more, the ladders, the scopes, the orders, the next region and the region of the day.
 
 **Master the world** (`scripts/data/master/`: `fetch-master.mjs` asks Wikidata through QLever, CC0, for the countries'
 ISO codes, how many Wikipedias have an article on each and the Spanish names of the cities; `build-master.mjs` builds
