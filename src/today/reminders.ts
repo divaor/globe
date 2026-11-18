@@ -247,8 +247,9 @@ export class Reminders {
   }
 
   // ---- The switches
-  /** A game's 🔔 switch; the first one asks the time; on, it says when and how (or offers the calendar). */
-  bell(id: string): HTMLElement | null {
+  /** A game's 🔔 switch; the first one asks the time; on, it says when and how (or offers the calendar). In the
+   *  reminders' panel (withHow false) the how is said once, under the list. */
+  bell(id: string, withHow = true, onChange?: () => void): HTMLElement | null {
     const src = this.sources.get(id);
     if (!src) return null;
     const row = h('div', { class: 'remind-row', 'data-remind': id });
@@ -256,13 +257,14 @@ export class Reminders {
       clear(row);
       const st = this.state();
       const on = this.isOn(id);
+      const after = () => { draw(); onChange?.(); };
       const sw = toggle(on, (v) => {
-        if (!v) { void this.turnOff(id, draw); return; }
-        if (!st.asked) { this.ask(row, () => void this.turnOn(id, draw), draw); return; }
-        void this.turnOn(id, draw);
+        if (!v) { void this.turnOff(id, after); return; }
+        if (!st.asked) { this.ask(row, () => void this.turnOn(id, after), draw); return; }
+        void this.turnOn(id, after);
       }, `🔔 ${src.label()}`);
       row.append(sw);
-      if (on) row.append(this.how(draw));
+      if (on && withHow) row.append(this.how(draw));
     };
     draw();
     return row;
@@ -285,28 +287,30 @@ export class Reminders {
   }
 
   /** Under a switch that is on: when, and how it reaches you here. */
-  private how(redraw: () => void): HTMLElement {
+  private how(redraw: () => void, inPanel = false): HTMLElement {
     const st = this.state();
     const time = this.timeText();
-    const change = h('button', { type: 'button', class: 'remind-link', 'data-remind': 'change' }, L('change', 'cambiar'));
-    change.addEventListener('click', () => this.openPanel());
+    // (In the reminders' panel itself there is nothing to open: no "change".)
+    const change = inPanel ? null : h('button', { type: 'button', class: 'remind-link', 'data-remind': 'change' }, L('change', 'cambiar'));
+    change?.addEventListener('click', () => this.openPanel());
+    const sep = (t: string) => (inPanel ? t.replace(/ · $/, '') : t);
     if (this.route === 'push' && Notification.permission === 'granted') {
-      return h('p', { class: 'tool-hint remind-hint' }, L(`Around ${time}, if it’s not done yet · `, `Hacia las ${time}, si aún no lo has hecho · `), change);
+      return h('p', { class: 'tool-hint remind-hint' }, sep(L(`Around ${time}, if it’s not done yet · `, `Hacia las ${time}, si aún no lo has hecho · `)), change);
     }
     if (this.route === 'push') {
       const allow = h('button', { type: 'button', class: 'pill sm primary', 'data-remind': 'allow' }, L('Allow notifications', 'Permitir notificaciones'));
       allow.addEventListener('click', () => void this.allow().then(redraw));
-      return h('div', { class: 'remind-hint' }, allow, h('p', { class: 'tool-hint' }, L(`Then one reminder around ${time} · `, `Después, un recordatorio hacia las ${time} · `), change));
+      return h('div', { class: 'remind-hint' }, allow, h('p', { class: 'tool-hint' }, sep(L(`Then one reminder around ${time} · `, `Después, un recordatorio hacia las ${time} · `)), change));
     }
     if (st.cal === st.time) {
-      return h('p', { class: 'tool-hint remind-hint' }, L(`📅 In your calendar, every day at ${time} · `, `📅 En tu calendario, cada día a las ${time} · `), change);
+      return h('p', { class: 'tool-hint remind-hint' }, sep(L(`📅 In your calendar, every day at ${time} · `, `📅 En tu calendario, cada día a las ${time} · `)), change);
     }
     const cal = h('button', { type: 'button', class: 'pill sm primary', 'data-remind': 'calendar' }, L(`📅 Add to my calendar (${time})`, `📅 Agregar a mi calendario (${time})`));
     cal.addEventListener('click', () => { this.addToCalendar(); redraw(); });
     return h('div', { class: 'remind-hint' }, cal, h('p', { class: 'tool-hint' },
-      st.cal
+      sep(st.cal
         ? L(`Your calendar still says ${this.timeText(st.cal)}: add the new time, and remove the old one if it stays. · `, `Tu calendario aún dice ${this.timeText(st.cal)}: agrega la nueva hora y quita la anterior si se queda. · `)
-        : L(`Your phone’s calendar reminds you every day at ${time}; tapping it opens Today. (Notifications in the background need Atlas installed on Android.) · `, `El calendario de tu teléfono te avisa cada día a las ${time}; al tocarlo se abre Hoy. (Las notificaciones en segundo plano necesitan Atlas instalado en Android.) · `),
+        : L(`Your phone’s calendar reminds you every day at ${time}; tapping it opens Today. (Notifications in the background need Atlas installed on Android.) · `, `El calendario de tu teléfono te avisa cada día a las ${time}; al tocarlo se abre Hoy. (Las notificaciones en segundo plano necesitan Atlas instalado en Android.) · `)),
       change));
   }
 
@@ -339,8 +343,11 @@ export class Reminders {
         h('label', { class: 'remind-ask-q' }, L('At', 'A las'), time),
         h('h3', { class: 'sec-title' }, L('Remind me of', 'Recuérdame')));
       const list = h('div', { class: 'remind-list' });
-      for (const s of [...this.sources.values()].sort((a, b) => a.order - b.order)) { const el = this.bell(s.id); if (el) list.append(el); }
-      body.append(list, h('p', { class: 'tool-hint' }, this.route === 'push'
+      for (const s of [...this.sources.values()].sort((a, b) => a.order - b.order)) { const el = this.bell(s.id, false, draw); if (el) list.append(el); }
+      body.append(list);
+      // How they reach you: once for all (one calendar event, or the notification).
+      if (this.on().length) body.append(h('div', { class: 'remind-how', 'data-remind': 'how' }, this.how(draw, true)));
+      body.append(h('p', { class: 'tool-hint' }, this.route === 'push'
         ? L('This phone wakes Atlas in the background now and then, so the reminder comes around your time, as the phone decides.', 'Este teléfono despierta a Atlas en segundo plano de vez en cuando, así que el recordatorio llega hacia tu hora, cuando el teléfono decide.')
         : L('Here a reminder is a daily event in your calendar, at the exact time: add it once. Atlas has no server, so it cannot send notifications to this device by itself.', 'Aquí un recordatorio es un evento diario en tu calendario, a la hora exacta: agrégalo una vez. Atlas no tiene servidor, así que no puede enviar notificaciones a este dispositivo por sí solo.')));
     };

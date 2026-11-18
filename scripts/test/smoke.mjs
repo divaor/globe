@@ -5473,6 +5473,13 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(/Capitals, Region of the day · 6:30\sPM/.test(line) && snap && snap.time === '18:30' && snap.chosen.join() === 'master:capitals,fill' && !snap.off && days.length === 8 && days[0] === today
     && /Fill the map/.test(snap.days[today]?.fill?.t ?? '') && /·/.test(snap.days[today]?.fill?.b ?? '') && /Capitals/.test(snap.days[today]?.['master:capitals']?.t ?? '') && /#today=1$/.test(snap.url),
     `Today: "${line}"; the worker's copy: ${snap?.chosen?.join(', ')} at ${snap?.time}, words for ${days.length} days ("${snap?.days?.[today]?.fill?.t}: ${snap?.days?.[today]?.fill?.b}")`);
+  // The reminders' panel, from Today's line: every switch, and how they reach you said once (one calendar event).
+  await page.tap('[data-today="reminders"]');
+  await page.waitForTimeout(1200);
+  const pnl = await F(() => ({ open: window.atlas.shell.sheet.isOpen('reminders'), rows: [...document.querySelectorAll('.remind-panel .remind-row')].map((r) => `${r.dataset.remind}${r.querySelector('.switch-input')?.checked ? '+' : ''}`), how: document.querySelectorAll('.remind-panel [data-remind="how"]').length, inRows: document.querySelectorAll('.remind-panel .remind-row .remind-hint').length, change: document.querySelectorAll('.remind-panel [data-remind="change"]').length, text: document.querySelector('.remind-panel [data-remind="how"]')?.textContent ?? '' }));
+  check(pnl.open && pnl.rows.join() === 'daily,master:capitals+,master:flags,master:countries,fill+,onmap,games' && pnl.how === 1 && pnl.inRows === 0 && pnl.change === 0 && /In your calendar, every day at 6:30\sPM$/.test(pnl.text),
+    `the reminders' panel from Today: ${pnl.rows.join(', ')} (+ on); how they reach you said once: "${pnl.text}"`);
+  await F(() => window.atlas.shell.sheet.close());
   // The service worker: one quiet notification, then none again today.
   await ctx.grantPermissions(['notifications']);
   await F(async () => { await navigator.serviceWorker?.ready; });
