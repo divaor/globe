@@ -361,9 +361,11 @@ export class PutOnMap implements HostGame {
     const placed = s.items.filter((x) => x.locked || x.given).length;
     const list = h('button', { type: 'button', class: 'pill sm', 'data-onmap': 'list' }, L(`All six (${placed}/${ITEMS})`, `Los seis (${placed}/${ITEMS})`));
     list.addEventListener('click', () => { s.list = true; this.render(); });
+    // The whole name (on two lines if it needs them), and under it what it is and what to do.
     card.append(h('div', { class: 'onmap-placing', 'data-onmap': 'placing' },
-      h('span', { class: 'onmap-item on' }, h('span', { class: 'onmap-kind' }, KIND[it.k].icon), h('span', { class: 'onmap-name' }, this.name(it.c.i))),
-      h('span', { class: 'muted small' }, L('Tap its place among the grey ones', 'Toca su lugar entre los grises')), list));
+      h('span', { class: 'onmap-item on' }, h('span', { class: 'onmap-kind' }, KIND[it.k].icon), h('span', { class: 'onmap-name', 'data-onmap': 'placing-name' }, this.name(it.c.i))),
+      h('div', { class: 'onmap-placing-row' },
+        h('span', { class: 'muted small' }, `${es() ? KIND[it.k].es : KIND[it.k].en} · ${L('tap its place among the grey ones', 'toca su lugar entre los grises')}`), list)));
   }
   private kindPlural(k: Kind) {
     const en: Record<Kind, string> = { river: 'rivers', lake: 'lakes', range: 'ranges', desert: 'deserts', peak: 'peaks', city: 'cities', built: 'places', park: 'parks' };

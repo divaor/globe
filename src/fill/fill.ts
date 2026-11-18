@@ -23,6 +23,7 @@ import type { DeckId } from '../master/srs';
 import type { Country } from '../master/decks';
 import { CATS, CONTS, TRIES, THEMES, continentOf, dailyPick, hash, inScope, ladder, langPrompt, nextRegion, order, regionsOf, rng, starsFor, type Clue, type FillCat, type Region, type Theme, type Unit } from './logic';
 import { fillState, saveFill, resetFill, resetFillMap } from './store';
+import { pickCountry, isTiny } from '../play/pick';
 
 /** A sentence starts with a capital ("the world" → "The world"). */
 const cap = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
@@ -55,6 +56,8 @@ interface Session {
   flash: { id: string; at: number } | null; note: string;
   stats: { stars: number; firsts: number; asked: number; shown: string[] };
   done: boolean; fold: boolean; timer: number; r: () => number;
+  /** "Try the ones shown again": these count as empty in this session until answered (their orange stays saved). */
+  again: Set<string>;
 }
 
 export class FillMap implements HostGame {
@@ -163,7 +166,7 @@ export class FillMap implements HostGame {
     this.s = {
       cat, scope, theme, daily: day, ids, queue: order(cat, todo, this.unitBy, r), i: 0, got: new Map(),
       cur: null, ans: null, flash: null, note: '', stats: { stars: 0, firsts: 0, asked: 0, shown: [] },
-      done: false, fold: false, timer: 0, r,
+      done: false, fold: false, timer: 0, r, again: new Set(o.retry && !day ? todo : []),
     };
     this.frameScope();
     if (!todo.length) { this.s.done = true; this.render(); return; }
@@ -193,7 +196,7 @@ export class FillMap implements HostGame {
   /** The filled countries, in this session's map. */
   private filled(id: string): number | undefined {
     const s = this.s!;
-    return s.daily ? s.got.get(id) : this.map(s.cat)[id] ?? s.got.get(id);
+    return s.daily || s.again.has(id) ? s.got.get(id) : this.map(s.cat)[id] ?? s.got.get(id);
   }
   private ask() {
     const s = this.s!;
@@ -227,22 +230,10 @@ export class FillMap implements HostGame {
     return true;
   }
 
-  /** The country under a tap, or a tiny one of the scope near it. */
+  /** The country a tap means: a tiny one still to fill near it first (Vatican City in Rome, an island). */
   private pickAt(g: [number, number]): string | null {
     const s = this.s!;
-    const view = this.app.renderer.view;
-    let id = this.app.renderer.countryAt(g[0], g[1]);
-    const tp = view.project(g[0], g[1]);
-    if (tp && (!id || !this.unitBy.has(id))) {
-      let bd = 24;
-      for (const k of s.ids) {
-        const u = this.unitBy.get(k);
-        const pp = u && view.project(u.at[0], u.at[1]);
-        const d = pp ? Math.hypot(pp[0] - tp[0], pp[1] - tp[1]) : Infinity;
-        if (d < bd) { bd = d; id = k; }
-      }
-    }
-    return id;
+    return pickCountry(this.app, g, s.ids, (id) => this.filled(id) == null);
   }
 
   /** A tap on a country (the tests call it too). */
@@ -494,9 +485,8 @@ export class FillMap implements HostGame {
     // Tiny countries not yet filled: a ring to tap.
     const level = this.app.data.best('50m');
     for (const id of empty) {
-      const shape = level.byId.get(id) ?? this.app.data.best('110m').byId.get(id);
       const u = this.unitBy.get(id);
-      if (!u || (shape && Math.max(shape.bbox[2] - shape.bbox[0], shape.bbox[3] - shape.bbox[1]) >= 1.2)) continue;
+      if (!u || !isTiny(this.app, id)) continue;
       const p = rc.project(u.at[0], u.at[1]);
       if (p) { ctx.beginPath(); ctx.arc(p[0], p[1], 9, 0, Math.PI * 2); ctx.lineWidth = 2; ctx.strokeStyle = dark ? 'rgba(200,210,225,0.85)' : 'rgba(60,70,90,0.8)'; ctx.stroke(); }
     }

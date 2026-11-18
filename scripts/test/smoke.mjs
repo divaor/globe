@@ -5081,6 +5081,42 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(400);
   const done = await F(() => ({ text: document.querySelector('[data-fill="done"]')?.textContent ?? '', next: document.querySelector('[data-fill="next-region"]')?.textContent ?? '', retry: document.querySelector('[data-fill="retry"]')?.textContent ?? '' }));
   check(/South America is filled in/.test(done.text) && /Next: (Caribbean|Central America)/.test(done.next) && /Try \S.* again/.test(done.retry) && !/the 1 shown/.test(done.retry), `"${done.text}"; ${done.next}; ${done.retry}`);
+  // Trying the one shown again asks it again (it counted as filled, so the retry used to end at once), and a right
+  // answer then keeps its stars.
+  await page.tap('[data-fill="retry"]');
+  await page.waitForTimeout(2600);
+  i = await info();
+  const again = i.cur?.id;
+  await tapAt(target);
+  await page.waitForTimeout(400);
+  i = await info();
+  const keptStars = await F((id) => JSON.parse(localStorage.getItem('atlas-globe:fill')).maps.capitals[id], target);
+  check(again === target && i.ans?.ok && i.ans.id === target && keptStars === 3, `"Try ${target} again" asks it again; found with a tap: ${keptStars} stars kept`);
+  // Vatican City, inside Rome: a tap on it is Vatican City, not Italy.
+  await F(() => window.atlas.fill.start({ cat: 'countries', scope: 'r:Southern Europe' }));
+  await page.waitForTimeout(2600);
+  for (let k = 0; k < 17; k++) { i = await info(); if (i.cur?.id === 'VAT') break; await F(() => { const f = window.atlas.fill; f.answer(f.info.cur.id); f.next(); }); }
+  i = await info();
+  const vatAsked = i.cur?.id === 'VAT';
+  await tapAt('VAT');
+  await page.waitForTimeout(400);
+  i = await info();
+  check(vatAsked && i.ans?.ok && i.ans.id === 'VAT', `Vatican City tapped inside Rome counts as Vatican City (${i.ans?.id ?? i.cur?.id})`);
+  // An island nation of Polynesia, from a tap in the sea beside it.
+  await F(() => window.atlas.fill.start({ cat: 'countries', scope: 'r:Polynesia' }));
+  await page.waitForTimeout(2600);
+  // A long flight from Rome: the tap waits for the map to stop.
+  await page.waitForFunction(() => !window.atlas.app.renderer.moving, null, { timeout: 8000 }).catch(() => {});
+  await page.waitForTimeout(600);
+  const poly = ['TON', 'WSM', 'TUV'];
+  for (let k = 0; k < 6; k++) { i = await info(); if (poly.includes(i.cur?.id)) break; await F(() => { const f = window.atlas.fill; f.answer(f.info.cur.id); f.next(); }); }
+  i = await info();
+  const isl = i.cur?.id;
+  const near = await F((id) => { const m = window.atlas.app.data.meta[id], v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(m.lx, m.ly); return p && [r.left + p[0] + 14, r.top + p[1] + 12]; }, isl);
+  if (near) await page.touchscreen.tap(near[0], near[1]);
+  await page.waitForTimeout(400);
+  i = await info();
+  check(poly.includes(isl) && i.ans?.ok && i.ans.id === isl, `${isl} found with a tap in the sea beside it`);
   // A tiny island, found with a tap near it.
   await F(() => window.atlas.fill.start({ cat: 'countries', scope: 'r:Caribbean' }));
   await page.waitForTimeout(2600);
@@ -5173,17 +5209,35 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(3000);
   let i = await info();
   const placing = await F(() => ({ one: !!document.querySelector('[data-onmap="placing"]'), list: !!document.querySelector('[data-onmap="items"]'), h: Math.round(window.atlas.play.host.card.getBoundingClientRect().height) }));
+  // The name being placed is shown whole, even a long one (it used to be cut: "Lagunas de Monteb…").
+  const longest = i.items.reduce((a, x, n) => (x.name.length > i.items[a].name.length ? n : a), 0);
+  await F((n) => window.atlas.onmap.pick(n), longest);
+  await page.waitForTimeout(300);
+  const whole = await F(() => { const el = document.querySelector('[data-onmap="placing-name"]'); return el ? { text: el.textContent, cut: el.scrollWidth > el.clientWidth + 1 || el.scrollHeight > el.clientHeight + 1, kind: document.querySelector('.onmap-placing-row')?.textContent ?? '' } : null; });
+  check(whole && whole.text === i.items[longest].name && !whole.cut && /tap its place/.test(whole.kind), `the name being placed is shown whole: "${whole?.text}" (${whole?.kind.split('·')[0].trim()})`);
+  await F(() => window.atlas.onmap.pick(0));
+  await page.waitForTimeout(200);
   const kinds = new Set(i.items.map((x) => x.k));
   check(i.scope === 'MEX' && i.items.length === 6 && kinds.size >= 4 && i.items.every((x) => i.cands[x.k].length >= 3 && i.cands[x.k].some((c) => c.i === x.i)) && i.active === 0 && placing.one && !placing.list && placing.h < 260,
     `Mexico: ${i.items.map((x) => `${x.k} ${x.name}`).join(', ')}; each among ${Math.min(...i.items.map((x) => i.cands[x.k].length))}+ grey places of its kind; on a phone the card is one line (${placing.h}px) while placing`);
-  // The first one with a real tap on its place.
-  await tapPlace(i.items[0].at);
+  // One with a real tap on its place: the first whose place is open map (not under the card or the zoom buttons).
+  const reach = await F(() => {
+    const o = window.atlas.onmap, inf = o.info, v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect();
+    for (let n = 0; n < inf.items.length; n++) {
+      o.pick(n);
+      const p = v.project(inf.items[n].at[0], inf.items[n].at[1]);
+      if (p && document.elementFromPoint(r.left + p[0], r.top + p[1]) instanceof HTMLCanvasElement) return n;
+    }
+    return 0;
+  });
+  await page.waitForTimeout(300);
+  await tapPlace(i.items[reach].at);
   await page.waitForTimeout(500);
   i = await info();
-  const firstOk = i.items[0].given === i.items[0].i && i.active === 1;
+  const firstOk = i.items[reach].given === i.items[reach].i && i.active !== reach;
   // The rest: two on another place of their kind, the others right.
-  const wrongs = [2, 4];
-  await F((wrongs) => { const o = window.atlas.onmap, inf = o.info; inf.items.forEach((it, n) => { if (n === 0) return; o.pick(n); o.place(wrongs.includes(n) ? inf.cands[it.k].find((c) => c.i !== it.i && !inf.items.some((x) => x.i === c.i)).i : it.i); }); }, wrongs);
+  const wrongs = [0, 1, 2, 3, 4, 5].filter((n) => n !== reach).slice(1, 3);
+  await F(([wrongs, reach]) => { const o = window.atlas.onmap, inf = o.info; inf.items.forEach((it, n) => { if (n === reach) return; o.pick(n); o.place(wrongs.includes(n) ? inf.cands[it.k].find((c) => c.i !== it.i && !inf.items.some((x) => x.i === c.i)).i : it.i); }); }, [wrongs, reach]);
   await page.waitForTimeout(400);
   const ready = await F(() => !document.querySelector('[data-onmap="check"]')?.disabled);
   await page.tap('[data-onmap="check"]');
@@ -5193,7 +5247,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const stillOff = await F(() => document.querySelector('[data-onmap="check"]')?.disabled);
   check(firstOk && ready && i.rows.length === 1 && i.rows[0].split('').filter((m) => m === 'g').length === 4 && wrongs.every((n) => i.items[n].mark !== 'g' && !i.items[n].locked) && i.items.filter((x) => x.locked).length === 4
     && chips.filter((c) => /\bg\b/.test(c.cls)).length === 4 && wrongs.every((n) => /\d+ km/.test(chips[n].text) && /\b[yor]\b/.test(chips[n].cls)) && stillOff,
-    `a real tap places ${i.items[0].name}; the first check: ${i.rows[0]} (${wrongs.map((n) => chips[n].text.trim()).join('; ')}); the greens stay; Check waits for a move`);
+    `a real tap places ${i.items[reach].name}; the first check: ${i.rows[0]} (${wrongs.map((n) => chips[n].text.trim()).join('; ')}); the greens stay; Check waits for a move`);
   // A green one cannot be moved; the two others put right; solved at the second check.
   await F(() => window.atlas.onmap.pick(0));
   const lockedStays = (await info()).active !== 0;
@@ -5261,7 +5315,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await s.page.waitForTimeout(2500);
   const esCard = await s.page.evaluate(() => ({ text: window.atlas.play.host.card.textContent, items: window.atlas.onmap.info.items.map((x) => x.name) }));
   await s.page.evaluate(() => window.atlas.onmap.stop());
-  check(/Ponlo en el mapa/.test(esPanel.title) && /Naturaleza/.test(esPanel.mixes) && /Toca su lugar entre los grises/.test(esCard.text) && /México/.test(esCard.text), `en español: ${esPanel.title} (${esPanel.mixes}); "${esCard.text.slice(0, 90)}…"`);
+  check(/Ponlo en el mapa/.test(esPanel.title) && /Naturaleza/.test(esPanel.mixes) && /toca su lugar entre los grises/i.test(esCard.text) && /México/.test(esCard.text), `en español: ${esPanel.title} (${esPanel.mixes}); "${esCard.text.slice(0, 90)}…"`);
   check(!s.errors.length && !d.errors.length, `no page errors on a computer or in Spanish${[...s.errors, ...d.errors].length ? ': ' + [...s.errors, ...d.errors].join(' | ') : ''}`);
   await s.ctx.close();
 }
