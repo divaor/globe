@@ -24,6 +24,9 @@ import type { Country } from '../master/decks';
 import { CATS, CONTS, TRIES, THEMES, continentOf, dailyPick, hash, inScope, ladder, langPrompt, nextRegion, order, regionsOf, rng, starsFor, type Clue, type FillCat, type Region, type Theme, type Unit } from './logic';
 import { fillState, saveFill, resetFill, resetFillMap } from './store';
 
+/** A sentence starts with a capital ("the world" → "The world"). */
+const cap = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
+
 const CAT_TEXT: Record<FillCat, { icon: string; en: string; es: string }> = {
   countries: { icon: '🗺️', en: 'Countries', es: 'Países' },
   capitals: { icon: '🏛️', en: 'Capitals', es: 'Capitales' },
@@ -250,7 +253,7 @@ export class FillMap implements HostGame {
     const right = cur.ids ? cur.ids.includes(id) : id === cur.id;
     if (!right && this.filled(id) != null && s.ids.includes(id)) {
       // Already coloured in: no harm done.
-      s.note = L(`${this.name(id)} is already filled in.`, `${this.name(id)} ya está coloreado.`);
+      s.note = L(`${this.name(id)} is already filled in.`, `${this.name(id)} ya tiene color.`);
       s.flash = { id, at: performance.now() };
       this.render();
       this.app.renderer.requestRender();
@@ -333,6 +336,7 @@ export class FillMap implements HostGame {
         saveFill();
       }
     }
+    this.frameScope();
     this.render();
     this.app.renderer.requestRender();
   }
@@ -411,8 +415,14 @@ export class FillMap implements HostGame {
     if (s.cat === 'clues') return cur.misses >= 2 ? L('Look inside the circle.', 'Mira dentro del círculo.') : '';
     if (cur.misses >= 2) return L('It is inside the circle.', 'Está dentro del círculo.');
     if (s.cat === 'languages') { const u = this.unitBy.get(cur.id); return u ? L(`One of them is in ${t(`cont.${continentOf(u)}`)}.`, `Uno de ellos está en ${t(`cont.${continentOf(u)}`)}.`) : ''; }
-    const land = (this.deck.get(cur.id)?.land ?? []).filter((x) => this.app.data.meta[x]).slice(0, 2).map((x) => this.name(x));
-    if (land.length) return L(`It borders ${land.join(' and ')}.`, `Limita con ${land.join(' y ')}.`);
+    const all = (this.deck.get(cur.id)?.land ?? []).filter((x) => this.app.data.meta[x])
+      .sort((a, b) => (this.unitBy.get(b)?.area ?? 0) - (this.unitBy.get(a)?.area ?? 0));
+    if (all.length) {
+      const land = all.slice(0, all.length > 4 ? 3 : 4).map((x) => this.name(x));
+      if (all.length > land.length) land.push(L(`${all.length - land.length} more`, `${all.length - land.length} más`));
+      const list = new Intl.ListFormat(appLocale(), { type: 'conjunction' }).format(land);
+      return L(`It borders ${list}.`, `Limita con ${list}.`);
+    }
     const u = this.unitBy.get(cur.id);
     return u?.sr ? L(`It is in ${u.sr}.`, `Está en ${subregion(u.sr)}.`) : '';
   }
@@ -433,7 +443,7 @@ export class FillMap implements HostGame {
     const missed = s.ids.filter((id) => (s.daily ? s.got.get(id) : map[id]) === 0);
     const head = s.daily
       ? L(`Done: ★ ${s.stats.stars} of ${s.ids.length * 3}`, `Hecho: ★ ${s.stats.stars} de ${s.ids.length * 3}`)
-      : L(`${this.scopeName(s.scope)} is filled in!`, `¡${this.scopeName(s.scope)} está coloreado!`);
+      : L(`${cap(this.scopeName(s.scope))} is filled in!`, `¡Terminaste de colorear ${this.scopeName(s.scope)}!`);
     card.append(h('div', { class: 'quiz-q', 'data-fill': 'done' }, head));
     if (s.stats.asked) card.append(h('div', { class: 'tool-hint' }, L(`${s.stats.firsts} of ${s.stats.asked} right at the first try.`, `${s.stats.firsts} de ${s.stats.asked} acertados a la primera.`)));
     if (missed.length) card.append(h('div', { class: 'tool-hint' }, L(`Shown: ${missed.map((x) => this.name(x)).join(', ')}`, `Mostrados: ${missed.map((x) => this.name(x)).join(', ')}`)));
@@ -446,7 +456,10 @@ export class FillMap implements HostGame {
     if (!s.daily) {
       const nx = nextRegion(this.regions, s.scope.startsWith('r:') ? s.scope : '', (r) => this.scopeIds(s.cat, r.id).every((id) => map[id] != null), (id) => this.unitBy.get(id)?.at);
       if (nx) add(L(`Next: ${es() ? subregion(nx.name) : nx.name}`, `Siguiente: ${es() ? subregion(nx.name) : nx.name}`), () => void this.start({ scope: nx.id }), true, 'next-region');
-      if (missed.length) add(L(`Try the ${missed.length} shown again`, `Repetir los ${missed.length} mostrados`), () => void this.start({ retry: true }), !nx, 'retry');
+      if (missed.length) {
+        const one = missed.length === 1 ? this.name(missed[0]) : '';
+        add(one ? L(`Try ${one} again`, `Repetir ${one}`) : L(`Try the ${missed.length} shown again`, `Repetir los ${missed.length} mostrados`), () => void this.start({ retry: true }), !nx, 'retry');
+      }
     }
     add(L('Share', 'Compartir'), () => void this.share(s.cat), false, 'share');
     add(L('Menu', 'Menú'), () => { void this.stop(); void this.openPanel(); }, false, 'menu');

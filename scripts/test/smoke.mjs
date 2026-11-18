@@ -5080,7 +5080,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await F(async () => { const f = window.atlas.fill; for (let k = 0; k < 40 && !f.info.done; k++) { if (f.info.ans) f.next(); else f.answer(f.info.cur.id); } });
   await page.waitForTimeout(400);
   const done = await F(() => ({ text: document.querySelector('[data-fill="done"]')?.textContent ?? '', next: document.querySelector('[data-fill="next-region"]')?.textContent ?? '', retry: document.querySelector('[data-fill="retry"]')?.textContent ?? '' }));
-  check(/South America is filled in/.test(done.text) && /Next: (Caribbean|Central America)/.test(done.next) && /Try the 1 shown again/.test(done.retry), `"${done.text}"; ${done.next}; ${done.retry}`);
+  check(/South America is filled in/.test(done.text) && /Next: (Caribbean|Central America)/.test(done.next) && /Try \S.* again/.test(done.retry) && !/the 1 shown/.test(done.retry), `"${done.text}"; ${done.next}; ${done.retry}`);
   // A tiny island, found with a tap near it.
   await F(() => window.atlas.fill.start({ cat: 'countries', scope: 'r:Caribbean' }));
   await page.waitForTimeout(2600);
