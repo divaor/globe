@@ -21,6 +21,7 @@ import { master, saveMaster, resetMaster, GOAL, type Speed } from './store';
 import { loadDeck, levelOf, LEVEL_COLORS } from './data';
 import { yourWorldLayer, refreshYourWorld, WORLD_ID } from './world';
 import { appLocale } from '../app/i18n';
+import { pickCountry } from '../play/pick';
 
 type Mode = 'learn' | 'run' | 'marathon';
 type Done = 'end' | 'empty' | 'over' | 'miss' | 'won';
@@ -289,17 +290,8 @@ export class Master implements HostGame {
       return true;
     }
     if (q.deck === 'countries' && q.step === 'tap') {
-      let id = this.app.renderer.countryAt(g[0], g[1]);
-      if (!id && tp) {
-        // A tiny country: near its middle is enough.
-        let bd = 26;
-        for (const k of s.allowed.keys()) {
-          const m = this.app.data.meta[k];
-          const pp = m && view.project(m.lx, m.ly);
-          const d = pp ? Math.hypot(pp[0] - tp[0], pp[1] - tp[1]) : Infinity;
-          if (d < bd) { bd = d; id = k; }
-        }
-      }
+      // A tiny country near the tap first (Vatican City in Rome, an island in the ocean), then the one under it.
+      const id = pickCountry(this.app, g, s.allowed.keys());
       if (id) this.settle(id === q.id, id);
       return true;
     }

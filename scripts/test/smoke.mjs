@@ -5081,6 +5081,42 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(400);
   const done = await F(() => ({ text: document.querySelector('[data-fill="done"]')?.textContent ?? '', next: document.querySelector('[data-fill="next-region"]')?.textContent ?? '', retry: document.querySelector('[data-fill="retry"]')?.textContent ?? '' }));
   check(/South America is filled in/.test(done.text) && /Next: (Caribbean|Central America)/.test(done.next) && /Try \S.* again/.test(done.retry) && !/the 1 shown/.test(done.retry), `"${done.text}"; ${done.next}; ${done.retry}`);
+  // Trying the one shown again asks it again (it counted as filled, so the retry used to end at once), and a right
+  // answer then keeps its stars.
+  await page.tap('[data-fill="retry"]');
+  await page.waitForTimeout(2600);
+  i = await info();
+  const again = i.cur?.id;
+  await tapAt(target);
+  await page.waitForTimeout(400);
+  i = await info();
+  const keptStars = await F((id) => JSON.parse(localStorage.getItem('atlas-globe:fill')).maps.capitals[id], target);
+  check(again === target && i.ans?.ok && i.ans.id === target && keptStars === 3, `"Try ${target} again" asks it again; found with a tap: ${keptStars} stars kept`);
+  // Vatican City, inside Rome: a tap on it is Vatican City, not Italy.
+  await F(() => window.atlas.fill.start({ cat: 'countries', scope: 'r:Southern Europe' }));
+  await page.waitForTimeout(2600);
+  for (let k = 0; k < 17; k++) { i = await info(); if (i.cur?.id === 'VAT') break; await F(() => { const f = window.atlas.fill; f.answer(f.info.cur.id); f.next(); }); }
+  i = await info();
+  const vatAsked = i.cur?.id === 'VAT';
+  await tapAt('VAT');
+  await page.waitForTimeout(400);
+  i = await info();
+  check(vatAsked && i.ans?.ok && i.ans.id === 'VAT', `Vatican City tapped inside Rome counts as Vatican City (${i.ans?.id ?? i.cur?.id})`);
+  // An island nation of Polynesia, from a tap in the sea beside it.
+  await F(() => window.atlas.fill.start({ cat: 'countries', scope: 'r:Polynesia' }));
+  await page.waitForTimeout(2600);
+  // A long flight from Rome: the tap waits for the map to stop.
+  await page.waitForFunction(() => !window.atlas.app.renderer.moving, null, { timeout: 8000 }).catch(() => {});
+  await page.waitForTimeout(600);
+  const poly = ['TON', 'WSM', 'TUV'];
+  for (let k = 0; k < 6; k++) { i = await info(); if (poly.includes(i.cur?.id)) break; await F(() => { const f = window.atlas.fill; f.answer(f.info.cur.id); f.next(); }); }
+  i = await info();
+  const isl = i.cur?.id;
+  const near = await F((id) => { const m = window.atlas.app.data.meta[id], v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(m.lx, m.ly); return p && [r.left + p[0] + 14, r.top + p[1] + 12]; }, isl);
+  if (near) await page.touchscreen.tap(near[0], near[1]);
+  await page.waitForTimeout(400);
+  i = await info();
+  check(poly.includes(isl) && i.ans?.ok && i.ans.id === isl, `${isl} found with a tap in the sea beside it`);
   // A tiny island, found with a tap near it.
   await F(() => window.atlas.fill.start({ cat: 'countries', scope: 'r:Caribbean' }));
   await page.waitForTimeout(2600);
