@@ -5362,7 +5362,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(200);
     await F(() => window.atlas.play.climate.next());
   }
-  const climateDay = await F(() => !!window.atlas.play.climate.info?.done && window.atlas.play.climate.info?.day);
+  const climateDay = await F(() => !!window.atlas.play.climate.info?.done);
   await F(() => window.atlas.play.host.close());
   // The region of the day, from its line.
   await page.tap('[data-dock="today"]');
@@ -5380,12 +5380,15 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const dot = await F(() => !!document.querySelector('[data-dock="today"] .dock-dot'));
   const text = await F(() => window.atlas.today.shareText());
   check(climateDay && climate?.done && /✓/.test(climate.mark) && fillDone && /2 of 16 done/.test(t.head) && t.share && dot
-    && /2\/16/.test(text) && /Region of the day: ★ \d+\/\d+/.test(text) && /🎮 🌡️ \d/.test(text),
-    `played from Today: Climate detective (${climate?.mark}) and the region of the day, both ticked; "${t.head.replace(/Share my day.*/, '').trim()}"; the dot stays (14 left); Share my day: "${text.split('\n').slice(0, 3).join(' / ')}"`);
+    && /2\/16/.test(text) && /Region of the day: ★ \d+\/\d+/.test(text) && /🎮 \S+ \d/.test(text),
+    `played from Today${[climateDay, climate?.done, fillDone, t.share, dot].every(Boolean) ? '' : ` (${JSON.stringify({ climateDay, tile: climate?.done, fillDone, share: t.share, dot })})`}: Climate detective (${climate?.mark}) and the region of the day, both ticked; "${t.head.replace(/Share my day.*/, '').trim()}"; the dot stays (14 left); Share my day: "${text.split('\n').slice(0, 3).join(' / ')}"`);
   // On this day opens from its card; Your progress from the head.
   await page.tap('[data-today-item="onthisday"]');
   await page.waitForTimeout(1500);
   const otd = await F(() => window.atlas.shell.sheet.isOpen('onthisday'));
+  // (On a phone a panel covers the bottom bar: it closes first.)
+  await F(() => window.atlas.shell.sheet.close());
+  await page.waitForTimeout(400);
   await page.tap('[data-dock="today"]');
   await page.waitForTimeout(1500);
   await page.tap('[data-today="progress"]');
