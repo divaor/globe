@@ -2096,7 +2096,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => [...document.querySelectorAll('.seg-wrap .seg-btn')].find((b) => /Latinoam/.test(b.textContent))?.click());
   await page.waitForTimeout(800);
   const st2 = await page.evaluate(() => ({ spanish: window.atlas.app.spanish, voice: document.querySelector('.voice-settings select option')?.textContent ?? '', share: window.atlas.app.shareUrl() }));
-  check(st.seg.join() === 'English,Español (Latinoamérica),Español (España)*' && /España/.test(st.voice) && st2.spanish === 'latam' && /México/.test(st2.voice) && /lang=es(&|$)/.test(st2.share), `Settings: ${st.seg.join(' | ')}; first voice ${st.voice}, and ${st2.voice} for Latin America`);
+  check(st.seg.join() === '📱 Como mi teléfono,English,Español (Latinoamérica),Español (España)*' && /España/.test(st.voice) && st2.spanish === 'latam' && /México/.test(st2.voice) && /lang=es(&|$)/.test(st2.share), `Settings: ${st.seg.join(' | ')}; first voice ${st.voice}, and ${st2.voice} for Latin America`);
   check(!errors.length, `no page errors in v0.23.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
