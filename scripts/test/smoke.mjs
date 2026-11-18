@@ -2218,7 +2218,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
-// 21. More map games (v0.25.0). The Map games panel (today's puzzles and the games: twelve since v0.29.0); Pin it (a real tap,
+// 21. More map games (v0.25.0). The Map games panel (today's puzzles and the games: twelve since v0.29.0, fourteen with Fill the map and Put it on the map since v0.37.0); Pin it (a real tap,
 // then pins on the spot: five rounds, the Sharpshooter badge; hard mode hides the seas' names); Higher or lower (the
 // fact's map shown, the run ending at a miss); Grand tour (a tap on a city, the best order for three stars, land and
 // history tours); Name them all (Spanish names typed in the English app, capitals without accents); Border chain (a
@@ -2246,7 +2246,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.play.openMenu());
   await page.waitForSelector('[data-daily]', { timeout: 15000 }).catch(() => {});
   const panel = await page.evaluate(() => ({ daily: [...document.querySelectorAll('[data-daily]')].map((b) => b.dataset.daily), games: [...document.querySelectorAll('[data-game-open]')].map((b) => b.dataset.gameOpen), head: [...document.querySelectorAll('.sheet .sec-title')].map((x) => x.textContent).join(' | ') }));
-  check(panel.daily.length === 12 && panel.games.join() === 'hop,pin,hilo,tour,names,chain,outline,museum,climate,explorer,sunrise,lives' && /Today · 0\/12/.test(panel.head), `Map games: ${panel.head}; ${panel.games.join(', ')}`);
+  check(panel.daily.length === 12 && panel.games.join() === 'hop,pin,hilo,tour,names,chain,outline,museum,climate,explorer,sunrise,lives,fill,onmap' && /Today · 0\/12/.test(panel.head) && /Games · 14/.test(panel.head), `Map games: ${panel.head}; ${panel.games.join(', ')}`);
 
   // Pin it: its own panel, then a real tap and four pins on the spot.
   await page.click('[data-game-open="pin"]');
@@ -2424,7 +2424,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.play.openMenu());
   await page.waitForTimeout(500);
   const esPanel = await page.evaluate(() => ({ title: document.querySelector('.sheet .sheet-title, .sheet h2')?.textContent ?? '', games: [...document.querySelectorAll('[data-game-open] .mode-title')].map((x) => x.textContent) }));
-  check(/Juegos en el mapa/.test(esPanel.title) && esPanel.games.join() === 'Salto de fronteras,Pon el pin,Más o menos,Gran vuelta,Nómbralos todos,Cadena de fronteras,Silueta,De museo en museo,Detective del clima,Bitácora del explorador,Carrera del amanecer,¿De quién es esta vida?', `en español: ${esPanel.games.join(', ')}`);
+  check(/Juegos en el mapa/.test(esPanel.title) && esPanel.games.join() === 'Salto de fronteras,Pon el pin,Más o menos,Gran vuelta,Nómbralos todos,Cadena de fronteras,Silueta,De museo en museo,Detective del clima,Bitácora del explorador,Carrera del amanecer,¿De quién es esta vida?,Llena el mapa,Ponlo en el mapa', `en español: ${esPanel.games.join(', ')}`);
   await page.evaluate(() => window.atlas.app.setLang('en'));
   await page.evaluate(() => window.atlas.shell.sheet.close());
 
