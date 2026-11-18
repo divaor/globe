@@ -1341,13 +1341,13 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.otd-story', { timeout: 30000 });
   const otd = await page.evaluate(() => ({ date: document.querySelector('.otd-date')?.textContent ?? '', rows: [...document.querySelectorAll('.otd-story')].map((r) => r.textContent) }));
   await page.evaluate(() => document.querySelector('[data-otd="next"]').click());
-  await page.waitForFunction(() => /12 November/.test(document.querySelector('.otd-date')?.textContent ?? ''), null, { timeout: 10000 });
+  await page.waitForFunction(() => /12 November|November 12/.test(document.querySelector('.otd-date')?.textContent ?? ''), null, { timeout: 10000 });
   await page.waitForSelector('.otd-story', { timeout: 30000 });
   const story = await page.evaluate(() => document.querySelector('.otd-story').dataset.story);
   await page.evaluate(() => document.querySelector('.otd-story').click());
   await page.waitForFunction((k) => window.atlas.app.mode === k.split('/')[0], story, { timeout: 30000 }).catch(() => {});
   const opened = await page.evaluate(() => ({ mode: window.atlas.app.mode, bar: document.querySelector('.wb-title')?.textContent ?? '' }));
-  check(/11 November/.test(otd.date) && otd.rows.some((r) => /1918/.test(r)) && opened.mode === story.split('/')[0], `On this day: 11 November in the stories (${otd.rows.length} entries, 1918 among them); the next day opens ${story} (${opened.bar})`);
+  check(/11 November|November 11/.test(otd.date) && otd.rows.some((r) => /1918/.test(r)) && opened.mode === story.split('/')[0], `On this day: 11 November in the stories (${otd.rows.length} entries, 1918 among them); the next day opens ${story} (${opened.bar})`);
   if (opened.mode) await page.evaluate((m) => window.atlas.time?.modes?.find((x) => x.id === m)?.exit(), opened.mode);
   await page.evaluate(() => document.querySelector('.warbar [aria-label="Close"], .wb-close')?.click());
   await page.waitForTimeout(800);
@@ -3771,7 +3771,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => document.querySelector('.warbar .wb-exit')?.click());
   await page.waitForTimeout(2000);
   const od = await page.evaluate(() => ({ mode: window.atlas.app.mode, date: document.querySelector('.otd-date')?.textContent ?? '', open: !!document.querySelector('.otd-stories') }));
-  check(!!otdStory && ob.mode === otdStory.split('/')[0] && !ob.guided && ob.x && /back to the list/.test(ob.label) && !od.mode && od.open && /14 November/.test(od.date),
+  check(!!otdStory && ob.mode === otdStory.split('/')[0] && !ob.guided && ob.x && /back to the list/.test(ob.label) && !od.mode && od.open && /14 November|November 14/.test(od.date),
     `On this day, 14 November: ${otdStory} opens with its controls, and its X ("${ob.label}") comes back to the list (${od.date})`);
   await page.evaluate(() => window.atlas.shell.sheet.close());
   await page.evaluate(() => window.atlas.app.setStack(['political', 'inventions']));
