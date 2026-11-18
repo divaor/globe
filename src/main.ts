@@ -161,7 +161,7 @@ async function boot() {
   });
   reminders.add({
     id: 'onmap', order: 40, icon: '📍', name: () => L('Put it on the map', 'Ponlo en el mapa'),
-    label: () => L('Remind me of the puzzle of the day', 'Recuérdame el reto del día'), done: () => !!onmapState().dailies[dayKey()], prepare: () => onmap.ready(),
+    label: () => L('Remind me of Put it on the map’s puzzle', 'Recuérdame el reto de Ponlo en el mapa'), done: () => !!onmapState().dailies[dayKey()], prepare: () => onmap.ready(),
     words: (day) => { const w = onmap.dayScope(day); return { t: `📍 ${L('Put it on the map: today', 'Ponlo en el mapa: hoy')}`, b: w ? L(`Six places in ${w} to put on the map`, `Seis lugares de ${w} para poner en el mapa`) : L('Six places to put on the map', 'Seis lugares para poner en el mapa') }; },
   });
   reminders.add({
