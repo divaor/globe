@@ -948,6 +948,23 @@ export class Master implements HostGame {
     return new Promise((res) => cv.toBlob((b) => res(b), 'image/png'));
   }
 
+  // ---- Other games' answers (Fill the map, v0.35.0)
+  /** An answer from another game: toward the daily goal, and graded in a deck when it asks what a deck does. */
+  async external(deck: DeckId | null, id: string, ok: boolean): Promise<Badge[]> {
+    await this.load();
+    const st = master(), badges: Badge[] = [];
+    if (deck && this.data?.countries.some((c) => c.id === id)) {
+      const g = grade(st.cards[deck][id], ok, this.today());
+      st.cards[deck][id] = g.card;
+      if (g.comeback) { st.comebacks++; badges.push(...recordMaster({ days: st.days.best, comebacks: st.comebacks })); }
+      if (g.mastered) badges.push(...this.feats(deck, id));
+    }
+    badges.push(...this.tally());
+    saveMaster();
+    refreshYourWorld(this.app);
+    return badges;
+  }
+
   // ---- The Daily challenge's review question (learn.ts)
   /** One capital due for review today, with three neighbours' capitals to pick from; null when none is due. */
   async reviewQuestion(r: () => number = Math.random): Promise<{ id: string; options: string[] } | null> {

@@ -18,8 +18,8 @@ const L = (en: string, sp: string) => (es() ? sp : en);
 /** Kept only where they were made: saved offline areas (their tiles live in this device's cache) and first-run hints. */
 const LOCAL_ONLY = new Set(['atlas-globe:saved-areas', 'atlas-saved-tiles', 'atlas-globe:hinted']);
 /** What is earned: badges, streaks and scores. Brought over only from a file whose seal matches. */
-// (Master the world's progress, v0.34.0, is earned too: what you know, the streaks and the records.)
-const earned = (k: string) => k === 'atlas-globe:progress' || k === 'atlas-globe:master' || k.startsWith('atlas-quiz-best:');
+// (Master the world's progress, v0.34.0, and Fill the map's maps, v0.35.0, are earned too.)
+const earned = (k: string) => k === 'atlas-globe:progress' || k === 'atlas-globe:master' || k === 'atlas-globe:fill' || k.startsWith('atlas-quiz-best:');
 const ours = (k: string) => /^atlas/.test(k) && !LOCAL_ONLY.has(k);
 
 export interface Backup { app: 'Atlas Globe'; kind: 'backup'; v: 1; version: string; made: string; data: Record<string, string>; seal: string }

@@ -48,6 +48,8 @@ export class MapGames {
   readonly explorer: ExplorersLog;
   readonly sunrise: SunriseRace;
   readonly lives: WhoseLife;
+  /** More cards for Today and the games list (Fill the map's region of the day, v0.35.0). */
+  extraToday: (() => Promise<HTMLElement | null>)[] = [];
 
   constructor(private app: App, private shell: Shell) {
     this.host = new PlayHost(app, shell);
@@ -94,6 +96,7 @@ export class MapGames {
     // Today's puzzles.
     const daily = h('div', { class: 'mode-list play-daily' });
     let played = 0;
+    for (const f of this.extraToday) { const el = await f().catch(() => null); if (el) daily.append(el); }
     for (const g of GAMES) {
       const r = gameDaily(g);
       if (r) played++;
