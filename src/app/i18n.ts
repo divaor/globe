@@ -353,7 +353,7 @@ export function subregion(name: string): string {
 
 let current: Lang = 'en';
 
-export function setLang(l: Lang) { current = l; document.documentElement.lang = l === 'es' && spanish === 'spain' ? 'es-ES' : l; }
+export function setLang(l: Lang) { current = l; localeCache = null; document.documentElement.lang = l === 'es' && spanish === 'spain' ? 'es-ES' : l; }
 export function lang(): Lang { return current; }
 
 /**
@@ -363,13 +363,30 @@ export function lang(): Lang { return current; }
 export type Spanish = 'latam' | 'spain';
 let spanish: Spanish = 'latam';
 export function setSpanish(v: Spanish) { spanish = v; setLang(current); }
+
+/** The phone's languages, the most wanted first (en-US, es-MX...). */
+function phoneTags(): string[] {
+  try {
+    const l = navigator.languages?.length ? navigator.languages : [navigator.language];
+    return l.filter(Boolean).map(String);
+  } catch { return []; }
+}
+const base = (tag: string) => tag.toLowerCase().split('-')[0];
+/** A tag's region (MX in es-MX, 419 in es-419), if it has one. */
+const regionOf = (tag: string) => tag.split('-').slice(1).find((p) => /^([a-z]{2}|\d{3})$/i.test(p))?.toUpperCase() ?? null;
 export function spanishVariant(): Spanish { return spanish; }
 /** Spanish from Spain is being shown. */
 export function spainOn(): boolean { return current === 'es' && spanish === 'spain'; }
-/** Spain's Spanish for a browser set to Spanish from Spain. */
+/**
+ * Which Spanish the phone speaks (v0.35.0): Spain's when its Spanish is from Spain (es-ES), or when it says only
+ * "Spanish" and its region is Spain (a phone in Catalan, Galician or Basque, ca-ES...); Latin America's otherwise.
+ */
 export function detectSpanish(): Spanish {
-  const n = (navigator.languages?.[0] || navigator.language || '').toLowerCase();
-  return n === 'es-es' || n.startsWith('es-es-') ? 'spain' : 'latam';
+  const tags = phoneTags();
+  const es = tags.find((t) => base(t) === 'es');
+  const region = es ? regionOf(es) : null;
+  if (region) return region === 'ES' ? 'spain' : 'latam';
+  return tags.some((t) => regionOf(t) === 'ES') ? 'spain' : 'latam';
 }
 
 export function t(key: string, vars?: Record<string, string | number>): string {
@@ -390,12 +407,35 @@ export function tx(text: { en: string; es: string } | undefined): string {
   return current === 'es' ? text.es || text.en : text.en;
 }
 
+/** The phone's language (v0.35.0): the first of its languages the app speaks, English otherwise. */
 export function detectLang(): Lang {
-  const n = (navigator.languages?.[0] || navigator.language || 'en').toLowerCase();
-  return n.startsWith('es') ? 'es' : 'en';
+  for (const tag of phoneTags()) {
+    const b = base(tag);
+    if (b === 'es' || b === 'en') return b;
+  }
+  return 'en';
 }
 
-const locale = () => (current === 'es' ? 'es-ES' : 'en-US');
+let localeCache: string | null = null;
+/**
+ * How numbers and dates are written (v0.35.0): the phone's own way when it speaks the app's language (es-MX writes
+ * 10,935.5; es-ES and es-AR 10.935,5; en-US May 3; en-GB 3 May), else Latin America's, Spain's or Britain's.
+ */
+export function appLocale(): string {
+  if (localeCache) return localeCache;
+  const fallback = current === 'es' ? (spanish === 'spain' ? 'es-ES' : 'es-419') : 'en-GB';
+  const mine = phoneTags().find((t) => base(t) === current && regionOf(t));
+  let loc = mine ?? fallback;
+  try {
+    loc = Intl.getCanonicalLocales(loc)[0] ?? fallback;
+    if (!Intl.NumberFormat.supportedLocalesOf([loc]).length) loc = fallback;
+  } catch { loc = fallback; }
+  localeCache = loc;
+  return loc;
+}
+/** Numbers and dates are written the phone's way (it speaks the app's language). */
+export const localeFromPhone = () => phoneTags().some((t) => base(t) === current && !!regionOf(t));
+const locale = appLocale;
 
 export function fmtNumber(v: number, digits = 0): string {
   return new Intl.NumberFormat(locale(), { maximumFractionDigits: digits }).format(v);

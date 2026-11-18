@@ -4989,6 +4989,41 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 37. Like the phone (v0.35.0): the app speaks the phone's language (English, Latin America's Spanish or Spain's) and
+// writes numbers, dates and times its way (es-MX 10,935.5 and 5:30 p.m.; es-ES 10.935,5 and 17:30); a language picked
+// in Settings stays after a reload; "Like my phone" goes back to the phone's.
+{
+  const seen = {};
+  for (const locale of ['es-MX', 'es-ES', 'fr-FR']) {
+    const { page, errors, ctx } = await open({ locale, viewport: { width: 420, height: 800 } }, '');
+    seen[locale] = await page.evaluate(() => ({ lang: window.atlas.app.lang, es: window.atlas.app.spanish, picked: window.atlas.app.langPicked, fmt: '' }));
+    await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Configuración'));
+    await page.waitForTimeout(400);
+    seen[locale].fmt = await page.evaluate(() => document.querySelector('[data-settings="formats"]')?.textContent ?? '');
+    if (locale === 'es-MX') {
+      // English picked in Settings: kept after a reload (with no link); "Like my phone" goes back to Spanish.
+      await page.evaluate(() => window.atlas.app.setLang('en'));
+      await page.waitForTimeout(600);
+      await page.goto(url, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+      await page.waitForFunction(() => window.atlas, null, { timeout: 60000 });
+      seen.kept = await page.evaluate(() => ({ lang: window.atlas.app.lang, picked: window.atlas.app.langPicked }));
+      await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Configuración'));
+      await page.waitForTimeout(400);
+      await page.evaluate(() => [...document.querySelectorAll('.settings .seg-btn')].find((b) => /phone|teléfono/.test(b.textContent))?.click());
+      await page.waitForTimeout(400);
+      seen.back = await page.evaluate(() => ({ lang: window.atlas.app.lang, picked: window.atlas.app.langPicked }));
+    }
+    check(!errors.length, `no page errors with a phone in ${locale}${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
+  check(seen['es-MX'].lang === 'es' && seen['es-MX'].es === 'latam' && !seen['es-MX'].picked && /10,935\.5/.test(seen['es-MX'].fmt) && /p\.\s?m\./.test(seen['es-MX'].fmt)
+    && seen['es-ES'].lang === 'es' && seen['es-ES'].es === 'spain' && /10\.935,5/.test(seen['es-ES'].fmt) && /17:30/.test(seen['es-ES'].fmt)
+    && seen['fr-FR'].lang === 'en' && /^Numbers and dates \(en-GB\)/.test(seen['fr-FR'].fmt),
+    `like the phone: es-MX "${seen['es-MX'].fmt}"; es-ES "${seen['es-ES'].fmt}"; fr-FR "${seen['fr-FR'].fmt}"`);
+  check(seen.kept?.lang === 'en' && seen.kept.picked && seen.back?.lang === 'es' && !seen.back.picked,
+    `a language picked in Settings stays after a reload (${seen.kept?.lang}); "Like my phone" goes back to the phone's (${seen.back?.lang})`);
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

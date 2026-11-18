@@ -5,6 +5,7 @@ import { loadJSON, shapesFrom, type Shape } from '../data/store';
 import { lang } from '../app/i18n';
 import type { Topology } from 'topojson-specification';
 import type { LayerDef } from './types';
+import { appLocale } from '../app/i18n';
 
 interface ZP { z: number; u: string; p?: string; tz?: string; c: number }
 
@@ -17,7 +18,7 @@ export function zoneColor(z: number, dark: boolean): string {
 }
 
 export function timeAt(offsetHours: number, tz?: string, date = new Date()): string {
-  const loc = lang() === 'es' ? 'es-ES' : 'en-GB';
+  const loc = appLocale();
   if (tz) {
     try { return new Intl.DateTimeFormat(loc, { hour: '2-digit', minute: '2-digit', timeZone: tz }).format(date); } catch { /* fall back */ }
   }

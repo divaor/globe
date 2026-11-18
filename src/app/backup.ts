@@ -9,6 +9,7 @@
 import { Download, Upload, Share2 } from 'lucide';
 import { h, icon, clear, add } from '../ui/dom';
 import { lang } from './i18n';
+import { appLocale } from './i18n';
 
 declare const __APP_VERSION__: string;
 const es = () => lang() === 'es';
@@ -122,7 +123,7 @@ export function backupSettings(toast: (m: string) => void): HTMLElement {
     const got = await readBackup(await f.text());
     clear(status);
     if (!got) { status.append(h('p', { class: 'backup-warn' }, L('This is not an Atlas Globe backup.', 'Este no es un respaldo de Atlas Globe.'))); return; }
-    const when = new Date(got.b.made).toLocaleString(lang(), { dateStyle: 'medium', timeStyle: 'short' });
+    const when = new Date(got.b.made).toLocaleString(appLocale(), { dateStyle: 'medium', timeStyle: 'short' });
     const yes = h('button', { type: 'button', class: 'pill sm primary', 'data-backup': 'replace' }, L('Replace this device’s data', 'Reemplazar los datos de este dispositivo'));
     const no = h('button', { type: 'button', class: 'pill sm', 'data-backup': 'cancel' }, L('Cancel', 'Cancelar'));
     no.addEventListener('click', () => clear(status));

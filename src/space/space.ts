@@ -13,6 +13,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { TimeTravel } from '../modes';
 import type { InfoRow } from '../layers/types';
+import { appLocale } from '../app/i18n';
 
 const KIND: Record<WorldDef['kind'], { en: string; es: string }> = {
   planet: { en: 'Planet', es: 'Planeta' }, moon: { en: 'Moon', es: 'Luna' }, dwarf: { en: 'Dwarf planet', es: 'Planeta enano' }, asteroid: { en: 'Asteroid', es: 'Asteroide' },
@@ -332,7 +333,7 @@ export class Space {
 /** A world's facts as card rows. */
 export function factRows(f: Facts | undefined): InfoRow[] {
   if (!f) return [];
-  const n = (v: number, d = 0) => v.toLocaleString(L('en-GB', 'es-ES'), { maximumFractionDigits: d });
+  const n = (v: number, d = 0) => v.toLocaleString(appLocale(), { maximumFractionDigits: d });
   const rows: InfoRow[] = [];
   if (f.radius) rows.push({ icon: '📏', label: L('Diameter', 'Diámetro'), value: `${n(f.radius * 2)} km` });
   if (f.gravity) rows.push({ icon: '🪶', label: L('Gravity', 'Gravedad'), value: `${n(f.gravity, 2)} m/s² (${n(f.gravity / 9.81 * 100)} % ${L('of Earth', 'de la Tierra')})` });

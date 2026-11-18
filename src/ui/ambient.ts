@@ -9,6 +9,7 @@ import type { Ticker, RenderSettings } from '../engine/renderer';
 import { playlist, itemTitle, itemWords, type PlayItem, type Playlist } from './playlists';
 import { canSpeak, speak, stopSpeaking } from './narrator';
 import type { ProjectionId } from '../engine/projections';
+import { appLocale } from '../app/i18n';
 
 export class Ambient {
   private ticker: Ticker | null = null;
@@ -216,7 +217,7 @@ export class Ambient {
     if (!this.app.ambient.clock) { this.clockEl.hidden = true; return; }
     this.clockEl.hidden = false;
     const now = new Date();
-    const loc = this.app.lang === 'es' ? 'es-MX' : 'en-US';
+    const loc = appLocale();
     const time = new Intl.DateTimeFormat(loc, { hour: '2-digit', minute: '2-digit' }).format(now);
     const d = new Intl.DateTimeFormat(loc, { weekday: 'long', day: 'numeric', month: 'long' }).format(now);
     // Only the first letter is a capital ("Sábado, 14 de noviembre").

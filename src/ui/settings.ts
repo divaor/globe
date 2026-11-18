@@ -2,7 +2,7 @@
 import { Download } from 'lucide';
 import { h, icon, toggle, segmented, slider, fillSelect } from './dom';
 import { canSpeak, narrationOn, setNarrationOn, voicesFor, voiceFor, setVoice, voiceRate, setVoiceRate, voiceRegion, speak, onNarration } from './narrator';
-import { t, tx, LANGS, type Lang } from '../app/i18n';
+import { t, tx, LANGS, fmtNumber, appLocale, localeFromPhone, type Lang } from '../app/i18n';
 import type { App } from '../app/app';
 import { terrainSettings } from './terrain';
 import { backupSettings } from '../app/backup';
@@ -39,16 +39,22 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     }
   });
 
-  type Choice = Lang | 'es-ES';
-  const langPicker = segmented<Choice>(app.lang === 'es' && app.spanish === 'spain' ? 'es-ES' : app.lang, [
+  // Like the phone (v0.35.0), English, and the two Spanishes; numbers and dates are written the phone's way.
+  type Choice = Lang | 'es-ES' | 'auto';
+  const es = app.lang === 'es';
+  const langPicker = segmented<Choice>(!app.langPicked ? 'auto' : app.lang === 'es' && app.spanish === 'spain' ? 'es-ES' : app.lang, [
+    { value: 'auto', label: es ? '📱 Como mi teléfono' : '📱 Like my phone' },
     ...LANGS.filter((l) => l.id !== 'es').map((l) => ({ value: l.id as Choice, label: l.name })),
     { value: 'es', label: 'Español (Latinoamérica)' },
     { value: 'es-ES', label: 'Español (España)' },
-  ], (v) => { app.setLang(v === 'es-ES' ? 'es' : v, v === 'es-ES' ? 'spain' : v === 'es' ? 'latam' : app.spanish); reopen(); });
+  ], (v) => { if (v === 'auto') app.setLang(null); else app.setLang(v === 'es-ES' ? 'es' : v, v === 'es-ES' ? 'spain' : v === 'es' ? 'latam' : app.spanish); reopen(); });
   langPicker.classList.add('seg-wrap');
+  const sample = `${fmtNumber(10935.5, 1)} · ${new Date(2026, 4, 3).toLocaleDateString(appLocale(), { day: 'numeric', month: 'long' })} · ${new Date(2026, 4, 3, 17, 30).toLocaleTimeString(appLocale(), { hour: 'numeric', minute: '2-digit' })}`;
+  const phone = localeFromPhone();
+  const numbers = h('p', { class: 'tool-hint', 'data-settings': 'formats' }, es ? `${phone ? 'Números y fechas como en tu teléfono' : 'Números y fechas'} (${appLocale()}): ${sample}` : `${phone ? 'Numbers and dates as on your phone' : 'Numbers and dates'} (${appLocale()}): ${sample}`);
   return h('div', { class: 'settings' },
     // English, and the two Spanishes: the texts as written (Latin America) or with Spain's words.
-    field(t('language'), langPicker),
+    field(t('language'), h('div', null, langPicker, numbers)),
     field(t('theme'), segmented<'dark' | 'light'>(app.themeId, [{ value: 'dark', label: t('themeDark') }, { value: 'light', label: t('themeLight') }], (v) => app.setTheme(v))),
     h('h3', { class: 'sec-title' }, t('labels')),
     h('div', { class: 'toggles' },

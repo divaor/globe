@@ -4,6 +4,7 @@ import { h } from '../ui/dom';
 import { lang } from '../app/i18n';
 import { TOURS } from './tours';
 import { GAMES } from '../play/logic';
+import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -279,9 +280,9 @@ export function resetProgress() {
   for (const f of onReset) f();
 }
 
-const fmt = (n: number) => n.toLocaleString(es() ? 'es-ES' : 'en-GB');
+const fmt = (n: number) => n.toLocaleString(appLocale());
 /** "13 Nov 2026" from 2026-11-13. */
-const fmtDay = (k: string) => { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d).toLocaleDateString(es() ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' }); };
+const fmtDay = (k: string) => { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d).toLocaleDateString(appLocale(), { day: 'numeric', month: 'short', year: 'numeric' }); };
 
 /** The progress panel: each subject with its level, right answers and day streak; the daily challenge; tours; badges. */
 export function progressPanel(onReset: () => void): HTMLElement {
@@ -300,7 +301,7 @@ export function progressPanel(onReset: () => void): HTMLElement {
   for (let k = 6; k >= 0; k--) {
     const d = new Date(); d.setDate(d.getDate() - k);
     const r = p.daily.results[dayKey(d)];
-    days.push(h('span', { class: `day-dot${r ? (r.s === r.n ? ' perfect' : ' done') : ''}`, title: `${dayKey(d)}${r ? ` · ${r.s}/${r.n}` : ''}` }, d.toLocaleDateString(es() ? 'es-ES' : 'en-GB', { weekday: 'narrow' })));
+    days.push(h('span', { class: `day-dot${r ? (r.s === r.n ? ' perfect' : ' done') : ''}`, title: `${dayKey(d)}${r ? ` · ${r.s}/${r.n}` : ''}` }, d.toLocaleDateString(appLocale(), { weekday: 'narrow' })));
   }
   body.append(h('h3', { class: 'sec-title' }, `🗓️ ${L('Daily challenge', 'Reto del día')}`),
     h('div', { class: 'prog-row' }, h('span', null, `🔥 ${L('Streak', 'Racha')}: ${fmt(current(p.daily))} · ${L('best', 'mejor')}: ${fmt(p.daily.best)}`), h('span', { class: 'day-dots' }, ...days)),

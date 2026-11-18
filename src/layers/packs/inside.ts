@@ -10,6 +10,7 @@ import { L } from '../../play/host';
 import { h } from '../../ui/dom';
 import { geoDistance, geoInterpolate } from 'd3-geo';
 import { declination, type WMM } from '../../earth/wmm';
+import { appLocale } from '../../app/i18n';
 
 const es = () => lang() === 'es';
 const T = (o: { en: string; es: string } | undefined) => (o ? (es() ? o.es : o.en) : '');
@@ -40,7 +41,7 @@ const DEPTHS = [
 const classOf = (km: number) => (km < 70 ? 0 : km < 300 ? 1 : 2);
 const SHADES = ['#ff6b4a', '#ffa94d', '#ffd43b', '#74c0fc', '#4dabf7', '#9775fa'];
 const shadeOf = (km: number) => (km < 70 ? 0 : km < 150 ? 1 : km < 300 ? 2 : km < 450 ? 3 : km < 600 ? 4 : 5);
-const dayText = (day: number) => new Date(day * 86400000).toLocaleDateString(es() ? 'es-MX' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const dayText = (day: number) => new Date(day * 86400000).toLocaleDateString(appLocale(), { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 /** The slice: two ends, drawn on the map; its cross-section opens in a panel. */
 let slice: { a: [number, number] | null; b: [number, number] | null; picking: boolean } = { a: null, b: null, picking: false };
 

@@ -9,6 +9,7 @@ import { loadJSON } from '../../data/store';
 import { LC } from '../context';
 import { loadWild } from '../../wild/data';
 import { wildData, links as wildLinks } from './wild';
+import { appLocale } from '../../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -223,7 +224,7 @@ function whereAt(mg: Migration, m: number): [number, number] | null {
 
 function migrationCard(ui: LayerTapUi, mg: Migration) {
   const rows = [
-    { label: L('Journey', 'Viaje'), value: `${mg.km.toLocaleString(lang())} km · ${es() ? mg.kmNote.es : mg.kmNote.en}`, icon: '🧭' },
+    { label: L('Journey', 'Viaje'), value: `${mg.km.toLocaleString(appLocale())} km · ${es() ? mg.kmNote.es : mg.kmNote.en}`, icon: '🧭' },
     { label: L('Species', 'Especie'), value: mg.species, icon: mg.emoji },
   ];
   const notes = [es() ? mg.text.es : mg.text.en, ...mg.moments.map((x) => `${monthName(x.month - 1)}: ${es() ? x.text.es : x.text.en}`)];
@@ -232,7 +233,7 @@ function migrationCard(ui: LayerTapUi, mg: Migration) {
   const animal = wildData()?.animals.find((a) => a.sci === mg.species);
   if (animal) links.push({ label: L('Its card', 'Su ficha'), onClick: () => wildLinks.openAnimal(animal) });
   mg.sources.slice(0, 3).forEach((u, i) => { try { links.push({ label: `${L('Source', 'Fuente')} ${i + 1}: ${new URL(u).hostname.replace(/^www\./, '')}`, href: u }); } catch { /* not a link */ } });
-  ui.card(mg.emoji, es() ? mg.name.es : mg.name.en, L(`${mg.km.toLocaleString('en-GB')} km a year`, `${mg.km.toLocaleString('es-ES')} km al año`), rows, links, notes);
+  ui.card(mg.emoji, es() ? mg.name.es : mg.name.en, L(`${mg.km.toLocaleString(appLocale())} km a year`, `${mg.km.toLocaleString(appLocale())} km al año`), rows, links, notes);
 }
 
 const migrations: LayerDef = {
@@ -271,12 +272,12 @@ const migrations: LayerDef = {
     if (String(inst.options.month ?? 'play') === 'play') {
       for (const mg of MIGRATIONS) {
         const mid = mg.path[Math.floor(mg.path.length / 2)], p = rc.project(mid[0], mid[1]);
-        if (p) rc.labels.add({ text: es() ? mg.name.es : mg.name.en, sub: `${mg.km.toLocaleString(lang())} km`, x: p[0], y: p[1] - 16, priority: 700, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
+        if (p) rc.labels.add({ text: es() ? mg.name.es : mg.name.en, sub: `${mg.km.toLocaleString(appLocale())} km`, x: p[0], y: p[1] - 16, priority: 700, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
       }
       return;
     }
     for (const d of (inst.state.drawn as { mg: Migration; x: number; y: number }[] | undefined) ?? []) {
-      rc.labels.add({ text: es() ? d.mg.name.es : d.mg.name.en, sub: `${d.mg.km.toLocaleString(lang())} km`, x: d.x, y: d.y + 20, priority: 700, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
+      rc.labels.add({ text: es() ? d.mg.name.es : d.mg.name.en, sub: `${d.mg.km.toLocaleString(appLocale())} km`, x: d.x, y: d.y + 20, priority: 700, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
     }
   },
   legend(inst) {
@@ -286,7 +287,7 @@ const migrations: LayerDef = {
     const step = (by: number) => { inst.state.shownMonth = -1; LC.notify?.(); window.atlas?.app.setOption('migrations', 'month', String(((m + by + 12) % 12) + 1)); };
     return {
       kind: 'categories', title: L(`Migrations · ${monthName(m)}`, `Migraciones · ${monthName(m)}`),
-      items: MIGRATIONS.map((mg) => ({ color: 'transparent', icon: mg.emoji, shape: 'emoji' as const, label: `${es() ? mg.name.es : mg.name.en} · ${mg.km.toLocaleString(lang())} km` })),
+      items: MIGRATIONS.map((mg) => ({ color: 'transparent', icon: mg.emoji, shape: 'emoji' as const, label: `${es() ? mg.name.es : mg.name.en} · ${mg.km.toLocaleString(appLocale())} km` })),
       note: playing ? L('A year goes by in 36 seconds. Pick a month to stop and see what happens then; tap a traveller for its story.', 'Un año pasa en 36 segundos. Elige un mes para detenerte y ver qué pasa entonces; toca un viajero para ver su historia.')
         : now.length ? `${L(`In ${monthName(m)}`, `En ${monthName(m)}`)}: ${now.slice(0, 4).join(' · ')}` : L(`Tap a traveller to see where it is in ${monthName(m)}.`, `Toca un viajero para ver dónde está en ${monthName(m)}.`),
       actions: [
@@ -310,7 +311,7 @@ const migrations: LayerDef = {
     return MIGRATIONS.map((mg) => {
       const s = Math.max(match(mg.name.en), match(mg.name.es), match(mg.species) - 6);
       const at = whereAt(mg, m) ?? mg.months.find(Boolean) ?? mg.path[0];
-      return { label: es() ? mg.name.es : mg.name.en, sub: `${mg.km.toLocaleString(lang())} km · ${L('migration', 'migración')}`, icon: mg.emoji, lon: at[0], lat: at[1], score: s, wz: 3,
+      return { label: es() ? mg.name.es : mg.name.en, sub: `${mg.km.toLocaleString(appLocale())} km · ${L('migration', 'migración')}`, icon: mg.emoji, lon: at[0], lat: at[1], score: s, wz: 3,
         open: (ui: LayerTapUi) => migrationCard(ui, mg) };
     }).filter((x) => x.score > 0);
   },

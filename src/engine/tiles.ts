@@ -2,6 +2,7 @@
 // how much has been downloaded, and a loader that keeps a capped number of decoded tiles in memory, fetches the
 // ones the view needs (nearest first, dropping those no longer needed), and looks in saved offline areas first.
 
+import { appLocale } from '../app/i18n';
 export type TileKind = 'terrarium' | 'rgb';
 export interface TileSource {
   id: string; kind: TileKind;
@@ -72,7 +73,7 @@ export function mayDownload(): boolean {
 }
 
 export const fmtBytes = (b: number, es = false) => {
-  const f = (x: number, d: number) => x.toLocaleString(es ? 'es-ES' : 'en-GB', { maximumFractionDigits: d });
+  const f = (x: number, d: number) => x.toLocaleString(appLocale(), { maximumFractionDigits: d });
   return b < 1e6 ? `${f(b / 1e3, 0)} KB` : b < 1e9 ? `${f(b / 1e6, 1)} MB` : `${f(b / 1e9, 2)} GB`;
 };
 

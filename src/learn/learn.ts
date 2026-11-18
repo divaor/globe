@@ -39,6 +39,7 @@ import type { RenderCtx } from '../layers/types';
 import type { Master } from '../master/master';
 import { loadDeck, deckCapital } from '../master/data';
 import { recordAnswer, recordQuiz, recordDaily, recordDailySubjects, recordTour, dailyResult, dayKey, current, progress, progressPanel, BADGES, type Badge } from './progress';
+import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -417,7 +418,7 @@ export class Learn {
     const done = dailyResult(day);
     const p = progress();
     const streak = current(p.daily);
-    const date = new Date().toLocaleDateString(es() ? 'es-ES' : 'en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+    const date = new Date().toLocaleDateString(appLocale(), { weekday: 'long', day: 'numeric', month: 'long' });
     const daily = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-quiz': 'daily' }, h('span', { class: 'mode-icon' }, '🗓️'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, `${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)} · ${date}`),
         h('span', { class: 'mode-desc' }, done
@@ -685,7 +686,7 @@ export class Learn {
     let text = ok ? L(`Correct! That's ${name}.`, `¡Correcto! Es ${name}.`) : L(`${name} is in yellow.`, `${name} está en amarillo.`);
     if (!ok && tapped) {
       const km = Math.round(geoDistance(tapped.at, right.at) * 6371);
-      text = L(`You tapped ${cur.given}. ${name} is in yellow, ${km.toLocaleString('en-GB')} km away.`, `Tocaste ${cur.given}. ${name} está en amarillo, a ${km.toLocaleString('es-ES')} km.`);
+      text = L(`You tapped ${cur.given}. ${name} is in yellow, ${km.toLocaleString(appLocale())} km away.`, `Tocaste ${cur.given}. ${name} está en amarillo, a ${km.toLocaleString(appLocale())} km.`);
     }
     this.bringIntoView(right);
     this.renderQuiz({ ok, text });
@@ -900,7 +901,7 @@ export class Learn {
     }
     const l = this.landings.find((x) => x.id === cur.id);
     this.pin = null;
-    const when = l ? new Date(`${l.date}T00:00:00Z`).toLocaleDateString(L('en-GB', 'es-ES'), { year: 'numeric', month: 'long', day: l.date.length > 7 ? 'numeric' : undefined, timeZone: 'UTC' }) : '';
+    const when = l ? new Date(`${l.date}T00:00:00Z`).toLocaleDateString(appLocale(), { year: 'numeric', month: 'long', day: l.date.length > 7 ? 'numeric' : undefined, timeZone: 'UTC' }) : '';
     this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was ', 'Era ')}${right}${l ? ` · ${when}${l.site ? ` · ${tr(l.site)}` : ''}` : ''}.` });
   }
 
@@ -1607,17 +1608,17 @@ export class Learn {
     this.scored(ok);
     const cur = q.qs[q.i];
     cur.ok = ok;
-    cur.given = km == null ? L('no answer', 'sin respuesta') : L(`${km.toLocaleString('en-GB')} km away`, `a ${km.toLocaleString('es-ES')} km`);
+    cur.given = km == null ? L('no answer', 'sin respuesta') : L(`${km.toLocaleString(appLocale())} km away`, `a ${km.toLocaleString(appLocale())} km`);
     this.showItem(it);
     const where = it.place ? tx(it.place) : '';
-    const dist = km == null ? '' : L(`${km.toLocaleString('en-GB')} km away. `, `A ${km.toLocaleString('es-ES')} km. `);
+    const dist = km == null ? '' : L(`${km.toLocaleString(appLocale())} km away. `, `A ${km.toLocaleString(appLocale())} km. `);
     if (plant) {
-      const near = km === 0 ? L('Right where it grows! ', '¡Justo donde crece! ') : km != null ? L(`${km.toLocaleString('en-GB')} km from where it grows. `, `A ${km.toLocaleString('es-ES')} km de donde crece. `) : '';
+      const near = km === 0 ? L('Right where it grows! ', '¡Justo donde crece! ') : km != null ? L(`${km.toLocaleString(appLocale())} km from where it grows. `, `A ${km.toLocaleString(appLocale())} km de donde crece. `) : '';
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${near}${tx(it.name)}: ${L('it grows wild in the green squares', 'crece silvestre en los cuadros verdes')}${where ? ` (${where})` : ''}.` });
       return;
     }
     if (animal) {
-      const near = km === 0 ? L('Right where it lives! ', '¡Justo donde vive! ') : km != null ? L(`${km.toLocaleString('en-GB')} km from where it lives. `, `A ${km.toLocaleString('es-ES')} km de donde vive. `) : '';
+      const near = km === 0 ? L('Right where it lives! ', '¡Justo donde vive! ') : km != null ? L(`${km.toLocaleString(appLocale())} km from where it lives. `, `A ${km.toLocaleString(appLocale())} km de donde vive. `) : '';
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${near}${tx(it.name)}: ${L('it lives in the orange squares', 'vive en los cuadros naranjas')}${where ? ` (${where})` : ''}.` });
       return;
     }
@@ -1876,7 +1877,7 @@ export class Learn {
     if (!ok && id) {
       const a = this.app.data.meta[id], b = this.app.data.meta[cur.id];
       const km = Math.round(geoDistance([a.lx, a.ly], [b.lx, b.ly]) * 6371);
-      text = L(`You tapped ${this.app.data.name(id, lang())}, ${km.toLocaleString()} km away.`, `Tocaste ${this.app.data.name(id, lang())}, a ${km.toLocaleString('es-ES')} km.`);
+      text = L(`You tapped ${this.app.data.name(id, lang())}, ${km.toLocaleString(appLocale())} km away.`, `Tocaste ${this.app.data.name(id, lang())}, a ${km.toLocaleString(appLocale())} km.`);
     }
     this.renderQuiz({ ok, text });
   }
@@ -2689,7 +2690,7 @@ export class Learn {
    *  selection of events, with a link to the story that tells the same event. Arrows go to the day before or after. */
   private async openOnThisDay(day = new Date()) {
     this.otdDay = day;
-    const loc = es() ? 'es-ES' : 'en-GB';
+    const loc = appLocale();
     const label = day.toLocaleDateString(loc, { day: 'numeric', month: 'long' });
     const go = (k: number) => { const d = new Date(day.getFullYear(), day.getMonth(), day.getDate() + k); void this.openOnThisDay(d); };
     const prev = h('button', { type: 'button', class: 'icon-btn sm', 'aria-label': L('The day before', 'El día anterior'), 'data-otd': 'prev' }, icon(ChevronLeft, 18));

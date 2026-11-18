@@ -5,6 +5,7 @@ import { loadJSON } from '../data/store';
 import { lang } from '../app/i18n';
 import { hasCell, unpackCells, unpackCounts } from '../layers/carpet';
 import type { Status } from '../wild/data';
+import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
 
@@ -120,7 +121,7 @@ export function growsIn(p: Plant, c: number): boolean {
 export function plantFacts(p: Plant): { label: string; value: string; icon: string }[] {
   const f = p.f ?? {};
   const L = (en: string, sp: string) => (es() ? sp : en);
-  const num = (x: number) => x.toLocaleString(lang(), { maximumFractionDigits: x < 1 ? 2 : x < 10 ? 1 : 0 });
+  const num = (x: number) => x.toLocaleString(appLocale(), { maximumFractionDigits: x < 1 ? 2 : x < 10 ? 1 : 0 });
   const m = (x: number) => (x < 1 ? `${num(x * 100)} cm` : `${num(x)} m`);
   const y = (x: number) => L(`${num(x)} years`, `${num(x)} años`);
   const span = (v: number[] | undefined, unit: (x: number) => string) => (v ? (v.length > 1 ? `${unit(v[0]).replace(/\s?\S+$/, '')}–${unit(v[1])}` : L(`up to ${unit(v[0])}`, `hasta ${unit(v[0])}`)) : null);
@@ -139,7 +140,7 @@ export function plantRelatives(d: GreenData, p: Plant): Plant[] {
 /** A year as people say it: "8000 BC", "1492". */
 export function yearText(y: number): string {
   const L = (en: string, sp: string) => (es() ? sp : en);
-  if (y < 0) return L(`${Math.abs(y).toLocaleString('en')} BC`, `${Math.abs(y).toLocaleString('es')} a. C.`);
+  if (y < 0) return L(`${Math.abs(y).toLocaleString(appLocale())} BC`, `${Math.abs(y).toLocaleString(appLocale())} a. C.`);
   return String(y);
 }
 
