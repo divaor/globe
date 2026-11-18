@@ -50,6 +50,13 @@ export class MapGames {
   readonly lives: WhoseLife;
   /** More cards for Today and the games list (Fill the map's region of the day, v0.35.0). */
   extraToday: (() => Promise<HTMLElement | null>)[] = [];
+  /** More games in the list (v0.37.0: Fill the map and Put it on the map, with their own panels). */
+  extraGames: { id: string; icon: string; title: () => string; desc: () => string; open: () => void }[] = [];
+
+  /** Today (v0.37.0): each game's puzzle of the day: its name, today's result if played, and how to start it. */
+  todayGames(): { id: GameId; icon: string; name: string; result: { score: number; stars: number } | null; open: () => void }[] {
+    return GAMES.map((g) => ({ id: g, icon: GAME_TEXT[g].icon, name: es() ? GAME_TEXT[g].es : GAME_TEXT[g].en, result: gameDaily(g), open: () => void this.daily(g) }));
+  }
 
   constructor(private app: App, private shell: Shell) {
     this.host = new PlayHost(app, shell);
@@ -69,7 +76,7 @@ export class MapGames {
     const borders = () => this.hop.borders();
     for (const g of [this.hop, this.pin, this.hilo, this.tour, this.names, this.chain, this.outline, this.museum, this.climate, this.explorer, this.sunrise, this.lives]) g.back = back;
     for (const g of [this.tour, this.names, this.chain, this.outline]) g.borders = borders;
-    shell.addMenu({ id: 'play', icon: Route, label: () => L('Map games', 'Juegos en el mapa'), order: 29, group: 'learn', onClick: () => void this.openMenu() });
+    shell.addMenu({ id: 'play', icon: Route, label: () => L('Map games', 'Juegos en el mapa'), order: 28.4, group: 'play', onClick: () => void this.openMenu() });
   }
 
   /** Starts today's puzzle of a game. */
@@ -110,10 +117,12 @@ export class MapGames {
       const b = g === 'hop' ? Math.max(0, ...['count', 'people', 'area', 'km'].map((k) => best[k] ?? 0)) : best[g] ?? 0;
       games.append(this.card(T(g).icon, nm(g), `${es() ? T(g).desc.es : T(g).desc.en}${b ? ` · ${L('Best', 'Récord')}: ${b}` : ''}`, { 'data-game-open': g }, () => this.open(g)));
     }
+    // Fill the map and Put it on the map: games too, with their own panels (v0.37.0).
+    for (const x of this.extraGames) games.append(this.card(x.icon, x.title(), x.desc(), { 'data-game-open': x.id }, x.open));
     body.append(
       h('p', { class: 'muted small' }, L('Games you play on the map, scored against the best result the app can find. A new puzzle of each game every day, the same for everyone.', 'Juegos en el mapa, puntuados frente al mejor resultado que encuentra la app. Cada día, un nuevo reto de cada juego, el mismo para todos.')),
       h('h3', { class: 'sec-title' }, `${L('Today', 'Hoy')} · ${played}/${GAMES.length}`), daily,
-      h('h3', { class: 'sec-title' }, L('Games', 'Juegos')), games);
+      h('h3', { class: 'sec-title' }, `${L('Games', 'Juegos')} · ${GAMES.length + this.extraGames.length}`), games);
     this.shell.openPanel('play', L('Map games', 'Juegos en el mapa'), body);
   }
 

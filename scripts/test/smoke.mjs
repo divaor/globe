@@ -4713,8 +4713,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
-// 35. The More menu (v0.33.1), on a phone: a few rows at the top (Ambient mode, Explore, Learn and play, Tools, Your
-// data, Save and share, Settings, About), each group saying in small type what is inside it; a group opens in place
+// 35. The More menu (v0.33.1), on a phone: a few rows at the top (Ambient mode, Explore, Learn, Play (v0.37.0: Learn
+// and play split in two), Tools, Your data, Save and share, Settings, About), each group saying in small type what is
+// inside it; a group opens in place
 // with a row back (and Escape); an entry inside opens as before and closes the menu; every entry is in reach; a tap
 // outside closes it; on a short screen it scrolls; in Spanish.
 {
@@ -4729,6 +4730,11 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(200);
   const learn = await rows();
   const learnOpen = await menuOpen();
+  await page.tap('.menu [data-back]');
+  await page.waitForTimeout(200);
+  await page.tap('.menu [data-group="play"]');
+  await page.waitForTimeout(200);
+  const playG = await rows();
   await page.tap('.menu [data-back]');
   await page.waitForTimeout(200);
   const back = await rows();
@@ -4763,10 +4769,11 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const deep = await page.evaluate(() => ({ open: window.atlas.deep.info.open, menu: !document.querySelector('.menu').hidden }));
   await page.evaluate(() => window.atlas.shell.sheet.close());
   await page.waitForTimeout(400);
-  check(top.length <= 9 && top.filter((r) => r.group).length === 4 && top.every((r) => !r.group || r.sub.length > 5) && fits
-    && learnOpen && learn[0]?.back === 'learn' && ['Quiz', 'Guided tours', 'Map games', 'On this day'].every((x) => learn.some((r) => r.text === x))
+  check(top.length <= 9 && top.filter((r) => r.group).length === 5 && top.every((r) => !r.group || r.sub.length > 5) && fits
+    && learnOpen && learn[0]?.back === 'learn' && ['Master the world', 'Quiz', 'Guided tours', 'On this day'].every((x) => learn.some((r) => r.text === x)) && !learn.some((r) => r.text === 'Map games')
+    && playG[0]?.back === 'play' && playG.slice(1).map((r) => r.text).join() === 'Map games,Fill the map,Put it on the map'
     && back.length === top.length && escBack.length === top.length && escClosed && reach.missing.length === 0 && outsideClosed && deep.open && !deep.menu,
-    `the More menu on a phone: ${top.length} rows that fit (${top.map((r) => r.text + (r.group ? ' ›' : '')).join(', ')}); Learn and play opens in place (${learn.slice(1).map((r) => r.text).join(', ')}), back and Escape return; all ${reach.n} entries in reach${reach.missing.length ? ` (missing ${reach.missing.join(', ')})` : ''}; a tap outside closes it; Explore → Into the deep opens its panel (${deep.open})`);
+    `the More menu on a phone: ${top.length} rows that fit (${top.map((r) => r.text + (r.group ? ' ›' : '')).join(', ')}); Learn opens in place (${learn.slice(1).map((r) => r.text).join(', ')}), Play too (${playG.slice(1).map((r) => r.text).join(', ')}), back and Escape return; all ${reach.n} entries in reach${reach.missing.length ? ` (missing ${reach.missing.join(', ')})` : ''}; a tap outside closes it; Explore → Into the deep opens its panel (${deep.open})`);
   // A short screen (the phone on its side): the menu scrolls instead of running off the top.
   await page.setViewportSize({ width: 851, height: 393 });
   await page.waitForTimeout(600);
@@ -4785,13 +4792,13 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.tap('[data-dock="more"]');
   await page.waitForTimeout(300);
   const es = await rows();
-  check(['Explorar', 'Aprender y jugar', 'Herramientas', 'Guardar y compartir'].every((x) => es.some((r) => r.text === x)) && es.find((r) => r.group === 'learn')?.sub.includes('Concurso'),
+  check(['Explorar', 'Aprender', 'Jugar', 'Herramientas', 'Guardar y compartir'].every((x) => es.some((r) => r.text === x)) && es.find((r) => r.group === 'learn')?.sub.includes('Concurso') && es.find((r) => r.group === 'play')?.sub.includes('Juegos en el mapa'),
     `en español: ${es.map((r) => r.text).join(', ')} (${es.find((r) => r.group === 'learn')?.sub})`);
   check(!errors.length, `no page errors in v0.33.1's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 
-// 36. Master the world (v0.34.0), on a phone. More → Learn and play → Master the world opens its panel: today's goal,
+// 36. Master the world (v0.34.0), on a phone. More → Learn → Master the world opens its panel: today's goal,
 // the three decks, progress by level and continent. Learn asks the countries due today first, then new ones: a known
 // capital is tapped on the map among four dots with no names, a well known one typed (accents and a typo forgiven), a
 // new one picked from four; Bolivia's answer is Sucre and La Paz is explained, never offered. A miss comes back three
@@ -4836,7 +4843,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     conts: [...document.querySelectorAll('.mw-cont')].map((r) => r.textContent), modes: [...document.querySelectorAll('[data-master^="mode-"]')].map((b) => b.dataset.master),
   }));
   check(inMenu && panel.open && /0 of 20/.test(panel.today) && panel.decks.length === 3 && /13 mastered/.test(panel.legend) && panel.conts.length === 6 && panel.conts.some((c) => /Oceania.*13\/14/.test(c)) && panel.modes.length === 3,
-    `Master the world from More → Learn and play: the panel (${panel.today.trim()}; ${panel.decks.join(' / ')}; ${panel.legend}; ${panel.conts.find((c) => /Oceania/.test(c))}; ${panel.modes.join(', ')})`);
+    `Master the world from More → Learn: the panel (${panel.today.trim()}; ${panel.decks.join(' / ')}; ${panel.legend}; ${panel.conts.find((c) => /Oceania/.test(c))}; ${panel.modes.join(', ')})`);
   // Learn, South America: Brazil (known: tapped), Argentina (new), Colombia (well known: typed), Bolivia (new)…
   await M(() => window.atlas.master.start('learn', { scope: 'SA', reverse: false }));
   await page.waitForTimeout(2200);
@@ -5024,7 +5031,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     `a language picked in Settings stays after a reload (${seen.kept?.lang}); "Like my phone" goes back to the phone's (${seen.back?.lang})`);
 }
 
-// 38. Fill the map (v0.35.0), on a phone. More → Learn and play → Fill the map: seven categories, the world, each
+// 38. Fill the map (v0.35.0), on a phone. More → Play → Fill the map: seven categories, the world, each
 // continent and its regions with how full each is. Capitals of South America: a country tapped right is painted in
 // with three stars, kept, and counted toward Master the world (its daily goal and its capitals deck); a wrong tap
 // says which country it was and gives a hint (its neighbours, then a circle), and after three it is shown in orange;
@@ -5042,7 +5049,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(1500);
   const panel = await F(() => ({ open: !!document.querySelector('.fill-panel'), cats: document.querySelectorAll('[data-fill="cats"] .chip').length, world: document.querySelector('[data-fill="world"]')?.textContent ?? '', conts: document.querySelectorAll('.fill-cont').length, regions: document.querySelectorAll('.fill-region').length, daily: document.querySelector('.fill-panel [data-fill="daily"]')?.textContent ?? '' }));
   check(panel.open && panel.cats === 7 && /0 of 195 filled/.test(panel.world) && panel.conts === 6 && panel.regions === 22 && /Region of the day/.test(panel.daily),
-    `Fill the map from More → Learn and play: ${panel.cats} categories, ${panel.world.trim()}, ${panel.conts} continents and ${panel.regions} regions; ${panel.daily.trim()}`);
+    `Fill the map from More → Play: ${panel.cats} categories, ${panel.world.trim()}, ${panel.conts} continents and ${panel.regions} regions; ${panel.daily.trim()}`);
   // Capitals of South America: one right with a real tap.
   await page.tap('[data-fill="cats"] [data-cat="capitals"]');
   await page.waitForTimeout(300);
@@ -5185,7 +5192,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
-// 39. Put it on the map (v0.36.0), on a phone. More → Learn and play → Put it on the map: four mixes, the countries
+// 39. Put it on the map (v0.36.0), on a phone. More → Play → Put it on the map: four mixes, the countries
 // with enough for a puzzle (Mexico among them), the continents and regions, the puzzle of the day. Mexico: six
 // names; on a phone the card shrinks to the name being placed; the grey places of its kind; one placed with a real
 // tap; a check colours them (greens stay, the others show how far off); Check waits for a change; the second check
@@ -5202,7 +5209,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(2500);
   const panel = await F(() => ({ open: !!document.querySelector('.onmap-panel'), mixes: document.querySelectorAll('[data-onmap="mixes"] .chip').length, countries: document.querySelectorAll('[data-onmap="country"] option').length, mex: !!document.querySelector('[data-onmap="country"] option[value="MEX"]'), lux: !!document.querySelector('[data-onmap="country"] option[value="LUX"]'), scopes: [...document.querySelectorAll('[data-onmap="regions"] .chip')].map((b) => b.textContent), daily: document.querySelector('.onmap-panel [data-onmap="daily"]')?.textContent ?? '' }));
   check(panel.open && panel.mixes === 4 && panel.countries >= 110 && panel.mex && !panel.lux && panel.scopes.length >= 24 && panel.scopes.filter((x) => x === 'South America').length === 1 && /today/.test(panel.daily),
-    `Put it on the map from More → Learn and play: ${panel.mixes} mixes, ${panel.countries} countries (Mexico yes, Luxembourg no), ${panel.scopes.length} continents and regions; "${panel.daily.trim()}"`);
+    `Put it on the map from More → Play: ${panel.mixes} mixes, ${panel.countries} countries (Mexico yes, Luxembourg no), ${panel.scopes.length} continents and regions; "${panel.daily.trim()}"`);
   // Mexico, everything.
   await page.selectOption('[data-onmap="country"]', 'MEX');
   await page.tap('[data-onmap="play"]');
@@ -5318,6 +5325,88 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(/Ponlo en el mapa/.test(esPanel.title) && /Naturaleza/.test(esPanel.mixes) && /toca su lugar entre los grises/i.test(esCard.text) && /México/.test(esCard.text), `en español: ${esPanel.title} (${esPanel.mixes}); "${esCard.text.slice(0, 90)}…"`);
   check(!s.errors.length && !d.errors.length, `no page errors on a computer or in Spanish${[...s.errors, ...d.errors].length ? ': ' + [...s.errors, ...d.errors].join(' | ') : ''}`);
   await s.ctx.close();
+}
+
+// 40. Today (v0.37.0), on a phone: every daily in one place. The bottom bar has Today (with a dot while something is
+// left today) among Filters, Globe, Time, Space and More. Its panel: today's date, "0 of 16 done", the Daily
+// challenge, Master the world's goal, Fill the map's region of the day, Put it on the map's puzzle of the day, the 12
+// map games' puzzles as tiles, On this day. A map game's puzzle played from its tile and the region of the day filled
+// from its line are marked done; Share my day puts them in one message. The Map games panel lists all 14 games. In
+// Spanish.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const dock = await F(() => [...document.querySelectorAll('.dock-btn')].map((b) => ({ id: b.dataset.dock, text: b.textContent.replace(/\d+$/, ''), dot: !!b.querySelector('.dock-dot') })));
+  const fitsDock = await F(() => [...document.querySelectorAll('.dock-label')].every((l) => l.scrollWidth <= l.clientWidth + 1));
+  check(dock.map((d) => d.text).join() === 'Filters,Globe,Today,Time,Space,More' && dock.find((d) => d.id === 'today')?.dot && fitsDock,
+    `the bottom bar: ${dock.map((d) => d.text + (d.dot ? ' •' : '')).join(' · ')} (six fit on a phone; a dot on Today while something is left)`);
+  await page.tap('[data-dock="today"]');
+  await page.waitForTimeout(2500);
+  const read = () => F(() => ({
+    open: window.atlas.shell.sheet.isOpen('today'),
+    head: document.querySelector('[data-today="head"]')?.textContent ?? '',
+    main: [...document.querySelectorAll('[data-today="main"] [data-today-item]')].map((x) => x.dataset.todayItem),
+    tiles: [...document.querySelectorAll('[data-today="games"] .today-tile')].map((x) => ({ id: x.dataset.todayItem, done: x.classList.contains('done'), mark: x.querySelector('.today-tile-mark')?.textContent ?? '' })),
+    read: !!document.querySelector('.today-panel [data-today-item="onthisday"]'),
+    share: !document.querySelector('[data-today="share"]')?.disabled,
+  }));
+  let t = await read();
+  check(t.open && /0 of 16 done/.test(t.head) && t.main.join() === 'daily,master,fill,onmap' && t.tiles.length === 12 && t.tiles.every((x) => !x.done) && t.read && !t.share,
+    `Today: "${t.head.replace(/Share my day.*/, '').trim()}"; ${t.main.join(', ')}; ${t.tiles.length} map games; On this day; Share my day waits for something done`);
+  // A map game's puzzle from its tile: Climate detective, a pin on each city.
+  await page.tap('[data-today-item="game-climate"]');
+  await page.waitForFunction(() => !!window.atlas.play.climate.info, null, { timeout: 20000 }).catch(() => {});
+  const n = await F(() => window.atlas.play.climate.info?.n ?? 0);
+  for (let k = 0; k < n; k++) {
+    await F(() => { const p = window.atlas.play.climate; const at = p.info.at; p.tap(at[Math.floor(at.length / 2)]); p.confirm(); });
+    await page.waitForTimeout(200);
+    await F(() => window.atlas.play.climate.next());
+  }
+  const climateDay = await F(() => !!window.atlas.play.climate.info?.done && window.atlas.play.climate.info?.day);
+  await F(() => window.atlas.play.host.close());
+  // The region of the day, from its line.
+  await page.tap('[data-dock="today"]');
+  await page.waitForTimeout(2500);
+  await page.tap('[data-today-item="fill"]');
+  await page.waitForTimeout(2500);
+  await F(async () => { const f = window.atlas.fill; for (let k = 0; k < 40 && !f.info?.done; k++) { if (f.info.ans) f.next(); else f.answer(f.info.cur.id); } });
+  await F(() => window.atlas.fill.stop());
+  await page.waitForTimeout(400);
+  await page.tap('[data-dock="today"]');
+  await page.waitForTimeout(2500);
+  t = await read();
+  const climate = t.tiles.find((x) => x.id === 'game-climate');
+  const fillDone = await F(() => document.querySelector('[data-today-item="fill"]')?.classList.contains('done'));
+  const dot = await F(() => !!document.querySelector('[data-dock="today"] .dock-dot'));
+  const text = await F(() => window.atlas.today.shareText());
+  check(climateDay && climate?.done && /✓/.test(climate.mark) && fillDone && /2 of 16 done/.test(t.head) && t.share && dot
+    && /2\/16/.test(text) && /Region of the day: ★ \d+\/\d+/.test(text) && /🎮 🌡️ \d/.test(text),
+    `played from Today: Climate detective (${climate?.mark}) and the region of the day, both ticked; "${t.head.replace(/Share my day.*/, '').trim()}"; the dot stays (14 left); Share my day: "${text.split('\n').slice(0, 3).join(' / ')}"`);
+  // On this day opens from its card; Your progress from the head.
+  await page.tap('[data-today-item="onthisday"]');
+  await page.waitForTimeout(1500);
+  const otd = await F(() => window.atlas.shell.sheet.isOpen('onthisday'));
+  await page.tap('[data-dock="today"]');
+  await page.waitForTimeout(1500);
+  await page.tap('[data-today="progress"]');
+  await page.waitForTimeout(800);
+  const prog = await F(() => window.atlas.shell.sheet.isOpen('progress'));
+  // The Map games panel: all 14 games.
+  await F(() => window.atlas.play.openMenu());
+  await page.waitForTimeout(1500);
+  const games = await F(() => [...document.querySelectorAll('[data-game-open]')].map((x) => x.dataset.gameOpen));
+  check(otd && prog && games.length === 14 && games.includes('fill') && games.includes('onmap'), `On this day and Your progress open from Today; the Map games panel lists all ${games.length} games (with Fill the map and Put it on the map)`);
+  check(!errors.length, `no page errors in Today's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  // In Spanish.
+  await page.goto(url + '?r=40#p=globe&l=political&lang=es', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(800);
+  await page.tap('[data-dock="today"]');
+  await page.waitForTimeout(2500);
+  const es = await F(() => ({ title: document.querySelector('.sheet:not([hidden]) .sheet-title')?.textContent ?? '', head: document.querySelector('[data-today="head"]')?.textContent ?? '', secs: [...document.querySelectorAll('.today-panel .sec-title')].map((x) => x.textContent), dock: document.querySelector('[data-dock="today"]')?.textContent ?? '' }));
+  check(es.title === 'Hoy' && es.dock === 'Hoy' && /2 de 16 hechos/.test(es.head) && /^[A-ZÁÉÍÓÚ]/.test(es.head) && !/ De /.test(es.head) && es.secs.some((x) => /Los retos de hoy/.test(x)) && es.secs.some((x) => /Juegos en el mapa · 1\/12/.test(x)),
+    `en español: ${es.title}; "${es.head.replace(/Compartir mi día.*/, '').trim()}"; ${es.secs.join(' / ')}`);
+  await ctx.close();
 }
 
 await browser.close();

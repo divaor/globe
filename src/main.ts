@@ -6,7 +6,12 @@ import { MyData } from './mydata/mydata';
 import { myDataPanel } from './mydata/panel';
 import { Upload } from 'lucide';
 import { coreLayers } from './layers';
-import { t } from './app/i18n';
+import { t, fmtNumber } from './app/i18n';
+import { L } from './play/host';
+import { gameDaily, dayKey } from './learn/progress';
+import { fillState } from './fill/store';
+import { onmapState } from './onmap/store';
+import { Today } from './today/today';
 import { TimeTravel } from './modes';
 import { STORY_KINDS, storyHashKey } from './modes/stories';
 import { Tools } from './tools/tools';
@@ -36,7 +41,7 @@ import { Plants } from './green/finder';
 import { InsideEarth } from './earth/inside';
 import { DeepSea } from './ocean/deep';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap; today: Today } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -88,6 +93,50 @@ async function boot() {
   play.extraToday.push(async () => ((await fill.ready()) ? fill.dailyCard() : null));
   const onmap = new PutOnMap(app, shell, play.host);
   play.extraToday.push(async () => ((await onmap.ready()) ? onmap.dailyCard() : null));
+  // Both are games too, in the Map games panel's list (v0.37.0), with their own panels.
+  play.extraGames.push(
+    { id: 'fill', icon: '🖍️', title: () => L('Fill the map', 'Llena el mapa'), desc: () => L('Colour in the world, country by country', 'Colorea el mundo, país por país'), open: () => void fill.openPanel() },
+    { id: 'onmap', icon: '📍', title: () => L('Put it on the map', 'Ponlo en el mapa'), desc: () => L('Six places of a country to put on the map, Wordle style', 'Seis lugares de un país para poner en el mapa, al estilo Wordle'), open: () => void onmap.openPanel() },
+  );
+  // Today (v0.37.0): every daily in one place, from the bottom bar; each game adds itself.
+  const today = new Today(shell);
+  today.openProgress = () => learn.openProgress();
+  today.add({
+    id: 'daily', order: 10, section: 'main', done: () => learn.todayDaily().done, share: () => learn.todayDaily().line,
+    card: () => { const d = learn.todayDaily(); return today.line('daily', '🗓️', d.title, d.desc, d.done, d.open); },
+  });
+  today.add({
+    id: 'master', order: 20, section: 'main',
+    done: () => { const g = master.todayGoal(); return g.n >= g.goal; },
+    card: () => {
+      const g = master.todayGoal();
+      return today.line('master', '🎯', L('Master the world', 'Domina el mundo'),
+        `${L(`Today’s goal: ${g.n} of ${g.goal} answers`, `Meta de hoy: ${g.n} de ${g.goal} respuestas`)}${g.due ? ` · ${L(`${g.due} to review`, `${g.due} por repasar`)}` : ''}`, g.n >= g.goal, () => void master.openPanel());
+    },
+    share: () => { const g = master.todayGoal(); return g.n >= g.goal ? `🎯 ${L('Master the world', 'Domina el mundo')}: ${g.goal}/${g.goal}` : null; },
+  });
+  today.add({
+    id: 'fill', order: 30, section: 'main', done: () => !!fillState().dailies[dayKey()],
+    card: async () => ((await fill.ready()) ? fill.dailyCard() : null),
+    share: () => { const d = fillState().dailies[dayKey()]; return d ? `🖍️ ${L('Region of the day', 'Región del día')}: ★ ${d.s}/${d.n}` : null; },
+  });
+  today.add({
+    id: 'onmap', order: 40, section: 'main', done: () => !!onmapState().dailies[dayKey()],
+    card: async () => ((await onmap.ready()) ? onmap.dailyCard() : null),
+    share: () => { const d = onmapState().dailies[dayKey()]; return d ? `📍 ${L('Put it on the map', 'Ponlo en el mapa')}: ${d.solved ? d.tries : 'X'}/5` : null; },
+  });
+  play.todayGames().forEach((g0, i) => {
+    const game = () => play.todayGames().find((x) => x.id === g0.id)!;
+    today.add({
+      id: `game-${g0.id}`, order: 100 + i, section: 'games', done: () => !!gameDaily(g0.id),
+      card: () => { const g = game(); return today.tile(`game-${g.id}`, g.icon, g.name, g.result ? fmtNumber(g.result.score) : null, g.open); },
+      share: () => { const g = game(); return g.result ? `${g.icon} ${fmtNumber(g.result.score)}${'★'.repeat(g.result.stars)}` : null; },
+    });
+  });
+  today.addRead({
+    id: 'onthisday', order: 10,
+    card: () => today.line('onthisday', '📅', L('On this day', 'Tal día como hoy'), L('What happened on this day: events, births and deaths', 'Lo que pasó un día como hoy: hechos, nacimientos y muertes'), false, () => void learn.openOnThisDay()),
+  });
   // The travel guide (v0.26.0).
   const guide = new TravelGuide(app, shell, time, learn);
   // Art and architecture (v0.27.0): its trails, and the guide's Art and Buildings tabs.
@@ -115,7 +164,7 @@ async function boot() {
   app.on('mydata', openMyData);
   shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, onClick: openMyData });
   void myData.init();
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill, onmap };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill, onmap, today };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };

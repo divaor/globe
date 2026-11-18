@@ -117,6 +117,16 @@ export class Master implements HostGame {
   private name(id: string) { return this.app.data.name(id, es() ? 'es' : 'en'); }
   private nm(p: { en: string; es: string }) { return es() ? p.es : p.en; }
   private today() { return dayKey(); }
+
+  /** Today (v0.37.0): today's answers toward the goal (every deck counts), the cards due, the streak. */
+  todayGoal(): { n: number; goal: number; due: number; streak: number } {
+    const st = master(), today = this.today();
+    const n = st.goal.day === today ? Math.min(st.goal.n, GOAL) : 0;
+    let due = 0;
+    for (const cards of Object.values(st.cards)) for (const c of Object.values(cards ?? {})) if (c && c.seen > 0 && c.due <= today) due++;
+    const streak = st.days.streak && st.days.last >= addDays(today, -1) ? st.days.streak : 0;
+    return { n, goal: GOAL, due, streak };
+  }
   private country(id: string) { return this.s?.allowed.get(id) ?? this.data?.countries.find((c) => c.id === id); }
 
   /** What the tests read. */

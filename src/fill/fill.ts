@@ -75,7 +75,7 @@ export class FillMap implements HostGame {
   openMaster: (() => void) | null = null;
 
   constructor(private app: App, private shell: Shell, private host: PlayHost, private mw: Master) {
-    shell.addMenu({ id: 'fill', icon: PaintBucket, label: () => L('Fill the map', 'Llena el mapa'), order: 28.5, group: 'learn', onClick: () => void this.openPanel() });
+    shell.addMenu({ id: 'fill', icon: PaintBucket, label: () => L('Fill the map', 'Llena el mapa'), order: 28.5, group: 'play', onClick: () => void this.openPanel() });
     onReset.push(() => resetFill());
   }
 

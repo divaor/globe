@@ -67,7 +67,7 @@ export class PutOnMap implements HostGame {
   private loaded: Promise<boolean> | null = null;
 
   constructor(private app: App, private shell: Shell, private host: PlayHost) {
-    shell.addMenu({ id: 'onmap', icon: MapPinned, label: () => L('Put it on the map', 'Ponlo en el mapa'), order: 28.6, group: 'learn', onClick: () => void this.openPanel() });
+    shell.addMenu({ id: 'onmap', icon: MapPinned, label: () => L('Put it on the map', 'Ponlo en el mapa'), order: 28.6, group: 'play', onClick: () => void this.openPanel() });
     onReset.push(() => resetOnmap());
   }
 
