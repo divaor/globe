@@ -26,7 +26,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   ("State: Texas") and Who was born here? names a place's state.
 - **The More menu:** Ambient mode, Your data, Settings and About sit at the top, with four groups that open in
   place, each row saying what is inside it in small type: **Explore** (Travel guide, Art and architecture, Nature,
-  Inside the Earth, Into the deep), **Learn and play** (Master the world, Fill the map, Map games, Quiz, Guided tours, On this day), **Tools**
+  Inside the Earth, Into the deep), **Learn and play** (Master the world, Fill the map, Put it on the map, Map games, Quiz, Guided tours, On this day), **Tools**
   (Measure distance, Compare countries, True size of countries, Compare two filters) and **Save and share** (Save
   image, the 4K and phone wallpapers, Share view). A row at the top of a group (or Escape) goes back, and the menu
   scrolls on a short screen.
@@ -371,6 +371,17 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   countries shown to try again. Tiny countries get a ring to tap. Every answer counts toward Master the world's daily
   goal, and countries, capitals and flags in its decks too. A **region of the day**, the same for everyone, is in the
   Map games panel; badges for a continent, a perfect continent, the world and every map; a picture of your map to share.
+- **Put it on the map** (More → Learn and play → Put it on the map): a Wordle-style puzzle. Six things from a country
+  or a region (a river, a lake, a mountain range, a desert, a peak or volcano, a city, a heritage site or famous
+  building, a national park) to put where they are: tap a name, then one of the grey places of its kind (the rivers
+  there as grey lines, the ranges as grey areas, the cities as dots...); on a computer a name can also be dragged onto
+  the map. **Check**: each one turns green when right, or yellow to red by how far off it is, measured against the size
+  of the country (300 km is far in Belgium and close in Russia). The greens stay, the others move; five checks. Mixes:
+  Everything, Nature, Cities or Built. 114 countries have enough for a fair puzzle (three or more places of each kind
+  asked); the others are played in their region or continent. A **puzzle of the day**, the same for everyone (a
+  country one day, a region the next), is in the Map games panel and is shared as a grid of coloured squares. On a
+  phone the card shrinks to the name being placed, so the map has room. Badges for a puzzle solved, all six at the
+  first check, and a week of puzzles of the day.
 - **Map games** (More → Learn and play → Map games): twelve games played on the map, each with a new puzzle every day that is the
   same for everyone (the panel's Today list), a best score and badges. The map, its labels and filters come back as
   they were when a game ends.
@@ -641,6 +652,17 @@ country (Who was born here?, Wikidata, CC0, with their field rather than their d
 nationality). A clue that names its country is left out. Clues for the 16 countries the data says too little about are
 written by hand in `curated-clues.json` (Vatican City, Tuvalu, Monaco, Palau…). `npm run test:fill` checks that every
 country has three clues or more, the ladders, the scopes, the orders, the next region and the region of the day.
+
+**Put it on the map's places** (`scripts/data/onmap/build-onmap.mjs` builds `public/data/onmap/places.json` and
+`shapes.json`): rivers, lakes, mountain ranges, deserts and peaks from Natural Earth (public domain), the river pieces
+of one name joined where they touch; the Spanish names of rivers, and better names of lakes, ranges and peaks, from
+Wikidata (CC0, through QLever). Volcanoes (Smithsonian's Global Volcanism Program), cities (Natural Earth), cultural
+World Heritage sites (UNESCO, by their short names), notable buildings (Wikidata) and national parks are the app's own.
+A river, lake, range or desert that crosses borders is in each country it crosses, measured from a point inside each.
+A country's lands across the oceans are left out of its puzzle (Réunion is not a place in France's). Each country keeps
+its sixteen best known of each kind (by length, area, height, people or how many Wikipedias write about it).
+`npm run test:onmap` checks the places, which countries and regions have enough, the puzzles, the marks and the puzzle
+of the day.
 
 **Master the world** (`scripts/data/master/`: `fetch-master.mjs` asks Wikidata through QLever, CC0, for the countries'
 ISO codes, how many Wikipedias have an article on each and the Spanish names of the cities; `build-master.mjs` builds

@@ -46,7 +46,7 @@ export default defineConfig({
           // Master the world (v0.34.0) works offline: its deck is kept with the app (its flags once the panel has opened).
           'data/master/deck.json',
           // Fill the map (v0.35.0) too: its clues.
-          'data/fill/clues.json'],
+          'data/fill/clues.json', 'data/onmap/places.json', 'data/onmap/shapes.json'],
         globIgnores: ['flags/**'],
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
         navigateFallback: 'index.html',

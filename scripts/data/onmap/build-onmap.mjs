@@ -17,6 +17,7 @@ import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import mapshaper from 'mapshaper';
 import { ask, askFor, val, qidOf, point } from '../lives/wdqs.mjs';
+import { rewindTopology } from '../winding.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 const require = createRequire(path.join(ROOT, 'package.json'));
@@ -383,7 +384,9 @@ async function main() {
     kinds: ['river', 'lake', 'range', 'desert', 'peak', 'city', 'built', 'park'],
     places: outPlaces, countries: outBy,
   });
-  const shapesJson = String(topoOut['out.json']);
+  const topoJ = JSON.parse(String(topoOut['out.json']));
+  rewindTopology(topoJ); // d3 reads a ring the wrong way round as the rest of the globe
+  const shapesJson = JSON.stringify(topoJ);
   const counts = {};
   for (const p of outPlaces) counts[p[0]] = (counts[p[0]] ?? 0) + 1;
   if (CHECK) {

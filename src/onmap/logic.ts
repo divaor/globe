@@ -67,7 +67,7 @@ export function usable(cands: Map<Kind, Cand[]>, mix: Mix): Kind[] {
 
 /**
  * A puzzle: six places of the scope to put on the map. As many kinds as it can (one of each, in a random order),
- * then a second of a kind with places to spare; each a well-known one of its kind (among its best known four, or
+ * then a second of a kind with places to spare; each a well-known one of its kind (among its best known three, or
  * as many as it asks plus two). Null when the scope has too little for six.
  */
 export function makePuzzle(cands: Map<Kind, Cand[]>, mix: Mix, r: () => number): Cand[] | null {
@@ -85,7 +85,7 @@ export function makePuzzle(cands: Map<Kind, Cand[]>, mix: Mix, r: () => number):
       const n = count.get(k) ?? 0;
       // Room for one more of this kind: two places more than it asks, so a pick is still a choice.
       if (all.length < n + 1 + (MIX_KINDS[mix].length === 1 ? 2 : MIN_CANDS - 1)) continue;
-      const pool = all.slice(0, Math.max(4, n + 3)).filter((c) => !picked.includes(c));
+      const pool = all.slice(0, n + 3).filter((c) => !picked.includes(c));
       if (!pool.length) continue;
       picked.push(pool[Math.floor(r() * pool.length)]);
       count.set(k, n + 1);

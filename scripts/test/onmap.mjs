@@ -28,6 +28,10 @@ const shapeIdx = new Set(Object.values(shapes.objects).flatMap((o) => o.geometri
 const nShapes = shapeIdx.size;
 const badShape = P.filter((p) => (O.SHAPED.includes(p[0]) ? !shapeIdx.has(p[6]) : p[6] !== -1));
 check(!badShape.length && O.KINDS.every((k) => P.some((p) => p[0] === k)), `${P.length} places of ${O.KINDS.length} kinds; every river, lake, range and desert has its shape (${nShapes})`);
+const { feature } = (await import('topojson-client')).default ?? (await import('topojson-client'));
+const { geoArea } = await import('d3-geo');
+const inverted = Object.values(shapes.objects).flatMap((o) => feature(shapes, o).features).filter((f) => /Polygon/.test(f.geometry?.type ?? '') && geoArea(f) > 2 * Math.PI);
+check(!inverted.length, `every lake, range and desert is wound the way d3 draws it (${inverted.length} inside out)`);
 const es = (k) => P.filter((p) => p[0] === k && p[2]).length / Math.max(1, P.filter((p) => p[0] === k).length);
 check(es('river') > 0.6 && es('lake') > 0.5 && es('range') > 0.5, `Spanish names: rivers ${Math.round(es('river') * 100)}%, lakes ${Math.round(es('lake') * 100)}%, ranges ${Math.round(es('range') * 100)}% (the rest are the same in both)`);
 const name = (i) => P[i][1];
@@ -61,7 +65,7 @@ for (const id of ok) {
 }
 check(!bad.length, `three puzzles for each of them: six different places, from three kinds or more, each among three or more of its kind${bad.length ? ` (not: ${[...new Set(bad)].slice(0, 6).join(' ')})` : ''}`);
 const pzM = O.makePuzzle(mex, 'all', O.rng(7));
-check(pzM.every((c) => mex.get(P[c.i][0]).indexOf(c) < 4), `the well-known ones are asked (Mexico: ${pzM.map((c) => name(c.i)).join(', ')})`);
+check(pzM.every((c) => mex.get(P[c.i][0]).indexOf(c) < 3), `the well-known ones are asked (Mexico: ${pzM.map((c) => name(c.i)).join(', ')})`);
 const city = O.makePuzzle(mex, 'cities', O.rng(2));
 check(city && city.every((c) => P[c.i][0] === 'city') && O.makePuzzle(mex, 'cities', O.rng(2)).map((c) => c.i).join() === city.map((c) => c.i).join(), `Cities: six of Mexico's cities among ${mex.get('city').length}; the same seed, the same puzzle`);
 

@@ -305,7 +305,7 @@ html.map-light .brand-name { color: #1d2433; text-shadow: 0 0 6px rgba(255,255,2
 /* ---------- tooltip and toast */
 .tooltip { position: absolute; left: 0; top: 0; pointer-events: none !important; padding: 7px 10px; border-radius: 10px; background: var(--glass-strong); border: 1px solid var(--line); box-shadow: var(--shadow); font-size: 13px; display: flex; flex-direction: column; gap: 2px; max-width: 280px; z-index: 4; }
 .tt-sub { color: var(--muted); font-size: 12px; }
-.toast { position: absolute; left: 50%; bottom: calc(140px + var(--safe-b)); transform: translateX(-50%); padding: 10px 16px; border-radius: 14px; font-size: 13.5px; font-weight: 600; max-width: calc(100vw - 32px); text-align: center; z-index: 7; animation: pop .2s ease-out; }
+.toast { pointer-events: none; position: absolute; left: 50%; bottom: calc(140px + var(--safe-b)); transform: translateX(-50%); padding: 10px 16px; border-radius: 14px; font-size: 13.5px; font-weight: 600; max-width: calc(100vw - 32px); text-align: center; z-index: 7; animation: pop .2s ease-out; }
 
 /* ---------- ambient */
 .amb-overlay { position: absolute; inset: 0; z-index: 10; cursor: none; }
@@ -1328,3 +1328,24 @@ textarea.trip-input { resize: vertical; }
 .fill-flag { width: 150px; height: 112px; }
 .fill-tries { font-size: 13px; color: var(--muted); align-self: center; letter-spacing: .1em; }
 .fill-hint { margin-top: 6px; }
+
+/* Put it on the map (v0.36.0): the six names, coloured by the last check. */
+.onmap-items { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+.onmap-item { display: flex; align-items: center; gap: 6px; min-width: 0; padding: 8px 10px; border-radius: 12px; border: 2px solid var(--line); background: var(--chip); color: inherit; font: inherit; font-size: 13.5px; text-align: left; cursor: pointer; touch-action: none; }
+.onmap-item .onmap-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 650; }
+.onmap-item .onmap-kind { flex: none; }
+.onmap-item .onmap-mark { flex: none; font-size: 11.5px; font-weight: 700; opacity: .9; }
+.onmap-item.placed { border-color: #4dabf7; }
+.onmap-item.on { border-color: var(--accent); background: var(--chip-on); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent); }
+.onmap-item.g { border-color: #2ecc71; background: color-mix(in srgb, #2ecc71 22%, var(--chip)); cursor: default; }
+.onmap-item.y { border-color: #f1c40f; background: color-mix(in srgb, #f1c40f 18%, var(--chip)); }
+.onmap-item.o { border-color: #f2994a; background: color-mix(in srgb, #f2994a 18%, var(--chip)); }
+.onmap-item.r { border-color: #eb5757; background: color-mix(in srgb, #eb5757 18%, var(--chip)); }
+.onmap-item.on.y, .onmap-item.on.o, .onmap-item.on.r { box-shadow: 0 0 0 3px var(--accent); }
+.onmap-grid { margin: 8px 0 0; font-size: 20px; line-height: 1.15; letter-spacing: 1px; }
+.onmap-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.onmap-row .select { flex: 1 1 180px; min-width: 0; }
+.onmap-ghost { position: fixed; z-index: 9999; pointer-events: none; padding: 6px 10px; border-radius: 10px; background: var(--chip-on); border: 1px solid var(--accent); font-size: 13px; font-weight: 700; }
+@media (max-width: 380px) { .onmap-items { grid-template-columns: 1fr; } }
+.onmap-placing { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 6px; }
+.onmap-placing .onmap-item { flex: 1 1 160px; cursor: default; }

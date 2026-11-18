@@ -375,8 +375,9 @@ export class Shell {
 
   private onHover(x: number, y: number) {
     const r = this.app.renderer;
-    // On another world (r.worldStyle) there are no countries to name or outline.
-    if (x < 0 || r.moving || r.worldStyle) {
+    // On another world (r.worldStyle) there are no countries to name or outline; during a map game the names
+    // under the pointer would give the answers away.
+    if (x < 0 || r.moving || r.worldStyle || document.documentElement.classList.contains('has-game')) {
       this.tooltip.hidden = true;
       if (this.hoverId) { this.hoverId = null; r.hover = null; r.requestRender(); }
       return;
