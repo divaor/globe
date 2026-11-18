@@ -5209,6 +5209,14 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(3000);
   let i = await info();
   const placing = await F(() => ({ one: !!document.querySelector('[data-onmap="placing"]'), list: !!document.querySelector('[data-onmap="items"]'), h: Math.round(window.atlas.play.host.card.getBoundingClientRect().height) }));
+  // The name being placed is shown whole, even a long one (it used to be cut: "Lagunas de Monteb…").
+  const longest = i.items.reduce((a, x, n) => (x.name.length > i.items[a].name.length ? n : a), 0);
+  await F((n) => window.atlas.onmap.pick(n), longest);
+  await page.waitForTimeout(300);
+  const whole = await F(() => { const el = document.querySelector('[data-onmap="placing-name"]'); return el ? { text: el.textContent, cut: el.scrollWidth > el.clientWidth + 1 || el.scrollHeight > el.clientHeight + 1, kind: document.querySelector('.onmap-placing-row')?.textContent ?? '' } : null; });
+  check(whole && whole.text === i.items[longest].name && !whole.cut && /tap its place/.test(whole.kind), `the name being placed is shown whole: "${whole?.text}" (${whole?.kind.split('·')[0].trim()})`);
+  await F(() => window.atlas.onmap.pick(0));
+  await page.waitForTimeout(200);
   const kinds = new Set(i.items.map((x) => x.k));
   check(i.scope === 'MEX' && i.items.length === 6 && kinds.size >= 4 && i.items.every((x) => i.cands[x.k].length >= 3 && i.cands[x.k].some((c) => c.i === x.i)) && i.active === 0 && placing.one && !placing.list && placing.h < 260,
     `Mexico: ${i.items.map((x) => `${x.k} ${x.name}`).join(', ')}; each among ${Math.min(...i.items.map((x) => i.cands[x.k].length))}+ grey places of its kind; on a phone the card is one line (${placing.h}px) while placing`);
