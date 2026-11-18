@@ -3,14 +3,14 @@
 // met in grey, so what you know stands out. The legend counts them.
 import type { LayerDef, LayerInstance, Legend } from '../layers/types';
 import type { App } from '../app/app';
-import { DECKS, type DeckId, type Level } from './srs';
+import { DECKS, type CountryDeck, type Level } from './srs';
 import { loadDeck, deckNow, deckCountry, levelOf, LEVEL_COLORS } from './data';
 import { inScope } from './decks';
 import { master } from './store';
 
 export const WORLD_ID = 'master-world';
 const NEW_DARK = '#4a5262', NEW_LIGHT = '#c9ced6';
-const DECK_NAMES: Record<DeckId | 'all', { en: string; es: string }> = {
+const DECK_NAMES: Record<CountryDeck | 'all', { en: string; es: string }> = {
   all: { en: 'All three', es: 'Los tres' },
   capitals: { en: 'Capitals', es: 'Capitales' },
   flags: { en: 'Flags', es: 'Banderas' },
@@ -23,13 +23,13 @@ const LEVEL_NAMES: Record<Exclude<Level, 'new'>, { en: string; es: string }> = {
 };
 
 export function yourWorldLayer(): LayerDef {
-  const deckOf = (inst: LayerInstance) => String(inst.options.deck ?? 'all') as DeckId | 'all';
+  const deckOf = (inst: LayerInstance) => String(inst.options.deck ?? 'all') as CountryDeck | 'all';
   return {
     id: WORLD_ID, category: 'fun', icon: '🎓', kind: 'fill', defaultOpacity: 1,
     name: { en: 'Your world', es: 'Tu mundo' },
     desc: { en: 'What you know, from Master the world: each country by how well you know its capital, its flag or where it is.', es: 'Lo que sabes, según Domina el mundo: cada país según lo bien que conoces su capital, su bandera o dónde está.' },
     keywords: 'master learn know progress capitals flags countries dominar aprender saber progreso capitales banderas paises',
-    options: [{ id: 'deck', type: 'select', label: { en: 'Deck', es: 'Mazo' }, default: 'all', choices: (['all', ...DECKS] as (DeckId | 'all')[]).map((d) => ({ value: d, label: DECK_NAMES[d] })) }],
+    options: [{ id: 'deck', type: 'select', label: { en: 'Deck', es: 'Mazo' }, default: 'all', choices: (['all', ...DECKS] as (CountryDeck | 'all')[]).map((d) => ({ value: d, label: DECK_NAMES[d] })) }],
     async load() { await loadDeck(); },
     countryColor(id, inst, rc) {
       const l = levelOf(deckOf(inst), id);

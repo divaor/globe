@@ -4,6 +4,7 @@
 // name among its neighbours (later: tap it on a map with no names). No browser code, so it can be checked with Node.
 import type { DeckId, Step } from './srs';
 import { shuffle } from './srs';
+import { eligible, type StatesData } from '../fill/states-logic';
 
 export interface Names { en: string; es: string }
 export interface Place extends Names { at: [number, number]; pop?: number }
@@ -12,6 +13,8 @@ export interface Country {
   /** A territory, in the deck only with that setting on. */
   t?: 1;
   cap?: Place; cities: Place[]; seats?: Names[]; note?: Names; skip?: string;
+  /** Other names the capital may be typed as (a state capital's official long name). */
+  alt?: string[];
   land: string[]; near: string[]; like: string[];
 }
 export interface DeckData { countries: Country[]; flagNotes: Record<string, Names> }
@@ -23,6 +26,37 @@ export const SCOPES: Scope[] = ['world', 'EU', 'AS', 'AF', 'NA', 'SA', 'OC'];
 export function inScope(data: DeckData, deck: DeckId, scope: Scope, territories: boolean): Country[] {
   return data.countries.filter((c) => (territories || !c.t) && (scope === 'world' || c.ct === scope) && !(deck === 'capitals' && (c.skip === 'capitals' || !c.cap || c.cities.length < 1)));
 }
+
+/** The decks that ask a capital: the countries' and (v0.38.1) the states'. */
+export const capDeck = (d: DeckId) => d === 'capitals' || d === 'states';
+
+/**
+ * The State capitals deck (v0.38.1), from public/data/states/states.json: a card per state, province or region of the
+ * twelve countries with a capital to ask (not a city of its own) and at least one other city, its id "MEX|MX-JAL".
+ * Its capital and other cities are the dots; `ct` is its country; `fame` puts each country's most populous first;
+ * `near` holds the six of the same country whose capitals are closest (the ones to pick among).
+ */
+export function stateDeck(data: StatesData): Country[] {
+  const out: Country[] = [];
+  const pl = (x: [string, string | 0, number, number, number, ...unknown[]]): Place => ({ en: x[0], es: x[1] || x[0], at: [x[2], x[3]], pop: x[4] || undefined });
+  for (const [a3, states] of Object.entries(data)) {
+    const ids = eligible('capitals', Object.keys(states), states).filter((id) => states[id].o.length >= 1);
+    const byPop = ids.slice().sort((a, b) => states[b].p - states[a].p);
+    for (const id of ids) {
+      const f = states[id], note = f.c[5];
+      out.push({
+        id: `${a3}|${id}`, a2: '', ct: a3, fame: 1 - byPop.indexOf(id) / Math.max(1, byPop.length), pop: f.p,
+        cap: pl(f.c), cities: f.o.map(pl), ...(note ? { note: { en: note[0], es: note[1] } } : {}), ...(f.f?.length ? { alt: f.f } : {}),
+        land: [], near: [], like: [],
+      });
+    }
+  }
+  const km = (a: Place, b: Place) => Math.hypot((a.at[0] - b.at[0]) * Math.cos(((a.at[1] + b.at[1]) / 2) * (Math.PI / 180)), a.at[1] - b.at[1]);
+  for (const c of out) c.near = out.filter((o) => o.ct === c.ct && o.id !== c.id).sort((a, b) => km(c.cap!, a.cap!) - km(c.cap!, b.cap!)).slice(0, 6).map((o) => o.id);
+  return out;
+}
+/** The State capitals deck in a scope: one country, or 'all' twelve. */
+export const statesIn = (deck: Country[], scope: string) => (scope === 'all' ? deck : deck.filter((c) => c.ct === scope));
 
 export interface Question {
   deck: DeckId; id: string; step: Step; reverse: boolean;
@@ -57,11 +91,11 @@ export function lookalikes(c: Country, allowed: Map<string, Country>, n: number,
 
 /** A question about one country, at its step; `reverse` asks the other way round (capitals and flags). */
 export function question(deck: DeckId, c: Country, step: Step, reverse: boolean, allowed: Map<string, Country>, r: () => number): Question {
-  if (deck === 'capitals' && !reverse) {
+  if (capDeck(deck) && !reverse) {
     const places = [c.cap!, ...c.cities];
     return { deck, id: c.id, step, reverse, places, order: shuffle(places.map((_, i) => i), r) };
   }
-  if (deck === 'capitals') {
+  if (capDeck(deck)) {
     const others = neighbours(c, new Map([...allowed].filter(([, o]) => !!o.cap && o.skip !== 'capitals')), 3, r);
     return { deck, id: c.id, step: 'pick', reverse, options: shuffle([c.id, ...others], r) };
   }

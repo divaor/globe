@@ -19,18 +19,20 @@ export interface MasterState {
   /** Look-alike flags told apart (the right flag picked with its look-alike among the options): "ROU|TCD". */
   pairs: string[];
   comebacks: number;
-  settings: { deck: DeckId; scope: Scope; order: Order; speed: Speed; typing: boolean; territories: boolean; sound: boolean };
+  settings: { deck: DeckId; scope: Scope; order: Order; speed: Speed; typing: boolean; territories: boolean; sound: boolean;
+    /** The State capitals deck's country (v0.38.1), or 'all' for the twelve. */
+    sscope: string };
 }
 
 const fresh = (): MasterState => ({
-  cards: { capitals: {}, flags: {}, countries: {} },
+  cards: { capitals: {}, flags: {}, countries: {}, states: {} },
   goal: { day: '', n: 0 },
   days: { last: '', streak: 0, best: 0 },
-  runs: { capitals: { best: 0, combo: 0 }, flags: { best: 0, combo: 0 }, countries: { best: 0, combo: 0 } },
-  marathon: { capitals: { record: 0, inRow: {} }, flags: { record: 0, inRow: {} }, countries: { record: 0, inRow: {} } },
+  runs: { capitals: { best: 0, combo: 0 }, flags: { best: 0, combo: 0 }, countries: { best: 0, combo: 0 }, states: { best: 0, combo: 0 } },
+  marathon: { capitals: { record: 0, inRow: {} }, flags: { record: 0, inRow: {} }, countries: { record: 0, inRow: {} }, states: { record: 0, inRow: {} } },
   pairs: [],
   comebacks: 0,
-  settings: { deck: 'capitals', scope: 'world', order: 'balanced', speed: 'normal', typing: false, territories: false, sound: true },
+  settings: { deck: 'capitals', scope: 'world', order: 'balanced', speed: 'normal', typing: false, territories: false, sound: true, sscope: 'MEX' },
 });
 
 let cache: MasterState | null = null;

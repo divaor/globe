@@ -30,7 +30,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   states' country of the day, Put it on the map's puzzle of the day, the 12 map games' puzzles as tiles (ticked with today's score) and On this day. Each
   line opens its game; each game keeps its own "today" card in its own panel too.
 - **Reminders** (🔔, optional, off until you turn one on): a **Remind me** switch in each daily game: the Daily
-  challenge, Master the world (one per deck: capitals, flags, countries), Fill the map's region of the day, Put it on
+  challenge, Master the world (one per deck: capitals, flags, countries, state capitals), Fill the map's region of the day, Put it on
   the map's puzzle of the day and the Map games panel. The first switch asks the time (19:00 at first). **One
   reminder a day at most**, only if something you chose is not done yet, each day about a different one ("🏛️
   Capitals: 6 to review today · 🔥 keep your 12-day streak"); it makes no sound, replaces yesterday's and opens
@@ -375,6 +375,12 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   flag told apart, every country among its neighbours, a marathon without a mistake, a week and a month of daily
   goals, 20 comebacks), a picture to share, sounds and buzz (a setting), and it works offline. **Your world**, a
   filter (Fun), paints each country by how well you know it: learning, known, mastered.
+  A fourth deck, **State capitals** (📍 States), asks the capitals of the 289 states, provinces and regions of the
+  twelve countries of Fill the states, one country at a time or all twelve: the state outlined among its country's
+  states with its capital and up to three other cities as dots ("What is the capital of Biobío?"), later the other
+  way round among four nearby states ("Valparaíso is the capital of…"); a state that is a city of its own (Mexico
+  City, Berlin, Washington) has nothing to ask. Its own order ("Country by country"), progress by country, a 🔔, a
+  badge for each country's capitals and one for all twelve; Fill the states' capitals count in it too.
 - **Fill the map** (More → Play → Fill the map): a world map coloured in country by country. Fill it with
   **countries** ("Tap Bolivia"), **capitals** ("Tap the country whose capital is Sucre"), **flags**, the **most people
   first** or the **largest first** (the biggest country left each time, so the map fills in order), **clues** (a ladder
@@ -396,7 +402,10 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   hidden while playing. A map per country and category, ★ stars, Next country, badges (a country filled, its capitals, a
   perfect country, all twelve by capital), and a **country of the day** in Today (with its 🔔 reminder). The facts:
   each state's capital, area and people from Wikidata (CC0) by its ISO 3166-2 code, its other cities from GeoNames
-  (CC BY 4.0), checked by `scripts/data/states/build-states.mjs --check` (in `npm run check:data`).
+  (CC BY 4.0), checked by `scripts/data/states/build-states.mjs --check` (in `npm run check:data`). A city's people
+  are Wikidata's: the item GeoNames points to, else (v0.38.1) the municipality of the same name it lies in (Londrina,
+  Joinville), else a place of its name within 10 km, each only within three times GeoNames' own count (a district of
+  the same name is not the town); a city with no sure count has 0 in the file, so no game says which is biggest.
 - **Put it on the map** (More → Play → Put it on the map): a Wordle-style puzzle. Six things from a country
   or a region (a river, a lake, a mountain range, a desert, a peak or volcano, a city, a heritage site or famous
   building, a national park) to put where they are: tap a name, then one of the grey places of its kind (the rivers
