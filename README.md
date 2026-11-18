@@ -25,9 +25,9 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   country zoom with thin dashed lines and their names, on by default and each with its switch; a tap says which one
   ("State: Texas") and Who was born here? names a place's state.
 - **Today** (the bottom bar, between Globe and Time; a dot while something is left): every daily thing in one place.
-  Your day ("5 of 16 done", the streak, Your progress, **Share my day**: all of today's results in one message), then
-  the Daily challenge, Master the world's goal (with the cards to review), Fill the map's region of the day, Put it on
-  the map's puzzle of the day, the 12 map games' puzzles as tiles (ticked with today's score) and On this day. Each
+  Your day ("5 of 17 done", the streak, Your progress, **Share my day**: all of today's results in one message), then
+  the Daily challenge, Master the world's goal (with the cards to review), Fill the map's region of the day, Fill the
+  states' country of the day, Put it on the map's puzzle of the day, the 12 map games' puzzles as tiles (ticked with today's score) and On this day. Each
   line opens its game; each game keeps its own "today" card in its own panel too.
 - **Reminders** (🔔, optional, off until you turn one on): a **Remind me** switch in each daily game: the Daily
   challenge, Master the world (one per deck: capitals, flags, countries), Fill the map's region of the day, Put it on
@@ -387,6 +387,16 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   countries shown to try again. Tiny countries get a ring to tap. Every answer counts toward Master the world's daily
   goal, and countries, capitals and flags in its decks too. A **region of the day**, the same for everyone, is in the
   Map games panel; badges for a continent, a perfect continent, the world and every map; a picture of your map to share.
+- **Fill the states** (Fill the map → **States**): Fill the map inside one country, its states, provinces or regions.
+  All 48 countries of the States and provinces quiz by **name**; the twelve with their states' facts (Mexico, the United
+  States, Brazil, Argentina, Colombia, Chile, Peru, Spain, Canada, Australia, Germany, India) also by **capital** ("Tap
+  the state whose capital is Guanajuato") and **biggest first** (people, area). The answer says the capital, and the
+  biggest city when it is another ("🏛️ Toluca · Ecatepec is the biggest"). A miss says which state it was and where in
+  the country the one asked is ("It is in the north-west of Mexico"), then a circle; the map's own state names are
+  hidden while playing. A map per country and category, ★ stars, Next country, badges (a country filled, its capitals, a
+  perfect country, all twelve by capital), and a **country of the day** in Today (with its 🔔 reminder). The facts:
+  each state's capital, area and people from Wikidata (CC0) by its ISO 3166-2 code, its other cities from GeoNames
+  (CC BY 4.0), checked by `scripts/data/states/build-states.mjs --check` (in `npm run check:data`).
 - **Put it on the map** (More → Play → Put it on the map): a Wordle-style puzzle. Six things from a country
   or a region (a river, a lake, a mountain range, a desert, a peak or volcano, a city, a heritage site or famous
   building, a national park) to put where they are: tap a name, then one of the grey places of its kind (the rivers
