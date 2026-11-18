@@ -26,6 +26,7 @@ import { spainView } from './ui/spainview';
 import { MapGames } from './play/menu';
 import { Master } from './master/master';
 import { FillMap } from './fill/fill';
+import { PutOnMap } from './onmap/onmap';
 import type { BorderHop } from './play/hop';
 import { TravelGuide } from './guide/guide';
 import { ArtGuide } from './artguide/artguide';
@@ -35,7 +36,7 @@ import { Plants } from './green/finder';
 import { InsideEarth } from './earth/inside';
 import { DeepSea } from './ocean/deep';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -85,6 +86,8 @@ async function boot() {
   const fill = new FillMap(app, shell, play.host, master);
   fill.openMaster = () => void master.openPanel();
   play.extraToday.push(async () => ((await fill.ready()) ? fill.dailyCard() : null));
+  const onmap = new PutOnMap(app, shell, play.host);
+  play.extraToday.push(async () => ((await onmap.ready()) ? onmap.dailyCard() : null));
   // The travel guide (v0.26.0).
   const guide = new TravelGuide(app, shell, time, learn);
   // Art and architecture (v0.27.0): its trails, and the guide's Art and Buildings tabs.
@@ -112,7 +115,7 @@ async function boot() {
   app.on('mydata', openMyData);
   shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, onClick: openMyData });
   void myData.init();
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill, onmap };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };

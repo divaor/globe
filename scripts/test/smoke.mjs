@@ -5149,6 +5149,123 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 39. Put it on the map (v0.36.0), on a phone. More → Learn and play → Put it on the map: four mixes, the countries
+// with enough for a puzzle (Mexico among them), the continents and regions, the puzzle of the day. Mexico: six
+// names; on a phone the card shrinks to the name being placed; the grey places of its kind; one placed with a real
+// tap; a check colours them (greens stay, the others show how far off); Check waits for a change; the second check
+// solves it; the share grid; a badge. "Show me" gives the answers. The puzzle of the day from the Map games panel.
+// No names under the pointer during a game. On a computer a name is dragged onto the map. In Spanish.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const info = () => F(() => window.atlas.onmap.info);
+  const tapPlace = async (at) => { const pt = await F((at) => { const v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(at[0], at[1]); return p && [r.left + p[0], r.top + p[1]]; }, at); if (pt) await page.touchscreen.tap(pt[0], pt[1]); return pt; };
+  await page.tap('[data-dock="more"]');
+  await page.waitForTimeout(300);
+  await page.evaluate(() => window.__menu('Put it on the map'));
+  await page.waitForTimeout(2500);
+  const panel = await F(() => ({ open: !!document.querySelector('.onmap-panel'), mixes: document.querySelectorAll('[data-onmap="mixes"] .chip').length, countries: document.querySelectorAll('[data-onmap="country"] option').length, mex: !!document.querySelector('[data-onmap="country"] option[value="MEX"]'), lux: !!document.querySelector('[data-onmap="country"] option[value="LUX"]'), scopes: [...document.querySelectorAll('[data-onmap="regions"] .chip')].map((b) => b.textContent), daily: document.querySelector('.onmap-panel [data-onmap="daily"]')?.textContent ?? '' }));
+  check(panel.open && panel.mixes === 4 && panel.countries >= 110 && panel.mex && !panel.lux && panel.scopes.length >= 24 && panel.scopes.filter((x) => x === 'South America').length === 1 && /today/.test(panel.daily),
+    `Put it on the map from More → Learn and play: ${panel.mixes} mixes, ${panel.countries} countries (Mexico yes, Luxembourg no), ${panel.scopes.length} continents and regions; "${panel.daily.trim()}"`);
+  // Mexico, everything.
+  await page.selectOption('[data-onmap="country"]', 'MEX');
+  await page.tap('[data-onmap="play"]');
+  await page.waitForTimeout(3000);
+  let i = await info();
+  const placing = await F(() => ({ one: !!document.querySelector('[data-onmap="placing"]'), list: !!document.querySelector('[data-onmap="items"]'), h: Math.round(window.atlas.play.host.card.getBoundingClientRect().height) }));
+  const kinds = new Set(i.items.map((x) => x.k));
+  check(i.scope === 'MEX' && i.items.length === 6 && kinds.size >= 4 && i.items.every((x) => i.cands[x.k].length >= 3 && i.cands[x.k].some((c) => c.i === x.i)) && i.active === 0 && placing.one && !placing.list && placing.h < 260,
+    `Mexico: ${i.items.map((x) => `${x.k} ${x.name}`).join(', ')}; each among ${Math.min(...i.items.map((x) => i.cands[x.k].length))}+ grey places of its kind; on a phone the card is one line (${placing.h}px) while placing`);
+  // The first one with a real tap on its place.
+  await tapPlace(i.items[0].at);
+  await page.waitForTimeout(500);
+  i = await info();
+  const firstOk = i.items[0].given === i.items[0].i && i.active === 1;
+  // The rest: two on another place of their kind, the others right.
+  const wrongs = [2, 4];
+  await F((wrongs) => { const o = window.atlas.onmap, inf = o.info; inf.items.forEach((it, n) => { if (n === 0) return; o.pick(n); o.place(wrongs.includes(n) ? inf.cands[it.k].find((c) => c.i !== it.i && !inf.items.some((x) => x.i === c.i)).i : it.i); }); }, wrongs);
+  await page.waitForTimeout(400);
+  const ready = await F(() => !document.querySelector('[data-onmap="check"]')?.disabled);
+  await page.tap('[data-onmap="check"]');
+  await page.waitForTimeout(600);
+  i = await info();
+  const chips = await F(() => [...document.querySelectorAll('[data-onmap="items"] .onmap-item')].map((b) => ({ cls: b.className, text: b.textContent })));
+  const stillOff = await F(() => document.querySelector('[data-onmap="check"]')?.disabled);
+  check(firstOk && ready && i.rows.length === 1 && i.rows[0].split('').filter((m) => m === 'g').length === 4 && wrongs.every((n) => i.items[n].mark !== 'g' && !i.items[n].locked) && i.items.filter((x) => x.locked).length === 4
+    && chips.filter((c) => /\bg\b/.test(c.cls)).length === 4 && wrongs.every((n) => /\d+ km/.test(chips[n].text) && /\b[yor]\b/.test(chips[n].cls)) && stillOff,
+    `a real tap places ${i.items[0].name}; the first check: ${i.rows[0]} (${wrongs.map((n) => chips[n].text.trim()).join('; ')}); the greens stay; Check waits for a move`);
+  // A green one cannot be moved; the two others put right; solved at the second check.
+  await F(() => window.atlas.onmap.pick(0));
+  const lockedStays = (await info()).active !== 0;
+  await F((wrongs) => { const o = window.atlas.onmap, inf = o.info; for (const n of wrongs) { o.pick(n); o.place(inf.items[n].i); } o.check(); }, wrongs);
+  await page.waitForTimeout(600);
+  i = await info();
+  const done = await F(() => ({ text: document.querySelector('[data-onmap="done"]')?.textContent ?? '', grid: document.querySelector('[data-onmap="grid"]')?.textContent ?? '', st: JSON.parse(localStorage.getItem('atlas-globe:onmap')), feats: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').feats ?? [] }));
+  const line = await F(() => window.atlas.onmap.shareLine());
+  check(lockedStays && i.done && i.solved && i.rows.length === 2 && /All six on the map in 2 checks/.test(done.text) && done.grid.split('\n').length === 2 && /🟩🟩🟩🟩🟩🟩$/.test(done.grid) && /Put it on the map · Mexico 2\/5\n/.test(line) && done.st.solved === 1 && done.feats.includes('onmap-solve'),
+    `solved at the second check: "${done.text}"; the share: "${line.split('\n').slice(0, 3).join(' / ')}"; badge On the map`);
+  // Cities of Mexico, and "Show me".
+  await F(() => window.atlas.onmap.start({ scope: 'MEX', mix: 'cities', seed: 4 }));
+  await page.waitForTimeout(2000);
+  i = await info();
+  const allCities = i.items.every((x) => x.k === 'city');
+  await page.tap('[data-onmap="list"]');
+  await page.waitForTimeout(300);
+  await page.tap('[data-onmap="reveal"]');
+  await page.waitForTimeout(500);
+  i = await info();
+  const st = await F(() => JSON.parse(localStorage.getItem('atlas-globe:onmap')));
+  check(allCities && i.done && !i.solved && st.played === 2 && st.solved === 1, `Cities: six of Mexico's cities; "Show me" gives the answers (played ${st.played}, solved ${st.solved})`);
+  // The puzzle of the day, from the Map games panel.
+  await F(() => window.atlas.onmap.stop());
+  await F(() => window.atlas.play.openMenu());
+  await page.waitForTimeout(1500);
+  const inGames = await F(() => !!document.querySelector('.play-daily [data-onmap="daily"]'));
+  await page.tap('.play-daily [data-onmap="daily"]');
+  await page.waitForTimeout(3000);
+  i = await info();
+  await F(() => window.atlas.onmap.reveal());
+  const day = await F(() => { const d = JSON.parse(localStorage.getItem('atlas-globe:onmap')).dailies; const k = Object.keys(d)[0]; return { k, v: d[k] }; });
+  check(inGames && i.day && i.items.length === 6 && day.v && day.v.scope === i.scope && day.v.tries === 0, `the puzzle of the day from the Map games panel: ${i.scope} (${i.items.map((x) => x.name).slice(0, 3).join(', ')}…), kept`);
+  await F(() => window.atlas.onmap.stop());
+  check(!errors.length, `no page errors on a phone${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+
+  // On a computer: no names under the pointer during a game, and a name dragged onto the map.
+  const d = await open({ viewport: { width: 1280, height: 800 } }, '#p=globe&l=political&lang=en');
+  await d.page.evaluate(() => window.atlas.onmap.start({ scope: 'MEX', mix: 'all', seed: 3 }));
+  await d.page.waitForTimeout(3000);
+  const di = await d.page.evaluate(() => window.atlas.onmap.info);
+  const target = di.items[1];
+  const pts = await d.page.evaluate((at) => { const v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(at[0], at[1]); const b = document.querySelector('[data-item="1"]').getBoundingClientRect(); return { to: [r.left + p[0], r.top + p[1]], from: [b.left + b.width / 2, b.top + b.height / 2] }; }, target.at);
+  await d.page.mouse.move(pts.to[0], pts.to[1]);
+  await d.page.waitForTimeout(400);
+  const tip = await d.page.evaluate(() => document.querySelector('.tooltip')?.hidden ?? true);
+  await d.page.mouse.move(pts.from[0], pts.from[1]);
+  await d.page.mouse.down();
+  await d.page.mouse.move(pts.from[0] + 30, pts.from[1] + 20, { steps: 4 });
+  await d.page.mouse.move(pts.to[0], pts.to[1], { steps: 8 });
+  await d.page.mouse.up();
+  await d.page.waitForTimeout(500);
+  const dg = await d.page.evaluate(() => window.atlas.onmap.info);
+  check(tip && dg.items[1].given === target.i, `on a computer: no name under the pointer during the game; ${target.name} dragged onto its place`);
+  await d.page.evaluate(() => window.atlas.onmap.stop());
+  await d.ctx.close();
+
+  // In Spanish.
+  const s = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&lang=es');
+  await s.page.evaluate(() => window.atlas.onmap.openPanel());
+  await s.page.waitForTimeout(1500);
+  const esPanel = await s.page.evaluate(() => ({ title: document.querySelector('.sheet:not([hidden]) .sheet-title')?.textContent ?? '', mixes: [...document.querySelectorAll('[data-onmap="mixes"] .chip')].map((b) => b.textContent).join(' / ') }));
+  await s.page.evaluate(() => window.atlas.onmap.start({ scope: 'MEX', mix: 'all', seed: 5 }));
+  await s.page.waitForTimeout(2500);
+  const esCard = await s.page.evaluate(() => ({ text: window.atlas.play.host.card.textContent, items: window.atlas.onmap.info.items.map((x) => x.name) }));
+  await s.page.evaluate(() => window.atlas.onmap.stop());
+  check(/Ponlo en el mapa/.test(esPanel.title) && /Naturaleza/.test(esPanel.mixes) && /Toca su lugar entre los grises/.test(esCard.text) && /México/.test(esCard.text), `en español: ${esPanel.title} (${esPanel.mixes}); "${esCard.text.slice(0, 90)}…"`);
+  check(!s.errors.length && !d.errors.length, `no page errors on a computer or in Spanish${[...s.errors, ...d.errors].length ? ': ' + [...s.errors, ...d.errors].join(' | ') : ''}`);
+  await s.ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);
