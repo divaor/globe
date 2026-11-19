@@ -2104,7 +2104,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => [...document.querySelectorAll('.seg-wrap .seg-btn')].find((b) => /Latinoam/.test(b.textContent))?.click());
   await page.waitForTimeout(800);
   const st2 = await page.evaluate(() => ({ spanish: window.atlas.app.spanish, voice: document.querySelector('.voice-settings select option')?.textContent ?? '', share: window.atlas.app.shareUrl() }));
-  check(st.seg.join() === '📱 Como mi teléfono,English,Español (Latinoamérica),Español (España)*' && /España/.test(st.voice) && st2.spanish === 'latam' && /México/.test(st2.voice) && /lang=es(&|$)/.test(st2.share), `Settings: ${st.seg.join(' | ')}; first voice ${st.voice}, and ${st2.voice} for Latin America`);
+  check(st.seg.join() === '📱 Como mi teléfono,English,Español (Latinoamérica),Español (España)*,Português (Brasil),Français,Deutsch' && /España/.test(st.voice) && st2.spanish === 'latam' && /México/.test(st2.voice) && /lang=es(&|$)/.test(st2.share), `Settings: ${st.seg.join(' | ')}; first voice ${st.voice}, and ${st2.voice} for Latin America`);
   check(!errors.length, `no page errors in v0.23.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
@@ -5040,11 +5040,12 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 }
 
 // 37. Like the phone (v0.35.0): the app speaks the phone's language (English, Latin America's Spanish or Spain's) and
-// writes numbers, dates and times its way (es-MX 10,935.5 and 5:30 p.m.; es-ES 10.935,5 and 17:30); a language picked
-// in Settings stays after a reload; "Like my phone" goes back to the phone's.
+// writes numbers, dates and times its way (es-MX 10,935.5 and 5:30 p.m.; es-ES 10.935,5 and 17:30); a phone in a
+// language the app does not speak (Italian, since v0.42.0 brought French) gets English; a language picked in Settings
+// stays after a reload; "Like my phone" goes back to the phone's.
 {
   const seen = {};
-  for (const locale of ['es-MX', 'es-ES', 'fr-FR']) {
+  for (const locale of ['es-MX', 'es-ES', 'it-IT']) {
     const { page, errors, ctx } = await open({ locale, viewport: { width: 420, height: 800 } }, '');
     seen[locale] = await page.evaluate(() => ({ lang: window.atlas.app.lang, es: window.atlas.app.spanish, picked: window.atlas.app.langPicked, fmt: '' }));
     await page.evaluate(() => window.__menu('Settings|Ajustes'));
@@ -5068,8 +5069,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }
   check(seen['es-MX'].lang === 'es' && seen['es-MX'].es === 'latam' && !seen['es-MX'].picked && /10,935\.5/.test(seen['es-MX'].fmt) && /p\.\s?m\./.test(seen['es-MX'].fmt)
     && seen['es-ES'].lang === 'es' && seen['es-ES'].es === 'spain' && /10\.935,5/.test(seen['es-ES'].fmt) && /17:30/.test(seen['es-ES'].fmt)
-    && seen['fr-FR'].lang === 'en' && /^Numbers and dates: 10,935\.5 · 3 May/.test(seen['fr-FR'].fmt),
-    `like the phone: es-MX "${seen['es-MX'].fmt}"; es-ES "${seen['es-ES'].fmt}"; fr-FR "${seen['fr-FR'].fmt}"`);
+    && seen['it-IT'].lang === 'en' && /^Numbers and dates: 10,935\.5 · 3 May/.test(seen['it-IT'].fmt),
+    `like the phone: es-MX "${seen['es-MX'].fmt}"; es-ES "${seen['es-ES'].fmt}"; it-IT "${seen['it-IT'].fmt}"`);
   check(seen.kept?.lang === 'en' && seen.kept.picked && seen.back?.lang === 'es' && !seen.back.picked,
     `a language picked in Settings stays after a reload (${seen.kept?.lang}); "Like my phone" goes back to the phone's (${seen.back?.lang})`);
 }
