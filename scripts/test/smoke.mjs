@@ -1327,9 +1327,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /Next|See result/.test(b.textContent))?.click());
     await page.waitForTimeout(700);
   }
-  const res = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', marks: document.querySelector('.learn-card .daily-marks')?.textContent ?? '', rows: document.querySelectorAll('.learn-card .quiz-sum-row').length, share: !!document.querySelector('.learn-card [data-share]'), p: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}') }));
+  const res = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', marks: document.querySelector('.learn-card .result .result-headline')?.textContent ?? '', rows: document.querySelectorAll('.learn-card .quiz-sum-row').length, share: !!document.querySelector('.learn-card [data-share]'), p: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}') }));
   check(/Daily challenge #\d+/.test(res.head) && (res.marks.match(/🟩|🟥/gu) ?? []).length === 8 && res.rows === 8 && res.share && !!res.p.badges?.['daily-1'] && res.p.daily?.streak === 1, `the daily result: ${res.marks}, 8 rows, Share, the first daily badge and a 1-day streak`);
-  await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /Done/.test(b.textContent))?.click());
+  await page.evaluate(() => [...document.querySelectorAll('.learn-card .result-actions button')].find((b) => /Done/.test(b.textContent))?.click());
   await page.waitForTimeout(500);
   await menu('Quiz');
   const done = await page.evaluate(() => document.querySelector('[data-quiz="daily"]')?.textContent ?? '');
