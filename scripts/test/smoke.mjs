@@ -4842,7 +4842,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     decks: [...document.querySelectorAll('[data-master="deck"] .seg-btn')].map((b) => b.textContent), legend: document.querySelector('.mw-legend')?.textContent ?? '',
     conts: [...document.querySelectorAll('.mw-cont')].map((r) => r.textContent), modes: [...document.querySelectorAll('[data-master^="mode-"]')].map((b) => b.dataset.master),
   }));
-  check(inMenu && panel.open && /0 of 20/.test(panel.today) && panel.decks.length === 4 && /13 mastered/.test(panel.legend) && panel.conts.length === 6 && panel.conts.some((c) => /Oceania.*13\/14/.test(c)) && panel.modes.length === 3,
+  check(inMenu && panel.open && /0 of 20/.test(panel.today) && panel.decks.length === 8 && /13 mastered/.test(panel.legend) && panel.conts.length === 6 && panel.conts.some((c) => /Oceania.*13\/14/.test(c)) && panel.modes.length === 3,
     `Master the world from More → Learn: the panel (${panel.today.trim()}; ${panel.decks.join(' / ')}; ${panel.legend}; ${panel.conts.find((c) => /Oceania/.test(c))}; ${panel.modes.join(', ')})`);
   // Learn, South America: Brazil (known: tapped), Argentina (new), Colombia (well known: typed), Bolivia (new)…
   await M(() => window.atlas.master.start('learn', { scope: 'SA', reverse: false }));
@@ -5478,7 +5478,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.tap('[data-today="reminders"]');
   await page.waitForTimeout(1200);
   const pnl = await F(() => ({ open: window.atlas.shell.sheet.isOpen('reminders'), rows: [...document.querySelectorAll('.remind-panel .remind-row')].map((r) => `${r.dataset.remind}${r.querySelector('.switch-input')?.checked ? '+' : ''}`), how: document.querySelectorAll('.remind-panel [data-remind="how"]').length, inRows: document.querySelectorAll('.remind-panel .remind-row .remind-hint').length, change: document.querySelectorAll('.remind-panel [data-remind="change"]').length, text: document.querySelector('.remind-panel [data-remind="how"]')?.textContent ?? '' }));
-  check(pnl.open && pnl.rows.join() === 'daily,master:capitals+,master:flags,master:countries,master:states,fill+,states,onmap,games' && pnl.how === 1 && pnl.inRows === 0 && pnl.change === 0 && /In your calendar, every day at 6:30\sPM$/.test(pnl.text),
+  check(pnl.open && pnl.rows.join() === 'daily,master:capitals+,master:flags,master:countries,master:states,master:outlines,master:cities,master:landmarks,master:nature,fill+,states,onmap,games' && pnl.how === 1 && pnl.inRows === 0 && pnl.change === 0 && /In your calendar, every day at 6:30\sPM$/.test(pnl.text),
     `the reminders' panel from Today: ${pnl.rows.join(', ')} (+ on); how they reach you said once: "${pnl.text}"`);
   await F(() => window.atlas.shell.sheet.close());
   // The service worker: one quiet notification, then none again today.
@@ -5668,7 +5668,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     order: [...document.querySelectorAll('[data-master="order"] option')].find((o) => o.value === 'continent')?.textContent,
     learn: document.querySelector('[data-master="mode-learn"] .mode-desc')?.textContent ?? '',
   }));
-  check(/📍 States$/.test(p0.decks) && p0.hint && p0.bell && p0.rows.length === 12 && p0.rows[0] === 'MEX:0/31' && p0.rows.includes('CHL:0/16') && p0.scope === 'MEX' && p0.n === 13 && !p0.world && !p0.terr && p0.order === 'Country by country' && /0 due today · 5 new/.test(p0.learn),
+  check(/📍 States( |$)/.test(p0.decks) && p0.hint && p0.bell && p0.rows.length === 12 && p0.rows[0] === 'MEX:0/31' && p0.rows.includes('CHL:0/16') && p0.scope === 'MEX' && p0.n === 13 && !p0.world && !p0.terr && p0.order === 'Country by country' && /0 due today · 5 new/.test(p0.learn),
     `the State capitals deck: ${p0.decks}; progress by country (${p0.rows.slice(0, 3).join(', ')}…); Mexico of ${p0.n} choices; its 🔔; "${p0.order}"; no Your world or territories`);
   // Learn in Chile.
   await page.selectOption('[data-master="sscope"]', 'CHL');
@@ -5741,8 +5741,110 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await es.page.evaluate(() => window.atlas.master.start('learn', { deck: 'states', scope: 'ARG' }));
   await es.page.waitForTimeout(2500);
   const esq = await es.page.evaluate(() => ({ prompt: document.querySelector('[data-master="question"]')?.textContent ?? '', id: window.atlas.master.info?.q.id ?? '', title: document.querySelector('.play-card .tool-head strong')?.textContent ?? '' }));
-  check(/📍 Estados$/.test(esd) && /^¿Cuál es la capital de \S/.test(esq.prompt) && esq.id.startsWith('ARG|') && /Capitales de estados/.test(esq.title), `en español: ${esd}; "${esq.prompt}" (${esq.title})`);
+  check(/📍 Estados( |$)/.test(esd) && /^¿Cuál es la capital de \S/.test(esq.prompt) && esq.id.startsWith('ARG|') && /Capitales de estados/.test(esq.title), `en español: ${esd}; "${esq.prompt}" (${esq.title})`);
   await es.ctx.close();
+}
+
+// 44. Four more decks (v0.39.0), on a phone: Outlines (a country's shape alone, then found on a map with no names),
+// Big cities (a gold dot: which city? then "Tap Mexico City" among the dots of its nearest), Landmarks (a World Heritage
+// picture: in which country?) and Rivers, mountains and seas (drawn in gold, then "Tap “Danube”" among the rivers near
+// it, then typed: "Danubio"). The panel's eight decks, Your world for Outlines only, the seas' names hidden while the
+// rivers deck plays, the whole of a deck mastered: its badge. In Spanish.
+{
+  const day = (n) => { const d = new Date(Date.now() + n * 864e5); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+  const known = (days) => ({ seen: days, right: days, wrong: 0, days: Array.from({ length: days }, (_, k) => day(-2 - 3 * k)), ivl: 1, due: day(-1), lapses: 0 });
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  await F(() => window.atlas.master.openPanel());
+  await page.waitForTimeout(1200);
+  const decks = await F(() => [...document.querySelectorAll('[data-master="deck"] .seg-btn')].map((b) => b.textContent));
+  await page.tap('[data-master="deck"] .seg-btn:nth-child(5)');
+  await page.waitForTimeout(1200);
+  const po = await F(() => ({ hint: document.querySelector('[data-master="deck-hint"]')?.textContent ?? '', world: /Your world/.test(document.querySelector('.mw-panel')?.textContent ?? ''), bell: !!document.querySelector('[data-remind="master:outlines"]'), conts: document.querySelectorAll('.mw-cont').length }));
+  await page.tap('[data-master="deck"] .seg-btn:nth-child(6)');
+  await page.waitForTimeout(1500);
+  const pc = await F(() => ({ hint: document.querySelector('[data-master="deck-hint"]')?.textContent ?? '', world: /Your world/.test(document.querySelector('.mw-panel')?.textContent ?? ''), terr: /territories/.test(document.querySelector('.mw-panel')?.textContent ?? ''), bell: !!document.querySelector('[data-remind="master:cities"]'), legend: document.querySelector('.mw-legend')?.textContent ?? '' }));
+  check(decks.length === 8 && /Outlines/.test(decks[4]) && /Cities/.test(decks[5]) && /Landmarks/.test(decks[6]) && /Nature/.test(decks[7]) && /shape/.test(po.hint) && po.world && po.bell && po.conts === 6
+    && /250 best-known cities/.test(pc.hint) && !pc.world && !pc.terr && pc.bell && /250 to meet/.test(pc.legend),
+    `the panel's eight decks (${decks.join(' / ')}); Outlines with Your world and its 🔔; Big cities: "${pc.hint.slice(0, 60)}…", ${pc.legend.match(/\d+ to meet/)?.[0]}, no Your world`);
+  // A question of each.
+  const asked = {};
+  for (const [deck, scope] of [['outlines', 'SA'], ['cities', 'SA'], ['landmarks', 'world'], ['nature', 'world']]) {
+    await F(({ deck, scope }) => window.atlas.master.start('learn', { deck, scope }), { deck, scope });
+    await page.waitForTimeout(3000);
+    const q = await F(() => ({ info: window.atlas.master.info, prompt: document.querySelector('[data-master="question"]')?.textContent ?? '', opts: [...document.querySelectorAll('[data-master="opt"]')].map((b) => b.textContent), shape: !!document.querySelector('[data-master="shape"]'), photo: document.querySelector('[data-master="photo"]')?.getAttribute('src') ?? '', seas: window.atlas.app.renderer.settings.labels.seas }));
+    const pick = deck === 'landmarks' ? q.info.q.options.find((o) => o !== q.info.right) : q.info.right;
+    await F((v) => window.atlas.master.choose(v), pick);
+    await page.waitForTimeout(500);
+    const a = await F(() => ({ ok: window.atlas.master.info?.ok, fb: document.querySelector('[data-master="feedback"]')?.textContent ?? '', about: document.querySelector('[data-master="about"]')?.textContent ?? '', credit: !!document.querySelector('.mw-credit a') }));
+    asked[deck] = { ...q, a };
+    await F(() => window.atlas.master.stop());
+    await page.waitForTimeout(400);
+  }
+  const seasBack = await F(() => window.atlas.app.renderer.settings.labels.seas);
+  const { outlines: o, cities: c, landmarks: l, nature: n } = asked;
+  check(o.info.deck === 'outlines' && o.shape && o.opts.length === 4 && /^Which country has this shape\?/.test(o.prompt) && o.a.ok && /^✅ /.test(o.a.fb),
+    `Outlines: "${o.prompt}", the shape in the card, among ${o.opts.join(', ')}: "${o.a.fb}"`);
+  check(c.info.deck === 'cities' && /^Which city is this\?/.test(c.prompt) && c.opts.length === 4 && c.a.ok && / · /.test(c.a.fb) && /people/.test(c.a.about),
+    `Big cities: "${c.prompt}" among ${c.opts.join(', ')}: "${c.a.fb}" (${c.a.about})`);
+  check(l.info.deck === 'landmarks' && /: in which country\?$/.test(l.prompt) && /commons\.wikimedia\.org/.test(l.photo) && l.opts.length === 4 && l.a.ok === false && /it is in /.test(l.a.fb) && /World Heritage site since \d{4}/.test(l.a.about) && l.a.credit,
+    `Landmarks: "${l.prompt}" with its picture; a wrong country: "${l.a.fb}" (${l.a.about}); the picture's credit`);
+  check(n.info.deck === 'nature' && /^Which [a-z ]+ is this\?/.test(n.prompt) && n.opts.length === 4 && n.a.ok && n.seas === false && seasBack === true,
+    `Rivers, mountains and seas: "${n.prompt}" among ${n.opts.join(', ')}: "${n.a.fb}"; the seas' names hidden while it plays, back after`);
+  // Known ones: Mexico City and the Danube tapped on the map for real.
+  await F((c) => { const st = JSON.parse(localStorage.getItem('atlas-globe:master')); st.cards.cities = { 'mexico-city': c }; st.cards.nature = { n15: c }; st.settings.typing = false; localStorage.setItem('atlas-globe:master', JSON.stringify(st)); }, known(1));
+  await page.reload({ waitUntil: 'networkidle' });
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await F(() => window.atlas.master.start('learn', { deck: 'cities', scope: 'world' }));
+  await page.waitForTimeout(3500);
+  const t0 = await F(() => ({ info: window.atlas.master.info, prompt: document.querySelector('[data-master="question"]')?.textContent ?? '' }));
+  const ptc = await F(() => window.atlas.app.renderer.view.project(-99.13, 19.43));
+  if (ptc) await page.touchscreen.tap(ptc[0], ptc[1]);
+  await page.waitForTimeout(500);
+  const t1 = await F(() => ({ ok: window.atlas.master.info?.ok, fb: document.querySelector('[data-master="feedback"]')?.textContent ?? '' }));
+  await F(() => window.atlas.master.stop());
+  await page.waitForTimeout(400);
+  await F(() => window.atlas.master.start('learn', { deck: 'nature', scope: 'world' }));
+  await page.waitForTimeout(3500);
+  const r0 = await F(() => ({ info: window.atlas.master.info, prompt: document.querySelector('[data-master="question"]')?.textContent ?? '' }));
+  const ptr = await F(() => window.atlas.app.renderer.view.project(19.05, 47.5));
+  if (ptr) await page.touchscreen.tap(ptr[0], ptr[1]);
+  await page.waitForTimeout(500);
+  const r1 = await F(() => ({ ok: window.atlas.master.info?.ok, fb: document.querySelector('[data-master="feedback"]')?.textContent ?? '' }));
+  await F(() => window.atlas.master.stop());
+  await page.waitForTimeout(400);
+  check(t0.info.q.id === 'mexico-city' && t0.info.q.step === 'tap' && t0.prompt === 'Tap Mexico City' && t0.info.q.cands.length >= 5 && t1.ok && /Mexico City · Mexico/.test(t1.fb)
+    && r0.info.q.id === 'n15' && r0.info.q.step === 'tap' && r0.prompt === 'Tap “Danube”' && r0.info.q.cands.length >= 4 && r1.ok,
+    `known ones tapped on the map for real: "${t0.prompt}" among ${t0.info.q.cands.length} dots: "${t1.fb}"; "${r0.prompt}" among ${r0.info.q.cands.length} rivers: "${r1.fb}"`);
+  check(!errors.length, `no page errors in Outlines, Big cities, Landmarks and Rivers, mountains and seas${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+{
+  // (A fresh page in Spanish with the seeded deck: the Danube is the last one left.)
+  const day = (n) => { const d = new Date(Date.now() + n * 864e5); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(MENU_HELPER);
+  const done = { seen: 3, right: 3, wrong: 0, days: [day(-30), day(-20), day(-10)], ivl: 20, due: day(20), lapses: 0, mastered: true };
+  const last = { seen: 2, right: 2, wrong: 0, days: [day(-6), day(-3)], ivl: 3, due: day(-1), lapses: 0 };
+  const items = JSON.parse(fs.readFileSync(new URL('../../public/data/master/nature.json', import.meta.url), 'utf8')).items.length;
+  const seed = JSON.stringify({ cards: { capitals: {}, flags: {}, countries: {}, states: {}, outlines: {}, cities: {}, landmarks: {}, nature: Object.fromEntries(Array.from({ length: items }, (_, i) => [`n${i}`, i === 15 ? last : done])) }, settings: { deck: 'nature', scope: 'world', sscope: 'MEX', order: 'balanced', speed: 'normal', typing: true, territories: false, sound: false } });
+  await ctx.addInitScript((s) => { if (!sessionStorage.getItem('seeded')) { sessionStorage.setItem('seeded', '1'); localStorage.setItem('atlas-globe:master', s); } }, seed);
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political&lang=es', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.evaluate(() => window.atlas.master.start('learn', { deck: 'nature', scope: 'world' }));
+  await page.waitForTimeout(3500);
+  const q = await page.evaluate(() => ({ info: window.atlas.master.info, prompt: document.querySelector('[data-master="question"]')?.textContent ?? '', input: !!document.querySelector('[data-master="type"]') }));
+  await page.fill('[data-master="type"]', 'Danubio');
+  await page.tap('[data-master="check"]');
+  await page.waitForTimeout(800);
+  const a = await page.evaluate(() => ({ ok: window.atlas.master.info?.ok, fb: document.querySelector('[data-master="feedback"]')?.textContent ?? '', feats: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').feats ?? [] }));
+  check(q.info.q.id === 'n15' && q.info.q.step === 'type' && q.input && /^¿Qué río es este\? Escribe su nombre\./.test(q.prompt) && a.ok && /Danubio/.test(a.fb) && a.feats.includes('master-nature-all'),
+    `en español, escrito: "${q.prompt}" → «Danubio»: "${a.fb}"; the last of ${items} mastered: badge ${a.feats.filter((f) => f.startsWith('master-nature')).join()}`);
+  check(!errors.length, `no page errors in the four new decks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
 }
 
 await browser.close();

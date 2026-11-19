@@ -30,7 +30,8 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   states' country of the day, Put it on the map's puzzle of the day, the 12 map games' puzzles as tiles (ticked with today's score) and On this day. Each
   line opens its game; each game keeps its own "today" card in its own panel too.
 - **Reminders** (🔔, optional, off until you turn one on): a **Remind me** switch in each daily game: the Daily
-  challenge, Master the world (one per deck: capitals, flags, countries, state capitals), Fill the map's region of the day, Put it on
+  challenge, Master the world (one per deck: capitals, flags, countries, state capitals, outlines, big cities,
+  landmarks, rivers, mountains and seas), Fill the map's region of the day, Put it on
   the map's puzzle of the day and the Map games panel. The first switch asks the time (19:00 at first). **One
   reminder a day at most**, only if something you chose is not done yet, each day about a different one ("🏛️
   Capitals: 6 to review today · 🔥 keep your 12-day streak"); it makes no sound, replaces yesterday's and opens
@@ -381,6 +382,21 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   way round among four nearby states ("Valparaíso is the capital of…"); a state that is a city of its own (Mexico
   City, Berlin, Washington) has nothing to ask. Its own order ("Country by country"), progress by country, a 🔔, a
   badge for each country's capitals and one for all twelve; Fill the states' capitals count in it too.
+  **Four more decks** (v0.39.0), on the same engine (spaced repetition, Learn, Run, Marathon, the daily goal, a 🔔
+  each, a badge for each deck mastered), by continent:
+  - **Outlines** (🖼️): a country's shape alone in the card ("Which country has this shape?"), picked among its
+    neighbours; once known, found on a map with no names; then typed. Your world paints it too.
+  - **Big cities** (🏙️): the 250 best-known cities (a share for each continent), a gold dot on a map with no names
+    ("Which city is this?"), picked among its nearest big cities; then "Tap Mexico City" among their dots; then typed.
+    The answer says its country, whether it is the capital and its people.
+  - **Landmarks** (🏰): 300 World Heritage sites, each with its picture and name: in which country? Picked among its
+    country's neighbours, then tapped on the map, then typed; the answer says when it was listed, and the picture's
+    author and licence (read from Wikimedia Commons). Sites in more than two countries, or named after their own
+    country (Great Zimbabwe), are left out.
+  - **Rivers, mountains and seas** (🏞️): 51 rivers, 26 lakes, 31 ranges, 17 deserts, 30 peaks and 47 oceans, seas,
+    gulfs, bays, straits and channels, drawn on the map in gold ("Which river is this?"), picked among the nearest of
+    their kind; then "Tap “Danube”" among them in white; then typed (in either language, "Danubio" for "Río Danubio");
+    the seas' names are hidden while it plays.
 - **Fill the map** (More → Play → Fill the map): a world map coloured in country by country. Fill it with
   **countries** ("Tap Bolivia"), **capitals** ("Tap the country whose capital is Sucre"), **flags**, the **most people
   first** or the **largest first** (the biggest country left each time, so the map fills in order), **clues** (a ladder
@@ -702,6 +718,15 @@ A country's lands across the oceans are left out of its puzzle (Réunion is not 
 its sixteen best known of each kind (by length, area, height, people or how many Wikipedias write about it).
 `npm run test:onmap` checks the places, which countries and regions have enough, the puzzles, the marks and the puzzle
 of the day.
+
+**Master the world's four new decks** (v0.39.0, `scripts/data/master/build-decks.mjs`, checked with `--check` in
+`npm run check:data`): Big cities from the travel guide's cities, the best known by Wikidata's sitelinks (QLever, CC0)
+with a share per continent; Landmarks from the World Heritage layer, the best known by the sitelinks of the
+best-known Wikidata item carrying the site's number (P757; Machu Picchu's article, not the sanctuary's), a share per
+continent and a short list of world-famous sites always in; Rivers, mountains and seas hand-picked, with shapes from
+Put it on the map (Natural Earth) and Natural Earth's 1:50m marine areas. Put it on the map's rivers were fixed on
+the way: a river's stretches through its reservoirs are kept (the Volga is one river) and its own English name is
+matched first (the Yangtze was called the Jinsha, the Congo the Lualaba).
 
 **Master the world** (`scripts/data/master/`: `fetch-master.mjs` asks Wikidata through QLever, CC0, for the countries'
 ISO codes, how many Wikipedias have an article on each and the Spanish names of the cities; `build-master.mjs` builds

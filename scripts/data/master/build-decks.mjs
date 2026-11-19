@@ -56,7 +56,7 @@ async function cities() {
     fs.mkdirSync(CACHE, { recursive: true });
     fs.writeFileSync(file, JSON.stringify(Object.fromEntries(sl)));
   }
-  const all = rows.map((r) => ({ id: r[f.id], en: r[f.name], es: r[f.nombre], at: [r[f.lon], r[f.lat]], cc: r[f.country], pop: r[f.pop], cap: r[f.capital] === 1 ? 1 : 0, sl: sl.get(r[f.qid]) ?? 0 }));
+  const all = rows.map((r) => ({ id: r[f.id], en: r[f.name], es: r[f.nombre], at: [r[f.lon], r[f.lat]], cc: r[f.country], pop: r[f.pop], cap: r[f.capital] === 2 ? 1 : 0, sl: sl.get(r[f.qid]) ?? 0 }));
   // A share per continent (by fame alone Europe had 75 and South America 15), then the best known of the rest.
   all.sort((a, b) => b.sl - a.sl || b.pop - a.pop);
   const top = [];
@@ -73,7 +73,25 @@ async function cities() {
 // ---- Landmarks.
 export const LANDMARKS = 300;
 const SHARE_L = { AS: 90, EU: 80, AF: 45, NA: 35, SA: 35, OC: 10 };
-function landmarks() {
+/** World-famous sites the count of readers misses (their Wikipedia articles are other items: Machu Picchu's, the Great
+ *  Wall's), always in, each counted in its continent's share. */
+export const MUST = [274, 438, 303, 80, 441, 403, 600, 426, 174, 285, 124, 1100, 64, 18, 2, 309];
+/** How well known each World Heritage site is: the most sitelinks among the Wikidata items that carry its number
+ *  (P757): Machu Picchu's article item, not the Historic Sanctuary's, which has few. */
+async function whsFame() {
+  const file = path.join(CACHE, 'whs-fame.json');
+  if (fs.existsSync(file)) return new Map(Object.entries(J(path.relative(ROOT, file))).map(([k, v]) => [Number(k), v]));
+  const { ask, val } = await import('../lives/wdqs.mjs');
+  const rows = await ask(CACHE, 'whs-sitelinks', 'SELECT ?ref (MAX(?sl) AS ?m) WHERE { ?item wdt:P757 ?ref . ?item wikibase:sitelinks ?sl } GROUP BY ?ref');
+  const out = new Map();
+  for (const b of rows) { const ref = parseInt(val(b, 'ref'), 10); if (ref > 0) out.set(ref, Math.max(out.get(ref) ?? 0, Number(val(b, 'm')))); }
+  fs.mkdirSync(CACHE, { recursive: true });
+  fs.writeFileSync(file, JSON.stringify(Object.fromEntries(out)));
+  return out;
+}
+
+async function landmarks() {
+  const fame = await whsFame();
   // (In one or two countries: "which country?" has no answer for Le Corbusier's work in seven.)
   const meta = J('public/data/base/countries-meta.json');
   const sites = J('public/data/layers/heritage.json').sites.filter((s) => s.img && !s.x && !s.merged && s.at && s.cc?.length && s.cc.length <= 2 && s.cc.every((c) => ctOf.has(c)));
@@ -82,20 +100,24 @@ function landmarks() {
   const named = (s) => s.cc.some((c) => [s.w?.[0], s.n[0]].some((t) => word(t, meta[c]?.n)) || [s.w?.[1], s.n[1]].some((t) => word(t, meta[c]?.es)));
   for (let i = sites.length - 1; i >= 0; i--) if (named(sites[i])) sites.splice(i, 1);
   // A share per continent too (by fame alone Asia had 117 and South America 15).
-  sites.sort((a, b) => (b.pop ?? 0) - (a.pop ?? 0) || a.ref - b.ref);
+  const known = (s) => Math.max(fame.get(s.ref) ?? 0, s.pop ?? 0);
+  sites.sort((a, b) => known(b) - known(a) || a.ref - b.ref);
   const top = [];
-  for (const [ct, n] of Object.entries(SHARE_L)) top.push(...sites.filter((s) => ctOf.get(s.cc[0]) === ct).slice(0, n));
+  const must = sites.filter((s) => MUST.includes(s.ref));
+  if (must.length !== MUST.length) throw new Error(`landmarks: not found or left out: ${MUST.filter((r) => !must.some((s) => s.ref === r)).join(', ')}`);
+  top.push(...must);
+  for (const [ct, n] of Object.entries(SHARE_L)) { const have = must.filter((s) => ctOf.get(s.cc[0]) === ct).length; top.push(...sites.filter((s) => ctOf.get(s.cc[0]) === ct && !top.includes(s)).slice(0, Math.max(0, n - have))); }
   top.push(...sites.filter((s) => !top.includes(s)).slice(0, LANDMARKS - top.length));
-  top.sort((a, b) => (b.pop ?? 0) - (a.pop ?? 0) || a.ref - b.ref);
+  top.sort((a, b) => known(b) - known(a) || a.ref - b.ref);
   return {
-    about: 'Master the world, Landmarks (v0.39.0): [id, name, nombre (0: as name), lon, lat, countries, continent, kind (c cultural, n natural, m mixed), year listed, Commons picture, Wikipedias]. UNESCO\'s World Heritage List with Wikidata\'s names (CC0) and Commons pictures (each with its own licence, credited in the app); the best known by Wikidata\'s sitelinks. Built by scripts/data/master/build-decks.mjs.',
+    about: 'Master the world, Landmarks (v0.39.0): [id, name, nombre (0: as name), lon, lat, countries, continent, kind (c cultural, n natural, m mixed), year listed, Commons picture, Wikipedias]. UNESCO\'s World Heritage List with Wikidata\'s names (CC0) and Commons pictures (each with its own licence, credited in the app); the best known by the sitelinks of the best-known Wikidata item with its World Heritage number. Built by scripts/data/master/build-decks.mjs.',
     sites: top.map((s) => {
       const [en0, es0] = s.w?.[0] ? [s.w[0], s.w[1] || s.n[1]] : s.n;
       // Not the answer in its name: "Sewell, Chile" → "Sewell"; "Guanajuato (city)" → "Guanajuato".
       const tail = new Set(s.cc.flatMap((c) => [meta[c]?.n, meta[c]?.es].filter(Boolean).map(norm)));
       const clean = (n) => { const x = String(n ?? '').replace(/\s*\([^)]*\)\s*$/, '').trim(); const m = /^(.*\S),\s*([^,]+)$/.exec(x); return m && tail.has(norm(m[2])) ? m[1] : x; };
       const en = clean(en0), es = es0 ? clean(es0) : 0;
-      return [`w${s.ref}`, en, es && es !== en ? es : 0, r2(s.at[0]), r2(s.at[1]), s.cc, ctOf.get(s.cc[0]), s.c, s.y, s.img, s.pop ?? 0];
+      return [`w${s.ref}`, en, es && es !== en ? es : 0, r2(s.at[0]), r2(s.at[1]), s.cc, ctOf.get(s.cc[0]), s.c, s.y, s.img, known(s)];
     }),
   };
 }
@@ -117,8 +139,9 @@ async function nature() {
   const topo = J('public/data/onmap/shapes.json');
   const shapeOf = new Map();
   for (const obj of Object.values(topo.objects)) for (const f of feature(topo, obj).features) shapeOf.set(f.properties.i, f.geometry);
-  const countryOf = new Map();
-  for (const [c, list] of Object.entries(o.countries)) for (const e of list) if (!countryOf.has(e[0])) countryOf.set(e[0], c);
+  // Every country a place is in (the Andes: seven), the first the one it is listed under first.
+  const countriesOf = new Map();
+  for (const [c, list] of Object.entries(o.countries)) for (const e of list) { if (!countriesOf.has(e[0])) countriesOf.set(e[0], []); countriesOf.get(e[0]).push(c); }
   const items = [], geoms = [], missing = [];
   // Rivers, lakes, ranges, deserts and peaks from Put it on the map: every piece of a name (the Nile's two) is one.
   for (const kind of ['river', 'lake', 'range', 'desert', 'peak']) for (const name of NATURE[kind]) {
@@ -133,8 +156,8 @@ async function nature() {
       const coords = parts.flatMap((x) => (x.type === 'LineString' || x.type === 'Polygon' ? [x.coordinates] : x.coordinates));
       g = { type: line ? 'MultiLineString' : 'MultiPolygon', coordinates: coords };
     }
-    const cc = countryOf.get(main);
-    items.push({ kind, en: p[1], es: p[2] || p[1], at: [p[3], p[4]], cc: cc ?? '', ct: ctOf.get(cc) ?? nearestCt([p[3], p[4]]), fame: p[5], g });
+    const cc = [...new Set([...(countriesOf.get(main) ?? []), ...idx.flatMap((i) => countriesOf.get(i) ?? [])])];
+    items.push({ kind, en: p[1], es: p[2] || p[1], at: [p[3], p[4]], cc, ct: ctOf.get(cc[0]) ?? nearestCt([p[3], p[4]]), fame: p[5], g });
   }
   // The waters from Natural Earth's marine areas (two pieces of one name, the Atlantic's, are one).
   const marine = JSON.parse(fs.readFileSync(path.join(ROOT, '.cache/ne/ne_50m_geography_marine_polys.geojson'), 'utf8'));
@@ -155,7 +178,7 @@ async function nature() {
     const w = waters[f.properties.i];
     const at = geoCentroid(f.geometry);
     // (An ocean is in every continent's waters: only in the world's deck.)
-    items.push({ kind: w.kind, en: w.name, es: w.es, at: [r2(at[0]), r2(at[1])], cc: '', ct: w.kind === 'ocean' ? '' : nearestCt(at), fame: 10 - (w.rank ?? 5), g: f.geometry });
+    items.push({ kind: w.kind, en: w.name, es: w.es, at: [r2(at[0]), r2(at[1])], cc: [], ct: w.kind === 'ocean' ? '' : nearestCt(at), fame: 10 - (w.rank ?? 5), g: f.geometry });
   }
   // The shapes, in item order (a peak has none).
   const fc = { type: 'FeatureCollection', features: [] };
@@ -166,7 +189,7 @@ async function nature() {
   const near = nearest(list, 5, (a, b) => a.group === b.group);
   return {
     data: {
-      about: 'Master the world, Rivers, mountains and seas (v0.39.0): items [kind, name, nombre (0: as name), lon, lat, country, continent (empty: the world\'s only, an ocean), fame, shape (index in shapes, -1: a point), the five nearest of the same kind], shapes a TopoJSON. Rivers, lakes, ranges, deserts and peaks from Put it on the map (Natural Earth, public domain; Wikidata\'s names, CC0); the waters from Natural Earth\'s marine areas. Built by scripts/data/master/build-decks.mjs.',
+      about: 'Master the world, Rivers, mountains and seas (v0.39.0): items [kind, name, nombre (0: as name), lon, lat, countries, continent (empty: the world\'s only, an ocean), fame, shape (index in shapes, -1: a point), the five nearest of the same kind], shapes a TopoJSON. Rivers, lakes, ranges, deserts and peaks from Put it on the map (Natural Earth, public domain; Wikidata\'s names, CC0); the waters from Natural Earth\'s marine areas. Built by scripts/data/master/build-decks.mjs.',
       items: list.map((it, i) => [it.kind, it.en, it.es && it.es !== it.en ? it.es : 0, r2(it.at[0]), r2(it.at[1]), it.cc, it.ct, Math.round(it.fame), it.shape, near[i].map((id) => Number(id.slice(1)))]),
       shapes: topoOut,
     },
@@ -174,7 +197,7 @@ async function nature() {
 }
 
 async function build() {
-  const out = { 'cities.json': await cities(), 'landmarks.json': landmarks(), 'nature.json': (await nature()).data };
+  const out = { 'cities.json': await cities(), 'landmarks.json': await landmarks(), 'nature.json': (await nature()).data };
   return Object.fromEntries(Object.entries(out).map(([k, v]) => [k, JSON.stringify(v)]));
 }
 

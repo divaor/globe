@@ -25,11 +25,11 @@ export interface MasterState {
 }
 
 const fresh = (): MasterState => ({
-  cards: { capitals: {}, flags: {}, countries: {}, states: {} },
+  cards: { capitals: {}, flags: {}, countries: {}, states: {}, outlines: {}, cities: {}, landmarks: {}, nature: {} },
   goal: { day: '', n: 0 },
   days: { last: '', streak: 0, best: 0 },
-  runs: { capitals: { best: 0, combo: 0 }, flags: { best: 0, combo: 0 }, countries: { best: 0, combo: 0 }, states: { best: 0, combo: 0 } },
-  marathon: { capitals: { record: 0, inRow: {} }, flags: { record: 0, inRow: {} }, countries: { record: 0, inRow: {} }, states: { record: 0, inRow: {} } },
+  runs: { capitals: { best: 0, combo: 0 }, flags: { best: 0, combo: 0 }, countries: { best: 0, combo: 0 }, states: { best: 0, combo: 0 }, outlines: { best: 0, combo: 0 }, cities: { best: 0, combo: 0 }, landmarks: { best: 0, combo: 0 }, nature: { best: 0, combo: 0 } },
+  marathon: { capitals: { record: 0, inRow: {} }, flags: { record: 0, inRow: {} }, countries: { record: 0, inRow: {} }, states: { record: 0, inRow: {} }, outlines: { record: 0, inRow: {} }, cities: { record: 0, inRow: {} }, landmarks: { record: 0, inRow: {} }, nature: { record: 0, inRow: {} } },
   pairs: [],
   comebacks: 0,
   settings: { deck: 'capitals', scope: 'world', order: 'balanced', speed: 'normal', typing: false, territories: false, sound: true, sscope: 'MEX' },

@@ -18,7 +18,7 @@ import { WITH_FACTS, type StatesData } from '../fill/states-logic';
 import { shareText } from '../play/pin';
 import { countryIndex, type CountryIndex } from '../mydata/parse';
 import { recordMaster, recordFeat, dayKey, onReset, type Badge } from '../learn/progress';
-import { DECKS, ALL_DECKS, ORDERS, addDays, grade, step as stepOf, ordered, learnQueue, requeue, rng, shuffle, newRun, runAnswer, multiplier, marathonList, SKIP_AFTER, type DeckId, type CountryDeck, type Order, type Run, type Power, type Level } from './srs';
+import { DECKS, ALL_DECKS, WORLD_DECKS, ORDERS, addDays, grade, step as stepOf, ordered, learnQueue, requeue, rng, shuffle, newRun, runAnswer, multiplier, marathonList, SKIP_AFTER, type DeckId, type WorldDeck, type Order, type Run, type Power, type Level } from './srs';
 import { inScope, question, flagNote, neighbours, typedRight, capDeck, stateDeck, statesIn, SCOPES, type Country, type DeckData, type Question, type Scope, type Place } from './decks';
 import { master, saveMaster, resetMaster, GOAL, type Speed } from './store';
 import { loadDeck, levelOf, LEVEL_COLORS } from './data';
@@ -26,6 +26,7 @@ import { yourWorldLayer, refreshYourWorld, WORLD_ID } from './world';
 import { appLocale, flagEmoji } from '../app/i18n';
 import { pickCountry } from '../play/pick';
 import { bell } from '../today/reminders';
+import { isExtra, outlinesDeck, citiesDeck, landmarksDeck, natureDeck, type ExtraDeck, type ExtraId } from './extra';
 
 type Mode = 'learn' | 'run' | 'marathon';
 type Done = 'end' | 'empty' | 'over' | 'miss' | 'won';
@@ -35,6 +36,11 @@ const DECK_TEXT: Record<DeckId, { icon: string; en: string; es: string; short?: 
   flags: { icon: '🏳️', en: 'Flags', es: 'Banderas' },
   countries: { icon: '🗺️', en: 'Countries', es: 'Países' },
   states: { icon: '📍', en: 'State capitals', es: 'Capitales de estados', short: ['States', 'Estados'] },
+  // v0.39.0
+  outlines: { icon: '🖼️', en: 'Outlines', es: 'Siluetas' },
+  cities: { icon: '🏙️', en: 'Big cities', es: 'Grandes ciudades', short: ['Cities', 'Ciudades'] },
+  landmarks: { icon: '🏰', en: 'Landmarks', es: 'Maravillas' },
+  nature: { icon: '🏞️', en: 'Rivers, mountains and seas', es: 'Ríos, montañas y mares', short: ['Nature', 'Naturaleza'] },
 };
 const MODE_TEXT: Record<Mode, { icon: string; en: string; es: string }> = {
   learn: { icon: '📚', en: 'Learn', es: 'Aprender' },
@@ -96,6 +102,9 @@ export class Master implements HostGame {
   private sdeck: Country[] | null = null;
   private sById = new Map<string, Country>();
   private regionsOf = new Map<string, Region[]>();
+  /** The four decks of v0.39.0 (extra.ts) and their cards once loaded. */
+  private extras = new Map<ExtraId, ExtraDeck>();
+  private xcards = new Map<ExtraId, Country[]>();
   private idx: CountryIndex | null = null;
   private others = new Map<string, string[]>();
   private ac: AudioContext | null = null;
@@ -116,6 +125,21 @@ export class Master implements HostGame {
     });
     for (const ev of ['pointerup', 'pointercancel', 'pointerleave']) card.addEventListener(ev, () => { const s = this.s; if (s?.held) { s.held = false; this.resume(); } });
     document.addEventListener('keydown', (e) => this.key(e));
+    const ctx = {
+      app, countries: () => this.data, country: (id: string) => this.cname(id),
+      matchCountry: (text: string) => this.idx?.match(text) ?? null,
+      fit: (pts: [number, number][], max?: number) => this.fit(pts, max),
+    };
+    for (const d of [outlinesDeck(ctx), citiesDeck(ctx), landmarksDeck(ctx), natureDeck(ctx)]) this.extras.set(d.id, d);
+  }
+  /** A deck of v0.39.0 (null for the others). */
+  private ext(deck: DeckId): ExtraDeck | null { return isExtra(deck) ? this.extras.get(deck)! : null; }
+  /** Its cards (the countries' deck first: Outlines and Landmarks need it). */
+  private async loadExtra(deck: ExtraId): Promise<Country[] | null> {
+    await this.load();
+    const got = this.xcards.get(deck) ?? (await this.extras.get(deck)!.load());
+    if (got) this.xcards.set(deck, got);
+    return got;
   }
 
   // ---- Data
@@ -127,6 +151,8 @@ export class Master implements HostGame {
   /** A country's name, or a state's ("MEX|MX-JAL": Jalisco). */
   private name(id: string) {
     if (id.includes('|')) { const r = this.region(id); return r ? (es() ? r.es : r.n) : id.split('|')[1]; }
+    // A big city, a landmark, a river or sea (v0.39.0).
+    for (const k of ['cities', 'landmarks', 'nature'] as ExtraId[]) { const d = this.extras.get(k)!; if (d.has(id)) return d.name(id); }
     return this.app.data.name(id, es() ? 'es' : 'en');
   }
   private region(id: string): Region | undefined { const [a3, sid] = id.split('|'); return this.regionsOf.get(a3)?.find((r) => r.id === sid); }
@@ -147,12 +173,15 @@ export class Master implements HostGame {
   /** A deck's cards in a region: a continent or the world; for State capitals, a country or 'all'. */
   private list(deck: DeckId, scope: string): Country[] {
     if (deck === 'states') return statesIn(this.sdeck ?? [], scope === 'world' ? 'all' : scope);
+    // Outlines: the countries (and territories with that setting); the others, their cards of a continent.
+    if (deck === 'outlines') return this.data ? inScope(this.data, 'countries', scope as Scope, master().settings.territories) : [];
+    if (isExtra(deck)) return (this.xcards.get(deck) ?? []).filter((c) => scope === 'world' || c.ct === scope);
     return this.data ? inScope(this.data, deck, scope as Scope, master().settings.territories) : [];
   }
   /** The region a deck is played in (the settings keep one for the countries' decks and one for State capitals). */
   private scopeOf(deck: DeckId) { const set = master().settings; return deck === 'states' ? set.sscope : set.scope; }
   /** What a deck's cards are: countries, or states. */
-  private noun(deck: DeckId) { return deck === 'states' ? L('states', 'estados') : L('countries', 'países'); }
+  private noun(deck: DeckId) { return deck === 'states' ? L('states', 'estados') : this.ext(deck)?.noun() ?? L('countries', 'países'); }
   /** A country's name (short enough for a progress row: the United States). */
   private cname(a3: string) { return a3 === 'USA' ? L('United States', 'Estados Unidos') : this.app.data.name(a3, es() ? 'es' : 'en'); }
   private nm(p: { en: string; es: string }) { return es() ? p.es : p.en; }
@@ -179,7 +208,7 @@ export class Master implements HostGame {
     for (const c of Object.values(master().cards[deck] ?? {})) { if (!c || c.seen <= 0) continue; seen++; if (c.due <= day) due++; }
     const name = this.deckName(deck);
     const lower = name.toLocaleLowerCase(appLocale());
-    const fem = deck !== 'countries'; // las capitales, las banderas; los países
+    const fem = deck !== 'countries' && deck !== 'nature'; // las capitales, las banderas, las siluetas, las ciudades; los países
     return {
       t: `${DECK_TEXT[deck].icon} ${L('Master the world', 'Domina el mundo')}: ${name}`,
       b: due ? L(`${due} ${lower} to review today`, `${due} ${lower} por repasar hoy`)
@@ -196,7 +225,7 @@ export class Master implements HostGame {
     const q = s.q;
     return {
       mode: s.mode, deck: s.deck, scope: s.scope, i: s.i, n: s.queue.length, done: s.done, paused: s.paused,
-      q: q ? { id: q.id, step: q.step, reverse: q.reverse, options: q.options ?? null, order: q.order ?? null, places: q.places?.map((p) => ({ en: p.en, es: p.es, at: p.at })) ?? null } : null,
+      q: q ? { id: q.id, step: q.step, reverse: q.reverse, options: q.options ?? null, cands: q.cands ?? null, order: q.order ?? null, places: q.places?.map((p) => ({ en: p.en, es: p.es, at: p.at })) ?? null } : null,
       right: q ? this.rightValue(q) : null, hidden: [...s.hidden],
       answered: !!s.ans, ok: s.ans?.ok ?? null, run: s.run ? { ...s.run } : null, count: s.count, stats: { ...s.stats },
       goal: { ...master().goal }, card: q ? master().cards[s.deck][q.id] ?? null : null,
@@ -213,7 +242,8 @@ export class Master implements HostGame {
     const deck = set.deck, scope = this.scopeOf(deck);
     const data = await this.load();
     const sdeck = deck === 'states' ? await this.loadStates() : null;
-    if (!data || (deck === 'states' && !sdeck)) { this.shell.toast(L('Master the world needs its data; check your connection.', 'Domina el mundo necesita sus datos; revisa tu conexión.')); return; }
+    const xdeck = isExtra(deck) ? await this.loadExtra(deck) : null;
+    if (!data || (deck === 'states' && !sdeck) || (isExtra(deck) && !xdeck)) { this.shell.toast(L('Master the world needs its data; check your connection.', 'Domina el mundo necesita sus datos; revisa tu conexión.')); return; }
     if (deck === 'states') await this.loadShapes(scope === 'all' ? WITH_FACTS : [scope]);
     const list = this.list(deck, scope);
     const allowed = new Map(list.map((c) => [c.id, c]));
@@ -230,7 +260,8 @@ export class Master implements HostGame {
     // A game already on: its timer and run end here.
     this.clearTimer();
     if (this.s?.run && !this.s.done) this.endRun();
-    await this.host.enter(this);
+    // (Rivers, mountains and seas: the seas' names hidden too.)
+    await this.host.enter(this, this.ext(deck)?.hide?.seas ? { labels: { seas: false } } : {});
     // State and province names would give countries away (Alaska, Ontario).
     const r0 = this.app.renderer;
     if (this.regions == null) { this.regions = r0.regionLabels; r0.regionLabels = false; }
@@ -265,6 +296,15 @@ export class Master implements HostGame {
     const set = master().settings;
     const card = master().cards[s.deck][id];
     let st = stepOf(card, set.typing);
+    const x = this.ext(s.deck);
+    if (x) {
+      s.q = x.question(c, st, s.allowed, s.r);
+      s.ans = null; s.hidden = [];
+      x.frame(s.q);
+      this.render();
+      this.app.renderer.requestRender();
+      return;
+    }
     // Four dots too close together to tap apart (a city-state): picked from the list instead.
     if (capDeck(s.deck) && st === 'tap' && spread([c.cap!.at, ...c.cities.map((x) => x.at)]) < 0.25) st = 'pick';
     const known = (card?.days.length ?? 0) >= 1;
@@ -317,12 +357,13 @@ export class Master implements HostGame {
   }
 
   /** The value of the right answer: the capital's place (index 0) or the country. */
-  private rightValue(q: Question): string { return capDeck(q.deck) && !q.reverse ? '0' : q.id; }
+  private rightValue(q: Question): string { const x = this.ext(q.deck); return x ? x.right(q) : capDeck(q.deck) && !q.reverse ? '0' : q.id; }
   /** The options as values, in the order shown (for the keys 1 to 4). */
   private optionValues(): string[] {
     const q = this.s?.q;
     if (!q) return [];
     if (capDeck(q.deck) && !q.reverse) return q.step === 'pick' ? q.order!.map(String).filter((v) => !this.s!.hidden.includes(v)) : [];
+    if (this.ext(q.deck)) return q.step === 'pick' ? (q.options ?? []).filter((v) => !this.s!.hidden.includes(v)) : [];
     if (q.step === 'type' || (q.deck === 'countries' && q.step === 'tap')) return [];
     return (q.options ?? []).filter((v) => !this.s!.hidden.includes(v));
   }
@@ -332,7 +373,8 @@ export class Master implements HostGame {
   choose(value: string) {
     const s = this.s;
     if (!s?.q || s.ans || s.done) return;
-    this.settle(value === this.rightValue(s.q), value);
+    const x = this.ext(s.q.deck);
+    this.settle(x ? x.isRight(s.q, value) : value === this.rightValue(s.q), value);
   }
 
   /** A typed answer. */
@@ -341,7 +383,9 @@ export class Master implements HostGame {
     if (!s?.q || s.ans || s.done || !text.trim()) return;
     const q = s.q, c = s.allowed.get(q.id)!;
     let ok: boolean;
-    if (capDeck(q.deck)) ok = typedRight(text, [c.cap!.en, c.cap!.es, ...(c.alt ?? [])]);
+    const x = this.ext(q.deck);
+    if (x) ok = x.typed(text, q);
+    else if (capDeck(q.deck)) ok = typedRight(text, [c.cap!.en, c.cap!.es, ...(c.alt ?? [])]);
     else { const m = this.idx!.match(text); ok = m === q.id || typedRight(text, [this.app.data.meta[q.id]?.n ?? '', this.app.data.meta[q.id]?.es ?? '']); }
     this.settle(ok, text.trim());
   }
@@ -356,6 +400,14 @@ export class Master implements HostGame {
     if (s.ans) { this.next(); return true; }
     const q = s.q;
     if (!q || !g) return true;
+    // v0.39.0: a big city's dot, a river, a country tapped.
+    const x = this.ext(q.deck);
+    if (x) {
+      if (q.step !== 'tap') return true;
+      const v = x.tap(g, q);
+      if (v) this.settle(x.isRight(q, v), v);
+      return true;
+    }
     const view = this.app.renderer.view;
     const tp = view.project(g[0], g[1]);
     if (capDeck(q.deck) && !q.reverse && q.step !== 'type' && tp) {
@@ -438,6 +490,7 @@ export class Master implements HostGame {
     const s = this.s!, q = s.q!;
     // The country asked from its flag, or its capital, is shown once it is known.
     if (q.deck === 'flags' && q.reverse) this.app.flyToCountry(q.id, false);
+    this.ext(q.deck)?.reveal(q);
     const ms = SPEED_MS[master().settings.speed];
     this.schedule(ok ? ms.ok : ms.bad);
     this.render();
@@ -464,6 +517,12 @@ export class Master implements HostGame {
     const cards = master().cards[deck];
     const m = (c: Country) => !!cards[c.id]?.mastered;
     const got: Badge[] = [];
+    if (isExtra(deck)) {
+      // v0.39.0: the whole deck mastered.
+      const every = this.list(deck, 'world');
+      if (every.length && every.every(m)) got.push(...recordFeat(`master-${deck}-all`));
+      return got;
+    }
     if (deck === 'states') {
       // A country's state capitals, then all twelve countries'.
       const every = this.sdeck ?? [], a3 = id.split('|')[0], mine = every.filter((c) => c.ct === a3);
@@ -626,11 +685,15 @@ export class Master implements HostGame {
     this.card.append(h('div', { class: 'quiz-q', 'data-master': 'question' }, this.prompt(q, c)));
     if (s.fold) return;
     if (q.deck === 'flags' && q.reverse) this.card.append(h('img', { class: 'quiz-flag mw-flag-big', src: this.flag(q.id), alt: L('A flag', 'Una bandera') }));
+    // v0.39.0: an outline, a landmark's picture.
+    const xv = this.ext(q.deck)?.visual(q, !!s.ans);
+    if (xv) this.card.append(xv);
     if (s.ans) { this.renderAnswer(q, c); return; }
     const opts = this.optionValues();
     if (q.step === 'type') {
-      const list = h('datalist', { id: 'mw-names' }, ...(capDeck(q.deck) ? [] : [...s.allowed.keys()].map((k) => h('option', { value: this.name(k) }))));
-      const input = h('input', { type: 'text', class: 'names-input', list: 'mw-names', autocomplete: 'off', autocapitalize: 'words', spellcheck: 'false', 'aria-label': L('Your answer', 'Tu respuesta'), placeholder: capDeck(q.deck) ? L('Type the capital…', 'Escribe la capital…') : L('Type the country…', 'Escribe el país…'), 'data-master': 'type' }) as HTMLInputElement;
+      const xt = this.ext(q.deck);
+      const list = h('datalist', { id: 'mw-names' }, ...(capDeck(q.deck) ? [] : (xt ? xt.names(s.allowed) : [...s.allowed.keys()].map((k) => this.name(k))).map((n) => h('option', { value: n }))));
+      const input = h('input', { type: 'text', class: 'names-input', list: 'mw-names', autocomplete: 'off', autocapitalize: 'words', spellcheck: 'false', 'aria-label': L('Your answer', 'Tu respuesta'), placeholder: xt ? xt.placeholder() : capDeck(q.deck) ? L('Type the capital…', 'Escribe la capital…') : L('Type the country…', 'Escribe el país…'), 'data-master': 'type' }) as HTMLInputElement;
       const go = h('button', { type: 'button', class: 'pill sm primary', 'data-master': 'check' }, icon(Send, 15), L('Check', 'Comprobar'));
       go.addEventListener('click', () => this.typeAnswer(input.value));
       input.addEventListener('keydown', (e) => { if (e.key === 'Enter') this.typeAnswer(input.value); });
@@ -647,7 +710,7 @@ export class Master implements HostGame {
       });
       this.card.append(grid);
     } else {
-      this.card.append(h('div', { class: 'tool-hint' }, capDeck(q.deck) ? L('Tap its dot on the map.', 'Toca su punto en el mapa.') : L('Tap it on the map.', 'Tócalo en el mapa.')), h('div', { class: 'hop-actions' }, this.showMe()));
+      this.card.append(h('div', { class: 'tool-hint' }, this.ext(q.deck)?.tapHint() ?? (capDeck(q.deck) ? L('Tap its dot on the map.', 'Toca su punto en el mapa.') : L('Tap it on the map.', 'Tócalo en el mapa.'))), h('div', { class: 'hop-actions' }, this.showMe()));
     }
     if (s.run?.powers.length) this.card.append(this.powers());
   }
@@ -664,7 +727,8 @@ export class Master implements HostGame {
     const counts = new Map<Power, number>();
     for (const p of s.run!.powers) counts.set(p, (counts.get(p) ?? 0) + 1);
     for (const [p, n] of counts) {
-      const usable = p !== 'half' || (q.step !== 'type' && !(q.deck === 'countries' && q.step === 'tap'));
+      // (Fifty-fifty needs options to halve.)
+      const usable = p !== 'half' || (q.step !== 'type' && !(q.deck === 'countries' && q.step === 'tap') && !(isExtra(q.deck) && q.step !== 'pick'));
       const b = h('button', { type: 'button', class: 'pill sm', 'data-power': p, disabled: !usable }, `${POWER_TEXT[p].icon} ${this.nm(POWER_TEXT[p])}${n > 1 ? ` ×${n}` : ''}`) as HTMLButtonElement;
       b.addEventListener('click', () => this.usePower(p));
       row.append(b);
@@ -684,6 +748,8 @@ export class Master implements HostGame {
   }
 
   private prompt(q: Question, c: Country): string {
+    const x = this.ext(q.deck);
+    if (x) return x.prompt(q);
     const n = this.name(q.id);
     if (capDeck(q.deck) && q.reverse) return L(`${this.nm(c.cap!)} is the capital of…`, `${this.nm(c.cap!)} es la capital de…`);
     if (capDeck(q.deck)) return q.step === 'tap' ? L(`Tap the capital of ${n}`, `Toca la capital de ${n}`) : q.step === 'type' ? L(`Type the capital of ${n}`, `Escribe la capital de ${n}`) : L(`What is the capital of ${n}?`, `¿Cuál es la capital de ${n}?`);
@@ -692,6 +758,8 @@ export class Master implements HostGame {
   }
 
   private optionLabel(q: Question, v: string): string {
+    const x = this.ext(q.deck);
+    if (x) return x.optionLabel(v);
     if (capDeck(q.deck) && !q.reverse) return this.nm(q.places![Number(v)]);
     return this.name(v);
   }
@@ -702,14 +770,15 @@ export class Master implements HostGame {
     const s = this.s!, a = s.ans!;
     const n = this.name(q.id);
     // The options as they were, the right one and the one picked marked.
-    const opts = q.step === 'type' ? [] : capDeck(q.deck) && !q.reverse ? (q.step === 'pick' ? q.order!.map(String) : []) : q.deck === 'countries' && q.step === 'tap' ? [] : q.options ?? [];
+    const xa = this.ext(q.deck);
+    const opts = q.step === 'type' ? [] : xa ? (q.step === 'pick' ? q.options ?? [] : []) : capDeck(q.deck) && !q.reverse ? (q.step === 'pick' ? q.order!.map(String) : []) : q.deck === 'countries' && q.step === 'tap' ? [] : q.options ?? [];
     if (opts.length) {
       const grid = h('div', { class: `quiz-opts${q.deck === 'flags' && !q.reverse ? ' mw-flags' : ''}` });
       for (const v of opts) {
         const b = h('button', { type: 'button', class: 'pill quiz-opt', disabled: true, 'data-value': v }) as HTMLButtonElement;
         if (q.deck === 'flags' && !q.reverse) b.append(h('img', { class: 'mw-flag', src: this.flag(v), alt: '' }), h('span', { class: 'mw-flag-name' }, this.name(v)));
         else b.append(this.optionLabel(q, v));
-        if (v === this.rightValue(q)) b.classList.add('ok'); else if (v === a.given) b.classList.add('bad');
+        if (xa ? xa.isRight(q, v) : v === this.rightValue(q)) b.classList.add('ok'); else if (v === a.given) b.classList.add('bad');
         if (s.hidden.includes(v)) b.classList.add('mw-gone');
         grid.append(b);
       }
@@ -717,7 +786,8 @@ export class Master implements HostGame {
     }
     let text: string;
     const cap = c.cap ? this.nm(c.cap) : '';
-    if (a.peek) text = `👀 ${capDeck(q.deck) ? L(`${cap}, the capital of ${n}.`, `${cap}, la capital de ${n}.`) : n}`;
+    if (xa) text = `${xa.feedback(q, a)}${q.step === 'type' && a.given && !a.ok ? ` ${L(`You wrote “${a.given}”.`, `Escribiste «${a.given}».`)}` : ''}`;
+    else if (a.peek) text = `👀 ${capDeck(q.deck) ? L(`${cap}, the capital of ${n}.`, `${cap}, la capital de ${n}.`) : n}`;
     else if (capDeck(q.deck)) text = a.ok ? `✅ ${L(`${cap} · the capital of ${n}`, `${cap} · la capital de ${n}`)}` : `❌ ${q.reverse ? L(`It is the capital of ${n}.`, `Es la capital de ${n}.`) : L(`It is ${cap}.`, `Es ${cap}.`)}${q.step === 'type' && a.given ? ` ${L(`You wrote “${a.given}”.`, `Escribiste «${a.given}».`)}` : ''}`;
     else if (q.deck === 'flags') text = a.ok ? `✅ ${L(`The flag of ${n}`, `La bandera de ${n}`)}` : `❌ ${!q.reverse && a.given ? L(`That is the flag of ${this.name(a.given)}.`, `Esa es la bandera de ${this.name(a.given)}.`) : L(`It is the flag of ${n}.`, `Es la bandera de ${n}.`)}`;
     else text = a.ok ? `✅ ${n}` : `❌ ${q.step === 'tap' && a.given ? L(`That is ${this.name(a.given)}. ${n} is outlined.`, `Ese es ${this.name(a.given)}. ${n} está marcado.`) : L(`It is ${n}.`, `Es ${n}.`)}`;
@@ -725,6 +795,7 @@ export class Master implements HostGame {
     if (a.mastered) extra.push(a.comeback ? L('🔄 Back again: mastered once more!', '🔄 ¡De vuelta: dominado otra vez!') : L('⭐ Mastered: right on three different days.', '⭐ Dominado: bien en tres días distintos.'));
     if (a.gained) extra.push(`+${a.gained}${a.power ? ` · ${POWER_TEXT[a.power].icon} ${this.nm(POWER_TEXT[a.power])}!` : ''}`);
     this.card.append(h('div', { class: `quiz-fb ${a.ok ? 'ok' : 'bad'}`, 'data-master': 'feedback' }, text), ...extra.map((x) => h('div', { class: 'hop-stats' }, x)));
+    if (xa) this.card.append(...xa.after(q, a));
     // What there is to know: the biggest of the four cities, the other seat of government.
     if (capDeck(q.deck)) {
       const places = [c.cap!, ...c.cities];
@@ -798,7 +869,7 @@ export class Master implements HostGame {
     this.card.append(h('div', { class: 'hop-stats' }, `🎯 ${Math.min(goal, GOAL)}/${GOAL} ${L('today', 'hoy')}${st.days.streak && st.days.last >= addDays(this.today(), -1) ? ` · 🔥 ${st.days.streak}` : ''} · ${deckName}: ${this.counts(s.deck, s.deck === 'states' ? 'all' : 'world').mastered} ${L('mastered', 'dominados')}`));
     add(L('Share', 'Compartir'), () => void this.share(), false, 'share');
     const wd = s.deck;
-    if (wd !== 'states') add(L('Your world', 'Tu mundo'), () => void this.showWorld(wd), false, 'world');
+    if ((WORLD_DECKS as DeckId[]).includes(wd)) add(L('Your world', 'Tu mundo'), () => void this.showWorld(wd as WorldDeck), false, 'world');
     add(L('Menu', 'Menú'), () => { void this.stop(); void this.openPanel(); }, false, 'menu');
     this.card.append(actions);
   }
@@ -810,6 +881,8 @@ export class Master implements HostGame {
     const q = s.q, c = s.allowed.get(q.id)!, a = s.ans;
     const { ctx } = rc;
     if (q.deck === 'states') { this.drawState(rc, q, a); this.drawPlaces(rc, q, c, a); return; }
+    const xd = this.ext(q.deck);
+    if (xd) { xd.draw(rc, q, a); return; }
     const focus = (q.deck === 'capitals' && !q.reverse) || (q.deck === 'flags' && !q.reverse) || (q.deck === 'countries' && q.step !== 'tap') || !!a;
     if (focus) {
       rc.fillCountries(this.othersOf(q.id), rc.theme.dark ? 'rgba(4,8,16,0.55)' : 'rgba(255,255,255,0.6)');
@@ -899,7 +972,7 @@ export class Master implements HostGame {
   }
 
   /** Turns Your world on, showing a deck. */
-  async showWorld(deck: CountryDeck | 'all') {
+  async showWorld(deck: WorldDeck | 'all') {
     if (this.s) await this.stop();
     this.shell.sheet.close();
     if (!this.app.layers.some((l) => l.def.id === WORLD_ID)) await this.app.activate(WORLD_ID, { options: { deck } });
@@ -910,8 +983,10 @@ export class Master implements HostGame {
   // ---- The panel
   async openPanel() {
     const data = await this.load();
-    // The State capitals deck's counts (its names and outlines wait for a game).
-    if (master().settings.deck === 'states') await this.loadStates();
+    // The State capitals deck's counts (its names and outlines wait for a game); a new deck's cards.
+    const cur = master().settings.deck;
+    if (cur === 'states') await this.loadStates();
+    if (isExtra(cur)) await this.loadExtra(cur);
     if (!data) { this.shell.toast(L('Master the world needs its data; check your connection.', 'Domina el mundo necesita sus datos; revisa tu conexión.')); return; }
     const root = h('div', { class: 'mw-panel' });
     const draw = () => { clear(root); root.append(...this.panel(draw)); };
@@ -948,7 +1023,9 @@ export class Master implements HostGame {
     // The deck.
     const decks = segmented(deck, ALL_DECKS.map((d) => { const t = DECK_TEXT[d]; return { value: d, label: `${t.icon} ${t.short ? L(t.short[0], t.short[1]) : this.nm(t)}` }; }), (v) => {
       set.deck = v; saveMaster();
-      if (v === 'states') void this.loadStates().then(redraw); else redraw();
+      if (v === 'states') void this.loadStates().then(redraw);
+      else if (isExtra(v)) void this.loadExtra(v).then(redraw);
+      else redraw();
     });
     decks.dataset.master = 'deck';
     // Four decks: a longer name may take two lines on a phone.
@@ -956,6 +1033,15 @@ export class Master implements HostGame {
     out.push(h('h3', { class: 'sec-title' }, L('Deck', 'Mazo')), decks);
     const states = deck === 'states';
     if (states) out.push(h('p', { class: 'tool-hint', 'data-master': 'states-hint' }, L('The capitals of the states, provinces and regions of twelve countries, one country at a time or all together.', 'Las capitales de los estados, provincias y regiones de doce países, de uno en uno o todos juntos.')));
+    // v0.39.0: what each new deck asks.
+    const XHINT: Partial<Record<DeckId, [string, string]>> = {
+      outlines: ['A country\'s shape alone: which country? Then find it on a map with no names.', 'La silueta de un país, sola: ¿cuál es? Luego encuéntralo en un mapa sin nombres.'],
+      cities: ['The 250 best-known cities on a map with no names: which city is this dot? Then tap it among its neighbours.', 'Las 250 ciudades más conocidas en un mapa sin nombres: ¿qué ciudad es este punto? Luego tócala entre sus vecinas.'],
+      landmarks: ['300 World Heritage sites, each with its picture: in which country is it?', '300 sitios del Patrimonio de la Humanidad, cada uno con su imagen: ¿en qué país está?'],
+      nature: ['The best-known rivers, lakes, mountain ranges, deserts, peaks, oceans and seas, drawn on the map: which is it?', 'Los ríos, lagos, cordilleras, desiertos, montañas, océanos y mares más conocidos, dibujados en el mapa: ¿cuál es?'],
+    };
+    const xh = XHINT[deck];
+    if (xh) out.push(h('p', { class: 'tool-hint', 'data-master': 'deck-hint' }, L(xh[0], xh[1])));
     // Its reminder (v0.37.1): one switch per deck.
     const rb = bell(`master:${deck}`);
     if (rb) out.push(rb);
@@ -1003,21 +1089,23 @@ export class Master implements HostGame {
         chips.append(b);
       }
       out.push(h('h3', { class: 'sec-title' }, L('Region', 'Región')), chips);
-      // Your world.
-      const on = this.app.layers.some((l) => l.def.id === WORLD_ID);
-      const wd = deck as CountryDeck;
-      out.push(h('h3', { class: 'sec-title' }, L('On the map', 'En el mapa')),
-        h('div', { class: 'mw-row' }, toggle(on, (v) => { if (v) void this.showWorld(wd); else { this.app.deactivate(WORLD_ID); redraw(); } }, L('Your world: each country coloured by how well you know it', 'Tu mundo: cada país coloreado según lo bien que lo conoces'))));
+      // Your world (the decks of countries).
+      if ((WORLD_DECKS as DeckId[]).includes(deck)) {
+        const on = this.app.layers.some((l) => l.def.id === WORLD_ID);
+        const wd = deck as WorldDeck;
+        out.push(h('h3', { class: 'sec-title' }, L('On the map', 'En el mapa')),
+          h('div', { class: 'mw-row' }, toggle(on, (v) => { if (v) void this.showWorld(wd); else { this.app.deactivate(WORLD_ID); redraw(); } }, L('Your world: each country coloured by how well you know it', 'Tu mundo: cada país coloreado según lo bien que lo conoces'))));
+      }
     }
     // Settings.
     const order = h('select', { class: 'select mw-select', 'aria-label': L('Order', 'Orden'), 'data-master': 'order' }) as HTMLSelectElement;
     for (const o of ORDERS) order.append(h('option', { value: o, selected: set.order === o }, states && o === 'continent' ? L('Country by country', 'País por país') : L(ORDER_TEXT[o][0], ORDER_TEXT[o][1])));
     order.addEventListener('change', () => { set.order = order.value as Order; save(); });
     out.push(h('h3', { class: 'sec-title' }, L('Settings', 'Ajustes')),
-      h('label', { class: 'mw-field' }, h('span', null, states ? L('New states come in this order', 'Los estados nuevos llegan en este orden') : L('New countries come in this order', 'Los países nuevos llegan en este orden')), order),
+      h('label', { class: 'mw-field' }, h('span', null, states ? L('New states come in this order', 'Los estados nuevos llegan en este orden') : isExtra(deck) && deck !== 'outlines' ? L('New cards come in this order', 'Las tarjetas nuevas llegan en este orden') : L('New countries come in this order', 'Los países nuevos llegan en este orden')), order),
       h('div', { class: 'mw-field' }, h('span', null, L('Pace after an answer', 'Ritmo tras responder')), segmented(set.speed, (['fast', 'normal', 'slow'] as Speed[]).map((v) => ({ value: v, label: L(SPEED_TEXT[v][0], SPEED_TEXT[v][1]) })), (v) => { set.speed = v; saveMaster(); })),
-      h('div', { class: 'mw-row' }, toggle(set.typing, (v) => { set.typing = v; saveMaster(); }, states ? L('Type the answer once a state is well known', 'Escribir la respuesta cuando un estado ya se conoce bien') : L('Type the answer once a country is well known', 'Escribir la respuesta cuando un país ya se conoce bien'))),
-      ...(states ? [] : [h('div', { class: 'mw-row' }, toggle(set.territories, (v) => { set.territories = v; save(); }, L('Add territories (Greenland, Puerto Rico, Hong Kong…)', 'Añadir territorios (Groenlandia, Puerto Rico, Hong Kong…)')))]),
+      h('div', { class: 'mw-row' }, toggle(set.typing, (v) => { set.typing = v; saveMaster(); }, states ? L('Type the answer once a state is well known', 'Escribir la respuesta cuando un estado ya se conoce bien') : isExtra(deck) && deck !== 'outlines' ? L('Type the answer once it is well known', 'Escribir la respuesta cuando ya se conoce bien') : L('Type the answer once a country is well known', 'Escribir la respuesta cuando un país ya se conoce bien'))),
+      ...(!(WORLD_DECKS as DeckId[]).includes(deck) ? [] : [h('div', { class: 'mw-row' }, toggle(set.territories, (v) => { set.territories = v; save(); }, L('Add territories (Greenland, Puerto Rico, Hong Kong…)', 'Añadir territorios (Groenlandia, Puerto Rico, Hong Kong…)')))]),
       h('div', { class: 'mw-row' }, toggle(set.sound, (v) => { set.sound = v; saveMaster(); }, L('Sounds and buzz', 'Sonidos y vibración'))));
     // Share, and the other quizzes.
     const share = h('button', { type: 'button', class: 'pill sm', 'data-master': 'share' }, icon(Share2, 15), L('Share your progress', 'Compartir tu progreso'));
@@ -1025,7 +1113,9 @@ export class Master implements HostGame {
     const quiz = h('button', { type: 'button', class: 'pill sm' }, icon(MapIcon, 15), L('More quizzes', 'Más concursos'));
     quiz.addEventListener('click', () => this.openQuiz?.());
     out.push(h('div', { class: 'hop-actions mw-foot' }, share, ...(this.openQuiz ? [quiz] : [])),
-      h('p', { class: 'tool-hint' }, states
+      h('p', { class: 'tool-hint' }, isExtra(deck) && deck !== 'outlines'
+        ? L({ cities: 'The travel guide\'s cities, the best known by how many Wikipedias write about them, a share for each continent.', landmarks: 'UNESCO\'s World Heritage List, the best known with a picture (Wikimedia Commons; each picture\'s author and licence are shown with the answer).', nature: 'Rivers, lakes, ranges, deserts and peaks from Natural Earth; oceans, seas, gulfs, bays, straits and channels from its marine areas.' }[deck as 'cities' | 'landmarks' | 'nature'], { cities: 'Las ciudades de la guía de viaje, las más conocidas según cuántas Wikipedias escriben de ellas, una parte para cada continente.', landmarks: 'La lista del Patrimonio de la Humanidad de la UNESCO, los más conocidos con imagen (Wikimedia Commons; con la respuesta se muestran el autor y la licencia de cada imagen).', nature: 'Ríos, lagos, cordilleras, desiertos y montañas de Natural Earth; océanos, mares, golfos, bahías, estrechos y canales de sus áreas marinas.' }[deck as 'cities' | 'landmarks' | 'nature'])
+        : states
         ? L('Mexico, the United States, Brazil, Argentina, Colombia, Chile, Peru, Spain, Canada, Australia, Germany and India. A state that is a city of its own (Mexico City, Berlin…) has no capital to ask; where a capital is shared or moves with the seasons, it is explained.', 'México, Estados Unidos, Brasil, Argentina, Colombia, Chile, Perú, España, Canadá, Australia, Alemania y la India. Un estado que es una ciudad en sí mismo (Ciudad de México, Berlín…) no tiene capital que preguntar; si una capital se comparte o cambia con las estaciones, se explica.')
         : L('The 193 UN members plus Vatican City and Palestine. Where a country has two seats of government, the official capital is the answer and the other is explained.', 'Los 193 miembros de la ONU más Ciudad del Vaticano y Palestina. Si un país tiene dos sedes de gobierno, la respuesta es la capital oficial y se explica la otra.')));
     return out;
@@ -1037,9 +1127,12 @@ export class Master implements HostGame {
     await this.load();
     const st = master();
     // The three decks of the world, and State capitals once begun.
-    const begun = Object.values(st.cards.states ?? {}).some((c) => c?.seen);
-    if (begun) await this.loadStates();
-    const rows = [...DECKS.map((d): { d: DeckId; c: Record<Level, number> & { total: number } } => ({ d, c: this.counts(d, 'world') })), ...(begun ? [{ d: 'states' as DeckId, c: this.counts('states', 'all') }] : [])];
+    // The three decks of the world, and the others once begun.
+    const begun = (d: DeckId) => Object.values(st.cards[d] ?? {}).some((c) => c?.seen);
+    if (begun('states')) await this.loadStates();
+    const more = ALL_DECKS.filter((d) => !(DECKS as DeckId[]).includes(d) && begun(d));
+    for (const d of more) if (isExtra(d)) await this.loadExtra(d);
+    const rows = [...(DECKS as DeckId[]), ...more].map((d) => ({ d, c: this.counts(d, d === 'states' ? 'all' : 'world') }));
     const live = st.days.last >= addDays(this.today(), -1) ? st.days.streak : 0;
     const text = `🌍 ${L('Master the world', 'Domina el mundo')}\n${rows.map(({ d, c }) => `${DECK_TEXT[d].icon} ${this.nm(DECK_TEXT[d])}: ${c.mastered}/${c.total} ${bar(c)}`).join('\n')}${live ? `\n🔥 ${L(`${live} days in a row`, `${live} días seguidos`)}` : ''}\n${location.origin}${location.pathname}`;
     const blob = await this.picture(rows, live).catch(() => null);
@@ -1064,20 +1157,21 @@ export class Master implements HostGame {
     g.fillText(`🌍 ${L('Master the world', 'Domina el mundo')}`, 80, 170);
     g.font = '500 34px system-ui, sans-serif'; g.fillStyle = 'rgba(255,255,255,0.75)';
     g.fillText(new Date().toLocaleDateString(appLocale(), { day: 'numeric', month: 'long', year: 'numeric' }), 80, 230);
-    const gap = rows.length > 3 ? 150 : 190;
+    // Up to eight rows between the date and the streak.
+    const gap = Math.min(190, 600 / rows.length), big = Math.round(Math.min(46, gap * 0.42)), bh = Math.round(Math.min(34, gap * 0.22));
     rows.forEach(({ d, c }, i) => {
-      const y = 340 + i * gap;
-      g.fillStyle = '#fff'; g.font = '700 46px system-ui, sans-serif';
+      const y = 320 + big + i * gap;
+      g.fillStyle = '#fff'; g.font = `700 ${big}px system-ui, sans-serif`;
       g.fillText(`${DECK_TEXT[d].icon} ${this.nm(DECK_TEXT[d])}`, 80, y);
-      g.font = '600 40px system-ui, sans-serif'; g.textAlign = 'right';
+      g.font = `600 ${Math.round(big * 0.87)}px system-ui, sans-serif`; g.textAlign = 'right';
       g.fillText(`${c.mastered} / ${c.total}`, W - 80, y); g.textAlign = 'left';
-      const x0 = 80, w = W - 160, bh = 34, by = y + 30;
-      g.fillStyle = 'rgba(255,255,255,0.14)'; roundRect(g, x0, by, w, bh, 17); g.fill();
+      const x0 = 80, w = W - 160, by = y + Math.round(big * 0.55);
+      g.fillStyle = 'rgba(255,255,255,0.14)'; roundRect(g, x0, by, w, bh, bh / 2); g.fill();
       let x = x0;
       for (const l of ['mastered', 'known', 'learning'] as Level[]) {
         const ww = c.total ? (w * c[l]) / c.total : 0;
         if (ww <= 0) continue;
-        g.save(); roundRect(g, x0, by, w, bh, 17); g.clip();
+        g.save(); roundRect(g, x0, by, w, bh, bh / 2); g.clip();
         g.fillStyle = LEVEL_COLORS[l]; g.fillRect(x, by, ww, bh); g.restore();
         x += ww;
       }

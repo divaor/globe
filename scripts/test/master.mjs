@@ -110,5 +110,28 @@ const qr = Dk.question('states', sById.get('CHL|CL-VS'), 'pick', true, scope, S.
 check(qf.places[0].en === 'Valparaíso' && qf.places.length === 3 && qr.options.length === 4 && qr.options.includes('CHL|CL-VS') && qr.options.every((o) => o.startsWith('CHL|')),
   `asked like a capital: Valparaíso among ${qf.places.length} dots; the other way round, among four Chilean regions (${qr.options.join(' ')})`);
 
+// The decks of v0.39.0: Big cities, Landmarks, and Rivers, mountains and seas.
+const J = (p) => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
+const cities = J('public/data/master/cities.json').cities, cityIds = new Set(cities.map((c) => c[0]));
+const per = (rows, i) => rows.reduce((m, r) => ((m[r[i]] = (m[r[i]] ?? 0) + 1), m), {});
+const cct = per(cities, 6);
+check(cities.length === 250 && cct.SA >= 30 && cct.NA >= 40 && cities.every((c) => c[10].length === 6 && c[10].every((n) => cityIds.has(n))),
+  `Big cities: ${cities.length} (${Object.entries(cct).map(([k, v]) => `${k} ${v}`).join(', ')}), each with its six nearest`);
+const capOf = (id) => cities.find((c) => c[0] === id)?.[8];
+check(capOf('brasilia') === 1 && capOf('mexico-city') === 1 && capOf('rio-de-janeiro') === 0 && capOf('new-york-city') === 0 && cities.find((c) => c[0] === 'mexico-city')?.[2] === 'Ciudad de México' && cities.find((c) => c[0] === 'bogota')?.[1] === 'Bogotá',
+  'national capitals marked (Brasília, Mexico City; not Rio de Janeiro or New York); Spanish names (Ciudad de México)');
+const sites = J('public/data/master/landmarks.json').sites;
+const meta = J('public/data/base/countries-meta.json');
+const giveaway = sites.filter((s) => s[5].some((c) => [meta[c]?.n, meta[c]?.es].some((n) => n && new RegExp(`\\b${n}\\b`).test(`${s[1]} ${s[2] || ''}`))));
+check(sites.length === 300 && sites.every((s) => s[9] && s[5].length >= 1 && s[5].length <= 2) && !giveaway.length && ['Machu Picchu', 'Great Wall', 'Taj Mahal', 'Petra', 'Chichen Itza', 'Iguazu'].every((n) => sites.some((s) => s[1].includes(n))),
+  `Landmarks: ${sites.length}, each with a picture and in one or two countries, none named after its country${giveaway.length ? ` (but: ${giveaway.map((s) => s[1]).join(', ')})` : ''}; Machu Picchu, the Great Wall, the Taj Mahal, Petra, Chichen Itza, Iguazú`);
+const nat = J('public/data/master/nature.json'), items = nat.items;
+const kinds = per(items, 0);
+const has = (n) => items.some((i) => i[1] === n);
+check(items.length >= 200 && kinds.river >= 50 && kinds.peak >= 25 && items.every((i) => (i[0] === 'peak') === (i[8] < 0)) && items.every((i) => i[9].length === 5 && i[9].every((k) => items[k] && items[k][0] !== undefined)),
+  `Rivers, mountains and seas: ${items.length} (${Object.entries(kinds).map(([k, v]) => `${k} ${v}`).join(', ')}); a shape for all but the peaks; five of the same kind near each`);
+check(['Volga', 'Yangtze River', 'Congo River', 'Amazon River', 'Andes', 'Sahara', 'Titicaca', 'Mount Everest', 'Gulf of Mexico', 'Caribbean Sea', 'Pacific Ocean'].every(has) && items.find((i) => i[1] === 'Andes')[5].length >= 6,
+  'the Volga, the Yangtze and the Congo (named right since v0.39.0), the Amazon, the Andes in their countries, the Sahara, Titicaca, Everest, the Gulf of Mexico, the Caribbean, the Pacific');
+
 console.log(failed ? `\n${failed} check(s) failed` : '\nmaster checks passed');
 process.exit(failed ? 1 : 0);
