@@ -1,4 +1,5 @@
 import { createElement, type IconNode } from 'lucide';
+import { proseInEnglish, L } from '../app/i18n';
 
 type Child = Node | string | number | null | undefined | false;
 type Attrs = Record<string, unknown> & { class?: string; style?: string | Partial<CSSStyleDeclaration> };
@@ -89,4 +90,11 @@ export function fillSelect(sel: HTMLSelectElement, choices: { value: string; lab
     }
     current.append(h('option', { value: c.value }, c.label));
   }
+}
+
+/** In a language read from files (v0.42.0), stories, lives and guides are still written in English and Spanish: a line
+ *  at the top of their panels says so. Null in English and Spanish. */
+export function englishNote(): HTMLElement | null {
+  if (!proseInEnglish()) return null;
+  return h('p', { class: 'prose-note', 'data-prose-note': '' }, `🌐 ${L('Stories, lives and guides are in English for now: they will come in your language step by step.', 'Las historias, las vidas y las guías están en inglés por ahora: llegarán a tu idioma poco a poco.')}`);
 }

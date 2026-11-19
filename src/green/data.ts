@@ -2,12 +2,11 @@
 // the ecoregions (public/data/green). Plants keep their ranges on the animals' grid (../layers/carpet.ts): GBIF's map
 // squares of 1.40625°, about 150 km at the equator.
 import { loadJSON } from '../data/store';
-import { lang, L, tx } from '../app/i18n';
+import { lang, L, tx, nm as nameIn, fileLang, monthName as monthOf } from '../app/i18n';
 import { hasCell, unpackCells, unpackCounts } from '../layers/carpet';
 import type { Status } from '../wild/data';
 import { appLocale } from '../app/i18n';
 
-const es = () => lang() === 'es';
 
 export type PlantGroup = 'trees' | 'flowers' | 'cacti' | 'strange' | 'food';
 
@@ -80,9 +79,9 @@ export const plantGroupName = (g: PlantGroup) => (tx(PLANT_GROUPS[g].name));
 
 export const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 export const MONTHS_ES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-export const monthName = (m: number) => (es() ? MONTHS_ES : MONTHS_EN)[((m % 12) + 12) % 12];
+export const monthName = (m: number) => (fileLang() ? monthOf(m) : (lang() === 'es' ? MONTHS_ES : MONTHS_EN)[((m % 12) + 12) % 12]);
 
-export const nm = (x: { n: [string, string] }) => (es() ? x.n[1] : x.n[0]);
+export const nm = (x: { n: [string, string] }) => (nameIn(x.n[0], x.n[1]));
 export const tt = (x: { en: string; es: string } | undefined | null) => (x ? (tx(x)) : '');
 
 let green: Promise<GreenData | null> | null = null;
@@ -166,7 +165,7 @@ export const REALMS: Record<string, string> = {
   Afrotropic: 'Afrotropical', Antarctica: 'Antártico', Australasia: 'Australasia', Indomalayan: 'Indomalayo', Nearctic: 'Neártico',
   Neotropic: 'Neotropical', Oceania: 'Oceánico', Palearctic: 'Paleártico',
 };
-export const realmName = (r: string) => (es() ? REALMS[r] ?? r : r);
+export const realmName = (r: string) => (lang() === 'es' ? REALMS[r] ?? r : nameIn(r));
 
 /** How much of an ecoregion is protected (RESOLVE's "Nature Needs Half" class). */
 export const PROTECTION: Record<number, { en: string; es: string; color: string }> = {

@@ -1,14 +1,22 @@
-// The app's languages (v0.41.0, One voice). Every text is written in English and Spanish where it is used, as
-// L('English', 'Spanish', ...values), with {0}, {1}… for the values so that a translator can move them, and
-// {0, plural, one {# day} other {# days}} or {0, select, a {…} other {…}} where the words change with a value.
-// Other languages come from a file per language, public/i18n/<lang>.json, keyed by the English text (gettext's way):
-// a text with no translation yet shows in English. scripts/i18n/extract.mjs lists every text (i18n/messages.json, for
-// translators) and with --check fails when a shipped language misses one, or a pattern's values do not match.
-export type Lang = 'en' | 'es';
+// The app's languages (v0.41.0, One voice; v0.42.0, Portuguese, French and German). Every text is written in English
+// and Spanish where it is used, as L('English', 'Spanish', ...values), with {0}, {1}… for the values so that a
+// translator can move them, and {0, plural, one {# day} other {# days}} or {0, select, a {…} other {…}} where the words
+// change with a value. Other languages come from a file per language, public/data/i18n/<lang>.json, keyed by the
+// English text (gettext's way): a text with no translation yet shows in English. Names (places, species, the data's
+// short texts) come from a second file, <lang>-data.json, also keyed by the English (nm, and tx's fallback).
+// scripts/i18n/extract.mjs lists every text (i18n/messages.json, for translators) and with --check fails when a
+// shipped language misses one, or a pattern's values do not match.
+export type Lang = 'en' | 'es' | 'pt' | 'fr' | 'de';
 export const LANGS: { id: Lang; name: string }[] = [
   { id: 'en', name: 'English' },
   { id: 'es', name: 'Español' },
+  { id: 'pt', name: 'Português (Brasil)' },
+  { id: 'fr', name: 'Français' },
+  { id: 'de', name: 'Deutsch' },
 ];
+/** The languages read from language files (English and Spanish are written in the code). */
+export const FILE_LANGS: readonly Lang[] = ['pt', 'fr', 'de'];
+export const isLang = (x: unknown): x is Lang => LANGS.some((l) => l.id === x);
 
 /** key: [English, Spanish] or [English, Spanish, context] (a context for an English that means two things). */
 const STRINGS: Record<string, [string, string] | [string, string, string]> = {
@@ -355,12 +363,12 @@ const SUBREGIONS_ES: Record<string, string> = {
 
 /** Natural Earth subregion name in the current language. */
 export function subregion(name: string): string {
-  return current === 'es' ? SUBREGIONS_ES[name] ?? name : name;
+  return current === 'es' ? SUBREGIONS_ES[name] ?? name : nm(name);
 }
 
 let current: Lang = 'en';
 
-export function setLang(l: Lang) { current = l; localeCache = null; document.documentElement.lang = l === 'es' && spanish === 'spain' ? 'es-ES' : l; }
+export function setLang(l: Lang) { current = l; localeCache = null; document.documentElement.lang = l === 'es' && spanish === 'spain' ? 'es-ES' : l === 'pt' ? 'pt-BR' : l; }
 export function lang(): Lang { return current; }
 
 /**
@@ -406,6 +414,9 @@ export function t(key: string, vars?: Record<string, string | number>): string {
 /** A language file's texts, keyed by the English (null: English or Spanish, written in the code). */
 let messages: Record<string, string> | null = null;
 export function setMessages(m: Record<string, string> | null) { messages = m; }
+/** The language's names and the data's short texts (<lang>-data.json), keyed by the English. */
+let names: Record<string, string> | null = null;
+export function setNames(m: Record<string, string> | null) { names = m; }
 /** Texts shown accented and in brackets ([Ŝháré]), to find on screen what does not go through L, tx or t. */
 let pseudo = false;
 export function setPseudo(on: boolean) { pseudo = on; }
@@ -420,8 +431,12 @@ function pick(en: string, es: string | undefined, ctx?: string, asWritten = fals
   // A text written in the code says what it means even when empty ('' in Spanish: nothing); a data field with no
   // Spanish yet shows the English.
   if (current === 'es') return asWritten ? es ?? en : es || en;
-  if (messages) return messages[ctx ? `${ctx}\u0004${en}` : en] || en;
-  return en;
+  if (messages) {
+    const m = messages[ctx ? `${ctx}\u0004${en}` : en];
+    if (m) return m;
+  }
+  // A data field (not a text of the code) may be a name, or one of the data's short texts.
+  return (!asWritten && names?.[en]) || en;
 }
 
 const ACCENT: Record<string, string> = { a: 'á', e: 'é', i: 'í', o: 'ó', u: 'ú', c: 'ç', n: 'ñ', s: 'ŝ', y: 'ý', A: 'Á', E: 'É', I: 'Í', O: 'Ó', U: 'Ú', C: 'Ç', N: 'Ñ', S: 'Ŝ' };
@@ -499,12 +514,41 @@ export function Lc(ctx: string, en: string, es: string, ...args: unknown[]): str
   return out(args.length ? fmt(s, args) : s);
 }
 
-/** f's texts in another language (a description kept in both, the English for a file name…). */
+/** f's texts in a language (a description kept in two, the English for a file name…); of the languages read from
+ * files, only the reader's own is at hand: another shows in English. */
 export function inLang<T>(l: Lang, f: () => T): T {
-  const was = current, m = messages, p = pseudo;
-  current = l; messages = null; pseudo = false;
-  try { return f(); } finally { current = was; messages = m; pseudo = p; }
+  const was = current, m = messages, n = names, p = pseudo;
+  if (l !== was) { messages = null; names = null; }
+  current = l; pseudo = false;
+  try { return f(); } finally { current = was; messages = m; names = n; pseudo = p; }
 }
+
+/**
+ * A name (a place, a species, a dish…) in the reader's language: the Spanish written beside it, or the language
+ * file's (Natural Earth's and Wikidata's names, keyed by the English); the English otherwise.
+ */
+export function nm(en: string, es?: string | null): string {
+  if (current === 'es') return out(es || en);
+  return out(names?.[en] || en);
+}
+/** A word set inside a sentence in lowercase ("the state of…"); German writes its nouns with a capital. */
+export const lower = (s: string) => (current === 'de' ? s : s.toLocaleLowerCase(appLocale()));
+/** "1st", "2nd", "23rd"; "1.º" in Spanish, "1º" in Portuguese, "1er", "2e" in French, "1." in German. */
+export function ordinal(n: number): string {
+  // i18n: by hand (each language's ordinals)
+  switch (current) {
+    case 'es': return `${n}.º`;
+    case 'pt': return `${n}º`;
+    case 'fr': return n === 1 ? '1er' : `${n}e`;
+    case 'de': return `${n}.`;
+    default: {
+      const teen = n % 100 >= 11 && n % 100 <= 13;
+      return `${n}${teen ? 'th' : (['th', 'st', 'nd', 'rd'][n % 10] ?? 'th')}`;
+    }
+  }
+}
+/** A name's [English, Spanish] pair (as the data keeps many) in the reader's language. */
+export const nm2 = (n: readonly [string, string?] | readonly string[]) => nm(n[0], n[1]);
 
 /** The text in the reader's language, with its values: L('{0} days', '{0} días', n). */
 export function L(en: string, es: string, ...args: unknown[]): string {
@@ -517,6 +561,30 @@ export function L(en: string, es: string, ...args: unknown[]): string {
  * reader reads Spanish, English otherwise.
  */
 export function dataLang(): 'en' | 'es' { return current === 'es' ? 'es' : 'en'; }
+/** The reader's language where another site has it (Wikipedia, iNaturalist, Wikimedia's On this day). */
+export function webLang(): Lang { return current; }
+/** iNaturalist's language for common names. */
+export const inatLocale = () => (current === 'pt' ? 'pt-BR' : current);
+/** UNESCO's World Heritage site is in English and French (and partly Spanish). */
+export function unescoLang(): 'en' | 'fr' | 'es' { return current === 'fr' || current === 'es' ? current : 'en'; }
+/** A Wikipedia article's address: its Spanish title when reading Spanish, else its English one (the data keeps
+ * those two titles; another language's article would have a title of its own). */
+export function wikiHref(w?: { en?: string; es?: string } | null): string | null {
+  const l = current === 'es' && w?.es ? 'es' : 'en';
+  const title = w?.[l];
+  return title ? `https://${l}.wikipedia.org/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}` : null;
+}
+/** A Wikipedia search for a name, in the reader's language's Wikipedia. */
+export const wikiSearch = (name: string) => `https://${current}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(name)}`;
+/** Stories, lives and guides are written in English and Spanish: in another language they show in English. */
+export const proseInEnglish = () => current !== 'en' && current !== 'es';
+/** A language read from files (Portuguese, French, German), not written in the code. */
+export const fileLang = proseInEnglish;
+/** A month's name (0 is January), as the phone's calendar writes it in the reader's language, with a capital. */
+export function monthName(m: number, short = false): string {
+  const s = new Intl.DateTimeFormat(appLocale(), { month: short ? 'short' : 'long', timeZone: 'UTC' }).format(new Date(Date.UTC(2001, ((m % 12) + 12) % 12, 15)));
+  return s.charAt(0).toLocaleUpperCase(appLocale()) + s.slice(1);
+}
 
 /** A string of the table in both languages (for labels that switch with the language). */
 export function both(key: string): { en: string; es: string } {
@@ -533,7 +601,7 @@ export function tx(text: { en: string; es?: string; ctx?: string } | undefined):
 export function detectLang(): Lang {
   for (const tag of phoneTags()) {
     const b = base(tag);
-    if (b === 'es' || b === 'en') return b;
+    if (isLang(b)) return b;
   }
   return 'en';
 }
@@ -541,11 +609,12 @@ export function detectLang(): Lang {
 let localeCache: string | null = null;
 /**
  * How numbers and dates are written (v0.35.0): the phone's own way when it speaks the app's language (es-MX writes
- * 10,935.5; es-ES and es-AR 10.935,5; en-US May 3; en-GB 3 May), else Latin America's, Spain's or Britain's.
+ * 10,935.5; es-ES and es-AR 10.935,5; en-US May 3; en-GB 3 May), else Latin America's, Spain's, Britain's, Brazil's,
+ * France's or Germany's.
  */
 export function appLocale(): string {
   if (localeCache) return localeCache;
-  const fallback = current === 'es' ? (spanish === 'spain' ? 'es-ES' : 'es-419') : 'en-GB';
+  const fallback = current === 'es' ? (spanish === 'spain' ? 'es-ES' : 'es-419') : { en: 'en-GB', pt: 'pt-BR', fr: 'fr-FR', de: 'de-DE' }[current];
   const mine = phoneTags().find((t) => base(t) === current && regionOf(t));
   let loc = mine ?? fallback;
   try {

@@ -4,7 +4,7 @@
 // get their own charts. It is one filter ("compare") whose options A and B are field keys.
 import { ChartScatter, X, ChevronDown, Map as MapIcon } from 'lucide';
 import { h, icon, clear, add, fillSelect } from '../ui/dom';
-import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji, L } from '../app/i18n';
+import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji, L, ordinal, nm } from '../app/i18n';
 import { samplePalette, categorical } from '../engine/colors';
 import * as M from './model';
 import { drawScatter, drawGroups, groupsHeight, type Dot, type HitTest } from './chart';
@@ -14,7 +14,6 @@ import type { Shell } from '../ui/shell';
 import type { TimeTravel } from '../modes';
 import type { InfoRow, LayerDef, LayerInstance, Legend, LegendAction, LegendItem } from '../layers/types';
 
-const es = () => lang() === 'es';
 /** Screens wide and tall enough for the card beside the map (in the Filters panel's place). */
 const WIDE = matchMedia('(min-width: 1200px) and (min-height: 600px)');
 
@@ -30,10 +29,9 @@ export function fmtVal(v: number): string {
   const a = Math.abs(v);
   return a >= 1e5 ? fmtCompact(v) : fmtNumber(v, a === 0 ? 0 : a < 1 ? 3 : a < 10 ? 1 : 0);
 }
-const ordinal = (n: number) => (L('{0}{1}', '{0}.º', n, n % 100 >= 11 && n % 100 <= 13 ? 'th' : (['th', 'st', 'nd', 'rd'][n % 10] ?? 'th')));
 const name = (key: string) => tx(M.fieldName(key));
 const label = (key: string) => `${M.fieldIcon(key)} ${name(key)}`;
-const unitOf = (key: string) => { const f = M.facts()?.fields[key]; return (es() ? f?.unit_es ?? f?.unit : f?.unit) ?? ''; };
+const unitOf = (key: string) => { const f = M.facts()?.fields[key]; return f?.unit ? nm(f.unit, f.unit_es) : ''; };
 /** A unit short enough to follow a value, without its bracketed detail ("US$ (current)" → "US$"); an index has none. */
 const shortUnit = (key: string) => {
   const u = unitOf(key).replace(/\s*\([^)]*\)\s*$/, '');
@@ -60,7 +58,7 @@ export function direction(a: string, b: string, rho: number): string {
     : L('Where {0} is higher, {1} tends to be lower.', 'Donde {0} es mayor, {1} suele ser menor.', label(a), label(b));
 }
 /** A correlation with two decimals always (0.60, not 0.6), with the language's decimal mark. */
-export const fmtR = (r: number) => (isFinite(r) ? (es() ? r.toFixed(2).replace('.', ',') : r.toFixed(2)).replace('-', '−') : '—');
+export const fmtR = (r: number) => (isFinite(r) ? (lang() === 'en' ? r.toFixed(2) : r.toFixed(2).replace('.', ',')).replace('-', '−') : '—');
 
 export class Compare {
   private card: HTMLElement;

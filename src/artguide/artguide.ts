@@ -8,14 +8,13 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import type { TravelGuide } from '../guide/guide';
-import { h, icon, clear } from '../ui/dom';
-import { lang, fmtCompact, L, tx } from '../app/i18n';
+import { h, icon, clear, englishNote } from '../ui/dom';
+import { lang, fmtCompact, L, tx, nm as nameIn } from '../app/i18n';
 import { nowInHook } from '../modes/stories';
 import { loadArt, loadArch, loadNowIn, nm, yearText, commons, kindIcon, KINDS, PERIODS, museumPlace, workWhy, buildingPlace, type Work, type Building, type Museum, type ArtData } from './data';
 import { planStar, planHooks, addPlace, type PlaceSpec } from '../guide/plan';
 import { workCard, buildingCard, museumCard } from './cards';
 
-const es = () => lang() === 'es';
 const fold = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
 /** A dot of a trail on the map: a museum (with how many of the artist's works) or a building; a tap opens its card. */
@@ -41,7 +40,7 @@ export class ArtGuide {
         const r = now[id];
         if (!r) return null;
         const city = r[3] ? this.guide.cityLabel(r[3]) : null;
-        return { name: `${es() ? r[2] : r[1]}${city ? `, ${city}` : ''}`, open: r[3] ? () => void this.guide.openCity(r[3]!, 'art') : null };
+        return { name: `${nameIn(r[1], r[2])}${city ? `, ${city}` : ''}`, open: r[3] ? () => void this.guide.openCity(r[3]!, 'art') : null };
       };
     });
   }
@@ -92,7 +91,7 @@ export class ArtGuide {
     // The map filters.
     const filters = h('div', { class: 'chip-row' });
     for (const [id, ic, en, sp] of [['art-museums', '🏛️', 'Art museums', 'Museos de arte'], ['masterpieces', '🖼️', 'Masterpieces', 'Obras maestras'], ['architecture', '📐', 'Architectural styles', 'Estilos arquitectónicos']]) {
-      const b = h('button', { type: 'button', class: `chip${this.app.isActive(id) ? ' on' : ''}`, 'data-art-filter': id }, `${ic} ${es() ? sp : en}`);
+      const b = h('button', { type: 'button', class: `chip${this.app.isActive(id) ? ' on' : ''}`, 'data-art-filter': id }, `${ic} ${tx({ en, es: sp })}`);
       b.addEventListener('click', () => { this.shell.sheet.close(); void this.app.activate(id); });
       filters.append(b);
     }
@@ -122,6 +121,8 @@ export class ArtGuide {
     input.addEventListener('input', fill);
     body.append(input, h('h3', { class: 'sec-title' }, L('Artist trails', 'Rutas de artistas')), artists, h('h3', { class: 'sec-title' }, L('Architect trails', 'Rutas de arquitectos')), architects);
     fill();
+    const note = englishNote();
+    if (note) body.prepend(note);
     this.shell.openPanel('art', L('Art and architecture', 'Arte y arquitectura'), body);
   }
 

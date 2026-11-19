@@ -16,15 +16,14 @@ import type { Wild } from '../wild/finder';
 import type { StoryKind } from '../modes/stories';
 import { storyKind } from '../modes/stories';
 import { TOURS } from '../learn/tours';
-import { h, icon, clear } from '../ui/dom';
-import { lang, flagEmoji, fmtNumber, fmtCompact, L, dataLang, tx, Lc, txs } from '../app/i18n';
+import { h, icon, clear, englishNote } from '../ui/dom';
+import { lang, flagEmoji, fmtNumber, fmtCompact, L, dataLang, tx, Lc, txs, nm, monthName as calMonth, fileLang, unescoLang } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { km, bestMonths, monthRanges, sunTimes, tzOffset, hhmm, flightHours, hoursText, bestOrder, tripKm, tripHash, readTrip, type Climate } from './logic';
 import { planHooks, planStar, placesOf, allPlaces, movePlace, removePlace, dropCity, setPlan, tripDetails, PLACE_ICONS, type Place, type PlaceSpec } from './plan';
 import { tripPanelExtras, packPlaces, unpackPlaces } from './export';
 import { appLocale } from '../app/i18n';
 
-const es = () => lang() === 'es';
 const KEY = 'atlas-globe:trip';
 
 export interface GuideCity {
@@ -137,7 +136,7 @@ export class TravelGuide {
     if (!this.attrs) { try { this.attrs = (await loadJSON<{ data: Record<string, Record<string, unknown>> }>('attributes/countries.json')).data; } catch { this.attrs = {}; } }
     return this.attrs[country] ?? {};
   }
-  cityName(c: GuideCity) { return es() ? c.es : c.name; }
+  cityName(c: GuideCity) { return nm(c.name, c.es); }
   /** A guide city's name, by its id (null when the guide does not know it). */
   cityLabel(id: string): string | null { const c = this.byId.get(id); return c ? this.cityName(c) : null; }
   private countryName(id: string) { return this.app.data.name(id, lang()); }
@@ -298,6 +297,8 @@ export class TravelGuide {
       body.append(h('div', { class: 'tool-actions' }, b));
     }
     body.append(h('p', { class: 'muted small guide-note' }, L('Not in the guide: hotels, restaurants by name, prices, visas and safety advice, which change too often to keep right. Wikivoyage and official sites have them.', 'No están en la guía: hoteles, restaurantes por nombre, precios, visados ni consejos de seguridad, que cambian demasiado para mantenerlos al día. Wikivoyage y los sitios oficiales los tienen.')));
+    const note = englishNote();
+    if (note) body.prepend(note);
     this.shell.openPanel('guide', L('Travel guide', 'Guía de viaje'), body, () => this.closed());
     requestAnimationFrame(() => this.inset(true));
   }
@@ -440,6 +441,8 @@ export class TravelGuide {
       tabs.append(b);
     }
     body.append(tabs, content);
+    const note = englishNote();
+    if (note) body.prepend(note);
     this.shell.openPanel('guide-city', `${this.flag(c.country)} ${this.cityName(c)}`, body, () => this.closed());
     // The city comes into view, above the panel on a phone (once, when its guide opens).
     if (opening) requestAnimationFrame(() => { this.inset(true); this.app.renderer.view.flyTo({ lon: c.at[0], lat: c.at[1], zoom: Math.max(this.app.renderer.view.zoom, 4.5) }); });
@@ -470,9 +473,9 @@ export class TravelGuide {
 
   /** A place of the trip under its city: up, down, out; a tap shows it on the map. */
   private placeRow(city: string, p: Place, k: number, n: number): HTMLElement {
-    const why = (p.why ?? []).map((w) => (es() ? w.t[1] : w.t[0])).join(' · ');
-    const name = h('button', { type: 'button', class: 'guide-place-name', 'data-trip-place': p.id }, h('span', { class: 'guide-place-ic' }, PLACE_ICONS[p.kind]), h('span', { class: 'guide-place-text' }, h('span', null, es() ? p.n[1] : p.n[0]), why ? h('span', { class: 'muted small' }, why) : null));
-    if (p.at) name.addEventListener('click', () => this.showPlace(p.at!, es() ? p.n[1] : p.n[0], 14));
+    const why = (p.why ?? []).map((w) => (nm(w.t[0], w.t[1]))).join(' · ');
+    const name = h('button', { type: 'button', class: 'guide-place-name', 'data-trip-place': p.id }, h('span', { class: 'guide-place-ic' }, PLACE_ICONS[p.kind]), h('span', { class: 'guide-place-text' }, h('span', null, nm(p.n[0], p.n[1])), why ? h('span', { class: 'muted small' }, why) : null));
+    if (p.at) name.addEventListener('click', () => this.showPlace(p.at!, nm(p.n[0], p.n[1]), 14));
     const btn = (ic: Parameters<typeof icon>[0], label: string, fn: () => void, dis = false) => {
       const b = h('button', { type: 'button', class: 'icon-btn xs', title: label, 'aria-label': label, disabled: dis }, icon(ic, 13));
       b.addEventListener('click', () => { fn(); void this.open(this.query); });
@@ -518,8 +521,8 @@ export class TravelGuide {
   private async eatTab(el: HTMLElement, c: GuideCity, g: CityGuide) {
     const f = await this.facts(c.country);
     if (typeof f.national_dish === 'string' && f.national_dish) el.append(h('p', { class: 'guide-national' }, `🍽️ ${L('{0}’s national dish', 'Plato nacional de {0}', this.countryName(c.country))}: `, h('strong', null, f.national_dish)));
-    const dishRow = (d: Dish) => this.row(d[3], es() ? d[5] : d[4], [es() ? d[10] : d[9], d[11] ? this.year(d[11]) : '', d[1] === 'here' ? '' : `${fmtNumber(d[2])} km`].filter(Boolean).join(' · '),
-      () => this.openStory('food', d[7], d[8], es() ? d[5] : d[4], [d[12], d[13]]), { 'data-dish': d[0] },
+    const dishRow = (d: Dish) => this.row(d[3], nm(d[4], d[5]), [nm(d[9], d[10]), d[11] ? this.year(d[11]) : '', d[1] === 'here' ? '' : `${fmtNumber(d[2])} km`].filter(Boolean).join(' · '),
+      () => this.openStory('food', d[7], d[8], nm(d[4], d[5]), [d[12], d[13]]), { 'data-dish': d[0] },
       { id: `dish:${d[0]}`, kind: 'dish', city: c.id, n: [d[4], d[5]], why: [{ t: [`To try: from ${d[9]}`, `Para probar: de ${d[10]}`] }] });
     const name = this.cityName(c), cn = this.countryName(c.country);
     this.section(el, Lc('dishes that come from a place', 'From {0}', 'De {0}', name), g.eat.filter((d) => d[1] === 'here').map(dishRow));
@@ -558,14 +561,14 @@ export class TravelGuide {
     const site = (s: Site, far: boolean) => {
       const img = s[8] ? h('img', { class: 'guide-thumb', src: commons(s[8]), alt: '', loading: 'lazy' }) : null;
       img?.addEventListener('error', () => img.replaceWith(document.createTextNode(s[4] === 'n' ? '🌿' : s[4] === 'm' ? '🏞️' : '🏛️')));
-      return this.row(img ?? (s[4] === 'n' ? '🌿' : '🏛️'), es() ? s[3] : s[2], [L('World Heritage since {0}', 'Patrimonio Mundial desde {0}', s[5]), far ? `${fmtNumber(s[1])} km` : ''].filter(Boolean).join(' · '),
-        () => this.showPlace([s[6], s[7]], es() ? s[3] : s[2], far ? 7 : 10), { 'data-whs': String(s[0]) },
-        { id: `whs:${s[0]}`, kind: 'whs', city: c.id, n: [s[2], s[3]], at: [s[6], s[7]], url: `https://whc.unesco.org/${dataLang()}/list/${s[0]}`,
+      return this.row(img ?? (s[4] === 'n' ? '🌿' : '🏛️'), nm(s[2], s[3]), [L('World Heritage since {0}', 'Patrimonio Mundial desde {0}', s[5]), far ? `${fmtNumber(s[1])} km` : ''].filter(Boolean).join(' · '),
+        () => this.showPlace([s[6], s[7]], nm(s[2], s[3]), far ? 7 : 10), { 'data-whs': String(s[0]) },
+        { id: `whs:${s[0]}`, kind: 'whs', city: c.id, n: [s[2], s[3]], at: [s[6], s[7]], url: `https://whc.unesco.org/${unescoLang()}/list/${s[0]}`,
           why: [{ t: [`World Heritage since ${s[5]}${far ? ` · ${s[1]} km away` : ''}`, `Patrimonio Mundial desde ${s[5]}${far ? ` · a ${s[1]} km` : ''}`] }] });
     };
     this.section(el, L('World Heritage in the city', 'Patrimonio Mundial en la ciudad'), g.whs.map((s) => site(s, false)));
-    this.section(el, L('Great structures', 'Grandes construcciones'), g.sights.map((r) => this.row(r[3], es() ? r[5] : r[4], [this.year(r[8]), r[9] >= 2 ? `${fmtNumber(Math.round(r[9]))} km` : ''].filter(Boolean).join(' · '),
-      () => this.openStory(r[0], r[1], r[2], es() ? r[5] : r[4], [r[6], r[7]]), { 'data-sight': r[1] },
+    this.section(el, L('Great structures', 'Grandes construcciones'), g.sights.map((r) => this.row(r[3], nm(r[4], r[5]), [this.year(r[8]), r[9] >= 2 ? `${fmtNumber(Math.round(r[9]))} km` : ''].filter(Boolean).join(' · '),
+      () => this.openStory(r[0], r[1], r[2], nm(r[4], r[5]), [r[6], r[7]]), { 'data-sight': r[1] },
       { id: `sight:${r[0]}/${r[1]}`, kind: 'sight', city: c.id, n: [r[4], r[5]], at: [r[6], r[7]] })));
     this.section(el, L('A day trip away', 'A una excursión de distancia'), g.trips.map((s) => site(s, true)));
     // Wildlife nearby (v0.30.0): parks and reserves within reach, with the animals each is best for.
@@ -578,7 +581,7 @@ export class TravelGuide {
     if (!g.museums.length) { el.append(h('p', { class: 'muted small' }, L('Wikidata lists no museum near the centre of this city.', 'Wikidata no tiene museos cerca del centro de esta ciudad.'))); return; }
     for (const [k, label] of MUSEUM_KINDS) {
       const rows = g.museums.filter((m) => m[3] === k).map((m) => {
-        const name = es() ? m[2] : m[1];
+        const name = nm(m[1], m[2]);
         const sub = m[4] ? L('{0} visitors a year', '{0} visitantes al año', fmtCompact(m[4])) : '';
         const r = this.row('🏛️', name, sub, m[6] ? () => this.showPlace(m[6]!, name, 12) : null, { 'data-museum': m[0] });
         const links = h('span', { class: 'guide-links' },
@@ -633,14 +636,14 @@ export class TravelGuide {
     const svg = document.createElementNS(NS, 'svg');
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'guide-chart'); svg.setAttribute('role', 'img');
     const el = (tag: string, a: Record<string, string | number>, text?: string) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(a)) e.setAttribute(k, String(v)); if (text) e.textContent = text; svg.append(e); return e; };
-    const m = txs(MONTHS);
+    const m = fileLang() ? Array.from({ length: 12 }, (_, i) => calMonth(i, true)) : txs(MONTHS);
     for (let i = 0; i < 12; i++) {
       const x = left + i * cw;
       if (best.includes(i)) el('rect', { x: x + 1, y: 2, width: cw - 2, height: H - bottom + 2, rx: 4, class: 'gc-best' });
       const bh = (cl.p[i] / maxP) * (H - top - bottom) * 0.9;
       el('rect', { x: x + cw * 0.22, y: H - bottom - bh, width: cw * 0.56, height: bh, rx: 2, class: 'gc-rain' });
       el('line', { x1: x + cw / 2, x2: x + cw / 2, y1: ty(hi[i]), y2: ty(lo[i]), class: 'gc-range' });
-      el('text', { x: x + cw / 2, y: H - 8, 'text-anchor': 'middle', class: 'gc-month' }, m[i].slice(0, es() ? 3 : 1));
+      el('text', { x: x + cw / 2, y: H - 8, 'text-anchor': 'middle', class: 'gc-month' }, m[i].slice(0, lang() === 'es' ? 3 : 1));
       el('text', { x: x + cw / 2, y: ty(hi[i]) - 4, 'text-anchor': 'middle', class: 'gc-temp' }, String(Math.round(cl.t[i] / 10)));
     }
     el('polyline', { points: cl.t.map((t, i) => `${left + i * cw + cw / 2},${ty(t / 10)}`).join(' '), class: 'gc-line' });
@@ -660,8 +663,8 @@ export class TravelGuide {
     const kinds = [...new Set(g.history.map((r) => r[0]))];
     for (const k of kinds) {
       const info = storyKind(k);
-      this.section(el, `${info.icon} ${tx(info.name)}`, g.history.filter((r) => r[0] === k).map((r) => this.row(r[3], es() ? r[5] : r[4], this.year(r[8]),
-        () => this.openStory(r[0], r[1], r[2], es() ? r[5] : r[4], [r[6], r[7]]), { 'data-history': `${r[0]}/${r[1]}` })));
+      this.section(el, `${info.icon} ${tx(info.name)}`, g.history.filter((r) => r[0] === k).map((r) => this.row(r[3], nm(r[4], r[5]), this.year(r[8]),
+        () => this.openStory(r[0], r[1], r[2], nm(r[4], r[5]), [r[6], r[7]]), { 'data-history': `${r[0]}/${r[1]}` })));
     }
     el.append(h('p', { class: 'muted small' }, L('What the Time travel stories tell of this place: tap one to open its story at that step.', 'Lo que cuentan de este lugar las historias de Viaje en el tiempo: toca una para abrirla en ese paso.')));
   }
@@ -670,7 +673,7 @@ export class TravelGuide {
     const links: HTMLElement[] = [];
     const wv = (l: 'en' | 'es') => c.wv[l] ? h('a', { class: 'pill sm', href: `https://${l}.wikivoyage.org/wiki/${encodeURIComponent(c.wv[l]!.replace(/ /g, '_'))}`, target: '_blank', rel: 'noopener', 'data-link': `wv-${l}` }, icon(ExternalLink, 14), `Wikivoyage (${l === 'en' ? L('English', 'inglés') : L('Spanish', 'español')})`) : null;
     const wp = (l: 'en' | 'es') => c.wp[l] ? h('a', { class: 'pill sm', href: `https://${l}.wikipedia.org/wiki/${encodeURIComponent(c.wp[l]!.replace(/ /g, '_'))}`, target: '_blank', rel: 'noopener', 'data-link': `wp-${l}` }, icon(ExternalLink, 14), `Wikipedia (${l === 'en' ? L('English', 'inglés') : L('Spanish', 'español')})`) : null;
-    const first: ('en' | 'es')[] = es() ? ['es', 'en'] : ['en', 'es'];
+    const first: ('en' | 'es')[] = lang() === 'es' ? ['es', 'en'] : ['en', 'es'];
     for (const l of first) { const a = wv(l); if (a) links.push(a); }
     for (const l of first) { const a = wp(l); if (a) links.push(a); }
     el.append(h('p', { class: 'small' }, L('Wikivoyage is a free travel guide written by travellers: where to stay, how to get around, restaurants, prices and safety, kept up to date by its writers.', 'Wikivoyage es una guía de viaje libre escrita por viajeros: dónde dormir, cómo moverse, restaurantes, precios y seguridad, al día gracias a sus autores.')),
@@ -682,7 +685,7 @@ export class TravelGuide {
   wikivoyage(c: GuideCity, section: 'eat'): Promise<{ paras: string[]; url: string; lang: string } | null> {
     const key = `${c.id}:${section}:${lang()}`;
     if (!this.wv.has(key)) this.wv.set(key, (async () => {
-      const order: ('en' | 'es')[] = es() ? ['es', 'en'] : ['en', 'es'];
+      const order: ('en' | 'es')[] = lang() === 'es' ? ['es', 'en'] : ['en', 'es'];
       for (const l of order) {
         const title = c.wv[l];
         if (!title) continue;
@@ -723,21 +726,21 @@ export class TravelGuide {
       const sec = h('section', null, h('h2', null, `${i + 1}. ${this.cityName(c)}, ${this.countryName(c.country)}${days ? ` · ${days} ${days === 1 ? L('day', 'día') : L('days', 'días')}` : ''}`));
       // The places chosen in it, with what for.
       const ps = placesOf(id);
-      if (ps.length) sec.append(h('p', null, h('strong', null, `★ ${L('My places', 'Mis lugares')}: `), ps.map((p) => { const w = (p.why ?? []).map((x) => (es() ? x.t[1] : x.t[0])).join(', '); return `${PLACE_ICONS[p.kind]} ${es() ? p.n[1] : p.n[0]}${w ? ` (${w})` : ''}`; }).join(' · ')));
+      if (ps.length) sec.append(h('p', null, h('strong', null, `★ ${L('My places', 'Mis lugares')}: `), ps.map((p) => { const w = (p.why ?? []).map((x) => (nm(x.t[0], x.t[1]))).join(', '); return `${PLACE_ICONS[p.kind]} ${nm(p.n[0], p.n[1])}${w ? ` (${w})` : ''}`; }).join(' · ')));
       if (i > 0) { const d = km(this.byId.get(this.trip[i - 1])!.at, c.at); sec.append(h('p', null, `✈️ ${fmtNumber(Math.round(d))} km · ${L('about', 'unas')} ${hoursText(flightHours(d))}`)); }
       if (c.climate) {
         const best = monthRanges(bestMonths(c.climate)).map(([a, b]) => { const n = txs(MONTH_NAMES); return a === b ? n[a] : `${n[a]}–${n[b]}`; });
-        const m = txs(MONTHS);
+        const m = fileLang() ? Array.from({ length: 12 }, (_, i) => calMonth(i, true)) : txs(MONTHS);
         sec.append(h('p', null, `${L('Best months', 'Mejores meses')}: ${best.join(', ') || '—'} · ${c.climate.t.map((t, k) => `${m[k]} ${Math.round(t / 10)}°`).join(' ')}`));
       }
       if (g) {
         const list = (title: string, items: string[]): HTMLElement | null => (items.length ? h('p', null, h('strong', null, `${title}: `), items.join(', ')) : null);
         sec.append(...[
-          list(L('Eat', 'Comer'), g.eat.slice(0, 12).map((d) => (es() ? d[5] : d[4]))),
-          list(L('World Heritage', 'Patrimonio de la Humanidad'), g.whs.map((s) => (es() ? s[3] : s[2]))),
-          list(L('Great structures', 'Grandes construcciones'), g.sights.map((r) => (es() ? r[5] : r[4]))),
-          list(L('Museums', 'Museos'), g.museums.slice(0, 8).map((m) => (es() ? m[2] : m[1]))),
-          list(L('Day trips', 'Excursiones'), g.trips.slice(0, 5).map((s) => `${es() ? s[3] : s[2]} (${s[1]} km)`)),
+          list(L('Eat', 'Comer'), g.eat.slice(0, 12).map((d) => (nm(d[4], d[5])))),
+          list(L('World Heritage', 'Patrimonio de la Humanidad'), g.whs.map((s) => (nm(s[2], s[3])))),
+          list(L('Great structures', 'Grandes construcciones'), g.sights.map((r) => (nm(r[4], r[5])))),
+          list(L('Museums', 'Museos'), g.museums.slice(0, 8).map((m) => (nm(m[1], m[2])))),
+          list(L('Day trips', 'Excursiones'), g.trips.slice(0, 5).map((s) => `${nm(s[2], s[3])} (${s[1]} km)`)),
         ].filter((x): x is HTMLElement => !!x));
       }
       page.append(sec);
@@ -833,7 +836,7 @@ export class TravelGuide {
           ctx.fillStyle = '#1098ad'; ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = '#fff'; ctx.stroke();
           ctx.fillStyle = '#fff'; ctx.font = '800 9px system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
           ctx.fillText(String(k + 1), p[0], p[1] + 0.5);
-          if (rc.webZoom >= 9) rc.labels.add({ text: es() ? pl.n[1] : pl.n[0], x: p[0] + 10, y: p[1], align: 'left', priority: 3150, size: 11.5, weight: 700, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
+          if (rc.webZoom >= 9) rc.labels.add({ text: nm(pl.n[0], pl.n[1]), x: p[0] + 10, y: p[1], align: 'left', priority: 3150, size: 11.5, weight: 700, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
         });
       }
       ctx.restore();

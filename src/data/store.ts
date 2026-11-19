@@ -4,6 +4,7 @@ import { feature, mesh } from 'topojson-client';
 import { geoArea, geoBounds, geoDistance } from 'd3-geo';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry, LineString, MultiLineString } from 'geojson';
+import { nm, lang } from '../app/i18n';
 
 export type LOD = '110m' | '50m' | '10m';
 export type BBox = [number, number, number, number]; // west, south, east, north (west > east when crossing 180°)
@@ -221,9 +222,11 @@ export class DataStore {
     return this.pending[lod]!;
   }
 
-  name(id: string, lang: string): string {
+  /** A country's name: in Spanish, or in the reader's language (nm), or in English when asked while reading Spanish. */
+  name(id: string, l: string): string {
     const m = this.meta[id];
     if (!m) return id;
-    return lang === 'es' ? m.es || m.n : m.n;
+    if (l === 'es') return m.es || m.n;
+    return l === 'en' && lang() === 'es' ? m.n : nm(m.n);
   }
 }

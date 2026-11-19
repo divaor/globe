@@ -13,7 +13,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { TimeTravel } from '../modes';
 import type { InfoRow } from '../layers/types';
-import { appLocale, dataLang } from '../app/i18n';
+import { appLocale, dataLang, wikiHref } from '../app/i18n';
 
 const KIND: Record<WorldDef['kind'], { en: string; es: string }> = {
   planet: { en: 'Planet', es: 'Planeta' }, moon: { en: 'Moon', es: 'Luna' }, dwarf: { en: 'Dwarf planet', es: 'Planeta enano' }, asteroid: { en: 'Asteroid', es: 'Asteroide' },
@@ -304,7 +304,8 @@ export class Space {
     const rows = [...extra, ...factRows(f)];
     const notes = [f?.text ? tr(f.text) : '', f?.wow ? `💡 ${tr(f.wow)}` : '', w?.note ? tr(w.note) : ''].filter(Boolean);
     const links: { label: string; href?: string; onClick?: () => void }[] = [];
-    if (f?.wiki) links.push({ label: 'Wikipedia', href: `https://${dataLang()}.wikipedia.org/wiki/${encodeURIComponent(tr(f.wiki).replace(/ /g, '_'))}` });
+    const href = wikiHref(f?.wiki);
+    if (href) links.push({ label: 'Wikipedia', href });
     if (w && !(this.active && this.surface.id === id)) links.push({ label: L('Visit on the globe', 'Visitar en el globo'), onClick: () => void this.enter(id) });
     if (id === 'earth') links.push({ label: L('Back to the Earth', 'Volver a la Tierra'), onClick: () => { this.closeOrrery?.(); void this.exit(); } });
     const name = f ? tr(f.name) : tr(w!.name);

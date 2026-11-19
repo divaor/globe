@@ -13,9 +13,9 @@ import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear, segmented } from '../ui/dom';
-import { fmtNumber, appLocale, subregion, t, dataLang, tx, Lc } from '../app/i18n';
+import { fmtNumber, appLocale, subregion, t, dataLang, tx, Lc, fileLang, nm } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
-import { L, es, type PlayHost, type HostGame } from '../play/host';
+import { L, type PlayHost, type HostGame } from '../play/host';
 import { shareText } from '../play/pin';
 import { recordFeat, dayKey, onReset, type Badge } from '../learn/progress';
 import { loadDeck } from '../master/data';
@@ -62,6 +62,29 @@ interface Session {
   done: boolean; fold: boolean; timer: number; r: () => number;
   /** "Try the ones shown again": these count as empty in this session until answered (their orange stays saved). */
   again: Set<string>;
+}
+
+/** A clue's label in the reader's language (the data writes clues in English and Spanish as "Label: value"). */
+const CLUE_LABEL: Record<string, () => string> = {
+  animal: () => L('National animal', 'Animal nacional'), peak: () => L('Highest point', 'Punto más alto'), dish: () => L('A national dish', 'Un plato nacional'),
+  export: () => L('Main export', 'Principal exportación'), lang: () => Lc('a clue: the languages a country speaks', 'Languages', 'Lenguas'), lang1: () => Lc('a clue: the language a country speaks', 'Language', 'Lengua'),
+  site: () => L('World Heritage', 'Patrimonio de la Humanidad'), person: () => L('Born here', 'Nació aquí'), capital: () => L('Capital', 'Capital'),
+  low: () => L('Lowest point', 'Punto más bajo'), plant: () => L('National flower or tree', 'Flor o árbol nacional'),
+};
+/** A clue in a language read from files: its label translated, its names through the names file ("Born here:
+ *  Khaled Hosseini (writer)" → "Nasceu aqui: Khaled Hosseini (escritor)"); a clue of its own words as a whole. */
+function clueIn(c: Clue): string {
+  const at = c.en.indexOf(': ');
+  const kind = c.k.replace(/\d+$/, '').replace(/^site-.*/, 'site');
+  if (at < 0 || !CLUE_LABEL[kind]) return nm(c.en);
+  const label = CLUE_LABEL[kind === 'lang' && !c.en.startsWith('Languages') ? 'lang1' : kind](), v = c.en.slice(at + 2);
+  let value: string;
+  if (kind === 'lang') value = v.split(', ').map((x) => nm(x)).join(', ');
+  else if (kind === 'person') { const m = /^(.*) \(([^)]*)\)$/.exec(v); value = m ? `${nm(m[1])} (${nm(m[2])})` : nm(v); }
+  else if (kind === 'peak') { const m = /^(.*), \{m\} m$/.exec(v); value = m ? `${nm(m[1])}, {m} m` : nm(v); }
+  else if (kind === 'low') { const m = /^(.*), \{m\} m below sea level$/.exec(v); value = m ? `${nm(m[1])}, ${L('{0} m below sea level', '{0} m bajo el nivel del mar', '{m}')}` : nm(v); }
+  else value = nm(v);
+  return `${label}: ${value}`;
 }
 
 export class FillMap implements HostGame {
@@ -131,7 +154,7 @@ export class FillMap implements HostGame {
   private name(id: string) { return this.app.data.name(id, dataLang()); }
   private scopeName(scope: string) {
     if (scope === 'world') return L('the world', 'el mundo');
-    if (scope.startsWith('r:')) return es() ? subregion(scope.slice(2)) : scope.slice(2);
+    if (scope.startsWith('r:')) return subregion(scope.slice(2));
     return t(`cont.${scope}`);
   }
   private catName(cat: FillCat) { return tx(CAT_TEXT[cat]); }
@@ -405,7 +428,7 @@ export class FillMap implements HostGame {
     }
   }
 
-  private clueText(c: Clue) { const txt = tx(c); return c.m != null ? txt.replace('{m}', fmtNumber(c.m)) : txt; }
+  private clueText(c: Clue) { const txt = fileLang() ? clueIn(c) : tx(c); return c.m != null ? txt.replace('{m}', fmtNumber(c.m)) : txt; }
 
   /** After a miss: its neighbours (or its region), then a circle where it is; for clues, the next clue. */
   private hint(cur: Cur): string {
@@ -456,7 +479,7 @@ export class FillMap implements HostGame {
     };
     if (!s.daily) {
       const nx = nextRegion(this.regions, s.scope.startsWith('r:') ? s.scope : '', (r) => this.scopeIds(s.cat, r.id).every((id) => map[id] != null), (id) => this.unitBy.get(id)?.at);
-      if (nx) add(L('Next: {0}', 'Siguiente: {0}', es() ? subregion(nx.name) : nx.name), () => void this.start({ scope: nx.id }), true, 'next-region');
+      if (nx) add(L('Next: {0}', 'Siguiente: {0}', subregion(nx.name)), () => void this.start({ scope: nx.id }), true, 'next-region');
       if (missed.length) {
         const one = missed.length === 1 ? this.name(missed[0]) : '';
         add(one ? L('Try {0} again', 'Repetir {0}', one) : L('Try the {0} shown again', 'Repetir los {0} mostrados', missed.length), () => void this.start({ retry: true }), !nx, 'retry');
@@ -606,7 +629,7 @@ export class FillMap implements HostGame {
       list.append(scopeBtn(ct, t(`cont.${ct}`), ids, 'fill-cont'));
       for (const r of this.regions.filter((x) => x.ct === ct)) {
         const rids = this.scopeIds(cat, r.id);
-        if (rids.length) list.append(scopeBtn(r.id, es() ? subregion(r.name) : r.name, rids, 'fill-region'));
+        if (rids.length) list.append(scopeBtn(r.id, subregion(r.name), rids, 'fill-region'));
       }
     }
     out.push(h('h3', { class: 'sec-title' }, L('Where (tap to fill it)', 'Dónde (toca para llenarlo)')), list);

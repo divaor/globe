@@ -3,7 +3,7 @@
 // are now, the guide of a city to visit, "Follow their life" on a person who has a life of their own).
 // The stories themselves are played by modes/stories.ts like any other collection.
 import { Search, Users, X } from 'lucide';
-import { h, icon, clear } from '../ui/dom';
+import { h, icon, clear, englishNote } from '../ui/dom';
 import { t, tx, lang, both, L } from '../app/i18n';
 import { livesHook, fmtWhen, type StoryMode, type Conflict, type Entry, type Step, type Item, type Life } from '../modes/stories';
 import { mergeLives, twoNames, km, SEP } from './merge';
@@ -134,6 +134,8 @@ export class Lives {
     }
     wrap.append(h('p', { class: 'muted small' }, t('livesIntro')), h('label', { class: 'lives-search-box' }, icon(Search, 16), input), banner, chips, two, list);
     render();
+    const note = englishNote();
+    if (note) wrap.prepend(note);
     this.shell.openPanel(this.mode.sheet, t('livesTitle'), wrap, () => { this.beside = null; });
   }
 
@@ -142,7 +144,6 @@ export class Lives {
   /** Who was born in a city and who died there (Wikidata), and the lives of this collection that pass through it. */
   async peopleTab(el: HTMLElement, c: GuideCity, name: string) {
     const [born] = await Promise.all([loadBorn(), this.warm()]);
-    const es = lang() === 'es';
     const here = this.index.map((e) => ({ e, steps: (e.life?.path ?? []).map((p, i) => (p && km(p, c.at) <= 25 ? i : -1)).filter((i) => i >= 0) })).filter((x) => x.steps.length);
     if (here.length) {
       el.append(h('h3', { class: 'sec-title' }, `👣 ${L('Lives that pass through here', 'Vidas que pasan por aquí')}`),

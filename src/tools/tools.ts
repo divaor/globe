@@ -11,7 +11,6 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 
 const R_KM = 6371.0088;
-const es = () => lang() === 'es';
 
 interface Tool { id: string; start(): void; stop(): void; tap(lon: number, lat: number, countryId: string | null): void; overlay(rc: RenderCtx): void }
 

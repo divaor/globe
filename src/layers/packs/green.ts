@@ -7,7 +7,7 @@
 // numbered stars. The breathing planet plays NASA's twelve monthly pictures of how green the land is.
 import { geoArea, geoContains, geoDistance, geoInterpolate } from 'd3-geo';
 import type { Topology } from 'topojson-specification';
-import { lang, fmtCompact, L, Lc, tx } from '../../app/i18n';
+import { lang, fmtCompact, L, Lc, tx, nm as nameIn, lower } from '../../app/i18n';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import { loadJSON, shapesFrom, dataUrl, type Shape } from '../../data/store';
@@ -27,7 +27,6 @@ import {
 } from '../../green/data';
 import { plantCard, gardenCard, treeCard, ecoCard, spectacleCard, cropCard, plantStatusBadge, spectacleKind, monthsText, type GreenLinks } from '../../green/cards';
 
-const es = () => lang() === 'es';
 let APP: App | null = null;
 let SHELL: Shell | null = null;
 let data: GreenData | null = null;
@@ -194,7 +193,7 @@ async function bestPlaces(p: Plant) {
   await showPlantFocus(f);
   SHELL?.card.hide();
   const body = h('div', { class: 'guide wild-panel', 'data-green': 'best', 'data-plant': p.id });
-  body.append(h('p', { class: 'muted small' }, L('Parks, reserves and botanical gardens where {0} grows wild, those where people have shared the most sightings first. The numbers match the stars on the map (gardens in pink).', 'Parques, reservas y jardines botánicos donde {1} crece silvestre, primero aquellos donde más avistamientos se han compartido. Los números coinciden con las estrellas del mapa (jardines en rosa).', nm(p), nm(p).toLowerCase())));
+  body.append(h('p', { class: 'muted small' }, L('Parks, reserves and botanical gardens where {0} grows wild, those where people have shared the most sightings first. The numbers match the stars on the map (gardens in pink).', 'Parques, reservas y jardines botánicos donde {1} crece silvestre, primero aquellos donde más avistamientos se han compartido. Los números coinciden con las estrellas del mapa (jardines en rosa).', nm(p), lower(nm(p)))));
   const list = h('div', { class: 'guide-list' });
   (f.best ?? []).forEach((pl, i) => {
     const sub = pl.kind === 'park' ? [pl.p.k === 'np' ? L('National park', 'Parque nacional') : L('Nature reserve', 'Reserva natural'), pl.p.cc ? greenLinks.countryName(pl.p.cc) : ''] : [L('Botanical garden', 'Jardín botánico'), pl.g.cc ? greenLinks.countryName(pl.g.cc) : ''];
@@ -533,7 +532,7 @@ export const ecoregions: LayerDef = {
       if (span < 32 / rc.webZoom ** 2 && rc.webZoom < 5) continue;
       const lon = w + span / 2, at = rc.project(lon > 180 ? lon - 360 : lon, (so + n) / 2);
       // A highlighted one may sit just beside its middle when a plant's disc is there.
-      if (at) rc.labels.add({ text: es() && p.es ? p.es : p.n, x: at[0], y: at[1], priority: (only ? 520 : 120) + Math.min(200, span * 4), size: only ? 10.5 : 10, weight: only ? 700 : 600, color: rc.theme.label, halo: rc.theme.labelHalo, ...(only ? { gap: 2, avoid: [] } : {}) });
+      if (at) rc.labels.add({ text: nameIn(p.n, p.es), x: at[0], y: at[1], priority: (only ? 520 : 120) + Math.min(200, span * 4), size: only ? 10.5 : 10, weight: only ? 700 : 600, color: rc.theme.label, halo: rc.theme.labelHalo, ...(only ? { gap: 2, avoid: [] } : {}) });
     }
   },
   legend(inst) {
@@ -566,7 +565,7 @@ export const ecoregions: LayerDef = {
       const sc = Math.max(match(p.n), match(p.es));
       if (sc < 55) continue;
       const [w, so, e, n] = s.bbox, lon = w + ((e < w ? e + 360 : e) - w) / 2;
-      out.push({ label: es() && p.es ? p.es : p.n, sub: `🌿 ${biomeName(p.b)}`, icon: '🗺️', lon: lon > 180 ? lon - 360 : lon, lat: (so + n) / 2, score: sc, wz: 4, open: (ui) => void openEco(s, ui) });
+      out.push({ label: nameIn(p.n, p.es), sub: `🌿 ${biomeName(p.b)}`, icon: '🗺️', lon: lon > 180 ? lon - 360 : lon, lat: (so + n) / 2, score: sc, wz: 4, open: (ui) => void openEco(s, ui) });
     }
     return out.sort((a, b) => b.score - a.score).slice(0, 5);
   },

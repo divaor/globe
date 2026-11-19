@@ -8,7 +8,6 @@ import type { InfoRow } from '../layers/types';
 import { nm, yearText, commons, commonsPage, commonsCredit, wikiOf, kindIcon, KINDS, museumPlace, workWhy, buildingPlace, type Work, type Building, type Museum } from './data';
 import { planLink } from '../guide/plan';
 
-const es = () => lang() === 'es';
 export type CardFn = (icon: string, title: string, sub: string, rows: InfoRow[], links?: { label: string; href?: string; onClick?: () => void }[], notes?: string[], image?: Promise<string | null>, extra?: HTMLElement | null) => void;
 
 /** A line under a picture: its licence and author, once Commons answers. */

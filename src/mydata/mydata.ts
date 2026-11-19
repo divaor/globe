@@ -6,7 +6,7 @@ import { geoBounds, geoContains } from 'd3-geo';
 import type { Topology } from 'topojson-specification';
 import { numericLayer, categoricalLayer } from '../layers/choropleth';
 import { SEQUENTIAL, categorical, samplePalette } from '../engine/colors';
-import { fmtNumber, fmtCompact, lang, L, inLang, type Lang } from '../app/i18n';
+import { fmtNumber, fmtCompact, lang, L, inLang, type Lang, nm } from '../app/i18n';
 import { loadJSON, shapesFrom, type Shape } from '../data/store';
 import { setExtraField } from '../compare/model';
 import type { App } from '../app/app';
@@ -261,7 +261,7 @@ export class MyData {
           if (!r) return null;
           const v = valuesOf(inst)[r.rid];
           const p = r.feature.properties;
-          const rows: InfoRow[] = [{ icon: '🗾', label: L('Region', 'Región'), value: (lang() === 'es' ? p.es : p.n) ?? p.n }];
+          const rows: InfoRow[] = [{ icon: '🗾', label: L('Region', 'Región'), value: nm(p.n, p.es) }];
           if (v !== undefined) rows.push({ label: `${colOf(inst).name}${yearOf(inst) ? ` (${yearOf(inst)})` : ''}`, value: typeof v === 'number' ? fmt(v) : v });
           return rows;
         },

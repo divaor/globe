@@ -3,10 +3,9 @@
 // use it. A person with a life in Lives on the map opens it; everyone else gets a short card and their Wikipedia
 // article. Living people appear by birthplace only.
 import { loadJSON } from '../data/store';
-import { lang, L, tx } from '../app/i18n';
+import { lang, L, tx, nm as nameIn } from '../app/i18n';
 import type { InfoRow } from '../layers/types';
 
-const es = () => lang() === 'es';
 export type CardFn = (icon: string, title: string, sub: string, rows: InfoRow[], links?: { label: string; href?: string; onClick?: () => void }[], notes?: string[], image?: Promise<string | null>, extra?: HTMLElement | null) => void;
 
 export interface BornPlace { i: number; name: [string, string]; at: [number, number]; city: string | null }
@@ -33,9 +32,9 @@ export const FIELDS: Record<string, { icon: string; color: string; name: { en: s
   other: { icon: '👤', color: '#868e96', name: { en: 'Others', es: 'Otros' } },
 };
 export const fieldName = (f: string) => (FIELDS[f] ? tx(FIELDS[f].name) : f);
-export const nm = (x: { name: [string, string] }) => (es() ? x.name[1] : x.name[0]);
+export const nm = (x: { name: [string, string] }) => (nameIn(x.name[0], x.name[1]));
 /** "Brazilian footballer" ("futbolista brasileño"), or the field when Wikidata says nothing. */
-export const what = (p: Person) => { const w = es() ? p.what[1] : p.what[0]; return w ? w.charAt(0).toUpperCase() + w.slice(1) : fieldName(p.field); };
+export const what = (p: Person) => { const w = nameIn(p.what[0], p.what[1]); return w ? w.charAt(0).toUpperCase() + w.slice(1) : fieldName(p.field); };
 
 let data: Promise<BornData | null> | null = null;
 export function loadBorn(): Promise<BornData | null> {

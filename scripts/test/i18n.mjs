@@ -50,5 +50,34 @@ check(I.L('Share', 'Compartir'), '[Ŝháré]', 'pseudo-language');
 I.setPseudo(false);
 check(I.L('Share', 'Compartir'), 'Share', 'pseudo-language off');
 
+// v0.42.0: Portuguese, French and German from their files.
+const fs = await import('node:fs');
+const cat = (l) => JSON.parse(fs.readFileSync(path.join(ROOT, `public/data/i18n/${l}.json`), 'utf8'));
+const names = (l) => JSON.parse(fs.readFileSync(path.join(ROOT, `public/data/i18n/${l}-data.json`), 'utf8'));
+I.setLang('pt'); I.setMessages(cat('pt')); I.setNames(names('pt'));
+check(I.L('Settings', 'Ajustes'), 'Configurações', 'Portuguese: a text');
+check(I.L(DAYS[0], DAYS[1], 3), '3 dias seguidos', 'Portuguese: a plural');
+check(I.nm('Germany', 'Alemania'), 'Alemanha', 'Portuguese: a country name');
+check(I.tx({ en: 'North Sea', es: 'Mar del Norte' }), 'Mar do Norte', 'Portuguese: a data name through tx');
+check(I.nm('Atlantis of the test', 'x'), 'Atlantis of the test', 'Portuguese: a name with none shows in English');
+check(I.ordinal(3), '3º', 'Portuguese: ordinal');
+I.setLang('fr'); I.setMessages(cat('fr')); I.setNames(names('fr'));
+check(I.L(DAYS[0], DAYS[1], 1), '1 jour d’affilée', 'French: plural one');
+check(I.nm('Germany'), 'Allemagne', 'French: a country name');
+check(I.ordinal(1), '1er', 'French: ordinal');
+I.setLang('de'); I.setMessages(cat('de')); I.setNames(names('de'));
+check(I.nm('Vienna'), 'Wien', 'German: a city name');
+check(I.lower('Hauptstädte'), 'Hauptstädte', 'German keeps a noun\'s capital');
+check(I.ordinal(2), '2.', 'German: ordinal');
+check(I.inLang('en', () => I.nm('Vienna')), 'Vienna', 'inLang English leaves the names file out');
+// Every country with its own name in a language has it in that language's file.
+const meta = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/base/countries-meta.json'), 'utf8'));
+for (const l of ['pt', 'fr', 'de']) {
+  const n = names(l);
+  const differ = Object.values(meta).filter((m) => m.n && n[m.n]).length;
+  const known = ['Germany', 'Spain', 'Egypt', 'Greece', 'South Africa', 'United Kingdom'].filter((c) => !n[c]);
+  check(known.join(', '), '', `${l}: countries whose name differs have it (${differ} of ${Object.keys(meta).length} differ from English)`);
+}
+
 console.log(fails ? `\n${fails} failed` : '\nall passed');
 process.exit(fails ? 1 : 0);

@@ -8,14 +8,14 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber, fmtCompact, dataLang, tx } from '../app/i18n';
+import { fmtNumber, fmtCompact, dataLang, tx, nm } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
 import { hiloPair, hiloPoints, hiloStars } from './logic';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
-import { L, es, type PlayHost, type HostGame } from './host';
+import { L, type PlayHost, type HostGame } from './host';
 
 /** The facts asked about, with the question each one makes. */
 const FACTS: { key: string; en: string; es: string }[] = [
@@ -140,7 +140,7 @@ export class HigherLower implements HostGame {
 
   private fmt(fact: string, v: number): string {
     const f = this.attrs!.fields[fact] ?? {};
-    const unit = (es() ? f.unit_es ?? f.unit : f.unit) ?? '';
+    const unit = f.unit ? nm(f.unit, f.unit_es) : '';
     const n = Math.abs(v) >= 1e6 ? fmtCompact(v) : fmtNumber(v, Math.abs(v) < 100 && !Number.isInteger(v) ? 1 : 0);
     return `${n}${unit && unit.length < 16 ? ` ${unit}` : ''}`;
   }

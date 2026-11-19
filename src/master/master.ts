@@ -10,9 +10,9 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear, toggle, segmented } from '../ui/dom';
-import { fmtNumber, dataLang, tx } from '../app/i18n';
+import { fmtNumber, dataLang, tx, nm, lang } from '../app/i18n';
 import { dataUrl } from '../data/store';
-import { L, es, type PlayHost, type HostGame } from '../play/host';
+import { L, type PlayHost, type HostGame } from '../play/host';
 import { loadJSON } from '../data/store';
 import { loadRegions, type Region } from '../learn/regions';
 import { WITH_FACTS, type StatesData } from '../fill/states-logic';
@@ -155,7 +155,7 @@ export class Master implements HostGame {
   }
   /** A country's name, or a state's ("MEX|MX-JAL": Jalisco). */
   private name(id: string) {
-    if (id.includes('|')) { const r = this.region(id); return r ? (es() ? r.es : r.n) : id.split('|')[1]; }
+    if (id.includes('|')) { const r = this.region(id); return r ? nm(r.n, r.es) : id.split('|')[1]; }
     // A big city, a landmark, a river or sea (v0.39.0).
     for (const k of ['cities', 'landmarks', 'nature'] as ExtraId[]) { const d = this.extras.get(k)!; if (d.has(id)) return d.name(id); }
     return this.app.data.name(id, dataLang());
@@ -212,7 +212,7 @@ export class Master implements HostGame {
     let due = 0, seen = 0;
     for (const c of Object.values(master().cards[deck] ?? {})) { if (!c || c.seen <= 0) continue; seen++; if (c.due <= day) due++; }
     const name = this.deckName(deck);
-    const lower = name.toLocaleLowerCase(appLocale());
+    const lower = lang() === 'de' ? name : name.toLocaleLowerCase(appLocale()); // German writes its nouns with a capital
     const fem = deck !== 'countries' && deck !== 'nature'; // las capitales, las banderas, las siluetas, las ciudades; los países
     return {
       t: `${DECK_TEXT[deck].icon} ${L('Master the world', 'Domina el mundo')}: ${name}`,
@@ -931,7 +931,7 @@ export class Master implements HostGame {
     for (const [r, pr] of [[me, 2900], [bad, 2800]] as [Region | undefined, number][]) {
       if (!a || !r) continue;
       const p = rc.project(r.at[0], r.at[1]);
-      if (p) rc.labels.add({ text: es() ? r.es : r.n, x: p[0], y: p[1] + 18, priority: pr, size: 13, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
+      if (p) rc.labels.add({ text: nm(r.n, r.es), x: p[0], y: p[1] + 18, priority: pr, size: 13, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
     }
   }
 

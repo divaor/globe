@@ -5,14 +5,13 @@ import type { App } from '../../app/app';
 import type { Shell } from '../../ui/shell';
 import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, RenderCtx } from '../types';
 import { loadJSON } from '../../data/store';
-import { fmtNumber, lang, Lc, tx } from '../../app/i18n';
+import { fmtNumber, lang, Lc, tx, nm } from '../../app/i18n';
 import { L } from '../../play/host';
 import { h } from '../../ui/dom';
 import { geoDistance, geoInterpolate } from 'd3-geo';
 import { declination, type WMM } from '../../earth/wmm';
 import { appLocale } from '../../app/i18n';
 
-const es = () => lang() === 'es';
 const T = (o: { en: string; es: string } | undefined) => (o ? (tx(o)) : '');
 /** The item nearest the tap, within `r` px. */
 function nearest<T>(items: T[], at: (t: T) => [number, number], ui: LayerTapUi, r = 16): T | null {
@@ -347,7 +346,7 @@ export const undergroundLayer: LayerDef = {
       if (show !== 'all' && w.k !== show) continue;
       if (!w.top && rc.webZoom < 4) continue;
       const p = rc.project(w.at[0], w.at[1]); if (!p) continue;
-      rc.labels.add({ text: `${KIND[w.k].e} ${es() ? w.n[1] : w.n[0]}`, x: p[0], y: p[1], gap: 8, priority: w.top ? 600 : 200 + Math.min(200, w.sl ?? 0), size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
+      rc.labels.add({ text: `${KIND[w.k].e} ${nm(w.n[0], w.n[1])}`, x: p[0], y: p[1], gap: 8, priority: w.top ? 600 : 200 + Math.min(200, w.sl ?? 0), size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
     }
   },
   legend(inst) {
@@ -365,7 +364,7 @@ export const undergroundLayer: LayerDef = {
     for (const w of wonders) {
       const sc = Math.max(match(w.n[0]), match(w.n[1]));
       if (sc < 50) continue;
-      out.push({ label: es() ? w.n[1] : w.n[0], sub: `${KIND[w.k].e} ${tx(KIND[w.k])}${w.place ? ` · ${es() ? w.place[1] : w.place[0]}` : ''}`, icon: KIND[w.k].e, lon: w.at[0], lat: w.at[1], score: sc + (w.top ? 8 : 0), wz: 8 });
+      out.push({ label: nm(w.n[0], w.n[1]), sub: `${KIND[w.k].e} ${tx(KIND[w.k])}${w.place ? ` · ${nm(w.place[0], w.place[1])}` : ''}`, icon: KIND[w.k].e, lon: w.at[0], lat: w.at[1], score: sc + (w.top ? 8 : 0), wz: 8 });
     }
     return out.sort((a, b) => b.score - a.score).slice(0, 6);
   },
@@ -382,7 +381,7 @@ export const undergroundLayer: LayerDef = {
     if (f.diameter_km != null) rows.push({ label: L('Diameter', 'Diámetro'), value: `${num(f.diameter_km)} km`, icon: '⭕' });
     if (f.age_ma != null) rows.push({ label: L('Age', 'Edad'), value: `${num(f.age_ma)} ${L('million years', 'millones de años')}`, icon: '⏳' });
     if (f.interval_min != null) rows.push({ label: L('Erupts about every', 'Erupciona más o menos cada'), value: `${num(f.interval_min)} min`, icon: '⏱️' });
-    ui.card(KIND[w.k].e, es() ? w.n[1] : w.n[0], w.place ? (es() ? w.place[1] : w.place[0]) : (tx(KIND[w.k])), rows, [], w.text ? [es() ? w.text[1] : w.text[0]] : []);
+    ui.card(KIND[w.k].e, nm(w.n[0], w.n[1]), w.place ? (nm(w.place[0], w.place[1])) : (tx(KIND[w.k])), rows, [], w.text ? [nm(w.text[0], w.text[1])] : []);
     return true;
   },
 };

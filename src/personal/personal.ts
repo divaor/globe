@@ -9,7 +9,6 @@ import type { Shell } from '../ui/shell';
 import type { LayerDef } from '../layers/types';
 
 const KEY = 'atlas-globe:personal';
-const es = () => lang() === 'es';
 
 interface Personal { visited: string[]; wish: string[]; notes: Record<string, string> }
 

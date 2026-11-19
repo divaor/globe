@@ -6,13 +6,12 @@ import { h, icon, clear } from './dom';
 import { tiles, TERRAIN, SENTINEL, mayDownload, prefs, srcRange, tileX, tileY, cols, rows, shrinks, type TileSource, type Want } from '../engine/tiles';
 import { ELEVATION, RELIEF } from '../layers/imagery';
 import { terrainActions, type Terrain3DContext } from '../layers/terrainActions';
-import { lang, L, tx } from '../app/i18n';
+import { lang, L, tx, nm } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Shell } from './shell';
 import type { TerrainUI } from './terrain';
 import { appLocale } from '../app/i18n';
 
-const es = () => lang() === 'es';
 const RAD = Math.PI / 180;
 type Drape = string;
 
@@ -127,7 +126,7 @@ export class Terrain3D {
       ],
       labels: ([bw, bs, be, bn]) => {
         const inLon = (lon: number) => (bw <= be ? lon >= bw && lon <= be : lon >= bw || lon <= be);
-        return cities.filter((c) => c.lat >= bs && c.lat <= bn && inLon(c.lon)).sort((a, b) => b.pop - a.pop).slice(0, 12).map((c) => ({ name: es() && c.es ? c.es : c.name, lon: c.lon, lat: c.lat }));
+        return cities.filter((c) => c.lat >= bs && c.lat <= bn && inLon(c.lon)).sort((a, b) => b.pop - a.pop).slice(0, 12).map((c) => ({ name: nm(c.name, c.es), lon: c.lon, lat: c.lat }));
       },
       areaName: (box) => this.ui.areaName(box),
     };

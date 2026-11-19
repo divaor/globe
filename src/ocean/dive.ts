@@ -4,7 +4,7 @@
 // the cold and the pressure there.
 import { h } from '../ui/dom';
 import { fmtNumber, Lc, tx } from '../app/i18n';
-import { L, es } from '../play/host';
+import { L } from '../play/host';
 import { ZONES, zoneOf, pressureAtm, lightAt, tempAt, type Ocean } from './depth';
 
 export interface SeaAnimal { id: string; e: string; name: { en: string; es: string }; sci: string; group: string; depth: [number, number]; usual: number; oceans: string[]; lat: [number, number]; text: { en: string; es: string }; record?: boolean }

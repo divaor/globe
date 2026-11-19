@@ -11,7 +11,6 @@ import { creditEl } from '../artguide/cards';
 import type { InfoRow } from '../layers/types';
 import { GROUPS, STATUS, factRows, groupName, nm, statusName, type Animal, type Park, type Zoo, type WildData } from './data';
 
-const es = () => lang() === 'es';
 export type CardFn = (icon: string, title: string, sub: string, rows: InfoRow[], links?: { label: string; href?: string; onClick?: () => void }[], notes?: string[], image?: Promise<string | null>, extra?: HTMLElement | null) => void;
 
 /** What the cards' buttons do (layers/packs/wild.ts gives them). */

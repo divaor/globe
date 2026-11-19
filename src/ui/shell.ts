@@ -5,7 +5,7 @@ import { Layers, Layers2, Globe, Map as MapIcon, Search, Maximize, Minimize, Plu
 import { terrainActions } from '../layers/terrainActions';
 import { FEATURES, ftile, featureOfSheet } from './features';
 import { h, icon, button, clear, add } from './dom';
-import { t, tx, L } from '../app/i18n';
+import { t, tx, L, nm } from '../app/i18n';
 import { Sheet } from './sheet';
 import { filtersPanel } from './filters';
 import { projectionsPanel } from './projections';
@@ -18,7 +18,7 @@ import { screensaverPanel } from './playlists';
 import { settingsPanel, aboutPanel } from './settings';
 import { MapStyleMenu } from './mapstyle';
 import { mapView } from '../engine/style';
-import { regionAt, regionType } from '../engine/regions';
+import { regionAt, regionType, regionName } from '../engine/regions';
 import { regionView } from './search';
 import { ring } from './ring';
 import type { LayerDef, LayerHit, LayerInstance } from '../layers/types';
@@ -418,8 +418,7 @@ export class Shell {
     // With the states and provinces on, the card says which one was tapped.
     const rg = id && mapView.regions && this.app.renderer.baseMap ? regionAt(g[0], g[1]) : null;
     if (rg) {
-      const es = this.app.lang === 'es';
-      picks.unshift({ title: L('State or province', 'Estado o provincia'), rows: [{ icon: '📍', label: regionType(rg, es) ?? (L('Region', 'Región')), value: es ? rg.es : rg.name }] });
+      picks.unshift({ title: L('State or province', 'Estado o provincia'), rows: [{ icon: '📍', label: regionType(rg) ?? (L('Region', 'Región')), value: regionName(rg) }] });
     }
     this.card.setPicks(picks);
     if (this.sheet.isOpen() && matchMedia('(max-width: 720px)').matches) this.sheet.close();
@@ -449,8 +448,7 @@ export class Shell {
     // The state or province under the pointer, when they are shown.
     const g = mapView.regions && r.baseMap ? r.view.invert(x, y) : null;
     const rg = g ? regionAt(g[0], g[1]) : null;
-    const es = this.app.lang === 'es';
-    add(this.tooltip, h('strong', null, es ? m.es : m.n), rg ? h('span', { class: 'tt-sub' }, `📍 ${es ? rg.es : rg.name}`) : null, extra ? h('span', { class: 'tt-sub' }, `${extra.label}: ${extra.value}`) : null);
+    add(this.tooltip, h('strong', null, nm(m.n, m.es)), rg ? h('span', { class: 'tt-sub' }, `📍 ${regionName(rg)}`) : null, extra ? h('span', { class: 'tt-sub' }, `${extra.label}: ${extra.value}`) : null);
     this.tooltip.style.transform = `translate(${Math.round(x + 14)}px, ${Math.round(y + 12)}px)`;
     this.tooltip.hidden = false;
   }

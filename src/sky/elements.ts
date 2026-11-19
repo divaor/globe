@@ -13,7 +13,7 @@ import type { Space } from '../space/space';
 import type { Sky } from './sky';
 import type { InfoRow } from '../layers/types';
 import type { Hit } from '../ui/search';
-import { dataLang } from '../app/i18n';
+import { dataLang, wikiHref } from '../app/i18n';
 
 export interface Element {
   z: number; symbol: string; name: Text;
@@ -195,7 +195,8 @@ export class Elements {
       if (d.at) links.push({ label: L('Where it was discovered', 'Dónde se descubrió'), onClick: () => { this.close(); this.app.flyTo(d.at![0], d.at![1], 7); } });
     }
     if (e.uses) rows.push({ icon: '🛠️', label: L('Uses', 'Usos'), value: tr(e.uses) });
-    if (e.wiki?.en) links.push({ label: 'Wikipedia', href: `https://${tr(e.wiki) ? dataLang() : 'en'}.wikipedia.org/wiki/${encodeURIComponent((tr(e.wiki) || e.wiki.en).replace(/ /g, '_'))}` });
+    const href = wikiHref(e.wiki);
+    if (href) links.push({ label: 'Wikipedia', href });
     const notes = [e.made ? `✨ ${tr(e.made)}` : '', e.earth ? `🌍 ${tr(e.earth)}` : '', e.fact ? `💡 ${tr(e.fact)}` : ''].filter(Boolean);
     this.shell.card.showCustom(e.symbol, tr(e.name), originName(mainOrigin(e)), rows, links, notes, e.wiki ? wikiThumb(e.wiki) : undefined);
   }

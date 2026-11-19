@@ -4,7 +4,7 @@
 import { categorical } from '../../engine/colors';
 import { CURATED, P } from '../factsCurated';
 import { loadJSON, dataUrl } from '../../data/store';
-import { lang, fmtNumber, fmtCompact, fmtMoney, tx, t, L } from '../../app/i18n';
+import { lang, fmtNumber, fmtCompact, fmtMoney, tx, t, L, nm } from '../../app/i18n';
 import { categoricalLayer, numericLayer, type CategoryInfo } from '../choropleth';
 import { LC } from '../context';
 import type { App } from '../../app/app';
@@ -27,8 +27,7 @@ const GROUP_CAT: Record<string, CategoryId> = {
   nature: 'nature', energy: 'economy', fun: 'fun',
 };
 
-const es = () => lang() === 'es';
-const unitOf = (f: Field) => (es() ? f.unit_es ?? f.unit : f.unit) ?? '';
+const unitOf = (f: Field) => (f.unit ? nm(f.unit, f.unit_es) : '');
 const credit = (f: Field) => `${f.source ?? ''}${f.license ? ` (${f.license})` : ''}`;
 const values = (key: string) => () => Object.fromEntries(Object.entries(DS.data).map(([id, d]) => [id, d[key] as never]));
 
@@ -395,7 +394,7 @@ function cardRows(id: string): InfoRow[] {
   const f = DS.fields;
   const cat = (k: string, v: unknown) => (typeof v === 'string' && f[k]?.categories?.[v] ? tx(f[k].categories![v]) : String(v));
   const rows: InfoRow[] = [];
-  const add = (icon: string, k: string, value: string | undefined | null) => { if (value) rows.push({ icon, label: es() ? f[k]?.label_es ?? k : f[k]?.label_en ?? k, value }); };
+  const add = (icon: string, k: string, value: string | undefined | null) => { if (value) rows.push({ icon, label: f[k] ? tx({ en: f[k].label_en ?? k, es: f[k].label_es }) : k, value }); };
   const meta = LC.data.meta[id];
   const pop = typeof d.population === 'number' ? d.population : meta?.pop;
   if (pop) rows.push({ icon: '👥', label: t('population'), value: fmtCompact(pop) });

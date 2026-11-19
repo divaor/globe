@@ -16,7 +16,7 @@ import { OUTLINE_ROUNDS, outlinePoints, outlineStars, sample } from './logic';
 import { countryIndex, type CountryIndex } from '../mydata/parse';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
-import { L, es, type PlayHost, type HostGame } from './host';
+import { L, type PlayHost, type HostGame } from './host';
 
 const CONT: Record<string, { en: string; es: string }> = { AF: { en: 'Africa', es: 'África' }, AS: { en: 'Asia', es: 'Asia' }, EU: { en: 'Europe', es: 'Europa' }, NA: { en: 'North or Central America', es: 'Norte o Centroamérica' }, SA: { en: 'South America', es: 'América del Sur' }, OC: { en: 'Oceania', es: 'Oceanía' } };
 

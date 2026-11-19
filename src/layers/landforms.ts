@@ -1,7 +1,7 @@
 // Landforms (mountain ranges, deserts, plateaus...), peaks and volcanoes, rivers and lakes.
 import { geoCentroid, geoArea, geoContains } from 'd3-geo';
 import { loadJSON, shapesFrom, type Shape } from '../data/store';
-import { lang, fmtNumber, L, tx } from '../app/i18n';
+import { lang, fmtNumber, L, tx, nm } from '../app/i18n';
 import type { Topology } from 'topojson-specification';
 import type { LayerDef } from './types';
 
@@ -77,7 +77,6 @@ export const landforms: LayerDef = {
   },
   labels(rc) {
     const wz = rc.webZoom;
-    const es = lang() === 'es';
     const pxPerRad = rc.view.pxPerRadian;
     for (const s of rc.visibleShapes(regions)) {
       const p = s.feature.properties;
@@ -90,7 +89,7 @@ export const landforms: LayerDef = {
       if (!pt) continue;
       const kind = KINDS[p.k];
       rc.labels.add({
-        text: es && p.es ? p.es : p.n, x: pt[0], y: pt[1], priority: 520 - p.sr * 25,
+        text: nm(p.n, p.es), x: pt[0], y: pt[1], priority: 520 - p.sr * 25,
         size: 10.5 + Math.min(4, px / 120), weight: 600, italic: true, caps: px > 140,
         color: rc.theme.dark ? (kind ? '#fff1d6' : '#d7e7ff') : (kind ? '#5a3418' : '#1f3b63'), halo: rc.theme.labelHalo,
       });
@@ -100,13 +99,12 @@ export const landforms: LayerDef = {
       const pt = rc.project(p.lon, p.lat);
       if (!pt) continue;
       rc.labels.add({
-        text: es && p.es ? p.es : p.name, sub: `${fmtNumber(p.elev)} m`, x: pt[0] + 4, y: pt[1], align: 'left',
+        text: nm(p.name, p.es), sub: `${fmtNumber(p.elev)} m`, x: pt[0] + 4, y: pt[1], align: 'left',
         priority: 450 + p.elev / 100, size: 10, weight: 600, color: rc.theme.dark ? '#ffe9cf' : '#4a2a12', halo: rc.theme.labelHalo,
       });
     }
   },
   legend() {
-    const es = lang() === 'es';
     return {
       kind: 'categories', title: L('Landforms', 'Formas del relieve'),
       items: [
@@ -118,12 +116,11 @@ export const landforms: LayerDef = {
     };
   },
   pick(lon, lat) {
-    const es = lang() === 'es';
     const hits = regions.filter((s) => KINDS[s.feature.properties.k] && geoContains(s.feature as never, [lon, lat]));
     if (!hits.length) return null;
     return hits.slice(0, 3).map((s) => {
       const p = s.feature.properties; const k = KINDS[p.k];
-      return { label: tx(k), value: es && p.es ? p.es : p.n, icon: k.icon };
+      return { label: tx(k), value: nm(p.n, p.es), icon: k.icon };
     });
   },
 };
@@ -167,7 +164,6 @@ export const rivers: LayerDef = {
     const set = (rc.lod === '10m' && water['10m']) || water['50m'];
     if (!set) return;
     const wz = rc.webZoom;
-    const es = lang() === 'es';
     // A view of its own (an ambient playlist's) names just a few rivers and lakes, by their English names.
     const named = inst?.options.named ? new Set(String(inst.options.named).split(',')) : null;
     for (const s of [...set.rivers, ...set.lakes]) {
@@ -175,11 +171,10 @@ export const rivers: LayerDef = {
       if (!p.n || (named ? !named.has(p.n) : p.sr > wz * 1.6 - 2.5)) continue;
       const pt = rc.project(s.c[0], s.c[1]);
       if (!pt) continue;
-      rc.labels.add({ text: es && p.es ? p.es : p.n, x: pt[0], y: pt[1], priority: 360 - p.sr * 20, size: 10, italic: true, weight: 600, color: rc.theme.dark ? '#9fd8ff' : '#1f5f99', halo: rc.theme.labelHalo });
+      rc.labels.add({ text: nm(p.n, p.es), x: pt[0], y: pt[1], priority: 360 - p.sr * 20, size: 10, italic: true, weight: 600, color: rc.theme.dark ? '#9fd8ff' : '#1f5f99', halo: rc.theme.labelHalo });
     }
   },
   legend() {
-    const es = lang() === 'es';
     return { kind: 'categories', items: [{ color: '#6ec3ff', label: L('Rivers', 'Ríos'), shape: 'line' }, { color: '#16518a', label: L('Lakes', 'Lagos') }] };
   },
 };

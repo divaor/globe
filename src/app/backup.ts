@@ -12,7 +12,6 @@ import { lang, L } from './i18n';
 import { appLocale } from './i18n';
 
 declare const __APP_VERSION__: string;
-const es = () => lang() === 'es';
 
 /** Kept only where they were made: saved offline areas (their tiles live in this device's cache) and first-run hints. */
 const LOCAL_ONLY = new Set(['atlas-globe:saved-areas', 'atlas-saved-tiles', 'atlas-globe:hinted', 'atlas-globe:welcomed']);

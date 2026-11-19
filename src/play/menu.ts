@@ -6,7 +6,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import { FEATURES, ftile } from '../ui/features';
 import { h, icon, clear, toggle } from '../ui/dom';
-import { PlayHost, L, es } from './host';
+import { PlayHost, L } from './host';
 import { BorderHop } from './hop';
 import { PinIt, PACKS, type Pack } from './pin';
 import { HigherLower } from './hilo';

@@ -7,7 +7,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { h, icon, toggle, slider, segmented } from '../ui/dom';
 import { fmtNumber, tx } from '../app/i18n';
-import { L, es } from '../play/host';
+import { L } from '../play/host';
 import { LAYERS, layerName, type Layer } from './model';
 import { drawCut, kOf, type CutState } from './cut';
 import { digColumn, depthText } from './column';

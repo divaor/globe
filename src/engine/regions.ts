@@ -5,6 +5,7 @@ import { mesh } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { MultiLineString } from 'geojson';
 import { chunkLines, loadJSON, shapesFrom, type Line, type Shape } from '../data/store';
+import { nm, lang } from '../app/i18n';
 
 interface RegionProps { n: string; es?: string; a: string; t?: string | null; lr: number; lx: number; ly: number }
 
@@ -85,9 +86,11 @@ const TYPES_ES: Record<string, string> = {
   'Autonomous Province': 'Provincia autónoma', 'Capital City': 'Ciudad capital', Area: 'Área', Zone: 'Zona',
 };
 
-/** "State", "Province"… in the reader's language; null when Natural Earth does not say. */
-export function regionType(r: Region, es: boolean): string | null {
+/** "State", "Province"… in the reader's language (the data's words, through nm); null when Natural Earth does not say. */
+export function regionType(r: Region): string | null {
   const t = r.type?.split('|')[0] ?? null;
   if (!t) return null;
-  return es ? TYPES_ES[r.type!] ?? TYPES_ES[t] ?? null : t;
+  return lang() === 'es' ? TYPES_ES[r.type!] ?? TYPES_ES[t] ?? null : nm(t);
 }
+/** The region's name in the reader's language. */
+export const regionName = (r: Region) => nm(r.name, r.es);

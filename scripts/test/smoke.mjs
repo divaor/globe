@@ -6097,6 +6097,57 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(!errors.length, `no page errors with ?pseudo${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
+// 48. More languages (v0.42.0): Portuguese (Brazil), French and German. A phone in Portuguese opens the app in
+// Portuguese (its texts, numbers, the map's names); each language's panels show no pattern's {0}; a country card has
+// the country's own name; Settings offers the five languages; stories, lives and guides say they are in English.
+{
+  const BAR = { pt: 'Mapa,Explorar,Hoje,Aprender,Jogar', fr: 'Carte,Explorer,Aujourd’hui,Apprendre,Jouer', de: 'Karte,Entdecken,Heute,Lernen,Spielen' };
+  const NAME = { pt: 'Alemanha', fr: 'Allemagne', de: 'Deutschland' };
+  const SETTINGS = { pt: 'Configurações', fr: 'Réglages', de: 'Einstellungen' };
+  const PANELS = [
+    ['Today', () => document.querySelector('[data-dock="today"]').click()], ['Settings', () => window.atlas.shell.openSettings()],
+    ['About', () => window.atlas.shell.openAbout(true)], ['Filters', () => window.atlas.shell.openFilters(true)],
+    ['Map games', () => void window.atlas.play.openMenu()], ['Master the world', () => void window.atlas.master.openPanel()],
+    ['Quiz', () => window.atlas.learn.openQuizMenu()], ['Fill the map', () => void window.atlas.fill.openPanel?.()],
+  ];
+  // A phone in Brazilian Portuguese, no language picked: the app speaks Portuguese.
+  {
+    const { page, errors, ctx } = await open({ ...devices['Pixel 7'], locale: 'pt-BR' }, '');
+    const F = (fn, arg) => page.evaluate(fn, arg);
+    const s = await F(() => ({ lang: document.documentElement.lang, bar: [...document.querySelectorAll('[data-dock]')].map((b) => b.textContent.trim()).join(','), n: window.atlas.i18n.nm('Germany'), sea: window.atlas.i18n.nm('North Sea') }));
+    await F(() => window.atlas.shell.openSettings());
+    await page.waitForTimeout(700);
+    const set = await F(() => ({ formats: document.querySelector('[data-settings="formats"]')?.textContent ?? '', langs: document.querySelector('.settings')?.innerText ?? '' }));
+    check(s.lang === 'pt-BR' && s.bar === BAR.pt && s.n === NAME.pt && s.sea === 'Mar do Norte', `a Portuguese phone: <html lang="${s.lang}">, the bar "${s.bar}", "${s.n}", "${s.sea}"`);
+    check(/10\.935,5/.test(set.formats) && ['Português (Brasil)', 'Français', 'Deutsch', 'Español (España)'].every((x) => set.langs.includes(x)), `Portuguese numbers "${set.formats.slice(0, 60)}"; Settings offers the five languages`);
+    check(!errors.length, `pt phone: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
+  for (const lang of ['pt', 'fr', 'de']) {
+    const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, `#p=globe&l=political&c=10,25,1.1&lang=${lang}`);
+    const F = (fn, arg) => page.evaluate(fn, arg);
+    const raw = [], seen = {};
+    for (const [label, open_] of PANELS) {
+      await F(open_);
+      await page.waitForTimeout(1200);
+      const text = await F(() => document.querySelector('.sheet.open')?.innerText ?? '');
+      seen[label] = text.length;
+      const m = text.match(/\{\d[^}]{0,30}\}?|\{[a-z]+\}/g);
+      if (m) raw.push(`${label}: ${m.slice(0, 3).join(' ')}`);
+    }
+    const short = Object.entries(seen).filter(([, n]) => n <= 40).map(([k]) => k);
+    check(!raw.length && !short.length, `${lang}: no pattern shows its {0} in ${PANELS.length} panels${raw.length ? ` (shown: ${raw.join('; ')})` : ''}${short.length ? `; empty: ${short.join(', ')}` : ''}`);
+    await F(() => { window.atlas.shell.sheet?.close?.(); window.atlas.app.select('DEU'); });
+    await page.waitForFunction((n) => document.querySelector('.country-card:not([hidden]) .card-title')?.textContent === n, NAME[lang], { timeout: 8000 }).catch(() => {});
+    const t = await F(() => ({ card: document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '', settings: window.atlas.i18n.t('settings'), bar: [...document.querySelectorAll('[data-dock]')].map((b) => b.textContent.trim()).join(',') }));
+    await F(() => window.atlas.time.stories.lives.pick());
+    await page.waitForTimeout(1500);
+    const note = await F(() => document.querySelector('.sheet.open [data-prose-note]')?.textContent ?? '');
+    check(t.card === NAME[lang] && t.settings === SETTINGS[lang] && t.bar === BAR[lang] && note.length > 20, `${lang}: the card "${t.card}", "${t.settings}", the bar "${t.bar}", the lives' note "${note.slice(0, 50)}…"`);
+    check(!errors.length, `${lang}: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
+}
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

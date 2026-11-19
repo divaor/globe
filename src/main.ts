@@ -6,7 +6,7 @@ import { MyData } from './mydata/mydata';
 import { myDataPanel } from './mydata/panel';
 import { Upload } from 'lucide';
 import { coreLayers } from './layers';
-import { t, tx, fmtNumber } from './app/i18n';
+import { t, tx, fmtNumber, lower, nm } from './app/i18n';
 import { L } from './play/host';
 import { gameDaily, dayKey } from './learn/progress';
 import { fillState } from './fill/store';
@@ -45,7 +45,7 @@ import { InsideEarth } from './earth/inside';
 import { DeepSea } from './ocean/deep';
 import { shouldWelcome, showWelcome } from './ui/welcome';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders; i18n: { L: typeof L; t: typeof t; tx: typeof tx } } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders; i18n: { L: typeof L; t: typeof t; tx: typeof tx; nm: typeof nm } } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -159,7 +159,7 @@ async function boot() {
   });
   ALL_DECKS.forEach((deck, k) => reminders.add({
     id: `master:${deck}`, order: 20 + k, icon: master.deckIcon(deck), name: () => master.deckName(deck),
-    label: () => L('Remind me to practise {0}', 'Recuérdame practicar {0}', master.deckName(deck).toLowerCase()),
+    label: () => L('Remind me to practise {0}', 'Recuérdame practicar {0}', lower(master.deckName(deck))),
     done: () => master.deckToday(deck), words: (day) => master.deckWords(deck, day),
   }));
   reminders.add({
@@ -209,7 +209,7 @@ async function boot() {
   app.on('mydata', openMyData);
   shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, group: 'map', onClick: openMyData });
   void myData.init();
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill, onmap, today, reminders, i18n: { L, t, tx } };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill, onmap, today, reminders, i18n: { L, t, tx, nm } };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };

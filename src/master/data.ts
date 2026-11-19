@@ -5,6 +5,7 @@ import type { DeckData, Country } from './decks';
 import type { DeckId, Level } from './srs';
 import { level } from './srs';
 import { master } from './store';
+import { lang as current, nm as capName } from '../app/i18n';
 
 let deck: DeckData | null = null;
 let byId = new Map<string, Country>();
@@ -24,7 +25,7 @@ export const deckCountry = (id: string) => byId.get(id);
 /** The capital's name from the deck (the official one for the countries with two seats), once it is loaded. */
 export function deckCapital(id: string, lang: string): string | null {
   const c = byId.get(id);
-  return c?.cap && c.skip !== 'capitals' ? (lang === 'es' ? c.cap.es : c.cap.en) : null;
+  return c?.cap && c.skip !== 'capitals' ? (lang === 'es' ? c.cap.es : lang === 'en' && current() === 'es' ? c.cap.en : capName(c.cap.en)) : null;
 }
 
 /** How well a country is known in a deck; for all three decks, the least known of the three. */

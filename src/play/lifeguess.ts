@@ -14,7 +14,7 @@ import { starText } from './score';
 import { LIFE_ROUNDS, lifePoints, lifeStars, sample, km } from './logic';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
-import { L, es, type PlayHost, type HostGame } from './host';
+import { L, type PlayHost, type HostGame } from './host';
 
 type T = { en: string; es: string };
 interface Entry { id: string; name: T; icon: string; region: T; life?: { field: string; born: string; died: string | null } }

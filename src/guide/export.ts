@@ -3,11 +3,10 @@
 // sent anywhere by the app: the reader copies, downloads or shares it. The share link carries the places, packed.
 import { ClipboardCopy, Download, FileJson } from 'lucide';
 import { h, icon } from '../ui/dom';
-import { lang, L } from '../app/i18n';
+import { lang, L, nm as nameIn, tx } from '../app/i18n';
 import { tripDetails, setTripDetails, PLACE_ICONS, type Place, type PlaceKind, type TripDetails } from './plan';
 import { appLocale } from '../app/i18n';
 
-const es = () => lang() === 'es';
 
 export interface TripOut {
   cities: { id: string; name: string; country: string; at: [number, number]; wiki?: string; places: Place[]; km?: number }[];
@@ -15,18 +14,18 @@ export interface TripOut {
   places: Record<string, Place[]>;
 }
 
-const KIND_NAMES: Record<PlaceKind, [string, string]> = {
-  whs: ['World Heritage site', 'Sitio del Patrimonio Mundial'], sight: ['Sight', 'Lugar'], museum: ['Museum', 'Museo'], building: ['Building', 'Edificio'],
-  park: ['Park or reserve', 'Parque o reserva'], zoo: ['Zoo or aquarium', 'Zoológico o acuario'], garden: ['Botanical garden', 'Jardín botánico'],
-  tree: ['Famous tree', 'Árbol famoso'], dish: ['Dish to try', 'Plato para probar'], spectacle: ['Nature spectacle', 'Espectáculo natural'],
+const KIND_NAMES: Record<PlaceKind, { en: string; es: string }> = {
+  whs: { en: 'World Heritage site', es: 'Sitio del Patrimonio Mundial' }, sight: { en: 'Sight', es: 'Lugar' }, museum: { en: 'Museum', es: 'Museo' }, building: { en: 'Building', es: 'Edificio' },
+  park: { en: 'Park or reserve', es: 'Parque o reserva' }, zoo: { en: 'Zoo or aquarium', es: 'Zoológico o acuario' }, garden: { en: 'Botanical garden', es: 'Jardín botánico' },
+  tree: { en: 'Famous tree', es: 'Árbol famoso' }, dish: { en: 'Dish to try', es: 'Plato para probar' }, spectacle: { en: 'Nature spectacle', es: 'Espectáculo natural' },
 };
-const PACES: [TripDetails['pace'], string, string][] = [['', '—', '—'], ['relaxed', 'Relaxed', 'Tranquilo'], ['normal', 'Normal', 'Normal'], ['packed', 'Packed', 'Intenso']];
-const BUDGETS: [TripDetails['budget'], string, string][] = [['', '—', '—'], ['low', 'Low', 'Bajo'], ['mid', 'Mid-range', 'Medio'], ['high', 'High', 'Alto']];
+const PACES: [TripDetails['pace'], { en: string; es: string }][] = [['', { en: '—', es: '—' }], ['relaxed', { en: 'Relaxed', es: 'Tranquilo' }], ['normal', { en: 'Normal', es: 'Normal' }], ['packed', { en: 'Packed', es: 'Intenso' }]];
+const BUDGETS: [TripDetails['budget'], { en: string; es: string }][] = [['', { en: '—', es: '—' }], ['low', { en: 'Low', es: 'Bajo' }], ['mid', { en: 'Mid-range', es: 'Medio' }], ['high', { en: 'High', es: 'Alto' }]];
 
 // ---- The plan, written out ---------------------------------------------------------------------------------------
 
-const nm = (p: Place) => (es() ? p.n[1] : p.n[0]);
-const why = (p: Place) => (p.why ?? []).map((w) => (es() ? w.t[1] : w.t[0]));
+const nm = (p: Place) => (nameIn(p.n[0], p.n[1]));
+const why = (p: Place) => (p.why ?? []).map((w) => (nameIn(w.t[0], w.t[1])));
 const fix = (x: number) => x.toFixed(4).replace(/\.?0+$/, '');
 
 /** The whole plan, in Markdown, ending with what to ask an assistant. */
@@ -40,8 +39,8 @@ export function tripMarkdown(t: TripOut, d: TripDetails = tripDetails()): string
   if (d.from) det.push(`- ${L('Starting from', 'Saliendo de')}: ${d.from}`);
   if (d.passport) det.push(`- ${L('Passport', 'Pasaporte')}: ${d.passport}`);
   const pace = PACES.find((p) => p[0] === d.pace && p[0]), budget = BUDGETS.find((b) => b[0] === d.budget && b[0]);
-  if (pace) det.push(`- ${L('Pace', 'Ritmo')}: ${es() ? pace[2] : pace[1]}`);
-  if (budget) det.push(`- ${L('Budget', 'Presupuesto')}: ${es() ? budget[2] : budget[1]}`);
+  if (pace) det.push(`- ${L('Pace', 'Ritmo')}: ${tx(pace[1])}`);
+  if (budget) det.push(`- ${L('Budget', 'Presupuesto')}: ${tx(budget[1])}`);
   if (d.interests) det.push(`- ${L('Interests', 'Intereses')}: ${d.interests}`);
   if (d.note) det.push(`- ${L('Note', 'Nota')}: ${d.note}`);
   if (det.length) out.push(`## ${L('Trip details', 'Datos del viaje')}`, ...det, '');
@@ -55,29 +54,21 @@ export function tripMarkdown(t: TripOut, d: TripDetails = tripDetails()): string
       for (const p of c.places) {
         const ws = why(p);
         const at = p.at ? ` (${fix(p.at[1])}, ${fix(p.at[0])})` : '';
-        out.push(`- ${PLACE_ICONS[p.kind]} **${nm(p)}** · ${es() ? KIND_NAMES[p.kind][1] : KIND_NAMES[p.kind][0]}${at}${ws.length ? `: ${ws.join('; ')}` : ''}${p.url ? ` · ${p.url}` : ''}`);
+        out.push(`- ${PLACE_ICONS[p.kind]} **${nm(p)}** · ${tx(KIND_NAMES[p.kind])}${at}${ws.length ? `: ${ws.join('; ')}` : ''}${p.url ? ` · ${p.url}` : ''}`);
       }
     } else out.push('', L('No places chosen yet: suggest the essentials.', 'Aún no elegí lugares: sugiere lo esencial.'));
     out.push('');
   });
   out.push(`## ${L('What I would like from you', 'Lo que te pido')}`, '');
   out.push(L('Please help me turn this plan into a complete trip, with real, current information:', 'Ayúdame a convertir este plan en un viaje completo, con información real y actual:'));
-  const asks = es() ? [
-    'Un itinerario día por día, en el orden de las ciudades (ajústalo si conviene otro), con los lugares de cada día agrupados por cercanía.',
-    'Cómo ir de una ciudad a la siguiente (tren, avión, autobús o auto): duración, frecuencia, precio aproximado y dónde reservar.',
-    'Requisitos de entrada y visado para mi pasaporte, y los documentos que necesito.',
-    'Días y horarios de apertura de cada lugar, cuáles requieren reservar entradas con anticipación y cuánto tiempo dedicar a cada uno.',
-    'Dónde alojarse en cada ciudad (barrios) y cómo moverse dentro de ella.',
-    'Un presupuesto aproximado, el clima, fiestas o cierres en mis fechas, y consejos de seguridad y salud.',
-    'Di claramente de qué no estás seguro, y dame los sitios oficiales donde comprobarlo.',
-  ] : [
-    'A day-by-day itinerary, in the order of the cities (change it if another works better), with each day\'s places grouped by how close they are.',
-    'How to get from each city to the next (train, flight, bus or car): how long, how often, a rough price and where to book.',
-    'Entry and visa rules for my passport, and the documents I need.',
-    'The days and hours each place is open, which need tickets booked ahead, and how long to give each one.',
-    'Where to stay in each city (which areas) and how to get around in it.',
-    'A rough budget, the weather, festivals or closures on my dates, and safety and health advice.',
-    'Say clearly what you are not sure of, and point me to the official sites to check it.',
+  const asks = [
+    L('A day-by-day itinerary, in the order of the cities (change it if another works better), with each day\'s places grouped by how close they are.', 'Un itinerario día por día, en el orden de las ciudades (ajústalo si conviene otro), con los lugares de cada día agrupados por cercanía.'),
+    L('How to get from each city to the next (train, flight, bus or car): how long, how often, a rough price and where to book.', 'Cómo ir de una ciudad a la siguiente (tren, avión, autobús o auto): duración, frecuencia, precio aproximado y dónde reservar.'),
+    L('Entry and visa rules for my passport, and the documents I need.', 'Requisitos de entrada y visado para mi pasaporte, y los documentos que necesito.'),
+    L('The days and hours each place is open, which need tickets booked ahead, and how long to give each one.', 'Días y horarios de apertura de cada lugar, cuáles requieren reservar entradas con anticipación y cuánto tiempo dedicar a cada uno.'),
+    L('Where to stay in each city (which areas) and how to get around in it.', 'Dónde alojarse en cada ciudad (barrios) y cómo moverse dentro de ella.'),
+    L('A rough budget, the weather, festivals or closures on my dates, and safety and health advice.', 'Un presupuesto aproximado, el clima, fiestas o cierres en mis fechas, y consejos de seguridad y salud.'),
+    L('Say clearly what you are not sure of, and point me to the official sites to check it.', 'Di claramente de qué no estás seguro, y dame los sitios oficiales donde comprobarlo.'),
   ];
   out.push(...asks.map((a, i) => `${i + 1}. ${a}`), '');
   return out.join('\n');
@@ -112,8 +103,8 @@ export function tripPanelExtras(t: TripOut, toast: (msg: string) => void): HTMLE
     i.addEventListener('change', () => { d[key] = i.value.trim() || undefined; save(); });
     return i;
   };
-  const select = <K extends 'pace' | 'budget'>(key: K, list: [TripDetails[K], string, string][]) => {
-    const s = h('select', { class: 'trip-input', 'data-trip-detail': key }, ...list.map(([v, en, sp]) => h('option', { value: v ?? '', selected: (d[key] ?? '') === v }, es() ? sp : en))) as HTMLSelectElement;
+  const select = <K extends 'pace' | 'budget'>(key: K, list: [TripDetails[K], { en: string; es: string }][]) => {
+    const s = h('select', { class: 'trip-input', 'data-trip-detail': key }, ...list.map(([v, label]) => h('option', { value: v ?? '', selected: (d[key] ?? '') === v }, tx(label)))) as HTMLSelectElement;
     s.addEventListener('change', () => { d[key] = (s.value || undefined) as TripDetails[K]; save(); });
     return s;
   };

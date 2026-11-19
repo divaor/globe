@@ -7,13 +7,13 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard, shareBtn, mainBtn } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber, tx } from '../app/i18n';
+import { fmtNumber, tx, nm } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
 import { PIN_ROUNDS, PIN_MAX, pinPoints, pinStars, sample, km } from './logic';
 import { recordGame, dayKey, type Badge } from '../learn/progress';
-import { L, es, type PlayHost, type HostGame } from './host';
+import { L, type PlayHost, type HostGame } from './host';
 
 export type Pack = 'mixed' | 'capitals' | 'heritage' | 'structures' | 'battles' | 'dishes' | 'inventions' | 'museums' | 'masterpieces' | 'animals' | 'trees';
 export const PACKS: [Pack, { en: string; es: string }][] = [
@@ -116,8 +116,8 @@ export class PinIt implements HostGame {
     if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
-  private name(p: Place) { return es() ? p[1] : p[0]; }
-  private note(p: Place) { return es() ? p[6] : p[5]; }
+  private name(p: Place) { return nm(p[0], p[1]); }
+  private note(p: Place) { return nm(p[5], p[6]); }
   private dist(d: number) { return d < 10 ? `${d.toFixed(1)} km` : `${fmtNumber(Math.round(d))} km`; }
 
   render() {

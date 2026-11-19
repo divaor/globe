@@ -175,7 +175,6 @@ const mmss = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).
 /** A clip on a card: its play button, how far it has played, and who made the recording, with its licence and a
  * link to its page on Commons (`credit: false` leaves them out, for a quiz). */
 export function clipEl(c: Clip, o: { title?: string; credit?: boolean } = {}): HTMLElement {
-  const es = lang() === 'es';
   const btn = h('button', { type: 'button', class: 'clip-play' }) as HTMLButtonElement;
   const fill = h('i');
   const bar = h('div', { class: 'clip-bar' }, fill);
@@ -241,7 +240,6 @@ function onScreen(c: Clip): boolean {
  * stops the clip, and the player goes with it. */
 export function clipMini(): HTMLElement {
   if (mini) return mini;
-  const es = () => lang() === 'es';
   const name = h('span', { class: 'clip-mini-name' });
   const stop = h('button', { type: 'button', class: 'clip-mini-stop' }, icon(Square, 14)) as HTMLButtonElement;
   stop.addEventListener('click', (e) => { e.stopPropagation(); stopClip(); });

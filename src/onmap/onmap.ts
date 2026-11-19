@@ -14,9 +14,9 @@ import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear } from '../ui/dom';
-import { subregion, t, dataLang, tx, Lc } from '../app/i18n';
+import { subregion, t, dataLang, tx, Lc, nm, appLocale } from '../app/i18n';
 import { loadJSON } from '../data/store';
-import { L, es, type PlayHost, type HostGame } from '../play/host';
+import { L, type PlayHost, type HostGame } from '../play/host';
 import { shareText } from '../play/pin';
 import { recordFeat, dayKey, onReset, type Badge } from '../learn/progress';
 import { loadDeck } from '../master/data';
@@ -111,10 +111,10 @@ export class PutOnMap implements HostGame {
     const entries = scope.length === 3 ? entriesOf(this.rows[scope], this.places) : regionEntries(this.rows, this.members(scope), this.places);
     return byKind(entries, this.places, MIX_KINDS[mix]);
   }
-  private name(i: number) { const p = this.places[i]; return es() && p[2] ? p[2] : p[1]; }
+  private name(i: number) { const p = this.places[i]; return nm(p[1], p[2] || null); }
   private countryName(id: string) { return this.app.data.name(id, dataLang()); }
   scopeName(scope: string) {
-    if (scope.startsWith('r:')) return es() ? subregion(scope.slice(2)) : scope.slice(2);
+    if (scope.startsWith('r:')) return subregion(scope.slice(2));
     if (scope.length === 2) return t(`cont.${scope}`);
     return this.countryName(scope);
   }
@@ -551,7 +551,7 @@ export class PutOnMap implements HostGame {
     // A country: the ones with enough for this mix, by continent.
     const ok = new Set(this.okCountries.get(set.mix) ?? []);
     const sel = h('select', { class: 'select', 'data-onmap': 'country', 'aria-label': L('Country', 'País') }) as HTMLSelectElement;
-    const lang = dataLang();
+    const lang = appLocale();
     for (const ct of CONTS) {
       const ids = this.deck.filter((c) => ok.has(c.id) && this.members(ct).includes(c.id)).map((c) => c.id).sort((a, b) => this.countryName(a).localeCompare(this.countryName(b), lang));
       if (!ids.length) continue;

@@ -59,7 +59,6 @@ const koppen: LayerDef = {
   load: loadKoppen,
   drawFill(rc) { drawClasses(rc, (k) => kClasses[k]?.color ?? null); },
   legend() {
-    const es = lang() === 'es';
     const items = Object.entries(kClasses).filter(([k]) => kShapes.some((s) => s.feature.properties.k === k)).map(([k, c]) => ({
       color: c.color, label: `${k} · ${tx(c)}`,
     }));
@@ -69,10 +68,9 @@ const koppen: LayerDef = {
     const k = kAt(lon, lat);
     if (!k) return null;
     const c = kClasses[k];
-    const es = lang() === 'es';
     return [
       { label: L('Climate', 'Clima'), value: `${k} · ${tx(c)}`, icon: '🌦️' },
-      { label: GROUPS[c.group] ? tx(GROUPS[c.group]) : c.group, value: es ? c.desc_es : c.desc_en },
+      { label: GROUPS[c.group] ? tx(GROUPS[c.group]) : c.group, value: tx({ en: c.desc_en, es: c.desc_es }) },
     ];
   },
 };
@@ -86,7 +84,6 @@ const vegetation: LayerDef = {
   load: loadKoppen,
   drawFill(rc) { drawClasses(rc, (k) => biomes[kClasses[k]?.biome]?.color ?? null); },
   legend() {
-    const es = lang() === 'es';
     return {
       kind: 'categories', title: L('Biomes', 'Biomas'),
       items: Object.values(biomes).map((b) => ({ color: b.color, label: tx(b), icon: b.emoji })),
@@ -97,8 +94,7 @@ const vegetation: LayerDef = {
     const k = kAt(lon, lat);
     const b = k ? biomes[kClasses[k]?.biome] : null;
     if (!b) return null;
-    const es = lang() === 'es';
-    return [{ label: L('Biome', 'Bioma'), value: `${b.emoji} ${tx(b)}`, icon: '🌳' }, { label: '', value: es ? b.desc_es : b.desc_en }];
+    return [{ label: L('Biome', 'Bioma'), value: `${b.emoji} ${tx(b)}`, icon: '🌳' }, { label: '', value: tx({ en: b.desc_en, es: b.desc_es }) }];
   },
 };
 
@@ -261,7 +257,6 @@ const winds: LayerDef = {
     });
   },
   legend() {
-    const es = lang() === 'es';
     return { kind: 'gradient', title: L('Wind speed', 'Velocidad del viento'), stops: SPEED_COLORS, min: '0 m/s', mid: '9 m/s', max: '20+ m/s', note: L('Monthly mean at 850 hPa (≈1.5 km).', 'Media mensual a 850 hPa (≈1,5 km).') };
   },
   pick(lon, lat, inst) {
@@ -269,7 +264,7 @@ const winds: LayerDef = {
     if (!f) return null;
     const [u, v] = windAt(f, lon, lat);
     const speed = Math.hypot(u, v);
-    const dirs = lang() === 'es' ? ['N', 'NE', 'E', 'SE', 'S', 'SO', 'O', 'NO'] : ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+    const dirs = L('N,NE,E,SE,S,SW,W,NW', 'N,NE,E,SE,S,SO,O,NO').split(',');
     // Wind comes FROM the opposite of its direction of travel.
     const from = (Math.atan2(-u, -v) * 180) / Math.PI;
     const d = dirs[Math.round(((from + 360) % 360) / 45) % 8];

@@ -2,7 +2,7 @@
 // Positions and realm outlines are approximate (compiled for an overview map).
 import { geoArea, geoCircle, geoContains, geoDistance, geoInterpolate } from 'd3-geo';
 import type { Polygon } from 'geojson';
-import { lang, L, tx } from '../../app/i18n';
+import { lang, L, tx, nm, fileLang, monthName as calMonth } from '../../app/i18n';
 import type { App } from '../../app/app';
 import type { LayerDef, LayerInstance, LayerTapUi, RenderCtx } from '../types';
 import { loadJSON } from '../../data/store';
@@ -11,7 +11,6 @@ import { loadWild } from '../../wild/data';
 import { wildData, links as wildLinks } from './wild';
 import { appLocale } from '../../app/i18n';
 
-const es = () => lang() === 'es';
 
 function poly(coords: [number, number][]): Polygon {
   const ring = [...coords, coords[0]];
@@ -81,7 +80,7 @@ const realms: LayerDef = {
   pick(lon, lat) {
     const r = REALMS.find((x) => geoContains(x.shape, [lon, lat]));
     if (!r) return null;
-    return [{ label: L('Realm', 'Región biogeográfica'), value: `${r.emoji} ${tx(r)}`, icon: '🧭' }, { label: L('Typical animals', 'Animales típicos'), value: es() ? r.animals[1] : r.animals[0] }];
+    return [{ label: L('Realm', 'Región biogeográfica'), value: `${r.emoji} ${tx(r)}`, icon: '🧭' }, { label: L('Typical animals', 'Animales típicos'), value: nm(r.animals[0], r.animals[1]) }];
   },
 };
 
@@ -175,7 +174,7 @@ const animals: LayerDef = {
     const size = Math.max(16, Math.min(34, 13 + rc.webZoom * 3.2));
     for (const a of ANIMALS) {
       const p = rc.project(a[3], a[4]);
-      if (p) rc.labels.add({ text: es() ? a[2] : a[1], x: p[0], y: p[1] + size * 0.85, priority: 800, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
+      if (p) rc.labels.add({ text: nm(a[1], a[2]), x: p[0], y: p[1] + size * 0.85, priority: 800, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
     }
   },
   pick(lon, lat, _i) {
@@ -183,7 +182,7 @@ const animals: LayerDef = {
     for (const a of ANIMALS) { const d = geoDistance([lon, lat], [a[3], a[4]]); if (d < bd) { bd = d; best = a; } }
     if (!best) return null;
     const [en, sp] = best[5].split('|');
-    return [{ label: L('Animal', 'Animal'), value: `${best[0]} ${es() ? best[2] : best[1]}`, icon: '🐾' }, { label: L('Lives in', 'Vive en'), value: es() ? sp : en }];
+    return [{ label: L('Animal', 'Animal'), value: `${best[0]} ${nm(best[1], best[2])}`, icon: '🐾' }, { label: L('Lives in', 'Vive en'), value: tx({ en, es: sp }) }];
   },
   legend() {
     return { kind: 'html', title: L('Iconic animals', 'Animales emblemáticos'), html: `<div class="lg-row">${L('Tap an animal to see where it lives.', 'Toca un animal para ver dónde vive.')}</div>` };
@@ -202,7 +201,7 @@ interface Migration {
 let MIGRATIONS: Migration[] = [];
 const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const MONTHS_ES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-const monthName = (m: number) => (es() ? MONTHS_ES[m] : MONTHS_EN[m]);
+const monthName = (m: number) => (fileLang() ? calMonth(m) : lang() === 'es' ? MONTHS_ES[m] : MONTHS_EN[m]);
 /** A year goes by in this many milliseconds while the journeys play. */
 const YEAR_MS = 36000;
 
@@ -375,7 +374,7 @@ const hotspots: LayerDef = {
   labels(rc) {
     for (const h of HOTSPOTS) {
       const p = rc.project(h[2], h[3]);
-      if (p) rc.labels.add({ text: es() ? h[1] : h[0], x: p[0], y: p[1], priority: 560, size: 10.5, weight: 700, color: rc.theme.dark ? '#c3fae8' : '#087f5b', halo: rc.theme.labelHalo });
+      if (p) rc.labels.add({ text: nm(h[0], h[1]), x: p[0], y: p[1], priority: 560, size: 10.5, weight: 700, color: rc.theme.dark ? '#c3fae8' : '#087f5b', halo: rc.theme.labelHalo });
     }
   },
   legend() {

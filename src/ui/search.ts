@@ -6,9 +6,9 @@
 // shows your last searches.
 import { Search, X, History } from 'lucide';
 import { h, icon, clear } from './dom';
-import { t, tx, fmtCompact, flagEmoji, L } from '../app/i18n';
+import { t, tx, fmtCompact, flagEmoji, L, nm } from '../app/i18n';
 import { matcher, parseCoords, fmtCoords } from './match';
-import { regions, loadRegions, regionType, type Region } from '../engine/regions';
+import { regions, loadRegions, regionType, regionName, type Region } from '../engine/regions';
 import { geoBounds } from 'd3-geo';
 import type { App } from '../app/app';
 import type { LayerDef, LayerHit, LayerInstance, LegendItem } from '../layers/types';
@@ -81,7 +81,6 @@ export class SearchBox {
 
   /** "Search places and countries", plus what the filters on add ("people born there, museums"). */
   private hint(): string {
-    const es = this.app.lang === 'es';
     const more = this.app.layers.filter((l) => l.ready && l.def.searchHint).map((l) => (tx(l.def.searchHint!)));
     if (!more.length) return t('searchHint');
     return `${L('Places', 'Lugares')}, ${[...new Set(more)].slice(0, 3).join(', ')}…`;
@@ -99,21 +98,20 @@ export class SearchBox {
     const score = matcher(q);
     const other = this.provider();
     if (other) return other.search(q, score).sort((a, b) => b.score - a.score).slice(0, 12);
-    const es = this.app.lang === 'es';
     const out: Hit[] = [];
     const coords = parseCoords(q);
     if (coords) out.push({ kind: 'place', lon: coords[1], lat: coords[0], label: fmtCoords(coords), sub: L('Coordinates', 'Coordenadas'), score: 200, zoom: 30, icon: '📍' });
     for (const [id, m] of Object.entries(this.app.data.meta)) {
-      const s = Math.max(score(m.n), score(m.es), m.ab ? score(m.ab) * 0.6 : 0, id.toLowerCase() === q.toLowerCase() ? 90 : 0);
-      if (s > 0) out.push({ kind: 'country', id, lon: m.lx, lat: m.ly, label: es ? m.es : m.n, sub: `${flagEmoji(m.a2)} ${t(`cont.${m.ct}`)}`, score: s + 15 + Math.max(0, 6 - m.lr) });
+      const s = Math.max(score(m.n), score(m.es), score(nm(m.n, m.es)), m.ab ? score(m.ab) * 0.6 : 0, id.toLowerCase() === q.toLowerCase() ? 90 : 0);
+      if (s > 0) out.push({ kind: 'country', id, lon: m.lx, lat: m.ly, label: nm(m.n, m.es), sub: `${flagEmoji(m.a2)} ${t(`cont.${m.ct}`)}`, score: s + 15 + Math.max(0, 6 - m.lr) });
     }
     for (const c of this.app.data.cities) {
-      const s = Math.max(score(c.name), c.es ? score(c.es) : 0);
+      const s = Math.max(score(c.name), c.es ? score(c.es) : 0, score(nm(c.name, c.es)));
       if (s <= 0) continue;
       const country = this.app.data.meta[c.country];
-      const cname = country ? (es ? country.es : country.n) : c.country;
+      const cname = country ? nm(country.n, country.es) : c.country;
       out.push({
-        kind: 'city', lon: c.lon, lat: c.lat, label: es && c.es ? c.es : c.name,
+        kind: 'city', lon: c.lon, lat: c.lat, label: nm(c.name, c.es),
         sub: `${c.capital === 2 ? '🏛️ ' : ''}${c.admin1 ? c.admin1 + ', ' : ''}${cname} · ${fmtCompact(c.pop)}`,
         score: s + Math.log10(Math.max(10, c.pop)) * 2 + (c.capital === 2 ? 6 : 0), zoom: c.pop > 5e6 ? 14 : c.pop > 1e6 ? 22 : 34,
       });
@@ -122,13 +120,13 @@ export class SearchBox {
     const rg = regions();
     if (rg) {
       for (const r of rg.regions) {
-        const s = Math.max(score(r.name), score(r.es));
+        const s = Math.max(score(r.name), score(r.es), score(regionName(r)));
         if (s < 45) continue;
         const country = this.app.data.meta[r.country];
-        const kind = regionType(r, es);
+        const kind = regionType(r);
         out.push({
-          kind: 'place', lon: r.lon, lat: r.lat, label: es ? r.es : r.name, icon: '🗺️',
-          sub: `${kind ?? (L('Region', 'Región'))}${country ? `, ${es ? country.es : country.n}` : ''}`,
+          kind: 'place', lon: r.lon, lat: r.lat, label: regionName(r), icon: '🗺️',
+          sub: `${kind ?? (L('Region', 'Región'))}${country ? `, ${nm(country.n, country.es)}` : ''}`,
           score: s + Math.min(10, r.size * 60), pick: () => this.onRegion?.(r),
         });
       }

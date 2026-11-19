@@ -681,7 +681,6 @@ export class Renderer {
   private baseLabels(rc: RenderCtx) {
     const { view, theme: th, labels } = rc;
     const wz = view.webZoom;
-    const es = this.lang === 'es';
     const set = this.settings.labels;
     const meta = this.data.meta;
     if (set.countries) {
@@ -696,7 +695,7 @@ export class Renderer {
         const size = Math.max(9.5, Math.min(20, 15.5 - m.lr * 1.3 + (wz - 3) * 1.6));
         const value = valueLayer ? valueLayer.def.valueLabel!(s.id, valueLayer) : null;
         labels.add({
-          text: es ? m.ses ?? m.es : m.sn ?? m.n, x: p[0], y: p[1], priority: 900 - m.lr * 40 + (s.id === this.selection ? 500 : 0),
+          text: nm(m.sn ?? m.n, m.ses ?? m.es), x: p[0], y: p[1], priority: 900 - m.lr * 40 + (s.id === this.selection ? 500 : 0),
           size, weight: big ? 700 : 600, color: th.label, halo: th.labelHalo, caps: big && wz < 5.5,
           sub: value ?? undefined, subSize: Math.max(9.5, Math.min(13, size * 0.8)), subColor: th.label,
         });
@@ -717,7 +716,7 @@ export class Renderer {
         if (!p) continue;
         const big = c.pop > 5e6 ? 2 : c.pop > 1e6 ? 1 : 0;
         labels.add({
-          text: es && c.es ? c.es : c.name, x: p[0], y: p[1],
+          text: nm(c.name, c.es), x: p[0], y: p[1],
           priority: (isCap ? 700 : 400) + big * 60 - c.minZoom * 20,
           size: 10.5 + big * (mapLook ? 2 : 1.2) + (isCap ? 0.6 : 0), weight: isCap || (mapLook && big) ? 650 : 500,
           color: th.city, halo: th.labelHalo,
@@ -740,7 +739,7 @@ export class Renderer {
         const p = rc.project(r.lon, r.lat);
         if (!p || p[0] < -40 || p[1] < -20 || p[0] > view.w + 40 || p[1] > view.h + 20) continue;
         labels.add({
-          text: es ? r.es : r.name, x: p[0], y: p[1], priority: 650 + Math.min(100, px / 8),
+          text: nm(r.name, r.es), x: p[0], y: p[1], priority: 650 + Math.min(100, px / 8),
           size: Math.max(9, Math.min(12.5, 8.2 + px / 110)), weight: 600, caps: true, color: th.regionLabel, halo: th.labelHalo,
         });
         if (++shown > 160) break;
@@ -754,7 +753,7 @@ export class Renderer {
         if (!p) continue;
         const ocean = m.kind === 'ocean';
         labels.add({
-          text: es && m.es ? m.es : m.name, x: p[0], y: p[1], priority: 300 - m.sr * 10,
+          text: nm(m.name, m.es), x: p[0], y: p[1], priority: 300 - m.sr * 10,
           size: ocean ? 13 : 10.5, weight: 500, italic: true, caps: ocean, color: th.sea, halo: th.labelHalo,
         });
       }
@@ -807,6 +806,7 @@ export class Renderer {
 
 // d3.geoContains is exact on the sphere; fine for single clicks.
 import { geoContains } from 'd3-geo';
+import { nm } from '../app/i18n';
 function geoContainsFast(f: Feature<Geometry, unknown>, lon: number, lat: number): boolean {
   return geoContains(f as never, [lon, lat]);
 }

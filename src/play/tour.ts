@@ -19,7 +19,7 @@ import { bestTour, tourCost, km, sample } from './logic';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
 import { loadArt } from '../artguide/data';
-import { L, es, type PlayHost, type HostGame } from './host';
+import { L, type PlayHost, type HostGame } from './host';
 
 export type TourMode = 'air' | 'land' | 'history';
 export const TOUR_MODES: [TourMode, { en: string; es: string }][] = [['air', { en: 'By air', es: 'En avión' }], ['land', { en: 'By land', es: 'Por tierra' }], ['history', { en: 'A journey from history', es: 'Un viaje de la historia' }]];

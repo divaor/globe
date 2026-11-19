@@ -12,7 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { Space } from '../space/space';
 import type { Sky } from './sky';
 import type { InfoRow } from '../layers/types';
-import { appLocale, dataLang, Lc } from '../app/i18n';
+import { appLocale, dataLang, Lc, wikiHref } from '../app/i18n';
 
 interface Nearby { id: string; name: Text; ra: number; dec: number; ly: number; kind?: Text; hip?: number; planets?: Text; text?: Text; wiki?: Text }
 interface Feature { id: string; kind: 'centre' | 'arm' | 'feature'; name: Text; l?: number; b?: number; ly?: number; text?: Text; wiki?: Text }
@@ -341,8 +341,8 @@ export class Galaxy {
   private links(wiki?: Text, skyTarget?: string) {
     const out: { label: string; href?: string; onClick?: () => void }[] = [];
     if (skyTarget) out.push({ label: L('See it in the sky', 'Verlo en el cielo'), onClick: () => this.sky.open({ frame: 'celestial', target: skyTarget, fov: 50 }) });
-    const t = wiki ? tr(wiki) || wiki.en : '';
-    if (t) out.push({ label: 'Wikipedia', href: `https://${wiki && tr(wiki) ? dataLang() : 'en'}.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_'))}` });
+    const href = wikiHref(wiki);
+    if (href) out.push({ label: 'Wikipedia', href });
     return out;
   }
 

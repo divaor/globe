@@ -1,7 +1,7 @@
 // Inside the Earth (v0.32.0): the layers, to scale, and how hot, how squeezed and how dense it is at each depth.
 // Depths and pressures follow PREM (Dziewonski & Anderson 1981); temperatures are today's usual estimates (the
 // deeper, the less certain: the facts in public/data/earth/inside.json give their ranges and sources).
-import { es } from '../play/host';
+
 import { fmtNumber, tx } from '../app/i18n';
 
 export const EARTH_KM = 6371;

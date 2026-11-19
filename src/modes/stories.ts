@@ -16,10 +16,10 @@ import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry, MultiLineString, Polygon } from 'geojson';
 import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen, Search, Music, Volume2, VolumeX } from 'lucide';
 import { loadJSON, shapesFrom, chunkLines, dataUrl, type Shape, type Line } from '../data/store';
-import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji, L, dataLang } from '../app/i18n';
+import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji, L, dataLang, ordinal, fileLang, appLocale, monthName as monthOf, nm, unescoLang, wikiSearch, inLang } from '../app/i18n';
 import { keepAwake } from '../ui/wake';
 import { recordSeen } from '../learn/progress';
-import { h, icon, clear } from '../ui/dom';
+import { h, icon, clear, englishNote } from '../ui/dom';
 import { continentSwatch, mix } from '../engine/colors';
 import { loadPaleo, fmtLat, unitName, type PaleoWorld, type Unit } from './paleo';
 import { SCRIPT_FONT, loadGlyphs, registerScriptFonts, isVertical } from '../app/scriptFonts';
@@ -50,14 +50,14 @@ export interface Whs { ref: number; n: [string, string]; y: number; c: 'c' | 'n'
 export function whsRows(w: Whs): { label: string; value: string; icon: string }[] {
   const kind = t(w.c === 'n' ? 'whsNatural' : w.c === 'm' ? 'whsMixed' : 'whsCultural');
   const value = w.x ? t('whsRemoved').replace('{y}', String(w.y)).replace('{x}', String(w.x))
-    : w.m && w.into ? t('whsMerged').replace('{y}', String(w.y)).replace('{m}', String(w.m)).replace('{into}', lang() === 'es' ? w.into[1] : w.into[0])
+    : w.m && w.into ? t('whsMerged').replace('{y}', String(w.y)).replace('{m}', String(w.m)).replace('{into}', nm(w.into[0], w.into[1]))
     : `${t('whsSince').replace('{y}', String(w.y))} · ${kind}`;
   const rows = [{ label: t('whsLabel'), value, icon: '🏛️' }];
   if (w.d && !w.x && !w.m) rows.push({ label: t('whsDangerLabel'), value: t('whsDanger'), icon: '⚠️' });
   return rows;
 }
 /** UNESCO's page of a site, in the reader's language. */
-export const whsUrl = (ref: number) => `https://whc.unesco.org/${dataLang()}/list/${ref}`;
+export const whsUrl = (ref: number) => `https://whc.unesco.org/${unescoLang()}/list/${ref}`;
 
 export interface Item {
   id?: string; name: Text; at: Pt; cat: string; icon: string; date: string; t: number; end?: string; life?: [string, string | null];
@@ -283,13 +283,37 @@ function agoNum(n: number, es: boolean): [string, 'bn' | 'mn' | ''] {
 }
 const UNIT_EN = { bn: 'billion', mn: 'million', '': '' };
 /** "3.7 billion years ago", "3.2 million years ago", "300,000 years ago", "hace 14\u00a0400 años". */
+/** "há 3,2 milhões de anos", "il y a 3,2 millions d’années", "vor 3,2 Millionen Jahren" (and a range of two). */
+function agoIn(n: number, n1?: number): string {
+  // i18n: by hand (how each language counts deep time)
+  const unit = (x: number): 'bn' | 'mn' | '' => (x >= 1e9 ? 'bn' : x >= 1e6 ? 'mn' : '');
+  const num = (x: number) => {
+    const u = unit(x), v = u === 'bn' ? x / 1e9 : u === 'mn' ? x / 1e6 : x >= 1e5 ? Math.round(x / 1e3) * 1e3 : Math.round(x / 100) * 100;
+    return new Intl.NumberFormat(appLocale(), { maximumFractionDigits: 2 }).format(u ? Math.round(v * 100) / 100 : v);
+  };
+  const word = (u: 'bn' | 'mn' | '', one: boolean) => {
+    if (!u) return '';
+    const W = { pt: u === 'bn' ? ['bilhão', 'bilhões'] : ['milhão', 'milhões'], fr: u === 'bn' ? ['milliard', 'milliards'] : ['million', 'millions'], de: u === 'bn' ? ['Milliarde', 'Milliarden'] : ['Million', 'Millionen'] }[lang() as 'pt' | 'fr' | 'de'];
+    return W[one ? 0 : 1];
+  };
+  const u = unit(n), many = n1 != null || num(n) !== '1';
+  const v = n1 != null && unit(n1) === u ? `${num(n)}–${num(n1)}` : num(n);
+  if (n1 != null && unit(n1) !== u) return `${agoIn(n)} – ${agoIn(n1)}`;
+  switch (lang()) {
+    case 'pt': return `há ${v}\u00a0${u ? `${word(u, !many)} de anos` : 'anos'}`;
+    case 'fr': return `il y a ${v}\u00a0${u ? `${word(u, !many)} d’années` : 'ans'}`;
+    default: return `vor ${v}\u00a0${u ? `${word(u, !many)} Jahren` : 'Jahren'}`;
+  }
+}
 function fmtAgo(y: number): string {
+  if (fileLang()) return agoIn(-y);
   const es = lang() === 'es', [v, u] = agoNum(-y, es);
   if (es) return u ? `hace ${v}\u00a0${v === '1' ? 'millón' : 'millones'} de años` : `hace ${v}\u00a0años`;
   return `${v}\u00a0${u ? `${UNIT_EN[u]} ` : ''}years ago`;
 }
 /** "7–2 million years ago", "300,000–40,000 years ago", "3.7 billion – 541 million years ago". */
 function fmtAgoRange(y0: number, y1: number): string {
+  if (fileLang()) return agoIn(-y0, -y1);
   const es = lang() === 'es', [a, ua] = agoNum(-y0, es), [b, ub] = agoNum(-y1, es);
   // i18n: by hand
   if (ua === ub) return es ? `hace ${a}–${b}\u00a0${ua ? 'millones de ' : ''}años` : `${a}–${b}\u00a0${ua ? `${UNIT_EN[ua]} ` : ''}years ago`;
@@ -306,9 +330,18 @@ export function fmtWhen(d: string, eraHint = 1, short = false): string {
   if (!m) return d;
   const y = Number(m[1]), mo = m[2] ? Number(m[2]) : 0, day = m[3] ? Number(m[3]) : 0;
   if (y < AGO) return fmtAgo(y);
-  const es = lang() === 'es';
   // Non-breaking spaces keep "216 a. C." and "AD 476" together when the text wraps.
   const year = y < 0 ? L('{0}\u00a0BC', '{0}\u00a0a.\u00a0C.', -y) : eraHint < 0 && y < 1000 ? L('AD\u00a0{0}', '{0}\u00a0d.\u00a0C.', y) : String(y);
+  if (fileLang()) {
+    // i18n: by hand (how each language writes a date): "1 de setembro de 1939", "1er septembre 1939", "1. September 1939".
+    const mn = mo ? monthOf(mo - 1, short) : '', low = mn.toLocaleLowerCase(appLocale());
+    switch (lang()) {
+      case 'pt': return day ? (short ? `${day} ${low} ${year}` : `${day} de ${low} de ${year}`) : mo ? `${mn} de ${year}` : year;
+      case 'fr': return day ? `${day === 1 ? '1er' : day} ${low} ${year}` : mo ? `${mn} ${year}` : year;
+      default: return day ? `${day}. ${mn} ${year}` : mo ? `${mn} ${year}` : year;
+    }
+  }
+  const es = lang() === 'es';
   const mon = mo ? (short ? MONTHS_SHORT : MONTHS)[dataLang()][mo - 1] : '';
   // Short: "1 nov. 1755" (a day's date that would not fit the story bar of a phone).
   if (es && short && day) return `${day} ${mon} ${year}`;
@@ -472,7 +505,7 @@ export class StoryMode {
     await this.ensureIndex();
     // Lives on the map lists its lives by field, with a search box and two lives side by side.
     if (this.kind === 'lives' && livesHook.pick) return livesHook.pick();
-    const wrap = h('div', { class: 'war-list' }, h('p', { class: 'muted small' }, this.tr('Intro')));
+    const wrap = h('div', { class: 'war-list' }, englishNote(), h('p', { class: 'muted small' }, this.tr('Intro')));
     if (!this.wars) {
       const browse = h('button', { type: 'button', class: 'pill story-browse-all' }, icon(Search, 16), t('storyBrowseAll'));
       browse.addEventListener('click', () => void this.browseCollection());
@@ -719,10 +752,11 @@ export class StoryMode {
       return;
     }
     const st = c.steps[this.step], i = this.step;
-    const title = tx(st.title);
-    const words = `${fmtWhen(st.date, c.t0)}. ${/[.!?…]$/.test(title) ? title : `${title}.`} ${tx(st.text)}`;
+    // A story is written in English and Spanish: in another language it is read in English, its date too.
+    const build = () => { const title = tx(st.title); return `${fmtWhen(st.date, c.t0)}. ${/[.!?…]$/.test(title) ? title : `${title}.`} ${tx(st.text)}`; };
+    const words = fileLang() ? inLang('en', build) : build();
     this.voice = 'reading';
-    void speak(words, { lang: lang() }).then((done) => {
+    void speak(words, { lang: fileLang() ? 'en' : lang() }).then((done) => {
       if (this.c !== c || this.step !== i) return;
       this.voice = done ? 'done' : 'off';
       this.voiceEnd = performance.now();
@@ -1628,7 +1662,7 @@ export class StoryMode {
     };
     input.addEventListener('input', () => { q = input.value; draw(); });
     drawChips(); draw();
-    this.shell.openPanel('story-browse', title, h('div', null, count, list), undefined, h('div', { class: 'story-browse-head' }, input, chips));
+    this.shell.openPanel('story-browse', title, h('div', null, englishNote(), count, list), undefined, h('div', { class: 'story-browse-head' }, input, chips));
   }
 
   /** Everything in the story on show, by date. */
@@ -1681,7 +1715,7 @@ export class StoryMode {
   }
 
   private battleCard(b: Battle, st: Step) {
-    const wiki = `https://${dataLang()}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(tx(b.name))}`;
+    const wiki = wikiSearch(tx(b.name));
     const { rows, notes } = this.battleInfo(b, st);
     this.shell.card.showCustom('⚔️', tx(b.name), tx(this.c!.name), rows, [{ label: t('wikipedia'), href: wiki }], notes);
   }
@@ -1994,12 +2028,6 @@ function ageText(st: Step): string {
   return t(st.ageAbout ? 'livesAgedAbout' : 'livesAged', { n });
 }
 
-/** "1st", "2nd", "23rd" ("1.º" in Spanish). */
-function ordinal(n: number): string {
-  if (lang() === 'es') return `${n}.º`;
-  const teen = n % 100 >= 11 && n % 100 <= 13;
-  return `${n}${teen ? 'th' : (['th', 'st', 'nd', 'rd'][n % 10] ?? 'th')}`;
-}
 
 /** An item's picture: its own Commons file if it has one, else its article's. */
 export function itemThumb(it: { wiki?: Text; img?: string }): Promise<string | null> {

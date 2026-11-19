@@ -12,7 +12,6 @@ import { crowdOf, type Placed } from '../crowd';
 import { loadArt, loadArch, nm, KINDS, PERIODS, type ArtData, type ArchData, type Work, type Museum, type Building } from '../../artguide/data';
 import { museumCard, buildingCard, workCard } from '../../artguide/cards';
 
-const es = () => lang() === 'es';
 let APP: App | null = null;
 let art: ArtData | null = null;
 let arch: ArchData | null = null;
