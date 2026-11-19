@@ -2104,7 +2104,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => [...document.querySelectorAll('.seg-wrap .seg-btn')].find((b) => /Latinoam/.test(b.textContent))?.click());
   await page.waitForTimeout(800);
   const st2 = await page.evaluate(() => ({ spanish: window.atlas.app.spanish, voice: document.querySelector('.voice-settings select option')?.textContent ?? '', share: window.atlas.app.shareUrl() }));
-  check(st.seg.join() === '📱 Como mi teléfono,English,Español (Latinoamérica),Español (España)*' && /España/.test(st.voice) && st2.spanish === 'latam' && /México/.test(st2.voice) && /lang=es(&|$)/.test(st2.share), `Settings: ${st.seg.join(' | ')}; first voice ${st.voice}, and ${st2.voice} for Latin America`);
+  check(st.seg.join() === '📱 Como mi teléfono,English,Español (Latinoamérica),Español (España)*,Português (Brasil),Français,Deutsch' && /España/.test(st.voice) && st2.spanish === 'latam' && /México/.test(st2.voice) && /lang=es(&|$)/.test(st2.share), `Settings: ${st.seg.join(' | ')}; first voice ${st.voice}, and ${st2.voice} for Latin America`);
   check(!errors.length, `no page errors in v0.23.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
@@ -5040,11 +5040,12 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 }
 
 // 37. Like the phone (v0.35.0): the app speaks the phone's language (English, Latin America's Spanish or Spain's) and
-// writes numbers, dates and times its way (es-MX 10,935.5 and 5:30 p.m.; es-ES 10.935,5 and 17:30); a language picked
-// in Settings stays after a reload; "Like my phone" goes back to the phone's.
+// writes numbers, dates and times its way (es-MX 10,935.5 and 5:30 p.m.; es-ES 10.935,5 and 17:30); a phone in a
+// language the app does not speak (Italian, since v0.42.0 brought French) gets English; a language picked in Settings
+// stays after a reload; "Like my phone" goes back to the phone's.
 {
   const seen = {};
-  for (const locale of ['es-MX', 'es-ES', 'fr-FR']) {
+  for (const locale of ['es-MX', 'es-ES', 'it-IT']) {
     const { page, errors, ctx } = await open({ locale, viewport: { width: 420, height: 800 } }, '');
     seen[locale] = await page.evaluate(() => ({ lang: window.atlas.app.lang, es: window.atlas.app.spanish, picked: window.atlas.app.langPicked, fmt: '' }));
     await page.evaluate(() => window.__menu('Settings|Ajustes'));
@@ -5068,8 +5069,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }
   check(seen['es-MX'].lang === 'es' && seen['es-MX'].es === 'latam' && !seen['es-MX'].picked && /10,935\.5/.test(seen['es-MX'].fmt) && /p\.\s?m\./.test(seen['es-MX'].fmt)
     && seen['es-ES'].lang === 'es' && seen['es-ES'].es === 'spain' && /10\.935,5/.test(seen['es-ES'].fmt) && /17:30/.test(seen['es-ES'].fmt)
-    && seen['fr-FR'].lang === 'en' && /^Numbers and dates: 10,935\.5 · 3 May/.test(seen['fr-FR'].fmt),
-    `like the phone: es-MX "${seen['es-MX'].fmt}"; es-ES "${seen['es-ES'].fmt}"; fr-FR "${seen['fr-FR'].fmt}"`);
+    && seen['it-IT'].lang === 'en' && /^Numbers and dates: 10,935\.5 · 3 May/.test(seen['it-IT'].fmt),
+    `like the phone: es-MX "${seen['es-MX'].fmt}"; es-ES "${seen['es-ES'].fmt}"; it-IT "${seen['it-IT'].fmt}"`);
   check(seen.kept?.lang === 'en' && seen.kept.picked && seen.back?.lang === 'es' && !seen.back.picked,
     `a language picked in Settings stays after a reload (${seen.kept?.lang}); "Like my phone" goes back to the phone's (${seen.back?.lang})`);
 }
@@ -6096,6 +6097,57 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(labels.length >= 8 && marked === labels.length && /^\[Ŝéttíñgŝ\]$/.test(title), `?pseudo: ${marked} of ${labels.length} menu labels marked (${labels.slice(0, 3).join(', ')}…); the panel title "${title}"`);
   check(!errors.length, `no page errors with ?pseudo${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
+}
+// 48. More languages (v0.42.0): Portuguese (Brazil), French and German. A phone in Portuguese opens the app in
+// Portuguese (its texts, numbers, the map's names); each language's panels show no pattern's {0}; a country card has
+// the country's own name; Settings offers the five languages; stories, lives and guides say they are in English.
+{
+  const BAR = { pt: 'Mapa,Explorar,Hoje,Aprender,Jogar', fr: 'Carte,Explorer,Aujourd’hui,Apprendre,Jouer', de: 'Karte,Entdecken,Heute,Lernen,Spielen' };
+  const NAME = { pt: 'Alemanha', fr: 'Allemagne', de: 'Deutschland' };
+  const SETTINGS = { pt: 'Configurações', fr: 'Réglages', de: 'Einstellungen' };
+  const PANELS = [
+    ['Today', () => document.querySelector('[data-dock="today"]').click()], ['Settings', () => window.atlas.shell.openSettings()],
+    ['About', () => window.atlas.shell.openAbout(true)], ['Filters', () => window.atlas.shell.openFilters(true)],
+    ['Map games', () => void window.atlas.play.openMenu()], ['Master the world', () => void window.atlas.master.openPanel()],
+    ['Quiz', () => window.atlas.learn.openQuizMenu()], ['Fill the map', () => void window.atlas.fill.openPanel?.()],
+  ];
+  // A phone in Brazilian Portuguese, no language picked: the app speaks Portuguese.
+  {
+    const { page, errors, ctx } = await open({ ...devices['Pixel 7'], locale: 'pt-BR' }, '');
+    const F = (fn, arg) => page.evaluate(fn, arg);
+    const s = await F(() => ({ lang: document.documentElement.lang, bar: [...document.querySelectorAll('[data-dock]')].map((b) => b.textContent.trim()).join(','), n: window.atlas.i18n.nm('Germany'), sea: window.atlas.i18n.nm('North Sea') }));
+    await F(() => window.atlas.shell.openSettings());
+    await page.waitForTimeout(700);
+    const set = await F(() => ({ formats: document.querySelector('[data-settings="formats"]')?.textContent ?? '', langs: document.querySelector('.settings')?.innerText ?? '' }));
+    check(s.lang === 'pt-BR' && s.bar === BAR.pt && s.n === NAME.pt && s.sea === 'Mar do Norte', `a Portuguese phone: <html lang="${s.lang}">, the bar "${s.bar}", "${s.n}", "${s.sea}"`);
+    check(/10\.935,5/.test(set.formats) && ['Português (Brasil)', 'Français', 'Deutsch', 'Español (España)'].every((x) => set.langs.includes(x)), `Portuguese numbers "${set.formats.slice(0, 60)}"; Settings offers the five languages`);
+    check(!errors.length, `pt phone: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
+  for (const lang of ['pt', 'fr', 'de']) {
+    const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, `#p=globe&l=political&c=10,25,1.1&lang=${lang}`);
+    const F = (fn, arg) => page.evaluate(fn, arg);
+    const raw = [], seen = {};
+    for (const [label, open_] of PANELS) {
+      await F(open_);
+      await page.waitForTimeout(1200);
+      const text = await F(() => document.querySelector('.sheet.open')?.innerText ?? '');
+      seen[label] = text.length;
+      const m = text.match(/\{\d[^}]{0,30}\}?|\{[a-z]+\}/g);
+      if (m) raw.push(`${label}: ${m.slice(0, 3).join(' ')}`);
+    }
+    const short = Object.entries(seen).filter(([, n]) => n <= 40).map(([k]) => k);
+    check(!raw.length && !short.length, `${lang}: no pattern shows its {0} in ${PANELS.length} panels${raw.length ? ` (shown: ${raw.join('; ')})` : ''}${short.length ? `; empty: ${short.join(', ')}` : ''}`);
+    await F(() => { window.atlas.shell.sheet?.close?.(); window.atlas.app.select('DEU'); });
+    await page.waitForFunction((n) => document.querySelector('.country-card:not([hidden]) .card-title')?.textContent === n, NAME[lang], { timeout: 8000 }).catch(() => {});
+    const t = await F(() => ({ card: document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '', settings: window.atlas.i18n.t('settings'), bar: [...document.querySelectorAll('[data-dock]')].map((b) => b.textContent.trim()).join(',') }));
+    await F(() => window.atlas.time.stories.lives.pick());
+    await page.waitForTimeout(1500);
+    const note = await F(() => document.querySelector('.sheet.open [data-prose-note]')?.textContent ?? '');
+    check(t.card === NAME[lang] && t.settings === SETTINGS[lang] && t.bar === BAR[lang] && note.length > 20, `${lang}: the card "${t.card}", "${t.settings}", the bar "${t.bar}", the lives' note "${note.slice(0, 50)}…"`);
+    check(!errors.length, `${lang}: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
 }
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');

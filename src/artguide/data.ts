@@ -2,9 +2,8 @@
 // architects and styles, and where our own art items are now (public/data/artguide, built by
 // scripts/data/artguide/build-artguide.mjs from Wikidata). Loaded once, when first needed.
 import { loadJSON } from '../data/store';
-import { lang, L } from '../app/i18n';
+import { lang, L, nm as nameIn } from '../app/i18n';
 
-const es = () => lang() === 'es';
 export type WorkKind = 'painting' | 'sculpture' | 'antiquity' | 'object';
 export interface Museum { i: number; id: string; name: [string, string]; at: [number, number]; city: string; visitors: number; sl: number; web: string | null }
 export interface Artist { i: number; id: string; name: [string, string]; sl: number }
@@ -57,7 +56,7 @@ export function loadNowIn() {
   return now;
 }
 
-export const nm = (x: { name: [string, string] }) => (es() ? x.name[1] : x.name[0]);
+export const nm = (x: { name: [string, string] }) => nameIn(x.name[0], x.name[1]);
 /** "1503", "c. 140 BC". */
 export function yearText(y: number | null): string {
   if (y == null) return '';

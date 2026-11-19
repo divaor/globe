@@ -13,7 +13,7 @@ import { starText } from './score';
 import { CHAIN_SECS, chainScore, chainStars, sample } from './logic';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
-import { L, es, type PlayHost, type HostGame } from './host';
+import { L, type PlayHost, type HostGame } from './host';
 
 interface State {
   day?: string; g: Borders; chain: string[]; t0: number; timer: number;

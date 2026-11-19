@@ -6,7 +6,7 @@
 //   and UNESCO's page.
 // - Inventions: every item of the Inventions collection (data/inventions/items.json) where it was invented, by
 //   field and age; a tap opens its card, which can open the story it comes from.
-import { lang, fmtNumber, L, dataLang, tx } from '../../app/i18n';
+import { lang, fmtNumber, L, dataLang, tx, nm, unescoLang } from '../../app/i18n';
 import { samplePalette, SEQUENTIAL } from '../../engine/colors';
 import { loadJSON } from '../../data/store';
 import { h } from '../../ui/dom';
@@ -17,7 +17,6 @@ import { crowdOf, type Placed } from '../crowd';
 import { planLink } from '../../guide/plan';
 import { appLocale } from '../../app/i18n';
 
-const es = () => lang() === 'es';
 let APP: App | null = null;
 
 // ---- Shared: pictures and Wikipedia summaries ---------------------------------------------------------------------
@@ -25,7 +24,7 @@ const commons = (file: string, w = 330) => `https://commons.wikimedia.org/wiki/S
 const summaries = new Map<string, Promise<{ extract: string; thumb: string | null } | null>>();
 /** An article's summary in the reader's language (else English): its first lines and its picture. */
 function summary(titles: { en: string; es: string }) {
-  const l = es() && titles.es ? 'es' : 'en';
+  const l = lang() === 'es' && titles.es ? 'es' : 'en';
   const title = titles[l] || titles.en;
   if (!title) return Promise.resolve(null);
   const key = `${l}:${title}`;
@@ -40,7 +39,7 @@ function summary(titles: { en: string; es: string }) {
   return p;
 }
 const wikiHref = (titles: { en: string; es: string }) => {
-  const l = es() && titles.es ? 'es' : 'en';
+  const l = lang() === 'es' && titles.es ? 'es' : 'en';
   return `https://${l}.wikipedia.org/wiki/${encodeURIComponent((titles[l] || titles.en).replace(/ /g, '_'))}`;
 };
 /** The first sentences of a summary, at most about 420 characters. */
@@ -57,7 +56,7 @@ function summaryEl(titles: { en: string; es: string }): HTMLElement | null {
   void summary(titles).then((s) => { if (s?.extract) p.textContent = shorten(s.extract); else p.remove(); });
   return p;
 }
-const countryName = (id: string) => { const m = LC.data.meta[id]; return m ? (es() ? m.es : m.n) : id; };
+const countryName = (id: string) => { const m = LC.data.meta[id]; return m ? nm(m.n, m.es) : id; };
 
 // ---- World Heritage sites -----------------------------------------------------------------------------------------
 interface Site {
@@ -81,7 +80,7 @@ const gone = (s: Site) => s.x ?? s.merged ?? null;
 function inDanger(s: Site, year = LAST): boolean {
   return !!s.d?.some(([a, b]) => a <= year && (b == null || b > year));
 }
-const siteName = (s: Site) => (es() ? s.n[1] || s.n[0] : s.n[0]);
+const siteName = (s: Site) => nm(s.n[0], s.n[1] || null);
 
 /** "Watch the list grow": the year on the timeline (null: today's list), whether it plays, how fast (years a second),
  * when it last moved, and the last whole year drawn. */
@@ -319,9 +318,9 @@ function siteCard(s: Site, ui: LayerTapUi) {
     const titles = { en: s.w[0], es: s.w[1] };
     const links: { label: string; href?: string; onClick?: () => void }[] = [];
     if (s.w[0] || s.w[1]) links.push({ label: 'Wikipedia', href: wikiHref(titles) });
-    links.push({ label: 'UNESCO', href: `https://whc.unesco.org/${dataLang()}/list/${s.ref}` });
+    links.push({ label: 'UNESCO', href: `https://whc.unesco.org/${unescoLang()}/list/${s.ref}` });
     // ☆: into the trip, under the travel-guide city nearest to it.
-    if (gone(s) == null) links.push(planLink({ id: `whs:${s.ref}`, kind: 'whs', n: [s.n[0], s.n[1] || s.n[0]], at: s.at, url: `https://whc.unesco.org/${dataLang()}/list/${s.ref}`, why: [{ t: [`World Heritage since ${s.y}`, `Patrimonio Mundial desde ${s.y}`] }] }));
+    if (gone(s) == null) links.push(planLink({ id: `whs:${s.ref}`, kind: 'whs', n: [s.n[0], s.n[1] || s.n[0]], at: s.at, url: `https://whc.unesco.org/${unescoLang()}/list/${s.ref}`, why: [{ t: [`World Heritage since ${s.y}`, `Patrimonio Mundial desde ${s.y}`] }] }));
     const image = s.img ? Promise.resolve(commons(s.img)) : summary(titles).then((x) => x?.thumb ?? null);
     const name = siteName(s);
     const sub = [L('World Heritage', 'Patrimonio de la Humanidad'), s.cc.length === 1 ? countryName(s.cc[0]) : ''].filter(Boolean).join(' · ');

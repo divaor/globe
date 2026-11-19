@@ -8,7 +8,7 @@ import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, MultiLineString, Polygon } from 'geojson';
 import { loadJSON, shapesFrom, chunkLines, type Shape, type Line } from '../data/store';
 import { oklch } from '../engine/colors';
-import { t, lang, fmtNumber, L, dataLang, tx } from '../app/i18n';
+import { t, lang, fmtNumber, L, dataLang, tx, nm, wikiSearch } from '../app/i18n';
 import { h, clear } from '../ui/dom';
 import { TimeBar } from '../ui/timebar';
 import type { App } from '../app/app';
@@ -24,7 +24,7 @@ interface Loaded { shapes: HShape[]; borders: Line[]; coast: Line[] }
 interface Change { from: number; to: number; appeared: string[]; disappeared: string[]; grew: [string, number][]; shrank: [string, number][]; renamed?: string[][] }
 
 /** The name to show for a polity: today's name on the present-day map, else the historical one. */
-const nameOf = (p: HP) => (lang() === 'es' ? p.ds : undefined) ?? p.d ?? p.n ?? '';
+const nameOf = (p: HP) => (lang() === 'es' ? p.ds : undefined) ?? nm(p.d ?? p.n ?? '');
 interface Entity { c: number; first: number; last: number; n: number }
 
 const COLORS = Array.from({ length: 24 }, (_, i) => oklch([0.74, 0.64, 0.82][i % 3], [0.12, 0.14, 0.1][i % 3], (i * 137.508 + 20) % 360));
@@ -63,7 +63,6 @@ export class HistoryMode {
       drawFill(rc) { self.draw(rc); },
       labels(rc) { self.labels(rc); },
       legend() {
-        const es = lang() === 'es';
         return {
           kind: 'html', title: L('Historical borders', 'Fronteras históricas'),
           html: `<div class="lg-row">${L('Each colour is one polity; colours stay the same over time.', 'Cada color es una entidad política; los colores se mantienen en el tiempo.')}</div>
@@ -120,7 +119,7 @@ export class HistoryMode {
 
   private label(i: number) {
     const s = this.snaps[Math.max(0, Math.min(this.snaps.length - 1, i))];
-    return lang() === 'es' ? s.label_es : s.label_en;
+    return tx({ en: s.label_en, es: s.label_es });
   }
 
   /** Snapshot shown "mostly" at the current position. */
@@ -193,7 +192,6 @@ export class HistoryMode {
     const startIdx = at >= 0 ? at : Math.max(0, this.snaps.findIndex((s) => s.year >= 1000));
     this.pos = startIdx;
     void this.load(startIdx); void this.load(Math.min(n - 1, startIdx + 1));
-    const es = lang() === 'es';
     this.bar = new TimeBar({
       title: L('Borders through time', 'Fronteras en el tiempo'),
       subtitle: L('{0} maps', '{0} mapas', n),
@@ -301,11 +299,10 @@ export class HistoryMode {
     const hit = l.shapes.find((s) => s.feature.properties.n && geoContains(s.feature as never, [lon, lat]));
     if (!hit) { this.shell.card.hide(); return true; }
     const p = hit.feature.properties;
-    const es = lang() === 'es';
     const e = this.entities[p.n!];
     const yl = (y: number) => (y < 0 ? (L('{0} BC', '{0} a. C.', fmtNumber(-y))) : String(y));
     const rows = [
-      ...(p.rn ? [{ label: L('Formerly', 'Antes'), value: (es ? p.rns : undefined) ?? p.rn, icon: '✏️' }] : []),
+      ...(p.rn ? [{ label: L('Formerly', 'Antes'), value: nm(p.rn, p.rns), icon: '✏️' }] : []),
       ...(p.s ? [{ label: L('Under', 'Bajo'), value: p.s, icon: '👑' }] : []),
       ...(p.p ? [{ label: L('Part of', 'Parte de'), value: p.p, icon: '🧩' }] : []),
       ...(e ? [{ label: L('On the maps', 'En los mapas'), value: `${yl(e.first)} – ${yl(e.last)}`, icon: '📅' }] : []),
@@ -313,7 +310,7 @@ export class HistoryMode {
       { label: L('Border precision', 'Precisión de la frontera'), value: [L('approximate', 'aproximada'), L('moderate', 'moderada'), L('recognised', 'reconocida')][Math.max(0, Math.min(2, (p.pr || 1) - 1))], icon: '📏' },
     ];
     const name = nameOf(p);
-    const wiki = `https://${dataLang()}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(name)}`;
+    const wiki = wikiSearch(name);
     this.shell.card.showCustom('🏛️', name, this.label(this.dominant()), rows, [{ label: t('wikipedia'), href: wiki }]);
     return true;
   }
@@ -321,7 +318,6 @@ export class HistoryMode {
   private openChanges(refresh = false) {
     if (!refresh && this.shell.sheet.isOpen('changes')) { this.shell.sheet.close(); return; }
     const di = this.dominant();
-    const es = lang() === 'es';
     const ch = this.changes.find((c) => c.to === this.snaps[di].year);
     const body = h('div', { class: 'changes' });
     const title = `${t('whatChanged')}: ${this.label(Math.max(0, di - 1))} → ${this.label(di)}`;
@@ -351,7 +347,7 @@ export class HistoryMode {
       if (ch.renamed?.length) {
         const list = h('div', { class: 'chip-row' });
         for (const [from, to, fromEs, toEs] of ch.renamed) {
-          const b = h('button', { type: 'button', class: 'chip' }, `${es ? fromEs ?? from : from} → ${es ? toEs ?? to : to}`);
+          const b = h('button', { type: 'button', class: 'chip' }, `${nm(from, fromEs)} → ${nm(to, toEs)}`);
           b.addEventListener('click', () => this.locate(from));
           list.append(b);
         }

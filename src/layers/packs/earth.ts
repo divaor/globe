@@ -3,7 +3,7 @@ import { geoCentroid, geoContains, geoInterpolate, geoDistance } from 'd3-geo';
 import type { Topology } from 'topojson-specification';
 import { loadJSON, shapesFrom, type Shape } from '../../data/store';
 import { oklch } from '../../engine/colors';
-import { lang, fmtNumber, L, tx, txs } from '../../app/i18n';
+import { lang, fmtNumber, L, tx, txs, nm } from '../../app/i18n';
 import type { App } from '../../app/app';
 import type { LayerDef, LayerHit, RenderCtx } from '../types';
 
@@ -121,14 +121,12 @@ const tectonics: LayerDef = {
     }
   },
   legend(inst) {
-    const es = lang() === 'es';
     return {
       kind: 'categories', title: L('Plate boundaries', 'Bordes de placa'), items: Object.values(BOUND).map((b) => ({ color: b.color, label: tx(b), shape: b.dash ? 'dash' as const : 'line' as const })),
       ...(inst.options.motion !== false ? { note: L('Arrows show which way each part of a plate moves: the longer, the faster (NNR-MORVEL56, from 1 to about 10 cm a year). Tap a plate for how fast that place moves.', 'Las flechas muestran hacia dónde se mueve cada parte de una placa: cuanto más larga, más rápido (NNR-MORVEL56, de 1 a unos 10 cm al año). Toca una placa para ver cuánto se mueve ese lugar.') } : {}),
     };
   },
   pick(lon, lat) {
-    const es = lang() === 'es';
     const p = plates.find((s) => geoContains(s.feature as never, [lon, lat]));
     if (!p) return null;
     // Nearest boundary step and its speed.
@@ -206,7 +204,7 @@ const VOLCANOES: [string, number, number, number, string, string][] = [
   ['Mount Erebus|Monte Erebus', 167.17, -77.53, 3794, 'Antarctica|Antártida', 'active|activo'],
 ];
 
-const pick2 = (s: string) => { const [en, es] = s.split('|'); return lang() === 'es' ? es ?? en : en; };
+const pick2 = (s: string) => { const [en, es] = s.split('|'); return nm(en, es); };
 
 /** The Smithsonian's volcanoes of the Holocene (v0.32.0): number, name, place, height, type, last eruption year. */
 interface Gvp { id: number; n: string; lon: number; lat: number; e: number | null; t: string; y: number | null; c: string; s: string; ev: string }
@@ -288,7 +286,6 @@ const volcanoes: LayerDef = {
   },
   legend(inst) {
     const show = String(inst.options.show ?? 'all');
-    const es = lang() === 'es';
     if (show === 'famous') return { kind: 'categories', items: [{ color: '#ff4b2b', label: L('Active', 'Activo'), shape: 'dot' }, { color: '#ff9f68', label: L('Dormant or historic', 'Dormido o histórico'), shape: 'dot' }] };
     return {
       kind: 'categories', title: L('Volcanoes by their last eruption', 'Volcanes por su última erupción'),
@@ -309,7 +306,6 @@ const volcanoes: LayerDef = {
     return out.sort((a, b) => b.score - a.score).slice(0, 6);
   },
   pick(lon, lat) {
-    const es = lang() === 'es';
     let best: (typeof VOLCANOES)[number] | null = null, bd = 0.035;
     for (const v of VOLCANOES) { const d = geoDistance([lon, lat], [v[1], v[2]]); if (d < bd) { bd = d; best = v; } }
     let g: Gvp | null = null, gd = best ? bd : 0.02;
@@ -434,7 +430,6 @@ const currents: LayerDef = {
     });
   },
   legend() {
-    const es = lang() === 'es';
     return { kind: 'categories', items: [{ color: WARM, label: L('Warm current', 'Corriente cálida'), shape: 'line' }, { color: COLD, label: L('Cold current', 'Corriente fría'), shape: 'line' }], note: L('Schematic paths.', 'Trazado esquemático.') };
   },
 };

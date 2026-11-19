@@ -4,7 +4,7 @@
 // shared under open licences, in squares of 1.40625°). An animal's card can "show where it lives": its squares,
 // darker where more people saw it, with the carpet showing only it, and its best parks as numbered stars.
 import { geoDistance } from 'd3-geo';
-import { lang, fmtCompact, L, tx } from '../../app/i18n';
+import { lang, fmtCompact, L, tx, lower } from '../../app/i18n';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import type { App } from '../../app/app';
@@ -18,7 +18,6 @@ import {
 } from '../../wild/data';
 import { animalCard, parkCard, zooCard, statusBadge, placeIcon, type WildLinks, type CardFn } from '../../wild/cards';
 
-const es = () => lang() === 'es';
 let APP: App | null = null;
 let SHELL: Shell | null = null;
 let data: WildData | null = null;
@@ -143,7 +142,7 @@ async function bestPlaces(a: Animal) {
   await showFocus(f);
   SHELL?.card.hide();
   const body = h('div', { class: 'guide wild-panel', 'data-wild': 'best', 'data-animal': a.id });
-  body.append(h('p', { class: 'muted small' }, L('National parks and reserves where {0} lives, those where people have shared the most sightings first. The numbers match the stars on the map.', 'Parques nacionales y reservas donde vive {1}, primero aquellos donde más avistamientos se han compartido. Los números coinciden con las estrellas del mapa.', nm(a), nm(a).toLowerCase())));
+  body.append(h('p', { class: 'muted small' }, L('National parks and reserves where {0} lives, those where people have shared the most sightings first. The numbers match the stars on the map.', 'Parques nacionales y reservas donde vive {1}, primero aquellos donde más avistamientos se han compartido. Los números coinciden con las estrellas del mapa.', nm(a), lower(nm(a)))));
   const list = h('div', { class: 'guide-list' });
   (f.best ?? []).forEach((p, i) => {
     const others = p.f.filter((id) => id !== a.id).map((id) => data?.byId.get(id)).filter((x): x is Animal => !!x).slice(0, 3);

@@ -19,7 +19,6 @@ import { Borders, GOALS, RULES, makeRound, dailyRound, seeded, type BorderData, 
 import { scoreOf, starText, challengeHash, readChallenge, hopNumber, HINT_COST, type Hint } from './score';
 import { recordHop, hopDaily, dayKey, progress, type Badge } from '../learn/progress';
 
-const es = () => lang() === 'es';
 
 const GOAL_TEXT: Record<Goal, { icon: string; en: string; es: string; desc: { en: string; es: string } }> = {
   count: { icon: '🔢', en: 'Fewest countries', es: 'Menos países', desc: { en: 'Cross as few countries as you can.', es: 'Cruza la menor cantidad de países.' } },

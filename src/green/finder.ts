@@ -8,7 +8,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import { h, clear } from '../ui/dom';
 import { planStar } from '../guide/plan';
-import { lang, fmtCompact, L, dataLang, Lc } from '../app/i18n';
+import { lang, fmtCompact, L, dataLang, Lc, tx, inatLocale } from '../app/i18n';
 import { matcher } from '../ui/match';
 import { liveRange, natureTabs, type Live, type Wild } from '../wild/finder';
 import { cellAt } from '../layers/carpet';
@@ -20,7 +20,6 @@ import {
   type Place, type PlantFocus,
 } from '../layers/packs/green';
 
-const es = () => lang() === 'es';
 /** Emoji for a plant GBIF found, by its class or family. */
 const CLASS_EMOJI: Record<string, string> = { Pinopsida: '🌲', Polypodiopsida: '🌿', Liliopsida: '🌾', Bryopsida: '🌱', Magnoliopsida: '🌼', Cycadopsida: '🌴', Ginkgoopsida: '🍂' };
 const FAMILY_EMOJI: Record<string, string> = { Cactaceae: '🌵', Arecaceae: '🌴', Orchidaceae: '🌺', Rosaceae: '🌸', Asteraceae: '🌼', Fagaceae: '🌳', Pinaceae: '🌲', Poaceae: '🌾', Fabaceae: '🌳' };
@@ -71,7 +70,7 @@ export class Plants {
     const filters = h('div', { class: 'chip-row' });
     for (const [id, ic, en, sp] of [['plants', '🌿', 'Plants of the world', 'Plantas del mundo'], ['trees', '🌳', 'Famous trees', 'Árboles famosos'], ['gardens', '🌺', 'Botanical gardens', 'Jardines botánicos'],
       ['ecoregions', '🗺️', 'Ecoregions', 'Ecorregiones'], ['greenness', '🫁', 'The breathing planet', 'El planeta que respira'], ['calendar', '📅', 'Nature’s calendar', 'Calendario de la naturaleza'], ['crops', '🌾', 'Where our food first grew', 'Dónde se cultivaron nuestros alimentos']]) {
-      const b = h('button', { type: 'button', class: `chip${this.app.isActive(id) ? ' on' : ''}`, 'data-green-filter': id }, `${ic} ${es() ? sp : en}`);
+      const b = h('button', { type: 'button', class: `chip${this.app.isActive(id) ? ' on' : ''}`, 'data-green-filter': id }, `${ic} ${tx({ en, es: sp })}`);
       b.addEventListener('click', () => { this.shell.sheet.close(); void this.app.activate(id); });
       filters.append(b);
     }
@@ -223,7 +222,7 @@ export class Plants {
     this.app.flyTo(at[0], at[1], Math.max(this.app.renderer.view.zoom, 12));
     const known = new Map((d?.plants ?? []).map((p) => [p.sci.toLowerCase(), p]));
     try {
-      const r = await fetch(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=Plantae&per_page=30&locale=${dataLang()}`);
+      const r = await fetch(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=Plantae&per_page=30&locale=${inatLocale()}`);
       if (!r.ok) throw new Error(String(r.status));
       const j = (await r.json()) as { results?: { count: number; taxon: { id: number; name: string; preferred_common_name?: string; default_photo?: { square_url?: string; attribution?: string } } }[] };
       clear(list);

@@ -6,7 +6,6 @@ import { TOURS } from './tours';
 import { GAMES } from '../play/logic';
 import { appLocale } from '../app/i18n';
 
-const es = () => lang() === 'es';
 const KEY = 'atlas-globe:progress';
 
 export type Subject = 'geo' | 'history' | 'culture' | 'languages' | 'science' | 'sport';

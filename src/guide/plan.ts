@@ -6,7 +6,6 @@ import { Star } from 'lucide';
 import { h, icon } from '../ui/dom';
 import { lang, L } from '../app/i18n';
 
-const es = () => lang() === 'es';
 
 export type PlaceKind = 'whs' | 'sight' | 'museum' | 'building' | 'park' | 'zoo' | 'garden' | 'tree' | 'dish' | 'spectacle';
 export const PLACE_ICONS: Record<PlaceKind, string> = { whs: '🏛️', sight: '🏰', museum: '🖼️', building: '📐', park: '🏞️', zoo: '🦒', garden: '🌷', tree: '🌳', dish: '🍽️', spectacle: '📅' };

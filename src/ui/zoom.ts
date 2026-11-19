@@ -28,7 +28,6 @@ export const seeThrough = (src: string) => /^data:image\/(?:svg|png|gif|webp)|\.
 /** Opens the picture full screen. A tap outside it, the X or Escape closes it. */
 export function openZoom(src: string, alt = '') {
   current?.close();
-  const es = lang() === 'es';
   const img = h('img', { class: `zoom-img${seeThrough(src) ? ' see-through' : ''}`, src, alt, draggable: 'false' }) as HTMLImageElement;
   const btn = h('button', { type: 'button', class: 'zoom-close', 'aria-label': L('Close', 'Cerrar') }, icon(X, 22));
   const hint = h('div', { class: 'zoom-hint' }, L('Pinch or double-tap to zoom', 'Pellizca o toca dos veces para acercar'));

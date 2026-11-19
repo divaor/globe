@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // The app's texts (v0.41.0, One voice): every L('English', 'Spanish', ...values) in src/, every { en, es } object of
 // plain texts and the STRINGS table of src/app/i18n.ts, written to i18n/messages.json for translators (the English,
-// the Spanish as a second reference, where each is used). A new language is public/i18n/<lang>.json, an object of
+// the Spanish as a second reference, where each is used). A new language is public/data/i18n/<lang>.json, an object of
 // English text → translation, and is shipped by adding it to SHIPPED below.
 //   node scripts/i18n/extract.mjs           writes i18n/messages.json
 //   node scripts/i18n/extract.mjs --check   fails when:
@@ -17,8 +17,8 @@ import { parse } from '@babel/parser';
 
 const CHECK = process.argv.includes('--check');
 const VERBOSE = process.argv.includes('--glossary');
-/** Languages shipped beyond English and Spanish (their files are public/i18n/<lang>.json). */
-const SHIPPED = [];
+/** Languages shipped beyond English and Spanish (their files are public/data/i18n/<lang>.json). */
+const SHIPPED = ['pt', 'fr', 'de'];
 
 const files = [];
 (function walk(d) { for (const f of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, f.name); if (f.isDirectory()) walk(p); else if (p.endsWith('.ts') && !p.endsWith('.d.ts')) files.push(p); } })('src');
@@ -98,6 +98,20 @@ for (const f of files) {
       const p = (k) => n.properties.find((x) => x.type === 'ObjectProperty' && (x.key.name ?? x.key.value) === k);
       const en = str(p('en')?.value), es = str(p('es')?.value);
       if (en != null && es != null) add(en, es, where, str(p('ctx')?.value));
+      // Pairs as x_en / x_es (a tour step's title_en and title_es, a field's label_en and label_es).
+      for (const prop of n.properties) {
+        const k = prop.type === 'ObjectProperty' ? (prop.key.name ?? prop.key.value) : null;
+        const m = typeof k === 'string' ? /^(\w+)_en$/.exec(k) : null;
+        if (!m) continue;
+        const e1 = str(prop.value), s1 = str(p(`${m[1]}_es`)?.value);
+        if (e1 != null && s1 != null) add(e1, s1, where);
+      }
+    }
+    // A tour's stop: at(story, fly, 'Title', 'Título', 'English', 'Spanish').
+    if (n.type === 'CallExpression' && n.callee.type === 'Identifier' && n.callee.name === 'at' && n.arguments.length === 6 && f.endsWith(path.join('learn', 'tours.ts'))) {
+      const [te, ts, e2, s2] = n.arguments.slice(2).map(str);
+      if (te != null && ts != null) add(te, ts, where);
+      if (e2 != null && s2 != null) add(e2, s2, where);
     }
     // The STRINGS table: key: ['English', 'Spanish'].
     if (isI18n && n.type === 'VariableDeclarator' && n.id.name === 'STRINGS') {
@@ -115,11 +129,11 @@ const list = [...msgs.entries()].sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] 
   const [ctx, en] = key.includes(SEP) ? key.split(SEP) : [null, key];
   return { ...(ctx ? { ctx, key } : {}), en, es: es[0][0], ...(es.length > 1 ? { esAlso: es.slice(1).map((x) => x[0]) } : {}), where: m.where };
 });
-const json = `${JSON.stringify({ about: 'The app\'s texts, by their English (scripts/i18n/extract.mjs). A language file, public/i18n/<lang>.json, maps each "en" (or "key", for a text with a context: the same English with another meaning) to its translation; "es" is the Spanish, for reference.', count: list.length, messages: list }, null, 1)}\n`;
+const json = `${JSON.stringify({ about: 'The app\'s texts, by their English (scripts/i18n/extract.mjs). A language file, public/data/i18n/<lang>.json, maps each "en" (or "key", for a text with a context: the same English with another meaning) to its translation; "es" is the Spanish, for reference.', count: list.length, messages: list }, null, 1)}\n`;
 
 // The shipped languages: every text, with the same values.
 for (const lang of SHIPPED) {
-  const file = `public/i18n/${lang}.json`;
+  const file = `public/data/i18n/${lang}.json`;
   const cat = JSON.parse(fs.readFileSync(file, 'utf8'));
   let missing = 0;
   for (const { en, key } of list) {

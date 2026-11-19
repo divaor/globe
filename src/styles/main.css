@@ -1516,3 +1516,6 @@ textarea.trip-input { resize: vertical; }
 .welcome-actions { display: flex; justify-content: space-between; gap: var(--sp-2); }
 .welcome-actions .pill.primary { min-width: 120px; justify-content: center; }
 .welcome-skip { position: absolute; top: 10px; right: 10px; min-height: 44px; padding: 0 12px; border: 0; background: none; color: var(--muted); font: inherit; font-size: var(--fs-sm); font-weight: var(--fw-semi); cursor: pointer; }
+
+/* v0.42.0: stories, lives and guides are still in English in the languages read from files. */
+.prose-note { margin: 0 0 var(--sp-3); padding: var(--sp-2) var(--sp-3); border-radius: var(--r-md); background: var(--chip); font-size: var(--fs-sm); line-height: 1.35; }

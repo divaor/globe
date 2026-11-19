@@ -4,7 +4,7 @@
 // temperature, pressure and density there.
 import { h } from '../ui/dom';
 import { fmtNumber, tx } from '../app/i18n';
-import { L, es } from '../play/host';
+import { L } from '../play/host';
 import { EARTH_KM, LAYERS, layerAt, layerName, pressureAt, temperatureAt, densityAt, pressureText } from './model';
 import type { Marker } from './data';
 

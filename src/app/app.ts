@@ -5,7 +5,8 @@ import { Renderer } from '../engine/renderer';
 import { Interaction } from '../engine/interaction';
 import { PROJECTIONS, type ProjectionId } from '../engine/projections';
 import { THEMES } from './theme';
-import { detectLang, detectSpanish, setLang, setSpanish, setPseudo, t, L, type Lang, type Spanish } from './i18n';
+import { detectLang, detectSpanish, setLang, setSpanish, setPseudo, setMessages, setNames, isLang, FILE_LANGS, t, L, type Lang, type Spanish } from './i18n';
+import { loadJSON } from '../data/store';
 import { setLayerContext } from '../layers/context';
 import { tiles, prefs as terrainPrefs } from '../engine/tiles';
 import { DETAIL_LAYERS, satellite } from '../layers/imagery';
@@ -124,6 +125,8 @@ export class App {
   async start() {
     const saved = this.restore();
     setSpanish(this.spanish);
+    await this.loadLang(this.lang);
+    this.useCatalog(this.lang);
     setLang(this.lang);
     // ?pseudo (v0.41.0): every text that goes through the language files shows accented and in brackets, so what
     // is still written straight into the code stands out (for checking before a new language ships).
@@ -264,13 +267,47 @@ export class App {
     document.getElementById('fg')?.setAttribute('aria-label', L('Interactive world map. Drag to rotate, pinch or scroll to zoom, tap a country for details.', 'Mapa del mundo interactivo. Arrastra para girarlo, pellizca o desplázate para acercarte y toca un país para ver sus datos.'));
   }
 
-  /** The language, and for Spanish which Spanish ('latam' or 'spain'), picked in Settings; null follows the phone. */
-  setLang(l: Lang | null, spanish: Spanish = this.spanish) {
+  /**
+   * A language read from files (v0.42.0): its texts and its names, fetched once (and kept offline with the app's
+   * data). English and Spanish are written in the code. If the files cannot be had, the texts show in English.
+   */
+  private langCats = new Map<Lang, [Record<string, string>, Record<string, string>]>();
+  private langLoads = new Map<Lang, Promise<void>>();
+  /** The language last asked for (a slow file must not switch back to a language left since). */
+  private langWanted: Lang | null = null;
+  private loadLang(l: Lang): Promise<void> {
+    if (!FILE_LANGS.includes(l) || this.langCats.has(l)) return Promise.resolve();
+    let p = this.langLoads.get(l);
+    if (!p) {
+      p = Promise.all([loadJSON<Record<string, string>>(`i18n/${l}.json`), loadJSON<Record<string, string>>(`i18n/${l}-data.json`).catch(() => ({}))])
+        .then((files) => { this.langCats.set(l, files); })
+        .catch((e) => { console.warn(`texts in ${l}:`, e); this.langLoads.delete(l); });
+      this.langLoads.set(l, p);
+    }
+    return p;
+  }
+  private useCatalog(l: Lang) {
+    const c = this.langCats.get(l);
+    setMessages(c?.[0] ?? null);
+    setNames(c?.[1] ?? null);
+  }
+  /**
+   * The language, and for Spanish which Spanish ('latam' or 'spain'), picked in Settings; null follows the phone.
+   * English and Spanish switch at once; a language read from files once its files are in.
+   */
+  setLang(l: Lang | null, spanish: Spanish = this.spanish): Promise<void> {
     this.langPicked = l != null;
     if (l == null) { l = detectLang(); spanish = detectSpanish(); }
+    const want = l;
+    this.langWanted = want;
+    if (!FILE_LANGS.includes(want) || this.langCats.has(want)) { this.applyLang(want, spanish); return Promise.resolve(); }
+    return this.loadLang(want).then(() => { if (this.langWanted === want) this.applyLang(want, spanish); });
+  }
+  private applyLang(l: Lang, spanish: Spanish) {
     this.lang = l;
     this.spanish = spanish;
     setSpanish(spanish);
+    this.useCatalog(l);
     setLang(l);
     this.localizePage();
     this.renderer.lang = l;
@@ -452,7 +489,7 @@ export class App {
         ...saved,
         projection: (hash.get('p') as ProjectionId) ?? saved.projection,
         active,
-        lang: (hash.get('lang')?.slice(0, 2) as Lang) ?? saved.lang,
+        lang: isLang(hash.get('lang')?.slice(0, 2)) ? hash.get('lang')!.slice(0, 2) as Lang : saved.lang,
         es: hash.get('lang') === 'es-ES' ? 'spain' : hash.get('lang') === 'es' ? 'latam' : saved.es,
         camera: c.length === 3 && c.every(isFinite) ? { lon: c[0], lat: c[1], zoom: c[2] } : saved.camera,
         view: { style: (hash.get('m') as MapStyle) ?? 'atlas', regions: hash.get('st') !== '0', regionNames: hash.get('sn') !== '0' },
@@ -465,7 +502,7 @@ export class App {
     const picked = saved.langPicked ?? (!!saved.lang && (saved.lang !== this.lang || (saved.lang === 'es' && !!saved.es && saved.es !== this.spanish)));
     this.langPicked = !!saved.langPicked || (!fromLink && picked);
     if (fromLink || this.langPicked) {
-      if (saved.lang === 'en' || saved.lang === 'es') this.lang = saved.lang;
+      if (isLang(saved.lang)) this.lang = saved.lang;
       if (saved.es === 'latam' || saved.es === 'spain') this.spanish = saved.es;
     }
     // Like the phone unless a theme was picked (before v0.40.0, a saved light theme was always picked).

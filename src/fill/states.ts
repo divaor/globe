@@ -9,9 +9,9 @@ import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber, appLocale, flagEmoji, dataLang, tx } from '../app/i18n';
+import { fmtNumber, appLocale, flagEmoji, dataLang, tx, nm, lang } from '../app/i18n';
 import { loadJSON } from '../data/store';
-import { L, es, type PlayHost, type HostGame } from '../play/host';
+import { L, type PlayHost, type HostGame } from '../play/host';
 import { shareText } from '../play/pin';
 import { recordFeat, dayKey, type Badge } from '../learn/progress';
 import type { Master } from '../master/master';
@@ -78,10 +78,12 @@ export class FillStates implements HostGame {
   cats(a3: string): StateCat[] { return catsOf(a3, this.data); }
   cname(a3: string) { return this.app.data.name(a3, dataLang()); }
   catName(c: StateCat) { return tx(STATE_CAT_TEXT[c]); }
-  private word(a3: string) { const w = WORD[a3]; return w ? (es() ? w[1] : w[0]) : L('region', 'región'); }
-  private rname(r: Region | undefined) { return r ? (es() ? r.es : r.n) : ''; }
+  /** "state", "province"… in the reader's language. The French prompts pick their article by the English word (a select
+   *  on state, province…), so French gets the English word. */
+  private word(a3: string) { const w = WORD[a3]; return w ? (lang() === 'fr' ? w[0] : nm(w[0], w[1])) : L('region', 'región'); }
+  private rname(r: Region | undefined) { return r ? nm(r.n, r.es) : ''; }
   private facts(a3: string, id: string) { return this.data?.[a3]?.[id]; }
-  private capName(a3: string, id: string) { const c = this.facts(a3, id)?.c; return c ? (es() && c[1] ? c[1] : c[0]) : ''; }
+  private capName(a3: string, id: string) { const c = this.facts(a3, id)?.c; return c ? nm(c[0], c[1] || null) : ''; }
   /** A country's saved map in a category. */
   map(a3: string, cat: StateCat) { const st = fillState(); return (st.states[`${a3}:${cat}`] ??= {}); }
 
@@ -352,7 +354,7 @@ export class FillStates implements HostGame {
     let w = Infinity, so = Infinity, e = -Infinity, n = -Infinity;
     for (const x of main.length ? main : s.list) { w = Math.min(w, x.core[0][0]); so = Math.min(so, x.core[0][1]); e = Math.max(e, x.core[1][0]); n = Math.max(n, x.core[1][1]); }
     const d = DIR_TEXT[direction(r.at, [[w, so], [e, n]])];
-    return r.far ? L('It lies apart from the rest.', 'Está apartado del resto.') : L('It is in {0} of {1}.', 'Está en {2} de {1}.', d[0], this.cname(s.a3), d[1]);
+    return r.far ? L('It lies apart from the rest.', 'Está apartado del resto.') : L('It is in {0} of {1}.', 'Está en {2} de {1}.', nm(d[0], d[1]), this.cname(s.a3), d[1]);
   }
 
   /** What the answer shows: its capital (and its biggest city when that is another), people or area. */
@@ -363,8 +365,8 @@ export class FillStates implements HostGame {
     if (s.cat === 'area') return `${fmtNumber(f.a)} km²`;
     if (s.cat === 'capitals' || s.cat === 'names') {
       if (f.s) return '';
-      const cap = this.capName(s.a3, id), note = f.c[5], big = f.b ? (es() && f.b[1] ? f.b[1] : f.b[0]) : '';
-      return `🏛️ ${cap}${note ? ` (${es() ? note[1] : note[0]})` : ''}${big ? ` · ${L('{0} is the biggest', '{0} es la más grande', big)}` : ''}`;
+      const cap = this.capName(s.a3, id), note = f.c[5], big = f.b ? nm(f.b[0], f.b[1] || null) : '';
+      return `🏛️ ${cap}${note ? ` (${nm(note[0], note[1])})` : ''}${big ? ` · ${L('{0} is the biggest', '{0} es la más grande', big)}` : ''}`;
     }
     return '';
   }

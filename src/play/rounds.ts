@@ -14,7 +14,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber, tx } from '../app/i18n';
+import { fmtNumber, tx, nm, nm as nameIn } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
@@ -22,7 +22,7 @@ import { PIN_MAX, pinPoints, km, sample, nearestKm, sunLine, climateBonus, clima
 import { subsolarPoint } from '../layers/sun';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
-import { L, es, type PlayHost, type HostGame } from './host';
+import { L, type PlayHost, type HostGame } from './host';
 
 /** A round: what is asked, where the answer is (a point, or a line where its nearest point counts), what is told after. */
 interface Round {
@@ -299,7 +299,7 @@ export class ClimateDetective extends PinRounds {
       ask: L('📈 Which city has this year of weather? Pin it.', '📈 ¿Qué ciudad tiene este clima a lo largo del año? Ponle un pin.'),
       extra: () => climateChart(c[15]!.t, c[15]!.p),
       at: [[c[3], c[4]]],
-      name: `${es() ? c[2] : c[1]}, ${this.app.data.name(c[5], this.app.lang)}`,
+      name: `${nameIn(c[1], c[2])}, ${this.app.data.name(c[5], this.app.lang)}`,
       note: L('Its climate zone: {0}.', 'Su zona climática: {0}.', cname(k)),
       bonus: (pin) => {
         const mine = zoneAt(zs, pin);
@@ -384,7 +384,7 @@ export class SunriseRace extends PinRounds {
     const hhmm = this.at.toISOString().slice(11, 16);
     const rounds: Round[] = SUN_ROUNDS.map((r) => ({
       ask: `${r.icon} ${tx(r)}`, at: sunLine(sub, r.goal),
-      name: es() ? { rise: 'El amanecer', noon: 'El mediodía', set: 'El atardecer', midnight: 'La medianoche', overhead: 'El sol encima' }[r.goal] : { rise: 'Sunrise', noon: 'Noon', set: 'Sunset', midnight: 'Midnight', overhead: 'The sun overhead' }[r.goal],
+      name: { rise: L('Sunrise', 'El amanecer'), noon: L('Noon', 'El mediodía'), set: L('Sunset', 'El atardecer'), midnight: L('Midnight', 'La medianoche'), overhead: L('The sun overhead', 'El sol encima') }[r.goal],
       note: L('At {0} UTC. The yellow line is where it is happening; day and night are shaded.', 'A las {0} UTC. La línea amarilla es donde está pasando; el día y la noche están sombreados.', hhmm),
     }));
     return { rounds, head: L('The sun right now ({0} UTC).', 'El sol ahora mismo ({0} UTC).', hhmm) };

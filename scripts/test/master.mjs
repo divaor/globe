@@ -88,6 +88,10 @@ const all = deck.countries, cs = all.filter((x) => !x.t);
 check(cs.length === 195 && cs.filter((x) => x.cap && !x.skip).length === 194 && cs.filter((x) => x.cities.length === 3).length >= 193, `the deck: ${cs.length} countries, ${cs.filter((x) => x.cap && !x.skip).length} capitals, three other cities for ${cs.filter((x) => x.cities.length === 3).length}`);
 check(cs.every((x) => x.like.length >= 3 && x.land.length + x.near.length >= 3), 'every country has three look-alike flags and three neighbours');
 check(all.length - cs.length >= 15 && all.filter((x) => x.t).every((x) => x.like.length >= 3), `and ${all.length - cs.length} territories, for the setting that adds them`);
+// v0.42.0: a capital question never shows the same name twice (Natural Earth called Maradi "Niamey").
+const twice = (ps) => ['en', 'es'].some((k) => new Set(ps.map((p) => p[k])).size < ps.length);
+const dupes = all.filter((x) => x.cap && twice([x.cap, ...x.cities])).map((x) => x.id);
+check(!dupes.length, `every country's capital and other cities have different names${dupes.length ? ` (not ${dupes.join(', ')})` : ''}`);
 
 // The State capitals deck (v0.38.1): a card per state with a capital to ask, country by country.
 const db = await rolldown({ input: path.join(ROOT, 'src/master/decks.ts'), platform: 'neutral', logLevel: 'silent' });
@@ -98,6 +102,8 @@ const perCountry = Object.fromEntries(Object.keys(sj).map((a3) => [a3, sd.filter
 check(sd.length >= 280 && Object.keys(sj).length === 12 && Object.values(perCountry).every((n) => n >= 7), `State capitals: ${sd.length} states in 12 countries (${Object.entries(perCountry).map(([a, n]) => `${a} ${n}`).join(', ')})`);
 check(!sById.has('MEX|MX-DIF') && !sById.has('DEU|DE-BE') && !sById.has('USA|US-DC') && sById.get('MEX|MX-JAL')?.cap.en === 'Guadalajara' && sById.get('COL|COL-1398')?.cap.en === 'Bogotá',
   `a city of its own (Mexico City, Berlin, Washington) has no card; Jalisco's capital is ${sById.get('MEX|MX-JAL')?.cap.en}, Cundinamarca's ${sById.get('COL|COL-1398')?.cap.en}`);
+const sDupes = sd.filter((c) => twice([c.cap, ...c.cities])).map((c) => c.id);
+check(!sDupes.length, `every state's capital and other cities have different names${sDupes.length ? ` (not ${sDupes.join(', ')})` : ''}`);
 check(sd.every((c) => c.cap && c.cities.length >= 1 && c.near.length >= 3 && c.near.every((n) => sById.get(n)?.ct === c.ct)), 'every state: a capital, another city, and three or more of the same country to pick among');
 const usa = sd.filter((c) => c.ct === 'USA').sort((a, b) => b.fame - a.fame);
 check(usa[0].id === 'USA|US-CA' && sById.get('ESP|ES-CanaryIs')?.note?.en.includes('Las Palmas'), `the most populous first (${usa[0].id}); a shared capital explained (the Canaries)`);

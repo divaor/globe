@@ -36,6 +36,10 @@ export function setVoiceRate(r: number) { put(KEY_RATE, String(r)); }
 /** Spanish voices by region, Latin America first; Spain's last. */
 const ES_ORDER = ['es-419', 'es-mx', 'es-us', 'es-co', 'es-ar', 'es-cl', 'es-pe', 'es-ve', 'es-ec', 'es-gt', 'es-cr', 'es-pa', 'es-do', 'es-uy', 'es-py', 'es-bo', 'es-sv', 'es-hn', 'es-ni', 'es-pr', 'es-cu', 'es'];
 const EN_ORDER = ['en-us', 'en-gb', 'en-au', 'en-ca', 'en-ie', 'en-nz', 'en-za', 'en-in', 'en'];
+/** Portuguese from Brazil before Portugal's; France's French and Germany's German first (v0.42.0). */
+const ORDER: Partial<Record<Lang, string[]>> = {
+  es: ES_ORDER, en: EN_ORDER, pt: ['pt-br', 'pt', 'pt-pt'], fr: ['fr-fr', 'fr', 'fr-ca', 'fr-be', 'fr-ch'], de: ['de-de', 'de', 'de-at', 'de-ch'],
+};
 
 let voiceList: SpeechSynthesisVoice[] = [];
 function refreshVoices() { if (canSpeak()) voiceList = speechSynthesis.getVoices(); }
@@ -46,7 +50,7 @@ if (canSpeak()) {
 
 const tag = (v: SpeechSynthesisVoice) => v.lang.toLowerCase().replace('_', '-');
 function rank(v: SpeechSynthesisVoice, l: Lang): number {
-  const order = l === 'es' ? ES_ORDER : EN_ORDER;
+  const order = ORDER[l] ?? EN_ORDER;
   const t = tag(v);
   let i = order.indexOf(t);
   if (i < 0) i = t.startsWith(`${l}-`) ? (l === 'es' && t === 'es-es' ? order.length + 1 : order.length - 1) : 99;
@@ -76,6 +80,7 @@ export function voiceRegion(v: SpeechSynthesisVoice, l: Lang): string {
   const region = tag(v).split('-')[1]?.toUpperCase();
   if (!region) return '';
   if (region === '419') return l === 'es' ? 'Latinoamérica' : 'Latin America';
+  if (l === 'pt' || l === 'fr' || l === 'de') { try { return new Intl.DisplayNames([l], { type: 'region' }).of(region) ?? region; } catch { return region; } }
   try { return new Intl.DisplayNames([l], { type: 'region' }).of(region) ?? region; } catch { return region; }
 }
 
@@ -91,6 +96,12 @@ export function forSpeech(text: string, l: Lang): string {
     s = s.replace(/\ba\.\s?C\./g, 'antes de Cristo').replace(/\bd\.\s?C\./g, 'después de Cristo')
       .replace(/\bc\.\s?(?=\d)/g, 'hacia ').replace(/\bkm²/g, 'kilómetros cuadrados').replace(/\bkm\b/g, 'kilómetros')
       .replace(/\bEE\.\s?UU\./g, 'Estados Unidos').replace(/\bp\. ej\./g, 'por ejemplo');
+  } else if (l === 'pt') {
+    s = s.replace(/\ba\.\s?C\./g, 'antes de Cristo').replace(/\bd\.\s?C\./g, 'depois de Cristo').replace(/\bkm²/g, 'quilômetros quadrados').replace(/\bkm\b/g, 'quilômetros');
+  } else if (l === 'fr') {
+    s = s.replace(/\bav\.\s?J\.-C\./g, 'avant Jésus-Christ').replace(/\bapr\.\s?J\.-C\./g, 'après Jésus-Christ').replace(/\bkm²/g, 'kilomètres carrés').replace(/\bkm\b/g, 'kilomètres');
+  } else if (l === 'de') {
+    s = s.replace(/\bv\.\s?Chr\./g, 'vor Christus').replace(/\bn\.\s?Chr\./g, 'nach Christus').replace(/\bkm²/g, 'Quadratkilometer').replace(/\bkm\b/g, 'Kilometer').replace(/\bz\.\s?B\./g, 'zum Beispiel');
   } else {
     s = s.replace(/\bc\.\s?(?=\d)/g, 'around ').replace(/\bkm²/g, 'square kilometres').replace(/\bkm\b/g, 'kilometres')
       .replace(/\be\.g\./g, 'for example').replace(/\bi\.e\./g, 'that is');
@@ -160,7 +171,7 @@ export function speak(text: string, o: SpeakOptions): Promise<boolean> {
       if (i >= parts.length) { finish(true); return; }
       const k = i++;
       const u = new SpeechSynthesisUtterance(forSpeech(o.lang === 'es' && spainOn() ? toSpain(parts[k]) : parts[k], o.lang));
-      u.lang = voice?.lang ?? (o.lang === 'es' ? (spainOn() ? 'es-ES' : 'es-MX') : 'en-US');
+      u.lang = voice?.lang ?? (o.lang === 'es' ? (spainOn() ? 'es-ES' : 'es-MX') : { en: 'en-US', pt: 'pt-BR', fr: 'fr-FR', de: 'de-DE' }[o.lang]);
       if (voice) u.voice = voice;
       u.rate = voiceRate();
       let ended = false;

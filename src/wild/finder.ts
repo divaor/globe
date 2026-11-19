@@ -11,7 +11,7 @@ import type { Shell } from '../ui/shell';
 import { h, icon, clear } from '../ui/dom';
 import { planStar } from '../guide/plan';
 import { wikiOf } from '../artguide/data';
-import { lang, fmtCompact, L, dataLang, tx } from '../app/i18n';
+import { lang, fmtCompact, L, dataLang, tx, inatLocale } from '../app/i18n';
 import { matcher } from '../ui/match';
 import { COLS, ROWS, cellAt, loadWild, loadParks, nm, groupName, GROUPS, type Animal, type Park, type WildData } from './data';
 import { animalCard, parkCard, statusBadge, type CardFn } from './cards';
@@ -19,7 +19,6 @@ import { decodeTile } from './mvt';
 import { months, monthBars } from './inat';
 import { links, showFocus, currentFocus, type Focus } from '../layers/packs/wild';
 
-const es = () => lang() === 'es';
 const BASIS = ['HUMAN_OBSERVATION', 'PRESERVED_SPECIMEN', 'MACHINE_OBSERVATION', 'OCCURRENCE', 'MATERIAL_SAMPLE'];
 
 /** A species from GBIF's search. */
@@ -66,7 +65,7 @@ const ICONIC_EMOJI: Record<string, string> = { Mammalia: '🐾', Aves: '🐦', R
 export function natureTabs(on: 'animals' | 'plants', animals: () => void, plants: () => void): HTMLElement {
   const row = h('div', { class: 'seg nature-tabs', role: 'tablist' });
   for (const [k, ic, en, sp, go] of [['animals', '🐾', 'Animals', 'Animales', animals], ['plants', '🌿', 'Plants', 'Plantas', plants]] as const) {
-    const b = h('button', { type: 'button', class: `seg-btn${k === on ? ' on' : ''}`, role: 'tab', 'aria-selected': String(k === on), 'data-nature-tab': k }, `${ic} ${es() ? sp : en}`);
+    const b = h('button', { type: 'button', class: `seg-btn${k === on ? ' on' : ''}`, role: 'tab', 'aria-selected': String(k === on), 'data-nature-tab': k }, `${ic} ${tx({ en, es: sp })}`);
     b.addEventListener('click', () => { if (k !== on) go(); });
     row.append(b);
   }
@@ -126,7 +125,7 @@ export class Wild {
     body.append(h('p', { class: 'muted small' }, L('Where animals live and where to go to see them: {0} animals on the map, any other species live from GBIF.', 'Dónde viven los animales y adónde ir a verlos: {0} animales en el mapa y cualquier otra especie en vivo desde GBIF.', d.animals.length)));
     const filters = h('div', { class: 'chip-row' });
     for (const [id, ic, en, sp] of [['wild', '🐾', 'Animals of the world', 'Animales del mundo'], ['wild-parks', '🏞️', 'Wildlife parks', 'Parques de vida silvestre'], ['wild-zoos', '🦓', 'Zoos and aquariums', 'Zoológicos y acuarios'], ['migrations', '🦋', 'Great migrations', 'Grandes migraciones']]) {
-      const b = h('button', { type: 'button', class: `chip${this.app.isActive(id) ? ' on' : ''}`, 'data-wild-filter': id }, `${ic} ${es() ? sp : en}`);
+      const b = h('button', { type: 'button', class: `chip${this.app.isActive(id) ? ' on' : ''}`, 'data-wild-filter': id }, `${ic} ${tx({ en, es: sp })}`);
       b.addEventListener('click', () => { this.shell.sheet.close(); void this.app.activate(id); });
       filters.append(b);
     }
@@ -323,7 +322,7 @@ export class Wild {
     this.app.flyTo(at[0], at[1], Math.max(this.app.renderer.view.zoom, 12));
     const known = new Map((d?.animals ?? []).map((a) => [a.sci.toLowerCase(), a]));
     try {
-      const r = await fetch(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=${ICONIC[group].taxa}&per_page=30&locale=${dataLang()}`);
+      const r = await fetch(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=${ICONIC[group].taxa}&per_page=30&locale=${inatLocale()}`);
       if (!r.ok) throw new Error(String(r.status));
       const j = (await r.json()) as { results?: { count: number; taxon: { id: number; name: string; preferred_common_name?: string; iconic_taxon_name?: string; default_photo?: { square_url?: string; attribution?: string } } }[] };
       clear(list);

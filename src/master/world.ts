@@ -7,6 +7,7 @@ import { WORLD_DECKS, type WorldDeck, type Level } from './srs';
 import { loadDeck, deckNow, deckCountry, levelOf, LEVEL_COLORS } from './data';
 import { inScope } from './decks';
 import { master } from './store';
+import { L, tx } from '../app/i18n';
 
 export const WORLD_ID = 'master-world';
 const NEW_DARK = '#4a5262', NEW_LIGHT = '#c9ced6';
@@ -47,17 +48,15 @@ export function yourWorldLayer(): LayerDef {
       const ids = data ? inScope(data, d === 'all' ? 'flags' : d, 'world', st.territories).map((c) => c.id) : [];
       const by: Record<Level, string[]> = { new: [], learning: [], known: [], mastered: [] };
       for (const id of ids) by[levelOf(d, id)].push(id);
-      const tx = (x: { en: string; es: string }) => (lang === 'es' ? x.es : x.en);
       return {
         kind: 'categories', title: `${tx({ en: 'Your world', es: 'Tu mundo' })} · ${tx(DECK_NAMES[d])}`,
         items: [...(['mastered', 'known', 'learning'] as const).map((l) => ({ color: LEVEL_COLORS[l], label: `${tx(LEVEL_NAMES[l])}: ${by[l].length}`, ids: by[l] })),
           { color: NEW_DARK, label: `${tx({ en: 'Still to meet', es: 'Por conocer' })}: ${by.new.length}`, ids: by.new }],
-        note: lang === 'es' ? `De ${ids.length} países` : `Of ${ids.length} countries`,
+        note: L('Of {0, plural, one {# country} other {# countries}}', 'De {0, plural, one {# país} other {# países}}', ids.length),
       };
     },
     info(id, inst, lang) {
       const l = levelOf(deckOf(inst), id);
-      const tx = (x: { en: string; es: string }) => (lang === 'es' ? x.es : x.en);
       return [{ label: tx({ en: 'Your world', es: 'Tu mundo' }), value: l === 'new' ? tx({ en: 'Not met yet', es: 'Aún sin ver' }) : tx(LEVEL_NAMES[l]) }];
     },
   };

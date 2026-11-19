@@ -1,3 +1,4 @@
+import { nm } from '../app/i18n';
 // Your own data: a CSV (or TSV, or a table pasted from a spreadsheet) read into a map. This module only reads and
 // matches, with no page around it, so scripts/test/mydata.mjs checks it in Node:
 //   - the table: the delimiter (comma, semicolon, tab or bar), quotes, a preamble above the header (World Bank
@@ -150,7 +151,8 @@ export interface CountryIndex { match(raw: string): CountryMatch; name(id: strin
 export function countryIndex(meta: Record<string, CountryMeta>): CountryIndex {
   const by = new Map<string, string>();
   const put = (k: string | null | undefined, id: string) => { if (k) { const n = norm(k); if (n && !by.has(n)) by.set(n, id); } };
-  for (const [id, m] of Object.entries(meta)) { put(m.n, id); put(m.es, id); }
+  // English, Spanish, and the reader's language (v0.42.0: "Alemanha", "Allemagne", "Deutschland").
+  for (const [id, m] of Object.entries(meta)) { put(m.n, id); put(m.es, id); put(nm(m.n), id); }
   for (const [id, list] of Object.entries(ALIASES)) if (meta[id]) for (const a of list) by.set(norm(a), id);
   const a3 = new Set(Object.keys(meta).map((k) => k.toUpperCase()));
   const a2 = new Map<string, string>();
@@ -172,7 +174,7 @@ export function countryIndex(meta: Record<string, CountryMeta>): CountryIndex {
       if (PART_NAMES.test(n) || PART_NAMES.test(bare)) return 'part';
       return GROUP.test(n) ? 'group' : null;
     },
-    name(id, lang) { const m = meta[id]; return m ? (lang === 'es' && m.es ? m.es : m.n) : id; },
+    name(id, lang) { const m = meta[id]; return m ? (lang === 'es' && m.es ? m.es : nm(m.n)) : id; },
   };
 }
 

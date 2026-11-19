@@ -91,7 +91,6 @@ export const timezones: LayerDef = {
     for (const s of zones) {
       if (!geoContains(s.feature as never, [lon, lat])) continue;
       const p = s.feature.properties;
-      const es = lang() === 'es';
       return [
         { label: L('Time zone', 'Huso horario'), value: fmtOffset(p.z), icon: '🕒' },
         { label: L('Local time', 'Hora local'), value: timeAt(p.z, p.tz) },

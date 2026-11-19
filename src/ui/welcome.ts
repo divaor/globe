@@ -4,7 +4,7 @@
 // first pick (games, stories or the map). Notifications are asked for only when a reminder is turned on.
 import { ChevronLeft, ChevronRight } from 'lucide';
 import { h, icon, clear } from './dom';
-import { L, LANGS } from '../app/i18n';
+import { L, LANGS, type Lang } from '../app/i18n';
 import type { App } from '../app/app';
 
 export interface WelcomeActions { today: () => void; games: () => void; stories: () => void; map: () => void }
@@ -30,17 +30,17 @@ export function showWelcome(app: App, act: WelcomeActions): HTMLElement {
   const card = h('div', { class: 'welcome-card glass', role: 'dialog', 'aria-modal': 'true' });
   const el = h('div', { class: 'welcome', 'data-welcome': '' }, card);
   const langPicker = () => {
-    const cur = !app.langPicked ? 'phone' : app.lang === 'en' ? 'en' : `es-${app.spanish}`;
-    const opts: [string, string][] = [['en', 'English'], ['es-latam', 'Español (Latinoamérica)'], ['es-spain', 'Español (España)']];
+    const cur = !app.langPicked ? 'phone' : app.lang === 'es' ? `es-${app.spanish}` : app.lang;
+    const opts: [string, string][] = [['en', 'English'], ['es-latam', 'Español (Latinoamérica)'], ['es-spain', 'Español (España)'],
+      ...LANGS.filter((l) => l.id !== 'en' && l.id !== 'es').map((l): [string, string] => [l.id, l.name])];
     const sel = h('select', { class: 'select', 'aria-label': L('Language', 'Idioma'), 'data-welcome': 'lang' }) as HTMLSelectElement;
     sel.append(h('option', { value: 'phone' }, `📱 ${L('Like my phone', 'Como mi teléfono')} (${LANGS.find((x) => x.id === app.lang)?.name ?? app.lang})`));
     for (const [v, label] of opts) sel.append(h('option', { value: v }, label));
-    sel.value = cur === 'en' || cur === 'es-latam' || cur === 'es-spain' ? cur : 'phone';
+    sel.value = opts.some(([v]) => v === cur) ? cur : 'phone';
     sel.addEventListener('change', () => {
       const v = sel.value;
-      if (v === 'phone') app.setLang(null);
-      else app.setLang(v === 'en' ? 'en' : 'es', v === 'es-spain' ? 'spain' : 'latam');
-      render();
+      const done = v === 'phone' ? app.setLang(null) : v.startsWith('es-') ? app.setLang('es', v === 'es-spain' ? 'spain' : 'latam') : app.setLang(v as Lang);
+      void done.then(render);
     });
     return h('label', { class: 'welcome-lang' }, h('span', null, L('Language', 'Idioma')), sel);
   };

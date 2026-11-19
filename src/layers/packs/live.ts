@@ -4,14 +4,13 @@
 // - Yesterday's satellite view: NASA GIBS WMS https://gibs.earthdata.nasa.gov/
 // - The International Space Station:          https://wheretheiss.at/
 import { geoCircle, geoDistance } from 'd3-geo';
-import { lang, fmtNumber, L } from '../../app/i18n';
+import { lang, fmtNumber, L, nm } from '../../app/i18n';
 import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { LayerDef, LayerInstance, RenderCtx } from '../types';
 import type { RasterTexture } from '../../engine/gl';
 import { appLocale } from '../../app/i18n';
 
-const es = () => lang() === 'es';
 
 async function fetchJSON<T>(url: string, ms = 15000): Promise<T> {
   const ctl = new AbortController();
@@ -173,7 +172,7 @@ const weather: LayerDef = {
         arr.forEach((r, k) => {
           const c = batch[k];
           if (!c || !r?.current) return;
-          out.push({ lon: c.lon, lat: c.lat, name: es() && c.es ? c.es : c.name, t: r.current.temperature_2m, code: r.current.weather_code, wind: r.current.wind_speed_10m, day: r.current.is_day });
+          out.push({ lon: c.lon, lat: c.lat, name: nm(c.name, c.es), t: r.current.temperature_2m, code: r.current.weather_code, wind: r.current.wind_speed_10m, day: r.current.is_day });
         });
       }
       inst.state.wx = out;
@@ -203,7 +202,7 @@ const weather: LayerDef = {
     for (const w of (inst.state.wx as Wx[]) ?? []) { const d = geoDistance([lon, lat], [w.lon, w.lat]); if (d < bd) { bd = d; best = w; } }
     if (!best) return null;
     const c = WMO[best.code] ?? ['🌡️', '', ''];
-    return [{ label: best.name, value: `${c[0]} ${es() ? c[2] : c[1]}, ${fmtNumber(best.t, 1)} °C`, icon: '⛅' }, { label: L('Wind', 'Viento'), value: `${fmtNumber(best.wind, 0)} km/h`, icon: '💨' }];
+    return [{ label: best.name, value: `${c[0]} ${nm(c[1], c[2])}, ${fmtNumber(best.t, 1)} °C`, icon: '⛅' }, { label: L('Wind', 'Viento'), value: `${fmtNumber(best.wind, 0)} km/h`, icon: '💨' }];
   },
 };
 

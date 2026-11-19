@@ -5,8 +5,8 @@ import { Waves } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import { h, segmented } from '../ui/dom';
-import { fmtNumber, tx } from '../app/i18n';
-import { L, es } from '../play/host';
+import { fmtNumber, tx, lower } from '../app/i18n';
+import { L } from '../play/host';
 import { loadJSON } from '../data/store';
 import { recordFeat } from '../learn/progress';
 import { loadDepths, heightAt, seaDepthAt, oceanAt, OCEAN_NAMES, zoneOf, depths } from './depth';
@@ -141,8 +141,8 @@ export class DeepSea {
     return h('div', null,
       h('p', { class: 'small' }, h('b', null, `🌊 ${cap(OCEAN_NAMES[ocean]())} · ${coord}`), h('br'),
         floor - typical > 300
-          ? L('The sea here is about {0} deep, down to {1} at its deepest. You are in the {2} at the bottom.', 'Aquí el mar tiene unos {0} de profundidad, hasta {1} en lo más hondo. Al fondo estás en la {2}.', metres(typical), metres(floor), zoneOf(floor).name().toLowerCase())
-          : L('The sea here is about {0} deep: its floor is in the {1}.', 'Aquí el mar tiene unos {0} de profundidad: su fondo está en la {1}.', metres(floor), zoneOf(floor).name().toLowerCase())),
+          ? L('The sea here is about {0} deep, down to {1} at its deepest. You are in the {2} at the bottom.', 'Aquí el mar tiene unos {0} de profundidad, hasta {1} en lo más hondo. Al fondo estás en la {2}.', metres(typical), metres(floor), lower(zoneOf(floor).name()))
+          : L('The sea here is about {0} deep: its floor is in the {1}.', 'Aquí el mar tiene unos {0} de profundidad: su fondo está en la {1}.', metres(floor), lower(zoneOf(floor).name()))),
       h('p', { class: 'muted small' }, L('{0} of our {1} sea animals live in {2} at this latitude. Tap the column for the light, the cold and the pressure; tap an animal for its story.', '{0} de nuestros {1} animales marinos viven en {2} a esta latitud. Toca la columna para ver la luz, el frío y la presión; toca un animal para su historia.', here.length, this.animals.length, OCEAN_NAMES[ocean]())),
       diveColumn({ floor, lat, animals: here, markers, onAnimal: (a) => this.animalCard(a) }),
       obisEl,

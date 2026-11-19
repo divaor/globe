@@ -25,6 +25,13 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   and About. One bar above the map: a chip per filter, the top one carrying its legend's ⌃. Zoom and locate on the
   right. A first visit (not from a link) gets three short cards: how to move the globe and the language, Today, and
   where to start.
+- **Languages (v0.42.0):** English, Spanish (Latin America's or Spain's), Portuguese (Brazil), French and German,
+  like the phone unless one is picked in Settings or on the first visit's card. In Portuguese, French and German:
+  every word of the app; the map's names (countries, states and provinces, cities, seas, rivers and mountains, World
+  Heritage sites, animals and plants: Natural Earth's and Wikidata's names); every quiz, game and deck, Fill the map's
+  clues and the guided tours; numbers, dates and ordinals as the language writes them; read aloud by the phone's own
+  voices for the language. Stories, lives and the travel guide are still in English there, with a note saying so, and
+  read aloud in English. Store listings for both stores are in `store/listings/` (six locales).
 - **Political map (default):** every country has its own shade; the colour family shows its continent.
   Capitals, cities and sea names appear as you zoom. Tap a country for a card with its flag and facts.
 - **Map style and states:** Map → Map style and states picks the look under every filter: Atlas (a colour per
@@ -607,7 +614,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
 - A feature's tile comes from `ftile(id)` (`src/ui/features.ts`). A panel's title gets it from its sheet id.
 - A game's result comes from `resultCard()` (`src/ui/result.ts`).
 
-**Texts** (v0.41.0, One voice). Every text is written where it is used, in English and Latin American Spanish:
+**Texts** (v0.41.0, One voice; v0.42.0, more languages). Every text is written where it is used, in English and Latin American Spanish:
 
 ```ts
 L('Out of {0}', 'De {0}', fmtNumber(total))                       // values as {0}, {1}… a translator can move
@@ -618,9 +625,19 @@ tx(item.name)                                                     // a data fiel
 ```
 
 - `npm run i18n:extract` writes `i18n/messages.json`: every text by its English (and context), with the Spanish and
-  where it is used, for translators. A language beyond English and Spanish is `public/i18n/<lang>.json`, the English
-  (or `context␄English`) to its translation, listed in `SHIPPED` in `scripts/i18n/extract.mjs`; a text it lacks shows
-  in English.
+  where it is used, for translators. A language beyond English and Spanish is `public/data/i18n/<lang>.json`, the
+  English (or `context␄English`) to its translation, listed in `SHIPPED` in `scripts/i18n/extract.mjs` (v0.42.0:
+  `pt`, `fr`, `de`), and in `LANGS` and `FILE_LANGS` in `src/app/i18n.ts`; a text it lacks shows in English. Pairs
+  written as `title_en`/`title_es` and a tour's `at(…)` stops are texts too.
+- **Names** (v0.42.0): `nm(english, spanish)` gives a place's, species' or data word's name in the reader's
+  language; `tx()` falls back to it for data fields. `public/data/i18n/<lang>-data.json` maps the English to it:
+  `NODE_USE_ENV_PROXY=1 node scripts/i18n/names.mjs` builds it from Natural Earth's NAME_PT/FR/DE and from the
+  Wikidata labels (QLever) of the items behind every name in `public/data` (the items come from the build caches in
+  `.cache/`; only names that read differently are kept), then adds `i18n/data-<lang>.json` (the data's short texts
+  and the names Wikidata lacks, translated by hand). `lower()` lowercases a name inside a sentence (German keeps its
+  capitals), `ordinal()` writes 1st / 1.º / 1º / 1er / 1., `monthName()` takes the phone's calendar names, and
+  `englishNote()` is the line on prose panels.
+- `node scripts/store/check.mjs` (in `check:data`) keeps the store listings within both stores' limits.
 - `npm run test:i18n` (also in `check:data`) checks the patterns (values, plurals, selects, pseudo-language) and fails
   on an `L()` that is not two plain texts, a value a pattern does not use, a text or data field that picks its
   language by hand (`es ? 'Hola' : 'Hello'`), an English text with two different Spanish (the glossary: one word for

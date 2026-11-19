@@ -18,6 +18,7 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import readline from 'node:readline';
 import { fileURLToPath } from 'node:url';
+import { fixPlaces } from '../ne-fixes.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 const HERE = path.join(ROOT, 'scripts/data/guide');
@@ -72,7 +73,7 @@ function pickCities() {
 
 /** Wikidata ids from Natural Earth's populated places: the nearest place of the same country with the same name. */
 function addQids(cities) {
-  const fc = JSON.parse(fs.readFileSync(path.join(ROOT, '.cache/ne/ne_10m_populated_places.geojson'), 'utf8'));
+  const fc = fixPlaces(JSON.parse(fs.readFileSync(path.join(ROOT, '.cache/ne/ne_10m_populated_places.geojson'), 'utf8')));
   const pts = fc.features.filter((f) => f.properties.WIKIDATAID).map((f) => { const p = f.properties; return { at: f.geometry.coordinates, q: p.WIKIDATAID, names: [p.NAME, p.NAME_EN, p.NAMEASCII, p.NAME_ES, p.NAMEPAR, p.NAMEALT].filter(Boolean) }; });
   let miss = 0;
   for (const c of cities) {

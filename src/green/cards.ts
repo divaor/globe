@@ -3,7 +3,7 @@
 // author), what it is, its Red List status, height and lifespan, the countries it grows in, when it flowers (live from
 // iNaturalist), and buttons for where it grows, the best places to see it, its relatives and its crop's story.
 import { h } from '../ui/dom';
-import { lang, fmtCompact, L, tx, Lc } from '../app/i18n';
+import { lang, fmtCompact, L, tx, Lc, nm as nameIn, lower } from '../app/i18n';
 import { recordSeen } from '../learn/progress';
 import { commons, wikiOf } from '../artguide/data';
 import { creditEl } from '../artguide/cards';
@@ -18,7 +18,6 @@ import {
 } from './data';
 import { appLocale } from '../app/i18n';
 
-const es = () => lang() === 'es';
 type Link = { label: string; href?: string; onClick?: () => void };
 
 /** What the cards' buttons do (layers/packs/green.ts gives them). */
@@ -107,7 +106,7 @@ export function gardenCard(card: CardFn, g: Garden, d: GreenData | null, x: Gree
 
 export function treeCard(card: CardFn, t: FamousTree, x: GreenLinks) {
   const rows: InfoRow[] = [];
-  if (t.sp) rows.push({ label: L('Species', 'Especie'), value: `${es() ? t.sp[1] : t.sp[0]} · ${t.sp[2]}`, icon: '🌳' });
+  if (t.sp) rows.push({ label: L('Species', 'Especie'), value: `${nameIn(t.sp[0], t.sp[1])} · ${t.sp[2]}`, icon: '🌳' });
   if (t.rec) rows.push({ label: L('Record', 'Récord'), value: tt(t.rec), icon: '🏆' });
   if (t.age) rows.push({ label: L('Age', 'Edad'), value: tt(t.age), icon: '⏳' });
   if (t.h) rows.push({ label: L('Height', 'Altura'), value: `${t.h.toLocaleString(appLocale(), { maximumFractionDigits: 1 })} m`, icon: '📏' });
@@ -141,8 +140,8 @@ export function ecoCard(card: CardFn, e: { i: number; n: string; es?: string; b:
   if (plants.length) extra.append(h('p', { class: 'muted small' }, L('Plants of ours that grow here:', 'Plantas nuestras que crecen aquí:')),
     chips(plants.slice(0, 10).map((p) => ({ e: p.e, name: nm(p), attr: { 'data-plant': p.id }, on: () => x.openPlant(p) }))));
   if (animals.length) extra.append(h('p', { class: 'muted small' }, L('Animals of ours that live here:', 'Animales nuestros que viven aquí:')),
-    chips(animals.slice(0, 10).map((a) => ({ e: a.e, name: es() ? a.n[1] : a.n[0], attr: { 'data-animal-sci': a.sci }, on: () => { x.openAnimal(a.sci); } }))));
-  const name = es() && e.es ? e.es : e.n;
+    chips(animals.slice(0, 10).map((a) => ({ e: a.e, name: nameIn(a.n[0], a.n[1]), attr: { 'data-animal-sci': a.sci }, on: () => { x.openAnimal(a.sci); } }))));
+  const name = nameIn(e.n, e.es);
   const notes = [L('One of 846 ecoregions: areas with their own mix of plants and animals, drawn by 49 scientists (RESOLVE Ecoregions 2017, CC BY 4.0).', 'Una de 846 ecorregiones: zonas con su propia mezcla de plantas y animales, trazadas por 49 científicos (RESOLVE Ecoregions 2017, CC BY 4.0).')];
   card('🌿', name, biomeName(e.b), rows, [], notes, undefined, extra);
 }
@@ -197,7 +196,7 @@ export function cropCard(card: CardFn, c: Crop, x: GreenLinks, show: () => void)
   if (c.today) notes.push(`${L('Today', 'Hoy')}: ${tt(c.today)}`);
   const links: Link[] = [{ label: L('Show its journey', 'Mostrar su viaje'), onClick: show }];
   const plant = c.plant ? x.plantById(c.plant) : null;
-  if (plant) links.push({ label: L('Wild {1}: its card', '{0} silvestre: su ficha', nm(plant), nm(plant).toLowerCase()), onClick: () => x.openPlant(plant) });
+  if (plant) links.push({ label: L('Wild {1}: its card', '{0} silvestre: su ficha', nm(plant), lower(nm(plant))), onClick: () => x.openPlant(plant) });
   if (c.story) links.push({ label: L('Open its story', 'Abrir su historia'), onClick: () => x.openStory(c.story![0], c.story![1], c.story![2]) });
   links.push(...sourceLinks(c.src));
   card(c.e, tt(c.n), c.sci, rows, links, notes);

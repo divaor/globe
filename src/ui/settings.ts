@@ -40,15 +40,16 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     }
   });
 
-  // Like the phone (v0.35.0), English, and the two Spanishes; numbers and dates are written the phone's way.
+  // Like the phone (v0.35.0), English, the two Spanishes, Portuguese, French and German (v0.42.0); numbers and dates
+  // are written the phone's way.
   type Choice = Lang | 'es-ES' | 'auto';
-  const es = app.lang === 'es';
   const langPicker = segmented<Choice>(!app.langPicked ? 'auto' : app.lang === 'es' && app.spanish === 'spain' ? 'es-ES' : app.lang, [
     { value: 'auto', label: L('📱 Like my phone', '📱 Como mi teléfono') },
-    ...LANGS.filter((l) => l.id !== 'es').map((l) => ({ value: l.id as Choice, label: l.name })),
+    { value: 'en', label: 'English' },
     { value: 'es', label: 'Español (Latinoamérica)' },
     { value: 'es-ES', label: 'Español (España)' },
-  ], (v) => { if (v === 'auto') app.setLang(null); else app.setLang(v === 'es-ES' ? 'es' : v, v === 'es-ES' ? 'spain' : v === 'es' ? 'latam' : app.spanish); reopen(); });
+    ...LANGS.filter((l) => l.id !== 'en' && l.id !== 'es').map((l) => ({ value: l.id as Choice, label: l.name })),
+  ], (v) => { void (v === 'auto' ? app.setLang(null) : app.setLang(v === 'es-ES' ? 'es' : v, v === 'es-ES' ? 'spain' : v === 'es' ? 'latam' : app.spanish)).then(reopen); });
   langPicker.classList.add('seg-wrap');
   const sample = `${fmtNumber(10935.5, 1)} · ${new Date(2026, 4, 3).toLocaleDateString(appLocale(), { day: 'numeric', month: 'long' })} · ${new Date(2026, 4, 3, 17, 30).toLocaleTimeString(appLocale(), { hour: 'numeric', minute: '2-digit' })}`;
   const phone = localeFromPhone();
@@ -96,7 +97,6 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
 }
 
 export function aboutPanel(app: App): HTMLElement {
-  const es = app.lang === 'es';
   const credits = new Map<string, string[]>();
   for (const d of app.registry.values()) {
     if (!d.credit) continue;
@@ -120,7 +120,6 @@ export function aboutPanel(app: App): HTMLElement {
 /** Reading aloud: on or off, the voice for the app's language (Latin American Spanish voices first), its speed, and
  * a sample. The voices are the device's own; some devices have none for a language. */
 function voiceSettings(app: App): HTMLElement {
-  const es = app.lang === 'es';
   const box = h('div', { class: 'voice-settings' });
   if (!canSpeak()) {
     box.append(h('p', { class: 'muted small' }, L('This browser cannot read aloud.', 'Este navegador no puede leer en voz alta.')));

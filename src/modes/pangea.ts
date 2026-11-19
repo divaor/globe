@@ -9,7 +9,6 @@ import type { LayerDef, RenderCtx } from '../layers/types';
 import { loadPaleo, unitName, PALEO_MAX_MA, type PaleoWorld } from './paleo';
 
 const easeLabel = (ma: number) => {
-  const es = lang() === 'es';
   if (ma < 0.05) return L('Today', 'Hoy');
   const v = ma < 10 ? fmtNumber(ma, 1) : fmtNumber(Math.round(ma));
   return L('{0} million years ago', 'Hace {0} millones de años', v);
@@ -33,7 +32,6 @@ export class PangeaMode {
       drawFill(rc) { self.draw(rc); },
       labels(rc) { self.world?.labels(rc, self.ma); },
       legend() {
-        const es = lang() === 'es';
         return {
           kind: 'categories', title: L('Land of today', 'Tierra de hoy'),
           items: ['AF', 'SA', 'NA', 'EU', 'AS', 'OC', 'AN'].map((c) => ({ color: continentSwatch(c), label: t(`cont.${c}`) })),
@@ -59,7 +57,6 @@ export class PangeaMode {
     app.select(null);
     app.renderer.baseMap = false;
     await app.setStack(['pangea']);
-    const es = lang() === 'es';
     const periods = this.world.units.filter((u) => u.rank === 'period' && u.start <= PALEO_MAX_MA);
     this.ma = Math.max(0, Math.min(PALEO_MAX_MA, ma));
     const pos = 1 - this.ma / 1000;

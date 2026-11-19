@@ -112,7 +112,6 @@ export class LegendCard {
 
   /** A timeline: play and pause, the slider through the years and the one for its speed (the same elements each time). */
   private player(id: string, p: LegendPlayer): HTMLElement {
-    const es = this.app.lang === 'es';
     let ui = this.players.get(id);
     if (!ui) {
       const play = h('button', { type: 'button', class: 'lg-play' }) as HTMLButtonElement;
@@ -189,14 +188,13 @@ export class LegendCard {
 
   private showBanner(inst: LayerInstance, it: LegendItem) {
     const n = it.count ?? it.ids?.length ?? 0;
-    const es = this.app.lang === 'es';
     const close = h('button', { type: 'button', class: 'lg-banner-x', title: t('close'), 'aria-label': t('close') }, icon(X, 16));
     close.addEventListener('click', () => this.clearHighlight());
     clear(this.banner);
     add(this.banner,
       h('span', { class: 'lg-sw', style: { background: it.color, borderColor: it.color } }),
       h('span', { class: 'lg-banner-text' }, h('strong', null, it.label),
-        h('span', { class: 'lg-banner-sub' }, `${inst.def.icon} ${tx(inst.def.name)} · ${n} ${es ? (n === 1 ? 'país' : 'países') : n === 1 ? 'country' : 'countries'}`)),
+        h('span', { class: 'lg-banner-sub' }, `${inst.def.icon} ${tx(inst.def.name)} · ${L('{0, plural, one {# country} other {# countries}}', '{0, plural, one {# país} other {# países}}', n)}`)),
       close);
     this.banner.hidden = this.app.ambient.on;
   }

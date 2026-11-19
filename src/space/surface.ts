@@ -3,7 +3,7 @@
 // the quizzes choose which world it shows.
 import { dataUrl, loadJSON } from '../data/store';
 import { DetailMosaic } from '../engine/detail';
-import { flagEmoji, dataLang, tx } from '../app/i18n';
+import { flagEmoji, dataLang, tx, nm, wikiHref } from '../app/i18n';
 import { wikiThumb } from '../modes/stories';
 import { WORLDS, worldById, loadNames, loadFacts, tr, L, TYPE_NAMES, BIG_TYPES, SEA_TYPES, namedAfter, type WorldDef, type WorldMap, type Names, type Text, type Facts } from './worlds';
 import type { App } from '../app/app';
@@ -256,7 +256,7 @@ export class WorldSurface {
   }
 
   landingCard(l: Landing, ui: { card: (icon: string, title: string, sub: string, rows: InfoRow[], links?: { label: string; href?: string; onClick?: () => void }[], notes?: string[], image?: Promise<string | null>) => void }) {
-    const links = l.wiki ? [{ label: 'Wikipedia', href: `https://${dataLang()}.wikipedia.org/wiki/${encodeURIComponent((tx(l.wiki) || l.wiki.en).replace(/ /g, '_'))}` }] : [];
+    const href = wikiHref(l.wiki), links = href ? [{ label: 'Wikipedia', href }] : [];
     const notes = [tr(l.text), ...(l.details ? [tr(l.details)] : []), ...(l.routeNote ? [tr(l.routeNote)] : [])];
     ui.card(LANDING_ICON[l.kind], tr(l.name), `${tr(this.def?.name)} · ${fmtDate(l.date)}`, this.landingRows(l), links, notes, l.wiki ? wikiThumb(l.wiki) : undefined);
   }
@@ -267,7 +267,7 @@ export class WorldSurface {
     const rows: InfoRow[] = [{ icon: '🏷️', label: L('Kind', 'Tipo'), value: tr(TYPE_NAMES[type]) || type }];
     if (km > 0) rows.push({ icon: '📏', label: L('Size', 'Tamaño'), value: `${km.toLocaleString(appLocale(), { maximumFractionDigits: km < 10 ? 1 : 0 })} km` });
     rows.push({ icon: '📍', label: L('Where', 'Dónde'), value: fmtLatLon([lon, lat]) });
-    const origin = oi >= 0 ? (dataLang() === 'es' ? this.names!.origins.es[oi] ?? null : this.names!.origins.en[oi]) : null;
+    const origin = oi >= 0 ? nm(this.names!.origins.en[oi], this.names!.origins.es[oi]) : null;
     if (origin) rows.push({ icon: '✍️', label: L('Named after', 'En honor de'), value: namedAfter(name, origin) });
     const common = this.seaNames.get(name);
     const title = common ? tr(common) : name;

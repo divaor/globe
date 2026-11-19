@@ -2,7 +2,7 @@
 // (public/data/born). A dot is a place, coloured by its best-known person's field and bigger the more people were
 // born there; a tap lists them. By field, by when they were born, and by birth or death.
 // A person with a life in Lives on the map opens it; living people appear by birthplace only.
-import { lang, fmtCompact, L, dataLang } from '../../app/i18n';
+import { lang, fmtCompact, L, dataLang, lower } from '../../app/i18n';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import type { App } from '../../app/app';
@@ -11,9 +11,8 @@ import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, RenderCtx } from '.
 import { crowdOf, type Placed } from '../crowd';
 import { loadBorn, loadLives, personCard, FIELDS, fieldName, nm, years, what, type BornData, type BornPlace, type Person, type PersonLinks } from '../../lives/born';
 import { creditEl } from '../../artguide/cards';
-import { regionAt, regionType } from '../../engine/regions';
+import { regionAt, regionType, regionName } from '../../engine/regions';
 
-const es = () => lang() === 'es';
 let APP: App | null = null;
 let SHELL: Shell | null = null;
 let data: BornData | null = null;
@@ -187,7 +186,7 @@ function openPlace(best: BornPlace, people: Person[], inst: LayerInstance, ui: L
     // Which state or province and country the place is in (when the states are shown, their shapes are loaded).
     const rg = regionAt(best.at[0], best.at[1]);
     const cid = APP?.renderer.countryAt(best.at[0], best.at[1]);
-    const where = [rg ? `${(dataLang() === 'es' ? rg.es || rg.name : rg.name)}${regionType(rg, APP?.lang === 'es') ? ` (${regionType(rg, APP?.lang === 'es')!.toLowerCase()})` : ''}` : null, cid ? APP!.data.name(cid, APP!.lang) : null].filter(Boolean).join(', ');
+    const where = [rg ? `${regionName(rg)}${regionType(rg) ? ` (${lower(regionType(rg)!)})` : ''}` : null, cid ? APP!.data.name(cid, APP!.lang) : null].filter(Boolean).join(', ');
     const body = h('div', { class: 'guide born-panel', 'data-place': best.name[0] },
       where ? h('p', { class: 'born-where' }, `📍 ${where}`) : null,
       h('p', { class: 'muted small' }, L('{0} well-known people, the best known first. Tap one for their card.', '{0} personas conocidas, las más conocidas primero. Toca una para ver su ficha.', people.length)),

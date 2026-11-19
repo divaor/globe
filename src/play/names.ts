@@ -7,7 +7,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber, dataLang, tx } from '../app/i18n';
+import { fmtNumber, dataLang, tx, nm } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { Borders, seeded, type BorderData } from './route';
 import { starText } from './score';
@@ -15,7 +15,7 @@ import { namesTime, namesScore, capitalNames, sample } from './logic';
 import { countryIndex, norm, type CountryIndex } from '../mydata/parse';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
-import { L, es, type PlayHost, type HostGame } from './host';
+import { L, type PlayHost, type HostGame } from './host';
 
 export type NameList = 'countries' | 'capitals' | 'neighbours';
 export const NAME_LISTS: [NameList, { en: string; es: string }][] = [['countries', { en: 'Countries', es: 'Países' }], ['capitals', { en: 'Capitals', es: 'Capitales' }], ['neighbours', { en: 'Neighbours of a country', es: 'Vecinos de un país' }]];
@@ -51,7 +51,7 @@ export class NameThemAll implements HostGame {
     if (!this.capitals.size) {
       // Each capital's names: the one the country facts give, and the app's capital cities (English and Spanish).
       for (const [id, d] of Object.entries(this.attrs.data)) for (const n of capitalNames([d.capital], norm)) if (n) this.capitals.set(n, id);
-      for (const c of this.app.data.cities) if (c.capital === 2) for (const n of capitalNames([c.name, c.es], norm)) if (n && !this.capitals.has(n)) this.capitals.set(n, c.country);
+      for (const c of this.app.data.cities) if (c.capital === 2) for (const n of capitalNames([c.name, c.es, nm(c.name, c.es)], norm)) if (n && !this.capitals.has(n)) this.capitals.set(n, c.country);
     }
     return true;
   }
@@ -136,7 +136,7 @@ export class NameThemAll implements HostGame {
   private capitalOf(id: string) {
     const caps = this.app.data.cities.filter((x) => x.country === id && x.capital === 2);
     const c = caps.find((x) => x.name === this.attrs!.data[id]?.capital) ?? caps[0];
-    return c ? (es() ? c.es ?? c.name : c.name) : this.attrs!.data[id]?.capital ?? '';
+    return c ? nm(c.name, c.es) : this.attrs!.data[id]?.capital ?? '';
   }
   private prompt(): string {
     const s = this.st!;

@@ -1,11 +1,10 @@
 // Wild world (v0.30.0): the animals, the parks and the zoos (public/data/wild, from Wikidata and GBIF), and the grid
 // their ranges are kept on: GBIF's map squares, 256 columns × 128 rows of 1.40625° (about 150 km at the equator).
 import { loadJSON } from '../data/store';
-import { lang, L, tx } from '../app/i18n';
+import { lang, L, tx, nm as nameIn } from '../app/i18n';
 import { hasCell, unpackCells, unpackCounts } from '../layers/carpet';
 import { appLocale } from '../app/i18n';
 
-const es = () => lang() === 'es';
 
 export { COLS, ROWS, DEG, cellAt, cellCenter } from '../layers/carpet';
 
@@ -55,7 +54,7 @@ export const STATUS: Record<Status, { en: string; es: string; color: string; ink
 export const statusName = (s: Status) => (tx(STATUS[s]));
 export const threatened = (s: Status | null) => s === 'VU' || s === 'EN' || s === 'CR';
 
-export const nm = (x: { n: [string, string] }) => (es() ? x.n[1] : x.n[0]);
+export const nm = (x: { n: [string, string] }) => nameIn(x.n[0], x.n[1]);
 
 let wild: Promise<WildData | null> | null = null;
 export function loadWild(): Promise<WildData | null> {

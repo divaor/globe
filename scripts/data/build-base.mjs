@@ -21,6 +21,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import mapshaper from 'mapshaper';
 import { rewindTopology } from './winding.mjs';
+import { fixPlaces } from './ne-fixes.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const CACHE = path.join(ROOT, '.cache/ne');
@@ -161,7 +162,7 @@ const RENAMED = { 'Nur-Sultan': ['Astana', 'Astaná'] };
 
 async function cities() {
   await countryIds();
-  const fc = await readJSON(src('ne_10m_populated_places'));
+  const fc = fixPlaces(await readJSON(src('ne_10m_populated_places')));
   const rows = [];
   for (const f of fc.features) {
     const p = f.properties;

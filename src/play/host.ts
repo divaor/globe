@@ -9,9 +9,7 @@ import type { RenderCtx } from '../layers/types';
 import { h, icon, clear } from '../ui/dom';
 import { lang, t, L } from '../app/i18n';
 
-const es = () => lang() === 'es';
 export { L };
-export { es };
 
 /** A map game, as the host sees it. */
 export interface HostGame {

@@ -15,7 +15,7 @@ import type { RenderCtx } from '../layers/types';
 import { h } from '../ui/dom';
 import { fmtNumber, tx, Lc } from '../app/i18n';
 import { loadJSON } from '../data/store';
-import { L, es } from '../play/host';
+import { L } from '../play/host';
 import { mainBody } from '../play/outline';
 import { pickCountry } from '../play/pick';
 import { commons, commonsPage, commonsCredit } from '../artguide/data';

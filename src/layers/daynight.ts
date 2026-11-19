@@ -38,7 +38,6 @@ export const dayNight: LayerDef = {
     }
   },
   legend() {
-    const es = lang() === 'es';
     const [lon, lat] = subsolarPoint(new Date());
     const time = new Intl.DateTimeFormat(appLocale(), { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }).format(new Date());
     return {

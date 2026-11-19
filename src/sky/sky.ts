@@ -12,7 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { Space } from '../space/space';
 import type { InfoRow } from '../layers/types';
 import type { Hit } from '../ui/search';
-import { appLocale, dataLang } from '../app/i18n';
+import { appLocale, dataLang, wikiHref } from '../app/i18n';
 
 type Frame = 'horizon' | 'celestial';
 interface Place { lon: number; lat: number; label: string }
@@ -658,7 +658,7 @@ export class Sky {
     // From the galaxy view: no "in the sky now", and a way to the sky instead.
     const where = (v: V3) => (o.galaxy || !this.el ? null : this.where(v, g));
     const toSky = (target: string) => { if (o.galaxy) links.push({ label: L('See it in the sky', 'Verlo en el cielo'), onClick: () => this.open({ frame: 'celestial', target, fov: 50 }) }); };
-    const wiki = (w?: { en: string; es: string }) => { const t = w ? tr(w) || w.en : ''; if (t) links.push({ label: 'Wikipedia', href: `https://${w && tr(w) ? dataLang() : 'en'}.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_'))}` }); };
+    const wiki = (w?: { en: string; es: string }) => { const href = wikiHref(w); if (href) links.push({ label: 'Wikipedia', href }); };
     if (p.kind === 'body') {
       const v = this.pickDir(p, g)!;
       const rows: InfoRow[] = [];

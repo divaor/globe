@@ -5,12 +5,11 @@ import { prefs, savePrefs, stats, connection, tiles, fmtBytes, TERRAIN, SENTINEL
 import { areas, plan, saveArea, deleteArea, type SavedArea } from '../engine/offline';
 import { tileZoom } from '../engine/detail';
 import { terrainActions } from '../layers/terrainActions';
-import { lang, L, tx, Lc } from '../app/i18n';
+import { lang, L, tx, Lc, nm, proseInEnglish } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Shell } from './shell';
 import { appLocale } from '../app/i18n';
 
-const es = () => lang() === 'es';
 /** The most tiles one save may hold (about 1 GB at the most). */
 const MAX_TILES = 20000;
 
@@ -19,6 +18,15 @@ const groundSize = (z: number, lat: number) => {
   const m = (40075016.686 * Math.cos((lat * Math.PI) / 180)) / (256 * 2 ** z);
   return m >= 1000 ? `${(m / 1000).toLocaleString(appLocale(), { maximumFractionDigits: 1 })} km` : `${Math.round(m)} m`;
 };
+
+/** A saved area's name in the reader's language: in another language than English and Spanish, "Around Cusco, Peru"
+ * is written again from its names. */
+export function areaTitle(n: { en: string; es: string }): string {
+  if (!proseInEnglish()) return tx(n);
+  const m = /^Around (.+?)(?:, ([^,]+))?$/.exec(n.en);
+  if (!m) return nm(n.en);
+  return L('Around {0}', 'Alrededor de {0}', [nm(m[1]), m[2] ? nm(m[2]) : ''].filter(Boolean).join(', '));
+}
 
 export class TerrainUI {
   /** For tests and the console: the tile loader, its counters and the user's choices. */
@@ -48,7 +56,8 @@ export class TerrainUI {
     return [w, Math.max(-85, Math.min(...lats)), e, Math.min(85, Math.max(...lats))];
   }
 
-  /** "Around Cusco, Peru": the largest city in the box, else the country in the middle. */
+  /** "Around Cusco, Peru": the largest city in the box, else the country in the middle (in English and Spanish;
+   * areaTitle writes it in the other languages from its names). */
   areaName(box: [number, number, number, number]): { en: string; es: string } {
     const [w, s, e, n] = box;
     const inLon = (lon: number) => (w <= e ? lon >= w && lon <= e : lon >= w || lon <= e);
@@ -125,7 +134,7 @@ export class TerrainUI {
         txt.textContent = L('Saving {0} of {1} tiles · {2}', 'Guardando {0} de {1} mosaicos · {3}', p.done.toLocaleString(appLocale()), p.total.toLocaleString(appLocale()), fmtBytes(p.bytes), fmtBytes(p.bytes, true));
       }, ctrl.signal);
       if (!res) { this.shell.toast(L('Saving cancelled.', 'Guardado cancelado.')); this.openSave(); return; }
-      this.shell.toast(L('Saved: {0} ({1})', 'Guardada: {0} ({2})', tx(res.name), fmtBytes(res.bytes), fmtBytes(res.bytes, true)), 4000);
+      this.shell.toast(L('Saved: {0} ({1})', 'Guardada: {0} ({2})', areaTitle(res.name), fmtBytes(res.bytes), fmtBytes(res.bytes)), 4000);
       this.openSave();
     })());
     const add = (...els: (HTMLElement | null)[]) => { for (const x of els) if (x) body.append(x); };
@@ -151,14 +160,14 @@ export function savedList(app: App, refresh: () => void): HTMLElement {
     show.addEventListener('click', () => showArea(app, a));
     const del = h('button', { type: 'button', class: 'pill sm', 'data-delete': a.id }, L('Delete', 'Borrar'));
     del.addEventListener('click', () => void (async () => {
-      if (!confirm(L('Delete "{0}" from this device?', '¿Borrar «{0}» de este dispositivo?', tx(a.name)))) return;
+      if (!confirm(L('Delete "{0}" from this device?', '¿Borrar «{0}» de este dispositivo?', areaTitle(a.name)))) return;
       await deleteArea(a.id);
       refresh();
     })());
     const what = [a.sources.includes(TERRAIN.id) ? L('heights', 'alturas') : '', a.sources.includes(SENTINEL.id) ? L('satellite', 'satélite') : ''].filter(Boolean).join(' + ');
     el.append(h('div', { class: 'saved-area', 'data-area': a.id },
-      h('div', { class: 'saved-text' }, h('strong', null, tx(a.name)),
-        h('span', { class: 'muted small' }, `${what} · ${fmtBytes(a.bytes, es())} · ${a.tiles.toLocaleString(appLocale())} ${L('tiles', 'mosaicos')} · ${a.date}`)),
+      h('div', { class: 'saved-text' }, h('strong', null, areaTitle(a.name)),
+        h('span', { class: 'muted small' }, `${what} · ${fmtBytes(a.bytes)} · ${a.tiles.toLocaleString(appLocale())} ${L('tiles', 'mosaicos')} · ${a.date}`)),
       h('div', { class: 'saved-btns' }, show, del)));
   }
   return el;
@@ -178,7 +187,7 @@ export function terrainSettings(app: App, reopen: () => void): HTMLElement {
     : conn === 'cellular' ? L('This device says it is on mobile data.', 'Este dispositivo dice que usa datos móviles.')
       : conn === 'offline' ? L('This device is offline: only saved areas are sharp.', 'Este dispositivo no tiene conexión: solo las zonas guardadas se ven nítidas.')
         : L('This browser does not say how it is connected (iPhones and computers do not): turn detail off by hand on mobile data.', 'Este navegador no dice cómo está conectado (los iPhone y las computadoras no lo dicen): apaga el detalle a mano con datos móviles.');
-  const counter = h('span', null, `${L('Downloaded', 'Descargado')}: ${fmtBytes(stats.session, es())} ${L('this visit', 'en esta visita')} · ${fmtBytes(prefs.total, es())} ${L('in all', 'en total')}`);
+  const counter = h('span', null, `${L('Downloaded', 'Descargado')}: ${fmtBytes(stats.session)} ${L('this visit', 'en esta visita')} · ${fmtBytes(prefs.total)} ${L('in all', 'en total')}`);
   const reset = h('button', { type: 'button', class: 'pill sm' }, L('Reset', 'Poner a cero'));
   reset.addEventListener('click', () => { prefs.total = 0; stats.session = 0; savePrefs(); reopen(); });
   const saveBtn = h('button', { type: 'button', class: 'pill sm', 'data-terrain': 'open-save' }, L('Save the area on screen…', 'Guardar la zona en pantalla…'));

@@ -3,7 +3,7 @@
 // country to country with the map in view; the flag or name opens the full panel.
 import { X, Navigation, ExternalLink, ChevronUp, ChevronDown } from 'lucide';
 import { h, icon, clear, add } from './dom';
-import { t, tx, fmtCompact, fmtMoney, flagEmoji, subregion, L, dataLang } from '../app/i18n';
+import { t, tx, fmtCompact, fmtMoney, flagEmoji, subregion, L, dataLang, nm, wikiSearch } from '../app/i18n';
 import type { App } from '../app/app';
 import type { InfoRow } from '../layers/types';
 import { dataUrl } from '../data/store';
@@ -80,9 +80,8 @@ export class CountryCard {
     if (!id) { this.hide(); return; }
     const m = this.app.data.meta[id];
     if (!m) { this.hide(); return; }
-    const es = this.app.lang === 'es';
     clear(this.body);
-    const name = es ? m.es : m.n;
+    const name = nm(m.n, m.es);
     const flagCode = (m.a2 || '').toLowerCase();
     const flag = flagCode
       ? h('img', { class: 'flag', src: dataUrl(`../flags/${flagCode}.svg`), alt: '', width: 48, height: 36, onerror: (e: Event) => { (e.target as HTMLElement).replaceWith(h('span', { class: 'flag-emoji' }, flagEmoji(m.a2))); } })
@@ -106,7 +105,7 @@ export class CountryCard {
 
     const capital = this.app.data.cities.find((c) => c.country === id && c.capital === 2 && !(c.flags & 4));
     const rows: InfoRow[] = [];
-    if (capital) rows.push({ label: t('capital'), value: es && capital.es ? capital.es : capital.name, icon: '🏛️' });
+    if (capital) rows.push({ label: t('capital'), value: nm(capital.name, capital.es), icon: '🏛️' });
     if (m.pop && !this.factsProvider) rows.push({ label: t('population'), value: fmtCompact(m.pop), icon: '👥' });
     if (m.gdp && m.pop && !this.factsProvider) rows.push({ label: t('gdpPerCapita'), value: fmtMoney((m.gdp * 1e6) / m.pop), icon: '💰' });
     rows.push({ label: t('continent'), value: t(`cont.${m.ct}`), icon: '🌍' });
@@ -119,7 +118,7 @@ export class CountryCard {
     rows.length = 0; rows.push(...keep);
     const pickEls = pickInfo.map(rowEl);
 
-    const wiki = `https://${dataLang()}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(name)}`;
+    const wiki = wikiSearch(name);
     const fly = h('button', { type: 'button', class: 'pill' }, icon(Navigation, 16), t('flyTo'));
     fly.addEventListener('click', () => this.app.flyToCountry(id));
     const actions = h('div', { class: 'card-actions' }, fly,

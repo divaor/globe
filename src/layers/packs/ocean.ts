@@ -8,7 +8,7 @@ import type { Shell } from '../../ui/shell';
 import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, RenderCtx } from '../types';
 import type { RasterTexture } from '../../engine/gl';
 import { loadJSON, shapesFrom, dataUrl, type Shape } from '../../data/store';
-import { fmtNumber, lang, tx, txs } from '../../app/i18n';
+import { fmtNumber, lang, tx, txs, nm, monthName as calMonth, fileLang } from '../../app/i18n';
 import { L } from '../../play/host';
 import { LC } from '../context';
 import { loadDepths, heightAt, seaDepthAt, zoneOf, ZONES, oceanAt, OCEAN_NAMES, depths, type Depths } from '../../ocean/depth';
@@ -17,11 +17,10 @@ let APP: App | null = null;
 let GL: import('../../engine/gl').GLRaster | null = null;
 let seaZoom = 0;
 let SHELL: Shell | null = null;
-const es = () => lang() === 'es';
 const T = (x?: { en: string; es: string } | null) => (x ? (tx(x)) : '');
 const m = (v: number) => `${fmtNumber(Math.round(v))} m`;
 const MONTHS = { en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'] };
-const monthName = (i: number) => (txs(MONTHS))[((i % 12) + 12) % 12];
+const monthName = (i: number) => (fileLang() ? calMonth(i) : txs(MONTHS)[((i % 12) + 12) % 12]);
 
 /** The item nearest a tap among those drawn on screen, within `px` pixels. */
 function pickNear<X>(items: X[], at: (x: X) => [number, number], ui: LayerTapUi, px = 14): X | null {
@@ -178,7 +177,7 @@ export const drainOceans: LayerDef = {
     const lv = (inst.state.level as number) ?? -120;
     if (lv <= -100 && lv > -1500) for (const [en, es2, lon, lat] of BRIDGES) {
       const p = rc.project(lon, lat);
-      if (p) rc.labels.add({ text: es() ? es2 : en, x: p[0], y: p[1], priority: 900, size: 12, weight: 700, italic: true, color: rc.theme.label, halo: rc.theme.labelHalo });
+      if (p) rc.labels.add({ text: nm(en, es2), x: p[0], y: p[1], priority: 900, size: 12, weight: 700, italic: true, color: rc.theme.label, halo: rc.theme.labelHalo });
     }
     if (lv > 0.5) for (const c of places?.rise ?? []) {
       if (c.elev_m >= lv) continue;
@@ -215,7 +214,7 @@ const loadFeatures = async () => (feats ??= await loadJSON<Features>('ocean/feat
 /** A GEBCO name with its generic term, which the gazetteer keeps apart: "Ake-No-Myojo Seamount", "Monte submarino Ake-No-Myojo". */
 function featureName(name: string, type: string): string {
   if (!type || type === 'UNKNOWN') return name;
-  if (es()) { const g = feats?.generic[type]; return g ? `${g} ${name}` : `${name} ${type}`; }
+  if (lang() === 'es') { const g = feats?.generic[type]; return g ? `${g} ${name}` : `${name} ${type}`; }
   return new RegExp(`\\b${type}\\b`, 'i').test(name) ? name : `${name} ${type}`;
 }
 const KIND_COLOUR: Record<string, string> = { trench: '#9775fa', ridge: '#ff922b', seamount: '#ffd43b', guyot: '#ffd43b', plain: '#74c0fc', canyon: '#63e6be', plateau: '#a9e34b', basin: '#74c0fc', fracture: '#adb5bd', rise: '#ffa94d', other: '#dee2e6' };
@@ -270,7 +269,7 @@ export const seaFeatures: LayerDef = {
     const type = feats.types[r[2]];
     const show = (nt: [number | null, string | null] | undefined) => {
       const d = depths ? seaDepthAt(depths, r[3], r[4]) : 0;
-      ui.card('⛰️', featureName(r[1], type), es() ? (feats!.generic[type] ?? type) : type, [
+      ui.card('⛰️', featureName(r[1], type), nm(type, feats!.generic[type]), [
         ...(d > 0 ? [{ label: L('Sea floor here', 'Fondo aquí'), value: m(d), icon: '⬇️' }] : []),
         ...(nt?.[0] ? [{ label: L('Discovered', 'Descubrimiento'), value: String(nt[0]), icon: '🔭' }] : []),
       ], [{ label: L('🤿 Dive here', '🤿 Bucear aquí'), onClick: () => void window.atlas?.deep.diveAt(r[3], r[4]) }], nt?.[1] ? [L('How it got its name: {0}', 'Cómo recibió su nombre (en inglés): {0}', nt[1])] : []);
@@ -394,7 +393,7 @@ export const wrecksLayer: LayerDef = {
     }
     if (want === 'all' && rc.webZoom >= 5) for (const w of moreWrecks) {
       const p = rc.project(w.at[0], w.at[1]);
-      if (p) rc.labels.add({ text: es() ? w.n[1] : w.n[0], x: p[0], y: p[1], gap: 5, priority: 200, size: 9.5, weight: 600, color: rc.theme.label, halo: rc.theme.labelHalo });
+      if (p) rc.labels.add({ text: nm(w.n[0], w.n[1]), x: p[0], y: p[1], gap: 5, priority: 200, size: 9.5, weight: 600, color: rc.theme.label, halo: rc.theme.labelHalo });
     }
   },
   tap(_lon, _lat, inst, ui) {
@@ -404,7 +403,7 @@ export const wrecksLayer: LayerDef = {
     if (want !== 'all') return false;
     const o = pickNear(moreWrecks, (x) => x.at, ui, 10);
     if (!o) return false;
-    ui.card('⚓', es() ? o.n[1] : o.n[0], L('Shipwreck', 'Naufragio'), [
+    ui.card('⚓', nm(o.n[0], o.n[1]), L('Shipwreck', 'Naufragio'), [
       ...(o.y ? [{ label: L('Sank', 'Se hundió'), value: String(o.y), icon: '📅' }] : []),
       ...(o.dep ? [{ label: L('Depth', 'Profundidad'), value: m(o.dep), icon: '⬇️' }] : []),
     ], [], [L('From Wikidata.', 'De Wikidata.')]);
@@ -427,7 +426,7 @@ export const wrecksLayer: LayerDef = {
     const deep = deepestAsked(match, ['deepest shipwreck', 'deepest wreck', 'deepest ship', 'naufragio mas profundo', 'barco mas profundo', 'pecio mas profundo', 'el mas profundo', 'mas profundo']);
     if (deep) [...wrecks].sort((a, b) => b.depth_m - a.depth_m).slice(0, 3).forEach((w, i) => out.push({ label: T(w.name), sub: i === 0 ? L('⚓ The deepest wreck found: {0} m', '⚓ El naufragio más profundo hallado: {0} m', fmtNumber(w.depth_m)) : L('⚓ {0} m down', '⚓ A {0} m', fmtNumber(w.depth_m)), icon: '⚓', lon: w.lon, lat: w.lat, score: deep + 25 - i, wz: 6, open: (ui) => wreckCard(ui, w) }));
     for (const w of wrecks) { const sc = Math.max(match(w.name.en), match(w.name.es)); if (sc >= 50) out.push({ label: T(w.name), sub: `⚓ ${T(w.place)}`, icon: '⚓', lon: w.lon, lat: w.lat, score: sc + 10, wz: 6, open: (ui) => wreckCard(ui, w) }); }
-    for (const w of moreWrecks) { const sc = Math.max(match(w.n[0]), match(w.n[1])); if (sc >= 60) out.push({ label: es() ? w.n[1] : w.n[0], sub: L('⚓ Shipwreck', '⚓ Naufragio'), icon: '⚓', lon: w.at[0], lat: w.at[1], score: sc, wz: 7 }); }
+    for (const w of moreWrecks) { const sc = Math.max(match(w.n[0]), match(w.n[1])); if (sc >= 60) out.push({ label: nm(w.n[0], w.n[1]), sub: L('⚓ Shipwreck', '⚓ Naufragio'), icon: '⚓', lon: w.at[0], lat: w.at[1], score: sc, wz: 7 }); }
     return out.sort((a, b) => b.score - a.score).slice(0, 6);
   },
 };
@@ -522,7 +521,7 @@ export const kelpLayer: LayerDef = {
     if (k) { ui.card('🌿', T(k.name), L('Kelp forest', 'Bosque de kelp'), [], [], [T(k.text)]); return true; }
     const s = mangroves.find((x) => lat >= x.bbox[1] && lat <= x.bbox[3] && lon >= x.bbox[0] && lon <= x.bbox[2] && geoContainsSafe(x, lon, lat));
     if (!s) return false;
-    ui.card('🌳', es() ? s.feature.properties.es ?? s.feature.properties.n : s.feature.properties.n, L('Mangroves', 'Manglares'), [], [], [L('Mangroves grow where the sea meets the land in the warm tropics: their roots shelter young fish and hold the coast against storms.', 'Los manglares crecen donde el mar se encuentra con la tierra en los trópicos cálidos: sus raíces protegen a los peces jóvenes y sostienen la costa ante las tormentas.')]);
+    ui.card('🌳', nm(s.feature.properties.n, s.feature.properties.es), L('Mangroves', 'Manglares'), [], [], [L('Mangroves grow where the sea meets the land in the warm tropics: their roots shelter young fish and hold the coast against storms.', 'Los manglares crecen donde el mar se encuentra con la tierra en los trópicos cálidos: sus raíces protegen a los peces jóvenes y sostienen la costa ante las tormentas.')]);
     return true;
   },
   legend() {

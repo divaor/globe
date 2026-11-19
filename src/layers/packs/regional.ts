@@ -8,7 +8,7 @@ import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { MultiLineString } from 'geojson';
 import { loadJSON, shapesFrom, chunkLines, type Shape, type Line } from '../../data/store';
 import { oklch } from '../../engine/colors';
-import { lang, L, tx } from '../../app/i18n';
+import { lang, L, tx, nm } from '../../app/i18n';
 import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { InfoRow, LayerDef, LegendItem, RenderCtx } from '../types';
@@ -31,7 +31,6 @@ let edges: Line[] = []; // borders between regions shown in different languages
 let anchors: { code: string; lon: number; lat: number; area: number }[] = [];
 const areaOf = new Map<string, number>(); // language -> area shown (legend order)
 
-const es = () => lang() === 'es';
 const pickOf = (inst: { options: Record<string, string | boolean> }) => (inst.options.pick ? new Set(String(inst.options.pick).split(',')) : null);
 const nameOf = (code: string) => {
   const n = D.languages[code] ?? names[code];
@@ -232,7 +231,7 @@ const regional: LayerDef = {
     const p = r.feature.properties;
     const note = D.notes?.[`${p.a}|${p.n}`];
     return [
-      { icon: '📍', label: L('Region', 'Región'), value: es() && p.es ? p.es : p.n },
+      { icon: '📍', label: L('Region', 'Región'), value: nm(p.n, p.es) },
       { icon: '💬', label: L('Languages (most spoken first)', 'Lenguas (la más hablada primero)'), value: r.langs.map(nameOf).join(', ') },
       ...(note ? [{ icon: '📝', label: L('Note', 'Nota'), value: note }] : []),
     ];

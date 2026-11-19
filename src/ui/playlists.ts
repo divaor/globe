@@ -238,7 +238,6 @@ export function itemWords(app: App, it: PlayItem): string {
 /** Names on the map while ambient mode plays: the view's own (default; the map's countries, cities and seas hidden),
  *  all of them, or none. In the screensaver's panel and in Settings. */
 export function ambientNamesField(app: App): HTMLElement {
-  const es = app.lang === 'es';
   return h('div', { class: 'field ambient-names' }, h('div', { class: 'field-label' }, L('Names on the map', 'Nombres en el mapa')),
     segmented<AmbientNames>(app.ambient.names, [
       { value: 'view', label: L('Only the view’s', 'Solo los de la vista') },
@@ -251,7 +250,6 @@ export function ambientNamesField(app: App): HTMLElement {
 /** The screensaver panel: playlists to start, the reader's own (add this view, order, remove, share), and the
  * screensaver's settings. `start` starts ambient mode with a playlist ('' for just the filters on the map). */
 export function screensaverPanel(app: App, start: (id: string) => void, toast: (msg: string) => void): HTMLElement {
-  const es = app.lang === 'es';
   const root = h('div', { class: 'ss' });
   const render = () => {
     root.replaceChildren();
@@ -295,7 +293,7 @@ export function screensaverPanel(app: App, start: (id: string) => void, toast: (
       h('h3', { class: 'sec-title' }, L('My playlist', 'Mi lista')),
       h('p', { class: 'muted small' }, L('Turn on filters, move the globe to a place, and add it. Your playlist is kept in this browser.', 'Pon filtros, mueve el globo a un lugar y agrégalo. Tu lista se guarda en este navegador.')),
       ...(mine.length ? [h('div', { class: 'ss-rows' }, ...rows)] : []),
-      h('div', { class: 'settings-actions' }, add, mine.length ? card(MINE_ID, '⭐', L('Play my playlist', 'Reproducir mi lista'), `${mine.length} ${es ? (mine.length === 1 ? 'vista' : 'vistas') : (mine.length === 1 ? 'view' : 'views')}`) : null, mine.length ? share : null),
+      h('div', { class: 'settings-actions' }, add, mine.length ? card(MINE_ID, '⭐', L('Play my playlist', 'Reproducir mi lista'), L('{0, plural, one {# view} other {# views}}', '{0, plural, one {# vista} other {# vistas}}', mine.length)) : null, mine.length ? share : null),
     );
     // Settings.
     const amb = app.ambient;
