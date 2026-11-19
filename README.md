@@ -577,8 +577,26 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
 - **Steady names:** as the globe turns, a name keeps its place and its side of its dot; one that loses its place to a
   neighbour fades out, and a new one fades in, instead of names blinking on and off. On a slow phone, where frames
   come far apart, names still settle (v0.32.0: a name is matched to itself by frames, not by time).
+- **One look** (v0.40.0): one design across the app.
+  - **The kit:** every text is one of six sizes, in units that follow the phone's text size (11, 12.5, 14, 16, 19 and 26 px at the default size). Emoji and icons have four sizes. Corners use four radii plus the pill.
+  - **One icon per feature:** a line icon on a tile in its part of the app's colour:
+    - Learn in cyan;
+    - Play in violet;
+    - Explore in green;
+    - Time in amber;
+    - Space in blue;
+    - Tools and the map in pink;
+    - You in grey.
+  - **Where the tiles appear:** the More menu, each panel's title, Today, and the Learn and Play lists. Emoji stay for what is inside a feature.
+  - **One result card:** every game ends on it, with its stars and score, a row per round marked right, close or off, and big Share and Play again buttons.
+  - **The theme** follows the phone's dark mode unless one is picked in Settings, and changes with it.
 
 ## Development
+
+**The design kit** (v0.40.0):
+- The tokens are at the top of `src/styles/main.css`: `--fs-*`, `--icon-*`, `--r-*`, `--sp-*`, `--shadow-*` and `--hue-*`. `node scripts/tools/css-tokens.mjs --check` (in `check:data`) fails on a px font size or radius off the kit; without `--check`, it puts them on the kit.
+- A feature's tile comes from `ftile(id)` (`src/ui/features.ts`). A panel's title gets it from its sheet id.
+- A game's result comes from `resultCard()` (`src/ui/result.ts`).
 
 ```bash
 npm install

@@ -5,6 +5,7 @@ import { Share2, RotateCcw, Flag } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
 import { fmtNumber } from '../app/i18n';
 import { Borders, seeded, type BorderData } from './route';
@@ -110,15 +111,14 @@ export class BorderChain implements HostGame {
     const chain = h('div', { class: 'hop-path' }, ...s.chain.map((id, i) => h('span', { class: `hop-step${i === 0 ? ' from' : ''}` }, name(id))));
     if (s.done) {
       const why = s.done.why === 'dead' ? L('A dead end: every neighbour was already in the chain.', 'Un callejón sin salida: todos los vecinos ya estaban en la cadena.') : s.done.why === 'time' ? L('Time is up.', 'Se acabó el tiempo.') : '';
-      this.card.append(
-        h('div', { class: 'hop-score' }, h('span', { class: 'hop-stars' }, starText(s.done.stars)), h('span', null, `${fmtNumber(s.done.score)} ${L('points', 'puntos')}`)),
-        h('div', { class: 'hop-stats' }, `${L(`${s.chain.length} countries`, `${s.chain.length} países`)}${why ? ` · ${why}` : ''}`));
-      if (!s.fold) this.card.append(chain);
-      const share = h('button', { type: 'button', class: 'pill sm', 'data-game': 'share' }, icon(Share2, 15), L('Share', 'Compartir'));
+      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: `${L(`${s.chain.length} countries`, `${s.chain.length} países`)}${why ? ` · ${why}` : ''}` });
+      this.card.append(res);
+      if (!s.fold) res.append(chain);
+      const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `⛓️ ${L('Border chain', 'Cadena de fronteras')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.chain.map(name).join(' › ')}`));
-      const again = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'again' }, icon(RotateCcw, 15), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start(); });
-      this.card.append(h('div', { class: 'hop-actions' }, share, again));
+      res.append(h('div', { class: 'result-actions' }, share, again));
       return;
     }
     const clock = h('span', { class: 'names-clock' }, '⏱️');

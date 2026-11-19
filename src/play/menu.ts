@@ -4,6 +4,7 @@
 import { Route, ChevronLeft, Play } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
+import { FEATURES, ftile } from '../ui/features';
 import { h, icon, clear, toggle } from '../ui/dom';
 import { PlayHost, L, es } from './host';
 import { BorderHop } from './hop';
@@ -90,7 +91,8 @@ export class MapGames {
   }
 
   private card(icon_: string, title: string, desc: string, attrs: Record<string, string>, onClick: () => void, done = false) {
-    const c = h('button', { type: 'button', class: `mode-card${done ? ' daily-card done' : ''}`, ...attrs }, h('span', { class: 'mode-icon' }, icon_),
+    // A whole feature (Fill the map, Put it on the map) by its tile; a game of the fourteen by its emoji.
+    const c = h('button', { type: 'button', class: `mode-card${done ? ' daily-card done' : ''}`, ...attrs }, FEATURES[icon_] ? ftile(icon_) : h('span', { class: 'mode-icon' }, icon_),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, title), h('span', { class: 'mode-desc' }, desc)));
     c.addEventListener('click', onClick);
     return c;

@@ -10,6 +10,7 @@ import { Undo2, Lightbulb, Flag, Share2, Link2, RotateCcw, Play, ChevronDown, Ch
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
 import { h, icon, clear, toggle } from '../ui/dom';
 import { lang, fmtCompact, fmtNumber } from '../app/i18n';
 import type { PlayHost, HostGame } from './host';
@@ -426,11 +427,10 @@ export class BorderHop implements HostGame {
     const d = s.done;
     const parLine = `${L('Best possible', 'Lo mejor posible')}: ${this.amount(round.goal, d.par)}`;
     const yoursLine = d.gaveUp ? L('You asked to see the route.', 'Pediste ver la ruta.') : `${L('Yours', 'La tuya')}: ${this.amount(round.goal, round.goal === 'count' ? s.path.length - 2 : d.yours)}`;
-    this.card.append(
-      h('div', { class: 'hop-score' }, h('span', { class: 'hop-stars' }, starText(d.stars)), h('span', null, `${d.score} ${L('points', 'puntos')}${d.bonus ? ` + ${d.bonus} ${L('for speed', 'por rapidez')}` : ''}`)),
-      h('div', { class: 'hop-stats' }, `${yoursLine} · ${parLine}`),
-      chain);
-    if (s.beat !== undefined && !d.gaveUp) this.card.append(h('div', { class: `quiz-fb ${d.score >= s.beat ? 'ok' : 'bad'}` }, d.score > s.beat ? L(`You beat your friend's ${s.beat}!`, `¡Superaste los ${s.beat} de tu amigo!`) : d.score === s.beat ? L(`A tie with your friend's ${s.beat}.`, `Empate con los ${s.beat} de tu amigo.`) : L(`Your friend's ${s.beat} still stands.`, `Los ${s.beat} de tu amigo siguen en pie.`)));
+    const res = resultCard({ stars: d.stars, score: `${d.score}`, unit: `${L('points', 'puntos')}${d.bonus ? ` + ${d.bonus} ${L('for speed', 'por rapidez')}` : ''}`, sub: `${yoursLine} · ${parLine}` });
+    this.card.append(res);
+    res.append(chain);
+    if (s.beat !== undefined && !d.gaveUp) res.append(h('div', { class: `quiz-fb ${d.score >= s.beat ? 'ok' : 'bad'}` }, d.score > s.beat ? L(`You beat your friend's ${s.beat}!`, `¡Superaste los ${s.beat} de tu amigo!`) : d.score === s.beat ? L(`A tie with your friend's ${s.beat}.`, `Empate con los ${s.beat} de tu amigo.`) : L(`Your friend's ${s.beat} still stands.`, `Los ${s.beat} de tu amigo siguen en pie.`)));
     // The best route for each goal: the same two countries, other answers.
     const others = h('div', { class: 'hop-others' });
     for (const goal of s.rule ? (['count'] as Goal[]) : GOALS) {
@@ -442,22 +442,22 @@ export class BorderHop implements HostGame {
     const othersB = h('button', { type: 'button', class: 'hop-sub-btn', 'data-hop': 'others', 'aria-expanded': String(s.showOthers) },
       s.rule ? L('The best route', 'La mejor ruta') : L('The best route for each goal', 'La mejor ruta para cada objetivo'), icon(s.showOthers ? ChevronUp : ChevronDown, 15));
     othersB.addEventListener('click', () => { s.showOthers = !s.showOthers; this.render(); });
-    this.card.append(othersB);
-    if (s.showOthers) this.card.append(others);
+    res.append(othersB);
+    if (s.showOthers) res.append(others);
     // The odd borders on the way, explained.
     const notes = new Set<string>();
     for (const p of [s.path, d.best]) for (let i = 1; i < p.length; i++) { const n = s.g.note(p[i - 1], p[i]); if (n) notes.add(n); }
-    for (const n of notes) { const x = s.g.data.notes[n]; if (x) this.card.append(h('p', { class: 'hop-note' }, `💡 ${es() ? x.es : x.en}`)); }
-    const shareB = h('button', { type: 'button', class: 'pill sm', 'data-hop': 'share' }, icon(Share2, 15), L('Share', 'Compartir'));
+    for (const n of notes) { const x = s.g.data.notes[n]; if (x) res.append(h('p', { class: 'hop-note' }, `💡 ${es() ? x.es : x.en}`)); }
+    const shareB = h('button', { type: 'button', class: 'pill', 'data-hop': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
     shareB.addEventListener('click', () => void this.share(false));
-    const chal = h('button', { type: 'button', class: 'pill sm', 'data-hop': 'challenge' }, icon(Link2, 15), L('Challenge a friend', 'Desafía a un amigo'));
+    const chal = h('button', { type: 'button', class: 'pill', 'data-hop': 'challenge' }, icon(Link2, 16), L('Challenge a friend', 'Desafía a un amigo'));
     chal.addEventListener('click', () => void this.share(true));
     const blitzEnd = s.blitz && s.blitz.results.length === BLITZ_ROUNDS;
-    const nextB = h('button', { type: 'button', class: 'pill sm primary', 'data-hop': 'next' }, icon(s.blitz && !blitzEnd ? Play : RotateCcw, 15),
+    const nextB = h('button', { type: 'button', class: 'pill primary', 'data-hop': 'next' }, icon(s.blitz && !blitzEnd ? Play : RotateCcw, 16),
       s.blitz && !blitzEnd ? L('Next route', 'Siguiente ruta') : s.mode === 'practice' ? L('Another route', 'Otra ruta') : L('More games', 'Más juegos'));
     nextB.addEventListener('click', () => void this.next());
-    if (s.blitz) this.card.append(h('div', { class: 'hop-stats' }, `${L('Blitz total', 'Total de la contrarreloj')}: ${s.blitz.total} · ${s.blitz.results.map((x) => starText(x.stars)).join(' ')}${blitzEnd ? ` · ${L('Best', 'Récord')}: ${progress().play.best.blitz ?? s.blitz.total}` : ''}`));
-    this.card.append(h('div', { class: 'hop-actions' }, ...(d.gaveUp || s.blitz ? [] : [shareB, chal]), nextB));
+    if (s.blitz) res.append(h('div', { class: 'hop-stats' }, `${L('Blitz total', 'Total de la contrarreloj')}: ${s.blitz.total} · ${s.blitz.results.map((x) => starText(x.stars)).join(' ')}${blitzEnd ? ` · ${L('Best', 'Récord')}: ${progress().play.best.blitz ?? s.blitz.total}` : ''}`));
+    res.append(h('div', { class: 'result-actions' }, ...(d.gaveUp || s.blitz ? [] : [shareB, chal]), nextB));
   }
 
   // ---- The map -----------------------------------------------------------------------------------------------

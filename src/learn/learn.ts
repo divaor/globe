@@ -3,6 +3,8 @@
 import { GraduationCap, Compass, CalendarDays, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Play, Pause, RotateCcw, Map as MapIcon, Share2, Volume2, VolumeX } from 'lucide';
 import { keepAwake } from '../ui/wake';
 import { geoDistance } from 'd3-geo';
+import { resultCard } from '../ui/result';
+import { ftile } from '../ui/features';
 import { h, icon, clear, add } from '../ui/dom';
 import { t, tx, lang, flagEmoji, fmtNumber } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
@@ -192,6 +194,9 @@ const LINK_WHY: Record<string, { en: string; es: string }> = {
     es: 'Fumar no alarga la vida: en los países más ricos, donde se vive más, también fuman más adultos. Un tercer factor, la riqueza, une a ambos.',
   },
 };
+
+/** A quiz's stars, like the map games': 3 for 90 % right, 2 for 60 %, else 1. */
+const quizStars = (score: number, n: number) => (n && score / n >= 0.9 ? 3 : n && score / n >= 0.6 ? 2 : 1);
 
 export class Learn {
   private card: HTMLElement;
@@ -420,18 +425,18 @@ export class Learn {
     const p = progress();
     const streak = current(p.daily);
     const date = new Date().toLocaleDateString(appLocale(), { weekday: 'long', day: 'numeric', month: 'long' });
-    const daily = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-quiz': 'daily' }, h('span', { class: 'mode-icon' }, '🗓️'),
+    const daily = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-quiz': 'daily' }, ftile('daily'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, `${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)} · ${date}`),
         h('span', { class: 'mode-desc' }, done
           ? `${L('Done', 'Hecho')}: ${done.s}/${done.n} ${done.m.replace(/y/g, '🟩').replace(/n/g, '🟥')}${streak ? ` · 🔥 ${streak}` : ''} · ${L('a new one tomorrow', 'mañana hay otro')}`
           : `${L('Eight questions, the same for everyone today', 'Ocho preguntas, las mismas para todos hoy')}${streak ? ` · 🔥 ${inARow(streak)}` : ''}`)));
     daily.addEventListener('click', () => void (done ? this.showDailyDone() : this.startQuiz('daily', 'world')));
     const earned = Object.keys(p.badges).length;
-    const prog = h('button', { type: 'button', class: 'mode-card', 'data-panel': 'progress' }, h('span', { class: 'mode-icon' }, '🏅'),
+    const prog = h('button', { type: 'button', class: 'mode-card', 'data-panel': 'progress' }, ftile('progress'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Your progress', 'Tu progreso')),
         h('span', { class: 'mode-desc' }, L(`Streaks and badges for each subject · ${earned} of ${BADGES.length} badges`, `Rachas e insignias por tema · ${earned} de ${BADGES.length} insignias`))));
     prog.addEventListener('click', () => this.openProgress());
-    const mw = h('button', { type: 'button', class: 'mode-card', 'data-panel': 'master' }, h('span', { class: 'mode-icon' }, '🌍'),
+    const mw = h('button', { type: 'button', class: 'mode-card', 'data-panel': 'master' }, ftile('master'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Master the world', 'Domina el mundo')),
         h('span', { class: 'mode-desc' }, L('Every capital, flag and country, learned for good: a little each day', 'Todas las capitales, banderas y países, aprendidos para siempre: un poco cada día'))));
     mw.addEventListener('click', () => void this.master?.openPanel());
@@ -1931,15 +1936,14 @@ export class Learn {
     if (q.kind === 'daily') { this.renderDailyResult(); return; }
     add(this.card, this.quizHead(`${L('Result', 'Resultado')} ${q.score}/${q.qs.length}`, ''));
     if (q.peek) return;
-    const again = h('button', { type: 'button', class: 'pill primary sm' }, L('Play again', 'Jugar otra vez'));
+    const again = h('button', { type: 'button', class: 'pill primary' }, icon(RotateCcw, 16), L('Play again', 'Jugar otra vez'));
     again.addEventListener('click', () => void (q.kind === 'region' ? this.startRegionQuiz(q.region, !!q.all) : this.startQuiz(q.kind, q.region)));
-    const done = h('button', { type: 'button', class: 'pill sm' }, L('Done', 'Terminar'));
+    const done = h('button', { type: 'button', class: 'pill' }, L('Done', 'Terminar'));
     done.addEventListener('click', () => this.stopQuiz());
     const list = h('div', { class: 'quiz-sum', role: 'list' });
     for (const cur of q.qs) list.append(this.resultRow(cur.kind ?? q.kind, cur));
-    add(this.card, h('div', { class: 'quiz-q' }, msg),
-      q.score > (q.best ?? 0) ? h('div', { class: 'tool-hint' }, L('New personal best!', '¡Nuevo récord personal!')) : null,
-      list, h('div', { class: 'tool-actions' }, again, done));
+    add(this.card, resultCard({ stars: quizStars(q.score, q.qs.length), score: `${q.score}`, unit: `/ ${q.qs.length}`, headline: msg,
+      sub: q.score > (q.best ?? 0) ? L('New personal best!', '¡Nuevo récord personal!') : undefined, extra: [list], actions: [done, again] }));
   }
 
   /** The daily challenge's result: the score, its squares to share, the streak, and every question. */
@@ -1950,14 +1954,15 @@ export class Learn {
     add(this.card, this.quizHead(`🗓️ ${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)}`, `${q.score}/${n}`));
     if (q.peek) return;
     const marks = marksOf(q.qs);
-    const done = h('button', { type: 'button', class: 'pill sm' }, L('Done', 'Terminar'));
+    const done = h('button', { type: 'button', class: 'pill' }, L('Done', 'Terminar'));
     done.addEventListener('click', () => void this.stopQuiz());
     const list = h('div', { class: 'quiz-sum', role: 'list' });
     for (const cur of q.qs) list.append(this.resultRow(cur.kind ?? q.kind, cur));
     const streak = current(progress().daily);
-    add(this.card, h('div', { class: 'quiz-q daily-marks' }, `${q.score}/${n} ${marks}`),
-      h('div', { class: 'tool-hint' }, `🔥 ${inARow(streak)} · ${L('A new challenge tomorrow.', 'Mañana hay un reto nuevo.')}`),
-      list, h('div', { class: 'tool-actions' }, this.shareButton(day, q.score, n, marks), done));
+    const share = this.shareButton(day, q.score, n, marks);
+    share.classList.remove('sm'); share.classList.add('primary');
+    add(this.card, resultCard({ stars: quizStars(q.score, n), score: `${q.score}`, unit: `/ ${n}`, headline: marks,
+      sub: `🔥 ${inARow(streak)} · ${L('A new challenge tomorrow', 'Mañana hay un reto nuevo')}`, extra: [list], actions: [done, share] }));
   }
 
   /** One question in the result: picture, what it was, the right answer and, if wrong, yours. */

@@ -27,6 +27,9 @@ try { ({ chromium, devices } = require('playwright')); } catch { ({ chromium, de
 
 const url = process.argv[2] || 'http://localhost:4173/';
 const browser = await chromium.launch({ args: ['--disable-accelerated-2d-canvas'] });
+// The app's theme follows the device's (v0.40.0): the checks below were written for the dark theme, so every page
+// opens as on a phone in dark mode unless a check asks for light (section 46).
+{ const plain = browser.newContext.bind(browser); browser.newContext = (o = {}) => plain({ colorScheme: 'dark', ...o }); }
 const failures = [];
 const check = (ok, msg) => { console.log(`${ok ? 'ok  ' : 'FAIL'} ${msg}`); if (!ok) failures.push(msg); };
 
@@ -1324,9 +1327,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /Next|See result/.test(b.textContent))?.click());
     await page.waitForTimeout(700);
   }
-  const res = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', marks: document.querySelector('.learn-card .daily-marks')?.textContent ?? '', rows: document.querySelectorAll('.learn-card .quiz-sum-row').length, share: !!document.querySelector('.learn-card [data-share]'), p: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}') }));
+  const res = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', marks: document.querySelector('.learn-card .result .result-headline')?.textContent ?? '', rows: document.querySelectorAll('.learn-card .quiz-sum-row').length, share: !!document.querySelector('.learn-card [data-share]'), p: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}') }));
   check(/Daily challenge #\d+/.test(res.head) && (res.marks.match(/🟩|🟥/gu) ?? []).length === 8 && res.rows === 8 && res.share && !!res.p.badges?.['daily-1'] && res.p.daily?.streak === 1, `the daily result: ${res.marks}, 8 rows, Share, the first daily badge and a 1-day streak`);
-  await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /Done/.test(b.textContent))?.click());
+  await page.evaluate(() => [...document.querySelectorAll('.learn-card .result-actions button')].find((b) => /Done/.test(b.textContent))?.click());
   await page.waitForTimeout(500);
   await menu('Quiz');
   const done = await page.evaluate(() => document.querySelector('[data-quiz="daily"]')?.textContent ?? '');
@@ -5421,6 +5424,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 {
   // Notifications need the full Chromium (in its new headless mode): the headless shell has none.
   const full = await chromium.launch({ channel: 'chromium', args: ['--disable-accelerated-2d-canvas'] });
+  { const plain = full.newContext.bind(full); full.newContext = (o = {}) => plain({ colorScheme: 'dark', ...o }); }
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en', full);
   const F = (fn, arg) => page.evaluate(fn, arg);
   const row = (id) => `[data-remind="${id}"]`;
@@ -5901,6 +5905,111 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+
+// 46. One look (v0.40.0), on a phone: every text in the main panels is one of the kit's six sizes; the features' tiles
+// in the More menu, panel titles and Today (with ✓ or a chevron at the end of each line); the shared result card (Pin
+// it to the end); the theme like the phone's, and following it; the hover label gone once a card opens; Master the
+// world's deck grid with each emoji over its name.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=10,25,1.1&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const SIZES = [11, 12.5, 14, 16, 19, 26];
+  const ICONS = [18, 24, 28, 34];
+  // The sizes of every element with text of its own in the open panel.
+  const sizes = () => F(() => {
+    const out = new Map();
+    for (const el of document.querySelectorAll('.sheet.open *')) {
+      if (![...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim())) continue;
+      const fs = parseFloat(getComputedStyle(el).fontSize);
+      out.set(fs, (out.get(fs) ?? 0) + 1);
+    }
+    return [...out];
+  });
+  const off = [];
+  for (const [label, open_] of [['Today', () => document.querySelector('[data-dock="today"]').click()], ['Settings', () => window.atlas.shell.openSettings()],
+    ['Map games', () => void window.atlas.play.openMenu()], ['Master the world', () => void window.atlas.master.openPanel()], ['Quiz', () => window.atlas.learn.openQuizMenu()]]) {
+    await F(open_);
+    await page.waitForTimeout(1200);
+    for (const [fs, n] of await sizes()) if (!SIZES.includes(fs) && !ICONS.includes(fs)) off.push(`${label}: ${fs}px ×${n}`);
+  }
+  check(!off.length, `the kit's sizes only (11, 12.5, 14, 16, 19, 26 px; icons 18–34) in Today, Settings, Map games, Master the world and Quiz${off.length ? `: off the kit ${off.join(', ')}` : ''}`);
+  // Tiles: the More menu, a panel's title, Today's lines.
+  await F(() => window.atlas.shell.sheet.close());
+  await F(() => document.querySelector('[data-dock="more"]').click());
+  await page.waitForTimeout(400);
+  const menu = await F(() => [...document.querySelectorAll('.menu .menu-item')].map((b) => ({ id: b.dataset.menu ?? b.dataset.group, tile: b.querySelector('.ftile')?.dataset.feature ?? (b.querySelector('.ftile') ? 'plain' : null) })));
+  await F(() => document.querySelector('[data-dock="more"]').click());
+  await F(() => document.querySelector('[data-dock="today"]').click());
+  await page.waitForTimeout(1200);
+  const today = await F(() => ({
+    title: document.querySelector('.sheet-title .ftile')?.dataset.feature ?? null,
+    text: document.querySelector('.sheet-title')?.textContent ?? '',
+    lines: [...document.querySelectorAll('[data-today="main"] > .mode-card')].map((c) => ({ id: c.dataset.todayItem, tile: c.querySelector(':scope > .ftile')?.dataset.feature ?? null, end: !!c.querySelector(':scope > .mode-end'), done: c.classList.contains('done') })),
+  }));
+  check(menu.length >= 8 && menu.every((m) => m.tile) && menu.find((m) => m.id === 'learn')?.tile === 'learn' && menu.find((m) => m.id === 'settings')?.tile === 'settings'
+    && today.title === 'today' && today.text === 'Today' && today.lines.length >= 5 && today.lines.every((l) => l.tile && l.end) && today.lines.find((l) => l.id === 'fill')?.tile === 'fill',
+    `tiles: the More menu (${menu.map((m) => `${m.id}:${m.tile}`).join(' ')}); Today's title (${today.title}); its lines ${today.lines.map((l) => `${l.id}:${l.tile}${l.end ? '›' : ''}`).join(' ')}`);
+  // The result card: Pin it to the end.
+  await F(() => window.atlas.shell.sheet.close());
+  await F(() => window.atlas.play.pin.start({ pack: 'capitals' }));
+  await page.waitForFunction(() => !!window.atlas.play.pin.info, null, { timeout: 15000 });
+  for (let i = 0; i < 5; i++) {
+    await F((o) => { const g = window.atlas.play.pin, p = g.info.place; g.tap([p[2] + o, p[3]]); g.confirm(); }, [0, 3, 0, 12, 0][i]);
+    await F(() => window.atlas.play.pin.next());
+  }
+  await page.waitForTimeout(600);
+  const res = await F(() => {
+    const r = document.querySelector('.play-card .result');
+    const d = window.atlas.play.pin.info?.done;
+    return r && { stars: r.querySelectorAll('.result-stars .on').length, want: d?.stars, score: r.querySelector('.result-score strong')?.textContent, rows: r.querySelectorAll('.result-row').length,
+      marks: [...r.querySelectorAll('.result-row')].map((x) => x.classList.contains('ok') ? 'ok' : x.classList.contains('near') ? 'near' : x.classList.contains('miss') ? 'miss' : '?').join(','),
+      again: !!r.querySelector('.result-actions [data-game="again"].primary'), share: !!r.querySelector('.result-actions [data-game="share"]'), h: Math.round(r.querySelector('.result-actions .pill')?.getBoundingClientRect().height ?? 0) };
+  });
+  check(res && res.stars === res.want && res.rows === 5 && /ok/.test(res.marks) && /near|miss/.test(res.marks) && res.again && res.share && res.h >= 44,
+    `the result card: ${res?.stars}★ of ${res?.want}, ${res?.score} points, 5 rows (${res?.marks}), Share and Play again ${res?.h}px tall`);
+  await F(() => window.atlas.play.pin.stop?.());
+  // Master the world's decks: each emoji over its name.
+  await F(() => window.atlas.master.openPanel());
+  await page.waitForTimeout(1200);
+  const decks = await F(() => [...document.querySelectorAll('[data-master="deck"] .seg-btn')].map((b) => { const i = b.querySelector('.seg-ic')?.getBoundingClientRect(), l = b.querySelector('.seg-label')?.getBoundingClientRect(); return i && l ? Math.round(l.top - i.bottom) : null; }));
+  check(decks.length === 8 && decks.every((g) => g !== null && g >= -1 && g < 12), `the eight decks, each emoji over its name (gaps ${decks.join(', ')} px)`);
+  await F(() => window.atlas.shell.sheet.close());
+  // The hover label (a mouse over a country) goes when a card opens.
+  await F(() => { const r = window.atlas.app.renderer; r.view.flyTo({ lon: 2.5, lat: 46.5, zoom: 3 }, 0); r.requestRender(); });
+  await page.waitForTimeout(800);
+  await F(() => { const p = window.atlas.app.renderer.view.project(2.5, 46.5); window.atlas.app.emit('hover', p[0], p[1]); });
+  await page.waitForTimeout(200);
+  const tipBefore = await F(() => !document.querySelector('.tooltip')?.hidden);
+  await F(() => window.atlas.app.select('FRA'));
+  await page.waitForTimeout(300);
+  const tipAfter = await F(() => !document.querySelector('.tooltip')?.hidden);
+  check(tipBefore && !tipAfter, `the hover label hides when a country's card opens (shown before: ${tipBefore}, after: ${tipAfter})`);
+  check(!errors.length, `no page errors in the design kit's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+// 46b. The theme like the phone: a phone in light mode opens light, follows it to dark, and a picked theme stays put.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'], colorScheme: 'light' }, '#p=globe&l=political&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const theme = () => F(() => ({ t: document.documentElement.dataset.theme, auto: window.atlas.app.themeAuto }));
+  const a = await theme();
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.waitForTimeout(300);
+  const b = await theme();
+  await F(() => window.atlas.shell.openSettings());
+  await page.waitForTimeout(400);
+  const seg = await F(() => [...document.querySelectorAll('.sheet .seg')].find((x) => /Like my phone/.test(x.textContent) && /Space|Atlas/.test(x.textContent))?.querySelector('.seg-btn.on')?.textContent ?? '');
+  await F(() => window.atlas.app.setTheme('light'));
+  await page.waitForTimeout(900); // the app saves its state a moment later
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.reload({ waitUntil: 'networkidle' });
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  const c = await theme();
+  check(a.t === 'light' && a.auto && b.t === 'dark' && /Like my phone/.test(seg) && c.t === 'light' && !c.auto,
+    `the theme like the phone: light phone → ${a.t}; the phone turns dark → ${b.t}; Settings: "${seg}"; light picked, then a dark phone and a reload → ${c.t}`);
+  check(!errors.length, `no page errors in the theme's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

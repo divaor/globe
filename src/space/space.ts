@@ -134,7 +134,7 @@ export class Space {
     earth.addEventListener('click', () => { this.shell.sheet.close(); void this.exit(); });
     top.append(earth);
     if (this.openOrrery) {
-      const orr = h('button', { type: 'button', class: 'pill primary', 'data-space': 'orrery' }, '☀️ ', L('The solar system', 'El sistema solar'));
+      const orr = h('button', { type: 'button', class: 'pill', 'data-space': 'orrery' }, '☀️ ', L('The solar system', 'El sistema solar'));
       orr.addEventListener('click', () => { this.shell.sheet.close(); this.openOrrery!(); });
       top.append(orr);
     }

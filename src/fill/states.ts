@@ -6,6 +6,8 @@ import { ChevronRight, SkipForward, RotateCcw, Share2, Play } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
+import { ftile } from '../ui/features';
 import { h, icon, clear } from '../ui/dom';
 import { fmtNumber, appLocale, flagEmoji } from '../app/i18n';
 import { loadJSON } from '../data/store';
@@ -374,13 +376,15 @@ export class FillStates implements HostGame {
     const head = s.daily
       ? L(`Done: ★ ${s.stats.stars} of ${s.ids.length * 3}`, `Hecho: ★ ${s.stats.stars} de ${s.ids.length * 3}`)
       : L(`${this.cname(s.a3)} is filled in!`, `¡Terminaste de colorear ${this.cname(s.a3)}!`);
-    card.append(h('div', { class: 'quiz-q', 'data-states': 'done' }, head));
-    if (s.stats.asked) card.append(h('div', { class: 'tool-hint' }, L(`${s.stats.firsts} of ${s.stats.asked} right at the first try.`, `${s.stats.firsts} de ${s.stats.asked} acertados a la primera.`)));
+    const res = resultCard({ stars: s.ids.length ? Math.round((3 * s.stats.stars) / (s.ids.length * 3)) : undefined, headline: head,
+      sub: s.stats.asked ? L(`${s.stats.firsts} of ${s.stats.asked} right at the first try`, `${s.stats.firsts} de ${s.stats.asked} acertados a la primera`) : undefined });
+    res.querySelector('.result-headline')?.setAttribute('data-states', 'done');
+    card.append(res);
     const name = (id: string) => this.rname(s.list.find((r) => r.id === id));
-    if (missed.length) card.append(h('div', { class: 'tool-hint' }, L(`Shown: ${missed.map(name).join(', ')}`, `Mostrados: ${missed.map(name).join(', ')}`)));
-    const actions = h('div', { class: 'hop-actions' });
+    if (missed.length) res.append(h('div', { class: 'tool-hint' }, L(`Shown: ${missed.map(name).join(', ')}`, `Mostrados: ${missed.map(name).join(', ')}`)));
+    const actions = h('div', { class: 'result-actions' });
     const add = (label: string, fn: () => void, primary = false, attr = '') => {
-      const b = h('button', { type: 'button', class: `pill sm${primary ? ' primary' : ''}`, 'data-states': attr }, label);
+      const b = h('button', { type: 'button', class: `pill${primary ? ' primary' : ''}`, 'data-states': attr }, label);
       b.addEventListener('click', fn);
       actions.append(b);
     };
@@ -396,7 +400,7 @@ export class FillStates implements HostGame {
     }
     add(L('Share', 'Compartir'), () => void this.share(), false, 'share');
     add(L('Menu', 'Menú'), () => { void this.stop(); this.openPanel?.(); }, false, 'menu');
-    card.append(actions);
+    res.append(actions);
   }
 
   /** "Fill the states · 🇲🇽 Mexico · Capitals: 32/32 · ★ 90" and the link. */
@@ -526,7 +530,7 @@ export class FillStates implements HostGame {
   dailyCard(): HTMLElement {
     const day = dayKey(), d = dailyCountry(day), done = fillState().stateDailies[day];
     const what = `${flagEmoji(this.app.data.meta[d.a3]?.a2)} ${this.cname(d.a3)} · ${this.catName(d.cat)}`;
-    const b = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-states': 'daily' }, h('span', { class: 'mode-icon' }, '🗺️'),
+    const b = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-states': 'daily' }, ftile('fill'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Country of the day', 'País del día')),
         h('span', { class: 'mode-desc' }, done ? `${L('Done', 'Hecho')}: ★ ${done.s}/${done.n} · ${what}` : `${what} · ${L('the same for everyone today', 'el mismo para todos hoy')}`)));
     b.addEventListener('click', () => void this.start({ daily: true }));

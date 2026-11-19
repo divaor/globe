@@ -1,5 +1,6 @@
 // A panel that is a bottom sheet on phones and a floating side panel on wider screens.
 import { X } from 'lucide';
+import { ftile, featureOfSheet } from './features';
 import { h, button, clear } from './dom';
 import { t } from '../app/i18n';
 
@@ -85,7 +86,7 @@ export class Sheet {
   open(id: string, title: string, content: HTMLElement, onClose?: () => void, bar?: HTMLElement) {
     if (this.current && this.current !== id) this.onCloseCb?.();
     this.current = id;
-    this.titleEl.textContent = title;
+    this.setTitle(title);
     clear(this.body);
     clear(this.bar);
     if (bar) this.bar.append(bar);
@@ -103,7 +104,11 @@ export class Sheet {
 
   isOpen(id?: string) { return !this.el.hidden && (!id || this.current === id); }
 
-  setTitle(title: string) { this.titleEl.textContent = title; }
+  /** The title, after its feature's tile (v0.40.0; a panel of no feature has none). */
+  setTitle(title: string) {
+    const f = this.current ? featureOfSheet(this.current) : null;
+    this.titleEl.replaceChildren(...(f ? [ftile(f, 'lg')] : []), h('span', { class: 'sheet-title-text' }, title));
+  }
 
   close() {
     if (this.el.hidden) return;

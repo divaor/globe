@@ -3,7 +3,8 @@
 // the map's puzzle of the day, the map games' puzzles as tiles, and On this day. Each game adds itself (main.ts), so
 // a new daily game is one more `add`; each keeps its own card in its own panel too: Today is a shortcut, not a move.
 // "Share my day" puts all of today's results in one message.
-import { CalendarCheck, Share2 } from 'lucide';
+import { CalendarCheck, Share2, Check, ChevronRight } from 'lucide';
+import { FEATURES, ftile } from '../ui/features';
 import type { Shell } from '../ui/shell';
 import { h, icon, clear } from '../ui/dom';
 import { appLocale } from '../app/i18n';
@@ -26,6 +27,9 @@ export interface TodayItem {
 }
 /** Something to read today (On this day): not a challenge, so not counted. */
 export interface TodayRead { id: string; order: number; card(): HTMLElement | null }
+
+/** Today's lines and their features (the games make their own cards; Today gives them the feature's tile). */
+const TODAY_FEATURE: Record<string, string> = { daily: 'daily', master: 'master', fill: 'fill', states: 'fill', onmap: 'onmap', onthisday: 'onthisday' };
 
 /** The panel's sheet id. */
 const ID = 'today';
@@ -86,7 +90,7 @@ export class Today {
     const main = h('div', { class: 'mode-list', 'data-today': 'main' });
     for (const it of this.items.filter((x) => x.section === 'main')) {
       const el = await Promise.resolve(safe(() => it.card(), null)).catch(() => null);
-      if (el) { el.dataset.todayItem = it.id; main.append(el); }
+      if (el) { el.dataset.todayItem = it.id; main.append(this.dress(el, it.id, safe(() => it.done(), false))); }
     }
     body.append(h('h3', { class: 'sec-title' }, L('Today’s challenges', 'Los retos de hoy')), main);
     // The map games, as tiles.
@@ -103,7 +107,7 @@ export class Today {
     // Something to read.
     for (const r of this.reads) {
       const el = safe(() => r.card(), null);
-      if (el) { el.dataset.todayItem = r.id; body.append(h('h3', { class: 'sec-title' }, L('To read', 'Para leer')), el); }
+      if (el) { el.dataset.todayItem = r.id; body.append(h('h3', { class: 'sec-title' }, L('To read', 'Para leer')), this.dress(el, r.id, false)); }
     }
   }
 
@@ -124,13 +128,26 @@ export class Today {
   }
   async share() { await shareText(this.shell, this.shareText()); }
 
-  /** A line of the list: an icon, a title and what it is (or how it went), done or not; it opens the game. */
+  /** A line of the list: the feature's icon (ui/features.ts, or an emoji), a title and what it is (or how it went),
+   *  done or not; it opens the game. */
   line(id: string, icon_: string, title: string, desc: string, done: boolean, open: () => void): HTMLElement {
     const b = h('button', { type: 'button', class: `mode-card${done ? ' daily-card done' : ''}`, 'data-today-item': id },
-      h('span', { class: 'mode-icon' }, icon_),
-      h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, `${done ? '✓ ' : ''}${title}`), h('span', { class: 'mode-desc' }, desc)));
+      FEATURES[icon_] ? ftile(icon_) : h('span', { class: 'mode-icon' }, icon_),
+      h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, title), h('span', { class: 'mode-desc' }, desc)));
     b.addEventListener('click', () => open());
     return b;
+  }
+
+  /** Every line of Today looks the same (v0.40.0), whichever game made it: its feature's tile first, and at the end a
+   *  ✓ once done today, else a chevron. */
+  private dress(el: HTMLElement, id: string, done: boolean): HTMLElement {
+    const f = TODAY_FEATURE[id];
+    const old = el.querySelector(':scope > .mode-icon');
+    if (f && old) old.replaceWith(ftile(f));
+    el.querySelector(':scope > .mode-end')?.remove();
+    el.classList.toggle('done', done);
+    el.append(h('span', { class: 'mode-end', 'aria-label': done ? L('Done today', 'Hecho hoy') : undefined }, icon(done ? Check : ChevronRight, done ? 16 : 18)));
+    return el;
   }
   /** A map game's tile: its icon and name, and ✓ with today's score once played. */
   tile(id: string, icon_: string, name: string, result: string | null, open: () => void): HTMLElement {

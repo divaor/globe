@@ -5,6 +5,7 @@ import { Share2, RotateCcw, Plus } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
 import { fmtNumber } from '../app/i18n';
 import { loadJSON } from '../data/store';
@@ -123,16 +124,15 @@ export class WhoseLife implements HostGame {
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     const total = s.pts.reduce((a, b) => a + b, 0);
     if (s.done) {
-      this.card.append(
-        h('div', { class: 'hop-score' }, h('span', { class: 'hop-stars' }, starText(s.done.stars)), h('span', null, `${fmtNumber(s.done.score)} ${L('points', 'puntos')}`)),
-        h('div', { class: 'hop-stats' }, L(`Out of ${fmtNumber(1000 * LIFE_ROUNDS)}.`, `De ${fmtNumber(1000 * LIFE_ROUNDS)}.`)),
-        h('div', { class: 'hop-others' }, ...s.rounds.map((r, i) => h('div', { class: 'hop-other' }, h('span', { class: 'hop-other-goal' }, `${r.who.icon} ${tx(r.who.name)}: ${fmtNumber(s.pts[i])}`),
-          h('span', { class: 'hop-other-path' }, r.answer === r.who.id ? L(`after ${r.shown} ${r.shown === 1 ? 'place' : 'places'}`, `con ${r.shown} ${r.shown === 1 ? 'lugar' : 'lugares'}`) : L('missed', 'fallada'))))));
-      const share = h('button', { type: 'button', class: 'pill sm', 'data-game': 'share' }, icon(Share2, 15), L('Share', 'Compartir'));
+      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: L(`Out of ${fmtNumber(1000 * LIFE_ROUNDS)}`, `De ${fmtNumber(1000 * LIFE_ROUNDS)}`),
+        rows: s.rounds.map((r, i) => ({ icon: r.who.icon, name: tx(r.who.name), value: fmtNumber(s.pts[i]), mark: r.answer === r.who.id ? (r.shown <= 2 ? 'ok' : 'near') : 'miss',
+          detail: r.answer === r.who.id ? L(`after ${r.shown} ${r.shown === 1 ? 'place' : 'places'}`, `con ${r.shown} ${r.shown === 1 ? 'lugar' : 'lugares'}`) : L('missed', 'fallada') })) });
+      this.card.append(res);
+      const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `👤 ${L('Whose life is this?', '¿De quién es esta vida?')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.rounds.map((r) => (r.answer !== r.who.id ? '🟥' : r.shown === 1 ? '🎯' : r.shown <= 2 ? '🟩' : '🟨')).join('')}`));
-      const again = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'again' }, icon(RotateCcw, 15), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start(); });
-      this.card.append(h('div', { class: 'hop-actions' }, share, again));
+      res.append(h('div', { class: 'result-actions' }, share, again));
       return;
     }
     const r = s.rounds[s.i];

@@ -23,6 +23,8 @@ interface Saved {
   /** Which Spanish (Latin America's, or Spain's words). */
   es?: Spanish;
   theme?: 'dark' | 'light';
+  /** The theme follows the phone's dark mode (v0.40.0; the default). */
+  themeAuto?: boolean;
   projection?: ProjectionId;
   active?: ActiveSpec[];
   labels?: { countries: boolean; capitals: boolean; cities: boolean; seas: boolean; values?: boolean };
@@ -50,6 +52,8 @@ export class App {
   /** Picked in Settings; otherwise the phone's language is followed at each start (v0.35.0). */
   langPicked = false;
   themeId: 'dark' | 'light' = 'dark';
+  /** Like the phone (v0.40.0): the theme follows its dark mode, and changes with it. */
+  themeAuto = true;
   selection: string | null = null;
   /** Ambient mode (the screensaver): its playlist ('' for the filters on the map), seconds a view, reading aloud. */
   /** Ambient mode; `names`: the view's own names only (the map's countries, cities and seas hidden), all, or none. */
@@ -124,6 +128,8 @@ export class App {
     this.renderer.lang = this.lang;
     this.applyTheme();
     document.documentElement.dataset.theme = this.themeId;
+    // The phone switching between light and dark (at sunset, say) switches the app too, when it follows the phone.
+    window.matchMedia?.('(prefers-color-scheme: light)').addEventListener?.('change', () => { if (this.themeAuto) this.useTheme(phoneTheme()); });
     void this.syncBaseImagery();
     await this.data.init();
     const active = saved.active?.length ? saved.active : [{ id: 'political', opacity: 1 }];
@@ -262,7 +268,12 @@ export class App {
     this.save();
   }
 
-  setTheme(id: 'dark' | 'light') {
+  /** Dark, light, or like the phone ('auto'). */
+  setTheme(id: 'dark' | 'light' | 'auto') {
+    this.themeAuto = id === 'auto';
+    this.useTheme(id === 'auto' ? phoneTheme() : id);
+  }
+  private useTheme(id: 'dark' | 'light') {
     this.themeId = id;
     this.applyTheme();
     document.documentElement.dataset.theme = id;
@@ -367,7 +378,7 @@ export class App {
   snapshot(): Saved {
     const r = this.renderer;
     return {
-      lang: this.lang, es: this.spanish, langPicked: this.langPicked, theme: this.themeId, projection: this.projection,
+      lang: this.lang, es: this.spanish, langPicked: this.langPicked, theme: this.themeId, themeAuto: this.themeAuto, projection: this.projection,
       active: this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options })),
       labels: r.settings.labels, graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
       labelScale: r.settings.labelScale,
@@ -445,7 +456,10 @@ export class App {
       if (saved.lang === 'en' || saved.lang === 'es') this.lang = saved.lang;
       if (saved.es === 'latam' || saved.es === 'spain') this.spanish = saved.es;
     }
-    if (saved.theme) this.themeId = saved.theme;
+    // Like the phone unless a theme was picked (before v0.40.0, a saved light theme was always picked).
+    this.themeAuto = saved.themeAuto ?? saved.theme !== 'light';
+    if (this.themeAuto) this.themeId = phoneTheme();
+    else if (saved.theme) this.themeId = saved.theme;
     if (saved.labels) r.settings.labels = { ...r.settings.labels, ...saved.labels };
     if (saved.graticule !== undefined) r.settings.graticule = saved.graticule;
     if (saved.shading !== undefined) r.settings.shading = saved.shading;
@@ -465,4 +479,9 @@ export class App {
     if (saved.camera) Object.assign(r.view, saved.camera);
     return saved;
   }
+}
+
+/** The phone's (or computer's) own theme. */
+function phoneTheme(): 'dark' | 'light' {
+  return window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }

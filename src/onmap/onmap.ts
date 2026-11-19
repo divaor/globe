@@ -11,6 +11,8 @@ import type { Topology, GeometryObject } from 'topojson-specification';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
+import { ftile } from '../ui/features';
 import { h, icon, clear } from '../ui/dom';
 import { subregion, t } from '../app/i18n';
 import { loadJSON } from '../data/store';
@@ -423,22 +425,26 @@ export class PutOnMap implements HostGame {
 
   private renderDone() {
     const s = this.s!, card = this.host.card;
-    card.append(h('div', { class: 'quiz-q', 'data-onmap': 'done' }, s.solved
-      ? L(`All six on the map in ${s.rows.length} ${s.rows.length === 1 ? 'check' : 'checks'}!`, `¡Los seis en el mapa en ${s.rows.length} ${s.rows.length === 1 ? 'comprobación' : 'comprobaciones'}!`)
-      : L('The right places are on the map, in green.', 'Los lugares correctos están en el mapa, en verde.')));
-    if (s.rows.length) card.append(h('pre', { class: 'onmap-grid', 'data-onmap': 'grid' }, grid(s.rows)));
     const missed = s.items.filter((it) => !it.locked);
-    if (missed.length) card.append(h('div', { class: 'tool-hint' }, missed.map((it) => `${KIND[it.k].icon} ${this.name(it.c.i)}`).join(' · ')));
-    const actions = h('div', { class: 'hop-actions' });
+    // Stars like the other games: three for one or two checks, two for three or four, one for five; none unsolved.
+    const res = resultCard({ stars: s.solved ? (s.rows.length <= 2 ? 3 : s.rows.length <= 4 ? 2 : 1) : 0,
+      headline: s.solved
+        ? L(`All six on the map in ${s.rows.length} ${s.rows.length === 1 ? 'check' : 'checks'}!`, `¡Los seis en el mapa en ${s.rows.length} ${s.rows.length === 1 ? 'comprobación' : 'comprobaciones'}!`)
+        : L('The right places are on the map, in green.', 'Los lugares correctos están en el mapa, en verde.'),
+      extra: [s.rows.length ? h('pre', { class: 'onmap-grid', 'data-onmap': 'grid' }, grid(s.rows)) : null,
+        missed.length ? h('div', { class: 'tool-hint' }, missed.map((it) => `${KIND[it.k].icon} ${this.name(it.c.i)}`).join(' · ')) : null] });
+    res.querySelector('.result-headline')?.setAttribute('data-onmap', 'done');
+    card.append(res);
+    const actions = h('div', { class: 'result-actions' });
     const add = (label: string, fn: () => void, primary = false, attr = '', ic?: Parameters<typeof icon>[0]) => {
-      const b = h('button', { type: 'button', class: `pill sm${primary ? ' primary' : ''}`, 'data-onmap': attr }, ...(ic ? [icon(ic, 15)] : []), label);
+      const b = h('button', { type: 'button', class: `pill${primary ? ' primary' : ''}`, 'data-onmap': attr }, ...(ic ? [icon(ic, 16)] : []), label);
       b.addEventListener('click', fn);
       actions.append(b);
     };
     add(L('Share', 'Compartir'), () => void this.share(), true, 'share', Share2);
     add(L('Another country', 'Otro país'), () => void this.start({ scope: this.randomCountry(s.mix, s.scope), mix: s.mix }), false, 'another', Shuffle);
     add(L('Menu', 'Menú'), () => { void this.stop(); void this.openPanel(); }, false, 'menu');
-    card.append(actions);
+    res.append(actions);
   }
 
   /** The share text: the puzzle, the checks, and the grid (a line of six squares per check). */
@@ -584,7 +590,7 @@ export class PutOnMap implements HostGame {
     const scope = this.loaded ? dailyScope(day, this.okCountries.get('all') ?? [], this.okRegions.map((r) => `r:${r}`)) : null;
     const done = onmapState().dailies[day];
     const where = scope ? this.scopeName(scope) : '';
-    const b = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-onmap': 'daily' }, h('span', { class: 'mode-icon' }, '📍'),
+    const b = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-onmap': 'daily' }, ftile('onmap'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Put it on the map: today', 'Ponlo en el mapa: hoy')),
         h('span', { class: 'mode-desc' }, done ? `${L('Done', 'Hecho')}: ${done.solved ? done.tries : 'X'}/${TRIES} · ${where}` : `${where} · ${L('the same for everyone today', 'el mismo para todos hoy')}`)));
     b.addEventListener('click', () => void this.startDaily());

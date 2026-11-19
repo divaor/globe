@@ -58,7 +58,8 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
   return h('div', { class: 'settings' },
     // English, and the two Spanishes: the texts as written (Latin America) or with Spain's words.
     field(t('language'), h('div', null, langPicker, numbers)),
-    field(t('theme'), segmented<'dark' | 'light'>(app.themeId, [{ value: 'dark', label: t('themeDark') }, { value: 'light', label: t('themeLight') }], (v) => app.setTheme(v))),
+    // Like the phone (v0.40.0), as for the language: the theme follows its dark mode.
+    field(t('theme'), segmented<'auto' | 'dark' | 'light'>(app.themeAuto ? 'auto' : app.themeId, [{ value: 'auto', label: es ? '📱 Como mi teléfono' : '📱 Like my phone' }, { value: 'dark', label: t('themeDark') }, { value: 'light', label: t('themeLight') }], (v) => app.setTheme(v))),
     h('h3', { class: 'sec-title' }, t('labels')),
     h('div', { class: 'toggles' },
       toggle(s.labels.countries, (v) => { s.labels.countries = v; save(); }, t('labelCountries')),

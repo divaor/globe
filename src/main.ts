@@ -99,22 +99,22 @@ async function boot() {
   play.extraToday.push(async () => ((await onmap.ready()) ? onmap.dailyCard() : null));
   // Both are games too, in the Map games panel's list (v0.37.0), with their own panels.
   play.extraGames.push(
-    { id: 'fill', icon: '🖍️', title: () => L('Fill the map', 'Llena el mapa'), desc: () => L('Colour in the world, country by country', 'Colorea el mundo, país por país'), open: () => void fill.openPanel() },
-    { id: 'onmap', icon: '📍', title: () => L('Put it on the map', 'Ponlo en el mapa'), desc: () => L('Six places of a country to put on the map, Wordle style', 'Seis lugares de un país para poner en el mapa, al estilo Wordle'), open: () => void onmap.openPanel() },
+    { id: 'fill', icon: 'fill', title: () => L('Fill the map', 'Llena el mapa'), desc: () => L('Colour in the world, country by country', 'Colorea el mundo, país por país'), open: () => void fill.openPanel() },
+    { id: 'onmap', icon: 'onmap', title: () => L('Put it on the map', 'Ponlo en el mapa'), desc: () => L('Six places of a country to put on the map, Wordle style', 'Seis lugares de un país para poner en el mapa, al estilo Wordle'), open: () => void onmap.openPanel() },
   );
   // Today (v0.37.0): every daily in one place, from the bottom bar; each game adds itself.
   const today = new Today(shell);
   today.openProgress = () => learn.openProgress();
   today.add({
     id: 'daily', order: 10, section: 'main', done: () => learn.todayDaily().done, share: () => learn.todayDaily().line,
-    card: () => { const d = learn.todayDaily(); return today.line('daily', '🗓️', d.title, d.desc, d.done, d.open); },
+    card: () => { const d = learn.todayDaily(); return today.line('daily', 'daily', d.title, d.desc, d.done, d.open); },
   });
   today.add({
     id: 'master', order: 20, section: 'main',
     done: () => { const g = master.todayGoal(); return g.n >= g.goal; },
     card: () => {
       const g = master.todayGoal();
-      return today.line('master', '🎯', L('Master the world', 'Domina el mundo'),
+      return today.line('master', 'master', L('Master the world', 'Domina el mundo'),
         `${L(`Today’s goal: ${g.n} of ${g.goal} answers`, `Meta de hoy: ${g.n} de ${g.goal} respuestas`)}${g.due ? ` · ${L(`${g.due} to review`, `${g.due} por repasar`)}` : ''}`, g.n >= g.goal, () => void master.openPanel());
     },
     share: () => { const g = master.todayGoal(); return g.n >= g.goal ? `🎯 ${L('Master the world', 'Domina el mundo')}: ${g.goal}/${g.goal}` : null; },
@@ -145,7 +145,7 @@ async function boot() {
   });
   today.addRead({
     id: 'onthisday', order: 10,
-    card: () => today.line('onthisday', '📅', L('On this day', 'Tal día como hoy'), L('What happened on this day: events, births and deaths', 'Lo que pasó un día como hoy: hechos, nacimientos y muertes'), false, () => void learn.openOnThisDay()),
+    card: () => today.line('onthisday', 'onthisday', L('On this day', 'Tal día como hoy'), L('What happened on this day: events, births and deaths', 'Lo que pasó un día como hoy: hechos, nacimientos y muertes'), false, () => void learn.openOnThisDay()),
   });
   // Reminders (v0.37.1): a 🔔 switch in each daily game, one gentle notification a day (or a calendar reminder).
   const reminders = new Reminders(shell);
