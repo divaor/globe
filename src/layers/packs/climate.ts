@@ -2,7 +2,7 @@
 import { geoContains } from 'd3-geo';
 import type { Topology } from 'topojson-specification';
 import { loadJSON, shapesFrom, type Shape } from '../../data/store';
-import { lang, tx, L } from '../../app/i18n';
+import { lang, tx, L, Lc } from '../../app/i18n';
 import { paletteRaster, setDayNightProbe } from '../rasterdata';
 import type { App } from '../../app/app';
 import type { LayerDef, RenderCtx } from '../types';
@@ -198,7 +198,7 @@ const winds: LayerDef = {
   keywords: 'wind weather jet stream trade winds monsoon viento alisios monzon',
   credit: 'ECMWF ERA-Interim 850 hPa monthly mean winds (contains modified ECMWF data)',
   options: [{ id: 'month', type: 'select', label: { en: 'Month', es: 'Mes' }, default: 'jan', choices: [
-    { value: 'jan', label: { en: 'January', es: 'Enero' } }, { value: 'jul', label: { en: 'July', es: 'Julio' } }] }],
+    { value: 'jan', label: { en: 'January', es: 'Enero', ctx: 'a month on its own' } }, { value: 'jul', label: { en: 'July', es: 'Julio', ctx: 'a month on its own' } }] }],
   animated: true,
   async load(_ctx, inst) {
     if (!windData) windData = await loadJSON('layers/winds.json');
@@ -273,7 +273,7 @@ const winds: LayerDef = {
     // Wind comes FROM the opposite of its direction of travel.
     const from = (Math.atan2(-u, -v) * 180) / Math.PI;
     const d = dirs[Math.round(((from + 360) % 360) / 45) % 8];
-    return [{ label: L('Wind', 'Viento'), value: `${speed.toFixed(1)} m/s · ${L('from', 'del')} ${d}`, icon: '💨' }];
+    return [{ label: L('Wind', 'Viento'), value: `${speed.toFixed(1)} m/s · ${Lc('wind from a direction', 'from', 'del')} ${d}`, icon: '💨' }];
   },
 };
 

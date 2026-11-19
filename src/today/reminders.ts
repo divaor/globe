@@ -274,14 +274,14 @@ export class Reminders {
   private ask(row: HTMLElement, ok: () => void, cancel: () => void) {
     const st = this.state();
     row.querySelector('.remind-ask')?.remove();
-    const input = h('input', { type: 'time', class: 'select remind-time', value: st.time, 'data-remind': 'time', 'aria-label': L('Time', 'Hora') }) as HTMLInputElement;
+    const input = h('input', { type: 'time', class: 'select remind-time', value: st.time, 'data-remind': 'time', 'aria-label': L('Reminder time', 'Hora del recordatorio') }) as HTMLInputElement;
     const yes = h('button', { type: 'button', class: 'pill sm primary', 'data-remind': 'ok' }, L('Remind me', 'Recuérdamelo'));
     const no = h('button', { type: 'button', class: 'pill sm', 'data-remind': 'cancel' }, L('Not now', 'Ahora no'));
     yes.addEventListener('click', () => { st.time = normTime(input.value); ok(); });
     no.addEventListener('click', () => cancel());
     row.append(h('div', { class: 'remind-ask' },
       h('label', { class: 'remind-ask-q' }, L('At what time?', '¿A qué hora?'), input),
-      h('p', { class: 'tool-hint' }, L('One reminder a day at most, only if it’s not done yet, with no sound. You can change the time in Today or Settings.', 'Un recordatorio al día como mucho, solo si aún no lo has hecho, sin sonido. Puedes cambiar la hora en Hoy o en Configuración.')),
+      h('p', { class: 'tool-hint' }, L('One reminder a day at most, only if it’s not done yet, with no sound. You can change the time in Today or Settings.', 'Un recordatorio al día como mucho, solo si aún no lo has hecho, sin sonido. Puedes cambiar la hora en Hoy o en Ajustes.')),
       h('div', { class: 'hop-actions' }, yes, no)));
     input.focus();
   }
@@ -335,7 +335,7 @@ export class Reminders {
     const draw = () => {
       clear(body);
       const st = this.state();
-      const time = h('input', { type: 'time', class: 'select remind-time', value: st.time, 'data-remind': 'panel-time', 'aria-label': L('Time', 'Hora') }) as HTMLInputElement;
+      const time = h('input', { type: 'time', class: 'select remind-time', value: st.time, 'data-remind': 'panel-time', 'aria-label': L('Reminder time', 'Hora del recordatorio') }) as HTMLInputElement;
       time.addEventListener('change', () => { void this.setTime(time.value).then(draw); });
       body.append(
         h('p', { class: 'muted small' }, L('One reminder a day at most, only if something you chose is not done yet; each day about a different one. It makes no sound and opens Today.', 'Un recordatorio al día como mucho, solo si algo que elegiste aún no está hecho; cada día sobre uno distinto. No suena y abre Hoy.')),
@@ -362,7 +362,7 @@ export class Reminders {
       clear(box);
       const st = this.state();
       const on = this.on();
-      const time = h('input', { type: 'time', class: 'select remind-time', value: st.time, 'data-remind': 'settings-time', 'aria-label': L('Time', 'Hora') }) as HTMLInputElement;
+      const time = h('input', { type: 'time', class: 'select remind-time', value: st.time, 'data-remind': 'settings-time', 'aria-label': L('Reminder time', 'Hora del recordatorio') }) as HTMLInputElement;
       time.addEventListener('change', () => { void this.setTime(time.value).then(draw); });
       const pick = h('button', { type: 'button', class: 'pill sm', 'data-remind': 'settings-open' }, L('Choose…', 'Elegir…'));
       pick.addEventListener('click', () => this.openPanel());

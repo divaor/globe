@@ -13,7 +13,7 @@ import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear, segmented } from '../ui/dom';
-import { fmtNumber, appLocale, subregion, t, dataLang, tx } from '../app/i18n';
+import { fmtNumber, appLocale, subregion, t, dataLang, tx, Lc } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
 import { L, es, type PlayHost, type HostGame } from '../play/host';
 import { shareText } from '../play/pin';
@@ -39,9 +39,9 @@ const CAT_TEXT: Record<FillCat, { icon: string; en: string; es: string }> = {
   people: { icon: '👥', en: 'Most people first', es: 'Más poblados primero' },
   area: { icon: '📐', en: 'Largest first', es: 'Más grandes primero' },
   clues: { icon: '🔎', en: 'Clues', es: 'Pistas' },
-  languages: { icon: '🗣️', en: 'Languages', es: 'Lenguas' },
+  languages: { icon: '🗣️', en: 'Languages', es: 'Idiomas' },
 };
-const THEME_TEXT: Record<Theme, { en: string; es: string }> = { all: { en: 'All', es: 'Todas' }, nature: { en: 'Nature', es: 'Naturaleza' }, culture: { en: 'Culture', es: 'Cultura' }, people: { en: 'People', es: 'Personas' } };
+const THEME_TEXT: Record<Theme, { en: string; es: string; ctx?: string }> = { all: { en: 'All', es: 'Todas', ctx: 'all clue themes' }, nature: { en: 'Nature', es: 'Naturaleza' }, culture: { en: 'Culture', es: 'Cultura' }, people: { en: 'People', es: 'Personas' } };
 /** The Master the world deck a category asks the same as. */
 const DECK_OF: Partial<Record<FillCat, DeckId>> = { countries: 'countries', capitals: 'capitals', flags: 'flags' };
 
@@ -430,7 +430,7 @@ export class FillMap implements HostGame {
   private valueOf(id: string): string {
     const s = this.s!, u = this.unitBy.get(id);
     if (!u) return '';
-    if (s.cat === 'people') return u.pop >= 1e6 ? L('{0} million people', '{0} millones de personas', (u.pop / 1e6).toLocaleString(appLocale(), { maximumFractionDigits: 1 })) : L('{0} people', '{0} personas', fmtNumber(u.pop));
+    if (s.cat === 'people') return u.pop >= 1e6 ? L('{0} million people', '{0} millones de personas', (u.pop / 1e6).toLocaleString(appLocale(), { maximumFractionDigits: 1 })) : L('{0} people', '{0} habitantes', fmtNumber(u.pop));
     if (s.cat === 'area') return `${fmtNumber(u.area)} km²`;
     if (s.cat === 'capitals') { const c = this.deck.get(id)?.cap; return c ? (es() ? c.es : c.en) : ''; }
     return '';
@@ -642,7 +642,7 @@ export class FillMap implements HostGame {
     const what = pick ? `${this.scopeName(pick.scope)} · ${this.catName(pick.cat)}` : '';
     const b = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-fill': 'daily' }, ftile('fill'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Region of the day', 'Región del día')),
-        h('span', { class: 'mode-desc' }, done ? `${L('Done', 'Hecho')}: ★ ${done.s}/${done.n} · ${what}` : `${what} · ${L('the same for everyone today', 'la misma para todos hoy')}`)));
+        h('span', { class: 'mode-desc' }, done ? `${L('Done', 'Hecho')}: ★ ${done.s}/${done.n} · ${what}` : `${what} · ${Lc('the daily puzzle', 'the same for everyone today', 'la misma para todos hoy')}`)));
     b.addEventListener('click', () => void this.startDaily());
     return b;
   }

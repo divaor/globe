@@ -6,7 +6,7 @@ import { geoDistance } from 'd3-geo';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear, add } from '../ui/dom';
-import { t, tx, lang, flagEmoji, fmtNumber, L, dataLang } from '../app/i18n';
+import { t, tx, lang, flagEmoji, fmtNumber, L, dataLang, Lc } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
 import { zoomable } from '../ui/zoom';
 import { fmtWhen, itemWhen, itemThumb, sampleEl, quoteEl, type CollectionItem, type StoryKind } from '../modes/stories';
@@ -1425,7 +1425,7 @@ export class Learn {
     }
     add(this.card, list);
     if (!q.answered && picked.length === set.length) {
-      const again = h('button', { type: 'button', class: 'pill sm' }, L('Start over', 'Volver a empezar'));
+      const again = h('button', { type: 'button', class: 'pill sm' }, L('Start over', 'Empezar de nuevo'));
       again.addEventListener('click', () => { cur.downPicked = []; this.renderQuiz(); });
       const check = h('button', { type: 'button', class: 'pill primary sm', 'data-check': '' }, L('Check', 'Comprobar'));
       check.addEventListener('click', () => {
@@ -1436,7 +1436,7 @@ export class Learn {
         cur.ok = ok;
         cur.given = cur.downPicked!.map((k) => { const x = set.find((y) => y.id === k)!; return es() ? x.name[1] : x.name[0]; }).join(' → ');
         this.scored(ok);
-        this.renderQuiz({ ok, text: ok ? L('Correct! All four in order.', '¡Correcto! Las cuatro en orden.') : L('{0} of {1} in the right place.', '{0} de {1} en su lugar.', placed, right.length) });
+        this.renderQuiz({ ok, text: ok ? Lc('four sea creatures by depth', 'Correct! All four in order.', '¡Correcto! Las cuatro en orden.') : L('{0} of {1} in the right place.', '{0} de {1} en su lugar.', placed, right.length) });
       });
       add(this.card, h('div', { class: 'tool-actions' }, again, check));
     } else if (!q.answered && picked.length) add(this.card, h('div', { class: 'tool-hint' }, L('Tap a numbered one to take it back.', 'Toca uno con número para quitarlo.')));
@@ -1937,7 +1937,7 @@ export class Learn {
     if (q.peek) return;
     const again = h('button', { type: 'button', class: 'pill primary' }, icon(RotateCcw, 16), L('Play again', 'Jugar otra vez'));
     again.addEventListener('click', () => void (q.kind === 'region' ? this.startRegionQuiz(q.region, !!q.all) : this.startQuiz(q.kind, q.region)));
-    const done = h('button', { type: 'button', class: 'pill' }, L('Done', 'Terminar'));
+    const done = h('button', { type: 'button', class: 'pill' }, Lc('a button: finish', 'Done', 'Terminar'));
     done.addEventListener('click', () => this.stopQuiz());
     const list = h('div', { class: 'quiz-sum', role: 'list' });
     for (const cur of q.qs) list.append(this.resultRow(cur.kind ?? q.kind, cur));
@@ -1953,7 +1953,7 @@ export class Learn {
     add(this.card, this.quizHead(`🗓️ ${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)}`, `${q.score}/${n}`));
     if (q.peek) return;
     const marks = marksOf(q.qs);
-    const done = h('button', { type: 'button', class: 'pill' }, L('Done', 'Terminar'));
+    const done = h('button', { type: 'button', class: 'pill' }, Lc('a button: finish', 'Done', 'Terminar'));
     done.addEventListener('click', () => void this.stopQuiz());
     const list = h('div', { class: 'quiz-sum', role: 'list' });
     for (const cur of q.qs) list.append(this.resultRow(cur.kind ?? q.kind, cur));
@@ -2054,7 +2054,7 @@ export class Learn {
     }
     add(this.card, list);
     if (!q.answered && picked.length === set.length) {
-      const again = h('button', { type: 'button', class: 'pill sm' }, L('Start over', 'Volver a empezar'));
+      const again = h('button', { type: 'button', class: 'pill sm' }, L('Start over', 'Empezar de nuevo'));
       again.addEventListener('click', () => { cur.picked = []; this.renderQuiz(); });
       const check = h('button', { type: 'button', class: 'pill primary sm', 'data-check': '' }, L('Check', 'Comprobar'));
       check.addEventListener('click', () => this.answerOrder());
@@ -2538,7 +2538,7 @@ export class Learn {
     next.addEventListener('click', () => this.nextStep());
     // At the last stop, once it has played through, ▶ becomes ↺: play it again from the start.
     const again = !tr.auto && tr.i === tr.steps.length - 1;
-    const autoLabel = tr.auto ? L('Pause', 'Pausa') : again ? L('Start again', 'Empezar de nuevo') : L('Play', 'Reproducir');
+    const autoLabel = tr.auto ? L('Pause', 'Pausa') : again ? L('Start again', 'Empezar de nuevo') : Lc('to play a recording or an animation', 'Play', 'Reproducir');
     const auto = h('button', { type: 'button', class: 'icon-btn sm tour-auto', 'aria-label': 'Auto', title: autoLabel, 'aria-pressed': String(tr.auto), 'data-state': tr.auto ? 'playing' : again ? 'again' : 'paused' }, icon(tr.auto ? Pause : again ? RotateCcw : Play, 16));
     auto.addEventListener('click', () => {
       if (again) { tr.auto = true; tr.i = 0; void this.showStep(); this.renderTour(); return; }

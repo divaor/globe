@@ -5,7 +5,7 @@ import type { App } from '../../app/app';
 import type { Shell } from '../../ui/shell';
 import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, RenderCtx } from '../types';
 import { loadJSON } from '../../data/store';
-import { fmtNumber, lang } from '../../app/i18n';
+import { fmtNumber, lang, Lc } from '../../app/i18n';
 import { L } from '../../play/host';
 import { h } from '../../ui/dom';
 import { geoDistance, geoInterpolate } from 'd3-geo';
@@ -299,7 +299,7 @@ export const magneticLayer: LayerDef = {
     if (!mag) return false;
     const year = new Date().getUTCFullYear() + new Date().getUTCMonth() / 12;
     const d = declination(mag.wmm, lon, lat, year);
-    const side = d >= 0 ? L('east', 'al este') : L('west', 'al oeste');
+    const side = d >= 0 ? Lc('direction: to the east', 'east', 'al este') : Lc('direction: to the west', 'west', 'al oeste');
     ui.card('🧭', L('Where a compass points', 'Hacia dónde apunta una brújula'), `${fmtNumber(Math.abs(lat), 1)}°${lat >= 0 ? 'N' : 'S'}, ${fmtNumber(Math.abs(lon), 1)}°${lon >= 0 ? 'E' : L('W', 'O')}`,
       [{ label: L('Magnetic declination', 'Declinación magnética'), value: L('{0}° {1} of true north', '{0}° {1} del norte verdadero', fmtNumber(Math.abs(d), 1), side), icon: '🧭' }],
       [{ label: 'NOAA WMM', href: 'https://www.ncei.noaa.gov/products/world-magnetic-model' }],

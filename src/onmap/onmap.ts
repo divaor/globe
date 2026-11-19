@@ -14,7 +14,7 @@ import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear } from '../ui/dom';
-import { subregion, t, dataLang, tx } from '../app/i18n';
+import { subregion, t, dataLang, tx, Lc } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { L, es, type PlayHost, type HostGame } from '../play/host';
 import { shareText } from '../play/pin';
@@ -340,7 +340,7 @@ export class PutOnMap implements HostGame {
     const title = `${s.day ? '🗓️' : '📍'} ${s.day ? L('Puzzle of the day', 'Reto del día') : L('Put it on the map', 'Ponlo en el mapa')} · ${this.scopeName(s.scope)}`;
     card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     const greens = s.items.filter((it) => it.locked).length;
-    card.append(h('div', { class: 'hop-stats', 'data-onmap': 'status' }, `${MIX_TEXT[s.mix].icon} ${tx(MIX_TEXT[s.mix])} · ${L('Check', 'Comprobación')} ${Math.min(s.rows.length + (s.done ? 0 : 1), TRIES)}/${TRIES} · ✅ ${greens}/${ITEMS}`));
+    card.append(h('div', { class: 'hop-stats', 'data-onmap': 'status' }, `${MIX_TEXT[s.mix].icon} ${tx(MIX_TEXT[s.mix])} · ${Lc('a count of tries', 'Check', 'Comprobación')} ${Math.min(s.rows.length + (s.done ? 0 : 1), TRIES)}/${TRIES} · ✅ ${greens}/${ITEMS}`));
     if (s.done) { this.renderDone(); return; }
     if (s.active != null && narrow() && !s.list && !s.fold) { this.renderPlacing(); return; }
     const prompt = s.active != null

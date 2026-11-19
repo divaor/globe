@@ -11,11 +11,11 @@ const KEY = 'atlas-globe:progress';
 
 export type Subject = 'geo' | 'history' | 'culture' | 'languages' | 'science' | 'sport';
 /** The subjects and their quizzes (the daily challenge counts each question for its own quiz's subject). */
-export const SUBJECTS: Record<Subject, { icon: string; en: string; es: string; quizzes: string[] }> = {
+export const SUBJECTS: Record<Subject, { icon: string; en: string; es: string; ctx?: string; quizzes: string[] }> = {
   geo: { icon: '🗺️', en: 'Geography', es: 'Geografía', quizzes: ['find', 'flag', 'capital', 'region', 'hop', 'where', 'link'] },
   history: { icon: '🏛️', en: 'History', es: 'Historia', quizzes: ['when', 'order', 'detective', 'era', 'civ', 'journey'] },
   culture: { icon: '🎨', en: 'Arts and culture', es: 'Arte y cultura', quizzes: ['dish', 'faith', 'listen', 'opening', 'artist', 'site', 'museum'] },
-  languages: { icon: '🗣️', en: 'Languages', es: 'Lenguas', quizzes: ['script', 'family'] },
+  languages: { icon: '🗣️', en: 'Languages', es: 'Lenguas', ctx: 'languages and scripts, a field of study', quizzes: ['script', 'family'] },
   science: { icon: '🔬', en: 'Science and nature', es: 'Ciencia y naturaleza', quizzes: ['period', 'plague', 'disaster', 'inventor', 'world', 'landed', 'constellation', 'element', 'habitat', 'lives', 'grows', 'season'] },
   sport: { icon: '🏅', en: 'Sport', es: 'Deporte', quizzes: ['champion'] },
 };
@@ -115,7 +115,7 @@ export const BADGES: Badge[] = [
   { id: 'play-sharp', icon: '🎯', en: 'Sharpshooter', es: 'Puntería', how: { en: 'A Pin it pin within 25 km', es: 'Un pin de Pon el pin a menos de 25 km' }, goal: 1, have: (p) => Number(p.play.feats.includes('pin-25km')) },
   { id: 'play-hilo', icon: '📈', en: 'Ten in a row', es: 'Diez seguidas', how: { en: '10 right in a row in Higher or lower', es: '10 aciertos seguidos en Más o menos' }, goal: 1, have: (p) => Number(p.play.feats.includes('hilo-10')) },
   { id: 'play-tour', icon: '🧳', en: 'Perfect tour', es: 'Viaje perfecto', how: { en: 'A Grand tour in the best order', es: 'Una gran vuelta en el mejor orden' }, goal: 1, have: (p) => Number(p.play.feats.includes('tour-par')) },
-  { id: 'play-names', icon: '📝', en: 'Name them all', es: 'Todos nombrados', how: { en: 'Every country of a continent, named', es: 'Todos los países de un continente, nombrados' }, goal: 1, have: (p) => Number(p.play.feats.includes('names-all')) },
+  { id: 'play-names', icon: '📝', en: 'Name them all', es: 'Nómbralos todos', how: { en: 'Every country of a continent, named', es: 'Todos los países de un continente, nombrados' }, goal: 1, have: (p) => Number(p.play.feats.includes('names-all')) },
   { id: 'play-chain', icon: '⛓️', en: 'Long chain', es: 'Cadena larga', how: { en: 'A Border chain of 15 countries', es: 'Una cadena de fronteras de 15 países' }, goal: 1, have: (p) => Number(p.play.feats.includes('chain-15')) },
   { id: 'play-outline', icon: '🖼️', en: 'Sharp eye', es: 'Buen ojo', how: { en: 'Five outlines, each at the first try', es: 'Cinco siluetas, cada una al primer intento' }, goal: 1, have: (p) => Number(p.play.feats.includes('outline-5')) },
   { id: 'play-every', icon: '🗺️', en: 'Every map game', es: 'Todos los juegos', how: { en: `Play all ${GAMES.length} map games`, es: `Juega los ${GAMES.length} juegos en el mapa` }, goal: GAMES.length, have: (p) => GAMES.filter((g) => p.play.games[g] || (g === 'hop' && p.play.rounds > 0)).length }, // (routes finished before v0.25.0 count for Border hop)
@@ -138,7 +138,7 @@ export const BADGES: Badge[] = [
   { id: 'app-diver', icon: '🤿', en: 'Diver', es: 'Buzo', how: { en: 'Dive below 6,000 m', es: 'Bucea a más de 6 000 m' }, goal: 1, have: (p) => Number(p.feats.includes('dive-6000')) },
   // v0.34.0 Master the world.
   ...(['EU', 'AS', 'AF', 'NA', 'SA', 'OC'] as const).map((ct): Badge => {
-    const n = { EU: ['Europe', 'Europa'], AS: ['Asia', 'Asia'], AF: ['Africa', 'África'], NA: ['North and Central America', 'Norte y Centroamérica'], SA: ['South America', 'Sudamérica'], OC: ['Oceania', 'Oceanía'] }[ct];
+    const n = { EU: ['Europe', 'Europa'], AS: ['Asia', 'Asia'], AF: ['Africa', 'África'], NA: ['North and Central America', 'Norte y Centroamérica'], SA: ['South America', 'América del Sur'], OC: ['Oceania', 'Oceanía'] }[ct];
     return { id: `master-cap-${ct}`, icon: '🏛️', en: `Capitals of ${n[0]}`, es: `Capitales de ${n[1]}`, how: { en: `Master every capital of ${n[0]}`, es: `Domina todas las capitales de ${n[1]}` }, goal: 1, have: (p) => Number(p.feats.includes(`master-cap-${ct}`)) };
   }),
   { id: 'master-cap-all', icon: '👑', en: 'Every capital', es: 'Todas las capitales', how: { en: 'Master every capital of the world', es: 'Domina todas las capitales del mundo' }, goal: 1, have: (p) => Number(p.feats.includes('master-cap-all')) },
@@ -333,7 +333,7 @@ export function progressPanel(onReset: () => void): HTMLElement {
     days.push(h('span', { class: `day-dot${r ? (r.s === r.n ? ' perfect' : ' done') : ''}`, title: `${dayKey(d)}${r ? ` · ${r.s}/${r.n}` : ''}` }, d.toLocaleDateString(appLocale(), { weekday: 'narrow' })));
   }
   body.append(h('h3', { class: 'sec-title' }, `🗓️ ${L('Daily challenge', 'Reto del día')}`),
-    h('div', { class: 'prog-row' }, h('span', null, `🔥 ${L('Streak', 'Racha')}: ${fmt(current(p.daily))} · ${L('best', 'mejor')}: ${fmt(p.daily.best)}`), h('span', { class: 'day-dots' }, ...days)),
+    h('div', { class: 'prog-row' }, h('span', null, `🔥 ${L('Streak', 'Racha')}: ${fmt(current(p.daily))} · ${L('best', 'récord')}: ${fmt(p.daily.best)}`), h('span', { class: 'day-dots' }, ...days)),
     h('div', { class: 'badge-list' }, ...BADGES.filter((b) => b.id.startsWith('daily-')).map(badge)));
   for (const s of Object.keys(SUBJECTS) as Subject[]) {
     const S = SUBJECTS[s];
@@ -344,7 +344,7 @@ export function progressPanel(onReset: () => void): HTMLElement {
       h('span', { style: `width:${Math.round(Math.min(1, right / (next ?? 300)) * 100)}%` }));
     body.append(h('h3', { class: 'sec-title', 'data-subject': s }, `${S.icon} ${es() ? S.es : S.en} ${lvl}`),
       h('div', { class: 'prog-row' }, h('span', null, `${fmt(right)} ${L('right answers', 'respuestas correctas')}${next ? ` · ${L('next medal at', 'próxima medalla con')} ${fmt(next)}` : ''}`), bar),
-      h('div', { class: 'prog-row muted small' }, `${fmt(p.played[s] ?? 0)} ${(p.played[s] ?? 0) === 1 ? L('quiz played', 'concurso jugado') : L('quizzes played', 'concursos jugados')} · 🔥 ${fmt(current(p.days[s]))} ${current(p.days[s]) === 1 ? L('day in a row', 'día seguido') : L('days in a row', 'días seguidos')} (${L('best', 'mejor')} ${fmt(p.days[s]?.best ?? 0)})`),
+      h('div', { class: 'prog-row muted small' }, `${fmt(p.played[s] ?? 0)} ${(p.played[s] ?? 0) === 1 ? L('quiz played', 'concurso jugado') : L('quizzes played', 'concursos jugados')} · 🔥 ${fmt(current(p.days[s]))} ${current(p.days[s]) === 1 ? L('day in a row', 'día seguido') : L('days in a row', 'días seguidos')} (${L('best', 'récord')} ${fmt(p.days[s]?.best ?? 0)})`),
       h('div', { class: 'badge-list' }, ...BADGES.filter((b) => b.subject === s).map(badge)));
   }
   const g = p.play;

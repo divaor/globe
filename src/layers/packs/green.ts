@@ -7,7 +7,7 @@
 // numbered stars. The breathing planet plays NASA's twelve monthly pictures of how green the land is.
 import { geoArea, geoContains, geoDistance, geoInterpolate } from 'd3-geo';
 import type { Topology } from 'topojson-specification';
-import { lang, fmtCompact, L } from '../../app/i18n';
+import { lang, fmtCompact, L, Lc } from '../../app/i18n';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import { loadJSON, shapesFrom, dataUrl, type Shape } from '../../data/store';
@@ -204,7 +204,7 @@ async function bestPlaces(p: Plant) {
   });
   if (!f.best?.length) list.append(h('p', { class: 'muted small' }, L('No park or garden of ours lies in its range.', 'Ningún parque o jardín de los nuestros está en su área.')));
   body.append(list);
-  SHELL?.openPanel('green-best', `${p.e} ${L('Best places to see it', 'Mejores lugares para verla')}`, body);
+  SHELL?.openPanel('green-best', `${p.e} ${Lc('a plant', 'Best places to see it', 'Mejores lugares para verla')}`, body);
 }
 
 async function relativesPanel(p: Plant) {
@@ -229,7 +229,7 @@ export const plantsOfTheWorld: LayerDef = {
   options: [
     { id: 'show', label: { en: 'Show', es: 'Mostrar' }, type: 'select', default: 'all', choices: [{ value: 'all', label: { en: 'All plants', es: 'Todas las plantas' }, icon: '🌿' }, ...(Object.keys(PLANT_GROUPS) as PlantGroup[]).map((g) => ({ value: g, label: PLANT_GROUPS[g].name, icon: PLANT_GROUPS[g].icon }))] },
     { id: 'status', label: { en: 'Status', es: 'Estado' }, type: 'select', default: 'all', choices: [
-      { value: 'all', label: { en: 'All', es: 'Todas' } },
+      { value: 'all', label: { en: 'All', es: 'Todas', ctx: 'all plants' } },
       { value: 'endangered', label: { en: 'Threatened (vulnerable, endangered, critically)', es: 'Amenazadas (vulnerables, en peligro, en peligro crítico)' }, icon: '⚠️' },
     ] },
   ],

@@ -130,7 +130,7 @@ export class Space {
     if (!force && this.shell.sheet.isOpen('space')) { this.shell.sheet.close(); return; }
     const wrap = h('div', { class: 'space-panel' });
     const top = h('div', { class: 'space-actions' });
-    const earth = h('button', { type: 'button', class: `pill${this.active ? '' : ' on'}`, 'data-world': 'earth' }, icon(EarthIcon, 16), L('Earth', 'La Tierra'));
+    const earth = h('button', { type: 'button', class: `pill${this.active ? '' : ' on'}`, 'data-world': 'earth' }, icon(EarthIcon, 16), L('Earth', 'Tierra'));
     earth.addEventListener('click', () => { this.shell.sheet.close(); void this.exit(); });
     top.append(earth);
     if (this.openOrrery) {

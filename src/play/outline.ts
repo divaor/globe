@@ -18,7 +18,7 @@ import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
 import { L, es, type PlayHost, type HostGame } from './host';
 
-const CONT: Record<string, { en: string; es: string }> = { AF: { en: 'Africa', es: 'África' }, AS: { en: 'Asia', es: 'Asia' }, EU: { en: 'Europe', es: 'Europa' }, NA: { en: 'North or Central America', es: 'Norte o Centroamérica' }, SA: { en: 'South America', es: 'Sudamérica' }, OC: { en: 'Oceania', es: 'Oceanía' } };
+const CONT: Record<string, { en: string; es: string }> = { AF: { en: 'Africa', es: 'África' }, AS: { en: 'Asia', es: 'Asia' }, EU: { en: 'Europe', es: 'Europa' }, NA: { en: 'North or Central America', es: 'Norte o Centroamérica' }, SA: { en: 'South America', es: 'América del Sur' }, OC: { en: 'Oceania', es: 'Oceanía' } };
 
 interface Attrs { data: Record<string, { un_member?: boolean; area_km2?: number }> }
 interface State {
@@ -175,7 +175,7 @@ export class Outline implements HostGame {
       this.card.append(res);
       const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `🖼️ ${L('Outline', 'Silueta')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.results.map((r) => ['🟥', '🟩', '🟨', '🟧', '🟧', '🟧'][r.tries] ?? '🟥').join('')}`));
-      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Jugar otra vez'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ hard: s.hard }); });
       res.append(h('div', { class: 'result-actions' }, share, again));
       return;
@@ -199,7 +199,7 @@ export class Outline implements HostGame {
     const go = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'guess' }, icon(Send, 15), L('Guess', 'Adivinar'));
     go.addEventListener('click', () => this.guess(input.value));
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') this.guess(input.value); });
-    const skip = h('button', { type: 'button', class: 'pill sm', 'data-game': 'skip' }, icon(SkipForward, 15), L('Show me', 'Ver la respuesta'));
+    const skip = h('button', { type: 'button', class: 'pill sm', 'data-game': 'skip' }, icon(SkipForward, 15), L('Show the answer', 'Ver la respuesta'));
     skip.addEventListener('click', () => this.solve('skip'));
     this.card.append(list, input, h('div', { class: 'hop-actions' }, go, skip));
     setTimeout(() => input.focus(), 50);

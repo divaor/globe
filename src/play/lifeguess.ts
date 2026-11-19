@@ -130,7 +130,7 @@ export class WhoseLife implements HostGame {
       this.card.append(res);
       const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `👤 ${L('Whose life is this?', '¿De quién es esta vida?')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.rounds.map((r) => (r.answer !== r.who.id ? '🟥' : r.shown === 1 ? '🎯' : r.shown <= 2 ? '🟩' : '🟨')).join('')}`));
-      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Jugar otra vez'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start(); });
       res.append(h('div', { class: 'result-actions' }, share, again));
       return;

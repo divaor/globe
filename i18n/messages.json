@@ -1,6 +1,6 @@
 {
- "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/i18n/<lang>.json, maps each \"en\" to its translation; \"es\" is the Spanish, for reference.",
- "count": 3202,
+ "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
+ "count": 3240,
  "messages": [
   {
    "en": " (below sea level)",
@@ -255,7 +255,7 @@
    "en": "1800–1945",
    "es": "1800–1945",
    "where": [
-    "src/app/i18n.ts:182"
+    "src/app/i18n.ts:183"
    ]
   },
   {
@@ -304,7 +304,7 @@
    "en": "3D shading",
    "es": "Sombreado 3D",
    "where": [
-    "src/app/i18n.ts:53"
+    "src/app/i18n.ts:54"
    ]
   },
   {
@@ -412,7 +412,7 @@
    "en": "A 3D view of Earth as seen from space.",
    "es": "La Tierra en 3D, como se ve desde el espacio.",
    "where": [
-    "src/app/i18n.ts:132"
+    "src/app/i18n.ts:133"
    ]
   },
   {
@@ -426,7 +426,7 @@
    "en": "A CSV of countries, regions or places becomes a map.",
    "es": "Un CSV de países, regiones o lugares se vuelve un mapa.",
    "where": [
-    "src/app/i18n.ts:115"
+    "src/app/i18n.ts:116"
    ]
   },
   {
@@ -461,7 +461,7 @@
    "en": "A balanced classic for world atlases.",
    "es": "Un clásico equilibrado de los atlas.",
    "where": [
-    "src/app/i18n.ts:136"
+    "src/app/i18n.ts:137"
    ]
   },
   {
@@ -890,7 +890,7 @@
    "en": "A rounded compromise designed for small-scale maps.",
    "es": "Un compromiso redondeado para mapas del mundo.",
    "where": [
-    "src/app/i18n.ts:139"
+    "src/app/i18n.ts:140"
    ]
   },
   {
@@ -939,7 +939,7 @@
    "en": "A softer Mercator that shows the poles.",
    "es": "Un Mercator suavizado que muestra los polos.",
    "where": [
-    "src/app/i18n.ts:135"
+    "src/app/i18n.ts:136"
    ]
   },
   {
@@ -1002,7 +1002,7 @@
    "en": "A tour of the great things people built: where, when, who built them, why and how.",
    "es": "Un recorrido por las grandes obras humanas: dónde, cuándo, quién las construyó, por qué y cómo.",
    "where": [
-    "src/app/i18n.ts:211"
+    "src/app/i18n.ts:212"
    ]
   },
   {
@@ -1114,7 +1114,7 @@
    "en": "About",
    "es": "Sobre la batalla",
    "where": [
-    "src/app/i18n.ts:200"
+    "src/app/i18n.ts:201"
    ]
   },
   {
@@ -1177,7 +1177,7 @@
    "en": "About and credits",
    "es": "Acerca de y créditos",
    "where": [
-    "src/app/i18n.ts:71"
+    "src/app/i18n.ts:72"
    ]
   },
   {
@@ -1233,14 +1233,14 @@
    "en": "Active filters",
    "es": "Filtros activos",
    "where": [
-    "src/app/i18n.ts:18"
+    "src/app/i18n.ts:19"
    ]
   },
   {
    "en": "Add filters",
    "es": "Añadir filtros",
    "where": [
-    "src/app/i18n.ts:19"
+    "src/app/i18n.ts:20"
    ]
   },
   {
@@ -1284,14 +1284,14 @@
    "en": "Add your data",
    "es": "Agregar tus datos",
    "where": [
-    "src/app/i18n.ts:114"
+    "src/app/i18n.ts:115"
    ]
   },
   {
    "en": "Africa",
    "es": "África",
    "where": [
-    "src/app/i18n.ts:93",
+    "src/app/i18n.ts:94",
     "src/master/master.ts:52",
     "src/play/hop.ts:32",
     "src/play/names.ts:22",
@@ -1344,7 +1344,7 @@
    "en": "Aftermath",
    "es": "Después",
    "where": [
-    "src/app/i18n.ts:188"
+    "src/app/i18n.ts:189"
    ]
   },
   {
@@ -1358,12 +1358,8 @@
   {
    "en": "Age",
    "es": "Edad",
-   "esAlso": [
-    "Época"
-   ],
    "where": [
     "src/green/cards.ts:112",
-    "src/layers/packs/heritage.ts:384",
     "src/layers/packs/inside.ts:383"
    ]
   },
@@ -1405,16 +1401,12 @@
   {
    "en": "All",
    "es": "Todos",
-   "esAlso": [
-    "Todas",
-    "Todo"
-   ],
    "where": [
-    "src/app/i18n.ts:264",
-    "src/app/i18n.ts:321",
-    "src/artguide/data.ts:90",
-    "src/fill/fill.ts:44",
-    "src/layers/packs/green.ts:232"
+    "src/layers/packs/green.ts:322",
+    "src/layers/packs/green.ts:386",
+    "src/layers/packs/wild.ts:181",
+    "src/layers/packs/wild.ts:285",
+    "src/ui/playlists.ts:245"
    ]
   },
   {
@@ -1450,7 +1442,7 @@
    "en": "All conflicts",
    "es": "Todos los conflictos",
    "where": [
-    "src/app/i18n.ts:173"
+    "src/app/i18n.ts:174"
    ]
   },
   {
@@ -1528,7 +1520,7 @@
    "en": "All stories",
    "es": "Todas las historias",
    "where": [
-    "src/app/i18n.ts:312"
+    "src/app/i18n.ts:313"
    ]
   },
   {
@@ -1649,7 +1641,7 @@
    "en": "Ambient mode",
    "es": "Modo ambiente",
    "where": [
-    "src/app/i18n.ts:59"
+    "src/app/i18n.ts:60"
    ]
   },
   {
@@ -1852,7 +1844,7 @@
    "en": "Antarctica",
    "es": "Antártida",
    "where": [
-    "src/app/i18n.ts:97"
+    "src/app/i18n.ts:98"
    ]
   },
   {
@@ -1866,7 +1858,7 @@
    "en": "Antiquity",
    "es": "Antigüedad",
    "where": [
-    "src/app/i18n.ts:179"
+    "src/app/i18n.ts:180"
    ]
   },
   {
@@ -1916,7 +1908,7 @@
    "en": "App updated",
    "es": "App actualizada",
    "where": [
-    "src/app/i18n.ts:89"
+    "src/app/i18n.ts:90"
    ]
   },
   {
@@ -2008,7 +2000,7 @@
    "en": "Area",
    "es": "Superficie",
    "where": [
-    "src/app/i18n.ts:76",
+    "src/app/i18n.ts:77",
     "src/green/cards.ts:137",
     "src/play/hop.ts:418",
     "src/tools/tools.ts:159",
@@ -2114,7 +2106,7 @@
    "en": "Art of the world",
    "es": "Arte del mundo",
    "where": [
-    "src/app/i18n.ts:246",
+    "src/app/i18n.ts:247",
     "src/learn/learn.ts:2424",
     "src/modes/stories.ts:202"
    ]
@@ -2165,7 +2157,7 @@
    "en": "Asia",
    "es": "Asia",
    "where": [
-    "src/app/i18n.ts:92",
+    "src/app/i18n.ts:93",
     "src/master/master.ts:52",
     "src/play/hop.ts:32",
     "src/play/names.ts:22",
@@ -2244,7 +2236,7 @@
    "en": "Athletes",
    "es": "Atletas",
    "where": [
-    "src/app/i18n.ts:300"
+    "src/app/i18n.ts:301"
    ]
   },
   {
@@ -2258,14 +2250,14 @@
    "en": "Atlas (light)",
    "es": "Atlas (claro)",
    "where": [
-    "src/app/i18n.ts:41"
+    "src/app/i18n.ts:42"
    ]
   },
   {
    "en": "Atlas Globe",
    "es": "Atlas Globe",
    "where": [
-    "src/app/i18n.ts:14"
+    "src/app/i18n.ts:15"
    ]
   },
   {
@@ -2314,7 +2306,7 @@
    "en": "Auto",
    "es": "Auto",
    "where": [
-    "src/app/i18n.ts:56"
+    "src/app/i18n.ts:57"
    ]
   },
   {
@@ -2370,7 +2362,7 @@
    "en": "Azimuthal equidistant",
    "es": "Azimutal equidistante",
    "where": [
-    "src/app/i18n.ts:129"
+    "src/app/i18n.ts:130"
    ]
   },
   {
@@ -2390,14 +2382,9 @@
   },
   {
    "en": "Back",
-   "es": "Atrás",
-   "esAlso": [
-    "Volver"
-   ],
+   "es": "Volver",
    "where": [
-    "src/app/i18n.ts:28",
-    "src/play/hop.ts:406",
-    "src/play/tour.ts:226"
+    "src/app/i18n.ts:29"
    ]
   },
   {
@@ -2488,14 +2475,14 @@
    "en": "Battery saver",
    "es": "Ahorro de batería",
    "where": [
-    "src/app/i18n.ts:58"
+    "src/app/i18n.ts:59"
    ]
   },
   {
    "en": "Battles",
    "es": "Batallas",
    "where": [
-    "src/app/i18n.ts:189",
+    "src/app/i18n.ts:190",
     "src/play/pin.ts:22"
    ]
   },
@@ -2540,7 +2527,7 @@
    "en": "Beside another life…",
    "es": "Junto a otra vida…",
    "where": [
-    "src/app/i18n.ts:268"
+    "src/app/i18n.ts:269"
    ]
   },
   {
@@ -2606,15 +2593,11 @@
   {
    "en": "Best places to see it",
    "es": "Mejores lugares para verlo",
-   "esAlso": [
-    "Mejores lugares para verla"
-   ],
    "where": [
-    "src/green/cards.ts:74",
-    "src/green/finder.ts:201",
-    "src/layers/packs/green.ts:207",
     "src/layers/packs/wild.ts:155",
-    "src/layers/packs/wild.ts:208"
+    "src/layers/packs/wild.ts:208",
+    "src/wild/cards.ts:70",
+    "src/wild/finder.ts:263"
    ]
   },
   {
@@ -2774,7 +2757,7 @@
    "en": "Books and writers",
    "es": "Libros y escritores",
    "where": [
-    "src/app/i18n.ts:243",
+    "src/app/i18n.ts:244",
     "src/learn/learn.ts:2424",
     "src/modes/stories.ts:201"
    ]
@@ -2830,7 +2813,7 @@
    "en": "Borders through time",
    "es": "Fronteras en el tiempo",
    "where": [
-    "src/app/i18n.ts:167",
+    "src/app/i18n.ts:168",
     "src/modes/history.ts:60",
     "src/modes/history.ts:198"
    ]
@@ -2845,12 +2828,8 @@
   {
    "en": "Born",
    "es": "Nació",
-   "esAlso": [
-    "Nacidos"
-   ],
    "where": [
-    "src/app/i18n.ts:271",
-    "src/layers/packs/born.ts:95",
+    "src/app/i18n.ts:272",
     "src/lives/born.ts:102"
    ]
   },
@@ -2905,7 +2884,7 @@
    "en": "Both in {place}",
    "es": "Ambos en {place}",
    "where": [
-    "src/app/i18n.ts:276"
+    "src/app/i18n.ts:277"
    ]
   },
   {
@@ -2962,14 +2941,14 @@
    "en": "Browse",
    "es": "Explorar",
    "where": [
-    "src/app/i18n.ts:315"
+    "src/app/i18n.ts:316"
    ]
   },
   {
    "en": "Browse everything",
    "es": "Explorarlo todo",
    "where": [
-    "src/app/i18n.ts:319"
+    "src/app/i18n.ts:320"
    ]
   },
   {
@@ -3112,7 +3091,7 @@
    "es": "Cancelar",
    "where": [
     "src/app/backup.ts:127",
-    "src/app/i18n.ts:270",
+    "src/app/i18n.ts:271",
     "src/ui/terrain.ts:120"
    ]
   },
@@ -3134,14 +3113,14 @@
    "en": "Capital",
    "es": "Capital",
    "where": [
-    "src/app/i18n.ts:74"
+    "src/app/i18n.ts:75"
    ]
   },
   {
    "en": "Capitals",
    "es": "Capitales",
    "where": [
-    "src/app/i18n.ts:44",
+    "src/app/i18n.ts:45",
     "src/fill/fill.ts:37",
     "src/fill/states.ts:26",
     "src/learn/learn.ts:345",
@@ -3180,7 +3159,7 @@
    "en": "Casualties",
    "es": "Bajas",
    "where": [
-    "src/app/i18n.ts:197"
+    "src/app/i18n.ts:198"
    ]
   },
   {
@@ -3209,7 +3188,7 @@
    "en": "Cenozoic (since 66 million years ago)",
    "es": "Cenozoico (desde hace 66 millones de años)",
    "where": [
-    "src/app/i18n.ts:177"
+    "src/app/i18n.ts:178"
    ]
   },
   {
@@ -3238,7 +3217,7 @@
    "en": "Champions",
    "es": "Campeón",
    "where": [
-    "src/app/i18n.ts:291"
+    "src/app/i18n.ts:292"
    ]
   },
   {
@@ -3280,14 +3259,10 @@
   {
    "en": "Check",
    "es": "Comprobar",
-   "esAlso": [
-    "Comprobación"
-   ],
    "where": [
     "src/learn/learn.ts:1430",
     "src/learn/learn.ts:2059",
     "src/master/master.ts:704",
-    "src/onmap/onmap.ts:343",
     "src/onmap/onmap.ts:354"
    ]
   },
@@ -3344,7 +3319,7 @@
    "en": "Cities",
    "es": "Ciudades",
    "where": [
-    "src/app/i18n.ts:45",
+    "src/app/i18n.ts:46",
     "src/master/master.ts:42",
     "src/onmap/onmap.ts:42"
    ]
@@ -3381,12 +3356,8 @@
   },
   {
    "en": "Clear",
-   "es": "Vaciar",
-   "esAlso": [
-    "Borrar"
-   ],
+   "es": "Borrar",
    "where": [
-    "src/guide/guide.ts:288",
     "src/tools/tools.ts:87"
    ]
   },
@@ -3408,7 +3379,7 @@
    "en": "Climate & weather",
    "es": "Clima y tiempo",
    "where": [
-    "src/app/i18n.ts:104"
+    "src/app/i18n.ts:105"
    ]
   },
   {
@@ -3444,7 +3415,7 @@
    "en": "Close",
    "es": "Cerrar",
    "where": [
-    "src/app/i18n.ts:72",
+    "src/app/i18n.ts:73",
     "src/guide/guide.ts:349",
     "src/guide/guide.ts:349",
     "src/ui/zoom.ts:33"
@@ -3561,7 +3532,7 @@
    "en": "Colour family = continent; every country has its own shade.",
    "es": "Familia de color = continente; cada país tiene su propio tono.",
    "where": [
-    "src/app/i18n.ts:99"
+    "src/app/i18n.ts:100"
    ]
   },
   {
@@ -3625,14 +3596,14 @@
    "en": "Coming soon",
    "es": "Próximamente",
    "where": [
-    "src/app/i18n.ts:343"
+    "src/app/i18n.ts:344"
    ]
   },
   {
    "en": "Compare",
    "es": "Comparar",
    "where": [
-    "src/app/i18n.ts:116",
+    "src/app/i18n.ts:117",
     "src/tools/tools.ts:37",
     "src/tools/tools.ts:128"
    ]
@@ -3672,21 +3643,21 @@
    "en": "Compromise",
    "es": "De compromiso",
    "where": [
-    "src/app/i18n.ts:148"
+    "src/app/i18n.ts:149"
    ]
   },
   {
    "en": "Conformal",
    "es": "Conforme",
    "where": [
-    "src/app/i18n.ts:146"
+    "src/app/i18n.ts:147"
    ]
   },
   {
    "en": "Conformal view from the opposite side of Earth.",
    "es": "Vista conforme desde el lado opuesto de la Tierra.",
    "where": [
-    "src/app/i18n.ts:145"
+    "src/app/i18n.ts:146"
    ]
   },
   {
@@ -3703,7 +3674,7 @@
    "en": "Continent",
    "es": "Continente",
    "where": [
-    "src/app/i18n.ts:77"
+    "src/app/i18n.ts:78"
    ]
   },
   {
@@ -3759,14 +3730,14 @@
    "en": "Continents",
    "es": "Continentes",
    "where": [
-    "src/app/i18n.ts:90"
+    "src/app/i18n.ts:91"
    ]
   },
   {
    "en": "Continents of {when}",
    "es": "Continentes de {when}",
    "where": [
-    "src/app/i18n.ts:216"
+    "src/app/i18n.ts:217"
    ]
   },
   {
@@ -3832,12 +3803,8 @@
   },
   {
    "en": "Correct! All four in order.",
-   "es": "¡Correcto! Las cuatro en orden.",
-   "esAlso": [
-    "¡Correcto! Los cuatro en orden."
-   ],
+   "es": "¡Correcto! Los cuatro en orden.",
    "where": [
-    "src/learn/learn.ts:1439",
     "src/learn/learn.ts:2092"
    ]
   },
@@ -3889,7 +3856,7 @@
    "en": "Could not load this filter’s data.",
    "es": "No se pudieron cargar los datos de este filtro.",
    "where": [
-    "src/app/i18n.ts:153"
+    "src/app/i18n.ts:154"
    ]
   },
   {
@@ -3918,7 +3885,7 @@
    "en": "Countries",
    "es": "Países",
    "where": [
-    "src/app/i18n.ts:43",
+    "src/app/i18n.ts:44",
     "src/fill/fill.ts:36",
     "src/layers/packs/heritage.ts:312",
     "src/master/master.ts:38",
@@ -3929,7 +3896,7 @@
    "en": "Countries are drawn with today’s borders: a team of the past (the Soviet Union, Yugoslavia) colours all the countries it is today. Tap a country for its result.",
    "es": "Los países se dibujan con sus fronteras de hoy: un equipo del pasado (la Unión Soviética, Yugoslavia) colorea todos los países que hoy lo forman. Toca un país para ver su resultado.",
    "where": [
-    "src/app/i18n.ts:307"
+    "src/app/i18n.ts:308"
    ]
   },
   {
@@ -3985,7 +3952,7 @@
    "en": "Country, capital or city",
    "es": "País, capital o ciudad",
    "where": [
-    "src/app/i18n.ts:35"
+    "src/app/i18n.ts:36"
    ]
   },
   {
@@ -4105,7 +4072,7 @@
    "en": "Culture & society",
    "es": "Cultura y sociedad",
    "where": [
-    "src/app/i18n.ts:107"
+    "src/app/i18n.ts:108"
    ]
   },
   {
@@ -4119,7 +4086,7 @@
    "en": "Currency",
    "es": "Moneda",
    "where": [
-    "src/app/i18n.ts:80"
+    "src/app/i18n.ts:81"
    ]
   },
   {
@@ -4147,7 +4114,7 @@
    "en": "Cycle through filters",
    "es": "Ir cambiando de filtro",
    "where": [
-    "src/app/i18n.ts:63"
+    "src/app/i18n.ts:64"
    ]
   },
   {
@@ -4286,7 +4253,7 @@
    "en": "Data credits",
    "es": "Créditos de datos",
    "where": [
-    "src/app/i18n.ts:155"
+    "src/app/i18n.ts:156"
    ]
   },
   {
@@ -4307,7 +4274,7 @@
    "en": "Date",
    "es": "Fecha",
    "where": [
-    "src/app/i18n.ts:194",
+    "src/app/i18n.ts:195",
     "src/space/orrery.ts:98"
    ]
   },
@@ -4378,7 +4345,7 @@
    "en": "Deaths so far (estimate)",
    "es": "Muertes hasta ahora (estimación)",
    "where": [
-    "src/app/i18n.ts:202"
+    "src/app/i18n.ts:203"
    ]
   },
   {
@@ -4526,7 +4493,7 @@
    "en": "Detail",
    "es": "Detalle",
    "where": [
-    "src/app/i18n.ts:54",
+    "src/app/i18n.ts:55",
     "src/ui/terrain.ts:135"
    ]
   },
@@ -4548,7 +4515,7 @@
    "en": "Details",
    "es": "Detalles",
    "where": [
-    "src/app/i18n.ts:187"
+    "src/app/i18n.ts:188"
    ]
   },
   {
@@ -4591,14 +4558,14 @@
    "en": "Did not take part",
    "es": "No participó",
    "where": [
-    "src/app/i18n.ts:295"
+    "src/app/i18n.ts:296"
    ]
   },
   {
    "en": "Died",
    "es": "Murió",
    "where": [
-    "src/app/i18n.ts:272",
+    "src/app/i18n.ts:273",
     "src/lives/born.ts:103"
    ]
   },
@@ -4656,6 +4623,8 @@
    "en": "Discovered",
    "es": "Descubrimiento",
    "where": [
+    "src/layers/packs/ocean.ts:275",
+    "src/layers/packs/ocean.ts:332",
     "src/sky/elements.ts:194",
     "src/space/space.ts:350"
    ]
@@ -4729,15 +4698,12 @@
   {
    "en": "Done",
    "es": "Hecho",
-   "esAlso": [
-    "Terminar"
-   ],
    "where": [
     "src/fill/fill.ts:645",
     "src/fill/states.ts:535",
     "src/learn/learn.ts:430",
     "src/learn/learn.ts:452",
-    "src/learn/learn.ts:1940"
+    "src/onmap/onmap.ts:595"
    ]
   },
   {
@@ -5041,7 +5007,7 @@
    "en": "Early modern era",
    "es": "Edad Moderna",
    "where": [
-    "src/app/i18n.ts:181"
+    "src/app/i18n.ts:182"
    ]
   },
   {
@@ -5054,9 +5020,6 @@
   {
    "en": "Earth",
    "es": "Tierra",
-   "esAlso": [
-    "La Tierra"
-   ],
    "where": [
     "src/space/orrery.ts:18",
     "src/space/space.ts:133"
@@ -5088,7 +5051,7 @@
    "en": "Earth science",
    "es": "Ciencias de la Tierra",
    "where": [
-    "src/app/i18n.ts:105"
+    "src/app/i18n.ts:106"
    ]
   },
   {
@@ -5173,14 +5136,14 @@
    "en": "Eckert IV",
    "es": "Eckert IV",
    "where": [
-    "src/app/i18n.ts:128"
+    "src/app/i18n.ts:129"
    ]
   },
   {
    "en": "Economy & energy",
    "es": "Economía y energía",
    "where": [
-    "src/app/i18n.ts:106"
+    "src/app/i18n.ts:107"
    ]
   },
   {
@@ -5344,49 +5307,49 @@
    "en": "Equal Earth",
    "es": "Equal Earth",
    "where": [
-    "src/app/i18n.ts:124"
+    "src/app/i18n.ts:125"
    ]
   },
   {
    "en": "Equal-area",
    "es": "Equivalente",
    "where": [
-    "src/app/i18n.ts:147"
+    "src/app/i18n.ts:148"
    ]
   },
   {
    "en": "Equal-area ellipse, often used for global data.",
    "es": "Elipse de áreas iguales, usada para datos globales.",
    "where": [
-    "src/app/i18n.ts:140"
+    "src/app/i18n.ts:141"
    ]
   },
   {
    "en": "Equal-area rectangle: true sizes, stretched shapes.",
    "es": "Rectángulo de áreas iguales: tamaños reales, formas estiradas.",
    "where": [
-    "src/app/i18n.ts:141"
+    "src/app/i18n.ts:142"
    ]
   },
   {
    "en": "Equal-area with rounded poles.",
    "es": "Áreas iguales con polos redondeados.",
    "where": [
-    "src/app/i18n.ts:142"
+    "src/app/i18n.ts:143"
    ]
   },
   {
    "en": "Equidistant",
    "es": "Equidistante",
    "where": [
-    "src/app/i18n.ts:149"
+    "src/app/i18n.ts:150"
    ]
   },
   {
    "en": "Eras and ideas",
    "es": "Épocas e ideas",
    "where": [
-    "src/app/i18n.ts:204",
+    "src/app/i18n.ts:205",
     "src/modes/stories.ts:189"
    ]
   },
@@ -5429,7 +5392,7 @@
    "en": "Europe",
    "es": "Europa",
    "where": [
-    "src/app/i18n.ts:91",
+    "src/app/i18n.ts:92",
     "src/master/master.ts:52",
     "src/play/hop.ts:32",
     "src/play/names.ts:22",
@@ -5447,7 +5410,7 @@
    "en": "Events",
    "es": "Acontecimientos",
    "where": [
-    "src/app/i18n.ts:190"
+    "src/app/i18n.ts:191"
    ]
   },
   {
@@ -5461,7 +5424,7 @@
    "en": "Every Olympics and every World Cup: the host city, the countries that took part, the medals, the champions and the boycotts; the Tour de France and the great marathons.",
    "es": "Todos los Juegos Olímpicos y todos los Mundiales: la ciudad sede, los países que participaron, las medallas, los campeones y los boicots; el Tour de Francia y los grandes maratones.",
    "where": [
-    "src/app/i18n.ts:223"
+    "src/app/i18n.ts:224"
    ]
   },
   {
@@ -5714,7 +5677,7 @@
    "en": "Everything about",
    "es": "Todo sobre",
    "where": [
-    "src/app/i18n.ts:48"
+    "src/app/i18n.ts:49"
    ]
   },
   {
@@ -5750,14 +5713,14 @@
    "en": "Explore",
    "es": "Explorar",
    "where": [
-    "src/app/i18n.ts:29"
+    "src/app/i18n.ts:30"
    ]
   },
   {
    "en": "Explore the world, layer by layer",
    "es": "Explora el mundo, capa a capa",
    "where": [
-    "src/app/i18n.ts:15"
+    "src/app/i18n.ts:16"
    ]
   },
   {
@@ -5828,7 +5791,7 @@
    "en": "Famous conflicts step by step: territory, invasions, battles and their human cost.",
    "es": "Conflictos famosos paso a paso: territorio, invasiones, batallas y su coste humano.",
    "where": [
-    "src/app/i18n.ts:171"
+    "src/app/i18n.ts:172"
    ]
   },
   {
@@ -5857,7 +5820,7 @@
    "en": "Fauna",
    "es": "Fauna",
    "where": [
-    "src/app/i18n.ts:109"
+    "src/app/i18n.ts:110"
    ]
   },
   {
@@ -6062,21 +6025,21 @@
    "en": "Filter values under country names",
    "es": "Valores del filtro bajo los nombres de país",
    "where": [
-    "src/app/i18n.ts:47"
+    "src/app/i18n.ts:48"
    ]
   },
   {
    "en": "Filters",
    "es": "Filtros",
    "where": [
-    "src/app/i18n.ts:17"
+    "src/app/i18n.ts:18"
    ]
   },
   {
    "en": "Final ranking",
    "es": "Clasificación final",
    "where": [
-    "src/app/i18n.ts:302"
+    "src/app/i18n.ts:303"
    ]
   },
   {
@@ -6132,7 +6095,7 @@
    "en": "Finished",
    "es": "Resultado",
    "where": [
-    "src/app/i18n.ts:299"
+    "src/app/i18n.ts:300"
    ]
   },
   {
@@ -6276,7 +6239,7 @@
    "en": "Flora",
    "es": "Flora",
    "where": [
-    "src/app/i18n.ts:108"
+    "src/app/i18n.ts:109"
    ]
   },
   {
@@ -6304,7 +6267,7 @@
    "en": "Fly here",
    "es": "Volar aquí",
    "where": [
-    "src/app/i18n.ts:84"
+    "src/app/i18n.ts:85"
    ]
   },
   {
@@ -6332,14 +6295,14 @@
    "en": "Follow a life place by place: where they were born, studied and worked, their great works and moments, exile and death. Scientists, writers, artists, musicians, leaders and athletes, from Hatshepsut to our time.",
    "es": "Sigue una vida lugar por lugar: dónde nació, estudió y trabajó, sus grandes obras y momentos, el exilio y la muerte. Científicos, escritores, artistas, músicos, líderes y deportistas, desde Hatshepsut hasta nuestro tiempo.",
    "where": [
-    "src/app/i18n.ts:256"
+    "src/app/i18n.ts:257"
    ]
   },
   {
    "en": "Follow their life",
    "es": "Seguir su vida",
    "where": [
-    "src/app/i18n.ts:273",
+    "src/app/i18n.ts:274",
     "src/lives/born.ts:106"
    ]
   },
@@ -6361,7 +6324,7 @@
    "en": "Food through time",
    "es": "La comida en el tiempo",
    "where": [
-    "src/app/i18n.ts:207",
+    "src/app/i18n.ts:208",
     "src/modes/stories.ts:190"
    ]
   },
@@ -6388,13 +6351,8 @@
   },
   {
    "en": "Found",
-   "es": "Descubierta",
-   "esAlso": [
-    "Hallado"
-   ],
+   "es": "Hallado",
    "where": [
-    "src/layers/packs/ocean.ts:275",
-    "src/layers/packs/ocean.ts:332",
     "src/layers/packs/ocean.ts:361"
    ]
   },
@@ -6430,14 +6388,14 @@
    "en": "Fourth place",
    "es": "Cuarto lugar",
    "where": [
-    "src/app/i18n.ts:294"
+    "src/app/i18n.ts:295"
    ]
   },
   {
    "en": "From",
    "es": "Desde",
    "where": [
-    "src/app/i18n.ts:164",
+    "src/app/i18n.ts:165",
     "src/guide/export.ts:132"
    ]
   },
@@ -6536,7 +6494,7 @@
    "en": "From our earliest ancestors to the great civilizations: where people came from, where they went and what they built.",
    "es": "De nuestros primeros antepasados a las grandes civilizaciones: de dónde venimos, a dónde fuimos y qué construimos.",
    "where": [
-    "src/app/i18n.ts:309"
+    "src/app/i18n.ts:310"
    ]
   },
   {
@@ -6574,21 +6532,21 @@
    "en": "From the first farms to the world’s kitchens: where crops were tamed, how foods travelled and where dishes were born.",
    "es": "De las primeras granjas a las cocinas del mundo: dónde se domesticaron los cultivos, cómo viajaron los alimentos y dónde nacieron los platos.",
    "where": [
-    "src/app/i18n.ts:208"
+    "src/app/i18n.ts:209"
    ]
   },
   {
    "en": "From the first microbes to the dinosaurs, the Ice Age giants and the animals we live with, on the drifting continents.",
    "es": "De los primeros microbios a los dinosaurios, los gigantes de la Edad de Hielo y los animales con los que vivimos, sobre los continentes a la deriva.",
    "where": [
-    "src/app/i18n.ts:213"
+    "src/app/i18n.ts:214"
    ]
   },
   {
    "en": "From the first rockets to footprints on the Moon and rovers on Mars: the space race, robots to the planets, and the astronomers who mapped the sky.",
    "es": "De los primeros cohetes a las huellas en la Luna y los vehículos en Marte: la carrera espacial, los robots que viajaron a los planetas y los astrónomos que cartografiaron el cielo.",
    "where": [
-    "src/app/i18n.ts:281"
+    "src/app/i18n.ts:282"
    ]
   },
   {
@@ -6614,12 +6572,8 @@
   },
   {
    "en": "From {0}",
-   "es": "De {0}",
-   "esAlso": [
-    "Desde {0}"
-   ],
+   "es": "Desde {0}",
    "where": [
-    "src/guide/guide.ts:525",
     "src/guide/guide.ts:618"
    ]
   },
@@ -6634,21 +6588,21 @@
    "en": "Full screen",
    "es": "Pantalla completa",
    "where": [
-    "src/app/i18n.ts:68"
+    "src/app/i18n.ts:69"
    ]
   },
   {
    "en": "Full-screen rotating globe with your filters",
    "es": "Globo girando a pantalla completa con tus filtros",
    "where": [
-    "src/app/i18n.ts:60"
+    "src/app/i18n.ts:61"
    ]
   },
   {
    "en": "Fun facts",
    "es": "Curiosidades",
    "where": [
-    "src/app/i18n.ts:112"
+    "src/app/i18n.ts:113"
    ]
   },
   {
@@ -6686,7 +6640,7 @@
    "en": "GDP",
    "es": "PIB",
    "where": [
-    "src/app/i18n.ts:81",
+    "src/app/i18n.ts:82",
     "src/tools/tools.ts:162"
    ]
   },
@@ -6694,7 +6648,7 @@
    "en": "GDP per person",
    "es": "PIB por persona",
    "where": [
-    "src/app/i18n.ts:82",
+    "src/app/i18n.ts:83",
     "src/layers/basics.ts:48",
     "src/tools/tools.ts:161"
    ]
@@ -6710,7 +6664,7 @@
    "en": "Gall–Peters",
    "es": "Gall-Peters",
    "where": [
-    "src/app/i18n.ts:127"
+    "src/app/i18n.ts:128"
    ]
   },
   {
@@ -6732,7 +6686,7 @@
    "en": "Games of the world",
    "es": "Juegos del mundo",
    "where": [
-    "src/app/i18n.ts:222",
+    "src/app/i18n.ts:223",
     "src/learn/learn.ts:2424",
     "src/modes/stories.ts:194"
    ]
@@ -6825,7 +6779,7 @@
    "en": "Globe",
    "es": "Globo",
    "where": [
-    "src/app/i18n.ts:118"
+    "src/app/i18n.ts:119"
    ]
   },
   {
@@ -6852,9 +6806,6 @@
   {
    "en": "Go on",
    "es": "Continuar",
-   "esAlso": [
-    "Seguir"
-   ],
    "where": [
     "src/fill/states.ts:514",
     "src/master/master.ts:830"
@@ -6885,7 +6836,7 @@
    "en": "Golden ages and big ideas: where they happened, the people, their works and how they spread.",
    "es": "Edades de oro y grandes ideas: dónde ocurrieron, sus protagonistas, sus obras y cómo se difundieron.",
    "where": [
-    "src/app/i18n.ts:205"
+    "src/app/i18n.ts:206"
    ]
   },
   {
@@ -6943,7 +6894,7 @@
    "en": "Great books where they take place, and their writers where they lived: epics, tales that travelled, novels, poetry, literature in Spanish and the story of the book, with lines in their own languages.",
    "es": "Grandes libros donde transcurren, y sus autores donde vivieron: epopeyas, cuentos que viajaron, novelas, poesía, la literatura en español y la historia del libro, con versos y frases en su propia lengua.",
    "where": [
-    "src/app/i18n.ts:244"
+    "src/app/i18n.ts:245"
    ]
   },
   {
@@ -6957,7 +6908,7 @@
    "en": "Great journeys, from Xuanzang, Marco Polo and Ibn Battuta to Cook and the race to the Poles, and the routes that carried silk, spices, gold and salt, and enslaved people across the Atlantic.",
    "es": "Grandes viajes, de Xuanzang, Marco Polo e Ibn Battuta a Cook y la carrera a los polos, y las rutas que llevaron seda, especias, oro y sal, y personas esclavizadas a través del Atlántico.",
    "where": [
-    "src/app/i18n.ts:226"
+    "src/app/i18n.ts:227"
    ]
   },
   {
@@ -6985,7 +6936,7 @@
    "en": "Great structures",
    "es": "Grandes construcciones",
    "where": [
-    "src/app/i18n.ts:210",
+    "src/app/i18n.ts:211",
     "src/guide/guide.ts:567",
     "src/guide/guide.ts:738",
     "src/modes/stories.ts:191",
@@ -7168,7 +7119,7 @@
    "en": "Has a recording",
    "es": "Tiene una grabación",
    "where": [
-    "src/app/i18n.ts:286"
+    "src/app/i18n.ts:287"
    ]
   },
   {
@@ -7264,7 +7215,7 @@
    "en": "High",
    "es": "Alto",
    "where": [
-    "src/app/i18n.ts:57"
+    "src/app/i18n.ts:58"
    ]
   },
   {
@@ -7441,7 +7392,7 @@
    "en": "How",
    "es": "Cómo",
    "where": [
-    "src/app/i18n.ts:326",
+    "src/app/i18n.ts:327",
     "src/play/menu.ts:163"
    ]
   },
@@ -7519,7 +7470,7 @@
    "en": "Human cost",
    "es": "Coste humano",
    "where": [
-    "src/app/i18n.ts:192"
+    "src/app/i18n.ts:193"
    ]
   },
   {
@@ -7590,14 +7541,14 @@
    "en": "Imagery",
    "es": "Imágenes",
    "where": [
-    "src/app/i18n.ts:110"
+    "src/app/i18n.ts:111"
    ]
   },
   {
    "en": "Imagery is not available in this projection.",
    "es": "Las imágenes no están disponibles en esta proyección.",
    "where": [
-    "src/app/i18n.ts:151"
+    "src/app/i18n.ts:152"
    ]
   },
   {
@@ -7875,14 +7826,14 @@
    "en": "In: {name}",
    "es": "En: {name}",
    "where": [
-    "src/app/i18n.ts:341"
+    "src/app/i18n.ts:342"
    ]
   },
   {
    "en": "Income group",
    "es": "Grupo de ingresos",
    "where": [
-    "src/app/i18n.ts:83"
+    "src/app/i18n.ts:84"
    ]
   },
   {
@@ -7947,14 +7898,14 @@
    "en": "Install app",
    "es": "Instalar app",
    "where": [
-    "src/app/i18n.ts:69"
+    "src/app/i18n.ts:70"
    ]
   },
   {
    "en": "Installed",
    "es": "Instalada",
    "where": [
-    "src/app/i18n.ts:70"
+    "src/app/i18n.ts:71"
    ]
   },
   {
@@ -8012,7 +7963,7 @@
    "en": "Inventions",
    "es": "Inventos",
    "where": [
-    "src/app/i18n.ts:249",
+    "src/app/i18n.ts:250",
     "src/layers/packs/heritage.ts:472",
     "src/learn/learn.ts:2424",
     "src/modes/stories.ts:203",
@@ -8279,12 +8230,8 @@
   },
   {
    "en": "January",
-   "es": "Enero",
-   "esAlso": [
-    "enero"
-   ],
+   "es": "enero",
    "where": [
-    "src/layers/packs/climate.ts:201",
     "src/sky/data.ts:115"
    ]
   },
@@ -8320,19 +8267,15 @@
    "en": "Journeys and trade routes",
    "es": "Viajes y rutas comerciales",
    "where": [
-    "src/app/i18n.ts:225",
+    "src/app/i18n.ts:226",
     "src/learn/learn.ts:2424",
     "src/modes/stories.ts:195"
    ]
   },
   {
    "en": "July",
-   "es": "Julio",
-   "esAlso": [
-    "julio"
-   ],
+   "es": "julio",
    "where": [
-    "src/layers/packs/climate.ts:201",
     "src/sky/data.ts:116"
    ]
   },
@@ -8370,7 +8313,7 @@
    "en": "Keeps angles for navigation; greatly enlarges the poles.",
    "es": "Conserva los ángulos para navegar; agranda mucho los polos.",
    "where": [
-    "src/app/i18n.ts:134"
+    "src/app/i18n.ts:135"
    ]
   },
   {
@@ -8430,14 +8373,14 @@
    "en": "Label size",
    "es": "Tamaño de etiquetas",
    "where": [
-    "src/app/i18n.ts:50"
+    "src/app/i18n.ts:51"
    ]
   },
   {
    "en": "Labels",
    "es": "Etiquetas",
    "where": [
-    "src/app/i18n.ts:42"
+    "src/app/i18n.ts:43"
    ]
   },
   {
@@ -8465,7 +8408,7 @@
    "en": "Lambert azimuthal",
    "es": "Azimutal de Lambert",
    "where": [
-    "src/app/i18n.ts:130"
+    "src/app/i18n.ts:131"
    ]
   },
   {
@@ -8508,17 +8451,13 @@
    "en": "Landforms & water",
    "es": "Relieve y agua",
    "where": [
-    "src/app/i18n.ts:103"
+    "src/app/i18n.ts:104"
    ]
   },
   {
    "en": "Landing site",
-   "es": "Sitio de alunizaje",
-   "esAlso": [
-    "Sitio de aterrizaje"
-   ],
+   "es": "Sitio de aterrizaje",
    "where": [
-    "src/space/worlds.ts:221",
     "src/space/worlds.ts:222"
    ]
   },
@@ -8547,7 +8486,7 @@
    "en": "Language",
    "es": "Idioma",
    "where": [
-    "src/app/i18n.ts:38",
+    "src/app/i18n.ts:39",
     "src/layers/packs/facts.ts:89"
    ]
   },
@@ -8575,15 +8514,11 @@
   {
    "en": "Languages",
    "es": "Idiomas",
-   "esAlso": [
-    "Lenguas"
-   ],
    "where": [
-    "src/app/i18n.ts:79",
+    "src/app/i18n.ts:80",
     "src/fill/fill.ts:42",
     "src/guide/guide.ts:599",
-    "src/layers/packs/facts.ts:76",
-    "src/learn/progress.ts:18"
+    "src/layers/packs/facts.ts:76"
    ]
   },
   {
@@ -8677,14 +8612,14 @@
    "en": "Latitude then",
    "es": "Latitud entonces",
    "where": [
-    "src/app/i18n.ts:215"
+    "src/app/i18n.ts:216"
    ]
   },
   {
    "en": "Latitude/longitude grid",
    "es": "Cuadrícula de latitud y longitud",
    "where": [
-    "src/app/i18n.ts:51"
+    "src/app/i18n.ts:52"
    ]
   },
   {
@@ -8712,7 +8647,7 @@
    "en": "Learn",
    "es": "Aprender",
    "where": [
-    "src/app/i18n.ts:30",
+    "src/app/i18n.ts:31",
     "src/master/master.ts:47"
    ]
   },
@@ -8748,14 +8683,14 @@
    "en": "Legacy",
    "es": "Legado",
    "where": [
-    "src/app/i18n.ts:313"
+    "src/app/i18n.ts:314"
    ]
   },
   {
    "en": "Legend",
    "es": "Leyenda",
    "where": [
-    "src/app/i18n.ts:73"
+    "src/app/i18n.ts:74"
    ]
   },
   {
@@ -8812,7 +8747,7 @@
    "en": "Life through time",
    "es": "La vida en el tiempo",
    "where": [
-    "src/app/i18n.ts:212",
+    "src/app/i18n.ts:213",
     "src/learn/learn.ts:2424",
     "src/modes/stories.ts:193"
    ]
@@ -8864,7 +8799,7 @@
    "en": "Link copied",
    "es": "Enlace copiado",
    "where": [
-    "src/app/i18n.ts:158",
+    "src/app/i18n.ts:159",
     "src/ui/playlists.ts:292"
    ]
   },
@@ -8893,14 +8828,14 @@
    "en": "Listed in {y}, removed in {x}",
    "es": "Inscrito en {y}, retirado en {x}",
    "where": [
-    "src/app/i18n.ts:334"
+    "src/app/i18n.ts:335"
    ]
   },
   {
    "en": "Listed in {y}; part of {into} since {m}",
    "es": "Inscrito en {y}; parte de {into} desde {m}",
    "where": [
-    "src/app/i18n.ts:335"
+    "src/app/i18n.ts:336"
    ]
   },
   {
@@ -8949,7 +8884,7 @@
    "en": "Live",
    "es": "En vivo",
    "where": [
-    "src/app/i18n.ts:111"
+    "src/app/i18n.ts:112"
    ]
   },
   {
@@ -8963,7 +8898,7 @@
    "en": "Lived",
    "es": "Vivió",
    "where": [
-    "src/app/i18n.ts:338"
+    "src/app/i18n.ts:339"
    ]
   },
   {
@@ -8993,7 +8928,7 @@
    "en": "Lives on the map",
    "es": "Vidas en el mapa",
    "where": [
-    "src/app/i18n.ts:255",
+    "src/app/i18n.ts:256",
     "src/modes/stories.ts:206"
    ]
   },
@@ -9008,7 +8943,7 @@
    "en": "Loading data…",
    "es": "Cargando datos…",
    "where": [
-    "src/app/i18n.ts:152"
+    "src/app/i18n.ts:153"
    ]
   },
   {
@@ -9036,7 +8971,7 @@
    "en": "Loading the world…",
    "es": "Cargando el mundo…",
    "where": [
-    "src/app/i18n.ts:16"
+    "src/app/i18n.ts:17"
    ]
   },
   {
@@ -9057,7 +8992,7 @@
    "en": "Local time",
    "es": "Hora local",
    "where": [
-    "src/app/i18n.ts:87",
+    "src/app/i18n.ts:88",
     "src/layers/timezones.ts:97"
    ]
   },
@@ -9197,20 +9132,13 @@
   {
    "en": "Made",
    "es": "Hecha",
-   "esAlso": [
-    "Época"
-   ],
    "where": [
-    "src/artguide/cards.ts:32",
-    "src/layers/packs/artmap.ts:111"
+    "src/artguide/cards.ts:32"
    ]
   },
   {
    "en": "Made by people",
-   "es": "Hecho por las personas",
-   "esAlso": [
-    "Hecho por personas"
-   ],
+   "es": "Hecho por personas",
    "where": [
     "src/sky/elements.ts:34",
     "src/sky/elements.ts:34"
@@ -9358,7 +9286,7 @@
    "en": "Map projections",
    "es": "Proyecciones",
    "where": [
-    "src/app/i18n.ts:25"
+    "src/app/i18n.ts:26"
    ]
   },
   {
@@ -9529,7 +9457,7 @@
    "en": "Masterpieces where they were made and where they are now, from cave paintings to modern art, and the works taken in war and by empires, and those returned.",
    "es": "Obras maestras donde se hicieron y donde están hoy, de las pinturas rupestres al arte moderno, y las obras que se llevaron las guerras y los imperios, y las que se devolvieron.",
    "where": [
-    "src/app/i18n.ts:247"
+    "src/app/i18n.ts:248"
    ]
   },
   {
@@ -9628,15 +9556,15 @@
    "en": "Medal table",
    "es": "Medallero",
    "where": [
-    "src/app/i18n.ts:297",
-    "src/app/i18n.ts:303"
+    "src/app/i18n.ts:298",
+    "src/app/i18n.ts:304"
    ]
   },
   {
    "en": "Medals",
    "es": "Medallas",
    "where": [
-    "src/app/i18n.ts:296"
+    "src/app/i18n.ts:297"
    ]
   },
   {
@@ -9685,7 +9613,7 @@
    "en": "Members",
    "es": "Miembros",
    "where": [
-    "src/app/i18n.ts:201"
+    "src/app/i18n.ts:202"
    ]
   },
   {
@@ -9709,7 +9637,7 @@
    "en": "Mercator",
    "es": "Mercator",
    "where": [
-    "src/app/i18n.ts:120"
+    "src/app/i18n.ts:121"
    ]
   },
   {
@@ -9739,7 +9667,7 @@
    "en": "Mesozoic (252–66 million years ago)",
    "es": "Mesozoico (hace 252–66 millones de años)",
    "where": [
-    "src/app/i18n.ts:176"
+    "src/app/i18n.ts:177"
    ]
   },
   {
@@ -9760,7 +9688,7 @@
    "en": "Middle Ages",
    "es": "Edad Media",
    "where": [
-    "src/app/i18n.ts:180",
+    "src/app/i18n.ts:181",
     "src/modes/history.ts:36"
    ]
   },
@@ -9796,7 +9724,7 @@
    "en": "Miller",
    "es": "Miller",
    "where": [
-    "src/app/i18n.ts:121"
+    "src/app/i18n.ts:122"
    ]
   },
   {
@@ -9852,7 +9780,7 @@
    "en": "Mollweide",
    "es": "Mollweide",
    "where": [
-    "src/app/i18n.ts:126"
+    "src/app/i18n.ts:127"
    ]
   },
   {
@@ -9921,7 +9849,7 @@
    "en": "More",
    "es": "Más",
    "where": [
-    "src/app/i18n.ts:27"
+    "src/app/i18n.ts:28"
    ]
   },
   {
@@ -10044,7 +9972,7 @@
    "en": "Music and dance",
    "es": "Música y baile",
    "where": [
-    "src/app/i18n.ts:240",
+    "src/app/i18n.ts:241",
     "src/learn/learn.ts:2424",
     "src/modes/stories.ts:200"
    ]
@@ -10053,14 +9981,14 @@
    "en": "Music on: each step with a recording plays a short clip of it.",
    "es": "Música activada: cada paso con una grabación toca un fragmento.",
    "where": [
-    "src/app/i18n.ts:284"
+    "src/app/i18n.ts:285"
    ]
   },
   {
    "en": "Music with the story",
    "es": "Música con la historia",
    "where": [
-    "src/app/i18n.ts:283"
+    "src/app/i18n.ts:284"
    ]
   },
   {
@@ -10182,9 +10110,6 @@
   {
    "en": "Name them all",
    "es": "Nómbralos todos",
-   "esAlso": [
-    "Todos nombrados"
-   ],
    "where": [
     "src/learn/progress.ts:118",
     "src/play/menu.ts:29",
@@ -10242,14 +10167,14 @@
    "en": "Nation",
    "es": "País",
    "where": [
-    "src/app/i18n.ts:288"
+    "src/app/i18n.ts:289"
    ]
   },
   {
    "en": "National Geographic’s world map: low overall distortion.",
    "es": "El mapa de National Geographic: poca distorsión total.",
    "where": [
-    "src/app/i18n.ts:137"
+    "src/app/i18n.ts:138"
    ]
   },
   {
@@ -10309,14 +10234,14 @@
    "en": "Natural Earth",
    "es": "Natural Earth",
    "where": [
-    "src/app/i18n.ts:125"
+    "src/app/i18n.ts:126"
    ]
   },
   {
    "en": "Natural disasters",
    "es": "Desastres naturales",
    "where": [
-    "src/app/i18n.ts:237",
+    "src/app/i18n.ts:238",
     "src/learn/learn.ts:2424",
     "src/modes/stories.ts:199"
    ]
@@ -10666,12 +10591,9 @@
   },
   {
    "en": "Next step",
-   "es": "Paso siguiente",
-   "esAlso": [
-    "Siguiente paso"
-   ],
+   "es": "Siguiente paso",
    "where": [
-    "src/app/i18n.ts:185",
+    "src/app/i18n.ts:186",
     "src/play/hop.ts:422"
    ]
   },
@@ -10780,21 +10702,21 @@
    "en": "No data",
    "es": "Sin datos",
    "where": [
-    "src/app/i18n.ts:154"
+    "src/app/i18n.ts:155"
    ]
   },
   {
    "en": "No filters on. Pick one below.",
    "es": "Ningún filtro activo. Elige uno abajo.",
    "where": [
-    "src/app/i18n.ts:21"
+    "src/app/i18n.ts:22"
    ]
   },
   {
    "en": "No life matches.",
    "es": "Ninguna vida coincide.",
    "where": [
-    "src/app/i18n.ts:265"
+    "src/app/i18n.ts:266"
    ]
   },
   {
@@ -10850,7 +10772,7 @@
    "en": "No results",
    "es": "Sin resultados",
    "where": [
-    "src/app/i18n.ts:36"
+    "src/app/i18n.ts:37"
    ]
   },
   {
@@ -10899,13 +10821,9 @@
   {
    "en": "None",
    "es": "Ninguna",
-   "esAlso": [
-    "Ninguno"
-   ],
    "where": [
     "src/layers/packs/facts.ts:161",
-    "src/layers/packs/regional.ts:248",
-    "src/ui/playlists.ts:246"
+    "src/layers/packs/regional.ts:248"
    ]
   },
   {
@@ -10987,12 +10905,9 @@
   },
   {
    "en": "North America",
-   "es": "Norteamérica",
-   "esAlso": [
-    "América del Norte"
-   ],
+   "es": "América del Norte",
    "where": [
-    "src/app/i18n.ts:94",
+    "src/app/i18n.ts:95",
     "src/play/hop.ts:32",
     "src/play/tour.ts:26"
    ]
@@ -11039,7 +10954,7 @@
    "en": "Not certain",
    "es": "No es seguro",
    "where": [
-    "src/app/i18n.ts:261"
+    "src/app/i18n.ts:262"
    ]
   },
   {
@@ -11123,7 +11038,7 @@
    "en": "Note",
    "es": "Nota",
    "where": [
-    "src/app/i18n.ts:199",
+    "src/app/i18n.ts:200",
     "src/guide/export.ts:46",
     "src/guide/export.ts:137",
     "src/layers/packs/regional.ts:237",
@@ -11162,7 +11077,7 @@
    "en": "Nothing found",
    "es": "No se ha encontrado nada",
    "where": [
-    "src/app/i18n.ts:339"
+    "src/app/i18n.ts:340"
    ]
   },
   {
@@ -11199,7 +11114,7 @@
    "en": "Now playing",
    "es": "Suena",
    "where": [
-    "src/app/i18n.ts:285"
+    "src/app/i18n.ts:286"
    ]
   },
   {
@@ -11269,7 +11184,7 @@
    "en": "Oceania",
    "es": "Oceanía",
    "where": [
-    "src/app/i18n.ts:96",
+    "src/app/i18n.ts:97",
     "src/master/master.ts:53",
     "src/play/names.ts:22",
     "src/play/outline.ts:21"
@@ -11329,7 +11244,7 @@
    "en": "Offline: showing saved data",
    "es": "Sin conexión: mostrando datos guardados",
    "where": [
-    "src/app/i18n.ts:88"
+    "src/app/i18n.ts:89"
    ]
   },
   {
@@ -11434,7 +11349,7 @@
    "en": "On the List of World Heritage in Danger",
    "es": "En la Lista del Patrimonio Mundial en Peligro",
    "where": [
-    "src/app/i18n.ts:337"
+    "src/app/i18n.ts:338"
    ]
   },
   {
@@ -11469,7 +11384,7 @@
    "en": "On the map",
    "es": "En el mapa",
    "where": [
-    "src/app/i18n.ts:314",
+    "src/app/i18n.ts:315",
     "src/artguide/artguide.ts:99",
     "src/green/finder.ts:78",
     "src/guide/guide.ts:428",
@@ -11571,7 +11486,7 @@
   },
   {
    "en": "One reminder a day at most, only if it’s not done yet, with no sound. You can change the time in Today or Settings.",
-   "es": "Un recordatorio al día como mucho, solo si aún no lo has hecho, sin sonido. Puedes cambiar la hora en Hoy o en Configuración.",
+   "es": "Un recordatorio al día como mucho, solo si aún no lo has hecho, sin sonido. Puedes cambiar la hora en Hoy o en Ajustes.",
    "where": [
     "src/today/reminders.ts:284"
    ]
@@ -11678,7 +11593,7 @@
    "en": "Opacity",
    "es": "Opacidad",
    "where": [
-    "src/app/i18n.ts:22"
+    "src/app/i18n.ts:23"
    ]
   },
   {
@@ -11722,7 +11637,7 @@
    "en": "Open-ocean islands",
    "es": "Islas oceánicas",
    "where": [
-    "src/app/i18n.ts:98"
+    "src/app/i18n.ts:99"
    ]
   },
   {
@@ -11881,7 +11796,7 @@
    "en": "Outcome",
    "es": "Desenlace",
    "where": [
-    "src/app/i18n.ts:191"
+    "src/app/i18n.ts:192"
    ]
   },
   {
@@ -11976,7 +11891,7 @@
    "en": "Paleozoic (539–252 million years ago)",
    "es": "Paleozoico (hace 539–252 millones de años)",
    "where": [
-    "src/app/i18n.ts:175"
+    "src/app/i18n.ts:176"
    ]
   },
   {
@@ -12004,7 +11919,7 @@
    "en": "Pangea to today",
    "es": "De Pangea a hoy",
    "where": [
-    "src/app/i18n.ts:169"
+    "src/app/i18n.ts:170"
    ]
   },
   {
@@ -12025,7 +11940,7 @@
    "en": "Part of",
    "es": "Parte de",
    "where": [
-    "src/app/i18n.ts:86",
+    "src/app/i18n.ts:87",
     "src/modes/history.ts:310"
    ]
   },
@@ -12099,11 +12014,7 @@
   {
    "en": "People",
    "es": "Personas",
-   "esAlso": [
-    "Población"
-   ],
    "where": [
-    "src/app/i18n.ts:102",
     "src/fill/fill.ts:44",
     "src/guide/guide.ts:49"
    ]
@@ -12127,7 +12038,7 @@
    "en": "Peoples and civilizations",
    "es": "Pueblos y civilizaciones",
    "where": [
-    "src/app/i18n.ts:308",
+    "src/app/i18n.ts:309",
     "src/modes/stories.ts:192"
    ]
   },
@@ -12153,10 +12064,18 @@
    ]
   },
   {
+   "en": "Period",
+   "es": "Época",
+   "where": [
+    "src/layers/packs/artmap.ts:111",
+    "src/layers/packs/heritage.ts:384"
+   ]
+  },
+  {
    "en": "Perspective",
    "es": "Perspectiva",
    "where": [
-    "src/app/i18n.ts:150"
+    "src/app/i18n.ts:151"
    ]
   },
   {
@@ -12178,14 +12097,14 @@
    "en": "Pick a conflict to play it on the map. Tap a battle for its casualties, and \"Details\" for the full story of each step.",
    "es": "Elige un conflicto para verlo en el mapa. Toca una batalla para ver sus bajas y \"Detalles\" para la historia completa de cada paso.",
    "where": [
-    "src/app/i18n.ts:172"
+    "src/app/i18n.ts:173"
    ]
   },
   {
    "en": "Pick a life to follow it on the map. Each step is a place and a date, with the age they were, and the way from the last place is drawn. Tap a marker for its card, and \"Details\" for more.",
    "es": "Elige una vida para seguirla en el mapa. Cada paso es un lugar y una fecha, con la edad que tenía, y se dibuja el camino desde el lugar anterior. Toca un marcador para ver su ficha, y «Detalles» para saber más.",
    "where": [
-    "src/app/i18n.ts:257"
+    "src/app/i18n.ts:258"
    ]
   },
   {
@@ -12199,119 +12118,119 @@
    "en": "Pick a story to see it on the map. A step older than 5 million years shows the continents of its time, and every fossil moves with its continent. Tap a marker for its card, and \"Details\" for more.",
    "es": "Elige una historia para verla en el mapa. Un paso de hace más de 5 millones de años muestra los continentes de su época, y cada fósil se mueve con su continente. Toca un marcador para ver su ficha, y \"Detalles\" para saber más.",
    "where": [
-    "src/app/i18n.ts:214"
+    "src/app/i18n.ts:215"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Each Games colours the countries by how they took part, with an arc from each to the host city. Tap a country for its medals or result, a marker for its card, and \"Details\" for the medal table.",
    "es": "Elige una historia para verla en el mapa. Cada edición colorea los países según cómo participaron, con un arco de cada uno a la ciudad sede. Toca un país para ver sus medallas o su resultado, un marcador para ver su ficha, y \"Detalles\" para el medallero.",
    "where": [
-    "src/app/i18n.ts:224"
+    "src/app/i18n.ts:225"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Each marker is a place; its card says when it joined the World Heritage List and whether it is in danger. For every site on the list, turn on the World Heritage filter.",
    "es": "Elige una historia para verla en el mapa. Cada marcador es un lugar; su ficha dice cuándo entró en la Lista del Patrimonio Mundial y si está en peligro. Para ver todos los sitios de la lista, activa el filtro Patrimonio de la Humanidad.",
    "where": [
-    "src/app/i18n.ts:254"
+    "src/app/i18n.ts:255"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Each marker is where a work was made; its card shows where it is now. Tap the picture to see it full screen and zoom in.",
    "es": "Elige una historia para verla en el mapa. Cada marcador está donde se hizo una obra; su ficha muestra dónde está hoy. Toca la imagen para verla en pantalla completa y acercarla.",
    "where": [
-    "src/app/i18n.ts:248"
+    "src/app/i18n.ts:249"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Each marker is where something was invented; arrows show how it travelled. Tap a marker for its card and who invented it.",
    "es": "Elige una historia para verla en el mapa. Cada marcador está donde se inventó algo; las flechas muestran cómo viajó. Toca un marcador para ver su ficha y quién lo inventó.",
    "where": [
-    "src/app/i18n.ts:251"
+    "src/app/i18n.ts:252"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Each step draws the next stretch of the journey, and the way already travelled stays on the map. Tap a marker for its card, and \"Details\" for more.",
    "es": "Elige una historia para verla en el mapa. Cada paso dibuja el siguiente tramo del viaje, y el camino ya recorrido queda en el mapa. Toca un marcador para ver su ficha, y \"Detalles\" para saber más.",
    "where": [
-    "src/app/i18n.ts:227"
+    "src/app/i18n.ts:228"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Each step shows what happened at that hour, day or year, and how far its effects reached. Tap a marker for its card, and \"Details\" for more.",
    "es": "Elige una historia para verla en el mapa. Cada paso muestra lo que pasó en esa hora, ese día o ese año, y hasta dónde llegaron sus efectos. Toca un marcador para ver su ficha y «Detalles» para saber más.",
    "where": [
-    "src/app/i18n.ts:239"
+    "src/app/i18n.ts:240"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Each step shows where a disease had reached at that time, and how it travelled. Tap a marker for its card, and \"Details\" for more.",
    "es": "Elige una historia para verla en el mapa. Cada paso muestra hasta dónde había llegado una enfermedad en ese momento y cómo viajó. Toca un marcador para ver su ficha y «Detalles» para saber más.",
    "where": [
-    "src/app/i18n.ts:236"
+    "src/app/i18n.ts:237"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Each step shows where a faith or a school of thought was followed at that time, and how it travelled. Tap a marker for its card, and \"Details\" for more.",
    "es": "Elige una historia para verla en el mapa. Cada paso muestra dónde se seguía una religión o una escuela de pensamiento en ese momento, y cómo viajó. Toca un marcador para ver su ficha, y \"Detalles\" para saber más.",
    "where": [
-    "src/app/i18n.ts:230"
+    "src/app/i18n.ts:231"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Each step shows where a script was written or a language spoken at that time. Tap a marker for its card: scripts and languages show a sample in their own letters.",
    "es": "Elige una historia para verla en el mapa. Cada paso muestra dónde se escribía una escritura o se hablaba una lengua en ese momento. Toca un marcador para ver su ficha: las escrituras y las lenguas muestran un ejemplo en sus propias letras.",
    "where": [
-    "src/app/i18n.ts:233"
+    "src/app/i18n.ts:234"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Each step shows where books were written and where they take place. Tap a marker for its card: many show a famous line in its own language.",
    "es": "Elige una historia para verla en el mapa. Cada paso muestra dónde se escribieron los libros y dónde transcurren. Toca un marcador para ver su ficha: muchas muestran una frase famosa en su propia lengua.",
    "where": [
-    "src/app/i18n.ts:245"
+    "src/app/i18n.ts:246"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Some steps happen on the Moon or Mars: the globe turns into that world, with the landing sites and the rovers' routes.",
    "es": "Elige una historia para verla en el mapa. Algunos pasos ocurren en la Luna o en Marte: el globo se convierte en ese mundo, con los sitios de aterrizaje y las rutas de los vehículos.",
    "where": [
-    "src/app/i18n.ts:282"
+    "src/app/i18n.ts:283"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Tap a marker for its card: many play a short clip of a free recording. Turn on ♪ in the story bar to hear each step’s music while the map moves.",
    "es": "Elige una historia para verla en el mapa. Toca un marcador para ver su ficha: muchas tocan un fragmento de una grabación libre. Activa ♪ en la barra de la historia para oír la música de cada paso mientras se mueve el mapa.",
    "where": [
-    "src/app/i18n.ts:242"
+    "src/app/i18n.ts:243"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Tap a marker for the crop, find or dish, and \"Details\" for more.",
    "es": "Elige una historia para verla en el mapa. Toca un marcador para conocer el cultivo, el hallazgo o el plato, y \"Detalles\" para saber más.",
    "where": [
-    "src/app/i18n.ts:209"
+    "src/app/i18n.ts:210"
    ]
   },
   {
    "en": "Pick a story to see it on the map. Tap a marker for the find, the city or the people, and \"Details\" for more.",
    "es": "Elige una historia para verla en el mapa. Toca un marcador para conocer el hallazgo, la ciudad o el pueblo, y \"Detalles\" para saber más.",
    "where": [
-    "src/app/i18n.ts:310"
+    "src/app/i18n.ts:311"
    ]
   },
   {
    "en": "Pick a tour to see it on the map. Tap a marker for who built it, why and how, and \"Details\" for more.",
    "es": "Elige un recorrido para verlo en el mapa. Toca un marcador para saber quién lo construyó, por qué y cómo, y \"Detalles\" para saber más.",
    "where": [
-    "src/app/i18n.ts:311"
+    "src/app/i18n.ts:312"
    ]
   },
   {
    "en": "Pick an era to see it on the map. Tap a marker for the person, work or place, and \"Details\" for more.",
    "es": "Elige una época para verla en el mapa. Toca un marcador para conocer a la persona, la obra o el lugar, y \"Detalles\" para saber más.",
    "where": [
-    "src/app/i18n.ts:206"
+    "src/app/i18n.ts:207"
    ]
   },
   {
@@ -12332,7 +12251,7 @@
    "en": "Pick the life to set beside {name}",
    "es": "Elige la vida que quieres junto a {name}",
    "where": [
-    "src/app/i18n.ts:269"
+    "src/app/i18n.ts:270"
    ]
   },
   {
@@ -12450,7 +12369,7 @@
    "en": "Plagues and cures",
    "es": "Epidemias y curas",
    "where": [
-    "src/app/i18n.ts:234",
+    "src/app/i18n.ts:235",
     "src/learn/learn.ts:2424",
     "src/modes/stories.ts:198"
    ]
@@ -12578,7 +12497,7 @@
    "en": "Plate Carrée",
    "es": "Equirrectangular",
    "where": [
-    "src/app/i18n.ts:119"
+    "src/app/i18n.ts:120"
    ]
   },
   {
@@ -12599,7 +12518,7 @@
    "en": "Plate tectonics: watch the supercontinent break apart into today’s continents (and go back to Rodinia, 1 billion years ago).",
    "es": "Tectónica de placas: mira cómo el supercontinente se separa en los continentes actuales (y retrocede hasta Rodinia, hace 1000 millones de años).",
    "where": [
-    "src/app/i18n.ts:342"
+    "src/app/i18n.ts:343"
    ]
   },
   {
@@ -12613,15 +12532,12 @@
   {
    "en": "Play",
    "es": "Jugar",
-   "esAlso": [
-    "Reproducir"
-   ],
    "where": [
-    "src/app/i18n.ts:31",
+    "src/app/i18n.ts:32",
     "src/fill/states.ts:514",
-    "src/learn/learn.ts:2541",
     "src/master/master.ts:1095",
-    "src/onmap/onmap.ts:562"
+    "src/onmap/onmap.ts:562",
+    "src/play/menu.ts:174"
    ]
   },
   {
@@ -12633,11 +12549,7 @@
   },
   {
    "en": "Play again",
-   "es": "Otra partida",
-   "esAlso": [
-    "Jugar otra vez",
-    "Otra vez"
-   ],
+   "es": "Jugar otra vez",
    "where": [
     "src/learn/learn.ts:1938",
     "src/master/master.ts:864",
@@ -12650,7 +12562,7 @@
    "en": "Play from the start",
    "es": "Reproducir desde el inicio",
    "where": [
-    "src/app/i18n.ts:162"
+    "src/app/i18n.ts:163"
    ]
   },
   {
@@ -12757,7 +12669,7 @@
    "en": "Political",
    "es": "Político",
    "where": [
-    "src/app/i18n.ts:101"
+    "src/app/i18n.ts:102"
    ]
   },
   {
@@ -12771,7 +12683,7 @@
    "en": "Population",
    "es": "Población",
    "where": [
-    "src/app/i18n.ts:75",
+    "src/app/i18n.ts:76",
     "src/layers/basics.ts:59",
     "src/play/hop.ts:418",
     "src/tools/tools.ts:158"
@@ -12802,14 +12714,14 @@
    "en": "Precambrian (until 539 million years ago)",
    "es": "Precámbrico (hasta hace 539 millones de años)",
    "where": [
-    "src/app/i18n.ts:174"
+    "src/app/i18n.ts:175"
    ]
   },
   {
    "en": "Prehistory",
    "es": "Prehistoria",
    "where": [
-    "src/app/i18n.ts:178",
+    "src/app/i18n.ts:179",
     "src/modes/history.ts:34"
    ]
   },
@@ -12838,7 +12750,7 @@
    "en": "Previous step",
    "es": "Paso anterior",
    "where": [
-    "src/app/i18n.ts:184"
+    "src/app/i18n.ts:185"
    ]
   },
   {
@@ -12852,7 +12764,7 @@
    "en": "Projection",
    "es": "Proyección",
    "where": [
-    "src/app/i18n.ts:24"
+    "src/app/i18n.ts:25"
    ]
   },
   {
@@ -12872,15 +12784,12 @@
   {
    "en": "Put it on the map",
    "es": "Ponlo en el mapa",
-   "esAlso": [
-    "Ponerlo en el mapa"
-   ],
    "where": [
     "src/main.ts:103",
     "src/main.ts:136",
     "src/main.ts:175",
-    "src/mydata/panel.ts:114",
-    "src/onmap/onmap.ts:73"
+    "src/onmap/onmap.ts:73",
+    "src/onmap/onmap.ts:340"
    ]
   },
   {
@@ -13024,7 +12933,7 @@
    "en": "Read all of it",
    "es": "Leer todo",
    "where": [
-    "src/app/i18n.ts:318"
+    "src/app/i18n.ts:319"
    ]
   },
   {
@@ -13080,12 +12989,8 @@
   },
   {
    "en": "Reading aloud",
-   "es": "Leyendo en voz alta",
-   "esAlso": [
-    "Lectura en voz alta"
-   ],
+   "es": "Lectura en voz alta",
    "where": [
-    "src/ui/ambient.ts:75",
     "src/ui/settings.ts:79"
    ]
   },
@@ -13099,9 +13004,6 @@
   {
    "en": "Realm",
    "es": "Región biogeográfica",
-   "esAlso": [
-    "Región"
-   ],
    "where": [
     "src/green/cards.ts:135",
     "src/layers/packs/fauna.ts:84"
@@ -13161,7 +13063,7 @@
    "en": "Region",
    "es": "Región",
    "where": [
-    "src/app/i18n.ts:78",
+    "src/app/i18n.ts:79",
     "src/layers/packs/regional.ts:235",
     "src/learn/learn.ts:415",
     "src/master/master.ts:1114",
@@ -13212,7 +13114,7 @@
    "en": "Religions and philosophies",
    "es": "Religiones y filosofías",
    "where": [
-    "src/app/i18n.ts:228",
+    "src/app/i18n.ts:229",
     "src/learn/learn.ts:2424",
     "src/modes/stories.ts:196"
    ]
@@ -13282,6 +13184,15 @@
    ]
   },
   {
+   "en": "Reminder time",
+   "es": "Hora del recordatorio",
+   "where": [
+    "src/today/reminders.ts:277",
+    "src/today/reminders.ts:338",
+    "src/today/reminders.ts:365"
+   ]
+  },
+  {
    "en": "Reminders",
    "es": "Recordatorios",
    "where": [
@@ -13307,7 +13218,7 @@
    "en": "Remove",
    "es": "Quitar",
    "where": [
-    "src/app/i18n.ts:23",
+    "src/app/i18n.ts:24",
     "src/guide/guide.ts:261",
     "src/ui/playlists.ts:287"
    ]
@@ -13374,7 +13285,7 @@
    "en": "Reset view",
    "es": "Restablecer vista",
    "where": [
-    "src/app/i18n.ts:67"
+    "src/app/i18n.ts:68"
    ]
   },
   {
@@ -13389,7 +13300,7 @@
    "en": "Result",
    "es": "Resultado",
    "where": [
-    "src/app/i18n.ts:195",
+    "src/app/i18n.ts:196",
     "src/learn/learn.ts:1936",
     "src/play/hilo.ts:153",
     "src/play/lifeguess.ts:123",
@@ -13477,7 +13388,7 @@
    "en": "Rivers",
    "es": "Ríos",
    "where": [
-    "src/app/i18n.ts:52",
+    "src/app/i18n.ts:53",
     "src/layers/landforms.ts:183"
    ]
   },
@@ -13507,7 +13418,7 @@
    "en": "Robinson",
    "es": "Robinson",
    "where": [
-    "src/app/i18n.ts:122"
+    "src/app/i18n.ts:123"
    ]
   },
   {
@@ -13542,7 +13453,7 @@
    "en": "Rotation speed",
    "es": "Velocidad de giro",
    "where": [
-    "src/app/i18n.ts:61",
+    "src/app/i18n.ts:62",
     "src/ui/playlists.ts:306"
    ]
   },
@@ -13565,7 +13476,7 @@
    "en": "Runners-up",
    "es": "Subcampeón",
    "where": [
-    "src/app/i18n.ts:292"
+    "src/app/i18n.ts:293"
    ]
   },
   {
@@ -13690,7 +13601,7 @@
    "en": "Save and share",
    "es": "Guardar y compartir",
    "where": [
-    "src/app/i18n.ts:33"
+    "src/app/i18n.ts:34"
    ]
   },
   {
@@ -13901,14 +13812,14 @@
    "en": "Search",
    "es": "Buscar",
    "where": [
-    "src/app/i18n.ts:320"
+    "src/app/i18n.ts:321"
    ]
   },
   {
    "en": "Search a name, a field or a place…",
    "es": "Busca un nombre, un campo o un lugar…",
    "where": [
-    "src/app/i18n.ts:263"
+    "src/app/i18n.ts:264"
    ]
   },
   {
@@ -13922,14 +13833,14 @@
    "en": "Search filters",
    "es": "Buscar filtros",
    "where": [
-    "src/app/i18n.ts:20"
+    "src/app/i18n.ts:21"
    ]
   },
   {
    "en": "Search places",
    "es": "Buscar lugares",
    "where": [
-    "src/app/i18n.ts:34"
+    "src/app/i18n.ts:35"
    ]
   },
   {
@@ -13957,7 +13868,7 @@
    "en": "Seas and oceans",
    "es": "Mares y océanos",
    "where": [
-    "src/app/i18n.ts:46"
+    "src/app/i18n.ts:47"
    ]
   },
   {
@@ -14035,7 +13946,7 @@
    "en": "See the continents move",
    "es": "Ver cómo se mueven los continentes",
    "where": [
-    "src/app/i18n.ts:220"
+    "src/app/i18n.ts:221"
    ]
   },
   {
@@ -14110,11 +14021,8 @@
   {
    "en": "Settings",
    "es": "Ajustes",
-   "esAlso": [
-    "Configuración"
-   ],
    "where": [
-    "src/app/i18n.ts:37",
+    "src/app/i18n.ts:38",
     "src/layers/imagery.ts:89",
     "src/master/master.ts:1127",
     "src/ui/playlists.ts:303"
@@ -14177,7 +14085,7 @@
    "en": "Share view",
    "es": "Compartir vista",
    "where": [
-    "src/app/i18n.ts:157"
+    "src/app/i18n.ts:158"
    ]
   },
   {
@@ -14260,9 +14168,6 @@
   {
    "en": "Show",
    "es": "Mostrar",
-   "esAlso": [
-    "Ver"
-   ],
    "where": [
     "src/layers/packs/born.ts:96",
     "src/layers/packs/earth.ts:230",
@@ -14282,7 +14187,7 @@
    "en": "Show clock",
    "es": "Mostrar reloj",
    "where": [
-    "src/app/i18n.ts:64"
+    "src/app/i18n.ts:65"
    ]
   },
   {
@@ -14296,17 +14201,12 @@
    "en": "Show less",
    "es": "Ver menos",
    "where": [
-    "src/app/i18n.ts:49"
+    "src/app/i18n.ts:50"
    ]
   },
   {
    "en": "Show me",
    "es": "Muéstramelo",
-   "esAlso": [
-    "Ver la ruta",
-    "Ver la respuesta",
-    "Ver la mejor"
-   ],
    "where": [
     "src/fill/fill.ts:381",
     "src/fill/states.ts:317",
@@ -14327,6 +14227,20 @@
    ]
   },
   {
+   "en": "Show the answer",
+   "es": "Ver la respuesta",
+   "where": [
+    "src/play/outline.ts:202"
+   ]
+  },
+  {
+   "en": "Show the best route",
+   "es": "Ver la mejor ruta",
+   "where": [
+    "src/play/tour.ts:229"
+   ]
+  },
+  {
    "en": "Show the chart",
    "es": "Mostrar el gráfico",
    "where": [
@@ -14338,6 +14252,13 @@
    "es": "Mostrar el reloj",
    "where": [
     "src/ui/playlists.ts:310"
+   ]
+  },
+  {
+   "en": "Show the route",
+   "es": "Ver la ruta",
+   "where": [
+    "src/play/hop.ts:419"
    ]
   },
   {
@@ -14430,7 +14351,7 @@
    "en": "Since 1945",
    "es": "Desde 1945",
    "where": [
-    "src/app/i18n.ts:183"
+    "src/app/i18n.ts:184"
    ]
   },
   {
@@ -14465,7 +14386,7 @@
    "en": "Since {y}",
    "es": "Desde {y}",
    "where": [
-    "src/app/i18n.ts:330"
+    "src/app/i18n.ts:331"
    ]
   },
   {
@@ -14514,7 +14435,7 @@
    "en": "Size",
    "es": "Tamaño",
    "where": [
-    "src/app/i18n.ts:327",
+    "src/app/i18n.ts:328",
     "src/sky/galaxy.ts:362",
     "src/sky/sky.ts:697",
     "src/sky/sky.ts:710",
@@ -14602,7 +14523,7 @@
    "en": "Smooth motion: let the graphics chip (GPU) draw the map while it moves",
    "es": "Movimiento fluido: que el chip gráfico (GPU) dibuje el mapa mientras se mueve",
    "where": [
-    "src/app/i18n.ts:55"
+    "src/app/i18n.ts:56"
    ]
   },
   {
@@ -14696,17 +14617,14 @@
    "en": "Sources",
    "es": "Fuentes",
    "where": [
-    "src/app/i18n.ts:193"
+    "src/app/i18n.ts:194"
    ]
   },
   {
    "en": "South America",
-   "es": "Sudamérica",
-   "esAlso": [
-    "América del Sur"
-   ],
+   "es": "América del Sur",
    "where": [
-    "src/app/i18n.ts:95",
+    "src/app/i18n.ts:96",
     "src/master/master.ts:53",
     "src/play/hop.ts:32",
     "src/play/names.ts:22",
@@ -14740,7 +14658,7 @@
    "en": "Space (dark)",
    "es": "Espacio (oscuro)",
    "where": [
-    "src/app/i18n.ts:40"
+    "src/app/i18n.ts:41"
    ]
   },
   {
@@ -14754,7 +14672,7 @@
    "en": "Space exploration",
    "es": "Exploración espacial",
    "where": [
-    "src/app/i18n.ts:280",
+    "src/app/i18n.ts:281",
     "src/modes/stories.ts:205"
    ]
   },
@@ -14813,7 +14731,7 @@
    "en": "Speed",
    "es": "Velocidad",
    "where": [
-    "src/app/i18n.ts:163",
+    "src/app/i18n.ts:164",
     "src/ui/legend.ts:130",
     "src/ui/settings.ts:142"
    ]
@@ -14895,9 +14813,6 @@
   {
    "en": "Start over",
    "es": "Empezar de nuevo",
-   "esAlso": [
-    "Volver a empezar"
-   ],
    "where": [
     "src/fill/states.ts:516",
     "src/learn/learn.ts:1428",
@@ -14963,7 +14878,7 @@
    "en": "Stayed away or kept out",
    "es": "Ausentes o excluidos",
    "where": [
-    "src/app/i18n.ts:306"
+    "src/app/i18n.ts:307"
    ]
   },
   {
@@ -14977,7 +14892,7 @@
    "en": "Stereographic",
    "es": "Estereográfica",
    "where": [
-    "src/app/i18n.ts:131"
+    "src/app/i18n.ts:132"
    ]
   },
   {
@@ -15040,12 +14955,8 @@
   {
    "en": "Streak",
    "es": "Racha",
-   "esAlso": [
-    "Franja"
-   ],
    "where": [
-    "src/learn/progress.ts:336",
-    "src/space/worlds.ts:223"
+    "src/learn/progress.ts:336"
    ]
   },
   {
@@ -15211,7 +15122,7 @@
    "en": "Tap a country for details",
    "es": "Toca un país para ver detalles",
    "where": [
-    "src/app/i18n.ts:159"
+    "src/app/i18n.ts:160"
    ]
   },
   {
@@ -15540,7 +15451,7 @@
    "en": "Tap to exit ambient mode",
    "es": "Toca para salir del modo ambiente",
    "where": [
-    "src/app/i18n.ts:62"
+    "src/app/i18n.ts:63"
    ]
   },
   {
@@ -15585,7 +15496,7 @@
    "en": "Team",
    "es": "Selección",
    "where": [
-    "src/app/i18n.ts:287"
+    "src/app/i18n.ts:288"
    ]
   },
   {
@@ -15696,12 +15607,8 @@
   },
   {
    "en": "That is {0}. ",
-   "es": "Esa es {0}. ",
-   "esAlso": [
-    "Ese es {0}. "
-   ],
+   "es": "Ese es {0}. ",
    "where": [
-    "src/master/extra.ts:229",
     "src/master/extra.ts:494"
    ]
   },
@@ -15807,7 +15714,7 @@
    "en": "The Black Death month by month, smallpox, cholera and John Snow, malaria, the 1918 flu, HIV and COVID-19, and the people who found the germs, the vaccines and the medicines that fight them.",
    "es": "La peste negra mes a mes, la viruela, el cólera y John Snow, la malaria, la gripe de 1918, el VIH y la COVID-19, y quienes descubrieron los microbios, las vacunas y los medicamentos que los combaten.",
    "where": [
-    "src/app/i18n.ts:235"
+    "src/app/i18n.ts:236"
    ]
   },
   {
@@ -16454,14 +16361,14 @@
    "en": "The map shows the continents of {when}, where the plate model of \"Pangea to today\" puts them (Merdith et al., 2021). Their coastlines are today’s, moved with their plates, and each marker moves with its continent.",
    "es": "El mapa muestra los continentes de {when}, donde los sitúa el modelo de placas de \"De Pangea a hoy\" (Merdith et al., 2021). Sus costas son las de hoy, desplazadas con su placa, y cada marcador se mueve con su continente.",
    "where": [
-    "src/app/i18n.ts:218"
+    "src/app/i18n.ts:219"
    ]
   },
   {
    "en": "The map shows today’s land, greyed: the plate model goes back only 1000 million years. The markers are where the rocks are found today.",
    "es": "El mapa muestra las tierras de hoy, en gris: el modelo de placas solo llega a hace 1000 millones de años. Los marcadores indican dónde están hoy las rocas.",
    "where": [
-    "src/app/i18n.ts:219"
+    "src/app/i18n.ts:220"
    ]
   },
   {
@@ -16560,7 +16467,7 @@
    "en": "The plain map: latitude and longitude as a grid.",
    "es": "El mapa simple: latitud y longitud como cuadrícula.",
    "where": [
-    "src/app/i18n.ts:133"
+    "src/app/i18n.ts:134"
    ]
   },
   {
@@ -16688,7 +16595,7 @@
    "en": "The separate inventions of writing, the journey of the alphabet, the scripts of East Asia and the scripts made by one person, the lost scripts and their code breakers, and how the great language families spread.",
    "es": "Las invenciones de la escritura, el viaje del alfabeto, las escrituras de Asia oriental y las creadas por una sola persona, las escrituras perdidas y quienes las descifraron, y cómo se extendieron las grandes familias de lenguas.",
    "where": [
-    "src/app/i18n.ts:232"
+    "src/app/i18n.ts:233"
    ]
   },
   {
@@ -16753,7 +16660,7 @@
    "en": "The story of UNESCO’s World Heritage List: how saving Abu Simbel started it, sites destroyed and rebuilt, nature saved, and Latin America’s history in its heritage.",
    "es": "La historia de la Lista del Patrimonio Mundial de la UNESCO: cómo empezó al salvar Abu Simbel, sitios destruidos y reconstruidos, la naturaleza salvada y la historia de América Latina en su patrimonio.",
    "where": [
-    "src/app/i18n.ts:253"
+    "src/app/i18n.ts:254"
    ]
   },
   {
@@ -16858,7 +16765,7 @@
    "en": "The whole world in a circle with true areas.",
    "es": "Todo el mundo en un círculo con áreas reales.",
    "where": [
-    "src/app/i18n.ts:144"
+    "src/app/i18n.ts:145"
    ]
   },
   {
@@ -16914,7 +16821,7 @@
    "en": "Their buildings",
    "es": "Sus edificios",
    "where": [
-    "src/app/i18n.ts:275"
+    "src/app/i18n.ts:276"
    ]
   },
   {
@@ -16928,14 +16835,14 @@
    "en": "Their paths cross",
    "es": "Sus caminos se cruzan",
    "where": [
-    "src/app/i18n.ts:262"
+    "src/app/i18n.ts:263"
    ]
   },
   {
    "en": "Theme",
    "es": "Tema",
    "where": [
-    "src/app/i18n.ts:39"
+    "src/app/i18n.ts:40"
    ]
   },
   {
@@ -16984,7 +16891,7 @@
    "en": "Third place",
    "es": "Tercer lugar",
    "where": [
-    "src/app/i18n.ts:293"
+    "src/app/i18n.ts:294"
    ]
   },
   {
@@ -17298,15 +17205,9 @@
   },
   {
    "en": "Time",
-   "es": "Hora",
-   "esAlso": [
-    "Tiempo"
-   ],
+   "es": "Tiempo",
    "where": [
-    "src/app/i18n.ts:161",
-    "src/today/reminders.ts:277",
-    "src/today/reminders.ts:338",
-    "src/today/reminders.ts:365"
+    "src/app/i18n.ts:162"
    ]
   },
   {
@@ -17341,8 +17242,8 @@
    "en": "Time travel",
    "es": "Viaje en el tiempo",
    "where": [
-    "src/app/i18n.ts:26",
-    "src/app/i18n.ts:160"
+    "src/app/i18n.ts:27",
+    "src/app/i18n.ts:161"
    ]
   },
   {
@@ -17419,8 +17320,8 @@
    "en": "Today",
    "es": "Hoy",
    "where": [
-    "src/app/i18n.ts:260",
-    "src/app/i18n.ts:328",
+    "src/app/i18n.ts:261",
+    "src/app/i18n.ts:329",
     "src/green/cards.ts:117",
     "src/green/cards.ts:197",
     "src/learn/learn.ts:2718"
@@ -17465,7 +17366,7 @@
    "en": "Today’s land: older than the plate model",
    "es": "Tierras de hoy: más antiguo que el modelo de placas",
    "where": [
-    "src/app/i18n.ts:217"
+    "src/app/i18n.ts:218"
    ]
   },
   {
@@ -17508,7 +17409,7 @@
    "en": "Tools",
    "es": "Herramientas",
    "where": [
-    "src/app/i18n.ts:32"
+    "src/app/i18n.ts:33"
    ]
   },
   {
@@ -17522,8 +17423,8 @@
    "en": "Total",
    "es": "Total",
    "where": [
-    "src/app/i18n.ts:198",
-    "src/app/i18n.ts:289"
+    "src/app/i18n.ts:199",
+    "src/app/i18n.ts:290"
    ]
   },
   {
@@ -17631,14 +17532,14 @@
    "en": "True areas with a pleasing shape (2018).",
    "es": "Áreas reales con forma agradable (2018).",
    "where": [
-    "src/app/i18n.ts:138"
+    "src/app/i18n.ts:139"
    ]
   },
   {
    "en": "True distances from the centre (UN emblem style).",
    "es": "Distancias reales desde el centro (como el emblema de la ONU).",
    "where": [
-    "src/app/i18n.ts:143"
+    "src/app/i18n.ts:144"
    ]
   },
   {
@@ -17782,21 +17683,21 @@
    "en": "Two lives on one map, step by step in the order they happened. A handshake marks where their paths crossed.",
    "es": "Dos vidas en un mismo mapa, paso a paso en el orden en que ocurrieron. Un apretón de manos marca dónde se cruzaron sus caminos.",
    "where": [
-    "src/app/i18n.ts:278"
+    "src/app/i18n.ts:279"
    ]
   },
   {
    "en": "Two lives side by side",
    "es": "Dos vidas lado a lado",
    "where": [
-    "src/app/i18n.ts:266"
+    "src/app/i18n.ts:267"
    ]
   },
   {
    "en": "Two people on one map, in the same years, and where their paths crossed.",
    "es": "Dos personas en un mismo mapa, en los mismos años, y dónde se cruzaron sus caminos.",
    "where": [
-    "src/app/i18n.ts:267"
+    "src/app/i18n.ts:268"
    ]
   },
   {
@@ -17898,7 +17799,7 @@
    "en": "UNESCO",
    "es": "UNESCO",
    "where": [
-    "src/app/i18n.ts:336"
+    "src/app/i18n.ts:337"
    ]
   },
   {
@@ -17991,6 +17892,8 @@
    "en": "Undo",
    "es": "Deshacer",
    "where": [
+    "src/play/hop.ts:406",
+    "src/play/tour.ts:226",
     "src/tools/tools.ts:86"
    ]
   },
@@ -18088,7 +17991,7 @@
    "en": "Version",
    "es": "Versión",
    "where": [
-    "src/app/i18n.ts:156"
+    "src/app/i18n.ts:157"
    ]
   },
   {
@@ -18109,7 +18012,7 @@
    "en": "Vesuvius in AD 79, the Lisbon earthquake of 1755, Tambora and the year without a summer, Krakatoa, the 2004 tsunami and more: hour by hour, with their effects around the world.",
    "es": "El Vesubio en el año 79, el terremoto de Lisboa de 1755, el Tambora y el año sin verano, el Krakatoa, el tsunami de 2004 y más: hora a hora, con sus efectos en todo el mundo.",
    "where": [
-    "src/app/i18n.ts:238"
+    "src/app/i18n.ts:239"
    ]
   },
   {
@@ -18292,7 +18195,7 @@
    "en": "Wars and conquests",
    "es": "Guerras y conquistas",
    "where": [
-    "src/app/i18n.ts:170",
+    "src/app/i18n.ts:171",
     "src/modes/stories.ts:188"
    ]
   },
@@ -18307,7 +18210,7 @@
    "en": "Watch the political map change from 123,000 BC to today. Pick a start and an end, then press play.",
    "es": "Mira cómo cambia el mapa político desde el 123 000 a. C. hasta hoy. Elige inicio y fin y toca reproducir.",
    "where": [
-    "src/app/i18n.ts:168"
+    "src/app/i18n.ts:169"
    ]
   },
   {
@@ -18386,7 +18289,7 @@
    "en": "What changed",
    "es": "Qué cambió",
    "where": [
-    "src/app/i18n.ts:166"
+    "src/app/i18n.ts:167"
    ]
   },
   {
@@ -18490,7 +18393,7 @@
    "en": "When",
    "es": "Cuándo",
    "where": [
-    "src/app/i18n.ts:322",
+    "src/app/i18n.ts:323",
     "src/green/cards.ts:174",
     "src/layers/packs/heritage.ts:462",
     "src/layers/packs/live.ts:133",
@@ -18624,7 +18527,7 @@
    "en": "Where",
    "es": "Dónde",
    "where": [
-    "src/app/i18n.ts:323",
+    "src/app/i18n.ts:324",
     "src/green/cards.ts:115",
     "src/green/cards.ts:175",
     "src/green/cards.ts:192",
@@ -18956,7 +18859,7 @@
    "en": "Where music and dance were born and how they travelled: the oldest flutes, classical music, the instruments of the world, jazz and blues, rock and hip hop, Latin rhythms and the dances of the world, with short clips of free recordings.",
    "es": "Dónde nacieron la música y el baile y cómo viajaron: las flautas más antiguas, la música clásica, los instrumentos del mundo, el jazz y el blues, el rock y el hip hop, los ritmos latinos y los bailes del mundo, con fragmentos de grabaciones libres.",
    "where": [
-    "src/app/i18n.ts:241"
+    "src/app/i18n.ts:242"
    ]
   },
   {
@@ -19014,14 +18917,14 @@
    "en": "Where the world’s faiths and schools of thought began and how they spread, told neutrally: Hinduism, Buddhism, Judaism, Christianity, Islam, Sikhism, the ways of East Asia, African faiths in the Americas and the first philosophers.",
    "es": "Dónde nacieron las religiones y las escuelas de pensamiento del mundo y cómo se extendieron, contado con neutralidad: el hinduismo, el budismo, el judaísmo, el cristianismo, el islam, el sijismo, las tradiciones de Asia oriental, las religiones africanas en América y los primeros filósofos.",
    "where": [
-    "src/app/i18n.ts:229"
+    "src/app/i18n.ts:230"
    ]
   },
   {
    "en": "Where their works are now",
    "es": "Dónde están hoy sus obras",
    "where": [
-    "src/app/i18n.ts:274"
+    "src/app/i18n.ts:275"
    ]
   },
   {
@@ -19049,7 +18952,7 @@
    "en": "Where things were invented and how they travelled: China’s four great inventions, clocks, lenses, flight, the telegraph and the Web, power, everyday things, disputed firsts and inventions from Latin America.",
    "es": "Dónde se inventaron las cosas y cómo viajaron: los cuatro grandes inventos de China, los relojes, las lentes, el vuelo, el telégrafo y la web, la energía, las cosas de todos los días, los primeros en disputa y los inventos de América Latina.",
    "where": [
-    "src/app/i18n.ts:250"
+    "src/app/i18n.ts:251"
    ]
   },
   {
@@ -19692,7 +19595,7 @@
    "en": "Who",
    "es": "Quién",
    "where": [
-    "src/app/i18n.ts:324",
+    "src/app/i18n.ts:325",
     "src/space/surface.ts:248"
    ]
   },
@@ -19801,7 +19704,7 @@
    "en": "Why",
    "es": "Por qué",
    "where": [
-    "src/app/i18n.ts:325"
+    "src/app/i18n.ts:326"
    ]
   },
   {
@@ -19836,7 +19739,7 @@
    "en": "Wikipedia",
    "es": "Wikipedia",
    "where": [
-    "src/app/i18n.ts:85"
+    "src/app/i18n.ts:86"
    ]
   },
   {
@@ -19928,7 +19831,7 @@
    "en": "Winkel Tripel",
    "es": "Winkel Tripel",
    "where": [
-    "src/app/i18n.ts:123"
+    "src/app/i18n.ts:124"
    ]
   },
   {
@@ -20027,12 +19930,9 @@
   {
    "en": "World Heritage",
    "es": "Patrimonio de la Humanidad",
-   "esAlso": [
-    "Patrimonio Mundial"
-   ],
    "where": [
-    "src/app/i18n.ts:252",
-    "src/app/i18n.ts:329",
+    "src/app/i18n.ts:253",
+    "src/app/i18n.ts:330",
     "src/guide/guide.ts:737",
     "src/layers/packs/heritage.ts:327",
     "src/layers/packs/heritage.ts:465"
@@ -20054,16 +19954,11 @@
   },
   {
    "en": "World Heritage sites",
-   "es": "Sitios del Patrimonio Mundial",
-   "esAlso": [
-    "Patrimonio de la Humanidad",
-    "sitios del Patrimonio Mundial"
-   ],
+   "es": "Sitios del Patrimonio de la Humanidad",
    "where": [
     "src/layers/packs/heritage.ts:154",
     "src/layers/packs/heritage.ts:274",
-    "src/layers/packs/heritage.ts:277",
-    "src/layers/packs/heritage.ts:289"
+    "src/layers/packs/heritage.ts:277"
    ]
   },
   {
@@ -20084,7 +19979,7 @@
    "en": "Writing and languages",
    "es": "Escritura y lenguas",
    "where": [
-    "src/app/i18n.ts:231",
+    "src/app/i18n.ts:232",
     "src/learn/learn.ts:2424",
     "src/modes/stories.ts:197"
    ]
@@ -20223,7 +20118,7 @@
    "en": "Your data",
    "es": "Tus datos",
    "where": [
-    "src/app/i18n.ts:113",
+    "src/app/i18n.ts:114",
     "src/mydata/mydata.ts:164"
    ]
   },
@@ -20357,7 +20252,7 @@
    "en": "Zoom in",
    "es": "Acercar",
    "where": [
-    "src/app/i18n.ts:65"
+    "src/app/i18n.ts:66"
    ]
   },
   {
@@ -20371,7 +20266,7 @@
    "en": "Zoom out",
    "es": "Alejar",
    "where": [
-    "src/app/i18n.ts:66"
+    "src/app/i18n.ts:67"
    ]
   },
   {
@@ -20389,10 +20284,74 @@
    ]
   },
   {
+   "ctx": "a button: finish",
+   "key": "a button: finish\u0004Done",
+   "en": "Done",
+   "es": "Terminar",
+   "where": [
+    "src/learn/learn.ts:1940",
+    "src/learn/learn.ts:1956"
+   ]
+  },
+  {
+   "ctx": "a button: show this area on the map",
+   "key": "a button: show this area on the map\u0004Show",
+   "en": "Show",
+   "es": "Ver",
+   "where": [
+    "src/ui/terrain.ts:150"
+   ]
+  },
+  {
+   "ctx": "a button: show your data on the map",
+   "key": "a button: show your data on the map\u0004Put it on the map",
+   "en": "Put it on the map",
+   "es": "Ponerlo en el mapa",
+   "where": [
+    "src/mydata/panel.ts:114"
+   ]
+  },
+  {
+   "ctx": "a city",
+   "key": "a city\u0004That is {0}. ",
+   "en": "That is {0}. ",
+   "es": "Esa es {0}. ",
+   "where": [
+    "src/master/extra.ts:229"
+   ]
+  },
+  {
+   "ctx": "a count of tries",
+   "key": "a count of tries\u0004Check",
+   "en": "Check",
+   "es": "Comprobación",
+   "where": [
+    "src/onmap/onmap.ts:343"
+   ]
+  },
+  {
    "en": "a faint blue glow",
    "es": "un tenue brillo azul",
    "where": [
     "src/ocean/dive.ts:116"
+   ]
+  },
+  {
+   "ctx": "a filter: when people were born",
+   "key": "a filter: when people were born\u0004Born",
+   "en": "Born",
+   "es": "Nacidos",
+   "where": [
+    "src/layers/packs/born.ts:95"
+   ]
+  },
+  {
+   "ctx": "a group of filters: population",
+   "key": "a group of filters: population\u0004People",
+   "en": "People",
+   "es": "Población",
+   "where": [
+    "src/app/i18n.ts:103"
    ]
   },
   {
@@ -20404,14 +20363,48 @@
    ]
   },
   {
+   "ctx": "a month on its own",
+   "key": "a month on its own\u0004January",
+   "en": "January",
+   "es": "Enero",
+   "where": [
+    "src/layers/packs/climate.ts:201"
+   ]
+  },
+  {
+   "ctx": "a month on its own",
+   "key": "a month on its own\u0004July",
+   "en": "July",
+   "es": "Julio",
+   "where": [
+    "src/layers/packs/climate.ts:201"
+   ]
+  },
+  {
    "en": "a new one tomorrow",
    "es": "mañana hay otro",
-   "esAlso": [
-    "mañana hay otra"
-   ],
    "where": [
-    "src/learn/learn.ts:430",
-    "src/play/hop.ts:110"
+    "src/learn/learn.ts:430"
+   ]
+  },
+  {
+   "ctx": "a plant",
+   "key": "a plant\u0004Best places to see it",
+   "en": "Best places to see it",
+   "es": "Mejores lugares para verla",
+   "where": [
+    "src/green/cards.ts:74",
+    "src/green/finder.ts:201",
+    "src/layers/packs/green.ts:207"
+   ]
+  },
+  {
+   "ctx": "a stripe on a planet's surface",
+   "key": "a stripe on a planet's surface\u0004Streak",
+   "en": "Streak",
+   "es": "Franja",
+   "where": [
+    "src/space/worlds.ts:223"
    ]
   },
   {
@@ -20454,16 +20447,10 @@
   {
    "en": "about",
    "es": "unas",
-   "esAlso": [
-    "hacia",
-    "unos"
-   ],
    "where": [
-    "src/green/cards.ts:191",
     "src/guide/guide.ts:268",
     "src/guide/guide.ts:618",
-    "src/guide/guide.ts:727",
-    "src/ocean/dive.ts:117"
+    "src/guide/guide.ts:727"
    ]
   },
   {
@@ -20498,14 +20485,14 @@
    "en": "aged about {n}",
    "es": "con unos {n} años",
    "where": [
-    "src/app/i18n.ts:259"
+    "src/app/i18n.ts:260"
    ]
   },
   {
    "en": "aged {n}",
    "es": "a los {n} años",
    "where": [
-    "src/app/i18n.ts:258"
+    "src/app/i18n.ts:259"
    ]
   },
   {
@@ -20513,6 +20500,33 @@
    "es": "la presión del aire al nivel del mar, y un poco más",
    "where": [
     "src/ocean/dive.ts:39"
+   ]
+  },
+  {
+   "ctx": "all clue themes",
+   "key": "all clue themes\u0004All",
+   "en": "All",
+   "es": "Todas",
+   "where": [
+    "src/fill/fill.ts:44"
+   ]
+  },
+  {
+   "ctx": "all lives",
+   "key": "all lives\u0004All",
+   "en": "All",
+   "es": "Todas",
+   "where": [
+    "src/app/i18n.ts:265"
+   ]
+  },
+  {
+   "ctx": "all plants",
+   "key": "all plants\u0004All",
+   "en": "All",
+   "es": "Todas",
+   "where": [
+    "src/layers/packs/green.ts:232"
    ]
   },
   {
@@ -20569,6 +20583,15 @@
    "es": "aproximada",
    "where": [
     "src/modes/history.ts:313"
+   ]
+  },
+  {
+   "ctx": "around a year",
+   "key": "around a year\u0004about",
+   "en": "about",
+   "es": "hacia",
+   "where": [
+    "src/green/cards.ts:191"
    ]
   },
   {
@@ -20639,10 +20662,7 @@
   },
   {
    "en": "best",
-   "es": "mejor",
-   "esAlso": [
-    "récord"
-   ],
+   "es": "récord",
    "where": [
     "src/learn/progress.ts:336",
     "src/learn/progress.ts:347",
@@ -20776,14 +20796,14 @@
    "en": "cultural and natural site",
    "es": "sitio cultural y natural",
    "where": [
-    "src/app/i18n.ts:333"
+    "src/app/i18n.ts:334"
    ]
   },
   {
    "en": "cultural site",
    "es": "sitio cultural",
    "where": [
-    "src/app/i18n.ts:331"
+    "src/app/i18n.ts:332"
    ]
   },
   {
@@ -20827,17 +20847,49 @@
    "en": "dead so far",
    "es": "muertos hasta ahora",
    "where": [
-    "src/app/i18n.ts:203"
+    "src/app/i18n.ts:204"
+   ]
+  },
+  {
+   "ctx": "degrees",
+   "key": "degrees\u0004about",
+   "en": "about",
+   "es": "unos",
+   "where": [
+    "src/ocean/dive.ts:117"
+   ]
+  },
+  {
+   "ctx": "direction: to the east",
+   "key": "direction: to the east\u0004east",
+   "en": "east",
+   "es": "al este",
+   "where": [
+    "src/layers/packs/inside.ts:302"
+   ]
+  },
+  {
+   "ctx": "direction: to the west",
+   "key": "direction: to the west\u0004west",
+   "en": "west",
+   "es": "al oeste",
+   "where": [
+    "src/layers/packs/inside.ts:302"
+   ]
+  },
+  {
+   "ctx": "dishes that come from a place",
+   "key": "dishes that come from a place\u0004From {0}",
+   "en": "From {0}",
+   "es": "De {0}",
+   "where": [
+    "src/guide/guide.ts:525"
    ]
   },
   {
    "en": "east",
-   "es": "al este",
-   "esAlso": [
-    "el este"
-   ],
+   "es": "el este",
    "where": [
-    "src/layers/packs/inside.ts:302",
     "src/sky/sky.ts:35"
    ]
   },
@@ -20854,6 +20906,16 @@
    "where": [
     "src/green/finder.ts:135",
     "src/wild/finder.ts:188"
+   ]
+  },
+  {
+   "ctx": "everything",
+   "key": "everything\u0004All",
+   "en": "All",
+   "es": "Todo",
+   "where": [
+    "src/app/i18n.ts:322",
+    "src/artguide/data.ts:90"
    ]
   },
   {
@@ -20878,13 +20940,18 @@
    ]
   },
   {
-   "en": "from",
-   "es": "del",
-   "esAlso": [
-    "desde"
-   ],
+   "ctx": "four sea creatures by depth",
+   "key": "four sea creatures by depth\u0004Correct! All four in order.",
+   "en": "Correct! All four in order.",
+   "es": "¡Correcto! Las cuatro en orden.",
    "where": [
-    "src/layers/packs/climate.ts:276",
+    "src/learn/learn.ts:1439"
+   ]
+  },
+  {
+   "en": "from",
+   "es": "desde",
+   "where": [
     "src/play/rounds.ts:357"
    ]
   },
@@ -20929,6 +20996,15 @@
    "es": "en total",
    "where": [
     "src/ui/terrain.ts:181"
+   ]
+  },
+  {
+   "ctx": "inside a sentence",
+   "key": "inside a sentence\u0004{0} million years ago",
+   "en": "{0} million years ago",
+   "es": "hace {0} millones de años",
+   "where": [
+    "src/sky/galaxy.ts:361"
    ]
   },
   {
@@ -20988,6 +21064,15 @@
    ]
   },
   {
+   "ctx": "languages and scripts, a field of study",
+   "key": "languages and scripts, a field of study\u0004Languages",
+   "en": "Languages",
+   "es": "Lenguas",
+   "where": [
+    "src/learn/progress.ts:18"
+   ]
+  },
+  {
    "en": "learning",
    "es": "aprendiendo",
    "where": [
@@ -20998,7 +21083,7 @@
    "en": "less",
    "es": "menos",
    "where": [
-    "src/app/i18n.ts:317"
+    "src/app/i18n.ts:318"
    ]
   },
   {
@@ -21023,6 +21108,15 @@
    "es": "vidas seguidas hasta el final",
    "where": [
     "src/learn/progress.ts:355"
+   ]
+  },
+  {
+   "ctx": "lower case, inside a sentence",
+   "key": "lower case, inside a sentence\u0004World Heritage sites",
+   "en": "World Heritage sites",
+   "es": "sitios del Patrimonio de la Humanidad",
+   "where": [
+    "src/layers/packs/heritage.ts:289"
    ]
   },
   {
@@ -21119,7 +21213,7 @@
    "en": "more",
    "es": "más",
    "where": [
-    "src/app/i18n.ts:316"
+    "src/app/i18n.ts:317"
    ]
   },
   {
@@ -21147,7 +21241,7 @@
    "en": "natural site",
    "es": "sitio natural",
    "where": [
-    "src/app/i18n.ts:332"
+    "src/app/i18n.ts:333"
    ]
   },
   {
@@ -21166,6 +21260,15 @@
     "src/learn/learn.ts:1009",
     "src/learn/learn.ts:1629",
     "src/learn/learn.ts:1891"
+   ]
+  },
+  {
+   "ctx": "no playlist",
+   "key": "no playlist\u0004None",
+   "en": "None",
+   "es": "Ninguno",
+   "where": [
+    "src/ui/playlists.ts:246"
    ]
   },
   {
@@ -21241,6 +21344,15 @@
    ]
   },
   {
+   "ctx": "on the Moon",
+   "key": "on the Moon\u0004Landing site",
+   "en": "Landing site",
+   "es": "Sitio de alunizaje",
+   "where": [
+    "src/space/worlds.ts:221"
+   ]
+  },
+  {
    "en": "on the left",
    "es": "por la izquierda",
    "where": [
@@ -21285,9 +21397,6 @@
   {
    "en": "people",
    "es": "habitantes",
-   "esAlso": [
-    "personas"
-   ],
    "where": [
     "src/guide/guide.ts:433",
     "src/play/hop.ts:351"
@@ -21526,10 +21635,19 @@
    ]
   },
   {
+   "ctx": "status: the app is reading aloud now",
+   "key": "status: the app is reading aloud now\u0004Reading aloud",
+   "en": "Reading aloud",
+   "es": "Leyendo en voz alta",
+   "where": [
+    "src/ui/ambient.ts:75"
+   ]
+  },
+  {
    "en": "step {k} of {n}",
    "es": "paso {k} de {n}",
    "where": [
-    "src/app/i18n.ts:186"
+    "src/app/i18n.ts:187"
    ]
   },
   {
@@ -21603,6 +21721,33 @@
    ]
   },
   {
+   "ctx": "the daily puzzle",
+   "key": "the daily puzzle\u0004the same for everyone today",
+   "en": "the same for everyone today",
+   "es": "la misma para todos hoy",
+   "where": [
+    "src/fill/fill.ts:645"
+   ]
+  },
+  {
+   "ctx": "the daily route",
+   "key": "the daily route\u0004a new one tomorrow",
+   "en": "a new one tomorrow",
+   "es": "mañana hay otra",
+   "where": [
+    "src/play/hop.ts:110"
+   ]
+  },
+  {
+   "ctx": "the daily route",
+   "key": "the daily route\u0004the same for everyone today",
+   "en": "the same for everyone today",
+   "es": "la misma para todos hoy",
+   "where": [
+    "src/play/hop.ts:110"
+   ]
+  },
+  {
    "en": "the ocean",
    "es": "el océano",
    "where": [
@@ -21625,15 +21770,10 @@
   },
   {
    "en": "the same for everyone today",
-   "es": "la misma para todos hoy",
-   "esAlso": [
-    "el mismo para todos hoy"
-   ],
+   "es": "el mismo para todos hoy",
    "where": [
-    "src/fill/fill.ts:645",
     "src/fill/states.ts:535",
-    "src/onmap/onmap.ts:595",
-    "src/play/hop.ts:110"
+    "src/onmap/onmap.ts:595"
    ]
   },
   {
@@ -21689,7 +21829,16 @@
    "en": "to",
    "es": "hasta",
    "where": [
-    "src/app/i18n.ts:165"
+    "src/app/i18n.ts:166"
+   ]
+  },
+  {
+   "ctx": "to empty the trip",
+   "key": "to empty the trip\u0004Clear",
+   "en": "Clear",
+   "es": "Vaciar",
+   "where": [
+    "src/guide/guide.ts:288"
    ]
   },
   {
@@ -21700,10 +21849,20 @@
    ]
   },
   {
+   "ctx": "to play a recording or an animation",
+   "key": "to play a recording or an animation\u0004Play",
+   "en": "Play",
+   "es": "Reproducir",
+   "where": [
+    "src/learn/learn.ts:2541",
+    "src/ui/legend.ts:118"
+   ]
+  },
+  {
    "en": "today",
    "es": "hoy",
    "where": [
-    "src/app/i18n.ts:221",
+    "src/app/i18n.ts:222",
     "src/master/master.ts:876"
    ]
   },
@@ -21794,13 +21953,18 @@
   },
   {
    "en": "west",
-   "es": "al oeste",
-   "esAlso": [
-    "el oeste"
-   ],
+   "es": "el oeste",
    "where": [
-    "src/layers/packs/inside.ts:302",
     "src/sky/sky.ts:36"
+   ]
+  },
+  {
+   "ctx": "wind from a direction",
+   "key": "wind from a direction\u0004from",
+   "en": "from",
+   "es": "del",
+   "where": [
+    "src/layers/packs/climate.ts:276"
    ]
   },
   {
@@ -22317,9 +22481,6 @@
   {
    "en": "{0} is filled in!",
    "es": "¡Terminaste de colorear {1}!",
-   "esAlso": [
-    "¡Terminaste de colorear {0}!"
-   ],
    "where": [
     "src/fill/fill.ts:445",
     "src/fill/states.ts:378"
@@ -22434,12 +22595,8 @@
   {
    "en": "{0} million years ago",
    "es": "Hace {0} millones de años",
-   "esAlso": [
-    "hace {0} millones de años"
-   ],
    "where": [
-    "src/modes/pangea.ts:15",
-    "src/sky/galaxy.ts:361"
+    "src/modes/pangea.ts:15"
    ]
   },
   {
@@ -22538,10 +22695,7 @@
   },
   {
    "en": "{0} people",
-   "es": "{0} personas",
-   "esAlso": [
-    "{0} habitantes"
-   ],
+   "es": "{0} habitantes",
    "where": [
     "src/fill/fill.ts:433",
     "src/fill/states.ts:362",
@@ -22934,21 +23088,21 @@
    "en": "{a} and {b}",
    "es": "{a} y {b}",
    "where": [
-    "src/app/i18n.ts:277"
+    "src/app/i18n.ts:278"
    ]
   },
   {
    "en": "{city}: the guide",
    "es": "{city}: la guía",
    "where": [
-    "src/app/i18n.ts:279"
+    "src/app/i18n.ts:280"
    ]
   },
   {
    "en": "{country} was part of",
    "es": "{country} formaba parte de",
    "where": [
-    "src/app/i18n.ts:301"
+    "src/app/i18n.ts:302"
    ]
   },
   {
@@ -23004,35 +23158,35 @@
    "en": "{n} nations took part",
    "es": "Participaron {n} países",
    "where": [
-    "src/app/i18n.ts:304"
+    "src/app/i18n.ts:305"
    ]
   },
   {
    "en": "{n} teams took part",
    "es": "Participaron {n} selecciones",
    "where": [
-    "src/app/i18n.ts:305"
+    "src/app/i18n.ts:306"
    ]
   },
   {
    "en": "{n} things",
    "es": "{n} elementos",
    "where": [
-    "src/app/i18n.ts:340"
+    "src/app/i18n.ts:341"
    ]
   },
   {
    "en": "{r} place",
    "es": "{r} lugar",
    "where": [
-    "src/app/i18n.ts:298"
+    "src/app/i18n.ts:299"
    ]
   },
   {
    "en": "{side} won",
    "es": "Victoria de {side}",
    "where": [
-    "src/app/i18n.ts:196"
+    "src/app/i18n.ts:197"
    ]
   },
   {
@@ -23060,7 +23214,7 @@
    "en": "…and {n} more in Details",
    "es": "…y {n} más en Detalles",
    "where": [
-    "src/app/i18n.ts:290"
+    "src/app/i18n.ts:291"
    ]
   },
   {

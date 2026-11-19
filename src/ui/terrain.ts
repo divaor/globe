@@ -5,7 +5,7 @@ import { prefs, savePrefs, stats, connection, tiles, fmtBytes, TERRAIN, SENTINEL
 import { areas, plan, saveArea, deleteArea, type SavedArea } from '../engine/offline';
 import { tileZoom } from '../engine/detail';
 import { terrainActions } from '../layers/terrainActions';
-import { lang, L, tx } from '../app/i18n';
+import { lang, L, tx, Lc } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Shell } from './shell';
 import { appLocale } from '../app/i18n';
@@ -147,7 +147,7 @@ export function savedList(app: App, refresh: () => void): HTMLElement {
   const el = h('div', { class: 'saved-areas' });
   if (!list.length) { el.append(h('p', { class: 'muted small' }, L('None yet.', 'Ninguna todavía.'))); return el; }
   for (const a of list) {
-    const show = h('button', { type: 'button', class: 'pill sm' }, L('Show', 'Ver'));
+    const show = h('button', { type: 'button', class: 'pill sm' }, Lc('a button: show this area on the map', 'Show', 'Ver'));
     show.addEventListener('click', () => showArea(app, a));
     const del = h('button', { type: 'button', class: 'pill sm', 'data-delete': a.id }, L('Delete', 'Borrar'));
     del.addEventListener('click', () => void (async () => {

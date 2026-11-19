@@ -151,7 +151,7 @@ function siteDots(rc: RenderCtx, inst: LayerInstance): Placed<Site>[] {
 }
 export const heritage: LayerDef = {
   id: 'heritage', category: 'culture', icon: '🏛️', kind: 'overlay', stackOrder: 4,
-  name: { en: 'World Heritage sites', es: 'Patrimonio de la Humanidad' },
+  name: { en: 'World Heritage sites', es: 'Sitios del Patrimonio de la Humanidad' },
   desc: { en: 'Every site on UNESCO’s World Heritage List, by category and year listed, with the sites in danger.', es: 'Todos los sitios de la Lista del Patrimonio Mundial de la UNESCO, por tipo y año de inscripción, con los sitios en peligro.' },
   keywords: 'unesco world heritage site sites monuments wonders danger patrimonio humanidad mundial sitios monumentos peligro unesco',
   credit: 'UNESCO World Heritage List (July 2026), via Wikipedia and Wikidata (CC0)',
@@ -271,10 +271,10 @@ export const heritage: LayerDef = {
   info(countryId) {
     if (!doc) return null;
     const mine = doc.sites.filter((s) => gone(s) == null && s.cc.includes(countryId));
-    if (!mine.length) return [{ label: L('World Heritage sites', 'Sitios del Patrimonio Mundial'), value: '0', icon: '🏛️' }];
+    if (!mine.length) return [{ label: L('World Heritage sites', 'Sitios del Patrimonio de la Humanidad'), value: '0', icon: '🏛️' }];
     const by = (c: Site['c']) => mine.filter((s) => s.c === c).length;
     const parts = (['c', 'n', 'm'] as const).filter((c) => by(c)).map((c) => `${by(c)} ${catName(c, true).toLowerCase().replace(/ \(.*\)/, '')}`);
-    const rows: InfoRow[] = [{ label: L('World Heritage sites', 'Sitios del Patrimonio Mundial'), value: `${mine.length} (${parts.join(', ')})`, icon: '🏛️' }];
+    const rows: InfoRow[] = [{ label: L('World Heritage sites', 'Sitios del Patrimonio de la Humanidad'), value: `${mine.length} (${parts.join(', ')})`, icon: '🏛️' }];
     const dz = mine.filter((s) => inDanger(s));
     if (dz.length) rows.push({ label: L('In danger', 'En peligro'), value: dz.map(siteName).join(', '), icon: '⚠️' });
     return rows;
@@ -286,7 +286,7 @@ export const heritage: LayerDef = {
     return true;
   },
   // Sites by their name, in English or Spanish ("Machu Picchu", "Alhambra").
-  searchHint: { en: 'World Heritage sites', es: 'sitios del Patrimonio Mundial' },
+  searchHint: { en: 'World Heritage sites', es: 'sitios del Patrimonio de la Humanidad', ctx: 'lower case, inside a sentence' },
   async searchLoad() { if (!doc) { doc = await loadJSON<HeritageDoc>('layers/heritage.json'); byPop = doc.sites.slice().sort((a, b) => a.pop - b.pop); } },
   search(match) {
     const out: LayerHit[] = [];
@@ -381,7 +381,7 @@ export const inventionsMap: LayerDef = {
   keywords: 'inventions inventors invention technology history inventos inventores tecnologia historia',
   credit: 'The Inventions stories of Time travel (Wikipedia)',
   options: [
-    { id: 'age', label: { en: 'Age', es: 'Época' }, type: 'select', default: 'all', choices: AGES.map((a) => ({ value: a.value, label: a.label })) },
+    { id: 'age', label: { en: 'Period', es: 'Época' }, type: 'select', default: 'all', choices: AGES.map((a) => ({ value: a.value, label: a.label })) },
     { id: 'field', label: { en: 'Field', es: 'Campo' }, type: 'select', default: 'all', choices: [
       { value: 'all', label: { en: 'All fields', es: 'Todos los campos' }, icon: '💡' },
       ...[['tools', '🪓', 'Tools and materials', 'Herramientas y materiales'], ['farming', '🌾', 'Farming and food', 'Agricultura y alimentos'],

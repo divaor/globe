@@ -92,7 +92,7 @@ export const bornHere: LayerDef = {
   credit: 'Wikidata (CC0)',
   options: [
     { id: 'field', label: { en: 'Field', es: 'Campo' }, type: 'select', default: 'all', choices: [{ value: 'all', label: { en: 'Everyone', es: 'Todos' } }, ...Object.entries(FIELDS).map(([value, f]) => ({ value, label: f.name, icon: f.icon }))] },
-    { id: 'period', label: { en: 'Born', es: 'Nacidos' }, type: 'select', default: 'all', choices: PERIODS.map(([value, label]) => ({ value, label })) },
+    { id: 'period', label: { en: 'Born', es: 'Nacidos', ctx: 'a filter: when people were born' }, type: 'select', default: 'all', choices: PERIODS.map(([value, label]) => ({ value, label })) },
     { id: 'show', label: { en: 'Show', es: 'Mostrar' }, type: 'select', default: 'born', choices: [{ value: 'born', label: { en: 'Where they were born', es: 'Dónde nacieron' } }, { value: 'died', label: { en: 'Where they died', es: 'Dónde murieron' } }] },
   ],
   async load() { data ??= await loadBorn(); void loadLives(); },

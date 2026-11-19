@@ -359,7 +359,7 @@ export class FillStates implements HostGame {
   private valueOf(id: string): string {
     const s = this.s!, f = this.facts(s.a3, id);
     if (!f) return '';
-    if (s.cat === 'people') return f.p >= 1e6 ? L('{0} million people', '{0} millones de personas', (f.p / 1e6).toLocaleString(appLocale(), { maximumFractionDigits: 1 })) : L('{0} people', '{0} personas', fmtNumber(f.p));
+    if (s.cat === 'people') return f.p >= 1e6 ? L('{0} million people', '{0} millones de personas', (f.p / 1e6).toLocaleString(appLocale(), { maximumFractionDigits: 1 })) : L('{0} people', '{0} habitantes', fmtNumber(f.p));
     if (s.cat === 'area') return `${fmtNumber(f.a)} km²`;
     if (s.cat === 'capitals' || s.cat === 'names') {
       if (f.s) return '';
@@ -375,7 +375,7 @@ export class FillStates implements HostGame {
     const missed = s.ids.filter((id) => (s.daily ? s.got.get(id) : map[id]) === 0);
     const head = s.daily
       ? L('Done: ★ {0} of {1}', 'Hecho: ★ {0} de {1}', s.stats.stars, s.ids.length * 3)
-      : L('{0} is filled in!', '¡Terminaste de colorear {0}!', this.cname(s.a3));
+      : L('{0} is filled in!', '¡Terminaste de colorear {1}!', this.cname(s.a3), this.cname(s.a3));
     const res = resultCard({ stars: s.ids.length ? Math.round((3 * s.stats.stars) / (s.ids.length * 3)) : undefined, headline: head,
       sub: s.stats.asked ? L('{0} of {1} right at the first try', '{0} de {1} acertados a la primera', s.stats.firsts, s.stats.asked) : undefined });
     res.querySelector('.result-headline')?.setAttribute('data-states', 'done');

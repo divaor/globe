@@ -81,7 +81,7 @@ const realms: LayerDef = {
   pick(lon, lat) {
     const r = REALMS.find((x) => geoContains(x.shape, [lon, lat]));
     if (!r) return null;
-    return [{ label: L('Realm', 'Región'), value: `${r.emoji} ${es() ? r.es : r.en}`, icon: '🧭' }, { label: L('Typical animals', 'Animales típicos'), value: es() ? r.animals[1] : r.animals[0] }];
+    return [{ label: L('Realm', 'Región biogeográfica'), value: `${r.emoji} ${es() ? r.es : r.en}`, icon: '🧭' }, { label: L('Typical animals', 'Animales típicos'), value: es() ? r.animals[1] : r.animals[0] }];
   },
 };
 

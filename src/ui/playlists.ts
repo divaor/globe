@@ -2,7 +2,7 @@
 // and the reader's own playlist (views added from the map, kept in this browser, shareable as a link).
 import { ArrowUp, ArrowDown, X, Plus, Play, Share2 } from 'lucide';
 import { h, icon, toggle, slider, segmented } from './dom';
-import { tx, L } from '../app/i18n';
+import { tx, L, Lc } from '../app/i18n';
 import type { App, AmbientNames } from '../app/app';
 import type { I18nText } from '../layers/types';
 import type { ProjectionId } from '../engine/projections';
@@ -243,7 +243,7 @@ export function ambientNamesField(app: App): HTMLElement {
     segmented<AmbientNames>(app.ambient.names, [
       { value: 'view', label: L('Only the view’s', 'Solo los de la vista') },
       { value: 'all', label: L('All', 'Todos') },
-      { value: 'none', label: L('None', 'Ninguno') },
+      { value: 'none', label: Lc('no playlist', 'None', 'Ninguno') },
     ], (v) => { app.ambient.names = v; app.save(); }));
 }
 

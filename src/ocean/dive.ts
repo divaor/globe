@@ -3,7 +3,7 @@
 // ocean and latitude at their usual depths on the right, records on the left; a tap on the column reads the light,
 // the cold and the pressure there.
 import { h } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, Lc } from '../app/i18n';
 import { L, es } from '../play/host';
 import { ZONES, zoneOf, pressureAtm, lightAt, tempAt, type Ocean } from './depth';
 
@@ -114,7 +114,7 @@ export function diveColumn(o: { floor: number; lat: number; animals: SeaAnimal[]
     read.replaceChildren(
       h('b', null, `${metres(m)} · ${zoneOf(m).name()}`),
       h('span', null, `☀️ ${light >= 0.01 ? `${fmtNumber(light * 100, light < 0.1 ? 1 : 0)} %` : m < 1000 ? L('a faint blue glow', 'un tenue brillo azul') : L('no sunlight: only the animals’ own light', 'sin luz del sol: solo la luz de los animales')}`),
-      h('span', null, `🌡️ ${L('about', 'unos')} ${fmtNumber(Math.round(tempAt(m, o.lat)))} °C`),
+      h('span', null, `🌡️ ${Lc('degrees', 'about', 'unos')} ${fmtNumber(Math.round(tempAt(m, o.lat)))} °C`),
       h('span', null, `⏬ ${pressureWords(m)}`),
     );
     o.onDepth?.(m);

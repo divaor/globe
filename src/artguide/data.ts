@@ -86,8 +86,8 @@ export function commonsCredit(file: string): Promise<{ licence: string; author: 
 }
 
 /** The kinds of works, as the city art guide filters them. */
-export const KINDS: [WorkKind | 'all', { en: string; es: string }, string][] = [
-  ['all', { en: 'All', es: 'Todo' }, '🖼️'], ['painting', { en: 'Paintings', es: 'Pinturas' }, '🎨'], ['sculpture', { en: 'Sculpture', es: 'Escultura' }, '🗿'],
+export const KINDS: [WorkKind | 'all', { en: string; es: string; ctx?: string }, string][] = [
+  ['all', { en: 'All', es: 'Todo', ctx: 'everything' }, '🖼️'], ['painting', { en: 'Paintings', es: 'Pinturas' }, '🎨'], ['sculpture', { en: 'Sculpture', es: 'Escultura' }, '🗿'],
   ['antiquity', { en: 'Antiquities', es: 'Antigüedades' }, '🏺'], ['object', { en: 'Other treasures', es: 'Otros tesoros' }, '💎'],
 ];
 /** Periods, as the city art guide filters them. */

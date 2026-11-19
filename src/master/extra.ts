@@ -13,7 +13,7 @@ import type { Topology, GeometryObject } from 'topojson-specification';
 import type { App } from '../app/app';
 import type { RenderCtx } from '../layers/types';
 import { h } from '../ui/dom';
-import { fmtNumber, tx } from '../app/i18n';
+import { fmtNumber, tx, Lc } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { L, es } from '../play/host';
 import { mainBody } from '../play/outline';
@@ -226,7 +226,7 @@ export function citiesDeck(x: Ctx): ExtraDeck {
       const c = by.get(q.id), n = name(q.id), ctry = c ? x.country(c.cc) : '';
       if (a.peek) return `👀 ${n}, ${ctry}`;
       if (a.ok) return `✅ ${n} · ${ctry}`;
-      return `❌ ${a.given && a.given !== q.id && q.step !== 'type' ? L('That is {0}. ', 'Esa es {0}. ', name(a.given)) : ''}${L('It is {0}, {1}.', 'Es {0}, {1}.', n, ctry)}`;
+      return `❌ ${a.given && a.given !== q.id && q.step !== 'type' ? Lc('a city', 'That is {0}. ', 'Esa es {0}. ', name(a.given)) : ''}${L('It is {0}, {1}.', 'Es {0}, {1}.', n, ctry)}`;
     },
     after(q) {
       const c = by.get(q.id);

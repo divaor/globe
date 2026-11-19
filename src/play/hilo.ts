@@ -157,7 +157,7 @@ export class HigherLower implements HostGame {
       this.card.append(res);
       const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `⚖️ ${L('Higher or lower', 'Más o menos')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.history.map((x) => (x.ok ? '🟩' : '🟥')).join('')}`));
-      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Jugar otra vez'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start(); });
       res.append(h('div', { class: 'result-actions' }, share, again));
       return;

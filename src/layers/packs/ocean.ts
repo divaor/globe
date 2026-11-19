@@ -272,7 +272,7 @@ export const seaFeatures: LayerDef = {
       const d = depths ? seaDepthAt(depths, r[3], r[4]) : 0;
       ui.card('⛰️', featureName(r[1], type), es() ? (feats!.generic[type] ?? type) : type, [
         ...(d > 0 ? [{ label: L('Sea floor here', 'Fondo aquí'), value: m(d), icon: '⬇️' }] : []),
-        ...(nt?.[0] ? [{ label: L('Found', 'Descubierta'), value: String(nt[0]), icon: '🔭' }] : []),
+        ...(nt?.[0] ? [{ label: L('Discovered', 'Descubrimiento'), value: String(nt[0]), icon: '🔭' }] : []),
       ], [{ label: L('🤿 Dive here', '🤿 Bucear aquí'), onClick: () => void window.atlas?.deep.diveAt(r[3], r[4]) }], nt?.[1] ? [L('How it got its name: {0}', 'Cómo recibió su nombre (en inglés): {0}', nt[1])] : []);
     };
     if (notes) show(notes[String(r[0])]);
@@ -329,7 +329,7 @@ export const ventsLayer: LayerDef = {
     if (!v) return false;
     ui.card('♨️', T(v.name), L('Hydrothermal vent', 'Fuente hidrotermal'), [
       { label: L('Depth', 'Profundidad'), value: m(v.depth_m), icon: '⬇️' },
-      ...(v.year ? [{ label: L('Found', 'Descubierta'), value: String(v.year), icon: '🔭' }] : []),
+      ...(v.year ? [{ label: L('Discovered', 'Descubrimiento'), value: String(v.year), icon: '🔭' }] : []),
     ], [{ label: L('🤿 Dive here', '🤿 Bucear aquí'), onClick: () => void window.atlas?.deep.diveAt(v.lon, v.lat) }], [T(v.text)]);
     return true;
   },

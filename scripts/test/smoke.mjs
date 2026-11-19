@@ -5007,7 +5007,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   for (const locale of ['es-MX', 'es-ES', 'fr-FR']) {
     const { page, errors, ctx } = await open({ locale, viewport: { width: 420, height: 800 } }, '');
     seen[locale] = await page.evaluate(() => ({ lang: window.atlas.app.lang, es: window.atlas.app.spanish, picked: window.atlas.app.langPicked, fmt: '' }));
-    await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Configuración'));
+    await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Ajustes'));
     await page.waitForTimeout(400);
     seen[locale].fmt = await page.evaluate(() => document.querySelector('[data-settings="formats"]')?.textContent ?? '');
     if (locale === 'es-MX') {
@@ -5017,7 +5017,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
       await page.goto(url, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
       await page.waitForFunction(() => window.atlas, null, { timeout: 60000 });
       seen.kept = await page.evaluate(() => ({ lang: window.atlas.app.lang, picked: window.atlas.app.langPicked }));
-      await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Configuración'));
+      await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Ajustes'));
       await page.waitForTimeout(400);
       await page.evaluate(() => [...document.querySelectorAll('.settings .seg-btn')].find((b) => /phone|teléfono/.test(b.textContent))?.click());
       await page.waitForTimeout(400);

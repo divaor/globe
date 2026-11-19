@@ -31,7 +31,7 @@ export const ORIGINS: { id: string; color: string; name: Text; short: Text }[] =
   { id: 'massive', color: '#ffcf5c', name: { en: 'Exploding massive stars', es: 'Estrellas masivas que estallan' }, short: { en: 'Exploding big stars', es: 'Estrellas grandes que estallan' } },
   { id: 'wd', color: '#86e3ff', name: { en: 'Exploding white dwarfs', es: 'Enanas blancas que estallan' }, short: { en: 'Exploding white dwarfs', es: 'Enanas blancas que estallan' } },
   { id: 'ns', color: '#b98cff', name: { en: 'Merging neutron stars', es: 'Choques de estrellas de neutrones' }, short: { en: 'Neutron star mergers', es: 'Choques de estrellas de neutrones' } },
-  { id: 'human', color: '#9aa3b5', name: { en: 'Made by people', es: 'Hecho por las personas' }, short: { en: 'Made by people', es: 'Hecho por personas' } },
+  { id: 'human', color: '#9aa3b5', name: { en: 'Made by people', es: 'Hecho por personas' }, short: { en: 'Made by people', es: 'Hecho por personas' } },
   { id: 'none', color: '#454c5c', name: { en: 'Too short-lived to last from stars', es: 'Duran demasiado poco para quedar de las estrellas' }, short: { en: 'Short-lived', es: 'De vida corta' } },
 ];
 const ORIGIN_ICON: Record<string, string> = { bigbang: '💥', cosmic: '☄️', lowmass: '🌫️', massive: '🌟', wd: '⚪', ns: '💫', human: '🧪', none: '⏳' };

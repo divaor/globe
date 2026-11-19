@@ -108,7 +108,7 @@ export const masterpieces: LayerDef = {
   credit: 'Wikidata (CC0)',
   options: [
     { id: 'kind', label: { en: 'Kind', es: 'Tipo' }, type: 'select', default: 'all', choices: KINDS.map(([value, label, icon]) => ({ value, label, icon })) },
-    { id: 'period', label: { en: 'Made', es: 'Época' }, type: 'select', default: 'all', choices: PERIODS.map(([value, label]) => ({ value, label })) },
+    { id: 'period', label: { en: 'Period', es: 'Época' }, type: 'select', default: 'all', choices: PERIODS.map(([value, label]) => ({ value, label })) },
   ],
   async load() { art ??= await loadArt(); },
   onOptionsChanged() { LC.requestRender(); },

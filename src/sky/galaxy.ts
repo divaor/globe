@@ -12,7 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { Space } from '../space/space';
 import type { Sky } from './sky';
 import type { InfoRow } from '../layers/types';
-import { appLocale, dataLang } from '../app/i18n';
+import { appLocale, dataLang, Lc } from '../app/i18n';
 
 interface Nearby { id: string; name: Text; ra: number; dec: number; ly: number; kind?: Text; hip?: number; planets?: Text; text?: Text; wiki?: Text }
 interface Feature { id: string; kind: 'centre' | 'arm' | 'feature'; name: Text; l?: number; b?: number; ly?: number; text?: Text; wiki?: Text }
@@ -358,7 +358,7 @@ export class Galaxy {
     const rows: InfoRow[] = [];
     if (g.ra != null && g.ly) {
       rows.push({ icon: '📏', label: L('Distance', 'Distancia'), value: lightYears(g.ly) });
-      rows.push({ icon: '💡', label: L('Light from it left', 'Su luz salió'), value: g.ly >= 1e6 ? L('{0} million years ago', 'hace {0} millones de años', num(g.ly / 1e6, 2)) : L('{0} years ago', 'hace {0} años', num(g.ly)) });
+      rows.push({ icon: '💡', label: L('Light from it left', 'Su luz salió'), value: g.ly >= 1e6 ? Lc('inside a sentence', '{0} million years ago', 'hace {0} millones de años', num(g.ly / 1e6, 2)) : L('{0} years ago', 'hace {0} años', num(g.ly)) });
     } else if (g.radiusLy ?? g.ly) rows.push({ icon: '↔️', label: L('Size', 'Tamaño'), value: L('about {0} across', 'unos {0} de diámetro', lightYears((g.radiusLy ?? g.ly)! * 2)) });
     if (g.kind) rows.splice(1, 0, { icon: '🌌', label: L('What it is', 'Qué es'), value: tr(g.kind) });
     const inSky = this.sd?.objects.some((o) => o.id === g.id) ? g.id : undefined;

@@ -3,7 +3,7 @@
 // highlights its countries on the map.
 import { ChevronDown, ChevronUp, X } from 'lucide';
 import { h, icon, clear, add, fillSelect } from './dom';
-import { t, tx, L } from '../app/i18n';
+import { t, tx, L, Lc } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Legend, LayerInstance, LegendItem, LegendPlayer } from '../layers/types';
 
@@ -115,7 +115,7 @@ export class LegendCard {
     }
     ui.p = p;
     ui.play.textContent = p.playing ? '⏸' : '▶';
-    ui.play.title = p.playing ? (L('Pause', 'Pausa')) : (L('Play', 'Reproducir'));
+    ui.play.title = p.playing ? (L('Pause', 'Pausa')) : (Lc('to play a recording or an animation', 'Play', 'Reproducir'));
     ui.play.setAttribute('aria-label', ui.play.title);
     ui.play.classList.toggle('on', p.playing);
     ui.seek.min = String(p.min); ui.seek.max = String(p.max);

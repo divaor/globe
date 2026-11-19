@@ -2,7 +2,7 @@
 // on the map; and the list of tables kept on this device.
 import { Upload, Trash2, MapPin } from 'lucide';
 import { h, icon, fillSelect } from '../ui/dom';
-import { lang, L } from '../app/i18n';
+import { lang, L, Lc } from '../app/i18n';
 import { SEQUENTIAL } from '../engine/colors';
 import { loadJSON, dataUrl } from '../data/store';
 import type { App } from '../app/app';
@@ -111,7 +111,7 @@ export function myDataPanel(app: App, my: MyData, done: (msg: string) => void): 
       { value: 'log', label: L('Logarithmic (for very uneven numbers)', 'Logarítmica (para números muy desiguales)') }, { value: 'quantile', label: L('By rank (equal shares of places)', 'Por posición (partes iguales de lugares)') },
     ]);
     const hasNumbers = cols.some((c) => c.kind === 'number');
-    const add = h('button', { type: 'button', class: 'pill primary md-add' }, icon(MapPin, 16), L('Put it on the map', 'Ponerlo en el mapa'));
+    const add = h('button', { type: 'button', class: 'pill primary md-add' }, icon(MapPin, 16), Lc('a button: show your data on the map', 'Put it on the map', 'Ponerlo en el mapa'));
     add.addEventListener('click', async () => {
       const set: MySet = {
         id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`, name: name.value.trim() || file, file, created: Date.now(),

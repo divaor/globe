@@ -18,7 +18,7 @@ import { L, es, type PlayHost, type HostGame } from './host';
 export type Pack = 'mixed' | 'capitals' | 'heritage' | 'structures' | 'battles' | 'dishes' | 'inventions' | 'museums' | 'masterpieces' | 'animals' | 'trees';
 export const PACKS: [Pack, { en: string; es: string }][] = [
   ['mixed', { en: 'A bit of everything', es: 'Un poco de todo' }], ['capitals', { en: 'Capitals', es: 'Capitales' }],
-  ['heritage', { en: 'World Heritage', es: 'Patrimonio Mundial' }], ['structures', { en: 'Great structures', es: 'Grandes construcciones' }],
+  ['heritage', { en: 'World Heritage', es: 'Patrimonio de la Humanidad' }], ['structures', { en: 'Great structures', es: 'Grandes construcciones' }],
   ['battles', { en: 'Battles', es: 'Batallas' }], ['dishes', { en: 'Dishes', es: 'Platos' }],
   ['inventions', { en: 'Inventions', es: 'Inventos' }], ['museums', { en: 'Museums', es: 'Museos' }],
   ['masterpieces', { en: 'Masterpieces', es: 'Obras maestras' }],
@@ -135,7 +135,7 @@ export class PinIt implements HostGame {
         rows: s.places.map((p, i) => ({ icon: p[4], name: this.name(p), detail: `${this.dist(s.results[i].km)} · ${this.note(p)}`, value: fmtNumber(s.results[i].pts), mark: mark(s.results[i].km) })),
         actions: [
           shareBtn(L('Share', 'Compartir'), () => void shareText(this.shell, `📍 ${L('Pin it', 'Pon el pin')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.results.map((r) => (r.km <= 100 ? '🎯' : r.km <= 500 ? '🟩' : r.km <= 1500 ? '🟨' : '🟥')).join('')}`)),
-          mainBtn(s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'), () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ pack: s.pack, hard: s.hard }); }),
+          mainBtn(s.day ? L('More games', 'Más juegos') : L('Play again', 'Jugar otra vez'), () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ pack: s.pack, hard: s.hard }); }),
         ],
       }));
       return;

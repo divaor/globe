@@ -17,7 +17,7 @@ import type { StoryKind } from '../modes/stories';
 import { storyKind } from '../modes/stories';
 import { TOURS } from '../learn/tours';
 import { h, icon, clear } from '../ui/dom';
-import { lang, flagEmoji, fmtNumber, fmtCompact, L, dataLang, tx } from '../app/i18n';
+import { lang, flagEmoji, fmtNumber, fmtCompact, L, dataLang, tx, Lc } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { km, bestMonths, monthRanges, sunTimes, tzOffset, hhmm, flightHours, hoursText, bestOrder, tripKm, tripHash, readTrip, type Climate } from './logic';
 import { planHooks, planStar, placesOf, allPlaces, movePlace, removePlace, dropCity, setPlan, tripDetails, PLACE_ICONS, type Place, type PlaceSpec } from './plan';
@@ -285,7 +285,7 @@ export class TravelGuide {
         }) : null,
         act(Share2, L('Share', 'Compartir'), 'share', () => void this.share()),
         act(Printer, L('Print', 'Imprimir'), 'print', () => this.print()),
-        act(Trash2, L('Clear', 'Vaciar'), 'clear', () => { this.trip = []; setPlan({}); this.save(); void this.open(this.query); })));
+        act(Trash2, Lc('to empty the trip', 'Clear', 'Vaciar'), 'clear', () => { this.trip = []; setPlan({}); this.save(); void this.open(this.query); })));
       // The trip's details and the plan to take anywhere (export.ts).
       body.append(tripPanelExtras(this.exportTrip(), (m) => this.shell.toast(m, 3500)));
     }
@@ -522,7 +522,7 @@ export class TravelGuide {
       () => this.openStory('food', d[7], d[8], es() ? d[5] : d[4], [d[12], d[13]]), { 'data-dish': d[0] },
       { id: `dish:${d[0]}`, kind: 'dish', city: c.id, n: [d[4], d[5]], why: [{ t: [`To try: from ${d[9]}`, `Para probar: de ${d[10]}`] }] });
     const name = this.cityName(c), cn = this.countryName(c.country);
-    this.section(el, L('From {0}', 'De {0}', name), g.eat.filter((d) => d[1] === 'here').map(dishRow));
+    this.section(el, Lc('dishes that come from a place', 'From {0}', 'De {0}', name), g.eat.filter((d) => d[1] === 'here').map(dishRow));
     this.section(el, L('From the rest of {0}', 'Del resto de {0}', cn), g.eat.filter((d) => d[1] === 'country').map(dishRow));
     this.section(el, L('From nearby countries', 'De países cercanos'), g.eat.filter((d) => d[1] === 'near').map(dishRow));
     this.section(el, L('First grown here or nearby', 'Cultivados aquí o cerca por primera vez'), g.grown.map(dishRow));
@@ -734,7 +734,7 @@ export class TravelGuide {
         const list = (title: string, items: string[]): HTMLElement | null => (items.length ? h('p', null, h('strong', null, `${title}: `), items.join(', ')) : null);
         sec.append(...[
           list(L('Eat', 'Comer'), g.eat.slice(0, 12).map((d) => (es() ? d[5] : d[4]))),
-          list(L('World Heritage', 'Patrimonio Mundial'), g.whs.map((s) => (es() ? s[3] : s[2]))),
+          list(L('World Heritage', 'Patrimonio de la Humanidad'), g.whs.map((s) => (es() ? s[3] : s[2]))),
           list(L('Great structures', 'Grandes construcciones'), g.sights.map((r) => (es() ? r[5] : r[4]))),
           list(L('Museums', 'Museos'), g.museums.slice(0, 8).map((m) => (es() ? m[2] : m[1]))),
           list(L('Day trips', 'Excursiones'), g.trips.slice(0, 5).map((s) => `${es() ? s[3] : s[2]} (${s[1]} km)`)),

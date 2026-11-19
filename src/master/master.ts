@@ -50,7 +50,7 @@ const MODE_TEXT: Record<Mode, { icon: string; en: string; es: string }> = {
 };
 const SCOPE_TEXT: Record<Scope, { en: string; es: string }> = {
   world: { en: 'World', es: 'Mundo' }, EU: { en: 'Europe', es: 'Europa' }, AS: { en: 'Asia', es: 'Asia' }, AF: { en: 'Africa', es: 'África' },
-  NA: { en: 'North and Central America', es: 'Norte y Centroamérica' }, SA: { en: 'South America', es: 'Sudamérica' }, OC: { en: 'Oceania', es: 'Oceanía' },
+  NA: { en: 'North and Central America', es: 'Norte y Centroamérica' }, SA: { en: 'South America', es: 'América del Sur' }, OC: { en: 'Oceania', es: 'Oceanía' },
 };
 const ORDER_TEXT: Record<Order, { en: string; es: string }> = {
   balanced: { en: 'Balanced: the best known first, a lesser known every fourth', es: 'Equilibrado: los más conocidos primero, uno menos conocido cada cuatro' },
@@ -827,7 +827,7 @@ export class Master implements HostGame {
     this.bar = h('div', { class: 'mw-bar', 'aria-hidden': 'true' }, h('span'));
     const next = h('button', { type: 'button', class: 'pill sm primary', 'data-master': 'next' }, L('Next', 'Siguiente'), icon(ChevronRight, 15));
     next.addEventListener('click', () => this.next());
-    const hold = h('button', { type: 'button', class: 'pill sm', 'data-master': 'pause', 'aria-label': s.paused ? L('Go on', 'Seguir') : L('Pause', 'Pausa') }, icon(s.paused ? Play : Pause, 15));
+    const hold = h('button', { type: 'button', class: 'pill sm', 'data-master': 'pause', 'aria-label': s.paused ? L('Go on', 'Continuar') : L('Pause', 'Pausa') }, icon(s.paused ? Play : Pause, 15));
     hold.addEventListener('click', () => { if (s.paused) this.resume(); else this.pause(); this.render(); });
     this.card.append(this.bar, h('div', { class: 'hop-actions' }, next, hold), h('div', { class: 'mw-hold' }, L('Press and hold the card to pause.', 'Mantén pulsada la tarjeta para pausar.')));
     requestAnimationFrame(() => this.syncBar());
@@ -861,7 +861,7 @@ export class Master implements HostGame {
     } else if (s.done === 'over') {
       head = L('Out of hearts: {0} points', 'Sin corazones: {0} puntos', fmtNumber(s.run!.score));
       lines.push(L('Best combo {0} · {1} questions · your best run {2}', 'Mejor combo {0} · {1} preguntas · tu mejor racha {2}', s.run!.best, s.run!.asked, fmtNumber(st.runs[s.deck].best)));
-      add(L('Play again', 'Otra vez'), () => void this.start('run'), true, 'again');
+      add(L('Play again', 'Jugar otra vez'), () => void this.start('run'), true, 'again');
     } else if (s.done === 'miss') {
       head = L('{0} in a row: back to the start', '{0} seguidos: vuelta al principio', s.count);
       lines.push(L('Your record: {0} of {1}. {2, select, states {States} other {Countries}} right {3} times in a row are skipped next time.', 'Tu récord: {0} de {1}. Los {4} acertados {3} veces seguidas se saltan la próxima vez.', st.marathon[s.deck].record, s.queue.length, s.deck, SKIP_AFTER, this.noun(s.deck)));

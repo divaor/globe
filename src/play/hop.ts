@@ -12,7 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear, toggle } from '../ui/dom';
-import { lang, fmtCompact, fmtNumber, L } from '../app/i18n';
+import { lang, fmtCompact, fmtNumber, L, Lc } from '../app/i18n';
 import type { PlayHost, HostGame } from './host';
 import { loadJSON } from '../data/store';
 import { Borders, GOALS, RULES, makeRound, dailyRound, seeded, type BorderData, type Goal, type Level, type Round, type Rule } from './route';
@@ -29,7 +29,7 @@ const GOAL_TEXT: Record<Goal, { icon: string; en: string; es: string; desc: { en
 };
 /** The filter a hint turns on for a goal (the fewest countries has none; the distance shows the capitals). */
 const GOAL_LAYER: Partial<Record<Goal, string>> = { people: 'fact-population', area: 'fact-area_km2' };
-const CONTINENTS: [string, { en: string; es: string }][] = [['', { en: 'World', es: 'Mundo' }], ['AF', { en: 'Africa', es: 'África' }], ['AS', { en: 'Asia', es: 'Asia' }], ['EU', { en: 'Europe', es: 'Europa' }], ['NA', { en: 'North America', es: 'Norteamérica' }], ['SA', { en: 'South America', es: 'Sudamérica' }]];
+const CONTINENTS: [string, { en: string; es: string }][] = [['', { en: 'World', es: 'Mundo' }], ['AF', { en: 'Africa', es: 'África' }], ['AS', { en: 'Asia', es: 'Asia' }], ['EU', { en: 'Europe', es: 'Europa' }], ['NA', { en: 'North America', es: 'América del Norte' }], ['SA', { en: 'South America', es: 'América del Sur' }]];
 const LEVELS: [Level, { en: string; es: string }][] = [['easy', { en: 'Easy', es: 'Fácil' }], ['medium', { en: 'Medium', es: 'Media' }], ['hard', { en: 'Hard', es: 'Difícil' }]];
 const BLITZ_ROUNDS = 5;
 /** Blitz: up to this many bonus points a route, two for each second under two minutes. */
@@ -107,7 +107,7 @@ export class BorderHop implements HostGame {
     const dr = dailyRound(this.graph(false), day, n);
     const daily = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-play': 'daily' }, h('span', { class: 'mode-icon' }, '🗓️'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, `${L('Daily route', 'Ruta del día')} #${n}${dr ? ` · ${this.name(dr.from)} → ${this.name(dr.to)}` : ''}`),
-        h('span', { class: 'mode-desc' }, done ? `${L('Done', 'Hecho')}: ${done.score} ${starText(done.stars)} · ${L('a new one tomorrow', 'mañana hay otra')}` : dr ? `${this.goalName(dr.goal, dr.rule)} · ${L('the same for everyone today', 'la misma para todos hoy')}` : '')));
+        h('span', { class: 'mode-desc' }, done ? `${L('Done', 'Hecho')}: ${done.score} ${starText(done.stars)} · ${Lc('the daily route', 'a new one tomorrow', 'mañana hay otra')}` : dr ? `${this.goalName(dr.goal, dr.rule)} · ${Lc('the daily route', 'the same for everyone today', 'la misma para todos hoy')}` : '')));
     daily.addEventListener('click', () => { if (dr) void this.start(dr, 'daily', { day }); });
     const goals = h('div', { class: 'mode-list' }, ...GOALS.map((goal) => {
       const T = GOAL_TEXT[goal], best = progress().play.best[goal];
@@ -348,7 +348,7 @@ export class BorderHop implements HostGame {
   // ---- Numbers -----------------------------------------------------------------------------------------------
   private amount(goal: Goal, v: number): string {
     if (goal === 'count') return v === 1 ? L('1 country in between', '1 país en medio') : L('{0} countries in between', '{0} países en medio', v);
-    if (goal === 'people') return `${fmtCompact(v)} ${L('people', 'personas')}`;
+    if (goal === 'people') return `${fmtCompact(v)} ${L('people', 'habitantes')}`;
     if (goal === 'area') return `${fmtNumber(Math.round(v))} km²`;
     return `${fmtNumber(Math.round(v))} km`;
   }
@@ -403,7 +403,7 @@ export class BorderHop implements HostGame {
       const so = s.g.cost([...s.path, round.to], round.goal);
       this.card.append(chain, h('div', { class: 'hop-stats' }, mid.length ? `${L('So far', 'Por ahora')}: ${this.amount(round.goal, round.goal === 'count' ? s.path.length - 1 : so)}` : L('Tap a country that borders the green one.', 'Toca un país que limite con el verde.')));
       if (s.msg) this.card.append(h('div', { class: `quiz-fb ${s.msg.ok ? 'ok' : 'bad'}` }, s.msg.text));
-      const undo = h('button', { type: 'button', class: 'pill sm', 'data-hop': 'undo' }, icon(Undo2, 15), L('Back', 'Atrás'));
+      const undo = h('button', { type: 'button', class: 'pill sm', 'data-hop': 'undo' }, icon(Undo2, 15), L('Undo', 'Deshacer'));
       undo.disabled = s.path.length < 2;
       undo.addEventListener('click', () => this.undo());
       const hint = (k: Hint, label: string) => {
@@ -416,7 +416,7 @@ export class BorderHop implements HostGame {
       hints.addEventListener('click', () => { s.showHints = !s.showHints; this.render(); });
       const hasMap = !!s.rule || round.goal !== 'count';
       const mapLabel = s.rule ? L('Allowed', 'Permitidos') : round.goal === 'km' ? L('Capitals', 'Capitales') : round.goal === 'people' ? L('Population', 'Población') : L('Area', 'Superficie');
-      const giveUp = h('button', { type: 'button', class: 'pill sm', 'data-hop': 'giveup' }, icon(Flag, 15), L('Show me', 'Ver la ruta'));
+      const giveUp = h('button', { type: 'button', class: 'pill sm', 'data-hop': 'giveup' }, icon(Flag, 15), L('Show the route', 'Ver la ruta'));
       giveUp.addEventListener('click', () => this.giveUp());
       this.card.append(h('div', { class: 'hop-actions' }, undo, hints, giveUp));
       if (s.showHints) this.card.append(h('div', { class: 'hop-actions hop-hints' }, hint('names', L('Names', 'Nombres')), ...(hasMap ? [hint('filter', mapLabel)] : []), hint('step', L('Next step', 'Siguiente paso'))));

@@ -3,7 +3,7 @@
 // author), what it is, its Red List status, height and lifespan, the countries it grows in, when it flowers (live from
 // iNaturalist), and buttons for where it grows, the best places to see it, its relatives and its crop's story.
 import { h } from '../ui/dom';
-import { lang, fmtCompact, L, tx } from '../app/i18n';
+import { lang, fmtCompact, L, tx, Lc } from '../app/i18n';
 import { recordSeen } from '../learn/progress';
 import { commons, wikiOf } from '../artguide/data';
 import { creditEl } from '../artguide/cards';
@@ -71,7 +71,7 @@ export function plantCard(card: CardFn, p: Plant, x: GreenLinks) {
     rows.push({ label: L('Grows wild in', 'Crece silvestre en'), value: names.length > 10 ? L('{0} and {1} more', '{0} y {1} más', shown, names.length - 10) : shown, icon: '🌍' });
   }
   const links: Link[] = [{ label: L('Show where it grows', 'Mostrar dónde crece'), onClick: () => x.showRange(p) }];
-  if (p.best.length) links.push({ label: L('Best places to see it', 'Mejores lugares para verla'), onClick: () => x.bestPlaces(p) });
+  if (p.best.length) links.push({ label: Lc('a plant', 'Best places to see it', 'Mejores lugares para verla'), onClick: () => x.bestPlaces(p) });
   links.push({ label: L('Its relatives', 'Sus parientes'), onClick: () => x.relatives(p) });
   if (p.crop) links.push({ label: L('Where it was first grown', 'Dónde se cultivó por primera vez'), onClick: () => x.openCrop(p.crop!) });
   links.push({ label: 'Wikipedia', href: wikiOf(p.q) });
@@ -188,7 +188,7 @@ export function spectacleCard(card: CardFn, s: Spectacle, x: GreenLinks, plantOf
 
 export function cropCard(card: CardFn, c: Crop, x: GreenLinks, show: () => void) {
   const rows: InfoRow[] = [
-    { label: L('First grown', 'Primer cultivo'), value: `${L('about', 'hacia')} ${yearText(c.date)}`, icon: '📅' },
+    { label: L('First grown', 'Primer cultivo'), value: `${Lc('around a year', 'about', 'hacia')} ${yearText(c.date)}`, icon: '📅' },
     { label: L('Where', 'Dónde'), value: tt(c.origin.place), icon: '📍' },
   ];
   if (c.spread.length) rows.push({ label: L('Then to', 'Luego a'), value: c.spread.slice(0, 4).map((s) => tt(s.label)).join(' · '), icon: '🧭' });

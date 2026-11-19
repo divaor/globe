@@ -19,7 +19,7 @@ import { L, es, type PlayHost, type HostGame } from './host';
 
 export type NameList = 'countries' | 'capitals' | 'neighbours';
 export const NAME_LISTS: [NameList, { en: string; es: string }][] = [['countries', { en: 'Countries', es: 'Países' }], ['capitals', { en: 'Capitals', es: 'Capitales' }], ['neighbours', { en: 'Neighbours of a country', es: 'Vecinos de un país' }]];
-export const CONTINENTS: [string, { en: string; es: string }][] = [['EU', { en: 'Europe', es: 'Europa' }], ['SA', { en: 'South America', es: 'Sudamérica' }], ['NA', { en: 'North and Central America', es: 'Norte y Centroamérica' }], ['AF', { en: 'Africa', es: 'África' }], ['AS', { en: 'Asia', es: 'Asia' }], ['OC', { en: 'Oceania', es: 'Oceanía' }]];
+export const CONTINENTS: [string, { en: string; es: string }][] = [['EU', { en: 'Europe', es: 'Europa' }], ['SA', { en: 'South America', es: 'América del Sur' }], ['NA', { en: 'North and Central America', es: 'Norte y Centroamérica' }], ['AF', { en: 'Africa', es: 'África' }], ['AS', { en: 'Asia', es: 'Asia' }], ['OC', { en: 'Oceania', es: 'Oceanía' }]];
 /** Not UN members, but countries on the map most people would name. */
 const ALSO = ['TWN', 'XKX', 'PSE', 'VAT'];
 
@@ -161,7 +161,7 @@ export class NameThemAll implements HostGame {
       if (missing.length && !s.fold) res.append(h('h4', { class: 'result-rows-title' }, L('Missing', 'Faltaron')), h('div', { class: 'hop-path' }, ...missing.map((id) => h('span', { class: 'hop-step to' }, s.list === 'capitals' ? `${this.capitalOf(id)} (${this.name(id)})` : this.name(id)))));
       const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `📝 ${L('Name them all', 'Nómbralos todos')}${s.day ? ` ${s.day}` : ''}: ${this.prompt()}\n${s.found.length}/${s.ids.length} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}`));
-      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Jugar otra vez'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ list: s.list, area: s.area }); });
       res.append(h('div', { class: 'result-actions' }, share, again));
       return;

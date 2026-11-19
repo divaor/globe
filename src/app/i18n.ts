@@ -10,7 +10,8 @@ export const LANGS: { id: Lang; name: string }[] = [
   { id: 'es', name: 'Español' },
 ];
 
-const STRINGS: Record<string, [string, string]> = {
+/** key: [English, Spanish] or [English, Spanish, context] (a context for an English that means two things). */
+const STRINGS: Record<string, [string, string] | [string, string, string]> = {
   appName: ['Atlas Globe', 'Atlas Globe'],
   tagline: ['Explore the world, layer by layer', 'Explora el mundo, capa a capa'],
   loading: ['Loading the world…', 'Cargando el mundo…'],
@@ -34,7 +35,7 @@ const STRINGS: Record<string, [string, string]> = {
   search: ['Search places', 'Buscar lugares'],
   searchHint: ['Country, capital or city', 'País, capital o ciudad'],
   noResults: ['No results', 'Sin resultados'],
-  settings: ['Settings', 'Configuración'],
+  settings: ['Settings', 'Ajustes'],
   language: ['Language', 'Idioma'],
   theme: ['Theme', 'Tema'],
   themeDark: ['Space (dark)', 'Espacio (oscuro)'],
@@ -99,7 +100,7 @@ const STRINGS: Record<string, [string, string]> = {
   politicalNote: ['Colour family = continent; every country has its own shade.', 'Familia de color = continente; cada país tiene su propio tono.'],
   // categories
   'cat.political': ['Political', 'Político'],
-  'cat.people': ['People', 'Población'],
+  'cat.people': ['People', 'Población', 'a group of filters: population'],
   'cat.nature': ['Landforms & water', 'Relieve y agua'],
   'cat.climate': ['Climate & weather', 'Clima y tiempo'],
   'cat.earth': ['Earth science', 'Ciencias de la Tierra'],
@@ -182,7 +183,7 @@ const STRINGS: Record<string, [string, string]> = {
   'era.modern': ['1800–1945', '1800–1945'],
   'era.contemporary': ['Since 1945', 'Desde 1945'],
   warPrev: ['Previous step', 'Paso anterior'],
-  warNext: ['Next step', 'Paso siguiente'],
+  warNext: ['Next step', 'Siguiente paso'],
   warStepOf: ['step {k} of {n}', 'paso {k} de {n}'],
   warDetails: ['Details', 'Detalles'],
   warAftermath: ['Aftermath', 'Después'],
@@ -261,7 +262,7 @@ const STRINGS: Record<string, [string, string]> = {
   livesUnsure: ['Not certain', 'No es seguro'],
   livesMet: ['Their paths cross', 'Sus caminos se cruzan'],
   livesSearch: ['Search a name, a field or a place…', 'Busca un nombre, un campo o un lugar…'],
-  livesAll: ['All', 'Todas'],
+  livesAll: ['All', 'Todas', 'all lives'],
   livesNone: ['No life matches.', 'Ninguna vida coincide.'],
   livesPairs: ['Two lives side by side', 'Dos vidas lado a lado'],
   livesPairsHint: ['Two people on one map, in the same years, and where their paths crossed.', 'Dos personas en un mismo mapa, en los mismos años, y dónde se cruzaron sus caminos.'],
@@ -318,7 +319,7 @@ const STRINGS: Record<string, [string, string]> = {
   storyReadAll: ['Read all of it', 'Leer todo'],
   storyBrowseAll: ['Browse everything', 'Explorarlo todo'],
   storySearch: ['Search', 'Buscar'],
-  storyAllCats: ['All', 'Todo'],
+  storyAllCats: ['All', 'Todo', 'everything'],
   storyWhen: ['When', 'Cuándo'],
   storyWhere: ['Where', 'Dónde'],
   storyBy: ['Who', 'Quién'],
@@ -397,7 +398,7 @@ export function detectSpanish(): Spanish {
 
 export function t(key: string, vars?: Record<string, string | number>): string {
   const row = STRINGS[key];
-  let s = row ? pick(row[0], row[1]) : key;
+  let s = row ? pick(row[0], row[1], row[2]) : key;
   if (vars) for (const [k, v] of Object.entries(vars)) s = s.replace(`{${k}}`, String(v));
   return out(s);
 }
@@ -410,10 +411,14 @@ let pseudo = false;
 export function setPseudo(on: boolean) { pseudo = on; }
 export const pseudoOn = () => pseudo;
 
-/** The text in the reader's language: the Spanish, the English's translation, or the English. */
-function pick(en: string, es: string | undefined): string {
+/**
+ * The text in the reader's language: the Spanish, the English's translation, or the English. A context tells apart
+ * the same English with two meanings ("Streak" of days, "Streak" on a planet): its key is context + U+0004 + English,
+ * as in gettext.
+ */
+function pick(en: string, es: string | undefined, ctx?: string): string {
   if (current === 'es') return es || en;
-  if (messages) return messages[en] || en;
+  if (messages) return messages[ctx ? `${ctx}\u0004${en}` : en] || en;
   return en;
 }
 
@@ -479,6 +484,12 @@ function arg(body: string, args: readonly unknown[]): string {
   return fmt(text.replace(/#/g, new Intl.NumberFormat(locale(), { maximumFractionDigits: 3 }).format(n)), args);
 }
 
+/** L with a context, for an English text that means two things: Lc('a stripe on a planet', 'Streak', 'Franja'). */
+export function Lc(ctx: string, en: string, es: string, ...args: unknown[]): string {
+  const s = pick(en, es, ctx);
+  return out(args.length ? fmt(s, args) : s);
+}
+
 /** f's texts in another language (a description kept in both, the English for a file name…). */
 export function inLang<T>(l: Lang, f: () => T): T {
   const was = current, m = messages, p = pseudo;
@@ -504,9 +515,9 @@ export function both(key: string): { en: string; es: string } {
   return row ? { en: row[0], es: row[1] } : { en: key, es: key };
 }
 
-export function tx(text: { en: string; es: string } | undefined): string {
+export function tx(text: { en: string; es: string; ctx?: string } | undefined): string {
   if (!text) return '';
-  return out(pick(text.en, text.es));
+  return out(pick(text.en, text.es, text.ctx));
 }
 
 /** The phone's language (v0.35.0): the first of its languages the app speaks, English otherwise. */

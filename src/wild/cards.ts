@@ -88,7 +88,7 @@ export function parkCard(card: CardFn, p: Park, d: WildData | null, x: WildLinks
   const rows: InfoRow[] = [{ label: L('Kind', 'Tipo'), value: es() ? k.es : k.en, icon: k.icon }];
   if (p.cc) rows.push({ label: L('Country', 'País'), value: x.countryName(p.cc), icon: '📍' });
   if (p.km2) rows.push({ label: L('Area', 'Superficie'), value: `${fmtCompact(p.km2)} km²`, icon: '📐' });
-  if (p.whs) rows.push({ label: L('World Heritage', 'Patrimonio Mundial'), value: L('Yes', 'Sí'), icon: '🏛️' });
+  if (p.whs) rows.push({ label: L('World Heritage', 'Patrimonio de la Humanidad'), value: L('Yes', 'Sí'), icon: '🏛️' });
   const extra = h('div', { class: 'wild-card-extra' });
   const famous = (d ? p.f.map((id) => d.byId.get(id)).filter((a): a is Animal => !!a) : []);
   if (famous.length) {

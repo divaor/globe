@@ -23,7 +23,7 @@ import { L, es, type PlayHost, type HostGame } from './host';
 
 export type TourMode = 'air' | 'land' | 'history';
 export const TOUR_MODES: [TourMode, { en: string; es: string }][] = [['air', { en: 'By air', es: 'En avión' }], ['land', { en: 'By land', es: 'Por tierra' }], ['history', { en: 'A journey from history', es: 'Un viaje de la historia' }]];
-export const REGIONS: [string, { en: string; es: string }][] = [['', { en: 'Anywhere', es: 'Cualquier lugar' }], ['EU', { en: 'Europe', es: 'Europa' }], ['AS', { en: 'Asia', es: 'Asia' }], ['AF', { en: 'Africa', es: 'África' }], ['NA', { en: 'North America', es: 'Norteamérica' }], ['SA', { en: 'South America', es: 'Sudamérica' }]];
+export const REGIONS: [string, { en: string; es: string }][] = [['', { en: 'Anywhere', es: 'Cualquier lugar' }], ['EU', { en: 'Europe', es: 'Europa' }], ['AS', { en: 'Asia', es: 'Asia' }], ['AF', { en: 'Africa', es: 'África' }], ['NA', { en: 'North America', es: 'América del Norte' }], ['SA', { en: 'South America', es: 'América del Sur' }]];
 const JOURNEYS = ['silk-road', 'marco-polo', 'ibn-battuta', 'xuanzang', 'zheng-he', 'magellan-elcano', 'cook', 'lewis-and-clark', 'trans-saharan', 'incense-and-spices'];
 const STOPS = 6;
 
@@ -223,10 +223,10 @@ export class GrandTour implements HostGame {
       if (s.fold) return;
       this.card.append(chips, h('div', { class: 'hop-stats' }, `${L('So far', 'Por ahora')}: ${this.cost(tourCost(s.order, cost))}`));
       if (s.msg) this.card.append(h('div', { class: 'quiz-fb bad' }, s.msg));
-      const undo = h('button', { type: 'button', class: 'pill sm', 'data-game': 'undo' }, icon(Undo2, 15), L('Back', 'Atrás'));
+      const undo = h('button', { type: 'button', class: 'pill sm', 'data-game': 'undo' }, icon(Undo2, 15), L('Undo', 'Deshacer'));
       undo.disabled = s.order.length < 2;
       undo.addEventListener('click', () => this.undo());
-      const giveUp = h('button', { type: 'button', class: 'pill sm', 'data-game': 'giveup' }, icon(Flag, 15), L('Show me', 'Ver la mejor'));
+      const giveUp = h('button', { type: 'button', class: 'pill sm', 'data-game': 'giveup' }, icon(Flag, 15), L('Show the best route', 'Ver la mejor ruta'));
       giveUp.addEventListener('click', () => this.giveUp());
       this.card.append(h('div', { class: 'hop-actions' }, undo, giveUp));
       return;

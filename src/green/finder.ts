@@ -8,7 +8,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import { h, clear } from '../ui/dom';
 import { planStar } from '../guide/plan';
-import { lang, fmtCompact, L, dataLang } from '../app/i18n';
+import { lang, fmtCompact, L, dataLang, Lc } from '../app/i18n';
 import { matcher } from '../ui/match';
 import { liveRange, natureTabs, type Live, type Wild } from '../wild/finder';
 import { cellAt } from '../layers/carpet';
@@ -198,7 +198,7 @@ export class Plants {
       }, { [pl.kind === 'park' ? 'data-park' : 'data-garden']: pl.kind === 'park' ? pl.p.id : pl.g.id }));
     });
     if (!o.best.length) list.append(h('p', { class: 'muted small' }, L('No park or garden of ours lies where it has been seen.', 'Ningún parque o jardín de los nuestros está donde se ha visto.')));
-    body.append(h('h3', { class: 'sec-title' }, L('Best places to see it', 'Mejores lugares para verla')), list);
+    body.append(h('h3', { class: 'sec-title' }, Lc('a plant', 'Best places to see it', 'Mejores lugares para verla')), list);
     if (o.best[0]) {
       const first = o.best[0];
       const trip = h('button', { type: 'button', class: 'pill sm', 'data-green': 'trip' }, `🧳 ${L('Plan a trip to {0}', 'Planear un viaje a {0}', placeName(first))}`);
