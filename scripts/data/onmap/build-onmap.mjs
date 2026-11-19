@@ -143,16 +143,28 @@ async function riverNames() {
   return byKey;
 }
 /** The Wikidata river for a Natural Earth one: the same name, its point nearest the river (within 600 km). */
-function matchRiver(byKey, names, g) {
+function matchRiver(byKey, names, g, primary) {
   const pts = vertices(g).filter((_, i, a) => i % Math.max(1, Math.floor(a.length / 40)) === 0);
-  let best = null, bd = 600 / KM;
-  for (const n of names) for (const r of byKey.get(norm(n)) ?? []) {
-    for (const c of r.at.length ? r.at : []) for (const p of pts) {
-      const d = geoDistance(c, p);
-      if (d < bd || (best && d === bd && r.sl > best.sl)) { bd = d; best = r; }
+  const dist = (r) => { let m = Infinity; for (const c of r.at) for (const p of pts) m = Math.min(m, geoDistance(c, p)); return m; };
+  const nearest = (list) => {
+    let best = null, bd = 600 / KM;
+    for (const n of list) for (const r of byKey.get(norm(n)) ?? []) {
+      for (const c of r.at.length ? r.at : []) for (const p of pts) {
+        const d = geoDistance(c, p);
+        if (d < bd || (best && d === bd && r.sl > best.sl)) { bd = d; best = r; }
+      }
     }
+    return best;
+  };
+  // v0.39.0: Natural Earth's own English name first, the best known of that name within 1,500 km (a long river's
+  // Wikidata point can be its far source: the Yangtze's is in Tibet), then its other names, the nearest: its
+  // "Yangtze" (also called Jinsha and Chang Jiang) is the Yangtze, not the Jinsha, its upper course; its Volga is
+  // the Volga, not a small Volga near Moscow.
+  if (primary) {
+    const own = (byKey.get(norm(primary)) ?? []).filter((r) => r.at.length && dist(r) < 1500 / KM).sort((a, b) => b.sl - a.sl || dist(a) - dist(b));
+    if (own.length) return own[0];
   }
-  return best;
+  return nearest(names);
 }
 const capFirst = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 /** A name without its disambiguation ("Río Verde (Mato Grosso do Sul)" → "Río Verde"). */
@@ -169,6 +181,7 @@ const unflip = (n) => { const m = /^([^,]+), ([^,]+)$/.exec(n); return m && m[2]
 /** Names the sources have wrong, by their English name. */
 const FIX = {
   'Chihuahuan Desert': [null, 'Desierto de Chihuahua'], 'Ordos Desert': [null, 'Desierto de Ordos'], Rhin: ['Rhine', 'Rin'],
+  'Mahäna Nadï': ['Mahanadi River', 'Río Mahanadi'], 'Motala strm': ['Motala ström', 'Río Motala'],
 };
 
 // ---- Build.
@@ -217,9 +230,12 @@ async function main() {
   // Rivers.
   const riv = NE('ne_10m_rivers_lake_centerlines');
   const byName = new Map();
+  // (A river's stretches through its reservoirs, "Lake Centerline", are kept too, so the Volga is one river: only for
+  // names that are rivers elsewhere.)
+  const riverNamed = new Set(riv.features.filter((f) => f.properties.featurecla === 'River').map((f) => str(f.properties.name_en) || str(f.properties.name)));
   for (const f of riv.features) {
     const p = f.properties;
-    if (p.featurecla !== 'River' || !f.geometry) continue;
+    if (!f.geometry || !(p.featurecla === 'River' || (p.featurecla === 'Lake Centerline' && riverNamed.has(str(p.name_en) || str(p.name))))) continue;
     const en = str(p.name_en) || str(p.name);
     if (!en || /canal|branch|delta|channel|distributary|protoka/i.test(en)) continue;
     const lines = f.geometry.type === 'LineString' ? [f.geometry.coordinates] : f.geometry.coordinates;
@@ -250,7 +266,7 @@ async function main() {
     if (km < 35) continue;
     const cs = countriesOf(f.geometry, true);
     if (!cs.length) continue;
-    const w = matchRiver(names, [...g.names], f.geometry);
+    const w = matchRiver(names, [...g.names], f.geometry, g.en);
     let en = g.en, es = null;
     if (w) { matched++; en = w.en; es = w.es; }
     // The English and Spanish names, as people say them: "Amazon River", "Río Amazonas".

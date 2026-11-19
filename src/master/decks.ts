@@ -64,6 +64,8 @@ export interface Question {
   places?: Place[]; order?: number[];
   /** The countries to pick from (reverse capitals, flags, countries), the answer among them. */
   options?: string[];
+  /** v0.39.0: what is on the map to tap among (big cities' dots, rivers and seas), the answer among them. */
+  cands?: string[];
 }
 
 /** The countries near one (its neighbours by land, then the nearest), among those allowed, filled from its continent. */

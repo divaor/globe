@@ -1383,3 +1383,12 @@ textarea.trip-input { resize: vertical; }
 .remind-list { display: grid; gap: 8px; }
 .remind-settings { display: grid; gap: 8px; }
 .today-remind { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 10px; width: 100%; padding: 6px 0 0; border: 0; border-top: 1px solid var(--line); background: none; color: inherit; font: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+
+/* v0.39.0 Master the world: eight decks in two rows; an outline and a landmark's picture in the card */
+.mw-panel .seg[data-master="deck"] { display: grid; grid-template-columns: repeat(4, 1fr); }
+.mw-shape { display: block; margin: 6px auto 4px; }
+.mw-photo-fig { margin: 6px 0 4px; }
+.mw-photo { display: block; width: 100%; max-height: 190px; object-fit: cover; border-radius: 12px; background: var(--chip); }
+.mw-photo.mw-photo-none { min-height: 90px; }
+.mw-credit { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.mw-credit a { color: inherit; }

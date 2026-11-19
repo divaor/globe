@@ -4,12 +4,15 @@
 // on 3 different days. As it gets better known it is asked harder: picked from a list, then its dot tapped with no
 // list, then (if the reader wants) its name typed. No browser code: scripts/test/master.mjs checks it with Node.
 
-export type DeckId = 'capitals' | 'flags' | 'countries' | 'states';
-/** The three decks of the world's countries (Your world paints them). */
-export type CountryDeck = Exclude<DeckId, 'states'>;
+export type DeckId = 'capitals' | 'flags' | 'countries' | 'states' | 'outlines' | 'cities' | 'landmarks' | 'nature';
+/** The three decks of the world's countries (Your world's "all three" is the least known of them). */
+export type CountryDeck = 'capitals' | 'flags' | 'countries';
 export const DECKS: CountryDeck[] = ['capitals', 'flags', 'countries'];
-/** With the State capitals deck (v0.38.1): the capitals of the states, provinces and regions of twelve countries. */
-export const ALL_DECKS: DeckId[] = [...DECKS, 'states'];
+/** The decks Your world can paint: the countries' three and Outlines (v0.39.0). */
+export type WorldDeck = CountryDeck | 'outlines';
+export const WORLD_DECKS: WorldDeck[] = [...DECKS, 'outlines'];
+/** With State capitals (v0.38.1) and, in v0.39.0, Outlines, Big cities, Landmarks, and Rivers, mountains and seas. */
+export const ALL_DECKS: DeckId[] = [...DECKS, 'states', 'outlines', 'cities', 'landmarks', 'nature'];
 export type Level = 'new' | 'learning' | 'known' | 'mastered';
 export type Step = 'pick' | 'tap' | 'type';
 export type Order = 'balanced' | 'known' | 'people' | 'continent' | 'fixed' | 'random';
