@@ -1,6 +1,6 @@
 {
  "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
- "count": 3240,
+ "count": 3237,
  "messages": [
   {
    "en": " (below sea level)",
@@ -45,24 +45,10 @@
    ]
   },
   {
-   "en": " r",
-   "es": "",
-   "where": [
-    "src/compare/compare.ts:436"
-   ]
-  },
-  {
    "en": " to ",
    "es": " al ",
    "where": [
     "src/guide/export.ts:39"
-   ]
-  },
-  {
-   "en": " ρ",
-   "es": "",
-   "where": [
-    "src/compare/compare.ts:436"
    ]
   },
   {
@@ -11997,13 +11983,6 @@
    ]
   },
   {
-   "en": "Pearson's",
-   "es": "r de Pearson",
-   "where": [
-    "src/compare/compare.ts:436"
-   ]
-  },
-  {
    "en": "Peek",
    "es": "Espiar",
    "where": [
@@ -14712,8 +14691,8 @@
    ]
   },
   {
-   "en": "Spearman's",
-   "es": "ρ de Spearman",
+   "en": "Spearman's ρ = {0} · Pearson's r = {1}",
+   "es": "ρ de Spearman = {0} · r de Pearson = {1}",
    "where": [
     "src/compare/compare.ts:436"
    ]

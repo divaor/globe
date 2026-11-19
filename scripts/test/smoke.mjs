@@ -5028,7 +5028,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }
   check(seen['es-MX'].lang === 'es' && seen['es-MX'].es === 'latam' && !seen['es-MX'].picked && /10,935\.5/.test(seen['es-MX'].fmt) && /p\.\s?m\./.test(seen['es-MX'].fmt)
     && seen['es-ES'].lang === 'es' && seen['es-ES'].es === 'spain' && /10\.935,5/.test(seen['es-ES'].fmt) && /17:30/.test(seen['es-ES'].fmt)
-    && seen['fr-FR'].lang === 'en' && /^Numbers and dates \(en-GB\)/.test(seen['fr-FR'].fmt),
+    && seen['fr-FR'].lang === 'en' && /^Numbers and dates: 10,935\.5 · 3 May/.test(seen['fr-FR'].fmt),
     `like the phone: es-MX "${seen['es-MX'].fmt}"; es-ES "${seen['es-ES'].fmt}"; fr-FR "${seen['fr-FR'].fmt}"`);
   check(seen.kept?.lang === 'en' && seen.kept.picked && seen.back?.lang === 'es' && !seen.back.picked,
     `a language picked in Settings stays after a reload (${seen.kept?.lang}); "Like my phone" goes back to the phone's (${seen.back?.lang})`);

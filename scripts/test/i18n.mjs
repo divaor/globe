@@ -34,6 +34,7 @@ check(I.L(fem[0], fem[1], 'capitales', 'f'), 'Empieza a aprender las capitales: 
 check(I.L(fem[0], fem[1], 'países', 'm'), 'Empieza a aprender los países: unos cuantos', 'select other with a value inside');
 check(I.tx({ en: 'Map', es: 'Mapa' }), 'Mapa', 'tx in Spanish');
 check(I.tx({ en: 'Map', es: '' }), 'Map', 'tx falls back to English');
+check(I.L(' ρ', ''), '', 'an empty Spanish in the code means nothing');
 check(I.inLang('en', () => I.L('Your data', 'Tus datos')), 'Your data', 'inLang');
 check(I.L('Your data', 'Tus datos'), 'Tus datos', 'inLang puts the language back');
 // A language file, keyed by the English.

@@ -398,7 +398,7 @@ export function detectSpanish(): Spanish {
 
 export function t(key: string, vars?: Record<string, string | number>): string {
   const row = STRINGS[key];
-  let s = row ? pick(row[0], row[1], row[2]) : key;
+  let s = row ? pick(row[0], row[1], row[2], true) : key;
   if (vars) for (const [k, v] of Object.entries(vars)) s = s.replace(`{${k}}`, String(v));
   return out(s);
 }
@@ -416,8 +416,10 @@ export const pseudoOn = () => pseudo;
  * the same English with two meanings ("Streak" of days, "Streak" on a planet): its key is context + U+0004 + English,
  * as in gettext.
  */
-function pick(en: string, es: string | undefined, ctx?: string): string {
-  if (current === 'es') return es || en;
+function pick(en: string, es: string | undefined, ctx?: string, asWritten = false): string {
+  // A text written in the code says what it means even when empty ('' in Spanish: nothing); a data field with no
+  // Spanish yet shows the English.
+  if (current === 'es') return asWritten ? es ?? en : es || en;
   if (messages) return messages[ctx ? `${ctx}\u0004${en}` : en] || en;
   return en;
 }
@@ -493,7 +495,7 @@ export function txs(text: { en: readonly string[]; es?: readonly string[] } | un
 
 /** L with a context, for an English text that means two things: Lc('a stripe on a planet', 'Streak', 'Franja'). */
 export function Lc(ctx: string, en: string, es: string, ...args: unknown[]): string {
-  const s = pick(en, es, ctx);
+  const s = pick(en, es, ctx, true);
   return out(args.length ? fmt(s, args) : s);
 }
 
@@ -506,7 +508,7 @@ export function inLang<T>(l: Lang, f: () => T): T {
 
 /** The text in the reader's language, with its values: L('{0} days', '{0} días', n). */
 export function L(en: string, es: string, ...args: unknown[]): string {
-  const s = pick(en, es);
+  const s = pick(en, es, undefined, true);
   return out(args.length ? fmt(s, args) : s);
 }
 

@@ -433,7 +433,7 @@ export class Compare {
       canvas,
       h('div', { class: 'cmp-xcap' }, `→ ${this.caption(an.a)}`),
       h('div', { class: 'cmp-keys' }, conts, size),
-      h('div', { class: 'cmp-stats' }, `${L("Spearman's", 'ρ de Spearman')}${L(' ρ', '')} = ${fmtR(an.rho)} · ${L("Pearson's", 'r de Pearson')}${L(' r', '')} = ${fmtR(an.r)}${an.tx !== 'lin' || an.ty !== 'lin' ? L(' (log scale)', ' (escala log.)') : ''} · ${nCountries(an.n)} · ${chanceWords(an.p)}`),
+      h('div', { class: 'cmp-stats' }, `${L("Spearman's ρ = {0} · Pearson's r = {1}", 'ρ de Spearman = {0} · r de Pearson = {1}', fmtR(an.rho), fmtR(an.r))}${an.tx !== 'lin' || an.ty !== 'lin' ? L(' (log scale)', ' (escala log.)') : ''} · ${nCountries(an.n)} · ${chanceWords(an.p)}`),
       an.exceptions.length ? h('div', { class: 'cmp-exc' }, h('span', { class: 'cmp-exc-t' }, L('Furthest from the trend:', 'Más lejos de la tendencia:')), an.exceptions.map((iso) => this.countryButton(iso))) : null,
       h('p', { class: 'cmp-note' }, [L('Correlation is not causation: a third factor, such as wealth, can drive both.', 'Correlación no es causalidad: un tercer factor, como la riqueza, puede influir en ambos.'), this.years(an.a, an.b)].filter(Boolean).join(' · ')));
   }
