@@ -3,7 +3,7 @@
 // CRUST1.0 says it is under the point; real things are marked at their depths; tapping the column reads the
 // temperature, pressure and density there.
 import { h } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, tx } from '../app/i18n';
 import { L, es } from '../play/host';
 import { EARTH_KM, LAYERS, layerAt, layerName, pressureAt, temperatureAt, densityAt, pressureText } from './model';
 import type { Marker } from './data';
@@ -73,8 +73,8 @@ export function digColumn(o: { crustKm: number; markers: Marker[]; onDepth?: (km
     lastY = y;
     svg.append(s('line', { x1: X0 + CW, x2: X0 + CW + 10, y1: y0, y2: y, class: 'dig-lead' }));
     svg.append(s('circle', { cx: X0 + CW, cy: y0, r: 2.6, class: 'dig-dot' }));
-    const t = s('text', { x: X0 + CW + 13, y: y + 4, class: 'dig-mark' }, `${depthText(km)} · ${es() ? m.name.es : m.name.en}`);
-    const title = s('title', {}, `${es() ? m.name.es : m.name.en} · ${es() ? m.place.es : m.place.en}${m.below === 'sea' ? L(' (below sea level)', ' (bajo el nivel del mar)') : ''}`);
+    const t = s('text', { x: X0 + CW + 13, y: y + 4, class: 'dig-mark' }, `${depthText(km)} · ${tx(m.name)}`);
+    const title = s('title', {}, `${tx(m.name)} · ${tx(m.place)}${m.below === 'sea' ? L(' (below sea level)', ' (bajo el nivel del mar)') : ''}`);
     t.append(title);
     svg.append(t);
   }

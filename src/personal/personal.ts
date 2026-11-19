@@ -2,7 +2,7 @@
 // in this browser), and PNG / 4K / phone wallpaper export of the current view.
 import { Check, Star, NotebookPen, ImageDown, Monitor, Smartphone } from 'lucide';
 import { h, icon } from '../ui/dom';
-import { t, lang, fmtNumber } from '../app/i18n';
+import { t, lang, fmtNumber, L } from '../app/i18n';
 import { categoricalLayer } from '../layers/choropleth';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
@@ -10,7 +10,6 @@ import type { LayerDef } from '../layers/types';
 
 const KEY = 'atlas-globe:personal';
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 
 interface Personal { visited: string[]; wish: string[]; notes: Record<string, string> }
 
@@ -42,8 +41,7 @@ export class PersonalMaps {
         const visited = self.p.visited.filter((id) => meta[id]);
         const conts = new Set(visited.map((id) => meta[id].ct).filter((c) => c !== 'AN' && c !== 'SS'));
         const sovereign = Object.values(meta).filter((m) => m.type === 'Sovereign country' || m.type === 'Country').length;
-        const note = L(`${visited.length} countries visited (${fmtNumber((visited.length / sovereign) * 100, 0)}% of the world), ${conts.size} of 6 continents. Saved only on this device.`,
-          `${visited.length} países visitados (${fmtNumber((visited.length / sovereign) * 100, 0)}% del mundo), ${conts.size} de 6 continentes. Guardado solo en este dispositivo.`);
+        const note = L('{0} countries visited ({1}% of the world), {2} of 6 continents. Saved only on this device.', '{0} países visitados ({1}% del mundo), {2} de 6 continentes. Guardado solo en este dispositivo.', visited.length, fmtNumber((visited.length / sovereign) * 100, 0), conts.size);
         return lg ? { ...lg, note } : lg;
       },
       labels(rc) {

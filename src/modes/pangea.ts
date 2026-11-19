@@ -1,7 +1,7 @@
 // Plate tectonics from 1 billion years ago to today (Merdith et al. 2021 full-plate model; the
 // model itself is in paleo.ts, shared with the Life through time stories).
 import { continentSwatch, mix } from '../engine/colors';
-import { t, lang, fmtNumber } from '../app/i18n';
+import { t, lang, fmtNumber, L } from '../app/i18n';
 import { TimeBar } from '../ui/timebar';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
@@ -10,9 +10,9 @@ import { loadPaleo, unitName, PALEO_MAX_MA, type PaleoWorld } from './paleo';
 
 const easeLabel = (ma: number) => {
   const es = lang() === 'es';
-  if (ma < 0.05) return es ? 'Hoy' : 'Today';
+  if (ma < 0.05) return L('Today', 'Hoy');
   const v = ma < 10 ? fmtNumber(ma, 1) : fmtNumber(Math.round(ma));
-  return es ? `Hace ${v} millones de años` : `${v} million years ago`;
+  return L('{0} million years ago', 'Hace {0} millones de años', v);
 };
 
 export class PangeaMode {
@@ -35,9 +35,9 @@ export class PangeaMode {
       legend() {
         const es = lang() === 'es';
         return {
-          kind: 'categories', title: es ? 'Tierra de hoy' : 'Land of today',
+          kind: 'categories', title: L('Land of today', 'Tierra de hoy'),
           items: ['AF', 'SA', 'NA', 'EU', 'AS', 'OC', 'AN'].map((c) => ({ color: continentSwatch(c), label: t(`cont.${c}`) })),
-          note: es ? 'Colores según el continente actual. Las costas son las de hoy, desplazadas con su placa.' : 'Coloured by today’s continent. Coastlines are today’s, moved with their plate.',
+          note: L('Coloured by today’s continent. Coastlines are today’s, moved with their plate.', 'Colores según el continente actual. Las costas son las de hoy, desplazadas con su placa.'),
         };
       },
     };
@@ -68,7 +68,7 @@ export class PangeaMode {
       format: (f) => easeLabel((1 - f) * 1000),
       caption: (f) => this.world?.caption((1 - f) * 1000) ?? '',
       bands: periods.map((u) => ({ from: 1 - u.start / 1000, to: 1 - u.end / 1000, color: u.color, label: unitName(u) })),
-      ticks: [1000, 750, 500, 250, 66, 0].map((m) => ({ at: 1 - m / 1000, label: m ? `${m} Ma` : (es ? 'Hoy' : 'Today') })),
+      ticks: [1000, 750, 500, 250, 66, 0].map((m) => ({ at: 1 - m / 1000, label: m ? `${m} Ma` : (L('Today', 'Hoy')) })),
       start: Math.min(0.75, pos), end: 1, pos,
       rate: 0.01,
       onPos: (f) => { this.ma = Math.max(0, (1 - f) * 1000); app.renderer.requestRender(); },

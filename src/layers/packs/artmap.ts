@@ -4,7 +4,7 @@
 // - Architectural styles: notable buildings with their architects, coloured by style.
 // A tap opens the museum's, the work's or the building's card, which links to the city's guide. Close up, dots that
 // overlap move apart, each with a line to its place (layers/crowd.ts), so every one can be tapped.
-import { lang, fmtCompact } from '../../app/i18n';
+import { lang, fmtCompact, L } from '../../app/i18n';
 import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { LayerDef, LayerHit, LayerInstance, RenderCtx } from '../types';
@@ -13,7 +13,6 @@ import { loadArt, loadArch, nm, KINDS, PERIODS, type ArtData, type ArchData, typ
 import { museumCard, buildingCard, workCard } from '../../artguide/cards';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 let APP: App | null = null;
 let art: ArtData | null = null;
 let arch: ArchData | null = null;
@@ -54,7 +53,7 @@ export const artMuseums: LayerDef = {
     }
   },
   legend() {
-    return { kind: 'categories', title: L(`${art?.museums.length ?? ''} art museums`, `${art?.museums.length ?? ''} museos de arte`),
+    return { kind: 'categories', title: L('{0} art museums', '{0} museos de arte', art?.museums.length ?? ''),
       items: [{ color: 'rgba(124,92,255,0.75)', label: L('Bigger: more visitors a year', 'Más grande: más visitantes al año') }, { color: 'rgba(124,92,255,0.45)', label: L('Visitors not known', 'Visitantes desconocidos') }],
       note: L('Tap one for its best-known works and the city’s art guide. Close up, museums that overlap move apart.', 'Toca uno para ver sus obras más conocidas y la guía de arte de la ciudad. De cerca, los museos que se enciman se separan.') };
   },
@@ -72,7 +71,7 @@ export const artMuseums: LayerDef = {
       const s = Math.max(match(m.name[0]), match(m.name[1]));
       if (s <= 0) continue;
       const works = art!.byMuseum.get(m.id) ?? [];
-      out.push({ label: nm(m), sub: [cityName(m.city), m.visitors ? L(`${fmtCompact(m.visitors)} visitors a year`, `${fmtCompact(m.visitors)} visitantes al año`) : null, works.length ? L(`${works.length} works`, `${works.length} obras`) : null].filter(Boolean).join(' · '),
+      out.push({ label: nm(m), sub: [cityName(m.city), m.visitors ? L('{0} visitors a year', '{0} visitantes al año', fmtCompact(m.visitors)) : null, works.length ? L('{0} works', '{0} obras', works.length) : null].filter(Boolean).join(' · '),
         icon: '🏛️', lon: m.at[0], lat: m.at[1], score: s + Math.min(10, m.sl / 30), wz: 13, dot: m,
         open: (ui) => museumCard(ui.card, m, works, cityName(m.city), openCity('art')) });
     }
@@ -109,7 +108,7 @@ export const masterpieces: LayerDef = {
   credit: 'Wikidata (CC0)',
   options: [
     { id: 'kind', label: { en: 'Kind', es: 'Tipo' }, type: 'select', default: 'all', choices: KINDS.map(([value, label, icon]) => ({ value, label, icon })) },
-    { id: 'period', label: { en: 'Made', es: 'Época' }, type: 'select', default: 'all', choices: PERIODS.map(([value, label]) => ({ value, label })) },
+    { id: 'period', label: { en: 'Period', es: 'Época' }, type: 'select', default: 'all', choices: PERIODS.map(([value, label]) => ({ value, label })) },
   ],
   async load() { art ??= await loadArt(); },
   onOptionsChanged() { LC.requestRender(); },
@@ -135,7 +134,7 @@ export const masterpieces: LayerDef = {
   },
   legend(inst) {
     const n = shownWorks(inst).reduce((s, x) => s + x[1].length, 0);
-    return { kind: 'categories', title: L(`${n} masterpieces`, `${n} obras maestras`), items: [{ color: '#f5c542', label: L('A museum: how many of them it holds', 'Un museo: cuántas tiene') }],
+    return { kind: 'categories', title: L('{0} masterpieces', '{0} obras maestras', n), items: [{ color: '#f5c542', label: L('A museum: how many of them it holds', 'Un museo: cuántas tiene') }],
       note: L('Each with the best-known work there. Tap one for its works.', 'Cada uno con la obra más conocida que tiene. Toca uno para ver sus obras.') };
   },
   tap(_lon, _lat, inst, ui) {
@@ -164,7 +163,7 @@ export const masterpieces: LayerDef = {
       const ws = art.byArtist.get(a.id) ?? [];
       if (!ws.length) continue;
       const top = ws[0].museum, ms = new Set(ws.map((w) => w.museum.id)).size;
-      out.push({ label: nm(a), sub: L(`${ws.length} works in ${ms} museums: the trail`, `${ws.length} obras en ${ms} museos: el recorrido`), icon: '🧑‍🎨',
+      out.push({ label: nm(a), sub: L('{0} works in {1} museums: the trail', '{0} obras en {1} museos: el recorrido', ws.length, ms), icon: '🧑‍🎨',
         lon: top.at[0], lat: top.at[1], score: s + 4 + Math.min(10, a.sl / 15), wz: 5, dot: top,
         open: () => void window.atlas?.art?.openArtist(a.id) });
     }
@@ -216,7 +215,7 @@ export const architecture: LayerDef = {
   legend(inst) {
     const shown = shownBuildings(inst);
     const used = (arch?.styles ?? []).filter((s) => shown.some((b) => b.style?.key === s.key));
-    return { kind: 'categories', title: L(`${shown.length} buildings by style`, `${shown.length} edificios por estilo`),
+    return { kind: 'categories', title: L('{0} buildings by style', '{0} edificios por estilo', shown.length),
       items: used.map((s) => ({ color: s.color, label: `${nm(s)} (${fmtCompact(shown.filter((b) => b.style?.key === s.key).length)})` })),
       note: L('Buildings Wikidata gives a style for. Tap one for its architect.', 'Edificios con un estilo en Wikidata. Toca uno para ver su arquitecto.') };
   },
@@ -246,7 +245,7 @@ export const architecture: LayerDef = {
       if (s <= 0) continue;
       const bs = (arch.byArchitect.get(a.id) ?? []).filter((b) => b.style);
       if (!bs.length) continue;
-      out.push({ label: nm(a), sub: L(`${bs.length} buildings: the trail`, `${bs.length} edificios: el recorrido`), icon: '👷',
+      out.push({ label: nm(a), sub: L('{0} buildings: the trail', '{0} edificios: el recorrido', bs.length), icon: '👷',
         lon: bs[0].at[0], lat: bs[0].at[1], score: s + 2 + Math.min(10, a.sl / 15), wz: 6, dot: bs[0],
         open: () => void window.atlas?.art?.openArchitect(a.id) });
     }

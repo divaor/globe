@@ -3,13 +3,13 @@
 // how each looks from space (a haze or none), and the facts researched for each (data/worlds/facts.json).
 import { dataUrl, loadJSON } from '../data/store';
 import { addSource, type TileSource } from '../engine/tiles';
-import { lang } from '../app/i18n';
+import { lang, L, tx } from '../app/i18n';
 
-export type Text = { en: string; es: string };
-export const tr = (t: Text | undefined) => (t ? (lang() === 'es' ? t.es : t.en) : '');
+export type Text = { en: string; es: string; ctx?: string };
+export const tr = (t: Text | undefined) => (t ? (tx(t)) : '');
 /** A world's name inside a sentence: "on the Moon", "en la Luna" (its article in lower case). */
 export const trIn = (t: Text | undefined) => tr(t).replace(/^(The|La|El) /, (m) => m.toLowerCase());
-export const L = (en: string, es: string) => (lang() === 'es' ? es : en);
+export { L };
 
 /** One way to see a world: a map file (hi, lo resolution) and, for some, tiles that sharpen it when zoomed in. */
 export interface WorldMap {
@@ -218,9 +218,9 @@ export const TYPE_NAMES: Record<string, Text> = {
   lg: { en: 'Tongue of a plateau', es: 'Lengua de una meseta' }, se: { en: 'Winding ridge', es: 'Cresta sinuosa' }, vs: { en: 'Wide lowland plain', es: 'Gran llanura baja' },
   fc: { en: 'Bright spot', es: 'Mancha brillante' }, fx: { en: 'Scalloped ridge', es: 'Cresta festoneada' }, in: { en: 'Island', es: 'Isla' },
   fm: { en: 'River channel', es: 'Cauce de río' }, al: { en: 'Light or dark marking', es: 'Mancha clara u oscura' },
-  st: { en: 'Landing site', es: 'Sitio de alunizaje' }, an: { en: 'Small crater named by the astronauts', es: 'Pequeño cráter nombrado por los astronautas' },
+  st: { en: 'Landing site', es: 'Sitio de alunizaje', ctx: 'on the Moon' }, an: { en: 'Small crater named by the astronauts', es: 'Pequeño cráter nombrado por los astronautas' },
   ls: { en: 'Landing site', es: 'Sitio de aterrizaje' }, ec: { en: 'Volcanic vent', es: 'Centro eruptivo' }, pm: { en: 'Plume', es: 'Penacho' },
-  ft: { en: 'Strait', es: 'Estrecho' }, sx: { en: 'Boulder', es: 'Roca' }, vi: { en: 'Streak', es: 'Franja' }, le: { en: 'Small dark spot', es: 'Pequeña mancha oscura' },
+  ft: { en: 'Strait', es: 'Estrecho' }, sx: { en: 'Boulder', es: 'Roca' }, vi: { en: 'Streak', es: 'Franja', ctx: 'a stripe on a planet\'s surface' }, le: { en: 'Small dark spot', es: 'Pequeña mancha oscura' },
   rt: { en: 'Net-like pattern', es: 'Patrón en red' }, lr: { en: 'Giant ringed basin', es: 'Gran cuenca anillada' }, lc: { en: 'Dry lake bed', es: 'Lecho de lago seco' },
 };
 /** Big kinds of place: seas, plains, highlands, regions (their labels are italic, like seas on Earth). */

@@ -7,10 +7,10 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { h, icon, clear } from '../ui/dom';
-import { lang, t } from '../app/i18n';
+import { lang, t, L } from '../app/i18n';
 
 const es = () => lang() === 'es';
-export const L = (en: string, sp: string) => (es() ? sp : en);
+export { L };
 export { es };
 
 /** A map game, as the host sees it. */

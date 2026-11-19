@@ -4,7 +4,7 @@
 // - Yesterday's satellite view: NASA GIBS WMS https://gibs.earthdata.nasa.gov/
 // - The International Space Station:          https://wheretheiss.at/
 import { geoCircle, geoDistance } from 'd3-geo';
-import { lang, fmtNumber } from '../../app/i18n';
+import { lang, fmtNumber, L } from '../../app/i18n';
 import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { LayerDef, LayerInstance, RenderCtx } from '../types';
@@ -12,7 +12,6 @@ import type { RasterTexture } from '../../engine/gl';
 import { appLocale } from '../../app/i18n';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 
 async function fetchJSON<T>(url: string, ms = 15000): Promise<T> {
   const ctl = new AbortController();
@@ -26,17 +25,17 @@ async function fetchJSON<T>(url: string, ms = 15000): Promise<T> {
 
 const ago = (ms: number) => {
   const m = Math.round(ms / 60000);
-  if (m < 60) return L(`${m} min ago`, `hace ${m} min`);
+  if (m < 60) return L('{0} min ago', 'hace {0} min', m);
   const h = Math.round(m / 60);
-  if (h < 48) return L(`${h} h ago`, `hace ${h} h`);
-  return L(`${Math.round(h / 24)} days ago`, `hace ${Math.round(h / 24)} días`);
+  if (h < 48) return L('{0} h ago', 'hace {0} h', h);
+  return L('{0} days ago', 'hace {0} días', Math.round(h / 24));
 };
 
 function statusNote(inst: LayerInstance): string | undefined {
   const err = inst.state.error as string | undefined;
   const at = inst.state.updated as number | undefined;
-  if (err) return L(`Live data unavailable (${err}). Retrying…`, `Datos en vivo no disponibles (${err}). Reintentando…`);
-  if (at) return L(`Updated ${new Date(at).toLocaleTimeString(appLocale())}`, `Actualizado ${new Date(at).toLocaleTimeString(appLocale())}`);
+  if (err) return L('Live data unavailable ({0}). Retrying…', 'Datos en vivo no disponibles ({0}). Reintentando…', err);
+  if (at) return L('Updated {0}', 'Actualizado {0}', new Date(at).toLocaleTimeString(appLocale()));
   return L('Loading live data…', 'Cargando datos en vivo…');
 }
 
@@ -117,7 +116,7 @@ const earthquakes: LayerDef = {
   legend(inst) {
     const n = ((inst.state.quakes as Quake[]) ?? []).length;
     return {
-      kind: 'categories', title: L(`Earthquakes: ${n}`, `Terremotos: ${n}`),
+      kind: 'categories', title: L('Earthquakes: {0}', 'Terremotos: {0}', n),
       items: [
         { color: '#ff4d4f', label: L('0–35 km deep', '0–35 km de profundidad'), shape: 'dot' }, { color: '#ff922b', label: '35–70 km', shape: 'dot' },
         { color: '#fcc419', label: '70–150 km', shape: 'dot' }, { color: '#51cf66', label: '150–300 km', shape: 'dot' }, { color: '#4dabf7', label: '> 300 km', shape: 'dot' },

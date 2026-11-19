@@ -2,7 +2,7 @@
 // architects and styles, and where our own art items are now (public/data/artguide, built by
 // scripts/data/artguide/build-artguide.mjs from Wikidata). Loaded once, when first needed.
 import { loadJSON } from '../data/store';
-import { lang } from '../app/i18n';
+import { lang, L } from '../app/i18n';
 
 const es = () => lang() === 'es';
 export type WorkKind = 'painting' | 'sculpture' | 'antiquity' | 'object';
@@ -61,7 +61,7 @@ export const nm = (x: { name: [string, string] }) => (es() ? x.name[1] : x.name[
 /** "1503", "c. 140 BC". */
 export function yearText(y: number | null): string {
   if (y == null) return '';
-  return y < 0 ? (es() ? `${-y} a. C.` : `${-y} BC`) : String(y);
+  return y < 0 ? (L('{0} BC', '{0} a. C.', -y)) : String(y);
 }
 export const commons = (file: string, w = 330) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file.replace(/ /g, '_'))}?width=${w}`;
 export const commonsPage = (file: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g, '_'))}`;
@@ -86,8 +86,8 @@ export function commonsCredit(file: string): Promise<{ licence: string; author: 
 }
 
 /** The kinds of works, as the city art guide filters them. */
-export const KINDS: [WorkKind | 'all', { en: string; es: string }, string][] = [
-  ['all', { en: 'All', es: 'Todo' }, '🖼️'], ['painting', { en: 'Paintings', es: 'Pinturas' }, '🎨'], ['sculpture', { en: 'Sculpture', es: 'Escultura' }, '🗿'],
+export const KINDS: [WorkKind | 'all', { en: string; es: string; ctx?: string }, string][] = [
+  ['all', { en: 'All', es: 'Todo', ctx: 'everything' }, '🖼️'], ['painting', { en: 'Paintings', es: 'Pinturas' }, '🎨'], ['sculpture', { en: 'Sculpture', es: 'Escultura' }, '🗿'],
   ['antiquity', { en: 'Antiquities', es: 'Antigüedades' }, '🏺'], ['object', { en: 'Other treasures', es: 'Otros tesoros' }, '💎'],
 ];
 /** Periods, as the city art guide filters them. */

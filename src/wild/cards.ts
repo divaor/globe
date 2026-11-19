@@ -4,7 +4,7 @@
 import { h } from '../ui/dom';
 import { clipEl, type Clip } from '../ui/audio';
 import { planLink } from '../guide/plan';
-import { lang, fmtCompact } from '../app/i18n';
+import { lang, fmtCompact, L, tx } from '../app/i18n';
 import { recordSeen } from '../learn/progress';
 import { commons, commonsPage, commonsCredit, wikiOf } from '../artguide/data';
 import { creditEl } from '../artguide/cards';
@@ -12,7 +12,6 @@ import type { InfoRow } from '../layers/types';
 import { GROUPS, STATUS, factRows, groupName, nm, statusName, type Animal, type Park, type Zoo, type WildData } from './data';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 export type CardFn = (icon: string, title: string, sub: string, rows: InfoRow[], links?: { label: string; href?: string; onClick?: () => void }[], notes?: string[], image?: Promise<string | null>, extra?: HTMLElement | null) => void;
 
 /** What the cards' buttons do (layers/packs/wild.ts gives them). */
@@ -31,7 +30,7 @@ export interface WildLinks {
 export function statusBadge(a: Animal): HTMLElement | null {
   if (!a.st) return null;
   const s = STATUS[a.st];
-  return h('span', { class: 'wild-status', style: `background:${s.color};color:${s.ink}`, 'data-status': a.st }, a.st === 'EX' && a.gone ? L(`Extinct · ${a.gone}`, `Extinto · ${a.gone}`) : statusName(a.st));
+  return h('span', { class: 'wild-status', style: `background:${s.color};color:${s.ink}`, 'data-status': a.st }, a.st === 'EX' && a.gone ? L('Extinct · {0}', 'Extinto · {0}', a.gone) : statusName(a.st));
 }
 
 /** An animal's call: played by the app's player (one sound at a time, the small player in the top bar to stop it once
@@ -48,22 +47,22 @@ function soundEl(a: Animal): HTMLElement {
   const credit = h('p', { class: 'card-note art-credit' }, h('a', { href: commonsPage(file), target: '_blank', rel: 'noopener' }, L('Sound: Wikimedia Commons', 'Sonido: Wikimedia Commons')));
   void commonsCredit(file).then((c) => {
     if (!c || !credit.isConnected) return;
-    credit.firstChild!.textContent = L(`Sound: ${c.licence}${c.author ? ` · ${c.author}` : ''} · Wikimedia Commons`, `Sonido: ${c.licence}${c.author ? ` · ${c.author}` : ''} · Wikimedia Commons`);
+    credit.firstChild!.textContent = L('Sound: {0}{1} · Wikimedia Commons', 'Sonido: {0}{1} · Wikimedia Commons', c.licence, c.author ? ` · ${c.author}` : '');
   });
   return h('div', { class: 'wild-sound' }, h('div', { class: 'wild-sound-title' }, `🔊 ${L('Its call', 'Su sonido')}`), player, credit);
 }
 
 export function animalCard(card: CardFn, a: Animal, x: WildLinks) {
   const got = recordSeen('animals', a.id);
-  if (got.length) x.toast(`${got[0].icon} ${es() ? `Nueva insignia: ${got[0].es}` : `New badge: ${got[0].en}`}`);
+  if (got.length) x.toast(`${got[0].icon} ${L('New badge: {0}', 'Nueva insignia: {0}', tx(got[0]))}`);
   const rows: InfoRow[] = [];
   rows.push({ label: L('Group', 'Grupo'), value: `${groupName(a.g)}${a.fam ? ` · ${a.fam}` : ''}`, icon: GROUPS[a.g].icon });
-  if (a.gone) rows.push({ label: L('Last seen', 'Visto por última vez'), value: `${a.gone} · ${es() ? a.last?.es : a.last?.en}`, icon: '🕯️' });
+  if (a.gone) rows.push({ label: L('Last seen', 'Visto por última vez'), value: `${a.gone} · ${tx(a.last)}`, icon: '🕯️' });
   rows.push(...factRows(a));
   if (a.cc.length) {
     const names = a.cc.map((c) => x.countryName(c)).filter(Boolean).sort((p, q) => p.localeCompare(q, lang()));
     const shown = names.slice(0, 10).join(', ');
-    rows.push({ label: a.gone ? L('Lived in', 'Vivía en') : L('Lives in', 'Vive en'), value: names.length > 10 ? L(`${shown} and ${names.length - 10} more`, `${shown} y ${names.length - 10} más`) : shown, icon: '🌍' });
+    rows.push({ label: a.gone ? L('Lived in', 'Vivía en') : L('Lives in', 'Vive en'), value: names.length > 10 ? L('{0} and {1} more', '{0} y {1} más', shown, names.length - 10) : shown, icon: '🌍' });
   }
   const links: { label: string; href?: string; onClick?: () => void }[] = [
     { label: a.gone ? L('Where it lived', 'Dónde vivía') : L('Show where it lives', 'Mostrar dónde vive'), onClick: () => x.showRange(a) },
@@ -86,10 +85,10 @@ export const placeIcon = (k: keyof typeof KIND) => KIND[k].icon;
 
 export function parkCard(card: CardFn, p: Park, d: WildData | null, x: WildLinks) {
   const k = KIND[p.k];
-  const rows: InfoRow[] = [{ label: L('Kind', 'Tipo'), value: es() ? k.es : k.en, icon: k.icon }];
+  const rows: InfoRow[] = [{ label: L('Kind', 'Tipo'), value: tx(k), icon: k.icon }];
   if (p.cc) rows.push({ label: L('Country', 'País'), value: x.countryName(p.cc), icon: '📍' });
   if (p.km2) rows.push({ label: L('Area', 'Superficie'), value: `${fmtCompact(p.km2)} km²`, icon: '📐' });
-  if (p.whs) rows.push({ label: L('World Heritage', 'Patrimonio Mundial'), value: L('Yes', 'Sí'), icon: '🏛️' });
+  if (p.whs) rows.push({ label: L('World Heritage', 'Patrimonio de la Humanidad'), value: L('Yes', 'Sí'), icon: '🏛️' });
   const extra = h('div', { class: 'wild-card-extra' });
   const famous = (d ? p.f.map((id) => d.byId.get(id)).filter((a): a is Animal => !!a) : []);
   if (famous.length) {
@@ -113,7 +112,7 @@ export function parkCard(card: CardFn, p: Park, d: WildData | null, x: WildLinks
 
 export function zooCard(card: CardFn, z: Zoo, x: WildLinks) {
   const k = KIND[z.k];
-  const rows: InfoRow[] = [{ label: L('Kind', 'Tipo'), value: es() ? k.es : k.en, icon: k.icon }];
+  const rows: InfoRow[] = [{ label: L('Kind', 'Tipo'), value: tx(k), icon: k.icon }];
   if (z.cc) rows.push({ label: L('Country', 'País'), value: x.countryName(z.cc), icon: '📍' });
   const links: { label: string; href?: string; onClick?: () => void }[] = [
     { label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(z.at, nm(z)) },

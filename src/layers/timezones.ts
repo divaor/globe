@@ -2,7 +2,7 @@
 import { geoContains } from 'd3-geo';
 import { oklch } from '../engine/colors';
 import { loadJSON, shapesFrom, type Shape } from '../data/store';
-import { lang } from '../app/i18n';
+import { lang, L } from '../app/i18n';
 import type { Topology } from 'topojson-specification';
 import type { LayerDef } from './types';
 import { appLocale } from '../app/i18n';
@@ -82,9 +82,9 @@ export const timezones: LayerDef = {
   legend() {
     const stops = [-12, -9, -6, -3, 0, 3, 6, 9, 12, 14].map((z) => zoneColor(z, true));
     return {
-      kind: 'gradient', title: lang() === 'es' ? 'Diferencia con UTC' : 'Offset from UTC', stops,
+      kind: 'gradient', title: L('Offset from UTC', 'Diferencia con UTC'), stops,
       min: 'UTC−12', mid: 'UTC', max: 'UTC+14',
-      note: lang() === 'es' ? 'Toca el mapa para ver la hora exacta de cada zona.' : 'Tap the map to see the exact time in a zone.',
+      note: L('Tap the map to see the exact time in a zone.', 'Toca el mapa para ver la hora exacta de cada zona.'),
     };
   },
   pick(lon, lat) {
@@ -93,9 +93,9 @@ export const timezones: LayerDef = {
       const p = s.feature.properties;
       const es = lang() === 'es';
       return [
-        { label: es ? 'Huso horario' : 'Time zone', value: fmtOffset(p.z), icon: '🕒' },
-        { label: es ? 'Hora local' : 'Local time', value: timeAt(p.z, p.tz) },
-        ...(p.p ? [{ label: es ? 'Lugares' : 'Places', value: p.p }] : []),
+        { label: L('Time zone', 'Huso horario'), value: fmtOffset(p.z), icon: '🕒' },
+        { label: L('Local time', 'Hora local'), value: timeAt(p.z, p.tz) },
+        ...(p.p ? [{ label: L('Places', 'Lugares'), value: p.p }] : []),
       ];
     }
     return null;

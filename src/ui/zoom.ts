@@ -2,7 +2,7 @@
 // zoomed (the globe takes those gestures), so the small pictures on quiz and story cards were hard to read on a phone.
 import { X, ZoomIn } from 'lucide';
 import { h, icon } from './dom';
-import { lang } from '../app/i18n';
+import { lang, L } from '../app/i18n';
 
 const MAX = 6;
 
@@ -30,9 +30,9 @@ export function openZoom(src: string, alt = '') {
   current?.close();
   const es = lang() === 'es';
   const img = h('img', { class: `zoom-img${seeThrough(src) ? ' see-through' : ''}`, src, alt, draggable: 'false' }) as HTMLImageElement;
-  const btn = h('button', { type: 'button', class: 'zoom-close', 'aria-label': es ? 'Cerrar' : 'Close' }, icon(X, 22));
-  const hint = h('div', { class: 'zoom-hint' }, es ? 'Pellizca o toca dos veces para acercar' : 'Pinch or double-tap to zoom');
-  const view = h('div', { class: 'zoom-view', role: 'dialog', 'aria-modal': 'true', 'aria-label': alt || (es ? 'Imagen' : 'Picture') }, img, btn, hint);
+  const btn = h('button', { type: 'button', class: 'zoom-close', 'aria-label': L('Close', 'Cerrar') }, icon(X, 22));
+  const hint = h('div', { class: 'zoom-hint' }, L('Pinch or double-tap to zoom', 'Pellizca o toca dos veces para acercar'));
+  const view = h('div', { class: 'zoom-view', role: 'dialog', 'aria-modal': 'true', 'aria-label': alt || (L('Picture', 'Imagen')) }, img, btn, hint);
   document.body.append(view);
 
   // A sharper picture, if Wikimedia has one; the small one stays until it has loaded.

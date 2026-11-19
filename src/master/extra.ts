@@ -13,7 +13,7 @@ import type { Topology, GeometryObject } from 'topojson-specification';
 import type { App } from '../app/app';
 import type { RenderCtx } from '../layers/types';
 import { h } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, tx, Lc } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { L, es } from '../play/host';
 import { mainBody } from '../play/outline';
@@ -116,7 +116,7 @@ export function outlinesDeck(x: Ctx): ExtraDeck {
       const n = name(q.id);
       if (a.peek) return `👀 ${n}`;
       if (a.ok) return `✅ ${n}`;
-      return `❌ ${a.given && a.given !== q.id && q.step !== 'type' ? L(`That is ${name(a.given)}. It is ${n}.`, `Ese es ${name(a.given)}. Es ${n}.`) : L(`It is ${n}.`, `Es ${n}.`)}`;
+      return `❌ ${a.given && a.given !== q.id && q.step !== 'type' ? L('That is {0}. It is {1}.', 'Ese es {0}. Es {1}.', name(a.given), n) : L('It is {0}.', 'Es {0}.', n)}`;
     },
     after: () => [],
     placeholder: () => L('Type the country…', 'Escribe el país…'),
@@ -149,7 +149,7 @@ export function citiesDeck(x: Ctx): ExtraDeck {
   const by = new Map<string, City>();
   const cards: { core?: Country[]; hard?: Country[] } = {};
   const core = new Set<string>();
-  const name = (id: string) => { const c = by.get(id); return c ? (es() ? c.es : c.en) : id; };
+  const name = (id: string) => { const c = by.get(id); return c ? (tx(c)) : id; };
   const at = (id: string) => by.get(id)?.at;
   const dot = (rc: RenderCtx, p: [number, number], fill: string, r = 6.5) => {
     const pt = rc.project(p[0], p[1]);
@@ -181,7 +181,7 @@ export function citiesDeck(x: Ctx): ExtraDeck {
       if (step === 'pick') return { deck: 'cities', id: c.id, step, reverse: false, options: shuffle([c.id, ...near.slice(0, 3)], r) };
       return { deck: 'cities', id: c.id, step, reverse: false, cands: step === 'tap' ? shuffle([c.id, ...near.slice(0, 6)], r) : [c.id, ...near.slice(0, 3)] };
     },
-    prompt: (q) => (q.step === 'tap' ? L(`Tap ${name(q.id)}`, `Toca ${name(q.id)}`) : q.step === 'type' ? L('Which city is this? Type its name.', '¿Qué ciudad es esta? Escribe su nombre.') : L('Which city is this?', '¿Qué ciudad es esta?')),
+    prompt: (q) => (q.step === 'tap' ? L('Tap {0}', 'Toca {0}', name(q.id)) : q.step === 'type' ? L('Which city is this? Type its name.', '¿Qué ciudad es esta? Escribe su nombre.') : L('Which city is this?', '¿Qué ciudad es esta?')),
     optionLabel: name,
     right: (q) => q.id,
     isRight: (q, v) => v === q.id,
@@ -226,12 +226,12 @@ export function citiesDeck(x: Ctx): ExtraDeck {
       const c = by.get(q.id), n = name(q.id), ctry = c ? x.country(c.cc) : '';
       if (a.peek) return `👀 ${n}, ${ctry}`;
       if (a.ok) return `✅ ${n} · ${ctry}`;
-      return `❌ ${a.given && a.given !== q.id && q.step !== 'type' ? L(`That is ${name(a.given)}. `, `Esa es ${name(a.given)}. `) : ''}${L(`It is ${n}, ${ctry}.`, `Es ${n}, ${ctry}.`)}`;
+      return `❌ ${a.given && a.given !== q.id && q.step !== 'type' ? Lc('a city', 'That is {0}. ', 'Esa es {0}. ', name(a.given)) : ''}${L('It is {0}, {1}.', 'Es {0}, {1}.', n, ctry)}`;
     },
     after(q) {
       const c = by.get(q.id);
       if (!c) return [];
-      const bits = [c.cap ? L(`The capital of ${x.country(c.cc)}`, `La capital de ${x.country(c.cc)}`) : '', c.pop ? L(`${fmtNumber(c.pop)} people`, `${fmtNumber(c.pop)} habitantes`) : ''].filter(Boolean);
+      const bits = [c.cap ? L('The capital of {0}', 'La capital de {0}', x.country(c.cc)) : '', c.pop ? L('{0} people', '{0} habitantes', fmtNumber(c.pop)) : ''].filter(Boolean);
       return bits.length ? [h('div', { class: 'tool-hint', 'data-master': 'about' }, bits.join(' · '))] : [];
     },
     placeholder: () => L('Type the city…', 'Escribe la ciudad…'),
@@ -248,7 +248,7 @@ export function landmarksDeck(x: Ctx): ExtraDeck {
   const by = new Map<string, Site>();
   const cards: { core?: Country[]; hard?: Country[] } = {};
   const core = new Set<string>();
-  const site = (id: string) => { const s = by.get(id); return s ? (es() ? s.es : s.en) : id; };
+  const site = (id: string) => { const s = by.get(id); return s ? (tx(s)) : id; };
   const countryCard = (id: string) => x.countries()?.countries.find((c) => c.id === id);
   const all = () => new Map((x.countries()?.countries ?? []).filter((c) => !c.t).map((c) => [c.id, c]));
   return {
@@ -279,7 +279,7 @@ export function landmarksDeck(x: Ctx): ExtraDeck {
     },
     prompt(q) {
       const n = site(q.id);
-      return q.step === 'tap' ? L(`Tap the country of ${n}`, `Toca el país de ${n}`) : q.step === 'type' ? L(`${n}: type its country`, `${n}: escribe su país`) : L(`${n}: in which country?`, `${n}: ¿en qué país está?`);
+      return q.step === 'tap' ? L('Tap the country of {0}', 'Toca el país de {0}', n) : q.step === 'type' ? L('{0}: type its country', '{0}: escribe su país', n) : L('{0}: in which country?', '{0}: ¿en qué país está?', n);
     },
     optionLabel: (v) => x.country(v),
     right: (q) => by.get(q.id)?.cc[0] ?? '',
@@ -329,13 +329,13 @@ export function landmarksDeck(x: Ctx): ExtraDeck {
       const s = by.get(q.id), where = s ? s.cc.map(x.country).join(L(' and ', ' y ')) : '';
       if (a.peek) return `👀 ${site(q.id)} · ${where}`;
       if (a.ok) return `✅ ${site(q.id)} · ${where}`;
-      return `❌ ${a.given && q.step !== 'type' && x.app.data.meta[a.given] ? L(`Not ${x.country(a.given)}: `, `No es ${x.country(a.given)}: `) : ''}${L(`it is in ${where}.`, `está en ${where}.`)}`;
+      return `❌ ${a.given && q.step !== 'type' && x.app.data.meta[a.given] ? L('Not {0}: ', 'No es {0}: ', x.country(a.given)) : ''}${L('it is in {0}.', 'está en {0}.', where)}`;
     },
     after(q) {
       const s = by.get(q.id);
       if (!s) return [];
       const kind = s.kind === 'n' ? L('natural', 'natural') : s.kind === 'm' ? L('mixed', 'mixto') : L('cultural', 'cultural');
-      return [h('div', { class: 'tool-hint', 'data-master': 'about' }, L(`A World Heritage site since ${s.year} (${kind})`, `Patrimonio de la Humanidad desde ${s.year} (${kind})`))];
+      return [h('div', { class: 'tool-hint', 'data-master': 'about' }, L('A World Heritage site since {0} ({1})', 'Patrimonio de la Humanidad desde {0} ({1})', s.year, kind))];
     },
     placeholder: () => L('Type the country…', 'Escribe el país…'),
     names: () => [...all().keys()].map(x.country),
@@ -348,18 +348,18 @@ export function landmarksDeck(x: Ctx): ExtraDeck {
 // ---- Rivers, mountains and seas
 export type NatureKind = 'river' | 'lake' | 'range' | 'desert' | 'peak' | 'ocean' | 'sea' | 'gulf' | 'bay' | 'strait' | 'channel';
 /** "Which river is this?" by kind. */
-const KIND_Q: Record<NatureKind, [string, string]> = {
-  river: ['Which river is this?', '¿Qué río es este?'], lake: ['Which lake is this?', '¿Qué lago es este?'],
-  range: ['Which mountain range is this?', '¿Qué cordillera es esta?'], desert: ['Which desert is this?', '¿Qué desierto es este?'],
-  peak: ['Which mountain is this?', '¿Qué montaña es esta?'], ocean: ['Which ocean is this?', '¿Qué océano es este?'],
-  sea: ['Which sea is this?', '¿Qué mar es este?'], gulf: ['Which gulf is this?', '¿Qué golfo es este?'],
-  bay: ['Which bay is this?', '¿Qué bahía es esta?'], strait: ['Which strait is this?', '¿Qué estrecho es este?'],
-  channel: ['Which channel is this?', '¿Qué canal es este?'],
+const KIND_Q: Record<NatureKind, { en: string; es: string }> = {
+  river: { en: 'Which river is this?', es: '¿Qué río es este?' }, lake: { en: 'Which lake is this?', es: '¿Qué lago es este?' },
+  range: { en: 'Which mountain range is this?', es: '¿Qué cordillera es esta?' }, desert: { en: 'Which desert is this?', es: '¿Qué desierto es este?' },
+  peak: { en: 'Which mountain is this?', es: '¿Qué montaña es esta?' }, ocean: { en: 'Which ocean is this?', es: '¿Qué océano es este?' },
+  sea: { en: 'Which sea is this?', es: '¿Qué mar es este?' }, gulf: { en: 'Which gulf is this?', es: '¿Qué golfo es este?' },
+  bay: { en: 'Which bay is this?', es: '¿Qué bahía es esta?' }, strait: { en: 'Which strait is this?', es: '¿Qué estrecho es este?' },
+  channel: { en: 'Which channel is this?', es: '¿Qué canal es este?' },
 };
-export const KIND_NAME: Record<NatureKind, [string, string]> = {
-  river: ['A river', 'Un río'], lake: ['A lake', 'Un lago'], range: ['A mountain range', 'Una cordillera'], desert: ['A desert', 'Un desierto'],
-  peak: ['A mountain', 'Una montaña'], ocean: ['An ocean', 'Un océano'], sea: ['A sea', 'Un mar'], gulf: ['A gulf', 'Un golfo'],
-  bay: ['A bay', 'Una bahía'], strait: ['A strait', 'Un estrecho'], channel: ['A channel', 'Un canal'],
+export const KIND_NAME: Record<NatureKind, { en: string; es: string }> = {
+  river: { en: 'A river', es: 'Un río' }, lake: { en: 'A lake', es: 'Un lago' }, range: { en: 'A mountain range', es: 'Una cordillera' }, desert: { en: 'A desert', es: 'Un desierto' },
+  peak: { en: 'A mountain', es: 'Una montaña' }, ocean: { en: 'An ocean', es: 'Un océano' }, sea: { en: 'A sea', es: 'Un mar' }, gulf: { en: 'A gulf', es: 'Un golfo' },
+  bay: { en: 'A bay', es: 'Una bahía' }, strait: { en: 'A strait', es: 'Un estrecho' }, channel: { en: 'A channel', es: 'Un canal' },
 };
 /** The words a typed name may leave out ("Amazon" for "Amazon River", "Danubio" for "Río Danubio"). */
 const GENERIC = /\b(river|lake|mount|mountains|range|desert|sea|ocean|gulf|bay|strait|channel|of|the|r[ií]o|lago|monte|montes|monta[nñ]as|cordillera|desierto|mar|oc[eé]ano|golfo|bah[ií]a|estrecho|canal|de|del|la|las|los|el)\b/gi;
@@ -367,7 +367,7 @@ interface Place { kind: NatureKind; en: string; es: string; at: [number, number]
 export function natureDeck(x: Ctx): ExtraDeck {
   const by = new Map<string, Place>();
   let cards: Country[] | null = null;
-  const name = (id: string) => { const p = by.get(id); return p ? (es() ? p.es : p.en) : id; };
+  const name = (id: string) => { const p = by.get(id); return p ? (tx(p)) : id; };
   const line = (p: Place) => !!p.f && /Line/.test(p.f.geometry.type);
   const box = (p: Place): [number, number][] => { if (!p.f) return [p.at]; const [[w, s], [e, n]] = geoBounds(p.f); return [[w, s], [e, n], p.at]; };
   /** One place drawn: a river as a line, a peak as a triangle, the rest as filled shapes. */
@@ -426,9 +426,9 @@ export function natureDeck(x: Ctx): ExtraDeck {
     prompt(q) {
       const p = by.get(q.id);
       if (!p) return '';
-      if (q.step === 'tap') return L(`Tap “${name(q.id)}”`, `Toca «${name(q.id)}»`);
+      if (q.step === 'tap') return L('Tap “{0}”', 'Toca «{0}»', name(q.id));
       const k = KIND_Q[p.kind];
-      return q.step === 'type' ? `${L(k[0], k[1])} ${L('Type its name.', 'Escribe su nombre.')}` : L(k[0], k[1]);
+      return q.step === 'type' ? `${tx(k)} ${L('Type its name.', 'Escribe su nombre.')}` : tx(k);
     },
     optionLabel: name,
     right: (q) => q.id,
@@ -491,7 +491,7 @@ export function natureDeck(x: Ctx): ExtraDeck {
       const n = name(q.id);
       if (a.peek) return `👀 ${n}`;
       if (a.ok) return `✅ ${n}`;
-      return `❌ ${a.given && a.given !== q.id && q.step !== 'type' && by.has(a.given) ? L(`That is ${name(a.given)}. `, `Ese es ${name(a.given)}. `) : ''}${L(`It is ${n}.`, `Es ${n}.`)}`;
+      return `❌ ${a.given && a.given !== q.id && q.step !== 'type' && by.has(a.given) ? L('That is {0}. ', 'Ese es {0}. ', name(a.given)) : ''}${L('It is {0}.', 'Es {0}.', n)}`;
     },
     after(q) {
       const p = by.get(q.id);
@@ -499,7 +499,7 @@ export function natureDeck(x: Ctx): ExtraDeck {
       const k = KIND_NAME[p.kind];
       // Its countries (three at most: the Sahara's are fifteen).
       const where = p.cc.slice(0, 3).map(x.country).join(', ') + (p.cc.length > 3 ? '…' : '');
-      return [h('div', { class: 'tool-hint', 'data-master': 'about' }, `${L(k[0], k[1])}${where ? ` · ${where}` : ''}`)];
+      return [h('div', { class: 'tool-hint', 'data-master': 'about' }, `${tx(k)}${where ? ` · ${where}` : ''}`)];
     },
     placeholder: () => L('Type its name…', 'Escribe su nombre…'),
     names: (allowed) => [...allowed.keys()].map(name),

@@ -7,7 +7,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, dataLang, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { Borders, seeded, type BorderData } from './route';
 import { starText } from './score';
@@ -19,7 +19,7 @@ import { L, es, type PlayHost, type HostGame } from './host';
 
 export type NameList = 'countries' | 'capitals' | 'neighbours';
 export const NAME_LISTS: [NameList, { en: string; es: string }][] = [['countries', { en: 'Countries', es: 'Países' }], ['capitals', { en: 'Capitals', es: 'Capitales' }], ['neighbours', { en: 'Neighbours of a country', es: 'Vecinos de un país' }]];
-export const CONTINENTS: [string, { en: string; es: string }][] = [['EU', { en: 'Europe', es: 'Europa' }], ['SA', { en: 'South America', es: 'Sudamérica' }], ['NA', { en: 'North and Central America', es: 'Norte y Centroamérica' }], ['AF', { en: 'Africa', es: 'África' }], ['AS', { en: 'Asia', es: 'Asia' }], ['OC', { en: 'Oceania', es: 'Oceanía' }]];
+export const CONTINENTS: [string, { en: string; es: string }][] = [['EU', { en: 'Europe', es: 'Europa' }], ['SA', { en: 'South America', es: 'América del Sur' }], ['NA', { en: 'North and Central America', es: 'Norte y Centroamérica' }], ['AF', { en: 'Africa', es: 'África' }], ['AS', { en: 'Asia', es: 'Asia' }], ['OC', { en: 'Oceania', es: 'Oceanía' }]];
 /** Not UN members, but countries on the map most people would name. */
 const ALSO = ['TWN', 'XKX', 'PSE', 'VAT'];
 
@@ -129,10 +129,10 @@ export class NameThemAll implements HostGame {
     this.ui = null;
     this.render();
     this.app.renderer.requestRender();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
-  private name(id: string) { return this.app.data.name(id, es() ? 'es' : 'en'); }
+  private name(id: string) { return this.app.data.name(id, dataLang()); }
   private capitalOf(id: string) {
     const caps = this.app.data.cities.filter((x) => x.country === id && x.capital === 2);
     const c = caps.find((x) => x.name === this.attrs!.data[id]?.capital) ?? caps[0];
@@ -141,10 +141,10 @@ export class NameThemAll implements HostGame {
   private prompt(): string {
     const s = this.st!;
     const area = CONTINENTS.find((c) => c[0] === s.area)?.[1];
-    const where = area ? (es() ? area.es : area.en) : '';
-    if (s.list === 'neighbours') return L(`Name every country that borders ${this.name(s.of!)}`, `Nombra todos los países que limitan con ${this.name(s.of!)}`);
-    if (s.list === 'capitals') return L(`Name the capital of every country of ${where}`, `Nombra la capital de todos los países de ${where}`);
-    return L(`Name every country of ${where}`, `Nombra todos los países de ${where}`);
+    const where = area ? (tx(area)) : '';
+    if (s.list === 'neighbours') return L('Name every country that borders {0}', 'Nombra todos los países que limitan con {0}', this.name(s.of!));
+    if (s.list === 'capitals') return L('Name the capital of every country of {0}', 'Nombra la capital de todos los países de {0}', where);
+    return L('Name every country of {0}', 'Nombra todos los países de {0}', where);
   }
 
   render() {
@@ -161,7 +161,7 @@ export class NameThemAll implements HostGame {
       if (missing.length && !s.fold) res.append(h('h4', { class: 'result-rows-title' }, L('Missing', 'Faltaron')), h('div', { class: 'hop-path' }, ...missing.map((id) => h('span', { class: 'hop-step to' }, s.list === 'capitals' ? `${this.capitalOf(id)} (${this.name(id)})` : this.name(id)))));
       const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `📝 ${L('Name them all', 'Nómbralos todos')}${s.day ? ` ${s.day}` : ''}: ${this.prompt()}\n${s.found.length}/${s.ids.length} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}`));
-      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Jugar otra vez'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ list: s.list, area: s.area }); });
       res.append(h('div', { class: 'result-actions' }, share, again));
       return;
@@ -172,7 +172,7 @@ export class NameThemAll implements HostGame {
     input.addEventListener('input', () => { this.try(input.value); });
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { if (!this.try(input.value)) input.classList.add('miss'); setTimeout(() => input.classList.remove('miss'), 400); } });
     const recent = h('div', { class: 'hop-path names-recent' }, ...[...s.found].reverse().map((id) => h('span', { class: 'hop-step' }, this.name(id))));
-    const giveUp = h('button', { type: 'button', class: 'pill sm', 'data-game': 'giveup' }, icon(Flag, 15), L('I give up', 'Me rindo'));
+    const giveUp = h('button', { type: 'button', class: 'pill sm', 'data-game': 'giveup' }, icon(Flag, 15), L('Show me', 'Muéstramelo'));
     giveUp.addEventListener('click', () => this.finish());
     this.card.append(h('div', { class: 'names-bar' }, clock, count), input);
     if (!s.fold) this.card.append(recent, h('div', { class: 'hop-actions' }, giveUp));

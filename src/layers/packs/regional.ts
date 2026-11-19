@@ -8,7 +8,7 @@ import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { MultiLineString } from 'geojson';
 import { loadJSON, shapesFrom, chunkLines, type Shape, type Line } from '../../data/store';
 import { oklch } from '../../engine/colors';
-import { lang } from '../../app/i18n';
+import { lang, L, tx } from '../../app/i18n';
 import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { InfoRow, LayerDef, LegendItem, RenderCtx } from '../types';
@@ -35,7 +35,7 @@ const es = () => lang() === 'es';
 const pickOf = (inst: { options: Record<string, string | boolean> }) => (inst.options.pick ? new Set(String(inst.options.pick).split(',')) : null);
 const nameOf = (code: string) => {
   const n = D.languages[code] ?? names[code];
-  return n ? (es() ? n.es : n.en) : code;
+  return n ? (tx(n)) : code;
 };
 const colours = new Map<string, string>();
 // Hand-picked hues for the most widespread languages and their usual neighbours, so that languages
@@ -220,12 +220,10 @@ const regional: LayerDef = {
     const regionalCodes = new Set(anchors.map((a) => a.code));
     const codes = [...areaOf.keys()].sort((a, b) => Number(regionalCodes.has(b)) - Number(regionalCodes.has(a)) || areaOf.get(b)! - areaOf.get(a)!);
     const items: LegendItem[] = codes.slice(0, 15).map((c) => ({ color: colourOf(c), label: nameOf(c) }));
-    items.push({ color: '#9aa4b2', label: es() ? 'Rayas: otra lengua muy hablada allí' : 'Stripes: another language widely spoken there', shape: 'hatch' });
+    items.push({ color: '#9aa4b2', label: L('Stripes: another language widely spoken there', 'Rayas: otra lengua muy hablada allí'), shape: 'hatch' });
     return {
-      kind: 'categories', title: es() ? 'Lengua de cada región' : 'Language of each region', items,
-      note: es()
-        ? 'Color: la lengua que más se habla en casa en cada región; rayas: otra lengua regional muy hablada. Toca una región para ver sus lenguas.'
-        : 'Colour: the language most people speak at home in each region; stripes: another regional language widely spoken there. Tap a region to see its languages.',
+      kind: 'categories', title: L('Language of each region', 'Lengua de cada región'), items,
+      note: L('Colour: the language most people speak at home in each region; stripes: another regional language widely spoken there. Tap a region to see its languages.', 'Color: la lengua que más se habla en casa en cada región; rayas: otra lengua regional muy hablada. Toca una región para ver sus lenguas.'),
     };
   },
   pick(lon, lat) {
@@ -234,22 +232,22 @@ const regional: LayerDef = {
     const p = r.feature.properties;
     const note = D.notes?.[`${p.a}|${p.n}`];
     return [
-      { icon: '📍', label: es() ? 'Región' : 'Region', value: es() && p.es ? p.es : p.n },
-      { icon: '💬', label: es() ? 'Lenguas (la más hablada primero)' : 'Languages (most spoken first)', value: r.langs.map(nameOf).join(', ') },
-      ...(note ? [{ icon: '📝', label: es() ? 'Nota' : 'Note', value: note }] : []),
+      { icon: '📍', label: L('Region', 'Región'), value: es() && p.es ? p.es : p.n },
+      { icon: '💬', label: L('Languages (most spoken first)', 'Lenguas (la más hablada primero)'), value: r.langs.map(nameOf).join(', ') },
+      ...(note ? [{ icon: '📝', label: L('Note', 'Nota'), value: note }] : []),
     ];
   },
   info(id) {
-    if (!byCountry.has(id)) return mainOf[id] ? [{ label: es() ? 'Lengua principal' : 'Main language', value: nameOf(mainOf[id]) }] : null;
+    if (!byCountry.has(id)) return mainOf[id] ? [{ label: L('Main language', 'Lengua principal'), value: nameOf(mainOf[id]) }] : null;
     const counts = new Map<string, number>();
     for (const r of regions) {
       if (r.feature.properties.a !== id) continue;
       for (const c of [r.first, r.also]) if (c && c !== mainOf[id]) counts.set(c, (counts.get(c) ?? 0) + 1);
     }
     const list = [...counts].sort((a, b) => b[1] - a[1]).map(([c]) => nameOf(c));
-    const rows: InfoRow[] = [{ label: es() ? 'Lenguas regionales' : 'Regional languages', value: list.length ? list.join(', ') : es() ? 'Ninguna' : 'None' }];
+    const rows: InfoRow[] = [{ label: L('Regional languages', 'Lenguas regionales'), value: list.length ? list.join(', ') : L('None', 'Ninguna') }];
     const note = D.countryNotes?.[id];
-    if (note) rows.push({ label: es() ? 'Nota' : 'Note', value: note });
+    if (note) rows.push({ label: L('Note', 'Nota'), value: note });
     return rows;
   },
 };

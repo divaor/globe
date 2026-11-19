@@ -13,7 +13,7 @@ export type CategoryId =
   | 'political' | 'people' | 'nature' | 'climate' | 'earth' | 'economy' | 'culture' | 'flora' | 'fauna'
   | 'imagery' | 'live' | 'fun' | 'mine';
 
-export interface I18nText { en: string; es: string }
+export interface I18nText { en: string; es: string; /** For an English that means two things: what it means here (the language files' key). */ ctx?: string }
 
 export type LayerKind = 'raster' | 'fill' | 'overlay';
 

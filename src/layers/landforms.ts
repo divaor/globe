@@ -1,7 +1,7 @@
 // Landforms (mountain ranges, deserts, plateaus...), peaks and volcanoes, rivers and lakes.
 import { geoCentroid, geoArea, geoContains } from 'd3-geo';
 import { loadJSON, shapesFrom, type Shape } from '../data/store';
-import { lang, fmtNumber } from '../app/i18n';
+import { lang, fmtNumber, L, tx } from '../app/i18n';
 import type { Topology } from 'topojson-specification';
 import type { LayerDef } from './types';
 
@@ -108,13 +108,13 @@ export const landforms: LayerDef = {
   legend() {
     const es = lang() === 'es';
     return {
-      kind: 'categories', title: es ? 'Formas del relieve' : 'Landforms',
+      kind: 'categories', title: L('Landforms', 'Formas del relieve'),
       items: [
-        ...Object.values(KINDS).slice(0, 10).map((k) => ({ color: k.color, label: es ? k.es : k.en })),
-        { color: '#f5e6d3', label: es ? 'Pico' : 'Peak', shape: 'dot' as const },
-        { color: '#ff6b3d', label: es ? 'Volcán' : 'Volcano', shape: 'dot' as const },
+        ...Object.values(KINDS).slice(0, 10).map((k) => ({ color: k.color, label: tx(k) })),
+        { color: '#f5e6d3', label: L('Peak', 'Pico'), shape: 'dot' as const },
+        { color: '#ff6b3d', label: L('Volcano', 'Volcán'), shape: 'dot' as const },
       ],
-      note: es ? 'Consejo: combínalo con «Relieve sombreado».' : 'Tip: combine with "Shaded relief".',
+      note: L('Tip: combine with "Shaded relief".', 'Consejo: combínalo con «Relieve sombreado».'),
     };
   },
   pick(lon, lat) {
@@ -123,7 +123,7 @@ export const landforms: LayerDef = {
     if (!hits.length) return null;
     return hits.slice(0, 3).map((s) => {
       const p = s.feature.properties; const k = KINDS[p.k];
-      return { label: es ? k.es : k.en, value: es && p.es ? p.es : p.n, icon: k.icon };
+      return { label: tx(k), value: es && p.es ? p.es : p.n, icon: k.icon };
     });
   },
 };
@@ -180,6 +180,6 @@ export const rivers: LayerDef = {
   },
   legend() {
     const es = lang() === 'es';
-    return { kind: 'categories', items: [{ color: '#6ec3ff', label: es ? 'Ríos' : 'Rivers', shape: 'line' }, { color: '#16518a', label: es ? 'Lagos' : 'Lakes' }] };
+    return { kind: 'categories', items: [{ color: '#6ec3ff', label: L('Rivers', 'Ríos'), shape: 'line' }, { color: '#16518a', label: L('Lakes', 'Lagos') }] };
   },
 };

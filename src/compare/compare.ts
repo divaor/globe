@@ -4,7 +4,7 @@
 // get their own charts. It is one filter ("compare") whose options A and B are field keys.
 import { ChartScatter, X, ChevronDown, Map as MapIcon } from 'lucide';
 import { h, icon, clear, add, fillSelect } from '../ui/dom';
-import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji } from '../app/i18n';
+import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji, L } from '../app/i18n';
 import { samplePalette, categorical } from '../engine/colors';
 import * as M from './model';
 import { drawScatter, drawGroups, groupsHeight, type Dot, type HitTest } from './chart';
@@ -15,7 +15,6 @@ import type { TimeTravel } from '../modes';
 import type { InfoRow, LayerDef, LayerInstance, Legend, LegendAction, LegendItem } from '../layers/types';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 /** Screens wide and tall enough for the card beside the map (in the Filters panel's place). */
 const WIDE = matchMedia('(min-width: 1200px) and (min-height: 600px)');
 
@@ -31,7 +30,7 @@ export function fmtVal(v: number): string {
   const a = Math.abs(v);
   return a >= 1e5 ? fmtCompact(v) : fmtNumber(v, a === 0 ? 0 : a < 1 ? 3 : a < 10 ? 1 : 0);
 }
-const ordinal = (n: number) => (es() ? `${n}.º` : `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : (['th', 'st', 'nd', 'rd'][n % 10] ?? 'th')}`);
+const ordinal = (n: number) => (L('{0}{1}', '{0}.º', n, n % 100 >= 11 && n % 100 <= 13 ? 'th' : (['th', 'st', 'nd', 'rd'][n % 10] ?? 'th')));
 const name = (key: string) => tx(M.fieldName(key));
 const label = (key: string) => `${M.fieldIcon(key)} ${name(key)}`;
 const unitOf = (key: string) => { const f = M.facts()?.fields[key]; return (es() ? f?.unit_es ?? f?.unit : f?.unit) ?? ''; };
@@ -55,10 +54,10 @@ export function chanceWords(p: number): string {
 }
 /** "Where A is higher, B tends to be higher too." */
 export function direction(a: string, b: string, rho: number): string {
-  if (strength(rho) === 'none') return L(`${label(a)} and ${label(b)} show little or no link.`, `${label(a)} y ${label(b)} casi no muestran relación.`);
+  if (strength(rho) === 'none') return L('{0} and {1} show little or no link.', '{0} y {1} casi no muestran relación.', label(a), label(b));
   return rho > 0
-    ? L(`Where ${label(a)} is higher, ${label(b)} tends to be higher too.`, `Donde ${label(a)} es mayor, ${label(b)} suele ser mayor también.`)
-    : L(`Where ${label(a)} is higher, ${label(b)} tends to be lower.`, `Donde ${label(a)} es mayor, ${label(b)} suele ser menor.`);
+    ? L('Where {0} is higher, {1} tends to be higher too.', 'Donde {0} es mayor, {1} suele ser mayor también.', label(a), label(b))
+    : L('Where {0} is higher, {1} tends to be lower.', 'Donde {0} es mayor, {1} suele ser menor.', label(a), label(b));
 }
 /** A correlation with two decimals always (0.60, not 0.6), with the language's decimal mark. */
 export const fmtR = (r: number) => (isFinite(r) ? (es() ? r.toFixed(2).replace('.', ',') : r.toFixed(2)).replace('-', '−') : '—');
@@ -228,7 +227,7 @@ export class Compare {
           const [lo, hi] = th.cuts;
           // Short units ride along ("< 28 years"); long ones are on the axis of the chart.
           const u = unitOf(key), us = u && u.length <= 8 ? ` ${u}` : '';
-          if (th.tie) return [L(`below ${fmtVal(lo)}${us}`, `menos de ${fmtVal(lo)}${us}`), `${fmtVal(lo)}${us}`, L(`above ${fmtVal(lo)}${us}`, `más de ${fmtVal(lo)}${us}`)][k];
+          if (th.tie) return [L('below {0}{1}', 'menos de {0}{1}', fmtVal(lo), us), `${fmtVal(lo)}${us}`, L('above {0}{1}', 'más de {0}{1}', fmtVal(lo), us)][k];
           return [`${L('bottom third', 'tercio inferior')} (< ${fmtVal(lo)}${us})`, `${L('middle third', 'tercio medio')} (${fmtVal(lo)}–${fmtVal(hi)}${us})`, `${L('top third', 'tercio superior')} (≥ ${fmtVal(hi)}${us})`][k];
         };
         const cells: LegendItem[] = [];
@@ -251,7 +250,7 @@ export class Compare {
       }
       case 'cn': {
         const items: LegendItem[] = an.groups.map((g) => ({ color: an.color(g.k), label: `${tx(M.catLabel(an.catKey, g.k))} (${g.isos.length})`, ids: this.toMapIds(g.isos), count: g.isos.length }));
-        return { kind: 'categories', title: `${name(an.catKey)} × ${name(an.numKey)}`, items, actions, note: L(`The chart shows ${name(an.numKey)} in each group, with its median.`, `El gráfico muestra ${name(an.numKey)} en cada grupo, con su mediana.`) };
+        return { kind: 'categories', title: `${name(an.catKey)} × ${name(an.numKey)}`, items, actions, note: L('The chart shows {0} in each group, with its median.', 'El gráfico muestra {0} en cada grupo, con su mediana.', name(an.numKey)) };
       }
       case 'cc': {
         const items: LegendItem[] = this.combos(an).map((c) => ({ color: c.color, label: `${c.label} (${c.isos.length})`, ids: this.toMapIds(c.isos), count: c.isos.length }));
@@ -434,13 +433,13 @@ export class Compare {
       canvas,
       h('div', { class: 'cmp-xcap' }, `→ ${this.caption(an.a)}`),
       h('div', { class: 'cmp-keys' }, conts, size),
-      h('div', { class: 'cmp-stats' }, `${L("Spearman's", 'ρ de Spearman')}${es() ? '' : ' ρ'} = ${fmtR(an.rho)} · ${L("Pearson's", 'r de Pearson')}${es() ? '' : ' r'} = ${fmtR(an.r)}${an.tx !== 'lin' || an.ty !== 'lin' ? L(' (log scale)', ' (escala log.)') : ''} · ${nCountries(an.n)} · ${chanceWords(an.p)}`),
+      h('div', { class: 'cmp-stats' }, `${L("Spearman's ρ = {0} · Pearson's r = {1}", 'ρ de Spearman = {0} · r de Pearson = {1}', fmtR(an.rho), fmtR(an.r))}${an.tx !== 'lin' || an.ty !== 'lin' ? L(' (log scale)', ' (escala log.)') : ''} · ${nCountries(an.n)} · ${chanceWords(an.p)}`),
       an.exceptions.length ? h('div', { class: 'cmp-exc' }, h('span', { class: 'cmp-exc-t' }, L('Furthest from the trend:', 'Más lejos de la tendencia:')), an.exceptions.map((iso) => this.countryButton(iso))) : null,
       h('p', { class: 'cmp-note' }, [L('Correlation is not causation: a third factor, such as wealth, can drive both.', 'Correlación no es causalidad: un tercer factor, como la riqueza, puede influir en ambos.'), this.years(an.a, an.b)].filter(Boolean).join(' · ')));
   }
 
   private renderCatNum(an: M.CatNum, width: number) {
-    add(this.card, h('div', { class: 'cmp-sum' }, h('strong', null, this.etaWords(an.eta2)), ' ', L(`${label(an.numKey)} by ${label(an.catKey)}: each dot is a country, the bar its group's median.`, `${label(an.numKey)} según ${label(an.catKey)}: cada punto es un país y la barra, la mediana de su grupo.`)));
+    add(this.card, h('div', { class: 'cmp-sum' }, h('strong', null, this.etaWords(an.eta2)), ' ', L('{0} by {1}: each dot is a country, the bar its group\'s median.', '{0} según {1}: cada punto es un país y la barra, la mediana de su grupo.', label(an.numKey), label(an.catKey))));
     if (this.fold) return;
     const sel = this.selectedIso();
     const rows = an.groups.map((g) => ({
@@ -477,7 +476,7 @@ export class Compare {
   }
 
   private renderRatio(an: M.Ratio) {
-    add(this.card, h('div', { class: 'cmp-sum' }, L(`${label(an.num)} divided by ${label(an.den)}: who has the most for their size.`, `${label(an.num)} dividido entre ${label(an.den)}: quién tiene más para su tamaño.`)));
+    add(this.card, h('div', { class: 'cmp-sum' }, L('{0} divided by {1}: who has the most for their size.', '{0} dividido entre {1}: quién tiene más para su tamaño.', label(an.num), label(an.den))));
     if (this.fold) return;
     const order = [...an.vals].sort((p, q) => q[1] - p[1]);
     const list = (items: [string, number][], from: number) => h('div', { class: 'cmp-rank', role: 'list' },

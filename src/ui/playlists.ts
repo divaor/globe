@@ -2,7 +2,7 @@
 // and the reader's own playlist (views added from the map, kept in this browser, shareable as a link).
 import { ArrowUp, ArrowDown, X, Plus, Play, Share2 } from 'lucide';
 import { h, icon, toggle, slider, segmented } from './dom';
-import { tx } from '../app/i18n';
+import { tx, L, Lc } from '../app/i18n';
 import type { App, AmbientNames } from '../app/app';
 import type { I18nText } from '../layers/types';
 import type { ProjectionId } from '../engine/projections';
@@ -239,11 +239,11 @@ export function itemWords(app: App, it: PlayItem): string {
  *  all of them, or none. In the screensaver's panel and in Settings. */
 export function ambientNamesField(app: App): HTMLElement {
   const es = app.lang === 'es';
-  return h('div', { class: 'field ambient-names' }, h('div', { class: 'field-label' }, es ? 'Nombres en el mapa' : 'Names on the map'),
+  return h('div', { class: 'field ambient-names' }, h('div', { class: 'field-label' }, L('Names on the map', 'Nombres en el mapa')),
     segmented<AmbientNames>(app.ambient.names, [
-      { value: 'view', label: es ? 'Solo los de la vista' : 'Only the view’s' },
-      { value: 'all', label: es ? 'Todos' : 'All' },
-      { value: 'none', label: es ? 'Ninguno' : 'None' },
+      { value: 'view', label: L('Only the view’s', 'Solo los de la vista') },
+      { value: 'all', label: L('All', 'Todos') },
+      { value: 'none', label: Lc('no playlist', 'None', 'Ninguno') },
     ], (v) => { app.ambient.names = v; app.save(); }));
 }
 
@@ -265,17 +265,17 @@ export function screensaverPanel(app: App, start: (id: string) => void, toast: (
       return b;
     };
     root.append(h('div', { class: 'ss-grid' },
-      card('', '🖼️', es ? 'Solo mis filtros' : 'Just my filters', es ? 'El globo gira con los filtros que tienes puestos.' : 'The globe turns with the filters you have on.'),
+      card('', '🖼️', L('Just my filters', 'Solo mis filtros'), L('The globe turns with the filters you have on.', 'El globo gira con los filtros que tienes puestos.')),
       ...PLAYLISTS.map((p) => card(p.id, p.icon, tx(p.name), tx(p.desc), p.items.length)),
     ));
     // The reader's own playlist.
     const mine = myItems();
-    const add = h('button', { type: 'button', class: 'pill primary' }, icon(Plus, 16), es ? 'Agregar esta vista' : 'Add this view');
+    const add = h('button', { type: 'button', class: 'pill primary' }, icon(Plus, 16), L('Add this view', 'Agregar esta vista'));
     add.addEventListener('click', () => {
       const it = currentView(app);
       if (!it.stack.length) return;
       saveMine([...myItems(), it].slice(0, 40));
-      toast(es ? 'Vista agregada a tu lista' : 'View added to your playlist');
+      toast(L('View added to your playlist', 'Vista agregada a tu lista'));
       render();
     });
     const rows = mine.map((it, i) => {
@@ -283,33 +283,31 @@ export function screensaverPanel(app: App, start: (id: string) => void, toast: (
       const btn = (ic: Parameters<typeof icon>[0], label: string, fn: () => void) => { const b = h('button', { type: 'button', class: 'icon-btn sm', title: label, 'aria-label': label }, icon(ic, 15)); b.addEventListener('click', fn); return b; };
       return h('div', { class: 'ss-row' },
         h('span', { class: 'ss-row-name' }, itemTitle(app, it), it.fly ? h('span', { class: 'muted small' }, ` · ${it.fly[1].toFixed(0)}°, ${it.fly[0].toFixed(0)}°`) : null),
-        btn(ArrowUp, es ? 'Subir' : 'Up', () => move(-1)), btn(ArrowDown, es ? 'Bajar' : 'Down', () => move(1)),
-        btn(X, es ? 'Quitar' : 'Remove', () => { const l = myItems(); l.splice(i, 1); saveMine(l); render(); }));
+        btn(ArrowUp, L('Up', 'Subir'), () => move(-1)), btn(ArrowDown, L('Down', 'Bajar'), () => move(1)),
+        btn(X, L('Remove', 'Quitar'), () => { const l = myItems(); l.splice(i, 1); saveMine(l); render(); }));
     });
-    const share = h('button', { type: 'button', class: 'pill' }, icon(Share2, 16), es ? 'Compartir' : 'Share');
+    const share = h('button', { type: 'button', class: 'pill' }, icon(Share2, 16), L('Share', 'Compartir'));
     share.addEventListener('click', async () => {
       const url = playlistLink(app, MINE_ID);
-      try { await navigator.clipboard.writeText(url); toast(es ? 'Enlace copiado' : 'Link copied'); } catch { prompt(es ? 'Copia el enlace:' : 'Copy the link:', url); }
+      try { await navigator.clipboard.writeText(url); toast(L('Link copied', 'Enlace copiado')); } catch { prompt(L('Copy the link:', 'Copia el enlace:'), url); }
     });
     root.append(
-      h('h3', { class: 'sec-title' }, es ? 'Mi lista' : 'My playlist'),
-      h('p', { class: 'muted small' }, es
-        ? 'Pon filtros, mueve el globo a un lugar y agrégalo. Tu lista se guarda en este navegador.'
-        : 'Turn on filters, move the globe to a place, and add it. Your playlist is kept in this browser.'),
+      h('h3', { class: 'sec-title' }, L('My playlist', 'Mi lista')),
+      h('p', { class: 'muted small' }, L('Turn on filters, move the globe to a place, and add it. Your playlist is kept in this browser.', 'Pon filtros, mueve el globo a un lugar y agrégalo. Tu lista se guarda en este navegador.')),
       ...(mine.length ? [h('div', { class: 'ss-rows' }, ...rows)] : []),
-      h('div', { class: 'settings-actions' }, add, mine.length ? card(MINE_ID, '⭐', es ? 'Reproducir mi lista' : 'Play my playlist', `${mine.length} ${es ? (mine.length === 1 ? 'vista' : 'vistas') : (mine.length === 1 ? 'view' : 'views')}`) : null, mine.length ? share : null),
+      h('div', { class: 'settings-actions' }, add, mine.length ? card(MINE_ID, '⭐', L('Play my playlist', 'Reproducir mi lista'), `${mine.length} ${es ? (mine.length === 1 ? 'vista' : 'vistas') : (mine.length === 1 ? 'view' : 'views')}`) : null, mine.length ? share : null),
     );
     // Settings.
     const amb = app.ambient;
     root.append(
-      h('h3', { class: 'sec-title' }, es ? 'Ajustes' : 'Settings'),
-      h('div', { class: 'field' }, h('div', { class: 'field-label' }, es ? 'Segundos en cada vista: ' : 'Seconds on each view: ', h('span', { class: 'ss-secs' }, String(amb.secs))),
+      h('h3', { class: 'sec-title' }, L('Settings', 'Ajustes')),
+      h('div', { class: 'field' }, h('div', { class: 'field-label' }, L('Seconds on each view: ', 'Segundos en cada vista: '), h('span', { class: 'ss-secs' }, String(amb.secs))),
         slider(amb.secs, 15, 120, 5, (v) => { amb.secs = v; app.save(); const l = root.querySelector('.ss-secs'); if (l) l.textContent = String(v); })),
-      h('div', { class: 'field' }, h('div', { class: 'field-label' }, es ? 'Velocidad de giro' : 'Rotation speed'), slider(amb.speed, 0.25, 4, 0.25, (v) => { amb.speed = v; app.save(); })),
+      h('div', { class: 'field' }, h('div', { class: 'field-label' }, L('Rotation speed', 'Velocidad de giro')), slider(amb.speed, 0.25, 4, 0.25, (v) => { amb.speed = v; app.save(); })),
       ambientNamesField(app),
       h('div', { class: 'toggles' },
-        ...(canSpeak() ? [toggle(amb.narrate, (v) => { amb.narrate = v; app.save(); }, es ? 'Leer cada vista en voz alta' : 'Read each view aloud')] : []),
-        toggle(amb.clock, (v) => { amb.clock = v; app.save(); }, es ? 'Mostrar el reloj' : 'Show the clock')),
+        ...(canSpeak() ? [toggle(amb.narrate, (v) => { amb.narrate = v; app.save(); }, L('Read each view aloud', 'Leer cada vista en voz alta'))] : []),
+        toggle(amb.clock, (v) => { amb.clock = v; app.save(); }, L('Show the clock', 'Mostrar el reloj'))),
     );
   };
   render();

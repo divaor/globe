@@ -1,7 +1,7 @@
 // Helpers that turn "a value per country" into a complete filter (colours, legend, card rows).
 // Most data filters are one call to numericLayer() or categoricalLayer().
 import { categorical, samplePalette } from '../engine/colors';
-import { fmtCompact, fmtNumber, t, tx } from '../app/i18n';
+import { fmtCompact, fmtNumber, t, tx, L } from '../app/i18n';
 import { LC } from './context';
 import type { CategoryId, I18nText, LayerDef, Legend, LegendItem, LayerOptionDef, LayerInstance } from './types';
 
@@ -171,7 +171,7 @@ export function categoricalLayer(spec: CategoricalSpec): LayerDef {
       const rest = keys.length - items.length;
       return {
         kind: 'categories', title: tx(spec.label ?? spec.name), items,
-        note: [rest > 0 ? (LC.lang() === 'es' ? `+${rest} más` : `+${rest} more`) : '', spec.note ? tx(spec.note) : ''].filter(Boolean).join(' · ') || undefined,
+        note: [rest > 0 ? (L('+{0} more', '+{0} más', rest)) : '', spec.note ? tx(spec.note) : ''].filter(Boolean).join(' · ') || undefined,
       };
     },
     valueLabel(id, inst) {

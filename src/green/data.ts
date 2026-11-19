@@ -2,7 +2,7 @@
 // the ecoregions (public/data/green). Plants keep their ranges on the animals' grid (../layers/carpet.ts): GBIF's map
 // squares of 1.40625°, about 150 km at the equator.
 import { loadJSON } from '../data/store';
-import { lang } from '../app/i18n';
+import { lang, L, tx } from '../app/i18n';
 import { hasCell, unpackCells, unpackCounts } from '../layers/carpet';
 import type { Status } from '../wild/data';
 import { appLocale } from '../app/i18n';
@@ -76,14 +76,14 @@ export const PLANT_GROUPS: Record<PlantGroup, { icon: string; name: { en: string
   strange: { icon: '🪤', name: { en: 'Carnivorous and strange', es: 'Carnívoras y extrañas' }, color: '#cc5de8' },
   food: { icon: '🍫', name: { en: 'Food plants in the wild', es: 'Plantas de comer en estado silvestre' }, color: '#f59f00' },
 };
-export const plantGroupName = (g: PlantGroup) => (es() ? PLANT_GROUPS[g].name.es : PLANT_GROUPS[g].name.en);
+export const plantGroupName = (g: PlantGroup) => (tx(PLANT_GROUPS[g].name));
 
 export const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 export const MONTHS_ES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 export const monthName = (m: number) => (es() ? MONTHS_ES : MONTHS_EN)[((m % 12) + 12) % 12];
 
 export const nm = (x: { n: [string, string] }) => (es() ? x.n[1] : x.n[0]);
-export const tt = (x: { en: string; es: string } | undefined | null) => (x ? (es() ? x.es : x.en) : '');
+export const tt = (x: { en: string; es: string } | undefined | null) => (x ? (tx(x)) : '');
 
 let green: Promise<GreenData | null> | null = null;
 export function loadGreen(): Promise<GreenData | null> {
@@ -120,11 +120,10 @@ export function growsIn(p: Plant, c: number): boolean {
 /** Height and lifespan as the card shows them ("up to 115 m", "4,800 years"). */
 export function plantFacts(p: Plant): { label: string; value: string; icon: string }[] {
   const f = p.f ?? {};
-  const L = (en: string, sp: string) => (es() ? sp : en);
   const num = (x: number) => x.toLocaleString(appLocale(), { maximumFractionDigits: x < 1 ? 2 : x < 10 ? 1 : 0 });
   const m = (x: number) => (x < 1 ? `${num(x * 100)} cm` : `${num(x)} m`);
-  const y = (x: number) => L(`${num(x)} years`, `${num(x)} años`);
-  const span = (v: number[] | undefined, unit: (x: number) => string) => (v ? (v.length > 1 ? `${unit(v[0]).replace(/\s?\S+$/, '')}–${unit(v[1])}` : L(`up to ${unit(v[0])}`, `hasta ${unit(v[0])}`)) : null);
+  const y = (x: number) => L('{0} years', '{0} años', num(x));
+  const span = (v: number[] | undefined, unit: (x: number) => string) => (v ? (v.length > 1 ? `${unit(v[0]).replace(/\s?\S+$/, '')}–${unit(v[1])}` : L('up to {0}', 'hasta {0}', unit(v[0]))) : null);
   const rows: { label: string; value: string; icon: string }[] = [];
   const ht = span(f.h, m); if (ht) rows.push({ label: L('Height', 'Altura'), value: ht, icon: '📏' });
   const life = span(f.y, y); if (life) rows.push({ label: L('Lives', 'Vive'), value: life, icon: '⏳' });
@@ -139,8 +138,7 @@ export function plantRelatives(d: GreenData, p: Plant): Plant[] {
 
 /** A year as people say it: "8000 BC", "1492". */
 export function yearText(y: number): string {
-  const L = (en: string, sp: string) => (es() ? sp : en);
-  if (y < 0) return L(`${Math.abs(y).toLocaleString(appLocale())} BC`, `${Math.abs(y).toLocaleString(appLocale())} a. C.`);
+  if (y < 0) return L('{0} BC', '{0} a. C.', Math.abs(y).toLocaleString(appLocale()));
   return String(y);
 }
 
@@ -161,7 +159,7 @@ export const BIOMES: Record<number, { en: string; es: string; color: string }> =
   13: { en: 'Deserts and xeric shrublands', es: 'Desiertos y matorrales xéricos', color: '#f2d6a2' },
   14: { en: 'Mangroves', es: 'Manglares', color: '#0e7c86' },
 };
-export const biomeName = (b: number) => (BIOMES[b] ? (es() ? BIOMES[b].es : BIOMES[b].en) : (es() ? 'Roca y hielo' : 'Rock and ice'));
+export const biomeName = (b: number) => (BIOMES[b] ? (tx(BIOMES[b])) : (L('Rock and ice', 'Roca y hielo')));
 
 /** The eight biogeographic realms, in Spanish. */
 export const REALMS: Record<string, string> = {

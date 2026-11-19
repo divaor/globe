@@ -8,7 +8,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, dataLang, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { Borders, seeded, type BorderData } from './route';
 import { starText } from './score';
@@ -18,7 +18,7 @@ import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
 import { L, es, type PlayHost, type HostGame } from './host';
 
-const CONT: Record<string, { en: string; es: string }> = { AF: { en: 'Africa', es: 'África' }, AS: { en: 'Asia', es: 'Asia' }, EU: { en: 'Europe', es: 'Europa' }, NA: { en: 'North or Central America', es: 'Norte o Centroamérica' }, SA: { en: 'South America', es: 'Sudamérica' }, OC: { en: 'Oceania', es: 'Oceanía' } };
+const CONT: Record<string, { en: string; es: string }> = { AF: { en: 'Africa', es: 'África' }, AS: { en: 'Asia', es: 'Asia' }, EU: { en: 'Europe', es: 'Europa' }, NA: { en: 'North or Central America', es: 'Norte o Centroamérica' }, SA: { en: 'South America', es: 'América del Sur' }, OC: { en: 'Oceania', es: 'Oceanía' } };
 
 interface Attrs { data: Record<string, { un_member?: boolean; area_km2?: number }> }
 interface State {
@@ -79,7 +79,7 @@ export class Outline implements HostGame {
   drop() { this.st = null; }
   tap(): boolean { return !!this.st && !this.st.done && !this.st.answered; }
 
-  private name(id: string) { return this.app.data.name(id, es() ? 'es' : 'en'); }
+  private name(id: string) { return this.app.data.name(id, dataLang()); }
 
   /** A guess (a typed name, in English or Spanish). */
   guess(text: string) {
@@ -89,13 +89,13 @@ export class Outline implements HostGame {
     const target = s.ids[s.i];
     if (id === target) { this.solve('ok'); return; }
     s.tries++;
-    s.miss = typeof id === 'string' ? L(`Not ${this.name(id)}.`, `No es ${this.name(id)}.`) : L('That is not a country name we know.', 'No conocemos ese nombre de país.');
+    s.miss = typeof id === 'string' ? L('Not {0}.', 'No es {0}.', this.name(id)) : L('That is not a country name we know.', 'No conocemos ese nombre de país.');
     if (s.tries >= 5) { this.solve('skip'); return; }
     // A clue: one more neighbour around the shape, or for an island its continent, then its first letter.
     const next = this.g!.neighbours(target).find((n) => !s.shown.includes(n) && this.app.data.best('50m').byId.get(n));
     if (next) s.shown.push(next);
-    else if (!s.clues.length) s.clues.push(L(`It is in ${CONT[this.app.data.meta[target].ct]?.en ?? '…'}.`, `Está en ${CONT[this.app.data.meta[target].ct]?.es ?? '…'}.`));
-    else s.clues.push(L(`Its name begins with ${this.name(target)[0]}.`, `Su nombre empieza por ${this.name(target)[0]}.`));
+    else if (!s.clues.length) s.clues.push(L('It is in {0}.', 'Está en {0}.', CONT[this.app.data.meta[target].ct] ? tx(CONT[this.app.data.meta[target].ct]) : '…'));
+    else s.clues.push(L('Its name begins with {0}.', 'Su nombre empieza por {0}.', this.name(target)[0]));
     this.render();
   }
 
@@ -127,7 +127,7 @@ export class Outline implements HostGame {
     const badges = recordGame('outline', { score, stars, feats: s.results.every((r) => r.tries === 1) ? ['outline-5'] : [], day: s.day });
     s.done = { score, stars, badges };
     this.render();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   /** The shape (and the neighbours shown) on a small canvas. */
@@ -171,11 +171,11 @@ export class Outline implements HostGame {
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     if (s.done) {
       const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'),
-        rows: s.results.map((r) => ({ name: this.name(r.id), detail: r.tries ? L(`at try ${r.tries}`, `al intento ${r.tries}`) : L('not guessed', 'sin adivinar'), value: fmtNumber(r.pts), mark: !r.tries ? 'miss' : r.tries === 1 ? 'ok' : 'near' })) });
+        rows: s.results.map((r) => ({ name: this.name(r.id), detail: r.tries ? L('at try {0}', 'al intento {0}', r.tries) : L('not guessed', 'sin adivinar'), value: fmtNumber(r.pts), mark: !r.tries ? 'miss' : r.tries === 1 ? 'ok' : 'near' })) });
       this.card.append(res);
       const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `🖼️ ${L('Outline', 'Silueta')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.results.map((r) => ['🟥', '🟩', '🟨', '🟧', '🟧', '🟧'][r.tries] ?? '🟥').join('')}`));
-      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Jugar otra vez'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ hard: s.hard }); });
       res.append(h('div', { class: 'result-actions' }, share, again));
       return;
@@ -187,19 +187,19 @@ export class Outline implements HostGame {
     for (const c of s.clues) this.card.append(h('div', { class: 'hop-stats' }, `💡 ${c}`));
     if (s.answered) {
       const r = s.results[s.results.length - 1];
-      this.card.append(h('div', { class: `quiz-fb ${r.pts ? 'ok' : 'bad'}` }, r.pts ? L(`Right, at try ${r.tries}: ${fmtNumber(r.pts)} points.`, `¡Bien, al intento ${r.tries}! ${fmtNumber(r.pts)} puntos.`) : L(`It was ${this.name(id)}.`, `Era ${this.name(id)}.`)));
+      this.card.append(h('div', { class: `quiz-fb ${r.pts ? 'ok' : 'bad'}` }, r.pts ? L('Right, at try {0}: {1} points.', '¡Bien, al intento {0}! {1} puntos.', r.tries, fmtNumber(r.pts)) : L('It was {0}.', 'Era {0}.', this.name(id))));
       const next = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'next' }, s.i + 1 < s.ids.length ? L('Next shape', 'Siguiente silueta') : L('See the result', 'Ver el resultado'));
       next.addEventListener('click', () => this.next());
       this.card.append(h('div', { class: 'hop-actions' }, next));
       return;
     }
-    if (s.miss) this.card.append(h('div', { class: 'quiz-fb bad' }, `${s.miss} ${L(`Try ${s.tries + 1} of 5.`, `Intento ${s.tries + 1} de 5.`)}`));
+    if (s.miss) this.card.append(h('div', { class: 'quiz-fb bad' }, `${s.miss} ${L('Try {0} of 5.', 'Intento {0} de 5.', s.tries + 1)}`));
     const list = h('datalist', { id: 'outline-names' }, ...Object.keys(this.app.data.meta).map((k) => h('option', { value: this.name(k) })));
     const input = h('input', { type: 'text', class: 'names-input', list: 'outline-names', autocomplete: 'off', 'aria-label': L('Country name', 'Nombre del país'), placeholder: L('Type the country…', 'Escribe el país…') }) as HTMLInputElement;
     const go = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'guess' }, icon(Send, 15), L('Guess', 'Adivinar'));
     go.addEventListener('click', () => this.guess(input.value));
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') this.guess(input.value); });
-    const skip = h('button', { type: 'button', class: 'pill sm', 'data-game': 'skip' }, icon(SkipForward, 15), L('Show me', 'Ver la respuesta'));
+    const skip = h('button', { type: 'button', class: 'pill sm', 'data-game': 'skip' }, icon(SkipForward, 15), L('Show the answer', 'Ver la respuesta'));
     skip.addEventListener('click', () => this.solve('skip'));
     this.card.append(list, input, h('div', { class: 'hop-actions' }, go, skip));
     setTimeout(() => input.focus(), 50);

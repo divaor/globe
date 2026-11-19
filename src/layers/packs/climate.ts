@@ -2,7 +2,7 @@
 import { geoContains } from 'd3-geo';
 import type { Topology } from 'topojson-specification';
 import { loadJSON, shapesFrom, type Shape } from '../../data/store';
-import { lang, tx } from '../../app/i18n';
+import { lang, tx, L, Lc } from '../../app/i18n';
 import { paletteRaster, setDayNightProbe } from '../rasterdata';
 import type { App } from '../../app/app';
 import type { LayerDef, RenderCtx } from '../types';
@@ -61,9 +61,9 @@ const koppen: LayerDef = {
   legend() {
     const es = lang() === 'es';
     const items = Object.entries(kClasses).filter(([k]) => kShapes.some((s) => s.feature.properties.k === k)).map(([k, c]) => ({
-      color: c.color, label: `${k} · ${es ? c.es : c.en}`,
+      color: c.color, label: `${k} · ${tx(c)}`,
     }));
-    return { kind: 'categories', title: es ? 'Tipos de clima' : 'Climate types', items, note: es ? 'A tropical · B seco · C templado · D continental · E polar' : 'A tropical · B dry · C temperate · D continental · E polar' };
+    return { kind: 'categories', title: L('Climate types', 'Tipos de clima'), items, note: L('A tropical · B dry · C temperate · D continental · E polar', 'A tropical · B seco · C templado · D continental · E polar') };
   },
   pick(lon, lat) {
     const k = kAt(lon, lat);
@@ -71,7 +71,7 @@ const koppen: LayerDef = {
     const c = kClasses[k];
     const es = lang() === 'es';
     return [
-      { label: es ? 'Clima' : 'Climate', value: `${k} · ${es ? c.es : c.en}`, icon: '🌦️' },
+      { label: L('Climate', 'Clima'), value: `${k} · ${tx(c)}`, icon: '🌦️' },
       { label: GROUPS[c.group] ? tx(GROUPS[c.group]) : c.group, value: es ? c.desc_es : c.desc_en },
     ];
   },
@@ -88,9 +88,9 @@ const vegetation: LayerDef = {
   legend() {
     const es = lang() === 'es';
     return {
-      kind: 'categories', title: es ? 'Biomas' : 'Biomes',
-      items: Object.values(biomes).map((b) => ({ color: b.color, label: es ? b.es : b.en, icon: b.emoji })),
-      note: es ? 'Vegetación natural potencial según el clima; no muestra cultivos ni ciudades.' : 'Natural vegetation expected from the climate; farms and cities are not shown.',
+      kind: 'categories', title: L('Biomes', 'Biomas'),
+      items: Object.values(biomes).map((b) => ({ color: b.color, label: tx(b), icon: b.emoji })),
+      note: L('Natural vegetation expected from the climate; farms and cities are not shown.', 'Vegetación natural potencial según el clima; no muestra cultivos ni ciudades.'),
     };
   },
   pick(lon, lat) {
@@ -98,7 +98,7 @@ const vegetation: LayerDef = {
     const b = k ? biomes[kClasses[k]?.biome] : null;
     if (!b) return null;
     const es = lang() === 'es';
-    return [{ label: es ? 'Bioma' : 'Biome', value: `${b.emoji} ${es ? b.es : b.en}`, icon: '🌳' }, { label: '', value: es ? b.desc_es : b.desc_en }];
+    return [{ label: L('Biome', 'Bioma'), value: `${b.emoji} ${tx(b)}`, icon: '🌳' }, { label: '', value: es ? b.desc_es : b.desc_en }];
   },
 };
 
@@ -198,7 +198,7 @@ const winds: LayerDef = {
   keywords: 'wind weather jet stream trade winds monsoon viento alisios monzon',
   credit: 'ECMWF ERA-Interim 850 hPa monthly mean winds (contains modified ECMWF data)',
   options: [{ id: 'month', type: 'select', label: { en: 'Month', es: 'Mes' }, default: 'jan', choices: [
-    { value: 'jan', label: { en: 'January', es: 'Enero' } }, { value: 'jul', label: { en: 'July', es: 'Julio' } }] }],
+    { value: 'jan', label: { en: 'January', es: 'Enero', ctx: 'a month on its own' } }, { value: 'jul', label: { en: 'July', es: 'Julio', ctx: 'a month on its own' } }] }],
   animated: true,
   async load(_ctx, inst) {
     if (!windData) windData = await loadJSON('layers/winds.json');
@@ -262,7 +262,7 @@ const winds: LayerDef = {
   },
   legend() {
     const es = lang() === 'es';
-    return { kind: 'gradient', title: es ? 'Velocidad del viento' : 'Wind speed', stops: SPEED_COLORS, min: '0 m/s', mid: '9 m/s', max: '20+ m/s', note: es ? 'Media mensual a 850 hPa (≈1,5 km).' : 'Monthly mean at 850 hPa (≈1.5 km).' };
+    return { kind: 'gradient', title: L('Wind speed', 'Velocidad del viento'), stops: SPEED_COLORS, min: '0 m/s', mid: '9 m/s', max: '20+ m/s', note: L('Monthly mean at 850 hPa (≈1.5 km).', 'Media mensual a 850 hPa (≈1,5 km).') };
   },
   pick(lon, lat, inst) {
     const f = inst.state.field as WindField | null;
@@ -273,7 +273,7 @@ const winds: LayerDef = {
     // Wind comes FROM the opposite of its direction of travel.
     const from = (Math.atan2(-u, -v) * 180) / Math.PI;
     const d = dirs[Math.round(((from + 360) % 360) / 45) % 8];
-    return [{ label: lang() === 'es' ? 'Viento' : 'Wind', value: `${speed.toFixed(1)} m/s · ${lang() === 'es' ? 'del' : 'from'} ${d}`, icon: '💨' }];
+    return [{ label: L('Wind', 'Viento'), value: `${speed.toFixed(1)} m/s · ${Lc('wind from a direction', 'from', 'del')} ${d}`, icon: '💨' }];
   },
 };
 

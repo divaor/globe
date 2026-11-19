@@ -6,7 +6,7 @@ import { geoDistance } from 'd3-geo';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear, add } from '../ui/dom';
-import { t, tx, lang, flagEmoji, fmtNumber } from '../app/i18n';
+import { t, tx, lang, flagEmoji, fmtNumber, L, dataLang, Lc } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
 import { zoomable } from '../ui/zoom';
 import { fmtWhen, itemWhen, itemThumb, sampleEl, quoteEl, type CollectionItem, type StoryKind } from '../modes/stories';
@@ -45,7 +45,6 @@ import { appLocale } from '../app/i18n';
 import { bell } from '../today/reminders';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 /** Where chance comes from: Math.random, or a seeded source while the daily challenge picks its questions. */
 let rand: () => number = Math.random;
 const shuffle = <T,>(a: T[]) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
@@ -145,7 +144,7 @@ const marksOf = (qs: { ok?: boolean; review?: boolean }[]) => qs.filter((x) => !
 /** The questions everyone gets (the Daily challenge's review question is the reader's own). */
 const shared = <T extends { review?: boolean }>(qs: T[]) => qs.filter((x) => !x.review);
 /** "1 day in a row", "3 días seguidos". */
-const inARow = (n: number) => (es() ? `${n} ${n === 1 ? 'día seguido' : 'días seguidos'}` : `${n} ${n === 1 ? 'day' : 'days'} in a row`);
+const inARow = (n: number) => L('{0, plural, one {# day} other {# days}} in a row', '{0, plural, one {# día seguido} other {# días seguidos}}', n);
 
 /** Four years to choose from: the right one and three plausible others (no year 0, none in the future). */
 function yearOptions(y: number): number[] {
@@ -325,7 +324,7 @@ export class Learn {
   }
 
   private badgeToast(got: Badge[]) {
-    if (got.length) this.shell.toast(`${L('New badge', 'Nueva insignia')}: ${got.map((b) => `${b.icon} ${es() ? b.es : b.en}`).join(' · ')}`, 4500);
+    if (got.length) this.shell.toast(`${L('New badge', 'Nueva insignia')}: ${got.map((b) => `${b.icon} ${tx(b)}`).join(' · ')}`, 4500);
   }
 
   // ---- Quiz -----------------------------------------------------------------------------------
@@ -434,11 +433,11 @@ export class Learn {
     const earned = Object.keys(p.badges).length;
     const prog = h('button', { type: 'button', class: 'mode-card', 'data-panel': 'progress' }, ftile('progress'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Your progress', 'Tu progreso')),
-        h('span', { class: 'mode-desc' }, L(`Streaks and badges for each subject · ${earned} of ${BADGES.length} badges`, `Rachas e insignias por tema · ${earned} de ${BADGES.length} insignias`))));
+        h('span', { class: 'mode-desc' }, L('Streaks and badges for each subject · {0} of {1} badges', 'Rachas e insignias por tema · {0} de {1} insignias', earned, BADGES.length))));
     prog.addEventListener('click', () => this.openProgress());
     const mw = h('button', { type: 'button', class: 'mode-card', 'data-panel': 'master' }, ftile('master'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Master the world', 'Domina el mundo')),
-        h('span', { class: 'mode-desc' }, L('Every capital, flag and country, learned for good: a little each day', 'Todas las capitales, banderas y países, aprendidos para siempre: un poco cada día'))));
+        h('span', { class: 'mode-desc' }, L('Countries, capitals, flags, cities, landmarks and more, learned for good: a little each day', 'Países, capitales, banderas, ciudades, monumentos y más, aprendidos para siempre: un poco cada día'))));
     mw.addEventListener('click', () => void this.master?.openPanel());
     return h('div', { class: 'mode-list' }, daily, bell('daily'), ...(this.master ? [mw] : []), prog);
   }
@@ -702,10 +701,10 @@ export class Learn {
     const right = rg.list.find((r) => r.id === cur.id)!, tapped = id ? rg.list.find((r) => r.id === id) : undefined;
     const name = this.regionName(right);
     cur.given = tapped ? this.regionName(tapped) : L('no answer', 'sin respuesta');
-    let text = ok ? L(`Correct! That's ${name}.`, `¡Correcto! Es ${name}.`) : L(`${name} is in yellow.`, `${name} está en amarillo.`);
+    let text = ok ? L('Correct! That\'s {0}.', '¡Correcto! Es {0}.', name) : L('{0} is in yellow.', '{0} está en amarillo.', name);
     if (!ok && tapped) {
       const km = Math.round(geoDistance(tapped.at, right.at) * 6371);
-      text = L(`You tapped ${cur.given}. ${name} is in yellow, ${km.toLocaleString(appLocale())} km away.`, `Tocaste ${cur.given}. ${name} está en amarillo, a ${km.toLocaleString(appLocale())} km.`);
+      text = L('You tapped {0}. {1} is in yellow, {2} km away.', 'Tocaste {0}. {1} está en amarillo, a {2} km.', cur.given, name, km.toLocaleString(appLocale()));
     }
     this.bringIntoView(right);
     this.renderQuiz({ ok, text });
@@ -717,7 +716,7 @@ export class Learn {
     const q = this.quiz!, rg = this.regions;
     const r = rg?.list.find((x) => x.id === cur.id);
     if (!rg || !r) return;
-    add(this.card, h('div', { class: 'quiz-q' }, L(`Where is ${this.regionName(r)}?`, `¿Dónde está ${this.regionName(r)}?`)),
+    add(this.card, h('div', { class: 'quiz-q' }, L('Where is {0}?', '¿Dónde está {0}?', this.regionName(r))),
       h('div', { class: 'quiz-item' }, `${flagEmoji(this.app.data.meta[rg.a3]?.a2)} ${this.app.data.name(rg.a3, lang())}`));
     if (!q.answered) {
       const skip = h('button', { type: 'button', class: 'pill sm' }, L('Show me', 'Muéstramelo'));
@@ -891,7 +890,7 @@ export class Learn {
     const q = this.quiz!;
     const w = worldById(cur.space!.world);
     const question = kind === 'world' ? L('Which world is this?', '¿Qué mundo es este?')
-      : L(`Who landed here, on ${w ? trIn(w.name) : ''}?`, `¿Quién aterrizó aquí, en ${w ? trIn(w.name) : ''}?`);
+      : L('Who landed here, on {0}?', '¿Quién aterrizó aquí, en {0}?', w ? trIn(w.name) : '');
     add(this.card, h('div', { class: 'quiz-q' }, question));
     if (kind === 'world' && !q.answered) add(this.card, h('div', { class: 'tool-hint' }, L('Turn the globe to look around.', 'Gira el globo para mirar.')));
     const opts = h('div', { class: 'quiz-opts' });
@@ -926,7 +925,7 @@ export class Learn {
 
   private spaceRow(kind: QuizKind, cur: Q): HTMLElement {
     const right = this.optionLabel(kind, cur.id, cur);
-    const yours = cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : L('no answer', 'sin respuesta');
+    const yours = cur.ok ? '' : cur.given ? L('you said {0}', 'dijiste {0}', cur.given) : L('no answer', 'sin respuesta');
     const pic = h('span', { class: 'quiz-thumb' }, h('img', { src: thumbUrl(cur.space!.world), alt: '' }));
     const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, pic,
       h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, right), h('span', { class: 'quiz-sum-ans' }, yours)),
@@ -1007,7 +1006,7 @@ export class Learn {
   private skyRow(kind: QuizKind, cur: Q): HTMLElement {
     const right = this.optionLabel(kind, cur.id, cur);
     const e = kind === 'element' ? this.elementOf(cur) : undefined;
-    const yours = cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : L('no answer', 'sin respuesta');
+    const yours = cur.ok ? '' : cur.given ? L('you said {0}', 'dijiste {0}', cur.given) : L('no answer', 'sin respuesta');
     const pic = h('span', { class: 'quiz-thumb quiz-el-thumb' }, e ? e.symbol : '✳️');
     const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, pic,
       h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, e ? `${tr(e.name)}: ${right}` : right), h('span', { class: 'quiz-sum-ans' }, yours)),
@@ -1066,7 +1065,7 @@ export class Learn {
   /** "1815", "AD 200", "500 BC" (as on the borders timeline). */
   private yearLabel(y: number | string): string {
     const l = this.detLabels.get(Number(y));
-    return l ? (es() ? l.es : l.en) : String(y);
+    return l ? (tx(l)) : String(y);
   }
 
   // ---- Which country in between? (a Border hop of one country, from the Map games' border data)
@@ -1128,7 +1127,7 @@ export class Learn {
 
   private hopQuestion(hp: { a: string; b: string }): string {
     const A = this.app.data.name(hp.a, lang()), B = this.app.data.name(hp.b, lang());
-    return L(`Which country do you cross from ${A} to ${B}?`, `¿Qué país cruzas para ir de ${A} a ${B}?`);
+    return L('Which country do you cross from {0} to {1}?', '¿Qué país cruzas para ir de {0} a {1}?', A, B);
   }
 
   /** "Peru → Bolivia → Paraguay". */
@@ -1326,7 +1325,7 @@ export class Learn {
   }
   private depthLabel(x: DownThing): string {
     const v = x.m >= 10000 ? `${fmtNumber(Math.round(x.m / 1000))} km` : `${fmtNumber(Math.round(x.m))} m`;
-    return x.below === 'sea' ? L(`${v} below sea level`, `${v} bajo el nivel del mar`) : v;
+    return x.below === 'sea' ? L('{0} below sea level', '{0} bajo el nivel del mar', v) : v;
   }
   /** Which of two goes deeper: pairs far enough apart (one at least a third deeper) to be fair. */
   /** Name the sea feature (v0.33.0): a famous undersea feature under a pin; its name among four. */
@@ -1334,12 +1333,12 @@ export class Learn {
     type F = { id: string; name: { en: string; es: string }; kind: string; lon: number; lat: number; rank: number; text: { en: string; es: string } };
     const fs = (await loadJSON<{ famous: F[] }>('ocean/features.json').catch(() => ({ famous: [] as F[] }))).famous.filter((f) => f.rank <= 2);
     if (fs.length < 4) return [];
-    const labels = Object.fromEntries(fs.map((f) => [f.id, es() ? f.name.es : f.name.en]));
+    const labels = Object.fromEntries(fs.map((f) => [f.id, tx(f.name)]));
     return shuffle(fs.slice()).slice(0, n).map((f) => {
       // Wrong answers: far enough away that the pin tells them apart, of the same kind first.
       const far = fs.filter((g) => g.id !== f.id && Math.hypot(g.lon - f.lon, g.lat - f.lat) > 12);
       const wrong = [...shuffle(far.filter((g) => g.kind === f.kind)), ...shuffle(far.filter((g) => g.kind !== f.kind))].slice(0, 3).map((g) => g.id);
-      return { id: f.id, kind: 'seafeature' as QuizKind, options: shuffle([f.id, ...wrong]), sea: { at: [f.lon, f.lat] as [number, number], prompt: L('What is under the pin?', '¿Qué hay bajo el alfiler?'), labels, note: es() ? f.text.es : f.text.en } };
+      return { id: f.id, kind: 'seafeature' as QuizKind, options: shuffle([f.id, ...wrong]), sea: { at: [f.lon, f.lat] as [number, number], prompt: L('What is under the pin?', '¿Qué hay bajo el alfiler?'), labels, note: tx(f.text) } };
     });
   }
   /** Which ocean zone? (v0.33.0): a sea animal; the zone it lives in most often. */
@@ -1359,8 +1358,8 @@ export class Learn {
       const z = zoneOf(a.usual);
       const wrong = shuffle(zones.map((x) => x[0]).filter((x) => x !== z)).slice(0, 3);
       const fmt = (v: number) => `${fmtNumber(Math.round(v))} m`;
-      return { id: z, kind: 'zone' as QuizKind, options: [...zones.map((x) => x[0])].filter((x) => x === z || wrong.includes(x)), sea: { prompt: L('Where does it live most often?', '¿Dónde vive más a menudo?'), item: `${a.e} ${es() ? a.name.es : a.name.en}`, labels,
-        note: L(`${a.name.en}: most often about ${fmt(a.usual)} down, from ${fmt(a.depth[0])} to ${fmt(a.depth[1])}. ${a.text.en}`, `${a.name.es}: casi siempre a unos ${fmt(a.usual)}, de ${fmt(a.depth[0])} a ${fmt(a.depth[1])}. ${a.text.es}`) } };
+      return { id: z, kind: 'zone' as QuizKind, options: [...zones.map((x) => x[0])].filter((x) => x === z || wrong.includes(x)), sea: { prompt: L('Where does it live most often?', '¿Dónde vive más a menudo?'), item: `${a.e} ${tx(a.name)}`, labels,
+        note: L('{0}: most often about {1} down, from {2} to {3}. {4}', '{0}: casi siempre a unos {1}, de {2} a {3}. {4}', tx(a.name), fmt(a.usual), fmt(a.depth[0]), fmt(a.depth[1]), tx(a.text)) } };
     });
   }
   private async deepQs(n: number): Promise<Q[]> {
@@ -1414,7 +1413,7 @@ export class Learn {
         h('span', { class: 'quiz-thumb' }, it.e),
         h('span', { class: 'order-text' }, h('span', { class: 'order-name' }, es() ? it.name[1] : it.name[0]),
           h('span', { class: 'order-sub' }, [q.answered ? this.depthLabel(it) : '', es() ? it.place[1] : it.place[0]].filter(Boolean).join(' · '))),
-        q.answered && mine !== at ? h('span', { class: 'order-yours' }, L(`you: ${mine + 1}`, `tú: ${mine + 1}`)) : null);
+        q.answered && mine !== at ? h('span', { class: 'order-yours' }, L('you: {0}', 'tú: {0}', mine + 1)) : null);
       row.addEventListener('click', () => {
         if (q.answered) return;
         const i = picked.indexOf(it.id);
@@ -1426,7 +1425,7 @@ export class Learn {
     }
     add(this.card, list);
     if (!q.answered && picked.length === set.length) {
-      const again = h('button', { type: 'button', class: 'pill sm' }, L('Start over', 'Volver a empezar'));
+      const again = h('button', { type: 'button', class: 'pill sm' }, L('Start over', 'Empezar de nuevo'));
       again.addEventListener('click', () => { cur.downPicked = []; this.renderQuiz(); });
       const check = h('button', { type: 'button', class: 'pill primary sm', 'data-check': '' }, L('Check', 'Comprobar'));
       check.addEventListener('click', () => {
@@ -1437,7 +1436,7 @@ export class Learn {
         cur.ok = ok;
         cur.given = cur.downPicked!.map((k) => { const x = set.find((y) => y.id === k)!; return es() ? x.name[1] : x.name[0]; }).join(' → ');
         this.scored(ok);
-        this.renderQuiz({ ok, text: ok ? L('Correct! All four in order.', '¡Correcto! Las cuatro en orden.') : L(`${placed} of ${right.length} in the right place.`, `${placed} de ${right.length} en su lugar.`) });
+        this.renderQuiz({ ok, text: ok ? Lc('four sea creatures by depth', 'Correct! All four in order.', '¡Correcto! Las cuatro en orden.') : L('{0} of {1} in the right place.', '{0} de {1} en su lugar.', placed, right.length) });
       });
       add(this.card, h('div', { class: 'tool-actions' }, again, check));
     } else if (!q.answered && picked.length) add(this.card, h('div', { class: 'tool-hint' }, L('Tap a numbered one to take it back.', 'Toca uno con número para quitarlo.')));
@@ -1552,8 +1551,8 @@ export class Learn {
   private periodLabel(id: string): string {
     const u = this.periods.find((p) => p.name_en === id);
     if (!u) return id;
-    const f = (x: number) => (x >= 10 ? String(Math.round(x)) : String(Math.round(x * 10) / 10).replace('.', es() ? ',' : '.'));
-    const when = u.end <= 0 ? L(`since ${f(u.start)} million years ago`, `desde hace ${f(u.start)} millones de años`) : L(`${f(u.start)}–${f(u.end)} million years ago`, `hace ${f(u.start)}–${f(u.end)} millones de años`);
+    const f = (x: number) => (x >= 10 ? String(Math.round(x)) : String(Math.round(x * 10) / 10).replace('.', L('.', ',')));
+    const when = u.end <= 0 ? L('since {0} million years ago', 'desde hace {0} millones de años', f(u.start)) : L('{0}–{1} million years ago', 'hace {0}–{1} millones de años', f(u.start), f(u.end));
     return `${es() ? u.name_es : u.name_en} (${when})`;
   }
 
@@ -1627,17 +1626,17 @@ export class Learn {
     this.scored(ok);
     const cur = q.qs[q.i];
     cur.ok = ok;
-    cur.given = km == null ? L('no answer', 'sin respuesta') : L(`${km.toLocaleString(appLocale())} km away`, `a ${km.toLocaleString(appLocale())} km`);
+    cur.given = km == null ? L('no answer', 'sin respuesta') : L('{0} km away', 'a {0} km', km.toLocaleString(appLocale()));
     this.showItem(it);
     const where = it.place ? tx(it.place) : '';
-    const dist = km == null ? '' : L(`${km.toLocaleString(appLocale())} km away. `, `A ${km.toLocaleString(appLocale())} km. `);
+    const dist = km == null ? '' : L('{0} km away. ', 'A {0} km. ', km.toLocaleString(appLocale()));
     if (plant) {
-      const near = km === 0 ? L('Right where it grows! ', '¡Justo donde crece! ') : km != null ? L(`${km.toLocaleString(appLocale())} km from where it grows. `, `A ${km.toLocaleString(appLocale())} km de donde crece. `) : '';
+      const near = km === 0 ? L('Right where it grows! ', '¡Justo donde crece! ') : km != null ? L('{0} km from where it grows. ', 'A {0} km de donde crece. ', km.toLocaleString(appLocale())) : '';
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${near}${tx(it.name)}: ${L('it grows wild in the green squares', 'crece silvestre en los cuadros verdes')}${where ? ` (${where})` : ''}.` });
       return;
     }
     if (animal) {
-      const near = km === 0 ? L('Right where it lives! ', '¡Justo donde vive! ') : km != null ? L(`${km.toLocaleString(appLocale())} km from where it lives. `, `A ${km.toLocaleString(appLocale())} km de donde vive. `) : '';
+      const near = km === 0 ? L('Right where it lives! ', '¡Justo donde vive! ') : km != null ? L('{0} km from where it lives. ', 'A {0} km de donde vive. ', km.toLocaleString(appLocale())) : '';
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${near}${tx(it.name)}: ${L('it lives in the orange squares', 'vive en los cuadros naranjas')}${where ? ` (${where})` : ''}.` });
       return;
     }
@@ -1699,10 +1698,10 @@ export class Learn {
     if (q.peek) {
       // Folded: the map is in view. What to find (the tap quizzes are answered on it), or the answer.
       if (feedback) add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, this.nextButton()));
-      else if (kind === 'find') add(this.card, h('div', { class: 'quiz-peek-q' }, L(`Where is ${this.app.data.name(cur.id, lang())}?`, `¿Dónde está ${this.app.data.name(cur.id, lang())}?`)));
+      else if (kind === 'find') add(this.card, h('div', { class: 'quiz-peek-q' }, L('Where is {0}?', '¿Dónde está {0}?', this.app.data.name(cur.id, lang()))));
       else if ((kind === 'where' || kind === 'habitat' || kind === 'grows') && cur.item) add(this.card, h('div', { class: 'quiz-peek-q' }, `${cur.item.icon} ${tx(cur.item.name)}`));
       else if (kind === 'season' && cur.green) { const sp = this.calQuiz?.find((x) => x.id === cur.green!.spectacle); if (sp) add(this.card, h('div', { class: 'quiz-peek-q' }, `${sp.e} ${tt(sp.n)}`)); }
-      else if (kind === 'region') { const r = this.regions?.list.find((x) => x.id === cur.id); if (r) add(this.card, h('div', { class: 'quiz-peek-q' }, L(`Where is ${this.regionName(r)}?`, `¿Dónde está ${this.regionName(r)}?`))); }
+      else if (kind === 'region') { const r = this.regions?.list.find((x) => x.id === cur.id); if (r) add(this.card, h('div', { class: 'quiz-peek-q' }, L('Where is {0}?', '¿Dónde está {0}?', this.regionName(r)))); }
       else if (kind === 'detective') add(this.card, h('div', { class: 'quiz-peek-q' }, `🕵️ ${L('When is this map from?', '¿De cuándo es este mapa?')}`));
       else if (kind === 'hop' && cur.hop) add(this.card, h('div', { class: 'quiz-peek-q' }, this.hopQuestion(cur.hop)));
       return;
@@ -1719,10 +1718,10 @@ export class Learn {
     if (kind === 'link') { this.renderLinkQuestion(cur, feedback); return; }
     if (kind === 'family') { this.renderFamilyQuestion(cur, feedback); return; }
     const name = this.app.data.name(cur.id, lang());
-    if (kind === 'find') add(this.card, h('div', { class: 'quiz-q' }, L(`Where is ${name}?`, `¿Dónde está ${name}?`)));
+    if (kind === 'find') add(this.card, h('div', { class: 'quiz-q' }, L('Where is {0}?', '¿Dónde está {0}?', name)));
     if (kind === 'flag') add(this.card, h('div', { class: 'quiz-q' }, L('Which country has this flag?', '¿De qué país es esta bandera?')),
       h('img', { class: 'quiz-flag', src: dataUrl(`../flags/${(this.app.data.meta[cur.id].a2 ?? '').toLowerCase()}.svg`), alt: '' }));
-    if (kind === 'capital') add(this.card, h('div', { class: 'quiz-q' }, L(`What is the capital of ${name}?`, `¿Cuál es la capital de ${name}?`)));
+    if (kind === 'capital') add(this.card, h('div', { class: 'quiz-q' }, L('What is the capital of {0}?', '¿Cuál es la capital de {0}?', name)));
     if (kind === 'hop' && cur.hop) add(this.card, h('div', { class: 'quiz-q' }, this.hopQuestion(cur.hop)));
     if (kind === 'museum' && cur.art) this.museumQuestion(cur);
     if (kind === 'lives' && cur.wild) add(this.card, h('div', { class: 'quiz-q' }, L('Which of these animals lives here, in the wild?', '¿Cuál de estos animales vive aquí, en libertad?')), h('div', { class: 'tool-hint' }, L('The globe shows the place.', 'El globo muestra el lugar.')));
@@ -1806,7 +1805,7 @@ export class Learn {
     if (cur.sea) {
       cur.given = cur.sea.labels[o] ?? o;
       if (cur.sea.at) { this.pin = { lon: cur.sea.at[0], lat: cur.sea.at[1], text: cur.sea.labels[cur.id] ?? '' }; this.app.renderer.requestRender(); }
-      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L(`It is: ${cur.sea.labels[cur.id]}. `, `Es: ${cur.sea.labels[cur.id]}. `)}${cur.sea.note ?? ''}` });
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It is: {0}. ', 'Es: {0}. ', cur.sea.labels[cur.id])}${cur.sea.note ?? ''}` });
       return;
     }
     if (cur.deep) {
@@ -1821,7 +1820,7 @@ export class Learn {
       cur.given = this.yearLabel(o);
       void this.time.history.quizMap(cur.det.year, true);
       const right = this.yearLabel(cur.id);
-      this.renderQuiz({ ok, text: ok ? L(`Correct! ${right}.`, `¡Correcto! ${right}.`) : L(`It was ${right}.`, `Era ${right}.`) });
+      this.renderQuiz({ ok, text: ok ? L('Correct! {0}.', '¡Correcto! {0}.', right) : L('It was {0}.', 'Era {0}.', right) });
       return;
     }
     if (cur.lang) {
@@ -1832,7 +1831,7 @@ export class Learn {
     if (cur.link) {
       cur.given = this.linkLabel(o);
       const k = cur.link;
-      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L(`It was: ${this.linkLabel(cur.id)}. `, `Era: ${this.linkLabel(cur.id)}. `)}ρ = ${fmtR(k.rho)}, ${strengthWords(strength(k.rho))}.` });
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was: {0}. ', 'Era: {0}. ', this.linkLabel(cur.id))}ρ = ${fmtR(k.rho)}, ${strengthWords(strength(k.rho))}.` });
       return;
     }
     if (cur.item) {
@@ -1841,7 +1840,7 @@ export class Learn {
       const right = kind === 'when' ? itemWhen(it, Math.min(...(cur.options ?? [cur.id]).map(Number))) : this.optionLabel(kind, cur.id, cur);
       if (kind === 'script') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It is: ', 'Es: ')}${tx(it.name)}${it.place ? ` · ${tx(it.place)}` : ''}` }); return; }
       if (kind === 'listen' || kind === 'opening') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was: ', 'Era: ')}${tx(it.name)}${it.by ? ` (${tx(it.by)})` : ''}${it.place ? ` · ${tx(it.place)}` : ''}` }); return; }
-      if (kind === 'site') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was: ', 'Era: ')}${tx(it.name)}${it.place ? ` · ${tx(it.place)}` : ''} · ${L(`on the list since ${it.t}`, `en la lista desde ${it.t}`)}` }); return; }
+      if (kind === 'site') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was: ', 'Era: ')}${tx(it.name)}${it.place ? ` · ${tx(it.place)}` : ''} · ${L('on the list since {0}', 'en la lista desde {0}', it.t)}` }); return; }
       if (kind === 'inventor') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${tx(it.by!)} (${itemWhen(it, it.t)}${it.place ? `, ${tx(it.place)}` : ''})` }); return; }
       if (kind === 'artist') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${tx(it.by!)}${it.status ? ` · ${tx(it.status)}` : ''}` }); return; }
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${right}.` });
@@ -1852,21 +1851,21 @@ export class Learn {
       const sp = this.calQuiz?.find((x) => x.id === cur.green!.spectacle);
       if (sp) this.pin = { lon: sp.at[0], lat: sp.at[1], text: tt(sp.n) };
       this.app.renderer.requestRender();
-      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L(`It is best in ${this.monthLabel(cur.id)}. `, `Su mejor mes es ${this.monthLabel(cur.id).toLowerCase()}. `)}${sp ? `${tt(sp.n)}: ${monthsText(sp)}. ${tt(sp.text)}` : ''}` });
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It is best in {0}. ', 'Su mejor mes es {1}. ', this.monthLabel(cur.id), this.monthLabel(cur.id).toLowerCase())}${sp ? `${tt(sp.n)}: ${monthsText(sp)}. ${tt(sp.text)}` : ''}` });
       return;
     }
     if (cur.wild) {
       // Its range comes out on the map.
       const a = this.wildQuiz?.byId.get(cur.id);
       if (a) { this.wildShow = a; this.app.renderer.requestRender(); }
-      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${L(`${this.animalLabel(cur.id)} lives here: its range is in orange.`, `${this.animalLabel(cur.id)} vive aquí: su área está en naranja.`)}` });
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${L('{0} lives here: its range is in orange.', '{0} vive aquí: su área está en naranja.', this.animalLabel(cur.id))}` });
       return;
     }
     if (cur.art) {
       // The museum comes out on the map.
       const m = this.artData?.museumById.get(cur.id);
       if (m) { this.pin = { lon: m.at[0], lat: m.at[1], text: artName(m) }; this.app.renderer.view.flyTo({ lon: m.at[0], lat: m.at[1], zoom: 6 }); }
-      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${L(`It is in ${this.museumLabel(cur.id)}.`, `Está en ${this.museumLabel(cur.id)}.`)}` });
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${L('It is in {0}.', 'Está en {0}.', this.museumLabel(cur.id))}` });
       return;
     }
     if (cur.hop) {
@@ -1878,8 +1877,8 @@ export class Learn {
     }
     this.showCountry(cur.id);
     const name = this.app.data.name(cur.id, lang());
-    this.renderQuiz({ ok, text: ok ? L(`Correct! ${flagEmoji(this.app.data.meta[cur.id].a2)} ${name}`, `¡Correcto! ${flagEmoji(this.app.data.meta[cur.id].a2)} ${name}`)
-      : kind === 'capital' ? L(`The capital of ${name} is ${this.capital(cur.id)}.`, `La capital de ${name} es ${this.capital(cur.id)}.`) : L(`It was ${name}.`, `Era ${name}.`) });
+    this.renderQuiz({ ok, text: ok ? L('Correct! {0} {1}', '¡Correcto! {0} {1}', flagEmoji(this.app.data.meta[cur.id].a2), name)
+      : kind === 'capital' ? L('The capital of {0} is {1}.', 'La capital de {0} es {1}.', name, this.capital(cur.id)) : L('It was {0}.', 'Era {0}.', name) });
   }
 
   private answerFind(id: string | null) {
@@ -1892,11 +1891,11 @@ export class Learn {
     cur.given = id ? this.app.data.name(id, lang()) : L('no answer', 'sin respuesta');
     this.showCountry(cur.id);
     const name = this.app.data.name(cur.id, lang());
-    let text = ok ? L(`Correct! That's ${name}.`, `¡Correcto! Es ${name}.`) : L(`Here is ${name}.`, `Aquí está ${name}.`);
+    let text = ok ? L('Correct! That\'s {0}.', '¡Correcto! Es {0}.', name) : L('Here is {0}.', 'Aquí está {0}.', name);
     if (!ok && id) {
       const a = this.app.data.meta[id], b = this.app.data.meta[cur.id];
       const km = Math.round(geoDistance([a.lx, a.ly], [b.lx, b.ly]) * 6371);
-      text = L(`You tapped ${this.app.data.name(id, lang())}, ${km.toLocaleString(appLocale())} km away.`, `Tocaste ${this.app.data.name(id, lang())}, a ${km.toLocaleString(appLocale())} km.`);
+      text = L('You tapped {0}, {1} km away.', 'Tocaste {0}, a {1} km.', this.app.data.name(id, lang()), km.toLocaleString(appLocale()));
     }
     this.renderQuiz({ ok, text });
   }
@@ -1938,7 +1937,7 @@ export class Learn {
     if (q.peek) return;
     const again = h('button', { type: 'button', class: 'pill primary' }, icon(RotateCcw, 16), L('Play again', 'Jugar otra vez'));
     again.addEventListener('click', () => void (q.kind === 'region' ? this.startRegionQuiz(q.region, !!q.all) : this.startQuiz(q.kind, q.region)));
-    const done = h('button', { type: 'button', class: 'pill' }, L('Done', 'Terminar'));
+    const done = h('button', { type: 'button', class: 'pill' }, Lc('a button: finish', 'Done', 'Terminar'));
     done.addEventListener('click', () => this.stopQuiz());
     const list = h('div', { class: 'quiz-sum', role: 'list' });
     for (const cur of q.qs) list.append(this.resultRow(cur.kind ?? q.kind, cur));
@@ -1954,7 +1953,7 @@ export class Learn {
     add(this.card, this.quizHead(`🗓️ ${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)}`, `${q.score}/${n}`));
     if (q.peek) return;
     const marks = marksOf(q.qs);
-    const done = h('button', { type: 'button', class: 'pill' }, L('Done', 'Terminar'));
+    const done = h('button', { type: 'button', class: 'pill' }, Lc('a button: finish', 'Done', 'Terminar'));
     done.addEventListener('click', () => void this.stopQuiz());
     const list = h('div', { class: 'quiz-sum', role: 'list' });
     for (const cur of q.qs) list.append(this.resultRow(cur.kind ?? q.kind, cur));
@@ -1980,14 +1979,14 @@ export class Learn {
       const right = cur.down.slice().sort((a, b) => a.m - b.m);
       return h('div', { class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, h('span', { class: 'quiz-thumb' }, '🌍'),
         h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, right.map((x) => (es() ? x.name[1] : x.name[0])).join(' → ')),
-          h('span', { class: 'quiz-sum-ans' }, cur.ok ? right.map((x) => this.depthLabel(x)).join(' · ') : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : L('no answer', 'sin respuesta'))),
+          h('span', { class: 'quiz-sum-ans' }, cur.ok ? right.map((x) => this.depthLabel(x)).join(' · ') : cur.given ? L('you said {0}', 'dijiste {0}', cur.given) : L('no answer', 'sin respuesta'))),
         h('span', { class: 'quiz-sum-mark' }, cur.ok ? '✓' : '✗'));
     }
     const name = it ? tx(it.name) : sp ? tt(sp.n) : cur.hop ? this.hopWay(cur) : cur.art ? this.workTitle(cur.art.work) : cur.deep ? L('Which goes deeper?', '¿Cuál llega más hondo?') : this.app.data.name(cur.id, lang());
     const right = it
       ? (kind === 'where' ? (it.place ? tx(it.place) : '') : kind === 'when' ? itemWhen(it, Math.min(...(cur.options ?? [cur.id]).map(Number))) : this.optionLabel(kind, cur.id, cur))
       : kind === 'capital' ? this.capital(cur.id) : kind === 'museum' ? this.museumLabel(cur.id) : kind === 'lives' ? this.animalLabel(cur.id) : kind === 'season' ? this.monthLabel(cur.id) : kind === 'deep' ? this.deepLabel(cur.id, true) : cur.sea ? cur.sea.labels[cur.id] ?? '' : '';
-    const yours = cur.ok ? '' : kind === 'where' || kind === 'find' ? (cur.given ?? '') : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : L('no answer', 'sin respuesta');
+    const yours = cur.ok ? '' : kind === 'where' || kind === 'find' ? (cur.given ?? '') : cur.given ? L('you said {0}', 'dijiste {0}', cur.given) : L('no answer', 'sin respuesta');
     const pic = h('span', { class: 'quiz-thumb' }, it ? it.icon : sp ? sp.e : '');
     if (it) {
       void itemThumb(it).then((src) => {
@@ -2049,13 +2048,13 @@ export class Learn {
         pic,
         h('span', { class: 'order-text' }, h('span', { class: 'order-name' }, tx(it.name)),
           h('span', { class: 'order-sub' }, [q.answered ? itemWhen(it, from) : '', it.place ? tx(it.place) : ''].filter(Boolean).join(' · '))),
-        q.answered && mine !== at ? h('span', { class: 'order-yours' }, L(`you: ${mine + 1}`, `tú: ${mine + 1}`)) : null);
+        q.answered && mine !== at ? h('span', { class: 'order-yours' }, L('you: {0}', 'tú: {0}', mine + 1)) : null);
       row.addEventListener('click', () => (q.answered ? this.showItem(it) : this.pickOrder(k)));
       list.append(row);
     }
     add(this.card, list);
     if (!q.answered && picked.length === set.length) {
-      const again = h('button', { type: 'button', class: 'pill sm' }, L('Start over', 'Volver a empezar'));
+      const again = h('button', { type: 'button', class: 'pill sm' }, L('Start over', 'Empezar de nuevo'));
       again.addEventListener('click', () => { cur.picked = []; this.renderQuiz(); });
       const check = h('button', { type: 'button', class: 'pill primary sm', 'data-check': '' }, L('Check', 'Comprobar'));
       check.addEventListener('click', () => this.answerOrder());
@@ -2090,7 +2089,7 @@ export class Learn {
     cur.given = cur.picked.map((k) => tx(cur.set!.find((x) => itemKey(x) === k)!.name)).join(' → ');
     this.scored(ok);
     this.showSet(right);
-    this.renderQuiz({ ok, text: ok ? L('Correct! All four in order.', '¡Correcto! Los cuatro en orden.') : L(`${placed} of ${right.length} in the right place.`, `${placed} de ${right.length} en su lugar.`) });
+    this.renderQuiz({ ok, text: ok ? L('Correct! All four in order.', '¡Correcto! Los cuatro en orden.') : L('{0} of {1} in the right place.', '{0} de {1} en su lugar.', placed, right.length) });
   }
 
   /** Numbered pins on a round's things, oldest first, with the map turned to see them all. */
@@ -2112,7 +2111,7 @@ export class Learn {
     const from = Math.min(...right.map((x) => x.t));
     const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, h('span', { class: 'quiz-thumb' }, '🔢'),
       h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, right.map((x) => tx(x.name)).join(' → ')),
-        h('span', { class: 'quiz-sum-ans' }, [right.map((x) => itemWhen(x, from)).join(' · '), cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : L('no answer', 'sin respuesta')].filter(Boolean).join(' · '))),
+        h('span', { class: 'quiz-sum-ans' }, [right.map((x) => itemWhen(x, from)).join(' · '), cur.ok ? '' : cur.given ? L('you said {0}', 'dijiste {0}', cur.given) : L('no answer', 'sin respuesta')].filter(Boolean).join(' · '))),
       h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
     row.addEventListener('click', () => {
       const q = this.quiz;
@@ -2135,7 +2134,7 @@ export class Learn {
     const d = cur.det!;
     const r = this.detRegion(d.region);
     add(this.card, h('div', { class: 'quiz-q' }, L('When is this map from?', '¿De cuándo es este mapa?')),
-      h('div', { class: 'quiz-item' }, `🕵️ ${r ? (es() ? r.es : r.en) : ''}`),
+      h('div', { class: 'quiz-item' }, `🕵️ ${r ? (tx(r)) : ''}`),
       q.answered ? null : h('div', { class: 'tool-hint' }, L('Each colour is a state, an empire or a people of the time. Their names appear when you answer.', 'Cada color es un Estado, un imperio o un pueblo de la época. Sus nombres aparecen cuando respondes.')));
     const opts = h('div', { class: 'quiz-opts' });
     for (const o of cur.options ?? []) {
@@ -2155,7 +2154,7 @@ export class Learn {
         await this.time.history.enter(d.year);
       })());
       add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text),
-        cap ? h('div', { class: 'quiz-caption' }, `${L(`The world in ${this.yearLabel(d.year)}`, `El mundo en ${this.yearLabel(d.year)}`)}: ${tx(cap)}`) : null,
+        cap ? h('div', { class: 'quiz-caption' }, `${L('The world in {0}', 'El mundo en {0}', this.yearLabel(d.year))}: ${tx(cap)}`) : null,
         h('div', { class: 'tool-hint' }, L('Tap a colour on the map to see its name.', 'Toca un color en el mapa para ver su nombre.')),
         h('div', { class: 'tool-actions' }, timeline, this.nextButton()));
     }
@@ -2166,8 +2165,8 @@ export class Learn {
     const d = cur.det!;
     const r = this.detRegion(d.region);
     const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, h('span', { class: 'quiz-thumb' }, '🕵️'),
-      h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, `${r ? (es() ? r.es : r.en) : ''} · ${this.yearLabel(d.year)}`),
-        h('span', { class: 'quiz-sum-ans' }, cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : L('no answer', 'sin respuesta'))),
+      h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, `${r ? (tx(r)) : ''} · ${this.yearLabel(d.year)}`),
+        h('span', { class: 'quiz-sum-ans' }, cur.ok ? '' : cur.given ? L('you said {0}', 'dijiste {0}', cur.given) : L('no answer', 'sin respuesta'))),
       h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
     row.addEventListener('click', () => void (async () => {
       const q = this.quiz;
@@ -2270,7 +2269,7 @@ export class Learn {
     const pic = h('span', { class: 'quiz-thumb' }, this.linkPlot(k, 48, 48));
     const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, pic,
       h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, `${tx(CM.fieldName(k.a))} × ${tx(CM.fieldName(k.b))}`),
-        h('span', { class: 'quiz-sum-ans' }, [`${this.linkLabel(cur.id)} (ρ = ${fmtR(k.rho)})`, cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : ''].filter(Boolean).join(' · '))),
+        h('span', { class: 'quiz-sum-ans' }, [`${this.linkLabel(cur.id)} (ρ = ${fmtR(k.rho)})`, cur.ok ? '' : cur.given ? L('you said {0}', 'dijiste {0}', cur.given) : ''].filter(Boolean).join(' · '))),
       h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
     row.addEventListener('click', () => void this.stopQuiz().then(() => this.app.emit('compare', k.a, k.b)));
     return row;
@@ -2330,8 +2329,8 @@ export class Learn {
     this.renderQuiz();
   }
 
-  private langName(code: string) { const c = this.famData?.langs[code]; return c ? (es() ? c.es : c.en) : code; }
-  private famName(f: string) { const c = this.famData?.fams[f]; return c ? (es() ? c.es : c.en) : f; }
+  private langName(code: string) { const c = this.famData?.langs[code]; return c ? (tx(c)) : code; }
+  private famName(f: string) { const c = this.famData?.fams[f]; return c ? (tx(c)) : f; }
 
   /** "Hungarian is a Uralic language, like Finnish and Estonian." */
   private familySentence(code: string, f: string): string {
@@ -2352,8 +2351,8 @@ export class Learn {
   /** Where a language is official: "Official in Hungary", "Official in Spain, Mexico, Colombia and 18 more". */
   private officialIn(code: string): string {
     const names = (this.famData?.where.get(code) ?? []).map((iso) => this.app.data.name(iso, lang())).sort((a, b) => a.localeCompare(b));
-    if (names.length > 4) return L(`Official in ${names.slice(0, 3).join(', ')} and ${names.length - 3} more`, `Oficial en ${names.slice(0, 3).join(', ')} y ${names.length - 3} más`);
-    return L(`Official in ${joinList(names)}`, `Oficial en ${joinList(names)}`);
+    if (names.length > 4) return L('Official in {0} and {1} more', 'Oficial en {0} y {1} más', names.slice(0, 3).join(', '), names.length - 3);
+    return L('Official in {0}', 'Oficial en {0}', joinList(names));
   }
 
   /** The Languages filter by family, with the language's (first) country selected. */
@@ -2389,7 +2388,7 @@ export class Learn {
   private familyRow(cur: Q): HTMLElement {
     const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, h('span', { class: 'quiz-thumb' }, '🗣️'),
       h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, this.langName(cur.lang!)),
-        h('span', { class: 'quiz-sum-ans' }, [this.famName(cur.id), cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : ''].filter(Boolean).join(' · '))),
+        h('span', { class: 'quiz-sum-ans' }, [this.famName(cur.id), cur.ok ? '' : cur.given ? L('you said {0}', 'dijiste {0}', cur.given) : ''].filter(Boolean).join(' · '))),
       h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
     row.addEventListener('click', () => void this.showFamilies(cur.lang!));
     return row;
@@ -2429,7 +2428,7 @@ export class Learn {
       if (!tours.length) continue;
       for (const tour of tours) {
         const c = h('button', { type: 'button', class: 'mode-card', 'data-tour': tour.en }, h('span', { class: 'mode-icon' }, tour.icon),
-          h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, es() ? tour.es : tour.en), h('span', { class: 'mode-desc' }, `${tour.steps.length} ${L('stops', 'paradas')}`)));
+          h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, tx(tour)), h('span', { class: 'mode-desc' }, `${tour.steps.length} ${L('stops', 'paradas')}`)));
         c.addEventListener('click', () => void this.startTour(tour));
         list.append(c);
       }
@@ -2539,7 +2538,7 @@ export class Learn {
     next.addEventListener('click', () => this.nextStep());
     // At the last stop, once it has played through, ▶ becomes ↺: play it again from the start.
     const again = !tr.auto && tr.i === tr.steps.length - 1;
-    const autoLabel = tr.auto ? L('Pause', 'Pausa') : again ? L('Start again', 'Empezar de nuevo') : L('Play', 'Reproducir');
+    const autoLabel = tr.auto ? L('Pause', 'Pausa') : again ? L('Start again', 'Empezar de nuevo') : Lc('to play a recording or an animation', 'Play', 'Reproducir');
     const auto = h('button', { type: 'button', class: 'icon-btn sm tour-auto', 'aria-label': 'Auto', title: autoLabel, 'aria-pressed': String(tr.auto), 'data-state': tr.auto ? 'playing' : again ? 'again' : 'paused' }, icon(tr.auto ? Pause : again ? RotateCcw : Play, 16));
     auto.addEventListener('click', () => {
       if (again) { tr.auto = true; tr.i = 0; void this.showStep(); this.renderTour(); return; }
@@ -2562,7 +2561,7 @@ export class Learn {
         this.renderTour();
       });
     }
-    const body = es() ? s.es : s.en;
+    const body = tx(s);
     add(this.card,
       h('div', { class: 'tool-head' }, h('strong', null, `${s.icon ?? '🧭'} ${es() ? s.title_es : s.title_en}`), h('span', { class: 'tour-tools' }, prev, h('span', { class: 'small muted' }, `${tr.i + 1}/${tr.steps.length}`), next, auto, voice, fold, close)),
       tr.fold ? null : h('div', { class: 'tour-text' }, ...sentences(body).map((x, k) => h('span', { class: 'tour-s', 'data-s': String(k) }, `${x} `))));
@@ -2626,7 +2625,7 @@ export class Learn {
   /** The words a stop reads aloud: its title, then its text. */
   private stopWords(s: TourStep): string {
     const title = es() ? s.title_es : s.title_en;
-    return `${/[.!?…]$/.test(title) ? title : `${title}.`} ${es() ? s.es : s.en}`;
+    return `${/[.!?…]$/.test(title) ? title : `${title}.`} ${tx(s)}`;
   }
 
   /** Reads the stop aloud (when reading aloud is on); auto-play then goes on when the voice is done. */
@@ -2640,7 +2639,7 @@ export class Learn {
     const titleParts = sentences(/[.!?…]$/.test(es() ? s.title_es : s.title_en) ? (es() ? s.title_es : s.title_en) : `${es() ? s.title_es : s.title_en}.`).length;
     tr.voice = 'reading';
     tr.at = performance.now();
-    void speak(this.stopWords(s), { lang: es() ? 'es' : 'en', onSentence: (k) => this.readingSentence(k - titleParts) }).then((done) => {
+    void speak(this.stopWords(s), { lang: dataLang(), onSentence: (k) => this.readingSentence(k - titleParts) }).then((done) => {
       if (this.tour !== tr || tr.i !== i) return;
       this.readingSentence(-1);
       tr.voice = done ? 'done' : 'off';
@@ -2765,7 +2764,7 @@ export class Learn {
 
   private async fillOtdWiki(el: HTMLElement, mm: number, dd: number, month: OtdMonth | null, entries: OtdEntry[]) {
     try {
-      const r = await fetch(`https://api.wikimedia.org/feed/v1/wikipedia/${es() ? 'es' : 'en'}/onthisday/selected/${String(mm).padStart(2, '0')}/${String(dd).padStart(2, '0')}`);
+      const r = await fetch(`https://api.wikimedia.org/feed/v1/wikipedia/${dataLang()}/onthisday/selected/${String(mm).padStart(2, '0')}/${String(dd).padStart(2, '0')}`);
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const j = (await r.json()) as { selected?: { text: string; year: number; pages?: { title: string; normalizedtitle?: string; coordinates?: { lat: number; lon: number } }[] }[] };
       if (!el.isConnected) return;
@@ -2790,7 +2789,7 @@ export class Learn {
       el.append(h('p', { class: 'muted small' }, L('Events from Wikipedia (CC BY-SA).', 'Acontecimientos de Wikipedia (CC BY-SA).')));
     } catch (e) {
       clear(el);
-      el.append(h('p', { class: 'muted' }, L(`Needs an internet connection (${(e as Error).message}).`, `Necesita conexión a internet (${(e as Error).message}).`)));
+      el.append(h('p', { class: 'muted' }, L('Needs an internet connection ({0}).', 'Necesita conexión a internet ({0}).', (e as Error).message)));
     }
   }
 

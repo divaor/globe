@@ -1,11 +1,17 @@
-// English and Spanish strings. Add a language by adding a column to STRINGS and to LANGS.
+// The app's languages (v0.41.0, One voice). Every text is written in English and Spanish where it is used, as
+// L('English', 'Spanish', ...values), with {0}, {1}… for the values so that a translator can move them, and
+// {0, plural, one {# day} other {# days}} or {0, select, a {…} other {…}} where the words change with a value.
+// Other languages come from a file per language, public/i18n/<lang>.json, keyed by the English text (gettext's way):
+// a text with no translation yet shows in English. scripts/i18n/extract.mjs lists every text (i18n/messages.json, for
+// translators) and with --check fails when a shipped language misses one, or a pattern's values do not match.
 export type Lang = 'en' | 'es';
 export const LANGS: { id: Lang; name: string }[] = [
   { id: 'en', name: 'English' },
   { id: 'es', name: 'Español' },
 ];
 
-const STRINGS: Record<string, [string, string]> = {
+/** key: [English, Spanish] or [English, Spanish, context] (a context for an English that means two things). */
+const STRINGS: Record<string, [string, string] | [string, string, string]> = {
   appName: ['Atlas Globe', 'Atlas Globe'],
   tagline: ['Explore the world, layer by layer', 'Explora el mundo, capa a capa'],
   loading: ['Loading the world…', 'Cargando el mundo…'],
@@ -29,7 +35,7 @@ const STRINGS: Record<string, [string, string]> = {
   search: ['Search places', 'Buscar lugares'],
   searchHint: ['Country, capital or city', 'País, capital o ciudad'],
   noResults: ['No results', 'Sin resultados'],
-  settings: ['Settings', 'Configuración'],
+  settings: ['Settings', 'Ajustes'],
   language: ['Language', 'Idioma'],
   theme: ['Theme', 'Tema'],
   themeDark: ['Space (dark)', 'Espacio (oscuro)'],
@@ -94,7 +100,7 @@ const STRINGS: Record<string, [string, string]> = {
   politicalNote: ['Colour family = continent; every country has its own shade.', 'Familia de color = continente; cada país tiene su propio tono.'],
   // categories
   'cat.political': ['Political', 'Político'],
-  'cat.people': ['People', 'Población'],
+  'cat.people': ['People', 'Población', 'a group of filters: population'],
   'cat.nature': ['Landforms & water', 'Relieve y agua'],
   'cat.climate': ['Climate & weather', 'Clima y tiempo'],
   'cat.earth': ['Earth science', 'Ciencias de la Tierra'],
@@ -177,7 +183,7 @@ const STRINGS: Record<string, [string, string]> = {
   'era.modern': ['1800–1945', '1800–1945'],
   'era.contemporary': ['Since 1945', 'Desde 1945'],
   warPrev: ['Previous step', 'Paso anterior'],
-  warNext: ['Next step', 'Paso siguiente'],
+  warNext: ['Next step', 'Siguiente paso'],
   warStepOf: ['step {k} of {n}', 'paso {k} de {n}'],
   warDetails: ['Details', 'Detalles'],
   warAftermath: ['Aftermath', 'Después'],
@@ -256,7 +262,7 @@ const STRINGS: Record<string, [string, string]> = {
   livesUnsure: ['Not certain', 'No es seguro'],
   livesMet: ['Their paths cross', 'Sus caminos se cruzan'],
   livesSearch: ['Search a name, a field or a place…', 'Busca un nombre, un campo o un lugar…'],
-  livesAll: ['All', 'Todas'],
+  livesAll: ['All', 'Todas', 'all lives'],
   livesNone: ['No life matches.', 'Ninguna vida coincide.'],
   livesPairs: ['Two lives side by side', 'Dos vidas lado a lado'],
   livesPairsHint: ['Two people on one map, in the same years, and where their paths crossed.', 'Dos personas en un mismo mapa, en los mismos años, y dónde se cruzaron sus caminos.'],
@@ -291,7 +297,7 @@ const STRINGS: Record<string, [string, string]> = {
   gamesMedals: ['Medals', 'Medallas'],
   gamesRank: ['Medal table', 'Medallero'],
   gamesRankOf: ['{r} place', '{r} lugar'],
-  gamesFinish: ['Finished', 'Resultado'],
+  gamesFinish: ['Result', 'Resultado'],
   gamesAthletes: ['Athletes', 'Atletas'],
   gamesPartOf: ['{country} was part of', '{country} formaba parte de'],
   gamesStandings: ['Final ranking', 'Clasificación final'],
@@ -313,7 +319,7 @@ const STRINGS: Record<string, [string, string]> = {
   storyReadAll: ['Read all of it', 'Leer todo'],
   storyBrowseAll: ['Browse everything', 'Explorarlo todo'],
   storySearch: ['Search', 'Buscar'],
-  storyAllCats: ['All', 'Todo'],
+  storyAllCats: ['All', 'Todo', 'everything'],
   storyWhen: ['When', 'Cuándo'],
   storyWhere: ['Where', 'Dónde'],
   storyBy: ['Who', 'Quién'],
@@ -392,10 +398,125 @@ export function detectSpanish(): Spanish {
 
 export function t(key: string, vars?: Record<string, string | number>): string {
   const row = STRINGS[key];
-  let s = row ? row[current === 'es' ? 1 : 0] : key;
+  let s = row ? pick(row[0], row[1], row[2], true) : key;
   if (vars) for (const [k, v] of Object.entries(vars)) s = s.replace(`{${k}}`, String(v));
-  return s;
+  return out(s);
 }
+
+/** A language file's texts, keyed by the English (null: English or Spanish, written in the code). */
+let messages: Record<string, string> | null = null;
+export function setMessages(m: Record<string, string> | null) { messages = m; }
+/** Texts shown accented and in brackets ([Ŝháré]), to find on screen what does not go through L, tx or t. */
+let pseudo = false;
+export function setPseudo(on: boolean) { pseudo = on; }
+export const pseudoOn = () => pseudo;
+
+/**
+ * The text in the reader's language: the Spanish, the English's translation, or the English. A context tells apart
+ * the same English with two meanings ("Streak" of days, "Streak" on a planet): its key is context + U+0004 + English,
+ * as in gettext.
+ */
+function pick(en: string, es: string | undefined, ctx?: string, asWritten = false): string {
+  // A text written in the code says what it means even when empty ('' in Spanish: nothing); a data field with no
+  // Spanish yet shows the English.
+  if (current === 'es') return asWritten ? es ?? en : es || en;
+  if (messages) return messages[ctx ? `${ctx}\u0004${en}` : en] || en;
+  return en;
+}
+
+const ACCENT: Record<string, string> = { a: 'á', e: 'é', i: 'í', o: 'ó', u: 'ú', c: 'ç', n: 'ñ', s: 'ŝ', y: 'ý', A: 'Á', E: 'É', I: 'Í', O: 'Ó', U: 'Ú', C: 'Ç', N: 'Ñ', S: 'Ŝ' };
+function out(s: string): string {
+  if (!pseudo || !s) return s;
+  return `[${s.replace(/[aeioucnsyAEIOUCNS]/g, (c) => ACCENT[c])}]`;
+}
+
+/**
+ * A pattern with its values: {0} is the first value; in {0, plural, =0 {none} one {# day} other {# days}} the case is
+ * picked by the number (as the language counts: Intl.PluralRules) and # is the number; {0, select, f {…} other {…}}
+ * is picked by the value. Braces that are not followed by a number are left as they are.
+ */
+export function fmt(p: string, args: readonly unknown[]): string {
+  let res = '', i = 0;
+  while (i < p.length) {
+    const c = p[i];
+    if (c === '{' && /\d/.test(p[i + 1] ?? '')) {
+      const end = closing(p, i);
+      if (end < 0) { res += p.slice(i); break; }
+      res += arg(p.slice(i + 1, end), args);
+      i = end + 1;
+    } else { res += c; i++; }
+  }
+  return res;
+}
+/** Where the brace opened at i closes. */
+function closing(p: string, i: number): number {
+  let depth = 0;
+  for (let k = i; k < p.length; k++) {
+    if (p[k] === '{') depth++;
+    else if (p[k] === '}' && --depth === 0) return k;
+  }
+  return -1;
+}
+function arg(body: string, args: readonly unknown[]): string {
+  const m = /^(\d+)\s*(?:,\s*(plural|select)\s*,\s*([\s\S]*))?$/.exec(body);
+  if (!m) return `{${body}}`;
+  const v = args[+m[1]];
+  if (!m[2]) return v == null ? '' : String(v);
+  // The cases: key {text} key {text}…
+  const cases: Record<string, string> = {};
+  const rest = m[3];
+  let k = 0;
+  while (k < rest.length) {
+    const km = /^\s*(=?[\w-]+)\s*\{/.exec(rest.slice(k));
+    if (!km) break;
+    const open = k + km[0].length - 1;
+    const end = closing(rest, open);
+    if (end < 0) break;
+    cases[km[1]] = rest.slice(open + 1, end);
+    k = end + 1;
+  }
+  if (m[2] === 'select') return fmt(cases[String(v)] ?? cases.other ?? '', args);
+  const n = Number(v);
+  let text = cases[`=${n}`];
+  if (text == null) {
+    let cat = 'other';
+    try { cat = new Intl.PluralRules(locale()).select(n); } catch { /* other */ }
+    text = cases[cat] ?? cases.other ?? '';
+  }
+  return fmt(text.replace(/#/g, new Intl.NumberFormat(locale(), { maximumFractionDigits: 3 }).format(n)), args);
+}
+
+/** A list in the reader's language (the Spanish list, or each English item's translation). */
+export function txs(text: { en: readonly string[]; es?: readonly string[] } | undefined): string[] {
+  if (!text) return [];
+  if (current === 'es' && text.es?.length) return text.es.map(out);
+  return text.en.map((en) => out(pick(en, undefined)));
+}
+
+/** L with a context, for an English text that means two things: Lc('a stripe on a planet', 'Streak', 'Franja'). */
+export function Lc(ctx: string, en: string, es: string, ...args: unknown[]): string {
+  const s = pick(en, es, ctx, true);
+  return out(args.length ? fmt(s, args) : s);
+}
+
+/** f's texts in another language (a description kept in both, the English for a file name…). */
+export function inLang<T>(l: Lang, f: () => T): T {
+  const was = current, m = messages, p = pseudo;
+  current = l; messages = null; pseudo = false;
+  try { return f(); } finally { current = was; messages = m; pseudo = p; }
+}
+
+/** The text in the reader's language, with its values: L('{0} days', '{0} días', n). */
+export function L(en: string, es: string, ...args: unknown[]): string {
+  const s = pick(en, es, undefined, true);
+  return out(args.length ? fmt(s, args) : s);
+}
+
+/**
+ * The language of the app's data (names, stories, guides are written in English and Spanish): Spanish when the
+ * reader reads Spanish, English otherwise.
+ */
+export function dataLang(): 'en' | 'es' { return current === 'es' ? 'es' : 'en'; }
 
 /** A string of the table in both languages (for labels that switch with the language). */
 export function both(key: string): { en: string; es: string } {
@@ -403,9 +524,9 @@ export function both(key: string): { en: string; es: string } {
   return row ? { en: row[0], es: row[1] } : { en: key, es: key };
 }
 
-export function tx(text: { en: string; es: string } | undefined): string {
+export function tx(text: { en: string; es?: string; ctx?: string } | undefined): string {
   if (!text) return '';
-  return current === 'es' ? text.es || text.en : text.en;
+  return out(pick(text.en, text.es, text.ctx));
 }
 
 /** The phone's language (v0.35.0): the first of its languages the app speaks, English otherwise. */

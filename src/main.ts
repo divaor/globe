@@ -6,7 +6,7 @@ import { MyData } from './mydata/mydata';
 import { myDataPanel } from './mydata/panel';
 import { Upload } from 'lucide';
 import { coreLayers } from './layers';
-import { t, fmtNumber } from './app/i18n';
+import { t, tx, fmtNumber } from './app/i18n';
 import { L } from './play/host';
 import { gameDaily, dayKey } from './learn/progress';
 import { fillState } from './fill/store';
@@ -44,7 +44,7 @@ import { Plants } from './green/finder';
 import { InsideEarth } from './earth/inside';
 import { DeepSea } from './ocean/deep';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders; i18n: { L: typeof L; t: typeof t; tx: typeof tx } } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -115,7 +115,7 @@ async function boot() {
     card: () => {
       const g = master.todayGoal();
       return today.line('master', 'master', L('Master the world', 'Domina el mundo'),
-        `${L(`Today’s goal: ${g.n} of ${g.goal} answers`, `Meta de hoy: ${g.n} de ${g.goal} respuestas`)}${g.due ? ` · ${L(`${g.due} to review`, `${g.due} por repasar`)}` : ''}`, g.n >= g.goal, () => void master.openPanel());
+        `${L('Today’s goal: {0} of {1} answers', 'Meta de hoy: {0} de {1} respuestas', g.n, g.goal)}${g.due ? ` · ${L('{0} to review', '{0} por repasar', g.due)}` : ''}`, g.n >= g.goal, () => void master.openPanel());
     },
     share: () => { const g = master.todayGoal(); return g.n >= g.goal ? `🎯 ${L('Master the world', 'Domina el mundo')}: ${g.goal}/${g.goal}` : null; },
   });
@@ -158,7 +158,7 @@ async function boot() {
   });
   ALL_DECKS.forEach((deck, k) => reminders.add({
     id: `master:${deck}`, order: 20 + k, icon: master.deckIcon(deck), name: () => master.deckName(deck),
-    label: () => L(`Remind me to practise ${master.deckName(deck).toLowerCase()}`, `Recuérdame practicar ${master.deckName(deck).toLowerCase()}`),
+    label: () => L('Remind me to practise {0}', 'Recuérdame practicar {0}', master.deckName(deck).toLowerCase()),
     done: () => master.deckToday(deck), words: (day) => master.deckWords(deck, day),
   }));
   reminders.add({
@@ -174,12 +174,12 @@ async function boot() {
   reminders.add({
     id: 'onmap', order: 40, icon: '📍', name: () => L('Put it on the map', 'Ponlo en el mapa'),
     label: () => L('Remind me of Put it on the map’s puzzle', 'Recuérdame el reto de Ponlo en el mapa'), done: () => !!onmapState().dailies[dayKey()], prepare: () => onmap.ready(),
-    words: (day) => { const w = onmap.dayScope(day); return { t: `📍 ${L('Put it on the map: today', 'Ponlo en el mapa: hoy')}`, b: w ? L(`Six places in ${w} to put on the map`, `Seis lugares de ${w} para poner en el mapa`) : L('Six places to put on the map', 'Seis lugares para poner en el mapa') }; },
+    words: (day) => { const w = onmap.dayScope(day); return { t: `📍 ${L('Put it on the map: today', 'Ponlo en el mapa: hoy')}`, b: w ? L('Six places in {0} to put on the map', 'Seis lugares de {0} para poner en el mapa', w) : L('Six places to put on the map', 'Seis lugares para poner en el mapa') }; },
   });
   reminders.add({
     id: 'games', order: 50, icon: '🎮', name: () => L('Map games', 'Juegos en el mapa'),
     label: () => L('Remind me of the map games’ puzzles', 'Recuérdame los retos de los juegos en el mapa'), done: () => play.todayGames().some((g) => !!g.result),
-    words: () => { const gs = play.todayGames(); const some = gs.slice(0, 3).map((g) => g.name).join(', '); return { t: `🎮 ${L('Map games', 'Juegos en el mapa')}`, b: L(`${gs.length} puzzles today: ${some}…`, `${gs.length} retos hoy: ${some}…`) }; },
+    words: () => { const gs = play.todayGames(); const some = gs.slice(0, 3).map((g) => g.name).join(', '); return { t: `🎮 ${L('Map games', 'Juegos en el mapa')}`, b: L('{0} puzzles today: {1}…', '{0} retos hoy: {1}…', gs.length, some) }; },
   });
   // The travel guide (v0.26.0).
   const guide = new TravelGuide(app, shell, time, learn);
@@ -208,7 +208,7 @@ async function boot() {
   app.on('mydata', openMyData);
   shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, onClick: openMyData });
   void myData.init();
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill, onmap, today, reminders };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill, onmap, today, reminders, i18n: { L, t, tx } };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };
@@ -225,7 +225,7 @@ async function boot() {
   setTimeout(() => void registerScriptFonts(), 2500);
   app.emit('layers');
   if (!localStorage.getItem('atlas-globe:hinted')) {
-    shell.toast(app.lang === 'es' ? 'Arrastra para girar · pellizca para acercar · toca un país' : 'Drag to spin · pinch to zoom · tap a country', 5000);
+    shell.toast(L('Drag to spin · pinch to zoom · tap a country', 'Arrastra para girar · pellizca para acercar · toca un país'), 5000);
     try { localStorage.setItem('atlas-globe:hinted', '1'); } catch { /* ignore */ }
   }
   void registerSW(shell).then(() => reminders.init());

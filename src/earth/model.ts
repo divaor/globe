@@ -2,7 +2,7 @@
 // Depths and pressures follow PREM (Dziewonski & Anderson 1981); temperatures are today's usual estimates (the
 // deeper, the less certain: the facts in public/data/earth/inside.json give their ranges and sources).
 import { es } from '../play/host';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, tx } from '../app/i18n';
 
 export const EARTH_KM = 6371;
 
@@ -23,7 +23,7 @@ export const LAYERS: Layer[] = [
   { id: 'outer-core', top: 2891, bottom: 5150, color: '#f59f00', en: 'Outer core (liquid)', es: 'Núcleo externo (líquido)' },
   { id: 'inner-core', top: 5150, bottom: 6371, color: '#ffd43b', en: 'Inner core (solid)', es: 'Núcleo interno (sólido)' },
 ];
-export const layerName = (l: Layer) => (es() ? l.es : l.en);
+export const layerName = (l: Layer) => (tx(l));
 export const layerAt = (depthKm: number): Layer => LAYERS.find((l) => depthKm < l.bottom) ?? LAYERS[LAYERS.length - 1];
 
 /** Piecewise-linear profile: [depth km, value]. */

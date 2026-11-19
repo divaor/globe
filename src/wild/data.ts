@@ -1,12 +1,11 @@
 // Wild world (v0.30.0): the animals, the parks and the zoos (public/data/wild, from Wikidata and GBIF), and the grid
 // their ranges are kept on: GBIF's map squares, 256 columns × 128 rows of 1.40625° (about 150 km at the equator).
 import { loadJSON } from '../data/store';
-import { lang } from '../app/i18n';
+import { lang, L, tx } from '../app/i18n';
 import { hasCell, unpackCells, unpackCounts } from '../layers/carpet';
 import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 
 export { COLS, ROWS, DEG, cellAt, cellCenter } from '../layers/carpet';
 
@@ -40,7 +39,7 @@ export const GROUPS: Record<Group, { icon: string; name: { en: string; es: strin
   sea: { icon: '🐋', name: { en: 'Fish and sea life', es: 'Peces y vida marina' }, color: '#4dabf7' },
   small: { icon: '🦋', name: { en: 'Insects and other small creatures', es: 'Insectos y otros animales pequeños' }, color: '#e599f7' },
 };
-export const groupName = (g: Group) => (es() ? GROUPS[g].name.es : GROUPS[g].name.en);
+export const groupName = (g: Group) => (tx(GROUPS[g].name));
 
 /** IUCN Red List categories: their name and colour (the Red List's own scale). */
 export const STATUS: Record<Status, { en: string; es: string; color: string; ink: string }> = {
@@ -53,7 +52,7 @@ export const STATUS: Record<Status, { en: string; es: string; color: string; ink
   EX: { en: 'Extinct', es: 'Extinto', color: '#212529', ink: '#fff' },
   DD: { en: 'Data deficient', es: 'Datos insuficientes', color: '#868e96', ink: '#fff' },
 };
-export const statusName = (s: Status) => (es() ? STATUS[s].es : STATUS[s].en);
+export const statusName = (s: Status) => (tx(STATUS[s]));
 export const threatened = (s: Status | null) => s === 'VU' || s === 'EN' || s === 'CR';
 
 export const nm = (x: { n: [string, string] }) => (es() ? x.n[1] : x.n[0]);
@@ -96,7 +95,7 @@ export function factRows(a: Animal): { label: string; value: string; icon: strin
   const span = (v: number[] | undefined, unit: (x: number) => string) => (v ? (v.length > 1 ? `${unit(v[0]).replace(/\s?\S+$/, '')}–${unit(v[1])}` : unit(v[0])) : null);
   const kg = (x: number) => (x >= 1000 ? `${num(x / 1000)} t` : x < 1 ? `${num(x * 1000)} g` : `${num(x)} kg`);
   const m = (x: number) => (x < 1 ? `${num(x * 100)} cm` : `${num(x)} m`);
-  const y = (x: number) => (x < 1 ? L(`${num(Math.round(x * 12))} months`, `${num(Math.round(x * 12))} meses`) : L(`${num(x)} years`, `${num(x)} años`));
+  const y = (x: number) => (x < 1 ? L('{0} months', '{0} meses', num(Math.round(x * 12))) : L('{0} years', '{0} años', num(x)));
   const rows: { label: string; value: string; icon: string }[] = [];
   const w = span(f.kg, kg); if (w) rows.push({ label: L('Weight', 'Peso'), value: w, icon: '⚖️' });
   const len = span(f.m, m); if (len) rows.push({ label: L('Length', 'Longitud'), value: len, icon: '📏' });

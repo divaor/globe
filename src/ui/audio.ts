@@ -5,7 +5,7 @@
 // the reader's browser from Commons (its MP3 copy, else the original file), only when they are asked for.
 import { Play, Pause, Square } from 'lucide';
 import { h, icon, clear } from './dom';
-import { lang, tx } from '../app/i18n';
+import { lang, tx, L } from '../app/i18n';
 
 /** A clip as the data gives it: the MP3 copy and the original file on Commons, its page, the seconds to play
  * (`end` not after `start`: the whole recording, an animal's call), who made the recording and its licence. */
@@ -180,9 +180,9 @@ export function clipEl(c: Clip, o: { title?: string; credit?: boolean } = {}): H
   const fill = h('i');
   const bar = h('div', { class: 'clip-bar' }, fill);
   const time = h('span', { class: 'clip-time' });
-  const note = h('div', { class: 'clip-note', hidden: true }, es ? 'No se pudo reproducir esta grabación aquí; escúchala en Wikimedia Commons.' : 'This recording could not be played here; listen to it on Wikimedia Commons.');
+  const note = h('div', { class: 'clip-note', hidden: true }, L('This recording could not be played here; listen to it on Wikimedia Commons.', 'No se pudo reproducir esta grabación aquí; escúchala en Wikimedia Commons.'));
   const credit = o.credit === false ? null : h('div', { class: 'clip-credit' }, `♪ ${tx(c.by)} · ${c.license} · `, h('a', { href: c.page, target: '_blank', rel: 'noopener' }, 'Wikimedia Commons'));
-  const wrap = h('div', { class: 'item-clip' }, h('div', { class: 'clip-row' }, btn, h('div', { class: 'clip-main' }, h('div', { class: 'clip-label' }, es ? 'Escucha un fragmento' : 'Listen to a clip'), bar), time), note, credit);
+  const wrap = h('div', { class: 'item-clip' }, h('div', { class: 'clip-row' }, btn, h('div', { class: 'clip-main' }, h('div', { class: 'clip-label' }, L('Listen to a clip', 'Escucha un fragmento')), bar), time), note, credit);
   // Its length: the seconds to play, or the whole recording's once the player knows it.
   const whole = c.end <= c.start;
   const length = () => (whole ? (same(cur, c) && el && Number.isFinite(el.duration) && el.duration > 0 ? el.duration : 0) : Math.max(1, c.end - c.start));
@@ -201,10 +201,10 @@ export function clipEl(c: Clip, o: { title?: string; credit?: boolean } = {}): H
     const on = mine && (state === 'playing' || state === 'loading');
     clear(btn);
     btn.append(icon(on ? Pause : Play, 20));
-    btn.setAttribute('aria-label', on ? (es ? 'Pausa' : 'Pause') : (es ? 'Escuchar' : 'Listen'));
+    btn.setAttribute('aria-label', on ? (L('Pause', 'Pausa')) : (L('Listen', 'Escuchar')));
     wrap.classList.toggle('loading', mine && state === 'loading');
     wrap.classList.toggle('playing', mine && state === 'playing');
-    if (o.credit === false) note.textContent = es ? 'No se pudo reproducir esta grabación aquí.' : 'This recording could not be played here.';
+    if (o.credit === false) note.textContent = L('This recording could not be played here.', 'No se pudo reproducir esta grabación aquí.');
     note.hidden = !same(failed, c);
     cancelAnimationFrame(raf);
     progress();
@@ -250,8 +250,8 @@ export function clipMini(): HTMLElement {
     const live = !!cur && origin === 'card' && (state === 'playing' || state === 'loading');
     const show = live && !onScreen(cur!);
     if (mini!.hidden === !show && (!show || name.textContent === curTitle)) { /* unchanged */ } else {
-      name.textContent = curTitle || (es() ? 'Sonido' : 'Sound');
-      stop.title = es() ? 'Detener' : 'Stop';
+      name.textContent = curTitle || (L('Sound', 'Sonido'));
+      stop.title = L('Stop', 'Detener');
       stop.setAttribute('aria-label', `${stop.title}: ${name.textContent}`);
       mini!.hidden = !show;
     }

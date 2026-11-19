@@ -288,6 +288,7 @@ html.map-light .brand-name { color: #1d2433; text-shadow: 0 0 6px rgba(255,255,2
 .settings-actions { margin: 18px 0 8px; display: flex; gap: 8px; flex-wrap: wrap; }
 .credits { padding-left: 18px; margin: 6px 0; font-size: var(--fs-sm); line-height: 1.5; }
 .about p { line-height: 1.5; font-size: var(--fs-md); }
+.about .about-lead { font-size: var(--fs-lg); font-weight: var(--fw-semi); }
 
 /* ---------- projections */
 .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }

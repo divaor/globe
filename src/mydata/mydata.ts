@@ -6,7 +6,7 @@ import { geoBounds, geoContains } from 'd3-geo';
 import type { Topology } from 'topojson-specification';
 import { numericLayer, categoricalLayer } from '../layers/choropleth';
 import { SEQUENTIAL, categorical, samplePalette } from '../engine/colors';
-import { fmtNumber, fmtCompact, lang } from '../app/i18n';
+import { fmtNumber, fmtCompact, lang, L, inLang, type Lang } from '../app/i18n';
 import { loadJSON, shapesFrom, type Shape } from '../data/store';
 import { setExtraField } from '../compare/model';
 import type { App } from '../app/app';
@@ -36,7 +36,6 @@ export interface MySet {
 }
 
 export const PALETTES = ['viridis', 'ylorrd', 'blues', 'greens', 'purples', 'magma', 'rdylgn', 'spectral', 'rdbu'];
-const L = (en: string, es: string) => (lang() === 'es' ? es : en);
 
 // ---- Storage (IndexedDB: tables can be large) -----------------------------------------------------
 const DB = 'atlas-mydata', STORE = 'sets';
@@ -325,8 +324,8 @@ export class MyData {
       },
       legend: (inst) => {
         const c = colOf(inst);
-        const lg = c?.kind === 'category' || (c?.kind === 'number' && c !== sizeCol) ? scaleOf(inst).legend : { kind: 'categories' as const, title: set.name, items: [{ color: 'rgba(255, 146, 43, 0.85)', shape: 'dot' as const, label: L(`${set.points.length} places`, `${set.points.length} lugares`) }] };
-        return withActions({ ...lg, note: sizeCol ? L(`Size: ${sizeCol.name}`, `Tamaño: ${sizeCol.name}`) : undefined }, inst);
+        const lg = c?.kind === 'category' || (c?.kind === 'number' && c !== sizeCol) ? scaleOf(inst).legend : { kind: 'categories' as const, title: set.name, items: [{ color: 'rgba(255, 146, 43, 0.85)', shape: 'dot' as const, label: L('{0} places', '{0} lugares', set.points.length) }] };
+        return withActions({ ...lg, note: sizeCol ? L('Size: {0}', 'Tamaño: {0}', sizeCol.name) : undefined }, inst);
       },
       tap: (_lon, _lat, inst, ui) => {
         const p = crowdOf<Dot>(inst, POINTS_APART).pick(ui, 16)?.p;
@@ -366,12 +365,14 @@ export class MyData {
 
 export const layerId = (s: MySet) => `my-${s.id}`;
 
-/** One line about a table: what it covers and its years. */
-export function describe(s: MySet, l: 'en' | 'es'): string {
-  const es = l === 'es';
-  const what = s.geo === 'points' ? (es ? `${s.stats.matched} lugares` : `${s.stats.matched} places`)
-    : s.geo === 'region' ? (es ? `${s.stats.matched} regiones` : `${s.stats.matched} regions`)
-    : (es ? `${s.stats.matched} países` : `${s.stats.matched} countries`);
-  const years = s.years.length > 1 ? `, ${s.years[0]}–${s.years[s.years.length - 1]}` : s.years.length ? `, ${s.years[0]}` : '';
-  return `${es ? 'Tus datos' : 'Your data'} (${s.file}): ${what}${years}.`;
+/** One line about a table: what it covers and its years (in the language given). */
+export function describe(s: MySet, l: Lang = lang()): string {
+  return inLang(l, () => {
+    const n = s.stats.matched;
+    const what = s.geo === 'points' ? L('{0, plural, one {# place} other {# places}}', '{0, plural, one {# lugar} other {# lugares}}', n)
+      : s.geo === 'region' ? L('{0, plural, one {# region} other {# regions}}', '{0, plural, one {# región} other {# regiones}}', n)
+      : L('{0, plural, one {# country} other {# countries}}', '{0, plural, one {# país} other {# países}}', n);
+    const years = s.years.length > 1 ? `, ${s.years[0]}–${s.years[s.years.length - 1]}` : s.years.length ? `, ${s.years[0]}` : '';
+    return L('Your data ({0}): {1}{2}.', 'Tus datos ({0}): {1}{2}.', s.file, what, years);
+  });
 }

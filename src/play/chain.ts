@@ -7,7 +7,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, dataLang, tx } from '../app/i18n';
 import { Borders, seeded, type BorderData } from './route';
 import { starText } from './score';
 import { CHAIN_SECS, chainScore, chainStars, sample } from './logic';
@@ -73,9 +73,9 @@ export class BorderChain implements HostGame {
     const s = this.st;
     if (!s || s.done) return;
     const last = s.chain[s.chain.length - 1];
-    const name = (x: string) => this.app.data.name(x, es() ? 'es' : 'en');
-    if (s.chain.includes(id)) { s.msg = { ok: false, text: L(`${name(id)} is already in the chain.`, `${name(id)} ya está en la cadena.`) }; s.flash = { id, until: performance.now() + 900 }; }
-    else if (!s.g.borders(last, id)) { s.msg = { ok: false, text: L(`${name(id)} does not border ${name(last)}.`, `${name(id)} no limita con ${name(last)}.`) }; s.flash = { id, until: performance.now() + 900 }; }
+    const name = (x: string) => this.app.data.name(x, dataLang());
+    if (s.chain.includes(id)) { s.msg = { ok: false, text: L('{0} is already in the chain.', '{0} ya está en la cadena.', name(id)) }; s.flash = { id, until: performance.now() + 900 }; }
+    else if (!s.g.borders(last, id)) { s.msg = { ok: false, text: L('{0} does not border {1}.', '{0} no limita con {1}.', name(id), name(last)) }; s.flash = { id, until: performance.now() + 900 }; }
     else {
       s.chain.push(id);
       s.msg = null;
@@ -98,25 +98,25 @@ export class BorderChain implements HostGame {
     this.clock = null;
     this.render();
     this.app.renderer.requestRender();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   render() {
     const s = this.st;
     clear(this.card);
     if (!s) return;
-    const name = (x: string) => this.app.data.name(x, es() ? 'es' : 'en');
+    const name = (x: string) => this.app.data.name(x, dataLang());
     const title = `⛓️ ${s.day ? L('Daily Border chain', 'Cadena de fronteras del día') : L('Border chain', 'Cadena de fronteras')} · ${s.chain.length}`;
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     const chain = h('div', { class: 'hop-path' }, ...s.chain.map((id, i) => h('span', { class: `hop-step${i === 0 ? ' from' : ''}` }, name(id))));
     if (s.done) {
       const why = s.done.why === 'dead' ? L('A dead end: every neighbour was already in the chain.', 'Un callejón sin salida: todos los vecinos ya estaban en la cadena.') : s.done.why === 'time' ? L('Time is up.', 'Se acabó el tiempo.') : '';
-      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: `${L(`${s.chain.length} countries`, `${s.chain.length} países`)}${why ? ` · ${why}` : ''}` });
+      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: `${L('{0} countries', '{0} países', s.chain.length)}${why ? ` · ${why}` : ''}` });
       this.card.append(res);
       if (!s.fold) res.append(chain);
       const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `⛓️ ${L('Border chain', 'Cadena de fronteras')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.chain.map(name).join(' › ')}`));
-      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Jugar otra vez'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start(); });
       res.append(h('div', { class: 'result-actions' }, share, again));
       return;
@@ -155,7 +155,7 @@ export class BorderChain implements HostGame {
     ctx.restore();
     for (const id of s.chain) {
       const q = rc.project(...pt(id));
-      if (q) rc.labels.add({ text: this.app.data.name(id, es() ? 'es' : 'en'), x: q[0] + 6, y: q[1], align: 'left', priority: 3000, size: 12.5, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
+      if (q) rc.labels.add({ text: this.app.data.name(id, dataLang()), x: q[0] + 6, y: q[1], align: 'left', priority: 3000, size: 12.5, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
     }
   }
 }

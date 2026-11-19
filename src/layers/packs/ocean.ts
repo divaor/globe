@@ -8,7 +8,7 @@ import type { Shell } from '../../ui/shell';
 import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, RenderCtx } from '../types';
 import type { RasterTexture } from '../../engine/gl';
 import { loadJSON, shapesFrom, dataUrl, type Shape } from '../../data/store';
-import { fmtNumber, lang } from '../../app/i18n';
+import { fmtNumber, lang, tx, txs } from '../../app/i18n';
 import { L } from '../../play/host';
 import { LC } from '../context';
 import { loadDepths, heightAt, seaDepthAt, zoneOf, ZONES, oceanAt, OCEAN_NAMES, depths, type Depths } from '../../ocean/depth';
@@ -18,10 +18,10 @@ let GL: import('../../engine/gl').GLRaster | null = null;
 let seaZoom = 0;
 let SHELL: Shell | null = null;
 const es = () => lang() === 'es';
-const T = (x?: { en: string; es: string } | null) => (x ? (es() ? x.es : x.en) : '');
+const T = (x?: { en: string; es: string } | null) => (x ? (tx(x)) : '');
 const m = (v: number) => `${fmtNumber(Math.round(v))} m`;
 const MONTHS = { en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'] };
-const monthName = (i: number) => (es() ? MONTHS.es : MONTHS.en)[((i % 12) + 12) % 12];
+const monthName = (i: number) => (txs(MONTHS))[((i % 12) + 12) % 12];
 
 /** The item nearest a tap among those drawn on screen, within `px` pixels. */
 function pickNear<X>(items: X[], at: (x: X) => [number, number], ui: LayerTapUi, px = 14): X | null {
@@ -98,7 +98,7 @@ export const seaFloor: LayerDef = {
     const c = heightAt(depths, lon, lat);
     if (c.mean >= 0 && c.deep >= -200) return false;
     const deepest = seaDepthAt(depths, lon, lat), z = zoneOf(-Math.min(c.mean, 0));
-    ui.card('🌊', L(`${m(-c.mean)} deep`, `${m(-c.mean)} de profundidad`), `${OCEAN_NAMES[oceanAt(lon, lat)]()} · ${fmtNumber(Math.abs(lat), 1)}°${lat >= 0 ? 'N' : 'S'}, ${fmtNumber(Math.abs(lon), 1)}°${lon >= 0 ? 'E' : L('W', 'O')}`, [
+    ui.card('🌊', L('{0} deep', '{0} de profundidad', m(-c.mean)), `${OCEAN_NAMES[oceanAt(lon, lat)]()} · ${fmtNumber(Math.abs(lat), 1)}°${lat >= 0 ? 'N' : 'S'}, ${fmtNumber(Math.abs(lon), 1)}°${lon >= 0 ? 'E' : L('W', 'O')}`, [
       { label: L('Zone', 'Zona'), value: z.name(), icon: '🔷' },
       ...(deepest + c.mean > 300 ? [{ label: L('Deepest point near here', 'Lo más hondo cerca de aquí'), value: m(deepest), icon: '⬇️' }] : []),
     ], [{ label: L('🤿 Dive here', '🤿 Bucear aquí'), onClick: () => void window.atlas?.deep.diveAt(lon, lat) }]);
@@ -123,12 +123,12 @@ let places: Places | null = null;
 const loadPlaces = async () => (places ??= await loadJSON<Places>('ocean/places.json'));
 const BRIDGES: [string, string, number, number][] = [['Beringia', 'Beringia', -168, 65], ['Doggerland', 'Doggerland', 3, 54.5], ['Sundaland', 'Sondalandia', 110, 2], ['Sahul', 'Sahul', 140, -10]];
 function levelWords(lv: number): string {
-  if (lv > 0.5) return L(`The sea ${m(lv)} higher: the land that low goes under. Elevation only, not a flood forecast.`, `El mar ${m(lv)} más alto: la tierra así de baja queda bajo el agua. Solo la altura, no un pronóstico de inundación.`);
+  if (lv > 0.5) return L('The sea {0} higher: the land that low goes under. Elevation only, not a flood forecast.', 'El mar {0} más alto: la tierra así de baja queda bajo el agua. Solo la altura, no un pronóstico de inundación.', m(lv));
   if (lv > -0.5) return L('The sea where it is today.', 'El mar donde está hoy.');
-  if (lv > -130) return L(`The sea ${m(-lv)} lower. At about −120 m, as in the last Ice Age, Asia and America join at Beringia, Britain at Doggerland, Borneo and Java at Sundaland, Australia and New Guinea at Sahul.`, `El mar ${m(-lv)} más bajo. A unos −120 m, como en la última glaciación, Asia y América se unen en Beringia, Gran Bretaña en Doggerland, Borneo y Java en Sondalandia, Australia y Nueva Guinea en Sahul.`);
-  if (lv > -2500) return L(`The sea ${m(-lv)} lower: the continental shelves are dry; the oceans shrink to their basins.`, `El mar ${m(-lv)} más bajo: las plataformas continentales quedan secas; los océanos se encogen a sus cuencas.`);
-  if (lv > -6000) return L(`The sea ${m(-lv)} lower: the mid-ocean ridges rise out of the water like mountain ranges.`, `El mar ${m(-lv)} más bajo: las dorsales oceánicas salen del agua como cordilleras.`);
-  return L(`The sea ${m(-lv)} lower: only the trenches still hold water.`, `El mar ${m(-lv)} más bajo: solo las fosas conservan agua.`);
+  if (lv > -130) return L('The sea {0} lower. At about −120 m, as in the last Ice Age, Asia and America join at Beringia, Britain at Doggerland, Borneo and Java at Sundaland, Australia and New Guinea at Sahul.', 'El mar {0} más bajo. A unos −120 m, como en la última glaciación, Asia y América se unen en Beringia, Gran Bretaña en Doggerland, Borneo y Java en Sondalandia, Australia y Nueva Guinea en Sahul.', m(-lv));
+  if (lv > -2500) return L('The sea {0} lower: the continental shelves are dry; the oceans shrink to their basins.', 'El mar {0} más bajo: las plataformas continentales quedan secas; los océanos se encogen a sus cuencas.', m(-lv));
+  if (lv > -6000) return L('The sea {0} lower: the mid-ocean ridges rise out of the water like mountain ranges.', 'El mar {0} más bajo: las dorsales oceánicas salen del agua como cordilleras.', m(-lv));
+  return L('The sea {0} lower: only the trenches still hold water.', 'El mar {0} más bajo: solo las fosas conservan agua.', m(-lv));
 }
 let levelTex: RasterTexture | null = null, levelDrawn = NaN, levelAt = 0;
 export const drainOceans: LayerDef = {
@@ -191,13 +191,13 @@ export const drainOceans: LayerDef = {
     const lv = levelOfT(t);
     const under = lv > 0.5 ? (places?.rise ?? []).filter((c) => c.elev_m < lv).length : 0;
     return {
-      kind: 'categories', title: L(`Sea level ${lv > 0 ? '+' : lv < 0 ? '−' : ''}${m(Math.abs(lv))}`, `Nivel del mar ${lv > 0 ? '+' : lv < 0 ? '−' : ''}${m(Math.abs(lv))}`),
-      items: lv < 0 ? [{ color: '#d9c48b', label: L('Sea floor left dry', 'Fondo marino que queda seco') }] : lv > 0 ? [{ color: '#1c5fb3', label: L(`Land under the sea${under ? ` · ${under} big cities` : ''}`, `Tierra bajo el mar${under ? ` · ${under} grandes ciudades` : ''}`) }] : [],
+      kind: 'categories', title: L('Sea level {0}{1}', 'Nivel del mar {0}{1}', lv > 0 ? '+' : lv < 0 ? '−' : '', m(Math.abs(lv))),
+      items: lv < 0 ? [{ color: '#d9c48b', label: L('Sea floor left dry', 'Fondo marino que queda seco') }] : lv > 0 ? [{ color: '#1c5fb3', label: (under ? L('Land under the sea · {0} big cities', 'Tierra bajo el mar · {0} grandes ciudades', under) : L('Land under the sea', 'Tierra bajo el mar')) }] : [],
       note: levelWords(lv),
       player: {
         min: 0, max: LEVELS.length - 1, value: t, playing: !!inst.state.playing, speeds: [0.5, 1, 2], speed: (inst.state.speed as number) ?? 1,
         label: (v) => { const x = levelOfT(v); return `${x > 0 ? '+' : x < 0 ? '−' : ''}${m(Math.abs(x))}`; },
-        speedLabel: (v) => L(`${v}× speed`, `velocidad ${v}×`),
+        speedLabel: (v) => L('{0}× speed', 'velocidad {0}×', v),
         onToggle: () => { if (!inst.state.playing && (inst.state.t as number) >= LEVELS.length - 1) inst.state.t = 6; inst.state.playing = !inst.state.playing; inst.state.last = performance.now(); LC.requestRender(); LC.notify?.(); },
         onSeek: (v) => { inst.state.t = v; inst.state.playing = false; LC.requestRender(); LC.notify?.(); },
         onSpeed: (v) => { inst.state.speed = v; LC.notify?.(); },
@@ -272,8 +272,8 @@ export const seaFeatures: LayerDef = {
       const d = depths ? seaDepthAt(depths, r[3], r[4]) : 0;
       ui.card('⛰️', featureName(r[1], type), es() ? (feats!.generic[type] ?? type) : type, [
         ...(d > 0 ? [{ label: L('Sea floor here', 'Fondo aquí'), value: m(d), icon: '⬇️' }] : []),
-        ...(nt?.[0] ? [{ label: L('Found', 'Descubierta'), value: String(nt[0]), icon: '🔭' }] : []),
-      ], [{ label: L('🤿 Dive here', '🤿 Bucear aquí'), onClick: () => void window.atlas?.deep.diveAt(r[3], r[4]) }], nt?.[1] ? [L(`How it got its name: ${nt[1]}`, `Cómo recibió su nombre (en inglés): ${nt[1]}`)] : []);
+        ...(nt?.[0] ? [{ label: L('Discovered', 'Descubrimiento'), value: String(nt[0]), icon: '🔭' }] : []),
+      ], [{ label: L('🤿 Dive here', '🤿 Bucear aquí'), onClick: () => void window.atlas?.deep.diveAt(r[3], r[4]) }], nt?.[1] ? [L('How it got its name: {0}', 'Cómo recibió su nombre (en inglés): {0}', nt[1])] : []);
     };
     if (notes) show(notes[String(r[0])]);
     else void loadJSON<Record<string, [number | null, string | null]>>('ocean/features-notes.json').then((n) => { notes = n; show(n[String(r[0])]); }).catch(() => show(undefined));
@@ -286,7 +286,7 @@ export const seaFeatures: LayerDef = {
     // "Deepest" (and "lo más hondo"...) finds the deepest place in the ocean (v0.33.2).
     const deep = deepestAsked(match, ['deepest point', 'deepest place', 'deepest trench', 'deepest ocean', 'deepest sea', 'punto mas profundo', 'lugar mas profundo', 'fosa mas profunda', 'lo mas hondo', 'lo mas profundo']);
     const bottom = deep ? [...(feats?.famous ?? [])].filter((f) => f.depth_m).sort((a, b) => (b.depth_m ?? 0) - (a.depth_m ?? 0))[0] : null;
-    if (bottom) out.push({ label: T(bottom.name), sub: L(`⬇️ The deepest place in the ocean: ${fmtNumber(bottom.depth_m!)} m`, `⬇️ El lugar más profundo del océano: ${fmtNumber(bottom.depth_m!)} m`), icon: '⛰️', lon: bottom.lon, lat: bottom.lat, score: deep + 15, wz: 4 });
+    if (bottom) out.push({ label: T(bottom.name), sub: L('⬇️ The deepest place in the ocean: {0} m', '⬇️ El lugar más profundo del océano: {0} m', fmtNumber(bottom.depth_m!)), icon: '⛰️', lon: bottom.lon, lat: bottom.lat, score: deep + 15, wz: 4 });
     for (const f of feats?.famous ?? []) {
       const sc = Math.max(match(f.name.en), match(f.name.es));
       if (sc >= 50) out.push({ label: T(f.name), sub: L('Undersea feature', 'Forma submarina'), icon: '⛰️', lon: f.lon, lat: f.lat, score: sc + 10, wz: 4 });
@@ -329,14 +329,14 @@ export const ventsLayer: LayerDef = {
     if (!v) return false;
     ui.card('♨️', T(v.name), L('Hydrothermal vent', 'Fuente hidrotermal'), [
       { label: L('Depth', 'Profundidad'), value: m(v.depth_m), icon: '⬇️' },
-      ...(v.year ? [{ label: L('Found', 'Descubierta'), value: String(v.year), icon: '🔭' }] : []),
+      ...(v.year ? [{ label: L('Discovered', 'Descubrimiento'), value: String(v.year), icon: '🔭' }] : []),
     ], [{ label: L('🤿 Dive here', '🤿 Bucear aquí'), onClick: () => void window.atlas?.deep.diveAt(v.lon, v.lat) }], [T(v.text)]);
     return true;
   },
   legend() {
     return { kind: 'categories', items: [
       { color: '#ff7828', label: L('Black and white smokers', 'Fumarolas negras y blancas'), shape: 'dot' }, { color: '#f0f0f0', label: L('Alkaline (Lost City)', 'Alcalinas (Ciudad Perdida)'), shape: 'dot' }, { color: '#82c8ff', label: L('Cold seeps', 'Emanaciones frías'), shape: 'dot' },
-    ], note: L(`${vents.length} vent fields. Tap one for how deep it is and what lives there.`, `${vents.length} campos de fuentes. Toca uno para ver su profundidad y qué vive allí.`) };
+    ], note: L('{0} vent fields. Tap one for how deep it is and what lives there.', '{0} campos de fuentes. Toca uno para ver su profundidad y qué vive allí.', vents.length) };
   },
 };
 
@@ -356,7 +356,7 @@ const ERAS: { id: Era; en: string; es: string; color: string }[] = [
 const eraOfYear = (y?: number): Era | null => (y == null ? null : y < 1500 ? 'ancient' : y < 1850 ? 'sail' : y < 1914 ? 'steam' : y < 1919 ? 'ww1' : y < 1939 ? 'steam' : y < 1946 ? 'ww2' : 'modern');
 function wreckCard(ui: { card: LayerTapUi['card'] }, w: Wreck) {
   ui.card('⚓', T(w.name), T(w.place), [
-    { label: L('Sank', 'Se hundió'), value: w.year < 0 ? L(`${fmtNumber(-w.year)} BCE`, `${fmtNumber(-w.year)} a. C.`) : String(w.year), icon: '📅' },
+    { label: L('Sank', 'Se hundió'), value: w.year < 0 ? L('{0} BCE', '{0} a. C.', fmtNumber(-w.year)) : String(w.year), icon: '📅' },
     { label: L('Depth', 'Profundidad'), value: w.depth_m > 0 ? m(w.depth_m) : L('On the shore', 'En la costa'), icon: '⬇️' },
     ...(w.found ? [{ label: L('Found', 'Hallado'), value: String(w.found), icon: '🔭' }] : []),
   ], w.depth_m > 30 ? [{ label: L('🤿 Dive to it', '🤿 Bucear hasta él'), onClick: () => void window.atlas?.deep.diveAt(w.lon, w.lat) }] : [], [T(w.text)]);
@@ -414,9 +414,9 @@ export const wrecksLayer: LayerDef = {
     const want = String(inst.options.era ?? 'all');
     const deepest = [...wrecks].sort((a, b) => b.depth_m - a.depth_m)[0];
     return {
-      kind: 'categories', items: ERAS.map((e) => ({ color: e.color, label: `${es() ? e.es : e.en} · ${wrecks.filter((w) => w.era === e.id).length}`, shape: 'dot' as const })),
-      note: want === 'all' ? L(`${wrecks.length} famous wrecks with their stories, and ${fmtNumber(moreWrecks.length)} more from Wikidata (the grey dots).`, `${wrecks.length} naufragios famosos con su historia y ${fmtNumber(moreWrecks.length)} más de Wikidata (los puntos grises).`) : undefined,
-      actions: deepest ? [{ label: L(`The deepest: ${T(deepest.name)}`, `El más profundo: ${T(deepest.name)}`), icon: '⬇️', onClick: () => { APP?.flyTo(deepest.lon, deepest.lat, 6); wreckCard({ card: (...a) => SHELL?.card.showCustom(...a) }, deepest); } }] : [],
+      kind: 'categories', items: ERAS.map((e) => ({ color: e.color, label: `${tx(e)} · ${wrecks.filter((w) => w.era === e.id).length}`, shape: 'dot' as const })),
+      note: want === 'all' ? L('{0} famous wrecks with their stories, and {1} more from Wikidata (the grey dots).', '{0} naufragios famosos con su historia y {1} más de Wikidata (los puntos grises).', wrecks.length, fmtNumber(moreWrecks.length)) : undefined,
+      actions: deepest ? [{ label: L('The deepest: {0}', 'El más profundo: {0}', T(deepest.name)), icon: '⬇️', onClick: () => { APP?.flyTo(deepest.lon, deepest.lat, 6); wreckCard({ card: (...a) => SHELL?.card.showCustom(...a) }, deepest); } }] : [],
     };
   },
   searchHint: { en: 'shipwrecks', es: 'naufragios' },
@@ -425,7 +425,7 @@ export const wrecksLayer: LayerDef = {
     const out: LayerHit[] = [];
     // "Deepest" (and "el más profundo"...) finds the deepest wrecks found (v0.33.2), the deepest first.
     const deep = deepestAsked(match, ['deepest shipwreck', 'deepest wreck', 'deepest ship', 'naufragio mas profundo', 'barco mas profundo', 'pecio mas profundo', 'el mas profundo', 'mas profundo']);
-    if (deep) [...wrecks].sort((a, b) => b.depth_m - a.depth_m).slice(0, 3).forEach((w, i) => out.push({ label: T(w.name), sub: i === 0 ? L(`⚓ The deepest wreck found: ${fmtNumber(w.depth_m)} m`, `⚓ El naufragio más profundo hallado: ${fmtNumber(w.depth_m)} m`) : L(`⚓ ${fmtNumber(w.depth_m)} m down`, `⚓ A ${fmtNumber(w.depth_m)} m`), icon: '⚓', lon: w.lon, lat: w.lat, score: deep + 25 - i, wz: 6, open: (ui) => wreckCard(ui, w) }));
+    if (deep) [...wrecks].sort((a, b) => b.depth_m - a.depth_m).slice(0, 3).forEach((w, i) => out.push({ label: T(w.name), sub: i === 0 ? L('⚓ The deepest wreck found: {0} m', '⚓ El naufragio más profundo hallado: {0} m', fmtNumber(w.depth_m)) : L('⚓ {0} m down', '⚓ A {0} m', fmtNumber(w.depth_m)), icon: '⚓', lon: w.lon, lat: w.lat, score: deep + 25 - i, wz: 6, open: (ui) => wreckCard(ui, w) }));
     for (const w of wrecks) { const sc = Math.max(match(w.name.en), match(w.name.es)); if (sc >= 50) out.push({ label: T(w.name), sub: `⚓ ${T(w.place)}`, icon: '⚓', lon: w.lon, lat: w.lat, score: sc + 10, wz: 6, open: (ui) => wreckCard(ui, w) }); }
     for (const w of moreWrecks) { const sc = Math.max(match(w.n[0]), match(w.n[1])); if (sc >= 60) out.push({ label: es() ? w.n[1] : w.n[0], sub: L('⚓ Shipwreck', '⚓ Naufragio'), icon: '⚓', lon: w.at[0], lat: w.at[1], score: sc, wz: 7 }); }
     return out.sort((a, b) => b.score - a.score).slice(0, 6);
@@ -526,7 +526,7 @@ export const kelpLayer: LayerDef = {
     return true;
   },
   legend() {
-    return { kind: 'categories', items: [{ color: '#2f9e44', label: L(`Mangroves · ${mangroves.length} ecoregions`, `Manglares · ${mangroves.length} ecorregiones`) }, { color: '#947828', label: L(`Kelp forests · ${places?.kelp.length ?? 0}`, `Bosques de kelp · ${places?.kelp.length ?? 0}`), shape: 'dot' }] };
+    return { kind: 'categories', items: [{ color: '#2f9e44', label: L('Mangroves · {0} ecoregions', 'Manglares · {0} ecorregiones', mangroves.length) }, { color: '#947828', label: L('Kelp forests · {0}', 'Bosques de kelp · {0}', places?.kelp.length ?? 0), shape: 'dot' }] };
   },
 };
 const geoContainsSafe = (s: Shape<unknown>, lon: number, lat: number) => { try { return geoContains(s.feature as never, [lon, lat]); } catch { return false; } };

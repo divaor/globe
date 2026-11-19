@@ -9,14 +9,13 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import type { TravelGuide } from '../guide/guide';
 import { h, icon, clear } from '../ui/dom';
-import { lang, fmtCompact } from '../app/i18n';
+import { lang, fmtCompact, L, tx } from '../app/i18n';
 import { nowInHook } from '../modes/stories';
 import { loadArt, loadArch, loadNowIn, nm, yearText, commons, kindIcon, KINDS, PERIODS, museumPlace, workWhy, buildingPlace, type Work, type Building, type Museum, type ArtData } from './data';
 import { planStar, planHooks, addPlace, type PlaceSpec } from '../guide/plan';
 import { workCard, buildingCard, museumCard } from './cards';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 const fold = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
 /** A dot of a trail on the map: a museum (with how many of the artist's works) or a building; a tap opens its card. */
@@ -89,7 +88,7 @@ export class ArtGuide {
     if (!art || !arch) { this.shell.toast(L('Art and architecture needs its data; check your connection.', 'Arte y arquitectura necesita sus datos; revisa tu conexión.')); return; }
     this.setTrail(null);
     const body = h('div', { class: 'guide art-menu' });
-    body.append(h('p', { class: 'muted small' }, L(`Which masterpieces and buildings you can see in which city: ${art.works.length} best-known works in ${art.museums.length} museums, and ${arch.buildings.length} buildings with their architects and styles (from Wikidata).`, `Qué obras maestras y edificios puedes ver en qué ciudad: ${art.works.length} obras muy conocidas en ${art.museums.length} museos y ${arch.buildings.length} edificios con sus arquitectos y estilos (de Wikidata).`)));
+    body.append(h('p', { class: 'muted small' }, L('Which masterpieces and buildings you can see in which city: {0} best-known works in {1} museums, and {2} buildings with their architects and styles (from Wikidata).', 'Qué obras maestras y edificios puedes ver en qué ciudad: {0} obras muy conocidas en {1} museos y {2} edificios con sus arquitectos y estilos (de Wikidata).', art.works.length, art.museums.length, arch.buildings.length)));
     // The map filters.
     const filters = h('div', { class: 'chip-row' });
     for (const [id, ic, en, sp] of [['art-museums', '🏛️', 'Art museums', 'Museos de arte'], ['masterpieces', '🖼️', 'Masterpieces', 'Obras maestras'], ['architecture', '📐', 'Architectural styles', 'Estilos arquitectónicos']]) {
@@ -109,13 +108,13 @@ export class ArtGuide {
         .sort((a, b) => (art.byArtist.get(b.id)!.length - art.byArtist.get(a.id)!.length) || b.sl - a.sl).slice(0, q ? 20 : 24);
       for (const a of as) {
         const ws = art.byArtist.get(a.id)!, ms = new Set(ws.map((w) => w.museum.id)).size;
-        artists.append(this.row('🧑‍🎨', nm(a), L(`${ws.length} works in ${ms} museums`, `${ws.length} obras en ${ms} museos`), () => this.openArtist(a.id, art), { 'data-artist': a.id }));
+        artists.append(this.row('🧑‍🎨', nm(a), L('{0} works in {1} museums', '{0} obras en {1} museos', ws.length, ms), () => this.openArtist(a.id, art), { 'data-artist': a.id }));
       }
       const rs = arch.architects.filter((a) => match(a) && (arch.byArchitect.get(a.id)?.length ?? 0) >= (q ? 1 : 3))
         .sort((a, b) => (arch.byArchitect.get(b.id)!.length - arch.byArchitect.get(a.id)!.length) || b.sl - a.sl).slice(0, q ? 20 : 18);
       for (const a of rs) {
         const bs = arch.byArchitect.get(a.id)!, cs = new Set(bs.map((b) => b.city ?? `${Math.round(b.at[0])},${Math.round(b.at[1])}`)).size;
-        architects.append(this.row('📐', nm(a), L(`${bs.length} buildings in ${cs} places`, `${bs.length} edificios en ${cs} lugares`), () => void this.openArchitect(a.id), { 'data-architect': a.id }));
+        architects.append(this.row('📐', nm(a), L('{0} buildings in {1} places', '{0} edificios en {1} lugares', bs.length, cs), () => void this.openArchitect(a.id), { 'data-architect': a.id }));
       }
       if (!as.length) artists.append(h('p', { class: 'muted small' }, L('No artist by that name in the guide.', 'Ningún artista con ese nombre en la guía.')));
       if (!rs.length) architects.append(h('p', { class: 'muted small' }, L('No architect by that name in the guide.', 'Ningún arquitecto con ese nombre en la guía.')));
@@ -160,7 +159,7 @@ export class ArtGuide {
           addPlace({ ...p, city });
           n++;
         }
-        this.shell.toast(L(`${this.guide.trip.length - before} cities and ${n} places added to your trip.`, `${this.guide.trip.length - before} ciudades y ${n} lugares agregados a tu viaje.`));
+        this.shell.toast(L('{0} cities and {1} places added to your trip.', '{0} ciudades y {1} lugares agregados a tu viaje.', this.guide.trip.length - before, n));
         void this.guide.open();
       })();
     });
@@ -178,12 +177,12 @@ export class ArtGuide {
     const museums = [...byM.entries()].sort((x, y) => y[1].length - x[1].length || y[1][0].sl - x[1][0].sl);
     const body = h('div', { class: 'guide art-trail', 'data-trail': id });
     body.append(this.back(), h('div', { class: 'guide-title' }, `🧑‍🎨 ${nm(a)}`),
-      h('p', { class: 'muted small' }, L(`${ws.length} best-known works in ${museums.length} museums in ${new Set(museums.map(([m]) => art.museumById.get(m)!.city)).size} cities.`, `${ws.length} obras muy conocidas en ${museums.length} museos de ${new Set(museums.map(([m]) => art.museumById.get(m)!.city)).size} ciudades.`)));
+      h('p', { class: 'muted small' }, L('{0} best-known works in {1} museums in {2} cities.', '{0} obras muy conocidas en {1} museos de {2} ciudades.', ws.length, museums.length, new Set(museums.map(([m]) => art.museumById.get(m)!.city)).size)));
     const pts: TrailPoint[] = museums.map(([mid, list]) => { const m = art.museumById.get(mid)!; return { at: m.at, n: list.length, label: nm(m), open: () => this.showMuseum(m, art.byMuseum.get(m.id) ?? []) }; });
     body.append(this.trailButtons([...new Set(museums.map(([m]) => art.museumById.get(m)!.city))], pts, nm(a), museums.map(([mid, list]) => museumPlace(art.museumById.get(mid)!, list))));
     for (const [mid, list] of museums) {
       const m = art.museumById.get(mid)!;
-      const head = this.row('🏛️', nm(m), `${this.guide.cityLabel(m.city) ?? ''} · ${L(`${list.length} works`, `${list.length} obras`)}`, () => this.showMuseum(m, art.byMuseum.get(m.id) ?? []), { 'data-trail-museum': m.id }, planStar(museumPlace(m)));
+      const head = this.row('🏛️', nm(m), `${this.guide.cityLabel(m.city) ?? ''} · ${L('{0} works', '{0} obras', list.length)}`, () => this.showMuseum(m, art.byMuseum.get(m.id) ?? []), { 'data-trail-museum': m.id }, planStar(museumPlace(m)));
       body.append(h('h3', { class: 'sec-title' }, nm(m)), h('div', { class: 'guide-list' }, head, ...list.map((w) => this.row(this.thumb(w.img, kindIcon(w.kind)), nm(w), yearText(w.year), () => this.showWork(w), { 'data-work': w.id }, planStar(museumPlace(m), workWhy(w))))));
     }
     this.shell.openPanel('art-trail', `🧑‍🎨 ${nm(a)}`, body);
@@ -196,7 +195,7 @@ export class ArtGuide {
     if (!arch || !a) return;
     const bs = (arch.byArchitect.get(id) ?? []).slice().sort((x, y) => y.sl - x.sl);
     const body = h('div', { class: 'guide art-trail', 'data-trail': id });
-    body.append(this.back(), h('div', { class: 'guide-title' }, `📐 ${nm(a)}`), h('p', { class: 'muted small' }, L(`${bs.length} buildings.`, `${bs.length} edificios.`)));
+    body.append(this.back(), h('div', { class: 'guide-title' }, `📐 ${nm(a)}`), h('p', { class: 'muted small' }, L('{0} buildings.', '{0} edificios.', bs.length)));
     const pts: TrailPoint[] = bs.map((b) => ({ at: b.at, n: 1, label: nm(b), open: () => this.showBuilding(b) }));
     body.append(this.trailButtons([...new Set(bs.map((b) => b.city).filter((c): c is string => !!c))], pts, nm(a), bs.map((b) => ({ ...buildingPlace(b), self: true }))));
     body.append(h('div', { class: 'guide-list' }, ...bs.map((b) => this.row(this.thumb(b.img, '🏛️'), nm(b), [b.city ? this.guide.cityLabel(b.city) : '', b.style ? nm(b.style) : '', yearText(b.year)].filter(Boolean).join(' · '), () => this.showBuilding(b), { 'data-building': b.id }, planStar(buildingPlace(b))))));
@@ -209,18 +208,18 @@ export class ArtGuide {
     const art = await loadArt();
     if (!art) { el.append(h('p', { class: 'muted small' }, L('The art guide could not be loaded.', 'No se pudo cargar la guía de arte.'))); return; }
     const museums = art.museums.filter((m) => m.city === city);
-    if (!museums.length) { el.append(h('p', { class: 'muted small' }, L(`None of ${cityName}’s museums is among the ${art.museums.length} of the art guide; Museums lists them all.`, `Ninguno de los museos de ${cityName} está entre los ${art.museums.length} de la guía de arte; Museos los muestra todos.`))); return; }
+    if (!museums.length) { el.append(h('p', { class: 'muted small' }, L('None of {0}’s museums is among the {1} of the art guide; Museums lists them all.', 'Ninguno de los museos de {0} está entre los {1} de la guía de arte; Museos los muestra todos.', cityName, art.museums.length))); return; }
     const all = museums.flatMap((m) => art.byMuseum.get(m.id) ?? []);
     const f = this.filter;
     const period = PERIODS.find((p) => p[0] === f.period) ?? PERIODS[0];
     const shown = (w: Work) => (f.kind === 'all' || w.kind === f.kind) && (f.period === 'all' || (w.year != null && w.year >= period[2] && w.year < period[3])) && (!f.artist || w.artist?.id === f.artist);
-    el.append(h('p', { class: 'guide-national' }, L(`In ${cityName} you can see ${all.length} of the world’s best-known works, in ${museums.length} museums.`, `En ${cityName} puedes ver ${all.length} de las obras más conocidas del mundo, en ${museums.length} museos.`)));
+    el.append(h('p', { class: 'guide-national' }, L('In {0} you can see {1} of the world’s best-known works, in {2} museums.', 'En {0} puedes ver {1} de las obras más conocidas del mundo, en {2} museos.', cityName, all.length, museums.length)));
     const redraw = () => { clear(el); void this.artTab(el, city, cityName); };
     const chips = <T extends string>(list: [T, { en: string; es: string }, ...unknown[]][], cur: string, set: (v: T) => void, attr: string) => {
       const row = h('div', { class: 'chip-row art-filters' });
       for (const [v, label] of list) {
         if (attr === 'kind' && v !== 'all' && !all.some((w) => w.kind === v)) continue;
-        const b = h('button', { type: 'button', class: `chip sm${cur === v ? ' on' : ''}`, [`data-${attr}`]: v }, es() ? label.es : label.en);
+        const b = h('button', { type: 'button', class: `chip sm${cur === v ? ' on' : ''}`, [`data-${attr}`]: v }, tx(label));
         b.addEventListener('click', () => { set(v); redraw(); });
         row.append(b);
       }
@@ -238,7 +237,7 @@ export class ArtGuide {
       const ws = (art.byMuseum.get(m.id) ?? []).filter(shown);
       if (!ws.length) continue;
       any = true;
-      const head = h('button', { type: 'button', class: 'art-museum-head', 'data-art-museum': m.id }, `🏛️ ${nm(m)}`, m.visitors ? h('span', { class: 'muted small' }, ` · ${L(`${fmtCompact(m.visitors)} visitors a year`, `${fmtCompact(m.visitors)} visitantes al año`)}`) : null);
+      const head = h('button', { type: 'button', class: 'art-museum-head', 'data-art-museum': m.id }, `🏛️ ${nm(m)}`, m.visitors ? h('span', { class: 'muted small' }, ` · ${L('{0} visitors a year', '{0} visitantes al año', fmtCompact(m.visitors))}`) : null);
       head.addEventListener('click', () => { this.guide.showPlace(m.at, nm(m), 12); museumCard(this.cardFn, m, art.byMuseum.get(m.id) ?? [], cityName, null); });
       el.append(h('h3', { class: 'sec-title art-museum' }, head, planStar(museumPlace(m))), h('div', { class: 'guide-list' }, ...ws.map((w) => this.row(this.thumb(w.img, kindIcon(w.kind)), nm(w), [w.artist ? nm(w.artist) : '', yearText(w.year)].filter(Boolean).join(' · '), () => { this.guide.showPlace(m.at, nm(m), 12); this.showWork(w); }, { 'data-work': w.id }, planStar(museumPlace(m), workWhy(w))))));
     }
@@ -251,10 +250,10 @@ export class ArtGuide {
     const arch = await loadArch();
     if (!arch) { el.append(h('p', { class: 'muted small' }, L('The architecture guide could not be loaded.', 'No se pudo cargar la guía de arquitectura.'))); return; }
     const all = arch.buildings.filter((b) => b.city === city);
-    if (!all.length) { el.append(h('p', { class: 'muted small' }, L(`Wikidata names no architect for ${cityName}’s best-known buildings.`, `Wikidata no nombra arquitectos para los edificios más conocidos de ${cityName}.`))); return; }
+    if (!all.length) { el.append(h('p', { class: 'muted small' }, L('Wikidata names no architect for {0}’s best-known buildings.', 'Wikidata no nombra arquitectos para los edificios más conocidos de {0}.', cityName))); return; }
     const styles = arch.styles.filter((s) => all.some((b) => b.style?.key === s.key));
     if (this.styleFilter !== 'all' && !styles.some((s) => s.key === this.styleFilter)) this.styleFilter = 'all';
-    el.append(h('p', { class: 'guide-national' }, L(`${all.length} notable buildings in ${cityName}, with their architects and styles.`, `${all.length} edificios destacados en ${cityName}, con sus arquitectos y estilos.`)));
+    el.append(h('p', { class: 'guide-national' }, L('{0} notable buildings in {1}, with their architects and styles.', '{0} edificios destacados en {1}, con sus arquitectos y estilos.', all.length, cityName)));
     const row = h('div', { class: 'chip-row art-filters' });
     for (const [key, label, color] of [['all', L('Every style', 'Todos los estilos'), ''], ...styles.map((s) => [s.key, nm(s), s.color])]) {
       const b = h('button', { type: 'button', class: `chip sm${this.styleFilter === key ? ' on' : ''}`, 'data-style': key }, color ? h('span', { class: 'art-dot', style: `background:${color}` }) : null, label);

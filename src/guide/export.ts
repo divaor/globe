@@ -3,12 +3,11 @@
 // sent anywhere by the app: the reader copies, downloads or shares it. The share link carries the places, packed.
 import { ClipboardCopy, Download, FileJson } from 'lucide';
 import { h, icon } from '../ui/dom';
-import { lang } from '../app/i18n';
+import { lang, L } from '../app/i18n';
 import { tripDetails, setTripDetails, PLACE_ICONS, type Place, type PlaceKind, type TripDetails } from './plan';
 import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 
 export interface TripOut {
   cities: { id: string; name: string; country: string; at: [number, number]; wiki?: string; places: Place[]; km?: number }[];
@@ -35,7 +34,7 @@ export function tripMarkdown(t: TripOut, d: TripDetails = tripDetails()): string
   const out: string[] = [];
   const route = t.cities.map((c) => c.name).join(' → ');
   out.push(`# ${L('My trip', 'Mi viaje')}: ${route}`, '');
-  out.push(L(`Planned with Atlas Globe's travel guide (${t.link}) on ${new Date().toISOString().slice(0, 10)}.`, `Planeado con la guía de viaje de Atlas Globe (${t.link}) el ${new Date().toISOString().slice(0, 10)}.`), '');
+  out.push(L('Planned with Atlas Globe\'s travel guide ({0}) on {1}.', 'Planeado con la guía de viaje de Atlas Globe ({0}) el {1}.', t.link, new Date().toISOString().slice(0, 10)), '');
   const det: string[] = [];
   if (d.start || d.end) det.push(`- ${L('Dates', 'Fechas')}: ${[d.start, d.end].filter(Boolean).join(L(' to ', ' al '))}`);
   if (d.from) det.push(`- ${L('Starting from', 'Saliendo de')}: ${d.from}`);
@@ -49,7 +48,7 @@ export function tripMarkdown(t: TripOut, d: TripDetails = tripDetails()): string
   t.cities.forEach((c, i) => {
     const days = d.days?.[c.id];
     out.push(`## ${i + 1}. ${c.name}, ${c.country}${days ? ` (${days} ${days === 1 ? L('day', 'día') : L('days', 'días')})` : ''}`);
-    if (c.km) out.push(L(`From ${t.cities[i - 1].name}: about ${c.km.toLocaleString(appLocale())} km in a straight line.`, `Desde ${t.cities[i - 1].name}: unos ${c.km.toLocaleString(appLocale())} km en línea recta.`));
+    if (c.km) out.push(L('From {0}: about {1} km in a straight line.', 'Desde {0}: unos {1} km en línea recta.', t.cities[i - 1].name, c.km.toLocaleString(appLocale())));
     out.push(`${L('Where', 'Dónde')}: ${fix(c.at[1])}, ${fix(c.at[0])}${c.wiki ? ` · ${c.wiki}` : ''}`);
     if (c.places.length) {
       out.push('', `${L('Places I want to see', 'Lugares que quiero ver')}:`);
@@ -62,9 +61,7 @@ export function tripMarkdown(t: TripOut, d: TripDetails = tripDetails()): string
     out.push('');
   });
   out.push(`## ${L('What I would like from you', 'Lo que te pido')}`, '');
-  out.push(es()
-    ? 'Ayúdame a convertir este plan en un viaje completo, con información real y actual:'
-    : 'Please help me turn this plan into a complete trip, with real, current information:');
+  out.push(L('Please help me turn this plan into a complete trip, with real, current information:', 'Ayúdame a convertir este plan en un viaje completo, con información real y actual:'));
   const asks = es() ? [
     'Un itinerario día por día, en el orden de las ciudades (ajústalo si conviene otro), con los lugares de cada día agrupados por cercanía.',
     'Cómo ir de una ciudad a la siguiente (tren, avión, autobús o auto): duración, frecuencia, precio aproximado y dónde reservar.',
@@ -123,7 +120,7 @@ export function tripPanelExtras(t: TripOut, toast: (msg: string) => void): HTMLE
   const note = h('textarea', { class: 'trip-input', rows: '2', 'data-trip-detail': 'note', placeholder: L('Anything else: who is coming, what to avoid…', 'Algo más: quién viaja, qué evitar…') }, d.note ?? '') as HTMLTextAreaElement;
   note.addEventListener('change', () => { d.note = note.value.trim() || undefined; save(); });
   const days = h('div', { class: 'trip-days' }, ...t.cities.map((c) => {
-    const i = h('input', { type: 'number', min: '0', max: '60', class: 'trip-input trip-day', value: d.days?.[c.id] ? String(d.days[c.id]) : '', 'aria-label': L(`Days in ${c.name}`, `Días en ${c.name}`), 'data-trip-days': c.id }) as HTMLInputElement;
+    const i = h('input', { type: 'number', min: '0', max: '60', class: 'trip-input trip-day', value: d.days?.[c.id] ? String(d.days[c.id]) : '', 'aria-label': L('Days in {0}', 'Días en {0}', c.name), 'data-trip-days': c.id }) as HTMLInputElement;
     i.addEventListener('change', () => { const n = Math.round(Number(i.value)); d.days = { ...(d.days ?? {}) }; if (n > 0) d.days[c.id] = n; else delete d.days[c.id]; save(); });
     return h('label', { class: 'trip-day-row' }, h('span', null, c.name), i);
   }));

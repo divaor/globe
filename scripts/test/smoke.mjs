@@ -5007,7 +5007,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   for (const locale of ['es-MX', 'es-ES', 'fr-FR']) {
     const { page, errors, ctx } = await open({ locale, viewport: { width: 420, height: 800 } }, '');
     seen[locale] = await page.evaluate(() => ({ lang: window.atlas.app.lang, es: window.atlas.app.spanish, picked: window.atlas.app.langPicked, fmt: '' }));
-    await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Configuración'));
+    await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Ajustes'));
     await page.waitForTimeout(400);
     seen[locale].fmt = await page.evaluate(() => document.querySelector('[data-settings="formats"]')?.textContent ?? '');
     if (locale === 'es-MX') {
@@ -5017,7 +5017,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
       await page.goto(url, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
       await page.waitForFunction(() => window.atlas, null, { timeout: 60000 });
       seen.kept = await page.evaluate(() => ({ lang: window.atlas.app.lang, picked: window.atlas.app.langPicked }));
-      await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Configuración'));
+      await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Ajustes'));
       await page.waitForTimeout(400);
       await page.evaluate(() => [...document.querySelectorAll('.settings .seg-btn')].find((b) => /phone|teléfono/.test(b.textContent))?.click());
       await page.waitForTimeout(400);
@@ -5028,7 +5028,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }
   check(seen['es-MX'].lang === 'es' && seen['es-MX'].es === 'latam' && !seen['es-MX'].picked && /10,935\.5/.test(seen['es-MX'].fmt) && /p\.\s?m\./.test(seen['es-MX'].fmt)
     && seen['es-ES'].lang === 'es' && seen['es-ES'].es === 'spain' && /10\.935,5/.test(seen['es-ES'].fmt) && /17:30/.test(seen['es-ES'].fmt)
-    && seen['fr-FR'].lang === 'en' && /^Numbers and dates \(en-GB\)/.test(seen['fr-FR'].fmt),
+    && seen['fr-FR'].lang === 'en' && /^Numbers and dates: 10,935\.5 · 3 May/.test(seen['fr-FR'].fmt),
     `like the phone: es-MX "${seen['es-MX'].fmt}"; es-ES "${seen['es-ES'].fmt}"; fr-FR "${seen['fr-FR'].fmt}"`);
   check(seen.kept?.lang === 'en' && seen.kept.picked && seen.back?.lang === 'es' && !seen.back.picked,
     `a language picked in Settings stays after a reload (${seen.kept?.lang}); "Like my phone" goes back to the phone's (${seen.back?.lang})`);
@@ -6008,6 +6008,56 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(a.t === 'light' && a.auto && b.t === 'dark' && /Like my phone/.test(seg) && c.t === 'light' && !c.auto,
     `the theme like the phone: light phone → ${a.t}; the phone turns dark → ${b.t}; Settings: "${seg}"; light picked, then a dark phone and a reload → ${c.t}`);
   check(!errors.length, `no page errors in the theme's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+// 47. One voice (v0.41.0): in English and in Spanish, no text in the main panels shows a pattern's {0}; plurals agree
+// (a day, two days); Settings is Ajustes; the About text; ?pseudo marks every text that goes through the language files.
+{
+  const PANELS = [
+    ['Today', () => document.querySelector('[data-dock="today"]').click()], ['Settings', () => window.atlas.shell.openSettings()],
+    ['About', () => window.atlas.shell.openAbout(true)], ['Filters', () => window.atlas.shell.openFilters(true)],
+    ['Map games', () => void window.atlas.play.openMenu()], ['Border hop', () => void window.atlas.hop.openMenu()],
+    ['Master the world', () => void window.atlas.master.openPanel()], ['Quiz', () => window.atlas.learn.openQuizMenu()],
+  ];
+  for (const lang of ['en', 'es']) {
+    const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, `#p=globe&l=political&c=10,25,1.1&lang=${lang}`);
+    const F = (fn, arg) => page.evaluate(fn, arg);
+    const raw = [], seen = {};
+    for (const [label, open_] of PANELS) {
+      await F(open_);
+      await page.waitForTimeout(1200);
+      const text = await F(() => document.querySelector('.sheet.open')?.innerText ?? '');
+      seen[label] = text.length;
+      const m = text.match(/\{\d[^}]{0,30}\}?|\{[a-z]+\}/g);
+      if (m) raw.push(`${label}: ${m.slice(0, 3).join(' ')}`);
+    }
+    check(!raw.length && Object.values(seen).every((n) => n > 40), `${lang}: no pattern shows its {0} in ${PANELS.map((x) => x[0]).join(', ')}${raw.length ? ` (shown: ${raw.join('; ')})` : ''}`);
+    const t = await F(() => {
+      const L = (en, es, ...a) => window.atlas.i18n.L(en, es, ...a);
+      const P = ['{0, plural, one {# day} other {# days}} in a row', '{0, plural, one {# día seguido} other {# días seguidos}}'];
+      return { one: L(P[0], P[1], 1), two: L(P[0], P[1], 2), settings: window.atlas.i18n.t('settings') };
+    });
+    await F(() => window.atlas.shell.openAbout(true));
+    await page.waitForTimeout(600);
+    const about = await F(() => document.querySelector('.about .about-lead')?.textContent ?? '');
+    const want = lang === 'es' ? { one: '1 día seguido', two: '2 días seguidos', settings: 'Ajustes', about: /^Atlas Globe es el mundo en un solo globo/ }
+      : { one: '1 day in a row', two: '2 days in a row', settings: 'Settings', about: /^Atlas Globe is the world on one globe/ };
+    check(t.one === want.one && t.two === want.two && t.settings === want.settings && want.about.test(about), `${lang}: plurals "${t.one}", "${t.two}"; "${t.settings}"; About: "${about.slice(0, 50)}…"`);
+    check(!errors.length, `${lang}: no page errors in the text checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
+  // ?pseudo: the More menu's labels and a panel's title come out accented and in brackets.
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '?pseudo#p=globe&l=political&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  await F(() => document.querySelector('[data-dock="more"]').click());
+  await page.waitForTimeout(400);
+  const labels = await F(() => [...document.querySelectorAll('.menu .menu-item')].map((b) => b.textContent.trim()).filter(Boolean));
+  await F(() => window.atlas.shell.openSettings());
+  await page.waitForTimeout(600);
+  const title = await F(() => document.querySelector('.sheet-title-text')?.textContent ?? '');
+  const marked = labels.filter((x) => /^\[.*\]$/.test(x)).length;
+  check(labels.length >= 8 && marked === labels.length && /^\[Ŝéttíñgŝ\]$/.test(title), `?pseudo: ${marked} of ${labels.length} menu labels marked (${labels.slice(0, 3).join(', ')}…); the panel title "${title}"`);
+  check(!errors.length, `no page errors with ?pseudo${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 await browser.close();

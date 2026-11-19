@@ -12,7 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { Space } from '../space/space';
 import type { Sky } from './sky';
 import type { InfoRow } from '../layers/types';
-import { appLocale } from '../app/i18n';
+import { appLocale, dataLang, Lc } from '../app/i18n';
 
 interface Nearby { id: string; name: Text; ra: number; dec: number; ly: number; kind?: Text; hip?: number; planets?: Text; text?: Text; wiki?: Text }
 interface Feature { id: string; kind: 'centre' | 'arm' | 'feature'; name: Text; l?: number; b?: number; ly?: number; text?: Text; wiki?: Text }
@@ -332,7 +332,7 @@ export class Galaxy {
       spots.push({ x: p[0], y: p[1], r: 14, open: () => (sunF ? this.featureCard(sunF) : void this.space.factsCard('sun')) });
     }
     this.spots = spots;
-    ui.scale.textContent = L(`${lightYears(this.R * 2)} across`, `${lightYears(this.R * 2)} de lado a lado`);
+    ui.scale.textContent = L('{0} across', '{0} de lado a lado', lightYears(this.R * 2));
     this.info.frames++; this.info.R = this.R; this.info.labels = labels;
   }
 
@@ -342,7 +342,7 @@ export class Galaxy {
     const out: { label: string; href?: string; onClick?: () => void }[] = [];
     if (skyTarget) out.push({ label: L('See it in the sky', 'Verlo en el cielo'), onClick: () => this.sky.open({ frame: 'celestial', target: skyTarget, fov: 50 }) });
     const t = wiki ? tr(wiki) || wiki.en : '';
-    if (t) out.push({ label: 'Wikipedia', href: `https://${wiki && tr(wiki) ? L('en', 'es') : 'en'}.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_'))}` });
+    if (t) out.push({ label: 'Wikipedia', href: `https://${wiki && tr(wiki) ? dataLang() : 'en'}.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_'))}` });
     return out;
   }
 
@@ -350,7 +350,7 @@ export class Galaxy {
     const rows: InfoRow[] = [{ icon: '📏', label: L('Distance', 'Distancia'), value: lightYears(n.ly) }];
     if (n.kind) rows.push({ icon: '⭐', label: L('What it is', 'Qué es'), value: tr(n.kind) });
     if (n.planets) rows.push({ icon: '🪐', label: L('Planets', 'Planetas'), value: tr(n.planets) });
-    rows.push({ icon: '💡', label: L('Light from it left', 'Su luz salió'), value: L(`${num(n.ly, 1)} years ago`, `hace ${num(n.ly, 1)} años`) });
+    rows.push({ icon: '💡', label: L('Light from it left', 'Su luz salió'), value: L('{0} years ago', 'hace {0} años', num(n.ly, 1)) });
     this.shell.card.showCustom('⭐', tr(n.name), L('A near neighbour', 'Una vecina cercana'), rows, this.links(n.wiki, n.hip ? String(n.hip) : undefined), n.text ? [tr(n.text)] : [], n.wiki ? wikiThumb(n.wiki) : undefined);
   }
 
@@ -358,8 +358,8 @@ export class Galaxy {
     const rows: InfoRow[] = [];
     if (g.ra != null && g.ly) {
       rows.push({ icon: '📏', label: L('Distance', 'Distancia'), value: lightYears(g.ly) });
-      rows.push({ icon: '💡', label: L('Light from it left', 'Su luz salió'), value: g.ly >= 1e6 ? L(`${num(g.ly / 1e6, 2)} million years ago`, `hace ${num(g.ly / 1e6, 2)} millones de años`) : L(`${num(g.ly)} years ago`, `hace ${num(g.ly)} años`) });
-    } else if (g.radiusLy ?? g.ly) rows.push({ icon: '↔️', label: L('Size', 'Tamaño'), value: L(`about ${lightYears((g.radiusLy ?? g.ly)! * 2)} across`, `unos ${lightYears((g.radiusLy ?? g.ly)! * 2)} de diámetro`) });
+      rows.push({ icon: '💡', label: L('Light from it left', 'Su luz salió'), value: g.ly >= 1e6 ? Lc('inside a sentence', '{0} million years ago', 'hace {0} millones de años', num(g.ly / 1e6, 2)) : L('{0} years ago', 'hace {0} años', num(g.ly)) });
+    } else if (g.radiusLy ?? g.ly) rows.push({ icon: '↔️', label: L('Size', 'Tamaño'), value: L('about {0} across', 'unos {0} de diámetro', lightYears((g.radiusLy ?? g.ly)! * 2)) });
     if (g.kind) rows.splice(1, 0, { icon: '🌌', label: L('What it is', 'Qué es'), value: tr(g.kind) });
     const inSky = this.sd?.objects.some((o) => o.id === g.id) ? g.id : undefined;
     const notes = g.text ? [tr(g.text)] : [];

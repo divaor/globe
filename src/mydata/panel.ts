@@ -2,7 +2,7 @@
 // on the map; and the list of tables kept on this device.
 import { Upload, Trash2, MapPin } from 'lucide';
 import { h, icon, fillSelect } from '../ui/dom';
-import { lang } from '../app/i18n';
+import { lang, L, Lc, tx } from '../app/i18n';
 import { SEQUENTIAL } from '../engine/colors';
 import { loadJSON, dataUrl } from '../data/store';
 import type { App } from '../app/app';
@@ -10,7 +10,6 @@ import type { Topology, GeometryCollection } from 'topojson-specification';
 import { parseTable, planTable, buildData, countryIndex, regionIndex, type RegionMeta, type CountryMeta, type Built } from './parse';
 import { PALETTES, layerId, describe, type MyData, type MySet } from './mydata';
 
-const L = (en: string, es: string) => (lang() === 'es' ? es : en);
 
 export const SAMPLES: { file: string; icon: string; name: { en: string; es: string } }[] = [
   { file: 'life-expectancy.csv', icon: '❤️', name: { en: 'Life expectancy, 1950–2023 (a row per country and year)', es: 'Esperanza de vida, 1950-2023 (una fila por país y año)' } },
@@ -79,9 +78,9 @@ export function myDataPanel(app: App, my: MyData, done: (msg: string) => void): 
 
   // Samples.
   const samples = h('div', { class: 'md-samples' }, ...SAMPLES.map((s) => {
-    const b = h('button', { type: 'button', class: 'md-sample', 'data-sample': s.file }, h('span', null, s.icon), h('span', null, lang() === 'es' ? s.name.es : s.name.en));
+    const b = h('button', { type: 'button', class: 'md-sample', 'data-sample': s.file }, h('span', null, s.icon), h('span', null, tx(s.name)));
     b.addEventListener('click', async () => {
-      try { const res = await fetch(dataUrl(`samples/${s.file}`)); await read(await res.text(), s.file, (lang() === 'es' ? s.name.es : s.name.en).replace(/ \(.*\)$/, '')); } catch { preview.replaceChildren(h('p', { class: 'md-error' }, L('⚠️ Could not load the sample (offline?).', '⚠️ No se pudo cargar el ejemplo (¿sin conexión?).'))); }
+      try { const res = await fetch(dataUrl(`samples/${s.file}`)); await read(await res.text(), s.file, (tx(s.name)).replace(/ \(.*\)$/, '')); } catch { preview.replaceChildren(h('p', { class: 'md-error' }, L('⚠️ Could not load the sample (offline?).', '⚠️ No se pudo cargar el ejemplo (¿sin conexión?).'))); }
     });
     return b;
   }));
@@ -89,14 +88,14 @@ export function myDataPanel(app: App, my: MyData, done: (msg: string) => void): 
   function showPreview(b: Built, header: string[], file: string, title?: string) {
     const name = h('input', { class: 'search-input md-name', type: 'text', value: (title ?? (b.columns.length === 1 && b.columns[0].name !== 'Value' ? b.columns[0].name : file.replace(/\.(csv|tsv|txt)$/i, ''))).slice(0, 80), 'aria-label': L('Name', 'Nombre') }) as HTMLInputElement;
     const lines: (HTMLElement | null)[] = [];
-    const what = b.geo === 'points' ? L(`📍 ${b.matched} places with coordinates`, `📍 ${b.matched} lugares con coordenadas`)
-      : b.geo === 'region' ? L(`🗾 ${b.matched} regions found`, `🗾 ${b.matched} regiones encontradas`)
-      : L(`🌍 ${b.matched} countries found`, `🌍 ${b.matched} países encontrados`);
-    lines.push(h('li', null, what, h('span', { class: 'muted' }, L(` in ${b.rows} rows`, ` en ${b.rows} filas`))));
-    if (b.years.length) lines.push(h('li', null, L(`📅 Years ${b.years[0]}–${b.years[b.years.length - 1]} (${b.years.length}); the map shows ${b.years[b.years.length - 1]}, and the legend plays them`, `📅 Años ${b.years[0]}-${b.years[b.years.length - 1]} (${b.years.length}); el mapa muestra ${b.years[b.years.length - 1]} y la leyenda los reproduce`)));
-    if (b.groups.length) lines.push(h('li', { class: 'muted' }, L(`➖ ${b.groups.length} totals set aside (${b.groups.slice(0, 4).join(', ')}${b.groups.length > 4 ? '…' : ''})`, `➖ ${b.groups.length} totales apartados (${b.groups.slice(0, 4).join(', ')}${b.groups.length > 4 ? '…' : ''})`)));
-    if (b.parts.length) lines.push(h('li', { class: 'muted' }, L(`➖ Drawn as part of another country on this map: ${b.parts.join(', ')}`, `➖ En este mapa forman parte de otro país: ${b.parts.join(', ')}`)));
-    if (b.unmatched.length) lines.push(h('li', { class: 'md-warn' }, L(`❓ Not found (${b.unmatched.length}): ${b.unmatched.slice(0, 12).join(', ')}${b.unmatched.length > 12 ? '…' : ''}. Try the name in English or Spanish, or the ISO code.`, `❓ No encontrados (${b.unmatched.length}): ${b.unmatched.slice(0, 12).join(', ')}${b.unmatched.length > 12 ? '…' : ''}. Prueba el nombre en español o inglés, o el código ISO.`)));
+    const what = b.geo === 'points' ? L('📍 {0} places with coordinates', '📍 {0} lugares con coordenadas', b.matched)
+      : b.geo === 'region' ? L('🗾 {0} regions found', '🗾 {0} regiones encontradas', b.matched)
+      : L('🌍 {0} countries found', '🌍 {0} países encontrados', b.matched);
+    lines.push(h('li', null, what, h('span', { class: 'muted' }, L(' in {0} rows', ' en {0} filas', b.rows))));
+    if (b.years.length) lines.push(h('li', null, L('📅 Years {0}–{1} ({2}); the map shows {1}, and the legend plays them', '📅 Años {0}-{1} ({2}); el mapa muestra {1} y la leyenda los reproduce', b.years[0], b.years[b.years.length - 1], b.years.length)));
+    if (b.groups.length) lines.push(h('li', { class: 'muted' }, L('➖ {0} totals set aside ({1}{2})', '➖ {0} totales apartados ({1}{2})', b.groups.length, b.groups.slice(0, 4).join(', '), b.groups.length > 4 ? '…' : '')));
+    if (b.parts.length) lines.push(h('li', { class: 'muted' }, L('➖ Drawn as part of another country on this map: {0}', '➖ En este mapa forman parte de otro país: {0}', b.parts.join(', '))));
+    if (b.unmatched.length) lines.push(h('li', { class: 'md-warn' }, L('❓ Not found ({0}): {1}{2}. Try the name in English or Spanish, or the ISO code.', '❓ No encontrados ({0}): {1}{2}. Prueba el nombre en español o inglés, o el código ISO.', b.unmatched.length, b.unmatched.slice(0, 12).join(', '), b.unmatched.length > 12 ? '…' : '')));
     const cols = b.columns;
     if (cols.length) lines.push(h('li', null, L('📊 ', '📊 '), cols.map((c) => `${c.name} (${c.kind === 'number' ? L('numbers', 'números') : L('categories', 'categorías')})`).join(' · ')));
     // Colours for numbers.
@@ -112,7 +111,7 @@ export function myDataPanel(app: App, my: MyData, done: (msg: string) => void): 
       { value: 'log', label: L('Logarithmic (for very uneven numbers)', 'Logarítmica (para números muy desiguales)') }, { value: 'quantile', label: L('By rank (equal shares of places)', 'Por posición (partes iguales de lugares)') },
     ]);
     const hasNumbers = cols.some((c) => c.kind === 'number');
-    const add = h('button', { type: 'button', class: 'pill primary md-add' }, icon(MapPin, 16), L('Put it on the map', 'Ponerlo en el mapa'));
+    const add = h('button', { type: 'button', class: 'pill primary md-add' }, icon(MapPin, 16), Lc('a button: show your data on the map', 'Put it on the map', 'Ponerlo en el mapa'));
     add.addEventListener('click', async () => {
       const set: MySet = {
         id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`, name: name.value.trim() || file, file, created: Date.now(),
@@ -122,7 +121,7 @@ export function myDataPanel(app: App, my: MyData, done: (msg: string) => void): 
       };
       add.setAttribute('disabled', '');
       await my.add(set);
-      done(L(`“${set.name}” is on the map`, `«${set.name}» está en el mapa`));
+      done(L('“{0}” is on the map', '«{0}» está en el mapa', set.name));
     });
     preview.replaceChildren(h('div', { class: 'md-card' },
       h('div', { class: 'field' }, h('div', { class: 'field-label' }, L('Name', 'Nombre')), name),
@@ -145,7 +144,7 @@ export function myDataPanel(app: App, my: MyData, done: (msg: string) => void): 
       show.addEventListener('click', () => { app.toggle(layerId(s)); renderList(); });
       const del = h('button', { type: 'button', class: 'icon-btn sm', title: L('Delete', 'Borrar'), 'aria-label': L('Delete', 'Borrar') }, icon(Trash2, 15));
       del.addEventListener('click', async () => {
-        if (!confirm(L(`Delete “${s.name}” from this device?`, `¿Borrar «${s.name}» de este dispositivo?`))) return;
+        if (!confirm(L('Delete “{0}” from this device?', '¿Borrar «{0}» de este dispositivo?', s.name))) return;
         await my.remove(s.id);
         renderList();
       });

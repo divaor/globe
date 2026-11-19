@@ -14,7 +14,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
@@ -128,7 +128,7 @@ abstract class PinRounds implements HostGame {
     const badges = recordGame(this.id, { score, stars, feats: this.feats(s.results), day: s.day });
     s.done = { score, stars, badges };
     this.render();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   protected dist(d: number) { return d < 10 ? `${d.toFixed(1)} km` : `${fmtNumber(Math.round(d))} km`; }
@@ -142,12 +142,12 @@ abstract class PinRounds implements HostGame {
     const total = s.results.reduce((a, r) => a + r.pts + r.bonus, 0);
     if (s.done) {
       const most = s.rounds.length * this.max();
-      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: L(`Out of ${fmtNumber(most)}`, `De ${fmtNumber(most)}`),
+      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: L('Out of {0}', 'De {0}', fmtNumber(most)),
         rows: s.rounds.map((r, i) => ({ name: r.name, detail: this.dist(s.results[i].km), value: fmtNumber(s.results[i].pts + s.results[i].bonus), mark: s.results[i].km <= 100 ? 'ok' : s.results[i].km <= 1500 ? 'near' : 'miss' })) });
       this.card.append(res);
       const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `${this.icon} ${this.title(false)}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.results.map((r) => (r.km <= 100 ? '🎯' : r.km <= 500 ? '🟩' : r.km <= 1500 ? '🟨' : '🟥')).join('')}`));
-      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Jugar otra vez'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start(); });
       res.append(h('div', { class: 'result-actions' }, share, again));
       return;
@@ -258,7 +258,7 @@ function climateChart(t: number[], p: number[]): HTMLElement {
     svg.append(e);
     return e;
   };
-  const months = es() ? MONTHS.es : MONTHS.en;
+  const months = tx(MONTHS);
   p.forEach((v, i) => el('rect', { x: pad + i * bw + 2, y: py(v), width: bw - 4, height: Math.max(0, H - 18 - py(v)), fill: '#4dabf7', opacity: 0.8 }));
   el('polyline', { points: t.map((v, i) => `${pad + i * bw + bw / 2},${ty(v / 10)}`).join(' '), fill: 'none', stroke: '#ff6b6b', 'stroke-width': 2.5 });
   for (let i = 0; i < 12; i++) el('text', { x: pad + i * bw + bw / 2, y: H - 4, 'text-anchor': 'middle', 'font-size': 10, fill: 'currentColor' }, months[i]);
@@ -294,19 +294,19 @@ export class ClimateDetective extends PinRounds {
       picked.push({ c, k });
       if (picked.length === CLIMATE_ROUNDS) break;
     }
-    const cname = (k: string | null) => (k && classes[k] ? `${k}, ${es() ? classes[k].es : classes[k].en}` : k ?? '');
+    const cname = (k: string | null) => (k && classes[k] ? `${k}, ${tx(classes[k])}` : k ?? '');
     const rounds: Round[] = picked.map(({ c, k }) => ({
       ask: L('📈 Which city has this year of weather? Pin it.', '📈 ¿Qué ciudad tiene este clima a lo largo del año? Ponle un pin.'),
       extra: () => climateChart(c[15]!.t, c[15]!.p),
       at: [[c[3], c[4]]],
       name: `${es() ? c[2] : c[1]}, ${this.app.data.name(c[5], this.app.lang)}`,
-      note: L(`Its climate zone: ${cname(k)}.`, `Su zona climática: ${cname(k)}.`),
+      note: L('Its climate zone: {0}.', 'Su zona climática: {0}.', cname(k)),
       bonus: (pin) => {
         const mine = zoneAt(zs, pin);
         const pts = climateBonus(k, mine);
-        return { pts, text: pts >= 1000 ? L(`+1,000: the same climate zone (${cname(mine)})`, `+1000: la misma zona climática (${cname(mine)})`)
-          : pts ? L(`+400: the same kind of climate (${cname(mine)})`, `+400: el mismo tipo de clima (${cname(mine)})`)
-          : L(`Your pin is in another climate zone (${cname(mine) || L('the sea', 'el mar')}).`, `Tu pin está en otra zona climática (${cname(mine) || L('the sea', 'el mar')}).`) };
+        return { pts, text: pts >= 1000 ? L('+1,000: the same climate zone ({0})', '+1000: la misma zona climática ({0})', cname(mine))
+          : pts ? L('+400: the same kind of climate ({0})', '+400: el mismo tipo de clima ({0})', cname(mine))
+          : L('Your pin is in another climate zone ({0}).', 'Tu pin está en otra zona climática ({0}).', cname(mine) || L('the sea', 'el mar')) };
       },
     }));
     return { rounds };
@@ -350,11 +350,11 @@ export class ExplorersLog extends PinRounds {
       const go = rest.slice(0, 7);
       const year = (d: string) => d.slice(0, 4).replace(/^-/, '');
       const rounds: Round[] = go.map(({ s, at }) => ({
-        ask: `📜 ${year(s.date)}: ${es() ? s.title.es : s.title.en}. ${L('Where did they go next?', '¿A dónde fueron después?')}`,
-        at: [at], name: es() ? s.title.es : s.title.en, note: es() ? s.text.es : s.text.en,
+        ask: `📜 ${year(s.date)}: ${tx(s.title)}. ${L('Where did they go next?', '¿A dónde fueron después?')}`,
+        at: [at], name: tx(s.title), note: tx(s.text),
       }));
-      const nm = es() ? j.name.es : j.name.en;
-      return { rounds, trail: [first.at], head: `${j.icon} ${nm} · ${L('from', 'desde')} ${es() ? first.s.title.es : first.s.title.en} (${year(first.s.date)})` };
+      const nm = tx(j.name);
+      return { rounds, trail: [first.at], head: `${j.icon} ${nm} · ${L('from', 'desde')} ${tx(first.s.title)} (${year(first.s.date)})` };
     }
     return null;
   }
@@ -383,11 +383,11 @@ export class SunriseRace extends PinRounds {
     const sub = subsolarPoint(this.at);
     const hhmm = this.at.toISOString().slice(11, 16);
     const rounds: Round[] = SUN_ROUNDS.map((r) => ({
-      ask: `${r.icon} ${es() ? r.es : r.en}`, at: sunLine(sub, r.goal),
+      ask: `${r.icon} ${tx(r)}`, at: sunLine(sub, r.goal),
       name: es() ? { rise: 'El amanecer', noon: 'El mediodía', set: 'El atardecer', midnight: 'La medianoche', overhead: 'El sol encima' }[r.goal] : { rise: 'Sunrise', noon: 'Noon', set: 'Sunset', midnight: 'Midnight', overhead: 'The sun overhead' }[r.goal],
-      note: L(`At ${hhmm} UTC. The yellow line is where it is happening; day and night are shaded.`, `A las ${hhmm} UTC. La línea amarilla es donde está pasando; el día y la noche están sombreados.`),
+      note: L('At {0} UTC. The yellow line is where it is happening; day and night are shaded.', 'A las {0} UTC. La línea amarilla es donde está pasando; el día y la noche están sombreados.', hhmm),
     }));
-    return { rounds, head: L(`The sun right now (${hhmm} UTC).`, `El sol ahora mismo (${hhmm} UTC).`) };
+    return { rounds, head: L('The sun right now ({0} UTC).', 'El sol ahora mismo ({0} UTC).', hhmm) };
   }
   /** After a pin, the day and night on the map (the Day and night filter); put away for the next question. */
   protected async answered() { if (!this.app.isActive('daynight')) await this.host.showLayer('daynight'); }

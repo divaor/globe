@@ -7,7 +7,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
@@ -22,7 +22,6 @@ interface Place { at: [number, number]; year: string; label: string }
 interface Round { who: Entry; choices: Entry[]; places: Place[]; shown: number; answer: string | null }
 interface State { day?: string; rounds: Round[]; i: number; pts: number[]; done: { score: number; stars: 1 | 2 | 3; badges: Badge[] } | null; fold: boolean }
 
-const tx = (x: T) => (es() ? x.es || x.en : x.en);
 
 export class WhoseLife implements HostGame {
   private st: State | null = null;
@@ -113,7 +112,7 @@ export class WhoseLife implements HostGame {
     s.done = { score, stars, badges };
     this.render();
     this.app.renderer.requestRender();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   render() {
@@ -124,13 +123,13 @@ export class WhoseLife implements HostGame {
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     const total = s.pts.reduce((a, b) => a + b, 0);
     if (s.done) {
-      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: L(`Out of ${fmtNumber(1000 * LIFE_ROUNDS)}`, `De ${fmtNumber(1000 * LIFE_ROUNDS)}`),
+      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: L('Out of {0}', 'De {0}', fmtNumber(1000 * LIFE_ROUNDS)),
         rows: s.rounds.map((r, i) => ({ icon: r.who.icon, name: tx(r.who.name), value: fmtNumber(s.pts[i]), mark: r.answer === r.who.id ? (r.shown <= 2 ? 'ok' : 'near') : 'miss',
-          detail: r.answer === r.who.id ? L(`after ${r.shown} ${r.shown === 1 ? 'place' : 'places'}`, `con ${r.shown} ${r.shown === 1 ? 'lugar' : 'lugares'}`) : L('missed', 'fallada') })) });
+          detail: r.answer === r.who.id ? L('after {0, plural, one {# place} other {# places}}', 'con {0, plural, one {# lugar} other {# lugares}}', r.shown) : L('missed', 'fallada') })) });
       this.card.append(res);
       const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `👤 ${L('Whose life is this?', '¿De quién es esta vida?')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.rounds.map((r) => (r.answer !== r.who.id ? '🟥' : r.shown === 1 ? '🎯' : r.shown <= 2 ? '🟩' : '🟨')).join('')}`));
-      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Jugar otra vez'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start(); });
       res.append(h('div', { class: 'result-actions' }, share, again));
       return;
@@ -146,14 +145,14 @@ export class WhoseLife implements HostGame {
         b.addEventListener('click', () => this.guess(c.id));
         return b;
       }));
-      const more = h('button', { type: 'button', class: 'pill sm', 'data-game': 'more' }, icon(Plus, 15), L(`Another place (${fmtNumber(Math.max(200, 1000 - 200 * r.shown))} left)`, `Otro lugar (quedan ${fmtNumber(Math.max(200, 1000 - 200 * r.shown))})`));
+      const more = h('button', { type: 'button', class: 'pill sm', 'data-game': 'more' }, icon(Plus, 15), L('Another place ({0} left)', 'Otro lugar (quedan {0})', fmtNumber(Math.max(200, 1000 - 200 * r.shown))));
       more.disabled = r.shown >= r.places.length;
       more.addEventListener('click', () => this.more());
       this.card.append(choices, h('div', { class: 'hop-actions' }, more), h('div', { class: 'hop-stats' }, `${L('Score', 'Puntos')}: ${fmtNumber(total)}`));
       return;
     }
     const right = r.answer === r.who.id;
-    this.card.append(h('div', { class: `quiz-fb ${right ? 'ok' : 'bad'}` }, right ? L(`Right: ${fmtNumber(s.pts[s.i])} points.`, `¡Correcto! ${fmtNumber(s.pts[s.i])} puntos.`) : L(`It was ${tx(r.who.name)}.`, `Era ${tx(r.who.name)}.`)),
+    this.card.append(h('div', { class: `quiz-fb ${right ? 'ok' : 'bad'}` }, right ? L('Right: {0} points.', '¡Correcto! {0} puntos.', fmtNumber(s.pts[s.i])) : L('It was {0}.', 'Era {0}.', tx(r.who.name))),
       h('div', { class: 'hop-stats' }, tx(r.who.region)));
     const open = h('button', { type: 'button', class: 'pill sm', 'data-game': 'open-life' }, L('Follow this life', 'Seguir esta vida'));
     open.addEventListener('click', () => { const id = r.who.id; void this.stop().then(() => this.app.emit('open-story', 'lives', id, 0)); });

@@ -12,7 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear, toggle } from '../ui/dom';
-import { lang, fmtCompact, fmtNumber } from '../app/i18n';
+import { lang, fmtCompact, fmtNumber, L, Lc, tx } from '../app/i18n';
 import type { PlayHost, HostGame } from './host';
 import { loadJSON } from '../data/store';
 import { Borders, GOALS, RULES, makeRound, dailyRound, seeded, type BorderData, type Goal, type Level, type Round, type Rule } from './route';
@@ -20,7 +20,6 @@ import { scoreOf, starText, challengeHash, readChallenge, hopNumber, HINT_COST, 
 import { recordHop, hopDaily, dayKey, progress, type Badge } from '../learn/progress';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 
 const GOAL_TEXT: Record<Goal, { icon: string; en: string; es: string; desc: { en: string; es: string } }> = {
   count: { icon: '🔢', en: 'Fewest countries', es: 'Menos países', desc: { en: 'Cross as few countries as you can.', es: 'Cruza la menor cantidad de países.' } },
@@ -30,7 +29,7 @@ const GOAL_TEXT: Record<Goal, { icon: string; en: string; es: string; desc: { en
 };
 /** The filter a hint turns on for a goal (the fewest countries has none; the distance shows the capitals). */
 const GOAL_LAYER: Partial<Record<Goal, string>> = { people: 'fact-population', area: 'fact-area_km2' };
-const CONTINENTS: [string, { en: string; es: string }][] = [['', { en: 'World', es: 'Mundo' }], ['AF', { en: 'Africa', es: 'África' }], ['AS', { en: 'Asia', es: 'Asia' }], ['EU', { en: 'Europe', es: 'Europa' }], ['NA', { en: 'North America', es: 'Norteamérica' }], ['SA', { en: 'South America', es: 'Sudamérica' }]];
+const CONTINENTS: [string, { en: string; es: string }][] = [['', { en: 'World', es: 'Mundo' }], ['AF', { en: 'Africa', es: 'África' }], ['AS', { en: 'Asia', es: 'Asia' }], ['EU', { en: 'Europe', es: 'Europa' }], ['NA', { en: 'North America', es: 'América del Norte' }], ['SA', { en: 'South America', es: 'América del Sur' }]];
 const LEVELS: [Level, { en: string; es: string }][] = [['easy', { en: 'Easy', es: 'Fácil' }], ['medium', { en: 'Medium', es: 'Media' }], ['hard', { en: 'Hard', es: 'Difícil' }]];
 const BLITZ_ROUNDS = 5;
 /** Blitz: up to this many bonus points a route, two for each second under two minutes. */
@@ -95,7 +94,7 @@ export class BorderHop implements HostGame {
       const draw = () => {
         clear(row);
         for (const [v, label] of list) {
-          const b = h('button', { type: 'button', class: `chip${cur() === v ? ' on' : ''}`, 'data-v': v }, es() ? label.es : label.en);
+          const b = h('button', { type: 'button', class: `chip${cur() === v ? ' on' : ''}`, 'data-v': v }, tx(label));
           b.addEventListener('click', () => { set(v); draw(); });
           row.append(b);
         }
@@ -108,25 +107,25 @@ export class BorderHop implements HostGame {
     const dr = dailyRound(this.graph(false), day, n);
     const daily = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-play': 'daily' }, h('span', { class: 'mode-icon' }, '🗓️'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, `${L('Daily route', 'Ruta del día')} #${n}${dr ? ` · ${this.name(dr.from)} → ${this.name(dr.to)}` : ''}`),
-        h('span', { class: 'mode-desc' }, done ? `${L('Done', 'Hecho')}: ${done.score} ${starText(done.stars)} · ${L('a new one tomorrow', 'mañana hay otra')}` : dr ? `${this.goalName(dr.goal, dr.rule)} · ${L('the same for everyone today', 'la misma para todos hoy')}` : '')));
+        h('span', { class: 'mode-desc' }, done ? `${L('Done', 'Hecho')}: ${done.score} ${starText(done.stars)} · ${Lc('the daily route', 'a new one tomorrow', 'mañana hay otra')}` : dr ? `${this.goalName(dr.goal, dr.rule)} · ${Lc('the daily route', 'the same for everyone today', 'la misma para todos hoy')}` : '')));
     daily.addEventListener('click', () => { if (dr) void this.start(dr, 'daily', { day }); });
     const goals = h('div', { class: 'mode-list' }, ...GOALS.map((goal) => {
       const T = GOAL_TEXT[goal], best = progress().play.best[goal];
       const c = h('button', { type: 'button', class: `mode-card${p.goal === goal ? ' on' : ''}`, 'data-goal': goal }, h('span', { class: 'mode-icon' }, T.icon),
-        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, es() ? T.es : T.en), h('span', { class: 'mode-desc' }, `${es() ? T.desc.es : T.desc.en}${best ? ` · ${L('Best', 'Récord')}: ${best}` : ''}`)));
+        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, tx(T)), h('span', { class: 'mode-desc' }, `${tx(T.desc)}${best ? ` · ${L('Best', 'Récord')}: ${best}` : ''}`)));
       c.addEventListener('click', () => { p.goal = goal; void this.startPractice(); });
       return c;
     }));
     const rules = h('div', { class: 'mode-list' }, ...RULES.map((rule) => {
       const best = progress().play.best[`rule:${rule.id}`];
       const c = h('button', { type: 'button', class: 'mode-card', 'data-rule': rule.id }, h('span', { class: 'mode-icon' }, rule.icon),
-        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, es() ? rule.es : rule.en), h('span', { class: 'mode-desc' }, `${es() ? rule.desc.es : rule.desc.en}${best ? ` · ${L('Best', 'Récord')}: ${best}` : ''}`)));
+        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, tx(rule)), h('span', { class: 'mode-desc' }, `${tx(rule.desc)}${best ? ` · ${L('Best', 'Récord')}: ${best}` : ''}`)));
       c.addEventListener('click', () => void this.startPractice(rule));
       return c;
     }));
     const blitz = h('button', { type: 'button', class: 'mode-card', 'data-play': 'blitz' }, h('span', { class: 'mode-icon' }, '⏱️'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Blitz', 'Contrarreloj')),
-        h('span', { class: 'mode-desc' }, `${L(`${BLITZ_ROUNDS} routes against the clock: up to 240 extra points a route for speed.`, `${BLITZ_ROUNDS} rutas contra el reloj: hasta 240 puntos más por ruta por la rapidez.`)}${progress().play.best.blitz ? ` · ${L('Best', 'Récord')}: ${progress().play.best.blitz}` : ''}`)));
+        h('span', { class: 'mode-desc' }, `${L('{0} routes against the clock: up to 240 extra points a route for speed.', '{0} rutas contra el reloj: hasta 240 puntos más por ruta por la rapidez.', BLITZ_ROUNDS)}${progress().play.best.blitz ? ` · ${L('Best', 'Récord')}: ${progress().play.best.blitz}` : ''}`)));
     blitz.addEventListener('click', () => void this.startBlitz());
     body.append(
       h('p', { class: 'muted small' }, L('Get from one country to another across land borders: tap the countries one by one. Their names are hidden, and the app knows the best route.', 'Llega de un país a otro cruzando fronteras terrestres: toca los países uno a uno. Sus nombres están ocultos, y la app conoce la mejor ruta.')),
@@ -137,13 +136,13 @@ export class BorderHop implements HostGame {
       h('h3', { class: 'sec-title' }, L('Border hop: pick a goal', 'Salto de fronteras: elige un objetivo')), goals, blitz,
       h('h3', { class: 'sec-title' }, L('Knowledge rounds', 'Rondas de conocimiento')),
       h('p', { class: 'muted small' }, L('Only some countries may be crossed: you need to know which.', 'Solo se pueden cruzar algunos países: hay que saber cuáles.')), rules,
-      h('p', { class: 'muted small' }, L('Scoring: the best route scores 1,000; yours scores 1,000 × best ÷ yours. ★★★ matches the best; ★★ is one country more (or within 15 %). Hints cost points and stars: names −150 and a map of the goal −200 leave at most ★★; each next step −300 leaves ★.', 'Puntuación: la mejor ruta vale 1.000; la tuya, 1.000 × la mejor ÷ la tuya. ★★★ iguala la mejor; ★★ es un país más (o hasta un 15 % más). Las pistas cuestan puntos y estrellas: nombres −150 y un mapa del objetivo −200 dejan como mucho ★★; cada siguiente paso −300 deja ★.')));
+      h('p', { class: 'muted small' }, L('The best route scores {0} and ★★★; one country more, ★★. Hints cost points and stars: names −{1} and the goal’s map −{2} (★★ at most), a next step −{3} (★).', 'La mejor ruta vale {0} y ★★★; un país más, ★★. Las pistas cuestan puntos y estrellas: los nombres −{1} y el mapa del objetivo −{2} (★★ como mucho), el siguiente paso −{3} (★).', fmtNumber(1000), HINT_COST.names, HINT_COST.filter, HINT_COST.step)));
     this.shell.openPanel('play-hop', L('Border hop', 'Salto de fronteras'), body);
   }
 
   private goalName(goal: Goal, rule: string | null) {
     const r = rule ? RULES.find((x) => x.id === rule) : null;
-    return r ? (es() ? r.es : r.en) : es() ? GOAL_TEXT[goal].es : GOAL_TEXT[goal].en;
+    return r ? (tx(r)) : tx(GOAL_TEXT[goal]);
   }
 
   // ---- Starting ----------------------------------------------------------------------------------------------
@@ -246,19 +245,19 @@ export class BorderHop implements HostGame {
     const at = s.path.indexOf(id);
     if (at >= 0) {
       s.path = s.path.slice(0, at + 1);
-      s.msg = { ok: true, text: L(`Back to ${this.name(id)}.`, `De vuelta en ${this.name(id)}.`) };
+      s.msg = { ok: true, text: L('Back to {0}.', 'De vuelta en {0}.', this.name(id)) };
     } else if (!s.g.borders(last, id)) {
       this.flash(id);
-      s.msg = { ok: false, text: L(`${this.name(id)} does not border ${this.name(last)}.`, `${this.name(id)} no limita con ${this.name(last)}.`) };
+      s.msg = { ok: false, text: L('{0} does not border {1}.', '{0} no limita con {1}.', this.name(id), this.name(last)) };
     } else if (!s.g.allowed(s.rule, id)) {
       this.flash(id);
       const r = s.rule!;
-      s.msg = { ok: false, text: (es() ? r.no.es : r.no.en).replace('{c}', this.name(id)) };
+      s.msg = { ok: false, text: (tx(r.no)).replace('{c}', this.name(id)) };
     } else {
       s.path.push(id);
       const note = s.g.note(last, id);
       const n = note ? s.g.data.notes[note] : null;
-      s.msg = n ? { ok: true, text: es() ? n.es : n.en } : null;
+      s.msg = n ? { ok: true, text: tx(n) } : null;
       if (id === s.round.to) { this.finish(false); return; }
     }
     this.render();
@@ -328,7 +327,7 @@ export class BorderHop implements HostGame {
     this.render();
     this.fit();
     this.app.renderer.requestRender();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   giveUp() { if (this.st && !this.st.done) this.finish(true); }
@@ -348,8 +347,8 @@ export class BorderHop implements HostGame {
 
   // ---- Numbers -----------------------------------------------------------------------------------------------
   private amount(goal: Goal, v: number): string {
-    if (goal === 'count') return v === 1 ? L('1 country in between', '1 país en medio') : L(`${v} countries in between`, `${v} países en medio`);
-    if (goal === 'people') return `${fmtCompact(v)} ${L('people', 'personas')}`;
+    if (goal === 'count') return v === 1 ? L('1 country in between', '1 país en medio') : L('{0} countries in between', '{0} países en medio', v);
+    if (goal === 'people') return `${fmtCompact(v)} ${L('people', 'habitantes')}`;
     if (goal === 'area') return `${fmtNumber(Math.round(v))} km²`;
     return `${fmtNumber(Math.round(v))} km`;
   }
@@ -396,15 +395,15 @@ export class BorderHop implements HostGame {
       }
       return;
     }
-    if (s.beat !== undefined && !s.done) this.card.append(h('div', { class: 'muted small' }, L(`A friend scored ${s.beat}. Can you beat it?`, `Un amigo hizo ${s.beat}. ¿Puedes superarlo?`)));
-    if (s.rule && !s.done) this.card.append(h('div', { class: 'muted small' }, es() ? s.rule.desc.es : s.rule.desc.en));
+    if (s.beat !== undefined && !s.done) this.card.append(h('div', { class: 'muted small' }, L('A friend scored {0}. Can you beat it?', 'Un amigo hizo {0}. ¿Puedes superarlo?', s.beat)));
+    if (s.rule && !s.done) this.card.append(h('div', { class: 'muted small' }, tx(s.rule.desc)));
     const mid = s.path.slice(1);
     const chain = h('div', { class: 'hop-path' }, ...s.path.map((id, i) => h('span', { class: `hop-step${i === 0 ? ' from' : ''}${id === round.to ? ' to' : ''}` }, this.name(id))));
     if (!s.done) {
       const so = s.g.cost([...s.path, round.to], round.goal);
       this.card.append(chain, h('div', { class: 'hop-stats' }, mid.length ? `${L('So far', 'Por ahora')}: ${this.amount(round.goal, round.goal === 'count' ? s.path.length - 1 : so)}` : L('Tap a country that borders the green one.', 'Toca un país que limite con el verde.')));
       if (s.msg) this.card.append(h('div', { class: `quiz-fb ${s.msg.ok ? 'ok' : 'bad'}` }, s.msg.text));
-      const undo = h('button', { type: 'button', class: 'pill sm', 'data-hop': 'undo' }, icon(Undo2, 15), L('Back', 'Atrás'));
+      const undo = h('button', { type: 'button', class: 'pill sm', 'data-hop': 'undo' }, icon(Undo2, 15), L('Undo', 'Deshacer'));
       undo.disabled = s.path.length < 2;
       undo.addEventListener('click', () => this.undo());
       const hint = (k: Hint, label: string) => {
@@ -417,7 +416,7 @@ export class BorderHop implements HostGame {
       hints.addEventListener('click', () => { s.showHints = !s.showHints; this.render(); });
       const hasMap = !!s.rule || round.goal !== 'count';
       const mapLabel = s.rule ? L('Allowed', 'Permitidos') : round.goal === 'km' ? L('Capitals', 'Capitales') : round.goal === 'people' ? L('Population', 'Población') : L('Area', 'Superficie');
-      const giveUp = h('button', { type: 'button', class: 'pill sm', 'data-hop': 'giveup' }, icon(Flag, 15), L('Show me', 'Ver la ruta'));
+      const giveUp = h('button', { type: 'button', class: 'pill sm', 'data-hop': 'giveup' }, icon(Flag, 15), L('Show the route', 'Ver la ruta'));
       giveUp.addEventListener('click', () => this.giveUp());
       this.card.append(h('div', { class: 'hop-actions' }, undo, hints, giveUp));
       if (s.showHints) this.card.append(h('div', { class: 'hop-actions hop-hints' }, hint('names', L('Names', 'Nombres')), ...(hasMap ? [hint('filter', mapLabel)] : []), hint('step', L('Next step', 'Siguiente paso'))));
@@ -430,13 +429,13 @@ export class BorderHop implements HostGame {
     const res = resultCard({ stars: d.stars, score: `${d.score}`, unit: `${L('points', 'puntos')}${d.bonus ? ` + ${d.bonus} ${L('for speed', 'por rapidez')}` : ''}`, sub: `${yoursLine} · ${parLine}` });
     this.card.append(res);
     res.append(chain);
-    if (s.beat !== undefined && !d.gaveUp) res.append(h('div', { class: `quiz-fb ${d.score >= s.beat ? 'ok' : 'bad'}` }, d.score > s.beat ? L(`You beat your friend's ${s.beat}!`, `¡Superaste los ${s.beat} de tu amigo!`) : d.score === s.beat ? L(`A tie with your friend's ${s.beat}.`, `Empate con los ${s.beat} de tu amigo.`) : L(`Your friend's ${s.beat} still stands.`, `Los ${s.beat} de tu amigo siguen en pie.`)));
+    if (s.beat !== undefined && !d.gaveUp) res.append(h('div', { class: `quiz-fb ${d.score >= s.beat ? 'ok' : 'bad'}` }, d.score > s.beat ? L('You beat your friend\'s {0}!', '¡Superaste los {0} de tu amigo!', s.beat) : d.score === s.beat ? L('A tie with your friend\'s {0}.', 'Empate con los {0} de tu amigo.', s.beat) : L('Your friend\'s {0} still stands.', 'Los {0} de tu amigo siguen en pie.', s.beat)));
     // The best route for each goal: the same two countries, other answers.
     const others = h('div', { class: 'hop-others' });
     for (const goal of s.rule ? (['count'] as Goal[]) : GOALS) {
       const b = s.g.best(round.from, round.to, goal, s.rule);
       if (!b) continue;
-      others.append(h('div', { class: `hop-other${goal === round.goal ? ' cur' : ''}` }, h('span', { class: 'hop-other-goal' }, `${GOAL_TEXT[goal].icon} ${es() ? GOAL_TEXT[goal].es : GOAL_TEXT[goal].en}: ${this.amount(goal, b.cost)}`),
+      others.append(h('div', { class: `hop-other${goal === round.goal ? ' cur' : ''}` }, h('span', { class: 'hop-other-goal' }, `${GOAL_TEXT[goal].icon} ${tx(GOAL_TEXT[goal])}: ${this.amount(goal, b.cost)}`),
         h('span', { class: 'hop-other-path' }, b.path.slice(1, -1).map((x) => this.name(x)).join(' › ') || '—')));
     }
     const othersB = h('button', { type: 'button', class: 'hop-sub-btn', 'data-hop': 'others', 'aria-expanded': String(s.showOthers) },
@@ -447,7 +446,7 @@ export class BorderHop implements HostGame {
     // The odd borders on the way, explained.
     const notes = new Set<string>();
     for (const p of [s.path, d.best]) for (let i = 1; i < p.length; i++) { const n = s.g.note(p[i - 1], p[i]); if (n) notes.add(n); }
-    for (const n of notes) { const x = s.g.data.notes[n]; if (x) res.append(h('p', { class: 'hop-note' }, `💡 ${es() ? x.es : x.en}`)); }
+    for (const n of notes) { const x = s.g.data.notes[n]; if (x) res.append(h('p', { class: 'hop-note' }, `💡 ${tx(x)}`)); }
     const shareB = h('button', { type: 'button', class: 'pill', 'data-hop': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
     shareB.addEventListener('click', () => void this.share(false));
     const chal = h('button', { type: 'button', class: 'pill', 'data-hop': 'challenge' }, icon(Link2, 16), L('Challenge a friend', 'Desafía a un amigo'));

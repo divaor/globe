@@ -8,7 +8,7 @@ import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, MultiLineString, Polygon } from 'geojson';
 import { loadJSON, shapesFrom, chunkLines, type Shape, type Line } from '../data/store';
 import { oklch } from '../engine/colors';
-import { t, lang, fmtNumber } from '../app/i18n';
+import { t, lang, fmtNumber, L, dataLang, tx } from '../app/i18n';
 import { h, clear } from '../ui/dom';
 import { TimeBar } from '../ui/timebar';
 import type { App } from '../app/app';
@@ -65,9 +65,9 @@ export class HistoryMode {
       legend() {
         const es = lang() === 'es';
         return {
-          kind: 'html', title: es ? 'Fronteras históricas' : 'Historical borders',
-          html: `<div class="lg-row">${es ? 'Cada color es una entidad política; los colores se mantienen en el tiempo.' : 'Each colour is one polity; colours stay the same over time.'}</div>
-                 <div class="lg-row muted">${es ? 'Las fronteras antiguas son aproximadas.' : 'Older borders are approximate.'}</div>`,
+          kind: 'html', title: L('Historical borders', 'Fronteras históricas'),
+          html: `<div class="lg-row">${L('Each colour is one polity; colours stay the same over time.', 'Cada color es una entidad política; los colores se mantienen en el tiempo.')}</div>
+                 <div class="lg-row muted">${L('Older borders are approximate.', 'Las fronteras antiguas son aproximadas.')}</div>`,
         };
       },
     };
@@ -195,12 +195,12 @@ export class HistoryMode {
     void this.load(startIdx); void this.load(Math.min(n - 1, startIdx + 1));
     const es = lang() === 'es';
     this.bar = new TimeBar({
-      title: es ? 'Fronteras en el tiempo' : 'Borders through time',
-      subtitle: es ? `${n} mapas` : `${n} maps`,
+      title: L('Borders through time', 'Fronteras en el tiempo'),
+      subtitle: L('{0} maps', '{0} mapas', n),
       steps: n,
       format: (f) => this.label(Math.round(f * (n - 1))),
-      bands: ERAS.map((e) => ({ from: this.yearFrac(e.from), to: this.yearFrac(e.to), color: e.color, label: es ? e.es : e.en })),
-      ticks: [-123000, -3000, -500, 1, 1000, 1500, 1800, 1914, this.snaps[this.snaps.length - 1].year].map((y) => ({ at: this.yearFrac(y), label: y < 0 ? (es ? `${-y} a. C.` : `${-y} BC`) : String(y) })).filter((tk) => tk.at >= 0),
+      bands: ERAS.map((e) => ({ from: this.yearFrac(e.from), to: this.yearFrac(e.to), color: e.color, label: tx(e) })),
+      ticks: [-123000, -3000, -500, 1, 1000, 1500, 1800, 1914, this.snaps[this.snaps.length - 1].year].map((y) => ({ at: this.yearFrac(y), label: y < 0 ? (L('{0} BC', '{0} a. C.', -y)) : String(y) })).filter((tk) => tk.at >= 0),
       start: startIdx / (n - 1), end: 1, pos: startIdx / (n - 1),
       rate: 1 / (n - 1) / 1.8,
       onPos: (f) => this.setPos(f * (n - 1)),
@@ -303,17 +303,17 @@ export class HistoryMode {
     const p = hit.feature.properties;
     const es = lang() === 'es';
     const e = this.entities[p.n!];
-    const yl = (y: number) => (y < 0 ? (es ? `${fmtNumber(-y)} a. C.` : `${fmtNumber(-y)} BC`) : String(y));
+    const yl = (y: number) => (y < 0 ? (L('{0} BC', '{0} a. C.', fmtNumber(-y))) : String(y));
     const rows = [
-      ...(p.rn ? [{ label: es ? 'Antes' : 'Formerly', value: (es ? p.rns : undefined) ?? p.rn, icon: '✏️' }] : []),
-      ...(p.s ? [{ label: es ? 'Bajo' : 'Under', value: p.s, icon: '👑' }] : []),
-      ...(p.p ? [{ label: es ? 'Parte de' : 'Part of', value: p.p, icon: '🧩' }] : []),
-      ...(e ? [{ label: es ? 'En los mapas' : 'On the maps', value: `${yl(e.first)} – ${yl(e.last)}`, icon: '📅' }] : []),
-      { label: es ? 'Superficie aprox.' : 'Approx. area', value: `${fmtNumber(Math.round(hit.area * 6371 * 6371 / 1000) * 1000)} km²`, icon: '📐' },
-      { label: es ? 'Precisión de la frontera' : 'Border precision', value: [es ? 'aproximada' : 'approximate', es ? 'moderada' : 'moderate', es ? 'reconocida' : 'recognised'][Math.max(0, Math.min(2, (p.pr || 1) - 1))], icon: '📏' },
+      ...(p.rn ? [{ label: L('Formerly', 'Antes'), value: (es ? p.rns : undefined) ?? p.rn, icon: '✏️' }] : []),
+      ...(p.s ? [{ label: L('Under', 'Bajo'), value: p.s, icon: '👑' }] : []),
+      ...(p.p ? [{ label: L('Part of', 'Parte de'), value: p.p, icon: '🧩' }] : []),
+      ...(e ? [{ label: L('On the maps', 'En los mapas'), value: `${yl(e.first)} – ${yl(e.last)}`, icon: '📅' }] : []),
+      { label: L('Approx. area', 'Superficie aprox.'), value: `${fmtNumber(Math.round(hit.area * 6371 * 6371 / 1000) * 1000)} km²`, icon: '📐' },
+      { label: L('Border precision', 'Precisión de la frontera'), value: [L('approximate', 'aproximada'), L('moderate', 'moderada'), L('recognised', 'reconocida')][Math.max(0, Math.min(2, (p.pr || 1) - 1))], icon: '📏' },
     ];
     const name = nameOf(p);
-    const wiki = `https://${es ? 'es' : 'en'}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(name)}`;
+    const wiki = `https://${dataLang()}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(name)}`;
     this.shell.card.showCustom('🏛️', name, this.label(this.dominant()), rows, [{ label: t('wikipedia'), href: wiki }]);
     return true;
   }
@@ -325,7 +325,7 @@ export class HistoryMode {
     const ch = this.changes.find((c) => c.to === this.snaps[di].year);
     const body = h('div', { class: 'changes' });
     const title = `${t('whatChanged')}: ${this.label(Math.max(0, di - 1))} → ${this.label(di)}`;
-    if (!ch) body.append(h('p', { class: 'muted' }, es ? 'Este es el primer mapa.' : 'This is the first map.'));
+    if (!ch) body.append(h('p', { class: 'muted' }, L('This is the first map.', 'Este es el primer mapa.')));
     else {
       // Names as shown on the map they belong to (today's names on the present-day map).
       const shown = (name: string, i: number) => {
@@ -344,20 +344,20 @@ export class HistoryMode {
         }
         body.append(h('h3', { class: 'sec-title' }, `${icon} ${label}`), list);
       };
-      section(es ? 'Aparecen' : 'Appeared', '🟢', ch.appeared);
-      section(es ? 'Desaparecen' : 'Disappeared', '⚫', ch.disappeared, Math.max(0, di - 1));
-      section(es ? 'Crecen' : 'Grew', '📈', ch.grew);
-      section(es ? 'Se reducen' : 'Shrank', '📉', ch.shrank);
+      section(L('Appeared', 'Aparecen'), '🟢', ch.appeared);
+      section(L('Disappeared', 'Desaparecen'), '⚫', ch.disappeared, Math.max(0, di - 1));
+      section(L('Grew', 'Crecen'), '📈', ch.grew);
+      section(L('Shrank', 'Se reducen'), '📉', ch.shrank);
       if (ch.renamed?.length) {
         const list = h('div', { class: 'chip-row' });
         for (const [from, to, fromEs, toEs] of ch.renamed) {
-          const b = h('button', { type: 'button', class: 'chip' }, es ? `${fromEs ?? from} → ${toEs ?? to}` : `${from} → ${to}`);
+          const b = h('button', { type: 'button', class: 'chip' }, `${es ? fromEs ?? from : from} → ${es ? toEs ?? to : to}`);
           b.addEventListener('click', () => this.locate(from));
           list.append(b);
         }
-        body.append(h('h3', { class: 'sec-title' }, `✏️ ${es ? 'Cambian de nombre' : 'Renamed'}`), list);
+        body.append(h('h3', { class: 'sec-title' }, `✏️ ${L('Renamed', 'Cambian de nombre')}`), list);
       }
-      if (!body.childElementCount) body.append(h('p', { class: 'muted' }, es ? 'Sin cambios grandes.' : 'No big changes.'));
+      if (!body.childElementCount) body.append(h('p', { class: 'muted' }, L('No big changes.', 'Sin cambios grandes.')));
     }
     if (refresh) { const el = this.shell.sheet.el.querySelector('.sheet-body'); if (el) { clear(el); el.append(body); } this.shell.sheet.setTitle(title); }
     else this.shell.openPanel('changes', title, body);

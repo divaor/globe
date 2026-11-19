@@ -9,7 +9,7 @@ import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber, appLocale, flagEmoji } from '../app/i18n';
+import { fmtNumber, appLocale, flagEmoji, dataLang, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { L, es, type PlayHost, type HostGame } from '../play/host';
 import { shareText } from '../play/pin';
@@ -76,8 +76,8 @@ export class FillStates implements HostGame {
   }
   hasFacts(a3: string) { return !!this.data?.[a3]; }
   cats(a3: string): StateCat[] { return catsOf(a3, this.data); }
-  cname(a3: string) { return this.app.data.name(a3, es() ? 'es' : 'en'); }
-  catName(c: StateCat) { return es() ? STATE_CAT_TEXT[c].es : STATE_CAT_TEXT[c].en; }
+  cname(a3: string) { return this.app.data.name(a3, dataLang()); }
+  catName(c: StateCat) { return tx(STATE_CAT_TEXT[c]); }
   private word(a3: string) { const w = WORD[a3]; return w ? (es() ? w[1] : w[0]) : L('region', 'región'); }
   private rname(r: Region | undefined) { return r ? (es() ? r.es : r.n) : ''; }
   private facts(a3: string, id: string) { return this.data?.[a3]?.[id]; }
@@ -204,7 +204,7 @@ export class FillStates implements HostGame {
     const cur = s.cur;
     const name = this.rname(s.list.find((r) => r.id === id));
     if (id !== cur.id && this.filled(id) != null && s.ids.includes(id)) {
-      s.note = L(`${name} is already filled in.`, `${name} ya tiene color.`);
+      s.note = L('{0} is already filled in.', '{0} ya tiene color.', name);
       s.flash = { id, at: performance.now() };
       this.render();
       this.app.renderer.requestRender();
@@ -213,7 +213,7 @@ export class FillStates implements HostGame {
     if (id === cur.id) { this.fillIn(id, starsFor(cur.misses), cur.misses === 0); return; }
     cur.misses++;
     s.flash = { id, at: performance.now() };
-    s.note = L(`That is ${name}.`, `Ese es ${name}.`);
+    s.note = L('That is {0}.', 'Ese es {0}.', name);
     if (cur.misses >= TRIES) { this.reveal(id); return; }
     this.render();
     this.app.renderer.requestRender();
@@ -245,7 +245,7 @@ export class FillStates implements HostGame {
     this.render();
     this.app.renderer.requestRender();
   }
-  private toastBadges(b: Badge[]) { if (b.length) this.shell.toast(`${b[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? b[0].es : b[0].en}`, 4000); }
+  private toastBadges(b: Badge[]) { if (b.length) this.shell.toast(`${b[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(b[0])}`, 4000); }
 
   /** A country filled, its capitals all, a perfect country, all twelve countries' capitals: the badges. */
   private feats(a3: string, cat: StateCat): Badge[] {
@@ -304,7 +304,7 @@ export class FillStates implements HostGame {
       const extra = this.valueOf(a.id);
       card.append(h('div', { class: `quiz-fb ${a.ok ? 'ok' : 'bad'}`, 'data-states': 'feedback' }, a.ok
         ? `✅ ${name} ${'★'.repeat(a.stars)}${'☆'.repeat(3 - a.stars)}${extra ? ` · ${extra}` : ''}`
-        : `👀 ${L(`It is ${name}`, `Es ${name}`)}${extra ? ` · ${extra}` : ''}`));
+        : `👀 ${L('It is {0}', 'Es {0}', name)}${extra ? ` · ${extra}` : ''}`));
       const next = h('button', { type: 'button', class: 'pill sm primary', 'data-states': 'next' }, L('Next', 'Siguiente'), icon(ChevronRight, 15));
       next.addEventListener('click', () => this.next());
       card.append(h('div', { class: 'hop-actions' }, next));
@@ -331,10 +331,10 @@ export class FillStates implements HostGame {
   private prompt(cur: Cur): string {
     const s = this.s!, r = s.list.find((x) => x.id === cur.id), w = this.word(s.a3);
     switch (s.cat) {
-      case 'names': return L(`Tap ${this.rname(r)}`, `Toca ${this.rname(r)}`);
-      case 'capitals': return L(`Tap the ${w} whose capital is ${this.capName(s.a3, cur.id)}`, `Toca ${this.esArticle(s.a3)} ${w} cuya capital es ${this.capName(s.a3, cur.id)}`);
-      case 'people': return L(`Tap the ${w} with the most people left`, `Toca ${this.esArticle(s.a3)} ${w} más poblad${this.esFem(s.a3) ? 'a' : 'o'} que queda`);
-      case 'area': return L(`Tap the largest ${w} left`, `Toca ${this.esArticle(s.a3)} ${w} más grande que queda`);
+      case 'names': return L('Tap {0}', 'Toca {0}', this.rname(r));
+      case 'capitals': return L('Tap the {0} whose capital is {1}', 'Toca {2} {0} cuya capital es {1}', w, this.capName(s.a3, cur.id), this.esArticle(s.a3));
+      case 'people': return L('Tap the {0} with the most people left', 'Toca {1} {0} {2, select, f {más poblada} other {más poblado}} que queda', w, this.esArticle(s.a3), this.esFem(s.a3) ? 'f' : 'm');
+      case 'area': return L('Tap the largest {0} left', 'Toca {1} {0} más grande que queda', w, this.esArticle(s.a3));
     }
   }
   /** "la provincia", "el estado". */
@@ -352,19 +352,19 @@ export class FillStates implements HostGame {
     let w = Infinity, so = Infinity, e = -Infinity, n = -Infinity;
     for (const x of main.length ? main : s.list) { w = Math.min(w, x.core[0][0]); so = Math.min(so, x.core[0][1]); e = Math.max(e, x.core[1][0]); n = Math.max(n, x.core[1][1]); }
     const d = DIR_TEXT[direction(r.at, [[w, so], [e, n]])];
-    return r.far ? L('It lies apart from the rest.', 'Está apartado del resto.') : L(`It is in ${d[0]} of ${this.cname(s.a3)}.`, `Está en ${d[1]} de ${this.cname(s.a3)}.`);
+    return r.far ? L('It lies apart from the rest.', 'Está apartado del resto.') : L('It is in {0} of {1}.', 'Está en {2} de {1}.', d[0], this.cname(s.a3), d[1]);
   }
 
   /** What the answer shows: its capital (and its biggest city when that is another), people or area. */
   private valueOf(id: string): string {
     const s = this.s!, f = this.facts(s.a3, id);
     if (!f) return '';
-    if (s.cat === 'people') return f.p >= 1e6 ? L(`${(f.p / 1e6).toLocaleString(appLocale(), { maximumFractionDigits: 1 })} million people`, `${(f.p / 1e6).toLocaleString(appLocale(), { maximumFractionDigits: 1 })} millones de personas`) : L(`${fmtNumber(f.p)} people`, `${fmtNumber(f.p)} personas`);
+    if (s.cat === 'people') return f.p >= 1e6 ? L('{0} million people', '{0} millones de personas', (f.p / 1e6).toLocaleString(appLocale(), { maximumFractionDigits: 1 })) : L('{0} people', '{0} habitantes', fmtNumber(f.p));
     if (s.cat === 'area') return `${fmtNumber(f.a)} km²`;
     if (s.cat === 'capitals' || s.cat === 'names') {
       if (f.s) return '';
       const cap = this.capName(s.a3, id), note = f.c[5], big = f.b ? (es() && f.b[1] ? f.b[1] : f.b[0]) : '';
-      return `🏛️ ${cap}${note ? ` (${es() ? note[1] : note[0]})` : ''}${big ? ` · ${L(`${big} is the biggest`, `${big} es la más grande`)}` : ''}`;
+      return `🏛️ ${cap}${note ? ` (${es() ? note[1] : note[0]})` : ''}${big ? ` · ${L('{0} is the biggest', '{0} es la más grande', big)}` : ''}`;
     }
     return '';
   }
@@ -374,14 +374,14 @@ export class FillStates implements HostGame {
     const map = this.map(s.a3, s.cat);
     const missed = s.ids.filter((id) => (s.daily ? s.got.get(id) : map[id]) === 0);
     const head = s.daily
-      ? L(`Done: ★ ${s.stats.stars} of ${s.ids.length * 3}`, `Hecho: ★ ${s.stats.stars} de ${s.ids.length * 3}`)
-      : L(`${this.cname(s.a3)} is filled in!`, `¡Terminaste de colorear ${this.cname(s.a3)}!`);
+      ? L('Done: ★ {0} of {1}', 'Hecho: ★ {0} de {1}', s.stats.stars, s.ids.length * 3)
+      : L('{0} is filled in!', '¡Terminaste de colorear {1}!', this.cname(s.a3), this.cname(s.a3));
     const res = resultCard({ stars: s.ids.length ? Math.round((3 * s.stats.stars) / (s.ids.length * 3)) : undefined, headline: head,
-      sub: s.stats.asked ? L(`${s.stats.firsts} of ${s.stats.asked} right at the first try`, `${s.stats.firsts} de ${s.stats.asked} acertados a la primera`) : undefined });
+      sub: s.stats.asked ? L('{0} of {1} right at the first try', '{0} de {1} acertados a la primera', s.stats.firsts, s.stats.asked) : undefined });
     res.querySelector('.result-headline')?.setAttribute('data-states', 'done');
     card.append(res);
     const name = (id: string) => this.rname(s.list.find((r) => r.id === id));
-    if (missed.length) res.append(h('div', { class: 'tool-hint' }, L(`Shown: ${missed.map(name).join(', ')}`, `Mostrados: ${missed.map(name).join(', ')}`)));
+    if (missed.length) res.append(h('div', { class: 'tool-hint' }, L('Shown: {0}', 'Mostrados: {0}', missed.map(name).join(', '))));
     const actions = h('div', { class: 'result-actions' });
     const add = (label: string, fn: () => void, primary = false, attr = '') => {
       const b = h('button', { type: 'button', class: `pill${primary ? ' primary' : ''}`, 'data-states': attr }, label);
@@ -392,10 +392,10 @@ export class FillStates implements HostGame {
       const order = this.list().filter((c) => this.cats(c.id).includes(s.cat)).map((c) => c.id);
       const full = (a3: string) => { const m = fillState().states[`${a3}:${s.cat}`] ?? {}; const n = Object.keys(m).length; return n > 0 && n >= (this.countries.find((c) => c.id === a3)?.n ?? Infinity) - (s.cat === 'capitals' ? Object.values(this.data?.[a3] ?? {}).filter((x) => x.s).length : 0); };
       const nx = nextCountry(order, s.a3, full);
-      if (nx) add(L(`Next: ${this.cname(nx)}`, `Siguiente: ${this.cname(nx)}`), () => void this.start({ a3: nx }), true, 'next-country');
+      if (nx) add(L('Next: {0}', 'Siguiente: {0}', this.cname(nx)), () => void this.start({ a3: nx }), true, 'next-country');
       if (missed.length) {
         const one = missed.length === 1 ? name(missed[0]) : '';
-        add(one ? L(`Try ${one} again`, `Repetir ${one}`) : L(`Try the ${missed.length} shown again`, `Repetir los ${missed.length} mostrados`), () => void this.start({ retry: true }), !nx, 'retry');
+        add(one ? L('Try {0} again', 'Repetir {0}', one) : L('Try the {0} shown again', 'Repetir los {0} mostrados', missed.length), () => void this.start({ retry: true }), !nx, 'retry');
       }
     }
     add(L('Share', 'Compartir'), () => void this.share(), false, 'share');
@@ -495,7 +495,7 @@ export class FillStates implements HostGame {
     sel.addEventListener('change', () => { set.a3 = sel.value; fillState(); saveFill(); void this.prepare(sel.value).then(redraw); });
     const info = this.countries.find((c) => c.id === a3);
     out.push(h('h3', { class: 'sec-title' }, L('Country', 'País')), sel,
-      ...(info ? [h('p', { class: 'tool-hint' }, es() ? info.what.es : info.what.en)] : []));
+      ...(info ? [h('p', { class: 'tool-hint' }, tx(info.what))] : []));
     // The categories, each with how full it is: tap one to fill it.
     const rows = h('div', { class: 'fill-scopes', 'data-states': 'cats' });
     for (const c of this.cats(a3)) {
@@ -515,7 +515,7 @@ export class FillStates implements HostGame {
     play.addEventListener('click', () => void this.start({ a3, cat }));
     const reset = h('button', { type: 'button', class: 'pill sm', 'data-states': 'reset' }, icon(RotateCcw, 15), L('Start over', 'Empezar de nuevo'));
     reset.addEventListener('click', () => {
-      if (!x.n || confirm(L(`Empty ${this.cname(a3)}'s ${this.catName(cat)} map (${x.n} filled)?`, `¿Vaciar el mapa de ${this.catName(cat)} de ${this.cname(a3)} (${x.n} coloreados)?`))) { fillState().states[`${a3}:${cat}`] = {}; saveFill(); redraw(); }
+      if (!x.n || confirm(L('Empty {0}\'s {1} map ({2} filled)?', '¿Vaciar el mapa de {1} de {0} ({2} coloreados)?', this.cname(a3), this.catName(cat), x.n))) { fillState().states[`${a3}:${cat}`] = {}; saveFill(); redraw(); }
     });
     const share = h('button', { type: 'button', class: 'pill sm', 'data-states': 'share' }, icon(Share2, 15), L('Share', 'Compartir'));
     share.addEventListener('click', () => void shareText(this.shell, `🖍️ ${L('Fill the states', 'Llena los estados')} · ${flagEmoji(this.app.data.meta[a3]?.a2)} ${this.cname(a3)} · ${this.catName(cat)}: ${x.n}/${x.total} · ★ ${x.stars}\n${location.origin}${location.pathname}`));

@@ -2,7 +2,7 @@
 // (public/data/born). A dot is a place, coloured by its best-known person's field and bigger the more people were
 // born there; a tap lists them. By field, by when they were born, and by birth or death.
 // A person with a life in Lives on the map opens it; living people appear by birthplace only.
-import { lang, fmtCompact } from '../../app/i18n';
+import { lang, fmtCompact, L, dataLang } from '../../app/i18n';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import type { App } from '../../app/app';
@@ -14,7 +14,6 @@ import { creditEl } from '../../artguide/cards';
 import { regionAt, regionType } from '../../engine/regions';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 let APP: App | null = null;
 let SHELL: Shell | null = null;
 let data: BornData | null = null;
@@ -81,7 +80,7 @@ export function peopleList(people: Person[], onPick: (p: Person) => void, max = 
     row.addEventListener('click', () => onPick(p));
     list.append(row);
   }
-  if (people.length > max) list.append(h('p', { class: 'muted small' }, L(`…and ${people.length - max} more.`, `…y ${people.length - max} más.`)));
+  if (people.length > max) list.append(h('p', { class: 'muted small' }, L('…and {0} more.', '…y {0} más.', people.length - max)));
   return list;
 }
 
@@ -93,7 +92,7 @@ export const bornHere: LayerDef = {
   credit: 'Wikidata (CC0)',
   options: [
     { id: 'field', label: { en: 'Field', es: 'Campo' }, type: 'select', default: 'all', choices: [{ value: 'all', label: { en: 'Everyone', es: 'Todos' } }, ...Object.entries(FIELDS).map(([value, f]) => ({ value, label: f.name, icon: f.icon }))] },
-    { id: 'period', label: { en: 'Born', es: 'Nacidos' }, type: 'select', default: 'all', choices: PERIODS.map(([value, label]) => ({ value, label })) },
+    { id: 'period', label: { en: 'Born', es: 'Nacidos', ctx: 'a filter: when people were born' }, type: 'select', default: 'all', choices: PERIODS.map(([value, label]) => ({ value, label })) },
     { id: 'show', label: { en: 'Show', es: 'Mostrar' }, type: 'select', default: 'born', choices: [{ value: 'born', label: { en: 'Where they were born', es: 'Dónde nacieron' } }, { value: 'died', label: { en: 'Where they died', es: 'Dónde murieron' } }] },
   ],
   async load() { data ??= await loadBorn(); void loadLives(); },
@@ -126,7 +125,7 @@ export const bornHere: LayerDef = {
     for (const people of places.values()) for (const p of people) { n.set(p.field, (n.get(p.field) ?? 0) + 1); total++; }
     const died = inst.options.show === 'died';
     return {
-      kind: 'categories', title: died ? L(`Where ${fmtCompact(total)} people died`, `Dónde murieron ${fmtCompact(total)} personas`) : L(`Where ${fmtCompact(total)} people were born`, `Dónde nacieron ${fmtCompact(total)} personas`),
+      kind: 'categories', title: died ? L('Where {0} people died', 'Dónde murieron {0} personas', fmtCompact(total)) : L('Where {0} people were born', 'Dónde nacieron {0} personas', fmtCompact(total)),
       items: Object.keys(FIELDS).filter((f) => n.get(f)).map((f) => ({ color: FIELDS[f].color, label: `${FIELDS[f].icon} ${fieldName(f)} (${fmtCompact(n.get(f)!)})`, shape: 'dot' as const })),
       note: L('A dot is a place, in the colour of its best-known person; bigger, more people. Zoom in for more places, and tap one for its people. People with articles in 48 Wikipedias or more.', 'Un punto es un lugar, del color de su persona más conocida; más grande, más personas. Acerca el mapa para ver más lugares, y toca uno para ver a su gente. Personas con artículos en 48 Wikipedias o más.'),
     };
@@ -170,7 +169,7 @@ export const bornHere: LayerDef = {
       const s = Math.max(match(pl.name[0]), match(pl.name[1]));
       if (s < 60) continue;
       out.push({
-        label: nm(pl), sub: L(`${people.length} well-known ${people.length === 1 ? 'person' : 'people'}: ${people.slice(0, 2).map(nm).join(', ')}${people.length > 2 ? '…' : ''}`, `${people.length} ${people.length === 1 ? 'persona conocida' : 'personas conocidas'}: ${people.slice(0, 2).map(nm).join(', ')}${people.length > 2 ? '…' : ''}`),
+        label: nm(pl), sub: L('{0, plural, one {# well-known person} other {# well-known people}}: {1}', '{0, plural, one {# persona conocida} other {# personas conocidas}}: {1}', people.length, `${people.slice(0, 2).map(nm).join(', ')}${people.length > 2 ? '…' : ''}`),
         icon: '👶', lon: pl.at[0], lat: pl.at[1], score: s - 4 + Math.min(10, people.length), wz: 9, dot: pl,
         open: (ui) => openPlace(pl, people, inst, ui),
       });
@@ -184,18 +183,18 @@ function openPlace(best: BornPlace, people: Person[], inst: LayerInstance, ui: L
     const x = personLinks();
     if (people.length === 1) { void personCard(ui.card, people[0], x); return; }
     const died = inst.options.show === 'died';
-    const title = died ? L(`Died in ${nm(best)}`, `Murieron en ${nm(best)}`) : L(`Born in ${nm(best)}`, `Nacieron en ${nm(best)}`);
+    const title = died ? L('Died in {0}', 'Murieron en {0}', nm(best)) : L('Born in {0}', 'Nacieron en {0}', nm(best));
     // Which state or province and country the place is in (when the states are shown, their shapes are loaded).
     const rg = regionAt(best.at[0], best.at[1]);
     const cid = APP?.renderer.countryAt(best.at[0], best.at[1]);
-    const where = [rg ? `${L(rg.name, rg.es)}${regionType(rg, APP?.lang === 'es') ? ` (${regionType(rg, APP?.lang === 'es')!.toLowerCase()})` : ''}` : null, cid ? APP!.data.name(cid, APP!.lang) : null].filter(Boolean).join(', ');
+    const where = [rg ? `${(dataLang() === 'es' ? rg.es || rg.name : rg.name)}${regionType(rg, APP?.lang === 'es') ? ` (${regionType(rg, APP?.lang === 'es')!.toLowerCase()})` : ''}` : null, cid ? APP!.data.name(cid, APP!.lang) : null].filter(Boolean).join(', ');
     const body = h('div', { class: 'guide born-panel', 'data-place': best.name[0] },
       where ? h('p', { class: 'born-where' }, `📍 ${where}`) : null,
-      h('p', { class: 'muted small' }, L(`${people.length} well-known people, the best known first. Tap one for their card.`, `${people.length} personas conocidas, las más conocidas primero. Toca una para ver su ficha.`)),
+      h('p', { class: 'muted small' }, L('{0} well-known people, the best known first. Tap one for their card.', '{0} personas conocidas, las más conocidas primero. Toca una para ver su ficha.', people.length)),
       peopleList(people, (p) => { SHELL?.sheet.close(); void personCard((...a) => SHELL!.card.showCustom(...a), p, x); }, 200));
     if (best.city) {
       const city = best.city;
-      const b = h('button', { type: 'button', class: 'pill sm', 'data-born': 'guide' }, L(`${x.cityName(city) ?? nm(best)}: the guide`, `${x.cityName(city) ?? nm(best)}: la guía`));
+      const b = h('button', { type: 'button', class: 'pill sm', 'data-born': 'guide' }, L('{0}: the guide', '{0}: la guía', x.cityName(city) ?? nm(best)));
       b.addEventListener('click', () => x.openCity?.(city));
       body.append(b);
     }

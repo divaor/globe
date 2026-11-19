@@ -7,7 +7,7 @@ import { feature as topoFeature, mesh } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry, MultiLineString, Polygon } from 'geojson';
 import { loadJSON, fixWinding } from '../data/store';
-import { t, lang } from '../app/i18n';
+import { t, lang, L, tx } from '../app/i18n';
 import type { App } from '../app/app';
 import type { RenderCtx } from '../layers/types';
 
@@ -244,7 +244,7 @@ export class PaleoWorld {
     const per = this.unit(ma, 'period'), era = this.unit(ma, 'era');
     const ev = this.events.find((e) => e.ma >= ma - 0.01 && e.ma - ma < 30);
     const parts = [per ? unitName(per) : '', era ? unitName(era) : ''].filter(Boolean).join(' · ');
-    return ev ? `${parts} — ${es ? ev.es : ev.en}` : parts;
+    return ev ? `${parts} — ${tx(ev)}` : parts;
   }
 
   /**
@@ -266,10 +266,10 @@ export class PaleoWorld {
       const id = app.renderer.countryAt(p0[0], p0[1]);
       const m0 = id ? app.data.meta[id] : null;
       return [
-        { label: es ? 'Hoy es' : 'Today it is', value: m0 ? `${es ? m0.es : m0.n}` : (es ? 'una isla o meseta oceánica' : 'an island or ocean plateau'), icon: '📍' },
-        { label: es ? 'Continente actual' : 'Continent today', value: t(`cont.${s.cont}`), icon: '🌍' },
-        { label: es ? 'Posición entonces' : 'Position then', value: fmtPos(lon, lat), icon: '🧭' },
-        { label: es ? 'Hoy está en' : 'Today it lies at', value: fmtPos(p0[0], p0[1]), icon: '🗺️' },
+        { label: L('Today it is', 'Hoy es'), value: m0 ? `${es ? m0.es : m0.n}` : (L('an island or ocean plateau', 'una isla o meseta oceánica')), icon: '📍' },
+        { label: L('Continent today', 'Continente actual'), value: t(`cont.${s.cont}`), icon: '🌍' },
+        { label: L('Position then', 'Posición entonces'), value: fmtPos(lon, lat), icon: '🧭' },
+        { label: L('Today it lies at', 'Hoy está en'), value: fmtPos(p0[0], p0[1]), icon: '🗺️' },
       ];
     }
     return null;

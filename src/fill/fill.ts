@@ -13,7 +13,7 @@ import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear, segmented } from '../ui/dom';
-import { fmtNumber, appLocale, subregion, t } from '../app/i18n';
+import { fmtNumber, appLocale, subregion, t, dataLang, tx, Lc } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
 import { L, es, type PlayHost, type HostGame } from '../play/host';
 import { shareText } from '../play/pin';
@@ -39,9 +39,9 @@ const CAT_TEXT: Record<FillCat, { icon: string; en: string; es: string }> = {
   people: { icon: '👥', en: 'Most people first', es: 'Más poblados primero' },
   area: { icon: '📐', en: 'Largest first', es: 'Más grandes primero' },
   clues: { icon: '🔎', en: 'Clues', es: 'Pistas' },
-  languages: { icon: '🗣️', en: 'Languages', es: 'Lenguas' },
+  languages: { icon: '🗣️', en: 'Languages', es: 'Idiomas' },
 };
-const THEME_TEXT: Record<Theme, [string, string]> = { all: ['All', 'Todas'], nature: ['Nature', 'Naturaleza'], culture: ['Culture', 'Cultura'], people: ['People', 'Personas'] };
+const THEME_TEXT: Record<Theme, { en: string; es: string; ctx?: string }> = { all: { en: 'All', es: 'Todas', ctx: 'all clue themes' }, nature: { en: 'Nature', es: 'Naturaleza' }, culture: { en: 'Culture', es: 'Cultura' }, people: { en: 'People', es: 'Personas' } };
 /** The Master the world deck a category asks the same as. */
 const DECK_OF: Partial<Record<FillCat, DeckId>> = { countries: 'countries', capitals: 'capitals', flags: 'flags' };
 
@@ -128,13 +128,13 @@ export class FillMap implements HostGame {
     });
   }
   private scopeIds(cat: FillCat, scope: string) { return inScope(this.eligible(cat), scope); }
-  private name(id: string) { return this.app.data.name(id, es() ? 'es' : 'en'); }
+  private name(id: string) { return this.app.data.name(id, dataLang()); }
   private scopeName(scope: string) {
     if (scope === 'world') return L('the world', 'el mundo');
     if (scope.startsWith('r:')) return es() ? subregion(scope.slice(2)) : scope.slice(2);
     return t(`cont.${scope}`);
   }
-  private catName(cat: FillCat) { return es() ? CAT_TEXT[cat].es : CAT_TEXT[cat].en; }
+  private catName(cat: FillCat) { return tx(CAT_TEXT[cat]); }
   private flag(id: string) { const a2 = this.deck.get(id)?.a2 ?? this.app.data.meta[id]?.a2 ?? ''; return dataUrl(`../flags/${a2.toLowerCase()}.svg`); }
   private map(cat: FillCat) { return fillState().maps[cat]; }
 
@@ -252,7 +252,7 @@ export class FillMap implements HostGame {
     const right = cur.ids ? cur.ids.includes(id) : id === cur.id;
     if (!right && this.filled(id) != null && s.ids.includes(id)) {
       // Already coloured in: no harm done.
-      s.note = L(`${this.name(id)} is already filled in.`, `${this.name(id)} ya tiene color.`);
+      s.note = L('{0} is already filled in.', '{0} ya tiene color.', this.name(id));
       s.flash = { id, at: performance.now() };
       this.render();
       this.app.renderer.requestRender();
@@ -261,7 +261,7 @@ export class FillMap implements HostGame {
     if (right) { this.fillIn(id, starsFor(cur.misses), cur.misses === 0); return; }
     cur.misses++;
     s.flash = { id, at: performance.now() };
-    s.note = L(`That is ${this.name(id)}.`, `Ese es ${this.name(id)}.`);
+    s.note = L('That is {0}.', 'Ese es {0}.', this.name(id));
     if (cur.misses >= TRIES) { this.reveal(id); return; }
     this.render();
     this.app.renderer.requestRender();
@@ -298,7 +298,7 @@ export class FillMap implements HostGame {
     this.app.renderer.requestRender();
   }
 
-  private toastBadges(b: Badge[]) { if (b.length) this.shell.toast(`${b[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? b[0].es : b[0].en}`, 4000); }
+  private toastBadges(b: Badge[]) { if (b.length) this.shell.toast(`${b[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(b[0])}`, 4000); }
 
   /** A continent, the world, a perfect continent, every category: the badges. */
   private feats(cat: FillCat): Badge[] {
@@ -364,10 +364,10 @@ export class FillMap implements HostGame {
       const extra = this.valueOf(a.id);
       card.append(h('div', { class: `quiz-fb ${a.ok ? 'ok' : 'bad'}`, 'data-fill': 'feedback' }, a.ok
         ? `✅ ${this.name(a.id)} ${'★'.repeat(a.stars)}${'☆'.repeat(3 - a.stars)}${extra ? ` · ${extra}` : ''}`
-        : `👀 ${L(`It is ${this.name(a.id)}`, `Es ${this.name(a.id)}`)}${extra ? ` · ${extra}` : ''}`));
+        : `👀 ${L('It is {0}', 'Es {0}', this.name(a.id))}${extra ? ` · ${extra}` : ''}`));
       if (s.cat === 'languages' && cur.ids && cur.lang) {
         const more = cur.ids.filter((x) => x !== a.id);
-        if (more.length) card.append(h('div', { class: 'tool-hint' }, L(`Also spoken in: ${more.map((x) => this.name(x)).join(', ')}`, `También se habla en: ${more.map((x) => this.name(x)).join(', ')}`)));
+        if (more.length) card.append(h('div', { class: 'tool-hint' }, L('Also spoken in: {0}', 'También se habla en: {0}', more.map((x) => this.name(x)).join(', '))));
       }
       const next = h('button', { type: 'button', class: 'pill sm primary', 'data-fill': 'next' }, L('Next', 'Siguiente'), icon(ChevronRight, 15));
       next.addEventListener('click', () => this.next());
@@ -395,17 +395,17 @@ export class FillMap implements HostGame {
   private prompt(cur: Cur): string {
     const s = this.s!, n = this.name(cur.id);
     switch (s.cat) {
-      case 'countries': return L(`Tap ${n}`, `Toca ${n}`);
-      case 'capitals': { const c = this.deck.get(cur.id)!.cap!; return L(`Tap the country whose capital is ${c.en}`, `Toca el país cuya capital es ${c.es}`); }
+      case 'countries': return L('Tap {0}', 'Toca {0}', n);
+      case 'capitals': { const c = this.deck.get(cur.id)!.cap!; return L('Tap the country whose capital is {0}', 'Toca el país cuya capital es {0}', tx(c)); }
       case 'flags': return L('Tap the country of this flag', 'Toca el país de esta bandera');
       case 'people': return L('Tap the country with the most people left', 'Toca el país más poblado que queda');
       case 'area': return L('Tap the largest country left', 'Toca el país más grande que queda');
       case 'clues': return L('Which country is it? Tap it', '¿Qué país es? Tócalo');
-      case 'languages': { const l = this.langNames[cur.lang ?? '']; return L(`Tap a country where ${l?.en ?? cur.lang} is spoken`, `Toca un país donde se hable ${(l?.es ?? cur.lang ?? '').toLowerCase()}`); }
+      case 'languages': { const l = this.langNames[cur.lang ?? '']; const nm = l ? tx(l) : cur.lang ?? ''; return L('Tap a country where {0} is spoken', 'Toca un país donde se hable {1}', nm, nm.toLowerCase()); }
     }
   }
 
-  private clueText(c: Clue) { const txt = es() ? c.es : c.en; return c.m != null ? txt.replace('{m}', fmtNumber(c.m)) : txt; }
+  private clueText(c: Clue) { const txt = tx(c); return c.m != null ? txt.replace('{m}', fmtNumber(c.m)) : txt; }
 
   /** After a miss: its neighbours (or its region), then a circle where it is; for clues, the next clue. */
   private hint(cur: Cur): string {
@@ -413,26 +413,26 @@ export class FillMap implements HostGame {
     if (!cur.misses) return '';
     if (s.cat === 'clues') return cur.misses >= 2 ? L('Look inside the circle.', 'Mira dentro del círculo.') : '';
     if (cur.misses >= 2) return L('It is inside the circle.', 'Está dentro del círculo.');
-    if (s.cat === 'languages') { const u = this.unitBy.get(cur.id); return u ? L(`One of them is in ${t(`cont.${continentOf(u)}`)}.`, `Uno de ellos está en ${t(`cont.${continentOf(u)}`)}.`) : ''; }
+    if (s.cat === 'languages') { const u = this.unitBy.get(cur.id); return u ? L('One of them is in {0}.', 'Uno de ellos está en {0}.', t(`cont.${continentOf(u)}`)) : ''; }
     const all = (this.deck.get(cur.id)?.land ?? []).filter((x) => this.app.data.meta[x])
       .sort((a, b) => (this.unitBy.get(b)?.area ?? 0) - (this.unitBy.get(a)?.area ?? 0));
     if (all.length) {
       const land = all.slice(0, all.length > 4 ? 3 : 4).map((x) => this.name(x));
-      if (all.length > land.length) land.push(L(`${all.length - land.length} more`, `${all.length - land.length} más`));
+      if (all.length > land.length) land.push(L('{0} more', '{0} más', all.length - land.length));
       const list = new Intl.ListFormat(appLocale(), { type: 'conjunction' }).format(land);
-      return L(`It borders ${list}.`, `Limita con ${list}.`);
+      return L('It borders {0}.', 'Limita con {0}.', list);
     }
     const u = this.unitBy.get(cur.id);
-    return u?.sr ? L(`It is in ${u.sr}.`, `Está en ${subregion(u.sr)}.`) : '';
+    return u?.sr ? L('It is in {0}.', 'Está en {0}.', subregion(u.sr)) : '';
   }
 
   /** Its number, for the categories by size. */
   private valueOf(id: string): string {
     const s = this.s!, u = this.unitBy.get(id);
     if (!u) return '';
-    if (s.cat === 'people') return u.pop >= 1e6 ? L(`${(u.pop / 1e6).toLocaleString(appLocale(), { maximumFractionDigits: 1 })} million people`, `${(u.pop / 1e6).toLocaleString(appLocale(), { maximumFractionDigits: 1 })} millones de personas`) : L(`${fmtNumber(u.pop)} people`, `${fmtNumber(u.pop)} personas`);
+    if (s.cat === 'people') return u.pop >= 1e6 ? L('{0} million people', '{0} millones de personas', (u.pop / 1e6).toLocaleString(appLocale(), { maximumFractionDigits: 1 })) : L('{0} people', '{0} habitantes', fmtNumber(u.pop));
     if (s.cat === 'area') return `${fmtNumber(u.area)} km²`;
-    if (s.cat === 'capitals') { const c = this.deck.get(id)?.cap; return c ? (es() ? c.es : c.en) : ''; }
+    if (s.cat === 'capitals') { const c = this.deck.get(id)?.cap; return c ? (tx(c)) : ''; }
     return '';
   }
 
@@ -441,13 +441,13 @@ export class FillMap implements HostGame {
     const map = this.map(s.cat);
     const missed = s.ids.filter((id) => (s.daily ? s.got.get(id) : map[id]) === 0);
     const head = s.daily
-      ? L(`Done: ★ ${s.stats.stars} of ${s.ids.length * 3}`, `Hecho: ★ ${s.stats.stars} de ${s.ids.length * 3}`)
-      : L(`${cap(this.scopeName(s.scope))} is filled in!`, `¡Terminaste de colorear ${this.scopeName(s.scope)}!`);
+      ? L('Done: ★ {0} of {1}', 'Hecho: ★ {0} de {1}', s.stats.stars, s.ids.length * 3)
+      : L('{0} is filled in!', '¡Terminaste de colorear {1}!', cap(this.scopeName(s.scope)), this.scopeName(s.scope));
     const res = resultCard({ stars: s.ids.length ? Math.round((3 * s.stats.stars) / (s.ids.length * 3)) : undefined, headline: head,
-      sub: s.stats.asked ? L(`${s.stats.firsts} of ${s.stats.asked} right at the first try`, `${s.stats.firsts} de ${s.stats.asked} acertados a la primera`) : undefined });
+      sub: s.stats.asked ? L('{0} of {1} right at the first try', '{0} de {1} acertados a la primera', s.stats.firsts, s.stats.asked) : undefined });
     res.querySelector('.result-headline')?.setAttribute('data-fill', 'done');
     card.append(res);
-    if (missed.length) res.append(h('div', { class: 'tool-hint' }, L(`Shown: ${missed.map((x) => this.name(x)).join(', ')}`, `Mostrados: ${missed.map((x) => this.name(x)).join(', ')}`)));
+    if (missed.length) res.append(h('div', { class: 'tool-hint' }, L('Shown: {0}', 'Mostrados: {0}', missed.map((x) => this.name(x)).join(', '))));
     const actions = h('div', { class: 'result-actions' });
     const add = (label: string, fn: () => void, primary = false, attr = '') => {
       const b = h('button', { type: 'button', class: `pill${primary ? ' primary' : ''}`, 'data-fill': attr }, label);
@@ -456,10 +456,10 @@ export class FillMap implements HostGame {
     };
     if (!s.daily) {
       const nx = nextRegion(this.regions, s.scope.startsWith('r:') ? s.scope : '', (r) => this.scopeIds(s.cat, r.id).every((id) => map[id] != null), (id) => this.unitBy.get(id)?.at);
-      if (nx) add(L(`Next: ${es() ? subregion(nx.name) : nx.name}`, `Siguiente: ${es() ? subregion(nx.name) : nx.name}`), () => void this.start({ scope: nx.id }), true, 'next-region');
+      if (nx) add(L('Next: {0}', 'Siguiente: {0}', es() ? subregion(nx.name) : nx.name), () => void this.start({ scope: nx.id }), true, 'next-region');
       if (missed.length) {
         const one = missed.length === 1 ? this.name(missed[0]) : '';
-        add(one ? L(`Try ${one} again`, `Repetir ${one}`) : L(`Try the ${missed.length} shown again`, `Repetir los ${missed.length} mostrados`), () => void this.start({ retry: true }), !nx, 'retry');
+        add(one ? L('Try {0} again', 'Repetir {0}', one) : L('Try the {0} shown again', 'Repetir los {0} mostrados', missed.length), () => void this.start({ retry: true }), !nx, 'retry');
       }
     }
     add(L('Share', 'Compartir'), () => void this.share(s.cat), false, 'share');
@@ -580,7 +580,7 @@ export class FillMap implements HostGame {
     if (cat === 'clues') {
       const th = h('div', { class: 'chip-row', 'data-fill': 'themes' });
       for (const x of THEMES) {
-        const b = h('button', { type: 'button', class: `chip${x === set.theme ? ' on' : ''}`, 'data-theme': x }, L(THEME_TEXT[x][0], THEME_TEXT[x][1]));
+        const b = h('button', { type: 'button', class: `chip${x === set.theme ? ' on' : ''}`, 'data-theme': x }, tx(THEME_TEXT[x]));
         b.addEventListener('click', () => { set.theme = x; saveFill(); redraw(); });
         th.append(b);
       }
@@ -590,7 +590,7 @@ export class FillMap implements HostGame {
     const world = this.tally(cat, this.scopeIds(cat, 'world'));
     const first = world.n ? Math.round((100 * world.three) / world.n) : 0;
     out.push(h('div', { class: 'mw-progress', 'data-fill': 'world' }, this.bar(world),
-      h('div', { class: 'mw-legend' }, h('span', null, L(`${world.n} of ${world.total} filled`, `${world.n} de ${world.total} coloreados`)), h('span', null, `★ ${world.stars}/${world.total * 3}`), h('span', null, L(`${first}% right first time`, `${first} % a la primera`)))));
+      h('div', { class: 'mw-legend' }, h('span', null, L('{0} of {1} filled', '{0} de {1} coloreados', world.n, world.total)), h('span', null, `★ ${world.stars}/${world.total * 3}`), h('span', null, L('{0}% right first time', '{0} % a la primera', first)))));
     const scopeBtn = (scope: string, label: string, ids: string[], cls: string) => {
       const x = this.tally(cat, ids);
       const b = h('button', { type: 'button', class: `fill-scope ${cls}${x.n === x.total && x.total ? ' full' : ''}`, 'data-scope': scope },
@@ -615,7 +615,7 @@ export class FillMap implements HostGame {
     share.addEventListener('click', () => void this.share(cat));
     const reset = h('button', { type: 'button', class: 'pill sm', 'data-fill': 'reset' }, icon(RotateCcw, 15), L('Start this map over', 'Empezar este mapa de nuevo'));
     reset.addEventListener('click', () => {
-      if (!world.n || confirm(L(`Empty the ${this.catName(cat)} map (${world.n} filled)?`, `¿Vaciar el mapa de ${this.catName(cat)} (${world.n} coloreados)?`))) { resetFillMap(cat); redraw(); }
+      if (!world.n || confirm(L('Empty the {0} map ({1} filled)?', '¿Vaciar el mapa de {0} ({1} coloreados)?', this.catName(cat), world.n))) { resetFillMap(cat); redraw(); }
     });
     const mw = h('button', { type: 'button', class: 'pill sm' }, '🌍 ', L('Master the world', 'Domina el mundo'));
     mw.addEventListener('click', () => this.openMaster?.());
@@ -642,7 +642,7 @@ export class FillMap implements HostGame {
     const what = pick ? `${this.scopeName(pick.scope)} · ${this.catName(pick.cat)}` : '';
     const b = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-fill': 'daily' }, ftile('fill'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Region of the day', 'Región del día')),
-        h('span', { class: 'mode-desc' }, done ? `${L('Done', 'Hecho')}: ★ ${done.s}/${done.n} · ${what}` : `${what} · ${L('the same for everyone today', 'la misma para todos hoy')}`)));
+        h('span', { class: 'mode-desc' }, done ? `${L('Done', 'Hecho')}: ★ ${done.s}/${done.n} · ${what}` : `${what} · ${Lc('the daily puzzle', 'the same for everyone today', 'la misma para todos hoy')}`)));
     b.addEventListener('click', () => void this.startDaily());
     return b;
   }
@@ -657,7 +657,7 @@ export class FillMap implements HostGame {
     const ids = this.scopeIds(cat, 'world');
     const x = this.tally(cat, ids);
     const first = x.n ? Math.round((100 * x.three) / x.n) : 0;
-    const text = `🖍️ ${L('Fill the map', 'Llena el mapa')} · ${CAT_TEXT[cat].icon} ${this.catName(cat)}: ${x.n}/${x.total} · ★ ${x.stars} · ${L(`${first}% first time`, `${first} % a la primera`)}\n${location.origin}${location.pathname}`;
+    const text = `🖍️ ${L('Fill the map', 'Llena el mapa')} · ${CAT_TEXT[cat].icon} ${this.catName(cat)}: ${x.n}/${x.total} · ★ ${x.stars} · ${L('{0}% first time', '{0} % a la primera', first)}\n${location.origin}${location.pathname}`;
     const blob = await this.picture(cat, x, first).catch(() => null);
     const file = blob ? new File([blob], 'fill-the-map.png', { type: 'image/png' }) : null;
     try { if (file && navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file], text }); return; } } catch (e) { if ((e as Error).name === 'AbortError') return; }
@@ -684,7 +684,7 @@ export class FillMap implements HostGame {
     g.fillStyle = '#fff'; g.font = '800 46px system-ui, sans-serif';
     g.fillText(`🖍️ ${L('Fill the map', 'Llena el mapa')} · ${this.catName(cat)}`, 40, 70);
     g.font = '600 30px system-ui, sans-serif'; g.fillStyle = 'rgba(255,255,255,0.85)';
-    g.fillText(`${L(`${x.n} of ${x.total} filled`, `${x.n} de ${x.total} coloreados`)} · ★ ${x.stars} · ${L(`${first}% first time`, `${first} % a la primera`)}`, 40, 112);
+    g.fillText(`${L('{0} of {1} filled', '{0} de {1} coloreados', x.n, x.total)} · ★ ${x.stars} · ${L('{0}% first time', '{0} % a la primera', first)}`, 40, 112);
     return new Promise((res) => cv.toBlob((b) => res(b), 'image/png'));
   }
 }

@@ -13,7 +13,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { TimeTravel } from '../modes';
 import type { InfoRow } from '../layers/types';
-import { appLocale } from '../app/i18n';
+import { appLocale, dataLang } from '../app/i18n';
 
 const KIND: Record<WorldDef['kind'], { en: string; es: string }> = {
   planet: { en: 'Planet', es: 'Planeta' }, moon: { en: 'Moon', es: 'Luna' }, dwarf: { en: 'Dwarf planet', es: 'Planeta enano' }, asteroid: { en: 'Asteroid', es: 'Asteroide' },
@@ -57,7 +57,7 @@ export class Space {
     this.surface.onChange(() => { if (this.bar) this.buildBar(); });
     // Search finds this world's named places and landings.
     shell.search.provider = () => (this.active && this.surface.def && !this.surface.bare ? {
-      hint: () => L(`Search places on ${trIn(this.surface.def!.name)}`, `Buscar lugares en ${trIn(this.surface.def!.name)}`),
+      hint: () => L('Search places on {0}', 'Buscar lugares en {0}', trIn(this.surface.def!.name)),
       search: (q, score) => this.searchHits(score),
     } : null);
     // The 3D view of the Moon and Mars (see ui/terrain3d.ts).
@@ -130,7 +130,7 @@ export class Space {
     if (!force && this.shell.sheet.isOpen('space')) { this.shell.sheet.close(); return; }
     const wrap = h('div', { class: 'space-panel' });
     const top = h('div', { class: 'space-actions' });
-    const earth = h('button', { type: 'button', class: `pill${this.active ? '' : ' on'}`, 'data-world': 'earth' }, icon(EarthIcon, 16), L('Earth', 'La Tierra'));
+    const earth = h('button', { type: 'button', class: `pill${this.active ? '' : ' on'}`, 'data-world': 'earth' }, icon(EarthIcon, 16), L('Earth', 'Tierra'));
     earth.addEventListener('click', () => { this.shell.sheet.close(); void this.exit(); });
     top.append(earth);
     if (this.openOrrery) {
@@ -304,7 +304,7 @@ export class Space {
     const rows = [...extra, ...factRows(f)];
     const notes = [f?.text ? tr(f.text) : '', f?.wow ? `💡 ${tr(f.wow)}` : '', w?.note ? tr(w.note) : ''].filter(Boolean);
     const links: { label: string; href?: string; onClick?: () => void }[] = [];
-    if (f?.wiki) links.push({ label: 'Wikipedia', href: `https://${L('en', 'es')}.wikipedia.org/wiki/${encodeURIComponent(tr(f.wiki).replace(/ /g, '_'))}` });
+    if (f?.wiki) links.push({ label: 'Wikipedia', href: `https://${dataLang()}.wikipedia.org/wiki/${encodeURIComponent(tr(f.wiki).replace(/ /g, '_'))}` });
     if (w && !(this.active && this.surface.id === id)) links.push({ label: L('Visit on the globe', 'Visitar en el globo'), onClick: () => void this.enter(id) });
     if (id === 'earth') links.push({ label: L('Back to the Earth', 'Volver a la Tierra'), onClick: () => { this.closeOrrery?.(); void this.exit(); } });
     const name = f ? tr(f.name) : tr(w!.name);
