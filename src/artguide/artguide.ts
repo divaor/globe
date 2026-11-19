@@ -264,7 +264,7 @@ export class ArtGuide {
     const shown = all.filter((b) => this.styleFilter === 'all' || b.style?.key === this.styleFilter);
     el.append(h('div', { class: 'guide-list' }, ...shown.map((b) => this.row(this.thumb(b.img, '🏛️'), nm(b), [b.architects.map(nm).join(', '), b.style ? nm(b.style) : '', yearText(b.year)].filter(Boolean).join(' · '),
       () => { this.guide.showPlace(b.at, nm(b), 13); this.showBuilding(b); }, { 'data-building': b.id }, planStar({ ...buildingPlace(b), city: b.city ?? city })))));
-    el.append(h('p', { class: 'muted small' }, L('From Wikidata: buildings that name their architect, the best known first. More → Explore → Art and architecture has each architect’s trail.', 'De Wikidata: edificios que nombran a su arquitecto, los más conocidos primero. Más → Explorar → Arte y arquitectura tiene la ruta de cada arquitecto.')));
+    el.append(h('p', { class: 'muted small' }, L('From Wikidata: buildings that name their architect, the best known first. Explore → Art and architecture has each architect’s trail.', 'De Wikidata: edificios que nombran a su arquitecto, los más conocidos primero. Explorar → Arte y arquitectura tiene la ruta de cada arquitecto.')));
   }
 
   // ---- The map -----------------------------------------------------------------------------------------------------

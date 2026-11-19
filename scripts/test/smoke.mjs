@@ -1119,6 +1119,12 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(700);
   const fb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
   check(/km/.test(fb), `quiz "where": a tap on the globe is scored by distance (${fb.slice(0, 70)})`);
+  // v0.41.1: a line from the tap to the place; a tap on the map after answering is the quiz's (no country card under it).
+  const line = await page.evaluate(() => ({ guess: !!window.atlas.learn['guess'], pin: !!window.atlas.learn['pin'] }));
+  await page.touchscreen.tap(206, 700);
+  await page.waitForTimeout(500);
+  const noCard = await page.evaluate(() => ({ sel: window.atlas.app.selection ?? null, card: !!document.querySelector('.country-card:not([hidden])') }));
+  check(line.guess && line.pin && !noCard.sel && !noCard.card, `quiz "where": a line from your tap to the place (${line.guess && line.pin}); a tap on the map while the quiz runs opens no country card (${noCard.sel ?? 'none'})`);
   await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /See it in the story/.test(b.textContent))?.click());
   await page.waitForSelector('.warbar', { timeout: 30000 }).catch(() => {});
   await page.waitForTimeout(1500);
@@ -1473,7 +1479,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     // 3D: the area on screen raised; the slider raises it more.
     await zoomTo(page, 10.4, 46.4, 8);
     await settle(page);
-    await page.evaluate(() => document.querySelector('.zoom-3d').click());
+    await page.evaluate(() => window.__menu('3D terrain'));
     await page.waitForFunction(() => window.atlas.terrain3d.info.ready && window.atlas.terrain3d.info.frames > 0, null, { timeout: 60000 });
     const t3 = await page.evaluate(() => ({ ...window.atlas.terrain3d.info }));
     const nonEmpty = await page.evaluate(() => { const c = document.querySelector('.t3d-canvas'); const g = c.getContext('webgl2'); const px = new Uint8Array(4); g.readPixels(c.width >> 1, c.height >> 1, 1, 1, g.RGBA, g.UNSIGNED_BYTE, px); return px[3]; });
@@ -2987,7 +2993,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 
 // 25. Map view (v0.28.5). States and provinces, on by default: their lines and names over the US from country zoom (Texas
 // named), with a filter on (Who was born here?, whose names give way to the states'); a tap on Texas says "State: Texas"
-// on the card; Salzburg's born-here panel names its state and country. The style button in the zoom controls: the Map
+// on the card; Salzburg's born-here panel names its state and country. Map → Map style and states: the Map
 // style (one light land colour, the Political map's colours gone and its legend saying so), Satellite (NASA's picture
 // under the filters, the deeper zoom), the names and the states switched off, all kept after a reload and in the link;
 // Spanish.
@@ -3050,7 +3056,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 
   // The style button: the Map style.
   await at(-98, 38, 4.4);
-  await page.click('.zoom-style');
+  await page.click('[data-dock="map"]'); await page.waitForTimeout(250); await page.click('.menu [data-menu="mapstyle"]');
   await page.waitForSelector('.mapstyle:not([hidden]) [data-style="map"]', { timeout: 5000 }).catch(() => {});
   const tiles = await page.evaluate(() => [...document.querySelectorAll('.mapstyle [data-style]')].map((b) => `${b.dataset.style}${b.getAttribute('aria-checked') === 'true' ? '*' : ''}`));
   await page.click('.mapstyle [data-style="map"]');
@@ -3093,10 +3099,10 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 
   // Spanish: the panel, and the card's row.
   await page.evaluate(() => { window.atlas.app.setLang('es'); window.atlas.app.setMapView({ style: 'atlas', regions: true }); window.atlas.app.deactivate('born-here'); });
-  await page.click('.zoom-style');
+  await page.click('[data-dock="map"]'); await page.waitForTimeout(250); await page.click('.menu [data-menu="mapstyle"]');
   await page.waitForTimeout(400);
   const esPanel = await page.evaluate(() => document.querySelector('.mapstyle')?.innerText ?? '');
-  await page.click('.zoom-style');
+  await page.keyboard.press('Escape');
   await page.evaluate(async () => { const { app } = window.atlas; app.renderer.requestRender(); });
   await at(-99.5, 31.3, 5);
   await page.waitForTimeout(2000);
@@ -5147,11 +5153,12 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   // An island nation of Polynesia, from a tap in the sea beside it.
   await F(() => window.atlas.fill.start({ cat: 'countries', scope: 'r:Polynesia' }));
   await page.waitForTimeout(2600);
-  // A long flight from Rome: the tap waits for the map to stop.
-  await page.waitForFunction(() => !window.atlas.app.renderer.moving, null, { timeout: 8000 }).catch(() => {});
-  await page.waitForTimeout(600);
   const poly = ['TON', 'WSM', 'TUV'];
   for (let k = 0; k < 6; k++) { i = await info(); if (poly.includes(i.cur?.id)) break; await F(() => { const f = window.atlas.fill; f.answer(f.info.cur.id); f.next(); }); }
+  // A long flight from Rome (slower on the live site): the tap waits until the map has stood still for half a second.
+  await page.waitForFunction(() => { const v = window.atlas.app.renderer.view, k = `${v.lon.toFixed(3)}|${v.lat.toFixed(3)}|${v.zoom.toFixed(3)}|${v.animating}`, w = window;
+    if (window.atlas.app.renderer.moving || w.__still?.k !== k) { w.__still = { k, t: performance.now() }; return false; }
+    return performance.now() - w.__still.t > 500; }, null, { timeout: 20000, polling: 100 }).catch(() => {});
   i = await info();
   const isl = i.cur?.id;
   const near = await F((id) => { const m = window.atlas.app.data.meta[id], v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(m.lx, m.ly); return p && [r.left + p[0] + 14, r.top + p[1] + 12]; }, isl);
@@ -6069,9 +6076,10 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await F(() => window.atlas.shell.openAbout(true));
     await page.waitForTimeout(600);
     const about = await F(() => document.querySelector('.about .about-lead')?.textContent ?? '');
+    const by = await F(() => document.querySelector('.about [data-about="by"]')?.textContent ?? '');
     const want = lang === 'es' ? { one: '1 día seguido', two: '2 días seguidos', settings: 'Ajustes', about: /^Atlas Globe es el mundo en un solo globo/ }
       : { one: '1 day in a row', two: '2 days in a row', settings: 'Settings', about: /^Atlas Globe is the world on one globe/ };
-    check(t.one === want.one && t.two === want.two && t.settings === want.settings && want.about.test(about), `${lang}: plurals "${t.one}", "${t.two}"; "${t.settings}"; About: "${about.slice(0, 50)}…"`);
+    check(t.one === want.one && t.two === want.two && t.settings === want.settings && want.about.test(about) && by === (lang === 'es' ? 'Hecho por Diego Valencia.' : 'Made by Diego Valencia.'), `${lang}: plurals "${t.one}", "${t.two}"; "${t.settings}"; About: "${about.slice(0, 50)}…"; ${by}`);
     check(!errors.length, `${lang}: no page errors in the text checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await ctx.close();
   }

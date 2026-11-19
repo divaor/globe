@@ -229,7 +229,7 @@ export class Shell {
     this.placeMenu();
     this.renderDock();
     this.renderTop();
-    (this.menu.querySelector('.menu-item') as HTMLElement | null)?.focus({ preventScroll: true });
+    (this.menu.querySelector('.menu-item') as HTMLElement | null)?.focus({ preventScroll: true, focusVisible: false } as FocusOptions);
   }
 
   closeMenu() {

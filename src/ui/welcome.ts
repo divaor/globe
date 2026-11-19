@@ -47,7 +47,8 @@ export function showWelcome(app: App, act: WelcomeActions): HTMLElement {
   const choice = (emoji: string, title: string, sub: string, id: string, go: () => void) => {
     const b = h('button', { type: 'button', class: 'mode-card', 'data-welcome': id }, h('span', { class: 'mode-icon' }, emoji),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, title), h('span', { class: 'mode-desc' }, sub)));
-    b.addEventListener('click', () => done(go));
+    // (The click stops here: the list a choice opens would take it as a tap outside, and close.)
+    b.addEventListener('click', (e) => { e.stopPropagation(); done(go); });
     return b;
   };
   const CARDS: (() => HTMLElement[])[] = [
@@ -59,7 +60,7 @@ export function showWelcome(app: App, act: WelcomeActions): HTMLElement {
       langPicker(),
     ],
     () => [
-      h('div', { class: 'welcome-art', 'aria-hidden': 'true' }, '📅'),
+      h('div', { class: 'welcome-art', 'aria-hidden': 'true' }, '🗓️'),
       h('h2', { class: 'welcome-title' }, L('Something new every day', 'Algo nuevo cada día')),
       h('p', null, L('Today, in the middle of the bottom bar, has the daily challenge, a map game and the country of the day: a few minutes, the same for everyone.', 'Hoy, en el centro de la barra de abajo, tiene el reto del día, un juego en el mapa y el país del día: unos minutos, lo mismo para todos.')),
       h('p', { class: 'muted' }, L('Keep a streak going, and turn on a reminder if you like (only then does the app ask to send notifications).', 'Mantén una racha y, si quieres, activa un recordatorio (solo entonces la app pide enviar notificaciones).')),
@@ -71,7 +72,7 @@ export function showWelcome(app: App, act: WelcomeActions): HTMLElement {
         choice('🎮', L('Games', 'Juegos'), L('Map games, Fill the map, Put it on the map', 'Juegos en el mapa, Llena el mapa, Ponlo en el mapa'), 'games', act.games),
         choice('📜', L('Stories', 'Historias'), L('Travel through time: wars, empires, journeys, inventions', 'Viaja en el tiempo: guerras, imperios, viajes, inventos'), 'stories', act.stories),
         choice('🗺️', L('The map', 'El mapa'), L('Pick what the globe shows', 'Elige lo que muestra el globo'), 'map', act.map),
-        choice('📅', L('Today', 'Hoy'), L('The daily challenge and more', 'El reto del día y más'), 'today', act.today)),
+        choice('🗓️', L('Today', 'Hoy'), L('The daily challenge and more', 'El reto del día y más'), 'today', act.today)),
     ],
   ];
   const render = () => {
@@ -89,7 +90,8 @@ export function showWelcome(app: App, act: WelcomeActions): HTMLElement {
       h('div', { class: 'welcome-body' }, ...CARDS[step]()),
       h('div', { class: 'welcome-dots', 'aria-hidden': 'true' }, ...CARDS.map((_, i) => h('span', { class: i === step ? 'on' : '' }))),
       h('div', { class: 'welcome-actions' }, back, next));
-    (card.querySelector('[data-welcome="next"], [data-welcome="close"]') as HTMLElement | null)?.focus({ preventScroll: true });
+    // The keyboard's place, without the focus ring a tap would not have asked for.
+    (card.querySelector('[data-welcome="next"], [data-welcome="close"]') as HTMLElement | null)?.focus({ preventScroll: true, focusVisible: false } as FocusOptions);
   };
   render();
   el.addEventListener('keydown', (e) => { if (e.key === 'Escape') done(); });

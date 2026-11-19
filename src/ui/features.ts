@@ -59,7 +59,7 @@ export const FEATURES: Record<string, Feature> = {
   share: { icon: Share2, hue: 'me' },
   link: { icon: Link, hue: 'me' },
   export: { icon: ImageDown, hue: 'me' },
-  export4k: { icon: Monitor, hue: 'me' },
+  export4k: { icon: Monitor, hue: 'tools' },
   exportphone: { icon: Smartphone, hue: 'me' },
   settings: { icon: Settings, hue: 'me' },
   about: { icon: Info, hue: 'me' },

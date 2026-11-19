@@ -81,11 +81,11 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     h('h3', { class: 'sec-title' }, t('ambient')),
     field(t('ambientSpeed'), slider(app.ambient.speed, 0.25, 4, 0.25, (v) => { app.ambient.speed = v; app.save(); })),
     h('div', { class: 'toggles' },
-      // Off unless turned on (here, in More → Ambient mode, or with the button shown on a tap while a playlist plays).
+      // Off unless turned on (here, in Explore → Ambient mode, or with the button shown on a tap while a playlist plays).
       ...(canSpeak() ? [toggle(app.ambient.narrate, (v) => { app.ambient.narrate = v; app.save(); }, L('Read each ambient view aloud', 'Leer cada vista del modo ambiente en voz alta'))] : []),
       toggle(app.ambient.clock, (v) => { app.ambient.clock = v; app.save(); }, t('ambientClock'))),
     ambientNamesField(app),
-    h('p', { class: 'muted small' }, L('The screensaver’s playlists are in More → Ambient mode.', 'Las listas de reproducción del salvapantallas están en Más → Modo ambiente.')),
+    h('p', { class: 'muted small' }, L('The screensaver’s playlists are in Explore → Ambient mode.', 'Las listas de reproducción del salvapantallas están en Explorar → Modo ambiente.')),
     ...settingsExtras.flatMap((x) => [h('h3', { class: 'sec-title' }, x.title()), x.body()]),
     // Your data on another device (v0.31.2): a backup to bring everything back on a phone or another computer.
     h('h3', { class: 'sec-title', 'data-section': 'backup' }, L('Your data on another device', 'Tus datos en otro dispositivo')),
@@ -110,6 +110,7 @@ export function aboutPanel(app: App): HTMLElement {
     h('p', null, L('Explore {0} maps, travel through time with hundreds of stories, plan a trip with the travel guide, and learn every country, capital and flag with games and a challenge each day.', 'Explora {0} mapas, viaja en el tiempo con cientos de historias, planea un viaje con la guía y aprende todos los países, capitales y banderas con juegos y un reto cada día.', fmtNumber([...app.registry.values()].filter((d) => !d.hidden && d.category !== 'mine').length))),
     h('p', null, L('No account and no ads. What you do stays on this device; to take it to another, use Settings → Your data on another device.', 'Sin cuenta y sin anuncios. Lo que haces se queda en este dispositivo; para llevarlo a otro, usa Ajustes → Tus datos en otro dispositivo.')),
     h('h3', { class: 'sec-title' }, t('credits')),
+    h('p', { class: 'about-by', 'data-about': 'by' }, L('Made by {0}.', 'Hecho por {0}.', 'Diego Valencia')),
     h('ul', { class: 'credits' }, [...credits].map(([c, names]) => h('li', null, h('strong', null, c), h('span', { class: 'muted' }, ` — ${names.join(', ')}`)))),
     h('p', { class: 'muted small' }, L('Open source (GPL-3.0). Every map and story names its sources; the data keep their own licences.', 'Código abierto (GPL-3.0). Cada mapa e historia nombra sus fuentes; los datos conservan sus propias licencias.')),
     h('p', { class: 'small' }, h('a', { href: 'https://github.com/divaor/globe', target: '_blank', rel: 'noopener' }, 'github.com/divaor/globe')),

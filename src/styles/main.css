@@ -300,6 +300,7 @@ html:not(.mode-time):not(.has-quiz) .legend.collapsed { display: none; }
 .credits { padding-left: 18px; margin: 6px 0; font-size: var(--fs-sm); line-height: 1.5; }
 .about p { line-height: 1.5; font-size: var(--fs-md); }
 .about .about-lead { font-size: var(--fs-lg); font-weight: var(--fw-semi); }
+.about .about-by { font-weight: var(--fw-semi); margin: 0 0 var(--sp-2); }
 
 /* ---------- projections */
 .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
