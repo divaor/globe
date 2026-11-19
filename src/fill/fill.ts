@@ -13,7 +13,7 @@ import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear, segmented } from '../ui/dom';
-import { fmtNumber, appLocale, subregion, t, dataLang, tx, Lc, fileLang, nm } from '../app/i18n';
+import { fmtNumber, appLocale, subregion, t, dataLang, tx, Lc, fileLang, nm, lang } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
 import { L, type PlayHost, type HostGame } from '../play/host';
 import { shareText } from '../play/pin';
@@ -84,7 +84,8 @@ function clueIn(c: Clue): string {
   else if (kind === 'peak') { const m = /^(.*), \{m\} m$/.exec(v); value = m ? `${nm(m[1])}, {m} m` : nm(v); }
   else if (kind === 'low') { const m = /^(.*), \{m\} m below sea level$/.exec(v); value = m ? `${nm(m[1])}, ${L('{0} m below sea level', '{0} m bajo el nivel del mar', '{m}')}` : nm(v); }
   else value = nm(v);
-  return `${label}: ${value}`;
+  // i18n: by hand (French puts a non-breaking space before the colon)
+  return `${label}${lang() === 'fr' ? '\u00a0: ' : ': '}${value}`;
 }
 
 export class FillMap implements HostGame {

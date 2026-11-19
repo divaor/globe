@@ -12,6 +12,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ask } from '../data/lives/wdqs.mjs';
+import { fixPlaces } from '../data/ne-fixes.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const CACHE = path.join(ROOT, '.cache');
@@ -69,7 +70,7 @@ function offer(en, lang, tr, prio, q = 1e12) {
 }
 
 // 2. Natural Earth: names written for maps.
-const ne = (f) => JSON.parse(fs.readFileSync(path.join(CACHE, 'ne', `${f}.geojson`), 'utf8')).features.map((x) => x.properties);
+const ne = (f) => fixPlaces(JSON.parse(fs.readFileSync(path.join(CACHE, 'ne', `${f}.geojson`), 'utf8'))).features.map((x) => x.properties);
 const NAME = { pt: ['NAME_PT', 'name_pt'], fr: ['NAME_FR', 'name_fr'], de: ['NAME_DE', 'name_de'] };
 const get = (p, keys) => keys.map((k) => p[k]).find((v) => typeof v === 'string' && v.trim());
 function fromNE(file, prio, enKeys) {

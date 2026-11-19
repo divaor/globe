@@ -721,7 +721,7 @@
    "en": "A flag",
    "es": "Una bandera",
    "where": [
-    "src/fill/fill.ts:380",
+    "src/fill/fill.ts:381",
     "src/master/master.ts:694"
    ]
   },
@@ -2119,7 +2119,7 @@
    "en": "Also spoken in: {0}",
    "es": "También se habla en: {0}",
    "where": [
-    "src/fill/fill.ts:393"
+    "src/fill/fill.ts:394"
    ]
   },
   {
@@ -6485,7 +6485,7 @@
    "en": "Done",
    "es": "Hecho",
    "where": [
-    "src/fill/fill.ts:668",
+    "src/fill/fill.ts:669",
     "src/fill/states.ts:537",
     "src/learn/learn.ts:453",
     "src/learn/learn.ts:475",
@@ -6510,7 +6510,7 @@
    "en": "Done: ★ {0} of {1}",
    "es": "Hecho: ★ {0} de {1}",
    "where": [
-    "src/fill/fill.ts:467",
+    "src/fill/fill.ts:468",
     "src/fill/states.ts:379"
    ]
   },
@@ -6750,7 +6750,7 @@
    "en": "Each country you find is painted in with its name: right at the first try ★★★, the second ★★, the third ★; after three misses it is shown in orange. Every answer counts toward Master the world's daily goal.",
    "es": "Cada país que encuentras se colorea con su nombre: a la primera ★★★, a la segunda ★★, a la tercera ★; tras tres fallos se muestra en naranja. Cada respuesta cuenta para la meta diaria de Domina el mundo.",
    "where": [
-    "src/fill/fill.ts:646"
+    "src/fill/fill.ts:647"
    ]
   },
   {
@@ -7162,7 +7162,7 @@
    "en": "Empty the {0} map ({1} filled)?",
    "es": "¿Vaciar el mapa de {0} ({1} coloreados)?",
    "where": [
-    "src/fill/fill.ts:641"
+    "src/fill/fill.ts:642"
    ]
   },
   {
@@ -7960,7 +7960,7 @@
    "en": "Fill it with",
    "es": "Llénalo con",
    "where": [
-    "src/fill/fill.ts:602"
+    "src/fill/fill.ts:603"
    ]
   },
   {
@@ -7974,10 +7974,10 @@
    "en": "Fill the map",
    "es": "Llena el mapa",
    "where": [
-    "src/fill/fill.ts:109",
-    "src/fill/fill.ts:566",
-    "src/fill/fill.ts:683",
-    "src/fill/fill.ts:708",
+    "src/fill/fill.ts:110",
+    "src/fill/fill.ts:567",
+    "src/fill/fill.ts:684",
+    "src/fill/fill.ts:709",
     "src/main.ts:103"
    ]
   },
@@ -7985,8 +7985,8 @@
    "en": "Fill the map needs its data; check your connection.",
    "es": "Llena el mapa necesita sus datos; revisa tu conexión.",
    "where": [
-    "src/fill/fill.ts:178",
-    "src/fill/fill.ts:560"
+    "src/fill/fill.ts:179",
+    "src/fill/fill.ts:561"
    ]
   },
   {
@@ -8043,7 +8043,7 @@
    "en": "Filled",
    "es": "Coloreados",
    "where": [
-    "src/fill/fill.ts:415",
+    "src/fill/fill.ts:416",
     "src/fill/states.ts:330"
    ]
   },
@@ -11335,7 +11335,7 @@
    "en": "It borders {0}.",
    "es": "Limita con {0}.",
    "where": [
-    "src/fill/fill.ts:446"
+    "src/fill/fill.ts:447"
    ]
   },
   {
@@ -11363,7 +11363,7 @@
    "en": "It is in {0}.",
    "es": "Está en {0}.",
    "where": [
-    "src/fill/fill.ts:449",
+    "src/fill/fill.ts:450",
     "src/learn/learn.ts:1893",
     "src/play/outline.ts:97"
    ]
@@ -11372,7 +11372,7 @@
    "en": "It is inside the circle.",
    "es": "Está dentro del círculo.",
    "where": [
-    "src/fill/fill.ts:438",
+    "src/fill/fill.ts:439",
     "src/fill/states.ts:350"
    ]
   },
@@ -11394,7 +11394,7 @@
    "en": "It is {0}",
    "es": "Es {0}",
    "where": [
-    "src/fill/fill.ts:390",
+    "src/fill/fill.ts:391",
     "src/fill/states.ts:309"
    ]
   },
@@ -12897,7 +12897,7 @@
    "en": "Look inside the circle.",
    "es": "Mira dentro del círculo.",
    "where": [
-    "src/fill/fill.ts:437"
+    "src/fill/fill.ts:438"
    ]
   },
   {
@@ -13566,7 +13566,7 @@
    "en": "Master the world",
    "es": "Domina el mundo",
    "where": [
-    "src/fill/fill.ts:643",
+    "src/fill/fill.ts:644",
     "src/learn/learn.ts:462",
     "src/main.ts:118",
     "src/main.ts:121",
@@ -13826,7 +13826,7 @@
    "en": "Menu",
    "es": "Menú",
    "where": [
-    "src/fill/fill.ts:489",
+    "src/fill/fill.ts:490",
     "src/fill/states.ts:404",
     "src/master/master.ts:882",
     "src/onmap/onmap.ts:446"
@@ -15090,7 +15090,7 @@
    "en": "New badge",
    "es": "Nueva insignia",
    "where": [
-    "src/fill/fill.ts:324",
+    "src/fill/fill.ts:325",
     "src/fill/states.ts:250",
     "src/learn/learn.ts:350",
     "src/master/master.ts:490",
@@ -15147,7 +15147,7 @@
    "en": "Next",
    "es": "Siguiente",
    "where": [
-    "src/fill/fill.ts:395",
+    "src/fill/fill.ts:396",
     "src/fill/states.ts:310",
     "src/learn/learn.ts:1699",
     "src/master/master.ts:828",
@@ -15201,7 +15201,7 @@
    "en": "Next: {0}",
    "es": "Siguiente: {0}",
    "where": [
-    "src/fill/fill.ts:482",
+    "src/fill/fill.ts:483",
     "src/fill/states.ts:397"
    ]
   },
@@ -16405,7 +16405,7 @@
    "en": "One of them is in {0}.",
    "es": "Uno de ellos está en {0}.",
    "where": [
-    "src/fill/fill.ts:439"
+    "src/fill/fill.ts:440"
    ]
   },
   {
@@ -18436,8 +18436,8 @@
    "en": "Region of the day",
    "es": "Región del día",
    "where": [
-    "src/fill/fill.ts:372",
-    "src/fill/fill.ts:667",
+    "src/fill/fill.ts:373",
+    "src/fill/fill.ts:668",
     "src/main.ts:126",
     "src/main.ts:166"
    ]
@@ -19733,7 +19733,7 @@
    "en": "Share",
    "es": "Compartir",
    "where": [
-    "src/fill/fill.ts:488",
+    "src/fill/fill.ts:489",
     "src/fill/states.ts:403",
     "src/fill/states.ts:522",
     "src/guide/guide.ts:285",
@@ -19758,7 +19758,7 @@
    "en": "Share this map",
    "es": "Compartir este mapa",
    "where": [
-    "src/fill/fill.ts:637"
+    "src/fill/fill.ts:638"
    ]
   },
   {
@@ -19909,7 +19909,7 @@
    "en": "Show me",
    "es": "Muéstramelo",
    "where": [
-    "src/fill/fill.ts:404",
+    "src/fill/fill.ts:405",
     "src/fill/states.ts:319",
     "src/learn/learn.ts:745",
     "src/learn/learn.ts:1770",
@@ -20008,7 +20008,7 @@
    "en": "Shown: {0}",
    "es": "Mostrados: {0}",
    "where": [
-    "src/fill/fill.ts:473",
+    "src/fill/fill.ts:474",
     "src/fill/states.ts:386"
    ]
   },
@@ -20791,7 +20791,7 @@
    "en": "Start this map over",
    "es": "Empezar este mapa de nuevo",
    "where": [
-    "src/fill/fill.ts:639"
+    "src/fill/fill.ts:640"
    ]
   },
   {
@@ -21265,7 +21265,7 @@
    "en": "Tap a country where {0} is spoken",
    "es": "Toca un país donde se hable {1}",
    "where": [
-    "src/fill/fill.ts:427"
+    "src/fill/fill.ts:428"
    ]
   },
   {
@@ -21444,7 +21444,7 @@
    "en": "Tap the country of this flag",
    "es": "Toca el país de esta bandera",
    "where": [
-    "src/fill/fill.ts:423"
+    "src/fill/fill.ts:424"
    ]
   },
   {
@@ -21472,14 +21472,14 @@
    "en": "Tap the country whose capital is {0}",
    "es": "Toca el país cuya capital es {0}",
    "where": [
-    "src/fill/fill.ts:422"
+    "src/fill/fill.ts:423"
    ]
   },
   {
    "en": "Tap the country with the most people left",
    "es": "Toca el país más poblado que queda",
    "where": [
-    "src/fill/fill.ts:424"
+    "src/fill/fill.ts:425"
    ]
   },
   {
@@ -21493,7 +21493,7 @@
    "en": "Tap the largest country left",
    "es": "Toca el país más grande que queda",
    "where": [
-    "src/fill/fill.ts:425"
+    "src/fill/fill.ts:426"
    ]
   },
   {
@@ -21600,7 +21600,7 @@
    "en": "Tap {0}",
    "es": "Toca {0}",
    "where": [
-    "src/fill/fill.ts:421",
+    "src/fill/fill.ts:422",
     "src/fill/states.ts:336",
     "src/master/extra.ts:184",
     "src/master/master.ts:764"
@@ -21792,7 +21792,7 @@
    "en": "That is {0}.",
    "es": "Ese es {0}.",
    "where": [
-    "src/fill/fill.ts:287",
+    "src/fill/fill.ts:288",
     "src/fill/states.ts:218"
    ]
   },
@@ -25124,7 +25124,7 @@
    "en": "The whole world",
    "es": "El mundo entero",
    "where": [
-    "src/fill/fill.ts:625"
+    "src/fill/fill.ts:626"
    ]
   },
   {
@@ -26068,7 +26068,7 @@
    "en": "Tries",
    "es": "Intentos",
    "where": [
-    "src/fill/fill.ts:403",
+    "src/fill/fill.ts:404",
     "src/fill/states.ts:318"
    ]
   },
@@ -26175,7 +26175,7 @@
    "en": "Try the {0} shown again",
    "es": "Repetir los {0} mostrados",
    "where": [
-    "src/fill/fill.ts:485",
+    "src/fill/fill.ts:486",
     "src/fill/states.ts:400"
    ]
   },
@@ -26183,7 +26183,7 @@
    "en": "Try {0} again",
    "es": "Repetir {0}",
    "where": [
-    "src/fill/fill.ts:485",
+    "src/fill/fill.ts:486",
     "src/fill/states.ts:400"
    ]
   },
@@ -27589,7 +27589,7 @@
    "en": "Where (tap to fill it)",
    "es": "Dónde (toca para llenarlo)",
    "where": [
-    "src/fill/fill.ts:635"
+    "src/fill/fill.ts:636"
    ]
   },
   {
@@ -28278,7 +28278,7 @@
    "en": "Which country is it? Tap it",
    "es": "¿Qué país es? Tócalo",
    "where": [
-    "src/fill/fill.ts:426"
+    "src/fill/fill.ts:427"
    ]
   },
   {
@@ -30972,7 +30972,7 @@
    "en": "the same for everyone today",
    "es": "la misma para todos hoy",
    "where": [
-    "src/fill/fill.ts:668"
+    "src/fill/fill.ts:669"
    ]
   },
   {
@@ -31047,7 +31047,7 @@
    "en": "the world",
    "es": "el mundo",
    "where": [
-    "src/fill/fill.ts:156"
+    "src/fill/fill.ts:157"
    ]
   },
   {
@@ -31715,7 +31715,7 @@
    "en": "{0} is already filled in.",
    "es": "{0} ya tiene color.",
    "where": [
-    "src/fill/fill.ts:278",
+    "src/fill/fill.ts:279",
     "src/fill/states.ts:209"
    ]
   },
@@ -31730,7 +31730,7 @@
    "en": "{0} is filled in!",
    "es": "¡Terminaste de colorear {1}!",
    "where": [
-    "src/fill/fill.ts:468",
+    "src/fill/fill.ts:469",
     "src/fill/states.ts:380"
    ]
   },
@@ -31843,7 +31843,7 @@
    "en": "{0} million people",
    "es": "{0} millones de personas",
    "where": [
-    "src/fill/fill.ts:456",
+    "src/fill/fill.ts:457",
     "src/fill/states.ts:364"
    ]
   },
@@ -31886,7 +31886,7 @@
    "en": "{0} more",
    "es": "{0} más",
    "where": [
-    "src/fill/fill.ts:444"
+    "src/fill/fill.ts:445"
    ]
   },
   {
@@ -31935,8 +31935,8 @@
    "en": "{0} of {1} filled",
    "es": "{0} de {1} coloreados",
    "where": [
-    "src/fill/fill.ts:616",
-    "src/fill/fill.ts:710"
+    "src/fill/fill.ts:617",
+    "src/fill/fill.ts:711"
    ]
   },
   {
@@ -31951,7 +31951,7 @@
    "en": "{0} of {1} right at the first try",
    "es": "{0} de {1} acertados a la primera",
    "where": [
-    "src/fill/fill.ts:470",
+    "src/fill/fill.ts:471",
     "src/fill/states.ts:382"
    ]
   },
@@ -31959,7 +31959,7 @@
    "en": "{0} people",
    "es": "{0} habitantes",
    "where": [
-    "src/fill/fill.ts:456",
+    "src/fill/fill.ts:457",
     "src/fill/states.ts:364",
     "src/master/extra.ts:234"
    ]
@@ -32193,15 +32193,15 @@
    "en": "{0}% first time",
    "es": "{0} % a la primera",
    "where": [
-    "src/fill/fill.ts:683",
-    "src/fill/fill.ts:710"
+    "src/fill/fill.ts:684",
+    "src/fill/fill.ts:711"
    ]
   },
   {
    "en": "{0}% right first time",
    "es": "{0} % a la primera",
    "where": [
-    "src/fill/fill.ts:616"
+    "src/fill/fill.ts:617"
    ]
   },
   {
@@ -32717,7 +32717,7 @@
    "en": "🌍 The world",
    "es": "🌍 El mundo",
    "where": [
-    "src/fill/fill.ts:585"
+    "src/fill/fill.ts:586"
    ]
   },
   {
@@ -32882,7 +32882,7 @@
    "en": "🧩 States",
    "es": "🧩 Estados",
    "where": [
-    "src/fill/fill.ts:585"
+    "src/fill/fill.ts:586"
    ]
   },
   {

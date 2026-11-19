@@ -12,6 +12,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { countries, namesByGeonames } from './fetch-master.mjs';
+import { fixPlaces } from '../ne-fixes.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 const HERE = path.join(ROOT, 'scripts/data/master');
@@ -28,7 +29,7 @@ const r3 = (v) => Math.round(v * 1000) / 1000;
 
 // ---- Natural Earth's populated places (CC0: metro populations, English and Spanish names, the capitals; the same
 // places as the map's own), and GeoNames' (for the smallest countries, which Natural Earth gives few places)
-const ne = JSON.parse(fs.readFileSync(path.join(ROOT, '.cache/ne/ne_10m_populated_places.geojson'), 'utf8')).features.map((f) => {
+const ne = fixPlaces(JSON.parse(fs.readFileSync(path.join(ROOT, '.cache/ne/ne_10m_populated_places.geojson'), 'utf8'))).features.map((f) => {
   const p = f.properties;
   return { ne: true, id: p.GEONAMESID > 0 ? Number(p.GEONAMESID) : -p.NE_ID, name: p.NAME_EN || p.NAME, es: p.NAME_ES || p.NAME_EN || p.NAME, lon: f.geometry.coordinates[0], lat: f.geometry.coordinates[1], pop: p.POP_MAX, rank: p.SCALERANK, cla: p.FEATURECLA, a3: p.ADM0_A3, a2: p.ISO_A2 };
 });
