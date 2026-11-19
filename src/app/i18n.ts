@@ -17,7 +17,7 @@ const STRINGS: Record<string, [string, string] | [string, string, string]> = {
   loading: ['Loading the world…', 'Cargando el mundo…'],
   filters: ['Filters', 'Filtros'],
   activeFilters: ['Active filters', 'Filtros activos'],
-  addFilter: ['Add filters', 'Añadir filtros'],
+  addFilter: ['Add filters', 'Agregar filtros'],
   searchFilters: ['Search filters', 'Buscar filtros'],
   noFilters: ['No filters on. Pick one below.', 'Ningún filtro activo. Elige uno abajo.'],
   opacity: ['Opacity', 'Opacidad'],

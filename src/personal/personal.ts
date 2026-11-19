@@ -64,9 +64,9 @@ export class PersonalMaps {
     });
     shell.card.extraRows.push((id) => (this.p.notes[id] ? [{ icon: '📝', label: L('My note', 'Mi nota'), value: this.p.notes[id] }] : null));
 
-    shell.addMenu({ id: 'export', icon: ImageDown, label: () => L('Save image', 'Guardar imagen'), order: 60, group: 'share', onClick: () => void this.exportImage('screen') });
-    shell.addMenu({ id: 'export4k', icon: Monitor, label: () => L('4K wallpaper', 'Fondo de pantalla 4K'), order: 61, group: 'share', onClick: () => void this.exportImage('4k') });
-    shell.addMenu({ id: 'exportphone', icon: Smartphone, label: () => L('Phone wallpaper', 'Fondo para el celular'), order: 62, group: 'share', onClick: () => void this.exportImage('phone') });
+    shell.addMenu({ id: 'export', icon: ImageDown, label: () => L('Save image', 'Guardar imagen'), order: 40, group: 'me', onClick: () => void this.exportImage('screen') });
+    shell.addMenu({ id: 'export4k', icon: Monitor, label: () => L('4K wallpaper', 'Fondo de pantalla 4K'), order: 45, group: 'map', onClick: () => void this.exportImage('4k') });
+    shell.addMenu({ id: 'exportphone', icon: Smartphone, label: () => L('Phone wallpaper', 'Fondo para el celular'), order: 41, group: 'me', onClick: () => void this.exportImage('phone') });
   }
 
   private save() {

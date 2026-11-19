@@ -24,12 +24,16 @@ export class LegendCard {
   /** A timeline's slider is held: the legend waits to be drawn again until it is let go (drawing it would end the drag). */
   private holding = false;
   private dirty = false;
+  /** Called when the legend opens or folds (the shell redraws the filter's chip, which carries its ⌃, v0.41.1). */
+  onToggle: (() => void) | null = null;
+  /** There is a legend to show (a filter with one is on). */
+  hasContent = false;
 
   constructor(private app: App, root: HTMLElement) {
     this.collapsed = matchMedia('(max-width: 720px)').matches;
     this.body = h('div', { class: 'legend-body' });
     this.toggleBtn = h('button', { type: 'button', class: 'legend-toggle' }) as HTMLButtonElement;
-    this.toggleBtn.addEventListener('click', () => { this.collapsed = !this.collapsed; this.render(); });
+    this.toggleBtn.addEventListener('click', () => this.toggle());
     this.el = h('aside', { class: 'legend glass' }, this.toggleBtn, this.body);
     this.banner = h('div', { class: 'lg-banner glass', hidden: true, role: 'status' });
     root.append(this.el, this.banner);
@@ -47,11 +51,24 @@ export class LegendCard {
     this.render();
   }
 
+  /** Open or fold the legend (its header, or the ⌃ on its filter's chip). */
+  toggle(open = this.collapsed) {
+    this.collapsed = !open;
+    this.render();
+    this.onToggle?.();
+  }
+
+  get open() { return !this.collapsed; }
+
   render() {
     if (this.holding) { this.dirty = true; return; }
     const focused = document.activeElement;
     const layers = [...this.app.layers].reverse().filter((l) => l.ready && l.def.legend);
     this.el.hidden = !layers.length || this.app.ambient.on;
+    this.hasContent = layers.length > 0;
+    // Folded, the legend is its filter's chip (one bar above the map, v0.41.1); its own header shows where the chips
+    // are hidden (time travel, a quiz, the compact strip on a phone).
+    this.el.classList.toggle('collapsed', this.collapsed);
     const legends = layers.map((inst) => ({ inst, lg: inst.def.legend!(inst, this.app.lang) }));
     this.syncHighlight(legends);
     clear(this.toggleBtn);

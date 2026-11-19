@@ -24,9 +24,9 @@ export class Tools {
     this.bar = h('div', { class: 'toolbar glass', hidden: true });
     app.root.append(this.bar);
     this.tools = { ruler: this.ruler(), compare: this.compare(), truesize: this.trueSize() };
-    shell.addMenu({ id: 'ruler', icon: Ruler, label: () => L('Measure distance', 'Medir distancias'), order: 20, group: 'tools', onClick: () => this.start('ruler') });
-    shell.addMenu({ id: 'compare', icon: Scale, label: () => L('Compare countries', 'Comparar países'), order: 21, group: 'tools', onClick: () => this.start('compare') });
-    shell.addMenu({ id: 'truesize', icon: Scaling, label: () => L('True size of countries', 'Tamaño real de los países'), order: 22, group: 'tools', onClick: () => this.start('truesize') });
+    shell.addMenu({ id: 'ruler', icon: Ruler, label: () => L('Measure distance', 'Medir distancias'), order: 20, group: 'map', onClick: () => this.start('ruler') });
+    shell.addMenu({ id: 'compare', icon: Scale, label: () => L('Compare countries', 'Comparar países'), order: 21, group: 'map', onClick: () => this.start('compare') });
+    shell.addMenu({ id: 'truesize', icon: Scaling, label: () => L('True size of countries', 'Tamaño real de los países'), order: 22, group: 'map', onClick: () => this.start('truesize') });
     shell.tapHandlers.unshift((_x, _y, g) => {
       if (!this.active || app.mode) return false;
       if (g) this.active.tap(g[0], g[1], app.renderer.countryAt(g[0], g[1]));

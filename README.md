@@ -16,9 +16,18 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
 
 ## What it does
 
+- **Getting around (v0.41.1):** five tabs at the bottom: **Map** (filters, projection, map style and states, 3D
+  terrain, search, and the tools: measuring, comparing, true size, Compare two filters, your own data, the 4K
+  wallpaper), **Explore** (time travel, space, the travel guide, art, nature, the Earth's inside, the deep, ambient
+  mode), **Today** (in the middle), **Learn** (Master the world, Quiz, guided tours, On this day, your progress) and
+  **Play** (map games, Fill the map, Put it on the map). Each opens its list above itself. The button top right holds
+  Settings, your data on another device, sharing, saving a picture or a phone wallpaper, full screen (in a browser)
+  and About. One bar above the map: a chip per filter, the top one carrying its legend's ⌃. Zoom and locate on the
+  right. A first visit (not from a link) gets three short cards: how to move the globe and the language, Today, and
+  where to start.
 - **Political map (default):** every country has its own shade; the colour family shows its continent.
   Capitals, cities and sea names appear as you zoom. Tap a country for a card with its flag and facts.
-- **Map style and states:** a button by the zoom controls picks the look under every filter: Atlas (a colour per
+- **Map style and states:** Map → Map style and states picks the look under every filter: Atlas (a colour per
   country), Map (a plain road-map look without the roads: one light land colour, a light sea, clear borders and more
   cities, their dots and names bigger the more people live there) or Satellite (NASA's Blue Marble, and Sentinel-2
   when you zoom in). States and provinces (the first-level divisions of every country, 4,596 of them) show from
@@ -51,7 +60,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   screen to pinch and zoom; a picture that may be see-through (a PNG, SVG or GIF: drawings, diagrams, glyphs) sits on
   paper, so its dark lines show in the dark theme and full screen. A sound started from a card (an animal's call,
   a piece of music) goes on when the card closes, in a small player in the top bar whose ■ stops it.
-- **Nature (More → Explore → Nature):** the animal finder, "Where can I see…?": any animal by its English, Spanish or Latin
+- **Nature (Explore → Nature):** the animal finder, "Where can I see…?": any animal by its English, Spanish or Latin
   name. The 405 work offline; any other of GBIF's species is looked up live and its range is GBIF's live map of every
   sighting shared. For each, the best parks to see it (ranked by sightings), when to go (sightings by month, live from
   iNaturalist, worldwide or at a park) and Plan a trip (the nearest travel-guide city). What lives here?: tap the map
@@ -67,7 +76,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   Where does it grow? (tap where a plant grows wild) and When is it? (the best month for a spectacle); Pin it adds a
   Famous trees pack; two tours (Giants and ancients: the great trees; A year of blossoms); the Botanist badge (find 25
   plants); and a Green planet playlist for ambient mode.
-- **Inside the Earth (More → Explore → Inside the Earth):** the globe cut open to scale, an eighth taken out, turning with the
+- **Inside the Earth (Explore → Inside the Earth):** the globe cut open to scale, an eighth taken out, turning with the
   globe: the crust, the upper mantle, the transition zone, the lower mantle, the liquid outer core and the solid inner
   core, their names on the cut and the map's names kept off the opening. Each layer's facts (what it is made of, how
   hot and squeezed, how we know), a slider that peels the layers away down to the inner core, and Cut where I look.
@@ -79,7 +88,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   Two quizzes, How deep? (which of two goes deeper) and Down to the core (put four in order, shallowest first), and
   two tours: Journey to the centre of the Earth (Verne's novel against the real Earth, the cut opening on the way down)
   and the Ring of Fire (ten stops, with earthquakes by depth under Tonga).
-- **Into the deep (More → Explore → Into the deep):** Dive from here: tap the sea anywhere for a column from its surface down to
+- **Into the deep (Explore → Into the deep):** Dive from here: tap the sea anywhere for a column from its surface down to
   11,000 m, the sea floor of that place drawn in (the deepest point of the cell, so a trench reads true): the zones
   (sunlit, twilight, midnight, the abyss, the trenches), the light, the temperature and the pressure wherever you
   touch it, the sea animals of that ocean and latitude at their depths (tap one for its story), the records (the
@@ -354,7 +363,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   the same event. A story opened from a card ("Open its story") or a list starts paused at its step with all its
   controls; its X goes back to the map and filters there were. While a tour, a story or the years of a timeline
   play by themselves (or are read aloud), the screen is kept on, where the browser can (the Screen Wake Lock).
-- **Master the world** (More → Learn → Master the world, or the Quiz panel): every capital, flag and country
+- **Master the world** (Learn → Master the world, or the Quiz panel): every capital, flag and country
   learned for good, a little each day. Three decks (the 193 UN members plus Vatican City and Palestine; territories
   such as Greenland or Hong Kong as a setting) and three ways to play: **Learn** (spaced repetition: the countries due
   today first, then up to five new ones; one you miss comes back three questions later, one you get right comes back
@@ -400,7 +409,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   - **Hard mode** (v0.39.1), a switch in Big cities and Landmarks: every city of a million people or more (553, the
     250 among them, each picked among its nearest of them all) and every World Heritage site with a picture (1,112).
     The cards are the same (what you know stays known); a badge for each hard deck mastered.
-- **Fill the map** (More → Play → Fill the map): a world map coloured in country by country. Fill it with
+- **Fill the map** (Play → Fill the map): a world map coloured in country by country. Fill it with
   **countries** ("Tap Bolivia"), **capitals** ("Tap the country whose capital is Sucre"), **flags**, the **most people
   first** or the **largest first** (the biggest country left each time, so the map fills in order), **clues** (a ladder
   from hard to easy, one more after each miss: a national animal, dish or export, then a famous person or the highest
@@ -425,7 +434,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   are Wikidata's: the item GeoNames points to, else (v0.38.1) the municipality of the same name it lies in (Londrina,
   Joinville), else a place of its name within 10 km, each only within three times GeoNames' own count (a district of
   the same name is not the town); a city with no sure count has 0 in the file, so no game says which is biggest.
-- **Put it on the map** (More → Play → Put it on the map): a Wordle-style puzzle. Six things from a country
+- **Put it on the map** (Play → Put it on the map): a Wordle-style puzzle. Six things from a country
   or a region (a river, a lake, a mountain range, a desert, a peak or volcano, a city, a heritage site or famous
   building, a national park) to put where they are: tap a name, then one of the grey places of its kind (the rivers
   there as grey lines, the ranges as grey areas, the cities as dots...); on a computer a name can also be dragged onto
@@ -436,7 +445,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   country one day, a region the next), is in the Map games panel and is shared as a grid of coloured squares. On a
   phone the card shrinks to the name being placed, so the map has room. Badges for a puzzle solved, all six at the
   first check, and a week of puzzles of the day.
-- **Map games** (More → Play → Map games): twelve games played on the map, each with a new puzzle every day that is the
+- **Map games** (Play → Map games): twelve games played on the map, each with a new puzzle every day that is the
   same for everyone (the panel's Today list), a best score and badges. The map, its labels and filters come back as
   they were when a game ends.
   - **Pin it:** drop a pin where a place is, five rounds. A pin on the spot scores 5,000; 1,500 km off scores about
@@ -488,7 +497,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     at the first try) and one for playing all seven.
   - **In the quiz:** "Which country in between?" (two countries that do not touch, and the one country you cross)
     is a quiz of its own and one of the daily challenge's eight questions.
-- **Travel guide** (More → Explore → Travel guide): pick the cities you want to visit (690: every capital, every city of a
+- **Travel guide** (Explore → Travel guide): pick the cities you want to visit (690: every capital, every city of a
   million people or more, and towns rich in sights such as Cusco, Luxor or Kraków) by searching, by tapping their dot
   on the map, with Plan a trip on a country's card, or from your Want to go list. Whatever a city's guide opens (an
   animal, a park, a site on the map, a story) leaves a "← Montreal" chip at the top, back to the city at the same tab.
@@ -520,7 +529,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   in order with its places and why, and a request for a day-by-day itinerary, getting between cities, entry and visa
   rules, opening hours and tickets, where to stay, costs and advice, saying what it is not sure of), or download it as
   Markdown or JSON. The app sends nothing anywhere: you paste or share it where you like.
-- **Art and architecture** (More → Explore → Art and architecture): which masterpieces and buildings you can see in which city.
+- **Art and architecture** (Explore → Art and architecture): which masterpieces and buildings you can see in which city.
   - **Masterpieces where they are now:** for 182 museums, their best-known works (2,226, ranked by how many
     Wikipedias write about them), with a picture, the artist and the date; each picture shows its licence and author,
     read live from Wikimedia Commons.

@@ -4,7 +4,8 @@
 import {
   Luggage, Palette, PawPrint, Pickaxe, Waves, MonitorPlay, History, Orbit, Earth, CircleHelp, Compass, CalendarDays,
   Zap, Medal, Route, PaintBucket, MapPinned, Ruler, Scale, Scaling, ChartScatter, Upload, ImageDown, Monitor, Smartphone,
-  Link, Settings, Info, Layers, Globe, CalendarCheck, Telescope, GraduationCap, Gamepad2, Wrench, Share2, Bell, Sparkles,
+  Link, Settings, Info, Layers, Layers2, Globe, CalendarCheck, Telescope, GraduationCap, Gamepad2, Wrench, Share2, Bell, Sparkles,
+  Map as MapIcon, Mountain, Search, HardDriveDownload, Maximize,
   type IconNode,
 } from 'lucide';
 import { h, icon } from './dom';
@@ -41,7 +42,11 @@ export const FEATURES: Record<string, Feature> = {
   space: { icon: Orbit, hue: 'space' },
   sky: { icon: Sparkles, hue: 'space' },
   // The map and tools
+  map: { icon: MapIcon, hue: 'tools' },
   filters: { icon: Layers, hue: 'tools' },
+  mapstyle: { icon: Layers2, hue: 'tools' },
+  terrain3d: { icon: Mountain, hue: 'tools' },
+  search: { icon: Search, hue: 'tools' },
   projection: { icon: Globe, hue: 'tools' },
   tools: { icon: Wrench, hue: 'tools' },
   ruler: { icon: Ruler, hue: 'tools' },
@@ -54,11 +59,13 @@ export const FEATURES: Record<string, Feature> = {
   share: { icon: Share2, hue: 'me' },
   link: { icon: Link, hue: 'me' },
   export: { icon: ImageDown, hue: 'me' },
-  export4k: { icon: Monitor, hue: 'me' },
+  export4k: { icon: Monitor, hue: 'tools' },
   exportphone: { icon: Smartphone, hue: 'me' },
   settings: { icon: Settings, hue: 'me' },
   about: { icon: Info, hue: 'me' },
   reminders: { icon: Bell, hue: 'me' },
+  backup: { icon: HardDriveDownload, hue: 'me' },
+  fullscreen: { icon: Maximize, hue: 'me' },
 };
 
 /** A panel's feature, by its sheet id (the panels of a feature's own pages share its icon). */

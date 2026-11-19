@@ -28,7 +28,7 @@ for (const entry of index) {
   const inMode = await page.evaluate(() => window.atlas.app.mode === 'wars');
   if (inMode) await page.evaluate(() => document.querySelector('.wb-tools .wb-list').click());
   else {
-    await page.tap('[data-dock="time"]');
+    await page.tap('[data-dock="explore"]'); await page.waitForTimeout(250); await page.tap('.menu [data-menu="time"]');
     await page.waitForTimeout(300);
     await page.evaluate(() => { const el = [...document.querySelectorAll('.mode-card')].find((c) => /Wars/.test(c.textContent)); el?.click(); });
   }

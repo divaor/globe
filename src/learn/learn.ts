@@ -1,8 +1,8 @@
 // Learn and play: quizzes (find the country, flags, capitals...), the games Put them in order and Time detective,
 // the daily challenge, your progress (streaks and badges), guided tours, and "On this day".
-import { GraduationCap, Compass, CalendarDays, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Play, Pause, RotateCcw, Map as MapIcon, Share2, Volume2, VolumeX } from 'lucide';
+import { GraduationCap, Compass, CalendarDays, Medal, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Play, Pause, RotateCcw, Map as MapIcon, Share2, Volume2, VolumeX } from 'lucide';
 import { keepAwake } from '../ui/wake';
-import { geoDistance } from 'd3-geo';
+import { geoDistance, geoInterpolate } from 'd3-geo';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear, add } from '../ui/dom';
@@ -207,6 +207,9 @@ export class Learn {
    * (`voice`: not reading, reading, or read to the end; `after` waits after the voice before the next stop). */
   private tour: { name: string; steps: TourStep[]; i: number; auto: boolean; timer: number; fold: boolean; voice: 'off' | 'reading' | 'done'; after: number; at: number } | null = null;
   private pin: { lon: number; lat: number; text: string } | null = null;
+  /** Where you tapped in Where in the world? (v0.41.1): a line from it to the place shows how far you were. */
+  private guess: [number, number] | null = null;
+  private guessKm = 0;
   /** Several numbered pins (Put them in order's answer). */
   private pins: { lon: number; lat: number; text: string }[] = [];
   /** Time detective: its regions and how their maps differ, and the maps' years with their labels. */
@@ -271,13 +274,16 @@ export class Learn {
     shell.addMenu({ id: 'quiz', icon: GraduationCap, label: () => L('Quiz', 'Concurso'), order: 30, group: 'learn', onClick: () => this.openQuizMenu() });
     shell.addMenu({ id: 'tours', icon: Compass, label: () => L('Guided tours', 'Visitas guiadas'), order: 31, group: 'learn', onClick: () => this.openTours() });
     shell.addMenu({ id: 'onthisday', icon: CalendarDays, label: () => L('On this day', 'Tal día como hoy'), order: 32, group: 'learn', onClick: () => void this.openOnThisDay() });
+    // v0.41.1: Your progress has its own place in Learn (it was only reachable from inside the Quiz panel).
+    shell.addMenu({ id: 'progress', icon: Medal, label: () => L('Your progress', 'Tu progreso'), order: 33, group: 'learn', onClick: () => this.openProgress() });
     shell.tapHandlers.unshift((_x, _y, g) => {
       const q = this.quiz;
       if (!q || q.done) return false;
       const kind = this.qk();
       // Time detective: no names before the answer; after it, a tap names the state or empire.
       if (kind === 'detective') { if (q.answered && g) this.time.history.tap(g[0], g[1]); return true; }
-      if (q.answered || !['find', 'where', 'region', 'habitat', 'grows'].includes(kind)) return false;
+      // While a quiz runs, the map's taps are the quiz's: a country's card would open under the question (v0.41.1).
+      if (q.answered || !['find', 'where', 'region', 'habitat', 'grows'].includes(kind)) return true;
       if (g && kind === 'find') this.answerFind(app.renderer.countryAt(g[0], g[1]));
       if (g && (kind === 'where' || kind === 'habitat' || kind === 'grows')) this.answerWhere(g as [number, number]);
       if (g && kind === 'region' && this.regions) {
@@ -299,6 +305,24 @@ export class Learn {
     app.renderer.overlays.add((rc) => { if (this.quiz && this.greenShow) drawPlantRange(rc, this.greenShow); });
     app.renderer.overlays.add((rc) => {
       const { ctx } = rc;
+      // Where in the world?: a dashed line along the great circle from your tap to the place, and your tap's dot.
+      if (this.guess && this.pin && this.quiz) {
+        const along = geoInterpolate(this.guess, [this.pin.lon, this.pin.lat]);
+        ctx.save(); ctx.setLineDash([7, 6]); ctx.lineWidth = 2.5; ctx.strokeStyle = '#fff'; ctx.shadowColor = 'rgba(0,0,0,.6)'; ctx.shadowBlur = 3;
+        ctx.beginPath();
+        let open = false;
+        for (let k = 0; k <= 48; k++) {
+          const p = rc.project(...along(k / 48));
+          if (!p) { open = false; continue; }
+          if (open) ctx.lineTo(p[0], p[1]); else { ctx.moveTo(p[0], p[1]); open = true; }
+        }
+        ctx.stroke(); ctx.restore();
+        const g = rc.project(this.guess[0], this.guess[1]);
+        if (g) { ctx.beginPath(); ctx.arc(g[0], g[1], 7, 0, Math.PI * 2); ctx.fillStyle = '#4dabf7'; ctx.fill(); ctx.lineWidth = 2.5; ctx.strokeStyle = '#fff'; ctx.stroke(); }
+        // How far, halfway along the line.
+        const mid = rc.project(...along(0.5));
+        if (mid && this.guessKm > 0) rc.labels.add({ text: L('{0} km', '{0} km', fmtNumber(this.guessKm)), x: mid[0] + 8, y: mid[1], align: 'left', priority: 2900, size: 12.5, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
+      }
       for (const [pin, r] of [...this.pins.map((x) => [x, 7] as const), ...(this.pin ? [[this.pin, 9] as const] : [])]) {
         const p = rc.project(pin.lon, pin.lat);
         if (!p) continue;
@@ -1621,6 +1645,8 @@ export class Learn {
     const plant = this.qk() === 'grows' ? this.greenQuiz?.byId.get(it.id ?? '') ?? null : null;
     const km = g ? Math.round(animal ? rangeKm(animal, g) : plant ? plantRangeKm(plant, g) : geoDistance(g, it.at) * 6371) : null;
     const ok = km != null && km <= (animal || plant ? 300 : 500);
+    this.guess = g && !animal && !plant ? g : null;
+    this.guessKm = km ?? 0;
     if (animal) { this.wildShow = animal; this.app.renderer.requestRender(); }
     if (plant) { this.greenShow = plant; this.app.renderer.requestRender(); }
     this.scored(ok);
@@ -1905,6 +1931,7 @@ export class Learn {
     stopClip(200, 'card');
     this.app.select(null);
     this.pin = null;
+    this.guess = null;
     this.pins = [];
     q.i++; q.answered = false; q.peek = false; q.fb = undefined;
     if (q.i >= q.qs.length) { this.finishQuiz(); return; }
@@ -2405,6 +2432,7 @@ export class Learn {
     this.wildShow = null;
     this.greenShow = null;
     this.pin = null;
+    this.guess = null;
     this.pins = [];
     this.regions = null;
     this.focusRegion = null;

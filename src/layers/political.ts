@@ -31,8 +31,8 @@ export const political: LayerDef = {
       return {
         kind: 'html', html: '',
         note: mapView.style === 'map'
-          ? L('In the Map style the countries are in one colour. For a colour per country, choose Atlas with the style button by the zoom controls.', 'En el estilo Mapa, los países van en un solo color. Para un color por país, elige Atlas en el botón de estilo, junto al zoom.')
-          : L('The Satellite style shows the Earth from space. For a colour per country, choose Atlas with the style button by the zoom controls.', 'En el estilo Satélite se ve la Tierra desde el espacio. Para un color por país, elige Atlas en el botón de estilo, junto al zoom.'),
+          ? L('In the Map style the countries are in one colour. For a colour per country, choose Atlas in Map → Map style and states.', 'En el estilo Mapa, los países van en un solo color. Para un color por país, elige Atlas en Mapa → Estilo del mapa y estados.')
+          : L('The Satellite style shows the Earth from space. For a colour per country, choose Atlas in Map → Map style and states.', 'En el estilo Satélite se ve la Tierra desde el espacio. Para un color por país, elige Atlas en Mapa → Estilo del mapa y estados.'),
       };
     }
     const meta = LC.data.meta;

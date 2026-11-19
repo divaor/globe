@@ -18,7 +18,7 @@ export interface TileSource {
 export const TERRAIN: TileSource = {
   id: 'terrain', kind: 'terrarium', minZoom: 0, maxZoom: 14,
   url: (z, x, y) => `https://s3.amazonaws.com/elevation-tiles-prod/terrarium/${z}/${x}/${y}.png`,
-  credit: 'Terrain Tiles (Mapzen, AWS Open Data): 3DEP, SRTM, GMTED2010, ETOPO1 and other sources (see SOURCES.md)',
+  credit: 'Terrain Tiles (Mapzen, AWS Open Data): 3DEP, SRTM, GMTED2010, ETOPO1 and other sources',
 };
 
 /** Sentinel-2 cloudless 2016, by EOX (CC BY 4.0): the edition free for any use. */
