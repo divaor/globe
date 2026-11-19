@@ -1479,7 +1479,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     // 3D: the area on screen raised; the slider raises it more.
     await zoomTo(page, 10.4, 46.4, 8);
     await settle(page);
-    await page.evaluate(() => window.__menu('3D terrain'));
+    await page.evaluate(() => { window.atlas.shell.openTab('map'); document.querySelector('.menu [data-menu="terrain3d"]').click(); });
     await page.waitForFunction(() => window.atlas.terrain3d.info.ready && window.atlas.terrain3d.info.frames > 0, null, { timeout: 60000 });
     const t3 = await page.evaluate(() => ({ ...window.atlas.terrain3d.info }));
     const nonEmpty = await page.evaluate(() => { const c = document.querySelector('.t3d-canvas'); const g = c.getContext('webgl2'); const px = new Uint8Array(4); g.readPixels(c.width >> 1, c.height >> 1, 1, 1, g.RGBA, g.UNSIGNED_BYTE, px); return px[3]; });
