@@ -57,7 +57,7 @@ export function animalCard(card: CardFn, a: Animal, x: WildLinks) {
   if (got.length) x.toast(`${got[0].icon} ${L('New badge: {0}', 'Nueva insignia: {0}', tx(got[0]))}`);
   const rows: InfoRow[] = [];
   rows.push({ label: L('Group', 'Grupo'), value: `${groupName(a.g)}${a.fam ? ` · ${a.fam}` : ''}`, icon: GROUPS[a.g].icon });
-  if (a.gone) rows.push({ label: L('Last seen', 'Visto por última vez'), value: `${a.gone} · ${es() ? a.last?.es : a.last?.en}`, icon: '🕯️' });
+  if (a.gone) rows.push({ label: L('Last seen', 'Visto por última vez'), value: `${a.gone} · ${tx(a.last)}`, icon: '🕯️' });
   rows.push(...factRows(a));
   if (a.cc.length) {
     const names = a.cc.map((c) => x.countryName(c)).filter(Boolean).sort((p, q) => p.localeCompare(q, lang()));
@@ -85,7 +85,7 @@ export const placeIcon = (k: keyof typeof KIND) => KIND[k].icon;
 
 export function parkCard(card: CardFn, p: Park, d: WildData | null, x: WildLinks) {
   const k = KIND[p.k];
-  const rows: InfoRow[] = [{ label: L('Kind', 'Tipo'), value: es() ? k.es : k.en, icon: k.icon }];
+  const rows: InfoRow[] = [{ label: L('Kind', 'Tipo'), value: tx(k), icon: k.icon }];
   if (p.cc) rows.push({ label: L('Country', 'País'), value: x.countryName(p.cc), icon: '📍' });
   if (p.km2) rows.push({ label: L('Area', 'Superficie'), value: `${fmtCompact(p.km2)} km²`, icon: '📐' });
   if (p.whs) rows.push({ label: L('World Heritage', 'Patrimonio de la Humanidad'), value: L('Yes', 'Sí'), icon: '🏛️' });
@@ -112,7 +112,7 @@ export function parkCard(card: CardFn, p: Park, d: WildData | null, x: WildLinks
 
 export function zooCard(card: CardFn, z: Zoo, x: WildLinks) {
   const k = KIND[z.k];
-  const rows: InfoRow[] = [{ label: L('Kind', 'Tipo'), value: es() ? k.es : k.en, icon: k.icon }];
+  const rows: InfoRow[] = [{ label: L('Kind', 'Tipo'), value: tx(k), icon: k.icon }];
   if (z.cc) rows.push({ label: L('Country', 'País'), value: x.countryName(z.cc), icon: '📍' });
   const links: { label: string; href?: string; onClick?: () => void }[] = [
     { label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(z.at, nm(z)) },

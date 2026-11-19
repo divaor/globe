@@ -189,7 +189,7 @@ export class Master implements HostGame {
   private noun(deck: DeckId) { return deck === 'states' ? L('states', 'estados') : this.ext(deck)?.noun() ?? L('countries', 'países'); }
   /** A country's name (short enough for a progress row: the United States). */
   private cname(a3: string) { return a3 === 'USA' ? L('United States', 'Estados Unidos') : this.app.data.name(a3, dataLang()); }
-  private nm(p: { en: string; es: string }) { return es() ? p.es : p.en; }
+  private nm(p: { en: string; es: string }) { return tx(p); }
   private today() { return dayKey(); }
 
   /** Today (v0.37.0): today's answers toward the goal (every deck counts), the cards due, the streak. */
@@ -487,7 +487,7 @@ export class Master implements HostGame {
     refreshYourWorld(this.app);
     s.ans = ans;
     this.sound(g.mastered ? 'star' : ok ? 'ok' : 'bad');
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
     this.afterAnswer(ok);
   }
 
@@ -638,7 +638,7 @@ export class Master implements HostGame {
       m.record = Math.max(m.record, s.count);
       m.won = (m.won ?? 0) + 1;
       saveMaster();
-      if (s.scope === 'world') { const b = recordFeat('master-marathon'); if (b.length) this.shell.toast(`${b[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? b[0].es : b[0].en}`, 4000); }
+      if (s.scope === 'world') { const b = recordFeat('master-marathon'); if (b.length) this.shell.toast(`${b[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(b[0])}`, 4000); }
     }
     this.sound(how === 'won' || how === 'end' ? 'star' : 'bad');
     this.render();
@@ -869,7 +869,7 @@ export class Master implements HostGame {
     } else {
       head = L('The whole deck, no mistake! 🏆', '¡El mazo entero, sin un error! 🏆');
       lines.push(L('{0} in a row.', '{0} seguidos.', s.count));
-      add(L('Again', 'Otra vez'), () => void this.start('marathon'), true, 'again');
+      add(L('Play again', 'Jugar otra vez'), () => void this.start('marathon'), true, 'again');
     }
     const goal = st.goal.day === this.today() ? st.goal.n : 0;
     const res = resultCard({ stars: s.done === 'end' && s.stats.asked ? (s.stats.right / s.stats.asked >= 0.9 ? 3 : s.stats.right / s.stats.asked >= 0.6 ? 2 : 1) : undefined,
@@ -1157,7 +1157,7 @@ export class Master implements HostGame {
     for (const d of more) if (isExtra(d)) await this.loadExtra(d);
     const rows = [...(DECKS as DeckId[]), ...more].map((d) => ({ d, c: this.counts(d, d === 'states' ? 'all' : 'world') }));
     const live = st.days.last >= addDays(this.today(), -1) ? st.days.streak : 0;
-    const text = `🌍 ${L('Master the world', 'Domina el mundo')}\n${rows.map(({ d, c }) => `${DECK_TEXT[d].icon} ${this.nm(DECK_TEXT[d])}: ${c.mastered}/${c.total} ${bar(c)}`).join('\n')}${live ? `\n🔥 ${L('{0} days in a row', '{0} días seguidos', live)}` : ''}\n${location.origin}${location.pathname}`;
+    const text = `🌍 ${L('Master the world', 'Domina el mundo')}\n${rows.map(({ d, c }) => `${DECK_TEXT[d].icon} ${this.nm(DECK_TEXT[d])}: ${c.mastered}/${c.total} ${bar(c)}`).join('\n')}${live ? `\n🔥 ${L('{0, plural, one {# day} other {# days}} in a row', '{0, plural, one {# día seguido} other {# días seguidos}}', live)}` : ''}\n${location.origin}${location.pathname}`;
     const blob = await this.picture(rows, live).catch(() => null);
     const file = blob ? new File([blob], 'master-the-world.png', { type: 'image/png' }) : null;
     try {
@@ -1200,7 +1200,7 @@ export class Master implements HostGame {
       }
     });
     g.fillStyle = '#fff'; g.font = '700 44px system-ui, sans-serif';
-    if (live) g.fillText(`🔥 ${L('{0} days in a row', '{0} días seguidos', live)}`, 80, 960);
+    if (live) g.fillText(`🔥 ${L('{0, plural, one {# day} other {# days}} in a row', '{0, plural, one {# día seguido} other {# días seguidos}}', live)}`, 80, 960);
     g.font = '500 30px system-ui, sans-serif'; g.fillStyle = 'rgba(255,255,255,0.7)'; g.textAlign = 'right';
     g.fillText('Atlas Globe', W - 80, 1010);
     return new Promise((res) => cv.toBlob((b) => res(b), 'image/png'));

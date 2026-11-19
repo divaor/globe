@@ -3,7 +3,7 @@ import { geoCentroid, geoContains, geoInterpolate, geoDistance } from 'd3-geo';
 import type { Topology } from 'topojson-specification';
 import { loadJSON, shapesFrom, type Shape } from '../../data/store';
 import { oklch } from '../../engine/colors';
-import { lang, fmtNumber, L } from '../../app/i18n';
+import { lang, fmtNumber, L, tx, txs } from '../../app/i18n';
 import type { App } from '../../app/app';
 import type { LayerDef, LayerHit, RenderCtx } from '../types';
 
@@ -40,7 +40,7 @@ export function plateMotion(code: string, lon: number, lat: number): { cm: numbe
   return { cm: Math.hypot(east, north), az: ((Math.atan2(east, north) / RAD) + 360) % 360 };
 }
 const BEARINGS = { en: ['north', 'north-east', 'east', 'south-east', 'south', 'south-west', 'west', 'north-west'], es: ['el norte', 'el noreste', 'el este', 'el sureste', 'el sur', 'el suroeste', 'el oeste', 'el noroeste'] };
-export const bearingText = (az: number) => (lang() === 'es' ? BEARINGS.es : BEARINGS.en)[Math.round(az / 45) % 8];
+export const bearingText = (az: number) => (txs(BEARINGS))[Math.round(az / 45) % 8];
 /** Grid points inside each plate, worked out once: where the arrows go. */
 let arrowGrid: { lon: number; lat: number; code: string; step: number }[] | null = null;
 function gridFor(): typeof arrowGrid {
@@ -123,7 +123,7 @@ const tectonics: LayerDef = {
   legend(inst) {
     const es = lang() === 'es';
     return {
-      kind: 'categories', title: L('Plate boundaries', 'Bordes de placa'), items: Object.values(BOUND).map((b) => ({ color: b.color, label: es ? b.es : b.en, shape: b.dash ? 'dash' as const : 'line' as const })),
+      kind: 'categories', title: L('Plate boundaries', 'Bordes de placa'), items: Object.values(BOUND).map((b) => ({ color: b.color, label: tx(b), shape: b.dash ? 'dash' as const : 'line' as const })),
       ...(inst.options.motion !== false ? { note: L('Arrows show which way each part of a plate moves: the longer, the faster (NNR-MORVEL56, from 1 to about 10 cm a year). Tap a plate for how fast that place moves.', 'Las flechas muestran hacia dónde se mueve cada parte de una placa: cuanto más larga, más rápido (NNR-MORVEL56, de 1 a unos 10 cm al año). Toca una placa para ver cuánto se mueve ese lugar.') } : {}),
     };
   },
@@ -142,7 +142,7 @@ const tectonics: LayerDef = {
     if (m) rows.push({ label: L('It moves', 'Se mueve'), value: L('{0} cm a year to the {1}', '{0} cm al año hacia {1}', fmtNumber(m.cm, 1), bearingText(m.az)), icon: '➡️' });
     if (best && bd < 0.08) {
       const b = BOUND[best.feature.properties.k];
-      rows.push({ label: L('Nearby boundary', 'Borde cercano'), value: `${es ? b.es : b.en} · ${best.feature.properties.v} mm/${L('yr', 'año')}`, icon: '↔️' });
+      rows.push({ label: L('Nearby boundary', 'Borde cercano'), value: `${tx(b)} · ${best.feature.properties.v} mm/${L('yr', 'año')}`, icon: '↔️' });
     }
     return rows;
   },
@@ -292,7 +292,7 @@ const volcanoes: LayerDef = {
     if (show === 'famous') return { kind: 'categories', items: [{ color: '#ff4b2b', label: L('Active', 'Activo'), shape: 'dot' }, { color: '#ff9f68', label: L('Dormant or historic', 'Dormido o histórico'), shape: 'dot' }] };
     return {
       kind: 'categories', title: L('Volcanoes by their last eruption', 'Volcanes por su última erupción'),
-      items: ERUPTED.filter((e) => show !== 'recent' || e.min >= 1900).map((e, k) => ({ color: e.color, label: `${es ? e.es : e.en} · ${fmtNumber(gvp.filter((v) => eraOf(v.y) === k).length)}`, shape: 'dot' as const })),
+      items: ERUPTED.filter((e) => show !== 'recent' || e.min >= 1900).map((e, k) => ({ color: e.color, label: `${tx(e)} · ${fmtNumber(gvp.filter((v) => eraOf(v.y) === k).length)}`, shape: 'dot' as const })),
       note: L('The big triangles are 53 famous volcanoes. Tap one for its type, height and last eruption.', 'Los triángulos grandes son 53 volcanes famosos. Toca uno para ver su tipo, altura y última erupción.'),
     };
   },

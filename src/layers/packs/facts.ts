@@ -271,7 +271,7 @@ function mineralsLayer(): LayerDef {
       const lg = base.legend!(inst, lang());
       if (lg && m) {
         const top = m.producers.slice(0, 5).map(([id, p]) => `${LC.data.name(id, lang())} ${fmtNumber(p, p < 10 ? 1 : 0)}%`).join(' · ');
-        return { ...lg, title: `${m.emoji} ${es() ? m.es : m.en} (${m.year})`, note: `${L('Top producers', 'Mayores productores')}: ${top}` };
+        return { ...lg, title: `${m.emoji} ${tx(m)} (${m.year})`, note: `${L('Top producers', 'Mayores productores')}: ${top}` };
       }
       return lg;
     },
@@ -303,7 +303,7 @@ function nationalAnimals(): LayerDef {
           if (!m || rc.webZoom < m.ml - 1.5) continue;
           const p = rc.project(m.lx, m.ly);
           // Zoomed in, the animal's name goes under its emoji.
-          const name = rc.webZoom >= 2.8 && k ? (es() ? cats[k]?.es : cats[k]?.en) : undefined;
+          const name = rc.webZoom >= 2.8 && k ? (cats[k] ? tx(cats[k]) : undefined) : undefined;
           if (p) rc.labels.add({
             text: emoji, x: p[0], y: p[1] - 14, priority: 990 - m.lr * 10, size: 18, weight: 400, color: '#000', halo: 'rgba(255,255,255,0.0)',
             sub: name, subSize: 11.5, subColor: rc.theme.label, subHalo: rc.theme.labelHalo,

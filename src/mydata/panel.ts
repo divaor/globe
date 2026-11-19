@@ -2,7 +2,7 @@
 // on the map; and the list of tables kept on this device.
 import { Upload, Trash2, MapPin } from 'lucide';
 import { h, icon, fillSelect } from '../ui/dom';
-import { lang, L, Lc } from '../app/i18n';
+import { lang, L, Lc, tx } from '../app/i18n';
 import { SEQUENTIAL } from '../engine/colors';
 import { loadJSON, dataUrl } from '../data/store';
 import type { App } from '../app/app';
@@ -78,9 +78,9 @@ export function myDataPanel(app: App, my: MyData, done: (msg: string) => void): 
 
   // Samples.
   const samples = h('div', { class: 'md-samples' }, ...SAMPLES.map((s) => {
-    const b = h('button', { type: 'button', class: 'md-sample', 'data-sample': s.file }, h('span', null, s.icon), h('span', null, lang() === 'es' ? s.name.es : s.name.en));
+    const b = h('button', { type: 'button', class: 'md-sample', 'data-sample': s.file }, h('span', null, s.icon), h('span', null, tx(s.name)));
     b.addEventListener('click', async () => {
-      try { const res = await fetch(dataUrl(`samples/${s.file}`)); await read(await res.text(), s.file, (lang() === 'es' ? s.name.es : s.name.en).replace(/ \(.*\)$/, '')); } catch { preview.replaceChildren(h('p', { class: 'md-error' }, L('⚠️ Could not load the sample (offline?).', '⚠️ No se pudo cargar el ejemplo (¿sin conexión?).'))); }
+      try { const res = await fetch(dataUrl(`samples/${s.file}`)); await read(await res.text(), s.file, (tx(s.name)).replace(/ \(.*\)$/, '')); } catch { preview.replaceChildren(h('p', { class: 'md-error' }, L('⚠️ Could not load the sample (offline?).', '⚠️ No se pudo cargar el ejemplo (¿sin conexión?).'))); }
     });
     return b;
   }));

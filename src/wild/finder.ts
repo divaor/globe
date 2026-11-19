@@ -11,7 +11,7 @@ import type { Shell } from '../ui/shell';
 import { h, icon, clear } from '../ui/dom';
 import { planStar } from '../guide/plan';
 import { wikiOf } from '../artguide/data';
-import { lang, fmtCompact, L, dataLang } from '../app/i18n';
+import { lang, fmtCompact, L, dataLang, tx } from '../app/i18n';
 import { matcher } from '../ui/match';
 import { COLS, ROWS, cellAt, loadWild, loadParks, nm, groupName, GROUPS, type Animal, type Park, type WildData } from './data';
 import { animalCard, parkCard, statusBadge, type CardFn } from './cards';
@@ -312,7 +312,7 @@ export class Wild {
     const body = h('div', { class: 'guide wild-panel', 'data-wild': 'here' });
     const chips = h('div', { class: 'chip-row' });
     for (const [k, g] of Object.entries(ICONIC)) {
-      const b = h('button', { type: 'button', class: `chip${k === group ? ' on' : ''}`, 'data-here-group': k }, `${g.icon} ${es() ? g.es : g.en}`);
+      const b = h('button', { type: 'button', class: `chip${k === group ? ' on' : ''}`, 'data-here-group': k }, `${g.icon} ${tx(g)}`);
       b.addEventListener('click', () => void this.whatLivesHere(at, k));
       chips.append(b);
     }

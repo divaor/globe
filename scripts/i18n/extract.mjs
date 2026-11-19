@@ -90,6 +90,10 @@ for (const f of files) {
     if (n.type === 'ConditionalExpression' && !byHand && ES_TEST.test(text(n.test)) && [n.consequent, n.alternate].every((x) => x.type === 'StringLiteral' || x.type === 'TemplateLiteral')) {
       errors.push(`${where}: a text that picks its language by hand (use L): ${text(n).slice(0, 110)}`);
     }
+    // A data field picked by hand (`es ? x.name.es : x.name.en`): tx(x.name) also reads the other languages' files.
+    if (n.type === 'ConditionalExpression' && !byHand && ES_TEST.test(text(n.test)) && /\.es\b[^:]*$/.test(text(n.consequent)) && /\.en$/.test(text(n.alternate).replace(/[)?!\s]+$/, ''))) {
+      errors.push(`${where}: a data field picked by hand (use tx): ${text(n).slice(0, 110)}`);
+    }
     if (n.type === 'ObjectExpression') {
       const p = (k) => n.properties.find((x) => x.type === 'ObjectProperty' && (x.key.name ?? x.key.value) === k);
       const en = str(p('en')?.value), es = str(p('es')?.value);

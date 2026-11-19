@@ -7,7 +7,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
@@ -22,7 +22,6 @@ interface Place { at: [number, number]; year: string; label: string }
 interface Round { who: Entry; choices: Entry[]; places: Place[]; shown: number; answer: string | null }
 interface State { day?: string; rounds: Round[]; i: number; pts: number[]; done: { score: number; stars: 1 | 2 | 3; badges: Badge[] } | null; fold: boolean }
 
-const tx = (x: T) => (es() ? x.es || x.en : x.en);
 
 export class WhoseLife implements HostGame {
   private st: State | null = null;
@@ -113,7 +112,7 @@ export class WhoseLife implements HostGame {
     s.done = { score, stars, badges };
     this.render();
     this.app.renderer.requestRender();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   render() {

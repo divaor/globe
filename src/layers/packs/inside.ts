@@ -5,7 +5,7 @@ import type { App } from '../../app/app';
 import type { Shell } from '../../ui/shell';
 import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, RenderCtx } from '../types';
 import { loadJSON } from '../../data/store';
-import { fmtNumber, lang, Lc } from '../../app/i18n';
+import { fmtNumber, lang, Lc, tx } from '../../app/i18n';
 import { L } from '../../play/host';
 import { h } from '../../ui/dom';
 import { geoDistance, geoInterpolate } from 'd3-geo';
@@ -13,7 +13,7 @@ import { declination, type WMM } from '../../earth/wmm';
 import { appLocale } from '../../app/i18n';
 
 const es = () => lang() === 'es';
-const T = (o: { en: string; es: string } | undefined) => (o ? (es() ? o.es : o.en) : '');
+const T = (o: { en: string; es: string } | undefined) => (o ? (tx(o)) : '');
 /** The item nearest the tap, within `r` px. */
 function nearest<T>(items: T[], at: (t: T) => [number, number], ui: LayerTapUi, r = 16): T | null {
   let best: T | null = null, bd = r * r;
@@ -116,7 +116,7 @@ export const quakeDepths: LayerDef = {
     const count = (k: number) => (q ? q.d.reduce((a, d, i) => a + (q.m[i] >= minM && classOf(d) === k ? 1 : 0), 0) : 0);
     return {
       kind: 'categories', title: L('Earthquakes since 1970, by depth', 'Terremotos desde 1970, por profundidad'),
-      items: DEPTHS.map((d, k) => ({ color: d.color, label: `${es() ? d.es : d.en} · ${fmtNumber(count(k))}`, shape: 'dot' as const })),
+      items: DEPTHS.map((d, k) => ({ color: d.color, label: `${tx(d)} · ${fmtNumber(count(k))}`, shape: 'dot' as const })),
       note: L('The deepest start about 700 km down, inside plates that sink into the mantle under Tonga, Japan and South America. The bigger the dot, the stronger the quake.',
         'Los más profundos empiezan a unos 700 km, dentro de placas que se hunden en el manto bajo Tonga, Japón y Sudamérica. Cuanto más grande el punto, más fuerte el sismo.'),
       actions: [{ label: L('Draw a slice', 'Trazar un corte'), icon: '✂️', primary: true, onClick: () => startSlice() }],
@@ -130,7 +130,7 @@ export const quakeDepths: LayerDef = {
     if (i == null) return false;
     const d = q.d[i];
     ui.card('💥', `M${fmtNumber(q.m[i] / 10, 1)} · ${dayText(q.t[i])}`, q.big[i] ?? `${fmtNumber(Math.abs(q.lat[i] / 100), 1)}°${q.lat[i] >= 0 ? 'N' : 'S'}, ${fmtNumber(Math.abs(q.lon[i] / 100), 1)}°${q.lon[i] >= 0 ? 'E' : L('W', 'O')}`, [
-      { label: L('Depth', 'Profundidad'), value: `${fmtNumber(d)} km · ${es() ? DEPTHS[classOf(d)].es : DEPTHS[classOf(d)].en}`, icon: '⬇️' },
+      { label: L('Depth', 'Profundidad'), value: `${fmtNumber(d)} km · ${tx(DEPTHS[classOf(d)])}`, icon: '⬇️' },
       { label: L('Magnitude', 'Magnitud'), value: fmtNumber(q.m[i] / 10, 1), icon: '📈' },
     ], [{ label: 'USGS', href: `https://earthquake.usgs.gov/earthquakes/search/` }],
     [d >= 300 ? L('This deep, rock should be too hot to break: deep earthquakes happen inside cold plates sinking into the mantle.', 'A esta profundidad la roca debería estar demasiado caliente para romperse: los sismos profundos ocurren dentro de placas frías que se hunden en el manto.')
@@ -354,7 +354,7 @@ export const undergroundLayer: LayerDef = {
     const show = String(inst.options.show ?? 'all');
     return {
       kind: 'categories', title: L('Underground wonders', 'Maravillas subterráneas'),
-      items: (Object.keys(KIND) as (keyof typeof KIND)[]).filter((k) => show === 'all' || k === show).map((k) => ({ color: KIND[k].color, icon: KIND[k].e, label: `${es() ? KIND[k].es : KIND[k].en} · ${fmtNumber(wonders.filter((w) => w.k === k).length)}`, shape: 'dot' as const })),
+      items: (Object.keys(KIND) as (keyof typeof KIND)[]).filter((k) => show === 'all' || k === show).map((k) => ({ color: KIND[k].color, icon: KIND[k].e, label: `${tx(KIND[k])} · ${fmtNumber(wonders.filter((w) => w.k === k).length)}`, shape: 'dot' as const })),
       note: L('The famous ones are bigger; zoom in for the rest.', 'Los famosos son más grandes; acércate para ver el resto.'),
     };
   },
@@ -365,7 +365,7 @@ export const undergroundLayer: LayerDef = {
     for (const w of wonders) {
       const sc = Math.max(match(w.n[0]), match(w.n[1]));
       if (sc < 50) continue;
-      out.push({ label: es() ? w.n[1] : w.n[0], sub: `${KIND[w.k].e} ${es() ? KIND[w.k].es : KIND[w.k].en}${w.place ? ` · ${es() ? w.place[1] : w.place[0]}` : ''}`, icon: KIND[w.k].e, lon: w.at[0], lat: w.at[1], score: sc + (w.top ? 8 : 0), wz: 8 });
+      out.push({ label: es() ? w.n[1] : w.n[0], sub: `${KIND[w.k].e} ${tx(KIND[w.k])}${w.place ? ` · ${es() ? w.place[1] : w.place[0]}` : ''}`, icon: KIND[w.k].e, lon: w.at[0], lat: w.at[1], score: sc + (w.top ? 8 : 0), wz: 8 });
     }
     return out.sort((a, b) => b.score - a.score).slice(0, 6);
   },
@@ -382,7 +382,7 @@ export const undergroundLayer: LayerDef = {
     if (f.diameter_km != null) rows.push({ label: L('Diameter', 'Diámetro'), value: `${num(f.diameter_km)} km`, icon: '⭕' });
     if (f.age_ma != null) rows.push({ label: L('Age', 'Edad'), value: `${num(f.age_ma)} ${L('million years', 'millones de años')}`, icon: '⏳' });
     if (f.interval_min != null) rows.push({ label: L('Erupts about every', 'Erupciona más o menos cada'), value: `${num(f.interval_min)} min`, icon: '⏱️' });
-    ui.card(KIND[w.k].e, es() ? w.n[1] : w.n[0], w.place ? (es() ? w.place[1] : w.place[0]) : (es() ? KIND[w.k].es : KIND[w.k].en), rows, [], w.text ? [es() ? w.text[1] : w.text[0]] : []);
+    ui.card(KIND[w.k].e, es() ? w.n[1] : w.n[0], w.place ? (es() ? w.place[1] : w.place[0]) : (tx(KIND[w.k])), rows, [], w.text ? [es() ? w.text[1] : w.text[0]] : []);
     return true;
   },
 };

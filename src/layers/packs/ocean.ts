@@ -8,7 +8,7 @@ import type { Shell } from '../../ui/shell';
 import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, RenderCtx } from '../types';
 import type { RasterTexture } from '../../engine/gl';
 import { loadJSON, shapesFrom, dataUrl, type Shape } from '../../data/store';
-import { fmtNumber, lang } from '../../app/i18n';
+import { fmtNumber, lang, tx, txs } from '../../app/i18n';
 import { L } from '../../play/host';
 import { LC } from '../context';
 import { loadDepths, heightAt, seaDepthAt, zoneOf, ZONES, oceanAt, OCEAN_NAMES, depths, type Depths } from '../../ocean/depth';
@@ -18,10 +18,10 @@ let GL: import('../../engine/gl').GLRaster | null = null;
 let seaZoom = 0;
 let SHELL: Shell | null = null;
 const es = () => lang() === 'es';
-const T = (x?: { en: string; es: string } | null) => (x ? (es() ? x.es : x.en) : '');
+const T = (x?: { en: string; es: string } | null) => (x ? (tx(x)) : '');
 const m = (v: number) => `${fmtNumber(Math.round(v))} m`;
 const MONTHS = { en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'] };
-const monthName = (i: number) => (es() ? MONTHS.es : MONTHS.en)[((i % 12) + 12) % 12];
+const monthName = (i: number) => (txs(MONTHS))[((i % 12) + 12) % 12];
 
 /** The item nearest a tap among those drawn on screen, within `px` pixels. */
 function pickNear<X>(items: X[], at: (x: X) => [number, number], ui: LayerTapUi, px = 14): X | null {
@@ -414,7 +414,7 @@ export const wrecksLayer: LayerDef = {
     const want = String(inst.options.era ?? 'all');
     const deepest = [...wrecks].sort((a, b) => b.depth_m - a.depth_m)[0];
     return {
-      kind: 'categories', items: ERAS.map((e) => ({ color: e.color, label: `${es() ? e.es : e.en} · ${wrecks.filter((w) => w.era === e.id).length}`, shape: 'dot' as const })),
+      kind: 'categories', items: ERAS.map((e) => ({ color: e.color, label: `${tx(e)} · ${wrecks.filter((w) => w.era === e.id).length}`, shape: 'dot' as const })),
       note: want === 'all' ? L('{0} famous wrecks with their stories, and {1} more from Wikidata (the grey dots).', '{0} naufragios famosos con su historia y {1} más de Wikidata (los puntos grises).', wrecks.length, fmtNumber(moreWrecks.length)) : undefined,
       actions: deepest ? [{ label: L('The deepest: {0}', 'El más profundo: {0}', T(deepest.name)), icon: '⬇️', onClick: () => { APP?.flyTo(deepest.lon, deepest.lat, 6); wreckCard({ card: (...a) => SHELL?.card.showCustom(...a) }, deepest); } }] : [],
     };

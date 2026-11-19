@@ -61,7 +61,7 @@ const koppen: LayerDef = {
   legend() {
     const es = lang() === 'es';
     const items = Object.entries(kClasses).filter(([k]) => kShapes.some((s) => s.feature.properties.k === k)).map(([k, c]) => ({
-      color: c.color, label: `${k} · ${es ? c.es : c.en}`,
+      color: c.color, label: `${k} · ${tx(c)}`,
     }));
     return { kind: 'categories', title: L('Climate types', 'Tipos de clima'), items, note: L('A tropical · B dry · C temperate · D continental · E polar', 'A tropical · B seco · C templado · D continental · E polar') };
   },
@@ -71,7 +71,7 @@ const koppen: LayerDef = {
     const c = kClasses[k];
     const es = lang() === 'es';
     return [
-      { label: L('Climate', 'Clima'), value: `${k} · ${es ? c.es : c.en}`, icon: '🌦️' },
+      { label: L('Climate', 'Clima'), value: `${k} · ${tx(c)}`, icon: '🌦️' },
       { label: GROUPS[c.group] ? tx(GROUPS[c.group]) : c.group, value: es ? c.desc_es : c.desc_en },
     ];
   },
@@ -89,7 +89,7 @@ const vegetation: LayerDef = {
     const es = lang() === 'es';
     return {
       kind: 'categories', title: L('Biomes', 'Biomas'),
-      items: Object.values(biomes).map((b) => ({ color: b.color, label: es ? b.es : b.en, icon: b.emoji })),
+      items: Object.values(biomes).map((b) => ({ color: b.color, label: tx(b), icon: b.emoji })),
       note: L('Natural vegetation expected from the climate; farms and cities are not shown.', 'Vegetación natural potencial según el clima; no muestra cultivos ni ciudades.'),
     };
   },
@@ -98,7 +98,7 @@ const vegetation: LayerDef = {
     const b = k ? biomes[kClasses[k]?.biome] : null;
     if (!b) return null;
     const es = lang() === 'es';
-    return [{ label: L('Biome', 'Bioma'), value: `${b.emoji} ${es ? b.es : b.en}`, icon: '🌳' }, { label: '', value: es ? b.desc_es : b.desc_en }];
+    return [{ label: L('Biome', 'Bioma'), value: `${b.emoji} ${tx(b)}`, icon: '🌳' }, { label: '', value: es ? b.desc_es : b.desc_en }];
   },
 };
 

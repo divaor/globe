@@ -9,7 +9,7 @@ import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber, appLocale, flagEmoji, dataLang } from '../app/i18n';
+import { fmtNumber, appLocale, flagEmoji, dataLang, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { L, es, type PlayHost, type HostGame } from '../play/host';
 import { shareText } from '../play/pin';
@@ -77,7 +77,7 @@ export class FillStates implements HostGame {
   hasFacts(a3: string) { return !!this.data?.[a3]; }
   cats(a3: string): StateCat[] { return catsOf(a3, this.data); }
   cname(a3: string) { return this.app.data.name(a3, dataLang()); }
-  catName(c: StateCat) { return es() ? STATE_CAT_TEXT[c].es : STATE_CAT_TEXT[c].en; }
+  catName(c: StateCat) { return tx(STATE_CAT_TEXT[c]); }
   private word(a3: string) { const w = WORD[a3]; return w ? (es() ? w[1] : w[0]) : L('region', 'región'); }
   private rname(r: Region | undefined) { return r ? (es() ? r.es : r.n) : ''; }
   private facts(a3: string, id: string) { return this.data?.[a3]?.[id]; }
@@ -245,7 +245,7 @@ export class FillStates implements HostGame {
     this.render();
     this.app.renderer.requestRender();
   }
-  private toastBadges(b: Badge[]) { if (b.length) this.shell.toast(`${b[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? b[0].es : b[0].en}`, 4000); }
+  private toastBadges(b: Badge[]) { if (b.length) this.shell.toast(`${b[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(b[0])}`, 4000); }
 
   /** A country filled, its capitals all, a perfect country, all twelve countries' capitals: the badges. */
   private feats(a3: string, cat: StateCat): Badge[] {
@@ -495,7 +495,7 @@ export class FillStates implements HostGame {
     sel.addEventListener('change', () => { set.a3 = sel.value; fillState(); saveFill(); void this.prepare(sel.value).then(redraw); });
     const info = this.countries.find((c) => c.id === a3);
     out.push(h('h3', { class: 'sec-title' }, L('Country', 'País')), sel,
-      ...(info ? [h('p', { class: 'tool-hint' }, es() ? info.what.es : info.what.en)] : []));
+      ...(info ? [h('p', { class: 'tool-hint' }, tx(info.what))] : []));
     // The categories, each with how full it is: tap one to fill it.
     const rows = h('div', { class: 'fill-scopes', 'data-states': 'cats' });
     for (const c of this.cats(a3)) {

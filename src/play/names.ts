@@ -7,7 +7,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber, dataLang } from '../app/i18n';
+import { fmtNumber, dataLang, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { Borders, seeded, type BorderData } from './route';
 import { starText } from './score';
@@ -129,7 +129,7 @@ export class NameThemAll implements HostGame {
     this.ui = null;
     this.render();
     this.app.renderer.requestRender();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   private name(id: string) { return this.app.data.name(id, dataLang()); }
@@ -141,7 +141,7 @@ export class NameThemAll implements HostGame {
   private prompt(): string {
     const s = this.st!;
     const area = CONTINENTS.find((c) => c[0] === s.area)?.[1];
-    const where = area ? (es() ? area.es : area.en) : '';
+    const where = area ? (tx(area)) : '';
     if (s.list === 'neighbours') return L('Name every country that borders {0}', 'Nombra todos los países que limitan con {0}', this.name(s.of!));
     if (s.list === 'capitals') return L('Name the capital of every country of {0}', 'Nombra la capital de todos los países de {0}', where);
     return L('Name every country of {0}', 'Nombra todos los países de {0}', where);
@@ -172,7 +172,7 @@ export class NameThemAll implements HostGame {
     input.addEventListener('input', () => { this.try(input.value); });
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { if (!this.try(input.value)) input.classList.add('miss'); setTimeout(() => input.classList.remove('miss'), 400); } });
     const recent = h('div', { class: 'hop-path names-recent' }, ...[...s.found].reverse().map((id) => h('span', { class: 'hop-step' }, this.name(id))));
-    const giveUp = h('button', { type: 'button', class: 'pill sm', 'data-game': 'giveup' }, icon(Flag, 15), L('I give up', 'Me rindo'));
+    const giveUp = h('button', { type: 'button', class: 'pill sm', 'data-game': 'giveup' }, icon(Flag, 15), L('Show me', 'Muéstramelo'));
     giveUp.addEventListener('click', () => this.finish());
     this.card.append(h('div', { class: 'names-bar' }, clock, count), input);
     if (!s.fold) this.card.append(recent, h('div', { class: 'hop-actions' }, giveUp));

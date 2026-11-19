@@ -1,7 +1,7 @@
 // Landforms (mountain ranges, deserts, plateaus...), peaks and volcanoes, rivers and lakes.
 import { geoCentroid, geoArea, geoContains } from 'd3-geo';
 import { loadJSON, shapesFrom, type Shape } from '../data/store';
-import { lang, fmtNumber, L } from '../app/i18n';
+import { lang, fmtNumber, L, tx } from '../app/i18n';
 import type { Topology } from 'topojson-specification';
 import type { LayerDef } from './types';
 
@@ -110,7 +110,7 @@ export const landforms: LayerDef = {
     return {
       kind: 'categories', title: L('Landforms', 'Formas del relieve'),
       items: [
-        ...Object.values(KINDS).slice(0, 10).map((k) => ({ color: k.color, label: es ? k.es : k.en })),
+        ...Object.values(KINDS).slice(0, 10).map((k) => ({ color: k.color, label: tx(k) })),
         { color: '#f5e6d3', label: L('Peak', 'Pico'), shape: 'dot' as const },
         { color: '#ff6b3d', label: L('Volcano', 'Volcán'), shape: 'dot' as const },
       ],
@@ -123,7 +123,7 @@ export const landforms: LayerDef = {
     if (!hits.length) return null;
     return hits.slice(0, 3).map((s) => {
       const p = s.feature.properties; const k = KINDS[p.k];
-      return { label: es ? k.es : k.en, value: es && p.es ? p.es : p.n, icon: k.icon };
+      return { label: tx(k), value: es && p.es ? p.es : p.n, icon: k.icon };
     });
   },
 };

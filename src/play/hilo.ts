@@ -8,7 +8,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber, fmtCompact, dataLang } from '../app/i18n';
+import { fmtNumber, fmtCompact, dataLang, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
@@ -129,7 +129,7 @@ export class HigherLower implements HostGame {
       s.done = { score: s.score, stars, run: s.run, badges };
       void this.host.showLayer(null);
       this.render();
-      if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+      if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
       return;
     }
     const q = this.question(s.rand, s.run, s.q.fact);
@@ -163,7 +163,7 @@ export class HigherLower implements HostGame {
       return;
     }
     const f = FACTS.find((x) => x.key === s.q.fact)!;
-    this.card.append(h('div', { class: 'quiz-q' }, es() ? f.es : f.en));
+    this.card.append(h('div', { class: 'quiz-q' }, tx(f)));
     if (s.fold) return;
     const opts = h('div', { class: 'quiz-opts' });
     for (const [id, v, color] of [[s.q.a, s.q.va, '#e67e22'], [s.q.b, s.q.vb, '#9b59b6']] as const) {

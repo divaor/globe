@@ -3,10 +3,10 @@
 // how each looks from space (a haze or none), and the facts researched for each (data/worlds/facts.json).
 import { dataUrl, loadJSON } from '../data/store';
 import { addSource, type TileSource } from '../engine/tiles';
-import { lang, L } from '../app/i18n';
+import { lang, L, tx } from '../app/i18n';
 
 export type Text = { en: string; es: string; ctx?: string };
-export const tr = (t: Text | undefined) => (t ? (lang() === 'es' ? t.es : t.en) : '');
+export const tr = (t: Text | undefined) => (t ? (tx(t)) : '');
 /** A world's name inside a sentence: "on the Moon", "en la Luna" (its article in lower case). */
 export const trIn = (t: Text | undefined) => tr(t).replace(/^(The|La|El) /, (m) => m.toLowerCase());
 export { L };

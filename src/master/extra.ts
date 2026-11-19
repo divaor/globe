@@ -149,7 +149,7 @@ export function citiesDeck(x: Ctx): ExtraDeck {
   const by = new Map<string, City>();
   const cards: { core?: Country[]; hard?: Country[] } = {};
   const core = new Set<string>();
-  const name = (id: string) => { const c = by.get(id); return c ? (es() ? c.es : c.en) : id; };
+  const name = (id: string) => { const c = by.get(id); return c ? (tx(c)) : id; };
   const at = (id: string) => by.get(id)?.at;
   const dot = (rc: RenderCtx, p: [number, number], fill: string, r = 6.5) => {
     const pt = rc.project(p[0], p[1]);
@@ -248,7 +248,7 @@ export function landmarksDeck(x: Ctx): ExtraDeck {
   const by = new Map<string, Site>();
   const cards: { core?: Country[]; hard?: Country[] } = {};
   const core = new Set<string>();
-  const site = (id: string) => { const s = by.get(id); return s ? (es() ? s.es : s.en) : id; };
+  const site = (id: string) => { const s = by.get(id); return s ? (tx(s)) : id; };
   const countryCard = (id: string) => x.countries()?.countries.find((c) => c.id === id);
   const all = () => new Map((x.countries()?.countries ?? []).filter((c) => !c.t).map((c) => [c.id, c]));
   return {
@@ -367,7 +367,7 @@ interface Place { kind: NatureKind; en: string; es: string; at: [number, number]
 export function natureDeck(x: Ctx): ExtraDeck {
   const by = new Map<string, Place>();
   let cards: Country[] | null = null;
-  const name = (id: string) => { const p = by.get(id); return p ? (es() ? p.es : p.en) : id; };
+  const name = (id: string) => { const p = by.get(id); return p ? (tx(p)) : id; };
   const line = (p: Place) => !!p.f && /Line/.test(p.f.geometry.type);
   const box = (p: Place): [number, number][] => { if (!p.f) return [p.at]; const [[w, s], [e, n]] = geoBounds(p.f); return [[w, s], [e, n], p.at]; };
   /** One place drawn: a river as a line, a peak as a triangle, the rest as filled shapes. */

@@ -20,6 +20,7 @@ import { starText } from './score';
 import { GAMES, type GameId } from './logic';
 import { gameDaily, progress, dayKey } from '../learn/progress';
 import { bell } from '../today/reminders';
+import { tx } from '../app/i18n';
 
 const GAME_TEXT: Record<GameId, { icon: string; en: string; es: string; desc: { en: string; es: string } }> = {
   hop: { icon: '🧭', en: 'Border hop', es: 'Salto de fronteras', desc: { en: 'From one country to a far one across land borders.', es: 'De un país a otro lejano cruzando fronteras terrestres.' } },
@@ -57,7 +58,7 @@ export class MapGames {
 
   /** Today (v0.37.0): each game's puzzle of the day: its name, today's result if played, and how to start it. */
   todayGames(): { id: GameId; icon: string; name: string; result: { score: number; stars: number } | null; open: () => void }[] {
-    return GAMES.map((g) => ({ id: g, icon: GAME_TEXT[g].icon, name: es() ? GAME_TEXT[g].es : GAME_TEXT[g].en, result: gameDaily(g), open: () => void this.daily(g) }));
+    return GAMES.map((g) => ({ id: g, icon: GAME_TEXT[g].icon, name: tx(GAME_TEXT[g]), result: gameDaily(g), open: () => void this.daily(g) }));
   }
 
   constructor(private app: App, private shell: Shell) {
@@ -102,7 +103,7 @@ export class MapGames {
     const body = h('div', { class: 'play-menu' });
     const today = await this.hop.today();
     const T = (g: GameId) => GAME_TEXT[g];
-    const nm = (g: GameId) => (es() ? T(g).es : T(g).en);
+    const nm = (g: GameId) => (tx(T(g)));
     // Today's puzzles.
     const daily = h('div', { class: 'mode-list play-daily' });
     let played = 0;
@@ -110,7 +111,7 @@ export class MapGames {
     for (const g of GAMES) {
       const r = gameDaily(g);
       if (r) played++;
-      const what = g === 'hop' && today ? `${today.from} → ${today.to} · ${today.goal}` : es() ? T(g).desc.es : T(g).desc.en;
+      const what = g === 'hop' && today ? `${today.from} → ${today.to} · ${today.goal}` : tx(T(g).desc);
       daily.append(this.card(T(g).icon, nm(g), r ? `${L('Done', 'Hecho')}: ${r.score} ${starText(r.stars)}` : what, { 'data-daily': g }, () => void this.daily(g), !!r));
     }
     // The games, each with its best.
@@ -118,7 +119,7 @@ export class MapGames {
     const games = h('div', { class: 'mode-list' });
     for (const g of GAMES) {
       const b = g === 'hop' ? Math.max(0, ...['count', 'people', 'area', 'km'].map((k) => best[k] ?? 0)) : best[g] ?? 0;
-      games.append(this.card(T(g).icon, nm(g), `${es() ? T(g).desc.es : T(g).desc.en}${b ? ` · ${L('Best', 'Récord')}: ${b}` : ''}`, { 'data-game-open': g }, () => this.open(g)));
+      games.append(this.card(T(g).icon, nm(g), `${tx(T(g).desc)}${b ? ` · ${L('Best', 'Récord')}: ${b}` : ''}`, { 'data-game-open': g }, () => this.open(g)));
     }
     // Fill the map and Put it on the map: games too, with their own panels (v0.37.0).
     for (const x of this.extraGames) games.append(this.card(x.icon, x.title(), x.desc(), { 'data-game-open': x.id }, x.open));
@@ -140,13 +141,13 @@ export class MapGames {
     const body = h('div', { class: 'play-menu' });
     const backB = h('button', { type: 'button', class: 'pill sm', 'data-play': 'back' }, icon(ChevronLeft, 15), L('Map games', 'Juegos en el mapa'));
     backB.addEventListener('click', () => void this.openMenu());
-    body.append(backB, h('p', { class: 'muted small' }, es() ? T.desc.es : T.desc.en));
+    body.append(backB, h('p', { class: 'muted small' }, tx(T.desc)));
     const chips = <V extends string>(title: string, list: [V, { en: string; es: string }][], cur: () => V, set: (v: V) => void) => {
       const row = h('div', { class: 'chip-row' });
       const draw = () => {
         clear(row);
         for (const [v, label] of list) {
-          const b = h('button', { type: 'button', class: `chip${cur() === v ? ' on' : ''}`, 'data-v': v }, es() ? label.es : label.en);
+          const b = h('button', { type: 'button', class: `chip${cur() === v ? ' on' : ''}`, 'data-v': v }, tx(label));
           b.addEventListener('click', () => { set(v); draw(); });
           row.append(b);
         }
@@ -174,6 +175,6 @@ export class MapGames {
     const play = h('button', { type: 'button', class: 'pill primary', 'data-play': 'start' }, icon(Play, 16), L('Play', 'Jugar'));
     play.addEventListener('click', start);
     body.append(h('div', { class: 'tool-actions' }, play));
-    this.shell.openPanel(`play-${g}`, `${T.icon} ${es() ? T.es : T.en}`, body);
+    this.shell.openPanel(`play-${g}`, `${T.icon} ${tx(T)}`, body);
   }
 }

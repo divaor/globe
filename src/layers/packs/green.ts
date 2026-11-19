@@ -7,7 +7,7 @@
 // numbered stars. The breathing planet plays NASA's twelve monthly pictures of how green the land is.
 import { geoArea, geoContains, geoDistance, geoInterpolate } from 'd3-geo';
 import type { Topology } from 'topojson-specification';
-import { lang, fmtCompact, L, Lc } from '../../app/i18n';
+import { lang, fmtCompact, L, Lc, tx } from '../../app/i18n';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import { loadJSON, shapesFrom, dataUrl, type Shape } from '../../data/store';
@@ -700,7 +700,7 @@ export const naturesCalendar: LayerDef = {
     const step = (by: number) => APP?.setOption('calendar', 'month', String(((m - 1 + by + 12) % 12) + 1));
     return {
       kind: 'categories', title: L('Nature’s calendar · {0}', 'Calendario de la naturaleza · {0}', monthName(m - 1)),
-      items: (['bloom', 'autumn', 'green', 'animal'] as const).map((k) => ({ color: KIND_COLOR[k], icon: spectacleKind(k).icon, shape: 'dot' as const, label: `${es() ? spectacleKind(k).es : spectacleKind(k).en} (${on.filter((s) => s.kind === k).length})` })),
+      items: (['bloom', 'autumn', 'green', 'animal'] as const).map((k) => ({ color: KIND_COLOR[k], icon: spectacleKind(k).icon, shape: 'dot' as const, label: `${tx(spectacleKind(k))} (${on.filter((s) => s.kind === k).length})` })),
       note: L('A thick ring: at its best this month. Tap one for when and how to see it.', 'Anillo grueso: en su mejor momento este mes. Toca uno para ver cuándo y cómo verlo.'),
       actions: [
         { label: '◀', onClick: () => step(-1) },

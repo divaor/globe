@@ -6,7 +6,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { h, icon, toggle, slider, segmented } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, tx } from '../app/i18n';
 import { L, es } from '../play/host';
 import { LAYERS, layerName, type Layer } from './model';
 import { drawCut, kOf, type CutState } from './cut';
@@ -196,7 +196,7 @@ export class InsideEarth {
 
   private layersTab(): HTMLElement {
     const f = (id: string) => this.facts?.layers.find((x) => x.id === id);
-    const t2 = (x?: { en: string; es: string }) => (x ? (es() ? x.es : x.en) : '');
+    const t2 = (x?: { en: string; es: string }) => (x ? (tx(x)) : '');
     const peelLabel = h('span', { class: 'inside-peel-name' }, PEEL_NAMES()[Math.round(this.peelGoal)]);
     const rows = LAYERS.map((l) => {
       const x = f(l.id);
@@ -225,7 +225,7 @@ export class InsideEarth {
         slider(this.peelGoal, 0, 5, 1, (v) => { this.setPeel(v); peelLabel.textContent = PEEL_NAMES()[v]; })),
       h('div', { class: 'toggles' }, toggle(this.st.names, (v) => { this.st.names = v; this.app.renderer.requestRender(); }, L('Names on the cut', 'Nombres en el corte'))),
       h('div', { class: 'hop-actions' }, dig, cut),
-      this.facts?.moho ? h('p', { class: 'muted small' }, es() ? this.facts.moho.es : this.facts.moho.en) : null,
+      this.facts?.moho ? h('p', { class: 'muted small' }, tx(this.facts.moho)) : null,
     );
   }
 

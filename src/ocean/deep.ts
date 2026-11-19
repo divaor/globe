@@ -19,7 +19,7 @@ let deepP: Promise<Deep> | null = null;
 let animalsP: Promise<SeaAnimal[]> | null = null;
 export const loadDeep = () => (deepP ??= loadJSON<Deep>('ocean/deep.json'));
 export const loadSeaAnimals = () => (animalsP ??= loadJSON<{ animals: SeaAnimal[] }>('ocean/animals.json').then((j) => j.animals));
-const T = (x?: { en: string; es: string }) => (x ? (es() ? x.es : x.en) : '');
+const T = (x?: { en: string; es: string }) => (x ? (tx(x)) : '');
 const cap = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
 
 /** The group's emoji for a sea creature OBIS names by its class. */

@@ -297,7 +297,7 @@ const STRINGS: Record<string, [string, string] | [string, string, string]> = {
   gamesMedals: ['Medals', 'Medallas'],
   gamesRank: ['Medal table', 'Medallero'],
   gamesRankOf: ['{r} place', '{r} lugar'],
-  gamesFinish: ['Finished', 'Resultado'],
+  gamesFinish: ['Result', 'Resultado'],
   gamesAthletes: ['Athletes', 'Atletas'],
   gamesPartOf: ['{country} was part of', '{country} formaba parte de'],
   gamesStandings: ['Final ranking', 'Clasificación final'],
@@ -484,6 +484,13 @@ function arg(body: string, args: readonly unknown[]): string {
   return fmt(text.replace(/#/g, new Intl.NumberFormat(locale(), { maximumFractionDigits: 3 }).format(n)), args);
 }
 
+/** A list in the reader's language (the Spanish list, or each English item's translation). */
+export function txs(text: { en: readonly string[]; es?: readonly string[] } | undefined): string[] {
+  if (!text) return [];
+  if (current === 'es' && text.es?.length) return text.es.map(out);
+  return text.en.map((en) => out(pick(en, undefined)));
+}
+
 /** L with a context, for an English text that means two things: Lc('a stripe on a planet', 'Streak', 'Franja'). */
 export function Lc(ctx: string, en: string, es: string, ...args: unknown[]): string {
   const s = pick(en, es, ctx);
@@ -515,7 +522,7 @@ export function both(key: string): { en: string; es: string } {
   return row ? { en: row[0], es: row[1] } : { en: key, es: key };
 }
 
-export function tx(text: { en: string; es: string; ctx?: string } | undefined): string {
+export function tx(text: { en: string; es?: string; ctx?: string } | undefined): string {
   if (!text) return '';
   return out(pick(text.en, text.es, text.ctx));
 }

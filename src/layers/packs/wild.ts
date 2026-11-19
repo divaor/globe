@@ -4,7 +4,7 @@
 // shared under open licences, in squares of 1.40625°). An animal's card can "show where it lives": its squares,
 // darker where more people saw it, with the carpet showing only it, and its best parks as numbered stars.
 import { geoDistance } from 'd3-geo';
-import { lang, fmtCompact, L } from '../../app/i18n';
+import { lang, fmtCompact, L, tx } from '../../app/i18n';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import type { App } from '../../app/app';
@@ -310,8 +310,8 @@ function placeLayer<T extends Park | Zoo>(o: {
       const kind = String(inst.options.kind ?? 'all');
       return {
         kind: 'categories', title: L('{0} places', '{0} lugares', fmtCompact(list.filter((p) => kind === 'all' || p.k === kind).length)),
-        items: o.kinds.filter(([k]) => kind === 'all' || k === kind).map(([k, label]) => ({ color: o.color[k], icon: placeIcon(k), label: `${es() ? label.es : label.en} (${fmtCompact(list.filter((p) => p.k === k).length)})`, shape: 'dot' as const })),
-        note: es() ? o.note.es : o.note.en,
+        items: o.kinds.filter(([k]) => kind === 'all' || k === kind).map(([k, label]) => ({ color: o.color[k], icon: placeIcon(k), label: `${tx(label)} (${fmtCompact(list.filter((p) => p.k === k).length)})`, shape: 'dot' as const })),
+        note: tx(o.note),
       };
     },
     tap(_lon, _lat, inst, ui) {

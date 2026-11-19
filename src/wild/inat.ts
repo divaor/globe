@@ -2,7 +2,7 @@
 // near a place. For plants, "flowering" counts only the sightings people marked as in flower (iNaturalist's Plant
 // Phenology annotation, term 12, value 13). Used by the animal and plant finders (v0.30.0, v0.31.0) and the plant card.
 import { h } from '../ui/dom';
-import { lang, fmtCompact, L } from '../app/i18n';
+import { lang, fmtCompact, L, tx, txs } from '../app/i18n';
 
 const es = () => lang() === 'es';
 const MONTHS = { en: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'], es: ['E', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'] };
@@ -36,7 +36,7 @@ export function bestMonths(v: number[]): number[] {
   const top = [...v].sort((a, b) => b - a)[2] ?? 0;
   return v.map((n, i) => [n, i] as const).filter(([n]) => n >= top && n > 0).map(([, i]) => i);
 }
-export const monthLong = (i: number) => (es() ? MONTH_NAMES.es : MONTH_NAMES.en)[i];
+export const monthLong = (i: number) => (txs(MONTH_NAMES))[i];
 
 /** Twelve bars, the best months highlighted; `what` says what is counted. */
 export function monthBars(v: number[], what: 'sightings' | 'flowering' = 'sightings'): HTMLElement {
@@ -45,7 +45,7 @@ export function monthBars(v: number[], what: 'sightings' | 'flowering' = 'sighti
   const bars = h('div', { class: 'wild-months', role: 'img', 'aria-label': what === 'flowering' ? L('Flowering by month', 'Floración por mes') : L('Sightings by month', 'Avistamientos por mes') });
   v.forEach((n, i) => {
     bars.append(h('div', { class: `wild-month${best.has(i) ? ' best' : ''}${what === 'flowering' ? ' bloom' : ''}`, title: `${monthLong(i)}: ${fmtCompact(n)}` },
-      h('div', { class: 'wild-month-bar', style: `height:${Math.round((n / max) * 100)}%` }), h('div', { class: 'wild-month-lab' }, (es() ? MONTHS.es : MONTHS.en)[i])));
+      h('div', { class: 'wild-month-bar', style: `height:${Math.round((n / max) * 100)}%` }), h('div', { class: 'wild-month-lab' }, (txs(MONTHS))[i])));
   });
   const names = [...best].map(monthLong).join(', ');
   const text = what === 'flowering'

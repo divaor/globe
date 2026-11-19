@@ -8,7 +8,7 @@ import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { MultiLineString } from 'geojson';
 import { loadJSON, shapesFrom, chunkLines, type Shape, type Line } from '../../data/store';
 import { oklch } from '../../engine/colors';
-import { lang, L } from '../../app/i18n';
+import { lang, L, tx } from '../../app/i18n';
 import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { InfoRow, LayerDef, LegendItem, RenderCtx } from '../types';
@@ -35,7 +35,7 @@ const es = () => lang() === 'es';
 const pickOf = (inst: { options: Record<string, string | boolean> }) => (inst.options.pick ? new Set(String(inst.options.pick).split(',')) : null);
 const nameOf = (code: string) => {
   const n = D.languages[code] ?? names[code];
-  return n ? (es() ? n.es : n.en) : code;
+  return n ? (tx(n)) : code;
 };
 const colours = new Map<string, string>();
 // Hand-picked hues for the most widespread languages and their usual neighbours, so that languages

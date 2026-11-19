@@ -82,7 +82,7 @@ export class SearchBox {
   /** "Search places and countries", plus what the filters on add ("people born there, museums"). */
   private hint(): string {
     const es = this.app.lang === 'es';
-    const more = this.app.layers.filter((l) => l.ready && l.def.searchHint).map((l) => (es ? l.def.searchHint!.es : l.def.searchHint!.en));
+    const more = this.app.layers.filter((l) => l.ready && l.def.searchHint).map((l) => (tx(l.def.searchHint!)));
     if (!more.length) return t('searchHint');
     return `${L('Places', 'Lugares')}, ${[...new Set(more)].slice(0, 3).join(', ')}…`;
   }

@@ -1,7 +1,7 @@
 // Your progress: right answers, quizzes played and day streaks for each subject, the daily challenge's streak,
 // finished tours, and the badges they earn. Kept only in this browser.
 import { h } from '../ui/dom';
-import { lang, L } from '../app/i18n';
+import { lang, L, tx } from '../app/i18n';
 import { TOURS } from './tours';
 import { GAMES } from '../play/logic';
 import { appLocale } from '../app/i18n';
@@ -320,10 +320,10 @@ export function progressPanel(onReset: () => void): HTMLElement {
   const badge = (b: Badge) => {
     const got = !!p.badges[b.id];
     const have = Math.min(b.goal, b.have(p));
-    return h('div', { class: `badge-chip${got ? ' got' : ''}`, title: es() ? b.how.es : b.how.en, 'data-badge': b.id },
+    return h('div', { class: `badge-chip${got ? ' got' : ''}`, title: tx(b.how), 'data-badge': b.id },
       h('span', { class: 'badge-icon', 'aria-hidden': 'true' }, b.icon),
-      h('span', { class: 'badge-text' }, h('span', { class: 'badge-name' }, es() ? b.es : b.en),
-        h('span', { class: 'badge-how' }, got ? L('Earned on {0}', 'Obtenida el {0}', fmtDay(p.badges[b.id])) : `${es() ? b.how.es : b.how.en} · ${fmt(have)}/${fmt(b.goal)}`)));
+      h('span', { class: 'badge-text' }, h('span', { class: 'badge-name' }, tx(b)),
+        h('span', { class: 'badge-how' }, got ? L('Earned on {0}', 'Obtenida el {0}', fmtDay(p.badges[b.id])) : `${tx(b.how)} · ${fmt(have)}/${fmt(b.goal)}`)));
   };
   // The daily challenge: streak, best, and the last 7 days.
   const days: HTMLElement[] = [];
@@ -342,7 +342,7 @@ export function progressPanel(onReset: () => void): HTMLElement {
     const next = [25, 100, 300].find((x) => right < x);
     const bar = h('span', { class: 'prog-bar', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(next ?? 300), 'aria-valuenow': String(right) },
       h('span', { style: `width:${Math.round(Math.min(1, right / (next ?? 300)) * 100)}%` }));
-    body.append(h('h3', { class: 'sec-title', 'data-subject': s }, `${S.icon} ${es() ? S.es : S.en} ${lvl}`),
+    body.append(h('h3', { class: 'sec-title', 'data-subject': s }, `${S.icon} ${tx(S)} ${lvl}`),
       h('div', { class: 'prog-row' }, h('span', null, `${fmt(right)} ${L('right answers', 'respuestas correctas')}${next ? ` · ${L('next medal at', 'próxima medalla con')} ${fmt(next)}` : ''}`), bar),
       h('div', { class: 'prog-row muted small' }, `${fmt(p.played[s] ?? 0)} ${(p.played[s] ?? 0) === 1 ? L('quiz played', 'concurso jugado') : L('quizzes played', 'concursos jugados')} · 🔥 ${fmt(current(p.days[s]))} ${current(p.days[s]) === 1 ? L('day in a row', 'día seguido') : L('days in a row', 'días seguidos')} (${L('best', 'récord')} ${fmt(p.days[s]?.best ?? 0)})`),
       h('div', { class: 'badge-list' }, ...BADGES.filter((b) => b.subject === s).map(badge)));

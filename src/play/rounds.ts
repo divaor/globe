@@ -14,7 +14,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
@@ -128,7 +128,7 @@ abstract class PinRounds implements HostGame {
     const badges = recordGame(this.id, { score, stars, feats: this.feats(s.results), day: s.day });
     s.done = { score, stars, badges };
     this.render();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   protected dist(d: number) { return d < 10 ? `${d.toFixed(1)} km` : `${fmtNumber(Math.round(d))} km`; }
@@ -258,7 +258,7 @@ function climateChart(t: number[], p: number[]): HTMLElement {
     svg.append(e);
     return e;
   };
-  const months = es() ? MONTHS.es : MONTHS.en;
+  const months = tx(MONTHS);
   p.forEach((v, i) => el('rect', { x: pad + i * bw + 2, y: py(v), width: bw - 4, height: Math.max(0, H - 18 - py(v)), fill: '#4dabf7', opacity: 0.8 }));
   el('polyline', { points: t.map((v, i) => `${pad + i * bw + bw / 2},${ty(v / 10)}`).join(' '), fill: 'none', stroke: '#ff6b6b', 'stroke-width': 2.5 });
   for (let i = 0; i < 12; i++) el('text', { x: pad + i * bw + bw / 2, y: H - 4, 'text-anchor': 'middle', 'font-size': 10, fill: 'currentColor' }, months[i]);
@@ -294,7 +294,7 @@ export class ClimateDetective extends PinRounds {
       picked.push({ c, k });
       if (picked.length === CLIMATE_ROUNDS) break;
     }
-    const cname = (k: string | null) => (k && classes[k] ? `${k}, ${es() ? classes[k].es : classes[k].en}` : k ?? '');
+    const cname = (k: string | null) => (k && classes[k] ? `${k}, ${tx(classes[k])}` : k ?? '');
     const rounds: Round[] = picked.map(({ c, k }) => ({
       ask: L('📈 Which city has this year of weather? Pin it.', '📈 ¿Qué ciudad tiene este clima a lo largo del año? Ponle un pin.'),
       extra: () => climateChart(c[15]!.t, c[15]!.p),
@@ -350,11 +350,11 @@ export class ExplorersLog extends PinRounds {
       const go = rest.slice(0, 7);
       const year = (d: string) => d.slice(0, 4).replace(/^-/, '');
       const rounds: Round[] = go.map(({ s, at }) => ({
-        ask: `📜 ${year(s.date)}: ${es() ? s.title.es : s.title.en}. ${L('Where did they go next?', '¿A dónde fueron después?')}`,
-        at: [at], name: es() ? s.title.es : s.title.en, note: es() ? s.text.es : s.text.en,
+        ask: `📜 ${year(s.date)}: ${tx(s.title)}. ${L('Where did they go next?', '¿A dónde fueron después?')}`,
+        at: [at], name: tx(s.title), note: tx(s.text),
       }));
-      const nm = es() ? j.name.es : j.name.en;
-      return { rounds, trail: [first.at], head: `${j.icon} ${nm} · ${L('from', 'desde')} ${es() ? first.s.title.es : first.s.title.en} (${year(first.s.date)})` };
+      const nm = tx(j.name);
+      return { rounds, trail: [first.at], head: `${j.icon} ${nm} · ${L('from', 'desde')} ${tx(first.s.title)} (${year(first.s.date)})` };
     }
     return null;
   }
@@ -383,7 +383,7 @@ export class SunriseRace extends PinRounds {
     const sub = subsolarPoint(this.at);
     const hhmm = this.at.toISOString().slice(11, 16);
     const rounds: Round[] = SUN_ROUNDS.map((r) => ({
-      ask: `${r.icon} ${es() ? r.es : r.en}`, at: sunLine(sub, r.goal),
+      ask: `${r.icon} ${tx(r)}`, at: sunLine(sub, r.goal),
       name: es() ? { rise: 'El amanecer', noon: 'El mediodía', set: 'El atardecer', midnight: 'La medianoche', overhead: 'El sol encima' }[r.goal] : { rise: 'Sunrise', noon: 'Noon', set: 'Sunset', midnight: 'Midnight', overhead: 'The sun overhead' }[r.goal],
       note: L('At {0} UTC. The yellow line is where it is happening; day and night are shaded.', 'A las {0} UTC. La línea amarilla es donde está pasando; el día y la noche están sombreados.', hhmm),
     }));

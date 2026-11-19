@@ -6,7 +6,7 @@ import { h, icon, clear } from './dom';
 import { tiles, TERRAIN, SENTINEL, mayDownload, prefs, srcRange, tileX, tileY, cols, rows, shrinks, type TileSource, type Want } from '../engine/tiles';
 import { ELEVATION, RELIEF } from '../layers/imagery';
 import { terrainActions, type Terrain3DContext } from '../layers/terrainActions';
-import { lang, L } from '../app/i18n';
+import { lang, L, tx } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Shell } from './shell';
 import type { TerrainUI } from './terrain';
@@ -163,7 +163,7 @@ export class Terrain3D {
     const drapes = h('div', { class: 'chip-row t3d-drapes' });
     const labels = h('div', { class: 't3d-labels' });
     const el = h('div', { class: 't3d', role: 'dialog', 'aria-label': L('3D terrain', 'Relieve en 3D'), style: cx.skyCss ? { background: cx.skyCss } : undefined }, canvas, labels,
-      h('div', { class: 't3d-head glass' }, h('strong', null, `⛰️ ${L('3D terrain', 'Relieve en 3D')}`), h('span', { class: 't3d-name' }, es() ? name.es : name.en), close),
+      h('div', { class: 't3d-head glass' }, h('strong', null, `⛰️ ${L('3D terrain', 'Relieve en 3D')}`), h('span', { class: 't3d-name' }, tx(name)), close),
       h('div', { class: 't3d-foot glass' },
         h('label', { class: 't3d-row' }, h('span', null, L('Raise the mountains', 'Elevar las montañas')), slider, kLabel),
         drapes, status,

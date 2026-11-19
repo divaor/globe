@@ -1,7 +1,7 @@
 // Wild world (v0.30.0): the animals, the parks and the zoos (public/data/wild, from Wikidata and GBIF), and the grid
 // their ranges are kept on: GBIF's map squares, 256 columns × 128 rows of 1.40625° (about 150 km at the equator).
 import { loadJSON } from '../data/store';
-import { lang, L } from '../app/i18n';
+import { lang, L, tx } from '../app/i18n';
 import { hasCell, unpackCells, unpackCounts } from '../layers/carpet';
 import { appLocale } from '../app/i18n';
 
@@ -39,7 +39,7 @@ export const GROUPS: Record<Group, { icon: string; name: { en: string; es: strin
   sea: { icon: '🐋', name: { en: 'Fish and sea life', es: 'Peces y vida marina' }, color: '#4dabf7' },
   small: { icon: '🦋', name: { en: 'Insects and other small creatures', es: 'Insectos y otros animales pequeños' }, color: '#e599f7' },
 };
-export const groupName = (g: Group) => (es() ? GROUPS[g].name.es : GROUPS[g].name.en);
+export const groupName = (g: Group) => (tx(GROUPS[g].name));
 
 /** IUCN Red List categories: their name and colour (the Red List's own scale). */
 export const STATUS: Record<Status, { en: string; es: string; color: string; ink: string }> = {
@@ -52,7 +52,7 @@ export const STATUS: Record<Status, { en: string; es: string; color: string; ink
   EX: { en: 'Extinct', es: 'Extinto', color: '#212529', ink: '#fff' },
   DD: { en: 'Data deficient', es: 'Datos insuficientes', color: '#868e96', ink: '#fff' },
 };
-export const statusName = (s: Status) => (es() ? STATUS[s].es : STATUS[s].en);
+export const statusName = (s: Status) => (tx(STATUS[s]));
 export const threatened = (s: Status | null) => s === 'VU' || s === 'EN' || s === 'CR';
 
 export const nm = (x: { n: [string, string] }) => (es() ? x.n[1] : x.n[0]);

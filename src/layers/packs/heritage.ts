@@ -6,7 +6,7 @@
 //   and UNESCO's page.
 // - Inventions: every item of the Inventions collection (data/inventions/items.json) where it was invented, by
 //   field and age; a tap opens its card, which can open the story it comes from.
-import { lang, fmtNumber, L, dataLang } from '../../app/i18n';
+import { lang, fmtNumber, L, dataLang, tx } from '../../app/i18n';
 import { samplePalette, SEQUENTIAL } from '../../engine/colors';
 import { loadJSON } from '../../data/store';
 import { h } from '../../ui/dom';
@@ -347,7 +347,7 @@ const AGES: { value: string; label: { en: string; es: string }; from: number; to
   { value: '1900s', label: { en: '1900–2000', es: '1900–2000' }, from: 1900, to: 2000 },
   { value: 'now', label: { en: 'Since 2000', es: 'Desde 2000' }, from: 2000, to: Infinity },
 ];
-const tx2 = (x?: { en: string; es: string }) => (x ? (es() ? x.es || x.en : x.en) : '');
+const tx2 = (x?: { en: string; es: string }) => (x ? (tx(x)) : '');
 /** Years of a date string, for "12,000 years ago" or "1876". */
 /** An invention's year as its story says it: from its date ("-36" is 36 BC; `t`, the year on a line with no year
  * zero, is one more for the years BC, so it read "35 BC" for the Long Count). */

@@ -8,7 +8,7 @@ import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, MultiLineString, Polygon } from 'geojson';
 import { loadJSON, shapesFrom, chunkLines, type Shape, type Line } from '../data/store';
 import { oklch } from '../engine/colors';
-import { t, lang, fmtNumber, L, dataLang } from '../app/i18n';
+import { t, lang, fmtNumber, L, dataLang, tx } from '../app/i18n';
 import { h, clear } from '../ui/dom';
 import { TimeBar } from '../ui/timebar';
 import type { App } from '../app/app';
@@ -199,7 +199,7 @@ export class HistoryMode {
       subtitle: L('{0} maps', '{0} mapas', n),
       steps: n,
       format: (f) => this.label(Math.round(f * (n - 1))),
-      bands: ERAS.map((e) => ({ from: this.yearFrac(e.from), to: this.yearFrac(e.to), color: e.color, label: es ? e.es : e.en })),
+      bands: ERAS.map((e) => ({ from: this.yearFrac(e.from), to: this.yearFrac(e.to), color: e.color, label: tx(e) })),
       ticks: [-123000, -3000, -500, 1, 1000, 1500, 1800, 1914, this.snaps[this.snaps.length - 1].year].map((y) => ({ at: this.yearFrac(y), label: y < 0 ? (L('{0} BC', '{0} a. C.', -y)) : String(y) })).filter((tk) => tk.at >= 0),
       start: startIdx / (n - 1), end: 1, pos: startIdx / (n - 1),
       rate: 1 / (n - 1) / 1.8,

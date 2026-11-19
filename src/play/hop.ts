@@ -12,7 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear, toggle } from '../ui/dom';
-import { lang, fmtCompact, fmtNumber, L, Lc } from '../app/i18n';
+import { lang, fmtCompact, fmtNumber, L, Lc, tx } from '../app/i18n';
 import type { PlayHost, HostGame } from './host';
 import { loadJSON } from '../data/store';
 import { Borders, GOALS, RULES, makeRound, dailyRound, seeded, type BorderData, type Goal, type Level, type Round, type Rule } from './route';
@@ -94,7 +94,7 @@ export class BorderHop implements HostGame {
       const draw = () => {
         clear(row);
         for (const [v, label] of list) {
-          const b = h('button', { type: 'button', class: `chip${cur() === v ? ' on' : ''}`, 'data-v': v }, es() ? label.es : label.en);
+          const b = h('button', { type: 'button', class: `chip${cur() === v ? ' on' : ''}`, 'data-v': v }, tx(label));
           b.addEventListener('click', () => { set(v); draw(); });
           row.append(b);
         }
@@ -112,14 +112,14 @@ export class BorderHop implements HostGame {
     const goals = h('div', { class: 'mode-list' }, ...GOALS.map((goal) => {
       const T = GOAL_TEXT[goal], best = progress().play.best[goal];
       const c = h('button', { type: 'button', class: `mode-card${p.goal === goal ? ' on' : ''}`, 'data-goal': goal }, h('span', { class: 'mode-icon' }, T.icon),
-        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, es() ? T.es : T.en), h('span', { class: 'mode-desc' }, `${es() ? T.desc.es : T.desc.en}${best ? ` · ${L('Best', 'Récord')}: ${best}` : ''}`)));
+        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, tx(T)), h('span', { class: 'mode-desc' }, `${tx(T.desc)}${best ? ` · ${L('Best', 'Récord')}: ${best}` : ''}`)));
       c.addEventListener('click', () => { p.goal = goal; void this.startPractice(); });
       return c;
     }));
     const rules = h('div', { class: 'mode-list' }, ...RULES.map((rule) => {
       const best = progress().play.best[`rule:${rule.id}`];
       const c = h('button', { type: 'button', class: 'mode-card', 'data-rule': rule.id }, h('span', { class: 'mode-icon' }, rule.icon),
-        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, es() ? rule.es : rule.en), h('span', { class: 'mode-desc' }, `${es() ? rule.desc.es : rule.desc.en}${best ? ` · ${L('Best', 'Récord')}: ${best}` : ''}`)));
+        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, tx(rule)), h('span', { class: 'mode-desc' }, `${tx(rule.desc)}${best ? ` · ${L('Best', 'Récord')}: ${best}` : ''}`)));
       c.addEventListener('click', () => void this.startPractice(rule));
       return c;
     }));
@@ -136,13 +136,13 @@ export class BorderHop implements HostGame {
       h('h3', { class: 'sec-title' }, L('Border hop: pick a goal', 'Salto de fronteras: elige un objetivo')), goals, blitz,
       h('h3', { class: 'sec-title' }, L('Knowledge rounds', 'Rondas de conocimiento')),
       h('p', { class: 'muted small' }, L('Only some countries may be crossed: you need to know which.', 'Solo se pueden cruzar algunos países: hay que saber cuáles.')), rules,
-      h('p', { class: 'muted small' }, L('Scoring: the best route scores 1,000; yours scores 1,000 × best ÷ yours. ★★★ matches the best; ★★ is one country more (or within 15 %). Hints cost points and stars: names −150 and a map of the goal −200 leave at most ★★; each next step −300 leaves ★.', 'Puntuación: la mejor ruta vale 1.000; la tuya, 1.000 × la mejor ÷ la tuya. ★★★ iguala la mejor; ★★ es un país más (o hasta un 15 % más). Las pistas cuestan puntos y estrellas: nombres −150 y un mapa del objetivo −200 dejan como mucho ★★; cada siguiente paso −300 deja ★.')));
+      h('p', { class: 'muted small' }, L('The best route scores {0} and ★★★; one country more, ★★. Hints cost points and stars: names −{1} and the goal’s map −{2} (★★ at most), a next step −{3} (★).', 'La mejor ruta vale {0} y ★★★; un país más, ★★. Las pistas cuestan puntos y estrellas: los nombres −{1} y el mapa del objetivo −{2} (★★ como mucho), el siguiente paso −{3} (★).', fmtNumber(1000), HINT_COST.names, HINT_COST.filter, HINT_COST.step)));
     this.shell.openPanel('play-hop', L('Border hop', 'Salto de fronteras'), body);
   }
 
   private goalName(goal: Goal, rule: string | null) {
     const r = rule ? RULES.find((x) => x.id === rule) : null;
-    return r ? (es() ? r.es : r.en) : es() ? GOAL_TEXT[goal].es : GOAL_TEXT[goal].en;
+    return r ? (tx(r)) : tx(GOAL_TEXT[goal]);
   }
 
   // ---- Starting ----------------------------------------------------------------------------------------------
@@ -252,12 +252,12 @@ export class BorderHop implements HostGame {
     } else if (!s.g.allowed(s.rule, id)) {
       this.flash(id);
       const r = s.rule!;
-      s.msg = { ok: false, text: (es() ? r.no.es : r.no.en).replace('{c}', this.name(id)) };
+      s.msg = { ok: false, text: (tx(r.no)).replace('{c}', this.name(id)) };
     } else {
       s.path.push(id);
       const note = s.g.note(last, id);
       const n = note ? s.g.data.notes[note] : null;
-      s.msg = n ? { ok: true, text: es() ? n.es : n.en } : null;
+      s.msg = n ? { ok: true, text: tx(n) } : null;
       if (id === s.round.to) { this.finish(false); return; }
     }
     this.render();
@@ -327,7 +327,7 @@ export class BorderHop implements HostGame {
     this.render();
     this.fit();
     this.app.renderer.requestRender();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   giveUp() { if (this.st && !this.st.done) this.finish(true); }
@@ -396,7 +396,7 @@ export class BorderHop implements HostGame {
       return;
     }
     if (s.beat !== undefined && !s.done) this.card.append(h('div', { class: 'muted small' }, L('A friend scored {0}. Can you beat it?', 'Un amigo hizo {0}. ¿Puedes superarlo?', s.beat)));
-    if (s.rule && !s.done) this.card.append(h('div', { class: 'muted small' }, es() ? s.rule.desc.es : s.rule.desc.en));
+    if (s.rule && !s.done) this.card.append(h('div', { class: 'muted small' }, tx(s.rule.desc)));
     const mid = s.path.slice(1);
     const chain = h('div', { class: 'hop-path' }, ...s.path.map((id, i) => h('span', { class: `hop-step${i === 0 ? ' from' : ''}${id === round.to ? ' to' : ''}` }, this.name(id))));
     if (!s.done) {
@@ -435,7 +435,7 @@ export class BorderHop implements HostGame {
     for (const goal of s.rule ? (['count'] as Goal[]) : GOALS) {
       const b = s.g.best(round.from, round.to, goal, s.rule);
       if (!b) continue;
-      others.append(h('div', { class: `hop-other${goal === round.goal ? ' cur' : ''}` }, h('span', { class: 'hop-other-goal' }, `${GOAL_TEXT[goal].icon} ${es() ? GOAL_TEXT[goal].es : GOAL_TEXT[goal].en}: ${this.amount(goal, b.cost)}`),
+      others.append(h('div', { class: `hop-other${goal === round.goal ? ' cur' : ''}` }, h('span', { class: 'hop-other-goal' }, `${GOAL_TEXT[goal].icon} ${tx(GOAL_TEXT[goal])}: ${this.amount(goal, b.cost)}`),
         h('span', { class: 'hop-other-path' }, b.path.slice(1, -1).map((x) => this.name(x)).join(' › ') || '—')));
     }
     const othersB = h('button', { type: 'button', class: 'hop-sub-btn', 'data-hop': 'others', 'aria-expanded': String(s.showOthers) },
@@ -446,7 +446,7 @@ export class BorderHop implements HostGame {
     // The odd borders on the way, explained.
     const notes = new Set<string>();
     for (const p of [s.path, d.best]) for (let i = 1; i < p.length; i++) { const n = s.g.note(p[i - 1], p[i]); if (n) notes.add(n); }
-    for (const n of notes) { const x = s.g.data.notes[n]; if (x) res.append(h('p', { class: 'hop-note' }, `💡 ${es() ? x.es : x.en}`)); }
+    for (const n of notes) { const x = s.g.data.notes[n]; if (x) res.append(h('p', { class: 'hop-note' }, `💡 ${tx(x)}`)); }
     const shareB = h('button', { type: 'button', class: 'pill', 'data-hop': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
     shareB.addEventListener('click', () => void this.share(false));
     const chal = h('button', { type: 'button', class: 'pill', 'data-hop': 'challenge' }, icon(Link2, 16), L('Challenge a friend', 'Desafía a un amigo'));

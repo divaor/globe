@@ -2,7 +2,7 @@
 import { Download } from 'lucide';
 import { h, icon, toggle, segmented, slider, fillSelect } from './dom';
 import { canSpeak, narrationOn, setNarrationOn, voicesFor, voiceFor, setVoice, voiceRate, setVoiceRate, voiceRegion, speak, onNarration } from './narrator';
-import { t, tx, LANGS, fmtNumber, appLocale, localeFromPhone, type Lang, L } from '../app/i18n';
+import { t, tx, LANGS, fmtNumber, appLocale, localeFromPhone, displayName, type Lang, L } from '../app/i18n';
 import type { App } from '../app/app';
 import { terrainSettings } from './terrain';
 import { backupSettings } from '../app/backup';
@@ -105,10 +105,13 @@ export function aboutPanel(app: App): HTMLElement {
     credits.set(d.credit, list);
   }
   return h('div', { class: 'about' },
-    h('p', null, L('Atlas Globe is a detailed, interactive globe: combine filters (political, languages, time zones, landforms, climate, population, resources, flora, fauna and many more), switch projections with a smooth morph, and travel through time.', 'Atlas Globe es un globo terráqueo interactivo y detallado: combina filtros (político, idiomas, husos horarios, relieve, clima, población, recursos, flora, fauna y muchos más), cambia de proyección con una transición suave y viaja en el tiempo.')),
+    // v0.41.0: what the app is, in three lines (the same words as the store listing).
+    h('p', { class: 'about-lead' }, L('Atlas Globe is the world on one globe: its countries and cities, its nature, its history and its sky.', 'Atlas Globe es el mundo en un solo globo: sus países y ciudades, su naturaleza, su historia y su cielo.')),
+    h('p', null, L('Explore {0} maps, travel through time with hundreds of stories, plan a trip with the travel guide, and learn every country, capital and flag with games and a challenge each day.', 'Explora {0} mapas, viaja en el tiempo con cientos de historias, planea un viaje con la guía y aprende todos los países, capitales y banderas con juegos y un reto cada día.', fmtNumber([...app.registry.values()].filter((d) => !d.hidden && d.category !== 'mine').length))),
+    h('p', null, L('No account and no ads. What you do stays on this device; to take it to another, use Settings → Your data on another device.', 'Sin cuenta y sin anuncios. Lo que haces se queda en este dispositivo; para llevarlo a otro, usa Ajustes → Tus datos en otro dispositivo.')),
     h('h3', { class: 'sec-title' }, t('credits')),
     h('ul', { class: 'credits' }, [...credits].map(([c, names]) => h('li', null, h('strong', null, c), h('span', { class: 'muted' }, ` — ${names.join(', ')}`)))),
-    h('p', { class: 'muted small' }, L('Open source (GPL-3.0). Data keep their own licences; see public/data/*/SOURCES.md in the repository.', 'Código abierto (GPL-3.0). Los datos conservan sus propias licencias; consulta public/data/*/SOURCES.md en el repositorio.')),
+    h('p', { class: 'muted small' }, L('Open source (GPL-3.0). Every map and story names its sources; the data keep their own licences.', 'Código abierto (GPL-3.0). Cada mapa e historia nombra sus fuentes; los datos conservan sus propias licencias.')),
     h('p', { class: 'small' }, h('a', { href: 'https://github.com/divaor/globe', target: '_blank', rel: 'noopener' }, 'github.com/divaor/globe')),
   );
 }
@@ -128,7 +131,7 @@ function voiceSettings(app: App): HTMLElement {
     const cur = voiceFor(app.lang);
     box.append(h('div', { class: 'toggles' }, toggle(narrationOn(), (v) => setNarrationOn(v), L('Read tours and stories aloud', 'Leer en voz alta las visitas guiadas y las historias'))));
     if (!list.length) {
-      box.append(h('p', { class: 'muted small' }, L('This device has no English voices. You can add one in the system’s text-to-speech settings.', 'Este dispositivo no tiene voces en español. Puedes agregar una en los ajustes de texto a voz del sistema.')));
+      box.append(h('p', { class: 'muted small' }, L('This device has no voices in {0}. You can add one in the system’s text-to-speech settings.', 'Este dispositivo no tiene voces en {0}. Puedes agregar una en los ajustes de texto a voz del sistema.', displayName('language', app.lang))));
       return;
     }
     const sel = h('select', { class: 'select', 'aria-label': L('Voice', 'Voz') }) as HTMLSelectElement;

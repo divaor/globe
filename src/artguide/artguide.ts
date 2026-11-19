@@ -9,7 +9,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import type { TravelGuide } from '../guide/guide';
 import { h, icon, clear } from '../ui/dom';
-import { lang, fmtCompact, L } from '../app/i18n';
+import { lang, fmtCompact, L, tx } from '../app/i18n';
 import { nowInHook } from '../modes/stories';
 import { loadArt, loadArch, loadNowIn, nm, yearText, commons, kindIcon, KINDS, PERIODS, museumPlace, workWhy, buildingPlace, type Work, type Building, type Museum, type ArtData } from './data';
 import { planStar, planHooks, addPlace, type PlaceSpec } from '../guide/plan';
@@ -219,7 +219,7 @@ export class ArtGuide {
       const row = h('div', { class: 'chip-row art-filters' });
       for (const [v, label] of list) {
         if (attr === 'kind' && v !== 'all' && !all.some((w) => w.kind === v)) continue;
-        const b = h('button', { type: 'button', class: `chip sm${cur === v ? ' on' : ''}`, [`data-${attr}`]: v }, es() ? label.es : label.en);
+        const b = h('button', { type: 'button', class: `chip sm${cur === v ? ' on' : ''}`, [`data-${attr}`]: v }, tx(label));
         b.addEventListener('click', () => { set(v); redraw(); });
         row.append(b);
       }

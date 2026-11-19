@@ -324,7 +324,7 @@ export class Learn {
   }
 
   private badgeToast(got: Badge[]) {
-    if (got.length) this.shell.toast(`${L('New badge', 'Nueva insignia')}: ${got.map((b) => `${b.icon} ${es() ? b.es : b.en}`).join(' · ')}`, 4500);
+    if (got.length) this.shell.toast(`${L('New badge', 'Nueva insignia')}: ${got.map((b) => `${b.icon} ${tx(b)}`).join(' · ')}`, 4500);
   }
 
   // ---- Quiz -----------------------------------------------------------------------------------
@@ -437,7 +437,7 @@ export class Learn {
     prog.addEventListener('click', () => this.openProgress());
     const mw = h('button', { type: 'button', class: 'mode-card', 'data-panel': 'master' }, ftile('master'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Master the world', 'Domina el mundo')),
-        h('span', { class: 'mode-desc' }, L('Every capital, flag and country, learned for good: a little each day', 'Todas las capitales, banderas y países, aprendidos para siempre: un poco cada día'))));
+        h('span', { class: 'mode-desc' }, L('Countries, capitals, flags, cities, landmarks and more, learned for good: a little each day', 'Países, capitales, banderas, ciudades, monumentos y más, aprendidos para siempre: un poco cada día'))));
     mw.addEventListener('click', () => void this.master?.openPanel());
     return h('div', { class: 'mode-list' }, daily, bell('daily'), ...(this.master ? [mw] : []), prog);
   }
@@ -1065,7 +1065,7 @@ export class Learn {
   /** "1815", "AD 200", "500 BC" (as on the borders timeline). */
   private yearLabel(y: number | string): string {
     const l = this.detLabels.get(Number(y));
-    return l ? (es() ? l.es : l.en) : String(y);
+    return l ? (tx(l)) : String(y);
   }
 
   // ---- Which country in between? (a Border hop of one country, from the Map games' border data)
@@ -1333,12 +1333,12 @@ export class Learn {
     type F = { id: string; name: { en: string; es: string }; kind: string; lon: number; lat: number; rank: number; text: { en: string; es: string } };
     const fs = (await loadJSON<{ famous: F[] }>('ocean/features.json').catch(() => ({ famous: [] as F[] }))).famous.filter((f) => f.rank <= 2);
     if (fs.length < 4) return [];
-    const labels = Object.fromEntries(fs.map((f) => [f.id, es() ? f.name.es : f.name.en]));
+    const labels = Object.fromEntries(fs.map((f) => [f.id, tx(f.name)]));
     return shuffle(fs.slice()).slice(0, n).map((f) => {
       // Wrong answers: far enough away that the pin tells them apart, of the same kind first.
       const far = fs.filter((g) => g.id !== f.id && Math.hypot(g.lon - f.lon, g.lat - f.lat) > 12);
       const wrong = [...shuffle(far.filter((g) => g.kind === f.kind)), ...shuffle(far.filter((g) => g.kind !== f.kind))].slice(0, 3).map((g) => g.id);
-      return { id: f.id, kind: 'seafeature' as QuizKind, options: shuffle([f.id, ...wrong]), sea: { at: [f.lon, f.lat] as [number, number], prompt: L('What is under the pin?', '¿Qué hay bajo el alfiler?'), labels, note: es() ? f.text.es : f.text.en } };
+      return { id: f.id, kind: 'seafeature' as QuizKind, options: shuffle([f.id, ...wrong]), sea: { at: [f.lon, f.lat] as [number, number], prompt: L('What is under the pin?', '¿Qué hay bajo el alfiler?'), labels, note: tx(f.text) } };
     });
   }
   /** Which ocean zone? (v0.33.0): a sea animal; the zone it lives in most often. */
@@ -1358,7 +1358,7 @@ export class Learn {
       const z = zoneOf(a.usual);
       const wrong = shuffle(zones.map((x) => x[0]).filter((x) => x !== z)).slice(0, 3);
       const fmt = (v: number) => `${fmtNumber(Math.round(v))} m`;
-      return { id: z, kind: 'zone' as QuizKind, options: [...zones.map((x) => x[0])].filter((x) => x === z || wrong.includes(x)), sea: { prompt: L('Where does it live most often?', '¿Dónde vive más a menudo?'), item: `${a.e} ${es() ? a.name.es : a.name.en}`, labels,
+      return { id: z, kind: 'zone' as QuizKind, options: [...zones.map((x) => x[0])].filter((x) => x === z || wrong.includes(x)), sea: { prompt: L('Where does it live most often?', '¿Dónde vive más a menudo?'), item: `${a.e} ${tx(a.name)}`, labels,
         note: L('{0}: most often about {1} down, from {2} to {3}. {4}', '{0}: casi siempre a unos {1}, de {2} a {3}. {4}', tx(a.name), fmt(a.usual), fmt(a.depth[0]), fmt(a.depth[1]), tx(a.text)) } };
     });
   }
@@ -2134,7 +2134,7 @@ export class Learn {
     const d = cur.det!;
     const r = this.detRegion(d.region);
     add(this.card, h('div', { class: 'quiz-q' }, L('When is this map from?', '¿De cuándo es este mapa?')),
-      h('div', { class: 'quiz-item' }, `🕵️ ${r ? (es() ? r.es : r.en) : ''}`),
+      h('div', { class: 'quiz-item' }, `🕵️ ${r ? (tx(r)) : ''}`),
       q.answered ? null : h('div', { class: 'tool-hint' }, L('Each colour is a state, an empire or a people of the time. Their names appear when you answer.', 'Cada color es un Estado, un imperio o un pueblo de la época. Sus nombres aparecen cuando respondes.')));
     const opts = h('div', { class: 'quiz-opts' });
     for (const o of cur.options ?? []) {
@@ -2165,7 +2165,7 @@ export class Learn {
     const d = cur.det!;
     const r = this.detRegion(d.region);
     const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, h('span', { class: 'quiz-thumb' }, '🕵️'),
-      h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, `${r ? (es() ? r.es : r.en) : ''} · ${this.yearLabel(d.year)}`),
+      h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, `${r ? (tx(r)) : ''} · ${this.yearLabel(d.year)}`),
         h('span', { class: 'quiz-sum-ans' }, cur.ok ? '' : cur.given ? L('you said {0}', 'dijiste {0}', cur.given) : L('no answer', 'sin respuesta'))),
       h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
     row.addEventListener('click', () => void (async () => {
@@ -2329,8 +2329,8 @@ export class Learn {
     this.renderQuiz();
   }
 
-  private langName(code: string) { const c = this.famData?.langs[code]; return c ? (es() ? c.es : c.en) : code; }
-  private famName(f: string) { const c = this.famData?.fams[f]; return c ? (es() ? c.es : c.en) : f; }
+  private langName(code: string) { const c = this.famData?.langs[code]; return c ? (tx(c)) : code; }
+  private famName(f: string) { const c = this.famData?.fams[f]; return c ? (tx(c)) : f; }
 
   /** "Hungarian is a Uralic language, like Finnish and Estonian." */
   private familySentence(code: string, f: string): string {
@@ -2428,7 +2428,7 @@ export class Learn {
       if (!tours.length) continue;
       for (const tour of tours) {
         const c = h('button', { type: 'button', class: 'mode-card', 'data-tour': tour.en }, h('span', { class: 'mode-icon' }, tour.icon),
-          h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, es() ? tour.es : tour.en), h('span', { class: 'mode-desc' }, `${tour.steps.length} ${L('stops', 'paradas')}`)));
+          h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, tx(tour)), h('span', { class: 'mode-desc' }, `${tour.steps.length} ${L('stops', 'paradas')}`)));
         c.addEventListener('click', () => void this.startTour(tour));
         list.append(c);
       }
@@ -2561,7 +2561,7 @@ export class Learn {
         this.renderTour();
       });
     }
-    const body = es() ? s.es : s.en;
+    const body = tx(s);
     add(this.card,
       h('div', { class: 'tool-head' }, h('strong', null, `${s.icon ?? '🧭'} ${es() ? s.title_es : s.title_en}`), h('span', { class: 'tour-tools' }, prev, h('span', { class: 'small muted' }, `${tr.i + 1}/${tr.steps.length}`), next, auto, voice, fold, close)),
       tr.fold ? null : h('div', { class: 'tour-text' }, ...sentences(body).map((x, k) => h('span', { class: 'tour-s', 'data-s': String(k) }, `${x} `))));
@@ -2625,7 +2625,7 @@ export class Learn {
   /** The words a stop reads aloud: its title, then its text. */
   private stopWords(s: TourStep): string {
     const title = es() ? s.title_es : s.title_en;
-    return `${/[.!?…]$/.test(title) ? title : `${title}.`} ${es() ? s.es : s.en}`;
+    return `${/[.!?…]$/.test(title) ? title : `${title}.`} ${tx(s)}`;
   }
 
   /** Reads the stop aloud (when reading aloud is on); auto-play then goes on when the voice is done. */

@@ -183,7 +183,7 @@ export function spectacleCard(card: CardFn, s: Spectacle, x: GreenLinks, plantOf
   links.push({ label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(s.at, tt(s.n)) },
     planLink({ id: `spectacle:${s.id}`, kind: 'spectacle', n: [s.n.en, s.n.es], at: s.at, why: [{ t: [`${monthsText(s)} · ${s.place.en}`, `${monthsText(s)} · ${s.place.es}`] }] }));
   links.push(...sourceLinks(s.src));
-  card(s.e, tt(s.n), `${k.icon} ${es() ? k.es : k.en}`, rows, links, notes);
+  card(s.e, tt(s.n), `${k.icon} ${tx(k)}`, rows, links, notes);
 }
 
 export function cropCard(card: CardFn, c: Crop, x: GreenLinks, show: () => void) {

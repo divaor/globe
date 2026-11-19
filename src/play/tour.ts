@@ -11,7 +11,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { Borders, seeded, type BorderData } from './route';
 import { starText, scoreOf } from './score';
@@ -191,7 +191,7 @@ export class GrandTour implements HostGame {
     s.done = { yours, par: best.cost, best: best.order, score: sc.score, stars, badges, gaveUp };
     this.render();
     this.app.renderer.requestRender();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   private cost(v: number): string {
@@ -200,7 +200,7 @@ export class GrandTour implements HostGame {
     const c = Math.floor(v / 1e6), d = v - c * 1e6;
     return `${c === 1 ? L('1 border', '1 frontera') : L('{0} borders', '{0} fronteras', c)} · ${fmtNumber(Math.round(d))} km`;
   }
-  private nm(x: Stop) { return es() ? x.es : x.en; }
+  private nm(x: Stop) { return tx(x); }
 
   render() {
     const s = this.st;
@@ -209,7 +209,7 @@ export class GrandTour implements HostGame {
     const mode = TOUR_MODES.find((m) => m[0] === s.mode)![1];
     const museum = this.game === 'museum';
     const title = museum ? `🏛️ ${s.day ? L('Daily Museum hop', 'De museo en museo del día') : L('Museum hop', 'De museo en museo')}`
-      : `🧳 ${s.day ? L('Daily Grand tour', 'Gran vuelta del día') : L('Grand tour', 'Gran vuelta')} · ${s.story ? `${s.story.icon} ${es() ? s.story.es : s.story.en}` : es() ? mode.es : mode.en}`;
+      : `🧳 ${s.day ? L('Daily Grand tour', 'Gran vuelta del día') : L('Grand tour', 'Gran vuelta')} · ${s.story ? `${s.story.icon} ${tx(s.story)}` : tx(mode)}`;
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     const chips = h('div', { class: 'hop-path' }, ...s.order.map((i, k) => h('span', { class: `hop-step${k === 0 ? ' from' : ''}` }, `${k + 1}. ${this.nm(s.stops[i])}`)),
       ...s.stops.map((x, i) => (s.order.includes(i) ? null : h('span', { class: 'hop-step left' }, this.nm(x)))).filter((x): x is HTMLElement => !!x));

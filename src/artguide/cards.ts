@@ -31,7 +31,7 @@ export function workCard(card: CardFn, w: Work, cityName: string | null, openCit
   if (w.artist) rows.push({ label: L('By', 'De'), value: nm(w.artist), icon: '🧑‍🎨' });
   if (w.year != null) rows.push({ label: L('Made', 'Hecha'), value: yearText(w.year), icon: '📅' });
   rows.push({ label: L('Now in', 'Hoy en'), value: `${nm(w.museum)}${cityName ? `, ${cityName}` : ''}`, icon: '🏛️' });
-  if (kind) rows.push({ label: L('Kind', 'Tipo'), value: es() ? kind.es : kind.en, icon: kindIcon(w.kind) });
+  if (kind) rows.push({ label: L('Kind', 'Tipo'), value: tx(kind), icon: kindIcon(w.kind) });
   const links: { label: string; href?: string; onClick?: () => void }[] = [{ label: 'Wikipedia', href: wikiOf(w.id) }];
   if (showOnMap) links.unshift({ label: L('Show on the map', 'Ver en el mapa'), onClick: showOnMap });
   // ☆: its museum into the trip, with this work as the reason to go.

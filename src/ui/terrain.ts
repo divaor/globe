@@ -130,7 +130,7 @@ export class TerrainUI {
     })());
     const add = (...els: (HTMLElement | null)[]) => { for (const x of els) if (x) body.append(x); };
     add(
-      h('p', { class: 'terrain-name' }, `📍 ${es() ? name.es : name.en}`),
+      h('p', { class: 'terrain-name' }, `📍 ${tx(name)}`),
       h('p', { class: 'muted small' }, L('The detailed tiles of the map on screen are kept on this device, so this area stays sharp without a connection: on a trip, or in ambient mode.', 'Los mosaicos detallados del mapa en pantalla se guardan en este dispositivo, para que la zona siga nítida sin conexión: de viaje o en el modo ambiente.')),
       h('h3', { class: 'sec-title' }, L('Detail', 'Detalle')), levelRow,
       h('h3', { class: 'sec-title' }, L('What to keep', 'Qué guardar')), srcRow,
@@ -157,7 +157,7 @@ export function savedList(app: App, refresh: () => void): HTMLElement {
     })());
     const what = [a.sources.includes(TERRAIN.id) ? L('heights', 'alturas') : '', a.sources.includes(SENTINEL.id) ? L('satellite', 'satélite') : ''].filter(Boolean).join(' + ');
     el.append(h('div', { class: 'saved-area', 'data-area': a.id },
-      h('div', { class: 'saved-text' }, h('strong', null, es() ? a.name.es : a.name.en),
+      h('div', { class: 'saved-text' }, h('strong', null, tx(a.name)),
         h('span', { class: 'muted small' }, `${what} · ${fmtBytes(a.bytes, es())} · ${a.tiles.toLocaleString(appLocale())} ${L('tiles', 'mosaicos')} · ${a.date}`)),
       h('div', { class: 'saved-btns' }, show, del)));
   }

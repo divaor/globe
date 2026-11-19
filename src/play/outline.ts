@@ -127,7 +127,7 @@ export class Outline implements HostGame {
     const badges = recordGame('outline', { score, stars, feats: s.results.every((r) => r.tries === 1) ? ['outline-5'] : [], day: s.day });
     s.done = { score, stars, badges };
     this.render();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   /** The shape (and the neighbours shown) on a small canvas. */

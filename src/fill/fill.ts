@@ -134,7 +134,7 @@ export class FillMap implements HostGame {
     if (scope.startsWith('r:')) return es() ? subregion(scope.slice(2)) : scope.slice(2);
     return t(`cont.${scope}`);
   }
-  private catName(cat: FillCat) { return es() ? CAT_TEXT[cat].es : CAT_TEXT[cat].en; }
+  private catName(cat: FillCat) { return tx(CAT_TEXT[cat]); }
   private flag(id: string) { const a2 = this.deck.get(id)?.a2 ?? this.app.data.meta[id]?.a2 ?? ''; return dataUrl(`../flags/${a2.toLowerCase()}.svg`); }
   private map(cat: FillCat) { return fillState().maps[cat]; }
 
@@ -298,7 +298,7 @@ export class FillMap implements HostGame {
     this.app.renderer.requestRender();
   }
 
-  private toastBadges(b: Badge[]) { if (b.length) this.shell.toast(`${b[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? b[0].es : b[0].en}`, 4000); }
+  private toastBadges(b: Badge[]) { if (b.length) this.shell.toast(`${b[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(b[0])}`, 4000); }
 
   /** A continent, the world, a perfect continent, every category: the badges. */
   private feats(cat: FillCat): Badge[] {
@@ -405,7 +405,7 @@ export class FillMap implements HostGame {
     }
   }
 
-  private clueText(c: Clue) { const txt = es() ? c.es : c.en; return c.m != null ? txt.replace('{m}', fmtNumber(c.m)) : txt; }
+  private clueText(c: Clue) { const txt = tx(c); return c.m != null ? txt.replace('{m}', fmtNumber(c.m)) : txt; }
 
   /** After a miss: its neighbours (or its region), then a circle where it is; for clues, the next clue. */
   private hint(cur: Cur): string {
@@ -432,7 +432,7 @@ export class FillMap implements HostGame {
     if (!u) return '';
     if (s.cat === 'people') return u.pop >= 1e6 ? L('{0} million people', '{0} millones de personas', (u.pop / 1e6).toLocaleString(appLocale(), { maximumFractionDigits: 1 })) : L('{0} people', '{0} habitantes', fmtNumber(u.pop));
     if (s.cat === 'area') return `${fmtNumber(u.area)} km²`;
-    if (s.cat === 'capitals') { const c = this.deck.get(id)?.cap; return c ? (es() ? c.es : c.en) : ''; }
+    if (s.cat === 'capitals') { const c = this.deck.get(id)?.cap; return c ? (tx(c)) : ''; }
     return '';
   }
 

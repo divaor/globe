@@ -328,7 +328,7 @@ export class PutOnMap implements HostGame {
     if (s.solved) got.push(...recordFeat('onmap-solve'));
     if (s.solved && s.rows.length === 1) got.push(...recordFeat('onmap-first'));
     if (Object.values(st.dailies).filter((d) => d.solved).length >= 7) got.push(...recordFeat('onmap-week'));
-    if (got.length) this.shell.toast(`${got[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? got[0].es : got[0].en}`, 4000);
+    if (got.length) this.shell.toast(`${got[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(got[0])}`, 4000);
   }
 
   // ---- The card
@@ -368,7 +368,7 @@ export class PutOnMap implements HostGame {
     card.append(h('div', { class: 'onmap-placing', 'data-onmap': 'placing' },
       h('span', { class: 'onmap-item on' }, h('span', { class: 'onmap-kind' }, KIND[it.k].icon), h('span', { class: 'onmap-name', 'data-onmap': 'placing-name' }, this.name(it.c.i))),
       h('div', { class: 'onmap-placing-row' },
-        h('span', { class: 'muted small' }, `${es() ? KIND[it.k].es : KIND[it.k].en} · ${L('tap its place among the grey ones', 'toca su lugar entre los grises')}`), list)));
+        h('span', { class: 'muted small' }, `${tx(KIND[it.k])} · ${L('tap its place among the grey ones', 'toca su lugar entre los grises')}`), list)));
   }
   private kindPlural(k: Kind) {
     const en: Record<Kind, string> = { river: 'rivers', lake: 'lakes', range: 'ranges', desert: 'deserts', peak: 'peaks', city: 'cities', built: 'places', park: 'parks' };
@@ -381,7 +381,7 @@ export class PutOnMap implements HostGame {
     const list = h('div', { class: 'onmap-items', 'data-onmap': 'items' });
     s.items.forEach((it, n) => {
       const cls = ['onmap-item', it.locked ? 'g' : it.last ? it.last.m : '', s.active === n ? 'on' : '', it.given && !it.locked ? 'placed' : ''].filter(Boolean).join(' ');
-      const b = h('button', { type: 'button', class: cls, 'data-item': String(n), disabled: it.locked || s.done, title: es() ? KIND[it.k].es : KIND[it.k].en },
+      const b = h('button', { type: 'button', class: cls, 'data-item': String(n), disabled: it.locked || s.done, title: tx(KIND[it.k]) },
         h('span', { class: 'onmap-kind' }, KIND[it.k].icon), h('span', { class: 'onmap-name' }, this.name(it.c.i)),
         it.locked ? h('span', { class: 'onmap-mark' }, '✓') : it.last ? h('span', { class: 'onmap-mark' }, `${Math.round(it.last.km)} km`) : null);
       b.addEventListener('click', () => { if (!this.dragged) this.pick(s.active === n ? null : n); this.dragged = false; });

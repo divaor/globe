@@ -7,7 +7,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber, dataLang } from '../app/i18n';
+import { fmtNumber, dataLang, tx } from '../app/i18n';
 import { Borders, seeded, type BorderData } from './route';
 import { starText } from './score';
 import { CHAIN_SECS, chainScore, chainStars, sample } from './logic';
@@ -98,7 +98,7 @@ export class BorderChain implements HostGame {
     this.clock = null;
     this.render();
     this.app.renderer.requestRender();
-    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
+    if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${tx(badges[0])}`, 4000);
   }
 
   render() {

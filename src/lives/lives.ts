@@ -198,7 +198,7 @@ export class Lives {
     const names = c.lives ? c.sides.map((s) => tx(s.name)) : [tx(c.name)];
     lives.forEach((l, k) => {
       const many = lives.length > 1 ? ` · ${names[k]}` : '';
-      if (l.wiki) row.append(h('a', { class: 'pill sm', href: `https://${lang()}.wikipedia.org/wiki/${encodeURIComponent((lang() === 'es' ? l.wiki.es : l.wiki.en).replace(/ /g, '_'))}`, target: '_blank', rel: 'noopener' }, `Wikipedia${many}`));
+      if (l.wiki) row.append(h('a', { class: 'pill sm', href: `https://${lang()}.wikipedia.org/wiki/${encodeURIComponent((tx(l.wiki)).replace(/ /g, '_'))}`, target: '_blank', rel: 'noopener' }, `Wikipedia${many}`));
       // Where their works are now (the art guide's trail), when they have one.
       if (this.art) {
         void loadArt().then((d) => {

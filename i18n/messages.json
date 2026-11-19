@@ -510,7 +510,7 @@
    "en": "A city’s year of weather: pin where it is.",
    "es": "El clima de una ciudad a lo largo del año: ponle un pin.",
    "where": [
-    "src/play/menu.ts:33"
+    "src/play/menu.ts:34"
    ]
   },
   {
@@ -743,7 +743,7 @@
    "en": "A life’s places, one by one: whose are they?",
    "es": "Los lugares de una vida, uno a uno: ¿de quién son?",
    "where": [
-    "src/play/menu.ts:36"
+    "src/play/menu.ts:37"
    ]
   },
   {
@@ -1351,8 +1351,7 @@
    "en": "Again",
    "es": "Otra vez",
    "where": [
-    "src/earth/waves.ts:93",
-    "src/master/master.ts:872"
+    "src/earth/waves.ts:93"
    ]
   },
   {
@@ -1802,7 +1801,7 @@
    "en": "Another place ({0} left)",
    "es": "Otro lugar (quedan {0})",
    "where": [
-    "src/play/lifeguess.ts:149"
+    "src/play/lifeguess.ts:148"
    ]
   },
   {
@@ -2261,10 +2260,10 @@
    ]
   },
   {
-   "en": "Atlas Globe is a detailed, interactive globe: combine filters (political, languages, time zones, landforms, climate, population, resources, flora, fauna and many more), switch projections with a smooth morph, and travel through time.",
-   "es": "Atlas Globe es un globo terráqueo interactivo y detallado: combina filtros (político, idiomas, husos horarios, relieve, clima, población, recursos, flora, fauna y muchos más), cambia de proyección con una transición suave y viaja en el tiempo.",
+   "en": "Atlas Globe is the world on one globe: its countries and cities, its nature, its history and its sky.",
+   "es": "Atlas Globe es el mundo en un solo globo: sus países y ciudades, su naturaleza, su historia y su cielo.",
    "where": [
-    "src/ui/settings.ts:108"
+    "src/ui/settings.ts:109"
    ]
   },
   {
@@ -2775,7 +2774,7 @@
    "where": [
     "src/play/chain.ts:109",
     "src/play/chain.ts:118",
-    "src/play/menu.ts:30"
+    "src/play/menu.ts:31"
    ]
   },
   {
@@ -2785,7 +2784,7 @@
     "src/play/hop.ts:140",
     "src/play/hop.ts:361",
     "src/play/hop.ts:383",
-    "src/play/menu.ts:25"
+    "src/play/menu.ts:26"
    ]
   },
   {
@@ -3386,7 +3385,7 @@
    "en": "Climate detective",
    "es": "Detective del clima",
    "where": [
-    "src/play/menu.ts:33",
+    "src/play/menu.ts:34",
     "src/play/rounds.ts:276"
    ]
   },
@@ -3907,6 +3906,13 @@
    ]
   },
   {
+   "en": "Countries, capitals, flags, cities, landmarks and more, learned for good: a little each day",
+   "es": "Países, capitales, banderas, ciudades, monumentos y más, aprendidos para siempre: un poco cada día",
+   "where": [
+    "src/learn/learn.ts:440"
+   ]
+  },
+  {
    "en": "Country",
    "es": "País",
    "where": [
@@ -4191,7 +4197,7 @@
    "en": "Daily Whose life is this?",
    "es": "¿De quién es esta vida? del día",
    "where": [
-    "src/play/lifeguess.ts:123"
+    "src/play/lifeguess.ts:122"
    ]
   },
   {
@@ -4830,7 +4836,7 @@
    "en": "Drop a pin where a place is: the closer, the more points.",
    "es": "Pon un pin donde está un lugar: cuanto más cerca, más puntos.",
    "where": [
-    "src/play/menu.ts:26"
+    "src/play/menu.ts:27"
    ]
   },
   {
@@ -5470,13 +5476,6 @@
    ]
   },
   {
-   "en": "Every capital, flag and country, learned for good: a little each day",
-   "es": "Todas las capitales, banderas y países, aprendidos para siempre: un poco cada día",
-   "where": [
-    "src/learn/learn.ts:440"
-   ]
-  },
-  {
    "en": "Every city",
    "es": "Todas las ciudades",
    "where": [
@@ -5571,7 +5570,7 @@
    "en": "Every country, capital or neighbour, against the clock.",
    "es": "Todos los países, capitales o vecinos, contra el reloj.",
    "where": [
-    "src/play/menu.ts:29"
+    "src/play/menu.ts:30"
    ]
   },
   {
@@ -5724,6 +5723,13 @@
    ]
   },
   {
+   "en": "Explore {0} maps, travel through time with hundreds of stories, plan a trip with the travel guide, and learn every country, capital and flag with games and a challenge each day.",
+   "es": "Explora {0} mapas, viaja en el tiempo con cientos de historias, planea un viaje con la guía y aprende todos los países, capitales y banderas con juegos y un reto cada día.",
+   "where": [
+    "src/ui/settings.ts:110"
+   ]
+  },
+  {
    "en": "Explorers",
    "es": "Exploradores",
    "where": [
@@ -5734,7 +5740,7 @@
    "en": "Explorer’s log",
    "es": "Bitácora del explorador",
    "where": [
-    "src/play/menu.ts:34",
+    "src/play/menu.ts:35",
     "src/play/rounds.ts:324"
    ]
   },
@@ -6092,13 +6098,6 @@
    ]
   },
   {
-   "en": "Finished",
-   "es": "Resultado",
-   "where": [
-    "src/app/i18n.ts:300"
-   ]
-  },
-  {
    "en": "First",
    "es": "Primero",
    "where": [
@@ -6288,7 +6287,7 @@
    "en": "Follow a journey by pinning each next stop.",
    "es": "Sigue un viaje poniendo un pin en cada parada.",
    "where": [
-    "src/play/menu.ts:34"
+    "src/play/menu.ts:35"
    ]
   },
   {
@@ -6310,7 +6309,7 @@
    "en": "Follow this life",
    "es": "Seguir esta vida",
    "where": [
-    "src/play/lifeguess.ts:158"
+    "src/play/lifeguess.ts:157"
    ]
   },
   {
@@ -6487,7 +6486,7 @@
    "en": "From one country to a far one across land borders.",
    "es": "De un país a otro lejano cruzando fronteras terrestres.",
    "where": [
-    "src/play/menu.ts:25"
+    "src/play/menu.ts:26"
    ]
   },
   {
@@ -6679,7 +6678,7 @@
    "en": "Games",
    "es": "Juegos",
    "where": [
-    "src/play/menu.ts:128"
+    "src/play/menu.ts:129"
    ]
   },
   {
@@ -6702,7 +6701,7 @@
    "en": "Games you play on the map, scored against the best result the app can find. A new puzzle of each game every day, the same for everyone.",
    "es": "Juegos en el mapa, puntuados frente al mejor resultado que encuentra la app. Cada día, un nuevo reto de cada juego, el mismo para todos.",
    "where": [
-    "src/play/menu.ts:126"
+    "src/play/menu.ts:127"
    ]
   },
   {
@@ -6878,7 +6877,7 @@
    "en": "Grand tour",
    "es": "Gran vuelta",
    "where": [
-    "src/play/menu.ts:28",
+    "src/play/menu.ts:29",
     "src/play/tour.ts:212",
     "src/play/tour.ts:247"
    ]
@@ -7039,7 +7038,7 @@
    "en": "Guess a country from its shape.",
    "es": "Adivina un país por su forma.",
    "where": [
-    "src/play/menu.ts:31"
+    "src/play/menu.ts:32"
    ]
   },
   {
@@ -7105,14 +7104,14 @@
    "en": "Hard: no names at all, not even the seas",
    "es": "Difícil: ningún nombre, ni siquiera los mares",
    "where": [
-    "src/play/menu.ts:160"
+    "src/play/menu.ts:161"
    ]
   },
   {
    "en": "Hard: the shapes are turned",
    "es": "Difícil: las siluetas están giradas",
    "where": [
-    "src/play/menu.ts:171"
+    "src/play/menu.ts:172"
    ]
   },
   {
@@ -7173,7 +7172,7 @@
    "en": "Hello. This is how the tours and stories will sound.",
    "es": "Hola. Así sonarán las visitas guiadas y las historias.",
    "where": [
-    "src/ui/settings.ts:139"
+    "src/ui/settings.ts:142"
    ]
   },
   {
@@ -7238,7 +7237,7 @@
    "where": [
     "src/play/hilo.ts:153",
     "src/play/hilo.ts:159",
-    "src/play/menu.ts:27"
+    "src/play/menu.ts:28"
    ]
   },
   {
@@ -7393,7 +7392,7 @@
    "es": "Cómo",
    "where": [
     "src/app/i18n.ts:327",
-    "src/play/menu.ts:163"
+    "src/play/menu.ts:164"
    ]
   },
   {
@@ -7506,13 +7505,6 @@
    "es": "Fuentes hidrotermales",
    "where": [
     "src/layers/packs/ocean.ts:308"
-   ]
-  },
-  {
-   "en": "I give up",
-   "es": "Me rindo",
-   "where": [
-    "src/play/names.ts:175"
    ]
   },
   {
@@ -7909,6 +7901,13 @@
    ]
   },
   {
+   "en": "Interactive world map. Drag to rotate, pinch or scroll to zoom, tap a country for details.",
+   "es": "Mapa del mundo interactivo. Arrastra para girarlo, pellizca o desplázate para acercarte y toca un país para ver sus datos.",
+   "where": [
+    "src/app/app.ts:264"
+   ]
+  },
+  {
    "en": "Interests",
    "es": "Intereses",
    "where": [
@@ -8132,7 +8131,7 @@
    "where": [
     "src/learn/learn.ts:1823",
     "src/learn/learn.ts:1881",
-    "src/play/lifeguess.ts:156",
+    "src/play/lifeguess.ts:155",
     "src/play/outline.ts:190"
    ]
   },
@@ -9272,7 +9271,7 @@
     "src/main.ts:180",
     "src/main.ts:182",
     "src/play/hop.ts:88",
-    "src/play/menu.ts:81"
+    "src/play/menu.ts:82"
    ]
   },
   {
@@ -9859,7 +9858,7 @@
     "src/play/chain.ts:119",
     "src/play/hilo.ts:160",
     "src/play/hop.ts:456",
-    "src/play/lifeguess.ts:133",
+    "src/play/lifeguess.ts:132",
     "src/play/names.ts:164"
    ]
   },
@@ -9940,7 +9939,7 @@
    "en": "Museum hop",
    "es": "De museo en museo",
    "where": [
-    "src/play/menu.ts:32",
+    "src/play/menu.ts:33",
     "src/play/tour.ts:211",
     "src/play/tour.ts:247"
    ]
@@ -10112,7 +10111,7 @@
    "es": "Nómbralos todos",
    "where": [
     "src/learn/progress.ts:118",
-    "src/play/menu.ts:29",
+    "src/play/menu.ts:30",
     "src/play/names.ts:154",
     "src/play/names.ts:163"
    ]
@@ -10425,7 +10424,7 @@
    "en": "Neighbour after neighbour, never the same twice, in 90 seconds.",
    "es": "Vecino tras vecino, sin repetir, en 90 segundos.",
    "where": [
-    "src/play/menu.ts:30"
+    "src/play/menu.ts:31"
    ]
   },
   {
@@ -10558,7 +10557,7 @@
    "en": "Next life",
    "es": "Siguiente vida",
    "where": [
-    "src/play/lifeguess.ts:160"
+    "src/play/lifeguess.ts:159"
    ]
   },
   {
@@ -10625,6 +10624,13 @@
    "es": "Ningún sitio del Patrimonio Mundial ni gran construcción nuestra está cerca; Wikivoyage (Más) tiene qué ver.",
    "where": [
     "src/guide/guide.ts:573"
+   ]
+  },
+  {
+   "en": "No account and no ads. What you do stays on this device; to take it to another, use Settings → Your data on another device.",
+   "es": "Sin cuenta y sin anuncios. Lo que haces se queda en este dispositivo; para llevarlo a otro, usa Ajustes → Tus datos en otro dispositivo.",
+   "where": [
+    "src/ui/settings.ts:111"
    ]
   },
   {
@@ -11474,7 +11480,7 @@
    "en": "One of your device’s own voices reads; the app records and sends nothing.",
    "es": "Lee una voz de tu dispositivo; la app no graba ni envía nada.",
    "where": [
-    "src/ui/settings.ts:144"
+    "src/ui/settings.ts:147"
    ]
   },
   {
@@ -11620,10 +11626,10 @@
    ]
   },
   {
-   "en": "Open source (GPL-3.0). Data keep their own licences; see public/data/*/SOURCES.md in the repository.",
-   "es": "Código abierto (GPL-3.0). Los datos conservan sus propias licencias; consulta public/data/*/SOURCES.md en el repositorio.",
+   "en": "Open source (GPL-3.0). Every map and story names its sources; the data keep their own licences.",
+   "es": "Código abierto (GPL-3.0). Cada mapa e historia nombra sus fuentes; los datos conservan sus propias licencias.",
    "where": [
-    "src/ui/settings.ts:111"
+    "src/ui/settings.ts:114"
    ]
   },
   {
@@ -11780,7 +11786,7 @@
    "en": "Out of {0}",
    "es": "De {0}",
    "where": [
-    "src/play/lifeguess.ts:127",
+    "src/play/lifeguess.ts:126",
     "src/play/pin.ts:134",
     "src/play/rounds.ts:145"
    ]
@@ -11810,7 +11816,7 @@
    "en": "Outline",
    "es": "Silueta",
    "where": [
-    "src/play/menu.ts:31",
+    "src/play/menu.ts:32",
     "src/play/outline.ts:170",
     "src/play/outline.ts:177"
    ]
@@ -12315,7 +12321,7 @@
    "en": "Pin it",
    "es": "Pon el pin",
    "where": [
-    "src/play/menu.ts:26",
+    "src/play/menu.ts:27",
     "src/play/pin.ts:127",
     "src/play/pin.ts:137"
    ]
@@ -12354,7 +12360,7 @@
    "es": "Lugares",
    "where": [
     "src/layers/timezones.ts:98",
-    "src/play/menu.ts:159",
+    "src/play/menu.ts:160",
     "src/ui/search.ts:87"
    ]
   },
@@ -12537,7 +12543,7 @@
     "src/fill/states.ts:514",
     "src/master/master.ts:1095",
     "src/onmap/onmap.ts:562",
-    "src/play/menu.ts:174"
+    "src/play/menu.ts:175"
    ]
   },
   {
@@ -12553,9 +12559,9 @@
    "where": [
     "src/learn/learn.ts:1938",
     "src/master/master.ts:864",
+    "src/master/master.ts:872",
     "src/play/chain.ts:119",
-    "src/play/hilo.ts:160",
-    "src/play/lifeguess.ts:133"
+    "src/play/hilo.ts:160"
    ]
   },
   {
@@ -12984,7 +12990,7 @@
    "en": "Read tours and stories aloud",
    "es": "Leer en voz alta las visitas guiadas y las historias",
    "where": [
-    "src/ui/settings.ts:129"
+    "src/ui/settings.ts:132"
    ]
   },
   {
@@ -13301,10 +13307,10 @@
    "es": "Resultado",
    "where": [
     "src/app/i18n.ts:196",
+    "src/app/i18n.ts:300",
     "src/learn/learn.ts:1936",
     "src/play/hilo.ts:153",
-    "src/play/lifeguess.ts:123",
-    "src/play/outline.ts:170"
+    "src/play/lifeguess.ts:122"
    ]
   },
   {
@@ -13353,7 +13359,7 @@
    "en": "Right: {0} points.",
    "es": "¡Correcto! {0} puntos.",
    "where": [
-    "src/play/lifeguess.ts:156"
+    "src/play/lifeguess.ts:155"
    ]
   },
   {
@@ -13730,17 +13736,10 @@
    "es": "Puntos",
    "where": [
     "src/play/hilo.ts:185",
-    "src/play/lifeguess.ts:152",
-    "src/play/lifeguess.ts:162",
+    "src/play/lifeguess.ts:151",
+    "src/play/lifeguess.ts:161",
     "src/play/pin.ts:151",
     "src/play/pin.ts:160"
-   ]
-  },
-  {
-   "en": "Scoring: the best route scores 1,000; yours scores 1,000 × best ÷ yours. ★★★ matches the best; ★★ is one country more (or within 15 %). Hints cost points and stars: names −150 and a map of the goal −200 leave at most ★★; each next step −300 leaves ★.",
-   "es": "Puntuación: la mejor ruta vale 1.000; la tuya, 1.000 × la mejor ÷ la tuya. ★★★ iguala la mejor; ★★ es un país más (o hasta un 15 % más). Las pistas cuestan puntos y estrellas: nombres −150 y un mapa del objetivo −200 dejan como mucho ★★; cada siguiente paso −300 deja ★.",
-   "where": [
-    "src/play/hop.ts:139"
    ]
   },
   {
@@ -13903,7 +13902,7 @@
    "en": "See five masterpieces travelling as little as you can.",
    "es": "Ve cinco obras maestras viajando lo menos posible.",
    "where": [
-    "src/play/menu.ts:32"
+    "src/play/menu.ts:33"
    ]
   },
   {
@@ -13977,7 +13976,7 @@
    "es": "Ver el resultado",
    "where": [
     "src/play/hilo.ts:181",
-    "src/play/lifeguess.ts:160",
+    "src/play/lifeguess.ts:159",
     "src/play/outline.ts:191",
     "src/play/pin.ts:158",
     "src/play/rounds.ts:173"
@@ -14733,7 +14732,7 @@
    "where": [
     "src/app/i18n.ts:164",
     "src/ui/legend.ts:130",
-    "src/ui/settings.ts:142"
+    "src/ui/settings.ts:145"
    ]
   },
   {
@@ -15041,7 +15040,7 @@
    "en": "Sunrise race",
    "es": "Carrera del amanecer",
    "where": [
-    "src/play/menu.ts:35",
+    "src/play/menu.ts:36",
     "src/play/rounds.ts:377"
    ]
   },
@@ -15978,6 +15977,13 @@
    ]
   },
   {
+   "en": "The best route scores {0} and ★★★; one country more, ★★. Hints cost points and stars: names −{1} and the goal’s map −{2} (★★ at most), a next step −{3} (★).",
+   "es": "La mejor ruta vale {0} y ★★★; un país más, ★★. Las pistas cuestan puntos y estrellas: los nombres −{1} y el mapa del objetivo −{2} (★★ como mucho), el siguiente paso −{3} (★).",
+   "where": [
+    "src/play/hop.ts:139"
+   ]
+  },
+  {
    "en": "The best-known rivers, lakes, mountain ranges, deserts, peaks, oceans and seas, drawn on the map: which is it?",
    "es": "Los ríos, lagos, cordilleras, desiertos, montañas, océanos y mares más conocidos, dibujados en el mapa: ¿cuál es?",
    "where": [
@@ -16898,7 +16904,7 @@
    "en": "This browser cannot read aloud.",
    "es": "Este navegador no puede leer en voz alta.",
    "where": [
-    "src/ui/settings.ts:122"
+    "src/ui/settings.ts:125"
    ]
   },
   {
@@ -16938,10 +16944,10 @@
    ]
   },
   {
-   "en": "This device has no English voices. You can add one in the system’s text-to-speech settings.",
-   "es": "Este dispositivo no tiene voces en español. Puedes agregar una en los ajustes de texto a voz del sistema.",
+   "en": "This device has no voices in {0}. You can add one in the system’s text-to-speech settings.",
+   "es": "Este dispositivo no tiene voces en {0}. Puedes agregar una en los ajustes de texto a voz del sistema.",
    "where": [
-    "src/ui/settings.ts:131"
+    "src/ui/settings.ts:134"
    ]
   },
   {
@@ -16984,8 +16990,8 @@
    "es": "Este juego necesita sus datos; revisa tu conexión.",
    "where": [
     "src/play/chain.ts:37",
-    "src/play/lifeguess.ts:51",
-    "src/play/lifeguess.ts:65",
+    "src/play/lifeguess.ts:50",
+    "src/play/lifeguess.ts:64",
     "src/play/names.ts:66",
     "src/play/outline.ts:65"
    ]
@@ -18068,7 +18074,7 @@
    "en": "Visit six cities in the shortest way.",
    "es": "Visita seis ciudades por el camino más corto.",
    "where": [
-    "src/play/menu.ts:28"
+    "src/play/menu.ts:29"
    ]
   },
   {
@@ -18096,8 +18102,8 @@
    "en": "Voice",
    "es": "Voz",
    "where": [
-    "src/ui/settings.ts:134",
-    "src/ui/settings.ts:141"
+    "src/ui/settings.ts:137",
+    "src/ui/settings.ts:144"
    ]
   },
   {
@@ -18266,7 +18272,7 @@
    "en": "What",
    "es": "Qué",
    "where": [
-    "src/play/menu.ts:167",
+    "src/play/menu.ts:168",
     "src/space/surface.ts:247"
    ]
   },
@@ -18538,7 +18544,7 @@
    "en": "Where (countries and capitals)",
    "es": "Dónde (países y capitales)",
    "where": [
-    "src/play/menu.ts:168"
+    "src/play/menu.ts:169"
    ]
   },
   {
@@ -18779,7 +18785,7 @@
    "en": "Where is the sun rising right now? Setting? Noon?",
    "es": "¿Dónde sale el sol ahora mismo? ¿Dónde se pone? ¿Dónde es mediodía?",
    "where": [
-    "src/play/menu.ts:35"
+    "src/play/menu.ts:36"
    ]
   },
   {
@@ -19510,7 +19516,7 @@
    "en": "Which of two countries has more…? Keep the run going.",
    "es": "¿Cuál de dos países tiene más…? Mantén la racha.",
    "where": [
-    "src/play/menu.ts:27"
+    "src/play/menu.ts:28"
    ]
   },
   {
@@ -19688,16 +19694,16 @@
    "en": "Whose life is this?",
    "es": "¿De quién es esta vida?",
    "where": [
-    "src/play/lifeguess.ts:123",
-    "src/play/lifeguess.ts:132",
-    "src/play/menu.ts:36"
+    "src/play/lifeguess.ts:122",
+    "src/play/lifeguess.ts:131",
+    "src/play/menu.ts:37"
    ]
   },
   {
    "en": "Whose life passed through these places?",
    "es": "¿Por estos lugares pasó la vida de quién?",
    "where": [
-    "src/play/lifeguess.ts:139"
+    "src/play/lifeguess.ts:138"
    ]
   },
   {
@@ -20478,7 +20484,7 @@
    "en": "after {0, plural, one {# place} other {# places}}",
    "es": "con {0, plural, one {# lugar} other {# lugares}}",
    "where": [
-    "src/play/lifeguess.ts:129"
+    "src/play/lifeguess.ts:128"
    ]
   },
   {
@@ -21192,7 +21198,7 @@
    "en": "missed",
    "es": "fallada",
    "where": [
-    "src/play/lifeguess.ts:129"
+    "src/play/lifeguess.ts:128"
    ]
   },
   {
@@ -21494,7 +21500,7 @@
     "src/play/hilo.ts:156",
     "src/play/hop.ts:390",
     "src/play/hop.ts:429",
-    "src/play/lifeguess.ts:127"
+    "src/play/lifeguess.ts:126"
    ]
   },
   {
@@ -22060,6 +22066,8 @@
    "where": [
     "src/learn/learn.ts:147",
     "src/master/master.ts:1031",
+    "src/master/master.ts:1160",
+    "src/master/master.ts:1203",
     "src/today/today.ts:86"
    ]
   },
@@ -22340,14 +22348,6 @@
    "es": "hace {0} días",
    "where": [
     "src/layers/packs/live.ts:31"
-   ]
-  },
-  {
-   "en": "{0} days in a row",
-   "es": "{0} días seguidos",
-   "where": [
-    "src/master/master.ts:1160",
-    "src/master/master.ts:1203"
    ]
   },
   {
@@ -23244,7 +23244,7 @@
    "en": "▶ Try the voice",
    "es": "▶ Probar la voz",
    "where": [
-    "src/ui/settings.ts:138"
+    "src/ui/settings.ts:141"
    ]
   },
   {

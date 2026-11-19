@@ -1,11 +1,11 @@
 // The sky's data (public/data/sky/, built by scripts/data/sky/build-sky.mjs): stars, constellations and deep-sky
 // objects, loaded once and shared by the sky view, the backdrop, search, quizzes and tours.
 import { loadJSON } from '../data/store';
-import { lang, L } from '../app/i18n';
+import { lang, L, tx } from '../app/i18n';
 import { vec, type V3, RAD } from './astro';
 
 export type Text = { en: string; es: string };
-export const tr = (t: Text | undefined) => (t ? (lang() === 'es' ? t.es : t.en) : '');
+export const tr = (t: Text | undefined) => (t ? (tx(t)) : '');
 export { L };
 
 export interface Star { hip: number; ra: number; dec: number; mag: number; bv: number; v: V3; name?: string; es?: string; desig?: string; con?: string }

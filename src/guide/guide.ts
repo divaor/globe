@@ -17,7 +17,7 @@ import type { StoryKind } from '../modes/stories';
 import { storyKind } from '../modes/stories';
 import { TOURS } from '../learn/tours';
 import { h, icon, clear } from '../ui/dom';
-import { lang, flagEmoji, fmtNumber, fmtCompact, L, dataLang, tx, Lc } from '../app/i18n';
+import { lang, flagEmoji, fmtNumber, fmtCompact, L, dataLang, tx, Lc, txs } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { km, bestMonths, monthRanges, sunTimes, tzOffset, hhmm, flightHours, hoursText, bestOrder, tripKm, tripHash, readTrip, type Climate } from './logic';
 import { planHooks, planStar, placesOf, allPlaces, movePlace, removePlace, dropCity, setPlan, tripDetails, PLACE_ICONS, type Place, type PlaceSpec } from './plan';
@@ -435,7 +435,7 @@ export class TravelGuide {
     const tabs = h('div', { class: 'chip-row guide-tabs', role: 'tablist' });
     const content = h('div', { class: 'guide-tab' });
     for (const [t, ic, label] of TABS) {
-      const b = h('button', { type: 'button', class: `chip${t === tab ? ' on' : ''}`, 'data-tab': t, role: 'tab', 'aria-selected': String(t === tab) }, `${ic} ${es() ? label.es : label.en}`);
+      const b = h('button', { type: 'button', class: `chip${t === tab ? ' on' : ''}`, 'data-tab': t, role: 'tab', 'aria-selected': String(t === tab) }, `${ic} ${tx(label)}`);
       b.addEventListener('click', () => void this.openCity(id, t));
       tabs.append(b);
     }
@@ -551,7 +551,7 @@ export class TravelGuide {
     const names = [c.name, ...c.also].map(plain);
     const tour = TOURS.find((t) => t.group === 'cities' && names.some((n) => plain(t.en) === `${n} through time`));
     if (tour) {
-      const b = h('button', { type: 'button', class: 'pill primary sm', 'data-guide': 'tour' }, icon(Compass, 15), `${tour.icon} ${es() ? tour.es : tour.en}`);
+      const b = h('button', { type: 'button', class: 'pill primary sm', 'data-guide': 'tour' }, icon(Compass, 15), `${tour.icon} ${tx(tour)}`);
       b.addEventListener('click', () => { this.picking = false; this.leftAt = 0; this.shell.sheet.close(); void this.learn.startTour(tour); });
       el.append(h('div', { class: 'tool-actions' }, b), h('p', { class: 'muted small' }, L('A guided tour of {0} through its history, {1} stops.', 'Una visita guiada por la historia de {0}, {1} paradas.', this.cityName(c), tour.steps.length)));
     }
@@ -586,7 +586,7 @@ export class TravelGuide {
           m[7] ? h('a', { href: m[7], target: '_blank', rel: 'noopener', title: L('Official site', 'Sitio oficial') }, icon(ExternalLink, 13)) : null);
         return h('div', { class: 'guide-item-wrap' }, r, links, planStar({ id: `museum:${m[0]}`, kind: 'museum', city: c.id, n: [m[1], m[2]], at: m[6] ?? undefined, url: m[7] ?? `https://www.wikidata.org/wiki/Special:GoToLinkedPage/${lang()}wiki/${m[0]}` }));
       });
-      this.section(el, es() ? label.es : label.en, rows);
+      this.section(el, tx(label), rows);
     }
     el.append(h('p', { class: 'muted small' }, L('Museums within a few km of the centre, the best known first (from Wikidata, CC0). Visitor numbers where Wikidata has them.', 'Museos a pocos km del centro, los más conocidos primero (de Wikidata, CC0). Visitantes cuando Wikidata los tiene.')));
   }
@@ -633,7 +633,7 @@ export class TravelGuide {
     const svg = document.createElementNS(NS, 'svg');
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'guide-chart'); svg.setAttribute('role', 'img');
     const el = (tag: string, a: Record<string, string | number>, text?: string) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(a)) e.setAttribute(k, String(v)); if (text) e.textContent = text; svg.append(e); return e; };
-    const m = es() ? MONTHS.es : MONTHS.en;
+    const m = txs(MONTHS);
     for (let i = 0; i < 12; i++) {
       const x = left + i * cw;
       if (best.includes(i)) el('rect', { x: x + 1, y: 2, width: cw - 2, height: H - bottom + 2, rx: 4, class: 'gc-best' });
@@ -644,7 +644,7 @@ export class TravelGuide {
       el('text', { x: x + cw / 2, y: ty(hi[i]) - 4, 'text-anchor': 'middle', class: 'gc-temp' }, String(Math.round(cl.t[i] / 10)));
     }
     el('polyline', { points: cl.t.map((t, i) => `${left + i * cw + cw / 2},${ty(t / 10)}`).join(' '), class: 'gc-line' });
-    const names = es() ? MONTH_NAMES.es : MONTH_NAMES.en;
+    const names = txs(MONTH_NAMES);
     const ranges = monthRanges(best).map(([a, b]) => (a === b ? names[a] : `${names[a]}–${names[b]}`));
     const hot = Math.max(...hi), cold = Math.min(...lo), rain = cl.p.reduce((s, x) => s + x, 0);
     return h('div', { class: 'guide-weather', 'data-guide': 'weather' },
@@ -660,7 +660,7 @@ export class TravelGuide {
     const kinds = [...new Set(g.history.map((r) => r[0]))];
     for (const k of kinds) {
       const info = storyKind(k);
-      this.section(el, `${info.icon} ${es() ? info.name.es : info.name.en}`, g.history.filter((r) => r[0] === k).map((r) => this.row(r[3], es() ? r[5] : r[4], this.year(r[8]),
+      this.section(el, `${info.icon} ${tx(info.name)}`, g.history.filter((r) => r[0] === k).map((r) => this.row(r[3], es() ? r[5] : r[4], this.year(r[8]),
         () => this.openStory(r[0], r[1], r[2], es() ? r[5] : r[4], [r[6], r[7]]), { 'data-history': `${r[0]}/${r[1]}` })));
     }
     el.append(h('p', { class: 'muted small' }, L('What the Time travel stories tell of this place: tap one to open its story at that step.', 'Lo que cuentan de este lugar las historias de Viaje en el tiempo: toca una para abrirla en ese paso.')));
@@ -726,8 +726,8 @@ export class TravelGuide {
       if (ps.length) sec.append(h('p', null, h('strong', null, `★ ${L('My places', 'Mis lugares')}: `), ps.map((p) => { const w = (p.why ?? []).map((x) => (es() ? x.t[1] : x.t[0])).join(', '); return `${PLACE_ICONS[p.kind]} ${es() ? p.n[1] : p.n[0]}${w ? ` (${w})` : ''}`; }).join(' · ')));
       if (i > 0) { const d = km(this.byId.get(this.trip[i - 1])!.at, c.at); sec.append(h('p', null, `✈️ ${fmtNumber(Math.round(d))} km · ${L('about', 'unas')} ${hoursText(flightHours(d))}`)); }
       if (c.climate) {
-        const best = monthRanges(bestMonths(c.climate)).map(([a, b]) => { const n = es() ? MONTH_NAMES.es : MONTH_NAMES.en; return a === b ? n[a] : `${n[a]}–${n[b]}`; });
-        const m = es() ? MONTHS.es : MONTHS.en;
+        const best = monthRanges(bestMonths(c.climate)).map(([a, b]) => { const n = txs(MONTH_NAMES); return a === b ? n[a] : `${n[a]}–${n[b]}`; });
+        const m = txs(MONTHS);
         sec.append(h('p', null, `${L('Best months', 'Mejores meses')}: ${best.join(', ') || '—'} · ${c.climate.t.map((t, k) => `${m[k]} ${Math.round(t / 10)}°`).join(' ')}`));
       }
       if (g) {

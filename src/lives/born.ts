@@ -3,7 +3,7 @@
 // use it. A person with a life in Lives on the map opens it; everyone else gets a short card and their Wikipedia
 // article. Living people appear by birthplace only.
 import { loadJSON } from '../data/store';
-import { lang, L } from '../app/i18n';
+import { lang, L, tx } from '../app/i18n';
 import type { InfoRow } from '../layers/types';
 
 const es = () => lang() === 'es';
@@ -32,7 +32,7 @@ export const FIELDS: Record<string, { icon: string; color: string; name: { en: s
   explore: { icon: '🧭', color: '#1098ad', name: { en: 'Explorers', es: 'Exploradores' } },
   other: { icon: '👤', color: '#868e96', name: { en: 'Others', es: 'Otros' } },
 };
-export const fieldName = (f: string) => (es() ? FIELDS[f]?.name.es : FIELDS[f]?.name.en) ?? f;
+export const fieldName = (f: string) => (FIELDS[f] ? tx(FIELDS[f].name) : f);
 export const nm = (x: { name: [string, string] }) => (es() ? x.name[1] : x.name[0]);
 /** "Brazilian footballer" ("futbolista brasileño"), or the field when Wikidata says nothing. */
 export const what = (p: Person) => { const w = es() ? p.what[1] : p.what[0]; return w ? w.charAt(0).toUpperCase() + w.slice(1) : fieldName(p.field); };
