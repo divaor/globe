@@ -12,7 +12,7 @@
 //
 // Outlines needs no file: it asks the countries of public/data/master/deck.json.
 //   node scripts/data/master/build-decks.mjs            build
-//   node scripts/data/master/build-decks.mjs --check    the files against what they should hold (no network)
+//   node scripts/data/master/build-decks.mjs --check    the files as committed: what each question needs (no network, no cache)
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -201,12 +201,45 @@ async function build() {
   return Object.fromEntries(Object.entries(out).map(([k, v]) => [k, JSON.stringify(v)]));
 }
 
-const files = await build();
-if (process.argv.includes('--check')) {
-  const stale = Object.entries(files).filter(([k, v]) => !fs.existsSync(path.join(OUT, k)) || fs.readFileSync(path.join(OUT, k), 'utf8') !== v).map(([k]) => k);
-  if (stale.length) { console.log(`out of date: ${stale.join(', ')} (node scripts/data/master/build-decks.mjs)`); process.exit(1); }
-  console.log('Master the world\'s Big cities, Landmarks and Rivers, mountains and seas are up to date');
-} else {
+/** The files as committed, checked with no network and no cache (CI has neither): what each card needs to be asked. */
+function check() {
+  const errs = [];
+  const read = (f) => JSON.parse(fs.readFileSync(path.join(OUT, f), 'utf8'));
+  const meta = J('public/data/base/countries-meta.json');
+  const cities = read('cities.json').cities, ids = new Set(cities.map((c) => c[0]));
+  if (cities.length !== CITIES) errs.push(`cities.json: ${cities.length} cities, not ${CITIES}`);
+  for (const c of cities) {
+    if (!c[1] || !Number.isFinite(c[3]) || !Number.isFinite(c[4]) || !meta[c[5]] || !c[6]) errs.push(`city ${c[0]}: a name, point, country or continent missing`);
+    if (c[10]?.length !== 6 || c[10].some((n) => !ids.has(n) || n === c[0])) errs.push(`city ${c[0]}: its six nearest are not six cities of the deck`);
+  }
+  const sites = read('landmarks.json').sites;
+  if (sites.length !== LANDMARKS) errs.push(`landmarks.json: ${sites.length} sites, not ${LANDMARKS}`);
+  for (const r of MUST) if (!sites.some((x) => x[0] === `w${r}`)) errs.push(`landmarks: the world-famous site ${r} is missing`);
+  for (const x of sites) {
+    if (!x[1] || !x[9] || !Array.isArray(x[5]) || !x[5].length || x[5].length > 2 || x[5].some((c) => !meta[c])) errs.push(`site ${x[0]}: a name, picture or country missing, or in more than two countries`);
+    // Its name does not give its country away.
+    const said = x[5].filter((c) => [meta[c]?.n, meta[c]?.es].some((n) => n && new RegExp(`(^|[^a-z])${norm(n).replace(/ /g, '[^a-z]+')}([^a-z]|$)`).test(norm(`${x[1]} ${x[2] || ''}`))));
+    if (said.length) errs.push(`site ${x[0]} ${x[1]}: its name says ${said.join(', ')}`);
+  }
+  const nat = read('nature.json'), items = nat.items;
+  const shapes = new Set();
+  for (const obj of Object.values(nat.shapes.objects)) for (const f of feature(nat.shapes, obj).features) shapes.add(f.properties.i);
+  const want = Object.entries(NATURE).reduce((n, [, l]) => n + l.length, 0);
+  if (items.length !== want) errs.push(`nature.json: ${items.length} places, not the ${want} picked`);
+  items.forEach((it, i) => {
+    const [kind, en, , lon, lat, cc, , , shape, near] = it;
+    if (!en || !Number.isFinite(lon) || !Number.isFinite(lat) || !Array.isArray(cc)) errs.push(`place ${i} ${en}: a name, point or countries missing`);
+    if ((kind === 'peak') !== (shape < 0) || (shape >= 0 && !shapes.has(shape))) errs.push(`place ${i} ${en}: its shape is missing`);
+    if (near?.length !== 5 || near.some((k) => !items[k] || k === i)) errs.push(`place ${i} ${en}: its five nearest are not five places of the deck`);
+  });
+  for (const e of errs.slice(0, 20)) console.log(`  ${e}`);
+  if (errs.length) { console.log(`${errs.length} problems in Master the world's new decks`); process.exit(1); }
+  console.log(`Master the world's new decks: ${cities.length} big cities, ${sites.length} landmarks, ${items.length} rivers, mountains and seas, each with what its questions need`);
+}
+
+if (process.argv.includes('--check')) check();
+else {
+  const files = await build();
   for (const [k, v] of Object.entries(files)) fs.writeFileSync(path.join(OUT, k), v);
   const c = JSON.parse(files['cities.json']).cities, l = JSON.parse(files['landmarks.json']).sites, n = JSON.parse(files['nature.json']).items;
   const count = (rows, i) => Object.entries(rows.reduce((m, r) => ((m[r[i] || 'world'] = (m[r[i] || 'world'] ?? 0) + 1), m), {})).map(([k, v]) => `${k} ${v}`).join(', ');
