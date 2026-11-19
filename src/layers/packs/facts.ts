@@ -4,7 +4,7 @@
 import { categorical } from '../../engine/colors';
 import { CURATED, P } from '../factsCurated';
 import { loadJSON, dataUrl } from '../../data/store';
-import { lang, fmtNumber, fmtCompact, fmtMoney, tx, t, L, nm } from '../../app/i18n';
+import { lang, fmtNumber, fmtCompact, fmtMoney, tx, t, L, nm, fileLang, appLocale } from '../../app/i18n';
 import { categoricalLayer, numericLayer, type CategoryInfo } from '../choropleth';
 import { LC } from '../context';
 import type { App } from '../../app/app';
@@ -42,7 +42,8 @@ function fieldLayerDef(key: string, f: Field): LayerDef | null {
   const base = {
     id: `fact-${key}`, category: c.cat ?? GROUP_CAT[f.group] ?? 'fun', icon: c.icon ?? '📊',
     name: { en: f.label_en, es: f.label_es },
-    desc: { en: `${f.label_en}${f.year ? ` (${f.year})` : ''}.${f.unit ? ` In ${f.unit}.` : ''}`, es: `${f.label_es}${f.year ? ` (${f.year})` : ''}.${f.unit_es ?? f.unit ? ` En ${f.unit_es ?? f.unit}.` : ''}` },
+    // In a language read from files the description is written when it is shown, from the translated name and unit.
+    desc: { get en() { return fileLang() ? `${nm(f.label_en)}${f.year ? ` (${f.year})` : ''}${f.unit ? ` · ${nm(f.unit)}` : ''}` : `${f.label_en}${f.year ? ` (${f.year})` : ''}.${f.unit ? ` In ${f.unit}.` : ''}`; }, es: `${f.label_es}${f.year ? ` (${f.year})` : ''}.${f.unit_es ?? f.unit ? ` En ${f.unit_es ?? f.unit}.` : ''}` },
     keywords: `${key.replace(/_/g, ' ')} ${c.keywords ?? ''}`, credit: credit(f),
     note: f.note ? { en: f.note, es: f.note } : undefined,
   };
@@ -62,7 +63,12 @@ function fieldLayerDef(key: string, f: Field): LayerDef | null {
       order: ['yes', 'no'],
     });
   }
-  const cats = () => Object.fromEntries(Object.entries(f.categories ?? {}).map(([k, v]) => [k, { ...v, color: c.colors?.[k] ?? v.color, icon: v.emoji ?? v.icon }]));
+  // Currencies and languages by their codes: in a language read from files, the phone's own names for them.
+  const cats = () => {
+    const own = fileLang() && (key === 'currency' || key === 'languages') ? new Intl.DisplayNames([appLocale()], { type: key === 'currency' ? 'currency' : 'language' }) : null;
+    const ownName = (k: string, en: string) => { try { const n = own?.of(k); return n && n !== k ? n.charAt(0).toLocaleUpperCase(appLocale()) + n.slice(1) : en; } catch { return en; } };
+    return Object.fromEntries(Object.entries(f.categories ?? {}).map(([k, v]) => [k, { ...v, ...(own ? { en: ownName(k, v.en) } : {}), color: c.colors?.[k] ?? v.color, icon: v.emoji ?? v.icon }]));
+  };
   return categoricalLayer({ ...base, values: values(key), categories: cats, order: c.order, listInCard: f.type === 'list', maxLegend: c.maxLegend });
 }
 

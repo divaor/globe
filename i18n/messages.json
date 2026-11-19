@@ -320,7 +320,7 @@
    "en": "46 alliances and organisations, from the UN, NATO and the EU to BRICS, OPEC, ASEAN, the African Union, Mercosur and the Commonwealth. Pick one, or compare two.",
    "es": "46 alianzas y organizaciones, de la ONU, la OTAN y la UE a los BRICS, la OPEP, la ASEAN, la Unión Africana, Mercosur y la Commonwealth. Elige una o compara dos.",
    "where": [
-    "src/layers/packs/facts.ts:451"
+    "src/layers/packs/facts.ts:457"
    ]
   },
   {
@@ -1297,7 +1297,7 @@
    "en": "AD {0}",
    "es": "{0} d. C.",
    "where": [
-    "src/modes/stories.ts:310"
+    "src/modes/stories.ts:334"
    ]
   },
   {
@@ -2056,7 +2056,7 @@
    "en": "Alliances and organisations",
    "es": "Alianzas y organizaciones",
    "where": [
-    "src/layers/packs/facts.ts:450"
+    "src/layers/packs/facts.ts:456"
    ]
   },
   {
@@ -4094,7 +4094,7 @@
    "en": "Branch",
    "es": "Rama",
    "where": [
-    "src/layers/packs/facts.ts:82"
+    "src/layers/packs/facts.ts:88"
    ]
   },
   {
@@ -4391,7 +4391,7 @@
    "en": "C (Europlug) fits most E, F, J, K and L sockets too.",
    "es": "El C (europeo) también entra en la mayoría de tomas E, F, J, K y L.",
    "where": [
-    "src/layers/packs/facts.ts:208"
+    "src/layers/packs/facts.ts:214"
    ]
   },
   {
@@ -4980,7 +4980,7 @@
    "en": "Close and go back to the list",
    "es": "Cerrar y volver a la lista",
    "where": [
-    "src/modes/stories.ts:1579"
+    "src/modes/stories.ts:1604"
    ]
   },
   {
@@ -5150,7 +5150,7 @@
    "en": "Colours",
    "es": "Colores",
    "where": [
-    "src/layers/packs/facts.ts:384",
+    "src/layers/packs/facts.ts:390",
     "src/mydata/panel.ts:129"
    ]
   },
@@ -5219,7 +5219,7 @@
    "en": "Compare with",
    "es": "Comparar con",
    "where": [
-    "src/layers/packs/facts.ts:136"
+    "src/layers/packs/facts.ts:142"
    ]
   },
   {
@@ -6743,7 +6743,7 @@
    "en": "Each country striped with its national colours.",
    "es": "Cada país a rayas con sus colores nacionales.",
    "where": [
-    "src/layers/packs/facts.ts:366"
+    "src/layers/packs/facts.ts:372"
    ]
   },
   {
@@ -7064,7 +7064,7 @@
    "en": "Electricity",
    "es": "Electricidad",
    "where": [
-    "src/layers/packs/facts.ts:415"
+    "src/layers/packs/facts.ts:421"
    ]
   },
   {
@@ -7450,7 +7450,7 @@
    "en": "Every combination",
    "es": "Todas las combinaciones",
    "where": [
-    "src/layers/packs/facts.ts:188"
+    "src/layers/packs/facts.ts:194"
    ]
   },
   {
@@ -7506,7 +7506,7 @@
    "en": "Every country painted with its own flag.",
    "es": "Cada país pintado con su propia bandera.",
    "where": [
-    "src/layers/packs/facts.ts:336"
+    "src/layers/packs/facts.ts:342"
    ]
   },
   {
@@ -8286,7 +8286,7 @@
    "en": "Flags on the map",
    "es": "Banderas en el mapa",
    "where": [
-    "src/layers/packs/facts.ts:335"
+    "src/layers/packs/facts.ts:341"
    ]
   },
   {
@@ -9813,7 +9813,7 @@
    "es": "Punto más alto",
    "where": [
     "src/fill/fill.ts:69",
-    "src/layers/packs/facts.ts:409",
+    "src/layers/packs/facts.ts:415",
     "src/tools/tools.ts:169"
    ]
   },
@@ -12136,7 +12136,7 @@
    "es": "Idioma",
    "where": [
     "src/app/i18n.ts:47",
-    "src/layers/packs/facts.ts:88",
+    "src/layers/packs/facts.ts:94",
     "src/ui/welcome.ts:36",
     "src/ui/welcome.ts:45"
    ]
@@ -12145,7 +12145,7 @@
    "en": "Language family",
    "es": "Familia lingüística",
    "where": [
-    "src/layers/packs/facts.ts:81"
+    "src/layers/packs/facts.ts:87"
    ]
   },
   {
@@ -12169,7 +12169,7 @@
     "src/app/i18n.ts:88",
     "src/fill/fill.ts:42",
     "src/guide/guide.ts:602",
-    "src/layers/packs/facts.ts:75"
+    "src/layers/packs/facts.ts:81"
    ]
   },
   {
@@ -13200,7 +13200,7 @@
    "en": "Main language",
    "es": "Lengua principal",
    "where": [
-    "src/layers/packs/facts.ts:80",
+    "src/layers/packs/facts.ts:86",
     "src/layers/packs/regional.ts:240"
    ]
   },
@@ -13208,7 +13208,7 @@
    "en": "Main language, language families and branches of every country.",
    "es": "Lengua principal, familias y ramas lingüísticas de cada país.",
    "where": [
-    "src/layers/packs/facts.ts:76"
+    "src/layers/packs/facts.ts:82"
    ]
   },
   {
@@ -13798,7 +13798,7 @@
    "en": "Member of",
    "es": "Miembro de",
    "where": [
-    "src/layers/packs/facts.ts:452"
+    "src/layers/packs/facts.ts:458"
    ]
   },
   {
@@ -14676,14 +14676,14 @@
    "en": "National animals",
    "es": "Animales nacionales",
    "where": [
-    "src/layers/packs/facts.ts:285"
+    "src/layers/packs/facts.ts:291"
    ]
   },
   {
    "en": "National colours",
    "es": "Colores nacionales",
    "where": [
-    "src/layers/packs/facts.ts:365"
+    "src/layers/packs/facts.ts:371"
    ]
   },
   {
@@ -14752,14 +14752,14 @@
    "en": "Natural resources",
    "es": "Recursos naturales",
    "where": [
-    "src/layers/packs/facts.ts:458"
+    "src/layers/packs/facts.ts:464"
    ]
   },
   {
    "en": "Natural resources: top producers",
    "es": "Recursos naturales: mayores productores",
    "where": [
-    "src/layers/packs/facts.ts:239"
+    "src/layers/packs/facts.ts:245"
    ]
   },
   {
@@ -15104,7 +15104,7 @@
     "src/artguide/cards.ts:27",
     "src/green/cards.ts:64",
     "src/guide/guide.ts:153",
-    "src/modes/stories.ts:714",
+    "src/modes/stories.ts:738",
     "src/ocean/deep.ts:86"
    ]
   },
@@ -15238,7 +15238,7 @@
    "es": "No",
    "where": [
     "src/compare/model.ts:101",
-    "src/layers/packs/facts.ts:61"
+    "src/layers/packs/facts.ts:62"
    ]
   },
   {
@@ -15478,7 +15478,7 @@
    "en": "None",
    "es": "Ninguna",
    "where": [
-    "src/layers/packs/facts.ts:160",
+    "src/layers/packs/facts.ts:166",
     "src/layers/packs/regional.ts:247"
    ]
   },
@@ -15734,7 +15734,7 @@
    "en": "Nothing",
    "es": "Nada",
    "where": [
-    "src/layers/packs/facts.ts:137"
+    "src/layers/packs/facts.ts:143"
    ]
   },
   {
@@ -15806,7 +15806,7 @@
    "es": "Hoy en",
    "where": [
     "src/artguide/cards.ts:32",
-    "src/modes/stories.ts:1513"
+    "src/modes/stories.ts:1538"
    ]
   },
   {
@@ -16617,7 +16617,7 @@
    "en": "Organisation",
    "es": "Organización",
    "where": [
-    "src/layers/packs/facts.ts:452"
+    "src/layers/packs/facts.ts:458"
    ]
   },
   {
@@ -16653,7 +16653,7 @@
    "es": "Otras combinaciones",
    "where": [
     "src/compare/compare.ts:182",
-    "src/layers/packs/facts.ts:203"
+    "src/layers/packs/facts.ts:209"
    ]
   },
   {
@@ -17317,7 +17317,7 @@
    "en": "Pick a natural resource and see every country that has it, or compare two.",
    "es": "Elige un recurso natural y mira todos los países que lo tienen, o compara dos.",
    "where": [
-    "src/layers/packs/facts.ts:457"
+    "src/layers/packs/facts.ts:463"
    ]
   },
   {
@@ -17866,7 +17866,7 @@
    "en": "Plug types",
    "es": "Tipos de enchufe",
    "where": [
-    "src/layers/packs/facts.ts:183"
+    "src/layers/packs/facts.ts:189"
    ]
   },
   {
@@ -17874,7 +17874,7 @@
    "es": "Enchufes",
    "where": [
     "src/guide/guide.ts:606",
-    "src/layers/packs/facts.ts:222"
+    "src/layers/packs/facts.ts:228"
    ]
   },
   {
@@ -18296,7 +18296,7 @@
    "es": "Leer en voz alta",
    "where": [
     "src/learn/learn.ts:2584",
-    "src/modes/stories.ts:1705",
+    "src/modes/stories.ts:1730",
     "src/ui/ambient.ts:75"
    ]
   },
@@ -18661,8 +18661,8 @@
    "en": "Resource",
    "es": "Recurso",
    "where": [
-    "src/layers/packs/facts.ts:243",
-    "src/layers/packs/facts.ts:458"
+    "src/layers/packs/facts.ts:249",
+    "src/layers/packs/facts.ts:464"
    ]
   },
   {
@@ -19751,7 +19751,7 @@
    "en": "Share of world production",
    "es": "Parte de la producción mundial",
    "where": [
-    "src/layers/packs/facts.ts:245"
+    "src/layers/packs/facts.ts:251"
    ]
   },
   {
@@ -19872,8 +19872,8 @@
    "where": [
     "src/layers/packs/born.ts:95",
     "src/layers/packs/earth.ts:228",
-    "src/layers/packs/facts.ts:79",
-    "src/layers/packs/facts.ts:187",
+    "src/layers/packs/facts.ts:85",
+    "src/layers/packs/facts.ts:193",
     "src/layers/packs/green.ts:229"
    ]
   },
@@ -20923,7 +20923,7 @@
    "es": "Dejar de leer en voz alta",
    "where": [
     "src/learn/learn.ts:2584",
-    "src/modes/stories.ts:1705"
+    "src/modes/stories.ts:1730"
    ]
   },
   {
@@ -20944,7 +20944,7 @@
    "en": "Stories step by step.",
    "es": "Historias paso a paso.",
    "where": [
-    "src/modes/stories.ts:446"
+    "src/modes/stories.ts:470"
    ]
   },
   {
@@ -23614,7 +23614,7 @@
    "where": [
     "src/artguide/cards.ts:38",
     "src/artguide/cards.ts:51",
-    "src/modes/stories.ts:1514"
+    "src/modes/stories.ts:1539"
    ]
   },
   {
@@ -24475,7 +24475,7 @@
    "en": "The national animal of each country, shown with its emoji.",
    "es": "El animal nacional de cada país, con su emoji.",
    "where": [
-    "src/layers/packs/facts.ts:286"
+    "src/layers/packs/facts.ts:292"
    ]
   },
   {
@@ -25981,7 +25981,7 @@
    "en": "Top producers",
    "es": "Mayores productores",
    "where": [
-    "src/layers/packs/facts.ts:273"
+    "src/layers/packs/facts.ts:279"
    ]
   },
   {
@@ -27795,7 +27795,7 @@
    "en": "Where is it found?",
    "es": "¿Dónde se encuentra?",
    "where": [
-    "src/layers/packs/facts.ts:456"
+    "src/layers/packs/facts.ts:462"
    ]
   },
   {
@@ -28603,7 +28603,7 @@
    "en": "Which plugs and sockets each country uses (types A to O): what adapter to pack.",
    "es": "Qué enchufes y tomas usa cada país (tipos A a O): qué adaptador llevar.",
    "where": [
-    "src/layers/packs/facts.ts:184"
+    "src/layers/packs/facts.ts:190"
    ]
   },
   {
@@ -28725,7 +28725,7 @@
    "en": "Who produces the world’s oil, gas, coal, gold, lithium, cobalt, rare earths, diamonds and more.",
    "es": "Quién produce el petróleo, gas, carbón, oro, litio, cobalto, tierras raras, diamantes y más del mundo.",
    "where": [
-    "src/layers/packs/facts.ts:240"
+    "src/layers/packs/facts.ts:246"
    ]
   },
   {
@@ -29195,7 +29195,7 @@
    "es": "Sí",
    "where": [
     "src/compare/model.ts:101",
-    "src/layers/packs/facts.ts:61",
+    "src/layers/packs/facts.ts:62",
     "src/wild/cards.ts:90"
    ]
   },
@@ -29955,7 +29955,7 @@
    "es": "h. ",
    "where": [
     "src/lives/lives.ts:25",
-    "src/modes/stories.ts:1792"
+    "src/modes/stories.ts:1817"
    ]
   },
   {
@@ -30729,7 +30729,7 @@
    "en": "plugs",
    "es": "enchufes",
    "where": [
-    "src/layers/packs/facts.ts:415"
+    "src/layers/packs/facts.ts:421"
    ]
   },
   {
@@ -31152,7 +31152,7 @@
    "es": "tipo",
    "where": [
     "src/guide/guide.ts:606",
-    "src/layers/packs/facts.ts:222"
+    "src/layers/packs/facts.ts:228"
    ]
   },
   {
@@ -31236,7 +31236,7 @@
    "es": "años",
    "where": [
     "src/compare/compare.ts:264",
-    "src/layers/packs/facts.ts:405"
+    "src/layers/packs/facts.ts:411"
    ]
   },
   {
@@ -32294,14 +32294,14 @@
    "en": "{0} BC",
    "es": "{0} a. C.",
    "where": [
-    "src/modes/stories.ts:310"
+    "src/modes/stories.ts:334"
    ]
   },
   {
    "en": "{0} BC – AD {1}",
    "es": "{0} a. C. – {1} d. C.",
    "where": [
-    "src/modes/stories.ts:334"
+    "src/modes/stories.ts:358"
    ]
   },
   {
@@ -32336,7 +32336,7 @@
    "en": "{0}–{1} BC",
    "es": "{0}–{1} a. C.",
    "where": [
-    "src/modes/stories.ts:333"
+    "src/modes/stories.ts:357"
    ]
   },
   {
@@ -32703,14 +32703,14 @@
    "en": "🇪🇺 Europe",
    "es": "🇪🇺 Europa",
    "where": [
-    "src/layers/packs/facts.ts:443"
+    "src/layers/packs/facts.ts:449"
    ]
   },
   {
    "en": "🌍 Africa",
    "es": "🌍 África",
    "where": [
-    "src/layers/packs/facts.ts:445"
+    "src/layers/packs/facts.ts:451"
    ]
   },
   {
@@ -32731,35 +32731,35 @@
    "en": "🌎 Americas",
    "es": "🌎 América",
    "where": [
-    "src/layers/packs/facts.ts:444"
+    "src/layers/packs/facts.ts:450"
    ]
   },
   {
    "en": "🌏 Asia and Pacific",
    "es": "🌏 Asia y Pacífico",
    "where": [
-    "src/layers/packs/facts.ts:447"
+    "src/layers/packs/facts.ts:453"
    ]
   },
   {
    "en": "🌐 Worldwide",
    "es": "🌐 Mundiales",
    "where": [
-    "src/layers/packs/facts.ts:440"
+    "src/layers/packs/facts.ts:446"
    ]
   },
   {
    "en": "🏔️ Eurasia",
    "es": "🏔️ Eurasia",
    "where": [
-    "src/layers/packs/facts.ts:448"
+    "src/layers/packs/facts.ts:454"
    ]
   },
   {
    "en": "💼 Economic clubs",
    "es": "💼 Clubes económicos",
    "where": [
-    "src/layers/packs/facts.ts:441"
+    "src/layers/packs/facts.ts:447"
    ]
   },
   {
@@ -32844,7 +32844,7 @@
    "en": "🕌 Middle East",
    "es": "🕌 Oriente Medio",
    "where": [
-    "src/layers/packs/facts.ts:446"
+    "src/layers/packs/facts.ts:452"
    ]
   },
   {
@@ -32858,7 +32858,7 @@
    "en": "🛡️ Military and security",
    "es": "🛡️ Militares y de seguridad",
    "where": [
-    "src/layers/packs/facts.ts:442"
+    "src/layers/packs/facts.ts:448"
    ]
   },
   {
