@@ -89,5 +89,26 @@ check(cs.length === 195 && cs.filter((x) => x.cap && !x.skip).length === 194 && 
 check(cs.every((x) => x.like.length >= 3 && x.land.length + x.near.length >= 3), 'every country has three look-alike flags and three neighbours');
 check(all.length - cs.length >= 15 && all.filter((x) => x.t).every((x) => x.like.length >= 3), `and ${all.length - cs.length} territories, for the setting that adds them`);
 
+// The State capitals deck (v0.38.1): a card per state with a capital to ask, country by country.
+const db = await rolldown({ input: path.join(ROOT, 'src/master/decks.ts'), platform: 'neutral', logLevel: 'silent' });
+const Dk = await import(`data:text/javascript;base64,${Buffer.from((await db.generate({ format: 'esm' })).output[0].code).toString('base64')}`);
+const sj = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/states/states.json'), 'utf8')).countries;
+const sd = Dk.stateDeck(sj), sById = new Map(sd.map((c) => [c.id, c]));
+const perCountry = Object.fromEntries(Object.keys(sj).map((a3) => [a3, sd.filter((c) => c.ct === a3).length]));
+check(sd.length >= 280 && Object.keys(sj).length === 12 && Object.values(perCountry).every((n) => n >= 7), `State capitals: ${sd.length} states in 12 countries (${Object.entries(perCountry).map(([a, n]) => `${a} ${n}`).join(', ')})`);
+check(!sById.has('MEX|MX-DIF') && !sById.has('DEU|DE-BE') && !sById.has('USA|US-DC') && sById.get('MEX|MX-JAL')?.cap.en === 'Guadalajara' && sById.get('COL|COL-1398')?.cap.en === 'Bogotá',
+  `a city of its own (Mexico City, Berlin, Washington) has no card; Jalisco's capital is ${sById.get('MEX|MX-JAL')?.cap.en}, Cundinamarca's ${sById.get('COL|COL-1398')?.cap.en}`);
+check(sd.every((c) => c.cap && c.cities.length >= 1 && c.near.length >= 3 && c.near.every((n) => sById.get(n)?.ct === c.ct)), 'every state: a capital, another city, and three or more of the same country to pick among');
+const usa = sd.filter((c) => c.ct === 'USA').sort((a, b) => b.fame - a.fame);
+check(usa[0].id === 'USA|US-CA' && sById.get('ESP|ES-CanaryIs')?.note?.en.includes('Las Palmas'), `the most populous first (${usa[0].id}); a shared capital explained (the Canaries)`);
+const oc = S.ordered(sd.map((c) => ({ id: c.id, name: c.id, ct: c.ct, fame: c.fame, pop: c.pop })), 'continent');
+const runs = oc.map((id) => sById.get(id).ct).filter((ct, i, a) => ct !== a[i - 1]);
+check(runs.length === 12, `"Country by country": the twelve one after another (${runs.join(' ')})`);
+const scope = new Map(Dk.statesIn(sd, 'CHL').map((c) => [c.id, c]));
+const qf = Dk.question('states', sById.get('CHL|CL-VS'), 'pick', false, scope, S.rng(3));
+const qr = Dk.question('states', sById.get('CHL|CL-VS'), 'pick', true, scope, S.rng(3));
+check(qf.places[0].en === 'Valparaíso' && qf.places.length === 3 && qr.options.length === 4 && qr.options.includes('CHL|CL-VS') && qr.options.every((o) => o.startsWith('CHL|')),
+  `asked like a capital: Valparaíso among ${qf.places.length} dots; the other way round, among four Chilean regions (${qr.options.join(' ')})`);
+
 console.log(failed ? `\n${failed} check(s) failed` : '\nmaster checks passed');
 process.exit(failed ? 1 : 0);

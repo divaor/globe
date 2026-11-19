@@ -60,3 +60,26 @@ SELECT ?gn ?item ?en ?es ?pop ?date WHERE {
   OPTIONAL { ?item p:P1082 ?ps . ?ps ps:P1082 ?pop ; wikibase:rank ?rank . FILTER(?rank != wikibase:DeprecatedRank) OPTIONAL { ?ps pq:P585 ?date } }
 }`);
 }
+
+/** v0.38.1: the people of the place an item lies in (P131), with that place's English name: a GeoNames town can be
+ *  its own item with no count, while its municipality, of the same name, has it (Londrina, Joinville). */
+export async function upPeople(items, tag) {
+  return ask(CACHE, tag, `
+SELECT ?item ?up ?upEn ?pop ?date WHERE {
+  VALUES ?item { ${items.map((q) => `wd:${q}`).join(' ')} }
+  ?item wdt:P131 ?up .
+  ?up rdfs:label ?upEn FILTER(LANG(?upEn) = "en")
+  ?up p:P1082 ?ps . ?ps ps:P1082 ?pop ; wikibase:rank ?rank . FILTER(?rank != wikibase:DeprecatedRank) OPTIONAL { ?ps pq:P585 ?date }
+}`);
+}
+
+/** v0.38.1: places by name (each name in English and the country's languages), with a point and people, for the
+ *  GeoNames towns no item points to; the build keeps the one within 10 km. */
+export async function peopleByName(names, tag) {
+  return ask(CACHE, tag, `
+SELECT ?name ?item ?coord ?pop ?date WHERE {
+  VALUES ?name { ${names.map(([n, lang]) => `${JSON.stringify(n)}@${lang}`).join(' ')} }
+  ?item rdfs:label ?name ; wdt:P625 ?coord .
+  ?item p:P1082 ?ps . ?ps ps:P1082 ?pop ; wikibase:rank ?rank . FILTER(?rank != wikibase:DeprecatedRank) OPTIONAL { ?ps pq:P585 ?date }
+}`);
+}

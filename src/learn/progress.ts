@@ -143,6 +143,16 @@ export const BADGES: Badge[] = [
     return { id: `master-cap-${ct}`, icon: '🏛️', en: `Capitals of ${n[0]}`, es: `Capitales de ${n[1]}`, how: { en: `Master every capital of ${n[0]}`, es: `Domina todas las capitales de ${n[1]}` }, goal: 1, have: (p) => Number(p.feats.includes(`master-cap-${ct}`)) };
   }),
   { id: 'master-cap-all', icon: '👑', en: 'Every capital', es: 'Todas las capitales', how: { en: 'Master every capital of the world', es: 'Domina todas las capitales del mundo' }, goal: 1, have: (p) => Number(p.feats.includes('master-cap-all')) },
+  // v0.38.1 Master the world's State capitals: each country's, then all twelve.
+  ...([
+    ['MEX', '🇲🇽', "Mexico's states", 'los estados de México'], ['USA', '🇺🇸', 'the US states', 'los estados de Estados Unidos'],
+    ['BRA', '🇧🇷', "Brazil's states", 'los estados de Brasil'], ['ARG', '🇦🇷', "Argentina's provinces", 'las provincias de Argentina'],
+    ['COL', '🇨🇴', "Colombia's departments", 'los departamentos de Colombia'], ['CHL', '🇨🇱', "Chile's regions", 'las regiones de Chile'],
+    ['PER', '🇵🇪', "Peru's regions", 'las regiones del Perú'], ['ESP', '🇪🇸', "Spain's communities", 'las comunidades de España'],
+    ['CAN', '🇨🇦', "Canada's provinces and territories", 'las provincias y territorios de Canadá'], ['AUS', '🇦🇺', "Australia's states and territories", 'los estados y territorios de Australia'],
+    ['DEU', '🇩🇪', "Germany's states", 'los estados de Alemania'], ['IND', '🇮🇳', "India's states and territories", 'los estados y territorios de la India'],
+  ] as const).map(([a3, icon, en, es]): Badge => ({ id: `master-states-${a3}`, icon, en: `Capitals of ${en}`, es: `Capitales de ${es}`, how: { en: `Master every capital of ${en}`, es: `Domina todas las capitales de ${es}` }, goal: 1, have: (p) => Number(p.feats.includes(`master-states-${a3}`)) })),
+  { id: 'master-states-all', icon: '🎓', en: 'Every state capital', es: 'Todas las capitales de estados', how: { en: 'Master the state capitals of all twelve countries', es: 'Domina las capitales de los estados de los doce países' }, goal: 1, have: (p) => Number(p.feats.includes('master-states-all')) },
   { id: 'master-flags', icon: '🏳️', en: 'Flag spotter', es: 'Ojo para las banderas', how: { en: 'Tell every look-alike flag apart', es: 'Distingue todas las banderas parecidas' }, goal: 1, have: (p) => Number(p.feats.includes('master-flags')) },
   { id: 'master-neighbours', icon: '🤝', en: 'Good neighbour', es: 'Buen vecino', how: { en: 'Master every country among its neighbours', es: 'Domina todos los países entre sus vecinos' }, goal: 1, have: (p) => Number(p.feats.includes('master-neighbours')) },
   { id: 'master-marathon', icon: '🏃', en: 'Marathon', es: 'Maratón', how: { en: 'The whole world in a marathon, without a mistake', es: 'El mundo entero en un maratón, sin un error' }, goal: 1, have: (p) => Number(p.feats.includes('master-marathon')) },

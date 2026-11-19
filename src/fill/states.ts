@@ -236,8 +236,8 @@ export class FillStates implements HostGame {
     if (stars > 0) s.flash = null;
     saveFill();
     const badges = this.feats(s.a3, s.cat);
-    // Every answer counts toward Master the world's daily goal.
-    void this.mw.external(null, `${s.a3}|${id}`, first).then((b) => this.toastBadges([...badges, ...b]));
+    // Every answer counts toward Master the world's daily goal; a capital, in its State capitals deck too (v0.38.1).
+    void this.mw.external(s.cat === 'capitals' ? 'states' : null, `${s.a3}|${id}`, first).then((b) => this.toastBadges([...badges, ...b]));
     s.i++;
     this.schedule(stars > 0 ? 1300 : 3200);
     this.render();

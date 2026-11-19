@@ -14,7 +14,7 @@ import { onmapState } from './onmap/store';
 import { Today } from './today/today';
 import { Reminders } from './today/reminders';
 import { settingsExtras } from './ui/settings';
-import { DECKS } from './master/srs';
+import { ALL_DECKS } from './master/srs';
 import { TimeTravel } from './modes';
 import { STORY_KINDS, storyHashKey } from './modes/stories';
 import { Tools } from './tools/tools';
@@ -156,7 +156,7 @@ async function boot() {
     label: () => L('Remind me of the Daily challenge', 'Recuérdame el Reto del día'), done: () => learn.todayDaily().done,
     words: (day) => ({ t: `🗓️ ${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)}`, b: L('Eight questions, the same for everyone today', 'Ocho preguntas, las mismas para todos hoy') }),
   });
-  DECKS.forEach((deck, k) => reminders.add({
+  ALL_DECKS.forEach((deck, k) => reminders.add({
     id: `master:${deck}`, order: 20 + k, icon: master.deckIcon(deck), name: () => master.deckName(deck),
     label: () => L(`Remind me to practise ${master.deckName(deck).toLowerCase()}`, `Recuérdame practicar ${master.deckName(deck).toLowerCase()}`),
     done: () => master.deckToday(deck), words: (day) => master.deckWords(deck, day),

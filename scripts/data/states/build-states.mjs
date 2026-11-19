@@ -144,6 +144,10 @@ function plainNames(en, es, gname, ascii, a2) {
   let e = (LABEL_FIX[en] ?? en ?? '').replace(/\s*\([^)]*\)\s*$/, '').replace(/^Kreisfreie Stadt /, '').replace(/,\s*[^,]+\s(?:Province|District|Department|Municipality)$/, '').trim();
   let s = (es ?? '').replace(/\s*\([^)]*\)\s*$/, '').trim();
   if (BAD_ES.has(s)) s = '';
+  // (Wikidata's "Frías, Santiago del Estero": the town's name before the comma, when that is GeoNames' name.)
+  // (Not an abbreviation: Washington, D.C.)
+  const comma = /^([^,]+),\s*[^,.]+$/.exec(e);
+  if (comma && (norm(comma[1]) === norm(gname) || norm(comma[1]) === norm(ascii))) e = comma[1];
   const city = /^(.*\S)\s+(?:City|city|Municipality|municipality)$/.exec(e);
   if (city && !CITY_NAMES.has(a2) && (norm(city[1]) === norm(gname) || norm(city[1]) === norm(ascii) || norm(city[1]) === norm(s))) e = city[1];
   const ciudad = /^Ciudad de (.+)$/.exec(s);
@@ -158,7 +162,7 @@ function plainNames(en, es, gname, ascii, a2) {
 }
 
 async function build() {
-  const { divisions, populations, areas, namesByGeonames } = await import('./fetch-states.mjs');
+  const { divisions, populations, areas, namesByGeonames, upPeople, peopleByName } = await import('./fetch-states.mjs');
   const regions = Object.fromEntries(Object.keys(COUNTRIES).map((a3) => [a3, regionsOf(a3)]));
   const codes = Object.values(regions).flat().flatMap((r) => codesOf(r.iso));
   const [divs, pops, ars] = [await divisions(codes), await populations(codes), await areas(codes)];
@@ -318,11 +322,63 @@ async function build() {
     const score = (x) => { const a = norm(x.en), b = norm(gname); let k = 0; while (k < a.length && a[k] === b[k]) k++; return k; };
     return list.slice().sort((x, y) => score(y) - score(x) || norm(x.en).length - norm(y.en).length)[0] ?? {};
   };
-  // People: the count of the item named for the place (Wikidata's), else GeoNames' up to 50,000 (GeoNames gives
-  // some towns their district's count, or a wrong one: Meads, Kentucky, 288,649; a real city has Wikidata's).
-  const SURE = 50_000;
-  const people = (gn, gname, own) => named(gn, gname).pop || Math.min(own, SURE);
-  const sure = (gn, gname) => !!named(gn, gname).pop;
+  // v0.38.1: a town whose item has no count (GeoNames' Londrina is an item of its own; the municipality of the same
+  // name has the count): the count of the place it lies in, when named the same; a town no item points to: a place of
+  // its name (in English or the country's languages) within 10 km.
+  const placeOf = new Map(), a2Of = new Map();
+  for (const states of Object.values(out.countries)) for (const st of Object.values(states)) for (const o of st.cands) { placeOf.set(o.gn, o); a2Of.set(o.gn, st.a2); }
+  const latest = (rows) => { let best = null; for (const r of rows) { const n = Number(v(r, 'pop')), d = v(r, 'date') ?? ''; if (n > 0 && (!best || d > best.d || (d === best.d && n > best.n))) best = { n, d }; } return best?.n ?? 0; };
+  const extra = new Map();
+  // (Only a count within three times GeoNames' own: a district of the same name, Steinburg, is not the town.)
+  const near = (n, own) => own > 0 && n <= own * 3 && n >= own / 3;
+  const qid = (u) => u?.split('/').pop();
+  const missing = ids.filter((g) => placeOf.has(g) && !named(g, placeOf.get(g).name).pop);
+  const itemOf = new Map(missing.map((g) => [g, qid(named(g, placeOf.get(g).name).item)]).filter(([, q]) => q));
+  const items = [...new Set(itemOf.values())].sort();
+  const ups = new Map();
+  for (let k = 0; k < items.length; k += 200) {
+    const batch = items.slice(k, k + 200);
+    for (const r of await upPeople(batch, `cityup-${tag(batch)}`)) { const key = `${qid(v(r, 'item'))}|${qid(v(r, 'up'))}`; if (!ups.has(key)) ups.set(key, { item: qid(v(r, 'item')), en: v(r, 'upEn'), rows: [] }); ups.get(key).rows.push(r); }
+  }
+  for (const [g, q] of itemOf) {
+    const p = placeOf.get(g), w = named(g, p.name), want = new Set([norm(p.name), norm(p.ascii), norm(w.en)].filter(Boolean));
+    const up = [...ups.values()].find((u) => u.item === q && want.has(norm(u.en)));
+    const n = up ? latest(up.rows) : 0;
+    if (n && near(n, p.pop)) extra.set(g, n);
+  }
+  const LANGS = { MX: ['es'], US: [], BR: ['pt'], AR: ['es'], CO: ['es'], CL: ['es'], PE: ['es'], ES: ['es'], CA: ['fr'], AU: [], DE: ['de'], IN: [] };
+  const still = missing.filter((g) => !extra.has(g));
+  const asked = [...new Set(still.flatMap((g) => ['en', ...(LANGS[a2Of.get(g)] ?? [])].flatMap((l) => [...new Set([placeOf.get(g).name, placeOf.get(g).ascii])].map((n) => `${n}\t${l}`))))].sort().map((x) => x.split('\t'));
+  const byName = new Map();
+  for (let k = 0; k < asked.length; k += 200) {
+    const batch = asked.slice(k, k + 200);
+    for (const r of await peopleByName(batch, `cityname-${tag(batch.map((x) => x.join('@')))}`)) {
+      const name = v(r, 'name'), at = point(v(r, 'coord'));
+      if (!at) continue;
+      if (!byName.has(name)) byName.set(name, new Map());
+      const m = byName.get(name), q = qid(v(r, 'item'));
+      if (!m.has(q)) m.set(q, { at, rows: [] });
+      m.get(q).rows.push(r);
+    }
+  }
+  for (const g of still) {
+    const p = placeOf.get(g);
+    let best = null;
+    for (const n of new Set([p.name, p.ascii])) for (const it of byName.get(n)?.values() ?? []) {
+      const d = km(it.at, [p.lon, p.lat]);
+      if (d < 10 && (!best || d < best.d)) best = { d, n: latest(it.rows) };
+    }
+    if (best?.n && near(best.n, p.pop)) extra.set(g, best.n);
+  }
+  console.log(`towns with no count of their own: ${missing.length}; from their municipality ${[...itemOf.keys()].filter((g) => extra.has(g)).length}, by name nearby ${still.filter((g) => extra.has(g)).length}, still unknown ${missing.length - extra.size}`);
+  // People: the count of the item named for the place (Wikidata's), or found above, else GeoNames' up to 20,000
+  // (GeoNames gives some towns their district's count, or a wrong one: Meads, Kentucky, 288,649; a real city has
+  // Wikidata's). Only a sure count goes in the file (0 otherwise: the game says which of four is the biggest).
+  // (A town ranks at most 20,000 on GeoNames' word alone: Chile's "Villa Mercedes", 131,936, is not a city of that
+  // size.)
+  const SURE = 20_000;
+  const people = (gn, gname, own) => named(gn, gname).pop || extra.get(gn) || Math.min(own, SURE);
+  const sure = (gn, gname) => !!named(gn, gname).pop || extra.has(gn);
   const file = { source: out.source, countries: {} };
   for (const [a3, states] of Object.entries(out.countries)) {
     file.countries[a3] = {};
@@ -358,7 +414,7 @@ async function build() {
         ...(capN.full.length ? { f: capN.full } : {}),
         ...(s.cap.self ? { s: 1 } : {}),
         a: s.area, p: s.pop, y: s.popYear ? Number(s.popYear) : null,
-        o: s.others.map((o) => [o.n.en, o.n.es, r5(o.lon), r5(o.lat), o.pop]),
+        o: s.others.map((o) => [o.n.en, o.n.es, r5(o.lon), r5(o.lat), sure(o.gn, o.name) ? o.pop : 0]),
         ...(s.big ? { b: [s.big.n.en, s.big.n.es, s.big.pop] } : {}),
       };
     }

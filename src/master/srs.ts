@@ -4,8 +4,12 @@
 // on 3 different days. As it gets better known it is asked harder: picked from a list, then its dot tapped with no
 // list, then (if the reader wants) its name typed. No browser code: scripts/test/master.mjs checks it with Node.
 
-export type DeckId = 'capitals' | 'flags' | 'countries';
-export const DECKS: DeckId[] = ['capitals', 'flags', 'countries'];
+export type DeckId = 'capitals' | 'flags' | 'countries' | 'states';
+/** The three decks of the world's countries (Your world paints them). */
+export type CountryDeck = Exclude<DeckId, 'states'>;
+export const DECKS: CountryDeck[] = ['capitals', 'flags', 'countries'];
+/** With the State capitals deck (v0.38.1): the capitals of the states, provinces and regions of twelve countries. */
+export const ALL_DECKS: DeckId[] = [...DECKS, 'states'];
 export type Level = 'new' | 'learning' | 'known' | 'mastered';
 export type Step = 'pick' | 'tap' | 'type';
 export type Order = 'balanced' | 'known' | 'people' | 'continent' | 'fixed' | 'random';
@@ -103,7 +107,11 @@ export function ordered(list: Orderable[], how: Order, seed = 1): string[] {
   switch (how) {
     case 'known': return byFame.map((x) => x.id);
     case 'people': return list.slice().sort((a, b) => b.pop - a.pop).map((x) => x.id);
-    case 'continent': return CONTINENTS.flatMap((ct) => byFame.filter((x) => x.ct === ct)).concat(byFame.filter((x) => !CONTINENTS.includes(x.ct))).map((x) => x.id);
+    case 'continent': {
+      // Continent by continent; the State capitals deck, whose `ct` is the country, country by country.
+      const cts = [...CONTINENTS, ...new Set(byFame.map((x) => x.ct).filter((ct) => !CONTINENTS.includes(ct)))];
+      return cts.flatMap((ct) => byFame.filter((x) => x.ct === ct)).map((x) => x.id);
+    }
     case 'fixed': return list.slice().sort((a, b) => a.name.localeCompare(b.name)).map((x) => x.id);
     case 'random': return shuffle(list.map((x) => x.id), rng(seed));
     default: {
