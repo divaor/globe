@@ -5705,7 +5705,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     localStorage.setItem('atlas-globe:master', JSON.stringify(st));
   });
   await page.reload({ waitUntil: 'networkidle' });
-  await page.waitForFunction(() => window.atlas && document.getElementById('splash')?.classList.contains('hide'), null, { timeout: 60000 });
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
   const known = await F(() => Object.keys(JSON.parse(localStorage.getItem('atlas-globe:master')).cards.states).length);
   // Biobío, known: its capital tapped on the map.
   await F(() => window.atlas.master.start('learn', { deck: 'states', scope: 'CHL', reverse: false }));
