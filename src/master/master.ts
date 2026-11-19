@@ -104,7 +104,7 @@ export class Master implements HostGame {
   private regionsOf = new Map<string, Region[]>();
   /** The four decks of v0.39.0 (extra.ts) and their cards once loaded. */
   private extras = new Map<ExtraId, ExtraDeck>();
-  private xcards = new Map<ExtraId, Country[]>();
+  private xcards = new Map<string, Country[]>();
   private idx: CountryIndex | null = null;
   private others = new Map<string, string[]>();
   private ac: AudioContext | null = null;
@@ -134,11 +134,15 @@ export class Master implements HostGame {
   }
   /** A deck of v0.39.0 (null for the others). */
   private ext(deck: DeckId): ExtraDeck | null { return isExtra(deck) ? this.extras.get(deck)! : null; }
-  /** Its cards (the countries' deck first: Outlines and Landmarks need it). */
+  /** Big cities or Landmarks in hard mode (v0.39.1): every city of a million or more, every World Heritage site. */
+  private hardOf(deck: DeckId) { return (deck === 'cities' || deck === 'landmarks') && !!master().settings.hard?.[deck]; }
+  private xkey(deck: DeckId) { return this.hardOf(deck) ? `${deck}+hard` : deck; }
+  /** Its cards (the countries' deck first: Outlines and Landmarks need it), in hard mode the wider set. */
   private async loadExtra(deck: ExtraId): Promise<Country[] | null> {
     await this.load();
-    const got = this.xcards.get(deck) ?? (await this.extras.get(deck)!.load());
-    if (got) this.xcards.set(deck, got);
+    const key = this.xkey(deck);
+    const got = this.xcards.get(key) ?? (await this.extras.get(deck)!.load(this.hardOf(deck)));
+    if (got) this.xcards.set(key, got);
     return got;
   }
 
@@ -175,7 +179,7 @@ export class Master implements HostGame {
     if (deck === 'states') return statesIn(this.sdeck ?? [], scope === 'world' ? 'all' : scope);
     // Outlines: the countries (and territories with that setting); the others, their cards of a continent.
     if (deck === 'outlines') return this.data ? inScope(this.data, 'countries', scope as Scope, master().settings.territories) : [];
-    if (isExtra(deck)) return (this.xcards.get(deck) ?? []).filter((c) => scope === 'world' || c.ct === scope);
+    if (isExtra(deck)) return (this.xcards.get(this.xkey(deck)) ?? []).filter((c) => scope === 'world' || c.ct === scope);
     return this.data ? inScope(this.data, deck, scope as Scope, master().settings.territories) : [];
   }
   /** The region a deck is played in (the settings keep one for the countries' decks and one for State capitals). */
@@ -224,7 +228,7 @@ export class Master implements HostGame {
     if (!s) return null;
     const q = s.q;
     return {
-      mode: s.mode, deck: s.deck, scope: s.scope, i: s.i, n: s.queue.length, done: s.done, paused: s.paused,
+      mode: s.mode, deck: s.deck, hard: this.hardOf(s.deck), scope: s.scope, i: s.i, n: s.queue.length, done: s.done, paused: s.paused,
       q: q ? { id: q.id, step: q.step, reverse: q.reverse, options: q.options ?? null, cands: q.cands ?? null, order: q.order ?? null, places: q.places?.map((p) => ({ en: p.en, es: p.es, at: p.at })) ?? null } : null,
       right: q ? this.rightValue(q) : null, hidden: [...s.hidden],
       answered: !!s.ans, ok: s.ans?.ok ?? null, run: s.run ? { ...s.run } : null, count: s.count, stats: { ...s.stats },
@@ -518,9 +522,11 @@ export class Master implements HostGame {
     const m = (c: Country) => !!cards[c.id]?.mastered;
     const got: Badge[] = [];
     if (isExtra(deck)) {
-      // v0.39.0: the whole deck mastered.
-      const every = this.list(deck, 'world');
-      if (every.length && every.every(m)) got.push(...recordFeat(`master-${deck}-all`));
+      // v0.39.0: the whole deck mastered; v0.39.1, in hard mode, its wider set too (and the normal deck within it).
+      const every = this.list(deck, 'world'), x = this.ext(deck)!;
+      const normal = this.hardOf(deck) ? every.filter((c) => x.isCore?.(c.id) ?? true) : every;
+      if (normal.length && normal.every(m)) got.push(...recordFeat(`master-${deck}-all`));
+      if (this.hardOf(deck) && every.length && every.every(m)) got.push(...recordFeat(`master-${deck}-hard`));
       return got;
     }
     if (deck === 'states') {
@@ -676,7 +682,7 @@ export class Master implements HostGame {
     this.bar = null;
     if (!s) return;
     const dt = DECK_TEXT[s.deck], mt = MODE_TEXT[s.mode];
-    const title = `${dt.icon} ${this.nm(dt)} · ${this.nm(mt)}`;
+    const title = `${dt.icon} ${this.nm(dt)}${this.hardOf(s.deck) ? ` · ${L('Hard', 'Difícil')}` : ''} · ${this.nm(mt)}`;
     this.card.classList.add('mw-card');
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     if (s.done) { this.renderDone(); return; }
@@ -1042,6 +1048,15 @@ export class Master implements HostGame {
     };
     const xh = XHINT[deck];
     if (xh) out.push(h('p', { class: 'tool-hint', 'data-master': 'deck-hint' }, L(xh[0], xh[1])));
+    // v0.39.1: hard mode, the wider set (the cards are the same: what is known stays known).
+    if (deck === 'cities' || deck === 'landmarks') {
+      const on = this.hardOf(deck);
+      const label = deck === 'cities'
+        ? L('Hard: every city of a million people or more', 'Difícil: todas las ciudades de un millón de habitantes o más')
+        : L('Hard: every World Heritage site with a picture', 'Difícil: todos los sitios del Patrimonio de la Humanidad con imagen');
+      const row = h('div', { class: 'mw-row', 'data-master': 'hard' }, toggle(on, (v) => { set.hard = { ...set.hard, [deck]: v }; saveMaster(); void this.loadExtra(deck).then(redraw); }, label));
+      out.push(row);
+    }
     // Its reminder (v0.37.1): one switch per deck.
     const rb = bell(`master:${deck}`);
     if (rb) out.push(rb);

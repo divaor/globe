@@ -397,6 +397,9 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     gulfs, bays, straits and channels, drawn on the map in gold ("Which river is this?"), picked among the nearest of
     their kind; then "Tap “Danube”" among them in white; then typed (in either language, "Danubio" for "Río Danubio");
     the seas' names are hidden while it plays.
+  - **Hard mode** (v0.39.1), a switch in Big cities and Landmarks: every city of a million people or more (553, the
+    250 among them, each picked among its nearest of them all) and every World Heritage site with a picture (1,112).
+    The cards are the same (what you know stays known); a badge for each hard deck mastered.
 - **Fill the map** (More → Play → Fill the map): a world map coloured in country by country. Fill it with
   **countries** ("Tap Bolivia"), **capitals** ("Tap the country whose capital is Sucre"), **flags**, the **most people
   first** or the **largest first** (the biggest country left each time, so the map fills in order), **clues** (a ladder
@@ -723,7 +726,8 @@ of the day.
 `npm run check:data`): Big cities from the travel guide's cities, the best known by Wikidata's sitelinks (QLever, CC0)
 with a share per continent; Landmarks from the World Heritage layer, the best known by the sitelinks of the
 best-known Wikidata item carrying the site's number (P757; Machu Picchu's article, not the sanctuary's), a share per
-continent and a short list of world-famous sites always in; Rivers, mountains and seas hand-picked, with shapes from
+continent and a short list of world-famous sites always in (hard mode, v0.39.1: `cities-hard.json`, every city of the
+guide of a million or more, and `landmarks-hard.json`, every site with a picture); Rivers, mountains and seas hand-picked, with shapes from
 Put it on the map (Natural Earth) and Natural Earth's 1:50m marine areas. Put it on the map's rivers were fixed on
 the way: a river's stretches through its reservoirs are kept (the Volga is one river) and its own English name is
 matched first (the Yangtze was called the Jinsha, the Congo the Lualaba).

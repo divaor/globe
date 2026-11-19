@@ -64,9 +64,19 @@ async function cities() {
   top.push(...all.filter((c) => !top.includes(c)).slice(0, CITIES - top.length));
   top.sort((a, b) => b.sl - a.sl || b.pop - a.pop);
   const near = nearest(top, 6);
+  const row = (c, n) => [c.id, c.en, c.es && c.es !== c.en ? c.es : 0, r2(c.at[0]), r2(c.at[1]), c.cc, ctOf.get(c.cc), c.pop, c.cap, c.sl, n];
+  // v0.39.1, the hard deck: these and every city of a million or more, each among its six nearest of them all.
+  const hard = [...top, ...all.filter((c) => c.pop >= 1e6 && !top.includes(c))].sort((a, b) => b.sl - a.sl || b.pop - a.pop);
+  const nearH = nearest(hard, 6), core = new Set(top);
   return {
-    about: 'Master the world, Big cities (v0.39.0): [id, name, nombre (0: as name), lon, lat, country, continent, people, capital (1), Wikipedias, the six nearest of the deck]. The travel guide\'s cities (GeoNames, CC BY 4.0; Wikidata, CC0), the best known by Wikidata\'s sitelinks. Built by scripts/data/master/build-decks.mjs.',
-    cities: top.map((c, i) => [c.id, c.en, c.es && c.es !== c.en ? c.es : 0, r2(c.at[0]), r2(c.at[1]), c.cc, ctOf.get(c.cc), c.pop, c.cap, c.sl, near[i]]),
+    core: {
+      about: 'Master the world, Big cities (v0.39.0): [id, name, nombre (0: as name), lon, lat, country, continent, people, capital (1), Wikipedias, the six nearest of the deck]. The travel guide\'s cities (GeoNames, CC BY 4.0; Wikidata, CC0), the best known by Wikidata\'s sitelinks. Built by scripts/data/master/build-decks.mjs.',
+      cities: top.map((c, i) => row(c, near[i])),
+    },
+    hard: {
+      about: 'Master the world, Big cities, hard (v0.39.1): the 250 of cities.json (1 at the end) and every city of a million or more, as in cities.json, each with its six nearest of them all. Built by scripts/data/master/build-decks.mjs.',
+      cities: hard.map((c, i) => [...row(c, nearH[i]), core.has(c) ? 1 : 0]),
+    },
   };
 }
 
@@ -109,17 +119,22 @@ async function landmarks() {
   for (const [ct, n] of Object.entries(SHARE_L)) { const have = must.filter((s) => ctOf.get(s.cc[0]) === ct).length; top.push(...sites.filter((s) => ctOf.get(s.cc[0]) === ct && !top.includes(s)).slice(0, Math.max(0, n - have))); }
   top.push(...sites.filter((s) => !top.includes(s)).slice(0, LANDMARKS - top.length));
   top.sort((a, b) => known(b) - known(a) || a.ref - b.ref);
-  return {
-    about: 'Master the world, Landmarks (v0.39.0): [id, name, nombre (0: as name), lon, lat, countries, continent, kind (c cultural, n natural, m mixed), year listed, Commons picture, Wikipedias]. UNESCO\'s World Heritage List with Wikidata\'s names (CC0) and Commons pictures (each with its own licence, credited in the app); the best known by the sitelinks of the best-known Wikidata item with its World Heritage number. Built by scripts/data/master/build-decks.mjs.',
-    sites: top.map((s) => {
+  const row = (s) => {
       const [en0, es0] = s.w?.[0] ? [s.w[0], s.w[1] || s.n[1]] : s.n;
       // Not the answer in its name: "Sewell, Chile" → "Sewell"; "Guanajuato (city)" → "Guanajuato".
       const tail = new Set(s.cc.flatMap((c) => [meta[c]?.n, meta[c]?.es].filter(Boolean).map(norm)));
       const clean = (n) => { const x = String(n ?? '').replace(/\s*\([^)]*\)\s*$/, '').trim(); const m = /^(.*\S),\s*([^,]+)$/.exec(x); return m && tail.has(norm(m[2])) ? m[1] : x; };
       const en = clean(en0), es = es0 ? clean(es0) : 0;
       return [`w${s.ref}`, en, es && es !== en ? es : 0, r2(s.at[0]), r2(s.at[1]), s.cc, ctOf.get(s.cc[0]), s.c, s.y, s.img, known(s)];
-    }),
   };
+  const core = new Set(top);
+  return { core: {
+    about: 'Master the world, Landmarks (v0.39.0): [id, name, nombre (0: as name), lon, lat, countries, continent, kind (c cultural, n natural, m mixed), year listed, Commons picture, Wikipedias]. UNESCO\'s World Heritage List with Wikidata\'s names (CC0) and Commons pictures (each with its own licence, credited in the app); the best known by the sitelinks of the best-known Wikidata item with its World Heritage number. Built by scripts/data/master/build-decks.mjs.',
+    sites: top.map(row),
+  }, hard: {
+    about: 'Master the world, Landmarks, hard (v0.39.1): every World Heritage site with a picture in one or two countries, not named after its country, as in landmarks.json, with 1 at the end for the 300 of landmarks.json. Built by scripts/data/master/build-decks.mjs.',
+    sites: sites.map((s) => [...row(s), core.has(s) ? 1 : 0]),
+  } };
 }
 
 // ---- Rivers, mountains and seas: the best known, by hand. Each name as Put it on the map or Natural Earth has it.
@@ -197,7 +212,8 @@ async function nature() {
 }
 
 async function build() {
-  const out = { 'cities.json': await cities(), 'landmarks.json': await landmarks(), 'nature.json': (await nature()).data };
+  const c = await cities(), l = await landmarks();
+  const out = { 'cities.json': c.core, 'cities-hard.json': c.hard, 'landmarks.json': l.core, 'landmarks-hard.json': l.hard, 'nature.json': (await nature()).data };
   return Object.fromEntries(Object.entries(out).map(([k, v]) => [k, JSON.stringify(v)]));
 }
 
@@ -221,6 +237,14 @@ function check() {
     const said = x[5].filter((c) => [meta[c]?.n, meta[c]?.es].some((n) => n && new RegExp(`(^|[^a-z])${norm(n).replace(/ /g, '[^a-z]+')}([^a-z]|$)`).test(norm(`${x[1]} ${x[2] || ''}`))));
     if (said.length) errs.push(`site ${x[0]} ${x[1]}: its name says ${said.join(', ')}`);
   }
+  // v0.39.1, the hard decks: the normal ones within them (flagged), every city of a million or more, the sites.
+  const ch = read('cities-hard.json').cities, chIds = new Set(ch.map((c) => c[0]));
+  if (ch.filter((c) => c[11] === 1).length !== CITIES || cities.some((c) => !chIds.has(c[0]))) errs.push('cities-hard.json: not every city of cities.json in it, flagged');
+  if (ch.some((c) => c[11] !== 1 && c[7] < 1e6)) errs.push('cities-hard.json: a city under a million that is not one of the 250');
+  if (ch.some((c) => c[10]?.length !== 6 || c[10].some((n) => !chIds.has(n) || n === c[0]))) errs.push('cities-hard.json: a city without its six nearest');
+  const lh = read('landmarks-hard.json').sites, lhIds = new Set(lh.map((x) => x[0]));
+  if (lh.filter((x) => x[11] === 1).length !== LANDMARKS || sites.some((x) => !lhIds.has(x[0]))) errs.push('landmarks-hard.json: not every site of landmarks.json in it, flagged');
+  if (lh.length < 1000 || lh.some((x) => !x[9] || !x[5]?.length || x[5].length > 2)) errs.push(`landmarks-hard.json: ${lh.length} sites, or one without a picture or in more than two countries`);
   const nat = read('nature.json'), items = nat.items;
   const shapes = new Set();
   for (const obj of Object.values(nat.shapes.objects)) for (const f of feature(nat.shapes, obj).features) shapes.add(f.properties.i);
@@ -234,7 +258,7 @@ function check() {
   });
   for (const e of errs.slice(0, 20)) console.log(`  ${e}`);
   if (errs.length) { console.log(`${errs.length} problems in Master the world's new decks`); process.exit(1); }
-  console.log(`Master the world's new decks: ${cities.length} big cities, ${sites.length} landmarks, ${items.length} rivers, mountains and seas, each with what its questions need`);
+  console.log(`Master the world's new decks: ${cities.length} big cities (${ch.length} hard), ${sites.length} landmarks (${lh.length} hard), ${items.length} rivers, mountains and seas, each with what its questions need`);
 }
 
 if (process.argv.includes('--check')) check();

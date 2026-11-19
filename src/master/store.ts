@@ -21,7 +21,9 @@ export interface MasterState {
   comebacks: number;
   settings: { deck: DeckId; scope: Scope; order: Order; speed: Speed; typing: boolean; territories: boolean; sound: boolean;
     /** The State capitals deck's country (v0.38.1), or 'all' for the twelve. */
-    sscope: string };
+    sscope: string;
+    /** v0.39.1: Big cities and Landmarks hard (every city of a million or more, every World Heritage site). */
+    hard: Partial<Record<'cities' | 'landmarks', boolean>> };
 }
 
 const fresh = (): MasterState => ({
@@ -32,7 +34,7 @@ const fresh = (): MasterState => ({
   marathon: { capitals: { record: 0, inRow: {} }, flags: { record: 0, inRow: {} }, countries: { record: 0, inRow: {} }, states: { record: 0, inRow: {} }, outlines: { record: 0, inRow: {} }, cities: { record: 0, inRow: {} }, landmarks: { record: 0, inRow: {} }, nature: { record: 0, inRow: {} } },
   pairs: [],
   comebacks: 0,
-  settings: { deck: 'capitals', scope: 'world', order: 'balanced', speed: 'normal', typing: false, territories: false, sound: true, sscope: 'MEX' },
+  settings: { deck: 'capitals', scope: 'world', order: 'balanced', speed: 'normal', typing: false, territories: false, sound: true, sscope: 'MEX', hard: {} },
 });
 
 let cache: MasterState | null = null;

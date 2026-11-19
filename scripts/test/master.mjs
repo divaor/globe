@@ -133,5 +133,12 @@ check(items.length >= 200 && kinds.river >= 50 && kinds.peak >= 25 && items.ever
 check(['Volga', 'Yangtze River', 'Congo River', 'Amazon River', 'Andes', 'Sahara', 'Titicaca', 'Mount Everest', 'Gulf of Mexico', 'Caribbean Sea', 'Pacific Ocean'].every(has) && items.find((i) => i[1] === 'Andes')[5].length >= 6,
   'the Volga, the Yangtze and the Congo (named right since v0.39.0), the Amazon, the Andes in their countries, the Sahara, Titicaca, Everest, the Gulf of Mexico, the Caribbean, the Pacific');
 
+// v0.39.1: the hard decks.
+const ch = J('public/data/master/cities-hard.json').cities, lh = J('public/data/master/landmarks-hard.json').sites;
+check(ch.length >= 500 && ch.filter((c) => c[11]).length === 250 && ch.every((c) => c[11] || c[7] >= 1e6) && ['tianjin', 'almaty', 'rotterdam'].every((id) => ch.some((c) => c[0] === id && !c[11])),
+  `Big cities, hard: ${ch.length} (the 250 and every city of a million or more: Tianjin, Almaty, Rotterdam…)`);
+check(lh.length >= 1000 && lh.filter((x) => x[11]).length === 300 && lh.every((x) => x[9] && x[5].length <= 2),
+  `Landmarks, hard: ${lh.length} World Heritage sites with a picture (the 300 among them)`);
+
 console.log(failed ? `\n${failed} check(s) failed` : '\nmaster checks passed');
 process.exit(failed ? 1 : 0);
