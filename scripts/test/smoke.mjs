@@ -5379,8 +5379,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const F = (fn, arg) => page.evaluate(fn, arg);
   const dock = await F(() => [...document.querySelectorAll('.dock-btn')].map((b) => ({ id: b.dataset.dock, text: b.textContent.replace(/\d+$/, ''), dot: !!b.querySelector('.dock-dot') })));
   const fitsDock = await F(() => [...document.querySelectorAll('.dock-label')].every((l) => l.scrollWidth <= l.clientWidth + 1));
-  check(dock.map((d) => d.text).join() === 'Filters,Globe,Today,Time,Space,More' && dock.find((d) => d.id === 'today')?.dot && fitsDock,
-    `the bottom bar: ${dock.map((d) => d.text + (d.dot ? ' •' : '')).join(' · ')} (six fit on a phone; a dot on Today while something is left)`);
+  check(dock.map((d) => d.text).join() === 'Map,Explore,Today,Learn,Play' && dock.find((d) => d.id === 'today')?.dot && fitsDock,
+    `the bottom bar: ${dock.map((d) => d.text + (d.dot ? ' •' : '')).join(' · ')} (v0.41.1's five tabs fit on a phone; a dot on Today while something is left)`);
   await page.tap('[data-dock="today"]');
   await page.waitForTimeout(2500);
   const read = () => F(() => ({
