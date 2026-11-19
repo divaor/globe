@@ -5847,6 +5847,60 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 45. Hard mode (v0.39.1), on a phone: Big cities' switch takes in every city of a million or more (553) and
+// Landmarks' every World Heritage site with a picture (1,112); the cards are the same (what is known stays known).
+// The card says Hard; the last of the 553 mastered: the hard badge and the normal deck's.
+{
+  const day = (n) => { const d = new Date(Date.now() + n * 864e5); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const legend = () => F(() => document.querySelector('.mw-legend')?.textContent ?? '');
+  await F(() => window.atlas.master.openPanel());
+  await page.waitForTimeout(1200);
+  await page.tap('[data-master="deck"] .seg-btn:nth-child(6)');
+  await page.waitForTimeout(1500);
+  const c0 = { legend: await legend(), sw: await F(() => ({ has: !!document.querySelector('[data-master="hard"]'), on: document.querySelector('[data-master="hard"] .switch-input')?.checked, label: document.querySelector('[data-master="hard"] .switch-label')?.textContent ?? '' })) };
+  await page.tap('[data-master="hard"] .switch');
+  await page.waitForTimeout(2000);
+  const c1 = await legend();
+  await page.tap('[data-master="deck"] .seg-btn:nth-child(7)');
+  await page.waitForTimeout(1500);
+  const l0 = await legend();
+  await page.tap('[data-master="hard"] .switch');
+  await page.waitForTimeout(2500);
+  const l1 = await legend();
+  check(c0.sw.has && !c0.sw.on && /every city of a million/.test(c0.sw.label) && /250 to meet/.test(c0.legend) && /553 to meet/.test(c1) && /300 to meet/.test(l0) && /1112 to meet/.test(l1),
+    `hard mode: "${c0.sw.label}": Big cities ${c0.legend.match(/\d+ to meet/)?.[0]} → ${c1.match(/\d+ to meet/)?.[0]}; Landmarks ${l0.match(/\d+ to meet/)?.[0]} → ${l1.match(/\d+ to meet/)?.[0]}`);
+  // Every one of the 553 mastered but Tianjin (one of the hard deck's own): answered right, both badges.
+  const hardIds = await F(() => fetch('data/master/cities-hard.json').then((r) => r.json()).then((d) => d.cities.map((c) => c[0])));
+  await F(({ ids, done, last }) => {
+    const st = JSON.parse(localStorage.getItem('atlas-globe:master'));
+    st.cards.cities = Object.fromEntries(ids.map((id) => [id, id === 'tianjin' ? last : done]));
+    localStorage.setItem('atlas-globe:master', JSON.stringify(st));
+  }, { ids: hardIds, done: { seen: 3, right: 3, wrong: 0, days: [day(-30), day(-20), day(-10)], ivl: 20, due: day(20), lapses: 0, mastered: true }, last: { seen: 2, right: 2, wrong: 0, days: [day(-6), day(-3)], ivl: 3, due: day(-1), lapses: 0 } });
+  await page.reload({ waitUntil: 'networkidle' });
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await F(() => window.atlas.master.start('learn', { deck: 'cities', scope: 'world' }));
+  await page.waitForTimeout(3500);
+  const q = await F(() => ({ info: window.atlas.master.info, title: document.querySelector('.play-card .tool-head strong')?.textContent ?? '' }));
+  if (q.info?.q?.step === 'tap') { const pt = await F(() => window.atlas.app.renderer.view.project(117.2, 39.13)); if (pt) await page.touchscreen.tap(pt[0], pt[1]); }
+  else await F((v) => window.atlas.master.choose(v), q.info?.right);
+  await page.waitForTimeout(800);
+  const a = await F(() => ({ ok: window.atlas.master.info?.ok, fb: document.querySelector('[data-master="feedback"]')?.textContent ?? '', feats: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').feats ?? [] }));
+  await F(() => window.atlas.master.stop());
+  await page.waitForTimeout(400);
+  // Off again: the 250.
+  await F(() => window.atlas.master.openPanel());
+  await page.waitForTimeout(1200);
+  await page.tap('[data-master="hard"] .switch');
+  await page.waitForTimeout(1500);
+  const back = await legend();
+  check(q.info?.hard && q.info.q.id === 'tianjin' && /Hard/.test(q.title) && a.ok && /Tianjin/.test(a.fb) && a.feats.includes('master-cities-hard') && a.feats.includes('master-cities-all') && /250 mastered/.test(back),
+    `hard Big cities: "${q.title}", Tianjin (${q.info?.q.step}) right: "${a.fb}"; badges ${a.feats.filter((f) => f.startsWith('master-cities')).join(', ')}; off again: ${back.match(/\d+ mastered/)?.[0]} of the 250`);
+  check(!errors.length, `no page errors in hard mode${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

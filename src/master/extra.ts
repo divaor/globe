@@ -43,8 +43,11 @@ export interface Ctx {
 
 export interface ExtraDeck {
   id: ExtraId;
-  /** Its cards, as countries are (id, continent, fame, people). */
-  load(): Promise<Country[] | null>;
+  /** Its cards, as countries are (id, continent, fame, people); `hard` (v0.39.1, Big cities and Landmarks): the
+   *  wider set. */
+  load(hard?: boolean): Promise<Country[] | null>;
+  /** One of the normal deck's (the hard deck holds them too). */
+  isCore?(id: string): boolean;
   has(id: string): boolean;
   name(id: string): string;
   question(c: Country, step: Step, allowed: Map<string, Country>, r: () => number): Question;
@@ -144,7 +147,8 @@ export function shapeCanvas(app: App, id: string, size: number): HTMLCanvasEleme
 interface City { en: string; es: string; at: [number, number]; cc: string; cap: boolean; pop: number }
 export function citiesDeck(x: Ctx): ExtraDeck {
   const by = new Map<string, City>();
-  let cards: Country[] | null = null;
+  const cards: { core?: Country[]; hard?: Country[] } = {};
+  const core = new Set<string>();
   const name = (id: string) => { const c = by.get(id); return c ? (es() ? c.es : c.en) : id; };
   const at = (id: string) => by.get(id)?.at;
   const dot = (rc: RenderCtx, p: [number, number], fill: string, r = 6.5) => {
@@ -156,17 +160,20 @@ export function citiesDeck(x: Ctx): ExtraDeck {
   };
   return {
     id: 'cities',
-    async load() {
-      if (cards) return cards;
-      const d = await loadJSON<{ cities: [string, string, string | 0, number, number, string, string, number, number, number, string[]][] }>('master/cities.json').catch(() => null);
+    async load(hard = false) {
+      const k = hard ? 'hard' : 'core';
+      if (cards[k]) return cards[k]!;
+      const d = await loadJSON<{ cities: [string, string, string | 0, number, number, string, string, number, number, number, string[], number?][] }>(hard ? 'master/cities-hard.json' : 'master/cities.json').catch(() => null);
       if (!d) return null;
-      cards = d.cities.map(([id, en, nes, lon, lat, cc, ct, pop, cap, sl, near]) => {
+      cards[k] = d.cities.map(([id, en, nes, lon, lat, cc, ct, pop, cap, sl, near, isCore]) => {
         by.set(id, { en, es: nes || en, at: [lon, lat], cc, cap: cap === 1, pop });
+        if (!hard || isCore) core.add(id);
         return card(id, ct, sl, pop, near);
       });
-      return cards;
+      return cards[k]!;
     },
     has: (id) => by.has(id),
+    isCore: (id) => core.has(id),
     name,
     question(c, step, allowed, r) {
       // Its nearest big cities (of the region played), the ones it is picked or tapped among.
@@ -239,23 +246,27 @@ export function citiesDeck(x: Ctx): ExtraDeck {
 interface Site { en: string; es: string; at: [number, number]; cc: string[]; kind: string; year: number; img: string }
 export function landmarksDeck(x: Ctx): ExtraDeck {
   const by = new Map<string, Site>();
-  let cards: Country[] | null = null;
+  const cards: { core?: Country[]; hard?: Country[] } = {};
+  const core = new Set<string>();
   const site = (id: string) => { const s = by.get(id); return s ? (es() ? s.es : s.en) : id; };
   const countryCard = (id: string) => x.countries()?.countries.find((c) => c.id === id);
   const all = () => new Map((x.countries()?.countries ?? []).filter((c) => !c.t).map((c) => [c.id, c]));
   return {
     id: 'landmarks',
-    async load() {
-      if (cards) return cards;
-      const d = await loadJSON<{ sites: [string, string, string | 0, number, number, string[], string, string, number, string, number][] }>('master/landmarks.json').catch(() => null);
+    async load(hard = false) {
+      const k = hard ? 'hard' : 'core';
+      if (cards[k]) return cards[k]!;
+      const d = await loadJSON<{ sites: [string, string, string | 0, number, number, string[], string, string, number, string, number, number?][] }>(hard ? 'master/landmarks-hard.json' : 'master/landmarks.json').catch(() => null);
       if (!d) return null;
-      cards = d.sites.map(([id, en, nes, lon, lat, cc, ct, kind, year, img, sl]) => {
+      cards[k] = d.sites.map(([id, en, nes, lon, lat, cc, ct, kind, year, img, sl, isCore]) => {
         by.set(id, { en, es: nes || en, at: [lon, lat], cc, kind, year, img });
+        if (!hard || isCore) core.add(id);
         return card(id, ct, sl, sl);
       });
-      return cards;
+      return cards[k]!;
     },
     has: (id) => by.has(id),
+    isCore: (id) => core.has(id),
     name: site,
     question(c, step, _allowed, r) {
       const s = by.get(c.id)!;
