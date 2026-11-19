@@ -13,6 +13,7 @@ import type { Space } from '../space/space';
 import type { Sky } from './sky';
 import type { InfoRow } from '../layers/types';
 import type { Hit } from '../ui/search';
+import { dataLang } from '../app/i18n';
 
 export interface Element {
   z: number; symbol: string; name: Text;
@@ -182,7 +183,7 @@ export class Elements {
     const m = e.mined ? await this.mineral(e.mined) : null;
     if (m) {
       const top = m.producers.slice(0, 4).map(([id, p]) => `${this.app.data.name(id, this.app.lang)} ${Math.round(p)} %`).join(', ');
-      rows.push({ icon: m.emoji, label: L(`Mined (${m.year})`, `Producción (${m.year})`), value: top });
+      rows.push({ icon: m.emoji, label: L('Mined ({0})', 'Producción ({0})', m.year), value: top });
       links.push({ label: L('Show who mines it', 'Ver quién lo extrae'), onClick: () => this.showMined(e.mined!) });
     }
     const d = e.discovered;
@@ -194,7 +195,7 @@ export class Elements {
       if (d.at) links.push({ label: L('Where it was discovered', 'Dónde se descubrió'), onClick: () => { this.close(); this.app.flyTo(d.at![0], d.at![1], 7); } });
     }
     if (e.uses) rows.push({ icon: '🛠️', label: L('Uses', 'Usos'), value: tr(e.uses) });
-    if (e.wiki?.en) links.push({ label: 'Wikipedia', href: `https://${tr(e.wiki) ? L('en', 'es') : 'en'}.wikipedia.org/wiki/${encodeURIComponent((tr(e.wiki) || e.wiki.en).replace(/ /g, '_'))}` });
+    if (e.wiki?.en) links.push({ label: 'Wikipedia', href: `https://${tr(e.wiki) ? dataLang() : 'en'}.wikipedia.org/wiki/${encodeURIComponent((tr(e.wiki) || e.wiki.en).replace(/ /g, '_'))}` });
     const notes = [e.made ? `✨ ${tr(e.made)}` : '', e.earth ? `🌍 ${tr(e.earth)}` : '', e.fact ? `💡 ${tr(e.fact)}` : ''].filter(Boolean);
     this.shell.card.showCustom(e.symbol, tr(e.name), originName(mainOrigin(e)), rows, links, notes, e.wiki ? wikiThumb(e.wiki) : undefined);
   }

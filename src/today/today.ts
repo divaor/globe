@@ -82,8 +82,8 @@ export class Today {
     prog.addEventListener('click', () => this.openProgress?.());
     body.append(h('div', { class: 'today-head', 'data-today': 'head' },
       h('div', { class: 'today-date' }, date),
-      h('div', { class: 'today-count' }, h('strong', null, L(`${done} of ${total} done`, `${done} de ${total} hechos`)),
-        streak ? h('span', null, ` · 🔥 ${L(`${streak} ${streak === 1 ? 'day' : 'days'} in a row`, `${streak} ${streak === 1 ? 'día' : 'días'} seguidos`)}`) : null),
+      h('div', { class: 'today-count' }, h('strong', null, L('{0} of {1} done', '{0} de {1} hechos', done, total)),
+        streak ? h('span', null, ` · 🔥 ${L('{0, plural, one {# day} other {# days}} in a row', '{0, plural, one {# día seguido} other {# días seguidos}}', streak)}`) : null),
       bar, h('div', { class: 'hop-actions' }, share, prog),
       this.remindLine ? safe(() => this.remindLine!(), null) : null));
     // The challenges.

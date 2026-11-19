@@ -8,7 +8,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import { h, clear } from '../ui/dom';
 import { planStar } from '../guide/plan';
-import { lang, fmtCompact } from '../app/i18n';
+import { lang, fmtCompact, L, dataLang } from '../app/i18n';
 import { matcher } from '../ui/match';
 import { liveRange, natureTabs, type Live, type Wild } from '../wild/finder';
 import { cellAt } from '../layers/carpet';
@@ -21,7 +21,6 @@ import {
 } from '../layers/packs/green';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 /** Emoji for a plant GBIF found, by its class or family. */
 const CLASS_EMOJI: Record<string, string> = { Pinopsida: '🌲', Polypodiopsida: '🌿', Liliopsida: '🌾', Bryopsida: '🌱', Magnoliopsida: '🌼', Cycadopsida: '🌴', Ginkgoopsida: '🍂' };
 const FAMILY_EMOJI: Record<string, string> = { Cactaceae: '🌵', Arecaceae: '🌴', Orchidaceae: '🌺', Rosaceae: '🌸', Asteraceae: '🌼', Fagaceae: '🌳', Pinaceae: '🌲', Poaceae: '🌾', Fabaceae: '🌳' };
@@ -68,7 +67,7 @@ export class Plants {
     if (!d) { this.shell.toast(L('Plants need their data; check your connection.', 'Las plantas necesitan sus datos; revisa tu conexión.')); return; }
     const body = h('div', { class: 'guide wild-panel', 'data-green': 'nature' });
     body.append(natureTabs('plants', () => void this.wild.open(), () => void this.open()));
-    body.append(h('p', { class: 'muted small' }, L(`Where plants grow wild and where to go to see them: ${d.plants.length} plants on the map, any other plant live from GBIF.`, `Dónde crecen silvestres las plantas y adónde ir a verlas: ${d.plants.length} plantas en el mapa y cualquier otra en vivo desde GBIF.`)));
+    body.append(h('p', { class: 'muted small' }, L('Where plants grow wild and where to go to see them: {0} plants on the map, any other plant live from GBIF.', 'Dónde crecen silvestres las plantas y adónde ir a verlas: {0} plantas en el mapa y cualquier otra en vivo desde GBIF.', d.plants.length)));
     const filters = h('div', { class: 'chip-row' });
     for (const [id, ic, en, sp] of [['plants', '🌿', 'Plants of the world', 'Plantas del mundo'], ['trees', '🌳', 'Famous trees', 'Árboles famosos'], ['gardens', '🌺', 'Botanical gardens', 'Jardines botánicos'],
       ['ecoregions', '🗺️', 'Ecoregions', 'Ecorregiones'], ['greenness', '🫁', 'The breathing planet', 'El planeta que respira'], ['calendar', '📅', 'Nature’s calendar', 'Calendario de la naturaleza'], ['crops', '🌾', 'Where our food first grew', 'Dónde se cultivaron nuestros alimentos']]) {
@@ -79,7 +78,7 @@ export class Plants {
     body.append(h('h3', { class: 'sec-title' }, L('On the map', 'En el mapa')), filters);
     // This month.
     const m = new Date().getMonth() + 1;
-    const on = h('button', { type: 'button', class: 'pill', 'data-green': 'whats-on-open' }, `📅 ${L(`What’s on in ${monthName(m - 1)}`, `Qué hay en ${monthName(m - 1)}`)}`);
+    const on = h('button', { type: 'button', class: 'pill', 'data-green': 'whats-on-open' }, `📅 ${L('What’s on in {0}', 'Qué hay en {0}', monthName(m - 1))}`);
     on.addEventListener('click', () => { void this.app.activate('calendar'); void whatsOnPanel(m); });
     body.append(h('h3', { class: 'sec-title' }, L('This month', 'Este mes')), h('p', { class: 'muted small' }, L('Blossoms, autumn forests and animal spectacles happening now, the nearest first.', 'Floraciones, bosques de otoño y espectáculos animales que ocurren ahora, primero los más cercanos.')), h('div', { class: 'chip-row' }, on));
     // What grows here?
@@ -133,7 +132,7 @@ export class Plants {
       const r = await fetch(`https://api.gbif.org/v1/species/search?q=${encodeURIComponent(q)}&rank=SPECIES&status=ACCEPTED&highertaxonKey=6&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c&limit=12`);
       if (!r.ok) return null;
       const j = (await r.json()) as { results?: { key: number; nubKey?: number; canonicalName?: string; scientificName: string; class?: string; family?: string; vernacularNames?: { vernacularName: string; language?: string }[] }[] };
-      const want = es() ? 'spa' : 'eng';
+      const want = L('eng', 'spa');
       return (j.results ?? []).map((s) => {
         const vn = s.vernacularNames ?? [];
         const name = vn.find((v) => v.language === want)?.vernacularName ?? vn.find((v) => v.language === 'eng')?.vernacularName ?? s.canonicalName ?? s.scientificName;
@@ -160,7 +159,7 @@ export class Plants {
     }
     let range: Awaited<ReturnType<typeof liveRange>> = null;
     try { range = await liveRange(s.key); } catch { this.shell.toast(L('GBIF didn’t answer; check your connection.', 'GBIF no respondió; revisa tu conexión.')); return; }
-    if (!range) { this.shell.toast(L(`No sightings of ${s.name} with a place on GBIF.`, `No hay avistamientos de ${s.name} con lugar en GBIF.`)); return; }
+    if (!range) { this.shell.toast(L('No sightings of {0} with a place on GBIF.', 'No hay avistamientos de {0} con lugar en GBIF.', s.name)); return; }
     const best = await placesInRange(range.cells, range.counts);
     const e = FAMILY_EMOJI[s.family ?? ''] ?? CLASS_EMOJI[s.cls ?? ''] ?? '🌱';
     const f: PlantFocus = { id: `gbif:${s.key}`, name: s.name, e, cells: range.cells, counts: range.counts, best,
@@ -184,7 +183,7 @@ export class Plants {
     const whenBox = h('div', { 'data-green': 'when' });
     const whenTitle = h('h3', { class: 'sec-title' }, L('When it flowers', 'Cuándo florece'));
     const showMonths = (at?: [number, number], label?: string) => {
-      whenTitle.textContent = label ? L(`When it flowers: ${label}`, `Cuándo florece: ${label}`) : L('When it flowers', 'Cuándo florece');
+      whenTitle.textContent = label ? L('When it flowers: {0}', 'Cuándo florece: {0}', label) : L('When it flowers', 'Cuándo florece');
       clear(whenBox); whenBox.append(floweringEl(o.sci, at));
     };
     const list = h('div', { class: 'guide-list', 'data-green': 'best' });
@@ -202,7 +201,7 @@ export class Plants {
     body.append(h('h3', { class: 'sec-title' }, L('Best places to see it', 'Mejores lugares para verla')), list);
     if (o.best[0]) {
       const first = o.best[0];
-      const trip = h('button', { type: 'button', class: 'pill sm', 'data-green': 'trip' }, `🧳 ${L(`Plan a trip to ${placeName(first)}`, `Planear un viaje a ${placeName(first)}`)}`);
+      const trip = h('button', { type: 'button', class: 'pill sm', 'data-green': 'trip' }, `🧳 ${L('Plan a trip to {0}', 'Planear un viaje a {0}', placeName(first))}`);
       trip.addEventListener('click', () => greenLinks.planTrip(placeAt(first), placeName(first)));
       body.append(trip);
     }
@@ -219,12 +218,12 @@ export class Plants {
     const body = h('div', { class: 'guide wild-panel', 'data-green': 'here' });
     const list = h('div', { class: 'guide-list', 'data-green': 'here-list' }, h('p', { class: 'muted small' }, L('Asking iNaturalist…', 'Preguntando a iNaturalist…')));
     const where = this.app.renderer.countryAt(at[0], at[1]);
-    body.append(h('p', { class: 'muted small' }, L(`Within 50 km of ${at[1].toFixed(2)}°, ${at[0].toFixed(2)}°${where ? `, ${this.app.data.name(where, this.app.lang)}` : ''}: the plants people have seen most.`, `A menos de 50 km de ${at[1].toFixed(2)}°, ${at[0].toFixed(2)}°${where ? `, ${this.app.data.name(where, this.app.lang)}` : ''}: las plantas más vistas.`)), list);
+    body.append(h('p', { class: 'muted small' }, L('Within 50 km of {0}°, {1}°{2}: the plants people have seen most.', 'A menos de 50 km de {0}°, {1}°{2}: las plantas más vistas.', at[1].toFixed(2), at[0].toFixed(2), where ? `, ${this.app.data.name(where, this.app.lang)}` : '')), list);
     this.shell.openPanel('nature-here', L('What grows here?', '¿Qué crece aquí?'), body, () => { this.here = null; this.app.renderer.requestRender(); });
     this.app.flyTo(at[0], at[1], Math.max(this.app.renderer.view.zoom, 12));
     const known = new Map((d?.plants ?? []).map((p) => [p.sci.toLowerCase(), p]));
     try {
-      const r = await fetch(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=Plantae&per_page=30&locale=${es() ? 'es' : 'en'}`);
+      const r = await fetch(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=Plantae&per_page=30&locale=${dataLang()}`);
       if (!r.ok) throw new Error(String(r.status));
       const j = (await r.json()) as { results?: { count: number; taxon: { id: number; name: string; preferred_common_name?: string; default_photo?: { square_url?: string; attribution?: string } } }[] };
       clear(list);
@@ -232,7 +231,7 @@ export class Plants {
         const t = x.taxon, ours = known.get(t.name.toLowerCase());
         const name = t.preferred_common_name ? t.preferred_common_name.charAt(0).toUpperCase() + t.preferred_common_name.slice(1) : t.name;
         const img = t.default_photo?.square_url ? h('img', { class: 'guide-thumb', src: t.default_photo.square_url, alt: '', loading: 'lazy', title: t.default_photo.attribution ?? '' }) : '🌱';
-        list.append(this.row(img, ours ? `${ours.e} ${name}` : name, `${t.name} · ${L(`${fmtCompact(x.count)} sightings`, `${fmtCompact(x.count)} avistamientos`)}`, () => {
+        list.append(this.row(img, ours ? `${ours.e} ${name}` : name, `${t.name} · ${L('{0} sightings', '{0} avistamientos', fmtCompact(x.count))}`, () => {
           if (ours) { this.shell.sheet.close(); openPlantCard(ours); } else void this.openLive({ key: 0, sci: t.name, name, cls: null, family: null }).catch(() => undefined);
         }, { 'data-inat': String(t.id) }));
       }
@@ -261,6 +260,6 @@ export class Plants {
       // ☆: into the trip, under this city.
       list.append(cityId ? h('div', { class: 'guide-item-wrap' }, r, planStar({ id: `spectacle:${s.id}`, kind: 'spectacle', city: cityId, n: [s.n.en, s.n.es], at: s.at, why: [{ t: [`${monthsText(s)} · ${s.place.en}`, `${monthsText(s)} · ${s.place.es}`] }] })) : r);
     }
-    el.append(list, h('p', { class: 'muted small' }, L(`Blossoms, autumn colours and animal spectacles within reach of ${city}.`, `Floraciones, colores de otoño y espectáculos animales al alcance de ${city}.`)));
+    el.append(list, h('p', { class: 'muted small' }, L('Blossoms, autumn colours and animal spectacles within reach of {0}.', 'Floraciones, colores de otoño y espectáculos animales al alcance de {0}.', city)));
   }
 }

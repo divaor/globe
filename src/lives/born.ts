@@ -3,11 +3,10 @@
 // use it. A person with a life in Lives on the map opens it; everyone else gets a short card and their Wikipedia
 // article. Living people appear by birthplace only.
 import { loadJSON } from '../data/store';
-import { lang } from '../app/i18n';
+import { lang, L } from '../app/i18n';
 import type { InfoRow } from '../layers/types';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 export type CardFn = (icon: string, title: string, sub: string, rows: InfoRow[], links?: { label: string; href?: string; onClick?: () => void }[], notes?: string[], image?: Promise<string | null>, extra?: HTMLElement | null) => void;
 
 export interface BornPlace { i: number; name: [string, string]; at: [number, number]; city: string | null }
@@ -57,7 +56,7 @@ export function loadBorn(): Promise<BornData | null> {
 export function years(p: Person): string {
   const y = (n: number) => (n < 0 ? `${-n}` : String(n));
   const bc = (n: number) => (n < 0 ? L(' BC', ' a. C.') : '');
-  if (p.died == null) return L(`born ${y(p.born)}${bc(p.born)}`, `n. ${y(p.born)}${bc(p.born)}`);
+  if (p.died == null) return L('born {0}{1}', 'n. {0}{1}', y(p.born), bc(p.born));
   return p.born < 0 && p.died < 0 ? `${y(p.born)}–${y(p.died)}${bc(p.died)}` : `${y(p.born)}${bc(p.born)}–${y(p.died)}${bc(p.died)}`;
 }
 
@@ -99,14 +98,14 @@ export interface PersonLinks {
 export async function personCard(card: CardFn, p: Person, x: PersonLinks) {
   const f = FIELDS[p.field] ?? FIELDS.other;
   const life = (await loadLives()).get(p.id);
-  const by = (n: number) => (n < 0 ? L(`${-n} BC`, `${-n} a. C.`) : String(n));
+  const by = (n: number) => (n < 0 ? L('{0} BC', '{0} a. C.', -n) : String(n));
   const rows: InfoRow[] = [{ label: L('Born', 'Nació'), value: `${by(p.born)} · ${nm(p.place)}`, icon: '👶' }];
   if (p.died != null) rows.push({ label: L('Died', 'Murió'), value: p.diedAt ? `${by(p.died)} · ${nm(p.diedAt)}` : by(p.died), icon: '🕯️' });
   rows.push({ label: L('Field', 'Campo'), value: fieldName(p.field), icon: f.icon });
   const links: { label: string; href?: string; onClick?: () => void }[] = [];
   if (life) links.push({ label: L('Follow their life', 'Seguir su vida'), onClick: () => x.openLife(life.id) });
   links.push({ label: 'Wikipedia', href: wikiOf(p.id) });
-  if (x.openCity && p.place.city) links.push({ label: L(`${x.cityName(p.place.city) ?? nm(p.place)}: the guide`, `${x.cityName(p.place.city) ?? nm(p.place)}: la guía`), onClick: () => x.openCity!(p.place.city!) });
+  if (x.openCity && p.place.city) links.push({ label: L('{0}: the guide', '{0}: la guía', x.cityName(p.place.city) ?? nm(p.place)), onClick: () => x.openCity!(p.place.city!) });
   const img = portrait(p.id);
   const extra = x.credit ? document.createElement('div') : null;
   if (extra && x.credit) void img.then(() => portraitFile(p.id)).then((file) => { const el = x.credit!(file); if (el) extra.append(el); });

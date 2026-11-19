@@ -2,7 +2,7 @@
 // Positions and realm outlines are approximate (compiled for an overview map).
 import { geoArea, geoCircle, geoContains, geoDistance, geoInterpolate } from 'd3-geo';
 import type { Polygon } from 'geojson';
-import { lang } from '../../app/i18n';
+import { lang, L } from '../../app/i18n';
 import type { App } from '../../app/app';
 import type { LayerDef, LayerInstance, LayerTapUi, RenderCtx } from '../types';
 import { loadJSON } from '../../data/store';
@@ -12,7 +12,6 @@ import { wildData, links as wildLinks } from './wild';
 import { appLocale } from '../../app/i18n';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 
 function poly(coords: [number, number][]): Polygon {
   const ring = [...coords, coords[0]];
@@ -233,7 +232,7 @@ function migrationCard(ui: LayerTapUi, mg: Migration) {
   const animal = wildData()?.animals.find((a) => a.sci === mg.species);
   if (animal) links.push({ label: L('Its card', 'Su ficha'), onClick: () => wildLinks.openAnimal(animal) });
   mg.sources.slice(0, 3).forEach((u, i) => { try { links.push({ label: `${L('Source', 'Fuente')} ${i + 1}: ${new URL(u).hostname.replace(/^www\./, '')}`, href: u }); } catch { /* not a link */ } });
-  ui.card(mg.emoji, es() ? mg.name.es : mg.name.en, L(`${mg.km.toLocaleString(appLocale())} km a year`, `${mg.km.toLocaleString(appLocale())} km al año`), rows, links, notes);
+  ui.card(mg.emoji, es() ? mg.name.es : mg.name.en, L('{0} km a year', '{0} km al año', mg.km.toLocaleString(appLocale())), rows, links, notes);
 }
 
 const migrations: LayerDef = {
@@ -286,10 +285,10 @@ const migrations: LayerDef = {
     const now = MIGRATIONS.flatMap((mg) => mg.moments.filter((x) => x.month - 1 === m).map((x) => `${mg.emoji} ${es() ? x.text.es : x.text.en}`));
     const step = (by: number) => { inst.state.shownMonth = -1; LC.notify?.(); window.atlas?.app.setOption('migrations', 'month', String(((m + by + 12) % 12) + 1)); };
     return {
-      kind: 'categories', title: L(`Migrations · ${monthName(m)}`, `Migraciones · ${monthName(m)}`),
+      kind: 'categories', title: L('Migrations · {0}', 'Migraciones · {0}', monthName(m)),
       items: MIGRATIONS.map((mg) => ({ color: 'transparent', icon: mg.emoji, shape: 'emoji' as const, label: `${es() ? mg.name.es : mg.name.en} · ${mg.km.toLocaleString(appLocale())} km` })),
       note: playing ? L('A year goes by in 36 seconds. Pick a month to stop and see what happens then; tap a traveller for its story.', 'Un año pasa en 36 segundos. Elige un mes para detenerte y ver qué pasa entonces; toca un viajero para ver su historia.')
-        : now.length ? `${L(`In ${monthName(m)}`, `En ${monthName(m)}`)}: ${now.slice(0, 4).join(' · ')}` : L(`Tap a traveller to see where it is in ${monthName(m)}.`, `Toca un viajero para ver dónde está en ${monthName(m)}.`),
+        : now.length ? `${L('In {0}', 'En {0}', monthName(m))}: ${now.slice(0, 4).join(' · ')}` : L('Tap a traveller to see where it is in {0}.', 'Toca un viajero para ver dónde está en {0}.', monthName(m)),
       actions: [
         { label: '◀', onClick: () => step(-1) },
         { label: '▶', onClick: () => step(1) },

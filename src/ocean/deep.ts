@@ -5,7 +5,7 @@ import { Waves } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import { h, segmented } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, tx } from '../app/i18n';
 import { L, es } from '../play/host';
 import { loadJSON } from '../data/store';
 import { recordFeat } from '../learn/progress';
@@ -83,7 +83,7 @@ export class DeepSea {
     const d = depths ? seaDepthAt(depths, lon, lat) : 0;
     if (d > 6000) {
       const got = recordFeat('dive-6000');
-      if (got.length) this.shell.toast(`${got[0].icon} ${L(`New badge: ${got[0].en}`, `Nueva insignia: ${got[0].es}`)}`, 4000);
+      if (got.length) this.shell.toast(`${got[0].icon} ${L('New badge: {0}', 'Nueva insignia: {0}', tx(got[0]))}`, 4000);
     }
   }
 
@@ -120,7 +120,7 @@ export class DeepSea {
     const coord = `${fmtNumber(Math.abs(lat), 1)}°${lat >= 0 ? 'N' : 'S'}, ${fmtNumber(Math.abs(lon), 1)}°${lon >= 0 ? 'E' : L('W', 'O')}`;
     if (floor <= 0) {
       return h('div', null, h('p', { class: 'small' }, h('b', null, `📍 ${coord}`), h('br'),
-        L(`This is land, ${metres(cell.mean)} above the sea. Tap the sea to dive.`, `Esto es tierra firme, a ${metres(cell.mean)} sobre el mar. Toca el mar para bucear.`)));
+        L('This is land, {0} above the sea. Tap the sea to dive.', 'Esto es tierra firme, a {0} sobre el mar. Toca el mar para bucear.', metres(cell.mean))));
     }
     const ocean = oceanAt(lon, lat);
     const here = animalsHere(this.animals, ocean, lat, floor);
@@ -141,10 +141,9 @@ export class DeepSea {
     return h('div', null,
       h('p', { class: 'small' }, h('b', null, `🌊 ${cap(OCEAN_NAMES[ocean]())} · ${coord}`), h('br'),
         floor - typical > 300
-          ? L(`The sea here is about ${metres(typical)} deep, down to ${metres(floor)} at its deepest. You are in the ${zoneOf(floor).name().toLowerCase()} at the bottom.`, `Aquí el mar tiene unos ${metres(typical)} de profundidad, hasta ${metres(floor)} en lo más hondo. Al fondo estás en la ${zoneOf(floor).name().toLowerCase()}.`)
-          : L(`The sea here is about ${metres(floor)} deep: its floor is in the ${zoneOf(floor).name().toLowerCase()}.`, `Aquí el mar tiene unos ${metres(floor)} de profundidad: su fondo está en la ${zoneOf(floor).name().toLowerCase()}.`)),
-      h('p', { class: 'muted small' }, L(`${here.length} of our ${this.animals.length} sea animals live in ${OCEAN_NAMES[ocean]()} at this latitude. Tap the column for the light, the cold and the pressure; tap an animal for its story.`,
-        `${here.length} de nuestros ${this.animals.length} animales marinos viven en ${OCEAN_NAMES[ocean]()} a esta latitud. Toca la columna para ver la luz, el frío y la presión; toca un animal para su historia.`)),
+          ? L('The sea here is about {0} deep, down to {1} at its deepest. You are in the {2} at the bottom.', 'Aquí el mar tiene unos {0} de profundidad, hasta {1} en lo más hondo. Al fondo estás en la {2}.', metres(typical), metres(floor), zoneOf(floor).name().toLowerCase())
+          : L('The sea here is about {0} deep: its floor is in the {1}.', 'Aquí el mar tiene unos {0} de profundidad: su fondo está en la {1}.', metres(floor), zoneOf(floor).name().toLowerCase())),
+      h('p', { class: 'muted small' }, L('{0} of our {1} sea animals live in {2} at this latitude. Tap the column for the light, the cold and the pressure; tap an animal for its story.', '{0} de nuestros {1} animales marinos viven en {2} a esta latitud. Toca la columna para ver la luz, el frío y la presión; toca un animal para su historia.', here.length, this.animals.length, OCEAN_NAMES[ocean]())),
       diveColumn({ floor, lat, animals: here, markers, onAnimal: (a) => this.animalCard(a) }),
       obisEl,
     );

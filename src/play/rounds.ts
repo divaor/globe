@@ -142,7 +142,7 @@ abstract class PinRounds implements HostGame {
     const total = s.results.reduce((a, r) => a + r.pts + r.bonus, 0);
     if (s.done) {
       const most = s.rounds.length * this.max();
-      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: L(`Out of ${fmtNumber(most)}`, `De ${fmtNumber(most)}`),
+      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: L('Out of {0}', 'De {0}', fmtNumber(most)),
         rows: s.rounds.map((r, i) => ({ name: r.name, detail: this.dist(s.results[i].km), value: fmtNumber(s.results[i].pts + s.results[i].bonus), mark: s.results[i].km <= 100 ? 'ok' : s.results[i].km <= 1500 ? 'near' : 'miss' })) });
       this.card.append(res);
       const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
@@ -300,13 +300,13 @@ export class ClimateDetective extends PinRounds {
       extra: () => climateChart(c[15]!.t, c[15]!.p),
       at: [[c[3], c[4]]],
       name: `${es() ? c[2] : c[1]}, ${this.app.data.name(c[5], this.app.lang)}`,
-      note: L(`Its climate zone: ${cname(k)}.`, `Su zona climática: ${cname(k)}.`),
+      note: L('Its climate zone: {0}.', 'Su zona climática: {0}.', cname(k)),
       bonus: (pin) => {
         const mine = zoneAt(zs, pin);
         const pts = climateBonus(k, mine);
-        return { pts, text: pts >= 1000 ? L(`+1,000: the same climate zone (${cname(mine)})`, `+1000: la misma zona climática (${cname(mine)})`)
-          : pts ? L(`+400: the same kind of climate (${cname(mine)})`, `+400: el mismo tipo de clima (${cname(mine)})`)
-          : L(`Your pin is in another climate zone (${cname(mine) || L('the sea', 'el mar')}).`, `Tu pin está en otra zona climática (${cname(mine) || L('the sea', 'el mar')}).`) };
+        return { pts, text: pts >= 1000 ? L('+1,000: the same climate zone ({0})', '+1000: la misma zona climática ({0})', cname(mine))
+          : pts ? L('+400: the same kind of climate ({0})', '+400: el mismo tipo de clima ({0})', cname(mine))
+          : L('Your pin is in another climate zone ({0}).', 'Tu pin está en otra zona climática ({0}).', cname(mine) || L('the sea', 'el mar')) };
       },
     }));
     return { rounds };
@@ -385,9 +385,9 @@ export class SunriseRace extends PinRounds {
     const rounds: Round[] = SUN_ROUNDS.map((r) => ({
       ask: `${r.icon} ${es() ? r.es : r.en}`, at: sunLine(sub, r.goal),
       name: es() ? { rise: 'El amanecer', noon: 'El mediodía', set: 'El atardecer', midnight: 'La medianoche', overhead: 'El sol encima' }[r.goal] : { rise: 'Sunrise', noon: 'Noon', set: 'Sunset', midnight: 'Midnight', overhead: 'The sun overhead' }[r.goal],
-      note: L(`At ${hhmm} UTC. The yellow line is where it is happening; day and night are shaded.`, `A las ${hhmm} UTC. La línea amarilla es donde está pasando; el día y la noche están sombreados.`),
+      note: L('At {0} UTC. The yellow line is where it is happening; day and night are shaded.', 'A las {0} UTC. La línea amarilla es donde está pasando; el día y la noche están sombreados.', hhmm),
     }));
-    return { rounds, head: L(`The sun right now (${hhmm} UTC).`, `El sol ahora mismo (${hhmm} UTC).`) };
+    return { rounds, head: L('The sun right now ({0} UTC).', 'El sol ahora mismo ({0} UTC).', hhmm) };
   }
   /** After a pin, the day and night on the map (the Day and night filter); put away for the next question. */
   protected async answered() { if (!this.app.isActive('daynight')) await this.host.showLayer('daynight'); }

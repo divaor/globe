@@ -3,7 +3,7 @@
 // author), what it is, its Red List status, height and lifespan, the countries it grows in, when it flowers (live from
 // iNaturalist), and buttons for where it grows, the best places to see it, its relatives and its crop's story.
 import { h } from '../ui/dom';
-import { lang, fmtCompact } from '../app/i18n';
+import { lang, fmtCompact, L, tx } from '../app/i18n';
 import { recordSeen } from '../learn/progress';
 import { commons, wikiOf } from '../artguide/data';
 import { creditEl } from '../artguide/cards';
@@ -19,7 +19,6 @@ import {
 import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 type Link = { label: string; href?: string; onClick?: () => void };
 
 /** What the cards' buttons do (layers/packs/green.ts gives them). */
@@ -63,13 +62,13 @@ function chips(items: { e: string; name: string; attr: Record<string, string>; o
 
 export function plantCard(card: CardFn, p: Plant, x: GreenLinks) {
   const got = recordSeen('plants', p.id);
-  if (got.length) x.toast(`${got[0].icon} ${es() ? `Nueva insignia: ${got[0].es}` : `New badge: ${got[0].en}`}`);
+  if (got.length) x.toast(`${got[0].icon} ${L('New badge: {0}', 'Nueva insignia: {0}', tx(got[0]))}`);
   const rows: InfoRow[] = [{ label: L('Group', 'Grupo'), value: `${plantGroupName(p.g)}${p.fam ? ` · ${p.fam}` : ''}`, icon: PLANT_GROUPS[p.g].icon }];
   rows.push(...plantFacts(p));
   if (p.cc.length) {
     const names = p.cc.map((c) => x.countryName(c)).filter(Boolean).sort((a, b) => a.localeCompare(b, lang()));
     const shown = names.slice(0, 10).join(', ');
-    rows.push({ label: L('Grows wild in', 'Crece silvestre en'), value: names.length > 10 ? L(`${shown} and ${names.length - 10} more`, `${shown} y ${names.length - 10} más`) : shown, icon: '🌍' });
+    rows.push({ label: L('Grows wild in', 'Crece silvestre en'), value: names.length > 10 ? L('{0} and {1} more', '{0} y {1} más', shown, names.length - 10) : shown, icon: '🌍' });
   }
   const links: Link[] = [{ label: L('Show where it grows', 'Mostrar dónde crece'), onClick: () => x.showRange(p) }];
   if (p.best.length) links.push({ label: L('Best places to see it', 'Mejores lugares para verla'), onClick: () => x.bestPlaces(p) });
@@ -121,7 +120,7 @@ export function treeCard(card: CardFn, t: FamousTree, x: GreenLinks) {
   if (t.secret) notes.push(L('Where it stands is kept secret to protect it, so the map shows its park instead.', 'Dónde está se mantiene en secreto para protegerlo, así que el mapa muestra su parque.'));
   const links: Link[] = [];
   const plant = t.plant ? x.plantById(t.plant) : null;
-  if (plant) links.push({ label: L(`${nm(plant)}: its card`, `${nm(plant)}: su ficha`), onClick: () => x.openPlant(plant) });
+  if (plant) links.push({ label: L('{0}: its card', '{0}: su ficha', nm(plant)), onClick: () => x.openPlant(plant) });
   if (!t.secret) links.push({ label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(t.at, nm(t)) }, planLink({ id: `tree:${t.id}`, kind: 'tree', n: t.n, at: t.at, ...(t.q ? { url: wikiOf(t.q) } : {}), ...(t.rec ? { why: [{ t: [t.rec.en, t.rec.es] }] } : {}) }));
   if (t.q) links.push({ label: 'Wikipedia', href: wikiOf(t.q) });
   links.push(...sourceLinks(t.src, 2));
@@ -166,7 +165,7 @@ export function monthsText(s: Spectacle): string {
   if (runs.length > 1 && runs[0][0] === 1 && runs[runs.length - 1].at(-1) === 12) runs[0] = [...runs.pop()!, ...runs[0]];
   const span = runs.map((r) => (r.length === 1 ? monthName(r[0] - 1) : `${monthName(r[0] - 1)}–${monthName(r[r.length - 1] - 1)}`)).join(', ');
   const cap = span.charAt(0).toUpperCase() + span.slice(1);
-  return s.months.length > 1 ? L(`${cap} (best in ${monthName(s.peak - 1)})`, `${cap} (mejor en ${monthName(s.peak - 1)})`) : cap;
+  return s.months.length > 1 ? L('{0} (best in {1})', '{0} (mejor en {1})', cap, monthName(s.peak - 1)) : cap;
 }
 
 export function spectacleCard(card: CardFn, s: Spectacle, x: GreenLinks, plantOf: (sci: string) => Plant | null) {
@@ -179,7 +178,7 @@ export function spectacleCard(card: CardFn, s: Spectacle, x: GreenLinks, plantOf
   if (s.how) notes.push(`${L('How to see it', 'Cómo verlo')}: ${tt(s.how)}`);
   const links: Link[] = [];
   const plant = s.sci ? plantOf(s.sci) : null;
-  if (plant) links.push({ label: L(`${nm(plant)}: its card`, `${nm(plant)}: su ficha`), onClick: () => x.openPlant(plant) });
+  if (plant) links.push({ label: L('{0}: its card', '{0}: su ficha', nm(plant)), onClick: () => x.openPlant(plant) });
   else if (s.sci && s.kind === 'animal') links.push({ label: L('The animal’s card', 'La ficha del animal'), onClick: () => { if (!x.openAnimal(s.sci!)) x.toast(L('Not one of our animals.', 'No es uno de nuestros animales.')); } });
   links.push({ label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(s.at, tt(s.n)) },
     planLink({ id: `spectacle:${s.id}`, kind: 'spectacle', n: [s.n.en, s.n.es], at: s.at, why: [{ t: [`${monthsText(s)} · ${s.place.en}`, `${monthsText(s)} · ${s.place.es}`] }] }));
@@ -198,7 +197,7 @@ export function cropCard(card: CardFn, c: Crop, x: GreenLinks, show: () => void)
   if (c.today) notes.push(`${L('Today', 'Hoy')}: ${tt(c.today)}`);
   const links: Link[] = [{ label: L('Show its journey', 'Mostrar su viaje'), onClick: show }];
   const plant = c.plant ? x.plantById(c.plant) : null;
-  if (plant) links.push({ label: L(`Wild ${nm(plant).toLowerCase()}: its card`, `${nm(plant)} silvestre: su ficha`), onClick: () => x.openPlant(plant) });
+  if (plant) links.push({ label: L('Wild {1}: its card', '{0} silvestre: su ficha', nm(plant), nm(plant).toLowerCase()), onClick: () => x.openPlant(plant) });
   if (c.story) links.push({ label: L('Open its story', 'Abrir su historia'), onClick: () => x.openStory(c.story![0], c.story![1], c.story![2]) });
   links.push(...sourceLinks(c.src));
   card(c.e, tt(c.n), c.sci, rows, links, notes);

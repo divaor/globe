@@ -4,10 +4,9 @@
 // centre first until you reorder them, and the export (export.ts) writes them out with the trip's details.
 import { Star } from 'lucide';
 import { h, icon } from '../ui/dom';
-import { lang } from '../app/i18n';
+import { lang, L } from '../app/i18n';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 
 export type PlaceKind = 'whs' | 'sight' | 'museum' | 'building' | 'park' | 'zoo' | 'garden' | 'tree' | 'dish' | 'spectacle';
 export const PLACE_ICONS: Record<PlaceKind, string> = { whs: '🏛️', sight: '🏰', museum: '🖼️', building: '📐', park: '🏞️', zoo: '🦒', garden: '🌷', tree: '🌳', dish: '🍽️', spectacle: '📅' };
@@ -164,7 +163,7 @@ export async function togglePlace(spec: PlaceSpec, why?: Why): Promise<boolean> 
   if (!p) return false;
   addPlace(p);
   const c = planHooks.city?.(p.city);
-  planHooks.toast?.(L(`In your trip, in ${c?.name ?? p.city}.`, `En tu viaje, en ${c?.name ?? p.city}.`));
+  planHooks.toast?.(L('In your trip, in {0}.', 'En tu viaje, en {0}.', c?.name ?? p.city));
   return true;
 }
 

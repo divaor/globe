@@ -181,8 +181,7 @@ function openSlice() {
   for (const [x, d, m] of pts.sort((p, q2) => p[2] - q2[2])) add('circle', { cx: X(x), cy: Y(d), r: 1.4 + (m - 55) * 0.18, fill: SHADES[shadeOf(d)], 'fill-opacity': 0.85, stroke: 'rgba(0,0,0,.4)', 'stroke-width': 0.5 });
   const deep = pts.filter((p) => p[1] >= 300).length;
   SHELL.openPanel('slice', L('A slice through the Earth', 'Un corte de la Tierra'), h('div', { class: 'slice' },
-    h('p', { class: 'small' }, L(`${fmtNumber(pts.length)} earthquakes within 150 km of your line, seen from the side, down to 700 km.${deep ? ` ${fmtNumber(deep)} are deeper than 300 km: they trace a plate sinking into the mantle.` : ''}`,
-      `${fmtNumber(pts.length)} terremotos a menos de 150 km de tu línea, vistos de lado, hasta 700 km.${deep ? ` ${fmtNumber(deep)} están a más de 300 km: dibujan una placa que se hunde en el manto.` : ''}`)),
+    h('p', { class: 'small' }, `${L('{0} earthquakes within 150 km of your line, seen from the side, down to 700 km.', '{0} terremotos a menos de 150 km de tu línea, vistos de lado, hasta 700 km.', fmtNumber(pts.length))}${deep ? ` ${L('{0} are deeper than 300 km: they trace a plate sinking into the mantle.', '{0} están a más de 300 km: dibujan una placa que se hunde en el manto.', fmtNumber(deep))}` : ''}`),
     svg as unknown as HTMLElement,
     h('p', { class: 'muted small' }, L('Left: where you started the line. Down: depth. Dots: the earthquakes, coloured by depth, bigger when stronger.', 'Izquierda: donde empezaste la línea. Abajo: profundidad. Puntos: los terremotos, coloreados por profundidad, más grandes cuanto más fuertes.'))));
 }
@@ -302,7 +301,7 @@ export const magneticLayer: LayerDef = {
     const d = declination(mag.wmm, lon, lat, year);
     const side = d >= 0 ? L('east', 'al este') : L('west', 'al oeste');
     ui.card('🧭', L('Where a compass points', 'Hacia dónde apunta una brújula'), `${fmtNumber(Math.abs(lat), 1)}°${lat >= 0 ? 'N' : 'S'}, ${fmtNumber(Math.abs(lon), 1)}°${lon >= 0 ? 'E' : L('W', 'O')}`,
-      [{ label: L('Magnetic declination', 'Declinación magnética'), value: L(`${fmtNumber(Math.abs(d), 1)}° ${side} of true north`, `${fmtNumber(Math.abs(d), 1)}° ${side} del norte verdadero`), icon: '🧭' }],
+      [{ label: L('Magnetic declination', 'Declinación magnética'), value: L('{0}° {1} of true north', '{0}° {1} del norte verdadero', fmtNumber(Math.abs(d), 1), side), icon: '🧭' }],
       [{ label: 'NOAA WMM', href: 'https://www.ncei.noaa.gov/products/world-magnetic-model' }],
       [L('The magnetic field changes every year; this is the World Magnetic Model for today.', 'El campo magnético cambia cada año; este es el Modelo Magnético Mundial para hoy.')]);
     return true;

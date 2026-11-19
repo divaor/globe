@@ -1,6 +1,6 @@
 // Live day and night: the real sun position, twilight bands and (with imagery) city lights.
 import { geoCircle } from 'd3-geo';
-import { lang } from '../app/i18n';
+import { lang, L } from '../app/i18n';
 import { subsolarPoint } from './sun';
 import type { LayerDef } from './types';
 import { appLocale } from '../app/i18n';
@@ -42,8 +42,8 @@ export const dayNight: LayerDef = {
     const [lon, lat] = subsolarPoint(new Date());
     const time = new Intl.DateTimeFormat(appLocale(), { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' }).format(new Date());
     return {
-      kind: 'html', title: es ? 'Día y noche' : 'Day and night',
-      html: `<div class="lg-row">☀️ ${es ? 'Sol en el cénit sobre' : 'Sun overhead at'} ${Math.abs(lat).toFixed(1)}°${lat >= 0 ? 'N' : 'S'}, ${Math.abs(lon).toFixed(1)}°${lon >= 0 ? 'E' : 'W'}</div><div class="lg-row muted">${time} UTC</div>`,
+      kind: 'html', title: L('Day and night', 'Día y noche'),
+      html: `<div class="lg-row">☀️ ${L('Sun overhead at', 'Sol en el cénit sobre')} ${Math.abs(lat).toFixed(1)}°${lat >= 0 ? 'N' : 'S'}, ${Math.abs(lon).toFixed(1)}°${lon >= 0 ? 'E' : 'W'}</div><div class="lg-row muted">${time} UTC</div>`,
     };
   },
 };

@@ -4,7 +4,7 @@ import { Layers, Layers2, Globe, Map as MapIcon, Ellipsis, Search, Maximize, Min
 import { terrainActions } from '../layers/terrainActions';
 import { FEATURES, ftile } from './features';
 import { h, icon, button, clear, add } from './dom';
-import { t, tx } from '../app/i18n';
+import { t, tx, L } from '../app/i18n';
 import { Sheet } from './sheet';
 import { filtersPanel } from './filters';
 import { projectionsPanel } from './projections';
@@ -70,9 +70,9 @@ export class Shell {
       button({ icon: Plus, title: t('zoomIn'), cls: 'icon-btn', onClick: () => app.interaction.animateZoom(1.8) }),
       button({ icon: Minus, title: t('zoomOut'), cls: 'icon-btn', onClick: () => app.interaction.animateZoom(1 / 1.8) }),
       button({ icon: LocateFixed, title: t('resetView'), cls: 'icon-btn', onClick: () => app.resetView() }),
-      button({ icon: Mountain, title: app.lang === 'es' ? 'Relieve en 3D' : '3D terrain', cls: 'icon-btn zoom-3d', onClick: () => terrainActions.view3d() }));
+      button({ icon: Mountain, title: L('3D terrain', 'Relieve en 3D'), cls: 'icon-btn zoom-3d', onClick: () => terrainActions.view3d() }));
     // The map style under every filter (Atlas, Map, Satellite) and the states and provinces.
-    const styleBtn = button({ icon: Layers2, title: app.lang === 'es' ? 'Estilo del mapa y estados' : 'Map style and states', cls: 'icon-btn zoom-style', onClick: () => this.mapStyle.toggle(styleBtn) });
+    const styleBtn = button({ icon: Layers2, title: L('Map style and states', 'Estilo del mapa y estados'), cls: 'icon-btn zoom-style', onClick: () => this.mapStyle.toggle(styleBtn) });
     styleBtn.setAttribute('aria-haspopup', 'dialog');
     styleBtn.setAttribute('aria-expanded', 'false');
     zoom.append(styleBtn);
@@ -372,7 +372,7 @@ export class Shell {
     const rg = id && mapView.regions && this.app.renderer.baseMap ? regionAt(g[0], g[1]) : null;
     if (rg) {
       const es = this.app.lang === 'es';
-      picks.unshift({ title: es ? 'Estado o provincia' : 'State or province', rows: [{ icon: '📍', label: regionType(rg, es) ?? (es ? 'Región' : 'Region'), value: es ? rg.es : rg.name }] });
+      picks.unshift({ title: L('State or province', 'Estado o provincia'), rows: [{ icon: '📍', label: regionType(rg, es) ?? (L('Region', 'Región')), value: es ? rg.es : rg.name }] });
     }
     this.card.setPicks(picks);
     if (this.sheet.isOpen() && matchMedia('(max-width: 720px)').matches) this.sheet.close();

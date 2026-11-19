@@ -3,7 +3,7 @@ import { geoCentroid, geoContains, geoInterpolate, geoDistance } from 'd3-geo';
 import type { Topology } from 'topojson-specification';
 import { loadJSON, shapesFrom, type Shape } from '../../data/store';
 import { oklch } from '../../engine/colors';
-import { lang, fmtNumber } from '../../app/i18n';
+import { lang, fmtNumber, L } from '../../app/i18n';
 import type { App } from '../../app/app';
 import type { LayerDef, LayerHit, RenderCtx } from '../types';
 
@@ -123,8 +123,8 @@ const tectonics: LayerDef = {
   legend(inst) {
     const es = lang() === 'es';
     return {
-      kind: 'categories', title: es ? 'Bordes de placa' : 'Plate boundaries', items: Object.values(BOUND).map((b) => ({ color: b.color, label: es ? b.es : b.en, shape: b.dash ? 'dash' as const : 'line' as const })),
-      ...(inst.options.motion !== false ? { note: es ? 'Las flechas muestran hacia dónde se mueve cada parte de una placa: cuanto más larga, más rápido (NNR-MORVEL56, de 1 a unos 10 cm al año). Toca una placa para ver cuánto se mueve ese lugar.' : 'Arrows show which way each part of a plate moves: the longer, the faster (NNR-MORVEL56, from 1 to about 10 cm a year). Tap a plate for how fast that place moves.' } : {}),
+      kind: 'categories', title: L('Plate boundaries', 'Bordes de placa'), items: Object.values(BOUND).map((b) => ({ color: b.color, label: es ? b.es : b.en, shape: b.dash ? 'dash' as const : 'line' as const })),
+      ...(inst.options.motion !== false ? { note: L('Arrows show which way each part of a plate moves: the longer, the faster (NNR-MORVEL56, from 1 to about 10 cm a year). Tap a plate for how fast that place moves.', 'Las flechas muestran hacia dónde se mueve cada parte de una placa: cuanto más larga, más rápido (NNR-MORVEL56, de 1 a unos 10 cm al año). Toca una placa para ver cuánto se mueve ese lugar.') } : {}),
     };
   },
   pick(lon, lat) {
@@ -137,12 +137,12 @@ const tectonics: LayerDef = {
       const c = (s.feature.geometry as unknown as { coordinates: number[][] }).coordinates;
       for (const q of c) { const d = geoDistance([lon, lat], q as [number, number]); if (d < bd) { bd = d; best = s; } }
     }
-    const rows = [{ label: es ? 'Placa' : 'Plate', value: p.feature.properties.n, icon: '🧩' }];
+    const rows = [{ label: L('Plate', 'Placa'), value: p.feature.properties.n, icon: '🧩' }];
     const m = plateMotion(p.feature.properties.c, lon, lat);
-    if (m) rows.push({ label: es ? 'Se mueve' : 'It moves', value: es ? `${fmtNumber(m.cm, 1)} cm al año hacia ${bearingText(m.az)}` : `${fmtNumber(m.cm, 1)} cm a year to the ${bearingText(m.az)}`, icon: '➡️' });
+    if (m) rows.push({ label: L('It moves', 'Se mueve'), value: L('{0} cm a year to the {1}', '{0} cm al año hacia {1}', fmtNumber(m.cm, 1), bearingText(m.az)), icon: '➡️' });
     if (best && bd < 0.08) {
       const b = BOUND[best.feature.properties.k];
-      rows.push({ label: es ? 'Borde cercano' : 'Nearby boundary', value: `${es ? b.es : b.en} · ${best.feature.properties.v} mm/${es ? 'año' : 'yr'}`, icon: '↔️' });
+      rows.push({ label: L('Nearby boundary', 'Borde cercano'), value: `${es ? b.es : b.en} · ${best.feature.properties.v} mm/${L('yr', 'año')}`, icon: '↔️' });
     }
     return rows;
   },
@@ -219,7 +219,7 @@ const ERUPTED = [
   { id: 'old', min: -1e9, color: '#b08968', en: 'Earlier, or not known', es: 'Antes, o no se sabe' },
 ];
 const eraOf = (y: number | null) => ERUPTED.findIndex((e) => (y ?? -1e9) >= e.min);
-const yearText = (y: number | null) => (y == null ? (lang() === 'es' ? 'no se sabe' : 'not known') : y < 0 ? (lang() === 'es' ? `${fmtNumber(-y)} a. C.` : `${fmtNumber(-y)} BCE`) : String(y));
+const yearText = (y: number | null) => (y == null ? (L('not known', 'no se sabe')) : y < 0 ? (L('{0} BCE', '{0} a. C.', fmtNumber(-y))) : String(y));
 
 const volcanoes: LayerDef = {
   id: 'volcanoes', category: 'earth', icon: '🌋', kind: 'overlay', stackOrder: 3,
@@ -289,11 +289,11 @@ const volcanoes: LayerDef = {
   legend(inst) {
     const show = String(inst.options.show ?? 'all');
     const es = lang() === 'es';
-    if (show === 'famous') return { kind: 'categories', items: [{ color: '#ff4b2b', label: es ? 'Activo' : 'Active', shape: 'dot' }, { color: '#ff9f68', label: es ? 'Dormido o histórico' : 'Dormant or historic', shape: 'dot' }] };
+    if (show === 'famous') return { kind: 'categories', items: [{ color: '#ff4b2b', label: L('Active', 'Activo'), shape: 'dot' }, { color: '#ff9f68', label: L('Dormant or historic', 'Dormido o histórico'), shape: 'dot' }] };
     return {
-      kind: 'categories', title: es ? 'Volcanes por su última erupción' : 'Volcanoes by their last eruption',
+      kind: 'categories', title: L('Volcanoes by their last eruption', 'Volcanes por su última erupción'),
       items: ERUPTED.filter((e) => show !== 'recent' || e.min >= 1900).map((e, k) => ({ color: e.color, label: `${es ? e.es : e.en} · ${fmtNumber(gvp.filter((v) => eraOf(v.y) === k).length)}`, shape: 'dot' as const })),
-      note: es ? 'Los triángulos grandes son 53 volcanes famosos. Toca uno para ver su tipo, altura y última erupción.' : 'The big triangles are 53 famous volcanoes. Tap one for its type, height and last eruption.',
+      note: L('The big triangles are 53 famous volcanoes. Tap one for its type, height and last eruption.', 'Los triángulos grandes son 53 volcanes famosos. Toca uno para ver su tipo, altura y última erupción.'),
     };
   },
   // Search (v0.32.0): every volcano of the Smithsonian's list by name.
@@ -317,20 +317,20 @@ const volcanoes: LayerDef = {
     if (best && (!g || famous.has(g.n))) {
       const m = g && famous.has(g.n) ? g : gvp.find((v) => v.n === best![0].split('|')[0]);
       return [
-        { label: es ? 'Volcán' : 'Volcano', value: pick2(best[0]), icon: '🌋' },
-        { label: es ? 'Altura' : 'Height', value: `${fmtNumber(best[3])} m` },
-        { label: es ? 'País' : 'Country', value: pick2(best[4]) },
-        { label: es ? 'Última erupción' : 'Last eruption', value: m?.y ? yearText(m.y) : pick2(best[5]) },
-        ...(m ? [{ label: es ? 'Tipo' : 'Type', value: m.t }] : []),
+        { label: L('Volcano', 'Volcán'), value: pick2(best[0]), icon: '🌋' },
+        { label: L('Height', 'Altura'), value: `${fmtNumber(best[3])} m` },
+        { label: L('Country', 'País'), value: pick2(best[4]) },
+        { label: L('Last eruption', 'Última erupción'), value: m?.y ? yearText(m.y) : pick2(best[5]) },
+        ...(m ? [{ label: L('Type', 'Tipo'), value: m.t }] : []),
       ];
     }
     if (!g) return null;
     return [
-      { label: es ? 'Volcán' : 'Volcano', value: g.n, icon: '🌋' },
-      { label: es ? 'País' : 'Country', value: g.c },
-      ...(g.e != null ? [{ label: es ? 'Altura' : 'Height', value: `${fmtNumber(g.e)} m` }] : []),
-      { label: es ? 'Tipo' : 'Type', value: g.t },
-      { label: es ? 'Última erupción' : 'Last eruption', value: yearText(g.y) },
+      { label: L('Volcano', 'Volcán'), value: g.n, icon: '🌋' },
+      { label: L('Country', 'País'), value: g.c },
+      ...(g.e != null ? [{ label: L('Height', 'Altura'), value: `${fmtNumber(g.e)} m` }] : []),
+      { label: L('Type', 'Tipo'), value: g.t },
+      { label: L('Last eruption', 'Última erupción'), value: yearText(g.y) },
     ];
   },
 };
@@ -435,7 +435,7 @@ const currents: LayerDef = {
   },
   legend() {
     const es = lang() === 'es';
-    return { kind: 'categories', items: [{ color: WARM, label: es ? 'Corriente cálida' : 'Warm current', shape: 'line' }, { color: COLD, label: es ? 'Corriente fría' : 'Cold current', shape: 'line' }], note: es ? 'Trazado esquemático.' : 'Schematic paths.' };
+    return { kind: 'categories', items: [{ color: WARM, label: L('Warm current', 'Corriente cálida'), shape: 'line' }, { color: COLD, label: L('Cold current', 'Corriente fría'), shape: 'line' }], note: L('Schematic paths.', 'Trazado esquemático.') };
   },
 };
 

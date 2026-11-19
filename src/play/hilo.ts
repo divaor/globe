@@ -8,7 +8,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber, fmtCompact } from '../app/i18n';
+import { fmtNumber, fmtCompact, dataLang } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
@@ -149,11 +149,11 @@ export class HigherLower implements HostGame {
     const s = this.st;
     clear(this.card);
     if (!s) return;
-    const name = (id: string) => this.app.data.name(id, es() ? 'es' : 'en');
+    const name = (id: string) => this.app.data.name(id, dataLang());
     const title = `⚖️ ${s.day ? L('Daily Higher or lower', 'Más o menos del día') : L('Higher or lower', 'Más o menos')} · ${s.done ? L('Result', 'Resultado') : `${L('Run', 'Racha')} ${s.run}`}`;
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     if (s.done) {
-      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: L(`${s.done.run} right in a row`, `${s.done.run} aciertos seguidos`) });
+      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: L('{0} right in a row', '{0} aciertos seguidos', s.done.run) });
       this.card.append(res);
       const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `⚖️ ${L('Higher or lower', 'Más o menos')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.history.map((x) => (x.ok ? '🟩' : '🟥')).join('')}`));
@@ -197,7 +197,7 @@ export class HigherLower implements HostGame {
     const m = this.app.data.meta;
     for (const id of [s.q.a, s.q.b]) {
       const p = rc.project(m[id].lx, m[id].ly);
-      if (p) rc.labels.add({ text: this.app.data.name(id, es() ? 'es' : 'en'), x: p[0], y: p[1], align: 'center', priority: 3200, size: 14, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
+      if (p) rc.labels.add({ text: this.app.data.name(id, dataLang()), x: p[0], y: p[1], align: 'center', priority: 3200, size: 14, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
     }
   }
 }

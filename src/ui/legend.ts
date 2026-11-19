@@ -3,7 +3,7 @@
 // highlights its countries on the map.
 import { ChevronDown, ChevronUp, X } from 'lucide';
 import { h, icon, clear, add, fillSelect } from './dom';
-import { t, tx } from '../app/i18n';
+import { t, tx, L } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Legend, LayerInstance, LegendItem, LegendPlayer } from '../layers/types';
 
@@ -77,7 +77,7 @@ export class LegendCard {
       const acts = [...(lg.actions ?? [])];
       // A country-facts filter can be compared with another one (Compare two filters).
       if (inst.def.compareKey && this.app.registry.has('compare') && !this.app.mode) {
-        acts.push({ icon: '⇄', label: this.app.lang === 'es' ? 'Comparar con…' : 'Compare with…', onClick: () => this.app.emit('compare', inst.def.compareKey) });
+        acts.push({ icon: '⇄', label: L('Compare with…', 'Comparar con…'), onClick: () => this.app.emit('compare', inst.def.compareKey) });
       }
       if (acts.length) {
         sec.append(h('div', { class: 'lg-actions' }, acts.map((a) => {
@@ -115,19 +115,19 @@ export class LegendCard {
     }
     ui.p = p;
     ui.play.textContent = p.playing ? '⏸' : '▶';
-    ui.play.title = p.playing ? (es ? 'Pausa' : 'Pause') : (es ? 'Reproducir' : 'Play');
+    ui.play.title = p.playing ? (L('Pause', 'Pausa')) : (L('Play', 'Reproducir'));
     ui.play.setAttribute('aria-label', ui.play.title);
     ui.play.classList.toggle('on', p.playing);
     ui.seek.min = String(p.min); ui.seek.max = String(p.max);
     ui.seek.value = String(Math.round(p.value));
-    ui.seek.setAttribute('aria-label', es ? 'Año' : 'Year');
+    ui.seek.setAttribute('aria-label', L('Year', 'Año'));
     ui.seek.setAttribute('aria-valuetext', p.label(p.value));
     ui.now.textContent = p.label(p.value);
     let k = 0;
     p.speeds.forEach((v, i) => { if (Math.abs(v - p.speed) < Math.abs(p.speeds[k] - p.speed)) k = i; });
     ui.speed.max = String(p.speeds.length - 1);
     ui.speed.value = String(k);
-    ui.speed.setAttribute('aria-label', es ? 'Velocidad' : 'Speed');
+    ui.speed.setAttribute('aria-label', L('Speed', 'Velocidad'));
     ui.speed.setAttribute('aria-valuetext', p.speedLabel(p.speeds[k]));
     ui.pace.textContent = p.speedLabel(p.speeds[k]);
     return ui.el;

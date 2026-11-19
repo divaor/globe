@@ -173,7 +173,7 @@ export class Reminders {
         if (!w) continue;
         // The streak: today (not lost yet), and tomorrow when today is already in it.
         const keep = streak && (d === d0 || (d === days[1] && streakLast === d0));
-        (words[d] ??= {})[s.id] = keep ? { t: w.t, b: `${w.b} · 🔥 ${L(`keep your ${streak}-day streak`, `no pierdas tu racha de ${streak} ${streak === 1 ? 'día' : 'días'}`)}` } : w;
+        (words[d] ??= {})[s.id] = keep ? { t: w.t, b: `${w.b} · 🔥 ${L('keep your {0}-day streak', 'no pierdas tu racha de {0, plural, one {# día} other {# días}}', streak)}` } : w;
       }
     }
     const snap = {
@@ -198,7 +198,7 @@ export class Reminders {
     this.save();
     if (this.route === 'push') {
       const ok = await this.allow();
-      if (ok) this.shell.toast(L(`🔔 One reminder around ${this.timeText()}, only if it’s not done yet.`, `🔔 Un recordatorio hacia las ${this.timeText()}, solo si aún no lo has hecho.`), 3600);
+      if (ok) this.shell.toast(L('🔔 One reminder around {0}, only if it’s not done yet.', '🔔 Un recordatorio hacia las {0}, solo si aún no lo has hecho.', this.timeText()), 3600);
     }
     redraw();
     this.shell.refreshDock();
@@ -295,22 +295,22 @@ export class Reminders {
     change?.addEventListener('click', () => this.openPanel());
     const sep = (t: string) => (inPanel ? t.replace(/ · $/, '') : t);
     if (this.route === 'push' && Notification.permission === 'granted') {
-      return h('p', { class: 'tool-hint remind-hint' }, sep(L(`Around ${time}, if it’s not done yet · `, `Hacia las ${time}, si aún no lo has hecho · `)), change);
+      return h('p', { class: 'tool-hint remind-hint' }, sep(L('Around {0}, if it’s not done yet · ', 'Hacia las {0}, si aún no lo has hecho · ', time)), change);
     }
     if (this.route === 'push') {
       const allow = h('button', { type: 'button', class: 'pill sm primary', 'data-remind': 'allow' }, L('Allow notifications', 'Permitir notificaciones'));
       allow.addEventListener('click', () => void this.allow().then(redraw));
-      return h('div', { class: 'remind-hint' }, allow, h('p', { class: 'tool-hint' }, sep(L(`Then one reminder around ${time} · `, `Después, un recordatorio hacia las ${time} · `)), change));
+      return h('div', { class: 'remind-hint' }, allow, h('p', { class: 'tool-hint' }, sep(L('Then one reminder around {0} · ', 'Después, un recordatorio hacia las {0} · ', time)), change));
     }
     if (st.cal === st.time) {
-      return h('p', { class: 'tool-hint remind-hint' }, sep(L(`📅 In your calendar, every day at ${time} · `, `📅 En tu calendario, cada día a las ${time} · `)), change);
+      return h('p', { class: 'tool-hint remind-hint' }, sep(L('📅 In your calendar, every day at {0} · ', '📅 En tu calendario, cada día a las {0} · ', time)), change);
     }
-    const cal = h('button', { type: 'button', class: 'pill sm primary', 'data-remind': 'calendar' }, L(`📅 Add to my calendar (${time})`, `📅 Agregar a mi calendario (${time})`));
+    const cal = h('button', { type: 'button', class: 'pill sm primary', 'data-remind': 'calendar' }, L('📅 Add to my calendar ({0})', '📅 Agregar a mi calendario ({0})', time));
     cal.addEventListener('click', () => { this.addToCalendar(); redraw(); });
     return h('div', { class: 'remind-hint' }, cal, h('p', { class: 'tool-hint' },
       sep(st.cal
-        ? L(`Your calendar still says ${this.timeText(st.cal)}: add the new time, and remove the old one if it stays. · `, `Tu calendario aún dice ${this.timeText(st.cal)}: agrega la nueva hora y quita la anterior si se queda. · `)
-        : L(`Your phone’s calendar reminds you every day at ${time}; tapping it opens Today. (Notifications in the background need Atlas installed on Android.) · `, `El calendario de tu teléfono te avisa cada día a las ${time}; al tocarlo se abre Hoy. (Las notificaciones en segundo plano necesitan Atlas instalado en Android.) · `)),
+        ? L('Your calendar still says {0}: add the new time, and remove the old one if it stays. · ', 'Tu calendario aún dice {0}: agrega la nueva hora y quita la anterior si se queda. · ', this.timeText(st.cal))
+        : L('Your phone’s calendar reminds you every day at {0}; tapping it opens Today. (Notifications in the background need Atlas installed on Android.) · ', 'El calendario de tu teléfono te avisa cada día a las {0}; al tocarlo se abre Hoy. (Las notificaciones en segundo plano necesitan Atlas instalado en Android.) · ', time)),
       change));
   }
 

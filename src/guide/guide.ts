@@ -17,7 +17,7 @@ import type { StoryKind } from '../modes/stories';
 import { storyKind } from '../modes/stories';
 import { TOURS } from '../learn/tours';
 import { h, icon, clear } from '../ui/dom';
-import { lang, flagEmoji, fmtNumber, fmtCompact } from '../app/i18n';
+import { lang, flagEmoji, fmtNumber, fmtCompact, L, dataLang, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { km, bestMonths, monthRanges, sunTimes, tzOffset, hhmm, flightHours, hoursText, bestOrder, tripKm, tripHash, readTrip, type Climate } from './logic';
 import { planHooks, planStar, placesOf, allPlaces, movePlace, removePlace, dropCity, setPlan, tripDetails, PLACE_ICONS, type Place, type PlaceSpec } from './plan';
@@ -25,7 +25,6 @@ import { tripPanelExtras, packPlaces, unpackPlaces } from './export';
 import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 const KEY = 'atlas-globe:trip';
 
 export interface GuideCity {
@@ -152,7 +151,7 @@ export class TravelGuide {
     const conts = new Set(this.trip.map((id) => this.app.data.meta[this.byId.get(id)?.country ?? '']?.ct).filter(Boolean));
     if (conts.size >= 3) {
       const got = recordFeat('trip-3cont');
-      if (got.length) this.shell.toast(`${got[0].icon} ${this.app.lang === 'es' ? `Nueva insignia: ${got[0].es}` : `New badge: ${got[0].en}`}`, 4000);
+      if (got.length) this.shell.toast(`${got[0].icon} ${L('New badge: {0}', 'Nueva insignia: {0}', tx(got[0]))}`, 4000);
     }
   }
   add(id: string) { if (this.byId.has(id) && !this.trip.includes(id)) { this.trip.push(id); this.save(); } }
@@ -222,7 +221,7 @@ export class TravelGuide {
     this.query = query; this.picking = true; this.onMap = false; this.city = null;
     this.hideBack();
     const body = h('div', { class: 'guide' });
-    body.append(h('p', { class: 'muted small' }, L(`Pick the cities you want to visit: for each one, what to eat, what to see, its museums and the practical facts. ${idx.length} cities; tap a dot on the map, or search.`, `Elige las ciudades que quieres visitar: de cada una, qué comer, qué ver, sus museos y los datos prácticos. ${idx.length} ciudades; toca un punto en el mapa o busca.`)));
+    body.append(h('p', { class: 'muted small' }, L('Pick the cities you want to visit: for each one, what to eat, what to see, its museums and the practical facts. {0} cities; tap a dot on the map, or search.', 'Elige las ciudades que quieres visitar: de cada una, qué comer, qué ver, sus museos y los datos prácticos. {0} ciudades; toca un punto en el mapa o busca.', idx.length)));
     // Search.
     const input = h('input', { type: 'search', class: 'guide-search', placeholder: L('A city or a country…', 'Una ciudad o un país…'), 'aria-label': L('Search the guide', 'Buscar en la guía'), value: query }) as HTMLInputElement;
     const results = h('div', { class: 'guide-results' });
@@ -271,7 +270,7 @@ export class TravelGuide {
       });
       body.append(list);
       const total = tripKm(this.trip.map((id) => this.byId.get(id)!.at));
-      if (this.trip.length > 1) body.append(h('p', { class: 'muted small', 'data-guide': 'total' }, L(`${fmtNumber(Math.round(total))} km in all.`, `${fmtNumber(Math.round(total))} km en total.`)));
+      if (this.trip.length > 1) body.append(h('p', { class: 'muted small', 'data-guide': 'total' }, L('{0} km in all.', '{0} km en total.', fmtNumber(Math.round(total)))));
       const act = (ic: Parameters<typeof icon>[0], label: string, attr: string, fn: () => void, primary = false) => {
         const b = h('button', { type: 'button', class: `pill sm${primary ? ' primary' : ''}`, 'data-guide': attr }, icon(ic, 15), label);
         b.addEventListener('click', fn);
@@ -281,7 +280,7 @@ export class TravelGuide {
         act(MapIcon, L('Show on the map', 'Ver en el mapa'), 'map', () => this.showOnMap(), true),
         this.trip.length > 2 ? act(Shuffle, L('Best order', 'Mejor orden'), 'best', () => {
           const r = this.bestOrder();
-          this.shell.toast(r.after < r.before - 1 ? L(`Best order: ${fmtNumber(Math.round(r.after))} km instead of ${fmtNumber(Math.round(r.before))}.`, `Mejor orden: ${fmtNumber(Math.round(r.after))} km en vez de ${fmtNumber(Math.round(r.before))}.`) : L('This is already the shortest order.', 'Este ya es el orden más corto.'));
+          this.shell.toast(r.after < r.before - 1 ? L('Best order: {0} km instead of {1}.', 'Mejor orden: {0} km en vez de {1}.', fmtNumber(Math.round(r.after)), fmtNumber(Math.round(r.before))) : L('This is already the shortest order.', 'Este ya es el orden más corto.'));
           void this.open(this.query);
         }) : null,
         act(Share2, L('Share', 'Compartir'), 'share', () => void this.share()),
@@ -294,8 +293,8 @@ export class TravelGuide {
     let wish: string[] = [];
     try { wish = JSON.parse(localStorage.getItem('atlas-globe:personal') || '{}').wish ?? []; } catch { /* none */ }
     if (wish.length) {
-      const b = h('button', { type: 'button', class: 'pill sm', 'data-guide': 'wish' }, icon(Star, 15), L(`Add my Want to go countries (${wish.length})`, `Agregar mis países de Quiero ir (${wish.length})`));
-      b.addEventListener('click', () => { const n = this.addWishList(); this.shell.toast(L(`${n} cities added.`, `${n} ciudades agregadas.`)); void this.open(this.query); });
+      const b = h('button', { type: 'button', class: 'pill sm', 'data-guide': 'wish' }, icon(Star, 15), L('Add my Want to go countries ({0})', 'Agregar mis países de Quiero ir ({0})', wish.length));
+      b.addEventListener('click', () => { const n = this.addWishList(); this.shell.toast(L('{0} cities added.', '{0} ciudades agregadas.', n)); void this.open(this.query); });
       body.append(h('div', { class: 'tool-actions' }, b));
     }
     body.append(h('p', { class: 'muted small guide-note' }, L('Not in the guide: hotels, restaurants by name, prices, visas and safety advice, which change too often to keep right. Wikivoyage and official sites have them.', 'No están en la guía: hoteles, restaurantes por nombre, precios, visados ni consejos de seguridad, que cambian demasiado para mantenerlos al día. Wikivoyage y los sitios oficiales los tienen.')));
@@ -338,7 +337,7 @@ export class TravelGuide {
     const c = this.byId.get(id);
     if (!c) return;
     this.hideBack();
-    const label = L(`Back to ${this.cityName(c)}`, `Volver a ${this.cityName(c)}`);
+    const label = L('Back to {0}', 'Volver a {0}', this.cityName(c));
     const go = h('button', { type: 'button', class: 'guide-back-go', title: label, 'aria-label': label, 'data-guide-back': id }, icon(ChevronLeft, 16), h('span', null, `${this.flag(c.country)} ${this.cityName(c)}`));
     // What it showed goes (a card, a story), and the city's guide comes back at its tab.
     go.addEventListener('click', () => void (async () => {
@@ -518,13 +517,13 @@ export class TravelGuide {
 
   private async eatTab(el: HTMLElement, c: GuideCity, g: CityGuide) {
     const f = await this.facts(c.country);
-    if (typeof f.national_dish === 'string' && f.national_dish) el.append(h('p', { class: 'guide-national' }, `🍽️ ${L(`${this.countryName(c.country)}’s national dish`, `Plato nacional de ${this.countryName(c.country)}`)}: `, h('strong', null, f.national_dish)));
+    if (typeof f.national_dish === 'string' && f.national_dish) el.append(h('p', { class: 'guide-national' }, `🍽️ ${L('{0}’s national dish', 'Plato nacional de {0}', this.countryName(c.country))}: `, h('strong', null, f.national_dish)));
     const dishRow = (d: Dish) => this.row(d[3], es() ? d[5] : d[4], [es() ? d[10] : d[9], d[11] ? this.year(d[11]) : '', d[1] === 'here' ? '' : `${fmtNumber(d[2])} km`].filter(Boolean).join(' · '),
       () => this.openStory('food', d[7], d[8], es() ? d[5] : d[4], [d[12], d[13]]), { 'data-dish': d[0] },
       { id: `dish:${d[0]}`, kind: 'dish', city: c.id, n: [d[4], d[5]], why: [{ t: [`To try: from ${d[9]}`, `Para probar: de ${d[10]}`] }] });
     const name = this.cityName(c), cn = this.countryName(c.country);
-    this.section(el, L(`From ${name}`, `De ${name}`), g.eat.filter((d) => d[1] === 'here').map(dishRow));
-    this.section(el, L(`From the rest of ${cn}`, `Del resto de ${cn}`), g.eat.filter((d) => d[1] === 'country').map(dishRow));
+    this.section(el, L('From {0}', 'De {0}', name), g.eat.filter((d) => d[1] === 'here').map(dishRow));
+    this.section(el, L('From the rest of {0}', 'Del resto de {0}', cn), g.eat.filter((d) => d[1] === 'country').map(dishRow));
     this.section(el, L('From nearby countries', 'De países cercanos'), g.eat.filter((d) => d[1] === 'near').map(dishRow));
     this.section(el, L('First grown here or nearby', 'Cultivados aquí o cerca por primera vez'), g.grown.map(dishRow));
     if (!g.eat.length) el.append(h('p', { class: 'muted small' }, L('Our food stories have no dish from here yet.', 'Nuestras historias de comida aún no tienen platos de aquí.')));
@@ -543,7 +542,7 @@ export class TravelGuide {
   private year(date: string): string {
     const y = Number(/^-?\d+/.exec(date)?.[0]);
     if (!Number.isFinite(y)) return date;
-    return y < 0 ? L(`${-y} BC`, `${-y} a. C.`) : String(y);
+    return y < 0 ? L('{0} BC', '{0} a. C.', -y) : String(y);
   }
 
   private seeTab(el: HTMLElement, c: GuideCity, g: CityGuide) {
@@ -554,14 +553,14 @@ export class TravelGuide {
     if (tour) {
       const b = h('button', { type: 'button', class: 'pill primary sm', 'data-guide': 'tour' }, icon(Compass, 15), `${tour.icon} ${es() ? tour.es : tour.en}`);
       b.addEventListener('click', () => { this.picking = false; this.leftAt = 0; this.shell.sheet.close(); void this.learn.startTour(tour); });
-      el.append(h('div', { class: 'tool-actions' }, b), h('p', { class: 'muted small' }, L(`A guided tour of ${this.cityName(c)} through its history, ${tour.steps.length} stops.`, `Una visita guiada por la historia de ${this.cityName(c)}, ${tour.steps.length} paradas.`)));
+      el.append(h('div', { class: 'tool-actions' }, b), h('p', { class: 'muted small' }, L('A guided tour of {0} through its history, {1} stops.', 'Una visita guiada por la historia de {0}, {1} paradas.', this.cityName(c), tour.steps.length)));
     }
     const site = (s: Site, far: boolean) => {
       const img = s[8] ? h('img', { class: 'guide-thumb', src: commons(s[8]), alt: '', loading: 'lazy' }) : null;
       img?.addEventListener('error', () => img.replaceWith(document.createTextNode(s[4] === 'n' ? '🌿' : s[4] === 'm' ? '🏞️' : '🏛️')));
-      return this.row(img ?? (s[4] === 'n' ? '🌿' : '🏛️'), es() ? s[3] : s[2], [L(`World Heritage since ${s[5]}`, `Patrimonio Mundial desde ${s[5]}`), far ? `${fmtNumber(s[1])} km` : ''].filter(Boolean).join(' · '),
+      return this.row(img ?? (s[4] === 'n' ? '🌿' : '🏛️'), es() ? s[3] : s[2], [L('World Heritage since {0}', 'Patrimonio Mundial desde {0}', s[5]), far ? `${fmtNumber(s[1])} km` : ''].filter(Boolean).join(' · '),
         () => this.showPlace([s[6], s[7]], es() ? s[3] : s[2], far ? 7 : 10), { 'data-whs': String(s[0]) },
-        { id: `whs:${s[0]}`, kind: 'whs', city: c.id, n: [s[2], s[3]], at: [s[6], s[7]], url: `https://whc.unesco.org/${es() ? 'es' : 'en'}/list/${s[0]}`,
+        { id: `whs:${s[0]}`, kind: 'whs', city: c.id, n: [s[2], s[3]], at: [s[6], s[7]], url: `https://whc.unesco.org/${dataLang()}/list/${s[0]}`,
           why: [{ t: [`World Heritage since ${s[5]}${far ? ` · ${s[1]} km away` : ''}`, `Patrimonio Mundial desde ${s[5]}${far ? ` · a ${s[1]} km` : ''}`] }] });
     };
     this.section(el, L('World Heritage in the city', 'Patrimonio Mundial en la ciudad'), g.whs.map((s) => site(s, false)));
@@ -580,7 +579,7 @@ export class TravelGuide {
     for (const [k, label] of MUSEUM_KINDS) {
       const rows = g.museums.filter((m) => m[3] === k).map((m) => {
         const name = es() ? m[2] : m[1];
-        const sub = m[4] ? L(`${fmtCompact(m[4])} visitors a year`, `${fmtCompact(m[4])} visitantes al año`) : '';
+        const sub = m[4] ? L('{0} visitors a year', '{0} visitantes al año', fmtCompact(m[4])) : '';
         const r = this.row('🏛️', name, sub, m[6] ? () => this.showPlace(m[6]!, name, 12) : null, { 'data-museum': m[0] });
         const links = h('span', { class: 'guide-links' },
           h('a', { href: `https://www.wikidata.org/wiki/Special:GoToLinkedPage/${lang()}wiki/${m[0]}`, target: '_blank', rel: 'noopener', title: 'Wikipedia' }, 'W'),
@@ -589,7 +588,7 @@ export class TravelGuide {
       });
       this.section(el, es() ? label.es : label.en, rows);
     }
-    el.append(h('p', { class: 'muted small' }, L(`Museums within a few km of the centre, the best known first (from Wikidata, CC0). Visitor numbers where Wikidata has them.`, `Museos a pocos km del centro, los más conocidos primero (de Wikidata, CC0). Visitantes cuando Wikidata los tiene.`)));
+    el.append(h('p', { class: 'muted small' }, L('Museums within a few km of the centre, the best known first (from Wikidata, CC0). Visitor numbers where Wikidata has them.', 'Museos a pocos km del centro, los más conocidos primero (de Wikidata, CC0). Visitantes cuando Wikidata los tiene.')));
   }
 
   private async factsTab(el: HTMLElement, c: GuideCity) {
@@ -610,13 +609,13 @@ export class TravelGuide {
       const there = tzOffset(c.tz, now), mine = -now.getTimezoneOffset();
       const diff = (there - mine) / 60;
       const local = now.toLocaleTimeString(appLocale(), { timeZone: c.tz, hour: '2-digit', minute: '2-digit' });
-      rows.push(['🕐', L('Time there now', 'Hora allí ahora'), `${local} · ${diff === 0 ? L('the same as yours', 'la misma que la tuya') : L(`${Math.abs(diff)} h ${diff > 0 ? 'ahead of' : 'behind'} you`, `${Math.abs(diff)} h ${diff > 0 ? 'más' : 'menos'} que tú`)}`]);
+      rows.push(['🕐', L('Time there now', 'Hora allí ahora'), `${local} · ${diff === 0 ? L('the same as yours', 'la misma que la tuya') : (diff > 0 ? L('{0} h ahead of you', '{0} h más que tú', diff) : L('{0} h behind you', '{0} h menos que tú', -diff))}`]);
       const sun = sunTimes(now, c.at[1], c.at[0]);
       rows.push(['🌅', L('Sunrise and sunset today', 'Amanecer y atardecer hoy'), 'polar' in sun ? (sun.polar === 'day' ? L('the sun does not set', 'el sol no se pone') : L('the sun does not rise', 'el sol no sale')) : `${hhmm(sun.rise + there)} · ${hhmm(sun.set + there)}`]);
     }
     // From the city before it in the trip.
     const i = this.trip.indexOf(c.id);
-    if (i > 0) { const p = this.byId.get(this.trip[i - 1])!; const d = km(p.at, c.at); rows.push(['✈️', L(`From ${this.cityName(p)}`, `Desde ${this.cityName(p)}`), `${fmtNumber(Math.round(d))} km · ${L('about', 'unas')} ${hoursText(flightHours(d))} ${L('by air', 'en avión')}`]); }
+    if (i > 0) { const p = this.byId.get(this.trip[i - 1])!; const d = km(p.at, c.at); rows.push(['✈️', L('From {0}', 'Desde {0}', this.cityName(p)), `${fmtNumber(Math.round(d))} km · ${L('about', 'unas')} ${hoursText(flightHours(d))} ${L('by air', 'en avión')}`]); }
     el.append(h('div', { class: 'rows guide-facts' }, ...rows.map(([ic, label, value]) => h('div', { class: 'row' }, h('span', { class: 'row-ic' }, ic), h('span', { class: 'row-label' }, label), h('span', { class: 'row-value' }, value)))));
     if (c.climate) el.append(this.weather(c.climate));
     if (this.plants) { const box = h('div', { 'data-guide': 'spectacles' }); el.append(box); void this.plants.spectaclesNearby(box, c.at, this.cityName(c), c.id); }
@@ -651,8 +650,8 @@ export class TravelGuide {
     return h('div', { class: 'guide-weather', 'data-guide': 'weather' },
       h('h3', { class: 'sec-title' }, L('Weather by month', 'El clima mes a mes')),
       svg,
-      h('p', { class: 'small' }, ranges.length ? L(`Best months to go: ${ranges.join(', ')} (shaded).`, `Mejores meses para ir: ${ranges.join(', ')} (sombreados).`) : L('No month is mild and dry here.', 'Aquí ningún mes es templado y seco.'),
-        ' ', L(`Mean temperature by month (°C), the bars are rain (${fmtNumber(rain)} mm a year); days from about ${Math.round(cold)} °C to ${Math.round(hot)} °C.`, `Temperatura media por mes (°C); las barras son la lluvia (${fmtNumber(rain)} mm al año); días de unos ${Math.round(cold)} °C a ${Math.round(hot)} °C.`)),
+      h('p', { class: 'small' }, ranges.length ? L('Best months to go: {0} (shaded).', 'Mejores meses para ir: {0} (sombreados).', ranges.join(', ')) : L('No month is mild and dry here.', 'Aquí ningún mes es templado y seco.'),
+        ' ', L('Mean temperature by month (°C), the bars are rain ({0} mm a year); days from about {1} °C to {2} °C.', 'Temperatura media por mes (°C); las barras son la lluvia ({0} mm al año); días de unos {1} °C a {2} °C.', fmtNumber(rain), Math.round(cold), Math.round(hot))),
       h('p', { class: 'muted small' }, L('Averages of 1961–1990 (CRU CL 2.0, University of East Anglia).', 'Promedios de 1961–1990 (CRU CL 2.0, Universidad de East Anglia).')));
   }
 

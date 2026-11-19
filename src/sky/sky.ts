@@ -12,7 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { Space } from '../space/space';
 import type { InfoRow } from '../layers/types';
 import type { Hit } from '../ui/search';
-import { appLocale } from '../app/i18n';
+import { appLocale, dataLang } from '../app/i18n';
 
 type Frame = 'horizon' | 'celestial';
 interface Place { lon: number; lat: number; label: string }
@@ -648,7 +648,7 @@ export class Sky {
     if (this.frame !== 'horizon') return null;
     const [alt, az] = altAz(v, g.hz);
     const dir = tr(COMPASS[Math.round(az / 45) % 8]);
-    return { icon: '🧭', label: L('In the sky now', 'En el cielo ahora'), value: alt < 0 ? L(`Below the horizon (${num(-alt)}°), toward the ${dir}`, `Bajo el horizonte (${num(-alt)}°), hacia ${dir}`) : L(`${num(alt)}° up, toward the ${dir}`, `A ${num(alt)}° de altura, hacia ${dir}`) };
+    return { icon: '🧭', label: L('In the sky now', 'En el cielo ahora'), value: alt < 0 ? L('Below the horizon ({0}°), toward the {1}', 'Bajo el horizonte ({0}°), hacia {1}', num(-alt), dir) : L('{0}° up, toward the {1}', 'A {0}° de altura, hacia {1}', num(alt), dir) };
   }
 
   private async card(p: Pick, o: { galaxy?: boolean } = {}) {
@@ -658,7 +658,7 @@ export class Sky {
     // From the galaxy view: no "in the sky now", and a way to the sky instead.
     const where = (v: V3) => (o.galaxy || !this.el ? null : this.where(v, g));
     const toSky = (target: string) => { if (o.galaxy) links.push({ label: L('See it in the sky', 'Verlo en el cielo'), onClick: () => this.open({ frame: 'celestial', target, fov: 50 }) }); };
-    const wiki = (w?: { en: string; es: string }) => { const t = w ? tr(w) || w.en : ''; if (t) links.push({ label: 'Wikipedia', href: `https://${w && tr(w) ? L('en', 'es') : 'en'}.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_'))}` }); };
+    const wiki = (w?: { en: string; es: string }) => { const t = w ? tr(w) || w.en : ''; if (t) links.push({ label: 'Wikipedia', href: `https://${w && tr(w) ? dataLang() : 'en'}.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_'))}` }); };
     if (p.kind === 'body') {
       const v = this.pickDir(p, g)!;
       const rows: InfoRow[] = [];
@@ -681,7 +681,7 @@ export class Sky {
       if (desig && desig !== starName(d, s)) rows.push({ icon: '🏷️', label: L('Designation', 'Designación'), value: desig });
       rows.push({ icon: '🔢', label: 'Hipparcos', value: `HIP ${s.hip}` });
       const notes = [info?.text ? tr(info.text) : '', info?.names ? `🌍 ${tr(info.names)}` : ''].filter(Boolean);
-      if (con && !o.galaxy) links.push({ label: L(`Show ${tr(con.name)}`, `Ver ${tr(con.name)}`), onClick: () => { this.picked = { kind: 'con', con }; this.lookAt(con.id); this.dirty(); void this.card({ kind: 'con', con }); } });
+      if (con && !o.galaxy) links.push({ label: L('Show {0}', 'Ver {0}', tr(con.name)), onClick: () => { this.picked = { kind: 'con', con }; this.lookAt(con.id); this.dirty(); void this.card({ kind: 'con', con }); } });
       toSky(String(s.hip));
       if (!o.galaxy && info?.ly && this.space.openGalaxy) links.push({ label: L('Where in the galaxy', 'Dónde está en la galaxia'), onClick: () => this.space.openGalaxy!(String(s.hip)) });
       wiki(info?.wiki);
@@ -707,10 +707,10 @@ export class Sky {
     const rows: InfoRow[] = [];
     const w = where(mul(g.P, centreOf(c))); if (w) rows.push(w);
     rows.push({ icon: '🏛️', label: L('Latin name', 'Nombre en latín'), value: `${c.la} (${c.gen})` });
-    rows.push({ icon: '📐', label: L('Size', 'Tamaño'), value: L(`${num(c.area)} square degrees, ${ordinal(rankBySize(d, c))} of 88`, `${num(c.area)} grados cuadrados, el ${rankBySize(d, c)}.º de 88`) });
+    rows.push({ icon: '📐', label: L('Size', 'Tamaño'), value: L('{0} square degrees, {1} of 88', '{0} grados cuadrados, el {2}.º de 88', num(c.area), ordinal(rankBySize(d, c)), rankBySize(d, c)) });
     const b = c.brightest != null ? d.byHip.get(c.brightest) : null;
     if (b) rows.push({ icon: '⭐', label: L('Brightest star', 'Estrella más brillante'), value: starName(d, b) });
-    rows.push({ icon: '🗓️', label: L('Best seen', 'Mejor época'), value: L(`${tr(MONTHS[c.best - 1])} evenings`, `las noches de ${tr(MONTHS[c.best - 1])}`) });
+    rows.push({ icon: '🗓️', label: L('Best seen', 'Mejor época'), value: L('{0} evenings', 'las noches de {0}', tr(MONTHS[c.best - 1])) });
     rows.push({ icon: '🌍', label: L('Seen whole from', 'Se ve completa desde'), value: visibleFrom(c.dec) });
     if (c.origin) rows.push({ icon: '📜', label: L('Origin', 'Origen'), value: tr(c.origin) });
     const objs = c.objects.map((id) => d.objects.find((o) => o.id === id)).filter((o): o is SkyObject => !!o).slice(0, 6);
@@ -793,7 +793,7 @@ const ordinal = (n: number) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : ['
 function visibleFrom([dmin, dmax]: [number, number]): string {
   const north = Math.min(90, dmin + 90), south = Math.max(-90, dmax - 90);
   const f = (v: number) => `${num(Math.abs(v))}° ${v >= 0 ? 'N' : 'S'}`;
-  if (north >= 90) return L(`anywhere north of ${f(south)}`, `cualquier lugar al norte de ${f(south)}`);
-  if (south <= -90) return L(`anywhere south of ${f(north)}`, `cualquier lugar al sur de ${f(north)}`);
-  return L(`between ${f(north)} and ${f(south)}`, `entre ${f(north)} y ${f(south)}`);
+  if (north >= 90) return L('anywhere north of {0}', 'cualquier lugar al norte de {0}', f(south));
+  if (south <= -90) return L('anywhere south of {0}', 'cualquier lugar al sur de {0}', f(north));
+  return L('between {0} and {1}', 'entre {0} y {1}', f(north), f(south));
 }

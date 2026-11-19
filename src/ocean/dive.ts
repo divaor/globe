@@ -37,10 +37,9 @@ export function animalsHere(all: SeaAnimal[], ocean: Ocean, lat: number, floor: 
 export function pressureWords(m: number): string {
   const atm = pressureAtm(m);
   if (m < 10) return L('air pressure at sea level, and a little more', 'la presión del aire al nivel del mar, y un poco más');
-  if (m < 300) return L(`${fmtNumber(Math.round(atm))} times the air at sea level`, `${fmtNumber(Math.round(atm))} veces el aire al nivel del mar`);
+  if (m < 300) return L('{0} times the air at sea level', '{0} veces el aire al nivel del mar', fmtNumber(Math.round(atm)));
   // About 1 kg on every square centimetre for each atmosphere.
-  return L(`${fmtNumber(Math.round(atm))} times the air at sea level: about ${fmtNumber(Math.round(atm))} kg on every square centimetre, like an elephant on a postage stamp`,
-    `${fmtNumber(Math.round(atm))} veces el aire al nivel del mar: unos ${fmtNumber(Math.round(atm))} kg en cada centímetro cuadrado, como un elefante sobre una estampilla`);
+  return L('{0} times the air at sea level: about {0} kg on every square centimetre, like an elephant on a postage stamp', '{0} veces el aire al nivel del mar: unos {0} kg en cada centímetro cuadrado, como un elefante sobre una estampilla', fmtNumber(Math.round(atm)));
 }
 
 const SVG = 'http://www.w3.org/2000/svg';
@@ -74,7 +73,7 @@ export function diveColumn(o: { floor: number; lat: number; animals: SeaAnimal[]
   // The scale on the left, and the records beside it.
   const left: { y: number; text: string; cls: string; tip?: string }[] = [];
   for (const m of [0, 200, 1000, 4000, 6000, 11000]) left.push({ y: Y(m), text: metres(m), cls: 'dive-tick' });
-  left.push({ y: Y(floor), text: L(`Sea floor ${metres(floor)}`, `Fondo ${metres(floor)}`), cls: 'dive-floor-label' });
+  left.push({ y: Y(floor), text: L('Sea floor {0}', 'Fondo {0}', metres(floor)), cls: 'dive-floor-label' });
   for (const k of o.markers) left.push({ y: Y(k.depth_m), text: `${es() ? k.name.es : k.name.en}`, cls: 'dive-rec', tip: `${metres(k.depth_m)} · ${es() ? k.text.es : k.text.en}` });
   left.sort((a, b) => a.y - b.y);
   let lastY = -99;

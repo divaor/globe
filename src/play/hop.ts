@@ -12,7 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear, toggle } from '../ui/dom';
-import { lang, fmtCompact, fmtNumber } from '../app/i18n';
+import { lang, fmtCompact, fmtNumber, L } from '../app/i18n';
 import type { PlayHost, HostGame } from './host';
 import { loadJSON } from '../data/store';
 import { Borders, GOALS, RULES, makeRound, dailyRound, seeded, type BorderData, type Goal, type Level, type Round, type Rule } from './route';
@@ -20,7 +20,6 @@ import { scoreOf, starText, challengeHash, readChallenge, hopNumber, HINT_COST, 
 import { recordHop, hopDaily, dayKey, progress, type Badge } from '../learn/progress';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 
 const GOAL_TEXT: Record<Goal, { icon: string; en: string; es: string; desc: { en: string; es: string } }> = {
   count: { icon: '🔢', en: 'Fewest countries', es: 'Menos países', desc: { en: 'Cross as few countries as you can.', es: 'Cruza la menor cantidad de países.' } },
@@ -126,7 +125,7 @@ export class BorderHop implements HostGame {
     }));
     const blitz = h('button', { type: 'button', class: 'mode-card', 'data-play': 'blitz' }, h('span', { class: 'mode-icon' }, '⏱️'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Blitz', 'Contrarreloj')),
-        h('span', { class: 'mode-desc' }, `${L(`${BLITZ_ROUNDS} routes against the clock: up to 240 extra points a route for speed.`, `${BLITZ_ROUNDS} rutas contra el reloj: hasta 240 puntos más por ruta por la rapidez.`)}${progress().play.best.blitz ? ` · ${L('Best', 'Récord')}: ${progress().play.best.blitz}` : ''}`)));
+        h('span', { class: 'mode-desc' }, `${L('{0} routes against the clock: up to 240 extra points a route for speed.', '{0} rutas contra el reloj: hasta 240 puntos más por ruta por la rapidez.', BLITZ_ROUNDS)}${progress().play.best.blitz ? ` · ${L('Best', 'Récord')}: ${progress().play.best.blitz}` : ''}`)));
     blitz.addEventListener('click', () => void this.startBlitz());
     body.append(
       h('p', { class: 'muted small' }, L('Get from one country to another across land borders: tap the countries one by one. Their names are hidden, and the app knows the best route.', 'Llega de un país a otro cruzando fronteras terrestres: toca los países uno a uno. Sus nombres están ocultos, y la app conoce la mejor ruta.')),
@@ -246,10 +245,10 @@ export class BorderHop implements HostGame {
     const at = s.path.indexOf(id);
     if (at >= 0) {
       s.path = s.path.slice(0, at + 1);
-      s.msg = { ok: true, text: L(`Back to ${this.name(id)}.`, `De vuelta en ${this.name(id)}.`) };
+      s.msg = { ok: true, text: L('Back to {0}.', 'De vuelta en {0}.', this.name(id)) };
     } else if (!s.g.borders(last, id)) {
       this.flash(id);
-      s.msg = { ok: false, text: L(`${this.name(id)} does not border ${this.name(last)}.`, `${this.name(id)} no limita con ${this.name(last)}.`) };
+      s.msg = { ok: false, text: L('{0} does not border {1}.', '{0} no limita con {1}.', this.name(id), this.name(last)) };
     } else if (!s.g.allowed(s.rule, id)) {
       this.flash(id);
       const r = s.rule!;
@@ -348,7 +347,7 @@ export class BorderHop implements HostGame {
 
   // ---- Numbers -----------------------------------------------------------------------------------------------
   private amount(goal: Goal, v: number): string {
-    if (goal === 'count') return v === 1 ? L('1 country in between', '1 país en medio') : L(`${v} countries in between`, `${v} países en medio`);
+    if (goal === 'count') return v === 1 ? L('1 country in between', '1 país en medio') : L('{0} countries in between', '{0} países en medio', v);
     if (goal === 'people') return `${fmtCompact(v)} ${L('people', 'personas')}`;
     if (goal === 'area') return `${fmtNumber(Math.round(v))} km²`;
     return `${fmtNumber(Math.round(v))} km`;
@@ -396,7 +395,7 @@ export class BorderHop implements HostGame {
       }
       return;
     }
-    if (s.beat !== undefined && !s.done) this.card.append(h('div', { class: 'muted small' }, L(`A friend scored ${s.beat}. Can you beat it?`, `Un amigo hizo ${s.beat}. ¿Puedes superarlo?`)));
+    if (s.beat !== undefined && !s.done) this.card.append(h('div', { class: 'muted small' }, L('A friend scored {0}. Can you beat it?', 'Un amigo hizo {0}. ¿Puedes superarlo?', s.beat)));
     if (s.rule && !s.done) this.card.append(h('div', { class: 'muted small' }, es() ? s.rule.desc.es : s.rule.desc.en));
     const mid = s.path.slice(1);
     const chain = h('div', { class: 'hop-path' }, ...s.path.map((id, i) => h('span', { class: `hop-step${i === 0 ? ' from' : ''}${id === round.to ? ' to' : ''}` }, this.name(id))));
@@ -430,7 +429,7 @@ export class BorderHop implements HostGame {
     const res = resultCard({ stars: d.stars, score: `${d.score}`, unit: `${L('points', 'puntos')}${d.bonus ? ` + ${d.bonus} ${L('for speed', 'por rapidez')}` : ''}`, sub: `${yoursLine} · ${parLine}` });
     this.card.append(res);
     res.append(chain);
-    if (s.beat !== undefined && !d.gaveUp) res.append(h('div', { class: `quiz-fb ${d.score >= s.beat ? 'ok' : 'bad'}` }, d.score > s.beat ? L(`You beat your friend's ${s.beat}!`, `¡Superaste los ${s.beat} de tu amigo!`) : d.score === s.beat ? L(`A tie with your friend's ${s.beat}.`, `Empate con los ${s.beat} de tu amigo.`) : L(`Your friend's ${s.beat} still stands.`, `Los ${s.beat} de tu amigo siguen en pie.`)));
+    if (s.beat !== undefined && !d.gaveUp) res.append(h('div', { class: `quiz-fb ${d.score >= s.beat ? 'ok' : 'bad'}` }, d.score > s.beat ? L('You beat your friend\'s {0}!', '¡Superaste los {0} de tu amigo!', s.beat) : d.score === s.beat ? L('A tie with your friend\'s {0}.', 'Empate con los {0} de tu amigo.', s.beat) : L('Your friend\'s {0} still stands.', 'Los {0} de tu amigo siguen en pie.', s.beat)));
     // The best route for each goal: the same two countries, other answers.
     const others = h('div', { class: 'hop-others' });
     for (const goal of s.rule ? (['count'] as Goal[]) : GOALS) {

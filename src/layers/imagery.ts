@@ -9,6 +9,7 @@ import { TERRAIN, SENTINEL, prefs, type TileSource } from '../engine/tiles';
 import { terrainActions } from './terrainActions';
 import type { LayerDef, LayerInstance } from './types';
 import type { GLRaster, RasterPalette, RasterTexture } from '../engine/gl';
+import { L } from '../app/i18n';
 
 function lowMemory(): boolean {
   const dm = (navigator as unknown as { deviceMemory?: number }).deviceMemory;
@@ -76,17 +77,16 @@ function imageLayer(o: {
       return [{ texture: tex, opacity: inst.opacity, shadeNight: isDayNightOn(), detail }];
     },
     onDeactivate(inst) { (inst.state.mosaic as DetailMosaic | undefined)?.free(); inst.state.mosaic = undefined; },
-    legend(_inst, lng) {
-      const es = lng === 'es';
+    legend() {
       const note = prefs.detail
-        ? (es ? 'Acércate para verlo más nítido; los mosaicos se descargan de la zona en pantalla.' : 'Zoom in for more detail; tiles are downloaded for the area on screen.')
-        : (es ? 'El detalle al acercarte está apagado en Ajustes.' : 'Detail when zoomed in is off in Settings.');
+        ? L('Zoom in for more detail; tiles are downloaded for the area on screen.', 'Acércate para verlo más nítido; los mosaicos se descargan de la zona en pantalla.')
+        : L('Detail when zoomed in is off in Settings.', 'El detalle al acercarte está apagado en Ajustes.');
       return {
         kind: 'html', html: '', note,
         actions: [
-          { icon: '⛰️', label: es ? 'Ver en 3D' : 'View in 3D', onClick: () => terrainActions.view3d() },
-          { icon: '📥', label: es ? 'Guardar esta zona' : 'Save this area', onClick: () => terrainActions.save() },
-          { icon: '⚙️', label: es ? 'Ajustes' : 'Settings', onClick: () => terrainActions.settings() },
+          { icon: '⛰️', label: L('View in 3D', 'Ver en 3D'), onClick: () => terrainActions.view3d() },
+          { icon: '📥', label: L('Save this area', 'Guardar esta zona'), onClick: () => terrainActions.save() },
+          { icon: '⚙️', label: L('Settings', 'Ajustes'), onClick: () => terrainActions.settings() },
         ],
       };
     },

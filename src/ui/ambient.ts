@@ -3,7 +3,7 @@
 // title and a line about it (read aloud when that is on), turning the globe or swaying gently around a place.
 import { Volume2, VolumeX } from 'lucide';
 import { h, icon } from './dom';
-import { t, tx } from '../app/i18n';
+import { t, tx, L } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Ticker, RenderSettings } from '../engine/renderer';
 import { playlist, itemTitle, itemWords, type PlayItem, type Playlist } from './playlists';
@@ -72,7 +72,7 @@ export class Ambient {
   private renderVoice() {
     const on = this.app.ambient.narrate, es = this.app.lang === 'es';
     this.voiceBtn.setAttribute('aria-pressed', String(on));
-    this.voiceBtn.replaceChildren(icon(on ? Volume2 : VolumeX, 18), h('span', null, on ? (es ? 'Leyendo en voz alta' : 'Reading aloud') : (es ? 'Leer en voz alta' : 'Read aloud')));
+    this.voiceBtn.replaceChildren(icon(on ? Volume2 : VolumeX, 18), h('span', null, on ? (L('Reading aloud', 'Leyendo en voz alta')) : (L('Read aloud', 'Leer en voz alta'))));
   }
 
   /** Read each view aloud, or not: from the view on screen now. */

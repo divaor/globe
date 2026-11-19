@@ -8,12 +8,11 @@
 // determined cheat (who would only be fooling themselves).
 import { Download, Upload, Share2 } from 'lucide';
 import { h, icon, clear, add } from '../ui/dom';
-import { lang } from './i18n';
+import { lang, L } from './i18n';
 import { appLocale } from './i18n';
 
 declare const __APP_VERSION__: string;
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 
 /** Kept only where they were made: saved offline areas (their tiles live in this device's cache) and first-run hints. */
 const LOCAL_ONLY = new Set(['atlas-globe:saved-areas', 'atlas-saved-tiles', 'atlas-globe:hinted']);
@@ -75,13 +74,13 @@ export function summary(data: Record<string, string>): string {
   const out: string[] = [];
   const p = parse<{ badges?: Record<string, string>; daily?: { best?: number } }>('atlas-globe:progress');
   const nb = Object.keys(p?.badges ?? {}).length;
-  if (nb) out.push(nb === 1 ? L('1 badge', '1 insignia') : L(`${nb} badges`, `${nb} insignias`));
+  if (nb) out.push(nb === 1 ? L('1 badge', '1 insignia') : L('{0} badges', '{0} insignias', nb));
   const trip = parse<string[]>('atlas-globe:trip') ?? [];
   const places = Object.values(parse<{ places?: Record<string, unknown[]> }>('atlas-globe:trip-places')?.places ?? {}).reduce((n, l) => n + l.length, 0);
-  if (trip.length) out.push(L(`a trip of ${trip.length} ${trip.length === 1 ? 'city' : 'cities'}${places ? ` and ${places} ${places === 1 ? 'place' : 'places'}` : ''}`, `un viaje de ${trip.length} ${trip.length === 1 ? 'ciudad' : 'ciudades'}${places ? ` y ${places} ${places === 1 ? 'lugar' : 'lugares'}` : ''}`));
+  if (trip.length) out.push(places ? L('a trip of {0, plural, one {# city} other {# cities}} and {1, plural, one {# place} other {# places}}', 'un viaje de {0, plural, one {# ciudad} other {# ciudades}} y {1, plural, one {# lugar} other {# lugares}}', trip.length, places) : L('a trip of {0, plural, one {# city} other {# cities}}', 'un viaje de {0, plural, one {# ciudad} other {# ciudades}}', trip.length));
   const me = parse<{ visited?: string[]; wish?: string[] }>('atlas-globe:personal');
-  if (me?.visited?.length) out.push(L(`${me.visited.length} countries visited`, `${me.visited.length} países visitados`));
-  if (me?.wish?.length) out.push(L(`${me.wish.length} to go`, `${me.wish.length} por visitar`));
+  if (me?.visited?.length) out.push(L('{0} countries visited', '{0} países visitados', me.visited.length));
+  if (me?.wish?.length) out.push(L('{0} to go', '{0} por visitar', me.wish.length));
   if (data['atlas-mydata']) out.push(L('your own data', 'tus datos propios'));
   return out.join(' · ') || L('settings only', 'solo ajustes');
 }
@@ -100,7 +99,7 @@ export function backupSettings(toast: (m: string) => void): HTMLElement {
     const a = h('a', { href: url, download: fileName() }) as HTMLAnchorElement;
     document.body.append(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 5000);
-    toast(L(`Backup saved: ${summary(b.data)}.`, `Respaldo guardado: ${summary(b.data)}.`));
+    toast(L('Backup saved: {0}.', 'Respaldo guardado: {0}.', summary(b.data)));
   })());
   const btns: HTMLElement[] = [save];
   // On a phone, straight to another app or device (a chat with yourself, a cloud drive, nearby sharing).
@@ -133,7 +132,7 @@ export function backupSettings(toast: (m: string) => void): HTMLElement {
       setTimeout(() => location.reload(), 900);
     });
     add(status,
-      h('p', null, h('strong', null, L(`Saved ${when}`, `Guardado el ${when}`)), ` (${got.b.version}): ${summary(got.b.data)}.`),
+      h('p', null, h('strong', null, L('Saved {0}', 'Guardado el {0}', when)), ` (${got.b.version}): ${summary(got.b.data)}.`),
       got.sealed ? null : h('p', { class: 'backup-warn', 'data-backup': 'unsealed' }, L('This file was changed after it was saved: your trip, places, lists and settings come over, but not its badges, streaks and scores (this device keeps its own).', 'Este archivo se modificó después de guardarlo: tu viaje, lugares, listas y ajustes se recuperan, pero no sus insignias, rachas ni puntuaciones (este dispositivo conserva las suyas).')),
       h('p', { class: 'muted small' }, L('Everything this device keeps is replaced by the file’s.', 'Todo lo que guarda este dispositivo se reemplaza por lo del archivo.')),
       h('div', { class: 'tool-actions' }, yes, no));

@@ -7,7 +7,7 @@ import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
-import { fmtNumber } from '../app/i18n';
+import { fmtNumber, dataLang } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { Borders, seeded, type BorderData } from './route';
 import { starText } from './score';
@@ -132,7 +132,7 @@ export class NameThemAll implements HostGame {
     if (badges.length) this.shell.toast(`${badges[0].icon} ${L('New badge', 'Nueva insignia')}: ${es() ? badges[0].es : badges[0].en}`, 4000);
   }
 
-  private name(id: string) { return this.app.data.name(id, es() ? 'es' : 'en'); }
+  private name(id: string) { return this.app.data.name(id, dataLang()); }
   private capitalOf(id: string) {
     const caps = this.app.data.cities.filter((x) => x.country === id && x.capital === 2);
     const c = caps.find((x) => x.name === this.attrs!.data[id]?.capital) ?? caps[0];
@@ -142,9 +142,9 @@ export class NameThemAll implements HostGame {
     const s = this.st!;
     const area = CONTINENTS.find((c) => c[0] === s.area)?.[1];
     const where = area ? (es() ? area.es : area.en) : '';
-    if (s.list === 'neighbours') return L(`Name every country that borders ${this.name(s.of!)}`, `Nombra todos los países que limitan con ${this.name(s.of!)}`);
-    if (s.list === 'capitals') return L(`Name the capital of every country of ${where}`, `Nombra la capital de todos los países de ${where}`);
-    return L(`Name every country of ${where}`, `Nombra todos los países de ${where}`);
+    if (s.list === 'neighbours') return L('Name every country that borders {0}', 'Nombra todos los países que limitan con {0}', this.name(s.of!));
+    if (s.list === 'capitals') return L('Name the capital of every country of {0}', 'Nombra la capital de todos los países de {0}', where);
+    return L('Name every country of {0}', 'Nombra todos los países de {0}', where);
   }
 
   render() {

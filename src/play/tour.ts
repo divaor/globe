@@ -198,7 +198,7 @@ export class GrandTour implements HostGame {
     const s = this.st!;
     if (s.mode !== 'land') return `${fmtNumber(Math.round(v))} km`;
     const c = Math.floor(v / 1e6), d = v - c * 1e6;
-    return `${c === 1 ? L('1 border', '1 frontera') : L(`${c} borders`, `${c} fronteras`)} · ${fmtNumber(Math.round(d))} km`;
+    return `${c === 1 ? L('1 border', '1 frontera') : L('{0} borders', '{0} fronteras', c)} · ${fmtNumber(Math.round(d))} km`;
   }
   private nm(x: Stop) { return es() ? x.es : x.en; }
 

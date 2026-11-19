@@ -4,7 +4,7 @@
 // The stories themselves are played by modes/stories.ts like any other collection.
 import { Search, Users, X } from 'lucide';
 import { h, icon, clear } from '../ui/dom';
-import { t, tx, lang, both } from '../app/i18n';
+import { t, tx, lang, both, L } from '../app/i18n';
 import { livesHook, fmtWhen, type StoryMode, type Conflict, type Entry, type Step, type Item, type Life } from '../modes/stories';
 import { mergeLives, twoNames, km, SEP } from './merge';
 import { loadJSON } from '../data/store';
@@ -22,7 +22,7 @@ const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCa
 const yearOf = (d: string) => /^-?\d+/.exec(d)?.[0] ?? d;
 /** "1907–1954", "c. 551–479 BC". */
 export function lifeYears(l: Life): string {
-  const about = l.bornAbout ? (lang() === 'es' ? 'h. ' : 'c. ') : '';
+  const about = l.bornAbout ? (L('c. ', 'h. ')) : '';
   const b = yearOf(l.born), d = yearOf(l.died);
   if (b.startsWith('-') && d.startsWith('-')) return `${about}${b.slice(1)}–${fmtWhen(d)}`;
   return `${about}${fmtWhen(b)}–${fmtWhen(d)}`;
@@ -123,7 +123,7 @@ export class Lives {
     // Two lives side by side: the pairs worth seeing, and any two.
     const pairRows = pairs.map((p) => [byId.get(p.a), byId.get(p.b)] as const).filter((x): x is readonly [Entry, Entry] => !!x[0] && !!x[1]);
     if (stories.length > 1) {
-      const any = h('button', { type: 'button', class: 'pill sm', 'data-lives': 'choose' }, icon(Users, 15), lang() === 'es' ? 'Elegir dos…' : 'Choose two…');
+      const any = h('button', { type: 'button', class: 'pill sm', 'data-lives': 'choose' }, icon(Users, 15), L('Choose two…', 'Elegir dos…'));
       any.addEventListener('click', () => { this.beside = ''; render(); list.scrollIntoView({ block: 'start' }); });
       two.append(h('h3', { class: 'sec-title' }, `👥 ${t('livesPairs')}`), h('p', { class: 'muted small' }, t('livesPairsHint')),
         h('div', { class: 'chip-row lives-pair-row' }, ...pairRows.map(([a, b]) => {
@@ -145,12 +145,12 @@ export class Lives {
     const es = lang() === 'es';
     const here = this.index.map((e) => ({ e, steps: (e.life?.path ?? []).map((p, i) => (p && km(p, c.at) <= 25 ? i : -1)).filter((i) => i >= 0) })).filter((x) => x.steps.length);
     if (here.length) {
-      el.append(h('h3', { class: 'sec-title' }, `👣 ${es ? 'Vidas que pasan por aquí' : 'Lives that pass through here'}`),
+      el.append(h('h3', { class: 'sec-title' }, `👣 ${L('Lives that pass through here', 'Vidas que pasan por aquí')}`),
         h('div', { class: 'guide-list' }, ...here.map(({ e, steps }) => {
           const row = h('button', { type: 'button', class: 'guide-item', 'data-life': e.id },
             h('span', { class: 'guide-item-ic' }, e.icon),
             h('span', { class: 'guide-item-text' }, h('span', { class: 'guide-item-title' }, tx(e.name)),
-              h('span', { class: 'guide-item-sub' }, `${e.life ? lifeYears(e.life) : ''} · ${tx(e.region)} · ${es ? `${steps.length} ${steps.length === 1 ? 'paso' : 'pasos'} aquí` : `${steps.length} ${steps.length === 1 ? 'step' : 'steps'} here`}`)));
+              h('span', { class: 'guide-item-sub' }, `${e.life ? lifeYears(e.life) : ''} · ${tx(e.region)} · ${L('{0, plural, one {# step} other {# steps}} here', '{0, plural, one {# paso} other {# pasos}} aquí', steps.length)}`)));
           row.addEventListener('click', () => { this.shell.sheet.close(); this.app.emit('open-story', 'lives', e.id, steps[0]); });
           return row;
         })));
@@ -165,15 +165,15 @@ export class Lives {
       const box = h('div', { 'data-people': key }, peopleList(people, pick, 30));
       el.append(h('h3', { class: 'sec-title' }, `${title} (${people.length})`), box);
       if (more) {
-        const all = h('button', { type: 'button', class: 'pill sm', 'data-people-all': key }, es ? 'Ver todos' : 'Show all');
+        const all = h('button', { type: 'button', class: 'pill sm', 'data-people-all': key }, L('Show all', 'Ver todos'));
         all.addEventListener('click', () => { clear(box); box.append(peopleList(people, pick, 500)); all.remove(); });
         el.append(all);
       }
     };
-    list(`👶 ${es ? `Nacieron en ${name}` : `Born in ${name}`}`, bornHere, 'born');
-    list(`🕯️ ${es ? `Murieron en ${name}` : `Died in ${name}`}`, diedHere, 'died');
-    if (!here.length && !bornHere.length && !diedHere.length) el.append(h('p', { class: 'muted small' }, es ? 'No tenemos a nadie de aquí todavía.' : 'We have nobody from here yet.'));
-    else el.append(h('p', { class: 'muted small' }, es ? 'Personas con artículos en muchas Wikipedias (Wikidata), las más conocidas primero. Toca una para ver su ficha.' : 'People with articles in many Wikipedias (Wikidata), the best known first. Tap one for their card.'));
+    list(`👶 ${L('Born in {0}', 'Nacieron en {0}', name)}`, bornHere, 'born');
+    list(`🕯️ ${L('Died in {0}', 'Murieron en {0}', name)}`, diedHere, 'died');
+    if (!here.length && !bornHere.length && !diedHere.length) el.append(h('p', { class: 'muted small' }, L('We have nobody from here yet.', 'No tenemos a nadie de aquí todavía.')));
+    else el.append(h('p', { class: 'muted small' }, L('People with articles in many Wikipedias (Wikidata), the best known first. Tap one for their card.', 'Personas con artículos en muchas Wikipedias (Wikidata), las más conocidas primero. Toca una para ver su ficha.')));
   }
 
   // ---- two lives side by side
@@ -184,7 +184,7 @@ export class Lives {
     try {
       const [a, b] = await Promise.all([loadJSON<Conflict>(`lives/${ia}.json`), loadJSON<Conflict>(`lives/${ib}.json`)]);
       await this.mode.play(mergeLives(a, b, { both: both('livesBoth'), summary: both('livesTwoSummary') }), null, at);
-    } catch { this.shell.toast(lang() === 'es' ? 'No se pudieron cargar esas vidas.' : 'Those lives could not be loaded.', 2500); }
+    } catch { this.shell.toast(L('Those lives could not be loaded.', 'No se pudieron cargar esas vidas.'), 2500); }
   }
 
   /** Starts choosing the life to set beside this one. */

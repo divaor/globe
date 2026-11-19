@@ -2,10 +2,9 @@
 // near a place. For plants, "flowering" counts only the sightings people marked as in flower (iNaturalist's Plant
 // Phenology annotation, term 12, value 13). Used by the animal and plant finders (v0.30.0, v0.31.0) and the plant card.
 import { h } from '../ui/dom';
-import { lang, fmtCompact } from '../app/i18n';
+import { lang, fmtCompact, L } from '../app/i18n';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 const MONTHS = { en: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'], es: ['E', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'] };
 const MONTH_NAMES = { en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'] };
 
@@ -50,9 +49,9 @@ export function monthBars(v: number[], what: 'sightings' | 'flowering' = 'sighti
   });
   const names = [...best].map(monthLong).join(', ');
   const text = what === 'flowering'
-    ? (total ? L(`${fmtCompact(total)} sightings in flower on iNaturalist. Most in ${names}.`, `${fmtCompact(total)} avistamientos en flor en iNaturalist. La mayoría en ${names}.`)
+    ? (total ? L('{0} sightings in flower on iNaturalist. Most in {1}.', '{0} avistamientos en flor en iNaturalist. La mayoría en {1}.', fmtCompact(total), names)
       : L('No sightings marked in flower on iNaturalist here yet.', 'Aún no hay avistamientos marcados en flor en iNaturalist aquí.'))
-    : (total ? L(`${fmtCompact(total)} checked sightings on iNaturalist. Most in ${names}.`, `${fmtCompact(total)} avistamientos verificados en iNaturalist. La mayoría en ${names}.`)
+    : (total ? L('{0} checked sightings on iNaturalist. Most in {1}.', '{0} avistamientos verificados en iNaturalist. La mayoría en {1}.', fmtCompact(total), names)
       : L('No checked sightings on iNaturalist here yet.', 'Aún no hay avistamientos verificados en iNaturalist aquí.'));
   return h('div', {}, bars, h('p', { class: 'muted small' }, text));
 }

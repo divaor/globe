@@ -3,6 +3,7 @@
 import { h, toggle } from './dom';
 import { mapView, MAP_STYLES, type MapStyle } from '../engine/style';
 import type { App } from '../app/app';
+import { L, tx } from '../app/i18n';
 
 const NAMES: Record<MapStyle, { en: string; es: string; sub: { en: string; es: string } }> = {
   atlas: { en: 'Atlas', es: 'Atlas', sub: { en: 'A colour per country', es: 'Un color por país' } },
@@ -57,15 +58,13 @@ export class MapStyleMenu {
   }
 
   private render() {
-    const es = this.app.lang === 'es';
-    const L = (en: string, sp: string) => (es ? sp : en);
     const tiles = h('div', { class: 'ms-tiles', role: 'radiogroup', 'aria-label': L('Map style', 'Estilo del mapa') },
       MAP_STYLES.map((st) => {
         const on = mapView.style === st;
         const b = h('button', { type: 'button', class: `ms-tile${on ? ' on' : ''}`, role: 'radio', 'aria-checked': String(on), 'data-style': st },
           h('span', { class: `ms-swatch ms-${st}`, 'aria-hidden': 'true' }),
-          h('span', { class: 'ms-name' }, NAMES[st][es ? 'es' : 'en']),
-          h('span', { class: 'ms-sub' }, NAMES[st].sub[es ? 'es' : 'en']));
+          h('span', { class: 'ms-name' }, tx(NAMES[st])),
+          h('span', { class: 'ms-sub' }, tx(NAMES[st].sub)));
         b.addEventListener('click', () => this.app.setMapView({ style: st }));
         return b;
       }));

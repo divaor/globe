@@ -6,7 +6,7 @@
 //   and UNESCO's page.
 // - Inventions: every item of the Inventions collection (data/inventions/items.json) where it was invented, by
 //   field and age; a tap opens its card, which can open the story it comes from.
-import { lang, fmtNumber } from '../../app/i18n';
+import { lang, fmtNumber, L, dataLang } from '../../app/i18n';
 import { samplePalette, SEQUENTIAL } from '../../engine/colors';
 import { loadJSON } from '../../data/store';
 import { h } from '../../ui/dom';
@@ -18,7 +18,6 @@ import { planLink } from '../../guide/plan';
 import { appLocale } from '../../app/i18n';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 let APP: App | null = null;
 
 // ---- Shared: pictures and Wikipedia summaries ---------------------------------------------------------------------
@@ -73,9 +72,9 @@ const LAST = 2026;
 const CAT_COLOR = { c: '#f2a93b', n: '#2fbf71', m: '#4fc3f7' } as const;
 const DANGER = '#ff3b30';
 const ROMAN = ['', 'i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x'];
-const catName = (c: Site['c'], plural = false) => c === 'n' ? L(plural ? 'Natural' : 'Natural site', plural ? 'Naturales' : 'Sitio natural')
-  : c === 'm' ? L(plural ? 'Mixed (cultural and natural)' : 'Cultural and natural site', plural ? 'Mixtos (culturales y naturales)' : 'Sitio cultural y natural')
-  : L(plural ? 'Cultural' : 'Cultural site', plural ? 'Culturales' : 'Sitio cultural');
+const catName = (c: Site['c'], plural = false) => c === 'n' ? (plural ? L('Natural', 'Naturales') : L('Natural site', 'Sitio natural'))
+  : c === 'm' ? (plural ? L('Mixed (cultural and natural)', 'Mixtos (culturales y naturales)') : L('Cultural and natural site', 'Sitio cultural y natural'))
+  : (plural ? L('Cultural', 'Culturales') : L('Cultural site', 'Sitio cultural'));
 /** The year a site left the list (removed, or merged into another site), if it did. */
 const gone = (s: Site) => s.x ?? s.merged ?? null;
 /** In danger in a given year (today when no year). */
@@ -244,13 +243,13 @@ export const heritage: LayerDef = {
     const player: LegendPlayer | undefined = year == null ? undefined : {
       min: FIRST, max: LAST, value: year, playing: st.playing, speeds: SPEEDS, speed: st.speed,
       label: (v) => String(v),
-      speedLabel: (v) => { const n = v.toLocaleString(appLocale()); return v === 1 ? L('1 year a second', '1 año por segundo') : L(`${n} years a second`, `${n} años por segundo`); },
+      speedLabel: (v) => { const n = v.toLocaleString(appLocale()); return v === 1 ? L('1 year a second', '1 año por segundo') : L('{0} years a second', '{0} años por segundo', n); },
       onToggle: () => togglePlay(inst), onSeek: (v) => seek(inst, v), onSpeed: (v) => { st.speed = v; },
     };
     const title = year != null
-      ? L(`${year}: ${fmtNumber(sites.length)} sites`, `${year}: ${fmtNumber(sites.length)} sitios`)
+      ? L('{0}: {1} sites', '{0}: {1} sitios', year, fmtNumber(sites.length))
       : String(inst.options.show) === 'removed' ? L('Removed from the list', 'Retirados de la lista')
-      : L(`${fmtNumber(sites.length)} World Heritage sites`, `${fmtNumber(sites.length)} sitios del Patrimonio Mundial`);
+      : L('{0} World Heritage sites', '{0} sitios del Patrimonio Mundial', fmtNumber(sites.length));
     const note = year != null ? L('The sites on the list in each year. Drag to any year, or change the speed.', 'Los sitios de la lista en cada año. Arrastra hasta cualquier año o cambia la velocidad.')
       : L('UNESCO’s list after its July 2026 session. Ringed in red: in danger. Tap a site for its card.', 'La lista de la UNESCO tras su sesión de julio de 2026. Con anillo rojo: en peligro. Toca un sitio para ver su ficha.');
     if (inst.options.colour === 'year') {
@@ -308,21 +307,21 @@ export const heritage: LayerDef = {
 function siteCard(s: Site, ui: LayerTapUi) {
     const rows: InfoRow[] = [];
     const left = gone(s);
-    rows.push({ label: L('Listed', 'Inscrito'), value: left != null ? (s.x ? L(`${s.y}; removed from the list in ${s.x}`, `${s.y}; retirado de la lista en ${s.x}`) : L(`${s.y}; part of another site since ${left}`, `${s.y}; parte de otro sitio desde ${left}`)) : String(s.y), icon: '📅' });
+    rows.push({ label: L('Listed', 'Inscrito'), value: left != null ? (s.x ? L('{0}; removed from the list in {1}', '{0}; retirado de la lista en {1}', s.y, s.x) : L('{0}; part of another site since {1}', '{0}; parte de otro sitio desde {1}', s.y, left)) : String(s.y), icon: '📅' });
     rows.push({ label: L('Category', 'Tipo'), value: catName(s.c), icon: s.c === 'n' ? '🌿' : s.c === 'm' ? '⛰️' : '🏰' });
     if (s.cc.length) rows.push({ label: s.cc.length > 1 ? L('Countries', 'Países') : L('Country', 'País'), value: s.cc.map(countryName).join(', '), icon: '📍' });
     if (s.cr.length) rows.push({ label: L('Criteria', 'Criterios'), value: s.cr.map((c) => `(${ROMAN[c]})`).join(' '), icon: '📜' });
     if (s.d?.length) {
       const now = inDanger(s);
-      const spans = s.d.map(([a, b]) => (b == null ? L(`since ${a}`, `desde ${a}`) : `${a}–${b}`)).join(', ');
+      const spans = s.d.map(([a, b]) => (b == null ? L('since {0}', 'desde {0}', a) : `${a}–${b}`)).join(', ');
       rows.push({ label: now ? L('In danger', 'En peligro') : L('Was in danger', 'Estuvo en peligro'), value: spans, icon: '⚠️' });
     }
     const titles = { en: s.w[0], es: s.w[1] };
     const links: { label: string; href?: string; onClick?: () => void }[] = [];
     if (s.w[0] || s.w[1]) links.push({ label: 'Wikipedia', href: wikiHref(titles) });
-    links.push({ label: 'UNESCO', href: `https://whc.unesco.org/${es() ? 'es' : 'en'}/list/${s.ref}` });
+    links.push({ label: 'UNESCO', href: `https://whc.unesco.org/${dataLang()}/list/${s.ref}` });
     // ☆: into the trip, under the travel-guide city nearest to it.
-    if (gone(s) == null) links.push(planLink({ id: `whs:${s.ref}`, kind: 'whs', n: [s.n[0], s.n[1] || s.n[0]], at: s.at, url: `https://whc.unesco.org/${es() ? 'es' : 'en'}/list/${s.ref}`, why: [{ t: [`World Heritage since ${s.y}`, `Patrimonio Mundial desde ${s.y}`] }] }));
+    if (gone(s) == null) links.push(planLink({ id: `whs:${s.ref}`, kind: 'whs', n: [s.n[0], s.n[1] || s.n[0]], at: s.at, url: `https://whc.unesco.org/${dataLang()}/list/${s.ref}`, why: [{ t: [`World Heritage since ${s.y}`, `Patrimonio Mundial desde ${s.y}`] }] }));
     const image = s.img ? Promise.resolve(commons(s.img)) : summary(titles).then((x) => x?.thumb ?? null);
     const name = siteName(s);
     const sub = [L('World Heritage', 'Patrimonio de la Humanidad'), s.cc.length === 1 ? countryName(s.cc[0]) : ''].filter(Boolean).join(' · ');
@@ -355,9 +354,9 @@ const tx2 = (x?: { en: string; es: string }) => (x ? (es() ? x.es || x.en : x.en
 function when(it: Invention): string {
   const y = Number.parseInt(it.date, 10);
   if (!Number.isFinite(y)) return String(Math.floor(it.t));
-  if (y < -10000) return L(`${fmtNumber(-y)} years ago`, `hace ${fmtNumber(-y)} años`);
-  if (y < 0) return L(`${-y} BC`, `${-y} a. C.`);
-  if (y < 1000) return L(`AD ${y}`, `${y} d. C.`);
+  if (y < -10000) return L('{0} years ago', 'hace {0} años', fmtNumber(-y));
+  if (y < 0) return L('{0} BC', '{0} a. C.', -y);
+  if (y < 1000) return L('AD {0}', '{0} d. C.', y);
   return String(y);
 }
 function shownInventions(inst: LayerInstance): Invention[] {
@@ -430,7 +429,7 @@ export const inventionsMap: LayerDef = {
     const n = shownInventions(inst).length;
     const used = [...new Set(shownInventions(inst).map((it) => it.cat))].map((c) => invCats.get(c)).filter((c): c is Cat => !!c);
     return {
-      kind: 'categories', title: L(`${n} inventions`, `${n} inventos`),
+      kind: 'categories', title: L('{0} inventions', '{0} inventos', n),
       items: used.map((c) => ({ color: c.color, label: tx2(c.name), icon: c.icon, shape: 'emoji' as const })),
       note: L('Where each was made or first shown. Tap one for its card and its story.', 'Dónde se hizo o se mostró cada uno. Toca uno para ver su ficha y su historia.'),
     };
@@ -463,7 +462,7 @@ function inventionCard(it: Invention, ui: LayerTapUi) {
     const rows: InfoRow[] = [{ label: L('When', 'Cuándo'), value: when(it), icon: '📅' }];
     if (it.place) rows.push({ label: L('Where', 'Dónde'), value: tx2(it.place), icon: '📍' });
     if (it.by) rows.push({ label: L('Invented by', 'Inventado por'), value: tx2(it.by), icon: '🧑‍🔬' });
-    if (it.whs) rows.push({ label: L('World Heritage', 'Patrimonio de la Humanidad'), value: L(`Since ${it.whs.y}`, `Desde ${it.whs.y}`), icon: '🏛️' });
+    if (it.whs) rows.push({ label: L('World Heritage', 'Patrimonio de la Humanidad'), value: L('Since {0}', 'Desde {0}', it.whs.y), icon: '🏛️' });
     const notes = [tx2(it.text), it.details ? tx2(it.details) : ''].filter(Boolean);
     const links: { label: string; href?: string; onClick?: () => void }[] = [];
     if (it.wiki) links.push({ label: 'Wikipedia', href: wikiHref(it.wiki) });

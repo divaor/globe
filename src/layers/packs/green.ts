@@ -7,7 +7,7 @@
 // numbered stars. The breathing planet plays NASA's twelve monthly pictures of how green the land is.
 import { geoArea, geoContains, geoDistance, geoInterpolate } from 'd3-geo';
 import type { Topology } from 'topojson-specification';
-import { lang, fmtCompact } from '../../app/i18n';
+import { lang, fmtCompact, L } from '../../app/i18n';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import { loadJSON, shapesFrom, dataUrl, type Shape } from '../../data/store';
@@ -28,7 +28,6 @@ import {
 import { plantCard, gardenCard, treeCard, ecoCard, spectacleCard, cropCard, plantStatusBadge, spectacleKind, monthsText, type GreenLinks } from '../../green/cards';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 let APP: App | null = null;
 let SHELL: Shell | null = null;
 let data: GreenData | null = null;
@@ -195,7 +194,7 @@ async function bestPlaces(p: Plant) {
   await showPlantFocus(f);
   SHELL?.card.hide();
   const body = h('div', { class: 'guide wild-panel', 'data-green': 'best', 'data-plant': p.id });
-  body.append(h('p', { class: 'muted small' }, L(`Parks, reserves and botanical gardens where ${nm(p)} grows wild, those where people have shared the most sightings first. The numbers match the stars on the map (gardens in pink).`, `Parques, reservas y jardines botánicos donde ${nm(p).toLowerCase()} crece silvestre, primero aquellos donde más avistamientos se han compartido. Los números coinciden con las estrellas del mapa (jardines en rosa).`)));
+  body.append(h('p', { class: 'muted small' }, L('Parks, reserves and botanical gardens where {0} grows wild, those where people have shared the most sightings first. The numbers match the stars on the map (gardens in pink).', 'Parques, reservas y jardines botánicos donde {1} crece silvestre, primero aquellos donde más avistamientos se han compartido. Los números coinciden con las estrellas del mapa (jardines en rosa).', nm(p), nm(p).toLowerCase())));
   const list = h('div', { class: 'guide-list' });
   (f.best ?? []).forEach((pl, i) => {
     const sub = pl.kind === 'park' ? [pl.p.k === 'np' ? L('National park', 'Parque nacional') : L('Nature reserve', 'Reserva natural'), pl.p.cc ? greenLinks.countryName(pl.p.cc) : ''] : [L('Botanical garden', 'Jardín botánico'), pl.g.cc ? greenLinks.countryName(pl.g.cc) : ''];
@@ -213,7 +212,7 @@ async function relativesPanel(p: Plant) {
   SHELL?.card.hide();
   const rel = plantRelatives(data, p);
   const body = h('div', { class: 'guide wild-panel', 'data-green': 'relatives', 'data-plant': p.id });
-  body.append(h('p', { class: 'muted small' }, p.fam && rel.some((b) => b.fam === p.fam) ? L(`${nm(p)} and its family, ${p.fam}, among our plants.`, `${nm(p)} y su familia, ${p.fam}, entre nuestras plantas.`) : L(`Its closest relatives among our plants (order ${p.ord}).`, `Sus parientes más cercanos entre nuestras plantas (orden ${p.ord}).`)));
+  body.append(h('p', { class: 'muted small' }, p.fam && rel.some((b) => b.fam === p.fam) ? L('{0} and its family, {1}, among our plants.', '{0} y su familia, {1}, entre nuestras plantas.', nm(p), p.fam) : L('Its closest relatives among our plants (order {0}).', 'Sus parientes más cercanos entre nuestras plantas (orden {0}).', p.ord)));
   const list = h('div', { class: 'guide-list' });
   for (const b of rel.slice(0, 30)) list.append(row(b.e, nm(b), b.sci, () => greenLinks.openPlant(b), { 'data-plant': b.id }, plantStatusBadge(b)));
   if (!rel.length) list.append(h('p', { class: 'muted small' }, L('None of its relatives is among our plants.', 'Ninguno de sus parientes está entre nuestras plantas.')));
@@ -252,7 +251,7 @@ export const plantsOfTheWorld: LayerDef = {
     if (!data) return null;
     if (focus) {
       return {
-        kind: 'categories', title: L(`${focus.name}: where it grows`, `${focus.name}: dónde crece`),
+        kind: 'categories', title: L('{0}: where it grows', '{0}: dónde crece', focus.name),
         items: [
           { color: 'rgb(43,138,62)', label: L('Many sightings', 'Muchos avistamientos'), shape: 'square' },
           { color: 'rgba(105,219,124,0.55)', label: L('A few sightings', 'Pocos avistamientos'), shape: 'square' },
@@ -269,7 +268,7 @@ export const plantsOfTheWorld: LayerDef = {
     const shown = data.plants.filter(okFor(inst));
     if (statusOf(inst) === 'endangered') {
       return {
-        kind: 'categories', title: L(`${shown.length} threatened plants`, `${shown.length} plantas amenazadas`),
+        kind: 'categories', title: L('{0} threatened plants', '{0} plantas amenazadas', shown.length),
         items: (['CR', 'EN', 'VU'] as const).map((s) => ({ color: STATUS[s].color, label: `${statusName(s)} (${shown.filter((p) => p.st === s).length})`, shape: 'dot' as const })),
         note: L('The ring shows its IUCN Red List category.', 'El anillo muestra su categoría en la Lista Roja de la UICN.'),
       };
@@ -277,7 +276,7 @@ export const plantsOfTheWorld: LayerDef = {
     const n = new Map<PlantGroup, number>();
     for (const p of shown) n.set(p.g, (n.get(p.g) ?? 0) + 1);
     return {
-      kind: 'categories', title: L(`${shown.length} plants where they grow`, `${shown.length} plantas donde crecen`),
+      kind: 'categories', title: L('{0} plants where they grow', '{0} plantas donde crecen', shown.length),
       items: (Object.keys(PLANT_GROUPS) as PlantGroup[]).filter((g) => n.get(g)).map((g) => ({ color: PLANT_GROUPS[g].color, icon: PLANT_GROUPS[g].icon, shape: 'emoji' as const, label: `${plantGroupName(g)} (${n.get(g)})` })),
       note: L('Each plant where people have seen it growing wild. Zoomed out, the best known of each area; zoom in for more. From GBIF sightings shared under open licences.', 'Cada planta donde se ha visto creciendo silvestre. De lejos, la más conocida de cada zona; acerca el mapa para ver más. A partir de avistamientos de GBIF compartidos con licencias abiertas.'),
     };
@@ -350,7 +349,7 @@ export const botanicalGardens: LayerDef = {
     const kind = String(inst.options.kind ?? 'all');
     const n = (k: string) => list.filter((g) => g.k === k).length;
     return {
-      kind: 'categories', title: L(`${fmtCompact(list.filter((g) => kind === 'all' || g.k === kind).length)} gardens`, `${fmtCompact(list.filter((g) => kind === 'all' || g.k === kind).length)} jardines`),
+      kind: 'categories', title: L('{0} gardens', '{0} jardines', fmtCompact(list.filter((g) => kind === 'all' || g.k === kind).length)),
       items: [['bg', '#e64980', '🌺', L('Botanical gardens', 'Jardines botánicos')], ['arb', '#2f9e44', '🌳', L('Arboretums', 'Arboretos')]].filter(([k]) => kind === 'all' || k === kind)
         .map(([k, color, icon, label]) => ({ color, icon, label: `${label} (${fmtCompact(n(k))})`, shape: 'dot' as const })),
       note: L('From Wikidata. A garden’s card lists the plants of ours that grow wild around it.', 'De Wikidata. La ficha de cada jardín enumera las plantas nuestras que crecen silvestres a su alrededor.'),
@@ -414,9 +413,9 @@ export const famousTrees: LayerDef = {
     const kind = String(inst.options.kind ?? 'all');
     const recs = list.filter((t) => t.rec);
     return {
-      kind: 'categories', title: L(`${fmtCompact(list.filter((t) => kind === 'all' || (kind === 'records') === !!t.rec).length)} famous trees`, `${fmtCompact(list.filter((t) => kind === 'all' || (kind === 'records') === !!t.rec).length)} árboles famosos`),
+      kind: 'categories', title: L('{0} famous trees', '{0} árboles famosos', fmtCompact(list.filter((t) => kind === 'all' || (kind === 'records') === !!t.rec).length)),
       items: [
-        ...(kind !== 'others' ? [{ color: '#f59f00', icon: '🏆', label: L(`Record holders (${recs.length})`, `Récords (${recs.length})`), shape: 'dot' as const }] : []),
+        ...(kind !== 'others' ? [{ color: '#f59f00', icon: '🏆', label: L('Record holders ({0})', 'Récords ({0})', recs.length), shape: 'dot' as const }] : []),
         ...(kind !== 'records' ? [{ color: '#2b8a3e', icon: '🌳', label: L('Remarkable trees', 'Árboles notables'), shape: 'dot' as const }, { color: '#868e96', icon: '🌳', label: L('Fallen or gone', 'Caídos o desaparecidos'), shape: 'dot' as const }] : []),
       ],
       note: L('A dashed ring: kept secret to protect it, drawn at its park. Trees from Wikidata; the record holders checked by hand.', 'Anillo punteado: se mantiene en secreto para protegerlo y se dibuja en su parque. Árboles de Wikidata; los récords, revisados a mano.'),
@@ -617,7 +616,7 @@ export const breathingPlanet: LayerDef = {
     const m = Math.floor(greenMonthOf(inst, performance.now()));
     const step = (by: number) => window.atlas?.app.setOption('greenness', 'month', String(((m + by + 12) % 12) + 1));
     return {
-      kind: 'gradient', title: L(`The breathing planet · ${monthName(m)}`, `El planeta que respira · ${monthName(m)}`),
+      kind: 'gradient', title: L('The breathing planet · {0}', 'El planeta que respira · {0}', monthName(m)),
       stops: NDVI_STOPS, min: L('Bare', 'Sin plantas'), max: L('Lush', 'Exuberante'),
       note: playing ? L('A year goes by in 24 seconds (2024). Pick a month to stop. Greener: more leaves, from NASA’s MODIS vegetation index.', 'Un año pasa en 24 segundos (2024). Elige un mes para detenerte. Más verde: más hojas, según el índice de vegetación MODIS de la NASA.')
         : L('Greener: more leaves, from NASA’s MODIS vegetation index (2024). Blank: no reading (snow, cloud, the polar night).', 'Más verde: más hojas, según el índice de vegetación MODIS de la NASA (2024). En blanco: sin lectura (nieve, nubes, la noche polar).'),
@@ -651,7 +650,7 @@ async function whatsOnPanel(m: number, at?: [number, number]) {
     b.addEventListener('click', () => { APP?.setOption('calendar', 'month', String(((m - 1 + by + 12) % 12) + 1)); void whatsOnPanel(((m - 1 + by + 12) % 12) + 1, from); });
     head.append(b);
   }
-  body.append(head, h('p', { class: 'muted small' }, L(`${list.length} of nature’s spectacles in ${monthName(m - 1)}, the nearest to the middle of the map first.`, `${list.length} espectáculos de la naturaleza en ${monthName(m - 1)}, primero los más cercanos al centro del mapa.`)));
+  body.append(head, h('p', { class: 'muted small' }, L('{0} of nature’s spectacles in {1}, the nearest to the middle of the map first.', '{0} espectáculos de la naturaleza en {1}, primero los más cercanos al centro del mapa.', list.length, monthName(m - 1))));
   const rows = h('div', { class: 'guide-list' });
   for (const s of list) {
     const km = Math.round(geoDistance(s.at, from) * 6371);
@@ -660,7 +659,7 @@ async function whatsOnPanel(m: number, at?: [number, number]) {
     }, { 'data-spectacle': s.id }));
   }
   body.append(rows);
-  SHELL?.openPanel('green-whats-on', `📅 ${L(`What’s on in ${monthName(m - 1)}`, `Qué hay en ${monthName(m - 1)}`)}`, body);
+  SHELL?.openPanel('green-whats-on', `📅 ${L('What’s on in {0}', 'Qué hay en {0}', monthName(m - 1))}`, body);
 }
 
 export const naturesCalendar: LayerDef = {
@@ -700,7 +699,7 @@ export const naturesCalendar: LayerDef = {
     const on = (calendar ?? []).filter((s) => s.months.includes(m));
     const step = (by: number) => APP?.setOption('calendar', 'month', String(((m - 1 + by + 12) % 12) + 1));
     return {
-      kind: 'categories', title: L(`Nature’s calendar · ${monthName(m - 1)}`, `Calendario de la naturaleza · ${monthName(m - 1)}`),
+      kind: 'categories', title: L('Nature’s calendar · {0}', 'Calendario de la naturaleza · {0}', monthName(m - 1)),
       items: (['bloom', 'autumn', 'green', 'animal'] as const).map((k) => ({ color: KIND_COLOR[k], icon: spectacleKind(k).icon, shape: 'dot' as const, label: `${es() ? spectacleKind(k).es : spectacleKind(k).en} (${on.filter((s) => s.kind === k).length})` })),
       note: L('A thick ring: at its best this month. Tap one for when and how to see it.', 'Anillo grueso: en su mejor momento este mes. Toca uno para ver cuándo y cómo verlo.'),
       actions: [
@@ -817,13 +816,13 @@ export const firstCrops: LayerDef = {
     const list = crops ?? [];
     if (cropFocus) return {
       kind: 'categories', title: `${cropFocus.e} ${tt(cropFocus.n)}: ${L('its journey', 'su viaje')}`,
-      items: [{ color: '#e67700', label: L(`First grown about ${yearText(cropFocus.date)}`, `Primer cultivo hacia ${yearText(cropFocus.date)}`), shape: 'dot' }, ...cropFocus.spread.map((s) => ({ color: '#ffd43b', label: `${tt(s.label)} · ${yearText(s.date)}`, shape: 'line' as const }))],
+      items: [{ color: '#e67700', label: L('First grown about {0}', 'Primer cultivo hacia {0}', yearText(cropFocus.date)), shape: 'dot' }, ...cropFocus.spread.map((s) => ({ color: '#ffd43b', label: `${tt(s.label)} · ${yearText(s.date)}`, shape: 'line' as const }))],
       actions: [{ label: L('All crops', 'Todos los cultivos'), icon: '🌾', onClick: () => { cropFocus = null; LC.requestRender(); LC.notify?.(); }, primary: true }, { label: L('Its card', 'Su ficha'), icon: cropFocus.e, onClick: () => void openCrop(cropFocus!.id) }],
     };
     const old = list.filter((c) => c.date <= -5000).length;
     return {
-      kind: 'categories', title: L(`${list.length} crops where they were first grown`, `${list.length} cultivos donde se cultivaron por primera vez`),
-      items: [{ color: '#e67700', label: L(`${old} of them more than 7,000 years ago`, `${old} de ellos hace más de 7000 años`), shape: 'dot' }],
+      kind: 'categories', title: L('{0} crops where they were first grown', '{0} cultivos donde se cultivaron por primera vez', list.length),
+      items: [{ color: '#e67700', label: L('{0} of them more than 7,000 years ago', '{0} de ellos hace más de 7000 años', old), shape: 'dot' }],
       note: L('Tap a crop for when and where it was first grown, and its journey around the world. Turn on Journeys to see them all.', 'Toca un cultivo para ver cuándo y dónde se cultivó por primera vez, y su viaje por el mundo. Activa Viajes para verlos todos.'),
     };
   },

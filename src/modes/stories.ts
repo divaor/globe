@@ -16,7 +16,7 @@ import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry, MultiLineString, Polygon } from 'geojson';
 import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen, Search, Music, Volume2, VolumeX } from 'lucide';
 import { loadJSON, shapesFrom, chunkLines, dataUrl, type Shape, type Line } from '../data/store';
-import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji } from '../app/i18n';
+import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji, L, dataLang } from '../app/i18n';
 import { keepAwake } from '../ui/wake';
 import { recordSeen } from '../learn/progress';
 import { h, icon, clear } from '../ui/dom';
@@ -57,7 +57,7 @@ export function whsRows(w: Whs): { label: string; value: string; icon: string }[
   return rows;
 }
 /** UNESCO's page of a site, in the reader's language. */
-export const whsUrl = (ref: number) => `https://whc.unesco.org/${lang() === 'es' ? 'es' : 'en'}/list/${ref}`;
+export const whsUrl = (ref: number) => `https://whc.unesco.org/${dataLang()}/list/${ref}`;
 
 export interface Item {
   id?: string; name: Text; at: Pt; cat: string; icon: string; date: string; t: number; end?: string; life?: [string, string | null];
@@ -273,12 +273,13 @@ function group(n: number, sep: string): string { return String(n).replace(/\B(?=
  * How long ago, and in what: ["3.7", billions], ["3.2", millions] or ["300,000", years]. Spanish
  * counts thousands of millions in millions, with no separator ("3700 millones").
  */
+// i18n: by hand. Deep-time numbers are written each language's own way (a case per language, as Intl would).
 function agoNum(n: number, es: boolean): [string, 'bn' | 'mn' | ''] {
   if (n >= 1e9 && !es) return [String(Math.round(n / 1e7) / 100), 'bn'];
   // Millions to two decimals at most, as the stories give them: 7, 3.2, 3.66.
   if (n >= 1e6) { const m = Math.round(n / 1e4) / 100; return [es ? String(m).replace('.', ',') : String(m), 'mn']; }
   const r = n >= 1e5 ? Math.round(n / 1e3) * 1e3 : Math.round(n / 100) * 100;
-  return [group(r, es ? '\u00a0' : ','), ''];
+  return [group(r, es ? '\u00a0' : ','), '']; // i18n: by hand
 }
 const UNIT_EN = { bn: 'billion', mn: 'million', '': '' };
 /** "3.7 billion years ago", "3.2 million years ago", "300,000 years ago", "hace 14\u00a0400 años". */
@@ -290,6 +291,7 @@ function fmtAgo(y: number): string {
 /** "7–2 million years ago", "300,000–40,000 years ago", "3.7 billion – 541 million years ago". */
 function fmtAgoRange(y0: number, y1: number): string {
   const es = lang() === 'es', [a, ua] = agoNum(-y0, es), [b, ub] = agoNum(-y1, es);
+  // i18n: by hand
   if (ua === ub) return es ? `hace ${a}–${b}\u00a0${ua ? 'millones de ' : ''}años` : `${a}–${b}\u00a0${ua ? `${UNIT_EN[ua]} ` : ''}years ago`;
   if (es) return `hace ${a}\u00a0millones – ${b}\u00a0años`;
   return `${a}\u00a0${UNIT_EN[ua]} – ${b}\u00a0${ub ? `${UNIT_EN[ub]} ` : ''}years ago`;
@@ -306,8 +308,8 @@ export function fmtWhen(d: string, eraHint = 1, short = false): string {
   if (y < AGO) return fmtAgo(y);
   const es = lang() === 'es';
   // Non-breaking spaces keep "216 a. C." and "AD 476" together when the text wraps.
-  const year = y < 0 ? (es ? `${-y}\u00a0a.\u00a0C.` : `${-y}\u00a0BC`) : eraHint < 0 && y < 1000 ? (es ? `${y}\u00a0d.\u00a0C.` : `AD\u00a0${y}`) : String(y);
-  const mon = mo ? (short ? MONTHS_SHORT : MONTHS)[es ? 'es' : 'en'][mo - 1] : '';
+  const year = y < 0 ? L('{0}\u00a0BC', '{0}\u00a0a.\u00a0C.', -y) : eraHint < 0 && y < 1000 ? L('AD\u00a0{0}', '{0}\u00a0d.\u00a0C.', y) : String(y);
+  const mon = mo ? (short ? MONTHS_SHORT : MONTHS)[dataLang()][mo - 1] : '';
   // Short: "1 nov. 1755" (a day's date that would not fit the story bar of a phone).
   if (es && short && day) return `${day} ${mon} ${year}`;
   if (es) return day ? `${day} de ${mon} de ${year}` : mo ? `${mon} de ${year}` : year;
@@ -319,9 +321,8 @@ function fmtYears(start: string, end: string): string {
   const y0 = Number(/^-?\d+/.exec(start)?.[0]), y1 = Number(/^-?\d+/.exec(end)?.[0]);
   // From deep time to our days: "245 million years ago – today".
   if (y0 < AGO) return y1 < AGO ? fmtAgoRange(y0, y1) : `${fmtAgo(y0)} – ${y1 >= 2000 ? t('storyToday') : fmtWhen(end, y0)}`;
-  const es = lang() === 'es';
-  if (y0 < 0 && y1 < 0) return `${-y0}–${-y1}\u00a0${es ? 'a.\u00a0C.' : 'BC'}`;
-  if (y0 < 0) return es ? `${-y0}\u00a0a.\u00a0C. – ${y1}\u00a0d.\u00a0C.` : `${-y0}\u00a0BC – AD\u00a0${y1}`;
+  if (y0 < 0 && y1 < 0) return L('{0}–{1}\u00a0BC', '{0}–{1}\u00a0a.\u00a0C.', -y0, -y1);
+  if (y0 < 0) return L('{0}\u00a0BC – AD\u00a0{1}', '{0}\u00a0a.\u00a0C. – {1}\u00a0d.\u00a0C.', -y0, y1);
   return y0 === y1 ? String(y0) : `${y0}–${y1}`;
 }
 
@@ -701,7 +702,7 @@ export class StoryMode {
     // A life followed to its last step counts for the Biographer badge (two lives side by side count for both).
     if (this.kind === 'lives' && i === c.steps.length - 1) {
       const got = c.id.split('~').flatMap((id) => recordSeen('lives', id));
-      if (got.length) this.shell.toast(`${got[0].icon} ${lang() === 'es' ? `Nueva insignia: ${got[0].es}` : `New badge: ${got[0].en}`}`, 4000);
+      if (got.length) this.shell.toast(`${got[0].icon} ${L('New badge: {0}', 'Nueva insignia: {0}', tx(got[0]))}`, 4000);
     }
   }
 
@@ -1500,8 +1501,8 @@ export class StoryMode {
     // A work of art: where it is now, and that city's art guide.
     const now = it.type === 'work' ? (it.id ? nowInHook.get?.(it.id) : null) : null;
     if (now) {
-      rows.push({ label: lang() === 'es' ? 'Hoy en' : 'Now in', value: now.name, icon: '🏛️' });
-      if (now.open) links.push({ label: lang() === 'es' ? 'Guía de arte de la ciudad' : 'The city’s art guide', onClick: now.open });
+      rows.push({ label: L('Now in', 'Hoy en'), value: now.name, icon: '🏛️' });
+      if (now.open) links.push({ label: L('The city’s art guide', 'Guía de arte de la ciudad'), onClick: now.open });
     }
     // A person with a life in Lives on the map: follow it. A place to visit: its city's guide.
     links.push(...(livesHook.links?.(c, it) ?? []));
@@ -1566,7 +1567,7 @@ export class StoryMode {
   private exitLabel() {
     const x = this.bar?.querySelector('.wb-exit');
     if (!x) return;
-    const label = this.back ? (lang() === 'es' ? 'Cerrar y volver a la lista' : 'Close and go back to the list') : t('close');
+    const label = this.back ? (L('Close and go back to the list', 'Cerrar y volver a la lista')) : t('close');
     x.setAttribute('title', label);
     x.setAttribute('aria-label', label);
   }
@@ -1680,8 +1681,7 @@ export class StoryMode {
   }
 
   private battleCard(b: Battle, st: Step) {
-    const es = lang() === 'es';
-    const wiki = `https://${es ? 'es' : 'en'}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(tx(b.name))}`;
+    const wiki = `https://${dataLang()}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(tx(b.name))}`;
     const { rows, notes } = this.battleInfo(b, st);
     this.shell.card.showCustom('⚔️', tx(b.name), tx(this.c!.name), rows, [{ label: t('wikipedia'), href: wiki }], notes);
   }
@@ -1693,7 +1693,7 @@ export class StoryMode {
     const b = this.ui?.voice;
     if (!b) return;
     const on = narrationOn();
-    const label = on ? (lang() === 'es' ? 'Dejar de leer en voz alta' : 'Stop reading aloud') : (lang() === 'es' ? 'Leer en voz alta' : 'Read aloud');
+    const label = on ? (L('Stop reading aloud', 'Dejar de leer en voz alta')) : (L('Read aloud', 'Leer en voz alta'));
     clear(b);
     b.append(icon(on ? Volume2 : VolumeX, 18));
     b.classList.toggle('on', on);
@@ -1780,7 +1780,7 @@ export class StoryMode {
     if (!c || !ui) return;
     const d = c.steps[this.step].date;
     // Lives on the map: an approximate date is "c. 470 BC" ("h. 470 a. C.").
-    const about = c.steps[this.step].about ? (lang() === 'es' ? 'h. ' : 'c. ') : '';
+    const about = c.steps[this.step].about ? (L('c. ', 'h. ')) : '';
     ui.date.textContent = about + fmtWhen(d, c.t0);
     fitLine(ui.date);
     if (ui.date.scrollWidth > ui.date.clientWidth) { ui.date.textContent = about + fmtWhen(d, c.t0, true); fitLine(ui.date); }
@@ -2011,7 +2011,7 @@ const thumbs = new Map<string, Promise<string | null>>();
 /** The picture of a Wikipedia article (in the reader's language, else English), or null. */
 export function wikiThumb(wiki?: Text): Promise<string | null> {
   if (!wiki) return Promise.resolve(null);
-  const l = lang() === 'es' ? 'es' : 'en';
+  const l = dataLang();
   const key = `${l}:${wiki[l]}`;
   let p = thumbs.get(key);
   if (!p) {

@@ -4,7 +4,7 @@
 import { categorical } from '../../engine/colors';
 import { CURATED, P } from '../factsCurated';
 import { loadJSON, dataUrl } from '../../data/store';
-import { lang, fmtNumber, fmtCompact, fmtMoney, tx, t } from '../../app/i18n';
+import { lang, fmtNumber, fmtCompact, fmtMoney, tx, t, L } from '../../app/i18n';
 import { categoricalLayer, numericLayer, type CategoryInfo } from '../choropleth';
 import { LC } from '../context';
 import type { App } from '../../app/app';
@@ -158,7 +158,7 @@ function pickerLayer(o: PickerSpec): LayerDef {
       const iso = LC.data.meta[id]?.iso;
       const d = DS.data[id] ?? (iso ? DS.data[iso] : undefined);
       const list = ((d?.[o.field] as string[] | undefined) ?? []).filter((k) => cats[k]).sort((x, y) => (counts.get(y) ?? 0) - (counts.get(x) ?? 0));
-      return [{ label: tx(o.listLabel), value: list.length ? list.map((k) => tx(cats[k])).join(', ') : es() ? 'Ninguna' : 'None' }];
+      return [{ label: tx(o.listLabel), value: list.length ? list.map((k) => tx(cats[k])).join(', ') : L('None', 'Ninguna') }];
     },
   };
 }
@@ -220,7 +220,7 @@ function plugsLayer(): LayerDef | null {
     info(id) {
       const iso = LC.data.meta[id]?.iso;
       const p = plugsOf(DS.data[id] ?? (iso ? DS.data[iso] : undefined));
-      return [{ label: es() ? 'Enchufes' : 'Plugs', value: p.length ? p.map((k) => `${es() ? 'tipo' : 'type'} ${k}`).join(', ') : t('noData') }];
+      return [{ label: L('Plugs', 'Enchufes'), value: p.length ? p.map((k) => `${L('type', 'tipo')} ${k}`).join(', ') : t('noData') }];
     },
   };
 }
@@ -271,7 +271,7 @@ function mineralsLayer(): LayerDef {
       const lg = base.legend!(inst, lang());
       if (lg && m) {
         const top = m.producers.slice(0, 5).map(([id, p]) => `${LC.data.name(id, lang())} ${fmtNumber(p, p < 10 ? 1 : 0)}%`).join(' · ');
-        return { ...lg, title: `${m.emoji} ${es() ? m.es : m.en} (${m.year})`, note: `${es() ? 'Mayores productores' : 'Top producers'}: ${top}` };
+        return { ...lg, title: `${m.emoji} ${es() ? m.es : m.en} (${m.year})`, note: `${L('Top producers', 'Mayores productores')}: ${top}` };
       }
       return lg;
     },
@@ -382,7 +382,7 @@ function nationalColours(): LayerDef {
       }
     },
     legend() {
-      return { kind: 'categories', title: es() ? 'Colores' : 'Colours', items: Object.values(cats).slice(0, 12).map((c) => ({ color: c.color ?? '#999', label: tx(c) })) };
+      return { kind: 'categories', title: L('Colours', 'Colores'), items: Object.values(cats).slice(0, 12).map((c) => ({ color: c.color ?? '#999', label: tx(c) })) };
     },
   };
 }
@@ -403,7 +403,7 @@ function cardRows(id: string): InfoRow[] {
   add('🗣️', 'languages', ((d.languages as string[]) ?? []).slice(0, 3).map((x) => cat('languages', x)).join(', '));
   add('💱', 'currency', ((d.currency as string[]) ?? []).map((x) => cat('currency', x)).join(', '));
   add('📐', 'area_km2', typeof d.area_km2 === 'number' ? `${fmtNumber(d.area_km2)} km²` : null);
-  add('❤️', 'life_expectancy', typeof d.life_expectancy === 'number' ? `${fmtNumber(d.life_expectancy, 1)} ${es() ? 'años' : 'years'}` : null);
+  add('❤️', 'life_expectancy', typeof d.life_expectancy === 'number' ? `${fmtNumber(d.life_expectancy, 1)} ${L('years', 'años')}` : null);
   add('🛐', 'religion', d.religion ? cat('religion', d.religion) : null);
   add('🏛️', 'government_type', d.government_type ? cat('government_type', d.government_type) : null);
   add('🎆', 'independence_year', d.independence_year ? `${d.independence_year}${d.independence_from ? ` (${cat('independence_from', d.independence_from)})` : ''}` : null);
@@ -413,7 +413,7 @@ function cardRows(id: string): InfoRow[] {
   if (d.mains_volts || d.plug_types) {
     const hz = d.mains_frequency === '50-60' ? '50/60 Hz' : d.mains_frequency ? `${d.mains_frequency} Hz` : '';
     const plugs = ((d.plug_types as string[]) ?? []).join(', ');
-    rows.push({ icon: '🔌', label: es() ? 'Electricidad' : 'Electricity', value: [d.mains_volts as string, hz, plugs && `${es() ? 'enchufes' : 'plugs'} ${plugs}`].filter(Boolean).join(' · ') });
+    rows.push({ icon: '🔌', label: L('Electricity', 'Electricidad'), value: [d.mains_volts as string, hz, plugs && `${L('plugs', 'enchufes')} ${plugs}`].filter(Boolean).join(' · ') });
   }
   add('🍽️', 'national_dish', d.national_dish as string);
   add('☎️', 'calling_code', d.calling_code as string);

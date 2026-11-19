@@ -6,7 +6,7 @@
 // shows your last searches.
 import { Search, X, History } from 'lucide';
 import { h, icon, clear } from './dom';
-import { t, tx, fmtCompact, flagEmoji } from '../app/i18n';
+import { t, tx, fmtCompact, flagEmoji, L } from '../app/i18n';
 import { matcher, parseCoords, fmtCoords } from './match';
 import { regions, loadRegions, regionType, type Region } from '../engine/regions';
 import { geoBounds } from 'd3-geo';
@@ -84,7 +84,7 @@ export class SearchBox {
     const es = this.app.lang === 'es';
     const more = this.app.layers.filter((l) => l.ready && l.def.searchHint).map((l) => (es ? l.def.searchHint!.es : l.def.searchHint!.en));
     if (!more.length) return t('searchHint');
-    return `${es ? 'Lugares' : 'Places'}, ${[...new Set(more)].slice(0, 3).join(', ')}…`;
+    return `${L('Places', 'Lugares')}, ${[...new Set(more)].slice(0, 3).join(', ')}…`;
   }
 
   private update() {
@@ -102,7 +102,7 @@ export class SearchBox {
     const es = this.app.lang === 'es';
     const out: Hit[] = [];
     const coords = parseCoords(q);
-    if (coords) out.push({ kind: 'place', lon: coords[1], lat: coords[0], label: fmtCoords(coords), sub: es ? 'Coordenadas' : 'Coordinates', score: 200, zoom: 30, icon: '📍' });
+    if (coords) out.push({ kind: 'place', lon: coords[1], lat: coords[0], label: fmtCoords(coords), sub: L('Coordinates', 'Coordenadas'), score: 200, zoom: 30, icon: '📍' });
     for (const [id, m] of Object.entries(this.app.data.meta)) {
       const s = Math.max(score(m.n), score(m.es), m.ab ? score(m.ab) * 0.6 : 0, id.toLowerCase() === q.toLowerCase() ? 90 : 0);
       if (s > 0) out.push({ kind: 'country', id, lon: m.lx, lat: m.ly, label: es ? m.es : m.n, sub: `${flagEmoji(m.a2)} ${t(`cont.${m.ct}`)}`, score: s + 15 + Math.max(0, 6 - m.lr) });
@@ -128,7 +128,7 @@ export class SearchBox {
         const kind = regionType(r, es);
         out.push({
           kind: 'place', lon: r.lon, lat: r.lat, label: es ? r.es : r.name, icon: '🗺️',
-          sub: `${kind ?? (es ? 'Región' : 'Region')}${country ? `, ${es ? country.es : country.n}` : ''}`,
+          sub: `${kind ?? (L('Region', 'Región'))}${country ? `, ${es ? country.es : country.n}` : ''}`,
           score: s + Math.min(10, r.size * 60), pick: () => this.onRegion?.(r),
         });
       }
@@ -157,7 +157,7 @@ export class SearchBox {
         out.push({
           kind: 'place', lon: hit.lon, lat: hit.lat, label: hit.label, sub: hit.sub, icon: hit.icon,
           // What the filters on show comes first, unless it only matched with typos.
-          score: hit.score + (inst ? (hit.score >= 55 ? 22 : 6) : 0), tag: inst ? `${def.icon} ${name}` : `${def.icon} ${name} · ${es ? 'lo enciende' : 'turns it on'}`,
+          score: hit.score + (inst ? (hit.score >= 55 ? 22 : 6) : 0), tag: inst ? `${def.icon} ${name}` : `${def.icon} ${name} · ${L('turns it on', 'lo enciende')}`,
           pick: () => this.onLayerHit?.(def, inst, hit),
         });
       }
@@ -175,7 +175,7 @@ export class SearchBox {
         const n = it.count ?? it.ids.length;
         out.push({
           kind: 'place', lon: 0, lat: 0, label: it.label, icon: it.icon && it.shape === 'emoji' ? it.icon : '🎨',
-          sub: es ? `${n} ${n === 1 ? 'país' : 'países'} en el mapa` : `${n} ${n === 1 ? 'country' : 'countries'} on the map`,
+          sub: L('{0, plural, one {# country} other {# countries}} on the map', '{0, plural, one {# país} other {# países}} en el mapa', n),
           score: s + 18, tag: `${inst.def.icon} ${tx(inst.def.name)}`, pick: () => this.onLegendItem?.(inst, it),
         });
       }
@@ -216,13 +216,13 @@ export class SearchBox {
     if (!this.hits.length) {
       if (this.input.value.trim()) {
         const busy = this.loading.size > 0;
-        this.results.append(h('div', { class: 'search-empty muted' }, busy ? (this.app.lang === 'es' ? 'Buscando…' : 'Searching…') : t('noResults')));
+        this.results.append(h('div', { class: 'search-empty muted' }, busy ? (L('Searching…', 'Buscando…')) : t('noResults')));
         return;
       }
       // An empty box: the last searches.
       const recent = this.provider() ? [] : this.recent();
       if (recent.length) {
-        this.results.append(h('div', { class: 'search-group muted' }, this.app.lang === 'es' ? 'Búsquedas recientes' : 'Recent searches'));
+        this.results.append(h('div', { class: 'search-group muted' }, L('Recent searches', 'Búsquedas recientes')));
         for (const text of recent) {
           const item = h('button', { type: 'button', class: 'search-item recent', 'data-recent': text }, h('span', { class: 'si-icon' }, icon(History, 16)), h('span', { class: 'si-text' }, h('span', { class: 'si-label' }, text)));
           item.addEventListener('click', () => { this.input.value = text; this.update(); this.input.focus(); });

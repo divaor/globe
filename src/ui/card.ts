@@ -3,7 +3,7 @@
 // country to country with the map in view; the flag or name opens the full panel.
 import { X, Navigation, ExternalLink, ChevronUp, ChevronDown } from 'lucide';
 import { h, icon, clear, add } from './dom';
-import { t, tx, fmtCompact, fmtMoney, flagEmoji, subregion } from '../app/i18n';
+import { t, tx, fmtCompact, fmtMoney, flagEmoji, subregion, L, dataLang } from '../app/i18n';
 import type { App } from '../app/app';
 import type { InfoRow } from '../layers/types';
 import { dataUrl } from '../data/store';
@@ -119,7 +119,7 @@ export class CountryCard {
     rows.length = 0; rows.push(...keep);
     const pickEls = pickInfo.map(rowEl);
 
-    const wiki = `https://${es ? 'es' : 'en'}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(name)}`;
+    const wiki = `https://${dataLang()}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(name)}`;
     const fly = h('button', { type: 'button', class: 'pill' }, icon(Navigation, 16), t('flyTo'));
     fly.addEventListener('click', () => this.app.flyToCountry(id));
     const actions = h('div', { class: 'card-actions' }, fly,

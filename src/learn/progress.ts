@@ -1,13 +1,12 @@
 // Your progress: right answers, quizzes played and day streaks for each subject, the daily challenge's streak,
 // finished tours, and the badges they earn. Kept only in this browser.
 import { h } from '../ui/dom';
-import { lang } from '../app/i18n';
+import { lang, L } from '../app/i18n';
 import { TOURS } from './tours';
 import { GAMES } from '../play/logic';
 import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 const KEY = 'atlas-globe:progress';
 
 export type Subject = 'geo' | 'history' | 'culture' | 'languages' | 'science' | 'sport';
@@ -324,7 +323,7 @@ export function progressPanel(onReset: () => void): HTMLElement {
     return h('div', { class: `badge-chip${got ? ' got' : ''}`, title: es() ? b.how.es : b.how.en, 'data-badge': b.id },
       h('span', { class: 'badge-icon', 'aria-hidden': 'true' }, b.icon),
       h('span', { class: 'badge-text' }, h('span', { class: 'badge-name' }, es() ? b.es : b.en),
-        h('span', { class: 'badge-how' }, got ? L(`Earned on ${fmtDay(p.badges[b.id])}`, `Obtenida el ${fmtDay(p.badges[b.id])}`) : `${es() ? b.how.es : b.how.en} · ${fmt(have)}/${fmt(b.goal)}`)));
+        h('span', { class: 'badge-how' }, got ? L('Earned on {0}', 'Obtenida el {0}', fmtDay(p.badges[b.id])) : `${es() ? b.how.es : b.how.en} · ${fmt(have)}/${fmt(b.goal)}`)));
   };
   // The daily challenge: streak, best, and the last 7 days.
   const days: HTMLElement[] = [];
@@ -365,7 +364,7 @@ export function progressPanel(onReset: () => void): HTMLElement {
     onReset();
   });
   const earned = Object.keys(p.badges).length;
-  body.prepend(h('p', { class: 'muted small' }, L(`${earned} of ${BADGES.length} badges. Saved only on this device.`, `${earned} de ${BADGES.length} insignias. Guardado solo en este dispositivo.`)));
+  body.prepend(h('p', { class: 'muted small' }, L('{0} of {1} badges. Saved only on this device.', '{0} de {1} insignias. Guardado solo en este dispositivo.', earned, BADGES.length)));
   body.append(h('div', { class: 'tool-actions' }, reset));
   return body;
 }

@@ -6,14 +6,13 @@ import { h, icon, clear } from './dom';
 import { tiles, TERRAIN, SENTINEL, mayDownload, prefs, srcRange, tileX, tileY, cols, rows, shrinks, type TileSource, type Want } from '../engine/tiles';
 import { ELEVATION, RELIEF } from '../layers/imagery';
 import { terrainActions, type Terrain3DContext } from '../layers/terrainActions';
-import { lang } from '../app/i18n';
+import { lang, L } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Shell } from './shell';
 import type { TerrainUI } from './terrain';
 import { appLocale } from '../app/i18n';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 const RAD = Math.PI / 180;
 type Drape = string;
 
@@ -185,7 +184,7 @@ export class Terrain3D {
     const HS = cx.heights;
     const zh = zoomFor(box, HS, 6);
     const hList = listOf(box, HS, zh);
-    const got = await tiles.loadAll(hList, '3d', (n) => { status.textContent = L(`Loading the heights… ${n} of ${hList.length}`, `Cargando las alturas… ${n} de ${hList.length}`); });
+    const got = await tiles.loadAll(hList, '3d', (n) => { status.textContent = L('Loading the heights… {0} of {1}', 'Cargando las alturas… {0} de {1}', n, hList.length); });
     if (this.el !== el) return;
     if (!got) {
       status.textContent = !mayDownload()

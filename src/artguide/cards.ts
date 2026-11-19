@@ -3,13 +3,12 @@
 // and links to its Wikipedia article and to the guide of its city.
 import { recordSeen } from '../learn/progress';
 import { h } from '../ui/dom';
-import { lang, fmtCompact } from '../app/i18n';
+import { lang, fmtCompact, L, tx } from '../app/i18n';
 import type { InfoRow } from '../layers/types';
 import { nm, yearText, commons, commonsPage, commonsCredit, wikiOf, kindIcon, KINDS, museumPlace, workWhy, buildingPlace, type Work, type Building, type Museum } from './data';
 import { planLink } from '../guide/plan';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 export type CardFn = (icon: string, title: string, sub: string, rows: InfoRow[], links?: { label: string; href?: string; onClick?: () => void }[], notes?: string[], image?: Promise<string | null>, extra?: HTMLElement | null) => void;
 
 /** A line under a picture: its licence and author, once Commons answers. */
@@ -18,7 +17,7 @@ export function creditEl(file: string | null): HTMLElement | null {
   const p = h('p', { class: 'card-note art-credit', 'data-credit': file }, h('a', { href: commonsPage(file), target: '_blank', rel: 'noopener' }, L('Picture: Wikimedia Commons', 'Imagen: Wikimedia Commons')));
   void commonsCredit(file).then((c) => {
     if (!c || !p.isConnected) return;
-    p.firstChild!.textContent = L(`Picture: ${c.licence}${c.author ? ` · ${c.author}` : ''} · Wikimedia Commons`, `Imagen: ${c.licence}${c.author ? ` · ${c.author}` : ''} · Wikimedia Commons`);
+    p.firstChild!.textContent = L('Picture: {0}{1} · Wikimedia Commons', 'Imagen: {0}{1} · Wikimedia Commons', c.licence, c.author ? ` · ${c.author}` : '');
   });
   return p;
 }
@@ -26,7 +25,7 @@ export function creditEl(file: string | null): HTMLElement | null {
 export function workCard(card: CardFn, w: Work, cityName: string | null, openCity: ((city: string) => void) | null, showOnMap?: () => void) {
   // Each masterpiece opened counts once for the Curator badge.
   const got = recordSeen('works', w.id);
-  if (got.length) window.atlas?.shell.toast(`${got[0].icon} ${es() ? `Nueva insignia: ${got[0].es}` : `New badge: ${got[0].en}`}`, 4000);
+  if (got.length) window.atlas?.shell.toast(`${got[0].icon} ${L('New badge: {0}', 'Nueva insignia: {0}', tx(got[0]))}`, 4000);
   const kind = KINDS.find((k) => k[0] === w.kind)?.[1];
   const rows: InfoRow[] = [];
   if (w.artist) rows.push({ label: L('By', 'De'), value: nm(w.artist), icon: '🧑‍🎨' });
@@ -44,7 +43,7 @@ export function workCard(card: CardFn, w: Work, cityName: string | null, openCit
 export function museumCard(card: CardFn, m: Museum, works: Work[], cityName: string | null, openCity: ((city: string) => void) | null, showOnMap?: () => void) {
   const rows: InfoRow[] = [];
   if (cityName) rows.push({ label: L('City', 'Ciudad'), value: cityName, icon: '📍' });
-  if (m.visitors) rows.push({ label: L('Visitors', 'Visitantes'), value: L(`${fmtCompact(m.visitors)} a year`, `${fmtCompact(m.visitors)} al año`), icon: '👥' });
+  if (m.visitors) rows.push({ label: L('Visitors', 'Visitantes'), value: L('{0} a year', '{0} al año', fmtCompact(m.visitors)), icon: '👥' });
   rows.push({ label: L('Best-known works here', 'Obras más conocidas aquí'), value: String(works.length), icon: '🖼️' });
   const links: { label: string; href?: string; onClick?: () => void }[] = [{ label: 'Wikipedia', href: wikiOf(m.id) }];
   if (showOnMap) links.unshift({ label: L('Show on the map', 'Ver en el mapa'), onClick: showOnMap });

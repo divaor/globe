@@ -5,7 +5,7 @@ import { Renderer } from '../engine/renderer';
 import { Interaction } from '../engine/interaction';
 import { PROJECTIONS, type ProjectionId } from '../engine/projections';
 import { THEMES } from './theme';
-import { detectLang, detectSpanish, setLang, setSpanish, type Lang, type Spanish } from './i18n';
+import { detectLang, detectSpanish, setLang, setSpanish, setPseudo, type Lang, type Spanish } from './i18n';
 import { setLayerContext } from '../layers/context';
 import { tiles, prefs as terrainPrefs } from '../engine/tiles';
 import { DETAIL_LAYERS, satellite } from '../layers/imagery';
@@ -125,6 +125,9 @@ export class App {
     const saved = this.restore();
     setSpanish(this.spanish);
     setLang(this.lang);
+    // ?pseudo (v0.41.0): every text that goes through the language files shows accented and in brackets, so what
+    // is still written straight into the code stands out (for checking before a new language ships).
+    if (/[?&]pseudo\b/.test(location.search)) setPseudo(true);
     this.renderer.lang = this.lang;
     this.applyTheme();
     document.documentElement.dataset.theme = this.themeId;

@@ -72,8 +72,8 @@ export function wavesPanel(): HTMLElement {
     const [qx, qy] = pt(0, 1);
     ctx.beginPath(); ctx.arc(qx, qy, 5, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = '#111'; ctx.stroke();
     clock.replaceChildren(
-      h('b', null, L(`${fmtNumber(t, 1)} minutes after the quake`, `${fmtNumber(t, 1)} minutos después del sismo`)),
-      h('span', null, L(`P waves have reached ${fmtNumber(Math.round(reach(P_TIME, t)))}°; S waves ${fmtNumber(Math.round(reach(S_TIME, t)))}°.`, `Las ondas P llegaron a ${fmtNumber(Math.round(reach(P_TIME, t)))}°; las S a ${fmtNumber(Math.round(reach(S_TIME, t)))}°.`)),
+      h('b', null, L('{0} minutes after the quake', '{0} minutos después del sismo', fmtNumber(t, 1))),
+      h('span', null, L('P waves have reached {0}°; S waves {1}°.', 'Las ondas P llegaron a {0}°; las S a {1}°.', fmtNumber(Math.round(reach(P_TIME, t))), fmtNumber(Math.round(reach(S_TIME, t))))),
     );
   };
   const play = () => {
@@ -94,9 +94,7 @@ export function wavesPanel(): HTMLElement {
   again.addEventListener('click', play);
   draw();
   const key = (color: string, text: string) => h('div', { class: 'waves-key' }, h('span', { class: 'waves-sw', style: `background:${color}` }), text);
-  const times = h('div', { class: 'muted small' }, L(
-    `Arrivals: at 30° the P waves after ${fmtNumber(lerp(P_TIME, 30), 1)} minutes and the S waves after ${fmtNumber(lerp(S_TIME, 30), 1)}; at 90°, ${fmtNumber(lerp(P_TIME, 90), 1)} and ${fmtNumber(lerp(S_TIME, 90), 1)}. Waves through the core reach the far side after about 20 minutes.`,
-    `Llegadas: a 30°, las ondas P a los ${fmtNumber(lerp(P_TIME, 30), 1)} minutos y las S a los ${fmtNumber(lerp(S_TIME, 30), 1)}; a 90°, ${fmtNumber(lerp(P_TIME, 90), 1)} y ${fmtNumber(lerp(S_TIME, 90), 1)}. Las que cruzan el núcleo llegan al otro lado en unos 20 minutos.`));
+  const times = h('div', { class: 'muted small' }, L('Arrivals: at 30° the P waves after {0} minutes and the S waves after {1}; at 90°, {2} and {3}. Waves through the core reach the far side after about 20 minutes.', 'Llegadas: a 30°, las ondas P a los {0} minutos y las S a los {1}; a 90°, {2} y {3}. Las que cruzan el núcleo llegan al otro lado en unos 20 minutos.', fmtNumber(lerp(P_TIME, 30), 1), fmtNumber(lerp(S_TIME, 30), 1), fmtNumber(lerp(P_TIME, 90), 1), fmtNumber(lerp(S_TIME, 90), 1)));
   return h('div', { class: 'waves' },
     h('p', { class: 'small' }, L(
       'A slice through the Earth with a quake at the top. P waves push and pull, and pass through rock and liquid. S waves shake from side to side, and cannot cross a liquid: none reach the far side, beyond about 104°. That shadow showed that the outer core is liquid.',

@@ -32,9 +32,9 @@ async function rocksAt(lon: number, lat: number): Promise<Rock | null> {
   if (!u) return null;
   return { name: u.name, lith: u.lith, age: u.best_int_name, ma: Number.isFinite(u.b_age) ? [u.t_age, u.b_age] : null };
 }
-const ageText = (ma: number) => (ma >= 1000 ? L(`${fmtNumber(ma / 1000, 1)} billion years`, `${fmtNumber(ma / 1000, 1)} mil millones de años`)
-  : ma >= 1 ? L(`${fmtNumber(Math.round(ma))} million years`, `${fmtNumber(Math.round(ma))} millones de años`)
-    : L(`${fmtNumber(Math.round(ma * 1000))} thousand years`, `${fmtNumber(Math.round(ma * 1000))} mil años`));
+const ageText = (ma: number) => (ma >= 1000 ? L('{0} billion years', '{0} mil millones de años', fmtNumber(ma / 1000, 1))
+  : ma >= 1 ? L('{0} million years', '{0} millones de años', fmtNumber(Math.round(ma)))
+    : L('{0} thousand years', '{0} mil años', fmtNumber(Math.round(ma * 1000))));
 
 export class InsideEarth {
   active = false;
@@ -208,8 +208,7 @@ export class InsideEarth {
       const more = on && x ? h('div', { class: 'inside-facts' },
         h('p', null, h('b', null, L('What it is: ', 'Qué es: ')), t2(x.state), '. ', t2(x.made)),
         h('p', null, h('b', null, L('How hot and squeezed: ', 'Qué tan caliente y comprimida: ')),
-          L(`${fmtNumber(x.temp_c[0])} to ${fmtNumber(x.temp_c[1])} °C; ${fmtNumber(x.pressure_gpa[0], 1)} to ${fmtNumber(x.pressure_gpa[1], 1)} GPa; ${fmtNumber(x.density[0], 1)} to ${fmtNumber(x.density[1], 1)} g/cm³.`,
-            `De ${fmtNumber(x.temp_c[0])} a ${fmtNumber(x.temp_c[1])} °C; de ${fmtNumber(x.pressure_gpa[0], 1)} a ${fmtNumber(x.pressure_gpa[1], 1)} GPa; de ${fmtNumber(x.density[0], 1)} a ${fmtNumber(x.density[1], 1)} g/cm³.`)),
+          L('{0} to {1} °C; {2} to {3} GPa; {4} to {5} g/cm³.', 'De {0} a {1} °C; de {2} a {3} GPa; de {4} a {5} g/cm³.', fmtNumber(x.temp_c[0]), fmtNumber(x.temp_c[1]), fmtNumber(x.pressure_gpa[0], 1), fmtNumber(x.pressure_gpa[1], 1), fmtNumber(x.density[0], 1), fmtNumber(x.density[1], 1))),
         h('p', null, h('b', null, L('How we know: ', 'Cómo lo sabemos: ')), t2(x.know)),
         h('p', { class: 'muted' }, t2(x.fact))) : null;
       return h('div', null, row, more);
@@ -255,10 +254,9 @@ export class InsideEarth {
       const name = r.name || r.lith, low = name.toLowerCase();
       const lith = r.lith && r.name && !low.includes(r.lith.toLowerCase()) ? ` (${r.lith})` : '';
       const age = r.age && !low.includes(r.age.toLowerCase()) ? `, ${r.age}` : '';
-      const old = !r.ma ? '' : r.ma[0] < 0.001 ? L(`: up to ${ageText(r.ma[1])} old`, `: de hasta ${ageText(r.ma[1])} de antigüedad`)
-        : L(`: ${ageText(r.ma[0])} to ${ageText(r.ma[1])} old`, `: de ${ageText(r.ma[0])} a ${ageText(r.ma[1])} de antigüedad`);
-      rockEl.textContent = L(`🪨 Under your feet: ${name}${lith}${age}${old}. From Macrostrat's geological map.`,
-        `🪨 Bajo tus pies: ${name}${lith}${age}${old}. Del mapa geológico de Macrostrat.`);
+      const old = !r.ma ? '' : r.ma[0] < 0.001 ? L(': up to {0} old', ': de hasta {0} de antigüedad', ageText(r.ma[1]))
+        : L(': {0} to {1} old', ': de {0} a {1} de antigüedad', ageText(r.ma[0]), ageText(r.ma[1]));
+      rockEl.textContent = L('🪨 Under your feet: {0}{1}{2}{3}. From Macrostrat\'s geological map.', '🪨 Bajo tus pies: {0}{1}{2}{3}. Del mapa geológico de Macrostrat.', name, lith, age, old);
     });
     // Straight through the centre: the antipode.
     const alon = lon > 0 ? lon - 180 : lon + 180, alat = -lat;
@@ -269,18 +267,17 @@ export class InsideEarth {
     go.addEventListener('click', () => { void this.digAt(alon, alat); this.app.renderer.view.flyTo({ lon: alon, lat: Math.max(-60, Math.min(70, alat)) }, 1600); });
     return h('div', null,
       h('p', { class: 'small' }, h('b', null, `📍 ${place} · ${coord}`), h('br'),
-        L(`The crust here is about ${fmtNumber(km)} km thick (CRUST1.0); below it, the Moho and the mantle. The centre is ${fmtNumber(6371)} km down.`,
-          `Aquí la corteza mide unos ${fmtNumber(km)} km (CRUST1.0); debajo, el Moho y el manto. El centro está a ${fmtNumber(6371)} km.`)),
+        L('The crust here is about {0} km thick (CRUST1.0); below it, the Moho and the mantle. The centre is {1} km down.', 'Aquí la corteza mide unos {0} km (CRUST1.0); debajo, el Moho y el manto. El centro está a {1} km.', fmtNumber(km), fmtNumber(6371))),
       rockEl,
       digColumn({ crustKm: km, markers: this.facts?.markers ?? [], onDepth: () => undefined }),
       h('div', { class: 'inside-through' },
         h('b', null, L('Dig through', 'Atravesar')),
         h('p', { class: 'small' }, L(
-          `Straight through the centre you would come out at ${fmtNumber(Math.abs(alat), 1)}°${alat >= 0 ? 'N' : 'S'}, ${fmtNumber(Math.abs(alon), 1)}°${alon >= 0 ? 'E' : 'W'}: ${thereName}. Falling down a tunnel through the Earth would take about ${fmtNumber(minutes)} minutes.`,
-          `Atravesando el centro saldrías en ${fmtNumber(Math.abs(alat), 1)}°${alat >= 0 ? 'N' : 'S'}, ${fmtNumber(Math.abs(alon), 1)}°${alon >= 0 ? 'E' : 'O'}: ${thereName}. Caer por un túnel a través de la Tierra tomaría unos ${fmtNumber(minutes)} minutos.`)),
+          'Straight through the centre you would come out at {0}°{1}, {2}°{3}: {4}. Falling down a tunnel through the Earth would take about {5} minutes.',
+          'Atravesando el centro saldrías en {0}°{1}, {2}°{3}: {4}. Caer por un túnel a través de la Tierra tomaría unos {5} minutos.',
+          fmtNumber(Math.abs(alat), 1), alat >= 0 ? L('N', 'N') : L('S', 'S'), fmtNumber(Math.abs(alon), 1), alon >= 0 ? L('E', 'E') : L('W', 'O'), thereName, fmtNumber(minutes))),
         go),
-      h('p', { class: 'muted small' }, L(`Deepest hole ever dug: the Kola borehole, ${depthText(12.262)}: ${fmtNumber((12.262 / 6371) * 100, 2)} % of the way to the centre.`,
-        `El agujero más profundo jamás cavado: el pozo de Kola, ${depthText(12.262)}: el ${fmtNumber((12.262 / 6371) * 100, 2)} % del camino al centro.`)),
+      h('p', { class: 'muted small' }, L('Deepest hole ever dug: the Kola borehole, {0}: {1} % of the way to the centre.', 'El agujero más profundo jamás cavado: el pozo de Kola, {0}: el {1} % del camino al centro.', depthText(12.262), fmtNumber((12.262 / 6371) * 100, 2))),
     );
   }
 }

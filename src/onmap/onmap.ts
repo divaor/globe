@@ -14,7 +14,7 @@ import type { RenderCtx } from '../layers/types';
 import { resultCard } from '../ui/result';
 import { ftile } from '../ui/features';
 import { h, icon, clear } from '../ui/dom';
-import { subregion, t } from '../app/i18n';
+import { subregion, t, dataLang, tx } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import { L, es, type PlayHost, type HostGame } from '../play/host';
 import { shareText } from '../play/pin';
@@ -38,8 +38,8 @@ const KIND: Record<Kind, { icon: string; en: string; es: string }> = {
   built: { icon: '🏛️', en: 'Heritage or building', es: 'Patrimonio o edificio' },
   park: { icon: '🌲', en: 'National park', es: 'Parque nacional' },
 };
-const MIX_TEXT: Record<Mix, [string, string, string]> = {
-  all: ['🧭', 'Everything', 'Todo'], nature: ['🌿', 'Nature', 'Naturaleza'], cities: ['🏙️', 'Cities', 'Ciudades'], built: ['🏛️', 'Built', 'Construido'],
+const MIX_TEXT: Record<Mix, { icon: string; en: string; es: string }> = {
+  all: { icon: '🧭', en: 'Everything', es: 'Todo' }, nature: { icon: '🌿', en: 'Nature', es: 'Naturaleza' }, cities: { icon: '🏙️', en: 'Cities', es: 'Ciudades' }, built: { icon: '🏛️', en: 'Built', es: 'Construido' },
 };
 const GREEN = '#2ecc71', PLACED = '#4dabf7';
 
@@ -112,7 +112,7 @@ export class PutOnMap implements HostGame {
     return byKind(entries, this.places, MIX_KINDS[mix]);
   }
   private name(i: number) { const p = this.places[i]; return es() && p[2] ? p[2] : p[1]; }
-  private countryName(id: string) { return this.app.data.name(id, es() ? 'es' : 'en'); }
+  private countryName(id: string) { return this.app.data.name(id, dataLang()); }
   scopeName(scope: string) {
     if (scope.startsWith('r:')) return es() ? subregion(scope.slice(2)) : scope.slice(2);
     if (scope.length === 2) return t(`cont.${scope}`);
@@ -299,7 +299,7 @@ export class PutOnMap implements HostGame {
     if (s.solved || s.rows.length >= TRIES) this.finish();
     else {
       const left = s.items.filter((it) => !it.locked).length;
-      s.note = L(`${ITEMS - left} right. Move the others and check again.`, `${ITEMS - left} bien. Mueve los demás y vuelve a comprobar.`);
+      s.note = L('{0} right. Move the others and check again.', '{0} bien. Mueve los demás y vuelve a comprobar.', ITEMS - left);
       s.active = s.items.findIndex((it) => !it.locked);
       s.list = true; // the colours first, then a name to move
     }
@@ -340,11 +340,11 @@ export class PutOnMap implements HostGame {
     const title = `${s.day ? '🗓️' : '📍'} ${s.day ? L('Puzzle of the day', 'Reto del día') : L('Put it on the map', 'Ponlo en el mapa')} · ${this.scopeName(s.scope)}`;
     card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     const greens = s.items.filter((it) => it.locked).length;
-    card.append(h('div', { class: 'hop-stats', 'data-onmap': 'status' }, `${MIX_TEXT[s.mix][0]} ${L(MIX_TEXT[s.mix][1], MIX_TEXT[s.mix][2])} · ${L('Check', 'Comprobación')} ${Math.min(s.rows.length + (s.done ? 0 : 1), TRIES)}/${TRIES} · ✅ ${greens}/${ITEMS}`));
+    card.append(h('div', { class: 'hop-stats', 'data-onmap': 'status' }, `${MIX_TEXT[s.mix].icon} ${tx(MIX_TEXT[s.mix])} · ${L('Check', 'Comprobación')} ${Math.min(s.rows.length + (s.done ? 0 : 1), TRIES)}/${TRIES} · ✅ ${greens}/${ITEMS}`));
     if (s.done) { this.renderDone(); return; }
     if (s.active != null && narrow() && !s.list && !s.fold) { this.renderPlacing(); return; }
     const prompt = s.active != null
-      ? L(`Where is ${this.name(s.items[s.active].c.i)}? Tap one of the grey ${this.kindPlural(s.items[s.active].k)}.`, `¿Dónde está ${this.name(s.items[s.active].c.i)}? Toca uno de los grises.`)
+      ? L('Where is {0}? Tap one of the grey {1}.', '¿Dónde está {0}? Toca uno de los grises.', this.name(s.items[s.active].c.i), this.kindPlural(s.items[s.active].k))
       : L('All placed: check them, or tap one to move it.', 'Todo en su sitio: compruébalo, o toca uno para moverlo.');
     card.append(h('div', { class: 'quiz-q onmap-prompt', 'data-onmap': 'prompt' }, prompt));
     if (s.fold) return;
@@ -362,7 +362,7 @@ export class PutOnMap implements HostGame {
   private renderPlacing() {
     const s = this.s!, card = this.host.card, it = s.items[s.active!];
     const placed = s.items.filter((x) => x.locked || x.given).length;
-    const list = h('button', { type: 'button', class: 'pill sm', 'data-onmap': 'list' }, L(`All six (${placed}/${ITEMS})`, `Los seis (${placed}/${ITEMS})`));
+    const list = h('button', { type: 'button', class: 'pill sm', 'data-onmap': 'list' }, L('All six ({0}/{1})', 'Los seis ({0}/{1})', placed, ITEMS));
     list.addEventListener('click', () => { s.list = true; this.render(); });
     // The whole name (on two lines if it needs them), and under it what it is and what to do.
     card.append(h('div', { class: 'onmap-placing', 'data-onmap': 'placing' },
@@ -429,7 +429,7 @@ export class PutOnMap implements HostGame {
     // Stars like the other games: three for one or two checks, two for three or four, one for five; none unsolved.
     const res = resultCard({ stars: s.solved ? (s.rows.length <= 2 ? 3 : s.rows.length <= 4 ? 2 : 1) : 0,
       headline: s.solved
-        ? L(`All six on the map in ${s.rows.length} ${s.rows.length === 1 ? 'check' : 'checks'}!`, `¡Los seis en el mapa en ${s.rows.length} ${s.rows.length === 1 ? 'comprobación' : 'comprobaciones'}!`)
+        ? L('All six on the map in {0, plural, one {# check} other {# checks}}!', '¡Los seis en el mapa en {0, plural, one {# comprobación} other {# comprobaciones}}!', s.rows.length)
         : L('The right places are on the map, in green.', 'Los lugares correctos están en el mapa, en verde.'),
       extra: [s.rows.length ? h('pre', { class: 'onmap-grid', 'data-onmap': 'grid' }, grid(s.rows)) : null,
         missed.length ? h('div', { class: 'tool-hint' }, missed.map((it) => `${KIND[it.k].icon} ${this.name(it.c.i)}`).join(' · ')) : null] });
@@ -543,7 +543,7 @@ export class PutOnMap implements HostGame {
     // The mix.
     const mixes = h('div', { class: 'chip-row', 'data-onmap': 'mixes' });
     for (const m of MIXES) {
-      const b = h('button', { type: 'button', class: `chip${m === set.mix ? ' on' : ''}`, 'data-mix': m }, `${MIX_TEXT[m][0]} ${L(MIX_TEXT[m][1], MIX_TEXT[m][2])}`);
+      const b = h('button', { type: 'button', class: `chip${m === set.mix ? ' on' : ''}`, 'data-mix': m }, `${MIX_TEXT[m].icon} ${tx(MIX_TEXT[m])}`);
       b.addEventListener('click', () => { set.mix = m; saveOnmap(); redraw(); });
       mixes.append(b);
     }
@@ -551,7 +551,7 @@ export class PutOnMap implements HostGame {
     // A country: the ones with enough for this mix, by continent.
     const ok = new Set(this.okCountries.get(set.mix) ?? []);
     const sel = h('select', { class: 'select', 'data-onmap': 'country', 'aria-label': L('Country', 'País') }) as HTMLSelectElement;
-    const lang = es() ? 'es' : 'en';
+    const lang = dataLang();
     for (const ct of CONTS) {
       const ids = this.deck.filter((c) => ok.has(c.id) && this.members(ct).includes(c.id)).map((c) => c.id).sort((a, b) => this.countryName(a).localeCompare(this.countryName(b), lang));
       if (!ids.length) continue;
@@ -563,7 +563,7 @@ export class PutOnMap implements HostGame {
     play.addEventListener('click', () => void this.start({ scope: sel.value, mix: set.mix }));
     const rnd = h('button', { type: 'button', class: 'pill sm', 'data-onmap': 'random' }, icon(Shuffle, 15), L('Any country', 'Un país al azar'));
     rnd.addEventListener('click', () => void this.start({ scope: this.randomCountry(set.mix), mix: set.mix }));
-    out.push(h('h3', { class: 'sec-title' }, L(`A country (${ok.size})`, `Un país (${ok.size})`)), h('div', { class: 'onmap-row' }, sel, play, rnd));
+    out.push(h('h3', { class: 'sec-title' }, L('A country ({0})', 'Un país ({0})', ok.size)), h('div', { class: 'onmap-row' }, sel, play, rnd));
     // A region or a continent (Everything).
     const regs = h('div', { class: 'chip-row onmap-regions', 'data-onmap': 'regions' });
     const seen = new Set<string>();
@@ -575,7 +575,7 @@ export class PutOnMap implements HostGame {
       regs.append(b);
     }
     out.push(h('h3', { class: 'sec-title' }, L('A continent or a region', 'Un continente o una región')), regs);
-    out.push(h('p', { class: 'muted small', 'data-onmap': 'stats' }, L(`Played ${st.played} · solved ${st.solved} · at the first check ${st.first}`, `Jugados ${st.played} · resueltos ${st.solved} · a la primera ${st.first}`)));
+    out.push(h('p', { class: 'muted small', 'data-onmap': 'stats' }, L('Played {0} · solved {1} · at the first check {2}', 'Jugados {0} · resueltos {1} · a la primera {2}', st.played, st.solved, st.first)));
     return out;
   }
 

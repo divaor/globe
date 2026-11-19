@@ -11,7 +11,7 @@ import type { Shell } from '../ui/shell';
 import { h, icon, clear } from '../ui/dom';
 import { planStar } from '../guide/plan';
 import { wikiOf } from '../artguide/data';
-import { lang, fmtCompact } from '../app/i18n';
+import { lang, fmtCompact, L, dataLang } from '../app/i18n';
 import { matcher } from '../ui/match';
 import { COLS, ROWS, cellAt, loadWild, loadParks, nm, groupName, GROUPS, type Animal, type Park, type WildData } from './data';
 import { animalCard, parkCard, statusBadge, type CardFn } from './cards';
@@ -20,7 +20,6 @@ import { months, monthBars } from './inat';
 import { links, showFocus, currentFocus, type Focus } from '../layers/packs/wild';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 const BASIS = ['HUMAN_OBSERVATION', 'PRESERVED_SPECIMEN', 'MACHINE_OBSERVATION', 'OCCURRENCE', 'MATERIAL_SAMPLE'];
 
 /** A species from GBIF's search. */
@@ -124,7 +123,7 @@ export class Wild {
     if (!d) { this.shell.toast(L('Nature needs its data; check your connection.', 'Naturaleza necesita sus datos; revisa tu conexión.')); return; }
     const body = h('div', { class: 'guide wild-panel', 'data-wild': 'nature' });
     body.append(natureTabs('animals', () => void this.open(), () => void this.plants?.open()));
-    body.append(h('p', { class: 'muted small' }, L(`Where animals live and where to go to see them: ${d.animals.length} animals on the map, any other species live from GBIF.`, `Dónde viven los animales y adónde ir a verlos: ${d.animals.length} animales en el mapa y cualquier otra especie en vivo desde GBIF.`)));
+    body.append(h('p', { class: 'muted small' }, L('Where animals live and where to go to see them: {0} animals on the map, any other species live from GBIF.', 'Dónde viven los animales y adónde ir a verlos: {0} animales en el mapa y cualquier otra especie en vivo desde GBIF.', d.animals.length)));
     const filters = h('div', { class: 'chip-row' });
     for (const [id, ic, en, sp] of [['wild', '🐾', 'Animals of the world', 'Animales del mundo'], ['wild-parks', '🏞️', 'Wildlife parks', 'Parques de vida silvestre'], ['wild-zoos', '🦓', 'Zoos and aquariums', 'Zoológicos y acuarios'], ['migrations', '🦋', 'Great migrations', 'Grandes migraciones']]) {
       const b = h('button', { type: 'button', class: `chip${this.app.isActive(id) ? ' on' : ''}`, 'data-wild-filter': id }, `${ic} ${es() ? sp : en}`);
@@ -177,7 +176,7 @@ export class Wild {
   }
 
   private animalRow(a: Animal): HTMLElement {
-    return this.row(a.e, nm(a), `${a.sci} · ${a.gone ? L(`gone, ${a.gone}`, `desaparecido, ${a.gone}`) : groupName(a.g)}`, () => void this.openAnimal(a), { 'data-animal': a.id }, statusBadge(a));
+    return this.row(a.e, nm(a), `${a.sci} · ${a.gone ? L('gone, {0}', 'desaparecido, {0}', a.gone) : groupName(a.g)}`, () => void this.openAnimal(a), { 'data-animal': a.id }, statusBadge(a));
   }
 
   /** GBIF's species whose name matches (scientific or common, in any language), animals only. */
@@ -186,7 +185,7 @@ export class Wild {
       const r = await fetch(`https://api.gbif.org/v1/species/search?q=${encodeURIComponent(q)}&rank=SPECIES&status=ACCEPTED&highertaxonKey=1&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c&limit=12`);
       if (!r.ok) return null;
       const j = (await r.json()) as { results?: { key: number; nubKey?: number; canonicalName?: string; scientificName: string; class?: string; family?: string; vernacularNames?: { vernacularName: string; language?: string }[] }[] };
-      const want = es() ? 'spa' : 'eng';
+      const want = L('eng', 'spa');
       return (j.results ?? []).map((s) => {
         const vn = s.vernacularNames ?? [];
         const name = vn.find((v) => v.language === want)?.vernacularName ?? vn.find((v) => v.language === 'eng')?.vernacularName ?? s.canonicalName ?? s.scientificName;
@@ -214,7 +213,7 @@ export class Wild {
     }
     let range: Awaited<ReturnType<typeof liveRange>> = null;
     try { range = await liveRange(s.key); } catch { this.shell.toast(L('GBIF didn’t answer; check your connection.', 'GBIF no respondió; revisa tu conexión.')); return; }
-    if (!range) { this.shell.toast(L(`No sightings of ${s.name} with a place on GBIF.`, `No hay avistamientos de ${s.name} con lugar en GBIF.`)); return; }
+    if (!range) { this.shell.toast(L('No sightings of {0} with a place on GBIF.', 'No hay avistamientos de {0} con lugar en GBIF.', s.name)); return; }
     const best = this.bestParks(range.cells, range.counts);
     const f: Focus = { id: `gbif:${s.key}`, name: s.name, e: ICONIC_EMOJI[s.cls ?? ''] ?? '🔎', cells: range.cells, counts: range.counts, best,
       note: L('GBIF’s live map: every sighting of it shared on GBIF, in squares of about 150 km. Darker: more sightings.', 'El mapa en vivo de GBIF: cada avistamiento compartido en GBIF, en cuadros de unos 150 km. Más oscuro: más avistamientos.') };
@@ -246,7 +245,7 @@ export class Wild {
     const whenTitle = h('h3', { class: 'sec-title' }, L('When to go', 'Cuándo ir'));
     const showMonths = (at?: [number, number], label?: string) => {
       clear(when); when.append(h('p', { class: 'muted small' }, L('Asking iNaturalist…', 'Preguntando a iNaturalist…')));
-      whenTitle.textContent = label ? L(`When to go: ${label}`, `Cuándo ir: ${label}`) : L('When to go', 'Cuándo ir');
+      whenTitle.textContent = label ? L('When to go: {0}', 'Cuándo ir: {0}', label) : L('When to go', 'Cuándo ir');
       void months(o.sci, at).then((v) => {
         clear(when);
         if (!v) { when.append(h('p', { class: 'muted small' }, L('When to go needs the internet (iNaturalist).', 'Cuándo ir necesita internet (iNaturalist).'))); return; }
@@ -263,7 +262,7 @@ export class Wild {
     if (!o.best.length) list.append(h('p', { class: 'muted small' }, L('No park of ours lies where it has been seen.', 'Ningún parque de los nuestros está donde se ha visto.')));
     body.append(h('h3', { class: 'sec-title' }, L('Best places to see it', 'Mejores lugares para verlo')), list);
     if (o.best[0]) {
-      const trip = h('button', { type: 'button', class: 'pill sm', 'data-wild': 'trip' }, `🧳 ${L(`Plan a trip to ${nm(o.best[0])}`, `Planear un viaje a ${nm(o.best[0])}`)}`);
+      const trip = h('button', { type: 'button', class: 'pill sm', 'data-wild': 'trip' }, `🧳 ${L('Plan a trip to {0}', 'Planear un viaje a {0}', nm(o.best[0]))}`);
       trip.addEventListener('click', () => links.planTrip(o.best[0].at, nm(o.best[0])));
       body.append(trip);
     }
@@ -301,7 +300,7 @@ export class Wild {
         b.addEventListener('click', () => { this.shell.sheet.close(); animalCard(this.cardFn, a, links); });
         chips.append(b);
       }
-      el.append(h('p', { class: 'muted small' }, L(`Animals that live around ${city}:`, `Animales que viven cerca de ${city}:`)), chips);
+      el.append(h('p', { class: 'muted small' }, L('Animals that live around {0}:', 'Animales que viven cerca de {0}:', city)), chips);
     }
   }
 
@@ -319,12 +318,12 @@ export class Wild {
     }
     const list = h('div', { class: 'guide-list', 'data-wild': 'here-list' }, h('p', { class: 'muted small' }, L('Asking iNaturalist…', 'Preguntando a iNaturalist…')));
     const where = this.app.renderer.countryAt(at[0], at[1]);
-    body.append(h('p', { class: 'muted small' }, L(`Within 50 km of ${at[1].toFixed(2)}°, ${at[0].toFixed(2)}°${where ? `, ${this.app.data.name(where, this.app.lang)}` : ''}: the animals people have seen most.`, `A menos de 50 km de ${at[1].toFixed(2)}°, ${at[0].toFixed(2)}°${where ? `, ${this.app.data.name(where, this.app.lang)}` : ''}: los animales más vistos.`)), chips, list);
+    body.append(h('p', { class: 'muted small' }, L('Within 50 km of {0}°, {1}°{2}: the animals people have seen most.', 'A menos de 50 km de {0}°, {1}°{2}: los animales más vistos.', at[1].toFixed(2), at[0].toFixed(2), where ? `, ${this.app.data.name(where, this.app.lang)}` : '')), chips, list);
     this.shell.openPanel('nature-here', L('What lives here?', '¿Qué vive aquí?'), body, () => { this.here = null; this.app.renderer.requestRender(); });
     this.app.flyTo(at[0], at[1], Math.max(this.app.renderer.view.zoom, 12));
     const known = new Map((d?.animals ?? []).map((a) => [a.sci.toLowerCase(), a]));
     try {
-      const r = await fetch(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=${ICONIC[group].taxa}&per_page=30&locale=${es() ? 'es' : 'en'}`);
+      const r = await fetch(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=${ICONIC[group].taxa}&per_page=30&locale=${dataLang()}`);
       if (!r.ok) throw new Error(String(r.status));
       const j = (await r.json()) as { results?: { count: number; taxon: { id: number; name: string; preferred_common_name?: string; iconic_taxon_name?: string; default_photo?: { square_url?: string; attribution?: string } } }[] };
       clear(list);
@@ -332,7 +331,7 @@ export class Wild {
         const t = x.taxon, ours = known.get(t.name.toLowerCase());
         const name = t.preferred_common_name ? t.preferred_common_name.charAt(0).toUpperCase() + t.preferred_common_name.slice(1) : t.name;
         const img = t.default_photo?.square_url ? h('img', { class: 'guide-thumb', src: t.default_photo.square_url, alt: '', loading: 'lazy', title: t.default_photo.attribution ?? '' }) : (ICONIC_EMOJI[t.iconic_taxon_name ?? ''] ?? '🐾');
-        list.append(this.row(img, ours ? `${ours.e} ${name}` : name, `${t.name} · ${L(`${fmtCompact(x.count)} sightings`, `${fmtCompact(x.count)} avistamientos`)}`, () => {
+        list.append(this.row(img, ours ? `${ours.e} ${name}` : name, `${t.name} · ${L('{0} sightings', '{0} avistamientos', fmtCompact(x.count))}`, () => {
           if (ours) { this.shell.sheet.close(); animalCard(this.cardFn, ours, links); } else void this.openLive({ key: 0, sci: t.name, name, cls: t.iconic_taxon_name ?? null, family: null }).catch(() => undefined);
         }, { 'data-inat': String(t.id) }));
       }

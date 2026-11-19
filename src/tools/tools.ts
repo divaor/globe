@@ -4,7 +4,7 @@ import { Ruler, Scale, Scaling, X, Undo2, RotateCcw } from 'lucide';
 import { geoDistance, geoInterpolate, geoRotation, geoCentroid, geoArea } from 'd3-geo';
 import type { Feature, Geometry, Position } from 'geojson';
 import { h, icon, clear, add } from '../ui/dom';
-import { t, lang, fmtNumber, fmtCompact, fmtMoney, flagEmoji } from '../app/i18n';
+import { t, lang, fmtNumber, fmtCompact, fmtMoney, flagEmoji, L } from '../app/i18n';
 import { loadJSON } from '../data/store';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
@@ -12,7 +12,6 @@ import type { RenderCtx } from '../layers/types';
 
 const R_KM = 6371.0088;
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 
 interface Tool { id: string; start(): void; stop(): void; tap(lon: number, lat: number, countryId: string | null): void; overlay(rc: RenderCtx): void }
 

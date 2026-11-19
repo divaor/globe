@@ -4,7 +4,7 @@
 // shared under open licences, in squares of 1.40625°). An animal's card can "show where it lives": its squares,
 // darker where more people saw it, with the carpet showing only it, and its best parks as numbered stars.
 import { geoDistance } from 'd3-geo';
-import { lang, fmtCompact } from '../../app/i18n';
+import { lang, fmtCompact, L } from '../../app/i18n';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import type { App } from '../../app/app';
@@ -19,7 +19,6 @@ import {
 import { animalCard, parkCard, zooCard, statusBadge, placeIcon, type WildLinks, type CardFn } from '../../wild/cards';
 
 const es = () => lang() === 'es';
-const L = (en: string, sp: string) => (es() ? sp : en);
 let APP: App | null = null;
 let SHELL: Shell | null = null;
 let data: WildData | null = null;
@@ -128,7 +127,7 @@ async function planTrip(at: [number, number], label: string) {
   for (const c of cities) { const d = geoDistance(c.at, at); if (d < bd) { bd = d; best = c; } }
   const km = Math.round(bd * 6371);
   g.add(best.id);
-  SHELL?.toast(L(`${g.cityName(best)} (${fmtCompact(km)} km from ${label}) is in your trip. More → Explore → Travel guide.`, `${g.cityName(best)} (a ${fmtCompact(km)} km de ${label}) está en tu viaje. Más → Explorar → Guía de viaje.`), 5000);
+  SHELL?.toast(L('{0} ({1} km from {2}) is in your trip. More → Explore → Travel guide.', '{0} (a {1} km de {2}) está en tu viaje. Más → Explorar → Guía de viaje.', g.cityName(best), fmtCompact(km), label), 5000);
 }
 
 function row(ic: string, title: string, sub: string, onClick: () => void, attrs: Record<string, string> = {}, badge?: HTMLElement | null): HTMLElement {
@@ -144,7 +143,7 @@ async function bestPlaces(a: Animal) {
   await showFocus(f);
   SHELL?.card.hide();
   const body = h('div', { class: 'guide wild-panel', 'data-wild': 'best', 'data-animal': a.id });
-  body.append(h('p', { class: 'muted small' }, L(`National parks and reserves where ${nm(a)} lives, those where people have shared the most sightings first. The numbers match the stars on the map.`, `Parques nacionales y reservas donde vive ${nm(a).toLowerCase()}, primero aquellos donde más avistamientos se han compartido. Los números coinciden con las estrellas del mapa.`)));
+  body.append(h('p', { class: 'muted small' }, L('National parks and reserves where {0} lives, those where people have shared the most sightings first. The numbers match the stars on the map.', 'Parques nacionales y reservas donde vive {1}, primero aquellos donde más avistamientos se han compartido. Los números coinciden con las estrellas del mapa.', nm(a), nm(a).toLowerCase())));
   const list = h('div', { class: 'guide-list' });
   (f.best ?? []).forEach((p, i) => {
     const others = p.f.filter((id) => id !== a.id).map((id) => data?.byId.get(id)).filter((x): x is Animal => !!x).slice(0, 3);
@@ -161,7 +160,7 @@ async function relativesPanel(a: Animal) {
   SHELL?.card.hide();
   const rel = relatives(data, a);
   const body = h('div', { class: 'guide wild-panel', 'data-wild': 'relatives', 'data-animal': a.id });
-  body.append(h('p', { class: 'muted small' }, a.fam && rel.some((b) => b.fam === a.fam) ? L(`${nm(a)} and its family, ${a.fam}, among our animals.`, `${nm(a)} y su familia, ${a.fam}, entre nuestros animales.`) : L(`Its closest relatives among our animals (order ${a.ord}).`, `Sus parientes más cercanos entre nuestros animales (orden ${a.ord}).`)));
+  body.append(h('p', { class: 'muted small' }, a.fam && rel.some((b) => b.fam === a.fam) ? L('{0} and its family, {1}, among our animals.', '{0} y su familia, {1}, entre nuestros animales.', nm(a), a.fam) : L('Its closest relatives among our animals (order {0}).', 'Sus parientes más cercanos entre nuestros animales (orden {0}).', a.ord)));
   const list = h('div', { class: 'guide-list' });
   for (const b of rel.slice(0, 30)) list.append(row(b.e, nm(b), b.sci, () => links.openAnimal(b), { 'data-animal': b.id }, statusBadge(b)));
   if (!rel.length) list.append(h('p', { class: 'muted small' }, L('None of its relatives is among our animals.', 'Ninguno de sus parientes está entre nuestros animales.')));
@@ -202,13 +201,13 @@ export const animalsOfTheWorld: LayerDef = {
     if (!data) return null;
     if (focus) {
       return {
-        kind: 'categories', title: L(`${focus.name}: where it lives`, `${focus.name}: dónde vive`),
+        kind: 'categories', title: L('{0}: where it lives', '{0}: dónde vive', focus.name),
         items: [
           { color: 'rgb(240,110,20)', label: L('Many sightings', 'Muchos avistamientos'), shape: 'square' },
           { color: 'rgba(255,190,60,0.55)', label: L('A few sightings', 'Pocos avistamientos'), shape: 'square' },
           ...(focus.best?.length ? [{ color: '#ffd43b', label: L('Best places to see it', 'Mejores lugares para verlo'), shape: 'dot' as const }] : []),
         ],
-        note: focus.note ?? (focus.animal?.gone ? L(`Where it lived until ${focus.animal.gone}, after historical records.`, `Dónde vivía hasta ${focus.animal.gone}, según los registros históricos.`)
+        note: focus.note ?? (focus.animal?.gone ? L('Where it lived until {0}, after historical records.', 'Dónde vivía hasta {0}, según los registros históricos.', focus.animal.gone)
           : L('Squares of about 150 km where people have shared sightings since 1970 (GBIF, open-licence records; no zoo animals). Darker: more sightings, which also means more people looking.', 'Cuadros de unos 150 km donde se han compartido avistamientos desde 1970 (GBIF, registros con licencia abierta; sin animales de zoológico). Más oscuro: más avistamientos, lo que también significa más gente observando.')),
         actions: [
           { label: L('All animals', 'Todos los animales'), icon: '🐾', onClick: () => void showFocus(null, false), primary: true },
@@ -220,14 +219,14 @@ export const animalsOfTheWorld: LayerDef = {
     const shown = data.animals.filter(ok);
     if (statusOf(inst) === 'gone') {
       return {
-        kind: 'categories', title: L(`${shown.length} animals gone since 1500`, `${shown.length} animales desaparecidos desde 1500`),
+        kind: 'categories', title: L('{0} animals gone since 1500', '{0} animales desaparecidos desde 1500', shown.length),
         items: shown.slice().sort((a, b) => (a.gone ?? 0) - (b.gone ?? 0)).map((a) => ({ color: 'transparent', icon: a.e, shape: 'emoji' as const, label: `${nm(a)} · ${a.gone}` })),
         note: L('Each where it lived, after historical records. Tap one for its story.', 'Cada uno donde vivía, según los registros históricos. Toca uno para ver su historia.'),
       };
     }
     if (statusOf(inst) === 'endangered') {
       return {
-        kind: 'categories', title: L(`${shown.length} threatened animals`, `${shown.length} animales amenazados`),
+        kind: 'categories', title: L('{0} threatened animals', '{0} animales amenazados', shown.length),
         items: (['CR', 'EN', 'VU'] as const).map((s) => ({ color: STATUS[s].color, label: `${statusName(s)} (${shown.filter((a) => a.st === s).length})`, shape: 'dot' as const })),
         note: L('The ring shows its IUCN Red List category.', 'El anillo muestra su categoría en la Lista Roja de la UICN.'),
       };
@@ -235,7 +234,7 @@ export const animalsOfTheWorld: LayerDef = {
     const n = new Map<Group, number>();
     for (const a of shown) n.set(a.g, (n.get(a.g) ?? 0) + 1);
     return {
-      kind: 'categories', title: L(`${shown.length} animals where they live`, `${shown.length} animales donde viven`),
+      kind: 'categories', title: L('{0} animals where they live', '{0} animales donde viven', shown.length),
       items: (Object.keys(GROUPS) as Group[]).filter((g) => n.get(g)).map((g) => ({ color: GROUPS[g].color, icon: GROUPS[g].icon, shape: 'emoji' as const, label: `${groupName(g)} (${n.get(g)})` })),
       note: L('Each animal where people have seen it in the wild. Zoomed out, the best known of each area; zoom in for more. From GBIF sightings shared under open licences.', 'Cada animal donde se ha visto en libertad. De lejos, el más conocido de cada zona; acerca el mapa para ver más. A partir de avistamientos de GBIF compartidos con licencias abiertas.'),
     };
@@ -259,7 +258,7 @@ export const animalsOfTheWorld: LayerDef = {
       const top = a.cells[a.counts.indexOf(Math.max(...a.counts))] ?? a.cells[0];
       const [lon, lat] = top != null ? cellCenter(top) : [0, 0];
       out.push({
-        label: nm(a), sub: `${a.sci} · ${a.gone ? L(`gone, ${a.gone}`, `desaparecido, ${a.gone}`) : groupName(a.g)}`, icon: a.e, lon, lat,
+        label: nm(a), sub: `${a.sci} · ${a.gone ? L('gone, {0}', 'desaparecido, {0}', a.gone) : groupName(a.g)}`, icon: a.e, lon, lat,
         score: s + Math.min(10, a.sl / 25), wz: 3,
         prepare: (i) => {
           if (i.options.status === 'gone' && !a.gone) APP?.setOption('wild', 'status', 'all');
@@ -310,7 +309,7 @@ function placeLayer<T extends Park | Zoo>(o: {
       const list = o.get() ?? [];
       const kind = String(inst.options.kind ?? 'all');
       return {
-        kind: 'categories', title: L(`${fmtCompact(list.filter((p) => kind === 'all' || p.k === kind).length)} places`, `${fmtCompact(list.filter((p) => kind === 'all' || p.k === kind).length)} lugares`),
+        kind: 'categories', title: L('{0} places', '{0} lugares', fmtCompact(list.filter((p) => kind === 'all' || p.k === kind).length)),
         items: o.kinds.filter(([k]) => kind === 'all' || k === kind).map(([k, label]) => ({ color: o.color[k], icon: placeIcon(k), label: `${es() ? label.es : label.en} (${fmtCompact(list.filter((p) => p.k === k).length)})`, shape: 'dot' as const })),
         note: es() ? o.note.es : o.note.en,
       };
