@@ -12,6 +12,7 @@ import { Share2, RotateCcw, MapPin } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
 import { fmtNumber } from '../app/i18n';
 import { loadJSON } from '../data/store';
@@ -141,15 +142,14 @@ abstract class PinRounds implements HostGame {
     const total = s.results.reduce((a, r) => a + r.pts + r.bonus, 0);
     if (s.done) {
       const most = s.rounds.length * this.max();
-      this.card.append(
-        h('div', { class: 'hop-score' }, h('span', { class: 'hop-stars' }, starText(s.done.stars)), h('span', null, `${fmtNumber(s.done.score)} ${L('points', 'puntos')}`)),
-        h('div', { class: 'hop-stats' }, L(`Out of ${fmtNumber(most)}.`, `De ${fmtNumber(most)}.`)),
-        h('div', { class: 'hop-others' }, ...s.rounds.map((r, i) => h('div', { class: 'hop-other' }, h('span', { class: 'hop-other-goal' }, `${r.name}: ${fmtNumber(s.results[i].pts + s.results[i].bonus)}`), h('span', { class: 'hop-other-path' }, this.dist(s.results[i].km))))));
-      const share = h('button', { type: 'button', class: 'pill sm', 'data-game': 'share' }, icon(Share2, 15), L('Share', 'Compartir'));
+      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: L(`Out of ${fmtNumber(most)}`, `De ${fmtNumber(most)}`),
+        rows: s.rounds.map((r, i) => ({ name: r.name, detail: this.dist(s.results[i].km), value: fmtNumber(s.results[i].pts + s.results[i].bonus), mark: s.results[i].km <= 100 ? 'ok' : s.results[i].km <= 1500 ? 'near' : 'miss' })) });
+      this.card.append(res);
+      const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `${this.icon} ${this.title(false)}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.results.map((r) => (r.km <= 100 ? '🎯' : r.km <= 500 ? '🟩' : r.km <= 1500 ? '🟨' : '🟥')).join('')}`));
-      const again = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'again' }, icon(RotateCcw, 15), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start(); });
-      this.card.append(h('div', { class: 'hop-actions' }, share, again));
+      res.append(h('div', { class: 'result-actions' }, share, again));
       return;
     }
     const r = s.rounds[s.i];

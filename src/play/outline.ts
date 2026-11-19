@@ -6,6 +6,7 @@ import { Share2, RotateCcw, SkipForward, Send } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
 import { fmtNumber } from '../app/i18n';
 import { loadJSON } from '../data/store';
@@ -169,14 +170,14 @@ export class Outline implements HostGame {
     const title = `🖼️ ${s.day ? L('Daily Outline', 'Silueta del día') : L('Outline', 'Silueta')} · ${s.done ? L('Result', 'Resultado') : `${s.i + 1}/${s.ids.length}`}`;
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     if (s.done) {
-      this.card.append(
-        h('div', { class: 'hop-score' }, h('span', { class: 'hop-stars' }, starText(s.done.stars)), h('span', null, `${fmtNumber(s.done.score)} ${L('points', 'puntos')}`)),
-        h('div', { class: 'hop-others' }, ...s.results.map((r) => h('div', { class: 'hop-other' }, h('span', { class: 'hop-other-goal' }, `${this.name(r.id)}: ${fmtNumber(r.pts)}`), h('span', { class: 'hop-other-path' }, r.tries ? L(`at try ${r.tries}`, `al intento ${r.tries}`) : L('not guessed', 'sin adivinar'))))));
-      const share = h('button', { type: 'button', class: 'pill sm', 'data-game': 'share' }, icon(Share2, 15), L('Share', 'Compartir'));
+      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'),
+        rows: s.results.map((r) => ({ name: this.name(r.id), detail: r.tries ? L(`at try ${r.tries}`, `al intento ${r.tries}`) : L('not guessed', 'sin adivinar'), value: fmtNumber(r.pts), mark: !r.tries ? 'miss' : r.tries === 1 ? 'ok' : 'near' })) });
+      this.card.append(res);
+      const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `🖼️ ${L('Outline', 'Silueta')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.results.map((r) => ['🟥', '🟩', '🟨', '🟧', '🟧', '🟧'][r.tries] ?? '🟥').join('')}`));
-      const again = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'again' }, icon(RotateCcw, 15), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ hard: s.hard }); });
-      this.card.append(h('div', { class: 'hop-actions' }, share, again));
+      res.append(h('div', { class: 'result-actions' }, share, again));
       return;
     }
     const id = s.ids[s.i];

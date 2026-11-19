@@ -8,6 +8,7 @@ import { Earth, Share2, Send, SkipForward, Pause, Play, Map as MapIcon, ChevronR
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
 import { h, icon, clear, toggle, segmented } from '../ui/dom';
 import { fmtNumber } from '../app/i18n';
 import { dataUrl } from '../data/store';
@@ -836,9 +837,9 @@ export class Master implements HostGame {
   private renderDone() {
     const s = this.s!, st = master();
     const deckName = this.nm(DECK_TEXT[s.deck]);
-    const actions = h('div', { class: 'hop-actions' });
+    const actions = h('div', { class: 'result-actions' });
     const add = (label: string, fn: () => void, primary = false, attr = '') => {
-      const b = h('button', { type: 'button', class: `pill sm${primary ? ' primary' : ''}`, 'data-master': attr }, label);
+      const b = h('button', { type: 'button', class: `pill${primary ? ' primary' : ''}`, 'data-master': attr }, label);
       b.addEventListener('click', fn);
       actions.append(b);
     };
@@ -870,14 +871,16 @@ export class Master implements HostGame {
       lines.push(L(`${s.count} in a row.`, `${s.count} seguidos.`));
       add(L('Again', 'Otra vez'), () => void this.start('marathon'), true, 'again');
     }
-    this.card.append(h('div', { class: 'quiz-q', 'data-master': 'done' }, head), ...lines.map((x) => h('div', { class: 'tool-hint' }, x)));
     const goal = st.goal.day === this.today() ? st.goal.n : 0;
-    this.card.append(h('div', { class: 'hop-stats' }, `🎯 ${Math.min(goal, GOAL)}/${GOAL} ${L('today', 'hoy')}${st.days.streak && st.days.last >= addDays(this.today(), -1) ? ` · 🔥 ${st.days.streak}` : ''} · ${deckName}: ${this.counts(s.deck, s.deck === 'states' ? 'all' : 'world').mastered} ${L('mastered', 'dominados')}`));
+    const res = resultCard({ stars: s.done === 'end' && s.stats.asked ? (s.stats.right / s.stats.asked >= 0.9 ? 3 : s.stats.right / s.stats.asked >= 0.6 ? 2 : 1) : undefined,
+      headline: head, sub: `🎯 ${Math.min(goal, GOAL)}/${GOAL} ${L('today', 'hoy')}${st.days.streak && st.days.last >= addDays(this.today(), -1) ? ` · 🔥 ${st.days.streak}` : ''} · ${deckName}: ${this.counts(s.deck, s.deck === 'states' ? 'all' : 'world').mastered} ${L('mastered', 'dominados')}`, extra: lines.map((x) => h('div', { class: 'tool-hint' }, x)) });
+    res.querySelector('.result-headline')?.setAttribute('data-master', 'done');
+    this.card.append(res);
     add(L('Share', 'Compartir'), () => void this.share(), false, 'share');
     const wd = s.deck;
     if ((WORLD_DECKS as DeckId[]).includes(wd)) add(L('Your world', 'Tu mundo'), () => void this.showWorld(wd as WorldDeck), false, 'world');
     add(L('Menu', 'Menú'), () => { void this.stop(); void this.openPanel(); }, false, 'menu');
-    this.card.append(actions);
+    res.append(actions);
   }
 
   // ---- The globe
@@ -1034,6 +1037,11 @@ export class Master implements HostGame {
       else redraw();
     });
     decks.dataset.master = 'deck';
+    // Each deck: its emoji over its name, the same in all eight (v0.40.0; long names wrapped differently before).
+    decks.querySelectorAll<HTMLElement>('.seg-btn').forEach((b) => {
+      const [ic, ...rest] = (b.textContent ?? '').split(' ');
+      b.replaceChildren(h('span', { class: 'seg-ic', 'aria-hidden': 'true' }, ic), ' ', h('span', { class: 'seg-label' }, rest.join(' ')));
+    });
     // Four decks: a longer name may take two lines on a phone.
     decks.classList.add('seg-wrap');
     out.push(h('h3', { class: 'sec-title' }, L('Deck', 'Mazo')), decks);

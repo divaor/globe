@@ -9,6 +9,7 @@ import { Share2, RotateCcw, Undo2, Flag } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
 import { fmtNumber } from '../app/i18n';
 import { loadJSON } from '../data/store';
@@ -231,9 +232,8 @@ export class GrandTour implements HostGame {
       return;
     }
     const d = s.done;
-    this.card.append(
-      h('div', { class: 'hop-score' }, h('span', { class: 'hop-stars' }, starText(d.stars)), h('span', null, `${d.score} ${L('points', 'puntos')}`)),
-      h('div', { class: 'hop-stats' }, `${d.gaveUp ? L('You asked to see the best order.', 'Pediste ver el mejor orden.') : `${L('Yours', 'La tuya')}: ${this.cost(d.yours)}`} · ${L('Best possible', 'Lo mejor posible')}: ${this.cost(d.par)}`));
+    const res = resultCard({ stars: d.stars, score: `${d.score}`, unit: L('points', 'puntos'), sub: `${d.gaveUp ? L('You asked to see the best order.', 'Pediste ver el mejor orden.') : `${L('Yours', 'La tuya')}: ${this.cost(d.yours)}`} · ${L('Best possible', 'Lo mejor posible')}: ${this.cost(d.par)}` });
+    this.card.append(res);
     if (s.fold) return;
     const others = h('div', { class: 'hop-others' },
       h('div', { class: 'hop-other cur' }, h('span', { class: 'hop-other-goal' }, `⭐ ${L('The best order', 'El mejor orden')}`), h('span', { class: 'hop-other-path' }, d.best.map((i) => this.nm(s.stops[i])).join(' › '))));
@@ -242,12 +242,12 @@ export class GrandTour implements HostGame {
       others.append(h('div', { class: 'hop-other' }, h('span', { class: 'hop-other-goal' }, `${s.story.icon} ${L('The traveller’s own order', 'El orden del viajero')}: ${this.cost(tourCost(s.stops.map((_, i) => i), cost))}`),
         h('span', { class: 'hop-other-path' }, s.stops.map((x) => this.nm(x)).join(' › '))));
     }
-    this.card.append(chips, others);
-    const share = h('button', { type: 'button', class: 'pill sm', 'data-game': 'share' }, icon(Share2, 15), L('Share', 'Compartir'));
+    res.append(chips, others);
+    const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
     share.addEventListener('click', () => void shareText(this.shell, `${museum ? `🏛️ ${L('Museum hop', 'De museo en museo')}` : `🧳 ${L('Grand tour', 'Gran vuelta')}`}${s.day ? ` ${s.day}` : ''} ${starText(d.stars)} ${d.score}\n${s.order.map((i) => this.nm(s.stops[i])).join(' › ')}`));
-    const again = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'again' }, icon(RotateCcw, 15), s.day ? L('More games', 'Más juegos') : museum ? L('Another hop', 'Otra ronda') : L('Another tour', 'Otra vuelta'));
+    const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : museum ? L('Another hop', 'Otra ronda') : L('Another tour', 'Otra vuelta'));
     again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ mode: s.mode, region: s.region }); });
-    this.card.append(h('div', { class: 'hop-actions' }, ...(d.gaveUp ? [] : [share]), again));
+    res.append(h('div', { class: 'result-actions' }, ...(d.gaveUp ? [] : [share]), again));
   }
 
   draw(rc: RenderCtx) {

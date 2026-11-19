@@ -155,6 +155,21 @@ export class TimeBar {
     this.render();
   }
 
+  /** An era's name under the thumb hides while the thumb is on it (v0.40.0), so neither covers the other. */
+  private clearThumb() {
+    const w = this.track.getBoundingClientRect().width;
+    if (!w) return;
+    const x = this.pos * w;
+    const left = this.track.getBoundingClientRect().left;
+    this.track.querySelectorAll<HTMLElement>('.tb-band span').forEach((el) => {
+      if (el.style.visibility === 'hidden' && !el.dataset.under) return;
+      const r = el.getBoundingClientRect();
+      const under = x + 14 > r.left - left && x - 14 < r.right - left;
+      el.style.opacity = under ? '0' : '';
+      el.dataset.under = under ? '1' : '';
+    });
+  }
+
   /** Hide tick labels that would overlap (narrow phone screens). */
   private declutter() {
     const w = this.track.getBoundingClientRect().width;
@@ -166,6 +181,8 @@ export class TimeBar {
       const room = isLast ? 34 : 46;
       const show = x - last >= room;
       el.style.visibility = show ? 'visible' : 'hidden';
+      // The first and last labels stay inside the track ("123000 BC" was cut at the left edge).
+      el.style.transform = i === 0 ? 'translateX(-4px)' : isLast ? 'translateX(calc(-100% + 4px))' : '';
       if (show) last = x;
     });
     this.track.querySelectorAll<HTMLElement>('.tb-band span').forEach((el) => {
@@ -178,6 +195,7 @@ export class TimeBar {
     if (!this.decluttered && this.el.isConnected) { this.decluttered = true; requestAnimationFrame(() => this.declutter()); }
     const pct = (f: number) => `${f * 100}%`;
     this.thumb.style.left = pct(this.pos);
+    this.clearThumb();
     this.hStart.style.left = pct(this.start);
     this.hEnd.style.left = pct(this.end);
     this.range.style.left = pct(this.start);

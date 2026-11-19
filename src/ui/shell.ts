@@ -2,6 +2,7 @@
 // active-filter chips and the dock (bottom), plus sheets, legend, card, tooltip and toasts.
 import { Layers, Layers2, Globe, Map as MapIcon, Ellipsis, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Share2, Settings, Info, X, Mountain, Earth, Gamepad2, GraduationCap, Wrench, Link, ChevronRight, ChevronLeft } from 'lucide';
 import { terrainActions } from '../layers/terrainActions';
+import { FEATURES, ftile } from './features';
 import { h, icon, button, clear, add } from './dom';
 import { t, tx } from '../app/i18n';
 import { Sheet } from './sheet';
@@ -115,6 +116,8 @@ export class Shell {
     app.on('tap', (x, y) => this.onTap(x as number, y as number));
     app.on('hover', (x, y) => this.onHover(x as number, y as number));
     app.on('interact', () => { this.menu.hidden = true; this.tooltip.hidden = true; });
+    // A country's card opening: the hover label goes, so it never sits over the card's title (v0.40.0).
+    app.on('select', () => { this.tooltip.hidden = true; });
     document.addEventListener('click', (e) => {
       // (By the path at the time of the click: opening a group redraws the menu, so its row is gone by now.)
       if (!this.menu.hidden && !e.composedPath().includes(this.menu) && !(e.target as HTMLElement).closest('[data-dock="more"]')) this.menu.hidden = true;
@@ -202,7 +205,7 @@ export class Shell {
   private renderMenu() {
     clear(this.menu);
     const row = (it: MenuItem) => {
-      const b = h('button', { type: 'button', class: 'menu-item', role: 'menuitem', 'data-menu': it.id }, icon(it.icon, 18), h('span', { class: 'menu-text' }, it.label()));
+      const b = h('button', { type: 'button', class: 'menu-item', role: 'menuitem', 'data-menu': it.id }, menuTile(it.id, it.icon), h('span', { class: 'menu-text' }, it.label()));
       b.addEventListener('click', () => { this.menu.hidden = true; it.onClick(); });
       return b;
     };
@@ -216,7 +219,7 @@ export class Shell {
       for (const gr of MENU_GROUPS) {
         const inside = this.menuItems.filter((it) => it.group === gr.id);
         if (!inside.length) continue;
-        const b = h('button', { type: 'button', class: 'menu-item menu-group', role: 'menuitem', 'aria-haspopup': 'menu', 'data-group': gr.id }, icon(gr.icon, 18),
+        const b = h('button', { type: 'button', class: 'menu-item menu-group', role: 'menuitem', 'aria-haspopup': 'menu', 'data-group': gr.id }, menuTile(gr.id === 'share' ? 'share' : gr.id, gr.icon),
           h('span', { class: 'menu-text' }, h('span', null, t(gr.key)), h('small', { class: 'menu-sub' }, inside.map((it) => it.label()).join(' · '))),
           h('span', { class: 'menu-chev', 'aria-hidden': 'true' }, icon(ChevronRight, 16)));
         b.addEventListener('click', () => this.openMenuGroup(gr.id));
@@ -404,4 +407,11 @@ export class Shell {
     this.tooltip.style.transform = `translate(${Math.round(x + 14)}px, ${Math.round(y + 12)}px)`;
     this.tooltip.hidden = false;
   }
+}
+
+/** A More menu row's tile: its feature's (ui/features.ts), else its own icon on a plain tile. */
+const MENU_FEATURE: Record<string, string> = { play: 'games', share: 'link' };
+function menuTile(id: string, ic: Parameters<typeof icon>[0]): HTMLElement {
+  const f = MENU_FEATURE[id] ?? id;
+  return FEATURES[f] ? ftile(f, 'sm') : h('span', { class: 'ftile ftile-sm hue-me', 'aria-hidden': 'true' }, icon(ic, 16));
 }

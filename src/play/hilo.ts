@@ -6,6 +6,7 @@ import { Share2, RotateCcw } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
 import { fmtNumber, fmtCompact } from '../app/i18n';
 import { loadJSON } from '../data/store';
@@ -152,14 +153,13 @@ export class HigherLower implements HostGame {
     const title = `⚖️ ${s.day ? L('Daily Higher or lower', 'Más o menos del día') : L('Higher or lower', 'Más o menos')} · ${s.done ? L('Result', 'Resultado') : `${L('Run', 'Racha')} ${s.run}`}`;
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     if (s.done) {
-      this.card.append(
-        h('div', { class: 'hop-score' }, h('span', { class: 'hop-stars' }, starText(s.done.stars)), h('span', null, `${fmtNumber(s.done.score)} ${L('points', 'puntos')}`)),
-        h('div', { class: 'hop-stats' }, L(`${s.done.run} right in a row.`, `${s.done.run} aciertos seguidos.`)));
-      const share = h('button', { type: 'button', class: 'pill sm', 'data-game': 'share' }, icon(Share2, 15), L('Share', 'Compartir'));
+      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: L(`${s.done.run} right in a row`, `${s.done.run} aciertos seguidos`) });
+      this.card.append(res);
+      const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `⚖️ ${L('Higher or lower', 'Más o menos')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.history.map((x) => (x.ok ? '🟩' : '🟥')).join('')}`));
-      const again = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'again' }, icon(RotateCcw, 15), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start(); });
-      this.card.append(h('div', { class: 'hop-actions' }, share, again));
+      res.append(h('div', { class: 'result-actions' }, share, again));
       return;
     }
     const f = FACTS.find((x) => x.key === s.q.fact)!;

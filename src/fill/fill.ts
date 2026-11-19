@@ -10,6 +10,8 @@ import { geoEqualEarth, geoPath } from 'd3-geo';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
+import { ftile } from '../ui/features';
 import { h, icon, clear, segmented } from '../ui/dom';
 import { fmtNumber, appLocale, subregion, t } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
@@ -441,12 +443,14 @@ export class FillMap implements HostGame {
     const head = s.daily
       ? L(`Done: ★ ${s.stats.stars} of ${s.ids.length * 3}`, `Hecho: ★ ${s.stats.stars} de ${s.ids.length * 3}`)
       : L(`${cap(this.scopeName(s.scope))} is filled in!`, `¡Terminaste de colorear ${this.scopeName(s.scope)}!`);
-    card.append(h('div', { class: 'quiz-q', 'data-fill': 'done' }, head));
-    if (s.stats.asked) card.append(h('div', { class: 'tool-hint' }, L(`${s.stats.firsts} of ${s.stats.asked} right at the first try.`, `${s.stats.firsts} de ${s.stats.asked} acertados a la primera.`)));
-    if (missed.length) card.append(h('div', { class: 'tool-hint' }, L(`Shown: ${missed.map((x) => this.name(x)).join(', ')}`, `Mostrados: ${missed.map((x) => this.name(x)).join(', ')}`)));
-    const actions = h('div', { class: 'hop-actions' });
+    const res = resultCard({ stars: s.ids.length ? Math.round((3 * s.stats.stars) / (s.ids.length * 3)) : undefined, headline: head,
+      sub: s.stats.asked ? L(`${s.stats.firsts} of ${s.stats.asked} right at the first try`, `${s.stats.firsts} de ${s.stats.asked} acertados a la primera`) : undefined });
+    res.querySelector('.result-headline')?.setAttribute('data-fill', 'done');
+    card.append(res);
+    if (missed.length) res.append(h('div', { class: 'tool-hint' }, L(`Shown: ${missed.map((x) => this.name(x)).join(', ')}`, `Mostrados: ${missed.map((x) => this.name(x)).join(', ')}`)));
+    const actions = h('div', { class: 'result-actions' });
     const add = (label: string, fn: () => void, primary = false, attr = '') => {
-      const b = h('button', { type: 'button', class: `pill sm${primary ? ' primary' : ''}`, 'data-fill': attr }, label);
+      const b = h('button', { type: 'button', class: `pill${primary ? ' primary' : ''}`, 'data-fill': attr }, label);
       b.addEventListener('click', fn);
       actions.append(b);
     };
@@ -460,7 +464,7 @@ export class FillMap implements HostGame {
     }
     add(L('Share', 'Compartir'), () => void this.share(s.cat), false, 'share');
     add(L('Menu', 'Menú'), () => { void this.stop(); void this.openPanel(); }, false, 'menu');
-    card.append(actions);
+    res.append(actions);
   }
 
   // ---- The globe
@@ -636,7 +640,7 @@ export class FillMap implements HostGame {
     const pick = dailyPick(day, this.regions);
     const done = fillState().dailies[day];
     const what = pick ? `${this.scopeName(pick.scope)} · ${this.catName(pick.cat)}` : '';
-    const b = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-fill': 'daily' }, h('span', { class: 'mode-icon' }, '🖍️'),
+    const b = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-fill': 'daily' }, ftile('fill'),
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Region of the day', 'Región del día')),
         h('span', { class: 'mode-desc' }, done ? `${L('Done', 'Hecho')}: ★ ${done.s}/${done.n} · ${what}` : `${what} · ${L('the same for everyone today', 'la misma para todos hoy')}`)));
     b.addEventListener('click', () => void this.startDaily());

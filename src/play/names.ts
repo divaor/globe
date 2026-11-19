@@ -5,6 +5,7 @@ import { Share2, RotateCcw, Flag } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
 import { fmtNumber } from '../app/i18n';
 import { loadJSON } from '../data/store';
@@ -155,15 +156,14 @@ export class NameThemAll implements HostGame {
     this.card.append(h('div', { class: 'quiz-q' }, this.prompt()));
     if (s.done) {
       const missing = s.ids.filter((id) => !s.found.includes(id));
-      this.card.append(
-        h('div', { class: 'hop-score' }, h('span', { class: 'hop-stars' }, starText(s.done.stars)), h('span', null, `${fmtNumber(s.done.score)} ${L('points', 'puntos')}`)),
-        h('div', { class: 'hop-stats' }, `${s.found.length}/${s.ids.length} ${L('named', 'nombrados')}`));
-      if (missing.length && !s.fold) this.card.append(h('h4', { class: 'hop-sub' }, L('Missing', 'Faltaron')), h('div', { class: 'hop-path' }, ...missing.map((id) => h('span', { class: 'hop-step to' }, s.list === 'capitals' ? `${this.capitalOf(id)} (${this.name(id)})` : this.name(id)))));
-      const share = h('button', { type: 'button', class: 'pill sm', 'data-game': 'share' }, icon(Share2, 15), L('Share', 'Compartir'));
+      const res = resultCard({ stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'), sub: `${s.found.length}/${s.ids.length} ${L('named', 'nombrados')}` });
+      this.card.append(res);
+      if (missing.length && !s.fold) res.append(h('h4', { class: 'result-rows-title' }, L('Missing', 'Faltaron')), h('div', { class: 'hop-path' }, ...missing.map((id) => h('span', { class: 'hop-step to' }, s.list === 'capitals' ? `${this.capitalOf(id)} (${this.name(id)})` : this.name(id)))));
+      const share = h('button', { type: 'button', class: 'pill', 'data-game': 'share' }, icon(Share2, 16), L('Share', 'Compartir'));
       share.addEventListener('click', () => void shareText(this.shell, `📝 ${L('Name them all', 'Nómbralos todos')}${s.day ? ` ${s.day}` : ''}: ${this.prompt()}\n${s.found.length}/${s.ids.length} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}`));
-      const again = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'again' }, icon(RotateCcw, 15), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
+      const again = h('button', { type: 'button', class: 'pill primary', 'data-game': 'again' }, icon(RotateCcw, 16), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
       again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ list: s.list, area: s.area }); });
-      this.card.append(h('div', { class: 'hop-actions' }, share, again));
+      res.append(h('div', { class: 'result-actions' }, share, again));
       return;
     }
     const clock = h('span', { class: 'names-clock' }, '⏱️');

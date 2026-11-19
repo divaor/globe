@@ -5,6 +5,7 @@ import { Share2, RotateCcw, MapPin } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
+import { resultCard, shareBtn, mainBtn } from '../ui/result';
 import { h, icon, clear } from '../ui/dom';
 import { fmtNumber } from '../app/i18n';
 import { loadJSON } from '../data/store';
@@ -127,15 +128,16 @@ export class PinIt implements HostGame {
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     const total = s.results.reduce((a, r) => a + r.pts, 0);
     if (s.done) {
-      this.card.append(
-        h('div', { class: 'hop-score' }, h('span', { class: 'hop-stars' }, starText(s.done.stars)), h('span', null, `${fmtNumber(s.done.score)} ${L('points', 'puntos')}`)),
-        h('div', { class: 'hop-stats' }, L(`Out of ${fmtNumber(PIN_MAX * PIN_ROUNDS)}.`, `De ${fmtNumber(PIN_MAX * PIN_ROUNDS)}.`)),
-        h('div', { class: 'hop-others' }, ...s.places.map((p, i) => h('div', { class: 'hop-other' }, h('span', { class: 'hop-other-goal' }, `${p[4]} ${this.name(p)}: ${fmtNumber(s.results[i].pts)}`), h('span', { class: 'hop-other-path' }, `${this.dist(s.results[i].km)} · ${this.note(p)}`)))));
-      const share = h('button', { type: 'button', class: 'pill sm', 'data-game': 'share' }, icon(Share2, 15), L('Share', 'Compartir'));
-      share.addEventListener('click', () => void shareText(this.shell, `📍 ${L('Pin it', 'Pon el pin')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.results.map((r) => (r.km <= 100 ? '🎯' : r.km <= 500 ? '🟩' : r.km <= 1500 ? '🟨' : '🟥')).join('')}`));
-      const again = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'again' }, icon(RotateCcw, 15), s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'));
-      again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ pack: s.pack, hard: s.hard }); });
-      this.card.append(h('div', { class: 'hop-actions' }, share, again));
+      const mark = (km: number) => (km <= 100 ? 'ok' : km <= 1500 ? 'near' : 'miss') as 'ok' | 'near' | 'miss';
+      this.card.append(resultCard({
+        stars: s.done.stars, score: fmtNumber(s.done.score), unit: L('points', 'puntos'),
+        sub: L(`Out of ${fmtNumber(PIN_MAX * PIN_ROUNDS)}`, `De ${fmtNumber(PIN_MAX * PIN_ROUNDS)}`),
+        rows: s.places.map((p, i) => ({ icon: p[4], name: this.name(p), detail: `${this.dist(s.results[i].km)} · ${this.note(p)}`, value: fmtNumber(s.results[i].pts), mark: mark(s.results[i].km) })),
+        actions: [
+          shareBtn(L('Share', 'Compartir'), () => void shareText(this.shell, `📍 ${L('Pin it', 'Pon el pin')}${s.day ? ` ${s.day}` : ''} ${starText(s.done!.stars)} ${fmtNumber(s.done!.score)}\n${s.results.map((r) => (r.km <= 100 ? '🎯' : r.km <= 500 ? '🟩' : r.km <= 1500 ? '🟨' : '🟥')).join('')}`)),
+          mainBtn(s.day ? L('More games', 'Más juegos') : L('Play again', 'Otra partida'), () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ pack: s.pack, hard: s.hard }); }),
+        ],
+      }));
       return;
     }
     const p = s.places[s.i];
