@@ -1,6 +1,6 @@
 // Learn and play: quizzes (find the country, flags, capitals...), the games Put them in order and Time detective,
 // the daily challenge, your progress (streaks and badges), guided tours, and "On this day".
-import { GraduationCap, Compass, CalendarDays, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Play, Pause, RotateCcw, Map as MapIcon, Share2, Volume2, VolumeX } from 'lucide';
+import { GraduationCap, Compass, CalendarDays, Medal, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Play, Pause, RotateCcw, Map as MapIcon, Share2, Volume2, VolumeX } from 'lucide';
 import { keepAwake } from '../ui/wake';
 import { geoDistance } from 'd3-geo';
 import { resultCard } from '../ui/result';
@@ -271,6 +271,8 @@ export class Learn {
     shell.addMenu({ id: 'quiz', icon: GraduationCap, label: () => L('Quiz', 'Concurso'), order: 30, group: 'learn', onClick: () => this.openQuizMenu() });
     shell.addMenu({ id: 'tours', icon: Compass, label: () => L('Guided tours', 'Visitas guiadas'), order: 31, group: 'learn', onClick: () => this.openTours() });
     shell.addMenu({ id: 'onthisday', icon: CalendarDays, label: () => L('On this day', 'Tal día como hoy'), order: 32, group: 'learn', onClick: () => void this.openOnThisDay() });
+    // v0.41.1: Your progress has its own place in Learn (it was only reachable from inside the Quiz panel).
+    shell.addMenu({ id: 'progress', icon: Medal, label: () => L('Your progress', 'Tu progreso'), order: 33, group: 'learn', onClick: () => this.openProgress() });
     shell.tapHandlers.unshift((_x, _y, g) => {
       const q = this.quiz;
       if (!q || q.done) return false;

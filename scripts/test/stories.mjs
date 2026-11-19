@@ -33,7 +33,7 @@ async function openPicker(kind) {
   if (await page.evaluate((k) => window.atlas.app.mode === k, kind)) {
     await page.evaluate(() => document.querySelector('.wb-list').click());
   } else {
-    await page.tap('[data-dock="time"]');
+    await page.tap('[data-dock="explore"]'); await page.waitForTimeout(250); await page.tap('.menu [data-menu="time"]');
     await page.waitForTimeout(300);
     const re = CARD[kind].source;
     await page.evaluate((re) => { const el = [...document.querySelectorAll('.mode-card')].find((c) => new RegExp(re).test(c.textContent)); el?.click(); }, re);

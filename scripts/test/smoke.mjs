@@ -35,12 +35,15 @@ const check = (ok, msg) => { console.log(`${ok ? 'ok  ' : 'FAIL'} ${msg}`); if (
 
 // The More menu (v0.33.1) keeps most entries in groups: window.__menu(re) taps the entry at the top, or opens the
 // group whose row names it and taps it there.
+// window.__menu(re): opens the tab (or the button for you, top right) whose list has an entry matching re, and taps
+// that entry, as a person would (v0.41.1: the five tabs and their lists).
 const MENU_HELPER = () => {
   window.__menu = (re) => {
-    const r = new RegExp(re), rows = () => [...document.querySelectorAll('.menu .menu-item')];
-    const own = () => rows().find((x) => !x.dataset.group && !x.dataset.back && r.test(x.textContent));
-    if (!own()) rows().find((x) => x.dataset.group && r.test(x.textContent))?.click();
-    own()?.click();
+    const r = new RegExp(re), sh = window.atlas?.shell;
+    const it = sh?.['menuItems'].find((m) => r.test(m.label()));
+    if (!it) return;
+    if (document.querySelector('.menu').hidden || sh['menuGroup'] !== it.group) sh.openTab(it.group);
+    document.querySelector(`.menu [data-menu="${it.id}"]`)?.click();
   };
 };
 
@@ -93,8 +96,8 @@ async function open(opts, hash, via = browser) {
 // 2. Phone: the More menu is above the open legend.
 {
   const { page, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-100,25,3&lang=en');
-  await page.click('.legend-toggle');
-  await page.click('[data-dock="more"]');
+  await page.evaluate(() => (window.atlas.shell.legend.open ? document.querySelector('.legend-toggle') : document.querySelector('.chips [data-legend]'))?.click());
+  await page.click('[data-dock="explore"]');
   await page.waitForTimeout(300);
   const onTop = await page.evaluate(() => {
     const m = document.querySelector('.menu');
@@ -103,14 +106,14 @@ async function open(opts, hash, via = browser) {
     const x = Math.max(a.left, b.left) + 4, y = Math.max(a.top, b.top) + 4; // a point inside both
     return m.contains(document.elementFromPoint(x, y));
   });
-  check(onTop, 'More menu sits above the legend');
+  check(onTop, 'a tab\'s list sits above the legend');
   await ctx.close();
 }
 
 // 3. Legend highlight is dropped on filter change; organisations compare.
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=organizations&c=15,48,2.2&lang=en');
-  await page.click('.legend-toggle');
+  await page.evaluate(() => (window.atlas.shell.legend.open ? document.querySelector('.legend-toggle') : document.querySelector('.chips [data-legend]'))?.click());
   const pickers = await page.locator('.lg-select').count();
   check(pickers === 2, `organisation pickers in the legend (${pickers})`);
   if (pickers === 2) {
@@ -184,7 +187,7 @@ async function open(opts, hash, via = browser) {
 // through it (it used to scroll with the list and was see-through), and it still filters.
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-100,60,3&lang=en');
-  await page.click('[data-dock="filters"]');
+  await page.click('[data-dock="map"]'); await page.waitForTimeout(250); await page.click('.menu [data-menu="filters"]');
   await page.waitForTimeout(500);
   const r = await page.evaluate(async () => {
     const body = document.querySelector('.sheet-body');
@@ -215,7 +218,7 @@ async function open(opts, hash, via = browser) {
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-100,40,2&lang=en');
   await page.waitForTimeout(4800); // let the gesture hint go
-  await page.tap('[data-dock="filters"]');
+  await page.tap('[data-dock="map"]'); await page.waitForTimeout(250); await page.tap('.menu [data-menu="filters"]');
   await page.waitForTimeout(600);
   const where = (id) => page.evaluate((id) => {
     const body = document.querySelector('.sheet-body');
@@ -249,7 +252,7 @@ async function open(opts, hash, via = browser) {
   await page.touchscreen.tap(200, 150); // the map above the sheet closes it on a phone
   await page.waitForTimeout(600);
   const closed = await page.evaluate(() => document.querySelector('.sheet').hidden);
-  await page.tap('[data-dock="filters"]');
+  await page.tap('[data-dock="map"]'); await page.waitForTimeout(250); await page.tap('.menu [data-menu="filters"]');
   // The sheet slides in from the next frame on; a slow frame (the globe redrawn) can hold that back, so measure once
   // it is fully open.
   await page.waitForFunction(() => { const s = document.querySelector('.sheet'); return s.classList.contains('open') && !s.getAnimations().some((a) => a.playState === 'running'); }, null, { timeout: 5000 }).catch(() => {});
@@ -347,7 +350,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=30,35,1.5&lang=en');
   await page.waitForTimeout(4200);
-  await page.tap('[data-dock="time"]');
+  await page.tap('[data-dock="explore"]'); await page.waitForTimeout(250); await page.tap('.menu [data-menu="time"]');
   await page.waitForTimeout(400);
   await page.locator('.mode-card', { hasText: 'Wars' }).tap();
   await page.waitForSelector('.war-card[data-war="alexander"]', { timeout: 15000 });
@@ -643,7 +646,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 // script in the legend, drawn with the app's own fonts for scripts (only the ones on screen are fetched).
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=fact-script&c=95,25,2.4&lang=en');
-  await page.click('.legend-toggle');
+  await page.evaluate(() => (window.atlas.shell.legend.open ? document.querySelector('.legend-toggle') : document.querySelector('.chips [data-legend]'))?.click());
   await page.waitForTimeout(2500);
   const w = await page.evaluate(async () => {
     await document.fonts.ready;
@@ -858,7 +861,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
   await page.waitForFunction(() => window.atlas.app.registry.has('compare'), null, { timeout: 30000 });
-  await page.tap('[data-dock="filters"]');
+  await page.tap('[data-dock="map"]'); await page.waitForTimeout(250); await page.tap('.menu [data-menu="filters"]');
   await page.waitForTimeout(600);
   await page.evaluate(() => document.querySelector('.fcard[data-id="compare"]').click());
   await page.waitForSelector('.compare-card:not([hidden]) .cmp-canvas', { timeout: 30000 });
@@ -871,7 +874,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   // "Map" folds the chart away; the legend's nine squares count the countries, and a tap lights them.
   await page.evaluate(() => document.querySelector('.cmp-fold').click());
   await page.waitForTimeout(500);
-  if (await page.evaluate(() => !document.querySelector('.lg-bi-grid'))) await page.tap('.legend-toggle');
+  if (await page.evaluate(() => !document.querySelector('.lg-bi-grid'))) await page.evaluate(() => (window.atlas.shell.legend.open ? document.querySelector('.legend-toggle') : document.querySelector('.chips [data-legend]'))?.click());
   await page.waitForTimeout(400);
   const grid = await page.evaluate(() => [...document.querySelectorAll('.lg-bi-cell')].map((c) => Number(c.textContent || 0)));
   const big = grid.indexOf(Math.max(...grid)), total = grid.reduce((n, k) => n + k, 0);
@@ -947,7 +950,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(400);
   await page.evaluate(() => window.atlas.app.activate('fact-gdp_per_capita'));
   await page.waitForTimeout(1200);
-  if (await page.evaluate(() => !document.querySelector('.legend .lg-act'))) await page.tap('.legend-toggle');
+  if (await page.evaluate(() => !document.querySelector('.legend .lg-act'))) await page.evaluate(() => (window.atlas.shell.legend.open ? document.querySelector('.legend-toggle') : document.querySelector('.chips [data-legend]'))?.click());
   await page.waitForTimeout(300);
   await page.evaluate(() => [...document.querySelectorAll('.legend .lg-act')].find((b) => /Compare with/.test(b.textContent))?.click());
   await page.waitForTimeout(1500);
@@ -967,8 +970,6 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
   const menu = async (re) => {
-    await page.tap('[data-dock="more"]');
-    await page.waitForTimeout(300);
     await page.evaluate((re) => window.__menu(re), re);
     await page.waitForTimeout(400);
   };
@@ -1264,8 +1265,6 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
   const menu = async (re) => {
-    await page.tap('[data-dock="more"]');
-    await page.waitForTimeout(300);
     await page.evaluate((re) => window.__menu(re), re);
     await page.waitForTimeout(500);
   };
@@ -1531,7 +1530,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const frames = () => page.evaluate(() => new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done))));
 
   // The Space panel: every world, by planets, moons and dwarf planets.
-  await page.click('[data-dock="space"]');
+  await page.click('[data-dock="explore"]'); await page.waitForTimeout(250); await page.click('.menu [data-menu="space"]');
   await page.waitForTimeout(500);
   const worlds = await page.$$eval('.world-btn[data-world]', (b) => b.map((x) => x.getAttribute('data-world')));
   check(worlds.length >= 19 && worlds.includes('moon') && worlds.includes('pluto') && worlds.includes('titan'), `the Space panel lists ${worlds.length} worlds (${worlds.slice(0, 6).join(', ')}…)`);
@@ -1659,7 +1658,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(bd > 0, `the globe's backdrop is the real sky (${bd} frames drawn)`);
 
   // The Space panel opens the sky, the galaxy and the elements.
-  await page.click('[data-dock="space"]');
+  await page.click('[data-dock="explore"]'); await page.waitForTimeout(250); await page.click('.menu [data-menu="space"]');
   await page.waitForTimeout(500);
   const btns = await page.$$eval('[data-space]', (b) => b.map((x) => x.getAttribute('data-space')));
   check(['sky', 'galaxy', 'elements'].every((k) => btns.includes(k)), `the Space panel opens the night sky, our galaxy and the elements (${btns.join(', ')})`);
@@ -1894,7 +1893,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(back === 'political', `stopping the screensaver puts the map back (${back})`);
 
   // Your data: the Filters list has its section and button; a sample with years.
-  await page.click('[data-dock="filters"]');
+  await page.click('[data-dock="map"]'); await page.waitForTimeout(250); await page.click('.menu [data-menu="filters"]');
   await page.waitForTimeout(600);
   const sec = await page.evaluate(() => !!document.querySelector('.cat-mine .fcard-add'));
   await page.click('.cat-mine .fcard-add');
@@ -4716,92 +4715,129 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
-// 35. The More menu (v0.33.1), on a phone: a few rows at the top (Ambient mode, Explore, Learn, Play (v0.37.0: Learn
-// and play split in two), Tools, Your data, Save and share, Settings, About), each group saying in small type what is
-// inside it; a group opens in place
-// with a row back (and Escape); an entry inside opens as before and closes the menu; every entry is in reach; a tap
-// outside closes it; on a short screen it scrolls; in Spanish.
+// 35. One way around (v0.41.1), on a phone: five tabs (Map · Explore · Today · Learn · Play, Today in the middle), each
+// opening its list above itself; the button for you, top right (Settings, your data, Share, About); every entry within
+// reach; the same tab, Escape or a tap on the globe closes a list; an entry opens its panel and lights its tab; zoom
+// and locate only; one bar above the map (the folded legend is the ⌃ on its filter's chip); a short screen scrolls
+// the longest list; in Spanish.
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
-  const rows = () => page.evaluate(() => [...document.querySelectorAll('.menu .menu-item')].map((b) => ({ text: (b.querySelector('.menu-text > span') ?? b.querySelector('.menu-text'))?.textContent ?? '', group: b.dataset.group ?? null, back: b.dataset.back ?? null, sub: b.querySelector('.menu-sub')?.textContent ?? '' })));
-  const menuOpen = () => page.evaluate(() => !document.querySelector('.menu').hidden);
-  await page.tap('[data-dock="more"]');
-  await page.waitForTimeout(300);
-  const top = await rows();
-  const fits = await page.evaluate(() => { const r = document.querySelector('.menu').getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight; });
-  await page.tap('.menu [data-group="learn"]');
-  await page.waitForTimeout(200);
-  const learn = await rows();
-  const learnOpen = await menuOpen();
-  await page.tap('.menu [data-back]');
-  await page.waitForTimeout(200);
-  await page.tap('.menu [data-group="play"]');
-  await page.waitForTimeout(200);
-  const playG = await rows();
-  await page.tap('.menu [data-back]');
-  await page.waitForTimeout(200);
-  const back = await rows();
-  await page.tap('.menu [data-group="tools"]');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const tabs = await F(() => [...document.querySelectorAll('.dock [data-dock]')].map((b) => ({ id: b.dataset.dock, label: b.querySelector('.dock-label')?.textContent ?? '' })));
+  const list = () => F(() => ({ open: !document.querySelector('.menu').hidden, tab: document.querySelector('.menu').dataset.tab,
+    rows: [...document.querySelectorAll('.menu [data-menu]')].map((b) => b.dataset.menu), seps: [...document.querySelectorAll('.menu .menu-sep')].map((x) => x.textContent),
+    tiles: [...document.querySelectorAll('.menu [data-menu]')].every((b) => b.querySelector('.ftile')),
+    fits: (() => { const r = document.querySelector('.menu').getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight && r.left >= 0 && r.right <= innerWidth; })(),
+    above: (() => { const m = document.querySelector('.menu').getBoundingClientRect(), d = document.querySelector('.dock').getBoundingClientRect(); return m.bottom <= d.top + 1; })(),
+    lit: [...document.querySelectorAll('.dock .dock-btn.on')].map((b) => b.dataset.dock) }));
+  const seen = {};
+  for (const t of ['map', 'explore', 'learn', 'play']) {
+    await page.tap(`[data-dock="${t}"]`);
+    await page.waitForTimeout(250);
+    seen[t] = await list();
+    await page.tap(`[data-dock="${t}"]`);
+    await page.waitForTimeout(200);
+    seen[t].closedAgain = !(await list()).open;
+  }
+  await page.tap('[data-tab="me"]');
+  await page.waitForTimeout(250);
+  seen.me = await list();
+  seen.me.under = await F(() => document.querySelector('.menu').getBoundingClientRect().top >= document.querySelector('[data-tab="me"]').getBoundingClientRect().bottom);
   await page.keyboard.press('Escape');
   await page.waitForTimeout(150);
-  const escBack = await rows();
-  await page.keyboard.press('Escape');
-  await page.waitForTimeout(150);
-  const escClosed = !(await menuOpen());
-  // Every entry is within reach: the top's own, and each group's.
-  await page.tap('[data-dock="more"]');
-  await page.waitForTimeout(300);
-  const reach = await page.evaluate(() => {
-    const sh = window.atlas.shell, ids = sh['menuItems'].map((m) => m.id), seen = new Set();
-    const here = () => document.querySelectorAll('.menu [data-menu]').forEach((b) => seen.add(b.dataset.menu));
-    here();
-    for (const g of [...document.querySelectorAll('.menu [data-group]')].map((b) => b.dataset.group)) { sh.openMenuGroup(g); here(); sh.openMenuGroup(null); }
-    return { n: ids.length, missing: ids.filter((id) => !seen.has(id)) };
-  });
-  // A tap on the globe closes it.
+  const escClosed = !(await list()).open;
+  const reach = await F(() => { const sh = window.atlas.shell, ids = sh['menuItems'].map((m) => m.id), seen = new Set();
+    for (const g of ['map', 'explore', 'learn', 'play', 'me']) { sh.openTab(g); document.querySelectorAll('.menu [data-menu]').forEach((b) => seen.add(b.dataset.menu)); sh.closeMenu(); }
+    return { n: ids.length, missing: ids.filter((id) => !seen.has(id)) }; });
+  await page.tap('[data-dock="learn"]');
+  await page.waitForTimeout(250);
   await page.touchscreen.tap(60, 300);
   await page.waitForTimeout(300);
-  const outsideClosed = !(await menuOpen());
-  // Explore → Into the deep opens its panel, and the menu closes.
-  await page.tap('[data-dock="more"]');
-  await page.waitForTimeout(300);
-  await page.tap('.menu [data-group="explore"]');
-  await page.waitForTimeout(200);
+  const outsideClosed = !(await list()).open;
+  // Explore → Into the deep opens its panel, closes the list and lights Explore.
+  await page.tap('[data-dock="explore"]');
+  await page.waitForTimeout(250);
   await page.tap('.menu [data-menu="deep"]');
   await page.waitForTimeout(900);
-  const deep = await page.evaluate(() => ({ open: window.atlas.deep.info.open, menu: !document.querySelector('.menu').hidden }));
-  await page.evaluate(() => window.atlas.shell.sheet.close());
+  const deep = await F(() => ({ open: window.atlas.deep.info.open, menu: !document.querySelector('.menu').hidden, lit: [...document.querySelectorAll('.dock .dock-btn.on')].map((b) => b.dataset.dock) }));
+  await F(() => window.atlas.shell.sheet.close());
   await page.waitForTimeout(400);
-  check(top.length <= 9 && top.filter((r) => r.group).length === 5 && top.every((r) => !r.group || r.sub.length > 5) && fits
-    && learnOpen && learn[0]?.back === 'learn' && ['Master the world', 'Quiz', 'Guided tours', 'On this day'].every((x) => learn.some((r) => r.text === x)) && !learn.some((r) => r.text === 'Map games')
-    && playG[0]?.back === 'play' && playG.slice(1).map((r) => r.text).join() === 'Map games,Fill the map,Put it on the map'
-    && back.length === top.length && escBack.length === top.length && escClosed && reach.missing.length === 0 && outsideClosed && deep.open && !deep.menu,
-    `the More menu on a phone: ${top.length} rows that fit (${top.map((r) => r.text + (r.group ? ' ›' : '')).join(', ')}); Learn opens in place (${learn.slice(1).map((r) => r.text).join(', ')}), Play too (${playG.slice(1).map((r) => r.text).join(', ')}), back and Escape return; all ${reach.n} entries in reach${reach.missing.length ? ` (missing ${reach.missing.join(', ')})` : ''}; a tap outside closes it; Explore → Into the deep opens its panel (${deep.open})`);
-  // A short screen (the phone on its side): the menu scrolls instead of running off the top.
+  const zoom = await F(() => document.querySelectorAll('.zoombar .icon-btn').length);
+  const L = (id) => seen[id].rows.join(',');
+  check(tabs.map((t) => t.id).join() === 'map,explore,today,learn,play' && tabs.map((t) => t.label).join() === 'Map,Explore,Today,Learn,Play'
+    && ['map', 'explore', 'learn', 'play'].every((t) => seen[t].open && seen[t].tab === t && seen[t].fits && seen[t].above && seen[t].tiles && seen[t].lit.join() === t && seen[t].closedAgain)
+    && L('map') === 'filters,projection,mapstyle,terrain3d,search,ruler,compare,truesize,compare-filters,mydata,export4k' && seen.map.seps.join() === 'Tools'
+    && L('explore') === 'time,space,guide,art,nature,inside,deep,ambient' && L('learn') === 'master,quiz,tours,onthisday,progress' && L('play') === 'play,fill,onmap'
+    && seen.me.open && seen.me.under && seen.me.fits && /^settings,backup,share,export,exportphone,(fullscreen,)?about$/.test(L('me')),
+    `five tabs (${tabs.map((t) => t.label).join(' · ')}), each list above its tab and on screen: Map ${L('map')} (${seen.map.seps}); Explore ${L('explore')}; Learn ${L('learn')}; Play ${L('play')}; top right ${L('me')}`);
+  check(escClosed && reach.missing.length === 0 && outsideClosed && deep.open && !deep.menu && deep.lit.join() === 'explore' && zoom === 3,
+    `every one of ${reach.n} entries in a list${reach.missing.length ? ` (missing: ${reach.missing.join(', ')})` : ''}; Escape and a tap on the globe close a list; Into the deep opens and lights Explore (${deep.lit}); zoom and locate only (${zoom} buttons)`);
+  // One bar above the map: the folded legend is the ⌃ on the political map's chip.
+  const bar = () => F(() => ({ header: (() => { const t = document.querySelector('.legend-toggle'); return !!t && t.getBoundingClientRect().height > 0; })(),
+    chip: !!document.querySelector('.chips [data-legend]'), exp: document.querySelector('.chips [data-legend]')?.getAttribute('aria-expanded'),
+    body: !document.querySelector('.legend-body')?.hidden && (document.querySelector('.legend-body')?.getBoundingClientRect().height ?? 0) > 0 }));
+  const folded = await bar();
+  await page.tap('.chips [data-legend]');
+  await page.waitForTimeout(300);
+  const opened = await bar();
+  await page.tap('.legend-toggle');
+  await page.waitForTimeout(300);
+  const refolded = await bar();
+  check(!folded.header && folded.chip && folded.exp === 'false' && !folded.body && opened.body && opened.header && opened.exp === 'true' && !refolded.body && !refolded.header,
+    `one bar above the map: the folded legend is its chip's ⌃ (no bar of its own); the chip opens it (${opened.exp}) and its header folds it again`);
+  // A short screen (the phone on its side): the longest list stays on screen and scrolls.
   await page.setViewportSize({ width: 851, height: 393 });
   await page.waitForTimeout(600);
-  await page.tap('[data-dock="more"]');
+  await page.tap('[data-dock="map"]');
   await page.waitForTimeout(300);
-  await page.tap('.menu [data-group="explore"]');
-  await page.waitForTimeout(200);
-  const short = await page.evaluate(() => { const m = document.querySelector('.menu'), r = m.getBoundingClientRect(); m.scrollTop = 9999; return { top: Math.round(r.top), bottom: Math.round(r.bottom), h: innerHeight, scrolls: m.scrollHeight > m.clientHeight, moved: m.scrollTop > 0 }; });
+  const short = await F(() => { const m = document.querySelector('.menu'), r = m.getBoundingClientRect(); m.scrollTop = 9999; return { top: Math.round(r.top), bottom: Math.round(r.bottom), h: innerHeight, scrolls: m.scrollHeight > m.clientHeight + 2, moved: m.scrollTop > 0 }; });
   await page.keyboard.press('Escape');
-  await page.keyboard.press('Escape');
-  check(short.top >= 0 && short.bottom <= short.h && (!short.scrolls || short.moved), `a short screen (851×393): the menu stays on screen (${short.top}–${short.bottom} of ${short.h} px)${short.scrolls ? ' and scrolls' : ''}`);
+  check(short.top >= 0 && short.bottom <= short.h && (!short.scrolls || short.moved), `a short screen (851×393): the Map list stays on screen (${short.top}–${short.bottom} of ${short.h} px)${short.scrolls ? ' and scrolls' : ''}`);
   // In Spanish.
   await page.setViewportSize({ width: 412, height: 839 });
   await page.goto(url + '?r=35#p=globe&l=political&lang=es', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
   await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
-  await page.tap('[data-dock="more"]');
-  await page.waitForTimeout(300);
-  const es = await rows();
-  check(['Explorar', 'Aprender', 'Jugar', 'Herramientas', 'Guardar y compartir'].every((x) => es.some((r) => r.text === x)) && es.find((r) => r.group === 'learn')?.sub.includes('Concurso') && es.find((r) => r.group === 'play')?.sub.includes('Juegos en el mapa'),
-    `en español: ${es.map((r) => r.text).join(', ')} (${es.find((r) => r.group === 'learn')?.sub})`);
-  check(!errors.length, `no page errors in v0.33.1's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  const es = await F(() => [...document.querySelectorAll('.dock .dock-label')].map((x) => x.textContent).join(' · '));
+  await page.tap('[data-tab="me"]');
+  await page.waitForTimeout(250);
+  const esMe = await F(() => [...document.querySelectorAll('.menu [data-menu] .menu-text > span')].map((x) => x.textContent).join(', '));
+  check(es === 'Mapa · Explorar · Hoy · Aprender · Jugar' && /^Ajustes, Tus datos en otro dispositivo/.test(esMe), `en español: ${es}; arriba a la derecha: ${esMe}`);
+  check(!errors.length, `no page errors in the tabs' checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+// 35b. The welcome (v0.41.1): a first visit with no link shows three cards in the phone's language (changeable there),
+// Next and Back; "Games" opens the Play list; it never shows again on that device, nor for a link to somewhere.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'], locale: 'es-MX' }, '');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const card = () => F(() => ({ on: !!document.querySelector('[data-welcome] .welcome-card'), title: document.querySelector('.welcome-title')?.textContent ?? '',
+    dots: document.querySelectorAll('.welcome-dots span').length, lang: document.querySelector('[data-welcome="lang"]')?.selectedOptions?.[0]?.textContent ?? '' }));
+  const first = await card();
+  await page.tap('[data-welcome="next"]');
+  await page.waitForTimeout(200);
+  const second = await card();
+  await page.tap('[data-welcome="back"]');
+  await page.waitForTimeout(200);
+  const back = await card();
+  await page.tap('[data-welcome="next"]');
+  await page.tap('[data-welcome="next"]');
+  await page.waitForTimeout(200);
+  const third = await F(() => [...document.querySelectorAll('.welcome-card .mode-card')].map((b) => b.dataset.welcome).join());
+  await page.tap('[data-welcome="games"]');
+  await page.waitForTimeout(500);
+  const after = await F(() => ({ gone: !document.querySelector('.welcome'), list: !document.querySelector('.menu').hidden && document.querySelector('.menu').dataset.tab }));
+  await page.reload({ waitUntil: 'networkidle' }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(800);
+  const again = await F(() => !!document.querySelector('.welcome'));
+  check(first.on && first.title === 'Te damos la bienvenida a Atlas Globe' && first.dots === 3 && /Como mi teléfono \(Español\)/.test(first.lang) && second.title === 'Algo nuevo cada día'
+    && back.title === first.title && third === 'games,stories,map,today' && after.gone && after.list === 'play' && !again,
+    `the welcome: "${first.title}" (${first.lang}), "${second.title}", Back, then ${third}; Games opens the ${after.list} list; not again after a reload (${again})`);
+  check(!errors.length, `no page errors in the welcome${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 
-// 36. Master the world (v0.34.0), on a phone. More → Learn → Master the world opens its panel: today's goal,
+// 36. Master the world (v0.34.0), on a phone. Learn → Master the world opens its panel: today's goal,
 // the three decks, progress by level and continent. Learn asks the countries due today first, then new ones: a known
 // capital is tapped on the map among four dots with no names, a well known one typed (accents and a typo forgiven), a
 // new one picked from four; Bolivia's answer is Sucre and La Paz is explained, never offered. A miss comes back three
@@ -4833,10 +4869,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const M = (fn, arg) => page.evaluate(fn, arg);
   const info = () => M(() => window.atlas.master.info);
   // The panel, from the menu.
-  await page.tap('[data-dock="more"]');
+  await page.tap('[data-dock="learn"]');
   await page.waitForTimeout(300);
-  await page.tap('.menu [data-group="learn"]');
-  await page.waitForTimeout(200);
   const inMenu = await M(() => !!document.querySelector('.menu [data-menu="master"]'));
   await page.tap('.menu [data-menu="master"]');
   await page.waitForTimeout(1200);
@@ -5007,7 +5041,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   for (const locale of ['es-MX', 'es-ES', 'fr-FR']) {
     const { page, errors, ctx } = await open({ locale, viewport: { width: 420, height: 800 } }, '');
     seen[locale] = await page.evaluate(() => ({ lang: window.atlas.app.lang, es: window.atlas.app.spanish, picked: window.atlas.app.langPicked, fmt: '' }));
-    await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Ajustes'));
+    await page.evaluate(() => window.__menu('Settings|Ajustes'));
     await page.waitForTimeout(400);
     seen[locale].fmt = await page.evaluate(() => document.querySelector('[data-settings="formats"]')?.textContent ?? '');
     if (locale === 'es-MX') {
@@ -5017,7 +5051,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
       await page.goto(url, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
       await page.waitForFunction(() => window.atlas, null, { timeout: 60000 });
       seen.kept = await page.evaluate(() => ({ lang: window.atlas.app.lang, picked: window.atlas.app.langPicked }));
-      await page.click('[data-dock="more"]'); await page.waitForTimeout(300); await page.evaluate(() => window.__menu('Settings|Ajustes'));
+      await page.evaluate(() => window.__menu('Settings|Ajustes'));
       await page.waitForTimeout(400);
       await page.evaluate(() => [...document.querySelectorAll('.settings .seg-btn')].find((b) => /phone|teléfono/.test(b.textContent))?.click());
       await page.waitForTimeout(400);
@@ -5046,8 +5080,6 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const F = (fn, arg) => page.evaluate(fn, arg);
   const info = () => F(() => window.atlas.fill.info);
   const tapAt = async (id) => { const pt = await F((id) => { const m = window.atlas.app.data.meta[id], v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(m.lx, m.ly); return p && [r.left + p[0], r.top + p[1]]; }, id); if (pt) await page.touchscreen.tap(pt[0], pt[1]); return !!pt; };
-  await page.tap('[data-dock="more"]');
-  await page.waitForTimeout(300);
   await page.evaluate(() => window.__menu('Fill the map'));
   await page.waitForTimeout(1500);
   const panel = await F(() => ({ open: !!document.querySelector('.fill-panel'), cats: document.querySelectorAll('[data-fill="cats"] .chip').length, world: document.querySelector('[data-fill="world"]')?.textContent ?? '', conts: document.querySelectorAll('.fill-cont').length, regions: document.querySelectorAll('.fill-region').length, daily: document.querySelector('.fill-panel [data-fill="daily"]')?.textContent ?? '' }));
@@ -5206,8 +5238,6 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const F = (fn, arg) => page.evaluate(fn, arg);
   const info = () => F(() => window.atlas.onmap.info);
   const tapPlace = async (at) => { const pt = await F((at) => { const v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(at[0], at[1]); return p && [r.left + p[0], r.top + p[1]]; }, at); if (pt) await page.touchscreen.tap(pt[0], pt[1]); return pt; };
-  await page.tap('[data-dock="more"]');
-  await page.waitForTimeout(300);
   await page.evaluate(() => window.__menu('Put it on the map'));
   await page.waitForTimeout(2500);
   const panel = await F(() => ({ open: !!document.querySelector('.onmap-panel'), mixes: document.querySelectorAll('[data-onmap="mixes"] .chip').length, countries: document.querySelectorAll('[data-onmap="country"] option').length, mex: !!document.querySelector('[data-onmap="country"] option[value="MEX"]'), lux: !!document.querySelector('[data-onmap="country"] option[value="LUX"]'), scopes: [...document.querySelectorAll('[data-onmap="regions"] .chip')].map((b) => b.textContent), daily: document.querySelector('.onmap-panel [data-onmap="daily"]')?.textContent ?? '' }));
@@ -5933,12 +5963,11 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     for (const [fs, n] of await sizes()) if (!SIZES.includes(fs) && !ICONS.includes(fs)) off.push(`${label}: ${fs}px ×${n}`);
   }
   check(!off.length, `the kit's sizes only (11, 12.5, 14, 16, 19, 26 px; icons 18–34) in Today, Settings, Map games, Master the world and Quiz${off.length ? `: off the kit ${off.join(', ')}` : ''}`);
-  // Tiles: the More menu, a panel's title, Today's lines.
+  // Tiles: every tab's list and the one for you (v0.41.1), a panel's title, Today's lines.
   await F(() => window.atlas.shell.sheet.close());
-  await F(() => document.querySelector('[data-dock="more"]').click());
-  await page.waitForTimeout(400);
-  const menu = await F(() => [...document.querySelectorAll('.menu .menu-item')].map((b) => ({ id: b.dataset.menu ?? b.dataset.group, tile: b.querySelector('.ftile')?.dataset.feature ?? (b.querySelector('.ftile') ? 'plain' : null) })));
-  await F(() => document.querySelector('[data-dock="more"]').click());
+  const menu = await F(() => { const sh = window.atlas.shell, out = [];
+    for (const g of ['map', 'explore', 'learn', 'play', 'me']) { sh.openTab(g); document.querySelectorAll('.menu [data-menu]').forEach((b) => out.push({ id: b.dataset.menu, tile: b.querySelector('.ftile')?.dataset.feature ?? (b.querySelector('.ftile') ? 'plain' : null) })); sh.closeMenu(); }
+    return out; });
   await F(() => document.querySelector('[data-dock="today"]').click());
   await page.waitForTimeout(1200);
   const today = await F(() => ({
@@ -5946,9 +5975,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     text: document.querySelector('.sheet-title')?.textContent ?? '',
     lines: [...document.querySelectorAll('[data-today="main"] > .mode-card')].map((c) => ({ id: c.dataset.todayItem, tile: c.querySelector(':scope > .ftile')?.dataset.feature ?? null, end: !!c.querySelector(':scope > .mode-end'), done: c.classList.contains('done') })),
   }));
-  check(menu.length >= 8 && menu.every((m) => m.tile) && menu.find((m) => m.id === 'learn')?.tile === 'learn' && menu.find((m) => m.id === 'settings')?.tile === 'settings'
+  check(menu.length >= 30 && menu.every((m) => m.tile && m.tile !== 'plain') && menu.find((m) => m.id === 'master')?.tile === 'master' && menu.find((m) => m.id === 'settings')?.tile === 'settings'
     && today.title === 'today' && today.text === 'Today' && today.lines.length >= 5 && today.lines.every((l) => l.tile && l.end) && today.lines.find((l) => l.id === 'fill')?.tile === 'fill',
-    `tiles: the More menu (${menu.map((m) => `${m.id}:${m.tile}`).join(' ')}); Today's title (${today.title}); its lines ${today.lines.map((l) => `${l.id}:${l.tile}${l.end ? '›' : ''}`).join(' ')}`);
+    `tiles: every list (${menu.map((m) => `${m.id}:${m.tile}`).join(' ')}); Today's title (${today.title}); its lines ${today.lines.map((l) => `${l.id}:${l.tile}${l.end ? '›' : ''}`).join(' ')}`);
   // The result card: Pin it to the end.
   await F(() => window.atlas.shell.sheet.close());
   await F(() => window.atlas.play.pin.start({ pack: 'capitals' }));
@@ -6046,10 +6075,10 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     check(!errors.length, `${lang}: no page errors in the text checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await ctx.close();
   }
-  // ?pseudo: the More menu's labels and a panel's title come out accented and in brackets.
+  // ?pseudo: the Explore list's labels and a panel's title come out accented and in brackets.
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '?pseudo#p=globe&l=political&lang=en');
   const F = (fn, arg) => page.evaluate(fn, arg);
-  await F(() => document.querySelector('[data-dock="more"]').click());
+  await F(() => document.querySelector('[data-dock="explore"]').click());
   await page.waitForTimeout(400);
   const labels = await F(() => [...document.querySelectorAll('.menu .menu-item')].map((b) => b.textContent.trim()).filter(Boolean));
   await F(() => window.atlas.shell.openSettings());

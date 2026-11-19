@@ -69,7 +69,7 @@ export class TimeTravel {
       shell.card.hide();
       await m.openAt(String(id), Number(step), typeof back === 'function' ? (back as () => void) : undefined);
     })());
-    shell.addDock({ id: 'time', icon: History, label: () => t('timeTravelShort'), order: 30, onClick: () => this.open() });
+    shell.addMenu({ id: 'time', icon: History, label: () => t('timeTravel'), order: 10, group: 'explore', onClick: () => this.open() });
     // In a mode, taps go to the mode instead of selecting today's countries.
     shell.tapHandlers.unshift((x, y, g) => {
       if (!app.mode) return false;

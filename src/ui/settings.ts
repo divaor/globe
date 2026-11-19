@@ -88,7 +88,7 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     h('p', { class: 'muted small' }, L('The screensaver’s playlists are in More → Ambient mode.', 'Las listas de reproducción del salvapantallas están en Más → Modo ambiente.')),
     ...settingsExtras.flatMap((x) => [h('h3', { class: 'sec-title' }, x.title()), x.body()]),
     // Your data on another device (v0.31.2): a backup to bring everything back on a phone or another computer.
-    h('h3', { class: 'sec-title' }, L('Your data on another device', 'Tus datos en otro dispositivo')),
+    h('h3', { class: 'sec-title', 'data-section': 'backup' }, L('Your data on another device', 'Tus datos en otro dispositivo')),
     backupSettings(toast),
     h('div', { class: 'settings-actions' }, installBtn),
     h('p', { class: 'muted small' }, `${t('version')} ${__APP_VERSION__}`),

@@ -43,6 +43,7 @@ import { Wild } from './wild/finder';
 import { Plants } from './green/finder';
 import { InsideEarth } from './earth/inside';
 import { DeepSea } from './ocean/deep';
+import { shouldWelcome, showWelcome } from './ui/welcome';
 
 declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders; i18n: { L: typeof L; t: typeof t; tx: typeof tx } } } }
 
@@ -206,7 +207,7 @@ async function boot() {
   const myData = new MyData(app);
   const openMyData = () => shell.openPanel('mydata', t('cat.mine'), myDataPanel(app, myData, (msg) => { shell.sheet.close(); shell.toast(msg, 2600); }));
   app.on('mydata', openMyData);
-  shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, onClick: openMyData });
+  shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, group: 'map', onClick: openMyData });
   void myData.init();
   window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill, onmap, today, reminders, i18n: { L, t, tx } };
   await Promise.all(Object.values(packs).map(async (load) => {
@@ -224,9 +225,11 @@ async function boot() {
   // The fonts for rare scripts: only registered here (a small list); a file is fetched when a letter shows.
   setTimeout(() => void registerScriptFonts(), 2500);
   app.emit('layers');
-  if (!localStorage.getItem('atlas-globe:hinted')) {
-    shell.toast(L('Drag to spin · pinch to zoom · tap a country', 'Arrastra para girar · pellizca para acercar · toca un país'), 5000);
-    try { localStorage.setItem('atlas-globe:hinted', '1'); } catch { /* ignore */ }
+  // v0.41.1: a first visit is welcomed with three short cards (not one opened from a link to somewhere).
+  if (shouldWelcome()) {
+    showWelcome(app, {
+      today: () => void today.openPanel(), games: () => shell.openTab('play'), stories: () => time.open(), map: () => shell.openTab('map'),
+    });
   }
   void registerSW(shell).then(() => reminders.init());
   // A reminder tapped: Today (in the app open already, or opened with #today=1).

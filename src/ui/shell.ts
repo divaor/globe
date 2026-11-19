@@ -1,8 +1,9 @@
-// The app chrome: brand + search (top left), ambient/fullscreen (top right), zoom controls, the
-// active-filter chips and the dock (bottom), plus sheets, legend, card, tooltip and toasts.
-import { Layers, Layers2, Globe, Map as MapIcon, Ellipsis, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Share2, Settings, Info, X, Mountain, Earth, Gamepad2, GraduationCap, Wrench, Link, ChevronRight, ChevronLeft } from 'lucide';
+// The app chrome: brand + search (top left), the button for you (top right: settings, sharing, your data, about),
+// zoom and locate, the one bar of filters above the map, and the five tabs (bottom: Map, Explore, Today, Learn,
+// Play, v0.41.1), plus sheets, legend, card, tooltip and toasts.
+import { Layers, Layers2, Globe, Map as MapIcon, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Settings, Info, X, Mountain, Telescope, Gamepad2, GraduationCap, Link, ChevronUp, ChevronDown, CircleUserRound, HardDriveDownload } from 'lucide';
 import { terrainActions } from '../layers/terrainActions';
-import { FEATURES, ftile } from './features';
+import { FEATURES, ftile, featureOfSheet } from './features';
 import { h, icon, button, clear, add } from './dom';
 import { t, tx, L } from '../app/i18n';
 import { Sheet } from './sheet';
@@ -26,17 +27,23 @@ import type { IconNode } from 'lucide';
 
 /** `dot`: a small dot on the button (v0.37.0: Today, while something is left today). */
 export interface DockItem { id: string; icon: IconNode; label: () => string; onClick: () => void; order: number; dot?: () => boolean }
-/** The More menu's groups (v0.33.1): each opens in place, with a row back; the rest stay at the top. */
-export type MenuGroup = 'explore' | 'learn' | 'play' | 'tools' | 'share';
-export interface MenuItem { id: string; icon: IconNode; label: () => string; onClick: () => void; order: number; group?: MenuGroup }
-const MENU_GROUPS: { id: MenuGroup; icon: IconNode; key: string; order: number }[] = [
-  { id: 'explore', icon: Earth, key: 'menuExplore', order: 15 },
-  // v0.37.0: Learn and play split in two: what you learn, and the games you play.
-  { id: 'learn', icon: GraduationCap, key: 'menuLearn', order: 16 },
-  { id: 'play', icon: Gamepad2, key: 'menuPlay', order: 16.5 },
-  { id: 'tools', icon: Wrench, key: 'menuTools', order: 17 },
-  { id: 'share', icon: Share2, key: 'menuShare', order: 60 },
+/**
+ * Where a menu entry lives (v0.41.1): a tab's list (Map, Explore, Learn, Play) or the button for you, top right
+ * (settings, sharing, your data, about). `sub`: a second line in small type (the filters on, the projection…).
+ */
+export type MenuGroup = 'map' | 'explore' | 'learn' | 'play' | 'me';
+export interface MenuItem { id: string; icon: IconNode; label: () => string; onClick: () => void; order: number; group: MenuGroup; sub?: () => string }
+/** The tabs that open a list (Today, between them, opens its own panel). */
+const TABS: { id: MenuGroup; icon: IconNode; label: () => string; order: number }[] = [
+  { id: 'map', icon: MapIcon, label: () => L('Map', 'Mapa'), order: 10 },
+  { id: 'explore', icon: Telescope, label: () => t('menuExplore'), order: 20 },
+  { id: 'learn', icon: GraduationCap, label: () => t('menuLearn'), order: 30 },
+  { id: 'play', icon: Gamepad2, label: () => t('menuPlay'), order: 40 },
 ];
+/** A heading inside a list, before the first entry from this order on. */
+const SECTIONS: Partial<Record<MenuGroup, { from: number; label: () => string }[]>> = {
+  map: [{ from: 20, label: () => t('menuTools') }],
+};
 
 export class Shell {
   readonly sheet: Sheet;
@@ -52,7 +59,7 @@ export class Shell {
   private dockItems: DockItem[] = [];
   private menuItems: MenuItem[] = [];
   private menu: HTMLElement;
-  /** The More menu's group open, or the top of the menu. */
+  /** The list open (a tab's, or the one for you), or null. */
   private menuGroup: MenuGroup | null = null;
   private top: HTMLElement;
   private toastTimer = 0;
@@ -62,25 +69,21 @@ export class Shell {
     const root = app.root;
     this.top = h('header', { class: 'topbar' });
     this.chips = h('div', { class: 'chips', role: 'toolbar' });
-    this.dock = h('nav', { class: 'dock glass', 'aria-label': 'Main' });
+    this.dock = h('nav', { class: 'dock glass', 'aria-label': L('Main', 'Principal') });
     this.menu = h('div', { class: 'menu glass', hidden: true, role: 'menu' });
     this.tooltip = h('div', { class: 'tooltip', hidden: true });
     this.toastEl = h('div', { class: 'toast glass', hidden: true, role: 'status' });
+    // Zoom and locate only (v0.41.1); the 3D terrain and the map style are in the Map tab.
     const zoom = h('div', { class: 'zoombar glass' },
       button({ icon: Plus, title: t('zoomIn'), cls: 'icon-btn', onClick: () => app.interaction.animateZoom(1.8) }),
       button({ icon: Minus, title: t('zoomOut'), cls: 'icon-btn', onClick: () => app.interaction.animateZoom(1 / 1.8) }),
-      button({ icon: LocateFixed, title: t('resetView'), cls: 'icon-btn', onClick: () => app.resetView() }),
-      button({ icon: Mountain, title: L('3D terrain', 'Relieve en 3D'), cls: 'icon-btn zoom-3d', onClick: () => terrainActions.view3d() }));
-    // The map style under every filter (Atlas, Map, Satellite) and the states and provinces.
-    const styleBtn = button({ icon: Layers2, title: L('Map style and states', 'Estilo del mapa y estados'), cls: 'icon-btn zoom-style', onClick: () => this.mapStyle.toggle(styleBtn) });
-    styleBtn.setAttribute('aria-haspopup', 'dialog');
-    styleBtn.setAttribute('aria-expanded', 'false');
-    zoom.append(styleBtn);
+      button({ icon: LocateFixed, title: t('resetView'), cls: 'icon-btn', onClick: () => app.resetView() }));
     root.append(this.top, zoom, this.chips, this.dock, this.menu, this.tooltip, this.toastEl);
     this.mapStyle = new MapStyleMenu(app, root);
 
     this.sheet = new Sheet(root);
     this.legend = new LegendCard(app, root);
+    this.legend.onToggle = () => this.renderChips();
     this.card = new CountryCard(app, root);
     this.search = new SearchBox(app);
     root.append(this.search.el);
@@ -98,37 +101,48 @@ export class Shell {
     };
     this.ambient = new Ambient(app, root);
 
-    this.addDock({ id: 'filters', icon: Layers, label: () => t('filters'), order: 10, onClick: () => this.openFilters() });
-    this.addDock({ id: 'projection', icon: Globe, label: () => t(`proj.${app.projection}`), order: 20, onClick: () => void this.openProjections() });
-    this.addDock({ id: 'more', icon: Ellipsis, label: () => t('more'), order: 90, onClick: () => this.toggleMenu() });
-    this.addMenu({ id: 'ambient', icon: MonitorPlay, label: () => t('ambient'), order: 10, onClick: () => this.openScreensaver() });
-    this.addMenu({ id: 'share', icon: Link, label: () => t('share'), order: 80, group: 'share', onClick: () => void this.share() });
-    this.addMenu({ id: 'settings', icon: Settings, label: () => t('settings'), order: 90, onClick: () => this.openSettings() });
-    this.addMenu({ id: 'about', icon: Info, label: () => t('about'), order: 95, onClick: () => this.openAbout() });
+    for (const tab of TABS) this.addDock({ id: tab.id, icon: tab.icon, label: tab.label, order: tab.order, onClick: () => this.openTab(tab.id) });
+    // Map: what the map shows and how, then the tools.
+    const onFilters = () => this.app.layers.filter((l) => !l.def.hidden).map((l) => tx(l.def.name)).join(' · ');
+    this.addMenu({ id: 'filters', icon: Layers, label: () => t('filters'), sub: onFilters, order: 5, group: 'map', onClick: () => this.openFilters() });
+    this.addMenu({ id: 'projection', icon: Globe, label: () => t('projections'), sub: () => t(`proj.${app.projection}`), order: 6, group: 'map', onClick: () => void this.openProjections() });
+    this.addMenu({ id: 'mapstyle', icon: Layers2, label: () => L('Map style and states', 'Estilo del mapa y estados'), order: 7, group: 'map', onClick: () => this.mapStyle.toggle(this.dockButton('map') ?? this.dock) });
+    this.addMenu({ id: 'terrain3d', icon: Mountain, label: () => L('3D terrain', 'Relieve en 3D'), order: 8, group: 'map', onClick: () => terrainActions.view3d() });
+    this.addMenu({ id: 'search', icon: Search, label: () => t('search'), order: 9, group: 'map', onClick: () => this.search.open() });
+    this.addMenu({ id: 'ambient', icon: MonitorPlay, label: () => t('ambient'), order: 40, group: 'explore', onClick: () => this.openScreensaver() });
+    // You: settings, your data, sharing, about.
+    this.addMenu({ id: 'settings', icon: Settings, label: () => t('settings'), order: 10, group: 'me', onClick: () => this.openSettings() });
+    this.addMenu({ id: 'backup', icon: HardDriveDownload, label: () => L('Your data on another device', 'Tus datos en otro dispositivo'), order: 20, group: 'me', onClick: () => this.openSettings(false, 'backup') });
+    this.addMenu({ id: 'share', icon: Link, label: () => t('share'), order: 30, group: 'me', onClick: () => void this.share() });
+    // Full screen, where a page can be (a browser, not an installed app).
+    if (document.fullscreenEnabled && !matchMedia('(display-mode: standalone)').matches) {
+      this.addMenu({ id: 'fullscreen', icon: Maximize, label: () => (document.fullscreenElement ? L('Leave full screen', 'Salir de pantalla completa') : t('fullscreen')), order: 50, group: 'me', onClick: () => this.toggleFullscreen() });
+    }
+    this.addMenu({ id: 'about', icon: Info, label: () => t('about'), order: 90, group: 'me', onClick: () => this.openAbout() });
 
     this.renderTop();
     this.renderChips();
     app.on('layers', () => { this.renderChips(); this.renderDock(); });
+    app.on('legend', () => this.renderChips());
     app.on('projection', () => this.renderDock());
     app.on('lang', () => { this.renderTop(); this.renderDock(); this.renderChips(); this.reopenSheet(); });
     app.on('ambient', () => this.legend.render());
     app.on('mapview', () => this.legend.render());
     app.on('tap', (x, y) => this.onTap(x as number, y as number));
     app.on('hover', (x, y) => this.onHover(x as number, y as number));
-    app.on('interact', () => { this.menu.hidden = true; this.tooltip.hidden = true; });
+    app.on('interact', () => { this.closeMenu(); this.tooltip.hidden = true; });
     // A country's card opening: the hover label goes, so it never sits over the card's title (v0.40.0).
     app.on('select', () => { this.tooltip.hidden = true; });
     document.addEventListener('click', (e) => {
       // (By the path at the time of the click: opening a group redraws the menu, so its row is gone by now.)
-      if (!this.menu.hidden && !e.composedPath().includes(this.menu) && !(e.target as HTMLElement).closest('[data-dock="more"]')) this.menu.hidden = true;
+      if (!this.menu.hidden && !e.composedPath().includes(this.menu) && !(e.target as HTMLElement).closest('[data-tab]')) this.closeMenu();
     });
     window.addEventListener('keydown', (e) => {
-      // Escape steps back out of a group of the More menu, then closes it.
-      if (e.key === 'Escape' && !this.menu.hidden) { if (this.menuGroup) this.openMenuGroup(null); else this.menu.hidden = true; return; }
+      if (e.key === 'Escape' && !this.menu.hidden) { this.closeMenu(); return; }
       if (e.key === 'Escape') { if (app.ambient.on) this.ambient.stop(); else if (this.sheet.isOpen()) this.sheet.close(); else app.select(null); }
       if ((e.key === '/' || (e.key === 'k' && (e.ctrlKey || e.metaKey))) && !(e.target as HTMLElement)?.closest('input,textarea')) { e.preventDefault(); this.search.open(); }
     });
-    document.addEventListener('fullscreenchange', () => this.renderTop());
+    addEventListener('resize', () => { if (!this.menu.hidden) this.placeMenu(); });
   }
 
   addDock(item: DockItem) { this.dockItems.push(item); this.dockItems.sort((a, b) => a.order - b.order); this.renderDock(); }
@@ -136,7 +150,6 @@ export class Shell {
 
   private renderTop() {
     clear(this.top);
-    const fs = !!document.fullscreenElement;
     const brand = h('button', { type: 'button', class: 'brand', title: t('about') }, h('span', { class: 'brand-logo', 'aria-hidden': 'true' }), h('span', { class: 'brand-name' }, 'Atlas'));
     brand.addEventListener('click', () => this.openAbout());
     const searchBtn = h('button', { type: 'button', class: 'search-btn glass' }, icon(Search, 18), h('span', { class: 'search-btn-label' }, t('search')));
@@ -145,37 +158,59 @@ export class Shell {
       h('div', { class: 'top-left' }, brand, searchBtn),
       // A clip from a card that goes on after its card closed, with its stop button (ui/audio.ts).
       clipMini(),
-      h('div', { class: 'top-right glass' },
-        button({ icon: MonitorPlay, title: t('ambient'), cls: 'icon-btn', onClick: () => void this.ambient.start() }),
-        button({ icon: fs ? Minimize : Maximize, title: t('fullscreen'), cls: 'icon-btn', onClick: () => this.toggleFullscreen() })),
+      this.meButton(),
     );
   }
+
+  /** The button for you, top right: settings, your data, sharing, about. */
+  private meButton(): HTMLElement {
+    const b = h('button', { type: 'button', class: 'me-btn glass', 'data-tab': 'me', 'aria-haspopup': 'menu', 'aria-expanded': String(this.menuGroup === 'me' && !this.menu.hidden), 'aria-label': L('Settings and more', 'Ajustes y más'), title: L('Settings and more', 'Ajustes y más') }, icon(CircleUserRound, 22));
+    b.addEventListener('click', (e) => { e.stopPropagation(); this.openTab('me'); });
+    return b;
+  }
+
+  private dockButton(id: string): HTMLElement | null { return this.dock.querySelector(`[data-dock="${id}"]`); }
 
   /** Draws the bottom bar again (a dot that changed). */
   refreshDock() { this.renderDock(); }
 
   private renderDock() {
     clear(this.dock);
-    const active = this.app.layers.length;
+    const active = this.app.layers.filter((l) => !l.def.hidden).length;
+    // A tab is lit while its list is open, or one of its panels.
+    const panel = this.sheet.current;
+    const f = panel ? featureOfSheet(panel) : null;
+    const owner = panel === 'today' ? 'today' : panel ? this.menuItems.find((m) => m.id === panel || m.id === f || (f === 'games' && m.id === 'play'))?.group ?? null : null;
+    const lit = !this.menu.hidden && this.menuGroup ? this.menuGroup : owner;
     for (const it of this.dockItems) {
-      const ic = it.id === 'projection' ? (this.app.renderer.view.current.kind === 'globe' ? Globe : MapIcon) : it.icon;
-      const b = h('button', { type: 'button', class: `dock-btn${this.sheet.current === it.id ? ' on' : ''}`, 'data-dock': it.id },
-        icon(ic, 22), h('span', { class: 'dock-label' }, it.label()),
-        it.id === 'filters' && active ? h('span', { class: 'dock-badge' }, String(active)) : null,
+      const tab = TABS.some((x) => x.id === it.id);
+      const b = h('button', { type: 'button', class: `dock-btn${lit === it.id ? ' on' : ''}`, 'data-dock': it.id, ...(tab ? { 'data-tab': it.id, 'aria-haspopup': 'menu', 'aria-expanded': String(!this.menu.hidden && this.menuGroup === it.id) } : {}) },
+        icon(it.icon, 22), h('span', { class: 'dock-label' }, it.label()),
+        it.id === 'map' && active > 1 ? h('span', { class: 'dock-badge' }, String(active)) : null,
         it.dot?.() ? h('span', { class: 'dock-dot', 'aria-hidden': 'true' }) : null);
       b.addEventListener('click', (e) => { e.stopPropagation(); it.onClick(); });
       this.dock.append(b);
     }
   }
 
+  /**
+   * The one bar above the map (v0.41.1): a chip per filter on, the top one with a legend carrying the legend's ⌃ (its
+   * name opens and folds the legend; the others' open the Filters panel), and + Add filters.
+   */
   private renderChips() {
     clear(this.chips);
+    let lgChip = false;
     for (const inst of [...this.app.layers].reverse()) {
       if (inst.def.hidden) continue;
-      const chip = h('div', { class: `fchip glass${inst.ready ? '' : ' loading'}${inst.error ? ' error' : ''}` },
-        h('button', { type: 'button', class: 'fchip-main', title: tx(inst.def.desc) }, h('span', { class: 'fchip-icon' }, inst.def.icon), h('span', { class: 'fchip-name' }, tx(inst.def.name))),
-        h('button', { type: 'button', class: 'fchip-x', 'aria-label': t('remove'), title: t('remove') }, icon(X, 14)));
-      chip.querySelector('.fchip-main')!.addEventListener('click', () => this.openFilters());
+      const withLegend = !lgChip && inst.ready && !!inst.def.legend && this.legend.hasContent;
+      if (withLegend) lgChip = true;
+      const open = this.legend.open;
+      const main = h('button', { type: 'button', class: 'fchip-main', title: withLegend ? (open ? L('Fold the legend', 'Ocultar la leyenda') : L('Show the legend', 'Mostrar la leyenda')) : tx(inst.def.desc), 'aria-expanded': withLegend ? String(open) : undefined, 'data-legend': withLegend ? '' : undefined },
+        h('span', { class: 'fchip-icon' }, inst.def.icon), h('span', { class: 'fchip-name' }, tx(inst.def.name)),
+        withLegend ? h('span', { class: 'fchip-lg', 'aria-hidden': 'true' }, icon(open ? ChevronDown : ChevronUp, 15)) : null);
+      const chip = h('div', { class: `fchip glass${inst.ready ? '' : ' loading'}${inst.error ? ' error' : ''}${withLegend && open ? ' on' : ''}` },
+        main, h('button', { type: 'button', class: 'fchip-x', 'aria-label': t('remove'), title: t('remove') }, icon(X, 14)));
+      main.addEventListener('click', () => (withLegend ? this.legend.toggle() : this.openFilters()));
       chip.querySelector('.fchip-x')!.addEventListener('click', () => this.app.deactivate(inst.def.id));
       this.chips.append(chip);
     }
@@ -184,48 +219,56 @@ export class Shell {
     this.chips.append(add);
   }
 
-  private toggleMenu() {
-    if (!this.menu.hidden) { this.menu.hidden = true; return; }
-    this.menuGroup = null;
-    this.renderMenu();
-    this.menu.hidden = false;
-  }
-
-  /** Open a group of the More menu in place (null: back to the top), the keyboard's focus on its first row. */
-  openMenuGroup(g: MenuGroup | null) {
-    const from = this.menuGroup;
+  /** A tab's list (or the one for you), opened above its button; the same tab again closes it. */
+  openTab(g: MenuGroup) {
+    if (!this.menu.hidden && this.menuGroup === g) { this.closeMenu(); return; }
+    this.mapStyle.close();
     this.menuGroup = g;
     this.renderMenu();
-    const focus = g ? this.menu.querySelector('.menu-item:not(.menu-back)') : from ? this.menu.querySelector(`[data-group="${from}"]`) : null;
-    (focus as HTMLElement | null)?.focus({ preventScroll: true });
+    this.menu.hidden = false;
+    this.placeMenu();
+    this.renderDock();
+    this.renderTop();
+    (this.menu.querySelector('.menu-item') as HTMLElement | null)?.focus({ preventScroll: true });
   }
 
-  /** The More menu: the groups (Explore, Learn, Play, Tools, Save and share) with what is in them in small type,
-   *  and the rows of their own; or one group's rows under a row back. It scrolls when the screen is short. */
+  closeMenu() {
+    if (this.menu.hidden) return;
+    this.menu.hidden = true;
+    this.renderDock();
+    this.renderTop();
+  }
+
+  /** Kept for the checks written for v0.33.1's More menu: a group is now a tab. */
+  openMenuGroup(g: MenuGroup | null) { if (g) this.openTab(g); else this.closeMenu(); }
+
+  /** Above its tab (centred on it, inside the screen), or under the button for you. */
+  private placeMenu() {
+    const g = this.menuGroup;
+    const a = g === 'me' ? this.top.querySelector('[data-tab="me"]') : this.dockButton(g ?? '');
+    this.menu.classList.toggle('menu-top', g === 'me');
+    if (!a) return;
+    const r = a.getBoundingClientRect(), w = this.menu.offsetWidth;
+    const left = Math.max(10, Math.min(innerWidth - w - 10, g === 'me' ? r.right - w : r.left + r.width / 2 - w / 2));
+    this.menu.style.left = `${Math.round(left)}px`;
+    if (g === 'me') { this.menu.style.top = `${Math.round(r.bottom + 8)}px`; this.menu.style.bottom = ''; }
+    else { this.menu.style.top = ''; this.menu.style.bottom = `${Math.round(innerHeight - this.dock.getBoundingClientRect().top + 8)}px`; }
+  }
+
+  /** The open list's entries, with a heading before each section (the Map tab's tools). */
   private renderMenu() {
     clear(this.menu);
-    const row = (it: MenuItem) => {
-      const b = h('button', { type: 'button', class: 'menu-item', role: 'menuitem', 'data-menu': it.id }, menuTile(it.id, it.icon), h('span', { class: 'menu-text' }, it.label()));
-      b.addEventListener('click', () => { this.menu.hidden = true; it.onClick(); });
-      return b;
-    };
-    const g = MENU_GROUPS.find((x) => x.id === this.menuGroup);
-    if (g) {
-      const back = h('button', { type: 'button', class: 'menu-item menu-back', 'data-back': g.id, 'aria-label': t('back') }, icon(ChevronLeft, 18), h('span', { class: 'menu-text' }, t(g.key)));
-      back.addEventListener('click', () => this.openMenuGroup(null));
-      this.menu.append(back, ...this.menuItems.filter((it) => it.group === g.id).map(row));
-    } else {
-      const rows: { order: number; el: HTMLElement }[] = this.menuItems.filter((it) => !it.group).map((it) => ({ order: it.order, el: row(it) }));
-      for (const gr of MENU_GROUPS) {
-        const inside = this.menuItems.filter((it) => it.group === gr.id);
-        if (!inside.length) continue;
-        const b = h('button', { type: 'button', class: 'menu-item menu-group', role: 'menuitem', 'aria-haspopup': 'menu', 'data-group': gr.id }, menuTile(gr.id === 'share' ? 'share' : gr.id, gr.icon),
-          h('span', { class: 'menu-text' }, h('span', null, t(gr.key)), h('small', { class: 'menu-sub' }, inside.map((it) => it.label()).join(' · '))),
-          h('span', { class: 'menu-chev', 'aria-hidden': 'true' }, icon(ChevronRight, 16)));
-        b.addEventListener('click', () => this.openMenuGroup(gr.id));
-        rows.push({ order: gr.order, el: b });
-      }
-      this.menu.append(...rows.sort((a, b) => a.order - b.order).map((r) => r.el));
+    const g = this.menuGroup;
+    this.menu.dataset.tab = g ?? '';
+    this.menu.setAttribute('aria-label', g === 'me' ? L('Settings and more', 'Ajustes y más') : TABS.find((x) => x.id === g)?.label() ?? '');
+    const secs = [...(SECTIONS[g!] ?? [])];
+    for (const it of this.menuItems.filter((m) => m.group === g)) {
+      while (secs.length && it.order >= secs[0].from) this.menu.append(h('div', { class: 'menu-sep', role: 'presentation' }, secs.shift()!.label()));
+      const sub = it.sub?.();
+      const b = h('button', { type: 'button', class: 'menu-item', role: 'menuitem', 'data-menu': it.id }, menuTile(it.id, it.icon),
+        h('span', { class: 'menu-text' }, h('span', null, it.label()), sub ? h('small', { class: 'menu-sub' }, sub) : null));
+      b.addEventListener('click', () => { this.closeMenu(); it.onClick(); });
+      this.menu.append(b);
     }
     this.menu.scrollTop = 0;
   }
@@ -252,14 +295,18 @@ export class Shell {
     this.renderDock();
   }
 
-  openSettings(force = false) {
-    if (!force && this.sheet.isOpen('settings')) { this.sheet.close(); return; }
-    this.sheet.open('settings', t('settings'), settingsPanel(this.app, () => this.openSettings(true), (m) => this.toast(m, 4000)));
+  /** Settings; `section`: scrolled to one of its parts (backup: your data on another device). */
+  openSettings(force = false, section?: string) {
+    if (!force && !section && this.sheet.isOpen('settings')) { this.sheet.close(); return; }
+    this.sheet.open('settings', t('settings'), settingsPanel(this.app, () => this.openSettings(true), (m) => this.toast(m, 4000)), () => this.renderDock());
+    this.renderDock();
+    if (section) requestAnimationFrame(() => document.querySelector(`.sheet [data-section="${section}"]`)?.scrollIntoView({ block: 'start' }));
   }
 
   openAbout(force = false) {
     if (!force && this.sheet.isOpen('about')) { this.sheet.close(); return; }
-    this.sheet.open('about', t('about'), aboutPanel(this.app));
+    this.sheet.open('about', t('about'), aboutPanel(this.app), () => this.renderDock());
+    this.renderDock();
   }
 
   /** Ambient mode's panel: its playlists, the reader's own, and its settings. */
@@ -352,7 +399,7 @@ export class Shell {
   tapHandlers: ((x: number, y: number, lonlat: [number, number] | null) => boolean)[] = [];
 
   private onTap(x: number, y: number) {
-    this.menu.hidden = true;
+    this.closeMenu();
     const g = this.app.renderer.view.invert(x, y);
     for (const fn of this.tapHandlers) if (fn(x, y, g)) return;
     this.legend.clearHighlight();
@@ -409,8 +456,8 @@ export class Shell {
   }
 }
 
-/** A More menu row's tile: its feature's (ui/features.ts), else its own icon on a plain tile. */
-const MENU_FEATURE: Record<string, string> = { play: 'games', share: 'link' };
+/** A menu row's tile: its feature's (ui/features.ts), else its own icon on a plain tile. */
+const MENU_FEATURE: Record<string, string> = { play: 'games', share: 'link', projection: 'projection' };
 function menuTile(id: string, ic: Parameters<typeof icon>[0]): HTMLElement {
   const f = MENU_FEATURE[id] ?? id;
   return FEATURES[f] ? ftile(f, 'sm') : h('span', { class: 'ftile ftile-sm hue-me', 'aria-hidden': 'true' }, icon(ic, 16));

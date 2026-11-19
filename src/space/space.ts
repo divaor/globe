@@ -51,7 +51,7 @@ export class Space {
       id: 'world', icon: '🪐', hidden: true, title: () => L('Other worlds', 'Otros mundos'), desc: () => '',
       enter: () => this.enter('moon'), exit: () => this.exit(), tap: (lon, lat, x, y) => this.tap(lon, lat, x ?? 0, y ?? 0),
     });
-    shell.addDock({ id: 'space', icon: Orbit, label: () => L('Space', 'Espacio'), order: 35, onClick: () => this.open() });
+    shell.addMenu({ id: 'space', icon: Orbit, label: () => L('Space', 'Espacio'), order: 12, group: 'explore', onClick: () => this.open() });
     app.on('lang', () => { if (this.bar) this.buildBar(); if (shell.sheet.isOpen('space')) this.open(true); });
     app.on('interactEnd', () => this.saveHash());
     this.surface.onChange(() => { if (this.bar) this.buildBar(); });

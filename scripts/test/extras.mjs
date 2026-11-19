@@ -26,9 +26,9 @@ await shot('quiz-answer', 2500);
 await page.evaluate(() => window.atlas.learn['stopQuiz']());
 // Tour
 await page.evaluate(() => { const l = window.atlas.learn; return l['startTour'](l.constructor && (window.TOURS_FOR_TEST ?? null) || null); }).catch(() => {});
-await page.evaluate(() => { document.querySelector('[data-dock="more"]')?.click(); });
+await page.evaluate(() => { document.querySelector('[data-dock="learn"]')?.click(); });
 await page.waitForTimeout(300);
-// (Guided tours is in the More menu's Learn and play group since v0.33.1: open the group first.)
+// (Guided tours is in the Learn tab's list since v0.41.1.)
 await page.evaluate(() => { const rows = () => [...document.querySelectorAll('.menu .menu-item')], own = () => rows().find((b) => !b.dataset.group && /tour|visita/i.test(b.textContent)); if (!own()) rows().find((b) => b.dataset.group && /tour|visita/i.test(b.textContent))?.click(); own()?.click(); });
 await page.waitForTimeout(500);
 await page.evaluate(() => { document.querySelectorAll('.mode-card')[1]?.click(); });
