@@ -6010,6 +6010,56 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(!errors.length, `no page errors in the theme's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
+// 47. One voice (v0.41.0): in English and in Spanish, no text in the main panels shows a pattern's {0}; plurals agree
+// (a day, two days); Settings is Ajustes; the About text; ?pseudo marks every text that goes through the language files.
+{
+  const PANELS = [
+    ['Today', () => document.querySelector('[data-dock="today"]').click()], ['Settings', () => window.atlas.shell.openSettings()],
+    ['About', () => window.atlas.shell.openAbout(true)], ['Filters', () => window.atlas.shell.openFilters(true)],
+    ['Map games', () => void window.atlas.play.openMenu()], ['Border hop', () => void window.atlas.hop.openMenu()],
+    ['Master the world', () => void window.atlas.master.openPanel()], ['Quiz', () => window.atlas.learn.openQuizMenu()],
+  ];
+  for (const lang of ['en', 'es']) {
+    const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, `#p=globe&l=political&c=10,25,1.1&lang=${lang}`);
+    const F = (fn, arg) => page.evaluate(fn, arg);
+    const raw = [], seen = {};
+    for (const [label, open_] of PANELS) {
+      await F(open_);
+      await page.waitForTimeout(1200);
+      const text = await F(() => document.querySelector('.sheet.open')?.innerText ?? '');
+      seen[label] = text.length;
+      const m = text.match(/\{\d[^}]{0,30}\}?|\{[a-z]+\}/g);
+      if (m) raw.push(`${label}: ${m.slice(0, 3).join(' ')}`);
+    }
+    check(!raw.length && Object.values(seen).every((n) => n > 40), `${lang}: no pattern shows its {0} in ${PANELS.map((x) => x[0]).join(', ')}${raw.length ? ` (shown: ${raw.join('; ')})` : ''}`);
+    const t = await F(() => {
+      const L = (en, es, ...a) => window.atlas.i18n.L(en, es, ...a);
+      const P = ['{0, plural, one {# day} other {# days}} in a row', '{0, plural, one {# día seguido} other {# días seguidos}}'];
+      return { one: L(P[0], P[1], 1), two: L(P[0], P[1], 2), settings: window.atlas.i18n.t('settings') };
+    });
+    await F(() => window.atlas.shell.openAbout(true));
+    await page.waitForTimeout(600);
+    const about = await F(() => document.querySelector('.about .about-lead')?.textContent ?? '');
+    const want = lang === 'es' ? { one: '1 día seguido', two: '2 días seguidos', settings: 'Ajustes', about: /^Atlas Globe es el mundo en un solo globo/ }
+      : { one: '1 day in a row', two: '2 days in a row', settings: 'Settings', about: /^Atlas Globe is the world on one globe/ };
+    check(t.one === want.one && t.two === want.two && t.settings === want.settings && want.about.test(about), `${lang}: plurals "${t.one}", "${t.two}"; "${t.settings}"; About: "${about.slice(0, 50)}…"`);
+    check(!errors.length, `${lang}: no page errors in the text checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
+  // ?pseudo: the More menu's labels and a panel's title come out accented and in brackets.
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '?pseudo#p=globe&l=political&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  await F(() => document.querySelector('[data-dock="more"]').click());
+  await page.waitForTimeout(400);
+  const labels = await F(() => [...document.querySelectorAll('.menu .menu-item')].map((b) => b.textContent.trim()).filter(Boolean));
+  await F(() => window.atlas.shell.openSettings());
+  await page.waitForTimeout(600);
+  const title = await F(() => document.querySelector('.sheet-title-text')?.textContent ?? '');
+  const marked = labels.filter((x) => /^\[.*\]$/.test(x)).length;
+  check(labels.length >= 8 && marked === labels.length && /^\[Ŝéttíñgŝ\]$/.test(title), `?pseudo: ${marked} of ${labels.length} menu labels marked (${labels.slice(0, 3).join(', ')}…); the panel title "${title}"`);
+  check(!errors.length, `no page errors with ?pseudo${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

@@ -598,6 +598,28 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
 - A feature's tile comes from `ftile(id)` (`src/ui/features.ts`). A panel's title gets it from its sheet id.
 - A game's result comes from `resultCard()` (`src/ui/result.ts`).
 
+**Texts** (v0.41.0, One voice). Every text is written where it is used, in English and Latin American Spanish:
+
+```ts
+L('Out of {0}', 'De {0}', fmtNumber(total))                       // values as {0}, {1}… a translator can move
+L('{0, plural, one {# day} other {# days}} in a row', '{0, plural, one {# día seguido} other {# días seguidos}}', n)
+L('Tap the {0}', 'Toca {1} {0}', name, article)                  // Spanish may use more values than English
+Lc('a stripe on a planet', 'Streak', 'Franja')                   // the same English with another meaning: a context
+tx(item.name)                                                     // a data field { en, es } (txs for lists)
+```
+
+- `npm run i18n:extract` writes `i18n/messages.json`: every text by its English (and context), with the Spanish and
+  where it is used, for translators. A language beyond English and Spanish is `public/i18n/<lang>.json`, the English
+  (or `context␄English`) to its translation, listed in `SHIPPED` in `scripts/i18n/extract.mjs`; a text it lacks shows
+  in English.
+- `npm run test:i18n` (also in `check:data`) checks the patterns (values, plurals, selects, pseudo-language) and fails
+  on an `L()` that is not two plain texts, a value a pattern does not use, a text or data field that picks its
+  language by hand (`es ? 'Hola' : 'Hello'`), an English text with two different Spanish (the glossary: one word for
+  one thing, or a context), a shipped language missing a text, or an out-of-date `messages.json`. Grammar written in
+  code on purpose (deep-time numbers) is marked `// i18n: by hand`.
+- `?pseudo` in the address shows every translatable text accented and in brackets ([Ŝháré]), so a text still written
+  straight into the code stands out.
+
 ```bash
 npm install
 npm run dev        # http://localhost:5173
