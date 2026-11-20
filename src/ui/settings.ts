@@ -51,7 +51,8 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     { value: 'es-ES', label: 'Español (España)' },
     ...LANGS.filter((l) => l.id !== 'en' && l.id !== 'es').map((l) => ({ value: l.id as Choice, label: l.name })),
   ], (v) => { void (v === 'auto' ? app.setLang(null) : app.setLang(v === 'es-ES' ? 'es' : v, v === 'es-ES' ? 'spain' : v === 'es' ? 'latam' : app.spanish)).then(reopen); });
-  langPicker.classList.add('seg-wrap');
+  langPicker.classList.add('seg-wrap', 'seg-langs');
+  langPicker.dataset.settings = 'language';
   const sample = `${fmtNumber(10935.5, 1)} · ${new Date(2026, 4, 3).toLocaleDateString(appLocale(), { day: 'numeric', month: 'long' })} · ${new Date(2026, 4, 3, 17, 30).toLocaleTimeString(appLocale(), { hour: 'numeric', minute: '2-digit' })}`;
   const phone = localeFromPhone();
   const numbers = h('p', { class: 'tool-hint', 'data-settings': 'formats' }, phone ? L('Numbers and dates as on your phone: {0}', 'Números y fechas como en tu teléfono: {0}', sample) : L('Numbers and dates: {0}', 'Números y fechas: {0}', sample));

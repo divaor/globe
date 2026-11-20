@@ -225,7 +225,8 @@ html:not(.mode-time):not(.has-quiz) .legend.collapsed { display: none; }
 .sheet-grip { display: none; }
 .sheet-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 10px 6px 18px; }
 .sheet-title { margin: 0; font-size: var(--fs-xl); font-weight: var(--fw-bold); display: flex; align-items: center; gap: var(--sp-3); min-width: 0; }
-.sheet-body { flex: 1; overflow-y: auto; padding: 4px 16px 18px; scrollbar-width: thin; }
+/* Never sideways: something too wide once slid the whole panel left on a phone (v0.43.0). */
+.sheet-body { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 4px 16px 18px; scrollbar-width: thin; }
 /* The filters list holds the card you tapped in place itself (filters.ts), so the browser's own
    scroll anchoring is off there to avoid moving it twice. */
 .sheet[data-sheet='filters'] .sheet-body { overflow-anchor: none; }
@@ -286,6 +287,9 @@ html:not(.mode-time):not(.has-quiz) .legend.collapsed { display: none; }
 .seg-btn.on { background: var(--glass-strong); color: var(--text); box-shadow: 0 1px 6px rgba(0,0,0,.18); }
 /* Longer choices (the language: "Español (Latinoamérica)") may take two lines. */
 .seg-wrap .seg-btn { height: auto; min-height: 34px; padding: 5px 6px; line-height: 1.2; }
+/* The language (v0.43.0): seven choices in rows that fit a phone, "Like my phone" across the top. */
+.seg-langs { display: grid; grid-template-columns: repeat(auto-fit, minmax(7.25rem, 1fr)); }
+.seg-langs .seg-btn:first-child { grid-column: 1 / -1; }
 .field { margin: 12px 0; display: flex; flex-direction: column; gap: 8px; }
 .field-label { font-size: var(--fs-sm); font-weight: 650; display: flex; justify-content: space-between; }
 .field-hint { color: var(--muted); font-weight: 500; }
@@ -1386,7 +1390,8 @@ textarea.trip-input { resize: vertical; }
 .mw-known { background: #f2c94c; }
 .mw-learning { background: #e8833a; }
 .mw-new { background: var(--line-strong); }
-.mw-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 6px; font-size: var(--fs-sm); color: var(--muted); }
+/* On the text's line: the ★ comes from a taller font on Android and pushed its words down (v0.43.0). */
+.mw-legend { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 6px; font-size: var(--fs-sm); color: var(--muted); }
 .mw-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
 .mw-conts { display: grid; gap: 6px; margin-top: 12px; }
 .mw-cont { display: grid; grid-template-columns: minmax(0, 10em) 1fr auto; gap: 10px; align-items: center; font-size: var(--fs-sm); }

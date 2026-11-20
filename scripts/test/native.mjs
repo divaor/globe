@@ -64,6 +64,12 @@ const privacy = fs.readFileSync(path.join(ROOT, 'ios/App/App/PrivacyInfo.xcpriva
 const id = /appId: '([^']+)'/.exec(cfg)?.[1];
 check(id === 'io.github.divaor.globe' && gradle.includes(`applicationId "${id}"`) && (pbx.match(new RegExp(`PRODUCT_BUNDLE_IDENTIFIER = ${id.replace(/\./g, '\\.')};`, 'g')) ?? []).length === 2,
   `one app id on both (${id})`);
+const appName = /appName: '([^']+)'/.exec(cfg)?.[1];
+const strings = fs.readFileSync(path.join(ROOT, 'android/app/src/main/res/values/strings.xml'), 'utf8');
+const listings = fs.readdirSync(path.join(ROOT, 'store/listings')).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'store/listings', f), 'utf8')).name);
+check(!!appName && strings.includes(`<string name="app_name">${appName}</string>`) && new RegExp(`CFBundleDisplayName</key>\\s*<string>${appName}</string>`).test(plist)
+  && listings.length === 6 && listings.every((n) => n.startsWith(appName)),
+  `one name under the icon on both, and in every store listing (${appName}; ${listings.join(' / ')})`);
 check(gradle.includes('versionName pkg.version') && (pbx.match(new RegExp(`MARKETING_VERSION = ${pkg.version.replace(/\./g, '\\.')};`, 'g')) ?? []).length === 2,
   `the version from package.json (${pkg.version})`);
 check(/POST_NOTIFICATIONS/.test(manifest) && /ACCESS_COARSE_LOCATION/.test(manifest) && !/ACCESS_FINE_LOCATION|SCHEDULE_EXACT_ALARM|USE_EXACT_ALARM/.test(manifest),

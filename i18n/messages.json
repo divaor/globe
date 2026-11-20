@@ -1,6 +1,6 @@
 {
  "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/data/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
- "count": 4570,
+ "count": 4575,
  "messages": [
   {
    "en": " (below sea level)",
@@ -601,14 +601,14 @@
    "en": "A continent or a region",
    "es": "Un continente o una región",
    "where": [
-    "src/onmap/onmap.ts:577"
+    "src/onmap/onmap.ts:594"
    ]
   },
   {
    "en": "A country ({0})",
    "es": "Un país ({0})",
    "where": [
-    "src/onmap/onmap.ts:566"
+    "src/onmap/onmap.ts:583"
    ]
   },
   {
@@ -1962,7 +1962,7 @@
    "en": "All placed: check them, or tap one to move it.",
    "es": "Todo en su sitio: compruébalo, o toca uno para moverlo.",
    "where": [
-    "src/onmap/onmap.ts:348"
+    "src/onmap/onmap.ts:352"
    ]
   },
   {
@@ -1984,14 +1984,14 @@
    "en": "All six ({0}/{1})",
    "es": "Los seis ({0}/{1})",
    "where": [
-    "src/onmap/onmap.ts:365"
+    "src/onmap/onmap.ts:382"
    ]
   },
   {
    "en": "All six on the map in {0, plural, one {# check} other {# checks}}!",
    "es": "¡Los seis en el mapa en {0, plural, one {# comprobación} other {# comprobaciones}}!",
    "where": [
-    "src/onmap/onmap.ts:432"
+    "src/onmap/onmap.ts:449"
    ]
   },
   {
@@ -2322,7 +2322,7 @@
    "en": "Another country",
    "es": "Otro país",
    "where": [
-    "src/onmap/onmap.ts:445"
+    "src/onmap/onmap.ts:462"
    ]
   },
   {
@@ -2413,7 +2413,7 @@
    "en": "Any country",
    "es": "Un país al azar",
    "where": [
-    "src/onmap/onmap.ts:564"
+    "src/onmap/onmap.ts:581"
    ]
   },
   {
@@ -3121,7 +3121,7 @@
    "en": "Atlas Globe is the world on one globe: its countries and cities, its nature, its history and its sky.",
    "es": "Atlas Globe es el mundo en un solo globo: sus países y ciudades, su naturaleza, su historia y su cielo.",
    "where": [
-    "src/ui/settings.ts:111"
+    "src/ui/settings.ts:112"
    ]
   },
   {
@@ -4755,7 +4755,7 @@
     "src/learn/learn.ts:1455",
     "src/learn/learn.ts:2087",
     "src/master/master.ts:706",
-    "src/onmap/onmap.ts:354"
+    "src/onmap/onmap.ts:369"
    ]
   },
   {
@@ -6273,7 +6273,7 @@
    "en": "Detailed terrain",
    "es": "Relieve detallado",
    "where": [
-    "src/ui/settings.ts:79"
+    "src/ui/settings.ts:80"
    ]
   },
   {
@@ -6489,7 +6489,7 @@
     "src/fill/states.ts:537",
     "src/learn/learn.ts:455",
     "src/learn/learn.ts:477",
-    "src/onmap/onmap.ts:595"
+    "src/onmap/onmap.ts:612"
    ]
   },
   {
@@ -7683,7 +7683,7 @@
    "en": "Explore {0} maps, travel through time with hundreds of stories, plan a trip with the travel guide, and learn every country, capital and flag with games and a challenge each day.",
    "es": "Explora {0} mapas, viaja en el tiempo con cientos de historias, planea un viaje con la guía y aprende todos los países, capitales y banderas con juegos y un reto cada día.",
    "where": [
-    "src/ui/settings.ts:112"
+    "src/ui/settings.ts:113"
    ]
   },
   {
@@ -9104,6 +9104,13 @@
    ]
   },
   {
+   "en": "Give up",
+   "es": "Me rindo",
+   "where": [
+    "src/onmap/onmap.ts:371"
+   ]
+  },
+  {
    "en": "Giza",
    "es": "Guiza",
    "where": [
@@ -9352,7 +9359,7 @@
    "en": "Green is right; yellow is close, red is far off. Five checks; the greens stay.",
    "es": "Verde es correcto; amarillo, cerca; rojo, lejos. Cinco comprobaciones; los verdes se quedan.",
    "where": [
-    "src/onmap/onmap.ts:359"
+    "src/onmap/onmap.ts:376"
    ]
   },
   {
@@ -9697,7 +9704,7 @@
    "en": "Hello. This is how the tours and stories will sound.",
    "es": "Hola. Así sonarán las visitas guiadas y las historias.",
    "where": [
-    "src/ui/settings.ts:144"
+    "src/ui/settings.ts:145"
    ]
   },
   {
@@ -11840,6 +11847,13 @@
    ]
   },
   {
+   "en": "Keep playing",
+   "es": "Seguir jugando",
+   "where": [
+    "src/onmap/onmap.ts:362"
+   ]
+  },
+  {
    "en": "Keeps angles for navigation; greatly enlarges the poles.",
    "es": "Conserva los ángulos para navegar; agranda mucho los polos.",
    "where": [
@@ -13108,7 +13122,7 @@
    "en": "Made by {0}.",
    "es": "Hecho por {0}.",
    "where": [
-    "src/ui/settings.ts:115"
+    "src/ui/settings.ts:116"
    ]
   },
   {
@@ -13829,7 +13843,7 @@
     "src/fill/fill.ts:490",
     "src/fill/states.ts:404",
     "src/master/master.ts:884",
-    "src/onmap/onmap.ts:446"
+    "src/onmap/onmap.ts:463"
    ]
   },
   {
@@ -15259,7 +15273,7 @@
    "en": "No account and no ads. What you do stays on this device; to take it to another, use Settings → Your data on another device.",
    "es": "Sin cuenta y sin anuncios. Lo que haces se queda en este dispositivo; para llevarlo a otro, usa Ajustes → Tus datos en otro dispositivo.",
    "where": [
-    "src/ui/settings.ts:113"
+    "src/ui/settings.ts:114"
    ]
   },
   {
@@ -15827,14 +15841,14 @@
    "en": "Numbers and dates as on your phone: {0}",
    "es": "Números y fechas como en tu teléfono: {0}",
    "where": [
-    "src/ui/settings.ts:57"
+    "src/ui/settings.ts:58"
    ]
   },
   {
    "en": "Numbers and dates: {0}",
    "es": "Números y fechas: {0}",
    "where": [
-    "src/ui/settings.ts:57"
+    "src/ui/settings.ts:58"
    ]
   },
   {
@@ -16412,7 +16426,7 @@
    "en": "One of your device’s own voices reads; the app records and sends nothing.",
    "es": "Lee una voz de tu dispositivo; la app no graba ni envía nada.",
    "where": [
-    "src/ui/settings.ts:149"
+    "src/ui/settings.ts:150"
    ]
   },
   {
@@ -16568,7 +16582,7 @@
    "en": "Open source (GPL-3.0). Every map and story names its sources; the data keep their own licences.",
    "es": "Código abierto (GPL-3.0). Cada mapa e historia nombra sus fuentes; los datos conservan sus propias licencias.",
    "where": [
-    "src/ui/settings.ts:117"
+    "src/ui/settings.ts:118"
    ]
   },
   {
@@ -17777,7 +17791,7 @@
     "src/app/i18n.ts:40",
     "src/fill/states.ts:516",
     "src/master/master.ts:1097",
-    "src/onmap/onmap.ts:562",
+    "src/onmap/onmap.ts:579",
     "src/play/menu.ts:175"
    ]
   },
@@ -17852,7 +17866,7 @@
    "en": "Played {0} · solved {1} · at the first check {2}",
    "es": "Jugados {0} · resueltos {1} · a la primera {2}",
    "where": [
-    "src/onmap/onmap.ts:578"
+    "src/onmap/onmap.ts:595"
    ]
   },
   {
@@ -18088,22 +18102,29 @@
    ]
   },
   {
+   "en": "Put all six on the map, then check ({0}/{1}).",
+   "es": "Pon los seis en el mapa y luego comprueba ({0}/{1}).",
+   "where": [
+    "src/onmap/onmap.ts:375"
+   ]
+  },
+  {
    "en": "Put it on the map",
    "es": "Ponlo en el mapa",
    "where": [
     "src/main.ts:112",
     "src/main.ts:145",
     "src/main.ts:184",
-    "src/onmap/onmap.ts:73",
-    "src/onmap/onmap.ts:340"
+    "src/onmap/onmap.ts:75",
+    "src/onmap/onmap.ts:344"
    ]
   },
   {
    "en": "Put it on the map needs its data; check your connection.",
    "es": "Ponlo en el mapa necesita sus datos; revisa tu conexión.",
    "where": [
-    "src/onmap/onmap.ts:136",
-    "src/onmap/onmap.ts:529"
+    "src/onmap/onmap.ts:138",
+    "src/onmap/onmap.ts:546"
    ]
   },
   {
@@ -18111,7 +18132,7 @@
    "es": "Ponlo en el mapa: hoy",
    "where": [
     "src/main.ts:186",
-    "src/onmap/onmap.ts:594"
+    "src/onmap/onmap.ts:611"
    ]
   },
   {
@@ -18139,7 +18160,7 @@
    "en": "Puzzle of the day",
    "es": "Reto del día",
    "where": [
-    "src/onmap/onmap.ts:340"
+    "src/onmap/onmap.ts:344"
    ]
   },
   {
@@ -18304,7 +18325,7 @@
    "en": "Read each ambient view aloud",
    "es": "Leer cada vista del modo ambiente en voz alta",
    "where": [
-    "src/ui/settings.ts:87"
+    "src/ui/settings.ts:88"
    ]
   },
   {
@@ -18339,14 +18360,14 @@
    "en": "Read tours and stories aloud",
    "es": "Leer en voz alta las visitas guiadas y las historias",
    "where": [
-    "src/ui/settings.ts:134"
+    "src/ui/settings.ts:135"
    ]
   },
   {
    "en": "Reading aloud",
    "es": "Lectura en voz alta",
    "where": [
-    "src/ui/settings.ts:81"
+    "src/ui/settings.ts:82"
    ]
   },
   {
@@ -19935,6 +19956,20 @@
    ]
   },
   {
+   "en": "Show the answers",
+   "es": "Mostrar las respuestas",
+   "where": [
+    "src/onmap/onmap.ts:364"
+   ]
+  },
+  {
+   "en": "Show the answers? The puzzle ends unsolved.",
+   "es": "¿Mostrar las respuestas? El reto termina sin resolver.",
+   "where": [
+    "src/onmap/onmap.ts:361"
+   ]
+  },
+  {
    "en": "Show the best route",
    "es": "Ver la mejor ruta",
    "where": [
@@ -20199,7 +20234,7 @@
    "en": "Six places from a country or a region: tap a name, then its place among the grey ones. Green is right; yellow to red, how far off. Five checks.",
    "es": "Seis lugares de un país o una región: toca un nombre y luego su lugar entre los grises. Verde es correcto; de amarillo a rojo, qué tan lejos. Cinco comprobaciones.",
    "where": [
-    "src/onmap/onmap.ts:539"
+    "src/onmap/onmap.ts:556"
    ]
   },
   {
@@ -20651,7 +20686,7 @@
    "where": [
     "src/app/i18n.ts:172",
     "src/ui/legend.ts:146",
-    "src/ui/settings.ts:147"
+    "src/ui/settings.ts:148"
    ]
   },
   {
@@ -24700,7 +24735,7 @@
    "en": "The right places are on the map, in green.",
    "es": "Los lugares correctos están en el mapa, en verde.",
    "where": [
-    "src/onmap/onmap.ts:433"
+    "src/onmap/onmap.ts:450"
    ]
   },
   {
@@ -24743,7 +24778,7 @@
    "en": "The screensaver’s playlists are in Explore → Ambient mode.",
    "es": "Las listas de reproducción del salvapantallas están en Explorar → Modo ambiente.",
    "where": [
-    "src/ui/settings.ts:90"
+    "src/ui/settings.ts:91"
    ]
   },
   {
@@ -25320,7 +25355,7 @@
    "en": "This browser cannot read aloud.",
    "es": "Este navegador no puede leer en voz alta.",
    "where": [
-    "src/ui/settings.ts:127"
+    "src/ui/settings.ts:128"
    ]
   },
   {
@@ -25363,7 +25398,7 @@
    "en": "This device has no voices in {0}. You can add one in the system’s text-to-speech settings.",
    "es": "Este dispositivo no tiene voces en {0}. Puedes agregar una en los ajustes de texto a voz del sistema.",
    "where": [
-    "src/ui/settings.ts:136"
+    "src/ui/settings.ts:137"
    ]
   },
   {
@@ -26993,8 +27028,8 @@
    "en": "Voice",
    "es": "Voz",
    "where": [
-    "src/ui/settings.ts:139",
-    "src/ui/settings.ts:146"
+    "src/ui/settings.ts:140",
+    "src/ui/settings.ts:147"
    ]
   },
   {
@@ -27401,7 +27436,7 @@
    "en": "What to place",
    "es": "Qué colocar",
    "where": [
-    "src/onmap/onmap.ts:550"
+    "src/onmap/onmap.ts:567"
    ]
   },
   {
@@ -27854,7 +27889,7 @@
    "en": "Where is {0}? Tap one of the grey {1}.",
    "es": "¿Dónde está {0}? Toca uno de los grises.",
    "where": [
-    "src/onmap/onmap.ts:347"
+    "src/onmap/onmap.ts:351"
    ]
   },
   {
@@ -29324,7 +29359,7 @@
    "en": "Your data on another device",
    "es": "Tus datos en otro dispositivo",
    "where": [
-    "src/ui/settings.ts:93",
+    "src/ui/settings.ts:94",
     "src/ui/shell.ts:115"
    ]
   },
@@ -29572,7 +29607,7 @@
    "en": "Check",
    "es": "Comprobación",
    "where": [
-    "src/onmap/onmap.ts:343"
+    "src/onmap/onmap.ts:347"
    ]
   },
   {
@@ -30907,7 +30942,7 @@
    "en": "tap its place among the grey ones",
    "es": "toca su lugar entre los grises",
    "where": [
-    "src/onmap/onmap.ts:371"
+    "src/onmap/onmap.ts:388"
    ]
   },
   {
@@ -31019,7 +31054,7 @@
    "es": "el mismo para todos hoy",
    "where": [
     "src/fill/states.ts:537",
-    "src/onmap/onmap.ts:595"
+    "src/onmap/onmap.ts:612"
    ]
   },
   {
@@ -31997,7 +32032,7 @@
    "en": "{0} right. Move the others and check again.",
    "es": "{0} bien. Mueve los demás y vuelve a comprobar.",
    "where": [
-    "src/onmap/onmap.ts:302"
+    "src/onmap/onmap.ts:306"
    ]
   },
   {
@@ -32605,7 +32640,7 @@
    "en": "▶ Try the voice",
    "es": "▶ Probar la voz",
    "where": [
-    "src/ui/settings.ts:143"
+    "src/ui/settings.ts:144"
    ]
   },
   {
@@ -32809,7 +32844,7 @@
    "es": "📱 Como mi teléfono",
    "where": [
     "src/ui/settings.ts:48",
-    "src/ui/settings.ts:62"
+    "src/ui/settings.ts:63"
    ]
   },
   {

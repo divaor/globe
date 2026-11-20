@@ -659,8 +659,9 @@ The service worker is the one vite-plugin-pwa writes, plus `public/reminders-sw.
 reminder's choice, its notification and its tap. The page leaves what it reads in Cache Storage (`atlas-reminders`).
 `npm run test:reminders` checks the choice and the calendar file with Node.
 
-**The iOS and Android apps** (v0.43.0) are the same code, wrapped with [Capacitor](https://capacitorjs.com)
-(`capacitor.config.ts`; app id `io.github.divaor.globe`). The native projects are `ios/` and `android/`; all of
+**The iOS and Android apps** (v0.43.0), called **Mundora** in the stores and on the home screen (the website stays
+Atlas Globe), are the same code, wrapped with [Capacitor](https://capacitorjs.com) (`capacitor.config.ts`; app id
+`io.github.divaor.globe`). Their store texts are `store/listings/<locale>.json` (`node scripts/store/check.mjs`). The native projects are `ios/` and `android/`; all of
 `dist/`, data included, goes inside the apps, so they work offline from the first launch. The website never loads
 the apps' code: `src/main.ts` imports `src/native/boot.ts` only when `src/native/platform.ts` sees an app.
 

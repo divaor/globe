@@ -7,8 +7,8 @@ import type { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   // The apps' permanent id (users never see it; it can't change once in the stores).
   appId: 'io.github.divaor.globe',
-  // The name under the icon: the store name replaces it once chosen (decision P1).
-  appName: 'Atlas Globe',
+  // The name under the icon: the apps' store name (decision P1, Mundora); the website stays Atlas Globe.
+  appName: 'Mundora',
   webDir: 'dist',
   backgroundColor: '#0b1220',
   android: {
