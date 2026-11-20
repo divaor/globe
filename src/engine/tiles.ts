@@ -3,6 +3,7 @@
 // ones the view needs (nearest first, dropping those no longer needed), and looks in saved offline areas first.
 
 import { appLocale } from '../app/i18n';
+import { canSave, savedStore } from './tilestore';
 export type TileKind = 'terrarium' | 'rgb';
 export interface TileSource {
   id: string; kind: TileKind;
@@ -79,7 +80,7 @@ export const fmtBytes = (b: number, es = false) => {
 
 // ---- saved offline areas live in a cache of their own ---------------------------------------------
 
-export const SAVED_CACHE = 'atlas-saved-tiles';
+export { SAVED_CACHE } from './tilestore';
 /** Set by offline.ts: whether any area is saved (no need to look in the cache otherwise). */
 export const saved = { any: false };
 
@@ -161,11 +162,11 @@ export class TileLoader {
     const url = w.src.url(w.z, w.x, w.y);
     let blob: Blob | null = null;
     // A saved offline area first.
-    if (saved.any && 'caches' in window) {
+    if (saved.any && canSave()) {
       try {
-        const r = await (await caches.open(SAVED_CACHE)).match(url);
-        if (r) { blob = await r.blob(); stats.fromSaved++; }
-      } catch { /* no cache */ }
+        const b = await (await savedStore()).match(url);
+        if (b) { blob = b; stats.fromSaved++; }
+      } catch { /* no saved tiles here */ }
     }
     if (!blob) {
       if (!mayDownload()) return;

@@ -27,6 +27,7 @@ import { yourWorldLayer, refreshYourWorld, WORLD_ID } from './world';
 import { appLocale, flagEmoji } from '../app/i18n';
 import { pickCountry } from '../play/pick';
 import { bell } from '../today/reminders';
+import { isNative } from '../native/platform';
 import { isExtra, outlinesDeck, citiesDeck, landmarksDeck, natureDeck, type ExtraDeck, type ExtraId } from './extra';
 
 type Mode = 'learn' | 'run' | 'marathon';
@@ -648,7 +649,8 @@ export class Master implements HostGame {
   // ---- Sounds and buzz
   private sound(kind: 'ok' | 'bad' | 'star') {
     if (!master().settings.sound) return;
-    if (kind === 'bad') { try { navigator.vibrate?.(90); } catch { /* no buzz here */ } }
+    // (The apps tap the phone for every answer themselves: src/native/haptics.ts.)
+    if (kind === 'bad' && !isNative()) { try { navigator.vibrate?.(90); } catch { /* no buzz here */ } }
     try {
       this.ac ??= new AudioContext();
       const ac = this.ac, t0 = ac.currentTime;

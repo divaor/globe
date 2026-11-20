@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The reminders' small icon in the status bar: a globe (white on transparent, as Android draws it). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#FFFFFFFF"
+        android:pathData="M12,2A10,10 0,1 0,22 12,10 10,0 0,0 12,2ZM19.93,11H16.95A15.5,15.5 0,0 0,15.5 4.6,8 8,0 0,1 19.93,11ZM12,4.04C12.83,5.23 13.97,7.4 14.24,11H9.76C10.03,7.4 11.17,5.23 12,4.04ZM8.5,4.6A15.5,15.5 0,0 0,7.05 11H4.07A8,8 0,0 1,8.5 4.6ZM4.07,13H7.05A15.5,15.5 0,0 0,8.5 19.4,8 8,0 0,1 4.07,13ZM12,19.96C11.17,18.77 10.03,16.6 9.76,13H14.24C13.97,16.6 12.83,18.77 12,19.96ZM15.5,19.4A15.5,15.5 0,0 0,16.95 13H19.93A8,8 0,0 1,15.5 19.4Z"/>
+</vector>

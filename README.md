@@ -659,6 +659,38 @@ The service worker is the one vite-plugin-pwa writes, plus `public/reminders-sw.
 reminder's choice, its notification and its tap. The page leaves what it reads in Cache Storage (`atlas-reminders`).
 `npm run test:reminders` checks the choice and the calendar file with Node.
 
+**The iOS and Android apps** (v0.43.0), called **Mundora** in the stores and on the home screen (the website stays
+Atlas Globe), are the same code, wrapped with [Capacitor](https://capacitorjs.com) (`capacitor.config.ts`; app id
+`io.github.divaor.globe`). Their store texts are `store/listings/<locale>.json` (`node scripts/store/check.mjs`). The native projects are `ios/` and `android/`; all of
+`dist/`, data included, goes inside the apps, so they work offline from the first launch. The website never loads
+the apps' code: `src/main.ts` imports `src/native/boot.ts` only when `src/native/platform.ts` sees an app.
+
+- **In the apps:**
+  - **No service worker.**
+  - **Storage:** every `localStorage` key is copied to the app's own storage (`src/native/storage.ts`) and put back
+    if iOS clears the page's.
+  - **Phone features:** the phone's share menu, clipboard and file saving stand in for `navigator.share`, the
+    clipboard and download links (`share.ts`). Links to other sites open the phone's browser (`links.ts`). Location
+    uses the phone's prompt and is coarse (`geo.ts`). Android reads aloud with the phone's voices (`tts.ts`).
+  - **Reminders** are scheduled ahead as phone notifications (`src/today/remind-plan.ts`, `notify.ts`).
+  - **Saved areas** keep their tiles as files (`src/engine/tilestore.ts`, `tilefiles.ts`).
+  - **Feedback and system controls:** the phone taps for each answer (`haptics.ts`). Android's back button closes
+    what is on top (`Shell.back()`). The status bar follows the theme, and links to the website open the app at the
+    same place (`chrome.ts`, `store/app-links/`).
+- **Building:**
+  - `npm run app:sync` builds the site and copies it into both projects.
+  - `npm run app:android` also builds a debug APK (it needs the Android SDK; `android/local.properties` names it).
+  - iOS builds on a Mac.
+  - The app icon and splash are drawn by `node scripts/app/icons.mjs` (`--preview <dir>` shows the three styles), then
+    `npm run app:icons` makes every size.
+- **GitHub (`.github/workflows/apps.yml`):**
+  - Every change to the apps builds both: an APK and an AAB, and an iOS build for the simulator.
+  - Started by hand with "upload", it sends them to Play's internal test and TestFlight, given the secrets listed at
+    the top of the workflow.
+  - The version comes from `package.json`; the run number is the build number.
+- **Tests:** `npm run test:native` (in `check:data`) checks the reminders' plan, links, file names and the native
+  projects' settings. Smoke section 49 runs the site as a pretend Android app (`window.__atlasNative = 'android'`).
+
 ## Adding a filter
 
 A filter is one object implementing `LayerDef` (`src/layers/types.ts`). Most data filters are one call:

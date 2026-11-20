@@ -4,7 +4,7 @@
 // dragged onto the map. Check: each turns green when right, and yellow to red by how far off it is (against the
 // size of the country); the greens stay, the others move; five checks. One puzzle a day, the same for everyone (a
 // country one day, a region the next), shared as a grid of coloured squares; any country or region any time.
-import { MapPinned, Check as CheckIcon, Shuffle, Share2 } from 'lucide';
+import { MapPinned, Check as CheckIcon, Flag, Shuffle, Share2 } from 'lucide';
 import { feature } from 'topojson-client';
 import { geoContains } from 'd3-geo';
 import type { Topology, GeometryObject } from 'topojson-specification';
@@ -52,6 +52,8 @@ interface Session {
   /** On a phone, while a name is being placed, the card is one line; this shows the six names again. */
   list: boolean;
   note: string;
+  /** "Give up" was tapped: it asks first (v0.43.0; one tap ended the puzzle of the day). */
+  asking: boolean;
 }
 /** A phone (the card is above the map, not beside it). */
 const narrow = () => window.innerWidth < 1000;
@@ -149,7 +151,7 @@ export class PutOnMap implements HostGame {
     this.s = {
       scope, mix, day, ids: this.members(scope), cands, span: spanOf(cands),
       items: pz.map((c) => ({ c, k: this.places[c.i][0], given: null, locked: false, last: null })),
-      active: 0, changed: false, rows: [], done: false, solved: false, fold: false, list: false, note: '',
+      active: 0, changed: false, rows: [], done: false, solved: false, fold: false, list: false, note: '', asking: false,
     };
     // No state or province names while playing (they would give places away).
     const r0 = this.app.renderer;
@@ -193,6 +195,7 @@ export class PutOnMap implements HostGame {
     if (n != null && s.items[n]?.locked) return;
     s.active = n;
     s.list = false;
+    s.asking = false;
     this.render();
     this.app.renderer.requestRender();
   }
@@ -210,6 +213,7 @@ export class PutOnMap implements HostGame {
     it.last = null; // moved: its last mark no longer says anything
     s.changed = true;
     s.note = '';
+    s.asking = false;
     // The next name still to place, else none.
     const next = s.items.findIndex((x, j) => j > s.active! && !x.locked && !x.given);
     const any = s.items.findIndex((x) => !x.locked && !x.given);
@@ -307,7 +311,7 @@ export class PutOnMap implements HostGame {
     this.app.renderer.requestRender();
   }
 
-  /** Shows the answers (the tests and "I give up" use it). */
+  /** Shows the answers (the tests, and "Give up" once it is confirmed). */
   reveal() {
     const s = this.s;
     if (!s || s.done) return;
@@ -350,12 +354,25 @@ export class PutOnMap implements HostGame {
     if (s.fold) return;
     card.append(this.itemList());
     if (s.note) card.append(h('div', { class: 'tool-hint', 'data-onmap': 'note' }, s.note));
-    const ready = s.changed && s.items.every((it) => it.locked || it.given);
+    const placed = s.items.filter((it) => it.locked || it.given).length;
+    const ready = s.changed && placed === ITEMS;
+    if (s.asking) {
+      // Giving up ends the puzzle (and today's counts as not solved): it asks first.
+      card.append(h('div', { class: 'tool-hint', 'data-onmap': 'asking' }, L('Show the answers? The puzzle ends unsolved.', '¿Mostrar las respuestas? El reto termina sin resolver.')));
+      const keep = h('button', { type: 'button', class: 'pill sm primary', 'data-onmap': 'keep' }, L('Keep playing', 'Seguir jugando'));
+      keep.addEventListener('click', () => { s.asking = false; this.render(); });
+      const yes = h('button', { type: 'button', class: 'pill sm', 'data-onmap': 'reveal-yes' }, icon(Flag, 15), L('Show the answers', 'Mostrar las respuestas'));
+      yes.addEventListener('click', () => this.reveal());
+      card.append(h('div', { class: 'hop-actions' }, keep, yes));
+      return;
+    }
     const check = h('button', { type: 'button', class: 'pill sm primary', 'data-onmap': 'check', disabled: !ready }, icon(CheckIcon, 15), L('Check', 'Comprobar'));
     check.addEventListener('click', () => this.check());
-    const give = h('button', { type: 'button', class: 'pill sm', 'data-onmap': 'reveal' }, L('Show me', 'Muéstramelo'));
-    give.addEventListener('click', () => this.reveal());
+    const give = h('button', { type: 'button', class: 'pill sm', 'data-onmap': 'reveal' }, icon(Flag, 15), L('Give up', 'Me rindo'));
+    give.addEventListener('click', () => { s.asking = true; this.render(); });
     card.append(h('div', { class: 'hop-actions' }, check, give));
+    // Check waits for all six (it once looked like it did nothing).
+    if (placed < ITEMS) card.append(h('div', { class: 'tool-hint muted small', 'data-onmap': 'to-place' }, L('Put all six on the map, then check ({0}/{1}).', 'Pon los seis en el mapa y luego comprueba ({0}/{1}).', placed, ITEMS)));
     if (!s.rows.length) card.append(h('div', { class: 'tool-hint muted small' }, L('Green is right; yellow is close, red is far off. Five checks; the greens stay.', 'Verde es correcto; amarillo, cerca; rojo, lejos. Cinco comprobaciones; los verdes se quedan.')));
   }
   /** On a phone: only the name being placed, so the map has the room. */

@@ -1,7 +1,8 @@
 // Saved areas for offline use: the detail tiles of a box of the map, at several zooms, kept in the browser's Cache
 // Storage (see tiles.ts: the loader looks there before the network). Each area is listed with its size and can be
 // deleted; tiles another saved area still needs are kept.
-import { SAVED_CACHE, saved, fetchTileBytes, srcRange, SOURCES, type TileSource } from './tiles';
+import { saved, fetchTileBytes, srcRange, SOURCES, type TileSource } from './tiles';
+import { savedStore } from './tilestore';
 
 export interface SavedArea {
   id: string;
@@ -52,7 +53,7 @@ export interface Progress { done: number; total: number; bytes: number; failed: 
 /** Saves an area's tiles (6 at a time), reporting progress; a cancelled save is undone. */
 export async function saveArea(area: Omit<SavedArea, 'id' | 'tiles' | 'bytes' | 'date'>, onProgress: (p: Progress) => void, signal: AbortSignal): Promise<SavedArea | null> {
   const { list } = plan(area.box, area.z0, area.z1, area.sources);
-  const cache = await caches.open(SAVED_CACHE);
+  const cache = await savedStore();
   // Ask the browser to keep this storage when space runs low.
   try { await navigator.storage?.persist?.(); } catch { /* not offered */ }
   const p: Progress = { done: 0, total: list.length, bytes: 0, failed: 0 };
@@ -62,10 +63,10 @@ export async function saveArea(area: Omit<SavedArea, 'id' | 'tiles' | 'bytes' | 
       const t = list[next++];
       const url = t.src.url(t.z, t.x, t.y);
       const have = await cache.match(url);
-      if (have) { p.bytes += (await have.clone().blob()).size; }
+      if (have) { p.bytes += have.size; }
       else {
         const r = await fetchTileBytes(t.src, t.z, t.x, t.y);
-        if (r) { const b = await r.clone().blob(); p.bytes += b.size; await cache.put(url, r); } else p.failed++;
+        if (r) { const b = await r.blob(); p.bytes += b.size; await cache.put(url, b); } else p.failed++;
       }
       p.done++;
       onProgress({ ...p });
@@ -91,6 +92,6 @@ export async function deleteArea(id: string) {
 async function removeUrls(urls: Set<string>, keepAreas: SavedArea[]) {
   const keep = new Set<string>();
   for (const k of keepAreas) for (const u of urlsOf(k)) keep.add(u);
-  const cache = await caches.open(SAVED_CACHE);
+  const cache = await savedStore();
   for (const u of urls) if (!keep.has(u)) await cache.delete(u);
 }

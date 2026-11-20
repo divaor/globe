@@ -145,6 +145,25 @@ export class Shell {
     addEventListener('resize', () => { if (!this.menu.hidden) this.placeMenu(); });
   }
 
+  /** Android's back button (v0.43.0): what else can close (a game, a quiz, a story), last added first. */
+  private backs: (() => boolean)[] = [];
+  onBack(f: () => boolean) { this.backs.push(f); }
+  /**
+   * Closes what is on top, as the back button does: the welcome, the bottom bar's list, the search, ambient mode, a
+   * panel, then a game, quiz or story (onBack), then a country's card. False when there was nothing to close.
+   */
+  back(): boolean {
+    const welcome = document.querySelector('[data-welcome]');
+    if (welcome) { welcome.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); return true; }
+    if (!this.menu.hidden) { this.closeMenu(); return true; }
+    if (this.search.isOpen) { this.search.close(); return true; }
+    if (this.app.ambient.on) { this.ambient.stop(); return true; }
+    if (this.sheet.isOpen()) { this.sheet.close(); this.renderDock(); return true; }
+    for (const f of [...this.backs].reverse()) if (f()) return true;
+    if (this.app.selection) { this.app.select(null); return true; }
+    return false;
+  }
+
   addDock(item: DockItem) { this.dockItems.push(item); this.dockItems.sort((a, b) => a.order - b.order); this.renderDock(); }
   addMenu(item: MenuItem) { this.menuItems.push(item); this.menuItems.sort((a, b) => a.order - b.order); }
 

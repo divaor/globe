@@ -5306,18 +5306,29 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const line = await F(() => window.atlas.onmap.shareLine());
   check(lockedStays && i.done && i.solved && i.rows.length === 2 && /All six on the map in 2 checks/.test(done.text) && done.grid.split('\n').length === 2 && /🟩🟩🟩🟩🟩🟩$/.test(done.grid) && /Put it on the map · Mexico 2\/5\n/.test(line) && done.st.solved === 1 && done.feats.includes('onmap-solve'),
     `solved at the second check: "${done.text}"; the share: "${line.split('\n').slice(0, 3).join(' / ')}"; badge On the map`);
-  // Cities of Mexico, and "Show me".
+  // Cities of Mexico, and "Give up": it asks first (v0.43.0: one tap once ended the puzzle of the day), and Check says
+  // it waits for all six.
   await F(() => window.atlas.onmap.start({ scope: 'MEX', mix: 'cities', seed: 4 }));
   await page.waitForTimeout(2000);
   i = await info();
   const allCities = i.items.every((x) => x.k === 'city');
   await page.tap('[data-onmap="list"]');
   await page.waitForTimeout(300);
+  const toPlace = await F(() => document.querySelector('[data-onmap="to-place"]')?.textContent ?? '');
   await page.tap('[data-onmap="reveal"]');
+  await page.waitForTimeout(300);
+  const asked = await F(() => ({ text: document.querySelector('[data-onmap="asking"]')?.textContent ?? '', done: window.atlas.onmap.info.done }));
+  await page.tap('[data-onmap="keep"]');
+  await page.waitForTimeout(300);
+  const kept = await F(() => ({ done: window.atlas.onmap.info.done, check: !!document.querySelector('[data-onmap="check"]'), asking: !!document.querySelector('[data-onmap="asking"]') }));
+  await page.tap('[data-onmap="reveal"]');
+  await page.waitForTimeout(300);
+  await page.tap('[data-onmap="reveal-yes"]');
   await page.waitForTimeout(500);
   i = await info();
   const st = await F(() => JSON.parse(localStorage.getItem('atlas-globe:onmap')));
-  check(allCities && i.done && !i.solved && st.played === 2 && st.solved === 1, `Cities: six of Mexico's cities; "Show me" gives the answers (played ${st.played}, solved ${st.solved})`);
+  check(allCities && /all six.*\(0\/6\)/.test(toPlace) && /Show the answers\?/.test(asked.text) && !asked.done && !kept.done && kept.check && !kept.asking && i.done && !i.solved && st.played === 2 && st.solved === 1,
+    `Cities: six of Mexico's cities; "${toPlace}"; Give up asks first ("${asked.text}"), Keep playing goes back, then the answers (played ${st.played}, solved ${st.solved})`);
   // The puzzle of the day, from the Map games panel.
   await F(() => window.atlas.onmap.stop());
   await F(() => window.atlas.play.openMenu());
@@ -6145,6 +6156,138 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(1500);
     const note = await F(() => document.querySelector('.sheet.open [data-prose-note]')?.textContent ?? '');
     check(t.card === NAME[lang] && t.settings === SETTINGS[lang] && t.bar === BAR[lang] && note.length > 20, `${lang}: the card "${t.card}", "${t.settings}", the bar "${t.bar}", the lives' note "${note.slice(0, 50)}…"`);
+    check(!errors.length, `${lang}: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
+}
+// 49. The apps (v0.43.0), as a pretend Android app (window.__atlasNative; Capacitor's web stand-ins behind it): the
+// apps' start (no service worker, no Install button), progress kept in the app's own storage and put back when the
+// page's is cleared, the back button closing a panel, a game and a country's card in turn, the tap for a wrong
+// answer, links to other sites sent to the phone's browser, and the reminders' app route.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(MENU_HELPER);
+  await ctx.addInitScript(() => {
+    window.__atlasNative = 'android';
+    try { localStorage.setItem('atlas-globe:welcomed', '1'); } catch {}
+    // The second visit: the phone cleared the page's storage (but not the app's).
+    if (sessionStorage.getItem('evict')) { sessionStorage.removeItem('evict'); localStorage.removeItem('atlas-globe:test-keep'); }
+    window.__opened = [];
+    window.open = (u) => { window.__opened.push(String(u)); return null; };
+    window.__buzz = 0;
+    navigator.vibrate = () => { window.__buzz++; return true; };
+  });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  const boot = async () => {
+    await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+    await page.waitForTimeout(1500);
+  };
+  await page.goto(url + '#p=globe&l=political&c=10,25,1.1', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await boot();
+  const N = (fn, arg) => page.evaluate(fn, arg);
+  const start = await N(async () => ({
+    cls: document.documentElement.className, route: window.atlas.reminders.route,
+    sw: navigator.serviceWorker ? (await navigator.serviceWorker.getRegistrations()).length : 0,
+  }));
+  await N(() => window.atlas.shell.openSettings());
+  await page.waitForTimeout(700);
+  const install = await N(() => !!document.querySelector('.settings [data-settings="install"]'));
+  check(/native-android/.test(start.cls) && start.sw === 0 && start.route === 'native' && !install,
+    `the app starts as an app: ${start.cls.match(/native[\w-]*/g)?.join(' ')}, ${start.sw} service workers, reminders by "${start.route}", no Install button (${!install})`);
+  // Progress in the app's own storage, and back after the page's storage is cleared.
+  await N(() => localStorage.setItem('atlas-globe:test-keep', '42'));
+  await page.waitForTimeout(900);
+  const kept = await N(() => localStorage.getItem('CapacitorStorage.ls:atlas-globe:test-keep'));
+  await N(() => sessionStorage.setItem('evict', '1'));
+  await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await boot();
+  const back42 = await N(() => localStorage.getItem('atlas-globe:test-keep'));
+  check(kept === '42' && back42 === '42', `progress is kept in the app's storage (${kept}) and put back after the page's storage is cleared (${back42})`);
+  // The back button: a panel, then a game, then a country's card; then nothing left (the app would go to the home screen).
+  const steps = [];
+  await N(() => window.atlas.shell.openSettings());
+  await page.waitForTimeout(600);
+  steps.push(await N(() => ({ r: window.atlas.shell.back(), open: window.atlas.shell.sheet.isOpen() })));
+  await N(() => window.atlas.master.start('learn', { deck: 'capitals', scope: 'world' }));
+  await page.waitForTimeout(2000);
+  // A wrong answer: the phone taps (the haptics' stand-in buzzes).
+  const before = await N(() => window.__buzz);
+  const wrong = await N(() => { const i = window.atlas.master.info; return (i.q.order ?? []).map(String).find((v) => v !== i.right) ?? null; });
+  if (wrong) await page.tap(`[data-master="opt"][data-value="${wrong}"]`).catch(() => {});
+  await page.waitForTimeout(800);
+  const buzz = (await N(() => window.__buzz)) - before;
+  steps.push(await N(() => ({ r: window.atlas.shell.back(), open: !!window.atlas.play.host.current })));
+  await page.waitForTimeout(800);
+  await N(() => window.atlas.app.select('FRA'));
+  await page.waitForTimeout(500);
+  steps.push(await N(() => ({ r: window.atlas.shell.back(), open: !!window.atlas.app.selection })));
+  steps.push(await N(() => ({ r: window.atlas.shell.back(), open: false })));
+  check(steps.map((x) => `${x.r}/${x.open}`).join(' ') === 'true/false true/false true/false false/false',
+    `the back button closes the panel, the game, the country's card, then has nothing left (${steps.map((x) => `${x.r}/${x.open}`).join(' ')})`);
+  check(!!wrong && buzz >= 1, `a wrong answer taps the phone (${buzz})`);
+  // A link to another site: the phone's browser (here, the stand-in's new tab), not the app.
+  const opened = await N(async () => {
+    const a = document.createElement('a');
+    a.href = 'https://example.org/somewhere';
+    a.textContent = 'x';
+    document.body.append(a);
+    a.click();
+    a.remove();
+    await new Promise((r) => setTimeout(r, 300));
+    return { list: window.__opened, here: location.href };
+  });
+  check(opened.list.includes('https://example.org/somewhere') && !/example\.org/.test(opened.here), `a link to another site goes to the phone's browser (${opened.list.join(', ')})`);
+  check(!errors.length, `the pretend app: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+  // The website is unchanged: its Install button, and none of the apps' code loaded.
+  {
+    const { page: w, ctx: wc } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=10,25,1.1');
+    await w.evaluate(() => window.atlas.shell.openSettings());
+    await w.waitForTimeout(700);
+    const web = await w.evaluate(() => ({ install: !!document.querySelector('.settings [data-settings="install"]'), native: document.documentElement.classList.contains('native'), boot: performance.getEntriesByType('resource').some((r) => /\/boot-[\w-]+\.js/.test(r.name)) }));
+    check(web.install && !web.native && !web.boot, `the website keeps its Install button and loads none of the apps' code (${JSON.stringify(web)})`);
+    await wc.close();
+  }
+}
+// 50. Fixes from the phone test (v0.43.0), on a narrow phone (360 px): Settings' seven languages fit in rows ("Like my
+// phone" across the top) and nothing slides the panel sideways, in English and in Portuguese; Fill the map's
+// "★ 0/585" sits on the same line as the words beside it (the ★ comes from a taller font on Android).
+{
+  for (const lang of ['en', 'pt']) {
+    const { page, errors, ctx } = await open({ ...devices['Pixel 7'], viewport: { width: 360, height: 780 } }, `#p=globe&l=political&c=20,30,1.4&lang=${lang}`);
+    await page.evaluate(() => window.atlas.shell.openSettings());
+    await page.waitForTimeout(800);
+    const fit = await page.evaluate(() => {
+      const body = document.querySelector('.sheet-body'), pick = document.querySelector('[data-settings="language"]');
+      if (!body || !pick) return null;
+      const box = pick.getBoundingClientRect(), btns = [...pick.querySelectorAll('.seg-btn')];
+      const rows = new Set(btns.map((b) => Math.round(b.getBoundingClientRect().top)));
+      return {
+        sideways: body.scrollWidth - body.clientWidth,
+        n: btns.length, rows: rows.size,
+        inside: btns.every((b) => { const r = b.getBoundingClientRect(); return r.left >= box.left - 0.5 && r.right <= box.right + 0.5; }),
+        clipped: btns.filter((b) => b.scrollWidth > b.clientWidth + 1).map((b) => b.textContent),
+        first: btns[0] ? Math.round(btns[0].getBoundingClientRect().width) === Math.round(box.width - 8) || btns[0].getBoundingClientRect().width > box.width * 0.9 : false,
+      };
+    });
+    check(!!fit && fit.sideways <= 0 && fit.n === 7 && fit.rows >= 3 && fit.inside && !fit.clipped.length && fit.first,
+      `${lang}: Settings on a 360 px phone: the seven languages in ${fit?.rows} rows inside the panel, "Like my phone" across the top, none cut (${fit?.clipped.join(', ') || 'none'}), nothing sideways (${fit?.sideways})`);
+    if (lang === 'en') {
+      await page.evaluate(() => window.atlas.shell.sheet.close());
+      await page.evaluate(() => window.__menu('Fill the map'));
+      await page.waitForTimeout(1500);
+      // A zero-size mark at the start of each part sits on its text's baseline: the three must be level, with the ★'s
+      // part in a taller font, as on Android (whose Roboto has no ★).
+      const line = await page.evaluate(() => {
+        document.head.append(Object.assign(document.createElement('style'), { textContent: '[data-fill="world"] .mw-legend > span:nth-child(2) { font-family: "Noto Color Emoji", sans-serif; }' }));
+        const parts = [...document.querySelectorAll('[data-fill="world"] .mw-legend > span')];
+        const ys = parts.map((p) => { const m = document.createElement('i'); m.style.cssText = 'display:inline-block;width:0;height:0'; p.prepend(m); const y = m.getBoundingClientRect().bottom; m.remove(); return Math.round(y * 10) / 10; });
+        return { ys, text: parts.map((p) => p.textContent).join(' | ') };
+      });
+      check(line.ys.length === 3 && Math.max(...line.ys) - Math.min(...line.ys) <= 0.5, `Fill the map: "${line.text}" on one line (baselines ${line.ys.join(', ')})`);
+    }
     check(!errors.length, `${lang}: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await ctx.close();
   }

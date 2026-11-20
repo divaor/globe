@@ -23,6 +23,7 @@ import { km, bestMonths, monthRanges, sunTimes, tzOffset, hhmm, flightHours, hou
 import { planHooks, planStar, placesOf, allPlaces, movePlace, removePlace, dropCity, setPlan, tripDetails, PLACE_ICONS, type Place, type PlaceSpec } from './plan';
 import { tripPanelExtras, packPlaces, unpackPlaces } from './export';
 import { appLocale } from '../app/i18n';
+import { isNative } from '../native/platform';
 
 const KEY = 'atlas-globe:trip';
 
@@ -283,7 +284,8 @@ export class TravelGuide {
           void this.open(this.query);
         }) : null,
         act(Share2, L('Share', 'Compartir'), 'share', () => void this.share()),
-        act(Printer, L('Print', 'Imprimir'), 'print', () => this.print()),
+        // (Phone apps can't print: the trip goes out by Share and the plan's files, v0.43.0.)
+        isNative() ? null : act(Printer, L('Print', 'Imprimir'), 'print', () => this.print()),
         act(Trash2, Lc('to empty the trip', 'Clear', 'Vaciar'), 'clear', () => { this.trip = []; setPlan({}); this.save(); void this.open(this.query); })));
       // The trip's details and the plan to take anywhere (export.ts).
       body.append(tripPanelExtras(this.exportTrip(), (m) => this.shell.toast(m, 3500)));

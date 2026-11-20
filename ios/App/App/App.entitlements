@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Links to the website open the app at the same place (universal links), verified with
+     https://divaor.github.io/.well-known/apple-app-site-association (store/app-links/). -->
+<plist version="1.0">
+<dict>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:divaor.github.io</string>
+	</array>
+</dict>
+</plist>

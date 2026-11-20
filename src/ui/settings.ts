@@ -7,6 +7,7 @@ import type { App } from '../app/app';
 import { terrainSettings } from './terrain';
 import { backupSettings } from '../app/backup';
 import { ambientNamesField } from './playlists';
+import { isNative } from '../native/platform';
 
 declare const __APP_VERSION__: string;
 
@@ -32,7 +33,7 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
   const s = app.renderer.settings;
   const save = () => { app.renderer.requestRender(); app.save(); };
   const standalone = matchMedia('(display-mode: standalone)').matches || (navigator as unknown as { standalone?: boolean }).standalone;
-  const installBtn = h('button', { type: 'button', class: 'pill primary' }, icon(Download, 16), standalone ? t('installed') : t('install')) as HTMLButtonElement;
+  const installBtn = h('button', { type: 'button', class: 'pill primary', 'data-settings': 'install' }, icon(Download, 16), standalone ? t('installed') : t('install')) as HTMLButtonElement;
   installBtn.disabled = !!standalone;
   installBtn.addEventListener('click', async () => {
     if (!(await install())) {
@@ -50,7 +51,8 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     { value: 'es-ES', label: 'Español (España)' },
     ...LANGS.filter((l) => l.id !== 'en' && l.id !== 'es').map((l) => ({ value: l.id as Choice, label: l.name })),
   ], (v) => { void (v === 'auto' ? app.setLang(null) : app.setLang(v === 'es-ES' ? 'es' : v, v === 'es-ES' ? 'spain' : v === 'es' ? 'latam' : app.spanish)).then(reopen); });
-  langPicker.classList.add('seg-wrap');
+  langPicker.classList.add('seg-wrap', 'seg-langs');
+  langPicker.dataset.settings = 'language';
   const sample = `${fmtNumber(10935.5, 1)} · ${new Date(2026, 4, 3).toLocaleDateString(appLocale(), { day: 'numeric', month: 'long' })} · ${new Date(2026, 4, 3, 17, 30).toLocaleTimeString(appLocale(), { hour: 'numeric', minute: '2-digit' })}`;
   const phone = localeFromPhone();
   const numbers = h('p', { class: 'tool-hint', 'data-settings': 'formats' }, phone ? L('Numbers and dates as on your phone: {0}', 'Números y fechas como en tu teléfono: {0}', sample) : L('Numbers and dates: {0}', 'Números y fechas: {0}', sample));
@@ -91,7 +93,8 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     // Your data on another device (v0.31.2): a backup to bring everything back on a phone or another computer.
     h('h3', { class: 'sec-title', 'data-section': 'backup' }, L('Your data on another device', 'Tus datos en otro dispositivo')),
     backupSettings(toast),
-    h('div', { class: 'settings-actions' }, installBtn),
+    // (The apps are installed already: no Install button there, v0.43.0.)
+    isNative() ? null : h('div', { class: 'settings-actions' }, installBtn),
     h('p', { class: 'muted small' }, `${t('version')} ${__APP_VERSION__}`),
   );
 }

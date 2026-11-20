@@ -249,6 +249,8 @@ export class Learn {
   beforeStart: (() => void) | null = null;
   /** Closes the quiz or tour on screen (a map game is starting). */
   async closeAll() { this.stopTour(); await this.stopQuiz(); }
+  /** A quiz or a tour is on screen (the back button closes it). */
+  get busy() { return !!this.quiz || !!this.tour; }
 
   /** The filters on the map before a quiz began, put away while it is on (their names and dots would give answers
    * away: World Heritage's "Acropolis, Athens" on "Where is Greece?") and put back when it ends, as the games do. */

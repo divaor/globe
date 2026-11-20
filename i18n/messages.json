@@ -1,6 +1,6 @@
 {
  "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/data/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
- "count": 4570,
+ "count": 4575,
  "messages": [
   {
    "en": " (below sea level)",
@@ -76,14 +76,14 @@
    "en": "+{n} more",
    "es": "+{n} más",
    "where": [
-    "src/today/reminders.ts:181"
+    "src/today/reminders.ts:199"
    ]
   },
   {
    "en": ".",
    "es": ",",
    "where": [
-    "src/learn/learn.ts:1577"
+    "src/learn/learn.ts:1579"
    ]
   },
   {
@@ -175,7 +175,7 @@
    "en": "10 questions",
    "es": "10 preguntas",
    "where": [
-    "src/learn/learn.ts:624"
+    "src/learn/learn.ts:626"
    ]
   },
   {
@@ -276,7 +276,7 @@
    "en": "300 World Heritage sites, each with its picture: in which country is it?",
    "es": "300 sitios del Patrimonio de la Humanidad, cada uno con su imagen: ¿en qué país está?",
    "where": [
-    "src/master/master.ts:1054"
+    "src/master/master.ts:1056"
    ]
   },
   {
@@ -510,7 +510,7 @@
    "en": "A cave, a mine, a trench, a wreck, a dive: which of two goes deeper?",
    "es": "Una cueva, una mina, una fosa, un naufragio, un buceo: ¿cuál de dos llega más hondo?",
    "where": [
-    "src/learn/learn.ts:394"
+    "src/learn/learn.ts:396"
    ]
   },
   {
@@ -531,7 +531,7 @@
    "en": "A city or a country…",
    "es": "Una ciudad o un país…",
    "where": [
-    "src/guide/guide.ts:225"
+    "src/guide/guide.ts:226"
    ]
   },
   {
@@ -587,7 +587,7 @@
    "en": "A constellation’s stars and figure, with no names: which one is it?",
    "es": "Las estrellas y la figura de una constelación, sin nombres: ¿cuál es?",
    "where": [
-    "src/learn/learn.ts:402"
+    "src/learn/learn.ts:404"
    ]
   },
   {
@@ -601,14 +601,14 @@
    "en": "A continent or a region",
    "es": "Un continente o una región",
    "where": [
-    "src/onmap/onmap.ts:577"
+    "src/onmap/onmap.ts:594"
    ]
   },
   {
    "en": "A country ({0})",
    "es": "Un país ({0})",
    "where": [
-    "src/onmap/onmap.ts:566"
+    "src/onmap/onmap.ts:583"
    ]
   },
   {
@@ -622,7 +622,7 @@
    "en": "A country's shape alone: which country? Then find it on a map with no names.",
    "es": "La silueta de un país, sola: ¿cuál es? Luego encuéntralo en un mapa sin nombres.",
    "where": [
-    "src/master/master.ts:1052"
+    "src/master/master.ts:1054"
    ]
   },
   {
@@ -636,7 +636,7 @@
    "en": "A day trip away",
    "es": "A una excursión de distancia",
    "where": [
-    "src/guide/guide.ts:573"
+    "src/guide/guide.ts:575"
    ]
   },
   {
@@ -692,14 +692,14 @@
    "en": "A famous line in its own language: which book or poem is it from?",
    "es": "Una frase famosa en su propia lengua: ¿de qué libro o poema es?",
    "where": [
-    "src/learn/learn.ts:387"
+    "src/learn/learn.ts:389"
    ]
   },
   {
    "en": "A few new {0} today, toward your goal of {1}",
    "es": "{2, select, f {Unas cuantas {0} nuevas} other {Unos cuantos {0} nuevos}} hoy, para tu meta de {1}",
    "where": [
-    "src/master/master.ts:220"
+    "src/master/master.ts:221"
    ]
   },
   {
@@ -722,7 +722,7 @@
    "es": "Una bandera",
    "where": [
     "src/fill/fill.ts:381",
-    "src/master/master.ts:694"
+    "src/master/master.ts:696"
    ]
   },
   {
@@ -771,7 +771,7 @@
    "en": "A guided tour of {0} through its history, {1} stops.",
    "es": "Una visita guiada por la historia de {0}, {1} paradas.",
    "where": [
-    "src/guide/guide.ts:559"
+    "src/guide/guide.ts:561"
    ]
   },
   {
@@ -785,7 +785,7 @@
    "en": "A heart",
    "es": "Un corazón",
    "where": [
-    "src/master/master.ts:69"
+    "src/master/master.ts:70"
    ]
   },
   {
@@ -834,14 +834,14 @@
    "en": "A map of old borders with no names on it: when is it from?",
    "es": "Un mapa de fronteras antiguas sin nombres: ¿de cuándo es?",
    "where": [
-    "src/learn/learn.ts:372"
+    "src/learn/learn.ts:374"
    ]
   },
   {
    "en": "A masterpiece: which museum holds it today?",
    "es": "Una obra maestra: ¿qué museo la tiene hoy?",
    "where": [
-    "src/learn/learn.ts:390"
+    "src/learn/learn.ts:392"
    ]
   },
   {
@@ -897,21 +897,21 @@
    "en": "A new challenge tomorrow",
    "es": "Mañana hay un reto nuevo",
    "where": [
-    "src/learn/learn.ts:1990"
+    "src/learn/learn.ts:1992"
    ]
   },
   {
    "en": "A new challenge tomorrow.",
    "es": "Mañana hay un reto nuevo.",
    "where": [
-    "src/learn/learn.ts:1512"
+    "src/learn/learn.ts:1514"
    ]
   },
   {
    "en": "A new region to fill in today",
    "es": "Una nueva región para colorear hoy",
    "where": [
-    "src/main.ts:168"
+    "src/main.ts:176"
    ]
   },
   {
@@ -946,28 +946,28 @@
    "en": "A photo of a plant: tap a place on the globe where it grows wild.",
    "es": "La foto de una planta: toca en el globo un lugar donde crece silvestre.",
    "where": [
-    "src/learn/learn.ts:393"
+    "src/learn/learn.ts:395"
    ]
   },
   {
    "en": "A photo of an animal: tap a place on the globe where it lives in the wild.",
    "es": "La foto de un animal: toca en el globo un lugar donde vive en libertad.",
    "where": [
-    "src/learn/learn.ts:391"
+    "src/learn/learn.ts:393"
    ]
   },
   {
    "en": "A pin under the sea: is it the Mariana Trench, the Mid-Atlantic Ridge or the Hawaiian–Emperor chain?",
    "es": "Un alfiler bajo el mar: ¿es la fosa de las Marianas, la dorsal mesoatlántica o la cadena Hawái-Emperador?",
    "where": [
-    "src/learn/learn.ts:397"
+    "src/learn/learn.ts:399"
    ]
   },
   {
    "en": "A planet, a moon or a dwarf planet turns on the globe, with no names: which one is it?",
    "es": "Un planeta, una luna o un planeta enano gira en el globo, sin nombres: ¿cuál es?",
    "where": [
-    "src/learn/learn.ts:400"
+    "src/learn/learn.ts:402"
    ]
   },
   {
@@ -981,7 +981,7 @@
    "en": "A plant: baobab, edelweiss, Quercus robur…",
    "es": "Una planta: baobab, edelweiss, Quercus robur…",
    "where": [
-    "src/green/finder.ts:93"
+    "src/green/finder.ts:94"
    ]
   },
   {
@@ -1030,7 +1030,7 @@
    "en": "A shared trip is now your trip.",
    "es": "Un viaje compartido es ahora tu viaje.",
    "where": [
-    "src/guide/guide.ts:211"
+    "src/guide/guide.ts:212"
    ]
   },
   {
@@ -1079,7 +1079,7 @@
    "en": "A spot on the Moon or Mars: which mission landed there?",
    "es": "Un punto en la Luna o en Marte: ¿qué misión aterrizó allí?",
    "where": [
-    "src/learn/learn.ts:401"
+    "src/learn/learn.ts:403"
    ]
   },
   {
@@ -1142,7 +1142,7 @@
    "en": "A to Z",
    "es": "De la A a la Z",
    "where": [
-    "src/master/master.ts:60"
+    "src/master/master.ts:61"
    ]
   },
   {
@@ -1212,7 +1212,7 @@
    "en": "A weak link",
    "es": "Una relación débil",
    "where": [
-    "src/learn/learn.ts:2242"
+    "src/learn/learn.ts:2244"
    ]
   },
   {
@@ -1247,7 +1247,7 @@
    "en": "A word or a few letters in one of the world’s scripts: which script is it?",
    "es": "Una palabra o unas letras en una de las escrituras del mundo: ¿cuál es?",
    "where": [
-    "src/learn/learn.ts:384"
+    "src/learn/learn.ts:386"
    ]
   },
   {
@@ -1529,7 +1529,7 @@
    "en": "Abyss (4 000–6 000 m)",
    "es": "Abismo (4 000–6 000 m)",
    "where": [
-    "src/learn/learn.ts:1372"
+    "src/learn/learn.ts:1374"
    ]
   },
   {
@@ -1557,7 +1557,7 @@
    "en": "Across the countries of the world, how are these two linked?",
    "es": "En los países del mundo, ¿cómo se relacionan estos dos?",
    "where": [
-    "src/learn/learn.ts:2268"
+    "src/learn/learn.ts:2270"
    ]
   },
   {
@@ -1606,14 +1606,14 @@
    "en": "Add my Want to go countries ({0})",
    "es": "Agregar mis países de Quiero ir ({0})",
    "where": [
-    "src/guide/guide.ts:295"
+    "src/guide/guide.ts:297"
    ]
   },
   {
    "en": "Add territories (Greenland, Puerto Rico, Hong Kong…)",
    "es": "Añadir territorios (Groenlandia, Puerto Rico, Hong Kong…)",
    "where": [
-    "src/master/master.ts:1131"
+    "src/master/master.ts:1133"
    ]
   },
   {
@@ -1627,9 +1627,9 @@
    "en": "Add to trip",
    "es": "Agregar al viaje",
    "where": [
-    "src/guide/guide.ts:379",
-    "src/guide/guide.ts:379",
-    "src/guide/guide.ts:427"
+    "src/guide/guide.ts:381",
+    "src/guide/guide.ts:381",
+    "src/guide/guide.ts:429"
    ]
   },
   {
@@ -1651,7 +1651,7 @@
    "es": "África",
    "where": [
     "src/app/i18n.ts:102",
-    "src/master/master.ts:52",
+    "src/master/master.ts:53",
     "src/play/hop.ts:31",
     "src/play/names.ts:22",
     "src/play/outline.ts:21"
@@ -1955,14 +1955,14 @@
    "en": "All of them",
    "es": "Todos",
    "where": [
-    "src/learn/learn.ts:624"
+    "src/learn/learn.ts:626"
    ]
   },
   {
    "en": "All placed: check them, or tap one to move it.",
    "es": "Todo en su sitio: compruébalo, o toca uno para moverlo.",
    "where": [
-    "src/onmap/onmap.ts:348"
+    "src/onmap/onmap.ts:352"
    ]
   },
   {
@@ -1984,14 +1984,14 @@
    "en": "All six ({0}/{1})",
    "es": "Los seis ({0}/{1})",
    "where": [
-    "src/onmap/onmap.ts:365"
+    "src/onmap/onmap.ts:382"
    ]
   },
   {
    "en": "All six on the map in {0, plural, one {# check} other {# checks}}!",
    "es": "¡Los seis en el mapa en {0, plural, one {# comprobación} other {# comprobaciones}}!",
    "where": [
-    "src/onmap/onmap.ts:432"
+    "src/onmap/onmap.ts:449"
    ]
   },
   {
@@ -2019,7 +2019,7 @@
    "en": "All twelve countries",
    "es": "Los doce países",
    "where": [
-    "src/master/master.ts:1102"
+    "src/master/master.ts:1104"
    ]
   },
   {
@@ -2042,7 +2042,7 @@
    "en": "All {0} in a row; a miss starts over · record {1}",
    "es": "Los {0} seguidos; un error y vuelta a empezar · récord {1}",
    "where": [
-    "src/master/master.ts:1098"
+    "src/master/master.ts:1100"
    ]
   },
   {
@@ -2063,7 +2063,7 @@
    "en": "Allow notifications",
    "es": "Permitir notificaciones",
    "where": [
-    "src/today/reminders.ts:301"
+    "src/today/reminders.ts:321"
    ]
   },
   {
@@ -2168,14 +2168,14 @@
    "en": "An animal of the sea: does it live in the sunlit zone, the twilight, the midnight zone, the abyss or the trenches?",
    "es": "Un animal del mar: ¿vive en la zona iluminada, la penumbra, la zona de medianoche, el abismo o las fosas?",
    "where": [
-    "src/learn/learn.ts:398"
+    "src/learn/learn.ts:400"
    ]
   },
   {
    "en": "An animal: jaguar, puffin, Panthera onca…",
    "es": "Un animal: jaguar, frailecillo, Panthera onca…",
    "where": [
-    "src/wild/finder.ts:143"
+    "src/wild/finder.ts:144"
    ]
   },
   {
@@ -2308,7 +2308,7 @@
    "en": "Animals that live around {0}:",
    "es": "Animales que viven cerca de {0}:",
    "where": [
-    "src/wild/finder.ts:302"
+    "src/wild/finder.ts:303"
    ]
   },
   {
@@ -2322,7 +2322,7 @@
    "en": "Another country",
    "es": "Otro país",
    "where": [
-    "src/onmap/onmap.ts:445"
+    "src/onmap/onmap.ts:462"
    ]
   },
   {
@@ -2413,7 +2413,7 @@
    "en": "Any country",
    "es": "Un país al azar",
    "where": [
-    "src/onmap/onmap.ts:564"
+    "src/onmap/onmap.ts:581"
    ]
   },
   {
@@ -2734,7 +2734,7 @@
    "en": "Around {0}, if it’s not done yet · ",
    "es": "Hacia las {0}, si aún no lo has hecho · ",
    "where": [
-    "src/today/reminders.ts:298"
+    "src/today/reminders.ts:318"
    ]
   },
   {
@@ -2755,8 +2755,8 @@
    "en": "Art",
    "es": "Arte",
    "where": [
-    "src/guide/guide.ts:48",
-    "src/guide/guide.ts:53"
+    "src/guide/guide.ts:49",
+    "src/guide/guide.ts:54"
    ]
   },
   {
@@ -2780,7 +2780,7 @@
    "en": "Art expert! 🎨",
    "es": "¡Experto en arte! 🎨",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -2802,7 +2802,7 @@
    "es": "Arte del mundo",
    "where": [
     "src/app/i18n.ts:255",
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/modes/stories.ts:202"
    ]
   },
@@ -2867,7 +2867,7 @@
    "es": "Asia",
    "where": [
     "src/app/i18n.ts:101",
-    "src/master/master.ts:52",
+    "src/master/master.ts:53",
     "src/play/hop.ts:31",
     "src/play/names.ts:22",
     "src/play/outline.ts:21"
@@ -2877,10 +2877,10 @@
    "en": "Asking iNaturalist…",
    "es": "Preguntando a iNaturalist…",
    "where": [
-    "src/green/finder.ts:218",
-    "src/wild/finder.ts:243",
-    "src/wild/finder.ts:246",
-    "src/wild/finder.ts:318",
+    "src/green/finder.ts:219",
+    "src/wild/finder.ts:244",
+    "src/wild/finder.ts:247",
+    "src/wild/finder.ts:319",
     "src/wild/inat.ts:63"
    ]
   },
@@ -2895,8 +2895,8 @@
    "en": "At",
    "es": "A las",
    "where": [
-    "src/today/reminders.ts:343",
-    "src/today/reminders.ts:371"
+    "src/today/reminders.ts:363",
+    "src/today/reminders.ts:391"
    ]
   },
   {
@@ -3064,7 +3064,7 @@
    "en": "At what time?",
    "es": "¿A qué hora?",
    "where": [
-    "src/today/reminders.ts:283"
+    "src/today/reminders.ts:303"
    ]
   },
   {
@@ -3121,14 +3121,14 @@
    "en": "Atlas Globe is the world on one globe: its countries and cities, its nature, its history and its sky.",
    "es": "Atlas Globe es el mundo en un solo globo: sus países y ciudades, su naturaleza, su historia y su cielo.",
    "where": [
-    "src/ui/settings.ts:109"
+    "src/ui/settings.ts:112"
    ]
   },
   {
    "en": "Atlas Globe · Daily challenge",
    "es": "Atlas Globe · Reto del día",
    "where": [
-    "src/learn/learn.ts:1522"
+    "src/learn/learn.ts:1524"
    ]
   },
   {
@@ -3212,7 +3212,7 @@
    "en": "Averages of 1961–1990 (CRU CL 2.0, University of East Anglia).",
    "es": "Promedios de 1961–1990 (CRU CL 2.0, Universidad de East Anglia).",
    "where": [
-    "src/guide/guide.ts:658"
+    "src/guide/guide.ts:660"
    ]
   },
   {
@@ -3247,7 +3247,7 @@
    "en": "BC",
    "es": "a. C.",
    "where": [
-    "src/learn/learn.ts:2764",
+    "src/learn/learn.ts:2766",
     "src/space/orrery.ts:55"
    ]
   },
@@ -3306,7 +3306,7 @@
    "en": "Back to the quiz",
    "es": "Volver al concurso",
    "where": [
-    "src/learn/learn.ts:1688"
+    "src/learn/learn.ts:1690"
    ]
   },
   {
@@ -3320,7 +3320,7 @@
    "en": "Back to {0}",
    "es": "Volver a {0}",
    "where": [
-    "src/guide/guide.ts:341"
+    "src/guide/guide.ts:343"
    ]
   },
   {
@@ -3348,7 +3348,7 @@
    "en": "Balanced: the best known first, a lesser known every fourth",
    "es": "Equilibrado: los más conocidos primero, uno menos conocido cada cuatro",
    "where": [
-    "src/master/master.ts:56"
+    "src/master/master.ts:57"
    ]
   },
   {
@@ -3617,8 +3617,8 @@
    "en": "Best",
    "es": "Récord",
    "where": [
-    "src/learn/learn.ts:430",
-    "src/learn/learn.ts:621",
+    "src/learn/learn.ts:432",
+    "src/learn/learn.ts:623",
     "src/play/hop.ts:114",
     "src/play/hop.ts:121",
     "src/play/hop.ts:127"
@@ -3628,35 +3628,35 @@
    "en": "Best combo {0} · {1} questions · your best run {2}",
    "es": "Mejor combo {0} · {1} preguntas · tu mejor racha {2}",
    "where": [
-    "src/master/master.ts:863"
+    "src/master/master.ts:865"
    ]
   },
   {
    "en": "Best months",
    "es": "Mejores meses",
    "where": [
-    "src/guide/guide.ts:734"
+    "src/guide/guide.ts:736"
    ]
   },
   {
    "en": "Best months to go: {0} (shaded).",
    "es": "Mejores meses para ir: {0} (sombreados).",
    "where": [
-    "src/guide/guide.ts:656"
+    "src/guide/guide.ts:658"
    ]
   },
   {
    "en": "Best order",
    "es": "Mejor orden",
    "where": [
-    "src/guide/guide.ts:280"
+    "src/guide/guide.ts:281"
    ]
   },
   {
    "en": "Best order: {0} km instead of {1}.",
    "es": "Mejor orden: {0} km en vez de {1}.",
    "where": [
-    "src/guide/guide.ts:282"
+    "src/guide/guide.ts:283"
    ]
   },
   {
@@ -3673,7 +3673,7 @@
     "src/layers/packs/wild.ts:154",
     "src/layers/packs/wild.ts:207",
     "src/wild/cards.ts:69",
-    "src/wild/finder.ts:262"
+    "src/wild/finder.ts:263"
    ]
   },
   {
@@ -3716,7 +3716,7 @@
    "en": "Beyond Earth",
    "es": "Más allá de la Tierra",
    "where": [
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/space/space.ts:176"
    ]
   },
@@ -3738,7 +3738,7 @@
    "en": "Big cities",
    "es": "Grandes ciudades",
    "where": [
-    "src/master/master.ts:42"
+    "src/master/master.ts:43"
    ]
   },
   {
@@ -3833,7 +3833,7 @@
    "en": "Blossoms, autumn colours and animal spectacles within reach of {0}.",
    "es": "Floraciones, colores de otoño y espectáculos animales al alcance de {0}.",
    "where": [
-    "src/green/finder.ts:262"
+    "src/green/finder.ts:263"
    ]
   },
   {
@@ -3862,7 +3862,7 @@
    "es": "Libros y escritores",
    "where": [
     "src/app/i18n.ts:252",
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/modes/stories.ts:201"
    ]
   },
@@ -3877,7 +3877,7 @@
    "en": "Bookworm! 📚",
    "es": "¡Ratón de biblioteca! 📚",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -4027,7 +4027,7 @@
    "es": "Jardín botánico",
    "where": [
     "src/green/cards.ts:88",
-    "src/green/finder.ts:191",
+    "src/green/finder.ts:192",
     "src/guide/export.ts:19",
     "src/layers/packs/green.ts:199"
    ]
@@ -4264,7 +4264,7 @@
    "en": "Buildings",
    "es": "Edificios",
    "where": [
-    "src/guide/guide.ts:48"
+    "src/guide/guide.ts:49"
    ]
   },
   {
@@ -4426,7 +4426,7 @@
    "en": "Calling code",
    "es": "Prefijo telefónico",
    "where": [
-    "src/guide/guide.ts:608"
+    "src/guide/guide.ts:610"
    ]
   },
   {
@@ -4509,8 +4509,8 @@
     "src/app/i18n.ts:53",
     "src/fill/fill.ts:37",
     "src/fill/states.ts:26",
-    "src/learn/learn.ts:368",
-    "src/master/master.ts:36"
+    "src/learn/learn.ts:370",
+    "src/master/master.ts:37"
    ]
   },
   {
@@ -4752,17 +4752,17 @@
    "en": "Check",
    "es": "Comprobar",
    "where": [
-    "src/learn/learn.ts:1453",
-    "src/learn/learn.ts:2085",
-    "src/master/master.ts:704",
-    "src/onmap/onmap.ts:354"
+    "src/learn/learn.ts:1455",
+    "src/learn/learn.ts:2087",
+    "src/master/master.ts:706",
+    "src/onmap/onmap.ts:369"
    ]
   },
   {
    "en": "Cherry blossom in Kyoto, the wildebeest crossing the Mara…: pick the best month to see it.",
    "es": "Los cerezos en flor de Kioto, los ñus cruzando el Mara…: elige el mejor mes para verlo.",
    "where": [
-    "src/learn/learn.ts:396"
+    "src/learn/learn.ts:398"
    ]
   },
   {
@@ -4832,14 +4832,14 @@
    "en": "Choose…",
    "es": "Elegir…",
    "where": [
-    "src/today/reminders.ts:367"
+    "src/today/reminders.ts:387"
    ]
   },
   {
    "en": "Chosen by Wikipedia",
    "es": "Elegidos por Wikipedia",
    "where": [
-    "src/learn/learn.ts:2752"
+    "src/learn/learn.ts:2754"
    ]
   },
   {
@@ -4861,7 +4861,7 @@
    "es": "Ciudades",
    "where": [
     "src/app/i18n.ts:54",
-    "src/master/master.ts:42",
+    "src/master/master.ts:43",
     "src/onmap/onmap.ts:42"
    ]
   },
@@ -4876,7 +4876,7 @@
    "en": "Cities through time",
    "es": "Ciudades a través del tiempo",
    "where": [
-    "src/learn/learn.ts:2452"
+    "src/learn/learn.ts:2454"
    ]
   },
   {
@@ -4971,8 +4971,8 @@
    "es": "Cerrar",
    "where": [
     "src/app/i18n.ts:81",
-    "src/guide/guide.ts:350",
-    "src/guide/guide.ts:350",
+    "src/guide/guide.ts:352",
+    "src/guide/guide.ts:352",
     "src/ui/zoom.ts:32"
    ]
   },
@@ -5129,7 +5129,7 @@
    "en": "Colour in the world, country by country",
    "es": "Colorea el mundo, país por país",
    "where": [
-    "src/main.ts:103"
+    "src/main.ts:111"
    ]
   },
   {
@@ -5278,7 +5278,7 @@
    "en": "Continent by continent",
    "es": "Continente por continente",
    "where": [
-    "src/master/master.ts:59"
+    "src/master/master.ts:60"
    ]
   },
   {
@@ -5369,7 +5369,7 @@
    "en": "Copied: paste it anywhere",
    "es": "Copiado: pégalo donde quieras",
    "where": [
-    "src/learn/learn.ts:1526"
+    "src/learn/learn.ts:1528"
    ]
   },
   {
@@ -5405,40 +5405,40 @@
    "en": "Correct! ",
    "es": "¡Correcto! ",
    "where": [
-    "src/learn/learn.ts:939",
-    "src/learn/learn.ts:946",
-    "src/learn/learn.ts:1021",
-    "src/learn/learn.ts:1026",
-    "src/learn/learn.ts:1660"
+    "src/learn/learn.ts:941",
+    "src/learn/learn.ts:948",
+    "src/learn/learn.ts:1023",
+    "src/learn/learn.ts:1028",
+    "src/learn/learn.ts:1662"
    ]
   },
   {
    "en": "Correct! All four in order.",
    "es": "¡Correcto! Los cuatro en orden.",
    "where": [
-    "src/learn/learn.ts:2118"
+    "src/learn/learn.ts:2120"
    ]
   },
   {
    "en": "Correct! That's {0}.",
    "es": "¡Correcto! Es {0}.",
    "where": [
-    "src/learn/learn.ts:727",
-    "src/learn/learn.ts:1919"
+    "src/learn/learn.ts:729",
+    "src/learn/learn.ts:1921"
    ]
   },
   {
    "en": "Correct! {0} {1}",
    "es": "¡Correcto! {0} {1}",
    "where": [
-    "src/learn/learn.ts:1905"
+    "src/learn/learn.ts:1907"
    ]
   },
   {
    "en": "Correct! {0}.",
    "es": "¡Correcto! {0}.",
    "where": [
-    "src/learn/learn.ts:1848"
+    "src/learn/learn.ts:1850"
    ]
   },
   {
@@ -5495,8 +5495,8 @@
    "en": "Couldn’t find where you are.",
    "es": "No se pudo saber dónde estás.",
    "where": [
-    "src/green/finder.ts:89",
-    "src/wild/finder.ts:139"
+    "src/green/finder.ts:90",
+    "src/wild/finder.ts:140"
    ]
   },
   {
@@ -5513,7 +5513,7 @@
     "src/app/i18n.ts:52",
     "src/fill/fill.ts:36",
     "src/layers/packs/heritage.ts:311",
-    "src/master/master.ts:38",
+    "src/master/master.ts:39",
     "src/master/world.ts:18"
    ]
   },
@@ -5535,7 +5535,7 @@
    "en": "Countries, capitals, flags, cities, landmarks and more, learned for good: a little each day",
    "es": "Países, capitales, banderas, ciudades, monumentos y más, aprendidos para siempre: un poco cada día",
    "where": [
-    "src/learn/learn.ts:463"
+    "src/learn/learn.ts:465"
    ]
   },
   {
@@ -5553,7 +5553,7 @@
    "en": "Country by country",
    "es": "País por país",
    "where": [
-    "src/master/master.ts:1125"
+    "src/master/master.ts:1127"
    ]
   },
   {
@@ -5569,8 +5569,8 @@
    "where": [
     "src/fill/states.ts:296",
     "src/fill/states.ts:536",
-    "src/main.ts:132",
-    "src/main.ts:171"
+    "src/main.ts:140",
+    "src/main.ts:179"
    ]
   },
   {
@@ -5893,25 +5893,25 @@
    "en": "Daily challenge",
    "es": "Reto del día",
    "where": [
-    "src/learn/learn.ts:451",
-    "src/learn/learn.ts:474",
+    "src/learn/learn.ts:453",
     "src/learn/learn.ts:476",
-    "src/learn/learn.ts:1510",
-    "src/learn/learn.ts:1979"
+    "src/learn/learn.ts:478",
+    "src/learn/learn.ts:1512",
+    "src/learn/learn.ts:1981"
    ]
   },
   {
    "en": "Daily goal reached 🎯",
    "es": "Meta diaria cumplida 🎯",
    "where": [
-    "src/master/master.ts:1030"
+    "src/master/master.ts:1032"
    ]
   },
   {
    "en": "Daily goal reached: {0} answers",
    "es": "Meta diaria cumplida: {0} respuestas",
    "where": [
-    "src/master/master.ts:516"
+    "src/master/master.ts:517"
    ]
   },
   {
@@ -5990,7 +5990,7 @@
    "en": "Data master! 📊",
    "es": "¡Maestro de los datos! 📊",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -6047,7 +6047,7 @@
    "en": "Day trips",
    "es": "Excursiones",
    "where": [
-    "src/guide/guide.ts:743"
+    "src/guide/guide.ts:745"
    ]
   },
   {
@@ -6096,7 +6096,7 @@
    "en": "Deck",
    "es": "Mazo",
    "where": [
-    "src/master/master.ts:1047",
+    "src/master/master.ts:1049",
     "src/master/world.ts:34"
    ]
   },
@@ -6111,7 +6111,7 @@
    "en": "Deep digger! ⛏️",
    "es": "¡Gran excavador! ⛏️",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -6273,7 +6273,7 @@
    "en": "Detailed terrain",
    "es": "Relieve detallado",
    "where": [
-    "src/ui/settings.ts:78"
+    "src/ui/settings.ts:80"
    ]
   },
   {
@@ -6388,7 +6388,7 @@
    "en": "Disaster expert! 🌋",
    "es": "¡Experto en desastres! 🌋",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -6412,7 +6412,7 @@
    "en": "Disease detective! 🔬",
    "es": "¡Detective de epidemias! 🔬",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -6433,7 +6433,7 @@
    "en": "Dishes of the world",
    "es": "Platos del mundo",
    "where": [
-    "src/learn/learn.ts:375"
+    "src/learn/learn.ts:377"
    ]
   },
   {
@@ -6478,7 +6478,7 @@
    "en": "Do two facts about countries go together? Guess, then see the scatter plot.",
    "es": "¿Van juntos dos datos de los países? Adivina y luego mira el diagrama de dispersión.",
    "where": [
-    "src/learn/learn.ts:404"
+    "src/learn/learn.ts:406"
    ]
   },
   {
@@ -6487,9 +6487,9 @@
    "where": [
     "src/fill/fill.ts:669",
     "src/fill/states.ts:537",
-    "src/learn/learn.ts:453",
-    "src/learn/learn.ts:475",
-    "src/onmap/onmap.ts:595"
+    "src/learn/learn.ts:455",
+    "src/learn/learn.ts:477",
+    "src/onmap/onmap.ts:612"
    ]
   },
   {
@@ -6503,7 +6503,7 @@
    "en": "Done: {0} of {1} right",
    "es": "Hecho: {0} de {1} bien",
    "where": [
-    "src/master/master.ts:855"
+    "src/master/master.ts:857"
    ]
   },
   {
@@ -6532,7 +6532,7 @@
    "en": "Down to the core",
    "es": "Hasta el núcleo",
    "where": [
-    "src/learn/learn.ts:395"
+    "src/learn/learn.ts:397"
    ]
   },
   {
@@ -6560,7 +6560,7 @@
    "en": "Drag the sky to look around it.",
    "es": "Arrastra el cielo para mirar alrededor.",
    "where": [
-    "src/learn/learn.ts:997"
+    "src/learn/learn.ts:999"
    ]
   },
   {
@@ -6609,7 +6609,7 @@
    "en": "Driving",
    "es": "Se conduce",
    "where": [
-    "src/guide/guide.ts:607"
+    "src/guide/guide.ts:609"
    ]
   },
   {
@@ -6729,7 +6729,7 @@
    "en": "Each colour is a state, an empire or a people of the time. Their names appear when you answer.",
    "es": "Cada color es un Estado, un imperio o un pueblo de la época. Sus nombres aparecen cuando respondes.",
    "where": [
-    "src/learn/learn.ts:2164"
+    "src/learn/learn.ts:2166"
    ]
   },
   {
@@ -6806,8 +6806,8 @@
    "en": "Earlier",
    "es": "Antes",
    "where": [
-    "src/guide/guide.ts:260",
-    "src/guide/guide.ts:485"
+    "src/guide/guide.ts:261",
+    "src/guide/guide.ts:487"
    ]
   },
   {
@@ -6956,8 +6956,8 @@
    "en": "Eat",
    "es": "Comer",
    "where": [
-    "src/guide/guide.ts:47",
-    "src/guide/guide.ts:739"
+    "src/guide/guide.ts:48",
+    "src/guide/guide.ts:741"
    ]
   },
   {
@@ -7055,9 +7055,9 @@
    "en": "Eight questions, the same for everyone today",
    "es": "Ocho preguntas, las mismas para todos hoy",
    "where": [
-    "src/learn/learn.ts:454",
-    "src/learn/learn.ts:475",
-    "src/main.ts:158"
+    "src/learn/learn.ts:456",
+    "src/learn/learn.ts:477",
+    "src/main.ts:166"
    ]
   },
   {
@@ -7205,8 +7205,8 @@
    "en": "English",
    "es": "inglés",
    "where": [
-    "src/guide/guide.ts:674",
-    "src/guide/guide.ts:675"
+    "src/guide/guide.ts:676",
+    "src/guide/guide.ts:677"
    ]
   },
   {
@@ -7336,7 +7336,7 @@
    "where": [
     "src/app/i18n.ts:100",
     "src/learn/tours.ts:91",
-    "src/master/master.ts:52",
+    "src/master/master.ts:53",
     "src/play/hop.ts:31",
     "src/play/names.ts:22"
    ]
@@ -7366,7 +7366,7 @@
    "en": "Events from Wikipedia (CC BY-SA).",
    "es": "Acontecimientos de Wikipedia (CC BY-SA).",
    "where": [
-    "src/learn/learn.ts:2817"
+    "src/learn/learn.ts:2819"
    ]
   },
   {
@@ -7520,7 +7520,7 @@
    "en": "Every country you have met is resting until its next day. Come back tomorrow, or practise the shakiest ones now.",
    "es": "Cada país que has visto descansa hasta su próximo día. Vuelve mañana o practica ahora los menos seguros.",
    "where": [
-    "src/master/master.ts:852"
+    "src/master/master.ts:854"
    ]
   },
   {
@@ -7597,7 +7597,7 @@
    "en": "Every state you have met is resting until its next day. Come back tomorrow, or practise the shakiest ones now.",
    "es": "Cada estado que has visto descansa hasta su próximo día. Vuelve mañana o practica ahora los menos seguros.",
    "where": [
-    "src/master/master.ts:851"
+    "src/master/master.ts:853"
    ]
   },
   {
@@ -7683,7 +7683,7 @@
    "en": "Explore {0} maps, travel through time with hundreds of stories, plan a trip with the travel guide, and learn every country, capital and flag with games and a challenge each day.",
    "es": "Explora {0} mapas, viaja en el tiempo con cientos de historias, planea un viaje con la guía y aprende todos los países, capitales y banderas con juegos y un reto cada día.",
    "where": [
-    "src/ui/settings.ts:110"
+    "src/ui/settings.ts:113"
    ]
   },
   {
@@ -7733,7 +7733,7 @@
    "en": "Facts",
    "es": "Datos",
    "where": [
-    "src/guide/guide.ts:49"
+    "src/guide/guide.ts:50"
    ]
   },
   {
@@ -7818,7 +7818,7 @@
    "en": "Fast",
    "es": "Rápido",
    "where": [
-    "src/master/master.ts:63"
+    "src/master/master.ts:64"
    ]
   },
   {
@@ -7904,7 +7904,7 @@
    "en": "Fifty-fifty",
    "es": "Cincuenta y cincuenta",
    "where": [
-    "src/master/master.ts:68"
+    "src/master/master.ts:69"
    ]
   },
   {
@@ -7978,7 +7978,7 @@
     "src/fill/fill.ts:567",
     "src/fill/fill.ts:684",
     "src/fill/fill.ts:709",
-    "src/main.ts:103"
+    "src/main.ts:111"
    ]
   },
   {
@@ -7993,7 +7993,7 @@
    "en": "Fill the map: the region of the day",
    "es": "Llena el mapa: la región del día",
    "where": [
-    "src/main.ts:168"
+    "src/main.ts:176"
    ]
   },
   {
@@ -8022,7 +8022,7 @@
    "en": "Fill the states: the country of the day",
    "es": "Llena los estados: el país del día",
    "where": [
-    "src/main.ts:173"
+    "src/main.ts:181"
    ]
   },
   {
@@ -8100,21 +8100,21 @@
    "en": "Find a plant",
    "es": "Buscar una planta",
    "where": [
-    "src/green/finder.ts:93"
+    "src/green/finder.ts:94"
    ]
   },
   {
    "en": "Find an animal",
    "es": "Buscar un animal",
    "where": [
-    "src/wild/finder.ts:143"
+    "src/wild/finder.ts:144"
    ]
   },
   {
    "en": "Find the country",
    "es": "Encuentra el país",
    "where": [
-    "src/learn/learn.ts:366"
+    "src/learn/learn.ts:368"
    ]
   },
   {
@@ -8177,7 +8177,7 @@
    "en": "First grown here or nearby",
    "es": "Cultivados aquí o cerca por primera vez",
    "where": [
-    "src/guide/guide.ts:531"
+    "src/guide/guide.ts:533"
    ]
   },
   {
@@ -8220,7 +8220,7 @@
    "en": "Five more",
    "es": "Cinco más",
    "where": [
-    "src/master/master.ts:860"
+    "src/master/master.ts:862"
    ]
   },
   {
@@ -8262,7 +8262,7 @@
    "en": "Flag",
    "es": "Bandera",
    "where": [
-    "src/master/master.ts:713"
+    "src/master/master.ts:715"
    ]
   },
   {
@@ -8277,8 +8277,8 @@
    "es": "Banderas",
    "where": [
     "src/fill/fill.ts:38",
-    "src/learn/learn.ts:367",
-    "src/master/master.ts:37",
+    "src/learn/learn.ts:369",
+    "src/master/master.ts:38",
     "src/master/world.ts:17"
    ]
   },
@@ -8349,7 +8349,7 @@
    "en": "Fold the legend",
    "es": "Ocultar la leyenda",
    "where": [
-    "src/ui/shell.ts:208"
+    "src/ui/shell.ts:227"
    ]
   },
   {
@@ -8505,14 +8505,14 @@
    "en": "Four things from the stories, such as a temple, an invention and a painting: put them in time, oldest first.",
    "es": "Cuatro cosas de las historias, como un templo, un invento y una pintura: ordénalas en el tiempo, de la más antigua a la más reciente.",
    "where": [
-    "src/learn/learn.ts:371"
+    "src/learn/learn.ts:373"
    ]
   },
   {
    "en": "Four things under our feet, from a metro station to the inner core: put them in order, shallowest first.",
    "es": "Cuatro cosas bajo nuestros pies, de una estación de metro al núcleo interno: ordénalas de la menos a la más profunda.",
    "where": [
-    "src/learn/learn.ts:395"
+    "src/learn/learn.ts:397"
    ]
   },
   {
@@ -8562,7 +8562,7 @@
    "en": "From Atlas Globe’s travel guide. Weather: CRU CL 2.0, 1961–1990. Museums: Wikidata.",
    "es": "De la guía de viaje de Atlas Globe. Clima: CRU CL 2.0, 1961–1990. Museos: Wikidata.",
    "where": [
-    "src/guide/guide.ts:748"
+    "src/guide/guide.ts:750"
    ]
   },
   {
@@ -8625,7 +8625,7 @@
    "en": "From Wikivoyage",
    "es": "De Wikivoyage",
    "where": [
-    "src/guide/guide.ts:540"
+    "src/guide/guide.ts:542"
    ]
   },
   {
@@ -8667,7 +8667,7 @@
    "en": "From nearby countries",
    "es": "De países cercanos",
    "where": [
-    "src/guide/guide.ts:530"
+    "src/guide/guide.ts:532"
    ]
   },
   {
@@ -8740,7 +8740,7 @@
    "en": "From the rest of {0}",
    "es": "Del resto de {0}",
    "where": [
-    "src/guide/guide.ts:529"
+    "src/guide/guide.ts:531"
    ]
   },
   {
@@ -8754,14 +8754,14 @@
    "en": "From which period are its fossils?",
    "es": "¿De qué periodo son sus fósiles?",
    "where": [
-    "src/learn/learn.ts:1594"
+    "src/learn/learn.ts:1596"
    ]
   },
   {
    "en": "From {0}",
    "es": "Desde {0}",
    "where": [
-    "src/guide/guide.ts:621"
+    "src/guide/guide.ts:623"
    ]
   },
   {
@@ -8817,24 +8817,24 @@
    "en": "GBIF didn’t answer; check your connection.",
    "es": "GBIF no respondió; revisa tu conexión.",
    "where": [
-    "src/green/finder.ts:156",
-    "src/green/finder.ts:160",
-    "src/wild/finder.ts:210",
-    "src/wild/finder.ts:214"
+    "src/green/finder.ts:157",
+    "src/green/finder.ts:161",
+    "src/wild/finder.ts:211",
+    "src/wild/finder.ts:215"
    ]
   },
   {
    "en": "GBIF’s live map: every sighting of it shared on GBIF, in squares of about 150 km, gardens included. Darker: more sightings.",
    "es": "El mapa en vivo de GBIF: cada avistamiento compartido en GBIF, en cuadros de unos 150 km, jardines incluidos. Más oscuro: más avistamientos.",
    "where": [
-    "src/green/finder.ts:165"
+    "src/green/finder.ts:166"
    ]
   },
   {
    "en": "GBIF’s live map: every sighting of it shared on GBIF, in squares of about 150 km. Darker: more sightings.",
    "es": "El mapa en vivo de GBIF: cada avistamiento compartido en GBIF, en cuadros de unos 150 km. Más oscuro: más avistamientos.",
    "where": [
-    "src/wild/finder.ts:218"
+    "src/wild/finder.ts:219"
    ]
   },
   {
@@ -8921,7 +8921,7 @@
    "en": "Game",
    "es": "Juego",
    "where": [
-    "src/learn/learn.ts:438",
+    "src/learn/learn.ts:440",
     "src/play/host.ts:102"
    ]
   },
@@ -8938,7 +8938,7 @@
    "es": "Juegos del mundo",
    "where": [
     "src/app/i18n.ts:231",
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/modes/stories.ts:194"
    ]
   },
@@ -8946,7 +8946,7 @@
    "en": "Games of time",
    "es": "Juegos del tiempo",
    "where": [
-    "src/learn/learn.ts:439"
+    "src/learn/learn.ts:441"
    ]
   },
   {
@@ -9030,7 +9030,7 @@
    "en": "Geography master! 🏆",
    "es": "¡Maestro de la geografía! 🏆",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -9104,6 +9104,13 @@
    ]
   },
   {
+   "en": "Give up",
+   "es": "Me rindo",
+   "where": [
+    "src/onmap/onmap.ts:371"
+   ]
+  },
+  {
    "en": "Giza",
    "es": "Guiza",
    "where": [
@@ -9150,7 +9157,7 @@
    "es": "Continuar",
    "where": [
     "src/fill/states.ts:516",
-    "src/master/master.ts:830"
+    "src/master/master.ts:832"
    ]
   },
   {
@@ -9185,7 +9192,7 @@
    "en": "Gold, carbon, iron...: which cosmic process made most of it?",
    "es": "El oro, el carbono, el hierro...: ¿qué proceso del cosmos formó la mayor parte?",
    "where": [
-    "src/learn/learn.ts:403"
+    "src/learn/learn.ts:405"
    ]
   },
   {
@@ -9206,7 +9213,7 @@
    "en": "Golden ears! 🎧",
    "es": "¡Oído de oro! 🎧",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -9271,7 +9278,7 @@
    "en": "Great job! 🌍",
    "es": "¡Muy bien! 🌍",
    "where": [
-    "src/learn/learn.ts:1960"
+    "src/learn/learn.ts:1962"
    ]
   },
   {
@@ -9307,8 +9314,8 @@
    "es": "Grandes construcciones",
    "where": [
     "src/app/i18n.ts:219",
-    "src/guide/guide.ts:570",
-    "src/guide/guide.ts:741",
+    "src/guide/guide.ts:572",
+    "src/guide/guide.ts:743",
     "src/modes/stories.ts:191",
     "src/play/pin.ts:21"
    ]
@@ -9352,14 +9359,14 @@
    "en": "Green is right; yellow is close, red is far off. Five checks; the greens stay.",
    "es": "Verde es correcto; amarillo, cerca; rojo, lejos. Cinco comprobaciones; los verdes se quedan.",
    "where": [
-    "src/onmap/onmap.ts:359"
+    "src/onmap/onmap.ts:376"
    ]
   },
   {
    "en": "Green thumb! 🌿",
    "es": "¡Mano verde! 🌿",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -9472,15 +9479,15 @@
    "en": "Guess the link",
    "es": "Adivina la relación",
    "where": [
-    "src/learn/learn.ts:404"
+    "src/learn/learn.ts:406"
    ]
   },
   {
    "en": "Guided tours",
    "es": "Visitas guiadas",
    "where": [
-    "src/learn/learn.ts:274",
-    "src/learn/learn.ts:2465",
+    "src/learn/learn.ts:276",
+    "src/learn/learn.ts:2467",
     "src/learn/progress.ts:356"
    ]
   },
@@ -9579,7 +9586,7 @@
    "en": "Hard",
    "es": "Difícil",
    "where": [
-    "src/master/master.ts:686",
+    "src/master/master.ts:688",
     "src/play/hop.ts:32"
    ]
   },
@@ -9587,14 +9594,14 @@
    "en": "Hard: every World Heritage site with a picture",
    "es": "Difícil: todos los sitios del Patrimonio de la Humanidad con imagen",
    "where": [
-    "src/master/master.ts:1064"
+    "src/master/master.ts:1066"
    ]
   },
   {
    "en": "Hard: every city of a million people or more",
    "es": "Difícil: todas las ciudades de un millón de habitantes o más",
    "where": [
-    "src/master/master.ts:1063"
+    "src/master/master.ts:1065"
    ]
   },
   {
@@ -9697,7 +9704,7 @@
    "en": "Hello. This is how the tours and stories will sound.",
    "es": "Hola. Así sonarán las visitas guiadas y las historias.",
    "where": [
-    "src/ui/settings.ts:142"
+    "src/ui/settings.ts:145"
    ]
   },
   {
@@ -9725,21 +9732,21 @@
    "en": "Here a reminder is a daily event in your calendar, at the exact time: add it once. Atlas has no server, so it cannot send notifications to this device by itself.",
    "es": "Aquí un recordatorio es un evento diario en tu calendario, a la hora exacta: agrégalo una vez. Atlas no tiene servidor, así que no puede enviar notificaciones a este dispositivo por sí solo.",
    "where": [
-    "src/today/reminders.ts:352"
+    "src/today/reminders.ts:372"
    ]
   },
   {
    "en": "Here is {0}.",
    "es": "Aquí está {0}.",
    "where": [
-    "src/learn/learn.ts:1919"
+    "src/learn/learn.ts:1921"
    ]
   },
   {
    "en": "Heritage explorer! 🏛️",
    "es": "¡Explorador del patrimonio! 🏛️",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -9760,7 +9767,7 @@
    "en": "Hide the text",
    "es": "Ocultar el texto",
    "where": [
-    "src/learn/learn.ts:2575"
+    "src/learn/learn.ts:2577"
    ]
   },
   {
@@ -9898,35 +9905,35 @@
    "en": "History and archaeology",
    "es": "Historia y arqueología",
    "where": [
-    "src/guide/guide.ts:53"
+    "src/guide/guide.ts:54"
    ]
   },
   {
    "en": "History and culture",
    "es": "Historia y cultura",
    "where": [
-    "src/learn/learn.ts:2452"
+    "src/learn/learn.ts:2454"
    ]
   },
   {
    "en": "History here",
    "es": "Historia aquí",
    "where": [
-    "src/guide/guide.ts:49"
+    "src/guide/guide.ts:50"
    ]
   },
   {
    "en": "History master! 🏆",
    "es": "¡Maestro de la historia! 🏆",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
    "en": "History, culture, life, sport and travel",
    "es": "Historia, cultura, vida, deporte y viajes",
    "where": [
-    "src/learn/learn.ts:440"
+    "src/learn/learn.ts:442"
    ]
   },
   {
@@ -10053,7 +10060,7 @@
    "en": "How deep?",
    "es": "¿Qué tan hondo?",
    "where": [
-    "src/learn/learn.ts:394"
+    "src/learn/learn.ts:396"
    ]
   },
   {
@@ -10186,7 +10193,7 @@
    "en": "Hungarian, Swahili, Malagasy...: which family does each language belong to?",
    "es": "Húngaro, suajili, malgache...: ¿a qué familia pertenece cada lengua?",
    "where": [
-    "src/learn/learn.ts:385"
+    "src/learn/learn.ts:387"
    ]
   },
   {
@@ -10974,7 +10981,7 @@
    "en": "In the stories",
    "es": "En las historias",
    "where": [
-    "src/learn/learn.ts:2751"
+    "src/learn/learn.ts:2753"
    ]
   },
   {
@@ -10995,7 +11002,7 @@
    "en": "In which period did it live?",
    "es": "¿En qué periodo vivió?",
    "where": [
-    "src/learn/learn.ts:1594"
+    "src/learn/learn.ts:1596"
    ]
   },
   {
@@ -11009,9 +11016,9 @@
    "en": "In your trip",
    "es": "En tu viaje",
    "where": [
-    "src/guide/guide.ts:379",
-    "src/guide/guide.ts:379",
-    "src/guide/guide.ts:427"
+    "src/guide/guide.ts:381",
+    "src/guide/guide.ts:381",
+    "src/guide/guide.ts:429"
    ]
   },
   {
@@ -11255,7 +11262,7 @@
    "where": [
     "src/app/i18n.ts:258",
     "src/layers/packs/heritage.ts:471",
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/modes/stories.ts:203",
     "src/play/pin.ts:23"
    ]
@@ -11271,7 +11278,7 @@
    "en": "Inventive mind! 💡",
    "es": "¡Mente inventiva! 💡",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -11342,14 +11349,14 @@
    "en": "It is also the biggest of the four.",
    "es": "También es la más grande de las cuatro.",
    "where": [
-    "src/master/master.ts:811"
+    "src/master/master.ts:813"
    ]
   },
   {
    "en": "It is best in {0}. ",
    "es": "Su mejor mes es {1}. ",
    "where": [
-    "src/learn/learn.ts:1879"
+    "src/learn/learn.ts:1881"
    ]
   },
   {
@@ -11364,7 +11371,7 @@
    "es": "Está en {0}.",
    "where": [
     "src/fill/fill.ts:450",
-    "src/learn/learn.ts:1893",
+    "src/learn/learn.ts:1895",
     "src/play/outline.ts:97"
    ]
   },
@@ -11380,14 +11387,14 @@
    "en": "It is the capital of {0}.",
    "es": "Es la capital de {0}.",
    "where": [
-    "src/master/master.ts:798"
+    "src/master/master.ts:800"
    ]
   },
   {
    "en": "It is the flag of {0}.",
    "es": "Es la bandera de {0}.",
    "where": [
-    "src/master/master.ts:799"
+    "src/master/master.ts:801"
    ]
   },
   {
@@ -11411,22 +11418,22 @@
    "where": [
     "src/master/extra.ts:119",
     "src/master/extra.ts:494",
-    "src/master/master.ts:798",
-    "src/master/master.ts:800"
+    "src/master/master.ts:800",
+    "src/master/master.ts:802"
    ]
   },
   {
    "en": "It is: ",
    "es": "Es: ",
    "where": [
-    "src/learn/learn.ts:1866"
+    "src/learn/learn.ts:1868"
    ]
   },
   {
    "en": "It is: {0}. ",
    "es": "Es: {0}. ",
    "where": [
-    "src/learn/learn.ts:1833"
+    "src/learn/learn.ts:1835"
    ]
   },
   {
@@ -11447,9 +11454,9 @@
    "en": "It was ",
    "es": "Era ",
    "where": [
-    "src/learn/learn.ts:939",
-    "src/learn/learn.ts:946",
-    "src/learn/learn.ts:1021"
+    "src/learn/learn.ts:941",
+    "src/learn/learn.ts:948",
+    "src/learn/learn.ts:1023"
    ]
   },
   {
@@ -11463,8 +11470,8 @@
    "en": "It was {0}.",
    "es": "Era {0}.",
    "where": [
-    "src/learn/learn.ts:1848",
-    "src/learn/learn.ts:1906",
+    "src/learn/learn.ts:1850",
+    "src/learn/learn.ts:1908",
     "src/play/lifeguess.ts:155",
     "src/play/outline.ts:190"
    ]
@@ -11473,15 +11480,15 @@
    "en": "It was: ",
    "es": "Era: ",
    "where": [
-    "src/learn/learn.ts:1867",
-    "src/learn/learn.ts:1868"
+    "src/learn/learn.ts:1869",
+    "src/learn/learn.ts:1870"
    ]
   },
   {
    "en": "It was: {0}. ",
    "es": "Era: {0}. ",
    "where": [
-    "src/learn/learn.ts:1859"
+    "src/learn/learn.ts:1861"
    ]
   },
   {
@@ -11516,7 +11523,7 @@
    "en": "Its card",
    "es": "Su ficha",
    "where": [
-    "src/green/finder.ts:177",
+    "src/green/finder.ts:178",
     "src/layers/packs/fauna.ts:232",
     "src/layers/packs/green.ts:263",
     "src/layers/packs/green.ts:819",
@@ -11727,7 +11734,7 @@
    "es": "Viajes y rutas comerciales",
    "where": [
     "src/app/i18n.ts:234",
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/modes/stories.ts:195"
    ]
   },
@@ -11836,7 +11843,14 @@
    "en": "Keep exploring! 🧭",
    "es": "¡Sigue explorando! 🧭",
    "where": [
-    "src/learn/learn.ts:1960"
+    "src/learn/learn.ts:1962"
+   ]
+  },
+  {
+   "en": "Keep playing",
+   "es": "Seguir jugando",
+   "where": [
+    "src/onmap/onmap.ts:362"
    ]
   },
   {
@@ -12121,7 +12135,7 @@
    "en": "Landmarks",
    "es": "Maravillas",
    "where": [
-    "src/master/master.ts:43"
+    "src/master/master.ts:44"
    ]
   },
   {
@@ -12152,7 +12166,7 @@
    "en": "Language master! 🗣️",
    "es": "¡Maestro de las lenguas! 🗣️",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -12168,7 +12182,7 @@
    "where": [
     "src/app/i18n.ts:88",
     "src/fill/fill.ts:42",
-    "src/guide/guide.ts:602",
+    "src/guide/guide.ts:604",
     "src/layers/packs/facts.ts:81"
    ]
   },
@@ -12262,8 +12276,8 @@
    "en": "Later",
    "es": "Después",
    "where": [
-    "src/guide/guide.ts:260",
-    "src/guide/guide.ts:485"
+    "src/guide/guide.ts:261",
+    "src/guide/guide.ts:487"
    ]
   },
   {
@@ -12320,7 +12334,7 @@
    "es": "Aprender",
    "where": [
     "src/app/i18n.ts:39",
-    "src/master/master.ts:47"
+    "src/master/master.ts:48"
    ]
   },
   {
@@ -12504,7 +12518,7 @@
    "es": "La vida en el tiempo",
    "where": [
     "src/app/i18n.ts:221",
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/modes/stories.ts:193"
    ]
   },
@@ -12598,7 +12612,7 @@
    "en": "Link copied: paste it anywhere",
    "es": "Enlace copiado: pégalo donde quieras",
    "where": [
-    "src/guide/guide.ts:409"
+    "src/guide/guide.ts:411"
    ]
   },
   {
@@ -12668,7 +12682,7 @@
    "en": "Listen to a short clip of an instrument, a piece or a style of music, and name it.",
    "es": "Escucha un fragmento de un instrumento, una obra o un estilo musical, y di cuál es.",
    "where": [
-    "src/learn/learn.ts:386"
+    "src/learn/learn.ts:388"
    ]
   },
   {
@@ -12689,7 +12703,7 @@
    "en": "Little or no link",
    "es": "Casi ninguna relación",
    "where": [
-    "src/learn/learn.ts:2243"
+    "src/learn/learn.ts:2245"
    ]
   },
   {
@@ -12790,7 +12804,7 @@
    "en": "Loading…",
    "es": "Cargando…",
    "where": [
-    "src/guide/guide.ts:449"
+    "src/guide/guide.ts:451"
    ]
   },
   {
@@ -12883,14 +12897,14 @@
    "en": "Look at a masterpiece and pick the artist who made it.",
    "es": "Mira una obra maestra y elige al artista que la hizo.",
    "where": [
-    "src/learn/learn.ts:388"
+    "src/learn/learn.ts:390"
    ]
   },
   {
    "en": "Look at a picture of a World Heritage site and name it.",
    "es": "Mira la foto de un sitio del Patrimonio Mundial y di cuál es.",
    "where": [
-    "src/learn/learn.ts:389"
+    "src/learn/learn.ts:391"
    ]
   },
   {
@@ -13108,7 +13122,7 @@
    "en": "Made by {0}.",
    "es": "Hecho por {0}.",
    "where": [
-    "src/ui/settings.ts:113"
+    "src/ui/settings.ts:116"
    ]
   },
   {
@@ -13352,7 +13366,7 @@
    "es": "Mapa",
    "where": [
     "src/compare/compare.ts:342",
-    "src/learn/learn.ts:1690",
+    "src/learn/learn.ts:1692",
     "src/play/host.ts:102",
     "src/ui/mapstyle.ts:10",
     "src/ui/shell.ts:38"
@@ -13363,8 +13377,8 @@
    "es": "Juegos en el mapa",
    "where": [
     "src/learn/progress.ts:350",
-    "src/main.ts:181",
-    "src/main.ts:183",
+    "src/main.ts:189",
+    "src/main.ts:191",
     "src/play/hop.ts:87",
     "src/play/menu.ts:82"
    ]
@@ -13410,7 +13424,7 @@
    "es": "Maratón",
    "where": [
     "src/learn/progress.ts:163",
-    "src/master/master.ts:49"
+    "src/master/master.ts:50"
    ]
   },
   {
@@ -13524,7 +13538,7 @@
    "en": "Master detective! 🕵️",
    "es": "¡Gran detective! 🕵️",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -13567,18 +13581,18 @@
    "es": "Domina el mundo",
    "where": [
     "src/fill/fill.ts:644",
-    "src/learn/learn.ts:462",
-    "src/main.ts:118",
-    "src/main.ts:121",
-    "src/master/master.ts:118"
+    "src/learn/learn.ts:464",
+    "src/main.ts:126",
+    "src/main.ts:129",
+    "src/master/master.ts:119"
    ]
   },
   {
    "en": "Master the world needs its data; check your connection.",
    "es": "Domina el mundo necesita sus datos; revisa tu conexión.",
    "where": [
-    "src/master/master.ts:251",
-    "src/master/master.ts:999"
+    "src/master/master.ts:252",
+    "src/master/master.ts:1001"
    ]
   },
   {
@@ -13592,7 +13606,7 @@
    "en": "Mastered today: {0}",
    "es": "Dominados hoy: {0}",
    "where": [
-    "src/master/master.ts:858"
+    "src/master/master.ts:860"
    ]
   },
   {
@@ -13621,49 +13635,49 @@
    "en": "Match finds, works and rulers to their civilization.",
    "es": "Relaciona hallazgos, obras y gobernantes con su civilización.",
    "where": [
-    "src/learn/learn.ts:377"
+    "src/learn/learn.ts:379"
    ]
   },
   {
    "en": "Match fossils and ancient animals to their geologic period.",
    "es": "Relaciona fósiles y animales antiguos con su periodo geológico.",
    "where": [
-    "src/learn/learn.ts:378"
+    "src/learn/learn.ts:380"
    ]
   },
   {
    "en": "Match people, works and inventions to their era.",
    "es": "Relaciona personas, obras e inventos con su época.",
    "where": [
-    "src/learn/learn.ts:376"
+    "src/learn/learn.ts:378"
    ]
   },
   {
    "en": "Match places, people and discoveries to the epidemic they belong to: the Black Death, smallpox, cholera, the 1918 flu...",
    "es": "Relaciona lugares, personas y descubrimientos con la epidemia a la que pertenecen: la peste negra, la viruela, el cólera, la gripe de 1918...",
    "where": [
-    "src/learn/learn.ts:382"
+    "src/learn/learn.ts:384"
    ]
   },
   {
    "en": "Match places, people and goods to the great journey or trade route they belong to.",
    "es": "Relaciona lugares, personas y mercancías con el gran viaje o la ruta comercial a la que pertenecen.",
    "where": [
-    "src/learn/learn.ts:380"
+    "src/learn/learn.ts:382"
    ]
   },
   {
    "en": "Match sacred places, texts and teachers to the faith or school of thought they belong to.",
    "es": "Relaciona lugares sagrados, textos y maestros con la religión o la escuela de pensamiento a la que pertenecen.",
    "where": [
-    "src/learn/learn.ts:381"
+    "src/learn/learn.ts:383"
    ]
   },
   {
    "en": "Match towns, witnesses and discoveries to the eruption, earthquake or tsunami they belong to.",
    "es": "Relaciona pueblos, testigos y descubrimientos con la erupción, el terremoto o el tsunami al que pertenecen.",
    "where": [
-    "src/learn/learn.ts:383"
+    "src/learn/learn.ts:385"
    ]
   },
   {
@@ -13705,7 +13719,7 @@
    "en": "Mean temperature by month (°C), the bars are rain ({0} mm a year); days from about {1} °C to {2} °C.",
    "es": "Temperatura media por mes (°C); las barras son la lluvia ({0} mm al año); días de unos {1} °C a {2} °C.",
    "where": [
-    "src/guide/guide.ts:657"
+    "src/guide/guide.ts:659"
    ]
   },
   {
@@ -13720,7 +13734,7 @@
    "en": "Measured down from the ground, or from the sea’s surface for trenches, wrecks and dives.",
    "es": "Medido desde el suelo, o desde la superficie del mar para fosas, naufragios y buceos.",
    "where": [
-    "src/learn/learn.ts:1753"
+    "src/learn/learn.ts:1755"
    ]
   },
   {
@@ -13828,8 +13842,8 @@
    "where": [
     "src/fill/fill.ts:490",
     "src/fill/states.ts:404",
-    "src/master/master.ts:882",
-    "src/onmap/onmap.ts:446"
+    "src/master/master.ts:884",
+    "src/onmap/onmap.ts:463"
    ]
   },
   {
@@ -13917,7 +13931,7 @@
    "en": "Mexico, the United States, Brazil, Argentina, Colombia, Chile, Peru, Spain, Canada, Australia, Germany and India. A state that is a city of its own (Mexico City, Berlin…) has no capital to ask; where a capital is shared or moves with the seasons, it is explained.",
    "es": "México, Estados Unidos, Brasil, Argentina, Colombia, Chile, Perú, España, Canadá, Australia, Alemania y la India. Un estado que es una ciudad en sí mismo (Ciudad de México, Berlín…) no tiene capital que preguntar; si una capital se comparte o cambia con las estaciones, se explica.",
    "where": [
-    "src/master/master.ts:1142"
+    "src/master/master.ts:1144"
    ]
   },
   {
@@ -13974,7 +13988,7 @@
    "en": "Midnight zone (1 000–4 000 m)",
    "es": "Zona de medianoche (1 000–4 000 m)",
    "where": [
-    "src/learn/learn.ts:1372"
+    "src/learn/learn.ts:1374"
    ]
   },
   {
@@ -14086,7 +14100,7 @@
    "en": "Money",
    "es": "Moneda",
    "where": [
-    "src/guide/guide.ts:604"
+    "src/guide/guide.ts:606"
    ]
   },
   {
@@ -14215,14 +14229,14 @@
    "en": "More museums",
    "es": "Más museos",
    "where": [
-    "src/guide/guide.ts:53"
+    "src/guide/guide.ts:54"
    ]
   },
   {
    "en": "More quizzes",
    "es": "Más concursos",
    "where": [
-    "src/master/master.ts:1136"
+    "src/master/master.ts:1138"
    ]
   },
   {
@@ -14367,8 +14381,8 @@
    "en": "Museums",
    "es": "Museos",
    "where": [
-    "src/guide/guide.ts:47",
-    "src/guide/guide.ts:742",
+    "src/guide/guide.ts:48",
+    "src/guide/guide.ts:744",
     "src/play/pin.ts:23"
    ]
   },
@@ -14376,7 +14390,7 @@
    "en": "Museums within a few km of the centre, the best known first (from Wikidata, CC0). Visitor numbers where Wikidata has them.",
    "es": "Museos a pocos km del centro, los más conocidos primero (de Wikidata, CC0). Visitantes cuando Wikidata los tiene.",
    "where": [
-    "src/guide/guide.ts:594"
+    "src/guide/guide.ts:596"
    ]
   },
   {
@@ -14391,7 +14405,7 @@
    "es": "Música y baile",
    "where": [
     "src/app/i18n.ts:249",
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/modes/stories.ts:200"
    ]
   },
@@ -14448,7 +14462,7 @@
    "en": "My places",
    "es": "Mis lugares",
    "where": [
-    "src/guide/guide.ts:729"
+    "src/guide/guide.ts:731"
    ]
   },
   {
@@ -14470,8 +14484,8 @@
    "es": "Mi viaje",
    "where": [
     "src/guide/export.ts:35",
-    "src/guide/guide.ts:407",
-    "src/guide/guide.ts:722"
+    "src/guide/guide.ts:409",
+    "src/guide/guide.ts:724"
    ]
   },
   {
@@ -14564,7 +14578,7 @@
    "en": "Name the sea feature",
    "es": "Nombra la forma submarina",
    "where": [
-    "src/learn/learn.ts:397"
+    "src/learn/learn.ts:399"
    ]
   },
   {
@@ -14697,7 +14711,7 @@
    "en": "National park",
    "es": "Parque nacional",
    "where": [
-    "src/green/finder.ts:191",
+    "src/green/finder.ts:192",
     "src/layers/packs/green.ts:199",
     "src/onmap/onmap.ts:39",
     "src/wild/cards.ts:82"
@@ -14744,7 +14758,7 @@
    "es": "Desastres naturales",
    "where": [
     "src/app/i18n.ts:246",
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/modes/stories.ts:199"
    ]
   },
@@ -14788,8 +14802,8 @@
    "es": "Naturaleza",
    "where": [
     "src/fill/fill.ts:44",
-    "src/green/finder.ts:120",
-    "src/master/master.ts:44",
+    "src/green/finder.ts:121",
+    "src/master/master.ts:45",
     "src/onmap/onmap.ts:42",
     "src/wild/finder.ts:86"
    ]
@@ -14798,7 +14812,7 @@
    "en": "Nature expert! 🐾",
    "es": "¡Experto en naturaleza! 🐾",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -14812,7 +14826,7 @@
    "en": "Nature reserve",
    "es": "Reserva natural",
    "where": [
-    "src/green/finder.ts:191",
+    "src/green/finder.ts:192",
     "src/layers/packs/green.ts:199",
     "src/wild/cards.ts:82"
    ]
@@ -14842,7 +14856,7 @@
    "en": "Nature’s calendar nearby",
    "es": "Calendario de la naturaleza cerca",
    "where": [
-    "src/green/finder.ts:253"
+    "src/green/finder.ts:254"
    ]
   },
   {
@@ -14969,7 +14983,7 @@
    "en": "Needs an internet connection ({0}).",
    "es": "Necesita conexión a internet ({0}).",
    "where": [
-    "src/learn/learn.ts:2820"
+    "src/learn/learn.ts:2822"
    ]
   },
   {
@@ -15092,9 +15106,9 @@
    "where": [
     "src/fill/fill.ts:325",
     "src/fill/states.ts:250",
-    "src/learn/learn.ts:350",
-    "src/master/master.ts:490",
-    "src/master/master.ts:641"
+    "src/learn/learn.ts:352",
+    "src/master/master.ts:491",
+    "src/master/master.ts:642"
    ]
   },
   {
@@ -15103,7 +15117,7 @@
    "where": [
     "src/artguide/cards.ts:27",
     "src/green/cards.ts:64",
-    "src/guide/guide.ts:153",
+    "src/guide/guide.ts:154",
     "src/modes/stories.ts:738",
     "src/ocean/deep.ts:86"
    ]
@@ -15112,28 +15126,28 @@
    "en": "New cards come in this order",
    "es": "Las tarjetas nuevas llegan en este orden",
    "where": [
-    "src/master/master.ts:1128"
+    "src/master/master.ts:1130"
    ]
   },
   {
    "en": "New countries come in this order",
    "es": "Los países nuevos llegan en este orden",
    "where": [
-    "src/master/master.ts:1128"
+    "src/master/master.ts:1130"
    ]
   },
   {
    "en": "New personal best!",
    "es": "¡Nuevo récord personal!",
    "where": [
-    "src/learn/learn.ts:1971"
+    "src/learn/learn.ts:1973"
    ]
   },
   {
    "en": "New states come in this order",
    "es": "Los estados nuevos llegan en este orden",
    "where": [
-    "src/master/master.ts:1128"
+    "src/master/master.ts:1130"
    ]
   },
   {
@@ -15149,8 +15163,8 @@
    "where": [
     "src/fill/fill.ts:396",
     "src/fill/states.ts:310",
-    "src/learn/learn.ts:1699",
-    "src/master/master.ts:828",
+    "src/learn/learn.ts:1701",
+    "src/master/master.ts:830",
     "src/play/rounds.ts:173"
    ]
   },
@@ -15245,21 +15259,21 @@
    "en": "No Wikivoyage or Wikipedia page is linked to this city on Wikidata.",
    "es": "Ninguna página de Wikivoyage o Wikipedia está enlazada a esta ciudad en Wikidata.",
    "where": [
-    "src/guide/guide.ts:680"
+    "src/guide/guide.ts:682"
    ]
   },
   {
    "en": "No World Heritage site or great structure of ours is near here; Wikivoyage (Read more) has what to see.",
    "es": "Ningún sitio del Patrimonio Mundial ni gran construcción nuestra está cerca; Wikivoyage (Más) tiene qué ver.",
    "where": [
-    "src/guide/guide.ts:576"
+    "src/guide/guide.ts:578"
    ]
   },
   {
    "en": "No account and no ads. What you do stays on this device; to take it to another, use Settings → Your data on another device.",
    "es": "Sin cuenta y sin anuncios. Lo que haces se queda en este dispositivo; para llevarlo a otro, usa Ajustes → Tus datos en otro dispositivo.",
    "where": [
-    "src/ui/settings.ts:111"
+    "src/ui/settings.ts:114"
    ]
   },
   {
@@ -15294,15 +15308,15 @@
    "en": "No checked sightings within 50 km yet.",
    "es": "Aún no hay avistamientos verificados a menos de 50 km.",
    "where": [
-    "src/green/finder.ts:237",
-    "src/wild/finder.ts:337"
+    "src/green/finder.ts:238",
+    "src/wild/finder.ts:338"
    ]
   },
   {
    "en": "No cities yet. Add some with +, or start from your Want to go list.",
    "es": "Todavía no hay ciudades. Agrégalas con + o empieza por tu lista de Quiero ir.",
    "where": [
-    "src/guide/guide.ts:238"
+    "src/guide/guide.ts:239"
    ]
   },
   {
@@ -15358,7 +15372,7 @@
    "en": "No month is mild and dry here.",
    "es": "Aquí ningún mes es templado y seco.",
    "where": [
-    "src/guide/guide.ts:656"
+    "src/guide/guide.ts:658"
    ]
   },
   {
@@ -15379,7 +15393,7 @@
    "en": "No park of ours lies where it has been seen.",
    "es": "Ningún parque de los nuestros está donde se ha visto.",
    "where": [
-    "src/wild/finder.ts:261"
+    "src/wild/finder.ts:262"
    ]
   },
   {
@@ -15393,7 +15407,7 @@
    "en": "No park or garden of ours lies where it has been seen.",
    "es": "Ningún parque o jardín de los nuestros está donde se ha visto.",
    "where": [
-    "src/green/finder.ts:199"
+    "src/green/finder.ts:200"
    ]
   },
   {
@@ -15407,7 +15421,7 @@
    "en": "No reminders left: remove “Atlas” from your calendar too.",
    "es": "Ya no quedan recordatorios: quita también «Atlas» de tu calendario.",
    "where": [
-    "src/today/reminders.ts:212"
+    "src/today/reminders.ts:232"
    ]
   },
   {
@@ -15442,8 +15456,8 @@
    "en": "No sightings of {0} with a place on GBIF.",
    "es": "No hay avistamientos de {0} con lugar en GBIF.",
    "where": [
-    "src/green/finder.ts:161",
-    "src/wild/finder.ts:215"
+    "src/green/finder.ts:162",
+    "src/wild/finder.ts:216"
    ]
   },
   {
@@ -15486,7 +15500,7 @@
    "en": "None chosen yet.",
    "es": "Aún no elegiste ninguno.",
    "where": [
-    "src/today/reminders.ts:372"
+    "src/today/reminders.ts:392"
    ]
   },
   {
@@ -15507,28 +15521,28 @@
    "en": "None of our animals by that name. Other species from GBIF:",
    "es": "Ninguno de nuestros animales con ese nombre. Otras especies de GBIF:",
    "where": [
-    "src/wild/finder.ts:157"
+    "src/wild/finder.ts:158"
    ]
   },
   {
    "en": "None of our animals lives right here.",
    "es": "Ninguno de nuestros animales vive justo aquí.",
    "where": [
-    "src/wild/finder.ts:345"
+    "src/wild/finder.ts:346"
    ]
   },
   {
    "en": "None of our plants by that name. Other plants from GBIF:",
    "es": "Ninguna de nuestras plantas con ese nombre. Otras plantas de GBIF:",
    "where": [
-    "src/green/finder.ts:106"
+    "src/green/finder.ts:107"
    ]
   },
   {
    "en": "None of our plants grows right here.",
    "es": "Ninguna de nuestras plantas crece justo aquí.",
    "where": [
-    "src/green/finder.ts:243"
+    "src/green/finder.ts:244"
    ]
   },
   {
@@ -15564,7 +15578,7 @@
    "es": "Normal",
    "where": [
     "src/guide/export.ts:22",
-    "src/master/master.ts:63"
+    "src/master/master.ts:64"
    ]
   },
   {
@@ -15587,7 +15601,7 @@
    "en": "North and Central America",
    "es": "Norte y Centroamérica",
    "where": [
-    "src/master/master.ts:53",
+    "src/master/master.ts:54",
     "src/play/names.ts:22"
    ]
   },
@@ -15639,7 +15653,7 @@
    "en": "Not in the guide: hotels, restaurants by name, prices, visas and safety advice, which change too often to keep right. Wikivoyage and official sites have them.",
    "es": "No están en la guía: hoteles, restaurantes por nombre, precios, visados ni consejos de seguridad, que cambian demasiado para mantenerlos al día. Wikivoyage y los sitios oficiales los tienen.",
    "where": [
-    "src/guide/guide.ts:299"
+    "src/guide/guide.ts:301"
    ]
   },
   {
@@ -15653,14 +15667,14 @@
    "en": "Not now",
    "es": "Ahora no",
    "where": [
-    "src/today/reminders.ts:279"
+    "src/today/reminders.ts:299"
    ]
   },
   {
    "en": "Not one of our 400 animals: its map is GBIF’s live map, and needs the internet.",
    "es": "No es uno de nuestros 400 animales: su mapa es el mapa en vivo de GBIF y necesita internet.",
    "where": [
-    "src/wild/finder.ts:241"
+    "src/wild/finder.ts:242"
    ]
   },
   {
@@ -15674,14 +15688,14 @@
    "en": "Not one of our plants: its map is GBIF’s live map, and needs the internet.",
    "es": "No es una de nuestras plantas: su mapa es el mapa en vivo de GBIF y necesita internet.",
    "where": [
-    "src/green/finder.ts:180"
+    "src/green/finder.ts:181"
    ]
   },
   {
    "en": "Not quite. ",
    "es": "No exactamente. ",
    "where": [
-    "src/learn/learn.ts:1026"
+    "src/learn/learn.ts:1028"
    ]
   },
   {
@@ -15741,14 +15755,14 @@
    "en": "Nothing due today 🎉",
    "es": "Nada pendiente hoy 🎉",
    "where": [
-    "src/master/master.ts:849"
+    "src/master/master.ts:851"
    ]
   },
   {
    "en": "Nothing due today: practise the shakiest ones.",
    "es": "Nada para hoy: practica los menos seguros.",
    "where": [
-    "src/master/master.ts:1096"
+    "src/master/master.ts:1098"
    ]
   },
   {
@@ -15827,14 +15841,14 @@
    "en": "Numbers and dates as on your phone: {0}",
    "es": "Números y fechas como en tu teléfono: {0}",
    "where": [
-    "src/ui/settings.ts:56"
+    "src/ui/settings.ts:58"
    ]
   },
   {
    "en": "Numbers and dates: {0}",
    "es": "Números y fechas: {0}",
    "where": [
-    "src/ui/settings.ts:56"
+    "src/ui/settings.ts:58"
    ]
   },
   {
@@ -15855,7 +15869,7 @@
    "en": "Ocean explorer! 🌊",
    "es": "¡Explorador del océano! 🌊",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -15884,7 +15898,7 @@
    "es": "Oceanía",
    "where": [
     "src/app/i18n.ts:105",
-    "src/master/master.ts:53",
+    "src/master/master.ts:54",
     "src/play/names.ts:22",
     "src/play/outline.ts:21"
    ]
@@ -15935,14 +15949,14 @@
    "en": "Official in {0}",
    "es": "Oficial en {0}",
    "where": [
-    "src/learn/learn.ts:2382"
+    "src/learn/learn.ts:2384"
    ]
   },
   {
    "en": "Official in {0} and {1} more",
    "es": "Oficial en {0} y {1} más",
    "where": [
-    "src/learn/learn.ts:2381"
+    "src/learn/learn.ts:2383"
    ]
   },
   {
@@ -15950,7 +15964,7 @@
    "es": "Sitio oficial",
    "where": [
     "src/artguide/cards.ts:50",
-    "src/guide/guide.ts:589"
+    "src/guide/guide.ts:591"
    ]
   },
   {
@@ -15964,14 +15978,14 @@
    "en": "Offline: the animals of ours that live around here.",
    "es": "Sin conexión: nuestros animales que viven por aquí.",
    "where": [
-    "src/wild/finder.ts:341"
+    "src/wild/finder.ts:342"
    ]
   },
   {
    "en": "Offline: the plants of ours that grow around here.",
    "es": "Sin conexión: nuestras plantas que crecen por aquí.",
    "where": [
-    "src/green/finder.ts:240"
+    "src/green/finder.ts:241"
    ]
   },
   {
@@ -16006,7 +16020,7 @@
    "en": "Oldest first:",
    "es": "Del más antiguo al más reciente:",
    "where": [
-    "src/learn/learn.ts:2060"
+    "src/learn/learn.ts:2062"
    ]
   },
   {
@@ -16304,7 +16318,7 @@
     "src/app/i18n.ts:323",
     "src/artguide/artguide.ts:98",
     "src/green/finder.ts:77",
-    "src/guide/guide.ts:429",
+    "src/guide/guide.ts:431",
     "src/learn/progress.ts:176"
    ]
   },
@@ -16354,9 +16368,9 @@
    "en": "On this day",
    "es": "Tal día como hoy",
    "where": [
-    "src/learn/learn.ts:275",
-    "src/learn/learn.ts:2753",
-    "src/main.ts:149"
+    "src/learn/learn.ts:277",
+    "src/learn/learn.ts:2755",
+    "src/main.ts:157"
    ]
   },
   {
@@ -16412,7 +16426,7 @@
    "en": "One of your device’s own voices reads; the app records and sends nothing.",
    "es": "Lee una voz de tu dispositivo; la app no graba ni envía nada.",
    "where": [
-    "src/ui/settings.ts:147"
+    "src/ui/settings.ts:150"
    ]
   },
   {
@@ -16426,14 +16440,14 @@
    "en": "One reminder a day at most, only if it’s not done yet, with no sound. You can change the time in Today or Settings.",
    "es": "Un recordatorio al día como mucho, solo si aún no lo has hecho, sin sonido. Puedes cambiar la hora en Hoy o en Ajustes.",
    "where": [
-    "src/today/reminders.ts:284"
+    "src/today/reminders.ts:304"
    ]
   },
   {
    "en": "One reminder a day at most, only if something you chose is not done yet; each day about a different one. It makes no sound and opens Today.",
    "es": "Un recordatorio al día como mucho, solo si algo que elegiste aún no está hecho; cada día sobre uno distinto. No suena y abre Hoy.",
    "where": [
-    "src/today/reminders.ts:341"
+    "src/today/reminders.ts:361"
    ]
   },
   {
@@ -16568,7 +16582,7 @@
    "en": "Open source (GPL-3.0). Every map and story names its sources; the data keep their own licences.",
    "es": "Código abierto (GPL-3.0). Cada mapa e historia nombra sus fuentes; los datos conservan sus propias licencias.",
    "where": [
-    "src/ui/settings.ts:115"
+    "src/ui/settings.ts:118"
    ]
   },
   {
@@ -16610,7 +16624,7 @@
    "en": "Order",
    "es": "Orden",
    "where": [
-    "src/master/master.ts:1124"
+    "src/master/master.ts:1126"
    ]
   },
   {
@@ -16660,14 +16674,14 @@
    "en": "Other plants need the internet.",
    "es": "Las demás plantas necesitan internet.",
    "where": [
-    "src/green/finder.ts:113"
+    "src/green/finder.ts:114"
    ]
   },
   {
    "en": "Other species need the internet.",
    "es": "Las demás especies necesitan internet.",
    "where": [
-    "src/wild/finder.ts:166"
+    "src/wild/finder.ts:167"
    ]
   },
   {
@@ -16709,14 +16723,14 @@
    "en": "Our Time travel stories do not stop here yet.",
    "es": "Nuestras historias de Viaje en el tiempo aún no pasan por aquí.",
    "where": [
-    "src/guide/guide.ts:662"
+    "src/guide/guide.ts:664"
    ]
   },
   {
    "en": "Our food stories have no dish from here yet.",
    "es": "Nuestras historias de comida aún no tienen platos de aquí.",
    "where": [
-    "src/guide/guide.ts:532"
+    "src/guide/guide.ts:534"
    ]
   },
   {
@@ -16746,7 +16760,7 @@
    "en": "Our planet",
    "es": "Nuestro planeta",
    "where": [
-    "src/learn/learn.ts:2452"
+    "src/learn/learn.ts:2454"
    ]
   },
   {
@@ -16782,7 +16796,7 @@
    "en": "Out of hearts: {0} points",
    "es": "Sin corazones: {0} puntos",
    "where": [
-    "src/master/master.ts:862"
+    "src/master/master.ts:864"
    ]
   },
   {
@@ -16829,7 +16843,7 @@
    "en": "Outlines",
    "es": "Siluetas",
    "where": [
-    "src/master/master.ts:41",
+    "src/master/master.ts:42",
     "src/master/world.ts:19"
    ]
   },
@@ -16887,7 +16901,7 @@
    "en": "Pace after an answer",
    "es": "Ritmo tras responder",
    "where": [
-    "src/master/master.ts:1129"
+    "src/master/master.ts:1131"
    ]
   },
   {
@@ -17120,8 +17134,8 @@
    "en": "Pause",
    "es": "Pausa",
    "where": [
-    "src/learn/learn.ts:2569",
-    "src/master/master.ts:830",
+    "src/learn/learn.ts:2571",
+    "src/master/master.ts:832",
     "src/ui/audio.ts:203",
     "src/ui/legend.ts:134"
    ]
@@ -17144,7 +17158,7 @@
    "en": "Peek",
    "es": "Espiar",
    "where": [
-    "src/master/master.ts:70"
+    "src/master/master.ts:71"
    ]
   },
   {
@@ -17159,7 +17173,7 @@
    "es": "Personas",
    "where": [
     "src/fill/fill.ts:44",
-    "src/guide/guide.ts:48"
+    "src/guide/guide.ts:49"
    ]
   },
   {
@@ -17288,8 +17302,8 @@
    "en": "Photos and sightings: iNaturalist, by the people who shared them.",
    "es": "Fotos y avistamientos: iNaturalist, de las personas que los compartieron.",
    "where": [
-    "src/green/finder.ts:238",
-    "src/wild/finder.ts:338"
+    "src/green/finder.ts:239",
+    "src/wild/finder.ts:339"
    ]
   },
   {
@@ -17450,7 +17464,7 @@
    "en": "Pick the cities you want to visit: for each one, what to eat, what to see, its museums and the practical facts. {0} cities; tap a dot on the map, or search.",
    "es": "Elige las ciudades que quieres visitar: de cada una, qué comer, qué ver, sus museos y los datos prácticos. {0} ciudades; toca un punto en el mapa o busca.",
    "where": [
-    "src/guide/guide.ts:223"
+    "src/guide/guide.ts:224"
    ]
   },
   {
@@ -17464,14 +17478,14 @@
    "en": "Pick the right capital city.",
    "es": "Elige la capital correcta.",
    "where": [
-    "src/learn/learn.ts:368"
+    "src/learn/learn.ts:370"
    ]
   },
   {
    "en": "Pick the year it was built, made or first recorded.",
    "es": "Elige el año en que se construyó, se hizo o aparece por primera vez.",
    "where": [
-    "src/learn/learn.ts:374"
+    "src/learn/learn.ts:376"
    ]
   },
   {
@@ -17611,7 +17625,7 @@
    "es": "Epidemias y curas",
    "where": [
     "src/app/i18n.ts:243",
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/modes/stories.ts:198"
    ]
   },
@@ -17631,15 +17645,15 @@
     "src/green/cards.ts:100",
     "src/green/cards.ts:123",
     "src/green/cards.ts:182",
-    "src/guide/guide.ts:93"
+    "src/guide/guide.ts:94"
    ]
   },
   {
    "en": "Plan a trip to {0}",
    "es": "Planear un viaje a {0}",
    "where": [
-    "src/green/finder.ts:203",
-    "src/wild/finder.ts:264"
+    "src/green/finder.ts:204",
+    "src/wild/finder.ts:265"
    ]
   },
   {
@@ -17703,7 +17717,7 @@
    "en": "Plants",
    "es": "Plantas",
    "where": [
-    "src/green/finder.ts:173"
+    "src/green/finder.ts:174"
    ]
   },
   {
@@ -17776,8 +17790,8 @@
    "where": [
     "src/app/i18n.ts:40",
     "src/fill/states.ts:516",
-    "src/master/master.ts:1095",
-    "src/onmap/onmap.ts:562",
+    "src/master/master.ts:1097",
+    "src/onmap/onmap.ts:579",
     "src/play/menu.ts:175"
    ]
   },
@@ -17792,9 +17806,9 @@
    "en": "Play again",
    "es": "Jugar otra vez",
    "where": [
-    "src/learn/learn.ts:1964",
-    "src/master/master.ts:864",
-    "src/master/master.ts:872",
+    "src/learn/learn.ts:1966",
+    "src/master/master.ts:866",
+    "src/master/master.ts:874",
     "src/play/chain.ts:119",
     "src/play/hilo.ts:160"
    ]
@@ -17852,7 +17866,7 @@
    "en": "Played {0} · solved {1} · at the first check {2}",
    "es": "Jugados {0} · resueltos {1} · a la primera {2}",
    "where": [
-    "src/onmap/onmap.ts:578"
+    "src/onmap/onmap.ts:595"
    ]
   },
   {
@@ -17873,7 +17887,7 @@
    "en": "Plugs",
    "es": "Enchufes",
    "where": [
-    "src/guide/guide.ts:606",
+    "src/guide/guide.ts:608",
     "src/layers/packs/facts.ts:228"
    ]
   },
@@ -17992,7 +18006,7 @@
    "en": "Practise",
    "es": "Practicar",
    "where": [
-    "src/master/master.ts:853"
+    "src/master/master.ts:855"
    ]
   },
   {
@@ -18028,7 +18042,7 @@
    "en": "Press and hold the card to pause.",
    "es": "Mantén pulsada la tarjeta para pausar.",
    "where": [
-    "src/master/master.ts:832"
+    "src/master/master.ts:834"
    ]
   },
   {
@@ -18056,7 +18070,7 @@
    "en": "Print",
    "es": "Imprimir",
    "where": [
-    "src/guide/guide.ts:286"
+    "src/guide/guide.ts:288"
    ]
   },
   {
@@ -18088,58 +18102,65 @@
    ]
   },
   {
+   "en": "Put all six on the map, then check ({0}/{1}).",
+   "es": "Pon los seis en el mapa y luego comprueba ({0}/{1}).",
+   "where": [
+    "src/onmap/onmap.ts:375"
+   ]
+  },
+  {
    "en": "Put it on the map",
    "es": "Ponlo en el mapa",
    "where": [
-    "src/main.ts:104",
-    "src/main.ts:137",
-    "src/main.ts:176",
-    "src/onmap/onmap.ts:73",
-    "src/onmap/onmap.ts:340"
+    "src/main.ts:112",
+    "src/main.ts:145",
+    "src/main.ts:184",
+    "src/onmap/onmap.ts:75",
+    "src/onmap/onmap.ts:344"
    ]
   },
   {
    "en": "Put it on the map needs its data; check your connection.",
    "es": "Ponlo en el mapa necesita sus datos; revisa tu conexión.",
    "where": [
-    "src/onmap/onmap.ts:136",
-    "src/onmap/onmap.ts:529"
+    "src/onmap/onmap.ts:138",
+    "src/onmap/onmap.ts:546"
    ]
   },
   {
    "en": "Put it on the map: today",
    "es": "Ponlo en el mapa: hoy",
    "where": [
-    "src/main.ts:178",
-    "src/onmap/onmap.ts:594"
+    "src/main.ts:186",
+    "src/onmap/onmap.ts:611"
    ]
   },
   {
    "en": "Put them in order",
    "es": "Ordénalos en el tiempo",
    "where": [
-    "src/learn/learn.ts:371"
+    "src/learn/learn.ts:373"
    ]
   },
   {
    "en": "Put them in order: tap the oldest first.",
    "es": "Ordénalos: toca primero el más antiguo.",
    "where": [
-    "src/learn/learn.ts:2060"
+    "src/learn/learn.ts:2062"
    ]
   },
   {
    "en": "Put them in order: tap the shallowest first.",
    "es": "Ordénalas: toca primero la menos profunda.",
    "where": [
-    "src/learn/learn.ts:1430"
+    "src/learn/learn.ts:1432"
    ]
   },
   {
    "en": "Puzzle of the day",
    "es": "Reto del día",
    "where": [
-    "src/onmap/onmap.ts:340"
+    "src/onmap/onmap.ts:344"
    ]
   },
   {
@@ -18153,16 +18174,16 @@
    "en": "Question",
    "es": "Pregunta",
    "where": [
-    "src/learn/learn.ts:1721"
+    "src/learn/learn.ts:1723"
    ]
   },
   {
    "en": "Quiz",
    "es": "Concurso",
    "where": [
-    "src/learn/learn.ts:273",
-    "src/learn/learn.ts:438",
-    "src/learn/learn.ts:1690"
+    "src/learn/learn.ts:275",
+    "src/learn/learn.ts:440",
+    "src/learn/learn.ts:1692"
    ]
   },
   {
@@ -18232,7 +18253,7 @@
    "en": "Random",
    "es": "Al azar",
    "where": [
-    "src/master/master.ts:61"
+    "src/master/master.ts:62"
    ]
   },
   {
@@ -18281,7 +18302,7 @@
    "en": "Reach the goal to start a streak (it keeps the Daily challenge’s too).",
    "es": "Cumple la meta para empezar una racha (también cuenta para el Reto del día).",
    "where": [
-    "src/master/master.ts:1031"
+    "src/master/master.ts:1033"
    ]
   },
   {
@@ -18295,7 +18316,7 @@
    "en": "Read aloud",
    "es": "Leer en voz alta",
    "where": [
-    "src/learn/learn.ts:2584",
+    "src/learn/learn.ts:2586",
     "src/modes/stories.ts:1730",
     "src/ui/ambient.ts:75"
    ]
@@ -18304,7 +18325,7 @@
    "en": "Read each ambient view aloud",
    "es": "Leer cada vista del modo ambiente en voz alta",
    "where": [
-    "src/ui/settings.ts:86"
+    "src/ui/settings.ts:88"
    ]
   },
   {
@@ -18318,14 +18339,14 @@
    "en": "Read it all on Wikivoyage",
    "es": "Leerlo todo en Wikivoyage",
    "where": [
-    "src/guide/guide.ts:542"
+    "src/guide/guide.ts:544"
    ]
   },
   {
    "en": "Read more",
    "es": "Más",
    "where": [
-    "src/guide/guide.ts:49"
+    "src/guide/guide.ts:50"
    ]
   },
   {
@@ -18339,14 +18360,14 @@
    "en": "Read tours and stories aloud",
    "es": "Leer en voz alta las visitas guiadas y las historias",
    "where": [
-    "src/ui/settings.ts:132"
+    "src/ui/settings.ts:135"
    ]
   },
   {
    "en": "Reading aloud",
    "es": "Lectura en voz alta",
    "where": [
-    "src/ui/settings.ts:80"
+    "src/ui/settings.ts:82"
    ]
   },
   {
@@ -18427,8 +18448,8 @@
    "where": [
     "src/app/i18n.ts:87",
     "src/layers/packs/regional.ts:234",
-    "src/learn/learn.ts:438",
-    "src/master/master.ts:1114",
+    "src/learn/learn.ts:440",
+    "src/master/master.ts:1116",
     "src/mydata/mydata.ts:264"
    ]
   },
@@ -18438,8 +18459,8 @@
    "where": [
     "src/fill/fill.ts:373",
     "src/fill/fill.ts:668",
-    "src/main.ts:126",
-    "src/main.ts:166"
+    "src/main.ts:134",
+    "src/main.ts:174"
    ]
   },
   {
@@ -18484,7 +18505,7 @@
    "es": "Religiones y filosofías",
    "where": [
     "src/app/i18n.ts:237",
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/modes/stories.ts:196"
    ]
   },
@@ -18500,87 +18521,87 @@
    "en": "Remind me",
    "es": "Recuérdamelo",
    "where": [
-    "src/today/reminders.ts:278"
+    "src/today/reminders.ts:298"
    ]
   },
   {
    "en": "Remind me of",
    "es": "Recuérdame",
    "where": [
-    "src/today/reminders.ts:344"
+    "src/today/reminders.ts:364"
    ]
   },
   {
    "en": "Remind me of Put it on the map’s puzzle",
    "es": "Recuérdame el reto de Ponlo en el mapa",
    "where": [
-    "src/main.ts:177"
+    "src/main.ts:185"
    ]
   },
   {
    "en": "Remind me of the Daily challenge",
    "es": "Recuérdame el Reto del día",
    "where": [
-    "src/main.ts:157"
+    "src/main.ts:165"
    ]
   },
   {
    "en": "Remind me of the country of the day",
    "es": "Recuérdame el país del día",
    "where": [
-    "src/main.ts:172"
+    "src/main.ts:180"
    ]
   },
   {
    "en": "Remind me of the map games’ puzzles",
    "es": "Recuérdame los retos de los juegos en el mapa",
    "where": [
-    "src/main.ts:182"
+    "src/main.ts:190"
    ]
   },
   {
    "en": "Remind me of the region of the day",
    "es": "Recuérdame la región del día",
    "where": [
-    "src/main.ts:167"
+    "src/main.ts:175"
    ]
   },
   {
    "en": "Remind me to practise {0}",
    "es": "Recuérdame practicar {0}",
    "where": [
-    "src/main.ts:162"
+    "src/main.ts:170"
    ]
   },
   {
    "en": "Reminder time",
    "es": "Hora del recordatorio",
    "where": [
-    "src/today/reminders.ts:277",
-    "src/today/reminders.ts:338",
-    "src/today/reminders.ts:365"
+    "src/today/reminders.ts:297",
+    "src/today/reminders.ts:358",
+    "src/today/reminders.ts:385"
    ]
   },
   {
    "en": "Reminders",
    "es": "Recordatorios",
    "where": [
-    "src/main.ts:154",
-    "src/today/reminders.ts:355"
+    "src/main.ts:162",
+    "src/today/reminders.ts:375"
    ]
   },
   {
    "en": "Reminders (🔔 in each game)",
    "es": "Recordatorios (🔔 en cada juego)",
    "where": [
-    "src/today/reminders.ts:370"
+    "src/today/reminders.ts:390"
    ]
   },
   {
    "en": "Reminders on",
    "es": "Recordatorios activados",
    "where": [
-    "src/today/reminders.ts:342"
+    "src/today/reminders.ts:362"
    ]
   },
   {
@@ -18588,7 +18609,7 @@
    "es": "Quitar",
    "where": [
     "src/app/i18n.ts:32",
-    "src/guide/guide.ts:260",
+    "src/guide/guide.ts:261",
     "src/ui/playlists.ts:285"
    ]
   },
@@ -18671,7 +18692,7 @@
    "where": [
     "src/app/i18n.ts:204",
     "src/app/i18n.ts:308",
-    "src/learn/learn.ts:1962",
+    "src/learn/learn.ts:1964",
     "src/play/hilo.ts:153",
     "src/play/lifeguess.ts:122"
    ]
@@ -18743,14 +18764,14 @@
    "en": "Right where it grows! ",
    "es": "¡Justo donde crece! ",
    "where": [
-    "src/learn/learn.ts:1659"
+    "src/learn/learn.ts:1661"
    ]
   },
   {
    "en": "Right where it lives! ",
    "es": "¡Justo donde vive! ",
    "where": [
-    "src/learn/learn.ts:1664"
+    "src/learn/learn.ts:1666"
    ]
   },
   {
@@ -18842,7 +18863,7 @@
    "en": "Rivers, lakes, ranges, deserts and peaks from Natural Earth; oceans, seas, gulfs, bays, straits and channels from its marine areas.",
    "es": "Ríos, lagos, cordilleras, desiertos y montañas de Natural Earth; océanos, mares, golfos, bahías, estrechos y canales de sus áreas marinas.",
    "where": [
-    "src/master/master.ts:1140"
+    "src/master/master.ts:1142"
    ]
   },
   {
@@ -18850,7 +18871,7 @@
    "es": "Ríos, montañas y mares",
    "where": [
     "src/learn/progress.ts:160",
-    "src/master/master.ts:44"
+    "src/master/master.ts:45"
    ]
   },
   {
@@ -18949,7 +18970,7 @@
    "en": "Run",
    "es": "Racha",
    "where": [
-    "src/master/master.ts:48",
+    "src/master/master.ts:49",
     "src/play/hilo.ts:153"
    ]
   },
@@ -19329,7 +19350,7 @@
    "en": "Science and nature",
    "es": "Ciencia y naturaleza",
    "where": [
-    "src/guide/guide.ts:53",
+    "src/guide/guide.ts:54",
     "src/learn/progress.ts:18"
    ]
   },
@@ -19476,7 +19497,7 @@
    "en": "Search the guide",
    "es": "Buscar en la guía",
    "where": [
-    "src/guide/guide.ts:225"
+    "src/guide/guide.ts:226"
    ]
   },
   {
@@ -19518,7 +19539,7 @@
    "en": "See",
    "es": "Ver",
    "where": [
-    "src/guide/guide.ts:47"
+    "src/guide/guide.ts:48"
    ]
   },
   {
@@ -19547,28 +19568,28 @@
    "en": "See it in the story",
    "es": "Verlo en la historia",
    "where": [
-    "src/learn/learn.ts:1810"
+    "src/learn/learn.ts:1812"
    ]
   },
   {
    "en": "See it on the map",
    "es": "Verlo en el mapa",
    "where": [
-    "src/learn/learn.ts:2281"
+    "src/learn/learn.ts:2283"
    ]
   },
   {
    "en": "See it on the timeline",
    "es": "Verlo en la línea de tiempo",
    "where": [
-    "src/learn/learn.ts:2176"
+    "src/learn/learn.ts:2178"
    ]
   },
   {
    "en": "See result",
    "es": "Ver resultado",
    "where": [
-    "src/learn/learn.ts:1699"
+    "src/learn/learn.ts:1701"
    ]
   },
   {
@@ -19582,7 +19603,7 @@
    "en": "See the families on the map",
    "es": "Ver las familias en el mapa",
    "where": [
-    "src/learn/learn.ts:2408"
+    "src/learn/learn.ts:2410"
    ]
   },
   {
@@ -19590,7 +19611,7 @@
    "es": "Ver el mapa",
    "where": [
     "src/compare/compare.ts:340",
-    "src/learn/learn.ts:1688",
+    "src/learn/learn.ts:1690",
     "src/play/host.ts:100"
    ]
   },
@@ -19681,7 +19702,7 @@
    "where": [
     "src/app/i18n.ts:46",
     "src/layers/imagery.ts:89",
-    "src/master/master.ts:1127",
+    "src/master/master.ts:1129",
     "src/ui/playlists.ts:301"
    ]
   },
@@ -19689,9 +19710,9 @@
    "en": "Settings and more",
    "es": "Ajustes y más",
    "where": [
-    "src/ui/shell.ts:167",
-    "src/ui/shell.ts:167",
-    "src/ui/shell.ts:263"
+    "src/ui/shell.ts:186",
+    "src/ui/shell.ts:186",
+    "src/ui/shell.ts:282"
    ]
   },
   {
@@ -19726,7 +19747,7 @@
    "en": "Shallowest first:",
    "es": "De la menos a la más profunda:",
    "where": [
-    "src/learn/learn.ts:1430"
+    "src/learn/learn.ts:1432"
    ]
   },
   {
@@ -19736,8 +19757,8 @@
     "src/fill/fill.ts:489",
     "src/fill/states.ts:403",
     "src/fill/states.ts:522",
-    "src/guide/guide.ts:285",
-    "src/learn/learn.ts:1520"
+    "src/guide/guide.ts:286",
+    "src/learn/learn.ts:1522"
    ]
   },
   {
@@ -19772,7 +19793,7 @@
    "en": "Share your progress",
    "es": "Compartir tu progreso",
    "where": [
-    "src/master/master.ts:1134"
+    "src/master/master.ts:1136"
    ]
   },
   {
@@ -19911,9 +19932,9 @@
    "where": [
     "src/fill/fill.ts:405",
     "src/fill/states.ts:319",
-    "src/learn/learn.ts:745",
-    "src/learn/learn.ts:1770",
-    "src/learn/learn.ts:1804"
+    "src/learn/learn.ts:747",
+    "src/learn/learn.ts:1772",
+    "src/learn/learn.ts:1806"
    ]
   },
   {
@@ -19924,7 +19945,7 @@
     "src/artguide/cards.ts:35",
     "src/artguide/cards.ts:48",
     "src/artguide/cards.ts:64",
-    "src/guide/guide.ts:279"
+    "src/guide/guide.ts:280"
    ]
   },
   {
@@ -19932,6 +19953,20 @@
    "es": "Ver la respuesta",
    "where": [
     "src/play/outline.ts:202"
+   ]
+  },
+  {
+   "en": "Show the answers",
+   "es": "Mostrar las respuestas",
+   "where": [
+    "src/onmap/onmap.ts:364"
+   ]
+  },
+  {
+   "en": "Show the answers? The puzzle ends unsolved.",
+   "es": "¿Mostrar las respuestas? El reto termina sin resolver.",
+   "where": [
+    "src/onmap/onmap.ts:361"
    ]
   },
   {
@@ -19959,7 +19994,7 @@
    "en": "Show the legend",
    "es": "Mostrar la leyenda",
    "where": [
-    "src/ui/shell.ts:208"
+    "src/ui/shell.ts:227"
    ]
   },
   {
@@ -19973,7 +20008,7 @@
    "en": "Show the text",
    "es": "Mostrar el texto",
    "where": [
-    "src/learn/learn.ts:2575"
+    "src/learn/learn.ts:2577"
    ]
   },
   {
@@ -20044,8 +20079,8 @@
    "en": "Sightings: GBIF.org and iNaturalist, by the people who shared them.",
    "es": "Avistamientos: GBIF.org e iNaturalist, de las personas que los compartieron.",
    "where": [
-    "src/green/finder.ts:207",
-    "src/wild/finder.ts:268"
+    "src/green/finder.ts:208",
+    "src/wild/finder.ts:269"
    ]
   },
   {
@@ -20199,28 +20234,28 @@
    "en": "Six places from a country or a region: tap a name, then its place among the grey ones. Green is right; yellow to red, how far off. Five checks.",
    "es": "Seis lugares de un país o una región: toca un nombre y luego su lugar entre los grises. Verde es correcto; de amarillo a rojo, qué tan lejos. Cinco comprobaciones.",
    "where": [
-    "src/onmap/onmap.ts:539"
+    "src/onmap/onmap.ts:556"
    ]
   },
   {
    "en": "Six places in {0} to put on the map",
    "es": "Seis lugares de {0} para poner en el mapa",
    "where": [
-    "src/main.ts:178"
+    "src/main.ts:186"
    ]
   },
   {
    "en": "Six places of a country to put on the map, Wordle style",
    "es": "Seis lugares de un país para poner en el mapa, al estilo Wordle",
    "where": [
-    "src/main.ts:104"
+    "src/main.ts:112"
    ]
   },
   {
    "en": "Six places to put on the map",
    "es": "Seis lugares para poner en el mapa",
    "where": [
-    "src/main.ts:178"
+    "src/main.ts:186"
    ]
   },
   {
@@ -20280,7 +20315,7 @@
    "en": "Slow",
    "es": "Lento",
    "where": [
-    "src/master/master.ts:63"
+    "src/master/master.ts:64"
    ]
   },
   {
@@ -20506,7 +20541,7 @@
    "en": "Sounds and buzz",
    "es": "Sonidos y vibración",
    "where": [
-    "src/master/master.ts:1132"
+    "src/master/master.ts:1134"
    ]
   },
   {
@@ -20536,7 +20571,7 @@
    "es": "América del Sur",
    "where": [
     "src/app/i18n.ts:104",
-    "src/master/master.ts:53",
+    "src/master/master.ts:54",
     "src/play/hop.ts:31",
     "src/play/names.ts:22",
     "src/play/outline.ts:21"
@@ -20591,7 +20626,7 @@
    "en": "Space explorer! 🚀",
    "es": "¡Explorador del espacio! 🚀",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -20626,8 +20661,8 @@
    "en": "Spanish",
    "es": "español",
    "where": [
-    "src/guide/guide.ts:674",
-    "src/guide/guide.ts:675"
+    "src/guide/guide.ts:676",
+    "src/guide/guide.ts:677"
    ]
   },
   {
@@ -20651,7 +20686,7 @@
    "where": [
     "src/app/i18n.ts:172",
     "src/ui/legend.ts:146",
-    "src/ui/settings.ts:145"
+    "src/ui/settings.ts:148"
    ]
   },
   {
@@ -20673,7 +20708,7 @@
    "en": "Sports master! 🏆",
    "es": "¡Maestro del deporte! 🏆",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -20746,7 +20781,7 @@
    "en": "Star gazer! ✨",
    "es": "¡Observador de estrellas! ✨",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
@@ -20760,7 +20795,7 @@
    "en": "Start again",
    "es": "Empezar de nuevo",
    "where": [
-    "src/learn/learn.ts:2569"
+    "src/learn/learn.ts:2571"
    ]
   },
   {
@@ -20774,7 +20809,7 @@
    "en": "Start learning the {0}: a few each day",
    "es": "Empieza a aprender {1, select, f {las {0}: unas cuantas} other {los {0}: unos cuantos}} cada día",
    "where": [
-    "src/master/master.ts:221"
+    "src/master/master.ts:222"
    ]
   },
   {
@@ -20782,9 +20817,9 @@
    "es": "Empezar de nuevo",
    "where": [
     "src/fill/states.ts:518",
-    "src/learn/learn.ts:1451",
-    "src/learn/learn.ts:2083",
-    "src/master/master.ts:868"
+    "src/learn/learn.ts:1453",
+    "src/learn/learn.ts:2085",
+    "src/master/master.ts:870"
    ]
   },
   {
@@ -20807,29 +20842,29 @@
    "es": "Capitales de estados",
    "where": [
     "src/learn/progress.ts:173",
-    "src/master/master.ts:39"
+    "src/master/master.ts:40"
    ]
   },
   {
    "en": "State or province",
    "es": "Estado o provincia",
    "where": [
-    "src/ui/shell.ts:421"
+    "src/ui/shell.ts:440"
    ]
   },
   {
    "en": "States",
    "es": "Estados",
    "where": [
-    "src/master/master.ts:39"
+    "src/master/master.ts:40"
    ]
   },
   {
    "en": "States and provinces",
    "es": "Estados y provincias",
    "where": [
-    "src/learn/learn.ts:369",
-    "src/learn/learn.ts:651",
+    "src/learn/learn.ts:371",
+    "src/learn/learn.ts:653",
     "src/ui/mapstyle.ts:75"
    ]
   },
@@ -20887,7 +20922,7 @@
    "en": "Still waiting for you today",
    "es": "Te espera hoy",
    "where": [
-    "src/today/reminders.ts:170"
+    "src/today/reminders.ts:188"
    ]
   },
   {
@@ -20922,7 +20957,7 @@
    "en": "Stop reading aloud",
    "es": "Dejar de leer en voz alta",
    "where": [
-    "src/learn/learn.ts:2584",
+    "src/learn/learn.ts:2586",
     "src/modes/stories.ts:1730"
    ]
   },
@@ -20993,7 +21028,7 @@
    "en": "Streaks and badges for each subject · {0} of {1} badges",
    "es": "Rachas e insignias por tema · {0} de {1} insignias",
    "where": [
-    "src/learn/learn.ts:459"
+    "src/learn/learn.ts:461"
    ]
   },
   {
@@ -21014,14 +21049,14 @@
    "en": "Strong: one rises, the other falls",
    "es": "Fuerte: uno sube y el otro baja",
    "where": [
-    "src/learn/learn.ts:2244"
+    "src/learn/learn.ts:2246"
    ]
   },
   {
    "en": "Strong: they rise together",
    "es": "Fuerte: suben juntos",
    "where": [
-    "src/learn/learn.ts:2241"
+    "src/learn/learn.ts:2243"
    ]
   },
   {
@@ -21085,7 +21120,7 @@
    "en": "Sunlit zone (0–200 m)",
    "es": "Zona iluminada (0–200 m)",
    "where": [
-    "src/learn/learn.ts:1372"
+    "src/learn/learn.ts:1374"
    ]
   },
   {
@@ -21099,7 +21134,7 @@
    "en": "Sunrise and sunset today",
    "es": "Amanecer y atardecer hoy",
    "where": [
-    "src/guide/guide.ts:617"
+    "src/guide/guide.ts:619"
    ]
   },
   {
@@ -21180,7 +21215,7 @@
    "en": "Take it out",
    "es": "Quitarlo",
    "where": [
-    "src/guide/guide.ts:485"
+    "src/guide/guide.ts:487"
    ]
   },
   {
@@ -21236,7 +21271,7 @@
    "en": "Tap a colour on the map to see its name.",
    "es": "Toca un color en el mapa para ver su nombre.",
    "where": [
-    "src/learn/learn.ts:2184"
+    "src/learn/learn.ts:2186"
    ]
   },
   {
@@ -21279,7 +21314,7 @@
    "en": "Tap a dish for its story.",
    "es": "Toca un plato para ver su historia.",
    "where": [
-    "src/guide/guide.ts:533"
+    "src/guide/guide.ts:535"
    ]
   },
   {
@@ -21293,29 +21328,29 @@
    "en": "Tap a numbered one to take it back.",
    "es": "Toca uno con número para quitarlo.",
    "where": [
-    "src/learn/learn.ts:1465",
-    "src/learn/learn.ts:2088"
+    "src/learn/learn.ts:1467",
+    "src/learn/learn.ts:2090"
    ]
   },
   {
    "en": "Tap a place where it grows wild (within 300 km of its range to score).",
    "es": "Toca un lugar donde crece silvestre (a menos de 300 km de su área para puntuar).",
    "where": [
-    "src/learn/learn.ts:1806"
+    "src/learn/learn.ts:1808"
    ]
   },
   {
    "en": "Tap a place where it lives (within 300 km of its range to score).",
    "es": "Toca un lugar donde vive (a menos de 300 km de su área para puntuar).",
    "where": [
-    "src/learn/learn.ts:1806"
+    "src/learn/learn.ts:1808"
    ]
   },
   {
    "en": "Tap a site to see where it is; a structure opens its story.",
    "es": "Toca un sitio para ver dónde está; una construcción abre su historia.",
    "where": [
-    "src/guide/guide.ts:577"
+    "src/guide/guide.ts:579"
    ]
   },
   {
@@ -21378,7 +21413,7 @@
    "en": "Tap it on the globe (labels hidden).",
    "es": "Tócalo en el globo (sin etiquetas).",
    "where": [
-    "src/learn/learn.ts:366"
+    "src/learn/learn.ts:368"
    ]
   },
   {
@@ -21387,14 +21422,14 @@
    "where": [
     "src/master/extra.ts:124",
     "src/master/extra.ts:506",
-    "src/master/master.ts:720"
+    "src/master/master.ts:722"
    ]
   },
   {
    "en": "Tap it on the map. You can move and zoom the map.",
    "es": "Tócalo en el mapa. Puedes mover y acercar el mapa.",
    "where": [
-    "src/learn/learn.ts:747"
+    "src/learn/learn.ts:749"
    ]
   },
   {
@@ -21402,14 +21437,14 @@
    "es": "Toca su punto en el mapa.",
    "where": [
     "src/master/extra.ts:239",
-    "src/master/master.ts:720"
+    "src/master/master.ts:722"
    ]
   },
   {
    "en": "Tap on the globe where a monument, a work, a dish or a fossil comes from.",
    "es": "Toca en el globo de dónde es un monumento, una obra, un plato o un fósil.",
    "where": [
-    "src/learn/learn.ts:373"
+    "src/learn/learn.ts:375"
    ]
   },
   {
@@ -21437,7 +21472,7 @@
    "en": "Tap the capital of {0}",
    "es": "Toca la capital de {0}",
    "where": [
-    "src/master/master.ts:762"
+    "src/master/master.ts:764"
    ]
   },
   {
@@ -21458,7 +21493,7 @@
    "en": "Tap the country on the globe.",
    "es": "Toca el país en el globo.",
    "where": [
-    "src/learn/learn.ts:1772"
+    "src/learn/learn.ts:1774"
    ]
   },
   {
@@ -21530,7 +21565,7 @@
    "en": "Tap the place on the globe (within 500 km to score).",
    "es": "Toca el lugar en el globo (a menos de 500 km para puntuar).",
    "where": [
-    "src/learn/learn.ts:1806"
+    "src/learn/learn.ts:1808"
    ]
   },
   {
@@ -21544,7 +21579,7 @@
    "en": "Tap the state or province in the United States, Mexico, Canada and 45 more countries.",
    "es": "Toca el estado o la provincia en Estados Unidos, México, Canadá y 45 países más.",
    "where": [
-    "src/learn/learn.ts:369"
+    "src/learn/learn.ts:371"
    ]
   },
   {
@@ -21603,7 +21638,7 @@
     "src/fill/fill.ts:422",
     "src/fill/states.ts:336",
     "src/master/extra.ts:184",
-    "src/master/master.ts:764"
+    "src/master/master.ts:766"
    ]
   },
   {
@@ -21785,7 +21820,7 @@
    "en": "That is the flag of {0}.",
    "es": "Esa es la bandera de {0}.",
    "where": [
-    "src/master/master.ts:799"
+    "src/master/master.ts:801"
    ]
   },
   {
@@ -21814,7 +21849,7 @@
    "en": "That is {0}. {1} is outlined.",
    "es": "Ese es {0}. {1} está marcado.",
    "where": [
-    "src/master/master.ts:800"
+    "src/master/master.ts:802"
    ]
   },
   {
@@ -21849,7 +21884,7 @@
    "en": "The 193 UN members plus Vatican City and Palestine. Where a country has two seats of government, the official capital is the answer and the other is explained.",
    "es": "Los 193 miembros de la ONU más Ciudad del Vaticano y Palestina. Si un país tiene dos sedes de gobierno, la respuesta es la capital oficial y se explica la otra.",
    "where": [
-    "src/master/master.ts:1143"
+    "src/master/master.ts:1145"
    ]
   },
   {
@@ -21863,7 +21898,7 @@
    "en": "The 250 best-known cities on a map with no names: which city is this dot? Then tap it among its neighbours.",
    "es": "Las 250 ciudades más conocidas en un mapa sin nombres: ¿qué ciudad es este punto? Luego tócala entre sus vecinas.",
    "where": [
-    "src/master/master.ts:1053"
+    "src/master/master.ts:1055"
    ]
   },
   {
@@ -23360,7 +23395,7 @@
    "en": "The animals people have seen most within 50 km of a place, with photos.",
    "es": "Los animales más vistos a menos de 50 km de un lugar, con fotos.",
    "where": [
-    "src/wild/finder.ts:141"
+    "src/wild/finder.ts:142"
    ]
   },
   {
@@ -23416,7 +23451,7 @@
    "en": "The best known first",
    "es": "Los más conocidos primero",
    "where": [
-    "src/master/master.ts:57"
+    "src/master/master.ts:58"
    ]
   },
   {
@@ -23451,7 +23486,7 @@
    "en": "The best-known rivers, lakes, mountain ranges, deserts, peaks, oceans and seas, drawn on the map: which is it?",
    "es": "Los ríos, lagos, cordilleras, desiertos, montañas, océanos y mares más conocidos, dibujados en el mapa: ¿cuál es?",
    "where": [
-    "src/master/master.ts:1055"
+    "src/master/master.ts:1057"
    ]
   },
   {
@@ -23542,14 +23577,14 @@
    "en": "The capital of {0} is {1}.",
    "es": "La capital de {0} es {1}.",
    "where": [
-    "src/learn/learn.ts:1906"
+    "src/learn/learn.ts:1908"
    ]
   },
   {
    "en": "The capitals of the states, provinces and regions of twelve countries, one country at a time or all together.",
    "es": "Las capitales de los estados, provincias y regiones de doce países, de uno en uno o todos juntos.",
    "where": [
-    "src/master/master.ts:1049"
+    "src/master/master.ts:1051"
    ]
   },
   {
@@ -23698,14 +23733,14 @@
    "en": "The day after",
    "es": "El día siguiente",
    "where": [
-    "src/learn/learn.ts:2744"
+    "src/learn/learn.ts:2746"
    ]
   },
   {
    "en": "The day before",
    "es": "El día anterior",
    "where": [
-    "src/learn/learn.ts:2742"
+    "src/learn/learn.ts:2744"
    ]
   },
   {
@@ -24062,7 +24097,7 @@
    "en": "The flag of {0}",
    "es": "La bandera de {0}",
    "where": [
-    "src/master/master.ts:799"
+    "src/master/master.ts:801"
    ]
   },
   {
@@ -24111,14 +24146,14 @@
    "en": "The globe flies to a place: which of four animals lives there?",
    "es": "El globo vuela a un lugar: ¿cuál de cuatro animales vive allí?",
    "where": [
-    "src/learn/learn.ts:392"
+    "src/learn/learn.ts:394"
    ]
   },
   {
    "en": "The globe shows the place.",
    "es": "El globo muestra el lugar.",
    "where": [
-    "src/learn/learn.ts:1752"
+    "src/learn/learn.ts:1754"
    ]
   },
   {
@@ -24433,7 +24468,7 @@
    "en": "The most people first",
    "es": "Los más poblados primero",
    "where": [
-    "src/master/master.ts:58"
+    "src/master/master.ts:59"
    ]
   },
   {
@@ -24454,7 +24489,7 @@
    "en": "The names are hidden: tap each state or province on the map. You can move and zoom the map.",
    "es": "Los nombres están ocultos: toca cada estado o provincia en el mapa. Puedes mover y acercar el mapa.",
    "where": [
-    "src/learn/learn.ts:617"
+    "src/learn/learn.ts:619"
    ]
   },
   {
@@ -24616,7 +24651,7 @@
    "en": "The plants people have seen most within 50 km of a place, with photos.",
    "es": "Las plantas más vistas a menos de 50 km de un lugar, con fotos.",
    "where": [
-    "src/green/finder.ts:91"
+    "src/green/finder.ts:92"
    ]
   },
   {
@@ -24700,7 +24735,7 @@
    "en": "The right places are on the map, in green.",
    "es": "Los lugares correctos están en el mapa, en verde.",
    "where": [
-    "src/onmap/onmap.ts:433"
+    "src/onmap/onmap.ts:450"
    ]
   },
   {
@@ -24743,7 +24778,7 @@
    "en": "The screensaver’s playlists are in Explore → Ambient mode.",
    "es": "Las listas de reproducción del salvapantallas están en Explorar → Modo ambiente.",
    "where": [
-    "src/ui/settings.ts:89"
+    "src/ui/settings.ts:91"
    ]
   },
   {
@@ -24907,14 +24942,14 @@
    "en": "The stories need a connection the first time.",
    "es": "Las historias necesitan conexión la primera vez.",
    "where": [
-    "src/learn/learn.ts:2769"
+    "src/learn/learn.ts:2771"
    ]
   },
   {
    "en": "The stories tell nothing of this day yet.",
    "es": "Las historias aún no cuentan nada de este día.",
    "where": [
-    "src/learn/learn.ts:2770"
+    "src/learn/learn.ts:2772"
    ]
   },
   {
@@ -24998,7 +25033,7 @@
    "en": "The telephone, paper, the World Wide Web...: pick who invented it.",
    "es": "El teléfono, el papel, la World Wide Web...: elige quién lo inventó.",
    "where": [
-    "src/learn/learn.ts:399"
+    "src/learn/learn.ts:401"
    ]
   },
   {
@@ -25026,14 +25061,14 @@
    "en": "The travel guide needs its data; check your connection.",
    "es": "La guía de viaje necesita sus datos; revisa tu conexión.",
    "where": [
-    "src/guide/guide.ts:219"
+    "src/guide/guide.ts:220"
    ]
   },
   {
    "en": "The travel guide's cities, the best known by how many Wikipedias write about them, a share for each continent.",
    "es": "Las ciudades de la guía de viaje, las más conocidas según cuántas Wikipedias escriben de ellas, una parte para cada continente.",
    "where": [
-    "src/master/master.ts:1140"
+    "src/master/master.ts:1142"
    ]
   },
   {
@@ -25054,7 +25089,7 @@
    "en": "The trenches (below 6 000 m)",
    "es": "Las fosas (más de 6 000 m)",
    "where": [
-    "src/learn/learn.ts:1372"
+    "src/learn/learn.ts:1374"
    ]
   },
   {
@@ -25117,7 +25152,7 @@
    "en": "The whole deck, no mistake! 🏆",
    "es": "¡El mazo entero, sin un error! 🏆",
    "where": [
-    "src/master/master.ts:870"
+    "src/master/master.ts:872"
    ]
   },
   {
@@ -25166,7 +25201,7 @@
    "en": "The world in {0}",
    "es": "El mundo en {0}",
    "where": [
-    "src/learn/learn.ts:2183"
+    "src/learn/learn.ts:2185"
    ]
   },
   {
@@ -25264,7 +25299,7 @@
    "en": "Then one reminder around {0} · ",
    "es": "Después, un recordatorio hacia las {0} · ",
    "where": [
-    "src/today/reminders.ts:303"
+    "src/today/reminders.ts:323"
    ]
   },
   {
@@ -25320,7 +25355,7 @@
    "en": "This browser cannot read aloud.",
    "es": "Este navegador no puede leer en voz alta.",
    "where": [
-    "src/ui/settings.ts:125"
+    "src/ui/settings.ts:128"
    ]
   },
   {
@@ -25334,7 +25369,7 @@
    "en": "This city’s guide could not be loaded; check your connection.",
    "es": "No se pudo cargar la guía de esta ciudad; revisa tu conexión.",
    "where": [
-    "src/guide/guide.ts:453"
+    "src/guide/guide.ts:455"
    ]
   },
   {
@@ -25363,7 +25398,7 @@
    "en": "This device has no voices in {0}. You can add one in the system’s text-to-speech settings.",
    "es": "Este dispositivo no tiene voces en {0}. Puedes agregar una en los ajustes de texto a voz del sistema.",
    "where": [
-    "src/ui/settings.ts:134"
+    "src/ui/settings.ts:137"
    ]
   },
   {
@@ -25416,7 +25451,7 @@
    "en": "This game needs its maps; check your connection.",
    "es": "Este juego necesita sus mapas; revisa tu conexión.",
    "where": [
-    "src/learn/learn.ts:495"
+    "src/learn/learn.ts:497"
    ]
   },
   {
@@ -25437,7 +25472,7 @@
    "en": "This is already the shortest order.",
    "es": "Este ya es el orden más corto.",
    "where": [
-    "src/guide/guide.ts:282"
+    "src/guide/guide.ts:283"
    ]
   },
   {
@@ -25473,65 +25508,65 @@
    "en": "This phone wakes Atlas in the background now and then, so the reminder comes around your time, as the phone decides.",
    "es": "Este teléfono despierta a Atlas en segundo plano de vez en cuando, así que el recordatorio llega hacia tu hora, cuando el teléfono decide.",
    "where": [
-    "src/today/reminders.ts:351"
+    "src/today/reminders.ts:371"
    ]
   },
   {
    "en": "This quiz could not load its questions; try again in a moment.",
    "es": "Este concurso no pudo cargar sus preguntas; vuelve a intentarlo en un momento.",
    "where": [
-    "src/learn/learn.ts:1709"
+    "src/learn/learn.ts:1711"
    ]
   },
   {
    "en": "This quiz needs its map data; check your connection.",
    "es": "Este concurso necesita sus datos de mapa; revisa tu conexión.",
    "where": [
-    "src/learn/learn.ts:611",
-    "src/learn/learn.ts:661"
+    "src/learn/learn.ts:613",
+    "src/learn/learn.ts:663"
    ]
   },
   {
    "en": "This quiz needs the animal data; check your connection.",
    "es": "Este concurso necesita los datos de animales; revisa tu conexión.",
    "where": [
-    "src/learn/learn.ts:495"
+    "src/learn/learn.ts:497"
    ]
   },
   {
    "en": "This quiz needs the art guide; check your connection.",
    "es": "Este concurso necesita la guía de arte; revisa tu conexión.",
    "where": [
-    "src/learn/learn.ts:495"
+    "src/learn/learn.ts:497"
    ]
   },
   {
    "en": "This quiz needs the border data; check your connection.",
    "es": "Este concurso necesita los datos de fronteras; revisa tu conexión.",
    "where": [
-    "src/learn/learn.ts:495"
+    "src/learn/learn.ts:497"
    ]
   },
   {
    "en": "This quiz needs the country data; check your connection.",
    "es": "Este concurso necesita los datos de los países; revisa tu conexión.",
    "where": [
-    "src/learn/learn.ts:2214",
-    "src/learn/learn.ts:2311"
+    "src/learn/learn.ts:2216",
+    "src/learn/learn.ts:2313"
    ]
   },
   {
    "en": "This quiz needs the plant data; check your connection.",
    "es": "Este concurso necesita los datos de plantas; revisa tu conexión.",
    "where": [
-    "src/learn/learn.ts:495"
+    "src/learn/learn.ts:497"
    ]
   },
   {
    "en": "This quiz needs the story collections; check your connection.",
    "es": "Este concurso necesita las colecciones de historias; revisa tu conexión.",
    "where": [
-    "src/learn/learn.ts:588"
+    "src/learn/learn.ts:590"
    ]
   },
   {
@@ -25601,7 +25636,7 @@
    "en": "Three hearts, a combo, a power-up every 10 in a row · best {0}",
    "es": "Tres corazones, un combo y un poder cada 10 seguidos · récord {0}",
    "where": [
-    "src/master/master.ts:1097"
+    "src/master/master.ts:1099"
    ]
   },
   {
@@ -25680,7 +25715,7 @@
    "en": "Time detective",
    "es": "Detective del tiempo",
    "where": [
-    "src/learn/learn.ts:372"
+    "src/learn/learn.ts:374"
    ]
   },
   {
@@ -25694,14 +25729,14 @@
    "en": "Time keeper! ⏳",
    "es": "¡Guardián del tiempo! ⏳",
    "where": [
-    "src/learn/learn.ts:1959"
+    "src/learn/learn.ts:1961"
    ]
   },
   {
    "en": "Time there now",
    "es": "Hora allí ahora",
    "where": [
-    "src/guide/guide.ts:615"
+    "src/guide/guide.ts:617"
    ]
   },
   {
@@ -25780,7 +25815,7 @@
    "en": "To install: in Chrome use the ⋮ menu → \"Install app\" / \"Add to Home screen\". On iPhone: Share → \"Add to Home Screen\".",
    "es": "Para instalar: en Chrome usa el menú ⋮ → «Instalar app» / «Añadir a pantalla de inicio». En iPhone: Compartir → «Añadir a pantalla de inicio».",
    "where": [
-    "src/ui/settings.ts:39"
+    "src/ui/settings.ts:40"
    ]
   },
   {
@@ -25833,7 +25868,7 @@
     "src/app/i18n.ts:337",
     "src/green/cards.ts:116",
     "src/green/cards.ts:196",
-    "src/learn/learn.ts:2746"
+    "src/learn/learn.ts:2748"
    ]
   },
   {
@@ -25882,7 +25917,7 @@
    "en": "Today: {0} of {1} answers",
    "es": "Hoy: {0} de {1} respuestas",
    "where": [
-    "src/master/master.ts:1030"
+    "src/master/master.ts:1032"
    ]
   },
   {
@@ -25896,7 +25931,7 @@
    "en": "Today’s goal: {0} of {1} answers",
    "es": "Meta de hoy: {0} de {1} respuestas",
    "where": [
-    "src/main.ts:119"
+    "src/main.ts:127"
    ]
   },
   {
@@ -26038,9 +26073,9 @@
    "en": "Travel guide",
    "es": "Guía de viaje",
    "where": [
-    "src/guide/guide.ts:90",
-    "src/guide/guide.ts:302",
-    "src/guide/guide.ts:352"
+    "src/guide/guide.ts:91",
+    "src/guide/guide.ts:304",
+    "src/guide/guide.ts:354"
    ]
   },
   {
@@ -26248,7 +26283,7 @@
    "en": "Turn the globe to look around.",
    "es": "Gira el globo para mirar.",
    "where": [
-    "src/learn/learn.ts:918"
+    "src/learn/learn.ts:920"
    ]
   },
   {
@@ -26298,7 +26333,7 @@
    "en": "Twilight zone (200–1 000 m)",
    "es": "Penumbra (200–1 000 m)",
    "where": [
-    "src/learn/learn.ts:1372"
+    "src/learn/learn.ts:1374"
    ]
   },
   {
@@ -26326,7 +26361,7 @@
    "en": "Two countries that do not touch, and one country between them: which one do you cross?",
    "es": "Dos países que no se tocan y un país entre ellos: ¿cuál cruzas?",
    "where": [
-    "src/learn/learn.ts:370"
+    "src/learn/learn.ts:372"
    ]
   },
   {
@@ -26404,35 +26439,35 @@
    "en": "Type the answer once a country is well known",
    "es": "Escribir la respuesta cuando un país ya se conoce bien",
    "where": [
-    "src/master/master.ts:1130"
+    "src/master/master.ts:1132"
    ]
   },
   {
    "en": "Type the answer once a state is well known",
    "es": "Escribir la respuesta cuando un estado ya se conoce bien",
    "where": [
-    "src/master/master.ts:1130"
+    "src/master/master.ts:1132"
    ]
   },
   {
    "en": "Type the answer once it is well known",
    "es": "Escribir la respuesta cuando ya se conoce bien",
    "where": [
-    "src/master/master.ts:1130"
+    "src/master/master.ts:1132"
    ]
   },
   {
    "en": "Type the capital of {0}",
    "es": "Escribe la capital de {0}",
    "where": [
-    "src/master/master.ts:762"
+    "src/master/master.ts:764"
    ]
   },
   {
    "en": "Type the capital…",
    "es": "Escribe la capital…",
    "where": [
-    "src/master/master.ts:703"
+    "src/master/master.ts:705"
    ]
   },
   {
@@ -26448,7 +26483,7 @@
    "where": [
     "src/master/extra.ts:122",
     "src/master/extra.ts:340",
-    "src/master/master.ts:703",
+    "src/master/master.ts:705",
     "src/play/outline.ts:198"
    ]
   },
@@ -26492,7 +26527,7 @@
    "en": "UNESCO's World Heritage List, the best known with a picture (Wikimedia Commons; each picture's author and licence are shown with the answer).",
    "es": "La lista del Patrimonio de la Humanidad de la UNESCO, los más conocidos con imagen (Wikimedia Commons; con la respuesta se muestran el autor y la licencia de cada imagen).",
    "where": [
-    "src/master/master.ts:1140"
+    "src/master/master.ts:1142"
    ]
   },
   {
@@ -26664,7 +26699,7 @@
    "en": "United States",
    "es": "Estados Unidos",
    "where": [
-    "src/master/master.ts:191"
+    "src/master/master.ts:192"
    ]
   },
   {
@@ -26993,8 +27028,8 @@
    "en": "Voice",
    "es": "Voz",
    "where": [
-    "src/ui/settings.ts:137",
-    "src/ui/settings.ts:144"
+    "src/ui/settings.ts:140",
+    "src/ui/settings.ts:147"
    ]
   },
   {
@@ -27219,7 +27254,7 @@
    "en": "Weather by month",
    "es": "El clima mes a mes",
    "where": [
-    "src/guide/guide.ts:654"
+    "src/guide/guide.ts:656"
    ]
   },
   {
@@ -27311,8 +27346,8 @@
    "en": "What are you hearing?",
    "es": "¿Qué estás oyendo?",
    "where": [
-    "src/learn/learn.ts:386",
-    "src/learn/learn.ts:1610"
+    "src/learn/learn.ts:388",
+    "src/learn/learn.ts:1612"
    ]
   },
   {
@@ -27326,30 +27361,30 @@
    "en": "What grows here?",
    "es": "¿Qué crece aquí?",
    "where": [
-    "src/green/finder.ts:91",
-    "src/green/finder.ts:221"
+    "src/green/finder.ts:92",
+    "src/green/finder.ts:222"
    ]
   },
   {
    "en": "What happened on this day: events, births and deaths",
    "es": "Lo que pasó un día como hoy: hechos, nacimientos y muertes",
    "where": [
-    "src/main.ts:149"
+    "src/main.ts:157"
    ]
   },
   {
    "en": "What is the capital of {0}?",
    "es": "¿Cuál es la capital de {0}?",
    "where": [
-    "src/learn/learn.ts:1749",
-    "src/master/master.ts:762"
+    "src/learn/learn.ts:1751",
+    "src/master/master.ts:764"
    ]
   },
   {
    "en": "What is under the pin?",
    "es": "¿Qué hay bajo el alfiler?",
    "where": [
-    "src/learn/learn.ts:1364"
+    "src/learn/learn.ts:1366"
    ]
   },
   {
@@ -27372,8 +27407,8 @@
    "en": "What lives here?",
    "es": "¿Qué vive aquí?",
    "where": [
-    "src/wild/finder.ts:141",
-    "src/wild/finder.ts:321"
+    "src/wild/finder.ts:142",
+    "src/wild/finder.ts:322"
    ]
   },
   {
@@ -27387,7 +27422,7 @@
    "en": "What the Time travel stories tell of this place: tap one to open its story at that step.",
    "es": "Lo que cuentan de este lugar las historias de Viaje en el tiempo: toca una para abrirla en ese paso.",
    "where": [
-    "src/guide/guide.ts:669"
+    "src/guide/guide.ts:671"
    ]
   },
   {
@@ -27401,7 +27436,7 @@
    "en": "What to place",
    "es": "Qué colocar",
    "where": [
-    "src/onmap/onmap.ts:550"
+    "src/onmap/onmap.ts:567"
    ]
   },
   {
@@ -27441,29 +27476,29 @@
    "en": "When did it happen?",
    "es": "¿Cuándo ocurrió?",
    "where": [
-    "src/learn/learn.ts:1602"
+    "src/learn/learn.ts:1604"
    ]
   },
   {
    "en": "When is it?",
    "es": "¿Cuándo es?",
    "where": [
-    "src/learn/learn.ts:396"
+    "src/learn/learn.ts:398"
    ]
   },
   {
    "en": "When is the best month to see it?",
    "es": "¿Cuál es el mejor mes para verlo?",
    "where": [
-    "src/learn/learn.ts:1757"
+    "src/learn/learn.ts:1759"
    ]
   },
   {
    "en": "When is this map from?",
    "es": "¿De cuándo es este mapa?",
    "where": [
-    "src/learn/learn.ts:1730",
-    "src/learn/learn.ts:2162"
+    "src/learn/learn.ts:1732",
+    "src/learn/learn.ts:2164"
    ]
   },
   {
@@ -27471,8 +27506,8 @@
    "es": "Cuándo florece",
    "where": [
     "src/green/cards.ts:80",
-    "src/green/finder.ts:183",
-    "src/green/finder.ts:185"
+    "src/green/finder.ts:184",
+    "src/green/finder.ts:186"
    ]
   },
   {
@@ -27486,7 +27521,7 @@
    "en": "When it flowers: {0}",
    "es": "Cuándo florece: {0}",
    "where": [
-    "src/green/finder.ts:185"
+    "src/green/finder.ts:186"
    ]
   },
   {
@@ -27500,71 +27535,71 @@
    "en": "When to go",
    "es": "Cuándo ir",
    "where": [
-    "src/wild/finder.ts:244",
-    "src/wild/finder.ts:247"
+    "src/wild/finder.ts:245",
+    "src/wild/finder.ts:248"
    ]
   },
   {
    "en": "When to go needs the internet (iNaturalist).",
    "es": "Cuándo ir necesita internet (iNaturalist).",
    "where": [
-    "src/wild/finder.ts:250"
+    "src/wild/finder.ts:251"
    ]
   },
   {
    "en": "When to go: {0}",
    "es": "Cuándo ir: {0}",
    "where": [
-    "src/wild/finder.ts:247"
+    "src/wild/finder.ts:248"
    ]
   },
   {
    "en": "When was it built?",
    "es": "¿Cuándo se construyó?",
    "where": [
-    "src/learn/learn.ts:1602"
+    "src/learn/learn.ts:1604"
    ]
   },
   {
    "en": "When was it completed?",
    "es": "¿Cuándo se terminó?",
    "where": [
-    "src/learn/learn.ts:1602"
+    "src/learn/learn.ts:1604"
    ]
   },
   {
    "en": "When was it first recorded?",
    "es": "¿Cuándo aparece por primera vez?",
    "where": [
-    "src/learn/learn.ts:1602"
+    "src/learn/learn.ts:1604"
    ]
   },
   {
    "en": "When was it invented?",
    "es": "¿Cuándo se inventó?",
    "where": [
-    "src/learn/learn.ts:1602"
+    "src/learn/learn.ts:1604"
    ]
   },
   {
    "en": "When was it made?",
    "es": "¿Cuándo se hizo?",
    "where": [
-    "src/learn/learn.ts:1602"
+    "src/learn/learn.ts:1604"
    ]
   },
   {
    "en": "When was it written?",
    "es": "¿Cuándo se escribió?",
    "where": [
-    "src/learn/learn.ts:1600"
+    "src/learn/learn.ts:1602"
    ]
   },
   {
    "en": "When was it?",
    "es": "¿Cuándo fue?",
    "where": [
-    "src/learn/learn.ts:374"
+    "src/learn/learn.ts:376"
    ]
   },
   {
@@ -27639,7 +27674,7 @@
    "en": "Where can I see…?",
    "es": "¿Dónde puedo ver…?",
    "where": [
-    "src/wild/finder.ts:171"
+    "src/wild/finder.ts:172"
    ]
   },
   {
@@ -27653,7 +27688,7 @@
    "en": "Where did this happen?",
    "es": "¿Dónde ocurrió?",
    "where": [
-    "src/learn/learn.ts:1601"
+    "src/learn/learn.ts:1603"
    ]
   },
   {
@@ -27688,64 +27723,64 @@
    "en": "Where does it grow?",
    "es": "¿Dónde crece?",
    "where": [
-    "src/green/finder.ts:118",
-    "src/learn/learn.ts:393"
+    "src/green/finder.ts:119",
+    "src/learn/learn.ts:395"
    ]
   },
   {
    "en": "Where does it live most often?",
    "es": "¿Dónde vive más a menudo?",
    "where": [
-    "src/learn/learn.ts:1384"
+    "src/learn/learn.ts:1386"
    ]
   },
   {
    "en": "Where does it live?",
    "es": "¿Dónde vive?",
    "where": [
-    "src/learn/learn.ts:391"
+    "src/learn/learn.ts:393"
    ]
   },
   {
    "en": "Where does this animal live in the wild?",
    "es": "¿Dónde vive este animal en libertad?",
    "where": [
-    "src/learn/learn.ts:1584"
+    "src/learn/learn.ts:1586"
    ]
   },
   {
    "en": "Where does this dish come from?",
    "es": "¿De dónde es este plato?",
    "where": [
-    "src/learn/learn.ts:1601"
+    "src/learn/learn.ts:1603"
    ]
   },
   {
    "en": "Where does this drink come from?",
    "es": "¿De dónde es esta bebida?",
    "where": [
-    "src/learn/learn.ts:1589"
+    "src/learn/learn.ts:1591"
    ]
   },
   {
    "en": "Where does this instrument come from?",
    "es": "¿De dónde es este instrumento?",
    "where": [
-    "src/learn/learn.ts:1599"
+    "src/learn/learn.ts:1601"
    ]
   },
   {
    "en": "Where does this plant grow wild?",
    "es": "¿Dónde crece silvestre esta planta?",
    "where": [
-    "src/learn/learn.ts:1585"
+    "src/learn/learn.ts:1587"
    ]
   },
   {
    "en": "Where does this spice or sauce come from?",
    "es": "¿De dónde es esta especia o salsa?",
    "where": [
-    "src/learn/learn.ts:1590"
+    "src/learn/learn.ts:1592"
    ]
   },
   {
@@ -27774,14 +27809,14 @@
    "en": "Where in the world is this?",
    "es": "¿Dónde está?",
    "where": [
-    "src/learn/learn.ts:1601"
+    "src/learn/learn.ts:1603"
    ]
   },
   {
    "en": "Where in the world?",
    "es": "¿Dónde está?",
    "where": [
-    "src/learn/learn.ts:373"
+    "src/learn/learn.ts:375"
    ]
   },
   {
@@ -27844,17 +27879,17 @@
    "en": "Where is {0}?",
    "es": "¿Dónde está {0}?",
    "where": [
-    "src/learn/learn.ts:742",
-    "src/learn/learn.ts:1726",
-    "src/learn/learn.ts:1729",
-    "src/learn/learn.ts:1746"
+    "src/learn/learn.ts:744",
+    "src/learn/learn.ts:1728",
+    "src/learn/learn.ts:1731",
+    "src/learn/learn.ts:1748"
    ]
   },
   {
    "en": "Where is {0}? Tap one of the grey {1}.",
    "es": "¿Dónde está {0}? Toca uno de los grises.",
    "where": [
-    "src/onmap/onmap.ts:347"
+    "src/onmap/onmap.ts:351"
    ]
   },
   {
@@ -28024,70 +28059,70 @@
    "en": "Where was most of this element made?",
    "es": "¿Dónde se formó la mayor parte de este elemento?",
    "where": [
-    "src/learn/learn.ts:1000"
+    "src/learn/learn.ts:1002"
    ]
   },
   {
    "en": "Where was this World Cup’s final played?",
    "es": "¿Dónde se jugó la final de este Mundial?",
    "where": [
-    "src/learn/learn.ts:1597"
+    "src/learn/learn.ts:1599"
    ]
   },
   {
    "en": "Where was this animal first tamed?",
    "es": "¿Dónde se domesticó primero este animal?",
    "where": [
-    "src/learn/learn.ts:1593"
+    "src/learn/learn.ts:1595"
    ]
   },
   {
    "en": "Where was this civilization centred?",
    "es": "¿Dónde tenía su centro esta civilización?",
    "where": [
-    "src/learn/learn.ts:1601"
+    "src/learn/learn.ts:1603"
    ]
   },
   {
    "en": "Where was this element made?",
    "es": "¿Dónde se formó este elemento?",
    "where": [
-    "src/learn/learn.ts:403"
+    "src/learn/learn.ts:405"
    ]
   },
   {
    "en": "Where was this found?",
    "es": "¿Dónde se encontró?",
    "where": [
-    "src/learn/learn.ts:1601"
+    "src/learn/learn.ts:1603"
    ]
   },
   {
    "en": "Where was this invented?",
    "es": "¿Dónde se inventó?",
    "where": [
-    "src/learn/learn.ts:1601"
+    "src/learn/learn.ts:1603"
    ]
   },
   {
    "en": "Where was this made?",
    "es": "¿Dónde se hizo?",
    "where": [
-    "src/learn/learn.ts:1601"
+    "src/learn/learn.ts:1603"
    ]
   },
   {
    "en": "Where was this style born?",
    "es": "¿Dónde nació este estilo?",
    "where": [
-    "src/learn/learn.ts:1598"
+    "src/learn/learn.ts:1600"
    ]
   },
   {
    "en": "Where were these Games held?",
    "es": "¿Dónde se celebraron estos Juegos?",
    "where": [
-    "src/learn/learn.ts:1597"
+    "src/learn/learn.ts:1599"
    ]
   },
   {
@@ -28129,14 +28164,14 @@
    "en": "Which World Heritage site is this?",
    "es": "¿Qué sitio del Patrimonio Mundial es este?",
    "where": [
-    "src/learn/learn.ts:1613"
+    "src/learn/learn.ts:1615"
    ]
   },
   {
    "en": "Which World Heritage site?",
    "es": "¿Qué sitio del Patrimonio Mundial?",
    "where": [
-    "src/learn/learn.ts:389"
+    "src/learn/learn.ts:391"
    ]
   },
   {
@@ -28157,14 +28192,14 @@
    "en": "Which book is it from?",
    "es": "¿De qué libro es?",
    "where": [
-    "src/learn/learn.ts:387"
+    "src/learn/learn.ts:389"
    ]
   },
   {
    "en": "Which book or poem is this line from?",
    "es": "¿De qué libro o poema es esta frase?",
    "where": [
-    "src/learn/learn.ts:1611"
+    "src/learn/learn.ts:1613"
    ]
   },
   {
@@ -28192,65 +28227,65 @@
    "en": "Which civilization does this belong to?",
    "es": "¿A qué civilización pertenece?",
    "where": [
-    "src/learn/learn.ts:1604"
+    "src/learn/learn.ts:1606"
    ]
   },
   {
    "en": "Which civilization?",
    "es": "¿Qué civilización?",
    "where": [
-    "src/learn/learn.ts:377"
+    "src/learn/learn.ts:379"
    ]
   },
   {
    "en": "Which constellation is this?",
    "es": "¿Qué constelación es esta?",
    "where": [
-    "src/learn/learn.ts:996"
+    "src/learn/learn.ts:998"
    ]
   },
   {
    "en": "Which constellation?",
    "es": "¿Qué constelación?",
    "where": [
-    "src/learn/learn.ts:402"
+    "src/learn/learn.ts:404"
    ]
   },
   {
    "en": "Which country do you cross from {0} to {1}?",
    "es": "¿Qué país cruzas para ir de {0} a {1}?",
    "where": [
-    "src/learn/learn.ts:1153"
+    "src/learn/learn.ts:1155"
    ]
   },
   {
    "en": "Which country does this dish come from?",
    "es": "¿De qué país es este plato?",
    "where": [
-    "src/learn/learn.ts:375",
-    "src/learn/learn.ts:1603"
+    "src/learn/learn.ts:377",
+    "src/learn/learn.ts:1605"
    ]
   },
   {
    "en": "Which country does this drink come from?",
    "es": "¿De qué país es esta bebida?",
    "where": [
-    "src/learn/learn.ts:1591"
+    "src/learn/learn.ts:1593"
    ]
   },
   {
    "en": "Which country does this spice or sauce come from?",
    "es": "¿De qué país es esta especia o salsa?",
    "where": [
-    "src/learn/learn.ts:1592"
+    "src/learn/learn.ts:1594"
    ]
   },
   {
    "en": "Which country has this flag?",
    "es": "¿De qué país es esta bandera?",
    "where": [
-    "src/learn/learn.ts:367",
-    "src/learn/learn.ts:1747"
+    "src/learn/learn.ts:369",
+    "src/learn/learn.ts:1749"
    ]
   },
   {
@@ -28271,7 +28306,7 @@
    "en": "Which country in between?",
    "es": "¿Qué país hay en medio?",
    "where": [
-    "src/learn/learn.ts:370"
+    "src/learn/learn.ts:372"
    ]
   },
   {
@@ -28285,7 +28320,7 @@
    "en": "Which country is this?",
    "es": "¿Qué país es este?",
    "where": [
-    "src/master/master.ts:764",
+    "src/master/master.ts:766",
     "src/play/outline.ts:184"
    ]
   },
@@ -28293,7 +28328,7 @@
    "en": "Which country is this? Type its name.",
    "es": "¿Qué país es este? Escribe su nombre.",
    "where": [
-    "src/master/master.ts:764"
+    "src/master/master.ts:766"
    ]
   },
   {
@@ -28307,14 +28342,14 @@
    "en": "Which disaster is it part of?",
    "es": "¿De qué desastre forma parte?",
    "where": [
-    "src/learn/learn.ts:1608"
+    "src/learn/learn.ts:1610"
    ]
   },
   {
    "en": "Which disaster?",
    "es": "¿Qué desastre?",
    "where": [
-    "src/learn/learn.ts:383"
+    "src/learn/learn.ts:385"
    ]
   },
   {
@@ -28328,50 +28363,50 @@
    "en": "Which epidemic is it part of?",
    "es": "¿De qué epidemia forma parte?",
    "where": [
-    "src/learn/learn.ts:1607"
+    "src/learn/learn.ts:1609"
    ]
   },
   {
    "en": "Which epidemic?",
    "es": "¿Qué epidemia?",
    "where": [
-    "src/learn/learn.ts:382"
+    "src/learn/learn.ts:384"
    ]
   },
   {
    "en": "Which era does this belong to?",
    "es": "¿A qué época pertenece?",
    "where": [
-    "src/learn/learn.ts:1615"
+    "src/learn/learn.ts:1617"
    ]
   },
   {
    "en": "Which era?",
    "es": "¿Qué época?",
    "where": [
-    "src/learn/learn.ts:376"
+    "src/learn/learn.ts:378"
    ]
   },
   {
    "en": "Which faith or school of thought does it belong to?",
    "es": "¿A qué religión o escuela de pensamiento pertenece?",
    "where": [
-    "src/learn/learn.ts:1606"
+    "src/learn/learn.ts:1608"
    ]
   },
   {
    "en": "Which faith?",
    "es": "¿Qué religión?",
    "where": [
-    "src/learn/learn.ts:381"
+    "src/learn/learn.ts:383"
    ]
   },
   {
    "en": "Which goes deeper?",
    "es": "¿Cuál llega más hondo?",
    "where": [
-    "src/learn/learn.ts:1753",
-    "src/learn/learn.ts:2011"
+    "src/learn/learn.ts:1755",
+    "src/learn/learn.ts:2013"
    ]
   },
   {
@@ -28448,7 +28483,7 @@
    "en": "Which instrument are you hearing?",
    "es": "¿Qué instrumento estás oyendo?",
    "where": [
-    "src/learn/learn.ts:1610"
+    "src/learn/learn.ts:1612"
    ]
   },
   {
@@ -28476,7 +28511,7 @@
    "en": "Which is the flag of {0}?",
    "es": "¿Cuál es la bandera de {0}?",
    "where": [
-    "src/master/master.ts:763"
+    "src/master/master.ts:765"
    ]
   },
   {
@@ -28490,14 +28525,14 @@
    "en": "Which journey or trade route is it from?",
    "es": "¿De qué viaje o ruta comercial es?",
    "where": [
-    "src/learn/learn.ts:1605"
+    "src/learn/learn.ts:1607"
    ]
   },
   {
    "en": "Which journey?",
    "es": "¿Qué viaje?",
    "where": [
-    "src/learn/learn.ts:380"
+    "src/learn/learn.ts:382"
    ]
   },
   {
@@ -28511,14 +28546,14 @@
    "en": "Which language family does it belong to?",
    "es": "¿A qué familia de lenguas pertenece?",
    "where": [
-    "src/learn/learn.ts:2397"
+    "src/learn/learn.ts:2399"
    ]
   },
   {
    "en": "Which language family?",
    "es": "¿Qué familia de lenguas?",
    "where": [
-    "src/learn/learn.ts:385"
+    "src/learn/learn.ts:387"
    ]
   },
   {
@@ -28546,15 +28581,15 @@
    "en": "Which museum is it in?",
    "es": "¿En qué museo está?",
    "where": [
-    "src/learn/learn.ts:390",
-    "src/learn/learn.ts:1230"
+    "src/learn/learn.ts:392",
+    "src/learn/learn.ts:1232"
    ]
   },
   {
    "en": "Which nation topped the medal table?",
    "es": "¿Qué país encabezó el medallero?",
    "where": [
-    "src/learn/learn.ts:1596"
+    "src/learn/learn.ts:1598"
    ]
   },
   {
@@ -28568,14 +28603,14 @@
    "en": "Which ocean zone?",
    "es": "¿Qué zona del océano?",
    "where": [
-    "src/learn/learn.ts:398"
+    "src/learn/learn.ts:400"
    ]
   },
   {
    "en": "Which of these animals lives here, in the wild?",
    "es": "¿Cuál de estos animales vive aquí, en libertad?",
    "where": [
-    "src/learn/learn.ts:1752"
+    "src/learn/learn.ts:1754"
    ]
   },
   {
@@ -28589,14 +28624,14 @@
    "en": "Which period?",
    "es": "¿Qué periodo?",
    "where": [
-    "src/learn/learn.ts:378"
+    "src/learn/learn.ts:380"
    ]
   },
   {
    "en": "Which piece are you hearing?",
    "es": "¿Qué obra estás oyendo?",
    "where": [
-    "src/learn/learn.ts:1610"
+    "src/learn/learn.ts:1612"
    ]
   },
   {
@@ -28617,14 +28652,14 @@
    "en": "Which script is this?",
    "es": "¿Qué escritura es esta?",
    "where": [
-    "src/learn/learn.ts:1609"
+    "src/learn/learn.ts:1611"
    ]
   },
   {
    "en": "Which script?",
    "es": "¿Qué escritura?",
    "where": [
-    "src/learn/learn.ts:384"
+    "src/learn/learn.ts:386"
    ]
   },
   {
@@ -28645,15 +28680,15 @@
    "en": "Which style of music is this?",
    "es": "¿Qué estilo de música es este?",
    "where": [
-    "src/learn/learn.ts:1610"
+    "src/learn/learn.ts:1612"
    ]
   },
   {
    "en": "Which world is this?",
    "es": "¿Qué mundo es este?",
    "where": [
-    "src/learn/learn.ts:400",
-    "src/learn/learn.ts:915"
+    "src/learn/learn.ts:402",
+    "src/learn/learn.ts:917"
    ]
   },
   {
@@ -28682,43 +28717,43 @@
    "en": "Who invented it?",
    "es": "¿Quién lo inventó?",
    "where": [
-    "src/learn/learn.ts:399",
-    "src/learn/learn.ts:1614"
+    "src/learn/learn.ts:401",
+    "src/learn/learn.ts:1616"
    ]
   },
   {
    "en": "Who landed here, on {0}?",
    "es": "¿Quién aterrizó aquí, en {0}?",
    "where": [
-    "src/learn/learn.ts:916"
+    "src/learn/learn.ts:918"
    ]
   },
   {
    "en": "Who landed here?",
    "es": "¿Quién aterrizó aquí?",
    "where": [
-    "src/learn/learn.ts:401"
+    "src/learn/learn.ts:403"
    ]
   },
   {
    "en": "Who lives here?",
    "es": "¿Quién vive aquí?",
    "where": [
-    "src/learn/learn.ts:392"
+    "src/learn/learn.ts:394"
    ]
   },
   {
    "en": "Who made it?",
    "es": "¿Quién lo hizo?",
    "where": [
-    "src/learn/learn.ts:388"
+    "src/learn/learn.ts:390"
    ]
   },
   {
    "en": "Who made this?",
    "es": "¿Quién hizo esta obra?",
    "where": [
-    "src/learn/learn.ts:1612"
+    "src/learn/learn.ts:1614"
    ]
   },
   {
@@ -28739,28 +28774,28 @@
    "en": "Who won this World Cup?",
    "es": "¿Quién ganó este Mundial?",
    "where": [
-    "src/learn/learn.ts:1596"
+    "src/learn/learn.ts:1598"
    ]
   },
   {
    "en": "Who won?",
    "es": "¿Quién ganó?",
    "where": [
-    "src/learn/learn.ts:379"
+    "src/learn/learn.ts:381"
    ]
   },
   {
    "en": "Whose flag is this?",
    "es": "¿De quién es esta bandera?",
    "where": [
-    "src/master/master.ts:763"
+    "src/master/master.ts:765"
    ]
   },
   {
    "en": "Whose flag is this? Type the country.",
    "es": "¿De quién es esta bandera? Escribe el país.",
    "where": [
-    "src/master/master.ts:763"
+    "src/master/master.ts:765"
    ]
   },
   {
@@ -28804,7 +28839,7 @@
    "en": "Wikidata lists no museum near the centre of this city.",
    "es": "Wikidata no tiene museos cerca del centro de esta ciudad.",
    "where": [
-    "src/guide/guide.ts:581"
+    "src/guide/guide.ts:583"
    ]
   },
   {
@@ -28825,28 +28860,28 @@
    "en": "Wikivoyage is a free travel guide written by travellers: where to stay, how to get around, restaurants, prices and safety, kept up to date by its writers.",
    "es": "Wikivoyage es una guía de viaje libre escrita por viajeros: dónde dormir, cómo moverse, restaurantes, precios y seguridad, al día gracias a sus autores.",
    "where": [
-    "src/guide/guide.ts:679"
+    "src/guide/guide.ts:681"
    ]
   },
   {
    "en": "Wikivoyage: loading…",
    "es": "Wikivoyage: cargando…",
    "where": [
-    "src/guide/guide.ts:535"
+    "src/guide/guide.ts:537"
    ]
   },
   {
    "en": "Wikivoyage’s “Eat” section could not be read (offline, or no page for this city).",
    "es": "No se pudo leer la sección “Comer” de Wikivoyage (sin conexión o sin página para esta ciudad).",
    "where": [
-    "src/guide/guide.ts:539"
+    "src/guide/guide.ts:541"
    ]
   },
   {
    "en": "Wild world",
    "es": "Mundo salvaje",
    "where": [
-    "src/learn/learn.ts:2452"
+    "src/learn/learn.ts:2454"
    ]
   },
   {
@@ -28860,7 +28895,7 @@
    "en": "Wildlife nearby",
    "es": "Vida silvestre cerca",
    "where": [
-    "src/wild/finder.ts:282"
+    "src/wild/finder.ts:283"
    ]
   },
   {
@@ -28959,14 +28994,14 @@
    "en": "Within 50 km of {0}°, {1}°{2}: the animals people have seen most.",
    "es": "A menos de 50 km de {0}°, {1}°{2}: los animales más vistos.",
    "where": [
-    "src/wild/finder.ts:320"
+    "src/wild/finder.ts:321"
    ]
   },
   {
    "en": "Within 50 km of {0}°, {1}°{2}: the plants people have seen most.",
    "es": "A menos de 50 km de {0}°, {1}°{2}: las plantas más vistas.",
    "where": [
-    "src/green/finder.ts:220"
+    "src/green/finder.ts:221"
    ]
   },
   {
@@ -29029,8 +29064,8 @@
    "en": "World",
    "es": "Mundo",
    "where": [
-    "src/learn/learn.ts:415",
-    "src/master/master.ts:52",
+    "src/learn/learn.ts:417",
+    "src/master/master.ts:53",
     "src/play/hop.ts:31"
    ]
   },
@@ -29045,7 +29080,7 @@
    "en": "World Cup champions, and the countries that topped each Olympics’ medal table.",
    "es": "Los campeones del Mundial y los países que encabezaron el medallero de cada Olimpiada.",
    "where": [
-    "src/learn/learn.ts:379"
+    "src/learn/learn.ts:381"
    ]
   },
   {
@@ -29062,7 +29097,7 @@
     "src/app/i18n.ts:261",
     "src/app/i18n.ts:338",
     "src/fill/fill.ts:71",
-    "src/guide/guide.ts:740",
+    "src/guide/guide.ts:742",
     "src/layers/packs/heritage.ts:326"
    ]
   },
@@ -29070,14 +29105,14 @@
    "en": "World Heritage in the city",
    "es": "Patrimonio Mundial en la ciudad",
    "where": [
-    "src/guide/guide.ts:569"
+    "src/guide/guide.ts:571"
    ]
   },
   {
    "en": "World Heritage since {0}",
    "es": "Patrimonio Mundial desde {0}",
    "where": [
-    "src/guide/guide.ts:564"
+    "src/guide/guide.ts:566"
    ]
   },
   {
@@ -29122,7 +29157,7 @@
    "es": "Escritura y lenguas",
    "where": [
     "src/app/i18n.ts:240",
-    "src/learn/learn.ts:2452",
+    "src/learn/learn.ts:2454",
     "src/modes/stories.ts:197"
    ]
   },
@@ -29245,36 +29280,36 @@
    "en": "You tapped {0}, {1} km away.",
    "es": "Tocaste {0}, a {1} km.",
    "where": [
-    "src/learn/learn.ts:1923"
+    "src/learn/learn.ts:1925"
    ]
   },
   {
    "en": "You tapped {0}. {1} is in yellow, {2} km away.",
    "es": "Tocaste {0}. {1} está en amarillo, a {2} km.",
    "where": [
-    "src/learn/learn.ts:730"
+    "src/learn/learn.ts:732"
    ]
   },
   {
    "en": "You wrote “{0}”.",
    "es": "Escribiste «{0}».",
    "where": [
-    "src/master/master.ts:796",
-    "src/master/master.ts:798"
+    "src/master/master.ts:798",
+    "src/master/master.ts:800"
    ]
   },
   {
    "en": "Your answer",
    "es": "Tu respuesta",
    "where": [
-    "src/master/master.ts:703"
+    "src/master/master.ts:705"
    ]
   },
   {
    "en": "Your calendar still says {0}: add the new time, and remove the old one if it stays. · ",
    "es": "Tu calendario aún dice {0}: agrega la nueva hora y quita la anterior si se queda. · ",
    "where": [
-    "src/today/reminders.ts:312"
+    "src/today/reminders.ts:332"
    ]
   },
   {
@@ -29295,7 +29330,7 @@
    "en": "Your daily games",
    "es": "Tus juegos del día",
    "where": [
-    "src/today/reminders.ts:236"
+    "src/today/reminders.ts:256"
    ]
   },
   {
@@ -29324,7 +29359,7 @@
    "en": "Your data on another device",
    "es": "Tus datos en otro dispositivo",
    "where": [
-    "src/ui/settings.ts:92",
+    "src/ui/settings.ts:94",
     "src/ui/shell.ts:115"
    ]
   },
@@ -29346,7 +29381,7 @@
    "en": "Your phone’s calendar reminds you every day at {0}; tapping it opens Today. (Notifications in the background need Atlas installed on Android.) · ",
    "es": "El calendario de tu teléfono te avisa cada día a las {0}; al tocarlo se abre Hoy. (Las notificaciones en segundo plano necesitan Atlas instalado en Android.) · ",
    "where": [
-    "src/today/reminders.ts:313"
+    "src/today/reminders.ts:333"
    ]
   },
   {
@@ -29360,9 +29395,9 @@
    "en": "Your progress",
    "es": "Tu progreso",
    "where": [
-    "src/learn/learn.ts:277",
-    "src/learn/learn.ts:458",
-    "src/learn/learn.ts:482",
+    "src/learn/learn.ts:279",
+    "src/learn/learn.ts:460",
+    "src/learn/learn.ts:484",
     "src/today/today.ts:81"
    ]
   },
@@ -29370,36 +29405,36 @@
    "en": "Your record: {0} of {1}. {2, select, states {States} other {Countries}} right {3} times in a row are skipped next time.",
    "es": "Tu récord: {0} de {1}. Los {4} acertados {3} veces seguidas se saltan la próxima vez.",
    "where": [
-    "src/master/master.ts:867"
+    "src/master/master.ts:869"
    ]
   },
   {
    "en": "Your review · Master the world",
    "es": "Tu repaso · Domina el mundo",
    "where": [
-    "src/learn/learn.ts:1735"
+    "src/learn/learn.ts:1737"
    ]
   },
   {
    "en": "Your trip",
    "es": "Tu viaje",
    "where": [
-    "src/guide/guide.ts:236",
-    "src/guide/guide.ts:425"
+    "src/guide/guide.ts:237",
+    "src/guide/guide.ts:427"
    ]
   },
   {
    "en": "Your trip is on the map. Open the Travel guide to change it.",
    "es": "Tu viaje está en el mapa. Abre la Guía de viaje para cambiarlo.",
    "where": [
-    "src/guide/guide.ts:390"
+    "src/guide/guide.ts:392"
    ]
   },
   {
    "en": "Your world",
    "es": "Tu mundo",
    "where": [
-    "src/master/master.ts:881",
+    "src/master/master.ts:883",
     "src/master/world.ts:31",
     "src/master/world.ts:52",
     "src/master/world.ts:60"
@@ -29409,7 +29444,7 @@
    "en": "Your world: each country coloured by how well you know it",
    "es": "Tu mundo: cada país coloreado según lo bien que lo conoces",
    "where": [
-    "src/master/master.ts:1120"
+    "src/master/master.ts:1122"
    ]
   },
   {
@@ -29517,8 +29552,8 @@
    "en": "Done",
    "es": "Terminar",
    "where": [
-    "src/learn/learn.ts:1966",
-    "src/learn/learn.ts:1982"
+    "src/learn/learn.ts:1968",
+    "src/learn/learn.ts:1984"
    ]
   },
   {
@@ -29572,7 +29607,7 @@
    "en": "Check",
    "es": "Comprobación",
    "where": [
-    "src/onmap/onmap.ts:343"
+    "src/onmap/onmap.ts:347"
    ]
   },
   {
@@ -29630,7 +29665,7 @@
    "en": "a new one tomorrow",
    "es": "mañana hay otro",
    "where": [
-    "src/learn/learn.ts:453"
+    "src/learn/learn.ts:455"
    ]
   },
   {
@@ -29640,7 +29675,7 @@
    "es": "Mejores lugares para verla",
    "where": [
     "src/green/cards.ts:73",
-    "src/green/finder.ts:200",
+    "src/green/finder.ts:201",
     "src/layers/packs/green.ts:206"
    ]
   },
@@ -29694,9 +29729,9 @@
    "en": "about",
    "es": "unas",
    "where": [
-    "src/guide/guide.ts:267",
-    "src/guide/guide.ts:621",
-    "src/guide/guide.ts:730"
+    "src/guide/guide.ts:268",
+    "src/guide/guide.ts:623",
+    "src/guide/guide.ts:732"
    ]
   },
   {
@@ -29851,7 +29886,7 @@
    "en": "at its best now",
    "es": "en su mejor momento ahora",
    "where": [
-    "src/green/finder.ts:256"
+    "src/green/finder.ts:257"
    ]
   },
   {
@@ -29865,7 +29900,7 @@
    "en": "atomic number",
    "es": "número atómico",
    "where": [
-    "src/learn/learn.ts:1001"
+    "src/learn/learn.ts:1003"
    ]
   },
   {
@@ -29912,7 +29947,7 @@
    "where": [
     "src/learn/progress.ts:335",
     "src/learn/progress.ts:346",
-    "src/master/master.ts:1031"
+    "src/master/master.ts:1033"
    ]
   },
   {
@@ -29947,7 +29982,7 @@
    "en": "by air",
    "es": "en avión",
    "where": [
-    "src/guide/guide.ts:621"
+    "src/guide/guide.ts:623"
    ]
   },
   {
@@ -29962,7 +29997,7 @@
    "en": "capital",
    "es": "capital",
    "where": [
-    "src/guide/guide.ts:434"
+    "src/guide/guide.ts:436"
    ]
   },
   {
@@ -29983,15 +30018,15 @@
    "en": "change",
    "es": "cambiar",
    "where": [
-    "src/today/reminders.ts:294",
-    "src/today/reminders.ts:327"
+    "src/today/reminders.ts:314",
+    "src/today/reminders.ts:347"
    ]
   },
   {
    "en": "choose",
    "es": "elegir",
    "where": [
-    "src/today/reminders.ts:327"
+    "src/today/reminders.ts:347"
    ]
   },
   {
@@ -30013,8 +30048,8 @@
    "es": "países",
    "where": [
     "src/compare/compare.ts:40",
-    "src/learn/learn.ts:2286",
-    "src/master/master.ts:189"
+    "src/learn/learn.ts:2288",
+    "src/master/master.ts:190"
    ]
   },
   {
@@ -30064,7 +30099,7 @@
    "es": "día",
    "where": [
     "src/guide/export.ts:49",
-    "src/guide/guide.ts:726"
+    "src/guide/guide.ts:728"
    ]
   },
   {
@@ -30079,7 +30114,7 @@
    "es": "días",
    "where": [
     "src/guide/export.ts:49",
-    "src/guide/guide.ts:726"
+    "src/guide/guide.ts:728"
    ]
   },
   {
@@ -30129,7 +30164,7 @@
    "en": "From {0}",
    "es": "De {0}",
    "where": [
-    "src/guide/guide.ts:528"
+    "src/guide/guide.ts:530"
    ]
   },
   {
@@ -30150,8 +30185,8 @@
    "en": "eng",
    "es": "spa",
    "where": [
-    "src/green/finder.ts:134",
-    "src/wild/finder.ts:187"
+    "src/green/finder.ts:135",
+    "src/wild/finder.ts:188"
    ]
   },
   {
@@ -30191,7 +30226,7 @@
    "en": "Correct! All four in order.",
    "es": "¡Correcto! Las cuatro en orden.",
    "where": [
-    "src/learn/learn.ts:1462"
+    "src/learn/learn.ts:1464"
    ]
   },
   {
@@ -30213,7 +30248,7 @@
    "es": "desaparecido, {0}",
    "where": [
     "src/layers/packs/wild.ts:260",
-    "src/wild/finder.ts:178"
+    "src/wild/finder.ts:179"
    ]
   },
   {
@@ -30227,14 +30262,14 @@
    "en": "in English",
    "es": "en inglés",
    "where": [
-    "src/guide/guide.ts:540"
+    "src/guide/guide.ts:542"
    ]
   },
   {
    "en": "in Spanish",
    "es": "en español",
    "where": [
-    "src/guide/guide.ts:540"
+    "src/guide/guide.ts:542"
    ]
   },
   {
@@ -30264,7 +30299,7 @@
    "en": "it grows wild in the green squares",
    "es": "crece silvestre en los cuadros verdes",
    "where": [
-    "src/learn/learn.ts:1660"
+    "src/learn/learn.ts:1662"
    ]
   },
   {
@@ -30278,7 +30313,7 @@
    "en": "it lives in the orange squares",
    "es": "vive en los cuadros naranjas",
    "where": [
-    "src/learn/learn.ts:1665"
+    "src/learn/learn.ts:1667"
    ]
   },
   {
@@ -30292,14 +30327,14 @@
    "en": "keep your {0}-day streak",
    "es": "no pierdas tu racha de {0, plural, one {# día} other {# días}}",
    "where": [
-    "src/today/reminders.ts:176"
+    "src/today/reminders.ts:194"
    ]
   },
   {
    "en": "known",
    "es": "conocidos",
    "where": [
-    "src/master/master.ts:66"
+    "src/master/master.ts:67"
    ]
   },
   {
@@ -30322,7 +30357,7 @@
    "en": "learning",
    "es": "aprendiendo",
    "where": [
-    "src/master/master.ts:66"
+    "src/master/master.ts:67"
    ]
   },
   {
@@ -30377,8 +30412,8 @@
    "en": "mastered",
    "es": "dominados",
    "where": [
-    "src/master/master.ts:66",
-    "src/master/master.ts:876"
+    "src/master/master.ts:67",
+    "src/master/master.ts:878"
    ]
   },
   {
@@ -30501,11 +30536,11 @@
    "en": "no answer",
    "es": "sin respuesta",
    "where": [
-    "src/learn/learn.ts:726",
-    "src/learn/learn.ts:951",
-    "src/learn/learn.ts:1032",
-    "src/learn/learn.ts:1654",
-    "src/learn/learn.ts:1916"
+    "src/learn/learn.ts:728",
+    "src/learn/learn.ts:953",
+    "src/learn/learn.ts:1034",
+    "src/learn/learn.ts:1656",
+    "src/learn/learn.ts:1918"
    ]
   },
   {
@@ -30586,7 +30621,7 @@
    "en": "on now",
    "es": "ahora",
    "where": [
-    "src/green/finder.ts:256"
+    "src/green/finder.ts:257"
    ]
   },
   {
@@ -30602,21 +30637,21 @@
    "en": "on the left",
    "es": "por la izquierda",
    "where": [
-    "src/guide/guide.ts:607"
+    "src/guide/guide.ts:609"
    ]
   },
   {
    "en": "on the list since {0}",
    "es": "en la lista desde {0}",
    "where": [
-    "src/learn/learn.ts:1868"
+    "src/learn/learn.ts:1870"
    ]
   },
   {
    "en": "on the right",
    "es": "por la derecha",
    "where": [
-    "src/guide/guide.ts:607"
+    "src/guide/guide.ts:609"
    ]
   },
   {
@@ -30644,7 +30679,7 @@
    "en": "people",
    "es": "habitantes",
    "where": [
-    "src/guide/guide.ts:434",
+    "src/guide/guide.ts:436",
     "src/play/hop.ts:350"
    ]
   },
@@ -30782,11 +30817,11 @@
    "en": "right",
    "es": "correcto",
    "where": [
-    "src/learn/learn.ts:760",
-    "src/learn/learn.ts:955",
-    "src/learn/learn.ts:1036",
-    "src/learn/learn.ts:2031",
-    "src/learn/learn.ts:2141"
+    "src/learn/learn.ts:762",
+    "src/learn/learn.ts:957",
+    "src/learn/learn.ts:1038",
+    "src/learn/learn.ts:2033",
+    "src/learn/learn.ts:2143"
    ]
   },
   {
@@ -30842,7 +30877,7 @@
    "en": "since {0} million years ago",
    "es": "desde hace {0} millones de años",
    "where": [
-    "src/learn/learn.ts:1578"
+    "src/learn/learn.ts:1580"
    ]
   },
   {
@@ -30877,7 +30912,7 @@
    "en": "states",
    "es": "estados",
    "where": [
-    "src/master/master.ts:189"
+    "src/master/master.ts:190"
    ]
   },
   {
@@ -30900,14 +30935,14 @@
    "en": "stops",
    "es": "paradas",
    "where": [
-    "src/learn/learn.ts:2459"
+    "src/learn/learn.ts:2461"
    ]
   },
   {
    "en": "tap its place among the grey ones",
    "es": "toca su lugar entre los grises",
    "where": [
-    "src/onmap/onmap.ts:371"
+    "src/onmap/onmap.ts:388"
    ]
   },
   {
@@ -30928,7 +30963,7 @@
    "en": "text CC BY-SA, by Wikivoyage’s writers",
    "es": "texto CC BY-SA, de los autores de Wikivoyage",
    "where": [
-    "src/guide/guide.ts:542"
+    "src/guide/guide.ts:544"
    ]
   },
   {
@@ -31011,7 +31046,7 @@
    "en": "the same as yours",
    "es": "la misma que la tuya",
    "where": [
-    "src/guide/guide.ts:615"
+    "src/guide/guide.ts:617"
    ]
   },
   {
@@ -31019,7 +31054,7 @@
    "es": "el mismo para todos hoy",
    "where": [
     "src/fill/states.ts:537",
-    "src/onmap/onmap.ts:595"
+    "src/onmap/onmap.ts:612"
    ]
   },
   {
@@ -31033,14 +31068,14 @@
    "en": "the sun does not rise",
    "es": "el sol no sale",
    "where": [
-    "src/guide/guide.ts:617"
+    "src/guide/guide.ts:619"
    ]
   },
   {
    "en": "the sun does not set",
    "es": "el sol no se pone",
    "where": [
-    "src/guide/guide.ts:617"
+    "src/guide/guide.ts:619"
    ]
   },
   {
@@ -31084,14 +31119,14 @@
    "en": "Clear",
    "es": "Vaciar",
    "where": [
-    "src/guide/guide.ts:287"
+    "src/guide/guide.ts:289"
    ]
   },
   {
    "en": "to meet",
    "es": "por conocer",
    "where": [
-    "src/master/master.ts:66"
+    "src/master/master.ts:67"
    ]
   },
   {
@@ -31100,7 +31135,7 @@
    "en": "Play",
    "es": "Reproducir",
    "where": [
-    "src/learn/learn.ts:2569",
+    "src/learn/learn.ts:2571",
     "src/ui/legend.ts:134"
    ]
   },
@@ -31109,14 +31144,14 @@
    "es": "hoy",
    "where": [
     "src/app/i18n.ts:230",
-    "src/master/master.ts:876"
+    "src/master/master.ts:878"
    ]
   },
   {
    "en": "today’s games",
    "es": "los juegos de hoy",
    "where": [
-    "src/today/reminders.ts:235"
+    "src/today/reminders.ts:255"
    ]
   },
   {
@@ -31151,7 +31186,7 @@
    "en": "type",
    "es": "tipo",
    "where": [
-    "src/guide/guide.ts:606",
+    "src/guide/guide.ts:608",
     "src/layers/packs/facts.ts:228"
    ]
   },
@@ -31224,11 +31259,11 @@
    "en": "wrong",
    "es": "incorrecto",
    "where": [
-    "src/learn/learn.ts:760",
-    "src/learn/learn.ts:955",
-    "src/learn/learn.ts:1036",
-    "src/learn/learn.ts:2031",
-    "src/learn/learn.ts:2141"
+    "src/learn/learn.ts:762",
+    "src/learn/learn.ts:957",
+    "src/learn/learn.ts:1038",
+    "src/learn/learn.ts:2033",
+    "src/learn/learn.ts:2143"
    ]
   },
   {
@@ -31243,19 +31278,19 @@
    "en": "you said {0}",
    "es": "dijiste {0}",
    "where": [
-    "src/learn/learn.ts:951",
-    "src/learn/learn.ts:1032",
-    "src/learn/learn.ts:2008",
-    "src/learn/learn.ts:2015",
-    "src/learn/learn.ts:2140"
+    "src/learn/learn.ts:953",
+    "src/learn/learn.ts:1034",
+    "src/learn/learn.ts:2010",
+    "src/learn/learn.ts:2017",
+    "src/learn/learn.ts:2142"
    ]
   },
   {
    "en": "you: {0}",
    "es": "tú: {0}",
    "where": [
-    "src/learn/learn.ts:1439",
-    "src/learn/learn.ts:2077"
+    "src/learn/learn.ts:1441",
+    "src/learn/learn.ts:2079"
    ]
   },
   {
@@ -31306,9 +31341,9 @@
    "es": "{0, plural, one {# día seguido} other {# días seguidos}}",
    "where": [
     "src/learn/learn.ts:146",
-    "src/master/master.ts:1031",
-    "src/master/master.ts:1160",
-    "src/master/master.ts:1203",
+    "src/master/master.ts:1033",
+    "src/master/master.ts:1162",
+    "src/master/master.ts:1205",
     "src/today/today.ts:86"
    ]
   },
@@ -31367,7 +31402,7 @@
    "where": [
     "src/artguide/data.ts:63",
     "src/green/data.ts:140",
-    "src/guide/guide.ts:548",
+    "src/guide/guide.ts:550",
     "src/layers/packs/heritage.ts:357",
     "src/lives/born.ts:100"
    ]
@@ -31469,7 +31504,7 @@
    "en": "{0} below sea level",
    "es": "{0} bajo el nivel del mar",
    "where": [
-    "src/learn/learn.ts:1351"
+    "src/learn/learn.ts:1353"
    ]
   },
   {
@@ -31539,7 +31574,7 @@
    "en": "{0} cities added.",
    "es": "{0} ciudades agregadas.",
    "where": [
-    "src/guide/guide.ts:296"
+    "src/guide/guide.ts:298"
    ]
   },
   {
@@ -31624,7 +31659,7 @@
    "en": "{0} due today · {1} new. Each comes back just before you would forget it; right on 3 different days and it is mastered.",
    "es": "{0} para hoy · {1} nuevos. Cada uno vuelve justo antes de que lo olvides; bien en 3 días distintos y queda dominado.",
    "where": [
-    "src/master/master.ts:1096"
+    "src/master/master.ts:1098"
    ]
   },
   {
@@ -31673,35 +31708,35 @@
    "en": "{0} h ahead of you",
    "es": "{0} h más que tú",
    "where": [
-    "src/guide/guide.ts:615"
+    "src/guide/guide.ts:617"
    ]
   },
   {
    "en": "{0} h behind you",
    "es": "{0} h menos que tú",
    "where": [
-    "src/guide/guide.ts:615"
+    "src/guide/guide.ts:617"
    ]
   },
   {
    "en": "{0} in a row of {1}",
    "es": "{0} seguidos de {1}",
    "where": [
-    "src/master/master.ts:752"
+    "src/master/master.ts:754"
    ]
   },
   {
    "en": "{0} in a row.",
    "es": "{0} seguidos.",
    "where": [
-    "src/master/master.ts:871"
+    "src/master/master.ts:873"
    ]
   },
   {
    "en": "{0} in a row: back to the start",
    "es": "{0} seguidos: vuelta al principio",
    "where": [
-    "src/master/master.ts:866"
+    "src/master/master.ts:868"
    ]
   },
   {
@@ -31738,7 +31773,7 @@
    "en": "{0} is in yellow.",
    "es": "{0} está en amarillo.",
    "where": [
-    "src/learn/learn.ts:727"
+    "src/learn/learn.ts:729"
    ]
   },
   {
@@ -31752,21 +31787,21 @@
    "en": "{0} is the biggest of the four.",
    "es": "{0} es la más grande de las cuatro.",
    "where": [
-    "src/master/master.ts:811"
+    "src/master/master.ts:813"
    ]
   },
   {
    "en": "{0} is the capital of…",
    "es": "{0} es la capital de…",
    "where": [
-    "src/master/master.ts:761"
+    "src/master/master.ts:763"
    ]
   },
   {
    "en": "{0} km",
    "es": "{0} km",
    "where": [
-    "src/learn/learn.ts:323"
+    "src/learn/learn.ts:325"
    ]
   },
   {
@@ -31780,42 +31815,42 @@
    "en": "{0} km away",
    "es": "a {0} km",
    "where": [
-    "src/learn/learn.ts:1654"
+    "src/learn/learn.ts:1656"
    ]
   },
   {
    "en": "{0} km away. ",
    "es": "A {0} km. ",
    "where": [
-    "src/learn/learn.ts:1657"
+    "src/learn/learn.ts:1659"
    ]
   },
   {
    "en": "{0} km from where it grows. ",
    "es": "A {0} km de donde crece. ",
    "where": [
-    "src/learn/learn.ts:1659"
+    "src/learn/learn.ts:1661"
    ]
   },
   {
    "en": "{0} km from where it lives. ",
    "es": "A {0} km de donde vive. ",
    "where": [
-    "src/learn/learn.ts:1664"
+    "src/learn/learn.ts:1666"
    ]
   },
   {
    "en": "{0} km in all.",
    "es": "{0} km en total.",
    "where": [
-    "src/guide/guide.ts:272"
+    "src/guide/guide.ts:273"
    ]
   },
   {
    "en": "{0} lives here: its range is in orange.",
    "es": "{0} vive aquí: su área está en naranja.",
    "where": [
-    "src/learn/learn.ts:1886"
+    "src/learn/learn.ts:1888"
    ]
   },
   {
@@ -31943,8 +31978,8 @@
    "en": "{0} of {1} in the right place.",
    "es": "{0} de {1} en su lugar.",
    "where": [
-    "src/learn/learn.ts:1462",
-    "src/learn/learn.ts:2118"
+    "src/learn/learn.ts:1464",
+    "src/learn/learn.ts:2120"
    ]
   },
   {
@@ -31983,7 +32018,7 @@
    "en": "{0} puzzles today: {1}…",
    "es": "{0} retos hoy: {1}…",
    "where": [
-    "src/main.ts:183"
+    "src/main.ts:191"
    ]
   },
   {
@@ -31997,7 +32032,7 @@
    "en": "{0} right. Move the others and check again.",
    "es": "{0} bien. Mueve los demás y vuelve a comprobar.",
    "where": [
-    "src/onmap/onmap.ts:302"
+    "src/onmap/onmap.ts:306"
    ]
   },
   {
@@ -32011,8 +32046,8 @@
    "en": "{0} sightings",
    "es": "{0} avistamientos",
    "where": [
-    "src/green/finder.ts:233",
-    "src/wild/finder.ts:333"
+    "src/green/finder.ts:234",
+    "src/wild/finder.ts:334"
    ]
   },
   {
@@ -32026,7 +32061,7 @@
    "en": "{0} skipped (right {1} times running)",
    "es": "{0} saltados (bien {1} veces seguidas)",
    "where": [
-    "src/master/master.ts:1098"
+    "src/master/master.ts:1100"
    ]
   },
   {
@@ -32089,7 +32124,7 @@
    "en": "{0} to review",
    "es": "{0} por repasar",
    "where": [
-    "src/main.ts:119"
+    "src/main.ts:127"
    ]
   },
   {
@@ -32111,7 +32146,7 @@
    "es": "{0} visitantes al año",
    "where": [
     "src/artguide/artguide.ts:241",
-    "src/guide/guide.ts:585",
+    "src/guide/guide.ts:587",
     "src/layers/packs/artmap.ts:73"
    ]
   },
@@ -32126,7 +32161,7 @@
    "en": "{0} will be back tomorrow.",
    "es": "{0} volverán mañana.",
    "where": [
-    "src/master/master.ts:859"
+    "src/master/master.ts:861"
    ]
   },
   {
@@ -32179,14 +32214,14 @@
    "en": "{0} {1} to review today",
    "es": "{0} {1} por repasar hoy",
    "where": [
-    "src/master/master.ts:219"
+    "src/master/master.ts:220"
    ]
   },
   {
    "en": "{0} · the capital of {1}",
    "es": "{0} · la capital de {1}",
    "where": [
-    "src/master/master.ts:798"
+    "src/master/master.ts:800"
    ]
   },
   {
@@ -32208,14 +32243,14 @@
    "en": "{0}, the capital of {1}.",
    "es": "{0}, la capital de {1}.",
    "where": [
-    "src/master/master.ts:797"
+    "src/master/master.ts:799"
    ]
   },
   {
    "en": "{0}: a language of the {1} family{2, select, none {} other {, like {2}}}.",
    "es": "{0}: una lengua de la familia {1}{2, select, none {} other {, como {2}}}.",
    "where": [
-    "src/learn/learn.ts:2370"
+    "src/learn/learn.ts:2372"
    ]
   },
   {
@@ -32237,7 +32272,7 @@
    "en": "{0}: most often about {1} down, from {2} to {3}. {4}",
    "es": "{0}: casi siempre a unos {1}, de {2} a {3}. {4}",
    "where": [
-    "src/learn/learn.ts:1385"
+    "src/learn/learn.ts:1387"
    ]
   },
   {
@@ -32329,7 +32364,7 @@
    "en": "{0}–{1} million years ago",
    "es": "hace {0}–{1} millones de años",
    "where": [
-    "src/learn/learn.ts:1578"
+    "src/learn/learn.ts:1580"
    ]
   },
   {
@@ -32343,7 +32378,7 @@
    "en": "{0}’s national dish",
    "es": "Plato nacional de {0}",
    "where": [
-    "src/guide/guide.ts:523"
+    "src/guide/guide.ts:525"
    ]
   },
   {
@@ -32605,7 +32640,7 @@
    "en": "▶ Try the voice",
    "es": "▶ Probar la voz",
    "where": [
-    "src/ui/settings.ts:141"
+    "src/ui/settings.ts:144"
    ]
   },
   {
@@ -32696,7 +32731,7 @@
    "en": "⭐ Mastered: right on three different days.",
    "es": "⭐ Dominado: bien en tres días distintos.",
    "where": [
-    "src/master/master.ts:802"
+    "src/master/master.ts:804"
    ]
   },
   {
@@ -32766,14 +32801,14 @@
    "en": "📅 Add to my calendar ({0})",
    "es": "📅 Agregar a mi calendario ({0})",
    "where": [
-    "src/today/reminders.ts:308"
+    "src/today/reminders.ts:328"
    ]
   },
   {
    "en": "📅 In your calendar, every day at {0} · ",
    "es": "📅 En tu calendario, cada día a las {0} · ",
    "where": [
-    "src/today/reminders.ts:306"
+    "src/today/reminders.ts:326"
    ]
   },
   {
@@ -32808,36 +32843,36 @@
    "en": "📱 Like my phone",
    "es": "📱 Como mi teléfono",
    "where": [
-    "src/ui/settings.ts:47",
-    "src/ui/settings.ts:61"
+    "src/ui/settings.ts:48",
+    "src/ui/settings.ts:63"
    ]
   },
   {
    "en": "🔄 Back again: mastered once more!",
    "es": "🔄 ¡De vuelta: dominado otra vez!",
    "where": [
-    "src/master/master.ts:802"
+    "src/master/master.ts:804"
    ]
   },
   {
    "en": "🔔 One reminder around {0}, only if it’s not done yet.",
    "es": "🔔 Un recordatorio hacia las {0}, solo si aún no lo has hecho.",
    "where": [
-    "src/today/reminders.ts:201"
+    "src/today/reminders.ts:221"
    ]
   },
   {
    "en": "🔔 Want a reminder? Turn one on in any game",
    "es": "🔔 ¿Quieres un recordatorio? Actívalo en cualquier juego",
    "where": [
-    "src/today/reminders.ts:326"
+    "src/today/reminders.ts:346"
    ]
   },
   {
    "en": "🔕 Reminders are off",
    "es": "🔕 Los recordatorios están apagados",
    "where": [
-    "src/today/reminders.ts:323"
+    "src/today/reminders.ts:343"
    ]
   },
   {

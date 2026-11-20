@@ -8,12 +8,19 @@
 // the time, reading what the page left in Cache Storage: what is chosen, the day each was last done, and the words
 // for the days ahead. Elsewhere (iPhone, computers) the switch offers a daily calendar reminder at the exact time
 // instead: an .ics file the calendar adds once. Today shows the reminders and Settings turns them all off.
+// In the iOS and Android apps (v0.43.0) the phone itself shows them: they are scheduled ahead for the next eight days
+// (src/today/remind-plan.ts, src/native/notify.ts) and scheduled again whenever something changes.
 import type { Shell } from '../ui/shell';
 import { h, clear, toggle } from '../ui/dom';
 import { L } from '../play/host';
 import { appLocale } from '../app/i18n';
 import { current, progress } from '../learn/progress';
 import { DEFAULT_TIME, ics, nextDays, normTime } from './remind-logic';
+import type { RemindSnapshot } from './remind-plan';
+import { isNative } from '../native/platform';
+
+/** The apps' notifications (loaded only in the apps). */
+const nativeNotify = () => import('../native/notify');
 
 export const REMIND_KEY = 'atlas-globe:reminders';
 /** What the service worker reads (public/reminders-sw.js), and its periodic sync's tag. */
@@ -49,8 +56,8 @@ export interface RemindSource {
   prepare?(): Promise<unknown>;
 }
 
-/** How a reminder reaches you here: the service worker's notification, or a calendar event. */
-export type Route = 'push' | 'cal';
+/** How a reminder reaches you here: the service worker's notification, a calendar event, or the app's own. */
+export type Route = 'push' | 'cal' | 'native';
 
 let inst: Reminders | null = null;
 /** A game's 🔔 switch (null until Reminders is set up, or for a game that cannot remind). */
@@ -64,6 +71,8 @@ export class Reminders {
   private last = '';
   private prepared = new Set<string>();
   route: Route = 'cal';
+  /** In the apps: the phone allows the app's notifications. */
+  private allowed = false;
   /** For the tests: what the last calendar file said. */
   lastIcs = '';
 
@@ -105,6 +114,7 @@ export class Reminders {
   /** Finds the way here, keeps the background check registered while something is chosen, and writes the state. */
   async init() {
     this.route = await this.detect();
+    if (this.route === 'native') this.allowed = await (await nativeNotify()).notificationsAllowed();
     if (this.route === 'push' && this.on().length && Notification.permission === 'granted') await this.register();
     await this.sync();
   }
@@ -118,6 +128,7 @@ export class Reminders {
   }
   /** The notification where the browser can wake an installed Atlas in the background; the calendar elsewhere. */
   private async detect(): Promise<Route> {
+    if (isNative()) return 'native';
     if (!('Notification' in window) || !('serviceWorker' in navigator)) return 'cal';
     const reg = await this.reg();
     if (!reg || !('periodicSync' in reg)) return 'cal';
@@ -134,11 +145,18 @@ export class Reminders {
     try { await ps.register(TAG, { minInterval: 60 * 60 * 1000 }); return true; } catch { return false; }
   }
   private async unregister() {
+    if (this.route === 'native') { await (await nativeNotify()).scheduleReminders(null); return; }
     const ps = (await this.reg() as unknown as { periodicSync?: { unregister(t: string): Promise<void> } } | undefined)?.periodicSync;
     try { await ps?.unregister(TAG); } catch { /* gone already */ }
   }
   /** Asks for notifications (once) and registers the background check; false when not allowed. */
   private async allow(): Promise<boolean> {
+    if (this.route === 'native') {
+      this.allowed = await (await nativeNotify()).allowNotifications();
+      this.last = '';
+      if (this.allowed) await this.sync();
+      return this.allowed;
+    }
     if (this.route !== 'push') return false;
     let p = Notification.permission;
     if (p === 'default') p = await Notification.requestPermission().catch(() => 'denied' as NotificationPermission);
@@ -176,13 +194,15 @@ export class Reminders {
         (words[d] ??= {})[s.id] = keep ? { t: w.t, b: `${w.b} · 🔥 ${L('keep your {0}-day streak', 'no pierdas tu racha de {0, plural, one {# día} other {# días}}', streak)}` } : w;
       }
     }
-    const snap = {
+    const snap: RemindSnapshot & { v: number; url: string } = {
       v: 1, off: st.off, time: st.time, chosen: this.on().map((s) => s.id), done, days: words, generic,
       more: L('+{n} more', '+{n} más'), url: `${location.origin}${location.pathname}#today=1`,
     };
     const json = JSON.stringify(snap);
     if (json === this.last) return;
     this.last = json;
+    // The apps: the phone shows them, scheduled ahead (and again now that something changed).
+    if (this.route === 'native') { await (await nativeNotify()).scheduleReminders(snap); return; }
     try {
       const c = await caches.open(CACHE);
       await c.put(STATE, new Response(json, { headers: { 'content-type': 'application/json' } }));
@@ -196,7 +216,7 @@ export class Reminders {
     if (!st.chosen.includes(id)) st.chosen.push(id);
     st.asked = true;
     this.save();
-    if (this.route === 'push') {
+    if (this.route === 'push' || this.route === 'native') {
       const ok = await this.allow();
       if (ok) this.shell.toast(L('🔔 One reminder around {0}, only if it’s not done yet.', '🔔 Un recordatorio hacia las {0}, solo si aún no lo has hecho.', this.timeText()), 3600);
     }
@@ -294,10 +314,10 @@ export class Reminders {
     const change = inPanel ? null : h('button', { type: 'button', class: 'remind-link', 'data-remind': 'change' }, L('change', 'cambiar'));
     change?.addEventListener('click', () => this.openPanel());
     const sep = (t: string) => (inPanel ? t.replace(/ · $/, '') : t);
-    if (this.route === 'push' && Notification.permission === 'granted') {
+    if ((this.route === 'push' && Notification.permission === 'granted') || (this.route === 'native' && this.allowed)) {
       return h('p', { class: 'tool-hint remind-hint' }, sep(L('Around {0}, if it’s not done yet · ', 'Hacia las {0}, si aún no lo has hecho · ', time)), change);
     }
-    if (this.route === 'push') {
+    if (this.route === 'push' || this.route === 'native') {
       const allow = h('button', { type: 'button', class: 'pill sm primary', 'data-remind': 'allow' }, L('Allow notifications', 'Permitir notificaciones'));
       allow.addEventListener('click', () => void this.allow().then(redraw));
       return h('div', { class: 'remind-hint' }, allow, h('p', { class: 'tool-hint' }, sep(L('Then one reminder around {0} · ', 'Después, un recordatorio hacia las {0} · ', time)), change));
