@@ -6216,7 +6216,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const before = await N(() => window.__buzz);
   const wrong = await N(() => { const i = window.atlas.master.info; return (i.q.order ?? []).map(String).find((v) => v !== i.right) ?? null; });
   if (wrong) await page.tap(`[data-master="opt"][data-value="${wrong}"]`).catch(() => {});
-  await page.waitForTimeout(800);
+  // (Up to 5 s: over the live site the phone's feedback once came a second after the answer.)
+  await page.waitForFunction((b) => window.__buzz > b, before, { timeout: 5000 }).catch(() => {});
+  await page.waitForTimeout(300);
   const buzz = (await N(() => window.__buzz)) - before;
   steps.push(await N(() => ({ r: window.atlas.shell.back(), open: !!window.atlas.play.host.current })));
   await page.waitForTimeout(800);

@@ -7,10 +7,15 @@ export type Feel = 'right' | 'wrong' | 'tap';
 
 let native: typeof import('@capacitor/haptics') | null = null;
 let loading: Promise<void> | null = null;
-function load() { loading ??= import('@capacitor/haptics').then((m) => { native = m; }).catch(() => {}); return loading; }
+/** Tried and failed: the plain buzz instead (v0.43.1; it once asked again and again, forever). */
+let failed = false;
+function load() {
+  loading ??= import('@capacitor/haptics').then((m) => { native = m; }, () => { failed = true; });
+  return loading;
+}
 
 export function haptic(kind: Feel) {
-  if (isNative()) {
+  if (isNative() && !failed) {
     if (!native) { void load().then(() => haptic(kind)); return; }
     const { Haptics, ImpactStyle, NotificationType } = native;
     if (kind === 'right') void Haptics.notification({ type: NotificationType.Success }).catch(() => {});
@@ -28,6 +33,8 @@ export function haptic(kind: Feel) {
  * card is redrawn).
  */
 export function watchAnswers() {
+  // Loaded now, so the first answer's tap comes at once (v0.43.1: it came a second late).
+  void load();
   let last: string | null = null;
   let queued = false;
   const check = () => {
