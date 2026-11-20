@@ -24,6 +24,11 @@ concurrency:
   group: apps-${{ github.ref }}
   cancel-in-progress: true
 
+# bash with pipefail: a build that fails fails the step, even when its output is cut short with tail.
+defaults:
+  run:
+    shell: bash
+
 jobs:
   android:
     runs-on: ubuntu-latest
