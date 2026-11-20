@@ -86,7 +86,8 @@ export class Plants {
     tap.addEventListener('click', () => { this.shell.sheet.close(); this.picking = true; this.shell.toast(L('Tap anywhere on the map: what grows there?', 'Toca cualquier lugar del mapa: ¿qué crece allí?'), 3500); });
     near.addEventListener('click', () => {
       if (!navigator.geolocation) { this.shell.toast(L('This device can’t tell where you are.', 'Este dispositivo no puede saber dónde estás.')); return; }
-      navigator.geolocation.getCurrentPosition((p) => void this.whatGrowsHere([p.coords.longitude, p.coords.latitude]), () => this.shell.toast(L('Couldn’t find where you are.', 'No se pudo saber dónde estás.')), { timeout: 10000, maximumAge: 600000 });
+      // Your place, to about 10 km (v0.43.0): the nature services never get more than that.
+      navigator.geolocation.getCurrentPosition((p) => void this.whatGrowsHere([Math.round(p.coords.longitude * 10) / 10, Math.round(p.coords.latitude * 10) / 10]), () => this.shell.toast(L('Couldn’t find where you are.', 'No se pudo saber dónde estás.')), { timeout: 10000, maximumAge: 600000 });
     });
     body.append(h('h3', { class: 'sec-title' }, L('What grows here?', '¿Qué crece aquí?')), h('p', { class: 'muted small' }, L('The plants people have seen most within 50 km of a place, with photos.', 'Las plantas más vistas a menos de 50 km de un lugar, con fotos.')), h('div', { class: 'chip-row' }, tap, near));
     // The finder.

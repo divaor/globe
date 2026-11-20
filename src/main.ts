@@ -44,10 +44,15 @@ import { Plants } from './green/finder';
 import { InsideEarth } from './earth/inside';
 import { DeepSea } from './ocean/deep';
 import { shouldWelcome, showWelcome } from './ui/welcome';
+import { isNative } from './native/platform';
 
 declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders; i18n: { L: typeof L; t: typeof t; tx: typeof tx; nm: typeof nm } } } }
 
 async function boot() {
+  // The iOS and Android apps (v0.43.0): their side first (stored progress back, a shared link's place, the phone's
+  // share, links, location and voices). The website never loads it.
+  const native = isNative() ? await import('./native/boot') : null;
+  await native?.early();
   // Read before the app rewrites the address with its own state.
   const shared = new URLSearchParams(location.hash.slice(1));
   const root = document.getElementById('app')!;
@@ -87,6 +92,9 @@ async function boot() {
   play.host.beforeStart = () => learn.closeAll();
   play.host.exitMode = async () => { await time.modes.find((m) => m.id === app.mode)?.exit(); };
   learn.beforeStart = () => void play.host.close();
+  // The back button (the apps): a map game, then a quiz or tour, closes before the country's card.
+  shell.onBack(() => { if (!learn.busy) return false; void learn.closeAll(); return true; });
+  shell.onBack(() => { if (!play.host.current) return false; void play.host.close(); return true; });
   // Master the world (v0.34.0): on the games' card and map; Learn's Quiz panel links to it and back.
   const master = new Master(app, shell, play.host);
   master.openQuiz = () => learn.openQuizMenu();
@@ -231,7 +239,11 @@ async function boot() {
       today: () => void today.openPanel(), games: () => shell.openTab('play'), stories: () => time.open(), map: () => shell.openTab('map'),
     });
   }
-  void registerSW(shell).then(() => reminders.init());
+  // (The apps have everything inside and the phone's own notifications: no service worker there.)
+  if (native) {
+    native.ready({ back: () => shell.back(), openToday: () => void today.openPanel() });
+    void reminders.init();
+  } else void registerSW(shell).then(() => reminders.init());
   // A reminder tapped: Today (in the app open already, or opened with #today=1).
   navigator.serviceWorker?.addEventListener('message', (e) => { if ((e.data as { type?: string } | null)?.type === 'atlas-open-today') void today.openPanel(); });
   if (shared.get('today')) setTimeout(() => void today.openPanel(), 500);

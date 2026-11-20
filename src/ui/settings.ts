@@ -7,6 +7,7 @@ import type { App } from '../app/app';
 import { terrainSettings } from './terrain';
 import { backupSettings } from '../app/backup';
 import { ambientNamesField } from './playlists';
+import { isNative } from '../native/platform';
 
 declare const __APP_VERSION__: string;
 
@@ -32,7 +33,7 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
   const s = app.renderer.settings;
   const save = () => { app.renderer.requestRender(); app.save(); };
   const standalone = matchMedia('(display-mode: standalone)').matches || (navigator as unknown as { standalone?: boolean }).standalone;
-  const installBtn = h('button', { type: 'button', class: 'pill primary' }, icon(Download, 16), standalone ? t('installed') : t('install')) as HTMLButtonElement;
+  const installBtn = h('button', { type: 'button', class: 'pill primary', 'data-settings': 'install' }, icon(Download, 16), standalone ? t('installed') : t('install')) as HTMLButtonElement;
   installBtn.disabled = !!standalone;
   installBtn.addEventListener('click', async () => {
     if (!(await install())) {
@@ -91,7 +92,8 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     // Your data on another device (v0.31.2): a backup to bring everything back on a phone or another computer.
     h('h3', { class: 'sec-title', 'data-section': 'backup' }, L('Your data on another device', 'Tus datos en otro dispositivo')),
     backupSettings(toast),
-    h('div', { class: 'settings-actions' }, installBtn),
+    // (The apps are installed already: no Install button there, v0.43.0.)
+    isNative() ? null : h('div', { class: 'settings-actions' }, installBtn),
     h('p', { class: 'muted small' }, `${t('version')} ${__APP_VERSION__}`),
   );
 }
