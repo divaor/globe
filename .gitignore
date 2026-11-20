@@ -7,3 +7,6 @@ dist/
 coverage/
 test-results/
 __pycache__/
+
+# Temporary copies of a few smoke-test sections, made while they run.
+scripts/test/.smoke-*.mjs
