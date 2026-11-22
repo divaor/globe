@@ -12,6 +12,7 @@ import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
 import { PIN_ROUNDS, PIN_MAX, pinPoints, pinStars, sample, km } from './logic';
+import { saveRun, loadRun, endRun } from './runs';
 import { recordGame, dayKey, type Badge } from '../learn/progress';
 import { L, type PlayHost, type HostGame } from './host';
 
@@ -69,6 +70,14 @@ export class PinIt implements HostGame {
     await this.host.enter(this, { labels: hard ? { seas: false } : {} });
     this.st = { pack, hard, day: o.day, places, i: 0, pin: null, results: [], answered: false, done: null, fold: false };
     this.app.renderer.view.flyTo({ lon: 10, lat: 20, zoom: 1.05 });
+    // Today's round left mid-way: the places pinned stay pinned (v0.43.3).
+    const run = o.day ? loadRun<{ results: State['results'] }>('pin', o.day) : null;
+    if (run?.results.length) {
+      const s = this.st;
+      s.results = run.results.slice(0, places.length);
+      s.i = Math.min(s.results.length, places.length - 1);
+      if (s.results.length >= places.length) { s.answered = true; this.next(); return; }
+    }
     this.render();
   }
 
@@ -93,6 +102,7 @@ export class PinIt implements HostGame {
     const d = km(s.pin, [p[2], p[3]]);
     s.results.push({ km: d, pts: pinPoints(d) });
     s.answered = true;
+    if (s.day) saveRun('pin', s.day, { results: s.results });
     this.host.fit([s.pin, [p[2], p[3]]], 7);
     this.render();
     this.app.renderer.requestRender();
@@ -110,6 +120,7 @@ export class PinIt implements HostGame {
     const score = s.results.reduce((a, r) => a + r.pts, 0);
     const stars = pinStars(score);
     const feats = s.results.some((r) => r.km <= 25) ? ['pin-25km'] : [];
+    if (s.day) endRun('pin');
     const badges = recordGame('pin', { score, stars, feats, day: s.day });
     s.done = { score, stars, badges };
     this.render();

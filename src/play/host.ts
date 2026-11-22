@@ -21,6 +21,8 @@ export interface HostGame {
   draw(rc: RenderCtx): void;
   /** Ends the game because another one starts (the host keeps the saved map). */
   drop(): void;
+  /** Frames the question again: the free map area changed (the phone's keyboard opened or closed, v0.43.3). */
+  refit?(): void;
 }
 
 type Labels = App['renderer']['settings']['labels'];
@@ -41,6 +43,26 @@ export class PlayHost {
     shell.tapHandlers.unshift((_x, _y, g) => (this.current ? this.current.tap(g as [number, number] | null) : false));
     app.renderer.overlays.add((rc) => this.current?.draw(rc));
     app.on('lang', () => this.current?.render());
+    // The phone's keyboard (v0.43.3): while it is open the free map area ends above it, and the game frames its
+    // question again, so what is asked about is in view between the card and the keyboard.
+    const vv = window.visualViewport;
+    let timer = 0;
+    const keyboard = () => {
+      clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        const v = this.app.renderer.view;
+        const covered = vv ? Math.max(0, Math.round(window.innerHeight - vv.height - vv.offsetTop)) : 0;
+        const kb = covered > 80 ? covered : 0;
+        if (kb === v.keyboard) return;
+        v.keyboard = kb;
+        this.current?.refit?.();
+        this.app.renderer.requestRender();
+      }, 150);
+    };
+    vv?.addEventListener('resize', keyboard);
+    // (Where the page itself shrinks for the keyboard, the map does too: the question is framed again all the same.)
+    let resized = 0;
+    addEventListener('resize', () => { clearTimeout(resized); resized = window.setTimeout(() => this.current?.refit?.(), 200); });
   }
 
   /**
@@ -133,6 +155,7 @@ export class PlayHost {
     let zoom = Math.max(1.05, Math.min(max, 140 / Math.max(6, span * 1.5)));
     if (this.app.renderer.view.current.kind === 'flat') zoom = Math.max(1, zoom * 0.7);
     if (window.innerWidth < 600) zoom *= 0.85;
+    zoom = Math.max(1.05, Math.min(zoom, this.app.renderer.view.fitZoom(span, span)));
     this.app.renderer.view.flyTo({ lon, lat, zoom });
   }
 }

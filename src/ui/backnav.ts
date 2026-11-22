@@ -9,15 +9,20 @@
 // address stays the newest one the app wrote (a story's step, the filters), whichever step it is on.
 import type { Shell } from './shell';
 
-/** Our steps above the page in the history are marked with their level. */
+/** Our steps in the history are marked with their level, the page's own (0) too: a step without a mark is a new
+ *  address opened in the page (a link to #hop=… or #pl=…), not one of ours. */
 const KEY = 'atlasBack';
-const level = () => Number((history.state as Record<string, unknown> | null)?.[KEY] ?? 0) || 0;
+const mark = () => (history.state as Record<string, unknown> | null)?.[KEY];
+const level = () => Number(mark() ?? 0) || 0;
 
 export function backGesture(shell: Shell) {
+  const replace = history.replaceState.bind(history);
+  /** Marks the step the page is on as ours, at that level (its address as it is). */
+  const own = (n: number) => replace({ ...((history.state as object | null) ?? {}), [KEY]: n }, '');
+  if (mark() === undefined) own(0);
   let depth = level();
   // The address the app wrote last (its filters, a story's step…): a step taken off must not bring back an older one.
   let href = location.href;
-  const replace = history.replaceState.bind(history);
   history.replaceState = (data: unknown, unused: string, url?: string | URL | null) => { replace(data, unused, url); href = location.href; };
   /** History moves made here (taking off the steps of things closed by their X): their popstate is not a gesture. */
   let quiet = 0;
@@ -35,8 +40,21 @@ export function backGesture(shell: Shell) {
   };
   addEventListener('popstate', () => {
     const was = depth;
+    if (mark() === undefined) {
+      // A new address opened in the page (v0.43.3: with a panel open, this looked like a back over one of our steps,
+      // so it closed the panel and put the old address back over a challenge link). It is the address from now on;
+      // nothing closes, and our steps start again above it.
+      own(0);
+      depth = 0;
+      href = location.href;
+      later();
+      return;
+    }
     depth = level();
-    if (location.href !== href) replace(history.state, '', href);
+    // Back over one of our steps: the newest address stays. Any other move among our steps is the address from now
+    // on.
+    if (quiet || depth < was) { if (location.href !== href) replace(history.state, '', href); }
+    else href = location.href;
     if (quiet) { quiet--; return; }
     // The back gesture: what is on top closes.
     if (depth < was) shell.back();

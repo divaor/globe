@@ -14,6 +14,7 @@ import { Borders, seeded, type BorderData } from './route';
 import { starText } from './score';
 import { OUTLINE_ROUNDS, outlinePoints, outlineStars, sample } from './logic';
 import { countryIndex, type CountryIndex } from '../mydata/parse';
+import { saveRun, loadRun, endRun } from './runs';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
 import { L, type PlayHost, type HostGame } from './host';
@@ -21,6 +22,8 @@ import { L, type PlayHost, type HostGame } from './host';
 const CONT: Record<string, { en: string; es: string }> = { AF: { en: 'Africa', es: 'África' }, AS: { en: 'Asia', es: 'Asia' }, EU: { en: 'Europe', es: 'Europa' }, NA: { en: 'North or Central America', es: 'Norte o Centroamérica' }, SA: { en: 'South America', es: 'América del Sur' }, OC: { en: 'Oceania', es: 'Oceanía' } };
 
 interface Attrs { data: Record<string, { un_member?: boolean; area_km2?: number }> }
+/** Today's round as far as it went: the shapes answered, and the tries and clues on the one shown. */
+interface OutlineRun { results: State['results']; tries: number; shown: string[]; clues: string[] }
 interface State {
   hard: boolean; day?: string; ids: string[]; i: number; tries: number; shown: string[]; clues: string[];
   results: { id: string; tries: number; pts: number }[]; answered: 'ok' | 'skip' | null; spin: number;
@@ -72,7 +75,22 @@ export class Outline implements HostGame {
     const hard = o.day ? false : o.hard ?? this.pick.hard;
     await this.host.enter(this);
     this.st = { hard, day: o.day, ids: sample(rand, pool, OUTLINE_ROUNDS), i: 0, tries: 0, shown: [], clues: [], results: [], answered: null, spin: hard ? 40 + Math.floor(rand() * 280) : 0, done: null, fold: false, miss: null };
+    // Today's round left mid-way: the shapes answered, and the tries and clues on the one shown (v0.43.3).
+    const run = o.day ? loadRun<OutlineRun>('outline', o.day) : null;
+    if (run?.results.length || run?.tries) {
+      const s = this.st;
+      s.results = run.results.slice(0, s.ids.length);
+      if (s.results.length >= s.ids.length) { s.i = s.ids.length - 1; s.answered = 'skip'; this.next(); return; }
+      s.i = s.results.length; s.tries = run.tries; s.shown = run.shown; s.clues = run.clues;
+    }
     this.render();
+  }
+  /** Today's round as far as it went (v0.43.3): kept after every guess. */
+  private keep() {
+    const s = this.st;
+    if (!s?.day || s.done) return;
+    const open = !s.answered;
+    saveRun('outline', s.day, { results: s.results, tries: open ? s.tries : 0, shown: open ? s.shown : [], clues: open ? s.clues : [] } satisfies OutlineRun);
   }
 
   async stop() { if (!this.st) return; this.st = null; await this.host.leave(this); }
@@ -96,6 +114,7 @@ export class Outline implements HostGame {
     if (next) s.shown.push(next);
     else if (!s.clues.length) s.clues.push(L('It is in {0}.', 'Está en {0}.', CONT[this.app.data.meta[target].ct] ? tx(CONT[this.app.data.meta[target].ct]) : '…'));
     else s.clues.push(L('Its name begins with {0}.', 'Su nombre empieza por {0}.', this.name(target)[0]));
+    this.keep();
     this.render();
   }
 
@@ -107,6 +126,7 @@ export class Outline implements HostGame {
     s.results.push({ id, tries: how === 'ok' ? s.tries + 1 : 0, pts });
     s.answered = how;
     s.miss = null;
+    this.keep();
     this.app.flyToCountry(id, false);
     this.render();
     this.app.renderer.requestRender();
@@ -124,6 +144,7 @@ export class Outline implements HostGame {
     }
     const score = s.results.reduce((a, r) => a + r.pts, 0);
     const stars = outlineStars(score);
+    if (s.day) endRun('outline');
     const badges = recordGame('outline', { score, stars, feats: s.results.every((r) => r.tries === 1) ? ['outline-5'] : [], day: s.day });
     s.done = { score, stars, badges };
     this.render();

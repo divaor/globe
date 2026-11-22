@@ -402,8 +402,11 @@ export class App {
     let zoom = 2.2;
     if (shape) {
       const [w, s, e, n] = shape.bbox;
-      const span = Math.max(((e - w + 360) % 360) || 360, (n - s) * 1.4);
+      const wide = ((e - w + 360) % 360) || 360;
+      const span = Math.max(wide, (n - s) * 1.4);
       zoom = Math.max(1.1, Math.min(60, 140 / Math.max(2, span)));
+      // No closer than the whole country fits in the free map area (between a card and the keyboard, v0.43.3).
+      if (wide < 180) zoom = Math.max(1.05, Math.min(zoom, this.renderer.view.fitZoom(wide * Math.cos((m.ly * Math.PI) / 180), n - s)));
     }
     if (this.renderer.view.current.kind === 'flat') zoom = Math.max(1, zoom * 0.7);
     this.renderer.view.flyTo({ lon: m.lx, lat: m.ly, zoom });

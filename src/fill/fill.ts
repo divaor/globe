@@ -28,6 +28,7 @@ import { fillState, saveFill, resetFill, resetFillMap } from './store';
 import { pickCountry, isTiny } from '../play/pick';
 import { bell } from '../today/reminders';
 import { FillStates } from './states';
+import { saveRun, loadRun, endRun } from '../play/runs';
 
 /** A sentence starts with a capital ("the world" → "The world"). */
 const cap = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
@@ -51,6 +52,9 @@ interface Cur {
   misses: number; clues: Clue[];
 }
 interface Answer { ok: boolean; id: string; given?: string; stars: number; at: number }
+/** The region of the day as far as it went: the countries filled (and their stars), where it was, the misses on the
+ * country asked. */
+interface FillRun { scope: string; cat: FillCat; got: [string, number][]; stats: Session['stats']; i: number; cur: string | null; misses: number }
 interface Session {
   cat: FillCat; scope: string; theme: Theme; daily: string | null;
   ids: string[]; queue: string[]; i: number;
@@ -202,7 +206,19 @@ export class FillMap implements HostGame {
     };
     this.frameScope();
     if (!todo.length) { this.s.done = true; this.render(); return; }
+    // The region of the day left mid-way: the countries filled, the stars, and the misses on the one asked (v0.43.3).
+    const run = day ? loadRun<FillRun>('fill', day) : null;
+    if (run && run.scope === scope && run.cat === cat) { this.s.got = new Map(run.got); this.s.stats = run.stats; this.s.i = run.i; }
     this.ask();
+    if (run && this.s?.cur && run.cur === this.s.cur.id) { this.s.cur.misses = run.misses; this.render(); }
+  }
+
+  /** The region of the day as far as it went (v0.43.3): kept after every tap, so leaving and coming back gives no
+   * country, star or miss back. */
+  private keep() {
+    const s = this.s;
+    if (!s?.daily || s.done) return;
+    saveRun('fill', s.daily, { scope: s.scope, cat: s.cat, got: [...s.got], stats: s.stats, i: s.i, cur: s.ans ? null : s.cur?.id ?? null, misses: s.ans ? 0 : s.cur?.misses ?? 0 } satisfies FillRun);
   }
 
   async stop() {
@@ -284,6 +300,7 @@ export class FillMap implements HostGame {
     }
     if (right) { this.fillIn(id, starsFor(cur.misses), cur.misses === 0); return; }
     cur.misses++;
+    this.keep();
     s.flash = { id, at: performance.now() };
     s.note = L('That is {0}.', 'Ese es {0}.', this.name(id));
     if (cur.misses >= TRIES) { this.reveal(id); return; }
@@ -317,6 +334,7 @@ export class FillMap implements HostGame {
     const badges = this.feats(s.cat);
     void this.mw.external(DECK_OF[s.cat] ?? null, id, first).then((b) => this.toastBadges([...badges, ...b]));
     if (s.cat !== 'languages') s.i++;
+    this.keep();
     this.schedule(stars > 0 ? 1300 : 3200);
     this.render();
     this.app.renderer.requestRender();
@@ -352,6 +370,7 @@ export class FillMap implements HostGame {
   private finish() {
     const s = this.s!;
     s.done = true; s.cur = null; s.ans = null;
+    if (s.daily) endRun('fill');
     if (s.daily) {
       const st = fillState();
       if (!st.dailies[s.daily]) {

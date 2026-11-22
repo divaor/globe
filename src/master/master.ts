@@ -350,15 +350,20 @@ export class Master implements HostGame {
     this.app.flyToCountry(q.id, false);
   }
 
+  /** The keyboard opened or closed (v0.43.3): the question's place is framed again in the free map area. */
+  refit() { const s = this.s; if (s?.q && !s.ans && !s.done && !s.fold) this.frame(); }
+
   /** Flies to show some points together, closer than the host's fit allows (a city-state's four places). */
   private fit(points: [number, number][], max = 60) {
     if (!points.length) return;
     let x = 0, y = 0, z = 0;
     for (const [a, b] of points) { const p = (a * Math.PI) / 180, t = (b * Math.PI) / 180; x += Math.cos(t) * Math.cos(p); y += Math.cos(t) * Math.sin(p); z += Math.sin(t); }
     const lon = (Math.atan2(y, x) * 180) / Math.PI, lat = (Math.atan2(z, Math.hypot(x, y)) * 180) / Math.PI;
-    let zoom = Math.max(1.05, Math.min(max, 140 / Math.max(0.35, spread(points) * 1.7)));
+    const span = spread(points);
+    let zoom = Math.max(1.05, Math.min(max, 140 / Math.max(0.35, span * 1.7)));
     if (this.app.renderer.view.current.kind === 'flat') zoom = Math.max(1, zoom * 0.7);
     if (window.innerWidth < 600) zoom *= 0.85;
+    zoom = Math.max(1.05, Math.min(zoom, this.app.renderer.view.fitZoom(span * 1.2, span * 1.2)));
     this.app.renderer.view.flyTo({ lon, lat, zoom });
   }
 

@@ -20,6 +20,7 @@ import { seeded } from './route';
 import { starText } from './score';
 import { PIN_MAX, pinPoints, km, sample, nearestKm, sunLine, climateBonus, climateStars, roundStars, CLIMATE_ROUNDS, type SunGoal } from './logic';
 import { subsolarPoint } from '../layers/sun';
+import { saveRun, loadRun, endRun } from './runs';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
 import { L, type PlayHost, type HostGame } from './host';
@@ -77,6 +78,16 @@ abstract class PinRounds implements HostGame {
     await this.host.enter(this, { labels: { seas: true } });
     this.st = { day: o.day, rounds: made.rounds, i: 0, pin: null, results: [], answered: false, done: null, fold: false, trail: made.trail, head: made.head };
     this.app.renderer.view.flyTo(this.view());
+    // Today's round left mid-way: the answers given stay (and the trail they drew), v0.43.3.
+    const run = o.day ? loadRun<{ results: Result[] }>(this.id, o.day) : null;
+    if (run?.results.length) {
+      const s = this.st, n = Math.min(run.results.length, s.rounds.length);
+      s.results = run.results.slice(0, n);
+      for (let k = 0; k < n - 1; k++) if (s.trail && s.rounds[k].at.length === 1) s.trail.push(s.rounds[k].at[0]);
+      s.i = n - 1; s.answered = true;
+      this.next();
+      return;
+    }
     this.render();
   }
 
@@ -101,6 +112,7 @@ abstract class PinRounds implements HostGame {
     const b = r.bonus?.(s.pin) ?? null;
     s.results.push({ km: d, pts: pinPoints(d), bonus: b?.pts ?? 0, bonusText: b?.text ?? null });
     s.answered = true;
+    if (s.day) saveRun(this.id, s.day, { results: s.results });
     // The pin and the nearest point of the answer, both on screen.
     let near = r.at[0];
     for (const q of r.at) if (km(s.pin, q) < km(s.pin, near)) near = q;
@@ -125,6 +137,7 @@ abstract class PinRounds implements HostGame {
     }
     const score = s.results.reduce((a, x) => a + x.pts + x.bonus, 0);
     const stars = this.stars(score, s.rounds.length);
+    if (s.day) endRun(this.id);
     const badges = recordGame(this.id, { score, stars, feats: this.feats(s.results), day: s.day });
     s.done = { score, stars, badges };
     this.render();

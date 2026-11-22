@@ -13,6 +13,7 @@ import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
 import { hiloPair, hiloPoints, hiloStars } from './logic';
+import { saveRun, loadRun, endRun } from './runs';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
 import { L, type PlayHost, type HostGame } from './host';
@@ -43,6 +44,8 @@ const FACTS: { key: string; en: string; es: string }[] = [
 
 interface Attrs { fields: Record<string, { unit?: string; unit_es?: string; year?: number }>; data: Record<string, Record<string, unknown>> }
 interface Q { fact: string; a: string; b: string; va: number; vb: number }
+/** Today's round as far as it went: the answers, the score and the run (the questions come again from the seed). */
+interface HiloRun { history: State['history']; score: number; run: number; answered: string }
 interface State {
   day?: string; rand: () => number; q: Q; run: number; score: number;
   answered: string | null; ok: boolean; history: { fact: string; ok: boolean }[];
@@ -93,6 +96,17 @@ export class HigherLower implements HostGame {
     if (!q) return;
     await this.host.enter(this);
     this.st = { day: o.day, rand, q, run: 0, score: 0, answered: null, ok: false, history: [], done: null, fold: false };
+    // Today's round left mid-way (v0.43.3): its questions come again from the day's seed up to the last one answered,
+    // then on to the next (or to the result, after a wrong one).
+    const run = o.day ? loadRun<HiloRun>('hilo', o.day) : null;
+    if (run?.history.length) {
+      const s = this.st;
+      let cur = q;
+      for (let k = 1; k < run.history.length; k++) { const n = this.question(rand, k, cur.fact); if (!n) break; cur = n; }
+      s.q = cur; s.history = run.history; s.score = run.score; s.run = run.run; s.answered = run.answered; s.ok = run.history[run.history.length - 1].ok;
+      this.next();
+      return;
+    }
     this.show();
   }
 
@@ -117,6 +131,7 @@ export class HigherLower implements HostGame {
     s.ok = id === right;
     s.history.push({ fact: s.q.fact, ok: s.ok });
     if (s.ok) { s.score += hiloPoints(s.q.va, s.q.vb, s.run); s.run++; }
+    if (s.day) saveRun('hilo', s.day, { history: s.history, score: s.score, run: s.run, answered: id } satisfies HiloRun);
     this.show();
   }
 
@@ -125,6 +140,7 @@ export class HigherLower implements HostGame {
     if (!s || !s.answered) return;
     if (!s.ok) {
       const stars = hiloStars(s.run);
+      if (s.day) endRun('hilo');
       const badges = recordGame('hilo', { score: s.score, stars, feats: s.run >= 10 ? ['hilo-10'] : [], day: s.day });
       s.done = { score: s.score, stars, run: s.run, badges };
       void this.host.showLayer(null);

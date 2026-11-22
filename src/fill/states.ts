@@ -17,6 +17,7 @@ import { recordFeat, dayKey, type Badge } from '../learn/progress';
 import type { Master } from '../master/master';
 import { regionCountries, loadRegions, frameRegions, regionAt, type Region, type RegionCountry } from '../learn/regions';
 import { hash, rng, starsFor, TRIES } from './logic';
+import { saveRun, loadRun, endRun } from '../play/runs';
 import { WITH_FACTS, WORD, DIR_TEXT, catsOf, eligible, stateOrder, direction, dailyCountry, nextCountry, type StateCat, type StatesData } from './states-logic';
 import { fillState, saveFill } from './store';
 import { bell } from '../today/reminders';
@@ -29,6 +30,8 @@ export const STATE_CAT_TEXT: Record<StateCat, { icon: string; en: string; es: st
 };
 
 interface Cur { id: string; misses: number }
+/** The country of the day as far as it went (as Fill the map's region of the day). */
+interface StatesRun { a3: string; cat: StateCat; got: [string, number][]; stats: Session['stats']; i: number; cur: string | null; misses: number }
 interface Answer { ok: boolean; id: string; given?: string; stars: number; at: number }
 interface Session {
   a3: string; cat: StateCat; daily: string | null;
@@ -145,7 +148,18 @@ export class FillStates implements HostGame {
     if (this.app.renderer.view.current.kind !== 'globe') this.app.setProjection('globe');
     setTimeout(() => this.frame(), 150);
     if (!todo.length) { this.s.done = true; this.render(); return; }
+    // The country of the day left mid-way: the states filled, the stars, the misses on the one asked (v0.43.3).
+    const run = day ? loadRun<StatesRun>('states', day) : null;
+    if (run && run.a3 === a3 && run.cat === cat) { this.s.got = new Map(run.got); this.s.stats = run.stats; this.s.i = run.i; }
     this.ask();
+    if (run && this.s?.cur && run.cur === this.s.cur.id) { this.s.cur.misses = run.misses; this.render(); }
+  }
+
+  /** The country of the day as far as it went (v0.43.3): kept after every tap. */
+  private keep() {
+    const s = this.s;
+    if (!s?.daily || s.done) return;
+    saveRun('states', s.daily, { a3: s.a3, cat: s.cat, got: [...s.got], stats: s.stats, i: s.i, cur: s.ans ? null : s.cur?.id ?? null, misses: s.ans ? 0 : s.cur?.misses ?? 0 } satisfies StatesRun);
   }
   async stop() {
     if (!this.s) return;
@@ -214,6 +228,7 @@ export class FillStates implements HostGame {
     }
     if (id === cur.id) { this.fillIn(id, starsFor(cur.misses), cur.misses === 0); return; }
     cur.misses++;
+    this.keep();
     s.flash = { id, at: performance.now() };
     s.note = L('That is {0}.', 'Ese es {0}.', name);
     if (cur.misses >= TRIES) { this.reveal(id); return; }
@@ -243,6 +258,7 @@ export class FillStates implements HostGame {
     // Every answer counts toward Master the world's daily goal; a capital, in its State capitals deck too (v0.38.1).
     void this.mw.external(s.cat === 'capitals' ? 'states' : null, `${s.a3}|${id}`, first).then((b) => this.toastBadges([...badges, ...b]));
     s.i++;
+    this.keep();
     this.schedule(stars > 0 ? 1300 : 3200);
     this.render();
     this.app.renderer.requestRender();
@@ -275,6 +291,7 @@ export class FillStates implements HostGame {
   private finish() {
     const s = this.s!;
     s.done = true; s.cur = null; s.ans = null;
+    if (s.daily) endRun('states');
     if (s.daily) {
       const st = fillState();
       if (!st.stateDailies[s.daily]) {
