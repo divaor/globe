@@ -276,7 +276,7 @@
    "en": "300 World Heritage sites, each with its picture: in which country is it?",
    "es": "300 sitios del Patrimonio de la Humanidad, cada uno con su imagen: ¿en qué país está?",
    "where": [
-    "src/master/master.ts:1056"
+    "src/master/master.ts:1061"
    ]
   },
   {
@@ -622,7 +622,7 @@
    "en": "A country's shape alone: which country? Then find it on a map with no names.",
    "es": "La silueta de un país, sola: ¿cuál es? Luego encuéntralo en un mapa sin nombres.",
    "where": [
-    "src/master/master.ts:1054"
+    "src/master/master.ts:1059"
    ]
   },
   {
@@ -722,7 +722,7 @@
    "es": "Una bandera",
    "where": [
     "src/fill/fill.ts:400",
-    "src/master/master.ts:696"
+    "src/master/master.ts:701"
    ]
   },
   {
@@ -1613,7 +1613,7 @@
    "en": "Add territories (Greenland, Puerto Rico, Hong Kong…)",
    "es": "Añadir territorios (Groenlandia, Puerto Rico, Hong Kong…)",
    "where": [
-    "src/master/master.ts:1133"
+    "src/master/master.ts:1138"
    ]
   },
   {
@@ -2019,7 +2019,7 @@
    "en": "All twelve countries",
    "es": "Los doce países",
    "where": [
-    "src/master/master.ts:1104"
+    "src/master/master.ts:1109"
    ]
   },
   {
@@ -2042,7 +2042,7 @@
    "en": "All {0} in a row; a miss starts over · record {1}",
    "es": "Los {0} seguidos; un error y vuelta a empezar · récord {1}",
    "where": [
-    "src/master/master.ts:1100"
+    "src/master/master.ts:1105"
    ]
   },
   {
@@ -3299,7 +3299,7 @@
    "en": "Back to the game",
    "es": "Volver al juego",
    "where": [
-    "src/play/host.ts:105"
+    "src/play/host.ts:127"
    ]
   },
   {
@@ -3628,7 +3628,7 @@
    "en": "Best combo {0} · {1} questions · your best run {2}",
    "es": "Mejor combo {0} · {1} preguntas · tu mejor racha {2}",
    "where": [
-    "src/master/master.ts:865"
+    "src/master/master.ts:870"
    ]
   },
   {
@@ -4754,7 +4754,7 @@
    "where": [
     "src/learn/learn.ts:1488",
     "src/learn/learn.ts:2124",
-    "src/master/master.ts:706",
+    "src/master/master.ts:711",
     "src/onmap/onmap.ts:397"
    ]
   },
@@ -5553,7 +5553,7 @@
    "en": "Country by country",
    "es": "País por país",
    "where": [
-    "src/master/master.ts:1127"
+    "src/master/master.ts:1132"
    ]
   },
   {
@@ -5858,7 +5858,7 @@
    "en": "Daily Name them all",
    "es": "Nómbralos del día",
    "where": [
-    "src/play/names.ts:162"
+    "src/play/names.ts:167"
    ]
   },
   {
@@ -5904,14 +5904,14 @@
    "en": "Daily goal reached 🎯",
    "es": "Meta diaria cumplida 🎯",
    "where": [
-    "src/master/master.ts:1032"
+    "src/master/master.ts:1037"
    ]
   },
   {
    "en": "Daily goal reached: {0} answers",
    "es": "Meta diaria cumplida: {0} respuestas",
    "where": [
-    "src/master/master.ts:517"
+    "src/master/master.ts:522"
    ]
   },
   {
@@ -6096,7 +6096,7 @@
    "en": "Deck",
    "es": "Mazo",
    "where": [
-    "src/master/master.ts:1049",
+    "src/master/master.ts:1054",
     "src/master/world.ts:34"
    ]
   },
@@ -6503,7 +6503,7 @@
    "en": "Done: {0} of {1} right",
    "es": "Hecho: {0} de {1} bien",
    "where": [
-    "src/master/master.ts:857"
+    "src/master/master.ts:862"
    ]
   },
   {
@@ -7520,7 +7520,7 @@
    "en": "Every country you have met is resting until its next day. Come back tomorrow, or practise the shakiest ones now.",
    "es": "Cada país que has visto descansa hasta su próximo día. Vuelve mañana o practica ahora los menos seguros.",
    "where": [
-    "src/master/master.ts:854"
+    "src/master/master.ts:859"
    ]
   },
   {
@@ -7597,7 +7597,7 @@
    "en": "Every state you have met is resting until its next day. Come back tomorrow, or practise the shakiest ones now.",
    "es": "Cada estado que has visto descansa hasta su próximo día. Vuelve mañana o practica ahora los menos seguros.",
    "where": [
-    "src/master/master.ts:853"
+    "src/master/master.ts:858"
    ]
   },
   {
@@ -8220,7 +8220,7 @@
    "en": "Five more",
    "es": "Cinco más",
    "where": [
-    "src/master/master.ts:862"
+    "src/master/master.ts:867"
    ]
   },
   {
@@ -8262,7 +8262,7 @@
    "en": "Flag",
    "es": "Bandera",
    "where": [
-    "src/master/master.ts:715"
+    "src/master/master.ts:720"
    ]
   },
   {
@@ -8922,7 +8922,7 @@
    "es": "Juego",
    "where": [
     "src/learn/learn.ts:453",
-    "src/play/host.ts:107"
+    "src/play/host.ts:129"
    ]
   },
   {
@@ -9157,7 +9157,7 @@
    "es": "Continuar",
    "where": [
     "src/fill/states.ts:533",
-    "src/master/master.ts:832"
+    "src/master/master.ts:837"
    ]
   },
   {
@@ -9586,7 +9586,7 @@
    "en": "Hard",
    "es": "Difícil",
    "where": [
-    "src/master/master.ts:688",
+    "src/master/master.ts:693",
     "src/play/hop.ts:33"
    ]
   },
@@ -9594,14 +9594,14 @@
    "en": "Hard: every World Heritage site with a picture",
    "es": "Difícil: todos los sitios del Patrimonio de la Humanidad con imagen",
    "where": [
-    "src/master/master.ts:1066"
+    "src/master/master.ts:1071"
    ]
   },
   {
    "en": "Hard: every city of a million people or more",
    "es": "Difícil: todas las ciudades de un millón de habitantes o más",
    "where": [
-    "src/master/master.ts:1065"
+    "src/master/master.ts:1070"
    ]
   },
   {
@@ -11349,7 +11349,7 @@
    "en": "It is also the biggest of the four.",
    "es": "También es la más grande de las cuatro.",
    "where": [
-    "src/master/master.ts:813"
+    "src/master/master.ts:818"
    ]
   },
   {
@@ -11387,14 +11387,14 @@
    "en": "It is the capital of {0}.",
    "es": "Es la capital de {0}.",
    "where": [
-    "src/master/master.ts:800"
+    "src/master/master.ts:805"
    ]
   },
   {
    "en": "It is the flag of {0}.",
    "es": "Es la bandera de {0}.",
    "where": [
-    "src/master/master.ts:801"
+    "src/master/master.ts:806"
    ]
   },
   {
@@ -11418,8 +11418,8 @@
    "where": [
     "src/master/extra.ts:119",
     "src/master/extra.ts:494",
-    "src/master/master.ts:800",
-    "src/master/master.ts:802"
+    "src/master/master.ts:805",
+    "src/master/master.ts:807"
    ]
   },
   {
@@ -13367,7 +13367,7 @@
    "where": [
     "src/compare/compare.ts:342",
     "src/learn/learn.ts:1728",
-    "src/play/host.ts:107",
+    "src/play/host.ts:129",
     "src/ui/mapstyle.ts:10",
     "src/ui/shell.ts:39"
    ]
@@ -13592,7 +13592,7 @@
    "es": "Domina el mundo necesita sus datos; revisa tu conexión.",
    "where": [
     "src/master/master.ts:252",
-    "src/master/master.ts:1001"
+    "src/master/master.ts:1006"
    ]
   },
   {
@@ -13606,7 +13606,7 @@
    "en": "Mastered today: {0}",
    "es": "Dominados hoy: {0}",
    "where": [
-    "src/master/master.ts:860"
+    "src/master/master.ts:865"
    ]
   },
   {
@@ -13842,7 +13842,7 @@
    "where": [
     "src/fill/fill.ts:509",
     "src/fill/states.ts:421",
-    "src/master/master.ts:884",
+    "src/master/master.ts:889",
     "src/onmap/onmap.ts:491"
    ]
   },
@@ -13931,7 +13931,7 @@
    "en": "Mexico, the United States, Brazil, Argentina, Colombia, Chile, Peru, Spain, Canada, Australia, Germany and India. A state that is a city of its own (Mexico City, Berlin…) has no capital to ask; where a capital is shared or moves with the seasons, it is explained.",
    "es": "México, Estados Unidos, Brasil, Argentina, Colombia, Chile, Perú, España, Canadá, Australia, Alemania y la India. Un estado que es una ciudad en sí mismo (Ciudad de México, Berlín…) no tiene capital que preguntar; si una capital se comparte o cambia con las estaciones, se explica.",
    "where": [
-    "src/master/master.ts:1144"
+    "src/master/master.ts:1149"
    ]
   },
   {
@@ -14051,7 +14051,7 @@
    "en": "Missing",
    "es": "Faltaron",
    "where": [
-    "src/play/names.ts:169"
+    "src/play/names.ts:174"
    ]
   },
   {
@@ -14215,7 +14215,7 @@
     "src/play/hilo.ts:176",
     "src/play/hop.ts:475",
     "src/play/lifeguess.ts:153",
-    "src/play/names.ts:172"
+    "src/play/names.ts:177"
    ]
   },
   {
@@ -14236,7 +14236,7 @@
    "en": "More quizzes",
    "es": "Más concursos",
    "where": [
-    "src/master/master.ts:1138"
+    "src/master/master.ts:1143"
    ]
   },
   {
@@ -14557,21 +14557,21 @@
    "en": "Name every country of {0}",
    "es": "Nombra todos los países de {0}",
    "where": [
-    "src/play/names.ts:155"
+    "src/play/names.ts:160"
    ]
   },
   {
    "en": "Name every country that borders {0}",
    "es": "Nombra todos los países que limitan con {0}",
    "where": [
-    "src/play/names.ts:153"
+    "src/play/names.ts:158"
    ]
   },
   {
    "en": "Name the capital of every country of {0}",
    "es": "Nombra la capital de todos los países de {0}",
    "where": [
-    "src/play/names.ts:154"
+    "src/play/names.ts:159"
    ]
   },
   {
@@ -14587,8 +14587,8 @@
    "where": [
     "src/learn/progress.ts:117",
     "src/play/menu.ts:30",
-    "src/play/names.ts:162",
-    "src/play/names.ts:171"
+    "src/play/names.ts:167",
+    "src/play/names.ts:176"
    ]
   },
   {
@@ -15107,8 +15107,8 @@
     "src/fill/fill.ts:343",
     "src/fill/states.ts:266",
     "src/learn/learn.ts:365",
-    "src/master/master.ts:491",
-    "src/master/master.ts:642"
+    "src/master/master.ts:496",
+    "src/master/master.ts:647"
    ]
   },
   {
@@ -15126,14 +15126,14 @@
    "en": "New cards come in this order",
    "es": "Las tarjetas nuevas llegan en este orden",
    "where": [
-    "src/master/master.ts:1130"
+    "src/master/master.ts:1135"
    ]
   },
   {
    "en": "New countries come in this order",
    "es": "Los países nuevos llegan en este orden",
    "where": [
-    "src/master/master.ts:1130"
+    "src/master/master.ts:1135"
    ]
   },
   {
@@ -15147,7 +15147,7 @@
    "en": "New states come in this order",
    "es": "Los estados nuevos llegan en este orden",
    "where": [
-    "src/master/master.ts:1130"
+    "src/master/master.ts:1135"
    ]
   },
   {
@@ -15164,7 +15164,7 @@
     "src/fill/fill.ts:415",
     "src/fill/states.ts:327",
     "src/learn/learn.ts:1737",
-    "src/master/master.ts:830",
+    "src/master/master.ts:835",
     "src/play/rounds.ts:186"
    ]
   },
@@ -15755,14 +15755,14 @@
    "en": "Nothing due today 🎉",
    "es": "Nada pendiente hoy 🎉",
    "where": [
-    "src/master/master.ts:851"
+    "src/master/master.ts:856"
    ]
   },
   {
    "en": "Nothing due today: practise the shakiest ones.",
    "es": "Nada para hoy: practica los menos seguros.",
    "where": [
-    "src/master/master.ts:1098"
+    "src/master/master.ts:1103"
    ]
   },
   {
@@ -16624,7 +16624,7 @@
    "en": "Order",
    "es": "Orden",
    "where": [
-    "src/master/master.ts:1126"
+    "src/master/master.ts:1131"
    ]
   },
   {
@@ -16796,7 +16796,7 @@
    "en": "Out of hearts: {0} points",
    "es": "Sin corazones: {0} puntos",
    "where": [
-    "src/master/master.ts:864"
+    "src/master/master.ts:869"
    ]
   },
   {
@@ -16901,7 +16901,7 @@
    "en": "Pace after an answer",
    "es": "Ritmo tras responder",
    "where": [
-    "src/master/master.ts:1131"
+    "src/master/master.ts:1136"
    ]
   },
   {
@@ -17135,7 +17135,7 @@
    "es": "Pausa",
    "where": [
     "src/learn/learn.ts:2608",
-    "src/master/master.ts:832",
+    "src/master/master.ts:837",
     "src/ui/audio.ts:203",
     "src/ui/legend.ts:134"
    ]
@@ -17790,7 +17790,7 @@
    "where": [
     "src/app/i18n.ts:40",
     "src/fill/states.ts:533",
-    "src/master/master.ts:1097",
+    "src/master/master.ts:1102",
     "src/onmap/onmap.ts:607",
     "src/play/menu.ts:175"
    ]
@@ -17807,8 +17807,8 @@
    "es": "Jugar otra vez",
    "where": [
     "src/learn/learn.ts:2003",
-    "src/master/master.ts:866",
-    "src/master/master.ts:874",
+    "src/master/master.ts:871",
+    "src/master/master.ts:879",
     "src/play/chain.ts:126",
     "src/play/hilo.ts:176"
    ]
@@ -18006,7 +18006,7 @@
    "en": "Practise",
    "es": "Practicar",
    "where": [
-    "src/master/master.ts:855"
+    "src/master/master.ts:860"
    ]
   },
   {
@@ -18042,7 +18042,7 @@
    "en": "Press and hold the card to pause.",
    "es": "Mantén pulsada la tarjeta para pausar.",
    "where": [
-    "src/master/master.ts:834"
+    "src/master/master.ts:839"
    ]
   },
   {
@@ -18302,7 +18302,7 @@
    "en": "Reach the goal to start a streak (it keeps the Daily challenge’s too).",
    "es": "Cumple la meta para empezar una racha (también cuenta para el Reto del día).",
    "where": [
-    "src/master/master.ts:1033"
+    "src/master/master.ts:1038"
    ]
   },
   {
@@ -18449,7 +18449,7 @@
     "src/app/i18n.ts:87",
     "src/layers/packs/regional.ts:234",
     "src/learn/learn.ts:453",
-    "src/master/master.ts:1116",
+    "src/master/master.ts:1121",
     "src/mydata/mydata.ts:264"
    ]
   },
@@ -18863,7 +18863,7 @@
    "en": "Rivers, lakes, ranges, deserts and peaks from Natural Earth; oceans, seas, gulfs, bays, straits and channels from its marine areas.",
    "es": "Ríos, lagos, cordilleras, desiertos y montañas de Natural Earth; océanos, mares, golfos, bahías, estrechos y canales de sus áreas marinas.",
    "where": [
-    "src/master/master.ts:1142"
+    "src/master/master.ts:1147"
    ]
   },
   {
@@ -19612,7 +19612,7 @@
    "where": [
     "src/compare/compare.ts:340",
     "src/learn/learn.ts:1726",
-    "src/play/host.ts:105"
+    "src/play/host.ts:127"
    ]
   },
   {
@@ -19702,7 +19702,7 @@
    "where": [
     "src/app/i18n.ts:46",
     "src/layers/imagery.ts:89",
-    "src/master/master.ts:1129",
+    "src/master/master.ts:1134",
     "src/ui/playlists.ts:301"
    ]
   },
@@ -19793,7 +19793,7 @@
    "en": "Share your progress",
    "es": "Compartir tu progreso",
    "where": [
-    "src/master/master.ts:1136"
+    "src/master/master.ts:1141"
    ]
   },
   {
@@ -20541,7 +20541,7 @@
    "en": "Sounds and buzz",
    "es": "Sonidos y vibración",
    "where": [
-    "src/master/master.ts:1134"
+    "src/master/master.ts:1139"
    ]
   },
   {
@@ -20819,7 +20819,7 @@
     "src/fill/states.ts:535",
     "src/learn/learn.ts:1486",
     "src/learn/learn.ts:2122",
-    "src/master/master.ts:870"
+    "src/master/master.ts:875"
    ]
   },
   {
@@ -21422,7 +21422,7 @@
    "where": [
     "src/master/extra.ts:124",
     "src/master/extra.ts:506",
-    "src/master/master.ts:722"
+    "src/master/master.ts:727"
    ]
   },
   {
@@ -21437,7 +21437,7 @@
    "es": "Toca su punto en el mapa.",
    "where": [
     "src/master/extra.ts:239",
-    "src/master/master.ts:722"
+    "src/master/master.ts:727"
    ]
   },
   {
@@ -21472,7 +21472,7 @@
    "en": "Tap the capital of {0}",
    "es": "Toca la capital de {0}",
    "where": [
-    "src/master/master.ts:764"
+    "src/master/master.ts:769"
    ]
   },
   {
@@ -21638,7 +21638,7 @@
     "src/fill/fill.ts:441",
     "src/fill/states.ts:353",
     "src/master/extra.ts:184",
-    "src/master/master.ts:766"
+    "src/master/master.ts:771"
    ]
   },
   {
@@ -21820,7 +21820,7 @@
    "en": "That is the flag of {0}.",
    "es": "Esa es la bandera de {0}.",
    "where": [
-    "src/master/master.ts:801"
+    "src/master/master.ts:806"
    ]
   },
   {
@@ -21849,7 +21849,7 @@
    "en": "That is {0}. {1} is outlined.",
    "es": "Ese es {0}. {1} está marcado.",
    "where": [
-    "src/master/master.ts:802"
+    "src/master/master.ts:807"
    ]
   },
   {
@@ -21884,7 +21884,7 @@
    "en": "The 193 UN members plus Vatican City and Palestine. Where a country has two seats of government, the official capital is the answer and the other is explained.",
    "es": "Los 193 miembros de la ONU más Ciudad del Vaticano y Palestina. Si un país tiene dos sedes de gobierno, la respuesta es la capital oficial y se explica la otra.",
    "where": [
-    "src/master/master.ts:1145"
+    "src/master/master.ts:1150"
    ]
   },
   {
@@ -21898,7 +21898,7 @@
    "en": "The 250 best-known cities on a map with no names: which city is this dot? Then tap it among its neighbours.",
    "es": "Las 250 ciudades más conocidas en un mapa sin nombres: ¿qué ciudad es este punto? Luego tócala entre sus vecinas.",
    "where": [
-    "src/master/master.ts:1055"
+    "src/master/master.ts:1060"
    ]
   },
   {
@@ -23486,7 +23486,7 @@
    "en": "The best-known rivers, lakes, mountain ranges, deserts, peaks, oceans and seas, drawn on the map: which is it?",
    "es": "Los ríos, lagos, cordilleras, desiertos, montañas, océanos y mares más conocidos, dibujados en el mapa: ¿cuál es?",
    "where": [
-    "src/master/master.ts:1057"
+    "src/master/master.ts:1062"
    ]
   },
   {
@@ -23584,7 +23584,7 @@
    "en": "The capitals of the states, provinces and regions of twelve countries, one country at a time or all together.",
    "es": "Las capitales de los estados, provincias y regiones de doce países, de uno en uno o todos juntos.",
    "where": [
-    "src/master/master.ts:1051"
+    "src/master/master.ts:1056"
    ]
   },
   {
@@ -24097,7 +24097,7 @@
    "en": "The flag of {0}",
    "es": "La bandera de {0}",
    "where": [
-    "src/master/master.ts:801"
+    "src/master/master.ts:806"
    ]
   },
   {
@@ -25068,7 +25068,7 @@
    "en": "The travel guide's cities, the best known by how many Wikipedias write about them, a share for each continent.",
    "es": "Las ciudades de la guía de viaje, las más conocidas según cuántas Wikipedias escriben de ellas, una parte para cada continente.",
    "where": [
-    "src/master/master.ts:1142"
+    "src/master/master.ts:1147"
    ]
   },
   {
@@ -25152,7 +25152,7 @@
    "en": "The whole deck, no mistake! 🏆",
    "es": "¡El mazo entero, sin un error! 🏆",
    "where": [
-    "src/master/master.ts:872"
+    "src/master/master.ts:877"
    ]
   },
   {
@@ -25636,7 +25636,7 @@
    "en": "Three hearts, a combo, a power-up every 10 in a row · best {0}",
    "es": "Tres corazones, un combo y un poder cada 10 seguidos · récord {0}",
    "where": [
-    "src/master/master.ts:1099"
+    "src/master/master.ts:1104"
    ]
   },
   {
@@ -25917,7 +25917,7 @@
    "en": "Today: {0} of {1} answers",
    "es": "Hoy: {0} de {1} respuestas",
    "where": [
-    "src/master/master.ts:1032"
+    "src/master/master.ts:1037"
    ]
   },
   {
@@ -26411,14 +26411,14 @@
    "en": "Type a name",
    "es": "Escribe un nombre",
    "where": [
-    "src/play/names.ts:179"
+    "src/play/names.ts:184"
    ]
   },
   {
    "en": "Type a name…",
    "es": "Escribe un nombre…",
    "where": [
-    "src/play/names.ts:179"
+    "src/play/names.ts:184"
    ]
   },
   {
@@ -26439,35 +26439,35 @@
    "en": "Type the answer once a country is well known",
    "es": "Escribir la respuesta cuando un país ya se conoce bien",
    "where": [
-    "src/master/master.ts:1132"
+    "src/master/master.ts:1137"
    ]
   },
   {
    "en": "Type the answer once a state is well known",
    "es": "Escribir la respuesta cuando un estado ya se conoce bien",
    "where": [
-    "src/master/master.ts:1132"
+    "src/master/master.ts:1137"
    ]
   },
   {
    "en": "Type the answer once it is well known",
    "es": "Escribir la respuesta cuando ya se conoce bien",
    "where": [
-    "src/master/master.ts:1132"
+    "src/master/master.ts:1137"
    ]
   },
   {
    "en": "Type the capital of {0}",
    "es": "Escribe la capital de {0}",
    "where": [
-    "src/master/master.ts:764"
+    "src/master/master.ts:769"
    ]
   },
   {
    "en": "Type the capital…",
    "es": "Escribe la capital…",
    "where": [
-    "src/master/master.ts:705"
+    "src/master/master.ts:710"
    ]
   },
   {
@@ -26483,7 +26483,7 @@
    "where": [
     "src/master/extra.ts:122",
     "src/master/extra.ts:340",
-    "src/master/master.ts:705",
+    "src/master/master.ts:710",
     "src/play/outline.ts:219"
    ]
   },
@@ -26527,7 +26527,7 @@
    "en": "UNESCO's World Heritage List, the best known with a picture (Wikimedia Commons; each picture's author and licence are shown with the answer).",
    "es": "La lista del Patrimonio de la Humanidad de la UNESCO, los más conocidos con imagen (Wikimedia Commons; con la respuesta se muestran el autor y la licencia de cada imagen).",
    "where": [
-    "src/master/master.ts:1142"
+    "src/master/master.ts:1147"
    ]
   },
   {
@@ -27377,7 +27377,7 @@
    "es": "¿Cuál es la capital de {0}?",
    "where": [
     "src/learn/learn.ts:1788",
-    "src/master/master.ts:764"
+    "src/master/master.ts:769"
    ]
   },
   {
@@ -28320,7 +28320,7 @@
    "en": "Which country is this?",
    "es": "¿Qué país es este?",
    "where": [
-    "src/master/master.ts:766",
+    "src/master/master.ts:771",
     "src/play/outline.ts:205"
    ]
   },
@@ -28328,7 +28328,7 @@
    "en": "Which country is this? Type its name.",
    "es": "¿Qué país es este? Escribe su nombre.",
    "where": [
-    "src/master/master.ts:766"
+    "src/master/master.ts:771"
    ]
   },
   {
@@ -28511,7 +28511,7 @@
    "en": "Which is the flag of {0}?",
    "es": "¿Cuál es la bandera de {0}?",
    "where": [
-    "src/master/master.ts:765"
+    "src/master/master.ts:770"
    ]
   },
   {
@@ -28788,14 +28788,14 @@
    "en": "Whose flag is this?",
    "es": "¿De quién es esta bandera?",
    "where": [
-    "src/master/master.ts:765"
+    "src/master/master.ts:770"
    ]
   },
   {
    "en": "Whose flag is this? Type the country.",
    "es": "¿De quién es esta bandera? Escribe el país.",
    "where": [
-    "src/master/master.ts:765"
+    "src/master/master.ts:770"
    ]
   },
   {
@@ -29294,15 +29294,15 @@
    "en": "You wrote “{0}”.",
    "es": "Escribiste «{0}».",
    "where": [
-    "src/master/master.ts:798",
-    "src/master/master.ts:800"
+    "src/master/master.ts:803",
+    "src/master/master.ts:805"
    ]
   },
   {
    "en": "Your answer",
    "es": "Tu respuesta",
    "where": [
-    "src/master/master.ts:705"
+    "src/master/master.ts:710"
    ]
   },
   {
@@ -29405,7 +29405,7 @@
    "en": "Your record: {0} of {1}. {2, select, states {States} other {Countries}} right {3} times in a row are skipped next time.",
    "es": "Tu récord: {0} de {1}. Los {4} acertados {3} veces seguidas se saltan la próxima vez.",
    "where": [
-    "src/master/master.ts:869"
+    "src/master/master.ts:874"
    ]
   },
   {
@@ -29434,7 +29434,7 @@
    "en": "Your world",
    "es": "Tu mundo",
    "where": [
-    "src/master/master.ts:883",
+    "src/master/master.ts:888",
     "src/master/world.ts:31",
     "src/master/world.ts:52",
     "src/master/world.ts:60"
@@ -29444,7 +29444,7 @@
    "en": "Your world: each country coloured by how well you know it",
    "es": "Tu mundo: cada país coloreado según lo bien que lo conoces",
    "where": [
-    "src/master/master.ts:1122"
+    "src/master/master.ts:1127"
    ]
   },
   {
@@ -29947,7 +29947,7 @@
    "where": [
     "src/learn/progress.ts:335",
     "src/learn/progress.ts:346",
-    "src/master/master.ts:1033"
+    "src/master/master.ts:1038"
    ]
   },
   {
@@ -30413,7 +30413,7 @@
    "es": "dominados",
    "where": [
     "src/master/master.ts:67",
-    "src/master/master.ts:878"
+    "src/master/master.ts:883"
    ]
   },
   {
@@ -30508,7 +30508,7 @@
    "en": "named",
    "es": "nombrados",
    "where": [
-    "src/play/names.ts:167"
+    "src/play/names.ts:172"
    ]
   },
   {
@@ -31144,7 +31144,7 @@
    "es": "hoy",
    "where": [
     "src/app/i18n.ts:230",
-    "src/master/master.ts:878"
+    "src/master/master.ts:883"
    ]
   },
   {
@@ -31341,9 +31341,9 @@
    "es": "{0, plural, one {# día seguido} other {# días seguidos}}",
    "where": [
     "src/learn/learn.ts:150",
-    "src/master/master.ts:1033",
-    "src/master/master.ts:1162",
-    "src/master/master.ts:1205",
+    "src/master/master.ts:1038",
+    "src/master/master.ts:1167",
+    "src/master/master.ts:1210",
     "src/today/today.ts:86"
    ]
   },
@@ -31659,7 +31659,7 @@
    "en": "{0} due today · {1} new. Each comes back just before you would forget it; right on 3 different days and it is mastered.",
    "es": "{0} para hoy · {1} nuevos. Cada uno vuelve justo antes de que lo olvides; bien en 3 días distintos y queda dominado.",
    "where": [
-    "src/master/master.ts:1098"
+    "src/master/master.ts:1103"
    ]
   },
   {
@@ -31722,21 +31722,21 @@
    "en": "{0} in a row of {1}",
    "es": "{0} seguidos de {1}",
    "where": [
-    "src/master/master.ts:754"
+    "src/master/master.ts:759"
    ]
   },
   {
    "en": "{0} in a row.",
    "es": "{0} seguidos.",
    "where": [
-    "src/master/master.ts:873"
+    "src/master/master.ts:878"
    ]
   },
   {
    "en": "{0} in a row: back to the start",
    "es": "{0} seguidos: vuelta al principio",
    "where": [
-    "src/master/master.ts:868"
+    "src/master/master.ts:873"
    ]
   },
   {
@@ -31787,14 +31787,14 @@
    "en": "{0} is the biggest of the four.",
    "es": "{0} es la más grande de las cuatro.",
    "where": [
-    "src/master/master.ts:813"
+    "src/master/master.ts:818"
    ]
   },
   {
    "en": "{0} is the capital of…",
    "es": "{0} es la capital de…",
    "where": [
-    "src/master/master.ts:763"
+    "src/master/master.ts:768"
    ]
   },
   {
@@ -32061,7 +32061,7 @@
    "en": "{0} skipped (right {1} times running)",
    "es": "{0} saltados (bien {1} veces seguidas)",
    "where": [
-    "src/master/master.ts:1100"
+    "src/master/master.ts:1105"
    ]
   },
   {
@@ -32161,7 +32161,7 @@
    "en": "{0} will be back tomorrow.",
    "es": "{0} volverán mañana.",
    "where": [
-    "src/master/master.ts:861"
+    "src/master/master.ts:866"
    ]
   },
   {
@@ -32221,7 +32221,7 @@
    "en": "{0} · the capital of {1}",
    "es": "{0} · la capital de {1}",
    "where": [
-    "src/master/master.ts:800"
+    "src/master/master.ts:805"
    ]
   },
   {
@@ -32243,7 +32243,7 @@
    "en": "{0}, the capital of {1}.",
    "es": "{0}, la capital de {1}.",
    "where": [
-    "src/master/master.ts:799"
+    "src/master/master.ts:804"
    ]
   },
   {
@@ -32731,7 +32731,7 @@
    "en": "⭐ Mastered: right on three different days.",
    "es": "⭐ Dominado: bien en tres días distintos.",
    "where": [
-    "src/master/master.ts:804"
+    "src/master/master.ts:809"
    ]
   },
   {
@@ -32851,7 +32851,7 @@
    "en": "🔄 Back again: mastered once more!",
    "es": "🔄 ¡De vuelta: dominado otra vez!",
    "where": [
-    "src/master/master.ts:804"
+    "src/master/master.ts:809"
    ]
   },
   {

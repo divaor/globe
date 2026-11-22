@@ -36,7 +36,10 @@ export function backGesture(shell: Shell) {
   addEventListener('popstate', () => {
     const was = depth;
     depth = level();
-    if (location.href !== href) replace(history.state, '', href);
+    // Back over one of our steps: the newest address stays. Any other move (a link's new address, #hop=… or
+    // #pl=…, v0.43.3: these were put back to the old one) is the address from now on.
+    if (quiet || depth < was) { if (location.href !== href) replace(history.state, '', href); }
+    else href = location.href;
     if (quiet) { quiet--; return; }
     // The back gesture: what is on top closes.
     if (depth < was) shell.back();

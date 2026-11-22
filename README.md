@@ -623,7 +623,12 @@ the app saves (and shares) what was lent, so leaving the app mid-game keeps noth
 ambient mode, a panel, a game or quiz, a country's card), and `Shell.openCount()` says how many are open. In the apps
 Android's back button calls it (`src/native/chrome.ts`). On the website `src/ui/backnav.ts` adds one step to the
 browser's history for each thing a tap opens, so the phone's back gesture closes it instead of leaving the app; a
-thing closed by its X takes its step off. Games and quizzes register with `shell.onBack(close, isOpen)`.
+thing closed by its X takes its step off, and the address stays the newest one the app wrote; a link's new address is
+kept as it comes. Games and quizzes register with `shell.onBack(close, isOpen)`.
+
+**The phone's keyboard** (v0.43.3): `PlayHost` reads its height from `visualViewport` into `view.keyboard`, so the
+free map area (`view.mapH`, `midY`) ends above it as it ends below a card; the game on screen frames its question
+again (`refit()`), and `view.fitZoom()` keeps a country, or a game's points, no closer than they fit in that area.
 
 **Today's puzzles as far as they went.** Today's challenge (v0.43.2) is kept in `atlas-globe:daily-run` after every
 answer. Every other daily (v0.43.3: Put it on the map, Fill the map's region and country of the day, and the map

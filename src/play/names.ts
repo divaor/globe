@@ -88,10 +88,15 @@ export class NameThemAll implements HostGame {
     const run = o.day ? loadRun<{ found: string[]; t0: number }>('names', o.day) : null;
     if (run) { this.st.found = run.found.filter((id) => ids.includes(id)); this.st.t0 = run.t0; }
     else if (o.day) saveRun('names', o.day, { found: [], t0: this.st.t0 });
-    const m = this.app.data.meta;
-    this.host.fit([...ids, ...(of ? [of] : [])].map((id) => [m[id].lx, m[id].ly] as [number, number]), 5);
+    this.refit();
     this.render();
     this.st.timer = window.setInterval(() => this.tick(), 250);
+  }
+
+  /** The countries to name, all in view (again when the keyboard opens or closes, v0.43.3). */
+  refit() {
+    const s = this.st, m = this.app.data.meta;
+    if (s && !s.done) this.host.fit([...s.ids, ...(s.of ? [s.of] : [])].map((id) => [m[id].lx, m[id].ly] as [number, number]), 5);
   }
 
   async stop() { if (!this.st) return; clearInterval(this.st.timer); this.st = null; this.ui = null; await this.host.leave(this); }

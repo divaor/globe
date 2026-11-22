@@ -41,6 +41,8 @@ export class View {
   insetBottom = 0;
   /** Pixels at the top covered by panels (a tour or quiz card); the map centres below them. */
   insetTop = 0;
+  /** Pixels at the bottom covered by the phone's keyboard while it is open (v0.43.3): the map centres above it too. */
+  keyboard = 0;
 
   /** Morph state: from `a` to `b`; t = 1 means the view is fully `b`. */
   a: ProjectionDef = PROJECTIONS.globe;
@@ -84,9 +86,20 @@ export class View {
   }
 
   /** The height the map fits in and centres on: the screen less what panels cover (at least 200 px). */
-  get mapH(): number { return Math.max(200, this.h - this.insetBottom - this.insetTop); }
+  get mapH(): number { return Math.max(200, this.h - this.bottom - this.insetTop); }
   /** The top of that area: the top inset, unless the panels leave less than 200 px between them. */
-  private get mapTop(): number { return Math.max(0, Math.min(this.insetTop, this.h - this.insetBottom - 200)); }
+  private get mapTop(): number { return Math.max(0, Math.min(this.insetTop, this.h - this.bottom - 200)); }
+  /** What covers the bottom: a panel, or the keyboard. */
+  private get bottom(): number { return Math.max(this.insetBottom, this.keyboard); }
+  /**
+   * The zoom at which a box `wDeg` wide and `hDeg` tall (in degrees of arc) fills most of the free map area: between a
+   * card above and a panel or the keyboard below (v0.43.3: a country asked for was half under the keyboard).
+   */
+  fitZoom(wDeg: number, hDeg: number, share = 0.84): number {
+    const perRad = this.pxPerRadian / Math.max(1e-9, this.zoom);
+    const rad = (d: number) => (Math.max(0.2, d) * Math.PI) / 180;
+    return Math.min((this.w * share) / (rad(wDeg) * perRad), (this.mapH * share) / (rad(hDeg) * perRad));
+  }
   /** The screen height of the middle of that area (where the camera's point is shown). */
   get midY(): number { return this.mapTop + this.mapH / 2; }
 
