@@ -17,6 +17,7 @@ import type { PlayHost, HostGame } from './host';
 import { loadJSON } from '../data/store';
 import { Borders, GOALS, RULES, makeRound, dailyRound, seeded, type BorderData, type Goal, type Level, type Round, type Rule } from './route';
 import { scoreOf, starText, challengeHash, readChallenge, hopNumber, HINT_COST, type Hint } from './score';
+import { saveRun, loadRun, endRun } from './runs';
 import { recordHop, hopDaily, dayKey, progress, type Badge } from '../learn/progress';
 
 
@@ -195,6 +196,14 @@ export class BorderHop implements HostGame {
     await this.host.enter(this);
     const r = this.app.renderer;
     this.st = { round, rule, mode, level: this.pick.level, continent: this.pick.continent, g, path: [round.from], hints: [], t0: Date.now(), msg: null, flash: null, done: null, fold: false, showHints: false, showOthers: !this.narrow(), ...extra };
+    // Today's route left mid-way (v0.43.3): the route so far and the hints taken stay (a hint costs points even then).
+    const run = mode === 'daily' && extra.day ? loadRun<{ from: string; to: string; path: string[]; hints: Hint[] }>('hop', extra.day) : null;
+    if (run && run.from === round.from && run.to === round.to && run.path[0] === round.from) {
+      const s = this.st;
+      s.path = run.path;
+      for (const k of run.hints) if (k !== 'step') await this.hint(k);
+      s.hints = run.hints;
+    }
     this.render();
     this.fit();
     r.requestRender();
@@ -244,6 +253,7 @@ export class BorderHop implements HostGame {
     const at = s.path.indexOf(id);
     if (at >= 0) {
       s.path = s.path.slice(0, at + 1);
+      this.keep();
       s.msg = { ok: true, text: L('Back to {0}.', 'De vuelta en {0}.', this.name(id)) };
     } else if (!s.g.borders(last, id)) {
       this.flash(id);
@@ -254,6 +264,7 @@ export class BorderHop implements HostGame {
       s.msg = { ok: false, text: (tx(r.no)).replace('{c}', this.name(id)) };
     } else {
       s.path.push(id);
+      this.keep();
       const note = s.g.note(last, id);
       const n = note ? s.g.data.notes[note] : null;
       s.msg = n ? { ok: true, text: tx(n) } : null;
@@ -274,6 +285,7 @@ export class BorderHop implements HostGame {
     const s = this.st;
     if (!s || s.done || s.path.length < 2) return;
     s.path.pop();
+    this.keep();
     s.msg = null;
     this.render();
     this.app.renderer.requestRender();
@@ -285,6 +297,7 @@ export class BorderHop implements HostGame {
     if (!s || s.done) return;
     if (k !== 'step' && s.hints.includes(k)) return;
     s.hints.push(k);
+    this.keep();
     const r = this.app.renderer;
     if (k === 'names') r.settings.labels = { ...r.settings.labels, countries: true };
     if (k === 'filter') {
@@ -300,9 +313,16 @@ export class BorderHop implements HostGame {
     r.requestRender();
   }
 
+  /** Today's route as far as it went (v0.43.3): kept after every step and hint. */
+  private keep() {
+    const s = this.st;
+    if (s?.mode === 'daily' && s.day && !s.done) saveRun('hop', s.day, { from: s.round.from, to: s.round.to, path: s.path, hints: s.hints });
+  }
+
   /** The route reached the target (or the player gave up): the score against par, and the best routes. */
   private finish(gaveUp: boolean) {
     const s = this.st!;
+    if (s.mode === 'daily') endRun('hop');
     const { g, round, rule } = s;
     const best = g.best(round.from, round.to, round.goal, rule)!;
     const yours = gaveUp ? Infinity : g.cost(s.path, round.goal);

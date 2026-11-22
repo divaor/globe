@@ -6427,6 +6427,92 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(!errors.length, `phone test fixes: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
+// 53. Today's puzzles kept mid-way (v0.43.3), on a phone: each daily game is left after a move (the page reloads) and
+// opened again: Put it on the map keeps its names placed and its check, Fill the map's region of the day its country
+// filled and the miss on the next one, Pin it its pin, Higher or lower its answer (the next question the same as before),
+// Border chain its chain with the clock still running, Border hop its route and the hint taken. A finished one is not
+// kept.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=10,25,1.1&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const reload = async () => {
+    await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+    await page.waitForTimeout(1200);
+  };
+  const runs = () => F(() => Object.keys(JSON.parse(localStorage.getItem('atlas-globe:runs') || '{}')).sort().join(','));
+  // Put it on the map: five names on their places and one off, a check; then left.
+  await F(() => window.atlas.onmap.startDaily());
+  await page.waitForFunction(() => !!window.atlas.onmap.info?.day, null, { timeout: 30000 });
+  await F(() => { const o = window.atlas.onmap, inf = o.info; inf.items.forEach((it, n) => { o.pick(n); const wrong = inf.cands[it.k].find((c) => c.i !== it.i); o.place(n === 0 && wrong ? wrong.i : it.i); }); o.check(); });
+  const om1 = await F(() => { const i = window.atlas.onmap.info; return { rows: i.rows.join('|'), locked: i.items.filter((x) => x.locked).length }; });
+  await reload();
+  await F(() => window.atlas.onmap.startDaily());
+  await page.waitForFunction(() => !!window.atlas.onmap.info?.day, null, { timeout: 30000 });
+  const om2 = await F(() => { const i = window.atlas.onmap.info; return { rows: i.rows.join('|'), locked: i.items.filter((x) => x.locked).length, done: i.done }; });
+  check(om1.rows.length === 6 && om2.rows === om1.rows && om2.locked === om1.locked && !om2.done, `Put it on the map today: the check (${om2.rows}) and the ${om2.locked} greens are kept after leaving`);
+  await F(() => window.atlas.onmap.stop());
+  // Fill the map, the region of the day: one right, one miss on the next; then left.
+  await F(() => window.atlas.fill.startDaily());
+  await page.waitForFunction(() => !!window.atlas.fill.info?.cur, null, { timeout: 30000 });
+  const f1 = await F(() => { const f = window.atlas.fill, cur = f.info.cur.id; f.answer(cur); f.next(); const n = f.info.cur.id, wrong = f.info.ids.find((x) => x !== n && x !== cur); f.answer(wrong); return { first: cur, next: n, misses: f.info.cur.misses }; });
+  await reload();
+  await F(() => window.atlas.fill.startDaily());
+  await page.waitForFunction(() => !!window.atlas.fill.info?.cur, null, { timeout: 30000 });
+  const f2 = await F(() => { const i = window.atlas.fill.info; return { cur: i.cur.id, misses: i.cur.misses, got: i.got ?? null }; });
+  check(f2.cur === f1.next && f2.misses === 1 && f1.misses === 1, `the region of the day: on at ${f2.cur} with its miss kept (${f2.misses}), after ${f1.first} was filled`);
+  await F(() => window.atlas.fill.stop());
+  // Pin it: one pin; then left.
+  await F(() => window.atlas.play.daily('pin'));
+  await page.waitForFunction(() => !!window.atlas.play.pin.info, null, { timeout: 15000 }).catch(() => {});
+  await F(() => { const g = window.atlas.play.pin, p = g.info.place; g.tap([p[2] + 1, p[3]]); g.confirm(); });
+  await reload();
+  await F(() => window.atlas.play.daily('pin'));
+  await page.waitForFunction(() => !!window.atlas.play.pin.info, null, { timeout: 15000 }).catch(() => {});
+  const pin = await F(() => { const i = window.atlas.play.pin.info; return { i: i.i, n: i.results.length, answered: i.answered }; });
+  check(pin.i === 1 && pin.n === 1 && !pin.answered, `Pin it today: on at the second place, the first pin kept (${pin.n})`);
+  await F(() => window.atlas.play.pin.stop());
+  // Higher or lower: one right answer; the next question seen, then left.
+  await F(() => window.atlas.play.daily('hilo'));
+  await page.waitForTimeout(1500);
+  const h1 = await F(() => { const g = window.atlas.play.hilo, q = g.st.q; g.answer(q.va >= q.vb ? q.a : q.b); const saved = JSON.parse(localStorage.getItem('atlas-globe:runs') || '{}').hilo; g.next(); return { q2: `${g.st.q.a}-${g.st.q.b}-${g.st.q.fact}`, saved: !!saved }; });
+  await reload();
+  await F(() => window.atlas.play.daily('hilo'));
+  await page.waitForTimeout(1500);
+  const h2 = await F(() => { const s = window.atlas.play.hilo.st; return { q: `${s.q.a}-${s.q.b}-${s.q.fact}`, run: s.run, n: s.history.length, answered: s.answered }; });
+  check(h1.saved && h2.q === h1.q2 && h2.run === 1 && h2.n === 1 && h2.answered === null, `Higher or lower today: on at the second question, the same as before (${h2.q}), the run kept (${h2.run})`);
+  await F(() => window.atlas.play.hilo.stop());
+  // Border chain: one link; then left.
+  await F(() => window.atlas.play.daily('chain'));
+  await page.waitForTimeout(1500);
+  const c1 = await F(() => { const g = window.atlas.play.chain, s = g.st; const n = s.g.neighbours(s.chain[0])[0]; g.add(n); return { chain: s.chain.join(','), t0: s.t0 }; });
+  await page.waitForTimeout(1500);
+  await reload();
+  await F(() => window.atlas.play.daily('chain'));
+  await page.waitForTimeout(1500);
+  const c2 = await F(() => { const s = window.atlas.play.chain.st; return { chain: s.chain.join(','), t0: s.t0 }; });
+  check(c2.chain === c1.chain && c2.t0 === c1.t0 && c1.chain.split(',').length === 2, `Border chain today: the chain kept (${c2.chain}), its clock not started again`);
+  await F(() => window.atlas.play.chain.stop());
+  // Border hop: one step and a hint; then left.
+  await F(() => window.atlas.play.hop.startDaily());
+  await page.waitForTimeout(2000);
+  const b1 = await F(async () => { const g = window.atlas.play.hop, s = g.st; const best = s.g.best(s.path[0], s.round.to, s.round.goal, s.rule); g.step(best.path[1]); await g.hint('names'); return { path: s.path.join(','), hints: s.hints.join(',') }; });
+  await reload();
+  await F(() => window.atlas.play.hop.startDaily());
+  await page.waitForTimeout(2000);
+  const b2 = await F(() => { const s = window.atlas.play.hop.st; return { path: s.path.join(','), hints: s.hints.join(','), names: window.atlas.app.renderer.settings.labels.countries }; });
+  check(b2.path === b1.path && b2.hints === 'names' && b2.names === true, `Border hop today: the route (${b2.path}) and the hint taken are kept, the names still shown`);
+  // A finished puzzle is not kept: Pin it played to its end.
+  await F(() => window.atlas.play.hop.stop());
+  await F(() => window.atlas.play.daily('pin'));
+  await page.waitForTimeout(1200);
+  await F(() => { const g = window.atlas.play.pin; for (let k = 0; k < 20 && !g.info.done; k++) { if (!g.info.answered) { const p = g.info.place; g.tap([p[2], p[3]]); g.confirm(); } else g.next(); } });
+  const left = await runs();
+  check(!left.split(',').includes('pin') && /onmap/.test(left), `a finished puzzle is not kept (kept now: ${left})`);
+  await F(() => window.atlas.play.pin.stop());
+  check(!errors.length, `today's puzzles kept mid-way: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

@@ -11,6 +11,7 @@ import { fmtNumber, dataLang, tx } from '../app/i18n';
 import { Borders, seeded, type BorderData } from './route';
 import { starText } from './score';
 import { CHAIN_SECS, chainScore, chainStars, sample } from './logic';
+import { saveRun, loadRun, endRun } from './runs';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
 import { L, type PlayHost, type HostGame } from './host';
@@ -42,7 +43,11 @@ export class BorderChain implements HostGame {
     const first = sample(rand, starts, 1)[0];
     await this.host.enter(this);
     this.st = { day: o.day, g, chain: [first], t0: Date.now(), timer: 0, msg: null, flash: null, done: null, fold: false };
-    const m = this.app.data.meta[first];
+    // Today's chain left mid-way (v0.43.3): the chain stays, and the clock kept running meanwhile.
+    const run = o.day ? loadRun<{ chain: string[]; t0: number }>('chain', o.day) : null;
+    if (run && run.chain[0] === first) { this.st.chain = run.chain; this.st.t0 = run.t0; }
+    else if (o.day) saveRun('chain', o.day, { chain: this.st.chain, t0: this.st.t0 });
+    const m = this.app.data.meta[this.st.chain[this.st.chain.length - 1]];
     this.app.renderer.view.flyTo({ lon: m.lx, lat: m.ly, zoom: window.innerWidth < 600 ? 2.2 : 2.6 });
     this.render();
     this.st.timer = window.setInterval(() => this.tick(), 250);
@@ -79,6 +84,7 @@ export class BorderChain implements HostGame {
     else {
       s.chain.push(id);
       s.msg = null;
+      if (s.day) saveRun('chain', s.day, { chain: s.chain, t0: s.t0 });
       // A dead end: no neighbour left that is not in the chain.
       if (!s.g.neighbours(id).some((n) => !s.chain.includes(n))) { this.finish('dead'); return; }
     }
@@ -93,6 +99,7 @@ export class BorderChain implements HostGame {
     clearInterval(s.timer);
     const conts = new Set(s.chain.map((x) => s.g.data.countries[x]?.ct)).size;
     const score = chainScore(s.chain.length, conts), stars = chainStars(s.chain.length);
+    if (s.day) endRun('chain');
     const badges = recordGame('chain', { score, stars, feats: s.chain.length >= 15 ? ['chain-15'] : [], day: s.day });
     s.done = { score, stars, why, badges };
     this.clock = null;

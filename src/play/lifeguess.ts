@@ -12,6 +12,7 @@ import { loadJSON } from '../data/store';
 import { seeded } from './route';
 import { starText } from './score';
 import { LIFE_ROUNDS, lifePoints, lifeStars, sample, km } from './logic';
+import { saveRun, loadRun, endRun } from './runs';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
 import { L, type PlayHost, type HostGame } from './host';
@@ -20,6 +21,8 @@ type T = { en: string; es: string };
 interface Entry { id: string; name: T; icon: string; region: T; life?: { field: string; born: string; died: string | null } }
 interface Place { at: [number, number]; year: string; label: string }
 interface Round { who: Entry; choices: Entry[]; places: Place[]; shown: number; answer: string | null }
+/** Today's round as far as it went: the points so far, and each round's places shown and answer. */
+interface LivesRun { pts: number[]; rounds: [number, string | null][] }
 interface State { day?: string; rounds: Round[]; i: number; pts: number[]; done: { score: number; stars: 1 | 2 | 3; badges: Badge[] } | null; fold: boolean }
 
 
@@ -64,8 +67,23 @@ export class WhoseLife implements HostGame {
     if (rounds.length < LIFE_ROUNDS) { this.shell.toast(L('This game needs its data; check your connection.', 'Este juego necesita sus datos; revisa tu conexión.')); return; }
     await this.host.enter(this, { labels: { seas: true, countries: true } });
     this.st = { day: o.day, rounds, i: 0, pts: [], done: null, fold: false };
+    // Today's round left mid-way: the places shown and the answers given stay (v0.43.3).
+    const run = o.day ? loadRun<LivesRun>('lives', o.day) : null;
+    if (run && run.rounds.length === rounds.length) {
+      const s = this.st;
+      run.rounds.forEach(([shown, answer], k) => { rounds[k].shown = shown; rounds[k].answer = answer; });
+      s.pts = run.pts;
+      const open = rounds.findIndex((r) => !r.answer);
+      s.i = open >= 0 ? open : rounds.length - 1;
+      if (open < 0) { this.next(); return; }
+    }
     this.frame();
     this.render();
+  }
+  /** Today's round as far as it went (v0.43.3): each place shown and each answer, kept as they happen. */
+  private keep() {
+    const s = this.st;
+    if (s?.day && !s.done) saveRun('lives', s.day, { pts: s.pts, rounds: s.rounds.map((r) => [r.shown, r.answer]) } satisfies LivesRun);
   }
 
   async stop() { if (!this.st) return; this.st = null; await this.host.leave(this); }
@@ -85,6 +103,7 @@ export class WhoseLife implements HostGame {
     const r = s?.rounds[s.i];
     if (!s || !r || r.answer || r.shown >= r.places.length) return;
     r.shown++;
+    this.keep();
     this.frame();
     this.render();
     this.app.renderer.requestRender();
@@ -96,6 +115,7 @@ export class WhoseLife implements HostGame {
     if (!s || !r || r.answer) return;
     r.answer = id;
     s.pts.push(lifePoints(r.shown, id === r.who.id));
+    this.keep();
     this.frame();
     this.render();
     this.app.renderer.requestRender();
@@ -108,6 +128,7 @@ export class WhoseLife implements HostGame {
     const score = s.pts.reduce((a, b) => a + b, 0);
     const stars = lifeStars(score);
     const feats = s.rounds.some((r) => r.answer === r.who.id && r.shown === 1) ? ['life-first'] : [];
+    if (s.day) endRun('lives');
     const badges = recordGame('lives', { score, stars, feats, day: s.day });
     s.done = { score, stars, badges };
     this.render();

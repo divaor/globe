@@ -16,6 +16,7 @@ import { loadJSON } from '../data/store';
 import { Borders, seeded, type BorderData } from './route';
 import { starText, scoreOf } from './score';
 import { bestTour, tourCost, km, sample } from './logic';
+import { saveRun, loadRun, endRun } from './runs';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
 import { loadArt } from '../artguide/data';
@@ -98,6 +99,7 @@ export class GrandTour implements HostGame {
       await this.host.enter(this, { labels: { seas: true, countries: true } });
       this.st = { mode: 'air', region: '', day: o.day, stops, order: [0], done: null, fold: false, msg: null };
       this.host.fit(stops.map((x) => x.at), 6);
+      this.resume();
       this.render();
       return;
     }
@@ -136,6 +138,7 @@ export class GrandTour implements HostGame {
     await this.host.enter(this, { labels: { seas: true } });
     this.st = { mode, region, day: o.day, stops, order: [0], story, done: null, fold: false, msg: null };
     this.host.fit(stops.map((x) => x.at), 6);
+    this.resume();
     this.render();
   }
 
@@ -163,21 +166,31 @@ export class GrandTour implements HostGame {
     return true;
   }
 
+  /** Today's tour left mid-way: the stops already chosen stay (v0.43.3). */
+  private resume() {
+    const s = this.st;
+    const run = s?.day ? loadRun<{ order: number[] }>(this.game, s.day) : null;
+    if (s && run && run.order.every((i) => i >= 0 && i < s.stops.length)) s.order = run.order;
+  }
+  private keep() { const s = this.st; if (s?.day && !s.done) saveRun(this.game, s.day, { order: s.order }); }
+
   visit(i: number) {
     const s = this.st;
     if (!s || s.done || s.order.includes(i)) return;
     s.order.push(i);
     s.msg = null;
+    this.keep();
     if (s.order.length === s.stops.length) this.finish(false);
     else this.render();
     this.app.renderer.requestRender();
   }
-  undo() { const s = this.st; if (s && !s.done && s.order.length > 1) { s.order.pop(); this.render(); this.app.renderer.requestRender(); } }
+  undo() { const s = this.st; if (s && !s.done && s.order.length > 1) { s.order.pop(); this.keep(); this.render(); this.app.renderer.requestRender(); } }
 
   giveUp() { if (this.st && !this.st.done) this.finish(true); }
 
   private finish(gaveUp: boolean) {
     const s = this.st!;
+    if (s.day) endRun(this.game);
     const cost = this.legCost(s.mode, s.stops);
     const best = bestTour(s.stops.length, cost);
     const yours = gaveUp ? Infinity : tourCost(s.order, cost);

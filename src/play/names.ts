@@ -13,6 +13,7 @@ import { Borders, seeded, type BorderData } from './route';
 import { starText } from './score';
 import { namesTime, namesScore, capitalNames, sample } from './logic';
 import { countryIndex, norm, type CountryIndex } from '../mydata/parse';
+import { saveRun, loadRun, endRun } from './runs';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
 import { L, type PlayHost, type HostGame } from './host';
@@ -82,6 +83,11 @@ export class NameThemAll implements HostGame {
     await this.host.enter(this);
     const secs = namesTime(ids.length);
     this.st = { list, area, of, day: o.day, ids, found: [], t0: Date.now(), secs, done: null, fold: false, timer: 0 };
+    // Today's round left mid-way (v0.43.3): the names found stay, and the clock kept running meanwhile (leaving is no
+    // pause to look names up); if it ran out, the round ends with what was found.
+    const run = o.day ? loadRun<{ found: string[]; t0: number }>('names', o.day) : null;
+    if (run) { this.st.found = run.found.filter((id) => ids.includes(id)); this.st.t0 = run.t0; }
+    else if (o.day) saveRun('names', o.day, { found: [], t0: this.st.t0 });
     const m = this.app.data.meta;
     this.host.fit([...ids, ...(of ? [of] : [])].map((id) => [m[id].lx, m[id].ly] as [number, number]), 5);
     this.render();
@@ -108,6 +114,7 @@ export class NameThemAll implements HostGame {
     const id = s.list === 'capitals' ? this.capitals.get(norm(text)) : this.idx!.match(text);
     if (!id || typeof id !== 'string' || !s.ids.includes(id) || s.found.includes(id)) return false;
     s.found.push(id);
+    if (s.day) saveRun('names', s.day, { found: s.found, t0: s.t0 });
     if (this.ui) {
       this.ui.input.value = '';
       this.ui.count.textContent = `${s.found.length}/${s.ids.length}`;
@@ -124,6 +131,7 @@ export class NameThemAll implements HostGame {
     clearInterval(s.timer);
     const { score, stars } = namesScore(s.found.length, s.ids.length, this.left());
     const feats = s.list === 'countries' && s.found.length === s.ids.length ? ['names-all'] : [];
+    if (s.day) endRun('names');
     const badges = recordGame('names', { score, stars, feats, day: s.day });
     s.done = { score, stars, badges };
     this.ui = null;

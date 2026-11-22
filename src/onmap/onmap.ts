@@ -27,6 +27,7 @@ import {
 } from './logic';
 import { onmapState, saveOnmap, resetOnmap } from './store';
 import { bell } from '../today/reminders';
+import { saveRun, loadRun, endRun } from '../play/runs';
 
 const KIND: Record<Kind, { icon: string; en: string; es: string }> = {
   river: { icon: '🌊', en: 'River', es: 'Río' },
@@ -55,6 +56,8 @@ interface Session {
   /** "Give up" was tapped: it asks first (v0.43.0; one tap ended the puzzle of the day). */
   asking: boolean;
 }
+/** Today's puzzle as far as it went: each name's place (its candidate's index), green or not, its last mark. */
+interface OnmapRun { scope: string; rows: Mark[][]; changed: boolean; items: { g: number | null; l: boolean; m: Item['last'] }[] }
 /** A phone (the card is above the map, not beside it). */
 const narrow = () => window.innerWidth < 1000;
 interface Shape { f: GeoJSON.Feature; line: boolean }
@@ -153,11 +156,33 @@ export class PutOnMap implements HostGame {
       items: pz.map((c) => ({ c, k: this.places[c.i][0], given: null, locked: false, last: null })),
       active: 0, changed: false, rows: [], done: false, solved: false, fold: false, list: false, note: '', asking: false,
     };
+    // Today's puzzle left mid-way: the names placed, the checks made and the greens are back (v0.43.3).
+    if (day) this.resume(day);
     // No state or province names while playing (they would give places away).
     const r0 = this.app.renderer;
     if (this.regionsLabels == null) { this.regionsLabels = r0.regionLabels; r0.regionLabels = false; }
     this.frame();
     this.render();
+  }
+
+  /** Today's puzzle as far as it went (v0.43.3): kept after every placement and check, so leaving and coming back
+   * does not give the checks back. */
+  private keep() {
+    const s = this.s;
+    if (!s?.day || s.done) return;
+    saveRun('onmap', s.day, { scope: s.scope, rows: s.rows, changed: s.changed, items: s.items.map((it) => ({ g: it.given?.i ?? null, l: it.locked, m: it.last })) } satisfies OnmapRun);
+  }
+  private resume(day: string) {
+    const s = this.s!, run = loadRun<OnmapRun>('onmap', day);
+    if (!run || run.scope !== s.scope || run.items.length !== s.items.length) return;
+    run.items.forEach((x, n) => {
+      const it = s.items[n];
+      it.given = x.g == null ? null : s.cands.get(it.k)?.find((c) => c.i === x.g) ?? null;
+      it.locked = x.l; it.last = x.m;
+    });
+    s.rows = run.rows; s.changed = run.changed;
+    const next = s.items.findIndex((it) => !it.locked && !it.given);
+    s.active = next >= 0 ? next : null;
   }
   async startDaily() { if (await this.load()) await this.start({ daily: true }); }
 
@@ -218,6 +243,7 @@ export class PutOnMap implements HostGame {
     const next = s.items.findIndex((x, j) => j > s.active! && !x.locked && !x.given);
     const any = s.items.findIndex((x) => !x.locked && !x.given);
     s.active = next >= 0 ? next : any >= 0 ? any : null;
+    this.keep();
     this.render();
     this.app.renderer.requestRender();
   }
@@ -300,6 +326,7 @@ export class PutOnMap implements HostGame {
     s.rows.push(row);
     s.changed = false;
     s.solved = row.every((m) => m === 'g');
+    this.keep();
     if (s.solved || s.rows.length >= TRIES) this.finish();
     else {
       const left = s.items.filter((it) => !it.locked).length;
@@ -323,6 +350,7 @@ export class PutOnMap implements HostGame {
   private finish() {
     const s = this.s!;
     s.done = true; s.active = null;
+    if (s.day) endRun('onmap');
     const st = onmapState();
     st.played++;
     if (s.solved) { st.solved++; if (s.rows.length === 1) st.first++; }
