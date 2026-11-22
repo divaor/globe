@@ -40,6 +40,7 @@ import { loadArt, nm as artName, yearText, commons as commonsUrl, type ArtData }
 import type { RenderCtx } from '../layers/types';
 import type { Master } from '../master/master';
 import { loadDeck, deckCapital } from '../master/data';
+import { pickCountry, tapNear } from '../play/pick';
 import { recordAnswer, recordQuiz, recordDaily, recordDailySubjects, recordTour, dailyResult, dayKey, current, progress, progressPanel, BADGES, type Badge } from './progress';
 import { bell } from '../today/reminders';
 
@@ -94,6 +95,9 @@ type OtdEntry = [string, number, string, string, string, string];
 interface OtdMonth { stories: Record<string, [string, string, string]>; days: Record<string, OtdEntry[]> }
 /** "Guess the link": two country facts, their correlation and how many countries have both. */
 interface Link { a: string; b: string; rho: number; n: number }
+/** Today's challenge as far as it went (v0.43.2). */
+const DAILY_RUN = 'atlas-globe:daily-run';
+interface DailyRun { day: string; qs: Q[]; i: number; score: number; answered: boolean }
 const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ', 'period', 'champion', 'journey', 'faith', 'script', 'plague', 'disaster', 'listen', 'opening', 'artist', 'site', 'inventor'];
 /** The quizzes whose question is a clip, a line or a picture, its name hidden until the answer: what are you hearing,
  * which book is it from, who made it. */
@@ -259,12 +263,15 @@ export class Learn {
   private async clearFilters() {
     const now = this.visibleStack();
     this.savedStack ??= now;
+    // The names and filters are saved as they were while the quiz runs (v0.43.2), in case the app is left mid-quiz.
+    this.app.lend(this, { labels: { ...this.app.renderer.settings.labels }, active: this.app.activeNow() });
     if (now.some((id) => id !== 'political')) await this.app.setStack(['political']);
   }
   private async restoreFilters() {
     const saved = this.savedStack;
     this.savedStack = null;
     if (saved && saved.join() !== this.visibleStack().join()) await this.app.setStack(saved.length ? saved : ['political']);
+    this.app.giveBack(this);
   }
 
   constructor(private app: App, private shell: Shell, private time: TimeTravel) {
@@ -285,7 +292,13 @@ export class Learn {
       if (kind === 'detective') { if (q.answered && g) this.time.history.tap(g[0], g[1]); return true; }
       // While a quiz runs, the map's taps are the quiz's: a country's card would open under the question (v0.41.1).
       if (q.answered || !['find', 'where', 'region', 'habitat', 'grows'].includes(kind)) return true;
-      if (g && kind === 'find') this.answerFind(app.renderer.countryAt(g[0], g[1]));
+      if (g && kind === 'find') {
+        // On or near the country asked (an island, a tap between islands) is it; else the country meant, if any (a tap
+        // in the open sea is no answer, v0.43.2: it counted as "no answer").
+        const want = q.qs[q.i].id;
+        const id = tapNear(app, g as [number, number], want) ? want : pickCountry(app, g as [number, number], Object.keys(app.data.meta), () => false);
+        if (id) this.answerFind(id);
+      }
       if (g && (kind === 'where' || kind === 'habitat' || kind === 'grows')) this.answerWhere(g as [number, number]);
       if (g && kind === 'region' && this.regions) {
         // A tap outside the country is not an answer.
@@ -499,14 +512,34 @@ export class Learn {
   }
 
   /** Starts a quiz with its questions (any Time travel story is closed first). */
-  private async begin(kind: QuizKind, region: string, qs: Q[], day?: string) {
+  private async begin(kind: QuizKind, region: string, qs: Q[], day?: string, at?: { i: number; score: number }) {
     if (this.quiz) await this.stopQuiz(false);
     if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
     await this.clearFilters();
-    this.quiz = { kind, region, qs, i: 0, score: 0, answered: false, savedLabels: { ...this.app.renderer.settings.labels }, peek: false, run: 0, day };
+    this.quiz = { kind, region, qs, i: at?.i ?? 0, score: at?.score ?? 0, answered: false, savedLabels: { ...this.app.renderer.settings.labels }, peek: false, run: 0, day };
     this.app.select(null);
+    if (this.quiz.i >= qs.length) { this.finishQuiz(); return; }
     this.renderQuiz();
     await this.prepareQuestion();
+  }
+
+  /**
+   * Today's challenge as far as it went (v0.43.2): saved after every answer, so leaving the app mid-way and coming
+   * back goes on from the next question, with the answers given kept (starting again let a wrong answer be redone).
+   */
+  private saveRun() {
+    const q = this.quiz;
+    if (!q || q.kind !== 'daily' || !q.day) return;
+    try {
+      if (q.done) localStorage.removeItem(DAILY_RUN);
+      else localStorage.setItem(DAILY_RUN, JSON.stringify({ day: q.day, qs: q.qs, i: q.i, score: q.score, answered: q.answered } satisfies DailyRun));
+    } catch { /* private mode: not kept */ }
+  }
+  private savedRun(day: string): DailyRun | null {
+    try {
+      const r = JSON.parse(localStorage.getItem(DAILY_RUN) || 'null') as DailyRun | null;
+      return r && r.day === day && Array.isArray(r.qs) && r.qs.length ? r : null;
+    } catch { return null; }
   }
 
   /** The map for the question on screen: names hidden and the globe for the map quizzes, Time detective's old borders. */
@@ -1482,10 +1515,13 @@ export class Learn {
   private async startDaily() {
     const day = dayKey();
     if (dailyResult(day)) { this.showDailyDone(); return; }
+    const run = this.savedRun(day);
     const num = dailyNumber(day);
     const last = DAILY_ROTATE[((num % DAILY_ROTATE.length) + DAILY_ROTATE.length) % DAILY_ROTATE.length];
     const wildDay = last === 'habitat' || last === 'lives', greenDay = last === 'grows' || last === 'season';
     await Promise.all([this.orderPool(), this.loadDetective(), this.hopPairs(), this.itemQs('where', 0), this.itemQs('when', 0), wildDay ? this.loadWildQuiz() : greenDay ? this.loadGreenQuiz() : this.itemQs(last, 0)]);
+    // Left mid-way today: on from where it was (an answered question counts as done).
+    if (run) { await this.begin('daily', 'world', run.qs, day, { i: run.i + (run.answered ? 1 : 0), score: run.score }); return; }
     rand = seeded(hash(`atlas-daily:${day}`));
     let qs: Q[] = [];
     try {
@@ -1713,6 +1749,7 @@ export class Learn {
     }
     if (feedback) q.fb = feedback;
     feedback = q.answered ? q.fb : undefined;
+    this.saveRun();
     const cur = q.qs[q.i];
     clear(this.card);
     this.card.classList.toggle('peek', q.peek);

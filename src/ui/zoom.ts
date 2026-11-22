@@ -148,6 +148,10 @@ export function openZoom(src: string, alt = '') {
   btn.focus({ preventScroll: true });
 }
 
+/** A picture open full screen (v0.43.2: the back gesture closes it first, Shell.back). */
+export const zoomOpen = () => !!current;
+export function closeZoom(): boolean { if (!current) return false; current.close(); return true; }
+
 /** Makes a card's picture open full screen when tapped, with a small zoom badge on its corner. Returns the
  * element to put in the card in place of the picture. */
 export function zoomable(img: HTMLImageElement): HTMLElement {

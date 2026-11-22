@@ -38,7 +38,12 @@ interface Saved {
   camera?: { lon: number; lat: number; zoom: number };
   /** The map style and the states and provinces (engine/style.ts). */
   view?: { style?: MapStyle; regions?: boolean; regionNames?: boolean };
+  /** Saved by v0.43.2 or later: the names a game left off by mistake have been put back once (see restore()). */
+  namesBack?: boolean;
 }
+
+/** What a game or quiz borrowed from the map (v0.43.2): the names it hid, the filters it put away. */
+export interface Lent { labels?: NonNullable<Saved['labels']>; active?: ActiveSpec[] }
 
 type Listener = (...args: unknown[]) => void;
 const STORE_KEY = 'atlas-globe:v1';
@@ -61,6 +66,11 @@ export class App {
   ambient: { on: boolean; speed: number; cycle: boolean; clock: boolean; playlist: string; secs: number; narrate: boolean; names: AmbientNames } = { on: false, speed: 1, cycle: false, clock: true, playlist: '', secs: 40, narrate: false, names: 'view' };
   /** While ambient mode plays (its playlist's filters, fewer names), what is saved is the map from before it. */
   held: Saved | null = null;
+  /**
+   * While a game or quiz holds the map (v0.43.2), what it borrowed is saved as it was before: leaving the app mid-game
+   * once kept the countries', capitals' and cities' names off for good. The first to borrow has the real state.
+   */
+  private lends = new Map<object, Lent>();
   private listeners = new Map<string, Set<Listener>>();
   private saveTimer = 0;
   /** Modes such as 'timeline' or 'pangea' take over the map; null = normal exploring. */
@@ -424,13 +434,23 @@ export class App {
   }
 
   // ---- persistence ------------------------------------------------------------------------
+  /** The filters on the map now, as they are saved. */
+  activeNow(): ActiveSpec[] {
+    return this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options }));
+  }
+  /** A game or quiz hides the map's names or puts its filters away: until it gives them back, they are saved as they were. */
+  lend(owner: object, what: Lent) { if (!this.lends.has(owner)) this.lends.set(owner, what); }
+  giveBack(owner: object) { if (this.lends.delete(owner)) this.save(); }
+
   snapshot(): Saved {
     const r = this.renderer;
+    const lent = [...this.lends.values()];
     return {
       lang: this.lang, es: this.spanish, langPicked: this.langPicked, theme: this.themeId, themeAuto: this.themeAuto, projection: this.projection,
-      active: this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options })),
-      labels: r.settings.labels, graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
-      labelScale: r.settings.labelScale,
+      active: lent.find((x) => x.active)?.active ?? this.activeNow(),
+      labels: lent.find((x) => x.labels)?.labels ?? r.settings.labels,
+      graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
+      labelScale: r.settings.labelScale, namesBack: true,
       ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, voice: this.ambient.narrate, names: this.ambient.names },
       camera: r.view.camera(),
       view: { ...mapView },
@@ -443,7 +463,7 @@ export class App {
       // Ambient mode's own settings are saved as they are now; the rest as before it started.
       const s = this.held ? { ...this.held, ambient: this.snapshot().ambient } : this.snapshot();
       try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); } catch { /* private mode */ }
-      if (!this.mode) history.replaceState(null, '', `#${this.shareHash(s)}`);
+      if (!this.mode) history.replaceState(history.state, '', `#${this.shareHash(s)}`);
     }, 400);
   }
 
@@ -510,6 +530,10 @@ export class App {
     if (this.themeAuto) this.themeId = phoneTheme();
     else if (saved.theme) this.themeId = saved.theme;
     if (saved.labels) r.settings.labels = { ...r.settings.labels, ...saved.labels };
+    // Before v0.43.2 a game or quiz left mid-way could save the countries', capitals' and cities' names off (all three
+    // together, as games hide them): they come back once.
+    const l = saved.labels;
+    if (!saved.namesBack && l && l.countries === false && l.capitals === false && l.cities === false) r.settings.labels = { ...r.settings.labels, countries: true, capitals: true, cities: true };
     if (saved.graticule !== undefined) r.settings.graticule = saved.graticule;
     if (saved.shading !== undefined) r.settings.shading = saved.shading;
     if (saved.quality) r.settings.quality = saved.quality;

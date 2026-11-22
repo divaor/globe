@@ -711,7 +711,7 @@ export class StoryMode {
     this.prev = i === this.step ? -1 : this.step;
     this.step = i;
     // The address names the war and the step, so the page can be shared or reloaded there.
-    history.replaceState(null, '', `#${KINDS[this.kind].hash}=${c.id}&step=${i + 1}&p=${this.app.projection}&lang=${lang()}`);
+    history.replaceState(history.state, '', `#${KINDS[this.kind].hash}=${c.id}&step=${i + 1}&p=${this.app.projection}&lang=${lang()}`);
     if (!this.noBorders(c.steps[i])) void this.ensureBorders(c.steps[i]);
     // A step on another world shows that world's map.
     if (KINDS[this.kind].worlds) worldHook.show?.(c.steps[i].world ?? null);

@@ -614,6 +614,20 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
 - A feature's tile comes from `ftile(id)` (`src/ui/features.ts`). A panel's title gets it from its sheet id.
 - A game's result comes from `resultCard()` (`src/ui/result.ts`).
 
+**Games and quizzes borrow the map** (v0.43.2): one that hides the map's names or puts the filters away calls
+`app.lend(this, { labels, active })` with them as they were, and `app.giveBack(this)` once they are back. Until then
+the app saves (and shares) what was lent, so leaving the app mid-game keeps nothing hidden. The game host
+(`src/play/host.ts`) and Learn's quizzes (`clearFilters` / `restoreFilters`) do it; ambient mode keeps `app.held`.
+
+**Back** (v0.43.2): `Shell.back()` closes what is on top (a picture full screen, the welcome, a list, the search,
+ambient mode, a panel, a game or quiz, a country's card), and `Shell.openCount()` says how many are open. In the apps
+Android's back button calls it (`src/native/chrome.ts`). On the website `src/ui/backnav.ts` adds one step to the
+browser's history for each thing a tap opens, so the phone's back gesture closes it instead of leaving the app; a
+thing closed by its X takes its step off. Games and quizzes register with `shell.onBack(close, isOpen)`.
+
+**Today's challenge as far as it went** (v0.43.2) is kept in `atlas-globe:daily-run` after every answer: opened again
+the same day, it goes on from the next question with the answers given kept.
+
 **Texts** (v0.41.0, One voice; v0.42.0, more languages). Every text is written where it is used, in English and Latin American Spanish:
 
 ```ts

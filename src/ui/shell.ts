@@ -24,6 +24,7 @@ import { ring } from './ring';
 import type { LayerDef, LayerHit, LayerInstance } from '../layers/types';
 import type { App } from '../app/app';
 import type { IconNode } from 'lucide';
+import { closeZoom, zoomOpen } from './zoom';
 
 /** `dot`: a small dot on the button (v0.37.0: Today, while something is left today). */
 export interface DockItem { id: string; icon: IconNode; label: () => string; onClick: () => void; order: number; dot?: () => boolean }
@@ -145,23 +146,31 @@ export class Shell {
     addEventListener('resize', () => { if (!this.menu.hidden) this.placeMenu(); });
   }
 
-  /** Android's back button (v0.43.0): what else can close (a game, a quiz, a story), last added first. */
-  private backs: (() => boolean)[] = [];
-  onBack(f: () => boolean) { this.backs.push(f); }
+  /** Android's back button (v0.43.0): what else can close (a game, a quiz, a story), last added first; `open` says
+   * whether it is open now (the website's back gesture counts what is open, v0.43.2). */
+  private backs: { close: () => boolean; open: () => boolean }[] = [];
+  onBack(close: () => boolean, open: () => boolean) { this.backs.push({ close, open }); }
   /**
-   * Closes what is on top, as the back button does: the welcome, the bottom bar's list, the search, ambient mode, a
-   * panel, then a game, quiz or story (onBack), then a country's card. False when there was nothing to close.
+   * Closes what is on top, as the back button does: a picture full screen, the welcome, the bottom bar's list, the
+   * search, ambient mode, a panel, then a game, quiz or story (onBack), then a country's card. False when there was
+   * nothing to close.
    */
   back(): boolean {
+    if (closeZoom()) return true;
     const welcome = document.querySelector('[data-welcome]');
     if (welcome) { welcome.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); return true; }
     if (!this.menu.hidden) { this.closeMenu(); return true; }
     if (this.search.isOpen) { this.search.close(); return true; }
     if (this.app.ambient.on) { this.ambient.stop(); return true; }
     if (this.sheet.isOpen()) { this.sheet.close(); this.renderDock(); return true; }
-    for (const f of [...this.backs].reverse()) if (f()) return true;
+    for (const b of [...this.backs].reverse()) if (b.close()) return true;
     if (this.app.selection) { this.app.select(null); return true; }
     return false;
+  }
+  /** How many things back() would close, one after another. */
+  openCount(): number {
+    return [zoomOpen(), !!document.querySelector('[data-welcome]'), !this.menu.hidden, this.search.isOpen, this.app.ambient.on, this.sheet.isOpen(),
+      ...this.backs.map((b) => b.open()), !!this.app.selection].filter(Boolean).length;
   }
 
   addDock(item: DockItem) { this.dockItems.push(item); this.dockItems.sort((a, b) => a.order - b.order); this.renderDock(); }

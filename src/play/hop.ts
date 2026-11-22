@@ -218,7 +218,7 @@ export class BorderHop implements HostGame {
   async stop() {
     if (!this.st) return;
     this.st = null;
-    if (/[#&]hop=/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search);
+    if (/[#&]hop=/.test(location.hash)) history.replaceState(history.state, '', location.pathname + location.search);
     await this.host.leave(this);
   }
   /** Another map game is starting. */

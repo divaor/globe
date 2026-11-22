@@ -246,7 +246,7 @@ export class Space {
     const v = this.app.renderer.view;
     const p = new URLSearchParams({ world: this.surface.id, c: `${v.lon.toFixed(2)},${v.lat.toFixed(2)},${v.zoom.toFixed(2)}`, lang: this.app.lang });
     if (this.surface.map !== 'photo') p.set('map', this.surface.map);
-    history.replaceState(null, '', `#${p}`);
+    history.replaceState(history.state, '', `#${p}`);
   }
 
   // ---- the bar --------------------------------------------------------------------------------------

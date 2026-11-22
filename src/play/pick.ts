@@ -51,6 +51,15 @@ function screenDist(app: App, id: string, tp: [number, number]): number {
 }
 
 /**
+ * A tap on or near this country (v0.43.2, Find the country): any of its islands within reach counts, so a tap between
+ * the Bahamas' islands, in the sea, is the Bahamas.
+ */
+export function tapNear(app: App, g: [number, number], id: string): boolean {
+  const tp = app.renderer.view.project(g[0], g[1]);
+  return app.renderer.countryAt(g[0], g[1]) === id || (!!tp && screenDist(app, id, tp) < NEAR);
+}
+
+/**
  * The country a tap means: `ids` are the game's countries; `tiny` says which tiny ones are still to find (the ones
  * with a ring on the map). Null for a tap on nothing near any country.
  */
