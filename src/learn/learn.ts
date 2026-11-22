@@ -259,12 +259,15 @@ export class Learn {
   private async clearFilters() {
     const now = this.visibleStack();
     this.savedStack ??= now;
+    // The names and filters are saved as they were while the quiz runs (v0.43.2), in case the app is left mid-quiz.
+    this.app.lend(this, { labels: { ...this.app.renderer.settings.labels }, active: this.app.activeNow() });
     if (now.some((id) => id !== 'political')) await this.app.setStack(['political']);
   }
   private async restoreFilters() {
     const saved = this.savedStack;
     this.savedStack = null;
     if (saved && saved.join() !== this.visibleStack().join()) await this.app.setStack(saved.length ? saved : ['political']);
+    this.app.giveBack(this);
   }
 
   constructor(private app: App, private shell: Shell, private time: TimeTravel) {

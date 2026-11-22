@@ -54,7 +54,11 @@ export class PlayHost {
     this.app.select(null);
     if (this.app.mode) await this.exitMode?.();
     const r = this.app.renderer;
-    if (!this.saved) this.saved = { labels: { ...r.settings.labels }, stack: this.visibleStack() };
+    if (!this.saved) {
+      this.saved = { labels: { ...r.settings.labels }, stack: this.visibleStack() };
+      // Saved as they were while the game plays (v0.43.2), in case the app is left mid-game.
+      this.app.lend(this, { labels: { ...this.saved.labels }, active: this.app.activeNow() });
+    }
     r.settings.labels = { ...this.saved.labels, countries: false, capitals: false, cities: false, ...o.labels };
     if (!o.keepStack && this.visibleStack().some((id) => id !== 'political')) await this.app.setStack(['political']);
     this.current = game;
@@ -75,6 +79,7 @@ export class PlayHost {
       this.saved = null;
       if (stack.join() !== this.visibleStack().join()) await this.app.setStack(stack.length ? stack : ['political']);
     }
+    this.app.giveBack(this);
     this.syncInset();
     r.requestRender();
   }

@@ -6294,6 +6294,66 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await ctx.close();
   }
 }
+// 51. Leaving mid-game (v0.43.2), on a phone. A game (Master the world) and a quiz (Find the country) hide the
+// countries', capitals' and cities' names and put the other filters away; the app saves while they run, and is left
+// mid-way (the page reloads): the names and the filter come back. A save from before v0.43.2 with the three names off
+// gets them back once; turned off in Settings afterwards, they stay off.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political,languages&c=10,25,1.1&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const state = () => F(() => {
+    const r = window.atlas.app.renderer.settings.labels, s = JSON.parse(localStorage.getItem('atlas-globe:v1') || '{}');
+    const three = (x) => (x ? [x.countries, x.capitals, x.cities].map((v) => (v ? 1 : 0)).join('') : '-');
+    return { now: three(r), saved: three(s.labels), active: (s.active ?? []).map((a) => a.id).join(','), stack: window.atlas.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id).join(',') };
+  });
+  const reload = async () => {
+    await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+    await page.waitForTimeout(1500);
+  };
+  const saveNow = async () => { await F(() => window.atlas.app.save()); await page.waitForTimeout(700); };
+  const before = await state();
+  // A game, left mid-way.
+  await F(() => window.atlas.master.start('learn', { deck: 'capitals', scope: 'world' }));
+  await page.waitForTimeout(2000);
+  await saveNow();
+  const inGame = await state();
+  await reload();
+  const afterGame = await state();
+  check(before.now === '111' && before.stack === 'political,languages' && inGame.now === '000' && inGame.stack === 'political' && inGame.saved === '111' && inGame.active === 'political,languages'
+    && afterGame.now === '111' && afterGame.stack === 'political,languages',
+    `a game hides the names (${inGame.now}) and the filter (${inGame.stack}), but they are saved as they were (${inGame.saved}, ${inGame.active}); left mid-game, they come back (${afterGame.now}, ${afterGame.stack})`);
+  // A quiz, left mid-way.
+  await F(() => window.atlas.learn.startQuiz('find', 'world'));
+  await page.waitForTimeout(2000);
+  await saveNow();
+  const inQuiz = await state();
+  await reload();
+  const afterQuiz = await state();
+  check(inQuiz.now === '000' && inQuiz.saved === '111' && inQuiz.active === 'political,languages' && afterQuiz.now === '111' && afterQuiz.stack === 'political,languages',
+    `a Find the country quiz hides the names (${inQuiz.now}), saved as they were (${inQuiz.saved}, ${inQuiz.active}); left mid-quiz, they come back (${afterQuiz.now}, ${afterQuiz.stack})`);
+  // A game played to its end and closed: the names are back, and saved so.
+  await F(() => window.atlas.master.start('learn', { deck: 'capitals', scope: 'world' }));
+  await page.waitForTimeout(1500);
+  await F(() => window.atlas.master.stop());
+  await page.waitForTimeout(1200);
+  const closed = await state();
+  check(closed.now === '111' && closed.saved === '111' && closed.stack === 'political,languages', `a game closed: the names and the filter are back and saved (${closed.now}, ${closed.saved}, ${closed.stack})`);
+  // A save from before v0.43.2 with the three names off: they come back once.
+  await F(() => { const s = JSON.parse(localStorage.getItem('atlas-globe:v1')); delete s.namesBack; s.labels = { ...s.labels, countries: false, capitals: false, cities: false }; localStorage.setItem('atlas-globe:v1', JSON.stringify(s)); });
+  await reload();
+  const mended = await state();
+  await saveNow();
+  const mark = await F(() => JSON.parse(localStorage.getItem('atlas-globe:v1')).namesBack);
+  // Turned off in Settings now: they stay off.
+  await F(() => { const l = window.atlas.app.renderer.settings.labels; Object.assign(l, { countries: false, capitals: false, cities: false }); window.atlas.app.save(); });
+  await page.waitForTimeout(700);
+  await reload();
+  const chosen = await state();
+  check(mended.now === '111' && mark === true && chosen.now === '000', `names left off by a game before v0.43.2 come back once (${mended.now}); turned off by hand afterwards, they stay off (${chosen.now})`);
+  check(!errors.length, `leaving mid-game: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

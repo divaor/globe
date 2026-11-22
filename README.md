@@ -614,6 +614,11 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
 - A feature's tile comes from `ftile(id)` (`src/ui/features.ts`). A panel's title gets it from its sheet id.
 - A game's result comes from `resultCard()` (`src/ui/result.ts`).
 
+**Games and quizzes borrow the map** (v0.43.2): one that hides the map's names or puts the filters away calls
+`app.lend(this, { labels, active })` with them as they were, and `app.giveBack(this)` once they are back. Until then
+the app saves (and shares) what was lent, so leaving the app mid-game keeps nothing hidden. The game host
+(`src/play/host.ts`) and Learn's quizzes (`clearFilters` / `restoreFilters`) do it; ambient mode keeps `app.held`.
+
 **Texts** (v0.41.0, One voice; v0.42.0, more languages). Every text is written where it is used, in English and Latin American Spanish:
 
 ```ts
