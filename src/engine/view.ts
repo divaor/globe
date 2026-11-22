@@ -85,10 +85,13 @@ export class View {
     this.update(performance.now());
   }
 
-  /** The height the map fits in and centres on: the screen less what panels cover (at least 200 px). */
-  get mapH(): number { return Math.max(200, this.h - this.bottom - this.insetTop); }
-  /** The top of that area: the top inset, unless the panels leave less than 200 px between them. */
-  private get mapTop(): number { return Math.max(0, Math.min(this.insetTop, this.h - this.bottom - 200)); }
+  /** The height the map fits in and centres on: the screen less what panels cover (at least 200 px; with the keyboard
+   *  up, whatever is left between the card and the keyboard, v0.43.4: the 200 px reached up under the card). */
+  get mapH(): number { return Math.max(this.least, this.h - this.bottom - this.insetTop); }
+  /** The top of that area: the top inset, unless the panels leave less than the least between them. */
+  private get mapTop(): number { return Math.max(0, Math.min(this.insetTop, this.h - this.bottom - this.least)); }
+  /** The least height for the map. */
+  private get least(): number { return this.keyboard ? 48 : 200; }
   /** What covers the bottom: a panel, or the keyboard. */
   private get bottom(): number { return Math.max(this.insetBottom, this.keyboard); }
   /**
@@ -96,7 +99,10 @@ export class View {
    * card above and a panel or the keyboard below (v0.43.3: a country asked for was half under the keyboard).
    */
   fitZoom(wDeg: number, hDeg: number, share = 0.84): number {
-    const perRad = this.pxPerRadian / Math.max(1e-9, this.zoom);
+    // The scale at zoom 1 for the free area as it is now (v0.43.4: the one kept from the last frame was for the area
+    // before the keyboard opened, so the country came out a quarter of the size it could have).
+    const H = this.mapH;
+    const perRad = lerp(fitScale(this.a, this.w, H) * xFactor(this.a), fitScale(this.b, this.w, H) * xFactor(this.b), this.t);
     const rad = (d: number) => (Math.max(0.2, d) * Math.PI) / 180;
     return Math.min((this.w * share) / (rad(wDeg) * perRad), (this.mapH * share) / (rad(hDeg) * perRad));
   }
