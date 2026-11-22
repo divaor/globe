@@ -6513,26 +6513,29 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(!errors.length, `today's puzzles kept mid-way: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
-// 54. The phone's keyboard (v0.43.3), on a phone: Master the world's question asks for a country; with the keyboard
-// open (its height given to the map, as the browser reports it), the question is framed again and the whole country
-// fits between the card and the keyboard; with the keyboard closed, it is framed for the whole free area again.
-{
-  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=10,25,1.1&lang=en');
+// 54. The phone's keyboard (v0.43.3, v0.43.4), on two phones: Master the world asks to type a country's name; with
+// the keyboard open (its height given to the map, as the browser reports it), the question is framed again and the
+// whole country fits between the card's bottom edge and the keyboard (v0.43.4: on a phone with little room left, the
+// map's least height of 200 px reached up under the card); with the keyboard closed, it is framed for the whole free
+// area again. In both, the country fills at least half the room.
+for (const dev of ['Pixel 7', 'iPhone 13']) {
+  const { page, errors, ctx } = await open({ ...devices[dev] }, '#p=globe&l=political&c=10,25,1.1&lang=en');
   const F = (fn, arg) => page.evaluate(fn, arg);
   await F(() => window.atlas.master.start('learn', { deck: 'countries', scope: 'world' }));
   await page.waitForTimeout(2500);
-  // Where the question's country is on the screen, against the free area between the card and the keyboard.
+  // Where the question's country is on the screen, against the room between the card and the keyboard.
   const box = () => F(() => {
-    const a = window.atlas.app, v = a.renderer.view, id = window.atlas.master.info.q.id;
+    const a = window.atlas.app, v = a.renderer.view, id = window.atlas.master.info.q.id, cr = a.renderer.canvasRect();
     const sh = a.data.best('50m').byId.get(id) ?? a.data.best('110m').byId.get(id);
     const [w, s, e, n] = sh.bbox;
     const pts = [[w, s], [w, n], [e, s], [e, n], [(w + e) / 2, s], [(w + e) / 2, n], [w, (s + n) / 2], [e, (s + n) / 2]].map((p) => v.project(p[0], p[1])).filter(Boolean);
     const ys = pts.map((p) => p[1]), xs = pts.map((p) => p[0]);
-    const top = v.midY - v.mapH / 2, bottom = v.midY + v.mapH / 2;
-    return { id, kb: v.keyboard, h: Math.round(Math.max(...ys) - Math.min(...ys)), w: Math.round(Math.max(...xs) - Math.min(...xs)), inside: Math.min(...ys) >= top - 4 && Math.max(...ys) <= bottom + 4 && Math.min(...xs) >= -4 && Math.max(...xs) <= v.w + 4, mapH: Math.round(v.mapH), zoom: Math.round(v.zoom * 100) / 100 };
+    const card = document.querySelector('.play-card:not([hidden])')?.getBoundingClientRect();
+    const top = Math.max(v.midY - v.mapH / 2, card ? card.bottom - cr.top : 0), bottom = Math.min(v.midY + v.mapH / 2, v.h - v.keyboard);
+    return { id, kb: v.keyboard, room: Math.round(bottom - top), h: Math.round(Math.max(...ys) - Math.min(...ys)), w: Math.round(Math.max(...xs) - Math.min(...xs)), inside: Math.min(...ys) >= top - 4 && Math.max(...ys) <= bottom + 4 && Math.min(...xs) >= -4 && Math.max(...xs) <= v.w + 4, vw: v.w, zoom: Math.round(v.zoom * 100) / 100, typing: !!document.querySelector('[data-master="type"]') };
   });
-  // A big country, so the test means something: the question set to Egypt.
-  await F(() => { const m = window.atlas.master; m.s.q.id = 'EGY'; m.refit(); });
+  // A big country, so the test means something: the question set to Egypt, to be typed.
+  await F(() => { const m = window.atlas.master; m.s.q.id = 'EGY'; m.s.q.step = 'type'; m.render(); m.refit(); });
   await page.waitForTimeout(1800);
   const open0 = await box();
   await F(() => { const v = window.atlas.app.renderer.view; v.keyboard = Math.round(v.h * 0.42); window.atlas.play.host.current.refit(); });
@@ -6541,9 +6544,12 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await F(() => { window.atlas.app.renderer.view.keyboard = 0; window.atlas.play.host.current.refit(); });
   await page.waitForTimeout(1800);
   const after = await box();
-  check(open0.inside && kb.kb > 0 && kb.inside && kb.zoom < open0.zoom && after.zoom >= kb.zoom && after.inside,
-    `${kb.id} fits between the card and the keyboard (${kb.w}×${kb.h} px in a ${kb.mapH} px tall area, zoom ${open0.zoom} → ${kb.zoom}), and is framed for the whole area again after (zoom ${after.zoom})`);
-  check(!errors.length, `the keyboard: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  // Not only inside but filling the room (v0.43.4: the zoom was worked out from the area before the keyboard, so the
+  // country came out a quarter of the size).
+  const fills = (b) => Math.max(b.h / b.room, b.w / b.vw) >= 0.5;
+  check(open0.typing && open0.inside && kb.kb > 0 && kb.inside && fills(kb) && after.inside && fills(after),
+    `${dev}: ${kb.id} fits between the card and the keyboard (${kb.w}×${kb.h} px in ${kb.room} px of room), and is framed for the whole area again after (${after.w}×${after.h} px in ${after.room} px)`);
+  check(!errors.length, `the keyboard (${dev}): no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 await browser.close();
