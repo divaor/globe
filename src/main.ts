@@ -45,6 +45,7 @@ import { InsideEarth } from './earth/inside';
 import { DeepSea } from './ocean/deep';
 import { shouldWelcome, showWelcome } from './ui/welcome';
 import { isNative } from './native/platform';
+import { backGesture } from './ui/backnav';
 
 declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders; i18n: { L: typeof L; t: typeof t; tx: typeof tx; nm: typeof nm } } } }
 
@@ -93,8 +94,8 @@ async function boot() {
   play.host.exitMode = async () => { await time.modes.find((m) => m.id === app.mode)?.exit(); };
   learn.beforeStart = () => void play.host.close();
   // The back button (the apps): a map game, then a quiz or tour, closes before the country's card.
-  shell.onBack(() => { if (!learn.busy) return false; void learn.closeAll(); return true; });
-  shell.onBack(() => { if (!play.host.current) return false; void play.host.close(); return true; });
+  shell.onBack(() => { if (!learn.busy) return false; void learn.closeAll(); return true; }, () => learn.busy);
+  shell.onBack(() => { if (!play.host.current) return false; void play.host.close(); return true; }, () => !!play.host.current);
   // Master the world (v0.34.0): on the games' card and map; Learn's Quiz panel links to it and back.
   const master = new Master(app, shell, play.host);
   master.openQuiz = () => learn.openQuizMenu();
@@ -244,6 +245,9 @@ async function boot() {
     native.ready({ back: () => shell.back(), openToday: () => void today.openPanel() });
     void reminders.init();
   } else void registerSW(shell).then(() => reminders.init());
+  // The website: the phone's back gesture closes what is on top before it leaves (v0.43.2; the apps have Android's
+  // back button).
+  if (!native) backGesture(shell);
   // A reminder tapped: Today (in the app open already, or opened with #today=1).
   navigator.serviceWorker?.addEventListener('message', (e) => { if ((e.data as { type?: string } | null)?.type === 'atlas-open-today') void today.openPanel(); });
   if (shared.get('today')) setTimeout(() => void today.openPanel(), 500);

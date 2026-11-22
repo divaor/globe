@@ -6354,6 +6354,79 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(!errors.length, `leaving mid-game: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
+// 52. Fixes from the phone test (v0.43.2), on a phone. Find the country: a tap in the sea between the Bahamas'
+// islands is the Bahamas, and a tap in the open ocean is no answer at all. Today's challenge left mid-way goes on
+// from the next question, with the answer given kept. The back gesture (the website's history) closes a quiz's
+// picture full screen, then the quiz, and stays in the app.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-77,24.5,6&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const tapGeo = async (lon, lat) => { const pt = await F(([lon, lat]) => { const v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(lon, lat); return p && [r.left + p[0], r.top + p[1]]; }, [lon, lat]); if (pt) await page.touchscreen.tap(pt[0], pt[1]); return pt; };
+  // Find the country, the question set to the Bahamas.
+  await F(() => window.atlas.learn.startQuiz('find', 'world'));
+  await page.waitForTimeout(2500);
+  await F(() => { const q = window.atlas.learn.quiz; q.qs[q.i].id = 'BHS'; window.atlas.app.renderer.view.flyTo({ lon: -77, lat: 24.6, zoom: 6 }, 0); });
+  await page.waitForTimeout(1500);
+  const sea = await F(() => window.atlas.app.renderer.countryAt(-76.95, 24.45));
+  await tapGeo(-76.95, 24.45);
+  await page.waitForTimeout(600);
+  const bahamas = await F(() => { const q = window.atlas.learn.quiz, cur = q.qs[q.i]; return { answered: q.answered, ok: cur.ok, fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '' }; });
+  check(sea === null && bahamas.answered && bahamas.ok === true && /Correct/.test(bahamas.fb), `Find the country: a tap in the sea between the Bahamas' islands is the Bahamas ("${bahamas.fb}")`);
+  // The next question; a tap in the open ocean far from everything is no answer.
+  await F(() => window.atlas.learn.nextQuestion());
+  await page.waitForTimeout(1500);
+  await F(() => window.atlas.app.renderer.view.flyTo({ lon: -40, lat: 30, zoom: 3 }, 0));
+  await page.waitForTimeout(1200);
+  await tapGeo(-40, 30);
+  await page.waitForTimeout(500);
+  const ocean = await F(() => window.atlas.learn.quiz.answered);
+  check(ocean === false, `a tap in the open Atlantic is no answer (answered: ${ocean})`);
+  await F(() => window.atlas.learn.closeAll());
+  await page.waitForTimeout(800);
+  // Today's challenge: one answer, then the app is left and opened again.
+  await F(() => window.atlas.learn.startQuiz('daily', 'world'));
+  await page.waitForFunction(() => window.atlas.learn.quiz?.kind === 'daily', null, { timeout: 30000 });
+  await page.waitForTimeout(1500);
+  const first = await F(() => { const q = window.atlas.learn.quiz; return { id: q.qs[0].id, n: q.qs.length }; });
+  await F(() => window.atlas.learn.answerFind(null));
+  await page.waitForTimeout(500);
+  const savedRun = await F(() => JSON.parse(localStorage.getItem('atlas-globe:daily-run') || 'null'));
+  await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(1500);
+  await F(() => window.atlas.learn.startQuiz('daily', 'world'));
+  await page.waitForFunction(() => window.atlas.learn.quiz?.kind === 'daily', null, { timeout: 30000 });
+  await page.waitForTimeout(1000);
+  const resumed = await F(() => { const q = window.atlas.learn.quiz; return { i: q.i, n: q.qs.length, id0: q.qs[0].id, given0: q.qs[0].given, ok0: q.qs[0].ok, head: document.querySelector('.learn-card')?.textContent?.slice(0, 60) ?? '' }; });
+  check(savedRun?.answered === true && savedRun.i === 0 && resumed.i === 1 && resumed.id0 === first.id && resumed.n === first.n && resumed.ok0 === false && /no answer/.test(resumed.given0 ?? ''),
+    `today's challenge left after its first answer goes on from question 2 of ${resumed.n} (${resumed.head.trim()}…), the first answer kept (${resumed.given0})`);
+  await F(() => window.atlas.learn.closeAll());
+  await page.waitForTimeout(800);
+  // The back gesture: a quiz's picture full screen, then the quiz (pictures answered by a stand-in).
+  const pic = fs.readFileSync(new URL('../../docs/screenshots/globe.jpg', import.meta.url));
+  await ctx.route(/^https:\/\/(upload|thumb)\.wikimedia\.org\//, (r) => r.fulfill({ status: 200, body: pic, contentType: 'image/jpeg' }));
+  await ctx.route(/^https:\/\/commons\.wikimedia\.org\/wiki\/Special:FilePath\//, (r) => r.fulfill({ status: 200, body: pic, contentType: 'image/jpeg' }));
+  await ctx.route(/^https:\/\/[a-z-]+\.wikipedia\.org\/api\/rest_v1\/page\/summary\//, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ thumbnail: { source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Stand-in.jpg/330px-Stand-in.jpg' } }) }));
+  await page.evaluate(() => window.__menu('Quiz'));
+  await page.waitForTimeout(600);
+  await page.tap('[data-quiz="disaster"]');
+  await page.waitForSelector('.learn-card .zoom-wrap .quiz-img:not([hidden])', { timeout: 30000 });
+  await page.waitForTimeout(800);
+  await page.tap('.learn-card .quiz-img');
+  await page.waitForSelector('.zoom-view .zoom-img', { timeout: 5000 });
+  await page.waitForTimeout(900);
+  const url0 = page.url();
+  await F(() => history.back());
+  await page.waitForTimeout(900);
+  const back1 = await F(() => ({ zoom: !!document.querySelector('.zoom-view'), quiz: window.atlas.learn.busy }));
+  await F(() => history.back());
+  await page.waitForTimeout(1200);
+  const back2 = await F(() => ({ zoom: !!document.querySelector('.zoom-view'), quiz: window.atlas.learn.busy, app: !!window.atlas }));
+  check(!back1.zoom && back1.quiz && !back2.quiz && back2.app && page.url().startsWith(url0.split('#')[0]),
+    `back closes the picture full screen (quiz still open: ${back1.quiz}), then the quiz (${!back2.quiz}), and the app stays`);
+  check(!errors.length, `phone test fixes: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

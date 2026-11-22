@@ -463,7 +463,7 @@ export class App {
       // Ambient mode's own settings are saved as they are now; the rest as before it started.
       const s = this.held ? { ...this.held, ambient: this.snapshot().ambient } : this.snapshot();
       try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); } catch { /* private mode */ }
-      if (!this.mode) history.replaceState(null, '', `#${this.shareHash(s)}`);
+      if (!this.mode) history.replaceState(history.state, '', `#${this.shareHash(s)}`);
     }, 400);
   }
 
