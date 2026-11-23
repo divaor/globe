@@ -54,7 +54,7 @@ export function showWelcome(app: App, act: WelcomeActions): HTMLElement {
   const CARDS: (() => HTMLElement[])[] = [
     () => [
       h('div', { class: 'welcome-art', 'aria-hidden': 'true' }, '🌍'),
-      h('h2', { class: 'welcome-title' }, L('Welcome to Atlas Globe', 'Te damos la bienvenida a Atlas Globe')),
+      h('h2', { class: 'welcome-title' }, L('Welcome to Mundora', 'Te damos la bienvenida a Mundora')),
       h('p', null, L('Drag to spin the globe, pinch to zoom, and tap a country to learn about it.', 'Arrastra para girar el globo, pellizca para acercarte y toca un país para conocerlo.')),
       h('p', { class: 'muted' }, L('The Map tab changes what the globe shows: languages, climate, animals, history and many more.', 'La pestaña Mapa cambia lo que muestra el globo: idiomas, clima, animales, historia y mucho más.')),
       langPicker(),

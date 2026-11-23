@@ -229,7 +229,7 @@ export class Reminders {
     this.save();
     if (!this.on().length) {
       await this.unregister();
-      if (st.cal) this.shell.toast(L('No reminders left: remove “Atlas” from your calendar too.', 'Ya no quedan recordatorios: quita también «Atlas» de tu calendario.'), 4000);
+      if (st.cal) this.shell.toast(L('No reminders left: remove the daily reminder from your calendar too.', 'Ya no quedan recordatorios: quita también el recordatorio diario de tu calendario.'), 4000);
     }
     redraw();
   }
@@ -252,12 +252,12 @@ export class Reminders {
   addToCalendar() {
     const st = this.state();
     const names = this.on().map((s) => s.name());
-    const title = `🌍 Atlas: ${L('today’s games', 'los juegos de hoy')}`;
+    const title = `🌍 Mundora: ${L('today’s games', 'los juegos de hoy')}`;
     const desc = names.length ? names.join(' · ') : L('Your daily games', 'Tus juegos del día');
     const now = new Date();
     this.lastIcs = ics({ time: st.time, title, desc, url: `${location.origin}${location.pathname}#today=1`, start: now });
     const url = URL.createObjectURL(new Blob([this.lastIcs], { type: 'text/calendar;charset=utf-8' }));
-    const a = h('a', { href: url, download: 'atlas-reminder.ics' }) as HTMLAnchorElement;
+    const a = h('a', { href: url, download: 'mundora-reminder.ics' }) as HTMLAnchorElement;
     document.body.append(a);
     a.click();
     a.remove();
@@ -330,7 +330,7 @@ export class Reminders {
     return h('div', { class: 'remind-hint' }, cal, h('p', { class: 'tool-hint' },
       sep(st.cal
         ? L('Your calendar still says {0}: add the new time, and remove the old one if it stays. · ', 'Tu calendario aún dice {0}: agrega la nueva hora y quita la anterior si se queda. · ', this.timeText(st.cal))
-        : L('Your phone’s calendar reminds you every day at {0}; tapping it opens Today. (Notifications in the background need Atlas installed on Android.) · ', 'El calendario de tu teléfono te avisa cada día a las {0}; al tocarlo se abre Hoy. (Las notificaciones en segundo plano necesitan Atlas instalado en Android.) · ', time)),
+        : L('Your phone’s calendar reminds you every day at {0}; tapping it opens Today. (Notifications in the background need Mundora installed on Android.) · ', 'El calendario de tu teléfono te avisa cada día a las {0}; al tocarlo se abre Hoy. (Las notificaciones en segundo plano necesitan Mundora instalado en Android.) · ', time)),
       change));
   }
 
@@ -368,8 +368,8 @@ export class Reminders {
       // How they reach you: once for all (one calendar event, or the notification).
       if (this.on().length) body.append(h('div', { class: 'remind-how', 'data-remind': 'how' }, this.how(draw, true)));
       body.append(h('p', { class: 'tool-hint' }, this.route === 'push'
-        ? L('This phone wakes Atlas in the background now and then, so the reminder comes around your time, as the phone decides.', 'Este teléfono despierta a Atlas en segundo plano de vez en cuando, así que el recordatorio llega hacia tu hora, cuando el teléfono decide.')
-        : L('Here a reminder is a daily event in your calendar, at the exact time: add it once. Atlas has no server, so it cannot send notifications to this device by itself.', 'Aquí un recordatorio es un evento diario en tu calendario, a la hora exacta: agrégalo una vez. Atlas no tiene servidor, así que no puede enviar notificaciones a este dispositivo por sí solo.')));
+        ? L('This phone wakes Mundora in the background now and then, so the reminder comes around your time, as the phone decides.', 'Este teléfono despierta a Mundora en segundo plano de vez en cuando, así que el recordatorio llega hacia tu hora, cuando el teléfono decide.')
+        : L('Here a reminder is a daily event in your calendar, at the exact time: add it once. Mundora has no server, so it cannot send notifications to this device by itself.', 'Aquí un recordatorio es un evento diario en tu calendario, a la hora exacta: agrégalo una vez. Mundora no tiene servidor, así que no puede enviar notificaciones a este dispositivo por sí solo.')));
     };
     draw();
     this.shell.openPanel('reminders', L('Reminders', 'Recordatorios'), body);

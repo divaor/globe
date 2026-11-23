@@ -20,7 +20,9 @@ const LOCAL_ONLY = new Set(['atlas-globe:saved-areas', 'atlas-saved-tiles', 'atl
 const earned = (k: string) => k === 'atlas-globe:progress' || k === 'atlas-globe:master' || k === 'atlas-globe:fill' || k === 'atlas-globe:onmap' || k.startsWith('atlas-quiz-best:');
 const ours = (k: string) => /^atlas/.test(k) && !LOCAL_ONLY.has(k);
 
-export interface Backup { app: 'Atlas Globe'; kind: 'backup'; v: 1; version: string; made: string; data: Record<string, string>; seal: string }
+/** The app a backup comes from: Mundora since v0.43.5; one made before by the same app, as Atlas Globe, still opens. */
+const APPS: readonly string[] = ['Mundora', 'Atlas Globe'];
+export interface Backup { app: 'Mundora' | 'Atlas Globe'; kind: 'backup'; v: 1; version: string; made: string; data: Record<string, string>; seal: string }
 
 function keys(): string[] {
   const out: string[] = [];
@@ -46,14 +48,14 @@ export async function makeBackup(): Promise<Backup> {
   const data: Record<string, string> = {};
   for (const k of keys()) { const v = localStorage.getItem(k); if (v != null) data[k] = v; }
   const made = new Date().toISOString();
-  return { app: 'Atlas Globe', kind: 'backup', v: 1, version: __APP_VERSION__, made, data, seal: await sealOf(made, data) };
+  return { app: 'Mundora', kind: 'backup', v: 1, version: __APP_VERSION__, made, data, seal: await sealOf(made, data) };
 }
 
 /** A backup file read back: its contents, and whether its seal matches (else its badges stay out). */
 export async function readBackup(text: string): Promise<{ b: Backup; sealed: boolean } | null> {
   let b: Backup;
   try { b = JSON.parse(text); } catch { return null; }
-  if (!b || b.app !== 'Atlas Globe' || b.kind !== 'backup' || typeof b.data !== 'object' || !b.data || typeof b.made !== 'string') return null;
+  if (!b || !APPS.includes(b.app) || b.kind !== 'backup' || typeof b.data !== 'object' || !b.data || typeof b.made !== 'string') return null;
   const data: Record<string, string> = {};
   for (const [k, v] of Object.entries(b.data)) if (ours(k) && typeof v === 'string' && v.length < 5_000_000) data[k] = v;
   const sealed = !!b.seal && b.seal === (await sealOf(b.made, b.data));
@@ -84,7 +86,7 @@ export function summary(data: Record<string, string>): string {
   return out.join(' · ') || L('settings only', 'solo ajustes');
 }
 
-const fileName = () => `atlas-globe-${L('backup', 'respaldo')}-${new Date().toISOString().slice(0, 10)}.json`;
+const fileName = () => `mundora-${L('backup', 'respaldo')}-${new Date().toISOString().slice(0, 10)}.json`;
 
 /** Settings' part: save a backup (download, or the phone's share sheet), and bring one back. */
 export function backupSettings(toast: (m: string) => void): HTMLElement {
@@ -107,7 +109,7 @@ export function backupSettings(toast: (m: string) => void): HTMLElement {
     const share = h('button', { type: 'button', class: 'pill sm', 'data-backup': 'share' }, icon(Share2, 15), L('Send it', 'Enviarlo'));
     share.addEventListener('click', () => void (async () => {
       const b = await makeBackup();
-      try { await navigator.share({ files: [new File([JSON.stringify(b)], fileName(), { type: 'application/json' })], title: 'Atlas Globe' }); } catch { /* cancelled */ }
+      try { await navigator.share({ files: [new File([JSON.stringify(b)], fileName(), { type: 'application/json' })], title: 'Mundora' }); } catch { /* cancelled */ }
     })());
     btns.push(share);
   }
@@ -120,7 +122,7 @@ export function backupSettings(toast: (m: string) => void): HTMLElement {
     if (!f) return;
     const got = await readBackup(await f.text());
     clear(status);
-    if (!got) { status.append(h('p', { class: 'backup-warn' }, L('This is not an Atlas Globe backup.', 'Este no es un respaldo de Atlas Globe.'))); return; }
+    if (!got) { status.append(h('p', { class: 'backup-warn' }, L('This is not a Mundora backup.', 'Este no es un respaldo de Mundora.'))); return; }
     const when = new Date(got.b.made).toLocaleString(appLocale(), { dateStyle: 'medium', timeStyle: 'short' });
     const yes = h('button', { type: 'button', class: 'pill sm primary', 'data-backup': 'replace' }, L('Replace this device’s data', 'Reemplazar los datos de este dispositivo'));
     const no = h('button', { type: 'button', class: 'pill sm', 'data-backup': 'cancel' }, L('Cancel', 'Cancelar'));

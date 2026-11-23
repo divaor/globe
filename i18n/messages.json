@@ -97,7 +97,7 @@
    "en": "1 badge",
    "es": "1 insignia",
    "where": [
-    "src/app/backup.ts:76"
+    "src/app/backup.ts:78"
    ]
   },
   {
@@ -3111,27 +3111,6 @@
    ]
   },
   {
-   "en": "Atlas Globe",
-   "es": "Atlas Globe",
-   "where": [
-    "src/app/i18n.ts:23"
-   ]
-  },
-  {
-   "en": "Atlas Globe is the world on one globe: its countries and cities, its nature, its history and its sky.",
-   "es": "Atlas Globe es el mundo en un solo globo: sus países y ciudades, su naturaleza, su historia y su cielo.",
-   "where": [
-    "src/ui/settings.ts:112"
-   ]
-  },
-  {
-   "en": "Atlas Globe · Daily challenge",
-   "es": "Atlas Globe · Reto del día",
-   "where": [
-    "src/learn/learn.ts:1560"
-   ]
-  },
-  {
    "en": "Atomic number",
    "es": "Número atómico",
    "where": [
@@ -3334,7 +3313,7 @@
    "en": "Backup saved: {0}.",
    "es": "Respaldo guardado: {0}.",
    "where": [
-    "src/app/backup.ts:101"
+    "src/app/backup.ts:103"
    ]
   },
   {
@@ -4151,7 +4130,7 @@
    "en": "Bring back a backup",
    "es": "Recuperar un respaldo",
    "where": [
-    "src/app/backup.ts:115"
+    "src/app/backup.ts:117"
    ]
   },
   {
@@ -4468,7 +4447,7 @@
    "en": "Cancel",
    "es": "Cancelar",
    "where": [
-    "src/app/backup.ts:126",
+    "src/app/backup.ts:128",
     "src/app/i18n.ts:279",
     "src/ui/terrain.ts:129"
    ]
@@ -7640,7 +7619,7 @@
    "en": "Everything this device keeps is replaced by the file’s.",
    "es": "Todo lo que guarda este dispositivo se reemplaza por lo del archivo.",
    "where": [
-    "src/app/backup.ts:136"
+    "src/app/backup.ts:138"
    ]
   },
   {
@@ -8559,13 +8538,6 @@
    ]
   },
   {
-   "en": "From Atlas Globe’s travel guide. Weather: CRU CL 2.0, 1961–1990. Museums: Wikidata.",
-   "es": "De la guía de viaje de Atlas Globe. Clima: CRU CL 2.0, 1961–1990. Museos: Wikidata.",
-   "where": [
-    "src/guide/guide.ts:750"
-   ]
-  },
-  {
    "en": "From Chile to Hawaii, 1960",
    "es": "De Chile a Hawái, 1960",
    "where": [
@@ -8577,6 +8549,13 @@
    "es": "Del ENIAC al iPhone",
    "where": [
     "src/learn/tours.ts:382"
+   ]
+  },
+  {
+   "en": "From Mundora’s travel guide. Weather: CRU CL 2.0, 1961–1990. Museums: Wikidata.",
+   "es": "De la guía de viaje de Mundora. Clima: CRU CL 2.0, 1961–1990. Museos: Wikidata.",
+   "where": [
+    "src/guide/guide.ts:750"
    ]
   },
   {
@@ -9729,8 +9708,8 @@
    ]
   },
   {
-   "en": "Here a reminder is a daily event in your calendar, at the exact time: add it once. Atlas has no server, so it cannot send notifications to this device by itself.",
-   "es": "Aquí un recordatorio es un evento diario en tu calendario, a la hora exacta: agrégalo una vez. Atlas no tiene servidor, así que no puede enviar notificaciones a este dispositivo por sí solo.",
+   "en": "Here a reminder is a daily event in your calendar, at the exact time: add it once. Mundora has no server, so it cannot send notifications to this device by itself.",
+   "es": "Aquí un recordatorio es un evento diario en tu calendario, a la hora exacta: agrégalo una vez. Mundora no tiene servidor, así que no puede enviar notificaciones a este dispositivo por sí solo.",
    "where": [
     "src/today/reminders.ts:372"
    ]
@@ -14341,6 +14320,27 @@
    ]
   },
   {
+   "en": "Mundora",
+   "es": "Mundora",
+   "where": [
+    "src/app/i18n.ts:23"
+   ]
+  },
+  {
+   "en": "Mundora is the world on one globe: its countries and cities, its nature, its history and its sky.",
+   "es": "Mundora es el mundo en un solo globo: sus países y ciudades, su naturaleza, su historia y su cielo.",
+   "where": [
+    "src/ui/settings.ts:112"
+   ]
+  },
+  {
+   "en": "Mundora · Daily challenge",
+   "es": "Mundora · Reto del día",
+   "where": [
+    "src/learn/learn.ts:1560"
+   ]
+  },
+  {
    "en": "Munich 1974",
    "es": "Múnich 1974",
    "where": [
@@ -14445,8 +14445,8 @@
    ]
   },
   {
-   "en": "My day on Atlas",
-   "es": "Mi día en Atlas",
+   "en": "My day on Mundora",
+   "es": "Mi día en Mundora",
    "where": [
     "src/today/today.ts:127"
    ]
@@ -15418,8 +15418,8 @@
    ]
   },
   {
-   "en": "No reminders left: remove “Atlas” from your calendar too.",
-   "es": "Ya no quedan recordatorios: quita también «Atlas» de tu calendario.",
+   "en": "No reminders left: remove the daily reminder from your calendar too.",
+   "es": "Ya no quedan recordatorios: quita también el recordatorio diario de tu calendario.",
    "where": [
     "src/today/reminders.ts:232"
    ]
@@ -16391,7 +16391,7 @@
    "en": "One file with everything this device keeps (badges, streaks and scores, your trip and its places, your countries, settings, playlists, your own data), to bring back on your phone or another computer. Saved offline areas stay on each device.",
    "es": "Un archivo con todo lo que guarda este dispositivo (insignias, rachas y puntuaciones, tu viaje y sus lugares, tus países, ajustes, listas, tus datos propios), para recuperarlo en tu teléfono u otra computadora. Las zonas guardadas sin conexión se quedan en cada dispositivo.",
    "where": [
-    "src/app/backup.ts:140"
+    "src/app/backup.ts:142"
    ]
   },
   {
@@ -17700,8 +17700,8 @@
    ]
   },
   {
-   "en": "Planned with Atlas Globe's travel guide ({0}) on {1}.",
-   "es": "Planeado con la guía de viaje de Atlas Globe ({0}) el {1}.",
+   "en": "Planned with Mundora's travel guide ({0}) on {1}.",
+   "es": "Planeado con la guía de viaje de Mundora ({0}) el {1}.",
    "where": [
     "src/guide/export.ts:36"
    ]
@@ -18653,7 +18653,7 @@
    "en": "Replace this device’s data",
    "es": "Reemplazar los datos de este dispositivo",
    "where": [
-    "src/app/backup.ts:125"
+    "src/app/backup.ts:127"
    ]
   },
   {
@@ -19202,7 +19202,7 @@
    "en": "Save a backup",
    "es": "Guardar un respaldo",
    "where": [
-    "src/app/backup.ts:93"
+    "src/app/backup.ts:95"
    ]
   },
   {
@@ -19258,7 +19258,7 @@
    "en": "Saved {0}",
    "es": "Guardado el {0}",
    "where": [
-    "src/app/backup.ts:134"
+    "src/app/backup.ts:136"
    ]
   },
   {
@@ -19672,7 +19672,7 @@
    "en": "Send it",
    "es": "Enviarlo",
    "where": [
-    "src/app/backup.ts:107"
+    "src/app/backup.ts:109"
    ]
   },
   {
@@ -25433,7 +25433,7 @@
    "en": "This file was changed after it was saved: your trip, places, lists and settings come over, but not its badges, streaks and scores (this device keeps its own).",
    "es": "Este archivo se modificó después de guardarlo: tu viaje, lugares, listas y ajustes se recuperan, pero no sus insignias, rachas ni puntuaciones (este dispositivo conserva las suyas).",
    "where": [
-    "src/app/backup.ts:135"
+    "src/app/backup.ts:137"
    ]
   },
   {
@@ -25483,10 +25483,10 @@
    ]
   },
   {
-   "en": "This is not an Atlas Globe backup.",
-   "es": "Este no es un respaldo de Atlas Globe.",
+   "en": "This is not a Mundora backup.",
+   "es": "Este no es un respaldo de Mundora.",
    "where": [
-    "src/app/backup.ts:123"
+    "src/app/backup.ts:125"
    ]
   },
   {
@@ -25505,8 +25505,8 @@
    ]
   },
   {
-   "en": "This phone wakes Atlas in the background now and then, so the reminder comes around your time, as the phone decides.",
-   "es": "Este teléfono despierta a Atlas en segundo plano de vez en cuando, así que el recordatorio llega hacia tu hora, cuando el teléfono decide.",
+   "en": "This phone wakes Mundora in the background now and then, so the reminder comes around your time, as the phone decides.",
+   "es": "Este teléfono despierta a Mundora en segundo plano de vez en cuando, así que el recordatorio llega hacia tu hora, cuando el teléfono decide.",
    "where": [
     "src/today/reminders.ts:371"
    ]
@@ -27293,8 +27293,8 @@
    ]
   },
   {
-   "en": "Welcome to Atlas Globe",
-   "es": "Te damos la bienvenida a Atlas Globe",
+   "en": "Welcome to Mundora",
+   "es": "Te damos la bienvenida a Mundora",
    "where": [
     "src/ui/welcome.ts:57"
    ]
@@ -29352,7 +29352,7 @@
    "en": "Your data is here. Starting again…",
    "es": "Tus datos están aquí. Reiniciando…",
    "where": [
-    "src/app/backup.ts:130"
+    "src/app/backup.ts:132"
    ]
   },
   {
@@ -29378,8 +29378,8 @@
    ]
   },
   {
-   "en": "Your phone’s calendar reminds you every day at {0}; tapping it opens Today. (Notifications in the background need Atlas installed on Android.) · ",
-   "es": "El calendario de tu teléfono te avisa cada día a las {0}; al tocarlo se abre Hoy. (Las notificaciones en segundo plano necesitan Atlas instalado en Android.) · ",
+   "en": "Your phone’s calendar reminds you every day at {0}; tapping it opens Today. (Notifications in the background need Mundora installed on Android.) · ",
+   "es": "El calendario de tu teléfono te avisa cada día a las {0}; al tocarlo se abre Hoy. (Las notificaciones en segundo plano necesitan Mundora instalado en Android.) · ",
    "where": [
     "src/today/reminders.ts:333"
    ]
@@ -29700,14 +29700,14 @@
    "en": "a trip of {0, plural, one {# city} other {# cities}}",
    "es": "un viaje de {0, plural, one {# ciudad} other {# ciudades}}",
    "where": [
-    "src/app/backup.ts:79"
+    "src/app/backup.ts:81"
    ]
   },
   {
    "en": "a trip of {0, plural, one {# city} other {# cities}} and {1, plural, one {# place} other {# places}}",
    "es": "un viaje de {0, plural, one {# ciudad} other {# ciudades}} y {1, plural, one {# lugar} other {# lugares}}",
    "where": [
-    "src/app/backup.ts:79"
+    "src/app/backup.ts:81"
    ]
   },
   {
@@ -29924,7 +29924,7 @@
    "en": "backup",
    "es": "respaldo",
    "where": [
-    "src/app/backup.ts:87"
+    "src/app/backup.ts:89"
    ]
   },
   {
@@ -30856,7 +30856,7 @@
    "en": "settings only",
    "es": "solo ajustes",
    "where": [
-    "src/app/backup.ts:84"
+    "src/app/backup.ts:86"
    ]
   },
   {
@@ -31304,7 +31304,7 @@
    "en": "your own data",
    "es": "tus datos propios",
    "where": [
-    "src/app/backup.ts:83"
+    "src/app/backup.ts:85"
    ]
   },
   {
@@ -31497,7 +31497,7 @@
    "en": "{0} badges",
    "es": "{0} insignias",
    "where": [
-    "src/app/backup.ts:76"
+    "src/app/backup.ts:78"
    ]
   },
   {
@@ -31609,7 +31609,7 @@
    "en": "{0} countries visited",
    "es": "{0} países visitados",
    "where": [
-    "src/app/backup.ts:81"
+    "src/app/backup.ts:83"
    ]
   },
   {
@@ -32117,7 +32117,7 @@
    "en": "{0} to go",
    "es": "{0} por visitar",
    "where": [
-    "src/app/backup.ts:82"
+    "src/app/backup.ts:84"
    ]
   },
   {

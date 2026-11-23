@@ -91,7 +91,7 @@ const L = await import(`data:text/javascript;base64,${Buffer.from(output[0].code
 check(L.normTime('7:05') === '07:05' && L.normTime('19:00') === '19:00' && L.normTime('25:00') === '19:00' && L.normTime('x') === '19:00' && L.normTime(null) === '19:00', 'times: 7:05 → 07:05; anything else → 19:00');
 check(L.nextDays(new Date(2026, 10, 29, 22), 4).join() === '2026-11-29,2026-11-30,2026-12-01,2026-12-02', 'the days ahead cross the month');
 const desc = 'Capitals, Flags; the Daily challenge · Región del día · Ponlo en el mapa · Juegos en el mapa · and a long line to fold 🌍🌍🌍';
-const text = L.ics({ time: '19:00', title: '🌍 Atlas: today’s games', desc, url: 'https://example.org/globe/#today=1', start: new Date(2026, 10, 18, 9), stamp: new Date(Date.UTC(2026, 10, 18, 12, 0, 0)) });
+const text = L.ics({ time: '19:00', title: '🌍 Mundora: today’s games', desc, url: 'https://example.org/globe/#today=1', start: new Date(2026, 10, 18, 9), stamp: new Date(Date.UTC(2026, 10, 18, 12, 0, 0)) });
 const lines = text.split('\r\n');
 const unfolded = text.replace(/\r\n /g, '').split('\r\n');
 const enc = new TextEncoder();

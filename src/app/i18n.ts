@@ -20,7 +20,7 @@ export const isLang = (x: unknown): x is Lang => LANGS.some((l) => l.id === x);
 
 /** key: [English, Spanish] or [English, Spanish, context] (a context for an English that means two things). */
 const STRINGS: Record<string, [string, string] | [string, string, string]> = {
-  appName: ['Atlas Globe', 'Atlas Globe'],
+  appName: ['Mundora', 'Mundora'],
   tagline: ['Explore the world, layer by layer', 'Explora el mundo, capa a capa'],
   loading: ['Loading the world…', 'Cargando el mundo…'],
   filters: ['Filters', 'Filtros'],

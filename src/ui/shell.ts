@@ -178,7 +178,7 @@ export class Shell {
 
   private renderTop() {
     clear(this.top);
-    const brand = h('button', { type: 'button', class: 'brand', title: t('about') }, h('span', { class: 'brand-logo', 'aria-hidden': 'true' }), h('span', { class: 'brand-name' }, 'Atlas'));
+    const brand = h('button', { type: 'button', class: 'brand', title: t('about') }, h('span', { class: 'brand-logo', 'aria-hidden': 'true' }), h('span', { class: 'brand-name' }, 'Mundora'));
     brand.addEventListener('click', () => this.openAbout());
     const searchBtn = h('button', { type: 'button', class: 'search-btn glass' }, icon(Search, 18), h('span', { class: 'search-btn-label' }, t('search')));
     searchBtn.addEventListener('click', () => this.search.open());
@@ -356,7 +356,7 @@ export class Shell {
   private async share() {
     const url = this.app.shareUrl();
     try {
-      if (navigator.share) { await navigator.share({ title: 'Atlas Globe', url }); return; }
+      if (navigator.share) { await navigator.share({ title: 'Mundora', url }); return; }
     } catch { /* cancelled */ }
     try { await navigator.clipboard.writeText(url); this.toast(t('linkCopied')); } catch { prompt('URL', url); }
   }

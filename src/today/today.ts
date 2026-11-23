@@ -124,7 +124,7 @@ export class Today {
       if (it.section === 'games') games.push(l); else lines.push(l);
     }
     if (games.length) lines.push(`🎮 ${games.join(' · ')}`);
-    return `🌍 ${L('My day on Atlas', 'Mi día en Atlas')} · ${date} · ${done}/${total}${streak ? ` · 🔥 ${streak}` : ''}\n${lines.join('\n')}\n${location.origin}${location.pathname}`;
+    return `🌍 ${L('My day on Mundora', 'Mi día en Mundora')} · ${date} · ${done}/${total}${streak ? ` · 🔥 ${streak}` : ''}\n${lines.join('\n')}\n${location.origin}${location.pathname}`;
   }
   async share() { await shareText(this.shell, this.shareText()); }
 

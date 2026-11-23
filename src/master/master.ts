@@ -1209,7 +1209,7 @@ export class Master implements HostGame {
     g.fillStyle = '#fff'; g.font = '700 44px system-ui, sans-serif';
     if (live) g.fillText(`🔥 ${L('{0, plural, one {# day} other {# days}} in a row', '{0, plural, one {# día seguido} other {# días seguidos}}', live)}`, 80, 960);
     g.font = '500 30px system-ui, sans-serif'; g.fillStyle = 'rgba(255,255,255,0.7)'; g.textAlign = 'right';
-    g.fillText('Atlas Globe', W - 80, 1010);
+    g.fillText('Mundora', W - 80, 1010);
     return new Promise((res) => cv.toBlob((b) => res(b), 'image/png'));
   }
 

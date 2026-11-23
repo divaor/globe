@@ -109,7 +109,7 @@ export function aboutPanel(app: App): HTMLElement {
   }
   return h('div', { class: 'about' },
     // v0.41.0: what the app is, in three lines (the same words as the store listing).
-    h('p', { class: 'about-lead' }, L('Atlas Globe is the world on one globe: its countries and cities, its nature, its history and its sky.', 'Atlas Globe es el mundo en un solo globo: sus países y ciudades, su naturaleza, su historia y su cielo.')),
+    h('p', { class: 'about-lead' }, L('Mundora is the world on one globe: its countries and cities, its nature, its history and its sky.', 'Mundora es el mundo en un solo globo: sus países y ciudades, su naturaleza, su historia y su cielo.')),
     h('p', null, L('Explore {0} maps, travel through time with hundreds of stories, plan a trip with the travel guide, and learn every country, capital and flag with games and a challenge each day.', 'Explora {0} mapas, viaja en el tiempo con cientos de historias, planea un viaje con la guía y aprende todos los países, capitales y banderas con juegos y un reto cada día.', fmtNumber([...app.registry.values()].filter((d) => !d.hidden && d.category !== 'mine').length))),
     h('p', null, L('No account and no ads. What you do stays on this device; to take it to another, use Settings → Your data on another device.', 'Sin cuenta y sin anuncios. Lo que haces se queda en este dispositivo; para llevarlo a otro, usa Ajustes → Tus datos en otro dispositivo.')),
     h('h3', { class: 'sec-title' }, t('credits')),

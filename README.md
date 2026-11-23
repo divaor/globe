@@ -1,8 +1,14 @@
-# Atlas Globe
+# Mundora
 
-A detailed, colourful, installable world globe (PWA). Stack any of ~140 map filters, morph between 14
+Mundora is a detailed, colourful, installable world globe (PWA). Stack any of ~140 map filters, morph between 14
 projections, travel through 123,000 years of borders and a billion years of plate tectonics, and leave it
-spinning full-screen as an ambient display. English and Spanish (Latin America's, or Spain's words).
+spinning full-screen as an ambient display. In English, Spanish (Latin America's, or Spain's words), Portuguese
+(Brazil), French and German.
+
+It was called Atlas Globe until v0.43.5, when the website took the apps' name and icon. The repository and the
+address stay `globe`; the saved data keeps its `atlas-globe:` keys (so nobody's progress is lost), the code its
+`window.atlas`, and the map style and theme called Atlas keep that word (a school atlas's look, not the app's name).
+A backup made as Atlas Globe still opens.
 
 - **App:** https://divaor.github.io/globe/ (GitHub Pages, deployed from `main`)
 - **Install:** open it in Chrome, Edge or Safari, then "Install app" / "Add to Home Screen". Works offline after the first visit.
@@ -51,7 +57,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   the map's puzzle of the day and the Map games panel. The first switch asks the time (19:00 at first). **One
   reminder a day at most**, only if something you chose is not done yet, each day about a different one ("🏛️
   Capitals: 6 to review today · 🔥 keep your 12-day streak"); it makes no sound, replaces yesterday's and opens
-  Today. Atlas has no server, so it uses what the device offers: where Atlas is installed on Android (Chrome), the
+  Today. Mundora has no server, so it uses what the device offers: where Mundora is installed on Android (Chrome), the
   phone wakes it in the background now and then and the notification comes **around** your time; elsewhere
   (iPhone, computers) the switch adds a **daily calendar reminder** at the exact time instead (an .ics file your
   calendar adds once; tapping it opens Today). Today shows your reminders and their time; Settings has one switch for
@@ -685,8 +691,8 @@ The service worker is the one vite-plugin-pwa writes, plus `public/reminders-sw.
 reminder's choice, its notification and its tap. The page leaves what it reads in Cache Storage (`atlas-reminders`).
 `npm run test:reminders` checks the choice and the calendar file with Node.
 
-**The iOS and Android apps** (v0.43.0), called **Mundora** in the stores and on the home screen (the website stays
-Atlas Globe), are the same code, wrapped with [Capacitor](https://capacitorjs.com) (`capacitor.config.ts`; app id
+**The iOS and Android apps** (v0.43.0), called **Mundora** in the stores and on the home screen (since v0.43.5 the
+website is Mundora too, with the same icon), are the same code, wrapped with [Capacitor](https://capacitorjs.com) (`capacitor.config.ts`; app id
 `io.github.divaor.globe`). Their store texts are `store/listings/<locale>.json` (`node scripts/store/check.mjs`). The native projects are `ios/` and `android/`; all of
 `dist/`, data included, goes inside the apps, so they work offline from the first launch. The website never loads
 the apps' code: `src/main.ts` imports `src/native/boot.ts` only when `src/native/platform.ts` sees an app.

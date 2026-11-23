@@ -4157,6 +4157,15 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     r2 = await restore(tampered);
   }
   check(r2 && r2.shown.unsealed && r2.got.trip >= 5 && !r2.got.badge, `a backup edited by hand: it says so; the trip comes over (${r2?.got.trip} cities), the badges don't (${r2?.got.badge ? 'there' : 'not there'})`);
+  // Mundora everywhere (v0.43.5): the file is Mundora's; one made before, by the app as Atlas Globe, still opens whole.
+  let r3 = null;
+  if (backup) {
+    const old = file + '-atlas.json';
+    fs.writeFileSync(old, JSON.stringify({ ...backup, app: 'Atlas Globe' }));
+    r3 = await restore(old);
+  }
+  check(backup?.app === 'Mundora' && /^mundora-backup-\d{4}-\d{2}-\d{2}\.json$/.test(d2?.suggestedFilename() ?? '') && r3 && !r3.shown.unsealed && r3.got.trip >= 5 && r3.got.badge,
+    `the backup is Mundora's (${d2?.suggestedFilename()}); one made before the new name (Atlas Globe) still opens, sealed, with its trip and badges`);
   check(!errors.length, `no page errors in the trip planner and the backup${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
@@ -4836,7 +4845,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
   await page.waitForTimeout(800);
   const again = await F(() => !!document.querySelector('.welcome'));
-  check(first.on && first.title === 'Te damos la bienvenida a Atlas Globe' && first.dots === 3 && /Como mi teléfono \(Español\)/.test(first.lang) && second.title === 'Algo nuevo cada día'
+  check(first.on && first.title === 'Te damos la bienvenida a Mundora' && first.dots === 3 && /Como mi teléfono \(Español\)/.test(first.lang) && second.title === 'Algo nuevo cada día'
     && back.title === first.title && third === 'games,stories,map,today' && after.gone && after.list === 'play' && !again,
     `the welcome: "${first.title}" (${first.lang}), "${second.title}", Back, then ${third}; Games opens the ${after.list} list; not again after a reload (${again})`);
   check(!errors.length, `no page errors in the welcome${errors.length ? ': ' + errors.join(' | ') : ''}`);
@@ -5496,7 +5505,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(400);
   const hint = await F(() => document.querySelector('[data-remind="master:capitals"] .remind-hint')?.textContent ?? '');
   const flat = icsText.replace(/\r\n /g, '');
-  check(dl?.suggestedFilename() === 'atlas-reminder.ics' && /RRULE:FREQ=DAILY/.test(flat) && /DTSTART:\d{8}T183000\r\n/.test(flat) && /TRIGGER:PT0M/.test(flat) && /DESCRIPTION:Capitals\\n/.test(flat) && /URL:\S+#today=1/.test(flat) && /In your calendar, every day at 6:30\sPM/.test(hint),
+  check(dl?.suggestedFilename() === 'mundora-reminder.ics' && /RRULE:FREQ=DAILY/.test(flat) && /DTSTART:\d{8}T183000\r\n/.test(flat) && /TRIGGER:PT0M/.test(flat) && /DESCRIPTION:Capitals\\n/.test(flat) && /URL:\S+#today=1/.test(flat) && /In your calendar, every day at 6:30\sPM/.test(hint),
     `the calendar reminder: ${dl?.suggestedFilename()}, every day at 18:30 with an alert and the link to Today; then "${hint.replace(/ · change$/, '')}"`);
   // The next switch, in Fill the map: no question this time.
   await F(() => window.atlas.fill.openPanel());
@@ -6089,8 +6098,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(600);
     const about = await F(() => document.querySelector('.about .about-lead')?.textContent ?? '');
     const by = await F(() => document.querySelector('.about [data-about="by"]')?.textContent ?? '');
-    const want = lang === 'es' ? { one: '1 día seguido', two: '2 días seguidos', settings: 'Ajustes', about: /^Atlas Globe es el mundo en un solo globo/ }
-      : { one: '1 day in a row', two: '2 days in a row', settings: 'Settings', about: /^Atlas Globe is the world on one globe/ };
+    const want = lang === 'es' ? { one: '1 día seguido', two: '2 días seguidos', settings: 'Ajustes', about: /^Mundora es el mundo en un solo globo/ }
+      : { one: '1 day in a row', two: '2 days in a row', settings: 'Settings', about: /^Mundora is the world on one globe/ };
     check(t.one === want.one && t.two === want.two && t.settings === want.settings && want.about.test(about) && by === (lang === 'es' ? 'Hecho por Diego Valencia.' : 'Made by Diego Valencia.'), `${lang}: plurals "${t.one}", "${t.two}"; "${t.settings}"; About: "${about.slice(0, 50)}…"; ${by}`);
     check(!errors.length, `${lang}: no page errors in the text checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await ctx.close();
@@ -6551,6 +6560,47 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
     `${dev}: ${kb.id} fits between the card and the keyboard (${kb.w}×${kb.h} px in ${kb.room} px of room), and is framed for the whole area again after (${after.w}×${after.h} px in ${after.room} px)`);
   check(!errors.length, `the keyboard (${dev}): no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
+}
+// 55. Mundora everywhere (v0.43.5), on a phone: the app's name is Mundora on the website as in the apps: the page's
+// title and loading screen, the top bar, the installed app's name, the welcome, About in each language, and the day's
+// results as shared. The website's icon is the apps' (the spectrum orb). The map style and the theme called Atlas keep
+// that word: they are a school atlas's look, not the app's name.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=10,25,1.1&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  const site = await F(async () => {
+    const m = document.querySelector('link[rel="manifest"]');
+    const man = m ? await (await fetch(m.href)).json() : null;
+    const html = await (await fetch(location.pathname, { cache: 'no-store' })).text();
+    const svg = await (await fetch(document.querySelector('link[rel="icon"]').href)).text();
+    return { title: document.title, brand: document.querySelector('.brand-name')?.textContent ?? '', man: man ? `${man.name}|${man.short_name}` : '',
+      apple: document.querySelector('meta[name="apple-mobile-web-app-title"]')?.content ?? '', splash: /class="splash-name">Mundora</.test(html),
+      orb: svg.includes('id="disc"'), day: window.atlas.today.shareText().split('\n')[0] };
+  });
+  check(site.title === 'Mundora' && site.brand === 'Mundora' && site.man === 'Mundora|Mundora' && site.apple === 'Mundora' && site.splash && site.orb && /^🌍 My day on Mundora/.test(site.day),
+    `the website is Mundora: title "${site.title}", top bar "${site.brand}", installed as ${site.man}, loading screen, the spectrum orb icon, and "${site.day}"`);
+  check(!errors.length, `Mundora (website): no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+  // About in each language, and the welcome (a first visit, no link).
+  const want = { en: /^Mundora is the world/, es: /^Mundora es el mundo/, pt: /^O Mundora é o mundo/, fr: /^Mundora, c’est le monde/, de: /^Mundora ist die Welt/ };
+  const seen = [];
+  for (const [lang, re] of Object.entries(want)) {
+    const o = await open({ ...devices['Pixel 7'] }, `#p=globe&l=political&lang=${lang}`);
+    await o.page.evaluate(() => window.atlas.shell.openAbout(true));
+    await o.page.waitForTimeout(700);
+    const about = await o.page.evaluate(() => document.querySelector('.about .about-lead')?.textContent ?? '');
+    const old = await o.page.evaluate(() => /Atlas Globe/.test(document.body.innerText));
+    seen.push({ lang, ok: re.test(about) && !old, about: about.slice(0, 32), errs: o.errors.length });
+    await o.ctx.close();
+  }
+  const w = await browser.newContext({ ...devices['Pixel 7'], locale: 'en-US' });
+  const wp = await w.newPage();
+  await wp.goto(url, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await wp.waitForSelector('.welcome-title', { timeout: 30000 }).catch(() => {});
+  const welcome = await wp.evaluate(() => document.querySelector('.welcome-title')?.textContent ?? '');
+  await w.close();
+  check(seen.every((x) => x.ok && !x.errs) && welcome === 'Welcome to Mundora',
+    `About says Mundora in every language (${seen.map((x) => `${x.lang}: "${x.about}…"`).join('; ')}), with no "Atlas Globe" left on screen; the welcome: "${welcome}"`);
 }
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');

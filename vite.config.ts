@@ -17,8 +17,8 @@ export default defineConfig({
       includeAssets: ['icons/*.png', 'icons/*.svg'],
       manifest: {
         id: './',
-        name: 'Atlas Globe',
-        short_name: 'Atlas',
+        name: 'Mundora',
+        short_name: 'Mundora',
         description: 'The world on one globe: maps of everything, its history in stories, a travel guide, and daily games to learn every country, capital and flag.',
         lang: 'en',
         start_url: './',

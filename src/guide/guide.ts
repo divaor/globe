@@ -747,7 +747,7 @@ export class TravelGuide {
       }
       page.append(sec);
     }
-    page.append(h('p', { class: 'small' }, L('From Atlas Globe’s travel guide. Weather: CRU CL 2.0, 1961–1990. Museums: Wikidata.', 'De la guía de viaje de Atlas Globe. Clima: CRU CL 2.0, 1961–1990. Museos: Wikidata.')));
+    page.append(h('p', { class: 'small' }, L('From Mundora’s travel guide. Weather: CRU CL 2.0, 1961–1990. Museums: Wikidata.', 'De la guía de viaje de Mundora. Clima: CRU CL 2.0, 1961–1990. Museos: Wikidata.')));
     return page;
   }
   print() {

@@ -468,7 +468,7 @@ export class StoryMode {
       id: kind === 'wars' ? 'wars' : `story-${kind}`, category: 'political', icon: k.icon, kind: 'fill', hidden: true, animated: true,
       name: k.name,
       desc: { en: 'Stories step by step.', es: 'Historias paso a paso.' },
-      credit: `${k.name.en}: Atlas Globe (sources listed with each story); pictures: Wikipedia; historical borders: aourednik/historical-basemaps (GPL-3.0)${k.paleo ? '; continents of the past: Merdith et al. (2021) plate model (CC BY 4.0)' : ''}`,
+      credit: `${k.name.en}: Mundora (sources listed with each story); pictures: Wikipedia; historical borders: aourednik/historical-basemaps (GPL-3.0)${k.paleo ? '; continents of the past: Merdith et al. (2021) plate model (CC BY 4.0)' : ''}`,
       drawFill(rc) { self.drawFill(rc); },
       drawOverlay(rc) { self.drawOverlay(rc); },
       labels(rc) { self.labels(rc); },
