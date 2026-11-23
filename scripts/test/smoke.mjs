@@ -6602,6 +6602,58 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   check(seen.every((x) => x.ok && !x.errs) && welcome === 'Welcome to Mundora',
     `About says Mundora in every language (${seen.map((x) => `${x.lang}: "${x.about}…"`).join('; ')}), with no "Atlas Globe" left on screen; the welcome: "${welcome}"`);
 }
+// 56. Western Sahara whole (v0.43.6), on a phone. Natural Earth draws the part Morocco administers inside Morocco;
+// the app draws the territory whole: its towns (Laayoune, Dakhla, Smara) are Western Sahara, north of 27°40′ N
+// (Tan-Tan) is Morocco, at both levels of detail the territory runs from about 21° to 27.7° N, its towns are its own in
+// the city list, its one region in the states layer is the whole territory, and the borders timeline's 2026 map agrees.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-12,24,4&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  await page.waitForTimeout(1500);
+  const at = await F(() => {
+    const r = window.atlas.app.renderer;
+    const p = { Laayoune: [-13.2, 27.15], Dakhla: [-15.94, 23.71], Smara: [-11.68, 26.73], 'Bir Lehlou': [-9.65, 26.12], 'Tan-Tan': [-11.1, 28.44], Rabat: [-6.84, 34.02] };
+    return Object.fromEntries(Object.entries(p).map(([n, q]) => [n, r.countryAt(q[0], q[1])]));
+  });
+  const boxes = await F(() => ['110m', '50m'].map((res) => {
+    const d = window.atlas.app.data.best(res);
+    const b = (id) => d.byId.get(id)?.bbox?.map((v) => Math.round(v * 10) / 10);
+    return { res, esh: b('ESH'), mar: b('MAR') };
+  }));
+  // The city list and the states layer.
+  const cities = await (await fetch(`${url}data/base/cities.json`)).json();
+  const fi = Object.fromEntries(cities.fields.map((k, i) => [k, i]));
+  const town = (n) => cities.rows.find((r) => r[fi.name] === n);
+  const towns = ['Laayoune', 'Dakhla', 'Smara'].map((n) => `${n}: ${town(n)?.[fi.country]}`);
+  const { feature } = require('topojson-client');
+  const { geoArea, geoContains } = require('d3-geo');
+  const a1 = await (await fetch(`${url}data/base/admin1.json`)).json();
+  const regions = feature(a1, a1.objects.admin1).features;
+  const regionAt = (q) => regions.find((f) => geoContains(f, q))?.properties;
+  const laayouneRegion = regionAt([-13.2, 27.15]);
+  const w26 = await (await fetch(`${url}data/history/world_2026.json`)).json();
+  const today = feature(w26, Object.values(w26.objects)[0]).features;
+  const km = (n) => Math.round(geoArea(today.find((f) => f.properties.n === n)) * 40589641 / 1000);
+  const ok = at.Laayoune === 'ESH' && at.Dakhla === 'ESH' && at.Smara === 'ESH' && at['Bir Lehlou'] === 'ESH' && at['Tan-Tan'] === 'MAR' && at.Rabat === 'MAR'
+    && boxes.every((b) => b.esh && b.esh[1] < 21.5 && b.esh[3] >= 27.6 && b.esh[0] <= -17 && b.mar[1] >= 27.6)
+    && towns.every((t) => /ESH$/.test(t)) && laayouneRegion?.a === 'ESH' && laayouneRegion?.n === 'Western Sahara'
+    && km('Western Sahara') > 250 && km('Western Sahara') < 290;
+  check(ok, `Western Sahara whole: ${Object.entries(at).map(([n, c]) => `${n} ${c}`).join(', ')}; ${boxes.map((b) => `${b.res} ESH ${b.esh?.[1]}–${b.esh?.[3]}° N, MAR from ${b.mar?.[1]}° N`).join('; ')}; ${towns.join(', ')}; Laayoune's region: ${laayouneRegion?.n} (${laayouneRegion?.a}); 2026 map: ${km('Western Sahara')}k km²`);
+  // Master the world's capitals deck: Western Sahara's capital and its other towns (the question's dots) are all in it.
+  const deck = await (await fetch(`${url}data/master/deck.json`)).json();
+  const esh = deck.countries.find((c) => c.id === 'ESH');
+  // (Dakhla and Boujdour are on the shore, a little out at sea in the map's coastline: the country nearest, within
+  // about 15 km, as a tap there counts.)
+  const dots = await F((pts) => pts.map(([n, q]) => {
+    const r = window.atlas.app.renderer;
+    let c = r.countryAt(q[0], q[1]);
+    for (const d of [0.05, 0.1, 0.15]) for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [-1, -1], [1, -1], [-1, 1]]) c ??= r.countryAt(q[0] + dx * d, q[1] + dy * d);
+    return `${n} ${c}`;
+  }), [esh.cap, ...esh.cities].map((c) => [c.en, c.at]));
+  check(dots.every((d) => / ESH$/.test(d)), `the capitals question's dots for Western Sahara are in it: ${dots.join(', ')}`);
+  check(!errors.length, `Western Sahara: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

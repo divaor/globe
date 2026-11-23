@@ -169,3 +169,7 @@ One entry per pair of consecutive snapshots (53 entries):
   - It has no rank or population field.
   - Most points are undated OpenStreetMap archaeological features (tells, tombs, shell middens, peaks)
     concentrated in Israel/Palestine and Australia.
+- **The 2026 map** (`world_2026.json`) is not from this source: it is the app's present-day countries (Natural Earth
+  1:50m, public domain), matched to the 2010 entities by `scripts/data/history/today-snapshot.mjs`. Western Sahara is
+  drawn whole in it (v0.43.6), as in the 2010 map: Natural Earth's present-day data put the part Morocco administers
+  inside Morocco, and `scripts/data/build-base.mjs` gives it back to Western Sahara.

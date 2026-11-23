@@ -601,14 +601,14 @@
    "en": "A continent or a region",
    "es": "Un continente o una región",
    "where": [
-    "src/onmap/onmap.ts:622"
+    "src/onmap/onmap.ts:632"
    ]
   },
   {
    "en": "A country ({0})",
    "es": "Un país ({0})",
    "where": [
-    "src/onmap/onmap.ts:611"
+    "src/onmap/onmap.ts:621"
    ]
   },
   {
@@ -1962,7 +1962,7 @@
    "en": "All placed: check them, or tap one to move it.",
    "es": "Todo en su sitio: compruébalo, o toca uno para moverlo.",
    "where": [
-    "src/onmap/onmap.ts:380"
+    "src/onmap/onmap.ts:390"
    ]
   },
   {
@@ -1984,14 +1984,14 @@
    "en": "All six ({0}/{1})",
    "es": "Los seis ({0}/{1})",
    "where": [
-    "src/onmap/onmap.ts:410"
+    "src/onmap/onmap.ts:420"
    ]
   },
   {
    "en": "All six on the map in {0, plural, one {# check} other {# checks}}!",
    "es": "¡Los seis en el mapa en {0, plural, one {# comprobación} other {# comprobaciones}}!",
    "where": [
-    "src/onmap/onmap.ts:477"
+    "src/onmap/onmap.ts:487"
    ]
   },
   {
@@ -2322,7 +2322,7 @@
    "en": "Another country",
    "es": "Otro país",
    "where": [
-    "src/onmap/onmap.ts:490"
+    "src/onmap/onmap.ts:500"
    ]
   },
   {
@@ -2413,7 +2413,7 @@
    "en": "Any country",
    "es": "Un país al azar",
    "where": [
-    "src/onmap/onmap.ts:609"
+    "src/onmap/onmap.ts:619"
    ]
   },
   {
@@ -4734,7 +4734,7 @@
     "src/learn/learn.ts:1488",
     "src/learn/learn.ts:2124",
     "src/master/master.ts:711",
-    "src/onmap/onmap.ts:397"
+    "src/onmap/onmap.ts:407"
    ]
   },
   {
@@ -6468,7 +6468,7 @@
     "src/fill/states.ts:554",
     "src/learn/learn.ts:468",
     "src/learn/learn.ts:490",
-    "src/onmap/onmap.ts:640"
+    "src/onmap/onmap.ts:650"
    ]
   },
   {
@@ -9086,7 +9086,7 @@
    "en": "Give up",
    "es": "Me rindo",
    "where": [
-    "src/onmap/onmap.ts:399"
+    "src/onmap/onmap.ts:409"
    ]
   },
   {
@@ -9338,7 +9338,7 @@
    "en": "Green is right; yellow is close, red is far off. Five checks; the greens stay.",
    "es": "Verde es correcto; amarillo, cerca; rojo, lejos. Cinco comprobaciones; los verdes se quedan.",
    "where": [
-    "src/onmap/onmap.ts:404"
+    "src/onmap/onmap.ts:414"
    ]
   },
   {
@@ -11829,7 +11829,7 @@
    "en": "Keep playing",
    "es": "Seguir jugando",
    "where": [
-    "src/onmap/onmap.ts:390"
+    "src/onmap/onmap.ts:400"
    ]
   },
   {
@@ -13822,7 +13822,7 @@
     "src/fill/fill.ts:509",
     "src/fill/states.ts:421",
     "src/master/master.ts:889",
-    "src/onmap/onmap.ts:491"
+    "src/onmap/onmap.ts:501"
    ]
   },
   {
@@ -17791,7 +17791,7 @@
     "src/app/i18n.ts:40",
     "src/fill/states.ts:533",
     "src/master/master.ts:1102",
-    "src/onmap/onmap.ts:607",
+    "src/onmap/onmap.ts:617",
     "src/play/menu.ts:175"
    ]
   },
@@ -17866,7 +17866,7 @@
    "en": "Played {0} · solved {1} · at the first check {2}",
    "es": "Jugados {0} · resueltos {1} · a la primera {2}",
    "where": [
-    "src/onmap/onmap.ts:623"
+    "src/onmap/onmap.ts:633"
    ]
   },
   {
@@ -18105,7 +18105,7 @@
    "en": "Put all six on the map, then check ({0}/{1}).",
    "es": "Pon los seis en el mapa y luego comprueba ({0}/{1}).",
    "where": [
-    "src/onmap/onmap.ts:403"
+    "src/onmap/onmap.ts:413"
    ]
   },
   {
@@ -18115,16 +18115,16 @@
     "src/main.ts:113",
     "src/main.ts:146",
     "src/main.ts:185",
-    "src/onmap/onmap.ts:78",
-    "src/onmap/onmap.ts:372"
+    "src/onmap/onmap.ts:82",
+    "src/onmap/onmap.ts:382"
    ]
   },
   {
    "en": "Put it on the map needs its data; check your connection.",
    "es": "Ponlo en el mapa necesita sus datos; revisa tu conexión.",
    "where": [
-    "src/onmap/onmap.ts:141",
-    "src/onmap/onmap.ts:574"
+    "src/onmap/onmap.ts:145",
+    "src/onmap/onmap.ts:584"
    ]
   },
   {
@@ -18132,7 +18132,7 @@
    "es": "Ponlo en el mapa: hoy",
    "where": [
     "src/main.ts:187",
-    "src/onmap/onmap.ts:639"
+    "src/onmap/onmap.ts:649"
    ]
   },
   {
@@ -18160,7 +18160,7 @@
    "en": "Puzzle of the day",
    "es": "Reto del día",
    "where": [
-    "src/onmap/onmap.ts:372"
+    "src/onmap/onmap.ts:382"
    ]
   },
   {
@@ -19959,14 +19959,14 @@
    "en": "Show the answers",
    "es": "Mostrar las respuestas",
    "where": [
-    "src/onmap/onmap.ts:392"
+    "src/onmap/onmap.ts:402"
    ]
   },
   {
    "en": "Show the answers? The puzzle ends unsolved.",
    "es": "¿Mostrar las respuestas? El reto termina sin resolver.",
    "where": [
-    "src/onmap/onmap.ts:389"
+    "src/onmap/onmap.ts:399"
    ]
   },
   {
@@ -20234,7 +20234,7 @@
    "en": "Six places from a country or a region: tap a name, then its place among the grey ones. Green is right; yellow to red, how far off. Five checks.",
    "es": "Seis lugares de un país o una región: toca un nombre y luego su lugar entre los grises. Verde es correcto; de amarillo a rojo, qué tan lejos. Cinco comprobaciones.",
    "where": [
-    "src/onmap/onmap.ts:584"
+    "src/onmap/onmap.ts:594"
    ]
   },
   {
@@ -24735,7 +24735,7 @@
    "en": "The right places are on the map, in green.",
    "es": "Los lugares correctos están en el mapa, en verde.",
    "where": [
-    "src/onmap/onmap.ts:478"
+    "src/onmap/onmap.ts:488"
    ]
   },
   {
@@ -27436,7 +27436,7 @@
    "en": "What to place",
    "es": "Qué colocar",
    "where": [
-    "src/onmap/onmap.ts:595"
+    "src/onmap/onmap.ts:605"
    ]
   },
   {
@@ -27889,7 +27889,7 @@
    "en": "Where is {0}? Tap one of the grey {1}.",
    "es": "¿Dónde está {0}? Toca uno de los grises.",
    "where": [
-    "src/onmap/onmap.ts:379"
+    "src/onmap/onmap.ts:389"
    ]
   },
   {
@@ -29607,7 +29607,7 @@
    "en": "Check",
    "es": "Comprobación",
    "where": [
-    "src/onmap/onmap.ts:375"
+    "src/onmap/onmap.ts:385"
    ]
   },
   {
@@ -30942,7 +30942,7 @@
    "en": "tap its place among the grey ones",
    "es": "toca su lugar entre los grises",
    "where": [
-    "src/onmap/onmap.ts:416"
+    "src/onmap/onmap.ts:426"
    ]
   },
   {
@@ -31054,7 +31054,7 @@
    "es": "el mismo para todos hoy",
    "where": [
     "src/fill/states.ts:554",
-    "src/onmap/onmap.ts:640"
+    "src/onmap/onmap.ts:650"
    ]
   },
   {
@@ -32032,7 +32032,7 @@
    "en": "{0} right. Move the others and check again.",
    "es": "{0} bien. Mueve los demás y vuelve a comprobar.",
    "where": [
-    "src/onmap/onmap.ts:333"
+    "src/onmap/onmap.ts:343"
    ]
   },
   {

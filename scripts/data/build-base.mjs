@@ -112,11 +112,75 @@ const SHORT_ES = {
   HMD: 'Islas Heard y McDonald', CNM: 'Línea Verde', SPM: 'San Pedro y Miquelón',
 };
 
+// Western Sahara whole (v0.43.6). Natural Earth (since v5) draws the part Morocco administers, west of the sand wall,
+// inside Morocco and keeps only the strip east of the wall as Western Sahara, so the coast and its towns (Laayoune,
+// Dakhla) were Morocco on the map and in the games. The app shows the territory whole, as the UN lists it (a
+// non-self-governing territory) and as Natural Earth drew it before: Morocco ends at the parallel 27°40′ N, and what
+// lies south of it, west of 8°40′ W, is Western Sahara.
+const ESH_BOX = [-20, 15, -(8 + 2 / 3), 27 + 2 / 3]; // xmin, ymin, xmax, ymax
+const ESH_CUT = ESH_BOX.join(',');
+/** A place Natural Earth gives to Morocco that lies in Western Sahara (the towns of the coast: Laayoune, Dakhla...). */
+const inWesternSahara = (adm, lon, lat) => adm === 'MAR' && lon < ESH_BOX[2] && lat < ESH_BOX[3] && lon > ESH_BOX[0] && lat > ESH_BOX[1];
+
+/**
+ * Moves what a layer's Moroccan features hold south of the boundary into Western Sahara's (one feature, dissolved
+ * with the strip Natural Earth already gives it). `key` is the field with the country id; `mine` picks Western
+ * Sahara's own feature, whose properties the whole territory keeps.
+ */
+async function wholeWesternSahara(file, key, mine) {
+  const fc = await readJSON(file);
+  const dir = path.dirname(file), stem = path.basename(file, '.geojson');
+  const part = (n) => path.join(dir, `${stem}.esh-${n}.geojson`);
+  // (Properties only: a feature's own id would come back from mapshaper as an extra FID field.)
+  const write = (n, features) => fs.writeFile(part(n), JSON.stringify({ type: 'FeatureCollection', features: features.map((f) => ({ type: 'Feature', geometry: f.geometry, properties: f.properties })) }));
+  const mar = fc.features.filter((f) => f.properties[key] === 'MAR');
+  const esh = fc.features.find((f) => mine(f.properties));
+  if (!mar.length || !esh) throw new Error(`${stem}: no Morocco or no Western Sahara to fix`);
+  // Each Moroccan feature carries its place, so one cut away whole (left out of the erase's output) shifts no other.
+  await write('mar', mar.map((f, i) => ({ ...f, properties: { ...f.properties, eshPart: i } })));
+  await write('own', [esh]);
+  await run(`-i "${part('mar')}" -erase bbox=${ESH_CUT} -o "${part('north')}"`);
+  await run(`-i "${part('mar')}" -clip bbox=${ESH_CUT} -o "${part('south')}"`);
+  // The territory: its own strip and the part cut off Morocco, as one shape with its own feature's properties.
+  const south = (await readJSON(part('south'))).features.filter((f) => f.geometry);
+  await write('south', south.map((f) => ({ type: 'Feature', geometry: f.geometry, properties: { ...esh.properties } })));
+  await run(`-i "${part('own')}" "${part('south')}" combine-files -merge-layers -dissolve2 ${key} copy-fields=${Object.keys(esh.properties).filter((k) => k !== key).join(',') || key} -o "${part('whole')}"`);
+  const north = new Map((await readJSON(part('north'))).features.filter((f) => f.geometry).map((f) => [f.properties.eshPart, f.geometry]));
+  const whole = (await readJSON(part('whole'))).features[0];
+  if (!whole?.geometry) throw new Error(`${stem}: Western Sahara came out empty`);
+  // Morocco's features keep their place and properties; one left with nothing (a region wholly in the territory) goes.
+  let m = 0;
+  fc.features = fc.features.flatMap((f) => {
+    if (f === esh) return [{ ...f, geometry: whole.geometry }];
+    if (f.properties[key] !== 'MAR') return [f];
+    const g = north.get(m++);
+    return g ? [{ ...f, geometry: g }] : [];
+  });
+  await fs.writeFile(file, JSON.stringify(fc));
+}
+
+/**
+ * Western Sahara whole in a built TopoJSON file (its `object`), after simplification: the shapes are cut as they will
+ * be drawn, and no other shape changes (simplifying again would move a few points everywhere).
+ */
+async function westernSaharaIn(out, object, q, key, mine) {
+  const tmp = path.join(PREP, `${object}-${path.basename(out, '.json')}.geojson`);
+  await run(`-i "${out}" -o "${tmp}" format=geojson`);
+  // mapshaper writes a TopoJSON feature id as the GeoJSON feature's id; the fix and the rebuild read it as a field.
+  const fc = await readJSON(tmp);
+  if (key === 'id') fc.features = fc.features.map((f) => ({ type: 'Feature', geometry: f.geometry, properties: { ...(f.properties ?? {}), id: f.id ?? f.properties?.id } }));
+  await fs.writeFile(tmp, JSON.stringify(fc));
+  await wholeWesternSahara(tmp, key, mine);
+  await run(`-i "${tmp}" name=${object} -o "${out}" format=topojson quantization=${q}${key === 'id' ? ' id-field=id' : ''}`);
+}
+
 async function countries() {
   await countryIds();
   for (const [res, q, simplify] of [['110m', '1e5', ''], ['50m', '1e5', ''], ['10m', '4e5', '-simplify 40% keep-shapes']]) {
     const file = await prep(`ne_${res}_admin_0_countries`, (p) => ({ id: countryId(p.ADM0_A3) }));
-    await run(`-i "${file}" name=countries ${simplify} -o "${path.join(BASE, `countries-${res}.json`)}" format=topojson quantization=${q} id-field=id`);
+    const out = path.join(BASE, `countries-${res}.json`);
+    await run(`-i "${file}" name=countries ${simplify} -o "${out}" format=topojson quantization=${q} id-field=id`);
+    await westernSaharaIn(out, 'countries', q, 'id', (p) => p.id === 'ESH');
   }
   const fc = await readJSON(src('ne_10m_admin_0_countries'));
   const meta = {};
@@ -175,9 +239,11 @@ async function cities() {
     const re = RENAMED[englishName(p)];
     const name = re ? re[0] : englishName(p);
     if (re) p.NAME_ES = re[1];
+    // Western Sahara's towns are its own (v0.43.6), in its one region, as on the map.
+    const ws = inWesternSahara(countryId(p.ADM0_A3), lon, lat);
     rows.push([round(lon), round(lat), name, p.NAME_ES && p.NAME_ES !== name ? p.NAME_ES : 0,
-      p.POP_MAX || 0, Math.round((p.MIN_ZOOM || 10) * 10) / 10, cap, flags, countryId(p.ADM0_A3),
-      p.TIMEZONE || 0, p.ADM1NAME || 0]);
+      p.POP_MAX || 0, Math.round((p.MIN_ZOOM || 10) * 10) / 10, cap, flags, ws ? 'ESH' : countryId(p.ADM0_A3),
+      p.TIMEZONE || 0, ws ? 'Western Sahara' : p.ADM1NAME || 0]);
   }
   // Most important first: lower min-zoom, then capitals, then population.
   rows.sort((a, b) => a[5] - b[5] || b[6] - a[6] || b[4] - a[4]);
@@ -188,12 +254,18 @@ async function cities() {
 
 async function admin1() {
   await countryIds();
-  const file = await prep('ne_10m_admin_1_states_provinces', (p) => ({
-    n: str(p.name_en) || str(p.name), es: str(p.name_es) || str(p.name_en) || str(p.name),
-    a: countryId(p.adm0_a3), t: str(p.type_en), lr: p.labelrank,
-    lx: round(p.longitude, 2), ly: round(p.latitude, 2),
-  }));
-  await run(`-i "${file}" name=admin1 -simplify 6% keep-shapes -o "${path.join(BASE, 'admin1.json')}" format=topojson quantization=1e5`);
+  const file = await prep('ne_10m_admin_1_states_provinces', (p) => {
+    const n = str(p.name_en) || str(p.name), re = RENAMED[n];
+    return {
+      n: re ? re[0] : n, es: re ? re[1] : str(p.name_es) || str(p.name_en) || str(p.name),
+      a: countryId(p.adm0_a3), t: str(p.type_en), lr: p.labelrank,
+      lx: round(p.longitude, 2), ly: round(p.latitude, 2),
+    };
+  });
+  const out = path.join(BASE, 'admin1.json');
+  await run(`-i "${file}" name=admin1 -simplify 6% keep-shapes -o "${out}" format=topojson quantization=1e5`);
+  // Morocco's regions end at the boundary; Western Sahara is one region, the whole territory (v0.43.6).
+  await westernSaharaIn(out, 'admin1', '1e5', 'a', (p) => p.a === 'ESH');
 }
 
 const named = (p) => {
