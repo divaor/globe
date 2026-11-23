@@ -35,7 +35,7 @@
     const k = shown && shown.id ? state.chosen.indexOf(shown.id) + 1 : 0;
     const turn = [...state.chosen.slice(k), ...state.chosen.slice(0, k)].filter((id) => left.includes(id));
     const id = turn[0];
-    const words = (state.days && state.days[day] && state.days[day][id]) || (state.generic && state.generic[id]) || { t: '🌍 Atlas', b: '' };
+    const words = (state.days && state.days[day] && state.days[day][id]) || (state.generic && state.generic[id]) || { t: '🌍 Mundora', b: '' };
     const more = left.length - 1;
     const body = more > 0 && state.more ? `${words.b}${words.b ? ' · ' : ''}${state.more.replace('{n}', String(more))}` : words.b;
     return { id, day, title: words.t, body, url: state.url || './#today=1' };

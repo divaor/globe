@@ -1557,7 +1557,7 @@ export class Learn {
   private shareButton(day: string, score: number, n: number, marks: string): HTMLElement {
     const b = h('button', { type: 'button', class: 'pill primary sm', 'data-share': '' }, icon(Share2, 15), L('Share', 'Compartir'));
     b.addEventListener('click', () => void (async () => {
-      const text = `${L('Atlas Globe · Daily challenge', 'Atlas Globe · Reto del día')} #${dailyNumber(day)}: ${score}/${n}\n${marks}\n${location.origin}${location.pathname}`;
+      const text = `${L('Mundora · Daily challenge', 'Mundora · Reto del día')} #${dailyNumber(day)}: ${score}/${n}\n${marks}\n${location.origin}${location.pathname}`;
       if (navigator.share) {
         try { await navigator.share({ text }); return; } catch (e) { if ((e as Error).name === 'AbortError') return; }
       }

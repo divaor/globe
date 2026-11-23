@@ -33,7 +33,7 @@ export function tripMarkdown(t: TripOut, d: TripDetails = tripDetails()): string
   const out: string[] = [];
   const route = t.cities.map((c) => c.name).join(' → ');
   out.push(`# ${L('My trip', 'Mi viaje')}: ${route}`, '');
-  out.push(L('Planned with Atlas Globe\'s travel guide ({0}) on {1}.', 'Planeado con la guía de viaje de Atlas Globe ({0}) el {1}.', t.link, new Date().toISOString().slice(0, 10)), '');
+  out.push(L('Planned with Mundora\'s travel guide ({0}) on {1}.', 'Planeado con la guía de viaje de Mundora ({0}) el {1}.', t.link, new Date().toISOString().slice(0, 10)), '');
   const det: string[] = [];
   if (d.start || d.end) det.push(`- ${L('Dates', 'Fechas')}: ${[d.start, d.end].filter(Boolean).join(L(' to ', ' al '))}`);
   if (d.from) det.push(`- ${L('Starting from', 'Saliendo de')}: ${d.from}`);
@@ -77,7 +77,7 @@ export function tripMarkdown(t: TripOut, d: TripDetails = tripDetails()): string
 /** The plan as JSON, for other apps. */
 export function tripJson(t: TripOut, d: TripDetails = tripDetails()): string {
   return JSON.stringify({
-    app: 'Atlas Globe', kind: 'trip', made: new Date().toISOString(), link: t.link, details: d,
+    app: 'Mundora', kind: 'trip', made: new Date().toISOString(), link: t.link, details: d,
     cities: t.cities.map((c) => ({ id: c.id, name: c.name, country: c.country, at: c.at, days: d.days?.[c.id] ?? null, kmFromPrevious: c.km ?? null, wiki: c.wiki ?? null,
       places: c.places.map((p) => ({ id: p.id, kind: p.kind, name: nm(p), at: p.at ?? null, why: why(p), url: p.url ?? null })) })),
   }, null, 2);

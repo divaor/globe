@@ -118,7 +118,7 @@ export class PersonalMaps {
     ctx.font = `600 ${Math.round(18 * Math.max(1, s))}px system-ui, sans-serif`;
     ctx.textAlign = 'right'; ctx.textBaseline = 'bottom';
     ctx.fillStyle = 'rgba(255,255,255,0.65)';
-    ctx.fillText('Atlas Globe', canvas.width - 24 * Math.max(1, s), canvas.height - 18 * Math.max(1, s));
+    ctx.fillText('Mundora', canvas.width - 24 * Math.max(1, s), canvas.height - 18 * Math.max(1, s));
     const blob = await new Promise<Blob | null>((res) => canvas.toBlob(res, 'image/png'));
     if (!blob) { this.shell.toast(t('dataError')); return; }
     const a = document.createElement('a');

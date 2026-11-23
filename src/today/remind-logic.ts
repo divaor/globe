@@ -50,7 +50,7 @@ export function ics(o: { time: string; title: string; desc: string; url: string;
   const stamp = `${s.getUTCFullYear()}${p(s.getUTCMonth() + 1)}${p(s.getUTCDate())}T${p(s.getUTCHours())}${p(s.getUTCMinutes())}${p(s.getUTCSeconds())}Z`;
   const desc = `${o.desc}\n${o.url}`;
   const lines = [
-    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Atlas Globe//Reminders//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Mundora//Reminders//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
     'BEGIN:VEVENT', 'UID:atlas-daily-reminder@atlas-globe', `DTSTAMP:${stamp}`, `DTSTART:${start}`, 'DURATION:PT10M', 'RRULE:FREQ=DAILY',
     `SUMMARY:${icsText(o.title)}`, `DESCRIPTION:${icsText(desc)}`, `URL:${o.url}`, 'TRANSP:TRANSPARENT',
     'BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${icsText(o.title)}`, 'TRIGGER:PT0M', 'END:VALARM',

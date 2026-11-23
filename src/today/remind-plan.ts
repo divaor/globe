@@ -42,7 +42,7 @@ export function planReminders(snap: RemindSnapshot | null, now: Date): PlannedRe
     const from: number = prev ? snap.chosen.indexOf(prev) + 1 : 0;
     const source: string = [...snap.chosen.slice(from), ...snap.chosen.slice(0, from)].find((id) => left.includes(id))!;
     prev = source;
-    const words = snap.days[day]?.[source] ?? snap.generic[source] ?? { t: '🌍 Atlas', b: '' };
+    const words = snap.days[day]?.[source] ?? snap.generic[source] ?? { t: '🌍 Mundora', b: '' };
     const more = left.length - 1;
     const body = more > 0 && snap.more ? `${words.b}${words.b ? ' · ' : ''}${snap.more.replace('{n}', String(more))}` : words.b;
     out.push({ id: REMIND_IDS[k], day, at, source, title: words.t, body });
