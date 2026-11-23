@@ -750,6 +750,16 @@ Main sources: Natural Earth (public domain), NASA Blue Marble and GIBS, NOAA ETO
 GPCP, Köppen–Geiger (Kottek/Rubel), GeoNames (CC BY 4.0), aourednik/historical-basemaps (GPL-3.0),
 Merdith et al. 2021 plate model (CC BY 4.0), PB2002 plates (ODC-By), CIA World Factbook, World Bank,
 Our World in Data (CC BY 4.0), mledoze/countries (ODbL), Unicode CLDR, flag-icons (MIT).
+
+**Western Sahara** (v0.43.6) is drawn whole. Natural Earth (since v5) puts the part Morocco administers, west of the
+sand wall, inside Morocco and keeps only the strip east of it as Western Sahara. `scripts/data/build-base.mjs` cuts
+Morocco at the parallel 27°40′ N (west of 8°40′ W), the boundary between the two, and gives what lies south of it to
+Western Sahara: in the countries at every level of detail, in the states layer (Western Sahara is one region, the
+whole territory) and in the city list (Laayoune, Dakhla, Smara...), as the UN lists it and Natural Earth drew it
+before. The cut is made after simplification, so no other shape moves. What is built from these was rebuilt with it:
+the borders timeline's 2026 map (`build-history.mjs --keep-colours` on the recorded source commit: only
+`world_2026.json` changes), Put it on the map's places, the stories' areas that take in either, the animals' countries,
+the map games' capitals and the travel guide's Laayoune.
 Time detective measures, for nine regions, which polities hold each borders map's land and how different two years
 look there (`scripts/data/history/detective.mjs`, `public/data/history/detective.json`); On this day lists the
 stories' dated steps and items by day (`scripts/data/build-onthisday.mjs`, `public/data/onthisday/`); and

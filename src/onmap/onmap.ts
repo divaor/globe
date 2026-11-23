@@ -56,8 +56,12 @@ interface Session {
   /** "Give up" was tapped: it asks first (v0.43.0; one tap ended the puzzle of the day). */
   asking: boolean;
 }
-/** Today's puzzle as far as it went: each name's place (its candidate's index), green or not, its last mark. */
-interface OnmapRun { scope: string; rows: Mark[][]; changed: boolean; items: { g: number | null; l: boolean; m: Item['last'] }[] }
+/**
+ * Today's puzzle as far as it went: the names asked, each one's place, green or not, its last mark. Places are kept by
+ * name and position (v0.43.6): their numbers move when the places are rebuilt, and a run kept by number (before) or
+ * for other names starts again.
+ */
+interface OnmapRun { scope: string; rows: Mark[][]; changed: boolean; asked?: string[]; items: { g?: number | null; gk?: string | null; l: boolean; m: Item['last'] }[] }
 /** A phone (the card is above the map, not beside it). */
 const narrow = () => window.innerWidth < 1000;
 interface Shape { f: GeoJSON.Feature; line: boolean }
@@ -170,14 +174,20 @@ export class PutOnMap implements HostGame {
   private keep() {
     const s = this.s;
     if (!s?.day || s.done) return;
-    saveRun('onmap', s.day, { scope: s.scope, rows: s.rows, changed: s.changed, items: s.items.map((it) => ({ g: it.given?.i ?? null, l: it.locked, m: it.last })) } satisfies OnmapRun);
+    saveRun('onmap', s.day, {
+      scope: s.scope, rows: s.rows, changed: s.changed, asked: s.items.map((it) => this.placeKey(it.c)),
+      items: s.items.map((it) => ({ gk: it.given ? this.placeKey(it.given) : null, l: it.locked, m: it.last })),
+    } satisfies OnmapRun);
   }
+  /** A place as the run keeps it: its name and where it is (its number can change when the places are rebuilt). */
+  private placeKey(c: Cand) { return `${this.places[c.i]?.[1] ?? ''}|${c.at[0]}|${c.at[1]}`; }
   private resume(day: string) {
     const s = this.s!, run = loadRun<OnmapRun>('onmap', day);
     if (!run || run.scope !== s.scope || run.items.length !== s.items.length) return;
+    if (!run.asked || run.asked.join('\n') !== s.items.map((it) => this.placeKey(it.c)).join('\n')) return;
     run.items.forEach((x, n) => {
       const it = s.items[n];
-      it.given = x.g == null ? null : s.cands.get(it.k)?.find((c) => c.i === x.g) ?? null;
+      it.given = x.gk == null ? null : s.cands.get(it.k)?.find((c) => this.placeKey(c) === x.gk) ?? null;
       it.locked = x.l; it.last = x.m;
     });
     s.rows = run.rows; s.changed = run.changed;
