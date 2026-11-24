@@ -24,6 +24,7 @@ export class Ambient {
   private nextTimer = 0;
   private hintTimer = 0;
   /** The map's names before ambient mode changed them. */
+  private keepNames = () => this.app.renderer.boxesOf([this.captionEl, this.clockEl]);
   private names: { labels: RenderSettings['labels']; scale: number; layer: boolean; regions: boolean } | null = null;
   /** What was on the map before: filters with their options, projection and place, put back on exit. */
   private saved: { stack: { id: string; options: Record<string, string | boolean> }[]; projection: ProjectionId; camera: { lon: number; lat: number; zoom: number } } | null = null;
@@ -115,15 +116,7 @@ export class Ambient {
     r.layerLabels = app.ambient.names !== 'none';
     r.regionLabels = app.ambient.names === 'all';
     // Names keep off the caption (at the top of a phone's screen, over the map) and the clock.
-    r.keepOut = () => {
-      const m = r.canvasRect(), out: [number, number, number, number][] = [];
-      for (const el of [this.captionEl, this.clockEl]) {
-        if (el.hidden) continue;
-        const c = el.getBoundingClientRect();
-        if (c.width) out.push([c.left - m.left - 4, c.top - m.top - 4, c.right - m.left + 4, c.bottom - m.top + 4]);
-      }
-      return out;
-    };
+    r.keepOut.add(this.keepNames);
     r.settings.labelScale = this.names.scale * 0.85;
     this.list = id ? playlist(id) : null;
     if (this.list) {
@@ -260,7 +253,7 @@ export class Ambient {
       app.renderer.settings.labelScale = this.names.scale;
       app.renderer.layerLabels = this.names.layer;
       app.renderer.regionLabels = this.names.regions;
-      app.renderer.keepOut = null;
+      app.renderer.keepOut.delete(this.keepNames);
       this.names = null;
     }
     if (!changed) release();

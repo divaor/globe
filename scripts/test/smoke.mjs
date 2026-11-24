@@ -552,7 +552,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(500);
     await page.tap('.story-drift');
     await page.waitForTimeout(3000);
-    check(await page.evaluate(() => window.atlas.app.mode === 'pangea'), '"See the continents move" opens Pangea to today');
+    // v0.45.0: Pangea to today is part of Deep time, which opens at the step's age.
+    const drift = await page.evaluate(() => ({ mode: window.atlas.app.mode, ma: window.atlas.time.deep.info.ma }));
+    check(drift.mode === 'deeptime' && drift.ma > 5, `"See the continents move" opens Deep time at the step's age (${drift.mode}, ${Math.round(drift.ma)} Ma)`);
     check(!errors.length, `no page errors in Life through time${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await ctx.close();
   }
@@ -4782,7 +4784,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(tabs.map((t) => t.id).join() === 'map,explore,today,learn,play' && tabs.map((t) => t.label).join() === 'Map,Explore,Today,Learn,Play'
     && ['map', 'explore', 'learn', 'play'].every((t) => seen[t].open && seen[t].tab === t && seen[t].fits && seen[t].above && seen[t].tiles && seen[t].lit.join() === t && seen[t].closedAgain)
     && L('map') === 'filters,projection,mapstyle,terrain3d,search,ruler,compare,truesize,compare-filters,mydata,export4k' && seen.map.seps.join() === 'Tools'
-    && L('explore') === 'time,legacy,space,guide,art,nature,inside,deep,ambient' && L('learn') === 'master,quiz,tours,onthisday,progress' && L('play') === 'play,fill,onmap'
+    && L('explore') === 'time,deeptime,legacy,space,guide,art,nature,inside,deep,ambient' && L('learn') === 'master,quiz,tours,onthisday,progress' && L('play') === 'play,fill,onmap'
     && seen.me.open && seen.me.under && seen.me.fits && /^settings,backup,share,export,exportphone,(fullscreen,)?about$/.test(L('me')),
     `five tabs (${tabs.map((t) => t.label).join(' · ')}), each list above its tab and on screen: Map ${L('map')} (${seen.map.seps}); Explore ${L('explore')}; Learn ${L('learn')}; Play ${L('play')}; top right ${L('me')}`);
   check(escClosed && reach.missing.length === 0 && outsideClosed && deep.open && !deep.menu && deep.lit.join() === 'explore' && zoom === 3,
@@ -6774,6 +6776,93 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   check(g.view?.civ === 'greeks' && /griegos/i.test(g.title ?? '') && g.sec.some((t) => /Lo que nos dieron/.test(t)), `#legacy=greeks in Spanish: "${g.title}", ${g.sec.join(' / ')}`);
   check(!es.errors.length, `Legacies link: no page errors${es.errors.length ? ': ' + es.errors.join(' | ') : ''}`);
   await es.ctx.close();
+}
+// 58. Deep time (v0.45.0), on a phone: Explore → Deep time opens at the Earth's first days with how long ago, the
+// eon and era, the cosmic calendar and the vital signs ("Could you survive here? No"); 150 million years ago is the
+// Jurassic with species on the map and a gentler verdict; What lived then lists them by where they lived and a row
+// opens a species' card; going past 66 million years ago the asteroid strikes; the true scale and Continents only;
+// the narrated story starts, shows its first words and stops; the search finds Tyrannosaurus; Today's line; "Which
+// came first?"; a #deeptime=66 link.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=0,20,1.1&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  await page.tap('[data-dock="explore"]');
+  await page.waitForTimeout(300);
+  await page.tap('.menu [data-menu="deeptime"]');
+  await page.waitForFunction(() => window.atlas.time.deep.info.active && window.atlas.time.deep.info.loaded, null, { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(2500);
+  const hud = () => F(() => ({ info: window.atlas.time.deep.info, ago: document.querySelector('[data-deeptime="ago"]')?.textContent ?? '', eras: document.querySelector('[data-deeptime="eras"]')?.textContent ?? '', cal: document.querySelector('[data-deeptime="calendar"]')?.textContent ?? '', verdict: document.querySelector('[data-deeptime="verdict"]')?.textContent ?? '', level: document.querySelector('[data-deeptime="vitals"]')?.dataset.level }));
+  const first = await hud();
+  check(first.info.active && first.info.ma > 4400 && /billion years ago/.test(first.ago) && /Hadean/.test(first.eras) && /September/.test(first.cal) && first.level === 'no',
+    `Deep time opens at the Earth's first days: "${first.ago}", ${first.eras}, ${first.cal}; "${first.verdict}"`);
+  await F(() => window.atlas.time.deep.setMa(150));
+  await page.waitForTimeout(2500);
+  const jur = await hud();
+  check(/Jurassic/.test(jur.eras) && /Mesozoic/.test(jur.eras) && jur.info.hits >= 5 && jur.level !== 'no', `150 million years ago: ${jur.eras}, ${jur.info.hits} things on the map; "${jur.verdict}"`);
+  // What lived then, and a species' card.
+  await page.tap('.timebar .tb-tools .pill:last-of-type').catch(() => {});
+  await page.waitForTimeout(400);
+  if (!(await F(() => window.atlas.shell.sheet.isOpen('deeptime')))) await F(() => window.atlas.time.deep.openNow());
+  await page.waitForTimeout(800);
+  const now = await F(() => ({ secs: [...document.querySelectorAll('[data-deeptime-life]')].map((e) => e.dataset.deeptimeLife), rows: document.querySelectorAll('[data-deeptime-species]').length }));
+  await page.click('[data-deeptime-species]');
+  await page.waitForTimeout(1500);
+  const card = await F(() => ({ title: document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '', rows: [...document.querySelectorAll('.country-card:not([hidden]) .rows > *')].map((r) => r.textContent).join(' | '), img: !!document.querySelector('.country-card:not([hidden]) .card-img') }));
+  check(now.secs.includes('land') && now.secs.includes('sea') && now.rows >= 8 && /\S/.test(card.title) && /Lived/.test(card.rows) && /Fossils found at/.test(card.rows) && card.img,
+    `What lived then: ${now.secs.join(', ')}, ${now.rows} species; a card: "${card.title}" (${card.rows.slice(0, 90)}…)`);
+  await F(() => { window.atlas.shell.sheet.close(); window.atlas.shell.card.hide(); });
+  // The asteroid.
+  await F(() => { const d = window.atlas.time.deep; d.setMa(66.3); d.setMa(65.9); });
+  await page.waitForTimeout(300);
+  const strike = await F(() => window.atlas.time.deep.info.anims);
+  await page.waitForTimeout(4200);
+  const seen = await F(() => JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').seen?.deeptime ?? []);
+  check(strike >= 1 && seen.includes('impact:chicxulub'), `going past 66 million years ago the asteroid strikes (${strike} animation; seen: ${seen.join(', ')})`);
+  // The true scale, Continents only.
+  await page.tap('[data-deeptime="scale"]');
+  await page.waitForTimeout(500);
+  await page.tap('[data-deeptime="plain"]');
+  await page.waitForTimeout(800);
+  const plain = await F(() => ({ info: window.atlas.time.deep.info, vitals: !document.querySelector('[data-deeptime="vitals"]')?.hidden }));
+  await page.tap('[data-deeptime="plain"]');
+  await page.waitForTimeout(500);
+  check(plain.info.scale === 'true' && plain.info.plain && !plain.vitals && plain.info.hits === 0, `the true scale, and Continents only (no life, no vital signs: ${plain.info.hits} markers)`);
+  // The narrated story.
+  await page.tap('[data-deeptime="story"]');
+  await page.waitForTimeout(10000);
+  const story = await F(() => ({ info: window.atlas.time.deep.info, text: document.querySelector('.dt-cap-text')?.textContent ?? '' }));
+  await page.tap('[data-deeptime="stop"]').catch(() => {});
+  await page.waitForTimeout(500);
+  const stopped = await F(() => ({ info: window.atlas.time.deep.info, cap: !!document.querySelector('[data-deeptime="caption"]') }));
+  check(story.info.playing && story.text.length > 40 && !stopped.info.playing && !stopped.cap, `Play the story: "${story.text.slice(0, 70)}…" (moment ${story.info.beat + 1}), then Stop`);
+  // The search finds a past species.
+  await F(() => window.atlas.shell.search.open());
+  await page.fill('.search-field', 'Tyrannosaurus');
+  await page.waitForTimeout(900);
+  const found = await F(() => [...document.querySelectorAll('.search-item')].map((x) => `${x.querySelector('.si-label')?.textContent ?? ''} ${x.textContent}`).filter((t) => /Deep time/.test(t)));
+  await F(() => window.atlas.shell.search.close?.());
+  check(found.length >= 1, `the search finds Tyrannosaurus in Deep time (${found[0]?.slice(0, 60)})`);
+  check(!errors.length, `Deep time: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  // Today's line and Which came first?
+  await F(async () => { await window.atlas.time.deep.exit(); window.atlas.today.openPanel(); });
+  await page.waitForTimeout(1200);
+  const dayLine = await F(() => document.querySelector('[data-today-item="deeptime"]')?.textContent ?? '');
+  check(/Today in deep time/.test(dayLine) && /cosmic calendar/.test(dayLine), `Today: "${dayLine.slice(0, 110)}"`);
+  await F(() => { window.atlas.shell.sheet.close(); window.atlas.learn['startQuiz']('deeporder', 'world'); });
+  await page.waitForFunction(() => window.atlas.learn.quiz?.qs?.length, null, { timeout: 15000 }).catch(() => {});
+  await page.waitForTimeout(800);
+  const oq = await F(() => { const q = window.atlas.learn.quiz; return q && { n: q.qs.length, set: q.qs[0].set?.map((x) => x.name.en) }; });
+  await F(() => window.atlas.learn.stopQuiz?.());
+  check(oq?.n === 10 && oq.set?.length === 4, `Which came first?: ${oq?.n} rounds of four (${oq?.set?.join(' / ')})`);
+  await ctx.close();
+  // A link to a moment.
+  const ln = await open({ ...devices['Pixel 7'] }, '#deeptime=66&p=globe&lang=en');
+  await ln.page.waitForFunction(() => window.atlas?.time?.deep?.info.active, null, { timeout: 30000 }).catch(() => {});
+  await ln.page.waitForTimeout(2000);
+  const li = await ln.page.evaluate(() => window.atlas.time.deep.info);
+  check(li.active && Math.abs(li.ma - 66) < 1, `#deeptime=66 opens Deep time at ${li.ma.toFixed(1)} million years ago`);
+  check(!ln.errors.length, `Deep time link: no page errors${ln.errors.length ? ': ' + ln.errors.join(' | ') : ''}`);
+  await ln.ctx.close();
 }
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');

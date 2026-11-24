@@ -215,6 +215,12 @@ async function boot() {
   const legacy = new Legacies(app, shell);
   legacy.leaveMode = async () => { if (app.mode) await time.modes.find((m) => m.id === app.mode)?.exit(); };
   legacy.startQuiz = () => learn.startLegacyQuiz();
+  // Deep time (v0.45.0): in Explore, and today's date on the cosmic calendar in Today.
+  time.deep.menu();
+  today.addRead({
+    id: 'deeptime', order: 25,
+    card: () => today.line('deeptime', 'deeptime', L('Today in deep time', 'Hoy en el tiempo profundo'), time.deep.dayLine(dayKey()) ?? L('All of time since the Big Bang in one year: where today falls', 'Todo el tiempo desde el Big Bang en un año: dónde cae hoy'), false, () => void time.deep.openDay(dayKey())),
+  });
   today.addRead({
     id: 'legacy', order: 20,
     card: () => today.line('legacy', 'legacy', L('Legacy of the day', 'Legado del día'), legacy.dayLine(dayKey()) ?? L('Something from the past that we still use today', 'Algo del pasado que todavía usamos hoy'), false, () => void legacy.openOfTheDay(dayKey())),
@@ -272,6 +278,7 @@ async function boot() {
   if (shared.get('hop')) setTimeout(() => void hop.startChallenge(`#${shared.toString()}`), 500);
   // A shared trip (#trip=lima,cusco) or a city's guide (#guide=kyoto).
   if (shared.get('legacy') !== null) setTimeout(() => void legacy.openLink(shared.get('legacy') ?? ''), 500);
+  if (shared.get('deeptime') !== null) setTimeout(() => void time.deep.openLink(shared.get('deeptime') ?? ''), 500);
   if (shared.get('trip')) setTimeout(() => void guide.openShared(shared.get('trip')!, shared.get('tp')), 500);
   else if (shared.get('guide')) setTimeout(() => void guide.openCity(shared.get('guide')!), 500);
   // A shared world: #world=moon&c=lon,lat,zoom (and &map=elev).

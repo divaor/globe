@@ -1,0 +1,840 @@
+{
+  "events": [
+    {
+      "id": "earth-forms",
+      "kind": "planet",
+      "ma": 4540, "err": 50,
+      "name": { "en": "The Earth forms", "es": "Se forma la Tierra" },
+      "text": {
+        "en": "Dust and rocks circling the young Sun crashed together, growing into bigger and bigger lumps until one became our planet. The newborn Earth was a glowing ball of molten rock, battered by space rocks, with no oceans and no air we could breathe. We know its age, about 4.54 billion years, from the oldest meteorites, which formed at the same time.",
+        "es": "El polvo y las rocas que giraban alrededor del joven Sol chocaron entre sí y formaron bolas cada vez más grandes, hasta que una se convirtió en nuestro planeta. La Tierra recién nacida era una bola incandescente de roca fundida, golpeada por rocas del espacio, sin océanos ni aire respirable. Sabemos su edad, unos 4540 millones de años, gracias a los meteoritos más antiguos, que se formaron al mismo tiempo."
+      },
+      "wiki": { "en": "Hadean", "es": "Hádico" }
+    },
+    {
+      "id": "theia-impact",
+      "kind": "planet",
+      "ma": 4510, "err": 60,
+      "sure": "likely",
+      "name": { "en": "Theia strikes: the Moon is born", "es": "El choque con Tea: nace la Luna" },
+      "text": {
+        "en": "A planet about the size of Mars, which scientists call Theia, smashed into the young Earth. The crash melted much of both worlds and threw a cloud of hot rock into space, which gathered into the Moon. The best clue: Moon rocks brought back by the Apollo astronauts are almost identical to Earth's. The exact date is still argued over, but it was about 4.5 billion years ago.",
+        "es": "Un planeta del tamaño de Marte, al que los científicos llaman Tea, chocó contra la joven Tierra. El golpe fundió gran parte de ambos mundos y lanzó al espacio una nube de roca caliente que se juntó y formó la Luna. La mejor pista: las rocas lunares que trajeron los astronautas del Apolo son casi idénticas a las de la Tierra. La fecha exacta aún se discute, pero fue hace unos 4500 millones de años."
+      },
+      "wiki": { "en": "Giant-impact hypothesis", "es": "Teoría del gran impacto" }
+    },
+    {
+      "id": "magma-ocean",
+      "kind": "planet",
+      "ma": 4509, "to": 4480, "err": 60,
+      "name": { "en": "An ocean of molten rock", "es": "Un océano de roca fundida" },
+      "text": {
+        "en": "After the crash with Theia, the Earth's surface was a sea of glowing magma hundreds of kilometres deep, under a scorching sky of rock vapour and steam. Theia's iron sank down to join the Earth's core. As the magma slowly cooled, a first thin crust froze on top. This took from a few million to perhaps tens of millions of years.",
+        "es": "Después del choque con Tea, la superficie de la Tierra era un mar de magma incandescente de cientos de kilómetros de profundidad, bajo un cielo ardiente de vapor de roca y de agua. El hierro de Tea se hundió hasta unirse al núcleo de la Tierra. Al enfriarse poco a poco el magma, encima se congeló una primera corteza delgada. Esto tardó entre unos pocos millones y quizá decenas de millones de años."
+      },
+      "wiki": { "en": "Magma ocean", "es": "Océano de magma" }
+    },
+    {
+      "id": "first-ocean",
+      "kind": "planet",
+      "ma": 4404, "err": 8,
+      "sure": "likely",
+      "name": { "en": "The first ocean", "es": "El primer océano" },
+      "at": [117.15, -26.12],
+      "text": {
+        "en": "Tiny crystals of zircon from the Jack Hills of Western Australia, one of them 4.404 billion years old, are the oldest known pieces of the Earth. Their chemistry shows they grew from rocks that had touched liquid water near the surface. So only about 150 million years after it formed, the Earth had probably cooled enough for rain to fall and an ocean to fill, under a thick, hot sky.",
+        "es": "Unos diminutos cristales de circón de las colinas Jack, en Australia Occidental, uno de ellos de 4404 millones de años, son los trozos de la Tierra más antiguos que se conocen. Su química muestra que crecieron a partir de rocas que habían tocado agua líquida cerca de la superficie. Así, apenas unos 150 millones de años después de formarse, la Tierra probablemente ya se había enfriado lo suficiente para que lloviera y se llenara un océano, bajo un cielo espeso y caliente."
+      },
+      "wiki": { "en": "Jack Hills", "es": "Zircón" },
+      "item": "jack-hills-zircons"
+    },
+    {
+      "id": "late-heavy-bombardment",
+      "kind": "planet",
+      "ma": 4100, "to": 3800,
+      "sure": "debated",
+      "name": { "en": "The Late Heavy Bombardment", "es": "El Bombardeo Intenso Tardío" },
+      "text": {
+        "en": "Many of the Moon's great craters, and the basins of its dark 'seas', were made by huge impacts about 4.1 to 3.8 billion years ago. Some scientists think a storm of asteroids and comets, flung about as the giant planets shifted their orbits, battered the Earth and the Moon at that time. Others think the impacts simply tailed off slowly after the planets formed. The Earth's own scars from then have long been wiped away.",
+        "es": "Muchos de los grandes cráteres de la Luna, y las cuencas de sus «mares» oscuros, se formaron por enormes impactos hace entre unos 4100 y 3800 millones de años. Algunos científicos creen que entonces una tormenta de asteroides y cometas, desviados cuando los planetas gigantes cambiaron de órbita, golpeó la Tierra y la Luna. Otros piensan que los impactos simplemente fueron disminuyendo poco a poco. Las cicatrices que dejaron en la Tierra se borraron hace mucho."
+      },
+      "wiki": { "en": "Late Heavy Bombardment", "es": "Bombardeo intenso tardío" }
+    },
+    {
+      "id": "acasta-gneiss",
+      "kind": "planet",
+      "ma": 4030, "err": 10,
+      "name": { "en": "The oldest rocks", "es": "Las rocas más antiguas" },
+      "at": [-115.58, 65.17],
+      "text": {
+        "en": "On a small island in the Acasta River, in Canada's Northwest Territories, lies the Acasta Gneiss, a striped grey rock about 4.03 billion years old. Zircon grains are older, but these are the oldest whole rocks known for sure. They were part of the Earth's early crust, squeezed and baked deep underground. Rocks in northern Quebec might be even older, but their age is disputed.",
+        "es": "En una pequeña isla del río Acasta, en los Territorios del Noroeste de Canadá, está el gneis de Acasta, una roca gris rayada de unos 4030 millones de años. Los granos de circón son más antiguos, pero estas son las rocas enteras más antiguas que se conocen con certeza. Formaban parte de la primera corteza de la Tierra, apretada y cocida bajo tierra. Unas rocas del norte de Quebec podrían ser aún más antiguas, pero su edad se discute."
+      },
+      "wiki": { "en": "Acasta Gneiss", "es": "Gneis Acasta" },
+      "item": "acasta-gneiss"
+    },
+    {
+      "id": "oldest-signs-of-life",
+      "kind": "life",
+      "ma": 3770, "err": 70,
+      "first": true,
+      "sure": "debated",
+      "name": { "en": "The oldest possible signs of life", "es": "Los posibles primeros rastros de vida" },
+      "at": [-77.73, 58.29],
+      "text": {
+        "en": "In rocks at Nuvvuagittuq, Quebec, at least 3.77 billion years old, there are tiny tubes and threads of iron like those made today by microbes around hot springs on the sea floor. In Greenland's Isua rocks, about 3.7 billion years old, there is carbon of the kind living things leave behind. Neither is proof: rocks can make life-like shapes on their own. Gene studies suggest life began even earlier, over 4 billion years ago.",
+        "es": "En rocas de Nuvvuagittuq, en Quebec, de al menos 3770 millones de años, hay diminutos tubos e hilos de hierro parecidos a los que hoy forman los microbios junto a las fuentes termales del fondo del mar. En las rocas de Isua, en Groenlandia, de unos 3700 millones de años, hay carbono como el que dejan los seres vivos. Ninguno es una prueba segura: las rocas también pueden formar figuras que parecen vida. Los estudios de genes sugieren que la vida empezó antes, hace más de 4000 millones de años."
+      },
+      "wiki": { "en": "Earliest known life forms", "es": "Primeras formas de vida conocidas" },
+      "item": "nuvvuagittuq"
+    },
+    {
+      "id": "first-cratons",
+      "kind": "planet",
+      "ma": 3600, "err": 100,
+      "name": { "en": "The first continents", "es": "Los primeros continentes" },
+      "at": [31.01, -25.97],
+      "text": {
+        "en": "Between about 3.6 and 2.5 billion years ago, the first lasting cores of continents, called cratons, formed from lighter rock that floated on the mantle. Some survive today, like the Kaapvaal craton in South Africa, with its Barberton hills, and the Pilbara in Australia. At first much of this land may have been low or under water: a few islands of rock dotted across a world ocean.",
+        "es": "Hace entre unos 3600 y 2500 millones de años se formaron los primeros núcleos duraderos de los continentes, llamados cratones, hechos de roca más ligera que flotaba sobre el manto. Algunos siguen ahí, como el cratón de Kaapvaal, en Sudáfrica, con las montañas de Barberton, y el de Pilbara, en Australia. Al principio gran parte de esta tierra quizá era baja o estaba bajo el agua: unas pocas islas de roca en un océano mundial."
+      },
+      "wiki": { "en": "Craton", "es": "Cratón" },
+      "item": "barberton-greenstone"
+    },
+    {
+      "id": "dresser-stromatolites",
+      "kind": "life",
+      "ma": 3480, "err": 10,
+      "first": true,
+      "sure": "likely",
+      "name": { "en": "The oldest stromatolites", "es": "Los estromatolitos más antiguos" },
+      "at": [119.4, -21.15],
+      "text": {
+        "en": "In the Dresser Formation of Western Australia's Pilbara, 3.48 billion years old, there are stromatolites: layered mounds built by sticky mats of microbes that trapped mud, layer upon layer. They grew around hot springs, perhaps on land. Most scientists accept them as some of the oldest clear signs of life. Living stromatolites still grow today in Shark Bay, Australia.",
+        "es": "En la Formación Dresser, en el Pilbara de Australia Occidental, de 3480 millones de años, hay estromatolitos: montículos en capas construidos por tapetes pegajosos de microbios que atrapaban barro, capa sobre capa. Crecían junto a fuentes termales, quizá en tierra firme. La mayoría de los científicos los acepta como unas de las señales de vida claras más antiguas. Todavía hoy crecen estromatolitos vivos en la bahía Shark, en Australia."
+      },
+      "wiki": { "en": "Dresser Formation", "es": "Estromatolito" },
+      "item": "dresser-stromatolites"
+    },
+    {
+      "id": "plate-tectonics-begins",
+      "kind": "planet",
+      "ma": 3200, "err": 300,
+      "sure": "debated",
+      "name": { "en": "The plates start moving?", "es": "¿Empiezan a moverse las placas?" },
+      "text": {
+        "en": "Today the Earth's outer shell is broken into plates that drift, collide and dive under one another, building mountains and recycling rock. No one knows when this began. Many geologists think it started around 3.2 billion years ago, when signs of plates pulling apart and sinking appear in the rocks, but guesses range from over 4 billion to under 1 billion years ago.",
+        "es": "Hoy la capa exterior de la Tierra está partida en placas que se desplazan, chocan y se hunden unas bajo otras, levantando montañas y reciclando la roca. Nadie sabe cuándo empezó esto. Muchos geólogos creen que fue hace unos 3200 millones de años, cuando aparecen en las rocas señales de placas que se separan y se hunden, pero las estimaciones van de más de 4000 a menos de 1000 millones de años."
+      },
+      "wiki": { "en": "Plate tectonics", "es": "Tectónica de placas" }
+    },
+    {
+      "id": "oxygen-photosynthesis",
+      "kind": "life",
+      "ma": 3000, "err": 300,
+      "first": true,
+      "sure": "debated",
+      "name": { "en": "Microbes start making oxygen", "es": "Los microbios empiezan a hacer oxígeno" },
+      "text": {
+        "en": "Cyanobacteria, microbes that live off sunlight, learned to split water and give off oxygen as waste. It was one of the most important inventions in the history of life: in time it would fill the air with the oxygen we breathe. When it began is debated, but chemical clues of a little oxygen in shallow seas 3 billion years ago or more suggest it was long before the air changed.",
+        "es": "Las cianobacterias, microbios que viven de la luz del sol, aprendieron a romper el agua y a soltar oxígeno como desecho. Fue uno de los inventos más importantes de la historia de la vida: con el tiempo llenaría el aire del oxígeno que respiramos. Cuándo empezó se discute, pero pistas químicas de un poco de oxígeno en mares poco profundos de hace 3000 millones de años o más indican que fue mucho antes de que cambiara el aire."
+      },
+      "wiki": { "en": "Cyanobacteria", "es": "Cyanobacteria" }
+    },
+    {
+      "id": "kenorland",
+      "kind": "continent",
+      "ma": 2720, "to": 2450, "err": 50,
+      "sure": "debated",
+      "name": { "en": "Kenorland, an early supercontinent?", "es": "Kenorland, ¿un supercontinente temprano?" },
+      "text": {
+        "en": "Around 2.7 billion years ago, many of the early cratons may have crowded together into a first big landmass, called Kenorland or Superia, around the rocks of Canada's Superior craton. Volcanoes and new crust grew fast at that time. Whether it was one supercontinent or several smaller ones is debated. It broke apart from about 2.45 billion years ago, as huge swarms of lava-filled cracks split it.",
+        "es": "Hace unos 2700 millones de años, muchos de los primeros cratones quizá se juntaron en una primera gran masa de tierra, llamada Kenorland o Superia, en torno a las rocas del cratón Superior, en Canadá. En esa época crecieron rápido los volcanes y la corteza nueva. Si fue un solo supercontinente o varios más pequeños se discute. Se partió desde hace unos 2450 millones de años, cuando enormes enjambres de grietas llenas de lava lo rajaron."
+      },
+      "wiki": { "en": "Kenorland", "es": "Kenorland" }
+    },
+    {
+      "id": "great-oxidation-event",
+      "kind": "air",
+      "ma": 2460, "to": 2060, "err": 20,
+      "name": { "en": "The Great Oxidation", "es": "La Gran Oxidación" },
+      "text": {
+        "en": "For half the Earth's life the air had almost no oxygen. Then, from about 2.46 billion years ago, oxygen made by cyanobacteria began to build up, in fits and starts over 200 million years or more, and around 2.2 billion years ago it may even have overshot before falling back. Rocks on land began to rust red, and microbes that oxygen poisons retreated to airless mud. Even so, the air held only a small part of today's oxygen.",
+        "es": "Durante la mitad de la vida de la Tierra el aire casi no tuvo oxígeno. Luego, desde hace unos 2460 millones de años, el oxígeno de las cianobacterias empezó a acumularse, a tropezones, durante 200 millones de años o más, y hace unos 2200 millones de años quizá hasta se pasó de la raya antes de volver a bajar. Las rocas en tierra empezaron a oxidarse de rojo, y los microbios a los que el oxígeno envenena se refugiaron en el barro sin aire. Aun así, el aire tenía solo una pequeña parte del oxígeno de hoy."
+      },
+      "wiki": { "en": "Great Oxidation Event", "es": "Gran Oxidación" },
+      "item": "great-oxidation-event"
+    },
+    {
+      "id": "huronian-glaciation",
+      "kind": "ice",
+      "ma": 2450, "to": 2220, "err": 20,
+      "sure": "debated",
+      "name": { "en": "The Huronian ice age", "es": "La glaciación huroniana" },
+      "text": {
+        "en": "Rocks around Canada's Lake Huron hold the traces of three ice ages between about 2.45 and 2.22 billion years ago, perhaps the longest cold spell in the Earth's history. As oxygen rose, it destroyed methane, a gas that had kept the Earth warm while the Sun was fainter, and the planet chilled. Ice may have reached the tropics, which would make it the first Snowball Earth, but this is debated.",
+        "es": "Las rocas alrededor del lago Hurón, en Canadá, guardan las huellas de tres glaciaciones ocurridas hace entre unos 2450 y 2220 millones de años, quizá la época fría más larga de la historia de la Tierra. Al subir el oxígeno, este destruyó el metano, un gas que mantenía caliente a la Tierra cuando el Sol brillaba menos, y el planeta se enfrió. El hielo quizá llegó a los trópicos, lo que la haría la primera Tierra bola de nieve, pero se discute."
+      },
+      "wiki": { "en": "Huronian glaciation", "es": "Glaciación huroniana" },
+      "item": "huronian-glaciation"
+    },
+    {
+      "id": "ozone-layer",
+      "kind": "air",
+      "ma": 2400, "err": 100,
+      "sure": "likely",
+      "name": { "en": "The ozone layer forms", "es": "Se forma la capa de ozono" },
+      "text": {
+        "en": "High in the sky, sunlight turns some oxygen into ozone, a gas that blocks the Sun's harmful ultraviolet rays. Once oxygen built up in the Great Oxidation, a thin ozone layer formed, and it grew thicker as oxygen rose later. By the time plants and animals moved onto land, nearly 2 billion years later, it was strong enough to shield them. Before it, bare ground was bathed in rays that damage living cells.",
+        "es": "En lo alto del cielo, la luz del sol convierte parte del oxígeno en ozono, un gas que bloquea los dañinos rayos ultravioleta del Sol. Cuando el oxígeno se acumuló en la Gran Oxidación se formó una capa de ozono delgada, que se hizo más gruesa al subir el oxígeno después. Cuando las plantas y los animales salieron a tierra, casi 2000 millones de años más tarde, ya era bastante fuerte para protegerlos. Antes, el suelo desnudo recibía rayos que dañan las células vivas."
+      },
+      "wiki": { "en": "Ozone layer", "es": "Capa de ozono" }
+    },
+    {
+      "id": "yarrabubba",
+      "kind": "impact",
+      "ma": 2229, "err": 5,
+      "name": { "en": "Yarrabubba, the oldest known crater", "es": "Yarrabubba, el cráter más antiguo conocido" },
+      "at": [118.83, -27.17],
+      "r": 35,
+      "text": {
+        "en": "In the outback of Western Australia lie the worn-down remains of the oldest impact crater known, Yarrabubba, once about 70 km wide. Tiny crystals shocked by the blow date it to 2.229 billion years ago, near the end of the Huronian ice ages. Some scientists think the rock may have hit an ice sheet and thrown huge amounts of water vapour, a warming gas, into the air, but this is only an idea.",
+        "es": "En el interior de Australia Occidental están los restos desgastados del cráter de impacto más antiguo que se conoce, Yarrabubba, que medía unos 70 km de ancho. Unos diminutos cristales alterados por el golpe lo fechan hace 2229 millones de años, cerca del final de las glaciaciones huronianas. Algunos científicos creen que la roca pudo caer sobre una capa de hielo y lanzar al aire enormes cantidades de vapor de agua, un gas que calienta, pero es solo una idea."
+      },
+      "wiki": { "en": "Yarrabubba impact structure", "es": "Cráter Yarrabubba" }
+    },
+    {
+      "id": "francevillian-biota",
+      "kind": "life",
+      "ma": 2100, "err": 30,
+      "first": true,
+      "sure": "debated",
+      "name": { "en": "The first many-celled life?", "es": "¿La primera vida de muchas células?" },
+      "at": [13.58, -1.63],
+      "text": {
+        "en": "In 2010, scientists in Gabon described strange flat fossils up to 12 cm across, wavy discs and strings in 2.1-billion-year-old black rock. If they were living things, they would be the oldest large life, made of many cells working together, over a billion years before animals. Many experts think some are just mineral growths. Simpler many-celled life, like strings of cyanobacteria, is certainly older.",
+        "es": "En 2010, unos científicos describieron en Gabón unos extraños fósiles planos de hasta 12 cm, discos ondulados y cordones en una roca negra de 2100 millones de años. Si eran seres vivos, serían la vida grande más antigua, formada por muchas células que trabajaban juntas, más de 1000 millones de años antes de los animales. Muchos expertos creen que algunos son solo formaciones minerales. Formas más simples de vida de muchas células, como los cordones de cianobacterias, son sin duda más antiguas."
+      },
+      "wiki": { "en": "Francevillian biota", "es": "Biota francevillense" },
+      "item": "francevillian-biota"
+    },
+    {
+      "id": "vredefort",
+      "kind": "impact",
+      "ma": 2023, "err": 4,
+      "name": { "en": "Vredefort, the biggest crater on Earth", "es": "Vredefort, el mayor cráter de la Tierra" },
+      "at": [27.5, -27.0],
+      "r": 150,
+      "text": {
+        "en": "A rock perhaps 20 to 25 km wide struck what is now South Africa, blasting a crater perhaps 250 to 300 km across, the largest known on Earth. Two billion years of erosion have worn it down to a ring of hills around the town of Vredefort, but shocked rocks and veins of melted rock still show the blow. It is a World Heritage Site.",
+        "es": "Una roca de quizá 20 a 25 km de ancho cayó en lo que hoy es Sudáfrica y abrió un cráter de quizá 250 a 300 km, el mayor que se conoce en la Tierra. Dos mil millones de años de erosión lo redujeron a un anillo de colinas alrededor del pueblo de Vredefort, pero las rocas alteradas por el golpe y las vetas de roca fundida aún muestran el impacto. Es Patrimonio de la Humanidad."
+      },
+      "wiki": { "en": "Vredefort impact structure", "es": "Cráter de Vredefort" }
+    },
+    {
+      "id": "columbia-nuna",
+      "kind": "continent",
+      "ma": 1800, "to": 1400, "err": 50,
+      "sure": "likely",
+      "name": { "en": "Columbia (Nuna) comes together", "es": "Se forma Columbia (Nuna)" },
+      "text": {
+        "en": "Between about 2.1 and 1.8 billion years ago, mountain-building collisions pushed most of the world's land into a supercontinent called Columbia or Nuna. Ancient North America, Greenland, Baltica and Siberia sat at its heart. It lasted for hundreds of millions of years, then slowly broke apart, from about 1.5 to 1.3 billion years ago.",
+        "es": "Hace entre unos 2100 y 1800 millones de años, choques que levantaron montañas empujaron casi toda la tierra del mundo hasta formar un supercontinente llamado Columbia o Nuna. En su centro estaban las antiguas Norteamérica, Groenlandia, Báltica y Siberia. Duró cientos de millones de años y luego se fue partiendo poco a poco, hace entre unos 1500 y 1300 millones de años."
+      },
+      "wiki": { "en": "Columbia (supercontinent)", "es": "Columbia (supercontinente)" }
+    },
+    {
+      "id": "sudbury",
+      "kind": "impact",
+      "ma": 1849, "err": 1,
+      "name": { "en": "Sudbury, a crater full of metal", "es": "Sudbury, un cráter lleno de metal" },
+      "at": [-81.0, 46.6],
+      "r": 100,
+      "text": {
+        "en": "A comet or asteroid over 10 km wide hit what is now Ontario, Canada, making a crater perhaps 150 to 260 km across. The heat melted the crust into a huge pool of molten rock, and metals settled at its base. Today the squashed, oval Sudbury Basin is one of the world's richest mines of nickel and copper, and Apollo astronauts trained there before going to the Moon.",
+        "es": "Un cometa o asteroide de más de 10 km de ancho cayó en lo que hoy es Ontario, en Canadá, y abrió un cráter de quizá 150 a 260 km. El calor fundió la corteza en un enorme charco de roca derretida, y los metales se asentaron en su fondo. Hoy la cuenca de Sudbury, aplastada y ovalada, es una de las minas de níquel y cobre más ricas del mundo, y los astronautas del Apolo entrenaron allí antes de ir a la Luna."
+      },
+      "wiki": { "en": "Sudbury Basin", "es": "Cuenca de Sudbury" },
+      "item": "sudbury-impact"
+    },
+    {
+      "id": "boring-billion",
+      "kind": "climate",
+      "ma": 1800, "to": 800,
+      "name": { "en": "The 'Boring Billion'", "es": "Los «mil millones aburridos»" },
+      "text": {
+        "en": "From about 1.8 billion to 800 million years ago, the Earth seems to have been unusually steady: no ice ages that we know of, little change in oxygen, and calm seas with little oxygen in their depths. Geologists jokingly call it the Boring Billion. It was not dull for life: complex cells, many-celled seaweeds and sex all appeared during it.",
+        "es": "Desde hace unos 1800 hasta 800 millones de años, la Tierra parece haber estado extrañamente tranquila: ninguna glaciación conocida, pocos cambios en el oxígeno y mares calmados con poco oxígeno en el fondo. Los geólogos la llaman en broma los «mil millones aburridos». Pero no fue aburrida para la vida: en ella aparecieron las células complejas, las algas de muchas células y el sexo."
+      },
+      "wiki": { "en": "Boring Billion", "es": "" }
+    },
+    {
+      "id": "first-eukaryotes",
+      "kind": "life",
+      "ma": 1650, "err": 50,
+      "first": true,
+      "sure": "likely",
+      "name": { "en": "Complex cells appear", "es": "Aparecen las células complejas" },
+      "at": [118.48, 40.61],
+      "text": {
+        "en": "Eukaryotes are cells with a nucleus, a parcel that holds their genes, and power stations called mitochondria, once free-living bacteria swallowed by another cell. Every animal, plant and fungus is built of them. The oldest fossils most experts accept as eukaryotes come from northern China, about 1.65 billion years old; some, like Qingshania, already lived as chains of many cells. Genes suggest they arose earlier.",
+        "es": "Los eucariotas son células con núcleo, un paquete que guarda sus genes, y con unas centrales de energía, las mitocondrias, que antes eran bacterias libres que otra célula se tragó. Todos los animales, plantas y hongos están hechos de ellas. Los fósiles más antiguos que la mayoría de los expertos acepta como eucariotas vienen del norte de China y tienen unos 1650 millones de años; algunos, como Qingshania, ya vivían como cadenas de muchas células. Los genes indican que surgieron antes."
+      },
+      "wiki": { "en": "Eukaryote", "es": "Eukaryota" },
+      "item": "qingshania"
+    },
+    {
+      "id": "mackenzie-lip",
+      "kind": "volcano",
+      "ma": 1267, "to": 1265, "err": 2,
+      "name": { "en": "The Mackenzie eruptions", "es": "Las erupciones de Mackenzie" },
+      "at": [-115.5, 67.5],
+      "r": 1000,
+      "text": {
+        "en": "A plume of hot rock rising from deep in the mantle split northern Canada with the largest swarm of lava-filled cracks on Earth, the Mackenzie dykes, which fan out for over 3,000 km from near the Arctic coast. Floods of lava poured out at the surface too, in only a few million years. Their worn remains, like the Coppermine River basalts, are among the best-kept ancient lava fields.",
+        "es": "Una pluma de roca caliente que subía desde lo profundo del manto partió el norte de Canadá con el mayor enjambre de grietas llenas de lava de la Tierra, los diques de Mackenzie, que se abren en abanico por más de 3000 km desde cerca de la costa ártica. También brotaron ríos de lava en la superficie, en solo unos pocos millones de años. Sus restos gastados, como los basaltos del río Coppermine, están entre los campos de lava antiguos mejor conservados."
+      },
+      "wiki": { "en": "Mackenzie Large Igneous Province", "es": "Gran provincia ígnea de Mackenzie" }
+    },
+    {
+      "id": "bangiomorpha",
+      "kind": "life",
+      "ma": 1047, "err": 15,
+      "first": true,
+      "name": { "en": "Sex and the first red seaweed", "es": "El sexo y la primera alga roja" },
+      "at": [-94.77, 73.59],
+      "text": {
+        "en": "Bangiomorpha pubescens, a tiny red seaweed from Somerset Island in the Canadian Arctic, is about 1.05 billion years old. Its threads show different cells for holding on and for making spores, and signs of sexual reproduction, the oldest known. It is also the oldest fossil that clearly belongs to a group still alive today: the red algae.",
+        "es": "Bangiomorpha pubescens, una diminuta alga roja de la isla Somerset, en el Ártico canadiense, tiene unos 1050 millones de años. Sus hilos muestran distintas células, unas para sujetarse y otras para hacer esporas, y señales de reproducción sexual, las más antiguas que se conocen. También es el fósil más antiguo que pertenece claramente a un grupo que sigue vivo hoy: las algas rojas."
+      },
+      "wiki": { "en": "Bangiomorpha", "es": "Bangiomorpha" },
+      "item": "bangiomorpha"
+    },
+    {
+      "id": "rodinia-forms",
+      "kind": "continent",
+      "ma": 1000, "err": 50,
+      "name": { "en": "Rodinia comes together", "es": "Se forma Rodinia" },
+      "text": {
+        "en": "Around 1.1 to 0.9 billion years ago, the continents crashed together into a new supercontinent, Rodinia, from a Russian word for 'motherland'. The collisions raised a mountain range as large as the Himalayas, the Grenville mountains, whose worn-down roots run from Labrador to Texas. Rodinia was mostly bare rock, with only thin crusts of microbes: no plants or animals lived on land yet.",
+        "es": "Hace entre unos 1100 y 900 millones de años, los continentes chocaron y formaron un nuevo supercontinente, Rodinia, de una palabra rusa que significa «patria». Los choques levantaron una cordillera tan grande como el Himalaya, la de Grenville, cuyas raíces gastadas van de Labrador a Texas. Rodinia era casi toda roca pelada, con solo finas costras de microbios: todavía no vivían plantas ni animales en tierra."
+      },
+      "wiki": { "en": "Rodinia", "es": "Rodinia" },
+      "item": "rodinia"
+    },
+    {
+      "id": "first-animals",
+      "kind": "life",
+      "ma": 800, "err": 100,
+      "first": true,
+      "sure": "debated",
+      "name": { "en": "The first animals?", "es": "¿Los primeros animales?" },
+      "text": {
+        "en": "The first animals were probably simple sponges, but when they appeared is a puzzle. Genes suggest about 800 million years ago or more. Chemical traces that sponges make turn up in rocks over 635 million years old, and a possible sponge skeleton from north-western Canada is 890 million years old. Some scientists think these clues could have come from other living things.",
+        "es": "Los primeros animales fueron probablemente esponjas sencillas, pero cuándo aparecieron es un misterio. Los genes indican que hace unos 800 millones de años o más. En rocas de más de 635 millones de años aparecen rastros químicos que hacen las esponjas, y un posible esqueleto de esponja del noroeste de Canadá tiene 890 millones de años. Algunos científicos creen que estas pistas podrían venir de otros seres vivos."
+      },
+      "wiki": { "en": "Sponge", "es": "Porifera" }
+    },
+    {
+      "id": "neoproterozoic-oxygenation",
+      "kind": "air",
+      "ma": 800, "to": 540, "err": 50,
+      "name": { "en": "Oxygen rises again", "es": "El oxígeno vuelve a subir" },
+      "text": {
+        "en": "Between about 800 and 540 million years ago, oxygen in the air and the deep sea rose again, in steps, towards today's levels, perhaps helped by the Snowball Earths, whose melting ice washed nutrients into the sea. With more oxygen, larger and more active creatures became possible. Many scientists link this rise to the appearance of animals, though which came first is argued over.",
+        "es": "Hace entre unos 800 y 540 millones de años, el oxígeno del aire y del mar profundo volvió a subir, a saltos, hacia los niveles de hoy, quizá ayudado por las Tierras bola de nieve, cuyo hielo al derretirse arrastró nutrientes al mar. Con más oxígeno fueron posibles seres más grandes y activos. Muchos científicos relacionan esta subida con la aparición de los animales, aunque se discute qué vino primero."
+      },
+      "wiki": { "en": "Neoproterozoic oxygenation event", "es": "" }
+    },
+    {
+      "id": "rodinia-breaks-up",
+      "kind": "continent",
+      "ma": 750, "err": 50,
+      "name": { "en": "Rodinia breaks apart", "es": "Rodinia se parte" },
+      "text": {
+        "en": "Between about 800 and 700 million years ago, rising plumes of hot rock stretched and split Rodinia. A new ocean, the ancestor of the Pacific, opened between ancient North America and the lands of Australia and Antarctica. The pieces lay near the equator, where heavy rain wore down their rock and pulled carbon dioxide from the air, which may have helped tip the Earth into its deepest freezes.",
+        "es": "Hace entre unos 800 y 700 millones de años, plumas de roca caliente estiraron y partieron Rodinia. Se abrió un nuevo océano, antepasado del Pacífico, entre la antigua Norteamérica y las tierras de Australia y la Antártida. Los pedazos quedaron cerca del ecuador, donde las fuertes lluvias desgastaban su roca y le quitaban dióxido de carbono al aire, lo que quizá ayudó a hundir a la Tierra en sus congelamientos más profundos."
+      },
+      "wiki": { "en": "Rodinia", "es": "Rodinia" }
+    },
+    {
+      "id": "franklin-lip",
+      "kind": "volcano",
+      "ma": 720, "to": 716, "err": 2,
+      "name": { "en": "The Franklin eruptions", "es": "Las erupciones de Franklin" },
+      "at": [-105.0, 72.0],
+      "r": 1000,
+      "text": {
+        "en": "Across what is now Arctic Canada and Greenland, then near the equator, floods of lava and huge sheets of magma spread over more than a million square kilometres about 720 to 716 million years ago. The Snowball Earth began at almost the same moment. Fresh basalt soaks up carbon dioxide as rain wears it down, and gases from the eruptions may have shaded the sun, so many scientists think the eruptions helped start the freeze.",
+        "es": "En lo que hoy es el Ártico canadiense y Groenlandia, entonces cerca del ecuador, ríos de lava y enormes capas de magma se extendieron por más de un millón de kilómetros cuadrados hace unos 720 a 716 millones de años. La Tierra bola de nieve empezó casi en el mismo momento. El basalto fresco absorbe dióxido de carbono cuando la lluvia lo desgasta, y los gases de las erupciones pudieron tapar el sol, así que muchos científicos creen que ayudaron a desatar el congelamiento."
+      },
+      "wiki": { "en": "Franklin Large Igneous Province", "es": "" }
+    },
+    {
+      "id": "sturtian-glaciation",
+      "kind": "ice",
+      "ma": 717, "to": 660, "err": 1,
+      "name": { "en": "Snowball Earth: the Sturtian freeze", "es": "Tierra bola de nieve: la glaciación sturtiana" },
+      "text": {
+        "en": "About 717 million years ago the Earth froze almost from pole to pole, and stayed frozen for some 57 million years. Ice sheets reached the equator and the oceans lay under ice, perhaps with thin ice or open water in places where simple life hung on. Volcanoes slowly filled the air with carbon dioxide until the greenhouse grew strong enough to melt the ice, suddenly and dramatically.",
+        "es": "Hace unos 717 millones de años la Tierra se congeló casi de polo a polo y siguió helada unos 57 millones de años. Los glaciares llegaron al ecuador y los océanos quedaron bajo el hielo, quizá con hielo delgado o agua abierta en algunos lugares donde resistió la vida sencilla. Los volcanes fueron llenando el aire de dióxido de carbono hasta que el efecto invernadero fue lo bastante fuerte para derretir el hielo, de golpe y de forma espectacular."
+      },
+      "wiki": { "en": "Sturtian glaciation", "es": "Glaciación global" },
+      "item": "snowball-earth"
+    },
+    {
+      "id": "marinoan-glaciation",
+      "kind": "ice",
+      "ma": 650, "to": 635, "err": 10,
+      "name": { "en": "Snowball Earth again: the Marinoan", "es": "Otra vez bola de nieve: la marinoana" },
+      "text": {
+        "en": "After a short warm break, the Earth froze over again from about 650 to 635 million years ago. When the ice melted, the sudden heat and rain covered the glacial rubble with layers of limestone called cap carbonates, found on every continent. The end of the Marinoan opened the Ediacaran Period, and soon after, the first large living things appeared.",
+        "es": "Tras una breve pausa cálida, la Tierra volvió a congelarse hace entre unos 650 y 635 millones de años. Al derretirse el hielo, el calor repentino y las lluvias cubrieron los escombros glaciares con capas de caliza llamadas carbonatos de casquete, que se encuentran en todos los continentes. El final de la glaciación marinoana abrió el período Ediacárico, y poco después aparecieron los primeros seres vivos grandes."
+      },
+      "wiki": { "en": "Marinoan glaciation", "es": "Glaciación Marinoana" },
+      "item": "marinoan-glaciation"
+    },
+    {
+      "id": "pannotia",
+      "kind": "continent",
+      "ma": 600, "to": 550, "err": 20,
+      "sure": "debated",
+      "name": { "en": "Pannotia, a short-lived supercontinent?", "es": "Pannotia, ¿un supercontinente fugaz?" },
+      "text": {
+        "en": "Around 600 million years ago, as the pieces of Rodinia came back together, the southern continents may have briefly joined ancient North America, Baltica and Siberia in a supercontinent called Pannotia. If it existed at all, it broke up again within a few tens of millions of years. Many geologists now doubt it ever fully formed.",
+        "es": "Hace unos 600 millones de años, mientras los pedazos de Rodinia volvían a juntarse, los continentes del sur quizá se unieron por poco tiempo con la antigua Norteamérica, Báltica y Siberia en un supercontinente llamado Pannotia. Si llegó a existir, volvió a partirse en unas pocas decenas de millones de años. Muchos geólogos dudan hoy de que se formara por completo."
+      },
+      "wiki": { "en": "Pannotia", "es": "Pannotia" }
+    },
+    {
+      "id": "acraman",
+      "kind": "impact",
+      "ma": 580, "err": 10,
+      "name": { "en": "The Acraman impact", "es": "El impacto de Acraman" },
+      "at": [135.45, -32.02],
+      "r": 45,
+      "text": {
+        "en": "An asteroid a few kilometres wide hit what is now South Australia, leaving a crater perhaps 90 km across; today the salt flat of Lake Acraman marks its centre. Its debris has been found in rock layers 300 km away in the Flinders Ranges. It struck about 580 million years ago, not long before the Ediacaran creatures spread, and some scientists wonder whether the shake-up helped them.",
+        "es": "Un asteroide de unos pocos kilómetros de ancho cayó en lo que hoy es Australia Meridional y dejó un cráter de quizá 90 km; hoy el salar del lago Acraman marca su centro. Sus restos se encontraron en capas de roca a 300 km de allí, en la cordillera de Flinders. Cayó hace unos 580 millones de años, poco antes de que se extendieran los seres del Ediacárico, y algunos científicos se preguntan si la sacudida los ayudó."
+      },
+      "wiki": { "en": "Acraman impact structure", "es": "Cráter Acraman" }
+    },
+    {
+      "id": "gaskiers-glaciation",
+      "kind": "ice",
+      "ma": 580.9, "to": 579.9, "err": 0.1,
+      "name": { "en": "The short, sharp Gaskiers ice age", "es": "La breve glaciación Gaskiers" },
+      "at": [-53.62, 46.87],
+      "text": {
+        "en": "About 580 million years ago, glaciers spread again, leaving their rubble at Gaskiers on Newfoundland's Avalon Peninsula and in other places. Unlike the Snowball Earths it was short, lasting less than 340,000 years, and did not freeze the whole planet. Soon afterwards, the first large Ediacaran creatures appear in the rocks just above, as if they had waited for the cold to end.",
+        "es": "Hace unos 580 millones de años los glaciares volvieron a avanzar y dejaron sus escombros en Gaskiers, en la península de Avalon, en Terranova, y en otros lugares. A diferencia de las Tierras bola de nieve fue corta, duró menos de 340 000 años, y no congeló todo el planeta. Poco después, en las rocas que están justo encima, aparecen los primeros seres grandes del Ediacárico, como si hubieran esperado a que terminara el frío."
+      },
+      "wiki": { "en": "Gaskiers glaciation", "es": "" },
+      "item": "gaskiers-glaciation"
+    },
+    {
+      "id": "ediacaran-biota",
+      "kind": "life",
+      "ma": 575, "err": 3,
+      "first": true,
+      "name": { "en": "The first large living things", "es": "Los primeros seres vivos grandes" },
+      "at": [-53.16, 46.63],
+      "text": {
+        "en": "On the sea floor at Mistaken Point, Newfoundland, about 575 million years ago, volcanic ash buried whole meadows of strange soft creatures shaped like fronds, discs and feathers, some up to 2 m long. These Ediacaran organisms had no mouths, legs or shells, and many probably soaked up food from the water. Some, like Dickinsonia, found in Australia and Russia, were early animals.",
+        "es": "En el fondo del mar de Mistaken Point, en Terranova, hace unos 575 millones de años, la ceniza de los volcanes sepultó praderas enteras de extraños seres blandos con forma de hoja, disco o pluma, algunos de hasta 2 m de largo. Estos organismos del Ediacárico no tenían boca, patas ni concha, y muchos probablemente absorbían su alimento del agua. Algunos, como Dickinsonia, hallada en Australia y Rusia, ya eran animales."
+      },
+      "wiki": { "en": "Ediacaran biota", "es": "Biota del periodo Ediacárico" },
+      "item": "mistaken-point"
+    },
+    {
+      "id": "end-ediacaran-extinction",
+      "kind": "extinction",
+      "ma": 550, "to": 539, "err": 5,
+      "sure": "debated",
+      "name": { "en": "The first mass extinction?", "es": "¿La primera extinción masiva?" },
+      "text": {
+        "en": "Between about 550 and 539 million years ago, most of the soft Ediacaran creatures vanished. One study found that around 80% of the kinds known from slightly older rocks disappear, perhaps as the seas lost oxygen. Others think the new burrowing and hunting animals pushed them out, or that the gap is partly a trick of how fossils are preserved.",
+        "es": "Hace entre unos 550 y 539 millones de años desaparecieron casi todos los seres blandos del Ediacárico. Un estudio halló que se esfuma cerca del 80 % de los tipos conocidos en rocas algo más antiguas, quizá porque los mares se quedaron sin oxígeno. Otros creen que los nuevos animales que cavaban y cazaban los desplazaron, o que el hueco se debe en parte a cómo se conservan los fósiles."
+      },
+      "wiki": { "en": "End-Ediacaran extinction", "es": "" },
+      "item": "end-ediacaran-extinction"
+    },
+    {
+      "id": "gondwana-assembles",
+      "kind": "continent",
+      "ma": 550, "err": 20,
+      "name": { "en": "Gondwana comes together", "es": "Se forma Gondwana" },
+      "text": {
+        "en": "Between about 600 and 530 million years ago, South America, Africa, Arabia, Madagascar, India, Antarctica and Australia crashed together into Gondwana, a huge southern continent. The collisions raised great mountain chains, like those of East Africa, whose eroded sand spread across the land. Gondwana would last over 350 million years and later became the southern half of Pangea.",
+        "es": "Hace entre unos 600 y 530 millones de años, Sudamérica, África, Arabia, Madagascar, la India, la Antártida y Australia chocaron y formaron Gondwana, un enorme continente del sur. Los choques levantaron grandes cordilleras, como las de África oriental, cuya arena erosionada se esparció por todo el territorio. Gondwana duraría más de 350 millones de años y más tarde sería la mitad sur de Pangea."
+      },
+      "wiki": { "en": "Gondwana", "es": "Gondwana" },
+      "item": "gondwana"
+    },
+    {
+      "id": "cambrian-explosion",
+      "kind": "life",
+      "ma": 538.8, "to": 515, "err": 0.6,
+      "first": true,
+      "name": { "en": "The Cambrian explosion", "es": "La explosión cámbrica" },
+      "at": [-55.86, 47.07],
+      "text": {
+        "en": "In about 25 million years, a geological blink, most of the main groups of animals alive today appear in the rocks: animals with shells, legs, eyes, guts and brains. Burrows in the sea floor, like those at Fortune Head, Newfoundland, mark the start of the Cambrian Period 538.8 million years ago. Rising oxygen, the first hunters and an arms race between predators and prey may all have helped.",
+        "es": "En unos 25 millones de años, un parpadeo geológico, aparecen en las rocas casi todos los grandes grupos de animales que viven hoy: animales con concha, patas, ojos, intestino y cerebro. Las madrigueras en el fondo marino, como las de Fortune Head, en Terranova, marcan el inicio del período Cámbrico, hace 538,8 millones de años. El aumento del oxígeno, los primeros cazadores y una carrera armamentista entre depredadores y presas pudieron ayudar."
+      },
+      "wiki": { "en": "Cambrian explosion", "es": "Explosión cámbrica" },
+      "item": "fortune-head"
+    },
+    {
+      "id": "first-vertebrates",
+      "kind": "life",
+      "ma": 518, "err": 1,
+      "first": true,
+      "name": { "en": "The first vertebrates", "es": "Los primeros vertebrados" },
+      "at": [102.585, 24.807],
+      "text": {
+        "en": "In the Chengjiang fossil beds near Kunming, China, 518 million years old, lie Myllokunmingia and Haikouichthys, fish about 3 cm long with no jaws, no scales and no paired fins. They had a skull of soft cartilage, eyes and a row of muscle blocks, like a tiny eel. They are among the oldest vertebrates, animals with a backbone: the group of fish, frogs, dinosaurs, birds and us.",
+        "es": "En los yacimientos de Chengjiang, cerca de Kunming, en China, de 518 millones de años, están Myllokunmingia y Haikouichthys, peces de unos 3 cm sin mandíbulas, sin escamas y sin aletas pares. Tenían un cráneo de cartílago blando, ojos y una fila de bloques de músculo, como una anguila diminuta. Están entre los vertebrados más antiguos, los animales con columna vertebral: el grupo de los peces, las ranas, los dinosaurios, las aves y nosotros."
+      },
+      "wiki": { "en": "Haikouichthys", "es": "Haikouichthys" },
+      "item": "haikouichthys"
+    },
+    {
+      "id": "kalkarindji-lip",
+      "kind": "volcano",
+      "ma": 511, "to": 510, "err": 1,
+      "name": { "en": "The Kalkarindji eruptions", "es": "Las erupciones de Kalkarindji" },
+      "at": [130.5, -18.5],
+      "r": 800,
+      "text": {
+        "en": "Around 511 million years ago, floods of basalt lava covered over 2 million square kilometres of northern Australia in a geological instant. The eruptions came at the same time as the first big extinction of animals after the Cambrian explosion, when many reef-building sponges called archaeocyaths and early trilobites vanished. Their gases probably warmed the climate and stripped oxygen from the seas.",
+        "es": "Hace unos 511 millones de años, ríos de lava basáltica cubrieron más de 2 millones de kilómetros cuadrados del norte de Australia en un instante geológico. Las erupciones coincidieron con la primera gran extinción de animales después de la explosión cámbrica, cuando desaparecieron muchas esponjas constructoras de arrecifes, los arqueociatos, y muchos de los primeros trilobites. Sus gases probablemente calentaron el clima y dejaron a los mares sin oxígeno."
+      },
+      "wiki": { "en": "Large igneous province", "es": "Gran provincia ígnea" }
+    },
+    {
+      "id": "burgess-shale",
+      "kind": "life",
+      "ma": 508, "err": 1,
+      "name": { "en": "The Burgess Shale", "es": "El esquisto de Burgess" },
+      "at": [-115.6, 51.75],
+      "text": {
+        "en": "High in the Canadian Rockies, a mudslide on the sea floor 508 million years ago buried a whole community of Cambrian animals so quickly that even their soft parts were kept: five-eyed Opabinia, spiky Hallucigenia, the hunter Anomalocaris and Pikaia, an early relative of vertebrates. Found by Charles Walcott in 1909, it showed how strange and varied early animal life was.",
+        "es": "En lo alto de las Montañas Rocosas de Canadá, un alud de barro en el fondo del mar sepultó hace 508 millones de años a toda una comunidad de animales cámbricos tan rápido que se conservaron hasta sus partes blandas: Opabinia, con cinco ojos; Hallucigenia, llena de púas; el cazador Anomalocaris, y Pikaia, un antiguo pariente de los vertebrados. Descubierto por Charles Walcott en 1909, mostró lo extraña y variada que era la primera vida animal."
+      },
+      "wiki": { "en": "Burgess Shale", "es": "Esquisto de Burgess" },
+      "item": "burgess-shale"
+    },
+    {
+      "id": "great-ordovician-biodiversification",
+      "kind": "life",
+      "ma": 485, "to": 460, "err": 5,
+      "name": { "en": "The Great Ordovician Biodiversification", "es": "La gran diversificación del Ordovícico" },
+      "text": {
+        "en": "After the Cambrian explosion came a second boom. Over about 25 million years in the Ordovician, the number of kinds of sea animals roughly tripled: reefs of corals and sponges spread, and shelled brachiopods, sea lilies, sea snails, trilobites and nautiloids, squid-like animals in long shells, filled the oceans. Plankton bloomed too, feeding it all.",
+        "es": "Después de la explosión cámbrica llegó un segundo auge. En unos 25 millones de años del Ordovícico, los tipos de animales marinos más o menos se triplicaron: se extendieron arrecifes de corales y esponjas, y los braquiópodos con concha, los lirios de mar, los caracoles marinos, los trilobites y los nautiloideos, parecidos a calamares dentro de una concha larga, llenaron los océanos. También floreció el plancton, que alimentaba a todos."
+      },
+      "wiki": { "en": "Great Ordovician Biodiversification Event", "es": "Radiación del Ordovícico" },
+      "item": "great-ordovician-biodiversification"
+    },
+    {
+      "id": "first-land-plants",
+      "kind": "life",
+      "ma": 470, "err": 5,
+      "first": true,
+      "name": { "en": "Plants move onto land", "es": "Las plantas salen a tierra" },
+      "at": [-65.4, -23.2],
+      "text": {
+        "en": "Tiny spores with tough walls, found in 470-million-year-old rocks in north-western Argentina, are the oldest firm traces of land plants. They came from small, low plants like today's liverworts, which grew from green algae living at the water's edge. Over millions of years they turned bare rock into the first soil, and by drawing carbon dioxide from the air they may even have cooled the climate.",
+        "es": "Unas diminutas esporas de pared resistente, halladas en rocas de 470 millones de años del noroeste de Argentina, son los rastros seguros más antiguos de plantas terrestres. Venían de plantas pequeñas y bajas, como las hepáticas de hoy, que surgieron de algas verdes que vivían a la orilla del agua. Con los millones de años convirtieron la roca pelada en el primer suelo y, al quitarle dióxido de carbono al aire, quizá hasta enfriaron el clima."
+      },
+      "wiki": { "en": "Embryophyte", "es": "Embryophyta" },
+      "item": "argentina-cryptospores"
+    },
+    {
+      "id": "hirnantian-glaciation",
+      "kind": "ice",
+      "ma": 445.5, "to": 443.4, "err": 1,
+      "name": { "en": "Ice over the Sahara", "es": "Hielo sobre el Sahara" },
+      "at": [8.5, 25.6],
+      "text": {
+        "en": "At the end of the Ordovician, Gondwana sat over the South Pole and a great ice sheet spread across it. Its scratches and rubble can still be seen in the Sahara desert of Algeria and Libya, which then lay near the pole. As water was locked up in ice, sea level fell by perhaps 100 m, draining the shallow seas where most animals lived.",
+        "es": "Al final del Ordovícico, Gondwana estaba sobre el polo sur y una gran capa de hielo se extendió sobre ella. Sus rayaduras y escombros aún se ven en el desierto del Sahara, en Argelia y Libia, que entonces estaba cerca del polo. Como el agua quedó atrapada en el hielo, el nivel del mar bajó quizá 100 m y secó los mares poco profundos donde vivía la mayoría de los animales."
+      },
+      "wiki": { "en": "Late Ordovician glaciation", "es": "Glaciación Andino-Sahariana" },
+      "item": "ordovician-ice-sahara"
+    },
+    {
+      "id": "end-ordovician-extinction",
+      "kind": "extinction",
+      "ma": 445.2, "to": 443.4, "err": 0.5,
+      "name": { "en": "The end-Ordovician extinction", "es": "La extinción del final del Ordovícico" },
+      "text": {
+        "en": "The first of the 'Big Five' mass extinctions struck in two blows, about 445 and 444 million years ago. The first came as the ice sheet grew and the seas cooled and drained; the second as the ice melted and deep water lost its oxygen. About 85% of species in the sea died, among them many trilobites, brachiopods and graptolites. On land there were still only small plants.",
+        "es": "La primera de las «cinco grandes» extinciones masivas golpeó dos veces, hace unos 445 y 444 millones de años. El primer golpe llegó cuando creció la capa de hielo y los mares se enfriaron y se secaron; el segundo, cuando el hielo se derritió y el agua profunda se quedó sin oxígeno. Murió cerca del 85 % de las especies marinas, entre ellas muchos trilobites, braquiópodos y graptolitos. En tierra todavía solo había plantas pequeñas."
+      },
+      "wiki": { "en": "Late Ordovician mass extinction", "es": "Extinciones masivas del Ordovícico-Silúrico" },
+      "item": "end-ordovician-extinction"
+    },
+    {
+      "id": "first-jawed-fish",
+      "kind": "life",
+      "ma": 436, "err": 2,
+      "first": true,
+      "name": { "en": "Fish get jaws", "es": "Los peces estrenan mandíbulas" },
+      "at": [109.12, 28.61],
+      "text": {
+        "en": "Jaws let animals bite, grip and crush, and opened up new ways of life. The oldest whole fish with jaws, like the little armoured Xiushanosteus, come from rocks about 436 million years old in Chongqing, China, and teeth from nearby Guizhou are about 439 million years old. Older scales hint that jawed fish may go back further still. Almost every vertebrate alive today, including us, descends from them.",
+        "es": "Las mandíbulas permiten morder, agarrar y triturar, y abrieron nuevas formas de vida. Los peces con mandíbulas completos más antiguos, como el pequeño y acorazado Xiushanosteus, vienen de rocas de unos 436 millones de años de Chongqing, en China, y unos dientes de la vecina Guizhou tienen unos 439 millones de años. Escamas más antiguas sugieren que podrían ser aún más viejos. Casi todos los vertebrados de hoy, nosotros incluidos, descienden de ellos."
+      },
+      "wiki": { "en": "Gnathostomata", "es": "Gnathostomata" }
+    },
+    {
+      "id": "first-land-animals",
+      "kind": "life",
+      "ma": 425, "err": 3,
+      "first": true,
+      "name": { "en": "Animals walk onto land", "es": "Los animales llegan a tierra" },
+      "at": [-5.55, 56.39],
+      "text": {
+        "en": "The oldest known animals that lived on land were millipedes. Kampecaris, from the island of Kerrera in Scotland, is about 425 million years old, and Pneumodesmus, found near Stonehaven, has tiny breathing holes in its armour, proof that it breathed air. They munched rotting plants and mats of algae and fungi near the shore. Tracks suggest some arthropods had ventured out of the water even earlier.",
+        "es": "Los animales terrestres más antiguos que se conocen eran milpiés. Kampecaris, de la isla de Kerrera, en Escocia, tiene unos 425 millones de años, y Pneumodesmus, hallado cerca de Stonehaven, tiene diminutos orificios para respirar en su armadura, la prueba de que respiraba aire. Comían plantas podridas y tapetes de algas y hongos cerca de la orilla. Ciertas huellas sugieren que algunos artrópodos salieron del agua aún antes."
+      },
+      "wiki": { "en": "Kampecaris", "es": "Diplopoda" },
+      "item": "kampecaris"
+    },
+    {
+      "id": "zachelmie-trackways",
+      "kind": "life",
+      "ma": 395, "err": 3,
+      "first": true,
+      "sure": "likely",
+      "name": { "en": "The first footprints of four-legged animals", "es": "Las primeras huellas de cuadrúpedos" },
+      "at": [20.65, 50.98],
+      "text": {
+        "en": "In an old quarry at Zachełmie, in Poland's Holy Cross Mountains, a seashore mudflat 395 million years old holds footprints, some with toes, left by animals with four limbs. They are older than the oldest bones of tetrapods, and even than those of their fish-like ancestors such as Tiktaalik, so the move towards land began earlier than once thought. A few scientists think fish made them.",
+        "es": "En una vieja cantera de Zachełmie, en los montes de la Santa Cruz, en Polonia, una llanura de barro costera de 395 millones de años guarda huellas, algunas con dedos, de animales de cuatro patas. Son más antiguas que los huesos más antiguos de tetrápodos e incluso que los de sus antepasados con forma de pez, como Tiktaalik, así que la salida a tierra empezó antes de lo que se creía. Unos pocos científicos creen que las hicieron peces."
+      },
+      "wiki": { "en": "Zachelmie trackways", "es": "Tetrapoda" },
+      "item": "zachelmie-tracks"
+    },
+    {
+      "id": "first-forests",
+      "kind": "life",
+      "ma": 386, "err": 4,
+      "first": true,
+      "name": { "en": "The first forests", "es": "Los primeros bosques" },
+      "at": [-74.45, 42.4],
+      "text": {
+        "en": "Near Gilboa and Cairo in New York State, rocks about 385 million years old hold the stumps and roots of some of the oldest forests; one 390 million years old was found in south-west England in 2024. Some trees looked like palm trees 8 m tall; others, like Archaeopteris, had wood, deep roots and leafy branches like modern trees. Forests built soils and drew carbon dioxide from the air.",
+        "es": "Cerca de Gilboa y Cairo, en el estado de Nueva York, rocas de unos 385 millones de años guardan los tocones y raíces de algunos de los bosques más antiguos; en 2024 se encontró uno de 390 millones de años en el suroeste de Inglaterra. Algunos árboles se parecían a palmeras de 8 m; otros, como Archaeopteris, tenían madera, raíces profundas y ramas con hojas como los árboles modernos. Los bosques formaron suelos y quitaron dióxido de carbono del aire."
+      },
+      "wiki": { "en": "Gilboa Fossil Forest", "es": "Archaeopteris" },
+      "item": "gilboa-forest"
+    },
+    {
+      "id": "viluy-traps",
+      "kind": "volcano",
+      "ma": 377, "to": 364, "err": 2,
+      "name": { "en": "The Viluy eruptions", "es": "Las erupciones de Viluy" },
+      "at": [121.6, 63.75],
+      "r": 400,
+      "text": {
+        "en": "In eastern Siberia, a rift opened and poured out floods of basalt lava over hundreds of thousands of square kilometres, in pulses between about 377 and 364 million years ago. The pulses match the two great crises of the Late Devonian, the Kellwasser and Hangenberg events, and their gases may have warmed the climate and stripped oxygen from the seas. The link is likely but not proven.",
+        "es": "En el este de Siberia se abrió una grieta que derramó ríos de lava basáltica sobre cientos de miles de kilómetros cuadrados, en pulsos entre hace unos 377 y 364 millones de años. Los pulsos coinciden con las dos grandes crisis del Devónico tardío, los eventos Kellwasser y Hangenberg, y sus gases quizá calentaron el clima y quitaron el oxígeno a los mares. La relación es probable, pero no está demostrada."
+      },
+      "wiki": { "en": "Viluy traps", "es": "" },
+      "item": "viluy-traps"
+    },
+    {
+      "id": "tiktaalik",
+      "kind": "life",
+      "ma": 375, "err": 2,
+      "name": { "en": "Tiktaalik, a fish with wrists", "es": "Tiktaalik, un pez con muñecas" },
+      "at": [-86.27, 77.17],
+      "text": {
+        "en": "In 2004, after years of searching on Ellesmere Island in the Canadian Arctic, scientists found Tiktaalik, a 375-million-year-old fish up to about 3 m long, with a flat head, a neck and stout fins with wrist bones. It could prop itself up in shallow water and breathe air. It shows, better than almost any other fossil, how fish became four-legged animals.",
+        "es": "En 2004, tras años de búsqueda en la isla de Ellesmere, en el Ártico canadiense, unos científicos encontraron a Tiktaalik, un pez de 375 millones de años de hasta unos 3 m de largo, con cabeza plana, cuello y aletas robustas con huesos de muñeca. Podía apoyarse en aguas poco profundas y respirar aire. Muestra, mejor que casi ningún otro fósil, cómo los peces se convirtieron en animales de cuatro patas."
+      },
+      "wiki": { "en": "Tiktaalik", "es": "Tiktaalik" },
+      "item": "tiktaalik"
+    },
+    {
+      "id": "kellwasser-event",
+      "kind": "extinction",
+      "ma": 372, "to": 371.1, "err": 1.1,
+      "name": { "en": "The Late Devonian extinction", "es": "La extinción del Devónico tardío" },
+      "text": {
+        "en": "About 372 million years ago, near the end of the Frasnian Age, the seas lost their oxygen in two pulses, recorded as dark layers of rock called the Kellwasser beds in Germany. Perhaps 70% of species in the sea died, and the vast reefs of sponges and corals collapsed; reefs that size did not return for over 100 million years. Warm, shallow tropical seas were hit hardest.",
+        "es": "Hace unos 372 millones de años, cerca del final del Frasniense, los mares se quedaron sin oxígeno en dos pulsos, que quedaron grabados como capas de roca oscura llamadas Kellwasser, en Alemania. Murió quizá el 70 % de las especies marinas, y los enormes arrecifes de esponjas y corales se derrumbaron; arrecifes de ese tamaño no volvieron en más de 100 millones de años. Los mares tropicales cálidos y poco profundos fueron los más golpeados."
+      },
+      "wiki": { "en": "Late Devonian mass extinction", "es": "Extinción masiva del Devónico" },
+      "item": "late-devonian-extinction"
+    },
+    {
+      "id": "first-seeds",
+      "kind": "life",
+      "ma": 365, "err": 3,
+      "first": true,
+      "name": { "en": "The first seeds", "es": "Las primeras semillas" },
+      "at": [-79.73, 38.91],
+      "text": {
+        "en": "Elkinsia, a plant from West Virginia about 365 million years old, made some of the oldest known seeds: tiny packages holding the makings of a new plant and a food store, wrapped in a protective coat. Unlike spores, which need wet ground, seeds could wait out dry spells and sprout far from water. Seed plants went on to rule the land: conifers, cycads and, much later, flowering plants.",
+        "es": "Elkinsia, una planta de Virginia Occidental de unos 365 millones de años, producía algunas de las semillas más antiguas que se conocen: diminutos paquetes con lo necesario para una nueva planta y una reserva de alimento, envueltos en una cubierta protectora. A diferencia de las esporas, que necesitan suelo húmedo, las semillas podían esperar a que pasara la sequía y brotar lejos del agua. Las plantas con semilla acabaron dominando la tierra: coníferas, cícadas y, mucho después, las plantas con flor."
+      },
+      "wiki": { "en": "Seed plant", "es": "Spermatophyta" }
+    },
+    {
+      "id": "hangenberg-event",
+      "kind": "extinction",
+      "ma": 359.3, "to": 358.86, "err": 0.3,
+      "name": { "en": "The Hangenberg crisis", "es": "La crisis de Hangenberg" },
+      "text": {
+        "en": "At the very end of the Devonian, about 359 million years ago, a second blow fell, recorded by a black shale near Hangenberg in Germany. Ice sheets grew in South America and the seas lost oxygen. The armoured placoderm fish vanished entirely, along with most other kinds of fish and many ammonoids, coiled shellfish. The few survivors, small sharks, ray-finned fish and our four-legged ancestors, went on to fill the waters again.",
+        "es": "Al final del Devónico, hace unos 359 millones de años, llegó un segundo golpe, grabado en una capa de roca negra cerca de Hangenberg, en Alemania. Crecieron capas de hielo en Sudamérica y los mares perdieron oxígeno. Los placodermos, peces acorazados, desaparecieron por completo, junto con la mayoría de los otros tipos de peces y muchos amonoideos, moluscos de concha enrollada. Los pocos supervivientes, tiburones pequeños, peces de aletas radiadas y nuestros antepasados de cuatro patas, volvieron a llenar las aguas."
+      },
+      "wiki": { "en": "Hangenberg event", "es": "Evento de Hangenberg" },
+      "item": "hangenberg-event"
+    },
+    {
+      "id": "late-paleozoic-ice-age",
+      "kind": "ice",
+      "ma": 340, "to": 260, "err": 10,
+      "name": { "en": "The Late Paleozoic ice age", "es": "La glaciación del Paleozoico tardío" },
+      "text": {
+        "en": "As Gondwana drifted over the South Pole, ice sheets came and went across southern Africa, South America, Antarctica, India and Australia for some 80 million years, from about 340 to 260 million years ago: the longest ice age of the last half-billion years. Their scratched rocks, found on continents now far apart, helped convince scientists that the continents had moved.",
+        "es": "Mientras Gondwana pasaba sobre el polo sur, capas de hielo avanzaron y retrocedieron sobre el sur de África, Sudamérica, la Antártida, la India y Australia durante unos 80 millones de años, desde hace unos 340 hasta 260 millones de años: la glaciación más larga de los últimos 500 millones de años. Sus rocas rayadas, halladas en continentes hoy muy separados, ayudaron a convencer a los científicos de que los continentes se habían movido."
+      },
+      "wiki": { "en": "Late Paleozoic icehouse", "es": "Glaciación Karoo" },
+      "item": "devonian-ice-south-america"
+    },
+    {
+      "id": "pangea-forms",
+      "kind": "continent",
+      "ma": 335, "err": 15,
+      "name": { "en": "Pangea comes together", "es": "Se forma Pangea" },
+      "text": {
+        "en": "From about 335 million years ago, Gondwana crashed into ancient North America and Europe, then Siberia joined, building Pangea, from the Greek for 'all lands'. The collisions raised mountains that are now the worn-down Appalachians, the hills of Cornwall, Brittany and central Europe, and the Ural Mountains. Pangea stretched from pole to pole, with a dry heart far from the sea.",
+        "es": "Desde hace unos 335 millones de años, Gondwana chocó con la antigua Norteamérica y Europa, y luego se unió Siberia, formando Pangea, que en griego significa «todas las tierras». Los choques levantaron montañas que hoy son los gastados Apalaches, las colinas de Cornualles, Bretaña y el centro de Europa, y los montes Urales. Pangea se extendía de polo a polo y tenía un corazón seco, lejos del mar."
+      },
+      "wiki": { "en": "Pangaea", "es": "Pangea" },
+      "item": "pangaea"
+    },
+    {
+      "id": "coal-forests",
+      "kind": "climate",
+      "ma": 330, "to": 300,
+      "name": { "en": "Coal swamps and giant insects", "es": "Pantanos de carbón e insectos gigantes" },
+      "text": {
+        "en": "In the Carboniferous, swampy forests of giant club mosses up to 40 m tall, horsetails and tree ferns covered the warm, wet lowlands near the equator. When they died, their trunks were buried in waterlogged mud and slowly turned into the coal that later powered the Industrial Revolution. So much buried plant matter let oxygen climb to perhaps 30% of the air, and dragonfly-like griffinflies had wings 70 cm across.",
+        "es": "En el Carbonífero, bosques pantanosos de licopodios gigantes de hasta 40 m de alto, colas de caballo y helechos arborescentes cubrían las tierras bajas, cálidas y húmedas cerca del ecuador. Al morir, sus troncos quedaban enterrados en el barro empapado y se convertían poco a poco en el carbón que mucho después movió la Revolución Industrial. Tanta materia vegetal enterrada dejó que el oxígeno subiera quizá hasta el 30 % del aire, y unos insectos parecidos a libélulas tuvieron alas de 70 cm."
+      },
+      "wiki": { "en": "Coal forest", "es": "Bosque de carbón" },
+      "item": "coal-forests"
+    },
+    {
+      "id": "first-flying-insects",
+      "kind": "life",
+      "ma": 325, "err": 3,
+      "first": true,
+      "name": { "en": "The first flying animals", "es": "Los primeros animales voladores" },
+      "at": [12.24, 51.6],
+      "text": {
+        "en": "Insects were the first animals to fly, nearly 100 million years before the first pterosaurs. The oldest known insect wings, from Delitzschala near Bitterfeld in Germany, are about 325 million years old, though insects probably took to the air earlier. Wings let them escape hunters, reach new food and spread far. Soon griffinflies, mayflies and cockroach-like insects flew through the coal forests.",
+        "es": "Los insectos fueron los primeros animales en volar, casi 100 millones de años antes que los primeros pterosaurios. Las alas de insecto más antiguas que se conocen, de Delitzschala, cerca de Bitterfeld, en Alemania, tienen unos 325 millones de años, aunque los insectos probablemente ya volaban antes. Las alas les permitían escapar de los cazadores, llegar a nueva comida y dispersarse lejos. Pronto volaban por los bosques de carbón libélulas gigantes, efímeras e insectos parecidos a cucarachas."
+      },
+      "wiki": { "en": "Insect flight", "es": "" }
+    },
+    {
+      "id": "first-amniotes",
+      "kind": "life",
+      "ma": 318, "err": 2,
+      "first": true,
+      "name": { "en": "Eggs for dry land: the first amniotes", "es": "Huevos para tierra firme: los primeros amniotas" },
+      "at": [-64.45, 45.7],
+      "text": {
+        "en": "Hylonomus, a lizard-like animal about 20 cm long, was found inside fossil tree stumps at Joggins, Nova Scotia, in rocks about 318 million years old. It is the oldest known amniote: the group of reptiles, birds and mammals, whose babies grow inside protective skins. In eggs with a shell these could be laid on dry land, far from water. Footprints from Australia hint the group may be older still.",
+        "es": "Hylonomus, un animal parecido a una lagartija de unos 20 cm, se encontró dentro de tocones de árboles fósiles en Joggins, Nueva Escocia, en rocas de unos 318 millones de años. Es el amniota más antiguo que se conoce: el grupo de los reptiles, las aves y los mamíferos, cuyas crías se desarrollan dentro de membranas protectoras. En huevos con cáscara podían ponerse en tierra seca, lejos del agua. Unas huellas de Australia sugieren que el grupo es aún más antiguo."
+      },
+      "wiki": { "en": "Hylonomus", "es": "Hylonomus" },
+      "item": "hylonomus"
+    },
+    {
+      "id": "first-synapsids",
+      "kind": "life",
+      "ma": 307, "err": 2,
+      "first": true,
+      "name": { "en": "The first of the mammal line", "es": "Los primeros del linaje de los mamíferos" },
+      "at": [-60.27, 46.29],
+      "text": {
+        "en": "Archaeothyris, a lizard-shaped hunter about 50 cm long from Florence, Nova Scotia, about 307 million years old, is one of the oldest well-known synapsids: the branch of amniotes that, some 80 million years later, gave rise to mammals. Synapsids have a single opening behind each eye for the jaw muscles. Scraps from Joggins show the branch already existed 318 million years ago.",
+        "es": "Archaeothyris, un cazador con forma de lagarto de unos 50 cm, de Florence, Nueva Escocia, de unos 307 millones de años, es uno de los sinápsidos más antiguos bien conocidos: la rama de los amniotas que unos 80 millones de años después daría origen a los mamíferos. Los sinápsidos tienen una sola abertura detrás de cada ojo para los músculos de la mandíbula. Unos restos de Joggins muestran que la rama ya existía hace 318 millones de años."
+      },
+      "wiki": { "en": "Archaeothyris", "es": "Archaeothyris" },
+      "item": "archaeothyris"
+    },
+    {
+      "id": "carboniferous-rainforest-collapse",
+      "kind": "climate",
+      "ma": 305, "to": 304, "err": 2,
+      "sure": "likely",
+      "name": { "en": "The coal forests collapse", "es": "Se derrumban los bosques de carbón" },
+      "text": {
+        "en": "Around 305 million years ago, the climate turned drier and began to swing between wet and dry, and the great coal swamps of the tropics broke up into scattered islands of forest. Giant club mosses dwindled and tree ferns took over. Amphibians, which need damp places, lost ground, while reptiles, with their tougher eggs and skin, spread across the drier land. How deadly it was for animals is still debated.",
+        "es": "Hace unos 305 millones de años el clima se volvió más seco y empezó a alternar entre épocas húmedas y secas, y los grandes pantanos de carbón de los trópicos se partieron en islas de bosque dispersas. Los licopodios gigantes menguaron y los helechos arborescentes ocuparon su lugar. Los anfibios, que necesitan lugares húmedos, perdieron terreno, mientras los reptiles, con huevos y piel más resistentes, se extendieron por las tierras secas. Aún se discute cuán mortal fue para los animales."
+      },
+      "wiki": { "en": "Carboniferous rainforest collapse", "es": "" }
+    },
+    {
+      "id": "emeishan-traps",
+      "kind": "volcano",
+      "ma": 260, "to": 259, "err": 0.5,
+      "name": { "en": "The Emeishan eruptions", "es": "Las erupciones de Emeishan" },
+      "at": [103.0, 27.0],
+      "r": 350,
+      "text": {
+        "en": "About 260 million years ago, floods of lava covered a large part of what is now south-western China, around Mount Emei, with basalt up to 5 km thick in places. The eruptions happened at the same time as the end-Guadalupian extinction, and many of them burst out under a shallow sea, sending carbon dioxide and sulfur into the air and water.",
+        "es": "Hace unos 260 millones de años, ríos de lava cubrieron gran parte de lo que hoy es el suroeste de China, en torno al monte Emei, con basalto de hasta 5 km de espesor en algunos lugares. Las erupciones coincidieron con la extinción del final del Guadalupiense, y muchas estallaron bajo un mar poco profundo, lanzando dióxido de carbono y azufre al aire y al agua."
+      },
+      "wiki": { "en": "Emeishan Traps", "es": "Traps de Emeishan" }
+    },
+    {
+      "id": "end-guadalupian-extinction",
+      "kind": "extinction",
+      "ma": 259.8, "to": 259.4, "err": 0.5,
+      "sure": "likely",
+      "name": { "en": "The end-Guadalupian extinction", "es": "La extinción del final del Guadalupiense" },
+      "text": {
+        "en": "About 260 million years ago, during the Emeishan eruptions, a crisis struck life in the warm seas. Giant clam-like shellfish, many corals, ammonoids and fusulinids, single-celled creatures with shells the size of rice grains, were hit hard, and roughly a third of the kinds of sea animals died out. On land, the big, thick-skulled dinocephalians vanished. Some scientists count it as a sixth great mass extinction.",
+        "es": "Hace unos 260 millones de años, durante las erupciones de Emeishan, una crisis golpeó la vida de los mares cálidos. Unos moluscos gigantes parecidos a almejas, muchos corales, amonoideos y los fusulínidos, seres de una sola célula con conchas del tamaño de un grano de arroz, sufrieron mucho, y desapareció más o menos un tercio de los tipos de animales marinos. En tierra se esfumaron los dinocéfalos, grandes animales de cráneo grueso. Algunos científicos la cuentan como una sexta gran extinción."
+      },
+      "wiki": { "en": "Capitanian mass extinction event", "es": "" }
+    },
+    {
+      "id": "siberian-traps",
+      "kind": "volcano",
+      "ma": 252.2, "to": 251.5, "err": 0.1,
+      "name": { "en": "The Siberian Traps erupt", "es": "Las erupciones de los Traps siberianos" },
+      "at": [100.0, 64.0],
+      "r": 1500,
+      "text": {
+        "en": "In Siberia, one of the largest volcanic outbursts in the Earth's history poured out millions of cubic kilometres of lava, building stacks of basalt like giant stairs ('trap' comes from the Swedish for stairs). Magma also baked buried coal, salt and limestone, releasing huge amounts of carbon dioxide, methane and poisonous gases. Most of it happened in under a million years, and most scientists think it set off the Great Dying.",
+        "es": "En Siberia, una de las mayores erupciones volcánicas de la historia de la Tierra derramó millones de kilómetros cúbicos de lava y formó pilas de basalto como escaleras gigantes («trap» viene de la palabra sueca para escalera). El magma también coció carbón, sal y caliza enterrados, y liberó enormes cantidades de dióxido de carbono, metano y gases venenosos. Casi todo ocurrió en menos de un millón de años, y la mayoría de los científicos cree que desató la Gran Mortandad."
+      },
+      "wiki": { "en": "Siberian Traps", "es": "Traps siberianos" },
+      "item": "siberian-traps"
+    },
+    {
+      "id": "great-dying",
+      "kind": "extinction",
+      "ma": 251.94, "to": 251.88, "err": 0.04,
+      "name": { "en": "The Great Dying", "es": "La Gran Mortandad" },
+      "text": {
+        "en": "The worst disaster in the history of life struck in about 60,000 years. Greenhouse gases from the Siberian Traps heated the planet, the oceans turned acidic and lost their oxygen, and the land dried out and burned. About four out of five species in the sea died, perhaps more, including the last trilobites, along with most kinds of land animals and even many insects. Life took millions of years to recover.",
+        "es": "El peor desastre de la historia de la vida ocurrió en unos 60 000 años. Los gases de efecto invernadero de los Traps siberianos calentaron el planeta, los océanos se volvieron ácidos y se quedaron sin oxígeno, y la tierra se secó y ardió. Murieron cerca de cuatro de cada cinco especies marinas, quizá más, entre ellas los últimos trilobites, además de la mayoría de los tipos de animales terrestres y hasta muchos insectos. La vida tardó millones de años en recuperarse."
+      },
+      "wiki": { "en": "Permian–Triassic extinction event", "es": "Extinción masiva del Pérmico-Triásico" },
+      "item": "end-permian-extinction"
+    }
+  ]
+}

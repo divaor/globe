@@ -48,7 +48,7 @@ export interface Progress {
   };
   /** v0.29.0: things seen around the app (masterpieces opened, lives followed to the end) and done once (a trip across
    * three continents). */
-  seen: { works: string[]; lives: string[]; animals: string[]; plants: string[]; legacies?: string[] };
+  seen: { works: string[]; lives: string[]; animals: string[]; plants: string[]; legacies?: string[]; deeptime?: string[] };
   feats: string[];
   /** v0.34.0 Master the world: the best run of days the daily goal was reached, and countries relearned after they
    * were forgotten (the rest of its badges are feats: a continent's capitals, every capital, the look-alike flags...). */
@@ -62,7 +62,7 @@ export function progress(): Progress {
   if (cache) return cache;
   try { cache = { ...empty(), ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { cache = empty(); }
   cache!.play = { ...emptyPlay(), ...cache!.play };
-  cache!.seen = { works: cache!.seen?.works ?? [], lives: cache!.seen?.lives ?? [], animals: cache!.seen?.animals ?? [], plants: cache!.seen?.plants ?? [], legacies: cache!.seen?.legacies ?? [] };
+  cache!.seen = { works: cache!.seen?.works ?? [], lives: cache!.seen?.lives ?? [], animals: cache!.seen?.animals ?? [], plants: cache!.seen?.plants ?? [], legacies: cache!.seen?.legacies ?? [], deeptime: cache!.seen?.deeptime ?? [] };
   cache!.feats ??= [];
   return cache!;
 }
@@ -136,6 +136,10 @@ export const BADGES: Badge[] = [
   // v0.44.0 Legacies of the past: legacies opened, and one from each of 20 civilizations ("civ/legacy").
   { id: 'app-heir', icon: '🏺', en: 'Heir of the ages', es: 'Heredero de los siglos', how: { en: 'Open 40 legacies of the past', es: 'Abre 40 legados del pasado' }, goal: 40, have: (p) => p.seen.legacies?.length ?? 0 },
   { id: 'app-ancestors', icon: '🌍', en: 'All our ancestors', es: 'Todos nuestros antepasados', how: { en: 'A legacy from 20 different civilizations', es: 'Un legado de 20 civilizaciones distintas' }, goal: 20, have: (p) => new Set((p.seen.legacies ?? []).map((k) => k.split('/')[0])).size },
+  // v0.45.0 Deep time: past species opened, the whole narrated story watched ("story:life"), the asteroid seen.
+  { id: 'app-fossils', icon: '🦴', en: 'Fossil hunter', es: 'Cazador de fósiles', how: { en: 'Open 30 past species in Deep time', es: 'Abre 30 especies del pasado en el tiempo profundo' }, goal: 30, have: (p) => (p.seen.deeptime ?? []).filter((k) => !k.includes(':')).length },
+  { id: 'app-timetraveller', icon: '⏳', en: 'Time traveller', es: 'Viajero del tiempo', how: { en: 'Watch Deep time’s whole story', es: 'Mira toda la historia del tiempo profundo' }, goal: 1, have: (p) => ((p.seen.deeptime ?? []).includes('story:life') ? 1 : 0) },
+  { id: 'app-witness', icon: '☄️', en: 'Witness', es: 'Testigo', how: { en: 'See the asteroid that ended the dinosaurs strike', es: 'Mira impactar el asteroide que acabó con los dinosaurios' }, goal: 1, have: (p) => ((p.seen.deeptime ?? []).includes('impact:chicxulub') ? 1 : 0) },
   // v0.33.0: a dive below 6,000 m (Into the deep).
   { id: 'app-diver', icon: '🤿', en: 'Diver', es: 'Buzo', how: { en: 'Dive below 6,000 m', es: 'Bucea a más de 6 000 m' }, goal: 1, have: (p) => Number(p.feats.includes('dive-6000')) },
   // v0.34.0 Master the world.
@@ -276,7 +280,7 @@ export function recordGame(game: string, o: { score: number; stars: number; feat
   return award();
 }
 /** Something seen around the app (a masterpiece's card, a life to its end): counted once. */
-export function recordSeen(kind: 'works' | 'lives' | 'animals' | 'plants' | 'legacies', id: string): Badge[] {
+export function recordSeen(kind: 'works' | 'lives' | 'animals' | 'plants' | 'legacies' | 'deeptime', id: string): Badge[] {
   const s = progress().seen;
   const list = (s[kind] ??= []);
   if (list.includes(id)) return [];

@@ -110,6 +110,22 @@ A backup made as Atlas Globe still opens.
   Name the sea feature (a pin under the sea, four names) and Which ocean zone? (a sea animal, five zones), and How
   deep? now with sea animals and wrecks; two tours, Wonders of the deep and Famous shipwrecks; the Time travel story
   Into the deep: exploring the ocean floor; and an Into the deep playlist for ambient mode.
+- **Deep time (Explore → Deep time, v0.45.0):** the Earth from its first days to today on one animated, interactive
+  timeline, joined with the plate tectonics of Pangea to today. The continents move (the plate model back to a
+  billion years ago, an impression before that), and the planet's look changes with time: a magma ocean, an orange
+  haze before the air had oxygen, rusty bare land, Snowball Earths, ice caps that grow and shrink, green land once
+  plants spread. {EVENTS} events happen where they happened (the great eruptions glow while they last, and the
+  asteroid that ended the dinosaurs streaks in, flashes, sends shock rings round the globe and darkens the world),
+  firsts pulse when their moment comes, and {SPECIES} past species appear at their fossil sites, moved with their
+  continents, while they lived (tap one for its card with a picture, its size, diet and closest living relatives).
+  Always on screen: how long ago, the eon, era, period and epoch in their official colours, the cosmic calendar (all
+  of time since the Big Bang in one year), and the Earth's vital signs (oxygen, carbon dioxide, temperature, day
+  length, the Sun's brightness, the Moon's distance, sea level, ice, the ozone layer) with a plain verdict: could you
+  survive here? What lived then lists everything alive at that moment, in the sea, on land and in the air. Play the
+  story flies through it all with {BEATS} narrated moments, read aloud or timed to read. A true scale shows how
+  little of the time is ours; Continents only gives the plain plate view. Also: the search finds species and
+  events, Life through time stories link both ways, "Which came first?" in Learn, Today in deep time, three badges,
+  and #deeptime= links.
 - **Legacies of the past (Explore → Legacies of the past, v0.44.0):** what past civilizations gave the world that we
   still use, and how connected that makes us: 20 civilizations (the Sumerians, Babylonians and Assyrians,
   Egyptians, Phoenicians, Greeks, Romans, Persians, the Islamic Golden Age, Ancient India and China, the Maya, Mexica,
@@ -259,7 +275,8 @@ A backup made as Atlas Globe still opens.
   number gives a dot plot with medians; two categories give a cross table with Cramér's V. Start from the
   Filters panel, the More menu, or "Compare with…" in any country-facts filter's legend.
 - **Time travel:** borders through time (54 maps, 123,000 BC → 2010) with start/end, play, speed and
-  "What changed"; Pangea to today (Merdith et al. 2021 plate model, 1,000 Ma → today) with the geological time scale.
+  "What changed"; Deep time, which takes in Pangea to today (Merdith et al. 2021 plate model, 1,000 Ma → today), with
+  the geological time scale.
   Researched stories play step by step on the map, with territory, routes, markers and a card with a Wikipedia
   picture for every person, work, place, dish or building:
   - Wars and conquests: 26 conflicts, from Alexander and Rome to the World Wars, with battles and aftermath.
