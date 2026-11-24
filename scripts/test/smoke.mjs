@@ -5669,7 +5669,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const n2 = await F(() => window.atlas.fill.states.info);
   check(n2.ans?.id === n1.cur.id && n2.ans?.ok && n2.ans.stars === 3, `a real tap on ${n1.cur.name} fills it in, ★★★`);
   // To the end.
-  await F(async () => { const g = window.atlas.fill.states; for (let k = 0; k < 80 && !g.info.done; k++) { if (g.info.ans) g.next(); else g.answer(g.info.cur.id); } });
+  await F(async () => { const g = window.atlas.fill.states; for (let k = 0; k < 400 && !g.info.done; k++) { if (g.info.ans) g.next(); else g.answer(g.info.cur.id); } });
   await page.waitForTimeout(1500);
   const d = await F(() => ({
     done: document.querySelector('[data-states="done"]')?.textContent ?? '', next: document.querySelector('[data-states="next-country"]')?.textContent ?? '',
@@ -5688,7 +5688,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.tap('[data-today-item="states"]');
   await page.waitForTimeout(3000);
   const dy = await F(() => window.atlas.fill.states.info);
-  await F(async () => { const g = window.atlas.fill.states; for (let k = 0; k < 80 && !g.info.done; k++) { if (g.info.ans) g.next(); else g.answer(g.info.cur.id); } });
+  await F(async () => { const g = window.atlas.fill.states; for (let k = 0; k < 400 && !g.info.done; k++) { if (g.info.ans) g.next(); else g.answer(g.info.cur.id); } });
   await page.waitForTimeout(800);
   const today = await F(() => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; });
   const rec = await F((t) => JSON.parse(localStorage.getItem('atlas-globe:fill') || '{}').stateDailies?.[t] ?? null, today);
