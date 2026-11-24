@@ -9,7 +9,7 @@ import { livesHook, fmtWhen, type StoryMode, type Conflict, type Entry, type Ste
 import { mergeLives, twoNames, km, SEP } from './merge';
 import { loadJSON } from '../data/store';
 import { loadArt, loadArch } from '../artguide/data';
-import { loadBorn, personCard, type Person } from './born';
+import { loadBornAll, personCard, type Person } from './born';
 import { peopleList, personLinks } from '../layers/packs/born';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
@@ -141,9 +141,9 @@ export class Lives {
 
   // ---- a city's People tab (the travel guide)
 
-  /** Who was born in a city and who died there (Wikidata), and the lives of this collection that pass through it. */
+  /** Who was born in a city and who died there (Wikidata, both files), and the lives of this collection that pass through it. */
   async peopleTab(el: HTMLElement, c: GuideCity, name: string) {
-    const [born] = await Promise.all([loadBorn(), this.warm()]);
+    const [born] = await Promise.all([loadBornAll(), this.warm()]);
     const here = this.index.map((e) => ({ e, steps: (e.life?.path ?? []).map((p, i) => (p && km(p, c.at) <= 25 ? i : -1)).filter((i) => i >= 0) })).filter((x) => x.steps.length);
     if (here.length) {
       el.append(h('h3', { class: 'sec-title' }, `👣 ${L('Lives that pass through here', 'Vidas que pasan por aquí')}`),

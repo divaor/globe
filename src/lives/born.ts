@@ -2,6 +2,8 @@
 // built by scripts/data/born/build-born.mjs). The map filter, the travel guide's People tab and a person's card
 // use it. A person with a life in Lives on the map opens it; everyone else gets a short card and their Wikipedia
 // article. Living people appear by birthplace only.
+// Two files: people.json, the world's best known and everyone the app features, comes first; more.json,
+// each country's own best known, follows in the background and joins the same lists (onBornMore says when).
 import { loadJSON } from '../data/store';
 import { lang, L, tx, nm as nameIn } from '../app/i18n';
 import type { InfoRow } from '../layers/types';
@@ -17,6 +19,10 @@ export interface BornData {
   fields: string[]; people: Person[]; places: BornPlace[];
   /** The people born in each place, and in each travel-guide city, the best known first. */
   byPlace: Map<number, Person[]>; byCity: Map<string, Person[]>; byId: Map<string, Person>;
+  /** Goes up each time people join the lists (the second file): for anything worked out from them. */
+  version: number;
+  /** The second file's people have joined. */
+  complete: boolean;
 }
 
 /** The fields, as the filter and the cards name them. */
@@ -37,20 +43,60 @@ export const nm = (x: { name: [string, string] }) => (nameIn(x.name[0], x.name[1
 /** "Brazilian footballer" ("futbolista brasileño"), or the field when Wikidata says nothing. */
 export const what = (p: Person) => { const w = nameIn(p.what[0], p.what[1]); return w ? w.charAt(0).toUpperCase() + w.slice(1) : fieldName(p.field); };
 
+/** A file as built: people.json or more.json (each with places and guide cities of its own). */
+interface BornFile { fields: string[]; cities: string[]; places: [string, string | 0, number, number, number][]; people: [string, string, string | 0, number, number | null, number, number, number, number, string | 0, string | 0][] }
+
+/** Adds a file's people to the lists: its places join those already there with the same name and point. */
+function join(born: BornData, d: BornFile) {
+  const key = (name: string, at: [number, number]) => `${name}@${at[0]},${at[1]}`;
+  const known = new Map(born.places.map((p) => [key(p.name[0], p.at), p]));
+  const places = d.places.map((r) => {
+    const at: [number, number] = [r[2], r[3]];
+    let pl = known.get(key(r[0], at));
+    if (!pl) { pl = { i: born.places.length, name: [r[0], r[1] || r[0]], at, city: r[4] >= 0 ? d.cities[r[4]] : null }; born.places.push(pl); known.set(key(r[0], at), pl); }
+    return pl;
+  });
+  const fresh: Person[] = d.people.filter((r) => !born.byId.has(r[0])).map((r) => ({ id: r[0], name: [r[1], r[2] || r[1]], born: r[3], died: r[4], place: places[r[5]], field: d.fields[r[6]], sl: r[7], diedAt: r[8] >= 0 ? places[r[8]] : null, what: [r[9] || '', r[10] || r[9] || ''] }));
+  // The best known first (a stable sort: the first file's order holds among equals).
+  born.people = born.people.length ? [...born.people, ...fresh].sort((a, b) => b.sl - a.sl) : fresh;
+  born.byPlace.clear(); born.byCity.clear();
+  for (const p of born.people) {
+    (born.byPlace.get(p.place.i) ?? born.byPlace.set(p.place.i, []).get(p.place.i)!).push(p);
+    if (p.place.city) (born.byCity.get(p.place.city) ?? born.byCity.set(p.place.city, []).get(p.place.city)!).push(p);
+    born.byId.set(p.id, p);
+  }
+  born.version++;
+}
+
 let data: Promise<BornData | null> | null = null;
+let all: Promise<BornData | null> | null = null;
+const joined = new Set<(d: BornData) => void>();
+/** The first file: the world's best known and everyone the app features. The second follows in the background. */
 export function loadBorn(): Promise<BornData | null> {
-  data ??= loadJSON<{ fields: string[]; cities: string[]; places: [string, string | 0, number, number, number][]; people: [string, string, string | 0, number, number | null, number, number, number, number, string | 0, string | 0][] }>('born/people.json').then((d) => {
-    const places: BornPlace[] = d.places.map((r, i) => ({ i, name: [r[0], r[1] || r[0]], at: [r[2], r[3]], city: r[4] >= 0 ? d.cities[r[4]] : null }));
-    const people: Person[] = d.people.map((r) => ({ id: r[0], name: [r[1], r[2] || r[1]], born: r[3], died: r[4], place: places[r[5]], field: d.fields[r[6]], sl: r[7], diedAt: r[8] >= 0 ? places[r[8]] : null, what: [r[9] || '', r[10] || r[9] || ''] }));
-    const byPlace = new Map<number, Person[]>(), byCity = new Map<string, Person[]>();
-    for (const p of people) {
-      (byPlace.get(p.place.i) ?? byPlace.set(p.place.i, []).get(p.place.i)!).push(p);
-      if (p.place.city) (byCity.get(p.place.city) ?? byCity.set(p.place.city, []).get(p.place.city)!).push(p);
-    }
-    return { fields: d.fields, people, places, byPlace, byCity, byId: new Map(people.map((p) => [p.id, p])) };
+  data ??= loadJSON<BornFile>('born/people.json').then((d) => {
+    const born: BornData = { fields: d.fields, people: [], places: [], byPlace: new Map(), byCity: new Map(), byId: new Map(), version: 0, complete: false };
+    join(born, d);
+    setTimeout(() => void loadBornAll(), 0);
+    return born;
   }).catch(() => { data = null; return null; });
   return data;
 }
+/** Everyone: the first file, then the second (each country's own best known) joined to the same lists. */
+export function loadBornAll(): Promise<BornData | null> {
+  all ??= loadBorn().then(async (born) => {
+    if (!born) { all = null; return null; }
+    if (born.complete) return born;
+    try {
+      join(born, await loadJSON<BornFile>('born/more.json'));
+      born.complete = true;
+      for (const f of joined) f(born);
+    } catch { all = null; /* asked again next time; the first file's people stay */ }
+    return born;
+  });
+  return all;
+}
+/** Called once the second file's people have joined the lists. */
+export function onBornMore(f: (d: BornData) => void) { joined.add(f); }
 
 /** "1756–1791", "born 1985", "c. 470–399 BC". */
 export function years(p: Person): string {

@@ -1,6 +1,7 @@
-// Who was born here? (v0.28.0): the birthplaces of about 12,000 of the world's best-known people, from Wikidata
-// (public/data/born). A dot is a place, coloured by its best-known person's field and bigger the more people were
-// born there; a tap lists them. By field, by when they were born, and by birth or death.
+// Who was born here? (v0.28.0): the birthplaces of about 35,000 well-known people, from Wikidata (public/data/born):
+// the world's best known and everyone the app features first, each country's own after them, in the background.
+// A dot is a place, coloured by its best-known person's field and bigger the more people were born there; a tap
+// lists them. By field, by when they were born, and by birth or death.
 // A person with a life in Lives on the map opens it; living people appear by birthplace only.
 import { lang, fmtCompact, L, dataLang, lower } from '../../app/i18n';
 import { h } from '../../ui/dom';
@@ -9,7 +10,7 @@ import type { App } from '../../app/app';
 import type { Shell } from '../../ui/shell';
 import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, RenderCtx } from '../types';
 import { crowdOf, type Placed } from '../crowd';
-import { loadBorn, loadLives, personCard, FIELDS, fieldName, nm, years, what, type BornData, type BornPlace, type Person, type PersonLinks } from '../../lives/born';
+import { loadBorn, loadBornAll, onBornMore, loadLives, personCard, FIELDS, fieldName, nm, years, what, type BornData, type BornPlace, type Person, type PersonLinks } from '../../lives/born';
 import { creditEl } from '../../artguide/cards';
 import { regionAt, regionType, regionName } from '../../engine/regions';
 
@@ -41,7 +42,8 @@ let memo: { key: string; places: Map<BornPlace, Person[]>; dots: [BornPlace, Per
 /** The places on the map with the filter's options: each with its people, the best known first. */
 function shown(inst: LayerInstance): Map<BornPlace, Person[]> {
   const field = String(inst.options.field ?? 'all'), per = PERIODS.find((p) => p[0] === inst.options.period) ?? PERIODS[0], died = inst.options.show === 'died';
-  const key = `${field}|${per[0]}|${died}`;
+  // (The second file's people join after the first's: a new version of the lists.)
+  const key = `${field}|${per[0]}|${died}|${data?.version ?? 0}`;
   if (memo?.key === key) return memo.places;
   const places = new Map<BornPlace, Person[]>();
   for (const p of data?.people ?? []) {
@@ -86,7 +88,7 @@ export function peopleList(people: Person[], onPick: (p: Person) => void, max = 
 export const bornHere: LayerDef = {
   id: 'born-here', category: 'culture', icon: '👶', kind: 'overlay', stackOrder: 4,
   name: { en: 'Who was born here?', es: '¿Quién nació aquí?' },
-  desc: { en: 'Where 12,000 of the world’s best-known people were born: scientists, writers, artists, musicians, leaders and athletes. Tap a place for its people.', es: 'Dónde nacieron 12 000 de las personas más conocidas del mundo: científicos, escritores, artistas, músicos, líderes y deportistas. Toca un lugar para ver a su gente.' },
+  desc: { en: 'Where 35,000 well-known people were born, the world’s best known and each country’s own: scientists, writers, artists, musicians, leaders and athletes. Tap a place for its people.', es: 'Dónde nacieron 35 000 personas conocidas, las más conocidas del mundo y las de cada país: científicos, escritores, artistas, músicos, líderes y deportistas. Toca un lugar para ver a su gente.' },
   keywords: 'born birthplace people famous who lives biography died nacio nacimiento personas famosos quien vidas biografia murio',
   credit: 'Wikidata (CC0)',
   options: [
@@ -94,7 +96,7 @@ export const bornHere: LayerDef = {
     { id: 'period', label: { en: 'Born', es: 'Nacidos', ctx: 'a filter: when people were born' }, type: 'select', default: 'all', choices: PERIODS.map(([value, label]) => ({ value, label })) },
     { id: 'show', label: { en: 'Show', es: 'Mostrar' }, type: 'select', default: 'born', choices: [{ value: 'born', label: { en: 'Where they were born', es: 'Dónde nacieron' } }, { value: 'died', label: { en: 'Where they died', es: 'Dónde murieron' } }] },
   ],
-  async load() { data ??= await loadBorn(); void loadLives(); },
+  async load() { data ??= await loadBorn(); void loadLives(); void loadBornAll(); },
   onOptionsChanged() { LC.requestRender(); },
   drawOverlay(rc, inst) {
     if (!data) return;
@@ -126,7 +128,7 @@ export const bornHere: LayerDef = {
     return {
       kind: 'categories', title: died ? L('Where {0} people died', 'Dónde murieron {0} personas', fmtCompact(total)) : L('Where {0} people were born', 'Dónde nacieron {0} personas', fmtCompact(total)),
       items: Object.keys(FIELDS).filter((f) => n.get(f)).map((f) => ({ color: FIELDS[f].color, label: `${FIELDS[f].icon} ${fieldName(f)} (${fmtCompact(n.get(f)!)})`, shape: 'dot' as const })),
-      note: L('A dot is a place, in the colour of its best-known person; bigger, more people. Zoom in for more places, and tap one for its people. People with articles in 48 Wikipedias or more.', 'Un punto es un lugar, del color de su persona más conocida; más grande, más personas. Acerca el mapa para ver más lugares, y toca uno para ver a su gente. Personas con artículos en 48 Wikipedias o más.'),
+      note: L('A dot is a place, in the colour of its best-known person; bigger, more people. Zoom in for more places, and tap one for its people. The world’s best known (articles in 48 Wikipedias or more), each country’s own (8 or more) and everyone the app features elsewhere.', 'Un punto es un lugar, del color de su persona más conocida; más grande, más personas. Acerca el mapa para ver más lugares, y toca uno para ver a su gente. Las más conocidas del mundo (con artículos en 48 Wikipedias o más), las de cada país (8 o más) y todas las que la app presenta en otras partes.'),
     };
   },
   tap(_lon, _lat, inst, ui: LayerTapUi) {
@@ -138,7 +140,7 @@ export const bornHere: LayerDef = {
   },
   // The search box finds the people (Rafael Nadal, "rafa nadal", "nadl") and their places, and takes you to the dot.
   searchHint: { en: 'people born there', es: 'personas nacidas allí' },
-  async searchLoad() { data ??= await loadBorn(); },
+  async searchLoad() { data ??= await loadBornAll(); },
   search(match, inst) {
     if (!data) return [];
     const died = inst.options.show === 'died';
@@ -203,5 +205,7 @@ function openPlace(best: BornPlace, people: Person[], inst: LayerInstance, ui: L
 
 export default function register(app: App, shell: Shell) {
   APP = app; SHELL = shell;
+  // Each country's own people, once they arrive: new dots, a new count in the legend.
+  onBornMore((d) => { data = d; memo = null; LC.requestRender(); LC.notify?.(); });
   app.register([bornHere]);
 }
