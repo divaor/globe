@@ -7,7 +7,7 @@
 // v0.46.0 adds the chapter before: from the Big Bang to the Earth and the Moon, drawn as a scene (cosmos.ts) with
 // the universe's own vital signs, and "Big Bang to today", the two chapters joined.
 // The parts that need no page are in logic.ts (scripts/test/deeptime.mjs).
-import { Hourglass, Clapperboard, Scale, Layers, SkipForward, SkipBack, Square, Pause, Play, Volume2, VolumeX, Orbit, Sparkles } from 'lucide';
+import { Hourglass, Clapperboard, Scale, Layers, SkipForward, SkipBack, Square, Volume2, VolumeX, Orbit, Sparkles } from 'lucide';
 import { geoCircle } from 'd3-geo';
 import { h, icon, clear } from '../ui/dom';
 import { L, Lc, tx, lang, fmtNumber, appLocale, wikiHref } from '../app/i18n';
@@ -15,14 +15,15 @@ import { TimeBar } from '../ui/timebar';
 import { loadJSON } from '../data/store';
 import { loadPaleo, unitName, PALEO_MAX_MA, type PaleoWorld, type Unit } from '../modes/paleo';
 import { wikiThumb } from '../modes/stories';
-import { speak, stopSpeaking, narrationOn, setNarrationOn, canSpeak } from '../ui/narrator';
+import { speak, stopSpeaking, narrationOn, setNarrationOn, canSpeak, holdAudio } from '../ui/narrator';
 import { recordSeen } from '../learn/progress';
 import {
   vitalsAt, survival, aliveAt, eventsAt, ago, cosmicDate, shareSince, look, crust, readingTime, EARTH_MA, BIG_BANG_MA,
   tAt, posOfT, sinceBang, maOfT, tOf, chapterFor, afterBang, scaleFactor, spaceTemp, cosmicEra, cosmicSurvival, COSMIC_ERAS, COSMOS_END,
   type DeepData, type Species, type DEvent, type Beat, type Scale as TimeScale, type Vitals, type Level, type Chapter, type CosmicEra,
+  paceClock, type PaceClock,
 } from './logic';
-import { CosmosScene } from './cosmos';
+import { CosmosScene, SCENE_MOMENTS } from './cosmos';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { LayerDef, RenderCtx, InfoRow } from '../layers/types';
@@ -174,6 +175,13 @@ export class DeepTime {
   private lastMa = this.ma;
   private player: { i: number; token: number; paused: boolean } | null = null;
   private token = 0;
+  /** Narrated (v0.46.1): the play button plays the narrated story instead of running through the years. */
+  private narrated = false;
+  private storyBtn: HTMLElement | null = null;
+  /** The play clock of the bar: quick across quiet stretches, slow where things happen. */
+  private clock: PaceClock | null = null;
+  /** Play speed (0.25× to 4×), kept between visits. */
+  private speed = (() => { try { const v = Number(localStorage.getItem('atlas-dt-speed')); return [0.25, 0.5, 1, 2, 4].includes(v) ? v : 1; } catch { return 1; } })();
   private protos: { lon: number; lat: number; r: number; jag: number[] }[] = [];
   /** Hooks main.ts sets: leave whatever mode is on. */
   leaveMode: () => Promise<void> = async () => {};
@@ -204,6 +212,7 @@ export class DeepTime {
     return {
       active: this.active, ma: this.ma, t: this.t, chapter: this.chapter, scale: this.scale, plain: this.plain, loaded: !!this.data, species: this.species.length, events: this.data?.events.length ?? 0,
       hits: this.hits.length, anims: this.anims.length, playing: !!this.player && !this.player.paused, beat: this.player?.i ?? null, beats: this.beats().length,
+      narrated: this.narrated, barPlaying: !!this.bar?.playing, speed: this.speed, playSecs: this.clock ? Math.round(this.clock.total) : null,
       scene: !!this.scene?.visible, spots: this.scene?.spots.map((s) => s.id) ?? [],
     };
   }
@@ -308,6 +317,8 @@ export class DeepTime {
     const tickMa = ch === 'cosmos' ? (sc === 'story' ? [13000, 10000, 4600] : [12000, 10000, 8000, 6000]) : ch === 'all' ? (sc === 'story' ? [EARTH_MA, 1000, 252, 66, 0] : [10000, 5000, 0]) : sc === 'story' ? [4000, 2500, 1000, 541, 252, 66, 0] : [4000, 3000, 2000, 1000, 0];
     const ticks = tickMa.map((m) => ({ at: pos(m), label: ga(m) }));
     if (ch !== 'earth') ticks.unshift({ at: 0, label: L('Big Bang', 'Big Bang') });
+    this.clock = this.makeClock();
+    const clock = this.clock;
     this.bar = new TimeBar({
       title: L('Deep time', 'El tiempo profundo'),
       format: (f) => whenText(tAt(f, this.scale, this.chapter)),
@@ -319,7 +330,23 @@ export class DeepTime {
       },
       caption: (f) => this.captionAt(tAt(f, this.scale, this.chapter)),
       bands, ticks, start: 0, end: 1, pos: posOfT(this.t, sc, ch),
-      rate: 0.012,
+      // Playing runs on the play clock: a second of clock a second (times the speed).
+      rate: 1,
+      warp: { to: (p) => clock.to(p), from: (c) => clock.from(c) },
+      speeds: [0.25, 0.5, 1, 2, 4],
+      speed: this.speed,
+      onSpeed: (v) => { this.speed = v; try { localStorage.setItem('atlas-dt-speed', String(v)); } catch { /* not kept */ } },
+      // One play button: with Narrated on, it plays (and pauses) the narrated story.
+      onPlay: () => {
+        if (!this.narrated) return false;
+        if (narrationOn()) holdAudio(true);
+        if (this.player) this.pauseStory(!this.player.paused);
+        else void this.playStory();
+        return true;
+      },
+      busy: () => !!this.player && !this.player.paused,
+      // Moving the bar by hand ends the story there; play goes on from the new moment.
+      onScrub: () => { if (this.player) this.stopStory(); },
       onPos: (f) => this.onTime(tAt(f, this.scale, this.chapter)),
       onExit: () => void this.exit(),
       onList: () => this.openNow(),
@@ -329,8 +356,9 @@ export class DeepTime {
     const tools = this.bar.el.querySelector('.tb-tools');
     const chapter = h('button', { type: 'button', class: 'icon-btn', 'data-deeptime': 'chapter', title: L('Chapter: {0}', 'Capítulo: {0}', CHAPTER[ch]()), 'aria-label': L('Chapter: {0}', 'Capítulo: {0}', CHAPTER[ch]()) }, icon(ch === 'earth' ? Orbit : Sparkles, 18));
     chapter.addEventListener('click', () => this.openChapters());
-    const story = h('button', { type: 'button', class: 'pill sm', 'data-deeptime': 'story', title: L('Play the story, narrated', 'Reproducir la historia narrada') }, icon(Clapperboard, 16), h('span', { class: 'tb-list-label' }, L('Play the story', 'Reproducir la historia')));
-    story.addEventListener('click', () => void this.playStory());
+    const story = h('button', { type: 'button', class: `pill sm${this.narrated ? ' on' : ''}`, 'data-deeptime': 'story', 'aria-pressed': String(this.narrated), title: L('Narrated: the play button tells the story', 'Narrado: el botón de reproducir cuenta la historia') }, icon(Clapperboard, 16), h('span', { class: 'tb-list-label' }, L('Narrated', 'Narrado')));
+    story.addEventListener('click', () => this.setNarrated(!this.narrated));
+    this.storyBtn = story;
     const scale = h('button', { type: 'button', class: 'icon-btn', 'data-deeptime': 'scale', title: this.scale === 'story' ? L('True scale: every million years the same width', 'Escala real: cada millón de años del mismo ancho') : L('Story scale: more room for the busy recent past', 'Escala de historia: más espacio para el pasado reciente') }, icon(Scale, 18));
     scale.addEventListener('click', () => { this.scale = this.scale === 'story' ? 'true' : 'story'; this.buildBar(); this.shell.toast(this.scale === 'true' ? L('True scale: see how little of the time is ours', 'Escala real: mira qué poco del tiempo es nuestro') : L('Story scale', 'Escala de historia'), 2500); });
     const plain = h('button', { type: 'button', class: `icon-btn${this.plain ? ' on' : ''}`, 'data-deeptime': 'plain', title: L('Continents only', 'Solo continentes'), 'aria-pressed': String(this.plain), hidden: ch === 'cosmos' }, icon(Layers, 18));
@@ -339,6 +367,49 @@ export class DeepTime {
     this.bar.el.classList.add('dt-bar');
     this.app.root.append(this.bar.el);
     requestAnimationFrame(() => this.fitBar());
+  }
+
+  /**
+   * Narrated on or off (the clapperboard). Turning it on tells the story from here; turning it off while the story
+   * plays goes on through the years from where it was.
+   */
+  setNarrated(on: boolean) {
+    this.narrated = on;
+    if (this.storyBtn) { this.storyBtn.classList.toggle('on', on); this.storyBtn.setAttribute('aria-pressed', String(on)); }
+    if (on) {
+      if (this.bar?.playing) this.bar.toggle();
+      if (narrationOn()) holdAudio(true);
+      void this.playStory();
+    } else {
+      const was = !!this.player && !this.player.paused;
+      if (this.player) this.stopStory();
+      if (was && this.bar && !this.bar.playing) this.bar.toggle();
+    }
+    this.shell.toast(on ? L('Narrated: the play button tells the story', 'Narrado: el botón de reproducir cuenta la historia') : L('Narration off: play runs through the years', 'Narración apagada: reproducir recorre los años'), 2500);
+    this.bar?.refresh();
+  }
+
+  private pauseStory(paused: boolean) {
+    if (!this.player) return;
+    this.player.paused = paused;
+    if (paused) stopSpeaking();
+    this.bar?.refresh();
+  }
+
+  /**
+   * The play clock (v0.46.1): quiet stretches go by quickly; every event gets about two seconds (firsts, impacts
+   * and mass extinctions a little more), and the cosmos scene's moments (the fog clearing, the zoom into the Milky Way, the
+   * Moon gathering…) get their time however short they are on the bar.
+   */
+  private makeClock(): PaceClock {
+    const sc = this.scale, ch = this.chapter;
+    const lo = ch === 'earth' ? sinceBang(EARTH_MA) : 0, hi = ch === 'cosmos' ? sinceBang(COSMOS_END) : sinceBang(0);
+    const inside = (t: number) => t >= lo - 1 && t <= hi + 1;
+    const marks = (this.data?.events ?? []).map((e) => ({ t: tOf(e), e })).filter((x) => inside(x.t))
+      .map(({ t, e }) => ({ at: posOfT(t, sc, ch), dur: e.first || e.kind === 'impact' || e.kind === 'extinction' ? 2.6 : 1.8 }));
+    const spans = ch === 'earth' ? [] : SCENE_MOMENTS.filter((m) => inside(m.from) || inside(m.to))
+      .map((m) => ({ from: posOfT(Math.max(lo, m.from), sc, ch), to: posOfT(Math.min(hi, m.to), sc, ch), dur: m.dur }));
+    return paceClock(marks, spans);
   }
 
   /** The chapters, to switch between. */
@@ -961,6 +1032,7 @@ export class DeepTime {
     this.player = { i, token: my, paused: false };
     document.documentElement.classList.add('dt-playing');
     if (this.bar?.playing) this.bar.toggle();
+    this.bar?.refresh();
     this.shell.card.hide();
     this.buildCaption();
     while (this.player && this.player.token === my && this.player.i < beats.length) {
@@ -969,10 +1041,15 @@ export class DeepTime {
       if (this.player?.token !== my) return;
       this.showBeat(b);
       const text = tx(b.text);
-      if (narrationOn()) await speak(text, { lang: lang() });
-      else await this.wait(readingTime(text) * 1000, my);
-      while (this.player?.token === my && this.player.paused) await this.wait(250, my);
-      if (this.player?.token !== my) return;
+      // Read the moment; paused in the middle, it is read again from its start when play goes on.
+      for (;;) {
+        const read = narrationOn() ? await speak(text, { lang: lang(), whole: true }) : (await this.wait(readingTime(text) * 1000, my), true);
+        if (this.player?.token !== my) return;
+        if (!this.player.paused) break;
+        while (this.player?.token === my && this.player.paused) await this.wait(250, my);
+        if (this.player?.token !== my) return;
+        if (read) break;
+      }
       this.player.i++;
     }
     if (this.player?.token === my) { this.stopStory(); recordSeen('deeptime', this.chapter === 'earth' ? 'story:life' : `story:${this.chapter}`); }
@@ -986,17 +1063,25 @@ export class DeepTime {
     });
   }
 
-  /** Moves the bar to `t` smoothly: faster across quiet stretches (seconds by the story scale's distance). */
+  /**
+   * Moves the bar to `t` smoothly on the play clock: quickly across quiet stretches, slowly through events and the
+   * scene's moments (the Moon gathering); a glide takes 1.5 to 14 seconds at 1×, divided by the speed.
+   */
   private async glide(t: number, my: number) {
-    const ch = this.chapter;
-    const p0 = posOfT(this.t, 'story', ch), p1 = posOfT(t, 'story', ch);
-    const secs = Math.max(1.2, Math.min(8, Math.abs(p1 - p0) * 60));
-    const t0 = performance.now();
+    const ch = this.chapter, sc = this.scale;
+    const clock = this.clock ?? (this.clock = this.makeClock());
+    const c0 = clock.to(posOfT(this.t, sc, ch)), c1 = clock.to(posOfT(t, sc, ch));
+    const secs = Math.max(1.5, Math.min(14, Math.abs(c1 - c0)));
+    let done = 0, last = performance.now();
     while (this.player?.token === my) {
-      if (this.player.paused) { await this.wait(200, my); continue; }
-      const f = Math.min(1, (performance.now() - t0) / (secs * 1000));
+      const now = performance.now();
+      const dt = Math.min(100, now - last) / 1000;
+      last = now;
+      if (this.player.paused) { await this.wait(200, my); last = performance.now(); continue; }
+      done += dt * this.speed;
+      const f = Math.min(1, done / secs);
       const e = f < 0.5 ? 2 * f * f : 1 - (-2 * f + 2) ** 2 / 2;
-      this.setT(f >= 1 ? t : tAt(p0 + (p1 - p0) * e, 'story', ch));
+      this.setT(f >= 1 ? t : tAt(clock.from(c0 + (c1 - c0) * e), sc, ch));
       if (f >= 1) return;
       await new Promise((r) => requestAnimationFrame(r));
     }
@@ -1023,24 +1108,17 @@ export class DeepTime {
 
   private buildCaption() {
     this.caption?.remove();
-    const pause = h('button', { type: 'button', class: 'icon-btn', 'data-deeptime': 'pause', 'aria-label': L('Pause', 'Pausa') }, icon(Pause, 18));
     const prev = h('button', { type: 'button', class: 'icon-btn', 'aria-label': L('Back', 'Volver') }, icon(SkipBack, 18));
     const next = h('button', { type: 'button', class: 'icon-btn', 'data-deeptime': 'next', 'aria-label': L('Next', 'Siguiente') }, icon(SkipForward, 18));
     const stop = h('button', { type: 'button', class: 'icon-btn', 'data-deeptime': 'stop', 'aria-label': L('Stop', 'Detener') }, icon(Square, 16));
     const voice = canSpeak() ? h('button', { type: 'button', class: 'icon-btn', 'aria-label': L('Read aloud', 'Leer en voz alta') }, icon(narrationOn() ? Volume2 : VolumeX, 18)) : null;
-    pause.addEventListener('click', () => {
-      if (!this.player) return;
-      this.player.paused = !this.player.paused;
-      if (this.player.paused) stopSpeaking();
-      clear(pause); pause.append(icon(this.player.paused ? Play : Pause, 18));
-    });
     next.addEventListener('click', () => { if (this.player) void this.playStory(Math.min(this.beats().length - 1, this.player.i + 1)); });
     prev.addEventListener('click', () => { if (this.player) void this.playStory(Math.max(0, this.player.i - 1)); });
     stop.addEventListener('click', () => this.stopStory());
-    voice?.addEventListener('click', () => { setNarrationOn(!narrationOn()); clear(voice); voice.append(icon(narrationOn() ? Volume2 : VolumeX, 18)); });
+    voice?.addEventListener('click', () => { setNarrationOn(!narrationOn()); holdAudio(narrationOn()); clear(voice); voice.append(icon(narrationOn() ? Volume2 : VolumeX, 18)); });
     this.caption = h('div', { class: 'dt-caption glass', 'data-deeptime': 'caption' },
       h('div', { class: 'dt-cap-text', 'aria-live': 'polite' }, ''),
-      h('div', { class: 'dt-cap-tools' }, h('span', { class: 'dt-cap-n muted small' }, ''), prev, pause, next, voice, stop));
+      h('div', { class: 'dt-cap-tools' }, h('span', { class: 'dt-cap-n muted small' }, ''), prev, next, voice, stop));
     this.app.root.append(this.caption);
     this.fitBar();
   }
@@ -1050,7 +1128,8 @@ export class DeepTime {
     this.player = null;
     if (this.scene) this.scene.focus = null;
     stopSpeaking();
-    if (remove) { this.caption?.remove(); this.caption = null; document.documentElement.classList.remove('dt-playing'); }
+    if (remove) { holdAudio(false); this.caption?.remove(); this.caption = null; document.documentElement.classList.remove('dt-playing'); }
+    this.bar?.refresh();
   }
 
   /** The search: past species and events, each opening Deep time at its time. */

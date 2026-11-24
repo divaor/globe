@@ -127,6 +127,37 @@ if (fs.existsSync(path.join(dir, 'deeptime.json'))) {
   for (const ma of [500, 300, 150, 50, 1]) check(G.aliveAt(S, ma).length >= 8, `${G.aliveAt(S, ma).length} species alive ${ma} million years ago`);
   check(D.events.some((e) => e.id.includes('chicxulub') && e.at), 'the asteroid that ended the dinosaurs is on the map');
   check(D.beats.length >= 40, `${D.beats.length} narrated moments`);
+
+  // The pace of play (v0.46.1): the same clock as the app's (events and the cosmos scene's moments), per chapter.
+  const cb = await rolldown({ input: path.join(ROOT, 'src/deeptime/cosmos.ts'), platform: 'neutral', logLevel: 'silent', external: [/lucide/] });
+  const C = await import(`data:text/javascript;base64,${Buffer.from((await cb.generate({ format: 'esm' })).output[0].code).toString('base64')}`);
+  const tOf = (e) => e.t ?? G.sinceBang(e.ma);
+  const clockFor = (ch, sc) => {
+    const lo = ch === 'earth' ? G.sinceBang(G.EARTH_MA) : 0, hi = ch === 'cosmos' ? G.sinceBang(G.COSMOS_END) : G.sinceBang(0);
+    const inside = (t) => t >= lo - 1 && t <= hi + 1;
+    const marks = D.events.filter((e) => inside(tOf(e))).map((e) => ({ at: G.posOfT(tOf(e), sc, ch), dur: e.first || e.kind === 'impact' || e.kind === 'extinction' ? 2.6 : 1.8 }));
+    const spans = ch === 'earth' ? [] : C.SCENE_MOMENTS.filter((m) => inside(m.from) || inside(m.to)).map((m) => ({ from: G.posOfT(Math.max(lo, m.from), sc, ch), to: G.posOfT(Math.min(hi, m.to), sc, ch), dur: m.dur }));
+    return G.paceClock(marks, spans);
+  };
+  const secs = (k, ch, sc, ma0, ma1) => k.to(G.posOfT(G.sinceBang(ma1), sc, ch)) - k.to(G.posOfT(G.sinceBang(ma0), sc, ch));
+  const old = (ch, sc, ma0, ma1) => (G.posOfT(G.sinceBang(ma1), sc, ch) - G.posOfT(G.sinceBang(ma0), sc, ch)) / 0.012;
+  for (const ch of ['cosmos', 'earth', 'all']) for (const sc of ['story', 'true']) {
+    const k = clockFor(ch, sc);
+    let mono = true, back = 0;
+    for (let i = 1; i <= 400; i++) { const p = i / 400; if (k.to(p) <= k.to(p - 1 / 400)) mono = false; back = Math.max(back, Math.abs(k.from(k.to(p)) - p)); }
+    check(mono && back < 1e-9 && k.total > 60 && k.total < 300, `${ch}, ${sc} scale: ${Math.round(k.total)} s of play at 1×, every moment in order`);
+  }
+  for (const ch of ['cosmos', 'all']) {
+    const k = clockFor(ch, 'story');
+    const moon = secs(k, ch, 'story', 4510, 4500);
+    check(moon >= 5, `${ch}: Theia's blow and the Moon gathering take ${moon.toFixed(1)} s (they flashed by in ${old(ch, 'story', 4510, 4500).toFixed(1)} s)`);
+  }
+  {
+    const k = clockFor('earth', 'story');
+    const quiet = secs(k, 'earth', 'story', 1600, 1320), was = old('earth', 'story', 1600, 1320);
+    const blast = secs(k, 'earth', 'story', 66.5, 65.5), wasB = old('earth', 'story', 66.5, 65.5);
+    check(quiet < was * 0.7 && blast > wasB * 1.5, `the play goes quicker through a quiet stretch of the "boring billion", 1,600 to 1,320 million years ago (${quiet.toFixed(1)} s, was ${was.toFixed(1)}) and slower at the asteroid (${blast.toFixed(1)} s, was ${wasB.toFixed(1)})`);
+  }
 } else console.log('(public/data/deeptime is not built yet: the real-data checks wait)');
 
 if (failed) { console.error(`${failed} failed`); process.exit(1); }

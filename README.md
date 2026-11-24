@@ -137,6 +137,11 @@ A backup made as Atlas Globe still opens.
   the Planck satellite's 2018 results. Chapters: From the Big Bang, The Earth, or Big Bang to today, both joined in
   one story; the true scale shows the Earth forming two-thirds of the way along. #deeptime=t380000 links go to a
   time after the Big Bang.
+  **One play button (v0.46.1):** the clapperboard turns Narrated on, and the play button then tells the story
+  (and pauses it); with Narrated off it runs through the years. Both go at the pace of what happens: quickly across
+  quiet stretches and slowly through events and the scene's moments (the fog clearing, the flight into the Milky
+  Way, Theia and the Moon gathering, which used to flash by), at 0.25× to 4× (the speed is on phones too). The
+  narration reads each moment in one go, without a pause or a cut word at every full stop.
 - **Legacies of the past (Explore → Legacies of the past, v0.44.0):** what past civilizations gave the world that we
   still use, and how connected that makes us: 20 civilizations (the Sumerians, Babylonians and Assyrians,
   Egyptians, Phoenicians, Greeks, Romans, Persians, the Islamic Golden Age, Ancient India and China, the Maya, Mexica,

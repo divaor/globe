@@ -41,6 +41,23 @@ const T = {
   closeUp: sinceBang(4541), theiaFrom: sinceBang(4530), impact: sinceBang(4510), moon: sinceBang(4506), end: sinceBang(4500),
 };
 
+/**
+ * Stretches of the scene that need time on screen however little of the bar they take (years after the Big Bang;
+ * seconds at 1×): playing slows down for them (v0.46.1). The Moon gathers in 0.45% of the cosmos bar.
+ */
+export const SCENE_MOMENTS: { from: number; to: number; dur: number }[] = [
+  { from: 1e-40, to: 1e-35, dur: 3 }, // inflation: the fog bursts out of the point
+  { from: 10 ** 5.4, to: 10 ** 5.62, dur: 4 }, // the fog clears, the oldest light
+  { from: T.starsOn, to: T.starsAll, dur: 4 }, // the first stars light up along the web
+  { from: T.galaxiesOn, to: T.spirals, dur: 6 }, // galaxies grow into spirals
+  { from: T.zoomFrom, to: T.zoomTo, dur: 7 }, // into the Milky Way (Gaia-Enceladus falls in)
+  { from: T.nebulaFrom, to: T.collapse, dur: 6 }, // the Sun's cloud collapses
+  { from: T.collapse, to: T.sun + 3e5, dur: 3 }, // the Sun lights up
+  { from: T.sun + 3e5, to: T.discEnd, dur: 6 }, // the disc: the first solids, small worlds, the planets
+  { from: T.theiaFrom, to: T.impact + 5e5, dur: 5 }, // Theia closes in and hits
+  { from: T.impact + 5e5, to: T.end, dur: 6 }, // the ring of debris and the Moon gathering
+];
+
 /** The planets growing in the disc: distance (share of the disc's radius), size, colour, when they appear (Ma). */
 const PLANETS: { id: string; a: number; r: number; c: string; from: number; ring?: true }[] = [
   { id: 'mercury', a: 0.13, r: 1.6, c: '#b0a79d', from: 4556 },

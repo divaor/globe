@@ -1615,6 +1615,8 @@ html.dt-cosmos .brand-name { color: #f2f5fa; text-shadow: 0 1px 6px rgba(0,0,0,.
   html.mode-deeptime .country-card { bottom: calc(var(--dt-bar-h, 230px) + 8px); max-height: calc(100dvh - var(--dt-bar-h, 230px) - 150px); z-index: 4; }
   html.mode-deeptime:has(.country-card:not([hidden])) .dt-vitals, html.dt-playing .dt-vitals { display: none; }
   .timebar.dt-bar .tb-top { justify-content: space-between; gap: 4px; }
+  /* Deep time keeps its speed on a phone (v0.46.1): slow it down to watch the Moon gather. */
+  .timebar.dt-bar .tb-speed { display: inline-block; height: 32px; padding: 0 4px; font-size: var(--fs-sm); min-width: 52px; }
   .dt-cap-text { font-size: var(--fs-sm); }
 }
 .dt-sources { margin-top: var(--sp-2); font-size: var(--fs-sm); color: var(--muted); }
