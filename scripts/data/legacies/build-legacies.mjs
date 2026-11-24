@@ -275,10 +275,18 @@ function checkLegacy(l, where, civ) {
     for (const [i, w] of l.words.entries()) {
       const ww = `${where}.words[${i}]`;
       if (!w || typeof w !== 'object') throw new Error(`${ww}: { "en"?, "es"?, "from", "means"?, "type"? }`);
-      known(w, ['en', 'es', 'from', 'means', 'type'], ww);
+      known(w, ['en', 'es', 'from', 'means', 'type', 'phrase'], ww);
       if (w.type != null && !WORD_TYPES.includes(w.type)) throw new Error(`${ww}.type: one of ${WORD_TYPES.join(', ')} (leave it out for a word)`);
+      if (w.phrase != null && w.phrase !== true) throw new Error(`${ww}.phrase: true, or leave it out`);
       if (!w.en && !w.es) throw new Error(`${ww}: the word today in English ("en"), Spanish ("es") or both`);
       for (const k of ['en', 'es']) if (w[k] != null && (typeof w[k] !== 'string' || !w[k].trim() || w[k].length > 40)) throw new Error(`${ww}.${k}: a word or short phrase (at most 40 characters)`);
+      // One word per entry: two words ("cacao, cocoa", "a.m. / p.m.") are two entries, and what it means goes in
+      // "means", not in brackets. A saying with commas in it ("veni, vidi, vici") says "phrase": true.
+      for (const k of ['en', 'es']) {
+        if (w[k] == null) continue;
+        if (/[/()]/.test(w[k])) throw new Error(`${ww}.${k} "${w[k]}": one word per entry (two words are two entries; what it means goes in "means")`);
+        if (w[k].includes(',') && !w.phrase) throw new Error(`${ww}.${k} "${w[k]}": one word per entry; a saying with commas in it says "phrase": true`);
+      }
       if (typeof w.from !== 'string' || !w.from.trim() || w.from.length > 90) throw new Error(`${ww}.from: the word it comes from, with its language ("tomatl (Nahuatl)"), at most 90 characters`);
       text(w.means, `${ww}.means`, { required: false, max: 120 });
     }

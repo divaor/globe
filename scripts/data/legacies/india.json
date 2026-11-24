@@ -555,9 +555,10 @@
       "words": [
         { "en": "India", "es": "India", "type": "place", "from": "Sindhu (Sanskrit), via Persian Hindu and Greek Indos", "means": { "en": "river; the Indus", "es": "río; el Indo" } },
         { "en": "Indus", "es": "Indo", "type": "place", "from": "Sindhu (Sanskrit), via Persian and Greek", "means": { "en": "river", "es": "río" } },
-        { "en": "Hindu, Hindi", "es": "hindú, hindi", "from": "Hindu (Persian), from Sanskrit Sindhu", "means": { "en": "of the Indus land", "es": "de la tierra del Indo" } },
+        { "en": "Hindu", "es": "hindú", "from": "Hindu (Persian), from Sanskrit Sindhu", "means": { "en": "of the Indus land", "es": "de la tierra del Indo" } },
+        { "en": "Hindi", "es": "hindi", "from": "Hindī (Persian), from Sanskrit Sindhu", "means": { "en": "of the Indus land", "es": "de la tierra del Indo" } },
         { "en": "West Indies", "es": "Indias Occidentales", "type": "place", "from": "India, by Columbus's mistake of 1492" },
-        { "en": "Indian (for Native Americans)", "es": "indio", "from": "India, by Columbus's mistake of 1492" },
+        { "en": "Indian", "es": "indio", "from": "India, by Columbus's mistake of 1492", "means": { "en": "the name Columbus gave the peoples of the Americas", "es": "el nombre que Colón dio a los pueblos de América" } },
         { "en": "Indiana", "type": "place", "from": "Indian + Latin -a", "means": { "en": "land of the Indians", "es": "tierra de los indios" } },
         { "en": "Indonesia", "es": "Indonesia", "type": "place", "from": "Indos + nēsos (Greek), coined in 1850", "means": { "en": "Indian islands", "es": "islas indias" } },
         { "en": "Himalaya", "es": "Himalaya", "type": "place", "from": "himālaya (Sanskrit)", "means": { "en": "abode of snow", "es": "morada de la nieve" } },
@@ -1112,16 +1113,16 @@
       "strong": ["NPL", "IND"],
       "note": { "en": "Official in Nepal and alongside the Gregorian calendar in India; Nyepi, the Saka new year, is a holiday in Indonesia, and Thai day names are Sanskrit.", "es": "Es oficial en Nepal y se usa junto al gregoriano en la India; el Nyepi, año nuevo saka, es feriado en Indonesia, y los días en tailandés tienen nombres sánscritos." },
       "words": [
-        { "en": "Ravivar (Sunday in Hindi)", "es": "Ravivar (domingo en hindi)", "type": "calendar", "from": "Ravi (Sanskrit), the Sun" },
-        { "en": "Somvar (Monday in Hindi)", "es": "Somvar (lunes en hindi)", "type": "calendar", "from": "Soma (Sanskrit), the Moon" },
-        { "en": "Mangalvar (Tuesday in Hindi)", "es": "Mangalvar (martes en hindi)", "type": "calendar", "from": "Maṅgala (Sanskrit), Mars" },
-        { "en": "Budhvar (Wednesday in Hindi)", "es": "Budhvar (miércoles en hindi)", "type": "calendar", "from": "Budha (Sanskrit), Mercury" },
-        { "en": "Guruvar (Thursday in Hindi)", "es": "Guruvar (jueves en hindi)", "type": "calendar", "from": "Guru (Sanskrit), Jupiter" },
-        { "en": "Shukravar (Friday in Hindi)", "es": "Shukravar (viernes en hindi)", "type": "calendar", "from": "Śukra (Sanskrit), Venus" },
-        { "en": "Shanivar (Saturday in Hindi)", "es": "Shanivar (sábado en hindi)", "type": "calendar", "from": "Śani (Sanskrit), Saturn" },
-        { "en": "Wan Chan (Monday in Thai)", "es": "Wan Chan (lunes en tailandés)", "type": "calendar", "from": "Candra (Sanskrit), the Moon" },
-        { "en": "Mesayon (April in Thai)", "es": "Mesayon (abril en tailandés)", "type": "calendar", "from": "Meṣa (Sanskrit), Aries, the ram" },
-        { "en": "Chaitra (first month, Indian calendar)", "es": "Chaitra (primer mes, calendario indio)", "type": "calendar", "from": "Citrā (Sanskrit), the star Spica" }
+        { "en": "Ravivar", "es": "Ravivar", "type": "calendar", "from": "Ravi (Sanskrit), the Sun", "means": { "en": "Sunday in Hindi", "es": "domingo en hindi" } },
+        { "en": "Somvar", "es": "Somvar", "type": "calendar", "from": "Soma (Sanskrit), the Moon", "means": { "en": "Monday in Hindi", "es": "lunes en hindi" } },
+        { "en": "Mangalvar", "es": "Mangalvar", "type": "calendar", "from": "Maṅgala (Sanskrit), Mars", "means": { "en": "Tuesday in Hindi", "es": "martes en hindi" } },
+        { "en": "Budhvar", "es": "Budhvar", "type": "calendar", "from": "Budha (Sanskrit), Mercury", "means": { "en": "Wednesday in Hindi", "es": "miércoles en hindi" } },
+        { "en": "Guruvar", "es": "Guruvar", "type": "calendar", "from": "Guru (Sanskrit), Jupiter", "means": { "en": "Thursday in Hindi", "es": "jueves en hindi" } },
+        { "en": "Shukravar", "es": "Shukravar", "type": "calendar", "from": "Śukra (Sanskrit), Venus", "means": { "en": "Friday in Hindi", "es": "viernes en hindi" } },
+        { "en": "Shanivar", "es": "Shanivar", "type": "calendar", "from": "Śani (Sanskrit), Saturn", "means": { "en": "Saturday in Hindi", "es": "sábado en hindi" } },
+        { "en": "Wan Chan", "es": "Wan Chan", "type": "calendar", "from": "Candra (Sanskrit), the Moon", "means": { "en": "Monday in Thai", "es": "lunes en tailandés" } },
+        { "en": "Mesayon", "es": "Mesayon", "type": "calendar", "from": "Meṣa (Sanskrit), Aries, the ram", "means": { "en": "April in Thai", "es": "abril en tailandés" } },
+        { "en": "Chaitra", "es": "Chaitra", "type": "calendar", "from": "Citrā (Sanskrit), the star Spica", "means": { "en": "the first month of India's national calendar", "es": "el primer mes del calendario nacional de la India" } }
       ],
       "wiki": { "en": "Hindu calendar", "es": "Calendario hindú" }
     }

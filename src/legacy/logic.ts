@@ -38,6 +38,16 @@ export interface IndexWord { en?: string; es?: string; t?: WordType }
 export const wordIn = (w: { en?: string; es?: string }, lang: string) => (lang === 'es' ? w.es ?? w.en : w.en ?? w.es) ?? '';
 
 /**
+ * A word as it reads inside a sentence or a list (v0.44.1): a saying with commas in it ("veni, vidi, vici") in the
+ * language's quotation marks, so the list does not read it as three words; anything else as it is.
+ */
+export function inText(w: string, lang: string): string {
+  if (!w.includes(',')) return w;
+  const [a, b] = ({ es: ['«', '»'], fr: ['« ', ' »'], de: ['„', '“'] } as Record<string, [string, string]>)[lang] ?? ['“', '”'];
+  return `${a}${w}${b}`;
+}
+
+/**
  * Words and names a civilization gave, by kind, each once (as the reader says it), with the legacy it is in: for the
  * top of its page ("Words like paper, ebony and oasis; names like Susan").
  */

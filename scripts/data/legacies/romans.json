@@ -971,12 +971,21 @@
           }
         },
         {
-          "en": "a.m. / p.m.",
-          "es": "a. m. / p. m.",
-          "from": "ante meridiem / post meridiem (Latin)",
+          "en": "a.m.",
+          "es": "a. m.",
+          "from": "ante meridiem (Latin)",
           "means": {
-            "en": "before / after midday",
-            "es": "antes / después del mediodía"
+            "en": "before midday",
+            "es": "antes del mediodía"
+          }
+        },
+        {
+          "en": "p.m.",
+          "es": "p. m.",
+          "from": "post meridiem (Latin)",
+          "means": {
+            "en": "after midday",
+            "es": "después del mediodía"
           }
         },
         {
@@ -1081,7 +1090,8 @@
           "means": {
             "en": "I came, I saw, I conquered",
             "es": "llegué, vi, vencí"
-          }
+          },
+          "phrase": true
         },
         {
           "en": "mens sana in corpore sano",

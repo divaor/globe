@@ -3,7 +3,8 @@
 // not everywhere, or everywhere), the shades of a civilization's map, the search, and "Who gave us this?" (four
 // different civilizations, one right, nothing debated or shared by two civilizations, the same questions from the
 // same seed). Then the real data: every civilization's homeland and legacies, every legacy used somewhere, the
-// five the reader named first with 30 or more, Mexico borrowing from the Mexica, Peru from the Incas.
+// five the reader named first with 30 or more, Mexico borrowing from the Mexica, Peru from the Incas, and one word
+// per entry (v0.44.1).
 // Usage: node scripts/test/legacy.mjs
 import path from 'node:path';
 import fs from 'node:fs';
@@ -71,6 +72,8 @@ check(G.findLegacies('pc', mini, score('pc')).some((x) => x.b.id === 'c-word'), 
 const byType = G.wordsByType([{ id: 'x', words: [{ en: 'paper', es: 'papel', from: 'papyros' }, { en: 'Susan', es: 'Susana', from: 'sšn', type: 'name' }] }, { id: 'y', words: [{ en: 'paper', es: 'papel', from: 'papyros' }, { es: 'adobe', en: 'adobe', from: 'ḏbt' }] }], 'es');
 check(JSON.stringify([...byType].map(([t, l]) => [t, l.map((x) => x.w)])) === JSON.stringify([['word', ['papel', 'adobe']], ['name', ['Susana']]]), 'words and names by kind, once each, in Spanish');
 check(G.wordIn({ es: 'cacahuate' }, 'en') === 'cacahuate' && G.wordIn({ en: 'tomato', es: 'tomate' }, 'fr') === 'tomato', 'a word missing in a language falls back to the other');
+check(G.inText('veni, vidi, vici', 'es') === '«veni, vidi, vici»' && G.inText('veni, vidi, vici', 'en') === '“veni, vidi, vici”' && G.inText('cacao', 'es') === 'cacao',
+  'a saying with commas reads in quotation marks inside a sentence; a word reads as it is');
 
 // Who gave us this?
 const qs = G.quizQuestions(mini, 30, G.seeded(7));
@@ -120,6 +123,14 @@ if (!fs.existsSync(path.join(dir, 'index.json'))) {
     for (const l of f.legacies) if (l.path?.some((p, i) => p.from != null && (p.from < 0 || p.from > i))) { ok = false; console.log(`  ${c.id}/${l.id}: a step's "from" is not an earlier step`); }
   }
   check(ok, 'each civilization’s file matches the index');
+  // One word per entry (v0.44.1): "cacao, cocoa" was two words in one, and read "chocolate, and cacao, cocoa".
+  const said = idx.all.flatMap((b) => (b.w ?? []).flatMap((w) => [w.en, w.es]).filter(Boolean));
+  const odd = said.filter((w) => /[/()]/.test(w));
+  check(!odd.length, `one word per entry: none with a slash or brackets${odd.length ? ` (${odd.join(', ')})` : ''}`);
+  const sayings = [...new Set(said.filter((w) => w.includes(',')))];
+  check(sayings.length <= 4, `only sayings have commas in them: ${sayings.join(' / ')}`);
+  const mexica = new Set(idx.all.filter((b) => b.c === 'mexica').flatMap((b) => (b.w ?? []).map((w) => w.en)));
+  check(mexica.has('cacao') && mexica.has('cocoa') && !mexica.has('cacao, cocoa'), 'the Mexica gave cacao and cocoa, two words');
 }
 
 if (failed) { console.error(`${failed} failed`); process.exit(1); }
