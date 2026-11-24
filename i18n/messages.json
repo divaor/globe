@@ -961,7 +961,7 @@
    "en": "A new region to fill in today",
    "es": "Una nueva región para colorear hoy",
    "where": [
-    "src/features.ts:162"
+    "src/features.ts:164"
    ]
   },
   {
@@ -2034,7 +2034,7 @@
    "en": "All of time since the Big Bang in one year: where today falls",
    "es": "Todo el tiempo desde el Big Bang en un año: dónde cae hoy",
    "where": [
-    "src/features.ts:206"
+    "src/features.ts:208"
    ]
   },
   {
@@ -5388,7 +5388,7 @@
    "en": "Colour in the world, country by country",
    "es": "Colorea el mundo, país por país",
    "where": [
-    "src/features.ts:97"
+    "src/features.ts:99"
    ]
   },
   {
@@ -5855,8 +5855,8 @@
    "en": "Country of the day",
    "es": "País del día",
    "where": [
-    "src/features.ts:126",
-    "src/features.ts:165",
+    "src/features.ts:128",
+    "src/features.ts:167",
     "src/fill/states.ts:313",
     "src/fill/states.ts:553"
    ]
@@ -6195,8 +6195,8 @@
    "en": "Daily challenge",
    "es": "Reto del día",
    "where": [
-    "src/features.ts:150",
     "src/features.ts:152",
+    "src/features.ts:154",
     "src/learn/learn.ts:472",
     "src/learn/learn.ts:495",
     "src/learn/learn.ts:497"
@@ -7433,7 +7433,7 @@
    "en": "Eight questions, the same for everyone today",
    "es": "Ocho preguntas, las mismas para todos hoy",
    "where": [
-    "src/features.ts:152",
+    "src/features.ts:154",
     "src/learn/learn.ts:475",
     "src/learn/learn.ts:496"
    ]
@@ -8352,7 +8352,7 @@
    "en": "Fill the map",
    "es": "Llena el mapa",
    "where": [
-    "src/features.ts:97",
+    "src/features.ts:99",
     "src/fill/fill.ts:114",
     "src/fill/fill.ts:586",
     "src/fill/fill.ts:703",
@@ -8371,7 +8371,7 @@
    "en": "Fill the map: the region of the day",
    "es": "Llena el mapa: la región del día",
    "where": [
-    "src/features.ts:162"
+    "src/features.ts:164"
    ]
   },
   {
@@ -8400,7 +8400,7 @@
    "en": "Fill the states: the country of the day",
    "es": "Llena los estados: el país del día",
    "where": [
-    "src/features.ts:167"
+    "src/features.ts:169"
    ]
   },
   {
@@ -13066,7 +13066,7 @@
    "en": "Legacy of the day",
    "es": "Legado del día",
    "where": [
-    "src/features.ts:210"
+    "src/features.ts:212"
    ]
   },
   {
@@ -14097,8 +14097,8 @@
    "en": "Map games",
    "es": "Juegos en el mapa",
    "where": [
-    "src/features.ts:175",
     "src/features.ts:177",
+    "src/features.ts:179",
     "src/learn/progress.ts:358",
     "src/play/hop.ts:88",
     "src/play/menu.ts:82"
@@ -14309,8 +14309,8 @@
    "en": "Master the world",
    "es": "Domina el mundo",
    "where": [
-    "src/features.ts:112",
-    "src/features.ts:115",
+    "src/features.ts:114",
+    "src/features.ts:117",
     "src/fill/fill.ts:663",
     "src/learn/learn.ts:483",
     "src/master/master.ts:119"
@@ -17319,7 +17319,7 @@
    "en": "On this day",
    "es": "Tal día como hoy",
    "where": [
-    "src/features.ts:143",
+    "src/features.ts:145",
     "src/learn/learn.ts:288",
     "src/learn/learn.ts:2839"
    ]
@@ -19159,9 +19159,9 @@
    "en": "Put it on the map",
    "es": "Ponlo en el mapa",
    "where": [
-    "src/features.ts:98",
-    "src/features.ts:131",
-    "src/features.ts:170",
+    "src/features.ts:100",
+    "src/features.ts:133",
+    "src/features.ts:172",
     "src/onmap/onmap.ts:82",
     "src/onmap/onmap.ts:382"
    ]
@@ -19178,7 +19178,7 @@
    "en": "Put it on the map: today",
    "es": "Ponlo en el mapa: hoy",
    "where": [
-    "src/features.ts:172",
+    "src/features.ts:174",
     "src/onmap/onmap.ts:649"
    ]
   },
@@ -19519,8 +19519,8 @@
    "en": "Region of the day",
    "es": "Región del día",
    "where": [
-    "src/features.ts:120",
-    "src/features.ts:160",
+    "src/features.ts:122",
+    "src/features.ts:162",
     "src/fill/fill.ts:392",
     "src/fill/fill.ts:687"
    ]
@@ -19597,42 +19597,42 @@
    "en": "Remind me of Put it on the map’s puzzle",
    "es": "Recuérdame el reto de Ponlo en el mapa",
    "where": [
-    "src/features.ts:171"
+    "src/features.ts:173"
    ]
   },
   {
    "en": "Remind me of the Daily challenge",
    "es": "Recuérdame el Reto del día",
    "where": [
-    "src/features.ts:151"
+    "src/features.ts:153"
    ]
   },
   {
    "en": "Remind me of the country of the day",
    "es": "Recuérdame el país del día",
    "where": [
-    "src/features.ts:166"
+    "src/features.ts:168"
    ]
   },
   {
    "en": "Remind me of the map games’ puzzles",
    "es": "Recuérdame los retos de los juegos en el mapa",
    "where": [
-    "src/features.ts:176"
+    "src/features.ts:178"
    ]
   },
   {
    "en": "Remind me of the region of the day",
    "es": "Recuérdame la región del día",
    "where": [
-    "src/features.ts:161"
+    "src/features.ts:163"
    ]
   },
   {
    "en": "Remind me to practise {0}",
    "es": "Recuérdame practicar {0}",
    "where": [
-    "src/features.ts:156"
+    "src/features.ts:158"
    ]
   },
   {
@@ -19648,7 +19648,7 @@
    "en": "Reminders",
    "es": "Recordatorios",
    "where": [
-    "src/features.ts:148",
+    "src/features.ts:150",
     "src/today/reminders.ts:375"
    ]
   },
@@ -21335,21 +21335,21 @@
    "en": "Six places in {0} to put on the map",
    "es": "Seis lugares de {0} para poner en el mapa",
    "where": [
-    "src/features.ts:172"
+    "src/features.ts:174"
    ]
   },
   {
    "en": "Six places of a country to put on the map, Wordle style",
    "es": "Seis lugares de un país para poner en el mapa, al estilo Wordle",
    "where": [
-    "src/features.ts:98"
+    "src/features.ts:100"
    ]
   },
   {
    "en": "Six places to put on the map",
    "es": "Seis lugares para poner en el mapa",
    "where": [
-    "src/features.ts:172"
+    "src/features.ts:174"
    ]
   },
   {
@@ -21621,7 +21621,7 @@
    "en": "Something from the past that we still use today",
    "es": "Algo del pasado que todavía usamos hoy",
    "where": [
-    "src/features.ts:210"
+    "src/features.ts:212"
    ]
   },
   {
@@ -27391,7 +27391,7 @@
    "en": "Today in deep time",
    "es": "Hoy en el tiempo profundo",
    "where": [
-    "src/features.ts:206"
+    "src/features.ts:208"
    ]
   },
   {
@@ -27461,7 +27461,7 @@
    "en": "Today’s goal: {0} of {1} answers",
    "es": "Meta de hoy: {0} de {1} respuestas",
    "where": [
-    "src/features.ts:113"
+    "src/features.ts:115"
    ]
   },
   {
@@ -28962,7 +28962,7 @@
    "en": "What happened on this day: events, births and deaths",
    "es": "Lo que pasó un día como hoy: hechos, nacimientos y muertes",
    "where": [
-    "src/features.ts:143"
+    "src/features.ts:145"
    ]
   },
   {
@@ -33926,7 +33926,7 @@
    "en": "{0} puzzles today: {1}…",
    "es": "{0} retos hoy: {1}…",
    "where": [
-    "src/features.ts:177"
+    "src/features.ts:179"
    ]
   },
   {
@@ -34054,7 +34054,7 @@
    "en": "{0} to review",
    "es": "{0} por repasar",
    "where": [
-    "src/features.ts:113"
+    "src/features.ts:115"
    ]
   },
   {

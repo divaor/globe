@@ -681,7 +681,8 @@ first frame (the renderer is `held` until `release()`, under the splash) and hid
 travel, learn and play, the guides, deep time, the filter packs, links) is `src/features.ts`, its own chunk, loaded
 behind the globe, and `window.atlas` is set when it is done. A tab tapped before then opens once the lists are built
 (`shell.markReady()`). Idle redraws are paced to twice the last frame's cost (at most 600 ms apart); moving, flying
-and fading labels still draw every frame. States and provinces load from web zoom 2. Measured with
+and fading labels still draw every frame; a view that moved since the last frame draws at once. States and provinces
+(1.8 MB) are read once the browser is idle after the start (v0.47.1; or as soon as the map zooms past web zoom 2.4). Measured with
 `scripts/test/startup.mjs`-style runs: a Pixel 7 at 4× CPU slowdown on 4G (9 Mbps, 60 ms).
 
 **Outside services** (v0.47.0): every call to a website Mundora doesn't run goes through `outside()` (`src/data/outside.ts`):
