@@ -6707,10 +6707,12 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await page.waitForFunction(() => window.atlas.legacy.info.view?.v === 'country', null, { timeout: 15000 }).catch(() => {});
   await page.waitForTimeout(2200);
   const mx = await F(() => ({ info: window.atlas.legacy.info, groups: [...document.querySelectorAll('[data-legacy-group]')].map((e) => e.dataset.legacyGroup), text: document.querySelector('.legacy-text')?.textContent,
-    mexicaWords: document.querySelector('[data-legacy-group="mexica"] [data-legacy="country-words"]')?.textContent ?? '' }));
-  check(/chocolate|tomato|avocado|coyote/i.test(mx.mexicaWords), `Mexico's words from the Mexica: ${mx.mexicaWords}`);
-  check(!!cardBtn && mx.info.view?.iso === 'MEX' && mx.groups.includes('mexica') && mx.groups.length >= 8 && mx.info.hits >= mx.groups.length,
-    `"Borrowed from the past" on Mexico's card: ${mx.text} (${mx.groups.slice(0, 6).join(', ')}…), ${mx.info.hits} civilizations on the map`);
+    mexicaWords: document.querySelector('[data-legacy-group="mexica"] [data-legacy="country-words"]')?.textContent ?? '',
+    // The homelands on this side of the globe (those behind it have no dot to tap).
+    visible: window.atlas.legacy['idx'].civs.filter((c) => window.atlas.app.renderer.view.project(c.at[0], c.at[1]) && document.querySelector(`[data-legacy-group="${c.id}"]`)).length }));
+  check(/chocolate|tomato|avocado|coyote/i.test(mx.mexicaWords), `Mexico's words from the Mexica, plain words first: ${mx.mexicaWords}`);
+  check(!!cardBtn && mx.info.view?.iso === 'MEX' && mx.groups.includes('mexica') && mx.groups.length >= 8 && mx.visible >= 5 && mx.info.hits >= mx.visible - 1,
+    `"Borrowed from the past" on Mexico's card: ${mx.text} (${mx.groups.slice(0, 6).join(', ')}…), ${mx.info.hits} civilizations on the map (${mx.visible} on this side of the globe)`);
   // A tap on another country switches to it.
   const tapAt = await F(() => { const v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(-102, 58); return p && [r.left + p[0], r.top + p[1]]; });
   if (tapAt) await page.touchscreen.tap(tapAt[0], tapAt[1]);

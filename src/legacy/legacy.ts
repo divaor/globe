@@ -19,7 +19,7 @@ import { recordSeen } from '../learn/progress';
 import { shareText } from '../play/pin';
 import type { Topology } from 'topojson-specification';
 import {
-  members, usersOf, borrowed, reach, segments, findLegacies, everywhere, ofTheDay, wordsByType, wordIn, type WordType,
+  members, usersOf, borrowed, reach, segments, findLegacies, everywhere, ofTheDay, wordsByType, wordIn, WORD_TYPES, type WordType,
   type LegacyIndex, type CivMeta, type Civ, type Legacy, type Brief, type Cat, type Tx,
 } from './logic';
 
@@ -447,8 +447,10 @@ export class Legacies {
       const head = h('button', { type: 'button', class: 'sec-title legacy-group-head', style: `--civ: ${g.civ.color}` }, `${g.civ.icon} ${this.civName(g.civ)} · ${g.own.length + g.world.length}`);
       head.addEventListener('click', () => void this.open({ v: 'civ', civ: g.civ.id }));
       sec.append(head);
-      // The words it took from them ("chocolate, tomate, aguacate…").
-      const ws = [...new Set([...g.own, ...g.world].flatMap((b) => (b.w ?? []).map((w) => wordIn(w, lang()))).filter(Boolean))];
+      // The words it took from them ("chocolate, tomate, aguacate…"): plain words first, then people's names, places,
+      // days and months, stars (the sort keeps each kind in the order of its legacies).
+      const kind = (t?: WordType) => WORD_TYPES.indexOf(t ?? 'word');
+      const ws = [...new Set([...g.own, ...g.world].flatMap((b) => b.w ?? []).sort((a, b) => kind(a.t) - kind(b.t)).map((w) => wordIn(w, lang())).filter(Boolean))];
       if (ws.length) sec.append(h('p', { class: 'legacy-words-line', 'data-legacy': 'country-words' }, `🗣️ ${ws.length > 10 ? `${ws.slice(0, 10).join(', ')}…` : ws.join(', ')}`));
       const list = h('div', { class: 'guide-list' });
       for (const b of g.own) list.append(this.briefRow(b, false));
