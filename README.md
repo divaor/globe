@@ -24,8 +24,8 @@ A backup made as Atlas Globe still opens.
 
 - **Getting around (v0.41.1):** five tabs at the bottom: **Map** (filters, projection, map style and states, 3D
   terrain, search, and the tools: measuring, comparing, true size, Compare two filters, your own data, the 4K
-  wallpaper), **Explore** (time travel, space, the travel guide, art, nature, the Earth's inside, the deep, ambient
-  mode), **Today** (in the middle), **Learn** (Master the world, Quiz, guided tours, On this day, your progress) and
+  wallpaper), **Explore** (time travel, legacies of the past, space, the travel guide, art, nature, the Earth's inside,
+  the deep, ambient mode), **Today** (in the middle), **Learn** (Master the world, Quiz, guided tours, On this day, your progress) and
   **Play** (map games, Fill the map, Put it on the map). Each opens its list above itself. The button top right holds
   Settings, your data on another device, sharing, saving a picture or a phone wallpaper, full screen (in a browser)
   and About. One bar above the map: a chip per filter, the top one carrying its legend's ⌃. Zoom and locate on the
@@ -110,6 +110,22 @@ A backup made as Atlas Globe still opens.
   Name the sea feature (a pin under the sea, four names) and Which ocean zone? (a sea animal, five zones), and How
   deep? now with sea animals and wrecks; two tours, Wonders of the deep and Famous shipwrecks; the Time travel story
   Into the deep: exploring the ocean floor; and an Into the deep playlist for ambient mode.
+- **Legacies of the past (Explore → Legacies of the past, v0.44.0):** what past civilizations gave the world that we
+  still use, and how connected that makes us: {CIVS} civilizations (the Sumerians, Babylonians and Assyrians,
+  Egyptians, Phoenicians, Greeks, Romans, Persians, the Islamic Golden Age, Ancient India and China, the Maya, Mexica,
+  Incas, Taíno, Norse, Celts, Polynesians, the First Peoples of North America, the West African kingdoms and Aksum)
+  and {LEGACIES} legacies in 14 subjects: words and names, writing, numbers, time and calendars, science, buildings,
+  tools, food, money, law, ideas, the arts, games and daily life. Each civilization has its homeland at its height on
+  the map, its intro, its heirs today and a link to its time-travel story; each legacy says how they gave it
+  (invented, developed, spread, named, tamed or kept alive, with what it was built on and whether it is debated), its
+  story in more detail, its words (Nahuatl *tomatl*, Quechua *ch'arki*, Taíno *hamaca*…), the line of its journey to
+  today step by step, and who uses it now: the countries in colour, darker where it is strongest. A country (its
+  card's "Borrowed from the past", or a tap on the map) shows what it borrowed from each civilization, with a line from
+  each, thicker for more. Search finds a legacy by its name or its words; a people story links to what its
+  civilization gave us; "Who gave us this?" (Learn → Quiz, and some days the Daily challenge) asks which civilization
+  gave a thing; the legacy of the day is in Today; and two badges, Heir of the ages (40 legacies) and All our
+  ancestors (one from each of 20 civilizations). Links: `#legacy=egyptians`, `#legacy=mexica/tomato-words`,
+  `#legacy=@MEX`. Data: `scripts/data/legacies/` (README there).
 - **Search:** countries, cities, states and provinces, coordinates ("40.4, -3.7"), and what the filters show: the
   people of Who was born here?, museums, masterpieces and their artists, buildings and their architects, World
   Heritage sites, inventions and your own places. The filters that are on come first; a filter that is off is searched

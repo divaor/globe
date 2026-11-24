@@ -612,7 +612,7 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
   .sheet-grip { display: block; width: 44px; height: 5px; border-radius: var(--r-xs); background: var(--line-strong); background-clip: content-box; padding: 8px 40px 6px; margin: 0 auto; box-sizing: content-box; cursor: ns-resize; touch-action: none; }
   .sheet-head { touch-action: none; }
   /* Panels that sit over the globe start lower, so the globe shows above them (the reader can drag them taller). */
-  .sheet[data-sheet='inside'], .sheet[data-sheet='deep'] { height: 56vh; }
+  .sheet[data-sheet='inside'], .sheet[data-sheet='deep'], .sheet[data-sheet='legacy'] { height: 56vh; }
   /* The height the reader dragged it to (the grip), kept for each panel. */
   .sheet.sized { height: var(--sheet-h); max-height: none; }
   .country-card { left: 8px; right: 8px; top: auto; bottom: calc(80px + var(--safe-b)); width: auto; max-height: 52vh; z-index: 3; }
@@ -1524,3 +1524,32 @@ textarea.trip-input { resize: vertical; }
 
 /* v0.42.0: stories, lives and guides are still in English in the languages read from files. */
 .prose-note { margin: 0 0 var(--sp-3); padding: var(--sp-2) var(--sp-3); border-radius: var(--r-md); background: var(--chip); font-size: var(--fs-sm); line-height: 1.35; }
+
+/* v0.44.0 Legacies of the past (legacy/legacy.ts): rows edged in their civilization's colour, tags, the words, the
+   journey as a timeline, a country's civilizations. */
+.legacy .guide-list { margin-bottom: var(--sp-2); }
+.legacy-ic { background: var(--chip); }
+.legacy-head { margin: var(--sp-2) 0 var(--sp-1); color: var(--muted); font-size: var(--fs-sm); }
+.legacy-years { font-weight: var(--fw-semi); }
+.legacy-text { font-size: var(--fs-lg); line-height: 1.4; margin: var(--sp-2) 0; }
+.legacy-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--sp-1) 0 var(--sp-2); }
+.legacy-tag { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border-radius: var(--r-pill); background: var(--chip); border: 1px solid var(--line); font-size: var(--fs-xs); font-weight: var(--fw-semi); color: var(--muted); }
+.legacy-tag[style] { border-color: var(--tag); color: inherit; }
+.legacy-tag.sure-debated { border-color: rgba(230, 126, 34, 0.6); color: #e67e22; }
+.legacy-tag.sure-likely { border-color: rgba(52, 152, 219, 0.5); }
+.legacy-pic img { width: 100%; max-height: 220px; object-fit: cover; border-radius: var(--r-md); margin: var(--sp-1) 0; }
+.legacy-more { margin-top: var(--sp-2); }
+.legacy-mine { font-weight: var(--fw-semi); }
+.legacy-countries { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--sp-2) 0; }
+.legacy-words { display: flex; flex-direction: column; gap: 4px; }
+.legacy-word { display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: baseline; padding: 6px 10px; border-radius: var(--r-sm); background: var(--chip); }
+.legacy-word-now { font-weight: var(--fw-semi); font-size: var(--fs-md); }
+.legacy-word-from { color: var(--muted); font-size: var(--fs-sm); }
+.legacy-path { list-style: none; margin: 0; padding: 0 0 0 14px; border-left: 2px solid var(--line-strong); }
+.legacy-path li { position: relative; margin: 0 0 var(--sp-2); }
+.legacy-path li::before { content: ''; position: absolute; left: -20px; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.legacy-path .linklike { text-align: left; }
+.legacy-civ-group { margin-bottom: var(--sp-2); }
+.legacy-group-head { display: block; width: 100%; text-align: left; background: none; border: 0; border-left: 4px solid var(--civ); padding: 2px 0 2px 8px; color: inherit; font: inherit; font-weight: var(--fw-semi); cursor: pointer; }
+.legacy .linklike { background: none; border: 0; padding: 0; margin: 0; color: var(--accent); font: inherit; cursor: pointer; text-align: left; }
+.legacy-path .linklike { color: inherit; }

@@ -43,11 +43,12 @@ import { Wild } from './wild/finder';
 import { Plants } from './green/finder';
 import { InsideEarth } from './earth/inside';
 import { DeepSea } from './ocean/deep';
+import { Legacies } from './legacy/legacy';
 import { shouldWelcome, showWelcome } from './ui/welcome';
 import { isNative } from './native/platform';
 import { backGesture } from './ui/backnav';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders; i18n: { L: typeof L; t: typeof t; tx: typeof tx; nm: typeof nm } } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; legacy: Legacies; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders; i18n: { L: typeof L; t: typeof t; tx: typeof tx; nm: typeof nm } } } }
 
 async function boot() {
   // The iOS and Android apps (v0.43.0): their side first (stored progress back, a shared link's place, the phone's
@@ -210,6 +211,14 @@ async function boot() {
   const deep = new DeepSea(app, shell);
   learn.inside = inside;
   shell.ambient.cut = inside;
+  // Legacies of the past (v0.44.0): what past civilizations gave us, where it went, who uses it today.
+  const legacy = new Legacies(app, shell);
+  legacy.leaveMode = async () => { if (app.mode) await time.modes.find((m) => m.id === app.mode)?.exit(); };
+  legacy.startQuiz = () => learn.startLegacyQuiz();
+  today.addRead({
+    id: 'legacy', order: 20,
+    card: () => today.line('legacy', 'legacy', L('Legacy of the day', 'Legado del día'), legacy.dayLine(dayKey()) ?? L('Something from the past that we still use today', 'Algo del pasado que todavía usamos hoy'), false, () => void legacy.openOfTheDay(dayKey())),
+  });
   // A story step on another world shows that world under the story.
   worldHook.show = (id) => { space.surface.quiet = !!id; void space.surface.set(id); };
   // Your own data: tables kept on this device become filters; the panel reads new ones.
@@ -218,7 +227,7 @@ async function boot() {
   app.on('mydata', openMyData);
   shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, group: 'map', onClick: openMyData });
   void myData.init();
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, master, fill, onmap, today, reminders, i18n: { L, t, tx, nm } };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, legacy, master, fill, onmap, today, reminders, i18n: { L, t, tx, nm } };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };
@@ -262,6 +271,7 @@ async function boot() {
   // (Read from the address as it was opened: the app writes its own state to the address when it starts.)
   if (shared.get('hop')) setTimeout(() => void hop.startChallenge(`#${shared.toString()}`), 500);
   // A shared trip (#trip=lima,cusco) or a city's guide (#guide=kyoto).
+  if (shared.get('legacy') !== null) setTimeout(() => void legacy.openLink(shared.get('legacy') ?? ''), 500);
   if (shared.get('trip')) setTimeout(() => void guide.openShared(shared.get('trip')!, shared.get('tp')), 500);
   else if (shared.get('guide')) setTimeout(() => void guide.openCity(shared.get('guide')!), 500);
   // A shared world: #world=moon&c=lon,lat,zoom (and &map=elev).

@@ -12,7 +12,7 @@ export type Subject = 'geo' | 'history' | 'culture' | 'languages' | 'science' | 
 /** The subjects and their quizzes (the daily challenge counts each question for its own quiz's subject). */
 export const SUBJECTS: Record<Subject, { icon: string; en: string; es: string; ctx?: string; quizzes: string[] }> = {
   geo: { icon: '🗺️', en: 'Geography', es: 'Geografía', quizzes: ['find', 'flag', 'capital', 'region', 'hop', 'where', 'link'] },
-  history: { icon: '🏛️', en: 'History', es: 'Historia', quizzes: ['when', 'order', 'detective', 'era', 'civ', 'journey'] },
+  history: { icon: '🏛️', en: 'History', es: 'Historia', quizzes: ['when', 'order', 'detective', 'era', 'civ', 'journey', 'legacy'] },
   culture: { icon: '🎨', en: 'Arts and culture', es: 'Arte y cultura', quizzes: ['dish', 'faith', 'listen', 'opening', 'artist', 'site', 'museum'] },
   languages: { icon: '🗣️', en: 'Languages', es: 'Lenguas', ctx: 'languages and scripts, a field of study', quizzes: ['script', 'family'] },
   science: { icon: '🔬', en: 'Science and nature', es: 'Ciencia y naturaleza', quizzes: ['period', 'plague', 'disaster', 'inventor', 'world', 'landed', 'constellation', 'element', 'habitat', 'lives', 'grows', 'season'] },
@@ -48,7 +48,7 @@ export interface Progress {
   };
   /** v0.29.0: things seen around the app (masterpieces opened, lives followed to the end) and done once (a trip across
    * three continents). */
-  seen: { works: string[]; lives: string[]; animals: string[]; plants: string[] };
+  seen: { works: string[]; lives: string[]; animals: string[]; plants: string[]; legacies?: string[] };
   feats: string[];
   /** v0.34.0 Master the world: the best run of days the daily goal was reached, and countries relearned after they
    * were forgotten (the rest of its badges are feats: a continent's capitals, every capital, the look-alike flags...). */
@@ -62,7 +62,7 @@ export function progress(): Progress {
   if (cache) return cache;
   try { cache = { ...empty(), ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { cache = empty(); }
   cache!.play = { ...emptyPlay(), ...cache!.play };
-  cache!.seen = { works: cache!.seen?.works ?? [], lives: cache!.seen?.lives ?? [], animals: cache!.seen?.animals ?? [], plants: cache!.seen?.plants ?? [] };
+  cache!.seen = { works: cache!.seen?.works ?? [], lives: cache!.seen?.lives ?? [], animals: cache!.seen?.animals ?? [], plants: cache!.seen?.plants ?? [], legacies: cache!.seen?.legacies ?? [] };
   cache!.feats ??= [];
   return cache!;
 }
@@ -133,6 +133,9 @@ export const BADGES: Badge[] = [
   { id: 'app-naturalist', icon: '🔭', en: 'Naturalist', es: 'Naturalista', how: { en: 'Find 25 animals', es: 'Encuentra 25 animales' }, goal: 25, have: (p) => p.seen.animals.length },
   // v0.31.0: plants found (a plant's card opened, from the map, the finder, a garden or a famous tree).
   { id: 'app-botanist', icon: '🌿', en: 'Botanist', es: 'Botánico', how: { en: 'Find 25 plants', es: 'Encuentra 25 plantas' }, goal: 25, have: (p) => p.seen.plants?.length ?? 0 },
+  // v0.44.0 Legacies of the past: legacies opened, and one from each of 20 civilizations ("civ/legacy").
+  { id: 'app-heir', icon: '🏺', en: 'Heir of the ages', es: 'Heredero de los siglos', how: { en: 'Open 40 legacies of the past', es: 'Abre 40 legados del pasado' }, goal: 40, have: (p) => p.seen.legacies?.length ?? 0 },
+  { id: 'app-ancestors', icon: '🌍', en: 'All our ancestors', es: 'Todos nuestros antepasados', how: { en: 'A legacy from 20 different civilizations', es: 'Un legado de 20 civilizaciones distintas' }, goal: 20, have: (p) => new Set((p.seen.legacies ?? []).map((k) => k.split('/')[0])).size },
   // v0.33.0: a dive below 6,000 m (Into the deep).
   { id: 'app-diver', icon: '🤿', en: 'Diver', es: 'Buzo', how: { en: 'Dive below 6,000 m', es: 'Bucea a más de 6 000 m' }, goal: 1, have: (p) => Number(p.feats.includes('dive-6000')) },
   // v0.34.0 Master the world.
@@ -273,11 +276,11 @@ export function recordGame(game: string, o: { score: number; stars: number; feat
   return award();
 }
 /** Something seen around the app (a masterpiece's card, a life to its end): counted once. */
-export function recordSeen(kind: 'works' | 'lives' | 'animals' | 'plants', id: string): Badge[] {
+export function recordSeen(kind: 'works' | 'lives' | 'animals' | 'plants' | 'legacies', id: string): Badge[] {
   const s = progress().seen;
-  s[kind] ??= [];
-  if (s[kind].includes(id)) return [];
-  s[kind].push(id);
+  const list = (s[kind] ??= []);
+  if (list.includes(id)) return [];
+  list.push(id);
   return award();
 }
 /** Something done once around the app (a trip across three continents). */
