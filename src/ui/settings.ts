@@ -1,4 +1,5 @@
 // Settings and About/credits panels.
+import { creditsList } from './credits';
 import { Download } from 'lucide';
 import { h, icon, toggle, segmented, slider, fillSelect } from './dom';
 import { canSpeak, narrationOn, setNarrationOn, voicesFor, voiceFor, setVoice, voiceRate, setVoiceRate, voiceRegion, speak, onNarration } from './narrator';
@@ -26,8 +27,11 @@ export async function install() {
 /** More sections, added by main.ts (Reminders, v0.37.1): a title and its controls, before the backup. */
 export const settingsExtras: { title: () => string; body: () => HTMLElement }[] = [];
 
-const field = (label: string, control: HTMLElement, hint?: string) =>
-  h('div', { class: 'field' }, h('div', { class: 'field-label' }, label, hint ? h('span', { class: 'field-hint' }, hint) : null), control);
+const field = (label: string, control: HTMLElement, hint?: string) => {
+  // A slider or box takes the field's name (for screen readers).
+  if (control instanceof HTMLInputElement && !control.getAttribute('aria-label')) control.setAttribute('aria-label', label);
+  return h('div', { class: 'field' }, h('div', { class: 'field-label' }, label, hint ? h('span', { class: 'field-hint' }, hint) : null), control);
+};
 
 export function settingsPanel(app: App, reopen: () => void, toast: (m: string) => void = () => {}): HTMLElement {
   const s = app.renderer.settings;
@@ -100,23 +104,17 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
 }
 
 export function aboutPanel(app: App): HTMLElement {
-  const credits = new Map<string, string[]>();
-  for (const d of app.registry.values()) {
-    if (!d.credit) continue;
-    const list = credits.get(d.credit) ?? [];
-    list.push(tx(d.name));
-    credits.set(d.credit, list);
-  }
   return h('div', { class: 'about' },
     // v0.41.0: what the app is, in three lines (the same words as the store listing).
     h('p', { class: 'about-lead' }, L('Mundora is the world on one globe: its countries and cities, its nature, its history and its sky.', 'Mundora es el mundo en un solo globo: sus países y ciudades, su naturaleza, su historia y su cielo.')),
     h('p', null, L('Explore {0} maps, travel through time with hundreds of stories, plan a trip with the travel guide, and learn every country, capital and flag with games and a challenge each day.', 'Explora {0} mapas, viaja en el tiempo con cientos de historias, planea un viaje con la guía y aprende todos los países, capitales y banderas con juegos y un reto cada día.', fmtNumber([...app.registry.values()].filter((d) => !d.hidden && d.category !== 'mine').length))),
     h('p', null, L('No account and no ads. What you do stays on this device; to take it to another, use Settings → Your data on another device.', 'Sin cuenta y sin anuncios. Lo que haces se queda en este dispositivo; para llevarlo a otro, usa Ajustes → Tus datos en otro dispositivo.')),
-    h('h3', { class: 'sec-title' }, t('credits')),
     h('p', { class: 'about-by', 'data-about': 'by' }, L('Made by {0}.', 'Hecho por {0}.', 'Diego Valencia')),
-    h('ul', { class: 'credits' }, [...credits].map(([c, names]) => h('li', null, h('strong', null, c), h('span', { class: 'muted' }, ` — ${names.join(', ')}`)))),
     h('p', { class: 'muted small' }, L('Open source (GPL-3.0). Every map and story names its sources; the data keep their own licences.', 'Código abierto (GPL-3.0). Cada mapa e historia nombra sus fuentes; los datos conservan sus propias licencias.')),
     h('p', { class: 'small' }, h('a', { href: 'https://github.com/divaor/globe', target: '_blank', rel: 'noopener' }, 'github.com/divaor/globe')),
+    // v0.47.0: every source by group, in plain words (it was a list of filters by credit line).
+    h('h3', { class: 'sec-title' }, L('Credits', 'Créditos')),
+    creditsList(app),
   );
 }
 

@@ -3,6 +3,7 @@
 // scripts/data/artguide/build-artguide.mjs from Wikidata). Loaded once, when first needed.
 import { loadJSON } from '../data/store';
 import { lang, L, nm as nameIn } from '../app/i18n';
+import { outside } from '../data/outside';
 
 export type WorkKind = 'painting' | 'sculpture' | 'antiquity' | 'object';
 export interface Museum { i: number; id: string; name: [string, string]; at: [number, number]; city: string; visitors: number; sl: number; web: string | null }
@@ -71,7 +72,7 @@ const credits = new Map<string, Promise<{ licence: string; author: string } | nu
 /** A Commons file's licence and author, read live from Commons (shown under its picture). */
 export function commonsCredit(file: string): Promise<{ licence: string; author: string } | null> {
   if (!credits.has(file)) {
-    credits.set(file, fetch(`https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&titles=${encodeURIComponent(`File:${file}`)}`)
+    credits.set(file, outside(`https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName%7CArtist&titles=${encodeURIComponent(`File:${file}`)}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((j: { query?: { pages?: Record<string, { imageinfo?: { extmetadata?: { LicenseShortName?: { value: string }; Artist?: { value: string } } }[] }> } } | null) => {
         const meta = Object.values(j?.query?.pages ?? {})[0]?.imageinfo?.[0]?.extmetadata;

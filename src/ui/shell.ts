@@ -182,7 +182,7 @@ export class Shell {
     clear(this.top);
     const brand = h('button', { type: 'button', class: 'brand', title: t('about') }, h('span', { class: 'brand-logo', 'aria-hidden': 'true' }), h('span', { class: 'brand-name' }, 'Mundora'));
     brand.addEventListener('click', () => this.openAbout());
-    const searchBtn = h('button', { type: 'button', class: 'search-btn glass' }, icon(Search, 18), h('span', { class: 'search-btn-label' }, t('search')));
+    const searchBtn = h('button', { type: 'button', class: 'search-btn glass', 'aria-label': t('search') }, icon(Search, 18), h('span', { class: 'search-btn-label' }, t('search')));
     searchBtn.addEventListener('click', () => this.search.open());
     this.top.append(
       h('div', { class: 'top-left' }, brand, searchBtn),
@@ -249,8 +249,22 @@ export class Shell {
     this.chips.append(add);
   }
 
+  /**
+   * Whether everything the tabs list has arrived (v0.47.0: the globe shows first, the rest is built behind it). A tab
+   * tapped before then opens as soon as it has.
+   */
+  private ready = false;
+  private waiting: MenuGroup | null = null;
+  markReady() {
+    this.ready = true;
+    const g = this.waiting;
+    this.waiting = null;
+    if (g) this.openTab(g);
+  }
+
   /** A tab's list (or the one for you), opened above its button; the same tab again closes it. */
   openTab(g: MenuGroup) {
+    if (!this.ready) { this.waiting = g; this.toast(L('Loading…', 'Cargando…'), 1500); return; }
     if (!this.menu.hidden && this.menuGroup === g) { this.closeMenu(); return; }
     this.mapStyle.close();
     this.menuGroup = g;

@@ -19,6 +19,7 @@ import {
   showPlantFocus, currentPlantFocus, greenLinks, openPlantCard, placesInRange, placeAt, placeName, openPlace, whatsOnPanel, spectaclesNear, openSpectacle,
   type Place, type PlantFocus,
 } from '../layers/packs/green';
+import { outside } from '../data/outside';
 
 /** Emoji for a plant GBIF found, by its class or family. */
 const CLASS_EMOJI: Record<string, string> = { Pinopsida: '🌲', Polypodiopsida: '🌿', Liliopsida: '🌾', Bryopsida: '🌱', Magnoliopsida: '🌼', Cycadopsida: '🌴', Ginkgoopsida: '🍂' };
@@ -129,7 +130,7 @@ export class Plants {
   /** GBIF's plant species whose name matches (scientific or common, in any language). */
   private async liveSearch(q: string): Promise<Live[] | null> {
     try {
-      const r = await fetch(`https://api.gbif.org/v1/species/search?q=${encodeURIComponent(q)}&rank=SPECIES&status=ACCEPTED&highertaxonKey=6&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c&limit=12`);
+      const r = await outside(`https://api.gbif.org/v1/species/search?q=${encodeURIComponent(q)}&rank=SPECIES&status=ACCEPTED&highertaxonKey=6&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c&limit=12`);
       if (!r.ok) return null;
       const j = (await r.json()) as { results?: { key: number; nubKey?: number; canonicalName?: string; scientificName: string; class?: string; family?: string; vernacularNames?: { vernacularName: string; language?: string }[] }[] };
       const want = L('eng', 'spa');
@@ -152,7 +153,7 @@ export class Plants {
   async openLive(s: Live) {
     await this.load();
     if (!s.key) {
-      const r = await fetch(`https://api.gbif.org/v1/species/match?kingdom=Plantae&name=${encodeURIComponent(s.sci)}`).catch(() => null);
+      const r = await outside(`https://api.gbif.org/v1/species/match?kingdom=Plantae&name=${encodeURIComponent(s.sci)}`).catch(() => null);
       const j = r?.ok ? ((await r.json()) as { usageKey?: number; acceptedUsageKey?: number; family?: string }) : null;
       if (!j?.usageKey) { this.shell.toast(L('GBIF didn’t answer; check your connection.', 'GBIF no respondió; revisa tu conexión.')); return; }
       s = { ...s, key: j.acceptedUsageKey ?? j.usageKey, family: j.family ?? null };
@@ -223,7 +224,7 @@ export class Plants {
     this.app.flyTo(at[0], at[1], Math.max(this.app.renderer.view.zoom, 12));
     const known = new Map((d?.plants ?? []).map((p) => [p.sci.toLowerCase(), p]));
     try {
-      const r = await fetch(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=Plantae&per_page=30&locale=${inatLocale()}`);
+      const r = await outside(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=Plantae&per_page=30&locale=${inatLocale()}`);
       if (!r.ok) throw new Error(String(r.status));
       const j = (await r.json()) as { results?: { count: number; taxon: { id: number; name: string; preferred_common_name?: string; default_photo?: { square_url?: string; attribution?: string } } }[] };
       clear(list);

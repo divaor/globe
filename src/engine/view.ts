@@ -5,6 +5,7 @@ import {
   type GeoProjection, type GeoRawProjection, type GeoStream,
 } from 'd3-geo';
 import { PROJECTIONS, fitScale, type ProjectionDef, type ProjectionId } from './projections';
+import { reducedMotion } from './motion';
 
 const DEG = 180 / Math.PI;
 const RAD = Math.PI / 180;
@@ -136,6 +137,8 @@ export class View {
   }
 
   flyTo(to: Partial<Camera>, duration = 1600, onDone?: () => void): void {
+    // Less motion: the view jumps there (in one frame) instead of flying.
+    if (reducedMotion()) duration = 1;
     const from = { lon: this.lon, lat: this.lat, zoom: this.zoom };
     const target: Camera = { lon: to.lon ?? this.lon, lat: to.lat ?? this.lat, zoom: to.zoom ?? this.zoom };
     // Take the short way round in longitude.

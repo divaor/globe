@@ -10,13 +10,14 @@ import type { App } from '../../app/app';
 import type { LayerDef, LayerInstance, RenderCtx } from '../types';
 import type { RasterTexture } from '../../engine/gl';
 import { appLocale } from '../../app/i18n';
+import { outside } from '../../data/outside';
 
 
 async function fetchJSON<T>(url: string, ms = 15000): Promise<T> {
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), ms);
   try {
-    const r = await fetch(url, { signal: ctl.signal, cache: 'no-store' });
+    const r = await outside(url, { signal: ctl.signal, cache: 'no-store' });
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     return (await r.json()) as T;
   } finally { clearTimeout(timer); }

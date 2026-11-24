@@ -44,6 +44,7 @@ import { quizQuestions as legacyQuestions, type LegacyIndex } from '../legacy/lo
 import { pickCountry, tapNear } from '../play/pick';
 import { recordAnswer, recordQuiz, recordDaily, recordDailySubjects, recordTour, dailyResult, dayKey, current, progress, progressPanel, BADGES, type Badge } from './progress';
 import { bell } from '../today/reminders';
+import { outside } from '../data/outside';
 
 /** Where chance comes from: Math.random, or a seeded source while the daily challenge picks its questions. */
 let rand: () => number = Math.random;
@@ -2877,7 +2878,7 @@ export class Learn {
 
   private async fillOtdWiki(el: HTMLElement, mm: number, dd: number, month: OtdMonth | null, entries: OtdEntry[]) {
     try {
-      const r = await fetch(`https://api.wikimedia.org/feed/v1/wikipedia/${webLang()}/onthisday/selected/${String(mm).padStart(2, '0')}/${String(dd).padStart(2, '0')}`);
+      const r = await outside(`https://api.wikimedia.org/feed/v1/wikipedia/${webLang()}/onthisday/selected/${String(mm).padStart(2, '0')}/${String(dd).padStart(2, '0')}`);
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const j = (await r.json()) as { selected?: { text: string; year: number; pages?: { title: string; normalizedtitle?: string; coordinates?: { lat: number; lon: number } }[] }[] };
       if (!el.isConnected) return;
@@ -2902,7 +2903,8 @@ export class Learn {
       el.append(h('p', { class: 'muted small' }, L('Events from Wikipedia (CC BY-SA).', 'Acontecimientos de Wikipedia (CC BY-SA).')));
     } catch (e) {
       clear(el);
-      el.append(h('p', { class: 'muted' }, L('Needs an internet connection ({0}).', 'Necesita conexión a internet ({0}).', (e as Error).message)));
+      el.append(h('p', { class: 'muted' }, (e as Error).name === 'Offline' ? L('Needs an internet connection.', 'Necesita conexión a internet.')
+        : L('Needs an internet connection ({0}).', 'Necesita conexión a internet ({0}).', (e as Error).message)));
     }
   }
 

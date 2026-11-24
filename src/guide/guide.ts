@@ -24,6 +24,7 @@ import { planHooks, planStar, placesOf, allPlaces, movePlace, removePlace, dropC
 import { tripPanelExtras, packPlaces, unpackPlaces } from './export';
 import { appLocale } from '../app/i18n';
 import { isNative } from '../native/platform';
+import { outside } from '../data/outside';
 
 const KEY = 'atlas-globe:trip';
 
@@ -693,10 +694,10 @@ export class TravelGuide {
         if (!title) continue;
         try {
           const api = `https://${l}.wikivoyage.org/w/api.php?format=json&origin=*&redirects=1&page=${encodeURIComponent(title)}`;
-          const secs = (await (await fetch(`${api}&action=parse&prop=sections`)).json()) as { parse?: { sections: { line: string; index: string; anchor: string }[] } };
+          const secs = (await (await outside(`${api}&action=parse&prop=sections`)).json()) as { parse?: { sections: { line: string; index: string; anchor: string }[] } };
           const s = secs.parse?.sections.find((x) => /^(eat|comer|gastronom[ií]a)$/i.test(x.line.replace(/<[^>]+>/g, '').trim()));
           if (!s) continue;
-          const page = (await (await fetch(`${api}&action=parse&prop=text&disableeditsection=1&section=${s.index}`)).json()) as { parse?: { text: { '*': string } } };
+          const page = (await (await outside(`${api}&action=parse&prop=text&disableeditsection=1&section=${s.index}`)).json()) as { parse?: { text: { '*': string } } };
           const html = page.parse?.text['*'];
           if (!html) continue;
           const doc = new DOMParser().parseFromString(html, 'text/html');

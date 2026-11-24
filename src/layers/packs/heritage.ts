@@ -16,6 +16,7 @@ import type { InfoRow, LayerDef, LayerHit, LayerInstance, LayerTapUi, Legend, Le
 import { crowdOf, type Placed } from '../crowd';
 import { planLink } from '../../guide/plan';
 import { appLocale } from '../../app/i18n';
+import { outside } from '../../data/outside';
 
 let APP: App | null = null;
 
@@ -30,7 +31,7 @@ function summary(titles: { en: string; es: string }) {
   const key = `${l}:${title}`;
   let p = summaries.get(key);
   if (!p) {
-    p = fetch(`https://${l}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title.replace(/ /g, '_'))}`)
+    p = outside(`https://${l}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title.replace(/ /g, '_'))}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((j: { extract?: string; thumbnail?: { source: string } } | null) => (j ? { extract: j.extract ?? '', thumb: j.thumbnail?.source ?? null } : null))
       .catch(() => null);
