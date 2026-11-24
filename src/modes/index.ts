@@ -1,11 +1,12 @@
-// Time-travel modes behind the "Time travel" dock button: political history, plate tectonics, and the
-// story collections (wars and conquests, eras and ideas, food through time, great structures, peoples
+// Time-travel modes behind the "Time travel" dock button: political history, Deep time (v0.45.0: the Earth from its
+// first days, with the plate tectonics of "Pangea to today" inside it), and the story collections (wars and conquests, eras and ideas, food through time, great structures, peoples
 // and civilizations, life through time, games of the world).
 import { History } from 'lucide';
 import { h } from '../ui/dom';
 import { t } from '../app/i18n';
 import { HistoryMode } from './history';
-import { PangeaMode } from './pangea';
+import { DeepTime } from '../deeptime/deeptime';
+import { L } from '../app/i18n';
 import { StoryMode, STORY_KINDS, type StoryKind } from './stories';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
@@ -28,6 +29,8 @@ export class TimeTravel {
   readonly stories = {} as Record<StoryKind, StoryMode>;
   /** Borders through time (Time detective shows its maps). */
   readonly history: HistoryMode;
+  /** Deep time (v0.45.0). */
+  readonly deep: DeepTime;
   get wars() { return this.stories.wars; }
 
   constructor(private app: App, private shell: Shell) {
@@ -36,17 +39,23 @@ export class TimeTravel {
       id: 'history', icon: '🏛️', title: () => t('historyTitle'), desc: () => t('historyDesc'),
       enter: () => history.enter(), exit: () => history.exit(), tap: (lon, lat) => history.tap(lon, lat),
     });
-    const pangea = new PangeaMode(app, shell);
+    const deep = (this.deep = new DeepTime(app, shell));
+    deep.leaveMode = async () => { if (app.mode && app.mode !== 'deeptime') await this.modes.find((x) => x.id === app.mode)?.exit(); };
     this.add({
-      id: 'pangea', icon: '🌋', title: () => t('pangeaTitle'), desc: () => t('pangeaDesc'),
-      enter: () => pangea.enter(), exit: () => pangea.exit(), tap: (lon, lat) => pangea.tap(lon, lat),
+      id: 'deeptime', icon: '⏳', title: () => L('Deep time', 'El tiempo profundo'),
+      desc: () => L('From the Earth’s first days to today: moving continents, past life, ice ages, the asteroid, and could you breathe there?', 'Desde los primeros días de la Tierra hasta hoy: continentes en movimiento, vida del pasado, glaciaciones, el asteroide y ¿podrías respirar allí?'),
+      enter: () => deep.enter(4540), exit: () => deep.exit(), tap: (lon, lat, x, y) => deep.tap(x, y, lon, lat),
     });
-    // A Life through time step opens the plate model at its age ("See the continents move").
+    // "Pangea to today" (v0.3.0) is part of Deep time now: its id opens Deep time at 250 million years ago (tours).
+    this.add({
+      id: 'pangea', icon: '🌋', hidden: true, title: () => t('pangeaTitle'), desc: () => t('pangeaDesc'),
+      enter: () => deep.enter(250), exit: () => deep.exit(), tap: (lon, lat, x, y) => deep.tap(x, y, lon, lat),
+    });
+    // A Life through time step opens Deep time at its age ("See the continents move").
     app.on('pangea-at', (ma) => void (async () => {
-      if (app.mode && app.mode !== 'pangea') await this.modes.find((x) => x.id === app.mode)?.exit();
-      if (app.mode === 'pangea') await pangea.exit();
       shell.sheet.close();
-      await pangea.enter(Number(ma));
+      if (app.mode === 'deeptime') deep.setMa(Number(ma));
+      else await deep.enter(Number(ma));
     })());
     // Each story collection opens its list of stories; the mode starts when one is picked.
     const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️', people: '🏺', life: '🦕', games: '🏅', journeys: '🧭', beliefs: '🛐', writing: '✍️', plagues: '🦠', disasters: '🌋', music: '🎵', books: '📚', art: '🖼️', inventions: '💡', heritage: '🏛️', space: '🚀', lives: '👤' };

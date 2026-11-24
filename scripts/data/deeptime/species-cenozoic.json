@@ -1,0 +1,1798 @@
+{
+  "species": [
+    {
+      "id": "purgatorius",
+      "name": { "en": "Purgatorius", "es": "Purgatorius" },
+      "group": "mammal", "icon": "🐿️", "life": "land",
+      "from": 65.9, "to": 63,
+      "sites": [
+        { "at": [-105.95, 47.55], "place": { "en": "Purgatory Hill, McCone County, Montana, United States", "es": "Purgatory Hill, condado de McCone, Montana, Estados Unidos" } },
+        { "at": [-106.9, 47.6], "place": { "en": "Garbani Channel, Garfield County, Montana, United States", "es": "Canal Garbani, condado de Garfield, Montana, Estados Unidos" } }
+      ],
+      "len": 0.15, "mass": 0.04,
+      "diet": "both",
+      "text": {
+        "en": "One of the oldest known primates, or very close to them: a tiny tree-climber no bigger than a rat, with ankles that could swivel to grip branches. It turned up in Montana a few hundred thousand years after the asteroid, eating fruit and insects. Its teeth and ankle bones link it to the line that led to monkeys, apes and us.",
+        "es": "Uno de los primates más antiguos que se conocen, o muy cercano a ellos: un trepador diminuto, no más grande que una rata, con tobillos que giraban para agarrarse de las ramas. Apareció en Montana unos cientos de miles de años después del asteroide y comía frutas e insectos. Sus dientes y sus tobillos lo vinculan con la rama que dio lugar a los monos, los simios y nosotros."
+      },
+      "kin": { "en": "Primates: lemurs, monkeys, apes and humans; then colugos and tree shrews", "es": "Los primates: lémures, monos, simios y humanos; luego los colugos y las tupayas" },
+      "wiki": { "en": "Purgatorius", "es": "Purgatorius" },
+      "pbdb": "Purgatorius",
+      "item": "purgatorius"
+    },
+    {
+      "id": "grasses",
+      "name": { "en": "Poaceae", "es": "Poaceae" },
+      "common": { "en": "Grasses", "es": "Pastos y gramíneas" },
+      "group": "plant", "icon": "🌾", "life": "land",
+      "from": 67, "to": 0, "alive": true,
+      "sites": [
+        { "at": [79.3, 20.3], "place": { "en": "Lameta beds, Chandrapur district, Maharashtra, India", "es": "Capas de Lameta, distrito de Chandrapur, Maharashtra, India" } },
+        { "at": [-72.62, 7.7], "place": { "en": "Mirador Formation, Norte de Santander, Colombia", "es": "Formación Mirador, Norte de Santander, Colombia" } },
+        { "at": [-98.1586, 42.425], "place": { "en": "Ashfall Fossil Beds, Nebraska, United States", "es": "Ashfall Fossil Beds, Nebraska, Estados Unidos" } }
+      ],
+      "diet": "light",
+      "text": {
+        "en": "Grasses were already growing in the last days of the dinosaurs: tiny bits of grass turn up in fossil dinosaur dung from India. But for tens of millions of years they stayed small and scattered. As the world cooled and dried, from about 20 million years ago, they spread into vast grasslands, and horses, antelopes and many others evolved long teeth to chew them. Wheat, rice and maize are grasses.",
+        "es": "Los pastos ya crecían en los últimos días de los dinosaurios: aparecen restos diminutos de pasto en excrementos fósiles de dinosaurio de la India. Pero durante decenas de millones de años fueron plantas pequeñas y escasas. Cuando el mundo se enfrió y se secó, desde hace unos 20 millones de años, formaron enormes praderas, y caballos, antílopes y otros animales desarrollaron dientes largos para masticarlos. El trigo, el arroz y el maíz son gramíneas."
+      },
+      "wiki": { "en": "Poaceae", "es": "Poaceae" },
+      "pbdb": "Poaceae"
+    },
+    {
+      "id": "waimanu",
+      "name": { "en": "Waimanu", "es": "Waimanu" },
+      "group": "flyer", "icon": "🐧", "life": "sea",
+      "from": 61.6, "to": 58,
+      "sites": [
+        { "at": [172.6, -43.07], "place": { "en": "Waipara River, North Canterbury, New Zealand", "es": "Río Waipara, Canterbury Norte, Nueva Zelanda" } }
+      ],
+      "len": 0.8,
+      "diet": "fish",
+      "text": {
+        "en": "One of the oldest known penguins, from about 61 million years ago in New Zealand. It already could not fly: it stood about 80 cm tall, with wings turned into flippers, a long beak and heavy bones for diving. It shows that penguins began in the southern seas soon after the dinosaurs vanished, and gave up flying very early.",
+        "es": "Uno de los pingüinos más antiguos que se conocen, de hace unos 61 millones de años, en Nueva Zelanda. Ya no volaba: medía unos 80 cm, tenía las alas convertidas en aletas, un pico largo y huesos pesados para bucear. Muestra que los pingüinos surgieron en los mares del sur poco después de la desaparición de los dinosaurios y que dejaron de volar muy pronto."
+      },
+      "kin": { "en": "Penguins; then albatrosses and petrels", "es": "Los pingüinos; luego los albatros y los petreles" },
+      "wiki": { "en": "Waimanu", "es": "Waimanu" },
+      "pbdb": "Waimanu"
+    },
+    {
+      "id": "titanoboa",
+      "name": { "en": "Titanoboa cerrejonensis", "es": "Titanoboa cerrejonensis" },
+      "common": { "en": "Titanoboa", "es": "Titanoboa" },
+      "group": "reptile", "icon": "🐍", "life": "fresh",
+      "from": 60, "to": 58,
+      "sites": [
+        { "at": [-72.5486, 11.1458], "place": { "en": "Cerrejón coal mine, La Guajira, Colombia", "es": "Mina de carbón del Cerrejón, La Guajira, Colombia" } }
+      ],
+      "len": 13, "mass": 1135,
+      "diet": "meat",
+      "text": {
+        "en": "The largest snake ever found: about 13 metres long and over a tonne, as heavy as a small car. It lived about 60 million years ago in a steamy rainforest where Colombia's Cerrejón coal mine is now. A snake that big needs a lot of warmth, so it suggests the tropics were then hotter than today. It probably ate fish and relatives of crocodiles.",
+        "es": "La serpiente más grande jamás hallada: unos 13 metros y más de una tonelada, como un carro pequeño. Vivió hace unos 60 millones de años en una selva húmeda y calurosa, donde hoy está la mina de carbón del Cerrejón, en Colombia. Una serpiente tan grande necesita mucho calor, así que sugiere que el trópico era entonces más caliente que hoy. Probablemente comía peces y parientes de los cocodrilos."
+      },
+      "kin": { "en": "Boas and anacondas", "es": "Las boas y las anacondas" },
+      "wiki": { "en": "Titanoboa", "es": "Titanoboa" },
+      "pbdb": "Titanoboa",
+      "item": "titanoboa"
+    },
+    {
+      "id": "plesiadapis",
+      "name": { "en": "Plesiadapis", "es": "Plesiadapis" },
+      "group": "mammal", "icon": "🐒", "life": "land",
+      "from": 60, "to": 55,
+      "sites": [
+        { "at": [4.15, 49.28], "place": { "en": "Mont de Berru, near Reims, France", "es": "Mont de Berru, cerca de Reims, Francia" } },
+        { "at": [-108.7, 44.6], "place": { "en": "Clarks Fork Basin, Wyoming, United States", "es": "Cuenca de Clarks Fork, Wyoming, Estados Unidos" } }
+      ],
+      "len": 0.8, "mass": 2,
+      "diet": "plants",
+      "text": {
+        "en": "An early cousin of the primates, the size of a big squirrel, common in the forests of Europe and North America about 58 million years ago. It had claws instead of nails and large gnawing front teeth, a little like a rodent, and climbed trees to eat fruit and leaves. It shows what our earliest relatives may have looked like before primates had grasping hands.",
+        "es": "Un pariente temprano de los primates, del tamaño de una ardilla grande, común en los bosques de Europa y Norteamérica hace unos 58 millones de años. Tenía garras en vez de uñas y grandes dientes delanteros para roer, un poco como un roedor, y trepaba a los árboles para comer frutos y hojas. Muestra cómo pudieron ser nuestros primeros parientes antes de que los primates tuvieran manos prensiles."
+      },
+      "kin": { "en": "Primates, colugos and tree shrews", "es": "Los primates, los colugos y las tupayas" },
+      "wiki": { "en": "Plesiadapis", "es": "Plesiadapis" },
+      "pbdb": "Plesiadapis"
+    },
+    {
+      "id": "gastornis",
+      "name": { "en": "Gastornis", "es": "Gastornis" },
+      "group": "flyer", "icon": "🐦", "life": "land",
+      "from": 59, "to": 45,
+      "sites": [
+        { "at": [2.24, 48.81], "place": { "en": "Meudon, near Paris, France", "es": "Meudon, cerca de París, Francia" } },
+        { "at": [11.95, 51.3], "place": { "en": "Geiseltal, Saxony-Anhalt, Germany", "es": "Geiseltal, Sajonia-Anhalt, Alemania" } },
+        { "at": [-108.2, 44.4], "place": { "en": "Bighorn Basin, Wyoming, United States", "es": "Cuenca de Bighorn, Wyoming, Estados Unidos" } }
+      ],
+      "len": 2, "mass": 150,
+      "diet": "plants",
+      "text": {
+        "en": "A flightless bird about 2 metres tall with a huge, deep beak, living in the forests of Europe, North America and Asia after the dinosaurs. It was long pictured as a fierce hunter (in America it was called Diatryma), but its beak had no hook, and the chemistry of its bones and its footprints point to a plant-eater that cracked seeds, nuts and tough stems.",
+        "es": "Un ave no voladora de unos 2 metros de alto con un pico enorme y profundo, que vivió en los bosques de Europa, Norteamérica y Asia después de los dinosaurios. Durante mucho tiempo se la imaginó como una cazadora feroz (en América se la llamaba Diatryma), pero su pico no tenía gancho, y la química de sus huesos y sus huellas indican que comía plantas: semillas, nueces y tallos duros."
+      },
+      "kin": { "en": "Ducks, geese and screamers", "es": "Los patos, los gansos y los chajás" },
+      "wiki": { "en": "Gastornis", "es": "Gastornis" },
+      "pbdb": "Gastornis"
+    },
+    {
+      "id": "eohippus",
+      "name": { "en": "Eohippus", "es": "Eohippus" },
+      "common": { "en": "Dawn horse", "es": "Caballo del alba" },
+      "group": "mammal", "icon": "🐎", "life": "land",
+      "from": 55, "to": 50,
+      "sites": [
+        { "at": [-108.0, 44.3], "place": { "en": "Bighorn Basin, Wyoming, United States", "es": "Cuenca de Bighorn, Wyoming, Estados Unidos" } }
+      ],
+      "len": 0.6, "mass": 10,
+      "diet": "plants",
+      "text": {
+        "en": "The dawn horse: one of the first horses, no bigger than a fox. It had four toes on its front feet and three on the back, each with a small hoof, and low teeth for soft leaves and fruit in warm forests. Over the next 50 million years its family grew taller, lost its side toes and got long teeth for grass, ending with today's horses.",
+        "es": "El caballo del alba: uno de los primeros caballos, no más grande que un zorro. Tenía cuatro dedos en las patas delanteras y tres en las traseras, cada uno con un pequeño casco, y dientes bajos para hojas blandas y frutos de bosques cálidos. En los 50 millones de años siguientes su familia creció, perdió los dedos laterales y desarrolló dientes largos para el pasto, hasta llegar a los caballos de hoy."
+      },
+      "kin": { "en": "Horses, zebras and donkeys; then rhinos and tapirs", "es": "Caballos, cebras y asnos; luego los rinocerontes y los tapires" },
+      "wiki": { "en": "Eohippus", "es": "Eohippus" },
+      "pbdb": "Eohippus"
+    },
+    {
+      "id": "teilhardina",
+      "name": { "en": "Teilhardina", "es": "Teilhardina" },
+      "group": "mammal", "icon": "🐒", "life": "land",
+      "from": 56, "to": 54,
+      "sites": [
+        { "at": [5.06, 50.8], "place": { "en": "Dormaal, Belgium", "es": "Dormaal, Bélgica" } },
+        { "at": [-108.3, 44.5], "place": { "en": "Bighorn Basin, Wyoming, United States", "es": "Cuenca de Bighorn, Wyoming, Estados Unidos" } },
+        { "at": [112.6, 26.9], "place": { "en": "Hengyang Basin, Hunan, China", "es": "Cuenca de Hengyang, Hunan, China" } }
+      ],
+      "len": 0.2, "mass": 0.03,
+      "diet": "both",
+      "text": {
+        "en": "One of the oldest true primates: a tree-dweller the size of a mouse, weighing about 30 grams. About 56 million years ago, during a burst of global warming, it spread quickly between Asia, Europe and North America, across land bridges near the Arctic that were then covered in forest. Its grasping hands and feet had nails, like ours.",
+        "es": "Uno de los primates verdaderos más antiguos: un habitante de los árboles del tamaño de un ratón, de unos 30 gramos. Hace unos 56 millones de años, durante un fuerte calentamiento global, se extendió rápidamente entre Asia, Europa y Norteamérica por puentes de tierra cerca del Ártico, entonces cubiertos de bosques. Sus manos y pies prensiles tenían uñas, como los nuestros."
+      },
+      "kin": { "en": "Tarsiers; then monkeys, apes and humans", "es": "Los tarseros; luego los monos, los simios y los humanos" },
+      "wiki": { "en": "Teilhardina", "es": "Teilhardina" },
+      "pbdb": "Teilhardina",
+      "item": "teilhardina"
+    },
+    {
+      "id": "nummulites",
+      "name": { "en": "Nummulites", "es": "Nummulites" },
+      "common": { "en": "Coin stones", "es": "Piedras moneda" },
+      "group": "microbe", "icon": "🪙", "life": "sea",
+      "from": 59, "to": 0, "alive": true,
+      "sites": [
+        { "at": [31.13, 29.98], "place": { "en": "Giza pyramid plateau, Egypt", "es": "Meseta de las pirámides de Guiza, Egipto" } }
+      ],
+      "len": 0.05,
+      "diet": "light",
+      "text": {
+        "en": "Giant single-celled creatures that built coin-shaped shells of lime, some as wide as a hand, in warm shallow seas about 50 million years ago. Tiny algae living inside them fed them with sunlight. Their shells piled up into thick limestone: the pyramids of Giza are built of it, and the Greek geographer Strabo thought they were lentils from the builders' meals turned to stone. Small kinds still live today.",
+        "es": "Seres gigantes de una sola célula que construían conchas de caliza en forma de moneda, algunas tan anchas como una mano, en mares cálidos y poco profundos hace unos 50 millones de años. Algas diminutas que vivían dentro de ellos los alimentaban con la luz del sol. Sus conchas formaron gruesas capas de caliza: con ella se hicieron las pirámides de Guiza, y el geógrafo griego Estrabón creyó que eran lentejas de la comida de los obreros convertidas en piedra."
+      },
+      "kin": { "en": "Other foraminifera, single-celled shell-builders still common in the sea", "es": "Otros foraminíferos, seres unicelulares con concha aún comunes en el mar" },
+      "wiki": { "en": "Nummulite", "es": "Nummulites" },
+      "pbdb": "Nummulites"
+    },
+    {
+      "id": "eucalyptus",
+      "name": { "en": "Eucalyptus", "es": "Eucalyptus" },
+      "common": { "en": "Gum trees", "es": "Eucaliptos" },
+      "group": "plant", "icon": "🌳", "life": "land",
+      "from": 52, "to": 0, "alive": true,
+      "sites": [
+        { "at": [-70.0, -42.5], "place": { "en": "Laguna del Hunco, Chubut, Argentina", "es": "Laguna del Hunco, Chubut, Argentina" } }
+      ],
+      "diet": "light",
+      "text": {
+        "en": "Gum trees are the trees of Australia today, but the oldest known eucalypt fossils, about 52 million years old, are leaves, flowers and fruits from Patagonia in Argentina. Back then South America, Antarctica and Australia were still joined. As Australia drifted north and dried out, eucalypts spread across it, helped by thick bark and seeds that survive fire. Koalas eat almost nothing but their leaves.",
+        "es": "Los eucaliptos son hoy los árboles típicos de Australia, pero sus fósiles más antiguos, de unos 52 millones de años, son hojas, flores y frutos de la Patagonia argentina. Entonces Sudamérica, la Antártida y Australia todavía estaban unidas. Cuando Australia se desplazó al norte y se volvió más seca, los eucaliptos la cubrieron, ayudados por su corteza gruesa y por semillas que resisten el fuego. Los koalas comen casi solo sus hojas."
+      },
+      "kin": { "en": "Myrtles, guavas and cloves (the myrtle family)", "es": "Los mirtos, las guayabas y el clavo de olor (familia de las mirtáceas)" },
+      "wiki": { "en": "Eucalyptus", "es": "Eucalyptus" },
+      "pbdb": "Eucalyptus"
+    },
+    {
+      "id": "icaronycteris",
+      "name": { "en": "Icaronycteris index", "es": "Icaronycteris index" },
+      "group": "mammal", "icon": "🦇", "life": "air",
+      "from": 53, "to": 51,
+      "sites": [
+        { "at": [-110.77, 41.86], "place": { "en": "Fossil Butte, Wyoming, United States", "es": "Fossil Butte, Wyoming, Estados Unidos" } }
+      ],
+      "len": 0.14,
+      "diet": "small",
+      "text": {
+        "en": "One of the oldest bats known from whole skeletons, about 52 million years old, from old lake beds in Wyoming. Its wings were already like a modern bat's, though it kept claws on two fingers and a long tail. Its ear bones suggest it could hunt insects in the dark by echolocation, listening for the echoes of its own squeaks.",
+        "es": "Uno de los murciélagos más antiguos conocidos por esqueletos completos, de unos 52 millones de años, hallado en antiguos lechos de lagos de Wyoming. Sus alas ya eran como las de un murciélago moderno, aunque conservaba garras en dos dedos y una cola larga. Sus oídos sugieren que cazaba insectos a oscuras por ecolocalización: escuchando el eco de sus propios chillidos."
+      },
+      "kin": { "en": "Bats", "es": "Los murciélagos" },
+      "wiki": { "en": "Icaronycteris", "es": "Icaronycteris" },
+      "pbdb": "Icaronycteris"
+    },
+    {
+      "id": "knightia",
+      "name": { "en": "Knightia eocaena", "es": "Knightia eocaena" },
+      "common": { "en": "Fossil herring", "es": "Arenque fósil" },
+      "group": "fish", "icon": "🐟", "life": "fresh",
+      "from": 53, "to": 49,
+      "sites": [
+        { "at": [-110.6, 41.8], "place": { "en": "Fossil Butte and Kemmerer, Wyoming, United States", "es": "Fossil Butte y Kemmerer, Wyoming, Estados Unidos" } }
+      ],
+      "len": 0.12,
+      "diet": "small",
+      "text": {
+        "en": "A small herring, usually 10 to 15 cm long, that swam in huge shoals in the lakes of Wyoming about 52 million years ago. Fine mud on the lake floor kept millions of them so well that it is one of the commonest fossil fish in the world, and Wyoming's state fossil. Some fossils show bigger fish that died choking on a Knightia.",
+        "es": "Un pequeño arenque, por lo general de 10 a 15 cm, que nadaba en enormes cardúmenes en los lagos de Wyoming hace unos 52 millones de años. El barro fino del fondo conservó millones tan bien que es uno de los peces fósiles más comunes del mundo y el fósil oficial de Wyoming. Algunos fósiles muestran peces más grandes que murieron atragantados con un Knightia."
+      },
+      "kin": { "en": "Herrings, sardines and anchovies", "es": "Los arenques, las sardinas y las anchoas" },
+      "wiki": { "en": "Knightia", "es": "Knightia (pez)" },
+      "pbdb": "Knightia eocaena"
+    },
+    {
+      "id": "titanomyrma",
+      "name": { "en": "Titanomyrma", "es": "Titanomyrma" },
+      "common": { "en": "Giant ant", "es": "Hormiga gigante" },
+      "group": "flyer", "icon": "🐜", "life": "land",
+      "from": 50, "to": 46,
+      "sites": [
+        { "at": [8.75, 49.93], "place": { "en": "Messel Pit, Germany", "es": "Pozo de Messel, Alemania" } },
+        { "at": [-109.42, 42.17], "place": { "en": "Green River Formation, Wyoming, United States", "es": "Formación Green River, Wyoming, Estados Unidos" } }
+      ],
+      "len": 0.05,
+      "diet": "both",
+      "text": {
+        "en": "A giant ant: its queens were about 5 cm long, with wings spanning some 15 cm, as big as a hummingbird. It lived about 50 to 46 million years ago in Germany and in Wyoming, when warm forests reached far to the north. It may have crossed between Europe and North America through the Arctic during short hot spells, like other animals of its time.",
+        "es": "Una hormiga gigante: sus reinas medían unos 5 cm y sus alas abiertas, unos 15 cm, como un colibrí. Vivió hace unos 50 a 46 millones de años en Alemania y en Wyoming, cuando los bosques cálidos llegaban muy al norte. Quizá pasó entre Europa y Norteamérica por el Ártico durante breves épocas de calor, como otros animales de su tiempo."
+      },
+      "kin": { "en": "Ants", "es": "Las hormigas" },
+      "wiki": { "en": "Titanomyrma", "es": "Titanomyrma" },
+      "pbdb": "Titanomyrma"
+    },
+    {
+      "id": "darwinius",
+      "name": { "en": "Darwinius masillae", "es": "Darwinius masillae" },
+      "common": { "en": "Ida", "es": "Ida" },
+      "group": "mammal", "icon": "🐒", "life": "land",
+      "from": 47.5, "to": 46.5,
+      "sites": [
+        { "at": [8.7333, 49.9333], "place": { "en": "Messel Pit, Germany", "es": "Pozo de Messel, Alemania" } }
+      ],
+      "len": 0.58,
+      "diet": "plants",
+      "text": {
+        "en": "Ida, a young primate from Germany's Messel Pit, is one of the most complete fossil primates ever found: the whole skeleton, the outline of her fur and even her last meal of fruit and leaves. She lived 47 million years ago in a jungle around a volcanic lake. Unveiled in 2009 as a 'missing link' to us, she is now thought by most scientists to belong with the ancestors of lemurs.",
+        "es": "Ida, una primate joven del pozo de Messel, en Alemania, es uno de los primates fósiles más completos jamás hallados: el esqueleto entero, la silueta de su pelaje y hasta su última comida de frutos y hojas. Vivió hace 47 millones de años en una selva junto a un lago volcánico. En 2009 la presentaron como un «eslabón perdido» hacia nosotros, pero la mayoría de los científicos cree que está emparentada con los antepasados de los lémures."
+      },
+      "kin": { "en": "Lemurs and lorises", "es": "Los lémures y los loris" },
+      "wiki": { "en": "Darwinius", "es": "Darwinius masillae" },
+      "pbdb": "Darwinius",
+      "item": "darwinius"
+    },
+    {
+      "id": "pakicetus",
+      "name": { "en": "Pakicetus", "es": "Pakicetus" },
+      "group": "mammal", "icon": "🐋", "life": "shore",
+      "from": 50, "to": 47,
+      "sites": [
+        { "at": [72.1889, 33.6333], "place": { "en": "Kala Chitta Hills, Punjab, Pakistan", "es": "Colinas Kala Chitta, Punyab, Pakistán" } }
+      ],
+      "len": 1.5,
+      "diet": "meat",
+      "text": {
+        "en": "One of the earliest whales looked nothing like one: a long-snouted animal the size of a wolf, running on four legs near rivers in what is now Pakistan, about 50 million years ago. What gives it away is its ear: a thick, shell-like ear bone found only in whales and dolphins. It probably hunted at the water's edge. Within 10 million years its relatives lived fully in the sea.",
+        "es": "Una de las primeras ballenas no se parecía a una ballena: era un animal de hocico largo, del tamaño de un lobo, que corría en cuatro patas cerca de ríos de lo que hoy es Pakistán, hace unos 50 millones de años. Lo delata su oído: un hueso grueso, como una concha, que solo tienen las ballenas y los delfines. Probablemente cazaba en la orilla del agua. En 10 millones de años sus parientes ya vivían por completo en el mar."
+      },
+      "kin": { "en": "Whales and dolphins; then hippos", "es": "Las ballenas y los delfines; luego los hipopótamos" },
+      "wiki": { "en": "Pakicetus", "es": "Pakicetus" },
+      "pbdb": "Pakicetus",
+      "item": "pakicetus"
+    },
+    {
+      "id": "ambulocetus",
+      "name": { "en": "Ambulocetus natans", "es": "Ambulocetus natans" },
+      "common": { "en": "Walking whale", "es": "Ballena caminante" },
+      "group": "mammal", "icon": "🐋", "life": "shore",
+      "from": 49, "to": 47.5,
+      "sites": [
+        { "at": [72.2, 33.6583], "place": { "en": "Kala Chitta Hills, Punjab, Pakistan", "es": "Colinas Kala Chitta, Punyab, Pakistán" } }
+      ],
+      "len": 3, "mass": 180,
+      "diet": "meat",
+      "text": {
+        "en": "The 'walking whale': a 3-metre whale with big webbed feet, strong legs and a head like a crocodile's, from about 48 million years ago in what is now Pakistan. It could still walk on land, clumsily, but swam by kicking its hind legs and bending its body. It probably lurked in shallow coastal waters and ambushed animals that came to drink, much like a crocodile.",
+        "es": "La «ballena que caminaba»: una ballena de 3 metros con grandes patas palmeadas, piernas fuertes y cabeza de cocodrilo, de hace unos 48 millones de años, en lo que hoy es Pakistán. Todavía podía andar en tierra, con torpeza, pero nadaba pataleando con las patas traseras y ondulando el cuerpo. Probablemente acechaba en aguas costeras poco profundas a los animales que venían a beber, como un cocodrilo."
+      },
+      "kin": { "en": "Whales and dolphins; then hippos", "es": "Las ballenas y los delfines; luego los hipopótamos" },
+      "wiki": { "en": "Ambulocetus", "es": "Ambulocetus" },
+      "pbdb": "Ambulocetus",
+      "item": "ambulocetus"
+    },
+    {
+      "id": "uintatherium",
+      "name": { "en": "Uintatherium", "es": "Uintatherium" },
+      "group": "mammal", "icon": "🦏", "life": "land",
+      "from": 49, "to": 40,
+      "sites": [
+        { "at": [-110.2, 41.3], "place": { "en": "Bridger Basin, Wyoming, United States", "es": "Cuenca de Bridger, Wyoming, Estados Unidos" } },
+        { "at": [-109.4, 40.1], "place": { "en": "Uinta Basin, Utah, United States", "es": "Cuenca de Uinta, Utah, Estados Unidos" } }
+      ],
+      "len": 4, "mass": 2000,
+      "diet": "plants",
+      "text": {
+        "en": "A plant-eater as big as a rhino, with six knobbly horns on its head and, in males, long dagger-like tusks. It roamed the forests and swamps of Wyoming and Utah about 46 million years ago, and its brain was tiny for its size. It was neither a rhino nor an elephant: it belonged to an extinct group of hoofed mammals that left no living descendants.",
+        "es": "Un herbívoro del tamaño de un rinoceronte, con seis cuernos abultados en la cabeza y, en los machos, largos colmillos como puñales. Recorría los bosques y pantanos de Wyoming y Utah hace unos 46 millones de años, y tenía un cerebro diminuto para su tamaño. No era rinoceronte ni elefante: pertenecía a un grupo extinto de mamíferos con pezuñas que no dejó descendientes."
+      },
+      "kin": { "en": "None close: its group, the dinoceratans, died out", "es": "Ninguno cercano: su grupo, los dinoceratos, se extinguió" },
+      "wiki": { "en": "Uintatherium", "es": "Uintatherium" },
+      "pbdb": "Uintatherium"
+    },
+    {
+      "id": "andrewsarchus",
+      "name": { "en": "Andrewsarchus", "es": "Andrewsarchus" },
+      "group": "mammal", "icon": "🐗", "life": "land",
+      "from": 45, "to": 40,
+      "sites": [
+        { "at": [111.76, 43.33], "place": { "en": "Irdin Manha, Inner Mongolia, China", "es": "Irdin Manha, Mongolia Interior, China" } }
+      ],
+      "diet": "both",
+      "text": {
+        "en": "Known from one enormous skull, 83 cm long, found in Inner Mongolia in 1923 by an expedition led by Roy Chapman Andrews. It lived about 45 to 40 million years ago and was once called the largest meat-eating land mammal ever. Without the rest of its body, its size and diet are guesses: it now seems to be a relative of hippos and whales that may have eaten almost anything.",
+        "es": "Se conoce por un único cráneo enorme, de 83 cm, hallado en Mongolia Interior en 1923 por una expedición dirigida por Roy Chapman Andrews. Vivió hace unos 45 a 40 millones de años y se dijo que era el mayor mamífero carnívoro terrestre de la historia. Sin el resto del cuerpo, su tamaño y su dieta son conjeturas: hoy parece pariente de los hipopótamos y las ballenas, y quizá comía casi de todo."
+      },
+      "kin": { "en": "Probably hippos and whales", "es": "Probablemente los hipopótamos y las ballenas" },
+      "wiki": { "en": "Andrewsarchus", "es": "Andrewsarchus" },
+      "pbdb": "Andrewsarchus"
+    },
+    {
+      "id": "basilosaurus",
+      "name": { "en": "Basilosaurus", "es": "Basilosaurus" },
+      "group": "mammal", "icon": "🐋", "life": "sea",
+      "from": 41.3, "to": 33.9,
+      "sites": [
+        { "at": [30.0463, 29.2963], "place": { "en": "Wadi al-Hitan (Valley of the Whales), Faiyum, Egypt", "es": "Wadi al-Hitan (valle de las Ballenas), El Fayum, Egipto" } },
+        { "at": [-87.85, 31.7], "place": { "en": "Clarke County, Alabama, United States", "es": "Condado de Clarke, Alabama, Estados Unidos" } }
+      ],
+      "len": 18,
+      "diet": "meat",
+      "text": {
+        "en": "A whale shaped like a sea serpent: up to 18 metres long and slim as an eel, hunting in warm seas about 40 million years ago. It still had tiny hind legs, with knees and toes, far too small to walk on. Bite marks show it ate other whales, such as the smaller Dorudon. Its bones were first thought to be a giant reptile's, so its name means 'king lizard'.",
+        "es": "Una ballena con forma de serpiente marina: de hasta 18 metros y delgada como una anguila, cazaba en mares cálidos hace unos 40 millones de años. Aún tenía diminutas patas traseras, con rodillas y dedos, demasiado pequeñas para caminar. Marcas de mordidas muestran que comía otras ballenas, como el pequeño Dorudon. Al principio se creyó que sus huesos eran de un reptil gigante; por eso su nombre significa «rey lagarto»."
+      },
+      "kin": { "en": "Whales and dolphins (it was not their direct ancestor)", "es": "Las ballenas y los delfines (no fue su antepasado directo)" },
+      "wiki": { "en": "Basilosaurus", "es": "Basilosaurus" },
+      "pbdb": "Basilosaurus",
+      "item": "basilosaurus"
+    },
+    {
+      "id": "megacerops",
+      "name": { "en": "Megacerops", "es": "Megacerops" },
+      "common": { "en": "Thunder beast", "es": "Bestia del trueno" },
+      "group": "mammal", "icon": "🦏", "life": "land",
+      "from": 38, "to": 33.9,
+      "sites": [
+        { "at": [-102.34, 43.86], "place": { "en": "White River Badlands, South Dakota, United States", "es": "Badlands del río White, Dakota del Sur, Estados Unidos" } },
+        { "at": [-103.84, 42.86], "place": { "en": "Toadstool Geologic Park, Nebraska, United States", "es": "Parque Geológico Toadstool, Nebraska, Estados Unidos" } }
+      ],
+      "len": 5, "mass": 3000,
+      "diet": "plants",
+      "text": {
+        "en": "A giant taller than a rhino, with a forked, Y-shaped horn on its nose. Herds browsed soft leaves on the wooded plains of North America about 37 million years ago. The Lakota people knew its huge bones in the Badlands and linked them to thunder horses that galloped in storms; its old name Brontotherium, 'thunder beast', comes from that story. It died out as the climate cooled and dried.",
+        "es": "Un gigante más alto que un rinoceronte, con un cuerno en forma de Y sobre la nariz. Sus manadas comían hojas tiernas en las llanuras boscosas de Norteamérica hace unos 37 millones de años. El pueblo lakota conocía sus enormes huesos de las Badlands y los asociaba con caballos del trueno que galopaban en las tormentas; de ahí su antiguo nombre, Brontotherium, «bestia del trueno». Desapareció cuando el clima se enfrió y se secó."
+      },
+      "kin": { "en": "Horses, rhinos and tapirs", "es": "Los caballos, los rinocerontes y los tapires" },
+      "wiki": { "en": "Megacerops", "es": "Megacerops" },
+      "pbdb": "Megacerops",
+      "item": "thunder-beasts"
+    },
+    {
+      "id": "mesohippus",
+      "name": { "en": "Mesohippus", "es": "Mesohippus" },
+      "group": "mammal", "icon": "🐎", "life": "land",
+      "from": 38, "to": 30,
+      "sites": [
+        { "at": [-102.2, 43.75], "place": { "en": "Badlands National Park, South Dakota, United States", "es": "Parque Nacional Badlands, Dakota del Sur, Estados Unidos" } },
+        { "at": [-109.5, 49.6], "place": { "en": "Cypress Hills, Saskatchewan, Canada", "es": "Cypress Hills, Saskatchewan, Canadá" } }
+      ],
+      "diet": "plants",
+      "text": {
+        "en": "A three-toed horse the size of a large dog, about 60 cm tall at the shoulder, common in North America about 35 million years ago. It walked mostly on its middle toe, a step towards the single hoof of today's horses, and had longer legs and teeth than the dawn horse. It still ate leaves and shoots rather than grass, in the open woodlands of a cooling world.",
+        "es": "Un caballo de tres dedos del tamaño de un perro grande, de unos 60 cm de alto a la cruz, común en Norteamérica hace unos 35 millones de años. Caminaba sobre todo apoyado en el dedo central, un paso hacia el casco único de los caballos de hoy, y tenía patas y dientes más largos que el caballo del alba. Aún comía hojas y brotes, no pasto, en los bosques abiertos de un mundo que se enfriaba."
+      },
+      "kin": { "en": "Horses, zebras and donkeys", "es": "Los caballos, las cebras y los asnos" },
+      "wiki": { "en": "Mesohippus", "es": "Mesohippus" },
+      "pbdb": "Mesohippus"
+    },
+    {
+      "id": "moeritherium",
+      "name": { "en": "Moeritherium", "es": "Moeritherium" },
+      "group": "mammal", "icon": "🐘", "life": "fresh",
+      "from": 38, "to": 33,
+      "sites": [
+        { "at": [30.67, 29.6], "place": { "en": "Qasr el-Sagha, Faiyum, Egypt", "es": "Qasr el-Sagha, El Fayum, Egipto" } },
+        { "at": [18.5, 25.75], "place": { "en": "Dor el Talha, Libya", "es": "Dor el Talha, Libia" } }
+      ],
+      "diet": "plants",
+      "text": {
+        "en": "An early cousin of elephants, about the size of a pygmy hippo, with no trunk and only short tusks. It lived along the swampy coasts and rivers of North Africa about 37 million years ago, and the chemistry of its teeth suggests it spent much of its time in water, eating water plants. It shows that the elephant family began in Africa, with small, low animals.",
+        "es": "Un pariente temprano de los elefantes, del tamaño de un hipopótamo pigmeo, sin trompa y con colmillos cortos. Vivía en costas pantanosas y ríos del norte de África hace unos 37 millones de años, y la química de sus dientes indica que pasaba mucho tiempo en el agua, comiendo plantas acuáticas. Muestra que la familia de los elefantes comenzó en África, con animales pequeños y bajos."
+      },
+      "kin": { "en": "Elephants; then sea cows and hyraxes", "es": "Los elefantes; luego los manatíes y los damanes" },
+      "wiki": { "en": "Moeritherium", "es": "Moeritherium" },
+      "pbdb": "Moeritherium"
+    },
+    {
+      "id": "arsinoitherium",
+      "name": { "en": "Arsinoitherium", "es": "Arsinoitherium" },
+      "group": "mammal", "icon": "🦏", "life": "land",
+      "from": 36, "to": 27,
+      "sites": [
+        { "at": [30.58, 29.64], "place": { "en": "Jebel Qatrani, Faiyum, Egypt", "es": "Jebel Qatrani, El Fayum, Egipto" } },
+        { "at": [37.07, 12.55], "place": { "en": "Chilga, Amhara, Ethiopia", "es": "Chilga, Amhara, Etiopía" } },
+        { "at": [54.0, 17.0], "place": { "en": "Dhofar, Oman", "es": "Dhofar, Omán" } }
+      ],
+      "len": 3,
+      "diet": "plants",
+      "text": {
+        "en": "A huge plant-eater with two enormous horns side by side on its nose, hollow and joined at the base, and two small ones behind them. It lived in the swampy forests of North Africa and Arabia about 33 million years ago. It looked like a rhino but was not one: its closest living relatives are probably elephants, sea cows and hyraxes. It is named after Arsinoe, a queen of ancient Egypt.",
+        "es": "Un enorme herbívoro con dos grandes cuernos uno al lado del otro sobre la nariz, huecos y unidos en la base, y dos pequeños detrás. Vivió en los bosques pantanosos del norte de África y Arabia hace unos 33 millones de años. Parecía un rinoceronte pero no lo era: sus parientes vivos más cercanos son probablemente los elefantes, los manatíes y los damanes. Debe su nombre a Arsínoe, una reina del antiguo Egipto."
+      },
+      "kin": { "en": "Probably elephants, sea cows and hyraxes", "es": "Probablemente los elefantes, los manatíes y los damanes" },
+      "wiki": { "en": "Arsinoitherium", "es": "Arsinoitherium" },
+      "pbdb": "Arsinoitherium"
+    },
+    {
+      "id": "prodryas",
+      "name": { "en": "Prodryas persephone", "es": "Prodryas persephone" },
+      "group": "flyer", "icon": "🦋", "life": "air",
+      "from": 34.2, "to": 33.9,
+      "sites": [
+        { "at": [-105.29, 38.91], "place": { "en": "Florissant Fossil Beds, Colorado, United States", "es": "Lechos fósiles de Florissant, Colorado, Estados Unidos" } }
+      ],
+      "len": 0.025,
+      "diet": "plants",
+      "text": {
+        "en": "One of the most beautiful fossil butterflies ever found, with the pattern of spots still visible on its wings. It was buried in fine volcanic ash in a lake at Florissant, Colorado, about 34 million years ago, together with thousands of insects, leaves and giant redwood trunks. Butterfly wings are so fragile that fossils this good are extremely rare.",
+        "es": "Una de las mariposas fósiles más bellas jamás halladas, con el dibujo de manchas todavía visible en las alas. Quedó enterrada en ceniza volcánica fina en un lago de Florissant, en Colorado, hace unos 34 millones de años, junto con miles de insectos, hojas y troncos de secuoyas gigantes. Las alas de las mariposas son tan frágiles que fósiles así son rarísimos."
+      },
+      "kin": { "en": "Brush-footed butterflies, such as monarchs and painted ladies", "es": "Las mariposas ninfálidas, como la monarca y la vanesa de los cardos" },
+      "wiki": { "en": "Prodryas", "es": "" },
+      "pbdb": "Prodryas"
+    },
+    {
+      "id": "archaeotherium",
+      "name": { "en": "Archaeotherium", "es": "Archaeotherium" },
+      "common": { "en": "Hell pig", "es": "Cerdo del infierno" },
+      "group": "mammal", "icon": "🐗", "life": "land",
+      "from": 37, "to": 28,
+      "sites": [
+        { "at": [-102.2, 43.75], "place": { "en": "Badlands National Park, South Dakota, United States", "es": "Parque Nacional Badlands, Dakota del Sur, Estados Unidos" } },
+        { "at": [-105.4, 42.76], "place": { "en": "Near Douglas, Wyoming, United States", "es": "Cerca de Douglas, Wyoming, Estados Unidos" } }
+      ],
+      "len": 2, "mass": 250,
+      "diet": "both",
+      "text": {
+        "en": "A 'hell pig' of North America about 35 million years ago: some 2 metres long, with a huge head, bony knobs on its cheeks and jaw, and teeth for both meat and plants. It was not a true pig, but probably a relative of hippos and whales. In Wyoming, remains of small early camels with its bite marks were found piled together, like a larder kept for later.",
+        "es": "Un «cerdo del infierno» de Norteamérica, de hace unos 35 millones de años: de unos 2 metros, con una cabeza enorme, protuberancias óseas en las mejillas y la mandíbula, y dientes para carne y plantas. No era un cerdo de verdad, sino probablemente pariente de los hipopótamos y las ballenas. En Wyoming se hallaron restos de pequeños camellos primitivos con sus mordidas, amontonados como una despensa para más tarde."
+      },
+      "kin": { "en": "Probably hippos and whales; then pigs", "es": "Probablemente los hipopótamos y las ballenas; luego los cerdos" },
+      "wiki": { "en": "Archaeotherium", "es": "Archaeotherium" },
+      "pbdb": "Archaeotherium"
+    },
+    {
+      "id": "entelodon",
+      "name": { "en": "Entelodon", "es": "Entelodon" },
+      "group": "mammal", "icon": "🐗", "life": "land",
+      "from": 37, "to": 28,
+      "sites": [
+        { "at": [3.87, 45.02], "place": { "en": "Ronzon, near Le Puy-en-Velay, France", "es": "Ronzon, cerca de Le Puy-en-Velay, Francia" } },
+        { "at": [1.63, 44.28], "place": { "en": "Quercy, Lot, France", "es": "Quercy, Lot, Francia" } },
+        { "at": [111.98, 43.65], "place": { "en": "Houldjin, Inner Mongolia, China", "es": "Houldjin, Mongolia Interior, China" } }
+      ],
+      "diet": "both",
+      "text": {
+        "en": "The first 'hell pig' to be named, from Europe and Asia about 37 to 28 million years ago. Its skull was long, with knobbly cheekbones and powerful jaws that could crack bones and nuts. Despite the nickname it was not a pig: entelodonts were a family of their own, probably closer to hippos and whales. Its fossils come from France, Germany, China, Mongolia and even Japan.",
+        "es": "El primer «cerdo del infierno» en recibir nombre, de Europa y Asia, de hace unos 37 a 28 millones de años. Tenía un cráneo largo, pómulos con protuberancias y mandíbulas potentes capaces de romper huesos y nueces. Pese al apodo no era un cerdo: los entelodontes fueron una familia aparte, probablemente más cercana a los hipopótamos y las ballenas. Hay fósiles en Francia, Alemania, China, Mongolia y hasta Japón."
+      },
+      "kin": { "en": "Probably hippos and whales; then pigs", "es": "Probablemente los hipopótamos y las ballenas; luego los cerdos" },
+      "wiki": { "en": "Entelodon", "es": "Entelodon" },
+      "pbdb": "Entelodon"
+    },
+    {
+      "id": "paraceratherium",
+      "name": { "en": "Paraceratherium", "es": "Paraceratherium" },
+      "group": "mammal", "icon": "🦏", "life": "land",
+      "from": 34, "to": 23,
+      "sites": [
+        { "at": [69.15, 29.0333], "place": { "en": "Bugti Hills, Balochistan, Pakistan", "es": "Colinas Bugti, Baluchistán, Pakistán" } },
+        { "at": [103.2, 35.6], "place": { "en": "Linxia Basin, Gansu, China", "es": "Cuenca de Linxia, Gansu, China" } },
+        { "at": [63.5, 49.6], "place": { "en": "Turgai, Kazakhstan", "es": "Turgai, Kazajistán" } }
+      ],
+      "len": 7.4, "mass": 17000,
+      "diet": "plants",
+      "text": {
+        "en": "One of the largest land mammals ever: a hornless rhinoceros almost 5 metres tall at the shoulder, about 7 metres long and perhaps 15 to 20 tonnes, as heavy as three or four elephants. With its long neck it browsed the treetops of Asia, from Pakistan to China and Kazakhstan, between about 34 and 23 million years ago. It has also been called Indricotherium and Baluchitherium.",
+        "es": "Uno de los mamíferos terrestres más grandes de todos los tiempos: un rinoceronte sin cuernos de casi 5 metros de alto a la cruz, unos 7 metros de largo y quizá de 15 a 20 toneladas, tanto como tres o cuatro elefantes. Con su cuello largo comía hojas de las copas de los árboles de Asia, de Pakistán a China y Kazajistán, hace entre unos 34 y 23 millones de años. También se le llamó Indricotherium y Baluchitherium."
+      },
+      "kin": { "en": "Rhinos; then tapirs and horses", "es": "Los rinocerontes; luego los tapires y los caballos" },
+      "wiki": { "en": "Paraceratherium", "es": "Paraceratherium" },
+      "pbdb": "Paraceratherium",
+      "item": "paraceratherium"
+    },
+    {
+      "id": "aegyptopithecus",
+      "name": { "en": "Aegyptopithecus zeuxis", "es": "Aegyptopithecus zeuxis" },
+      "group": "mammal", "icon": "🐒", "life": "land",
+      "from": 30.2, "to": 29,
+      "sites": [
+        { "at": [30.58, 29.6], "place": { "en": "Jebel Qatrani, Faiyum, Egypt", "es": "Jebel Qatrani, El Fayum, Egipto" } }
+      ],
+      "mass": 6.7,
+      "diet": "plants",
+      "text": {
+        "en": "A climber the size of a cat from the steamy forests of Egypt's Faiyum, about 30 million years ago, when the Sahara was a green land of rivers. It lived before Old World monkeys and apes went their separate ways, so it looks a little like the ancestor of both. It had a snout, a small brain and large canine teeth, and males were bigger than females.",
+        "es": "Un trepador del tamaño de un gato que vivía en las selvas húmedas del Fayum, en Egipto, hace unos 30 millones de años, cuando el Sahara era una tierra verde llena de ríos. Vivió antes de que los monos del Viejo Mundo y los simios se separaran, así que se parece un poco al antepasado de ambos. Tenía hocico, un cerebro pequeño y grandes colmillos, y los machos eran más grandes que las hembras."
+      },
+      "kin": { "en": "Old World monkeys, apes and humans", "es": "Los monos del Viejo Mundo, los simios y los humanos" },
+      "wiki": { "en": "Aegyptopithecus", "es": "Aegyptopithecus" },
+      "pbdb": "Aegyptopithecus"
+    },
+    {
+      "id": "pelagornis",
+      "name": { "en": "Pelagornis", "es": "Pelagornis" },
+      "common": { "en": "Bony-toothed bird", "es": "Ave de dientes óseos" },
+      "group": "flyer", "icon": "🦅", "life": "air",
+      "from": 28, "to": 2.5,
+      "sites": [
+        { "at": [-80.04, 32.9], "place": { "en": "Charleston, South Carolina, United States", "es": "Charleston, Carolina del Sur, Estados Unidos" } },
+        { "at": [-70.85, -27.1], "place": { "en": "Bahía Inglesa, Atacama, Chile", "es": "Bahía Inglesa, Atacama, Chile" } },
+        { "at": [-7.53, 33.6], "place": { "en": "Ahl al Oughlam, Casablanca, Morocco", "es": "Ahl al Oughlam, Casablanca, Marruecos" } }
+      ],
+      "mass": 30,
+      "diet": "fish",
+      "text": {
+        "en": "A seabird with the widest wings of any bird known: Pelagornis sandersi, found while building Charleston's airport in South Carolina, spanned about 6.4 metres, twice an albatross. Its beak was lined with bony spikes like teeth, for gripping slippery fish and squid. It glided over the oceans for days on end. Its kind lived from about 28 to 2.5 million years ago.",
+        "es": "Un ave marina con las alas más anchas de cualquier ave conocida: Pelagornis sandersi, hallada al construir el aeropuerto de Charleston, en Carolina del Sur, medía unos 6,4 metros de punta a punta, el doble que un albatros. Su pico tenía puntas de hueso como dientes para sujetar peces y calamares resbaladizos. Planeaba sobre los océanos durante días. Su linaje vivió hace unos 28 a 2,5 millones de años."
+      },
+      "kin": { "en": "Possibly ducks and geese; this is debated", "es": "Quizá los patos y los gansos; se debate" },
+      "wiki": { "en": "Pelagornis", "es": "Pelagornis" },
+      "pbdb": "Pelagornis"
+    },
+    {
+      "id": "andrias-scheuchzeri",
+      "name": { "en": "Andrias scheuchzeri", "es": "Andrias scheuchzeri" },
+      "common": { "en": "Flood witness salamander", "es": "Salamandra del diluvio" },
+      "group": "amphibian", "icon": "🦎", "life": "fresh",
+      "from": 25, "to": 7,
+      "sites": [
+        { "at": [8.88, 47.66], "place": { "en": "Öhningen, Lake Constance, Germany", "es": "Öhningen, lago de Constanza, Alemania" } }
+      ],
+      "len": 1.2,
+      "diet": "meat",
+      "text": {
+        "en": "A giant salamander more than a metre long. In 1726 the Swiss doctor Johann Scheuchzer described a fossil skeleton from Öhningen, Germany, as a man drowned in Noah's flood: Homo diluvii testis, 'man, witness of the flood'. In 1811 Georges Cuvier showed that it was a giant salamander. Its kind lived in the rivers of Europe between about 25 and 7 million years ago.",
+        "es": "Una salamandra gigante de más de un metro. En 1726, el médico suizo Johann Scheuchzer describió un esqueleto fósil de Öhningen, en Alemania, como un hombre ahogado en el diluvio de Noé: Homo diluvii testis, «hombre testigo del diluvio». En 1811, Georges Cuvier demostró que era una salamandra gigante. Vivió en los ríos de Europa hace entre unos 25 y 7 millones de años."
+      },
+      "kin": { "en": "The giant salamanders of China and Japan; then the hellbender", "es": "Las salamandras gigantes de China y Japón; luego el tapacaminos o hellbender" },
+      "wiki": { "en": "Andrias scheuchzeri", "es": "Andrias scheuchzeri" },
+      "pbdb": "Andrias scheuchzeri"
+    },
+    {
+      "id": "megalodon",
+      "name": { "en": "Otodus megalodon", "es": "Otodus megalodon" },
+      "common": { "en": "Megalodon", "es": "Megalodón" },
+      "group": "fish", "icon": "🦈", "life": "sea",
+      "from": 23, "to": 3.6,
+      "sites": [
+        { "at": [-75.9069, -14.3369], "place": { "en": "Pisco-Ica desert, Peru", "es": "Desierto de Pisco-Ica, Perú" } },
+        { "at": [-76.5, 38.45], "place": { "en": "Calvert Cliffs, Maryland, United States", "es": "Acantilados de Calvert, Maryland, Estados Unidos" } },
+        { "at": [-76.79, 35.37], "place": { "en": "Lee Creek Mine, Aurora, North Carolina, United States", "es": "Mina Lee Creek, Aurora, Carolina del Norte, Estados Unidos" } }
+      ],
+      "len": 15, "mass": 50000,
+      "diet": "meat",
+      "text": {
+        "en": "The biggest shark that ever lived, probably about 15 metres long or more, with saw-edged teeth bigger than a hand. It hunted whales and seals in warm seas around the world from about 23 to 3.6 million years ago; bitten whale bones show where it struck. Its teeth are common fossils. It may have died out as the seas cooled and great white sharks competed for its food.",
+        "es": "El tiburón más grande que ha existido, probablemente de unos 15 metros o más, con dientes aserrados más grandes que una mano. Cazaba ballenas y focas en mares cálidos de todo el mundo hace entre unos 23 y 3,6 millones de años; huesos de ballena mordidos muestran dónde atacaba. Sus dientes son fósiles comunes. Quizá se extinguió cuando los mares se enfriaron y el tiburón blanco le disputó el alimento."
+      },
+      "kin": { "en": "Mackerel sharks: great white, mako and basking sharks", "es": "Los tiburones lamniformes: el blanco, el mako y el peregrino" },
+      "wiki": { "en": "Megalodon", "es": "Otodus megalodon" },
+      "pbdb": "Otodus megalodon",
+      "item": "megalodon"
+    },
+    {
+      "id": "proconsul",
+      "name": { "en": "Proconsul", "es": "Proconsul" },
+      "group": "mammal", "icon": "🐒", "life": "land",
+      "from": 21, "to": 17,
+      "sites": [
+        { "at": [34.17, -0.4], "place": { "en": "Rusinga Island, Lake Victoria, Kenya", "es": "Isla de Rusinga, lago Victoria, Kenia" } },
+        { "at": [35.27, -0.13], "place": { "en": "Koru, Kisumu, Kenya", "es": "Koru, Kisumu, Kenia" } }
+      ],
+      "mass": 15,
+      "diet": "plants",
+      "text": {
+        "en": "An early ape from the forests of East Africa, about 20 to 17 million years ago. Like apes it had no tail, but its long back and limbs let it walk along branches on all fours, like a monkey. In 1948 Mary Leakey found a nearly complete skull on Rusinga Island in Lake Victoria, the first skull of a fossil ape ever found. Its name means 'before Consul', a famous chimpanzee in London.",
+        "es": "Un simio temprano de las selvas de África oriental, de hace unos 20 a 17 millones de años. Como los simios, no tenía cola, pero su espalda larga y sus patas le permitían andar por las ramas en cuatro patas, como un mono. En 1948, Mary Leakey halló un cráneo casi completo en la isla de Rusinga, en el lago Victoria: el primer cráneo de un simio fósil jamás encontrado. Su nombre significa «antes de Cónsul», un chimpancé famoso de Londres."
+      },
+      "kin": { "en": "Apes and humans", "es": "Los simios y los humanos" },
+      "wiki": { "en": "Proconsul (mammal)", "es": "Proconsul (animal)" },
+      "pbdb": "Proconsul"
+    },
+    {
+      "id": "merychippus",
+      "name": { "en": "Merychippus", "es": "Merychippus" },
+      "group": "mammal", "icon": "🐎", "life": "land",
+      "from": 17, "to": 10,
+      "sites": [
+        { "at": [-103.8, 42.4], "place": { "en": "Sheep Creek, Sioux County, Nebraska, United States", "es": "Sheep Creek, condado de Sioux, Nebraska, Estados Unidos" } },
+        { "at": [-100.8, 42.8], "place": { "en": "Niobrara River valley, Cherry County, Nebraska, United States", "es": "Valle del río Niobrara, condado de Cherry, Nebraska, Estados Unidos" } },
+        { "at": [-84.5, 30.5], "place": { "en": "Torreya, Gadsden County, Florida, United States", "es": "Torreya, condado de Gadsden, Florida, Estados Unidos" } }
+      ],
+      "diet": "plants",
+      "text": {
+        "en": "The first horse built for grass. About 17 to 10 million years ago, as grasslands spread across North America, Merychippus had tall, ridged cheek teeth that could last for years while gritty grass wore them down. It was pony-sized, about 1 metre at the shoulder, and ran on its middle toe, with two small side toes that no longer touched the ground. Many horse lines came from it.",
+        "es": "El primer caballo hecho para comer pasto. Hace unos 17 a 10 millones de años, cuando las praderas se extendieron por Norteamérica, Merychippus tenía muelas altas y con crestas que duraban años aunque el pasto áspero las desgastara. Era del tamaño de un poni, de 1 metro a la cruz, y corría sobre el dedo central, con dos dedos laterales pequeños que ya no tocaban el suelo. De él salieron muchas ramas de caballos."
+      },
+      "kin": { "en": "Horses, zebras and donkeys", "es": "Los caballos, las cebras y los asnos" },
+      "wiki": { "en": "Merychippus", "es": "Merychippus" },
+      "pbdb": "Merychippus"
+    },
+    {
+      "id": "gomphotherium",
+      "name": { "en": "Gomphotherium", "es": "Gomphotherium" },
+      "group": "mammal", "icon": "🐘", "life": "land",
+      "from": 19, "to": 5,
+      "sites": [
+        { "at": [0.61, 43.53], "place": { "en": "Sansan, Gers, France", "es": "Sansan, Gers, Francia" } },
+        { "at": [-100.8, 42.8], "place": { "en": "Cherry County, Nebraska, United States", "es": "Condado de Cherry, Nebraska, Estados Unidos" } }
+      ],
+      "mass": 5000,
+      "diet": "plants",
+      "text": {
+        "en": "An elephant relative with four tusks: two in the upper jaw and two short, flat ones sticking out of its long lower jaw, perhaps for scraping bark or digging up plants. It stood about 2.5 to 3 metres tall. When Africa and Arabia met Asia about 19 million years ago it walked out of Africa and spread across Europe, Asia and North America; that link is called the Gomphotherium land bridge.",
+        "es": "Un pariente de los elefantes con cuatro colmillos: dos en la mandíbula superior y dos cortos y planos que salían de su larga mandíbula inferior, quizá para raspar corteza o desenterrar plantas. Medía de 2,5 a 3 metros de alto. Cuando África y Arabia se unieron con Asia, hace unos 19 millones de años, salió de África y se extendió por Europa, Asia y Norteamérica; ese paso se llama puente terrestre de Gomphotherium."
+      },
+      "kin": { "en": "Elephants", "es": "Los elefantes" },
+      "wiki": { "en": "Gomphotherium", "es": "Gomphotherium" },
+      "pbdb": "Gomphotherium"
+    },
+    {
+      "id": "platybelodon",
+      "name": { "en": "Platybelodon", "es": "Platybelodon" },
+      "common": { "en": "Shovel tusker", "es": "Mastodonte pala" },
+      "group": "mammal", "icon": "🐘", "life": "land",
+      "from": 17, "to": 9,
+      "sites": [
+        { "at": [105.91, 36.98], "place": { "en": "Tongxin, Ningxia, China", "es": "Tongxin, Ningxia, China" } },
+        { "at": [112.66, 43.65], "place": { "en": "Tunggur, Inner Mongolia, China", "es": "Tunggur, Mongolia Interior, China" } }
+      ],
+      "diet": "plants",
+      "text": {
+        "en": "An elephant relative whose long lower jaw ended in two flat, wide tusks side by side, like a shovel. It was once pictured scooping up water plants from lakes, but wear on its tusks suggests it used them, with its trunk, to cut and strip tough plants and bark. It lived mostly in Asia, especially China, about 17 to 9 million years ago.",
+        "es": "Un pariente de los elefantes cuya larga mandíbula inferior terminaba en dos colmillos planos y anchos, uno al lado del otro, como una pala. Antes se lo imaginaba sacando plantas acuáticas de los lagos, pero el desgaste de sus colmillos sugiere que los usaba, junto con la trompa, para cortar y pelar plantas duras y corteza. Vivió sobre todo en Asia, en especial en China, hace unos 17 a 9 millones de años."
+      },
+      "kin": { "en": "Elephants", "es": "Los elefantes" },
+      "wiki": { "en": "Platybelodon", "es": "Platybelodon" },
+      "pbdb": "Platybelodon"
+    },
+    {
+      "id": "chalicotherium",
+      "name": { "en": "Chalicotherium", "es": "Chalicotherium" },
+      "group": "mammal", "icon": "🐴", "life": "land",
+      "from": 16, "to": 4,
+      "sites": [
+        { "at": [8.17, 49.7], "place": { "en": "Eppelsheim, Rhineland-Palatinate, Germany", "es": "Eppelsheim, Renania-Palatinado, Alemania" } },
+        { "at": [0.61, 43.53], "place": { "en": "Sansan, Gers, France", "es": "Sansan, Gers, Francia" } }
+      ],
+      "diet": "plants",
+      "text": {
+        "en": "A bizarre relative of horses, with long arms, short legs and big hooked claws instead of hooves on its hands. It walked on its knuckles, like a gorilla, to keep its claws sharp, and probably reared up on its hind legs to pull down branches. It browsed in the forests of Europe, Asia and Africa for millions of years.",
+        "es": "Un pariente extrañísimo de los caballos, con brazos largos, patas cortas y grandes garras curvas en vez de cascos en las manos. Caminaba apoyado en los nudillos, como un gorila, para no gastar las garras, y probablemente se erguía sobre las patas traseras para bajar ramas. Comió hojas en los bosques de Europa, Asia y África durante millones de años."
+      },
+      "kin": { "en": "Horses, rhinos and tapirs", "es": "Los caballos, los rinocerontes y los tapires" },
+      "wiki": { "en": "Chalicotherium", "es": "Chalicotherium" },
+      "pbdb": "Chalicotherium"
+    },
+    {
+      "id": "kelenken",
+      "name": { "en": "Kelenken guillermoi", "es": "Kelenken guillermoi" },
+      "common": { "en": "Terror bird", "es": "Ave del terror" },
+      "group": "flyer", "icon": "🐦", "life": "land",
+      "from": 15.5, "to": 14,
+      "sites": [
+        { "at": [-70.26, -41.03], "place": { "en": "Comallo, Río Negro, Argentina", "es": "Comallo, Río Negro, Argentina" } }
+      ],
+      "diet": "meat",
+      "text": {
+        "en": "A terror bird, one of the flightless hunters that ruled South America after the dinosaurs. Kelenken, from about 15 million years ago in Patagonia, has the largest bird skull ever found: 71 cm long, with a huge hooked beak. It probably chased prey on its long legs and struck it with its beak like an axe. Its name comes from a spirit of the Tehuelche people.",
+        "es": "Un ave del terror, una de las cazadoras no voladoras que dominaron Sudamérica después de los dinosaurios. Kelenken, de hace unos 15 millones de años en la Patagonia, tiene el cráneo de ave más grande jamás hallado: 71 cm, con un enorme pico ganchudo. Probablemente perseguía a sus presas con sus largas patas y las golpeaba con el pico como con un hacha. Su nombre viene de un espíritu del pueblo tehuelche."
+      },
+      "kin": { "en": "Seriemas of South American grasslands; then falcons and parrots", "es": "Las chuñas o seriemas de los pastizales sudamericanos; luego los halcones y los loros" },
+      "wiki": { "en": "Kelenken", "es": "Kelenken guillermoi" },
+      "pbdb": "Kelenken"
+    },
+    {
+      "id": "hymenaea-protera",
+      "name": { "en": "Hymenaea protera", "es": "Hymenaea protera" },
+      "common": { "en": "Dominican amber tree", "es": "Árbol del ámbar dominicano" },
+      "group": "plant", "icon": "🌳", "life": "land",
+      "from": 20, "to": 15,
+      "sites": [
+        { "at": [-70.6, 19.65], "place": { "en": "Cordillera Septentrional, near Santiago, Dominican Republic", "es": "Cordillera Septentrional, cerca de Santiago, República Dominicana" } }
+      ],
+      "diet": "light",
+      "text": {
+        "en": "An extinct tropical tree whose sticky resin, hardened over millions of years, became the amber of the Dominican Republic, about 20 to 15 million years old. Insects, spiders, frogs, flowers and even feathers were trapped in its resin and kept in three dimensions, so the amber is a window into a whole lost forest. Its closest living relative grows in East Africa.",
+        "es": "Un árbol tropical extinto cuya resina pegajosa, endurecida durante millones de años, se convirtió en el ámbar de la República Dominicana, de unos 20 a 15 millones de años. Insectos, arañas, ranas, flores y hasta plumas quedaron atrapados en ella y se conservaron en tres dimensiones: el ámbar es una ventana a toda una selva perdida. Su pariente vivo más cercano crece en África oriental."
+      },
+      "kin": { "en": "Hymenaea verrucosa of East Africa; then the courbaril tree of the Americas", "es": "Hymenaea verrucosa, de África oriental; luego el guapinol o jatobá de América" },
+      "wiki": { "en": "Hymenaea protera", "es": "" }
+    },
+    {
+      "id": "purussaurus",
+      "name": { "en": "Purussaurus", "es": "Purussaurus" },
+      "group": "reptile", "icon": "🐊", "life": "fresh",
+      "from": 19, "to": 5.3,
+      "sites": [
+        { "at": [-67.81, -10.13], "place": { "en": "Acre, Brazil", "es": "Acre, Brasil" } },
+        { "at": [-70.24, 11.22], "place": { "en": "Urumaco, Falcón, Venezuela", "es": "Urumaco, Falcón, Venezuela" } },
+        { "at": [-75.3, 3.0], "place": { "en": "La Venta, Huila, Colombia", "es": "La Venta, Huila, Colombia" } }
+      ],
+      "len": 10,
+      "diet": "meat",
+      "text": {
+        "en": "A giant caiman of the Amazon wetlands about 10 million years ago, 10 metres long or more, one of the largest crocodile relatives that ever lived. It lived in a vast maze of rivers, lakes and swamps that covered western Amazonia, and could eat almost anything: giant turtles, fish and big mammals. Its first fossils came from the Purus River in Brazil, which gives it its name.",
+        "es": "Un caimán gigante de los humedales amazónicos de hace unos 10 millones de años, de 10 metros o más, uno de los mayores parientes de los cocodrilos que han existido. Vivía en un enorme laberinto de ríos, lagos y pantanos que cubría el oeste de la Amazonía, y podía comer casi de todo: tortugas gigantes, peces y grandes mamíferos. Sus primeros fósiles salieron del río Purús, en Brasil; de ahí su nombre."
+      },
+      "kin": { "en": "Caimans and alligators", "es": "Los caimanes y los aligátores" },
+      "wiki": { "en": "Purussaurus", "es": "Purussaurus" },
+      "pbdb": "Purussaurus"
+    },
+    {
+      "id": "stupendemys",
+      "name": { "en": "Stupendemys geographica", "es": "Stupendemys geographica" },
+      "group": "reptile", "icon": "🐢", "life": "fresh",
+      "from": 13, "to": 7,
+      "sites": [
+        { "at": [-70.27, 11.22], "place": { "en": "Urumaco, Falcón, Venezuela", "es": "Urumaco, Falcón, Venezuela" } },
+        { "at": [-69.34, -10.94], "place": { "en": "Acre, Brazil", "es": "Acre, Brasil" } },
+        { "at": [-75.15, 3.31], "place": { "en": "Tatacoa Desert, Huila, Colombia", "es": "Desierto de la Tatacoa, Huila, Colombia" } }
+      ],
+      "len": 2.4, "mass": 1145,
+      "diet": "both",
+      "text": {
+        "en": "One of the largest turtles that ever lived: its shell was up to 2.4 metres long and it weighed over a tonne. Males had two horns at the front of the shell, perhaps for fighting. It lived in the rivers and swamps of northern South America about 13 to 7 million years ago, eating fish, snails, fruit and seeds. A caiman tooth found stuck in one shell shows that giant caimans hunted it.",
+        "es": "Una de las tortugas más grandes que han existido: su caparazón medía hasta 2,4 metros y pesaba más de una tonelada. Los machos tenían dos cuernos en la parte delantera del caparazón, quizá para pelear. Vivió en ríos y pantanos del norte de Sudamérica hace unos 13 a 7 millones de años y comía peces, caracoles, frutos y semillas. Un diente de caimán clavado en un caparazón muestra que los caimanes gigantes la cazaban."
+      },
+      "kin": { "en": "The big-headed Amazon river turtle and other side-necked turtles", "es": "La tortuga cabezona del Amazonas y otras tortugas de cuello lateral" },
+      "wiki": { "en": "Stupendemys", "es": "Stupendemys" },
+      "pbdb": "Stupendemys"
+    },
+    {
+      "id": "sivapithecus",
+      "name": { "en": "Sivapithecus", "es": "Sivapithecus" },
+      "group": "mammal", "icon": "🦧", "life": "land",
+      "from": 12.7, "to": 8.5,
+      "sites": [
+        { "at": [72.5, 33.0], "place": { "en": "Potwar Plateau, Punjab, Pakistan", "es": "Meseta de Potwar, Punyab, Pakistán" } },
+        { "at": [76.63, 31.53], "place": { "en": "Haritalyangar, Himachal Pradesh, India", "es": "Haritalyangar, Himachal Pradesh, India" } }
+      ],
+      "mass": 30,
+      "diet": "plants",
+      "text": {
+        "en": "An ape that lived in the forests at the foot of the Himalayas, in Pakistan and India, about 12.5 to 8.5 million years ago. Its face is so like an orangutan's that it is thought to be close to the orangutans' ancestors. It was once thought to be a human ancestor, under the name Ramapithecus, until a better skull found in the 1980s showed its likeness to the orangutan.",
+        "es": "Un simio que vivía en los bosques al pie del Himalaya, en Pakistán y la India, hace unos 12,5 a 8,5 millones de años. Su cara se parece tanto a la de un orangután que se cree emparentado con los antepasados de los orangutanes. Hubo un tiempo en que se pensó que era un antepasado humano, con el nombre de Ramapithecus, hasta que un cráneo mejor hallado en los años ochenta reveló su parecido con el orangután."
+      },
+      "kin": { "en": "Orangutans", "es": "Los orangutanes" },
+      "wiki": { "en": "Sivapithecus", "es": "Sivapithecus" },
+      "pbdb": "Sivapithecus"
+    },
+    {
+      "id": "deinotherium",
+      "name": { "en": "Deinotherium", "es": "Deinotherium" },
+      "group": "mammal", "icon": "🐘", "life": "land",
+      "from": 14, "to": 1,
+      "sites": [
+        { "at": [8.17, 49.7], "place": { "en": "Eppelsheim, Rhineland-Palatinate, Germany", "es": "Eppelsheim, Renania-Palatinado, Alemania" } },
+        { "at": [35.35, -2.99], "place": { "en": "Olduvai Gorge, Tanzania", "es": "Garganta de Olduvai, Tanzania" } }
+      ],
+      "mass": 10000,
+      "diet": "plants",
+      "text": {
+        "en": "A giant elephant relative, up to about 4 metres tall at the shoulder and perhaps over 10 tonnes, one of the largest land mammals ever. Instead of upper tusks it had two big tusks curving down and back from its lower jaw, perhaps for stripping bark or pulling down branches. It lived in Europe, Asia and Africa from about 14 million years ago; in Africa it lasted until about a million years ago, alongside early humans.",
+        "es": "Un pariente gigante de los elefantes, de hasta unos 4 metros de alto a la cruz y quizá más de 10 toneladas, uno de los mamíferos terrestres más grandes. En vez de colmillos arriba tenía dos grandes colmillos curvados hacia abajo y atrás en la mandíbula inferior, quizá para arrancar corteza o bajar ramas. Vivió en Europa, Asia y África desde hace unos 14 millones de años; en África duró hasta hace cerca de un millón de años, junto a los primeros humanos."
+      },
+      "kin": { "en": "Elephants, though from a branch that split off very early", "es": "Los elefantes, aunque de una rama que se separó muy pronto" },
+      "wiki": { "en": "Deinotherium", "es": "Deinotherium" },
+      "pbdb": "Deinotherium"
+    },
+    {
+      "id": "hipparion",
+      "name": { "en": "Hipparion", "es": "Hipparion" },
+      "group": "mammal", "icon": "🐎", "life": "land",
+      "from": 11.1, "to": 0.78,
+      "sites": [
+        { "at": [23.95, 38.0], "place": { "en": "Pikermi, Attica, Greece", "es": "Pikermi, Ática, Grecia" } },
+        { "at": [26.8, 37.73], "place": { "en": "Samos, Greece", "es": "Samos, Grecia" } }
+      ],
+      "diet": "plants",
+      "text": {
+        "en": "A three-toed horse that crossed from North America into Asia about 11 million years ago and spread over Europe, Asia and Africa so suddenly that geologists use its arrival to date rocks. Pony-sized and fast, it grazed and browsed in open woodlands and grasslands. At Pikermi in Greece its bones lie in heaps with those of giraffes, antelopes and sabre-toothed cats.",
+        "es": "Un caballo de tres dedos que pasó de Norteamérica a Asia hace unos 11 millones de años y se extendió por Europa, Asia y África de forma tan repentina que los geólogos usan su llegada para fechar las rocas. Del tamaño de un poni y veloz, comía pasto y hojas en bosques abiertos y praderas. En Pikermi, Grecia, sus huesos se amontonan junto a los de jirafas, antílopes y felinos de dientes de sable."
+      },
+      "kin": { "en": "Horses, zebras and donkeys (not their direct ancestor)", "es": "Los caballos, las cebras y los asnos (no es su antepasado directo)" },
+      "wiki": { "en": "Hipparion", "es": "Hipparion" },
+      "pbdb": "Hipparion"
+    },
+    {
+      "id": "teleoceras",
+      "name": { "en": "Teleoceras", "es": "Teleoceras" },
+      "group": "mammal", "icon": "🦏", "life": "land",
+      "from": 17, "to": 5,
+      "sites": [
+        { "at": [-98.1586, 42.425], "place": { "en": "Ashfall Fossil Beds, Nebraska, United States", "es": "Ashfall Fossil Beds, Nebraska, Estados Unidos" } }
+      ],
+      "len": 4,
+      "diet": "plants",
+      "text": {
+        "en": "A barrel-bodied rhinoceros with short, stubby legs, built a bit like a hippo, common in North America about 17 to 5 million years ago. At Ashfall Fossil Beds in Nebraska, whole herds lie where they died about 12 million years ago, after a supervolcano in Idaho covered the land in ash: mothers with their calves, some with grass seeds still in their mouths.",
+        "es": "Un rinoceronte de cuerpo de barril y patas cortas, con una forma algo parecida a la de un hipopótamo, común en Norteamérica hace unos 17 a 5 millones de años. En Ashfall Fossil Beds, en Nebraska, manadas enteras yacen donde murieron hace unos 12 millones de años, después de que un supervolcán de Idaho cubriera la tierra de ceniza: madres con sus crías, algunas con semillas de pasto todavía en la boca."
+      },
+      "kin": { "en": "Rhinoceroses", "es": "Los rinocerontes" },
+      "wiki": { "en": "Teleoceras", "es": "Teleoceras" },
+      "pbdb": "Teleoceras",
+      "item": "teleoceras"
+    },
+    {
+      "id": "livyatan",
+      "name": { "en": "Livyatan melvillei", "es": "Livyatan melvillei" },
+      "group": "mammal", "icon": "🐋", "life": "sea",
+      "from": 9.9, "to": 5,
+      "sites": [
+        { "at": [-75.95, -14.3], "place": { "en": "Cerro Colorado, Ica, Peru", "es": "Cerro Colorado, Ica, Perú" } },
+        { "at": [145.05, -37.99], "place": { "en": "Beaumaris, Victoria, Australia", "es": "Beaumaris, Victoria, Australia" } }
+      ],
+      "len": 15,
+      "diet": "meat",
+      "text": {
+        "en": "A giant sperm whale with the biggest biting teeth of any animal known, up to 36 cm long. About 9 million years ago, off the coast of Peru, it hunted other whales, seizing them in huge jaws on a head 3 metres long. It was about as long as a sperm whale today, some 14 to 17 metres. Its name honours Herman Melville, who wrote Moby-Dick.",
+        "es": "Un cachalote gigante con los dientes para morder más grandes de cualquier animal conocido, de hasta 36 cm. Hace unos 9 millones de años, frente a la costa de Perú, cazaba otras ballenas, que atrapaba con unas mandíbulas enormes en una cabeza de 3 metros. Medía como un cachalote actual, unos 14 a 17 metros. Su nombre honra a Herman Melville, autor de Moby Dick."
+      },
+      "kin": { "en": "Sperm whales", "es": "Los cachalotes" },
+      "wiki": { "en": "Livyatan", "es": "Livyatan melvillei" },
+      "pbdb": "Livyatan",
+      "item": "livyatan"
+    },
+    {
+      "id": "argentavis",
+      "name": { "en": "Argentavis magnificens", "es": "Argentavis magnificens" },
+      "group": "flyer", "icon": "🦅", "life": "air",
+      "from": 9, "to": 6,
+      "sites": [
+        { "at": [-63.55, -37.22], "place": { "en": "Salinas Grandes de Hidalgo, La Pampa, Argentina", "es": "Salinas Grandes de Hidalgo, La Pampa, Argentina" } },
+        { "at": [-66.03, -26.68], "place": { "en": "Andalhuala, Catamarca, Argentina", "es": "Andalhuala, Catamarca, Argentina" } }
+      ],
+      "mass": 70,
+      "diet": "meat",
+      "text": {
+        "en": "One of the largest flying birds ever: a relative of condors with wings about 6 metres from tip to tip, weighing some 70 kg. It soared over the plains and Andean foothills of Argentina about 9 to 6 million years ago, riding rising warm air and strong winds like a condor. To take off it probably had to run into the wind or launch itself from a slope.",
+        "es": "Una de las aves voladoras más grandes de la historia: un pariente de los cóndores con alas de unos 6 metros de punta a punta y unos 70 kg. Planeaba sobre las llanuras y el pie de los Andes en Argentina hace unos 9 a 6 millones de años, aprovechando el aire caliente que sube y los vientos fuertes, como un cóndor. Para despegar probablemente tenía que correr contra el viento o lanzarse desde una ladera."
+      },
+      "kin": { "en": "Probably condors and other New World vultures", "es": "Probablemente los cóndores y los zopilotes americanos" },
+      "wiki": { "en": "Argentavis", "es": "Argentavis magnificens" },
+      "pbdb": "Argentavis"
+    },
+    {
+      "id": "thylacosmilus",
+      "name": { "en": "Thylacosmilus atrox", "es": "Thylacosmilus atrox" },
+      "group": "mammal", "icon": "🐆", "life": "land",
+      "from": 9, "to": 3,
+      "sites": [
+        { "at": [-66.9, -27.2], "place": { "en": "Catamarca, Argentina", "es": "Catamarca, Argentina" } },
+        { "at": [-57.63, -38.17], "place": { "en": "Chapadmalal, Buenos Aires, Argentina", "es": "Chapadmalal, Buenos Aires, Argentina" } }
+      ],
+      "mass": 100,
+      "diet": "meat",
+      "text": {
+        "en": "It looks like a sabre-toothed cat but was a relative of marsupials, the pouched mammals: a famous case of unrelated animals evolving the same shape. Its huge upper canines kept growing all its life and were guarded by a bony sheath on the lower jaw. It lived in South America about 9 to 3 million years ago. Some studies suggest it ate the soft parts of carcasses rather than hunting.",
+        "es": "Parece un felino de dientes de sable, pero era pariente de los marsupiales, los mamíferos con bolsa: un caso famoso de animales sin parentesco que evolucionan la misma forma. Sus enormes colmillos superiores crecían toda la vida y los protegía una funda de hueso en la mandíbula inferior. Vivió en Sudamérica hace unos 9 a 3 millones de años. Algunos estudios sugieren que comía las partes blandas de animales muertos en vez de cazar."
+      },
+      "kin": { "en": "Marsupials such as opossums and kangaroos (distantly)", "es": "Los marsupiales, como zarigüeyas y canguros (de lejos)" },
+      "wiki": { "en": "Thylacosmilus", "es": "Thylacosmilus" },
+      "pbdb": "Thylacosmilus",
+      "item": "thylacosmilus"
+    },
+    {
+      "id": "thalassocnus",
+      "name": { "en": "Thalassocnus", "es": "Thalassocnus" },
+      "common": { "en": "Sea sloth", "es": "Perezoso marino" },
+      "group": "mammal", "icon": "🦥", "life": "shore",
+      "from": 8, "to": 3,
+      "sites": [
+        { "at": [-74.6, -15.5], "place": { "en": "Sacaco, Pisco Formation, Peru", "es": "Sacaco, Formación Pisco, Perú" } },
+        { "at": [-70.85, -27.1], "place": { "en": "Bahía Inglesa, Atacama, Chile", "es": "Bahía Inglesa, Atacama, Chile" } }
+      ],
+      "len": 2.5,
+      "diet": "plants",
+      "text": {
+        "en": "A sloth that swam in the sea. On the desert coast of Peru and Chile, from about 8 to 3 million years ago, these ground sloths waded and then swam into the Pacific to graze on seaweed and seagrass, since the desert had little else to eat. Species after species, their bones grew denser for diving and their snouts longer for tearing plants from the seabed.",
+        "es": "Un perezoso que nadaba en el mar. En la costa desértica de Perú y Chile, hace unos 8 a 3 millones de años, estos perezosos terrestres se metían en el Pacífico para comer algas y pastos marinos, porque en el desierto había poco más. Especie tras especie, sus huesos se volvieron más densos para bucear y sus hocicos más largos para arrancar plantas del fondo."
+      },
+      "kin": { "en": "Sloths", "es": "Los perezosos" },
+      "wiki": { "en": "Thalassocnus", "es": "Thalassocnus" },
+      "pbdb": "Thalassocnus",
+      "item": "thalassocnus"
+    },
+    {
+      "id": "sahelanthropus",
+      "name": { "en": "Sahelanthropus tchadensis", "es": "Sahelanthropus tchadensis" },
+      "common": { "en": "Toumaï", "es": "Toumaï" },
+      "group": "human", "icon": "💀", "life": "land",
+      "from": 7.2, "to": 6.8,
+      "sites": [
+        { "at": [17.48, 16.24], "place": { "en": "Toros-Ménalla, Djurab Desert, Chad", "es": "Toros-Ménalla, desierto de Djurab, Chad" } }
+      ],
+      "diet": "plants",
+      "text": {
+        "en": "Toumaï, 'hope of life' in the Daza language of Chad, is a skull about 7 million years old found in the Djurab Desert in 2001. It may be one of the first members of the human family, from near the time when our line split from that of chimpanzees. Its brain was the size of a chimp's, but its canine teeth were small, and some bones suggest it walked upright; this is debated.",
+        "es": "Toumaï, «esperanza de vida» en la lengua daza del Chad, es un cráneo de unos 7 millones de años hallado en el desierto de Djurab en 2001. Podría ser uno de los primeros miembros de la familia humana, de cuando nuestra rama se separó de la de los chimpancés. Su cerebro era del tamaño del de un chimpancé, pero sus colmillos eran pequeños, y algunos huesos sugieren que caminaba erguido; se debate."
+      },
+      "kin": { "en": "Humans; then chimpanzees and bonobos", "es": "Los humanos; luego los chimpancés y los bonobos" },
+      "wiki": { "en": "Sahelanthropus", "es": "Sahelanthropus tchadensis" },
+      "pbdb": "Sahelanthropus"
+    },
+    {
+      "id": "orrorin",
+      "name": { "en": "Orrorin tugenensis", "es": "Orrorin tugenensis" },
+      "common": { "en": "Millennium Man", "es": "Hombre del Milenio" },
+      "group": "human", "icon": "🦴", "life": "land",
+      "from": 6.1, "to": 5.7,
+      "sites": [
+        { "at": [35.85, 0.7], "place": { "en": "Tugen Hills, Baringo, Kenya", "es": "Colinas Tugen, Baringo, Kenia" } }
+      ],
+      "diet": "plants",
+      "text": {
+        "en": "Known from thigh bones, teeth and bits of jaw found in the Tugen Hills of Kenya in 2000, about 6 million years old. The thigh bones look built for walking on two legs, which makes it one of the earliest possible members of the human family; it probably also climbed trees well. Its name means 'original man' in the local Tugen language.",
+        "es": "Se conoce por fémures, dientes y trozos de mandíbula hallados en las colinas Tugen, en Kenia, en el año 2000, de unos 6 millones de años. Sus fémures parecen hechos para caminar en dos patas, lo que lo convierte en uno de los posibles primeros miembros de la familia humana; probablemente también trepaba bien. Su nombre significa «hombre original» en la lengua tugen de la región."
+      },
+      "kin": { "en": "Humans; then chimpanzees and bonobos", "es": "Los humanos; luego los chimpancés y los bonobos" },
+      "wiki": { "en": "Orrorin", "es": "Orrorin tugenensis" }
+    },
+    {
+      "id": "ardipithecus",
+      "name": { "en": "Ardipithecus", "es": "Ardipithecus" },
+      "common": { "en": "Ardi", "es": "Ardi" },
+      "group": "human", "icon": "🦶", "life": "land",
+      "from": 5.8, "to": 4.3,
+      "sites": [
+        { "at": [40.47, 10.52], "place": { "en": "Aramis, Middle Awash, Afar, Ethiopia", "es": "Aramis, Awash Medio, Afar, Etiopía" } },
+        { "at": [40.25, 10.32], "place": { "en": "Middle Awash, Afar, Ethiopia", "es": "Awash Medio, Afar, Etiopía" } }
+      ],
+      "len": 1.2, "mass": 50,
+      "diet": "both",
+      "text": {
+        "en": "Ardi, a skeleton of Ardipithecus ramidus 4.4 million years old from Aramis in Ethiopia, shows a strange mix: she walked upright on the ground, but her big toe stuck out sideways like a thumb, for gripping branches. She was about 1.2 metres tall and weighed some 50 kg. An older species, Ardipithecus kadabba, goes back about 5.8 million years.",
+        "es": "Ardi, un esqueleto de Ardipithecus ramidus de 4,4 millones de años hallado en Aramis, Etiopía, muestra una mezcla curiosa: caminaba erguida en el suelo, pero su dedo gordo del pie se abría hacia el lado como un pulgar, para agarrarse de las ramas. Medía 1,2 metros y pesaba unos 50 kg. Una especie más antigua, Ardipithecus kadabba, se remonta a unos 5,8 millones de años."
+      },
+      "kin": { "en": "Humans; then chimpanzees and bonobos", "es": "Los humanos; luego los chimpancés y los bonobos" },
+      "wiki": { "en": "Ardipithecus", "es": "Ardipithecus" },
+      "pbdb": "Ardipithecus"
+    },
+    {
+      "id": "megatherium",
+      "name": { "en": "Megatherium americanum", "es": "Megatherium americanum" },
+      "common": { "en": "Giant ground sloth", "es": "Perezoso gigante" },
+      "group": "mammal", "icon": "🦥", "life": "land",
+      "from": 4, "to": 0.012,
+      "sites": [
+        { "at": [-59.105, -34.57], "place": { "en": "Luján River, Buenos Aires, Argentina", "es": "Río Luján, Buenos Aires, Argentina" } },
+        { "at": [-62.07, -38.88], "place": { "en": "Punta Alta, Bahía Blanca, Argentina", "es": "Punta Alta, Bahía Blanca, Argentina" } },
+        { "at": [-64.73, -21.53], "place": { "en": "Tarija, Bolivia", "es": "Tarija, Bolivia" } }
+      ],
+      "len": 6, "mass": 4000,
+      "diet": "plants",
+      "text": {
+        "en": "A giant ground sloth as big as an elephant: about 6 metres long and 4 tonnes, able to rear up on its hind legs and tail to reach high branches with its long claws. It lived in South America for millions of years and died out about 12,000 years ago, soon after people arrived; some of its bones bear hunters' cut marks. Its first skeleton, from Luján in Argentina, was shipped to Madrid in 1788.",
+        "es": "Un perezoso terrestre gigante, grande como un elefante: unos 6 metros y 4 toneladas, capaz de erguirse sobre las patas traseras y la cola para alcanzar ramas altas con sus largas garras. Vivió en Sudamérica durante millones de años y desapareció hace unos 12 000 años, poco después de la llegada de las personas; algunos huesos tienen marcas de cortes de cazadores. Su primer esqueleto, de Luján, Argentina, se envió a Madrid en 1788."
+      },
+      "kin": { "en": "Tree sloths; then armadillos and anteaters", "es": "Los perezosos de los árboles; luego los armadillos y los osos hormigueros" },
+      "wiki": { "en": "Megatherium", "es": "Megatherium" },
+      "pbdb": "Megatherium",
+      "item": "megatherium"
+    },
+    {
+      "id": "great-white-shark",
+      "name": { "en": "Carcharodon carcharias", "es": "Carcharodon carcharias" },
+      "common": { "en": "Great white shark", "es": "Tiburón blanco" },
+      "group": "fish", "icon": "🦈", "life": "sea",
+      "from": 5.3, "to": 0, "alive": true,
+      "sites": [
+        { "at": [-76.79, 35.37], "place": { "en": "Lee Creek Mine, Aurora, North Carolina, United States", "es": "Mina Lee Creek, Aurora, Carolina del Norte, Estados Unidos" } }
+      ],
+      "len": 4.5, "mass": 1000,
+      "diet": "meat",
+      "text": {
+        "en": "The great white shark, still hunting today, has fossils going back about 5 million years; its ancestors, with smoother-edged teeth, swam off Peru 6 to 8 million years ago. Adults are usually 4 to 5 metres long. The chemistry of fossil teeth suggests that great whites and megalodon hunted the same prey, which may have helped push the giant to extinction.",
+        "es": "El gran tiburón blanco, que aún caza hoy, tiene fósiles de hace unos 5 millones de años; sus antepasados, de dientes con bordes más lisos, nadaban frente a Perú hace 6 a 8 millones de años. Los adultos suelen medir de 4 a 5 metros. La química de dientes fósiles sugiere que el tiburón blanco y el megalodón cazaban las mismas presas, y eso quizá ayudó a extinguir al gigante."
+      },
+      "kin": { "en": "Mako sharks; then the porbeagle and salmon shark", "es": "Los tiburones mako; luego el marrajo sardinero y el tiburón salmón" },
+      "wiki": { "en": "Great white shark", "es": "Carcharodon carcharias" },
+      "pbdb": "Carcharodon carcharias"
+    },
+    {
+      "id": "titanis",
+      "name": { "en": "Titanis walleri", "es": "Titanis walleri" },
+      "group": "flyer", "icon": "🐦", "life": "land",
+      "from": 5, "to": 1.8,
+      "sites": [
+        { "at": [-82.75, 29.92], "place": { "en": "Santa Fe River, Florida, United States", "es": "Río Santa Fe, Florida, Estados Unidos" } }
+      ],
+      "mass": 150,
+      "diet": "meat",
+      "text": {
+        "en": "A terror bird that went north. Terror birds evolved in South America, but Titanis reached Florida and Texas about 5 million years ago, perhaps island-hopping before the Isthmus of Panama fully closed. It stood about 1.5 to 2 metres tall and weighed around 150 kg, with a hooked beak and strong clawed toes. It is the only terror bird known from North America.",
+        "es": "Un ave del terror que se fue al norte. Estas aves surgieron en Sudamérica, pero Titanis llegó a Florida y Texas hace unos 5 millones de años, quizá saltando de isla en isla antes de que se cerrara del todo el istmo de Panamá. Medía de 1,5 a 2 metros de alto y unos 150 kg, con un pico ganchudo y fuertes dedos con garras. Es la única ave del terror conocida de Norteamérica."
+      },
+      "kin": { "en": "Seriemas of South American grasslands; then falcons and parrots", "es": "Las chuñas o seriemas de los pastizales sudamericanos; luego los halcones y los loros" },
+      "wiki": { "en": "Titanis", "es": "Titanis" },
+      "pbdb": "Titanis",
+      "item": "titanis"
+    },
+    {
+      "id": "american-mastodon",
+      "name": { "en": "Mammut americanum", "es": "Mammut americanum" },
+      "common": { "en": "American mastodon", "es": "Mastodonte americano" },
+      "group": "mammal", "icon": "🐘", "life": "land",
+      "from": 3.7, "to": 0.011,
+      "sites": [
+        { "at": [-74.15, 41.52], "place": { "en": "Hudson Valley, New York, United States", "es": "Valle del Hudson, Nueva York, Estados Unidos" } },
+        { "at": [-84.75, 38.89], "place": { "en": "Big Bone Lick, Kentucky, United States", "es": "Big Bone Lick, Kentucky, Estados Unidos" } }
+      ],
+      "mass": 6000,
+      "diet": "plants",
+      "text": {
+        "en": "A shaggy browser of North American forests and swamps, a distant cousin of elephants and mammoths, with long, almost straight tusks and teeth with cone-shaped bumps for chewing twigs and leaves. It lived from about 3.7 million to about 11,000 years ago. Its bones were among the first fossils studied in the United States, and Thomas Jefferson hoped it still roamed the unexplored West.",
+        "es": "Un herbívoro peludo de los bosques y pantanos de Norteamérica, pariente lejano de elefantes y mamuts, con colmillos largos y casi rectos y muelas con cúspides en forma de cono para masticar ramas y hojas. Vivió desde hace unos 3,7 millones de años hasta hace unos 11 000. Sus huesos estuvieron entre los primeros fósiles estudiados en Estados Unidos, y Thomas Jefferson esperaba que aún viviera en el Oeste sin explorar."
+      },
+      "kin": { "en": "Elephants, from a branch that split off long ago", "es": "Los elefantes, de una rama que se separó hace mucho" },
+      "wiki": { "en": "Mastodon", "es": "Mammut" },
+      "pbdb": "Mammut americanum",
+      "item": "american-mastodon"
+    },
+    {
+      "id": "thylacoleo",
+      "name": { "en": "Thylacoleo", "es": "Thylacoleo" },
+      "common": { "en": "Marsupial lion", "es": "León marsupial" },
+      "group": "mammal", "icon": "🦁", "life": "land",
+      "from": 4.5, "to": 0.04,
+      "sites": [
+        { "at": [140.7976, -37.0361], "place": { "en": "Naracoorte Caves, South Australia", "es": "Cuevas de Naracoorte, Australia Meridional" } },
+        { "at": [148.94, -32.6], "place": { "en": "Wellington Caves, New South Wales, Australia", "es": "Cuevas de Wellington, Nueva Gales del Sur, Australia" } }
+      ],
+      "len": 1.5, "mass": 110,
+      "diet": "meat",
+      "text": {
+        "en": "The marsupial lion of Australia: a hunter of about 100 kg with the strongest bite, for its size, of any mammal known. Instead of long fangs it had huge blade-like cheek teeth that sliced like shears, and a large hooked claw on each thumb. It descended from plant-eaters related to wombats and koalas. It died out about 40,000 years ago.",
+        "es": "El león marsupial de Australia: un cazador de unos 100 kg con la mordida más fuerte, para su tamaño, de cualquier mamífero conocido. En vez de colmillos largos tenía enormes muelas en forma de cuchilla que cortaban como tijeras, y una gran garra curva en cada pulgar. Descendía de herbívoros emparentados con los wombats y los koalas. Desapareció hace unos 40 000 años."
+      },
+      "kin": { "en": "Wombats and koalas", "es": "Los wombats y los koalas" },
+      "wiki": { "en": "Thylacoleo", "es": "Thylacoleo" },
+      "pbdb": "Thylacoleo",
+      "item": "thylacoleo"
+    },
+    {
+      "id": "toxodon",
+      "name": { "en": "Toxodon", "es": "Toxodon" },
+      "group": "mammal", "icon": "🦏", "life": "land",
+      "from": 2.6, "to": 0.012,
+      "sites": [
+        { "at": [-58.03, -33.25], "place": { "en": "Arroyo Sarandí, near Mercedes, Uruguay", "es": "Arroyo Sarandí, cerca de Mercedes, Uruguay" } },
+        { "at": [-59.105, -34.57], "place": { "en": "Luján, Buenos Aires, Argentina", "es": "Luján, Buenos Aires, Argentina" } }
+      ],
+      "len": 2.7, "mass": 1100,
+      "diet": "plants",
+      "text": {
+        "en": "A heavy, rhino-sized plant-eater about 2.7 metres long, with teeth that grew all its life, living in South America until about 12,000 years ago. In 1833 Charles Darwin bought its skull from a farmer in Uruguay for eighteen pence and called it one of the strangest animals ever discovered. In 2015 proteins from its bones showed it was related to horses, rhinos and tapirs.",
+        "es": "Un herbívoro pesado del tamaño de un rinoceronte, de unos 2,7 metros, con dientes que crecían toda la vida, que vivió en Sudamérica hasta hace unos 12 000 años. En 1833, Charles Darwin le compró su cráneo a un granjero de Uruguay por dieciocho peniques y lo llamó uno de los animales más extraños jamás descubiertos. En 2015, proteínas de sus huesos mostraron que era pariente de los caballos, los rinocerontes y los tapires."
+      },
+      "kin": { "en": "Horses, rhinos and tapirs", "es": "Los caballos, los rinocerontes y los tapires" },
+      "wiki": { "en": "Toxodon", "es": "Toxodon" },
+      "pbdb": "Toxodon",
+      "item": "toxodon"
+    },
+    {
+      "id": "australopithecus-afarensis",
+      "name": { "en": "Australopithecus afarensis", "es": "Australopithecus afarensis" },
+      "common": { "en": "Lucy's species", "es": "La especie de Lucy" },
+      "group": "human", "icon": "🧍‍♀️", "life": "land",
+      "from": 3.9, "to": 2.9,
+      "sites": [
+        { "at": [40.58, 11.15], "place": { "en": "Hadar, Afar, Ethiopia", "es": "Hadar, Afar, Etiopía" } },
+        { "at": [35.2, -3.22], "place": { "en": "Laetoli, Tanzania", "es": "Laetoli, Tanzania" } },
+        { "at": [40.52, 11.08], "place": { "en": "Dikika, Afar, Ethiopia", "es": "Dikika, Afar, Etiopía" } }
+      ],
+      "len": 1.2, "mass": 35,
+      "diet": "both",
+      "text": {
+        "en": "Lucy, found at Hadar in Ethiopia in 1974, is its most famous member: a small adult female about 1.1 metres tall who lived 3.2 million years ago. Her species walked upright, as footprints left in volcanic ash at Laetoli in Tanzania show, but still had long arms, curved fingers for climbing and a brain not much bigger than a chimp's. It lived from about 3.9 to 2.9 million years ago.",
+        "es": "Lucy, hallada en Hadar, Etiopía, en 1974, es su miembro más famoso: una hembra adulta pequeña, de 1,1 metros, que vivió hace 3,2 millones de años. Su especie caminaba erguida, como muestran las huellas que dejó en ceniza volcánica en Laetoli, Tanzania, pero aún tenía brazos largos, dedos curvos para trepar y un cerebro poco mayor que el de un chimpancé. Vivió hace unos 3,9 a 2,9 millones de años."
+      },
+      "kin": { "en": "Humans; then chimpanzees and bonobos", "es": "Los humanos; luego los chimpancés y los bonobos" },
+      "wiki": { "en": "Australopithecus afarensis", "es": "Australopithecus afarensis" },
+      "pbdb": "Australopithecus afarensis"
+    },
+    {
+      "id": "australopithecus-africanus",
+      "name": { "en": "Australopithecus africanus", "es": "Australopithecus africanus" },
+      "common": { "en": "Taung Child", "es": "Niño de Taung" },
+      "group": "human", "icon": "🧒", "life": "land",
+      "from": 3.5, "to": 2.1,
+      "sites": [
+        { "at": [24.77, -27.62], "place": { "en": "Taung, North West, South Africa", "es": "Taung, Noroeste, Sudáfrica" } },
+        { "at": [27.73, -26.02], "place": { "en": "Sterkfontein, Cradle of Humankind, South Africa", "es": "Sterkfontein, Cuna de la Humanidad, Sudáfrica" } }
+      ],
+      "len": 1.25, "mass": 35,
+      "diet": "both",
+      "text": {
+        "en": "The Taung Child, a small skull with a stone cast of its brain, found in a lime quarry in South Africa in 1924, was the first australopith ever discovered. Raymond Dart said it was a human relative that walked upright, and many experts scoffed for decades before he was proved right. Much later, marks on the skull showed the child had been killed by an eagle.",
+        "es": "El Niño de Taung, un pequeño cráneo con el molde de su cerebro convertido en piedra, hallado en una cantera de cal de Sudáfrica en 1924, fue el primer australopiteco descubierto. Raymond Dart dijo que era un pariente humano que caminaba erguido, y durante décadas muchos expertos se burlaron, hasta que se demostró que tenía razón. Mucho después, marcas en el cráneo revelaron que al niño lo mató un águila."
+      },
+      "kin": { "en": "Humans; then chimpanzees and bonobos", "es": "Los humanos; luego los chimpancés y los bonobos" },
+      "wiki": { "en": "Australopithecus africanus", "es": "Australopithecus africanus" },
+      "pbdb": "Australopithecus africanus"
+    },
+    {
+      "id": "paranthropus",
+      "name": { "en": "Paranthropus", "es": "Paranthropus" },
+      "common": { "en": "Nutcracker Man", "es": "Hombre Cascanueces" },
+      "group": "human", "icon": "🦷", "life": "land",
+      "from": 2.7, "to": 1,
+      "sites": [
+        { "at": [35.35, -2.99], "place": { "en": "Olduvai Gorge, Tanzania", "es": "Garganta de Olduvai, Tanzania" } },
+        { "at": [27.72, -26.02], "place": { "en": "Swartkrans, Cradle of Humankind, South Africa", "es": "Swartkrans, Cuna de la Humanidad, Sudáfrica" } },
+        { "at": [35.95, 3.9], "place": { "en": "West Turkana, Kenya", "es": "Turkana Occidental, Kenia" } }
+      ],
+      "len": 1.3, "mass": 45,
+      "diet": "plants",
+      "text": {
+        "en": "The 'robust' cousins of our ancestors, with enormous cheek teeth, thick jaws and, in some, a bony crest on top of the skull for huge chewing muscles; 'Nutcracker Man' from Olduvai Gorge is one of them. They lived in Africa from about 2.7 to 1 million years ago, alongside early Homo, and ate tough plants such as grasses, sedges and seeds. They were a side branch that died out.",
+        "es": "Los primos «robustos» de nuestros antepasados, con muelas enormes, mandíbulas gruesas y, en algunos, una cresta de hueso sobre el cráneo para unos músculos de masticar enormes; el «Hombre Cascanueces» de Olduvai es uno de ellos. Vivieron en África hace unos 2,7 a 1 millón de años, junto a los primeros Homo, y comían plantas duras como pastos, juncias y semillas. Fueron una rama lateral que se extinguió."
+      },
+      "kin": { "en": "Humans; then chimpanzees and bonobos", "es": "Los humanos; luego los chimpancés y los bonobos" },
+      "wiki": { "en": "Paranthropus", "es": "Paranthropus" },
+      "pbdb": "Paranthropus"
+    },
+    {
+      "id": "megalania",
+      "name": { "en": "Varanus priscus", "es": "Varanus priscus" },
+      "common": { "en": "Megalania", "es": "Megalania" },
+      "group": "reptile", "icon": "🦎", "life": "land",
+      "from": 4, "to": 0.05,
+      "sites": [
+        { "at": [151.5, -27.5], "place": { "en": "Darling Downs, Queensland, Australia", "es": "Darling Downs, Queensland, Australia" } },
+        { "at": [140.7976, -37.0361], "place": { "en": "Naracoorte Caves, South Australia", "es": "Cuevas de Naracoorte, Australia Meridional" } }
+      ],
+      "len": 5,
+      "diet": "meat",
+      "text": {
+        "en": "A giant monitor lizard of Australia, a relative of the Komodo dragon but much bigger: perhaps 5 metres long or more, though estimates vary a lot. With curved, saw-edged teeth it hunted large marsupials, and like its relatives it may have had venom. It died out about 50,000 years ago, soon after the first people reached Australia.",
+        "es": "Un varano gigante de Australia, pariente del dragón de Komodo pero mucho más grande: quizá de 5 metros o más, aunque las estimaciones varían mucho. Con dientes curvos y aserrados cazaba grandes marsupiales, y quizá tenía veneno, como sus parientes. Desapareció hace unos 50 000 años, poco después de la llegada de las primeras personas a Australia."
+      },
+      "kin": { "en": "The Komodo dragon and other monitor lizards", "es": "El dragón de Komodo y otros varanos" },
+      "wiki": { "en": "Megalania", "es": "Varanus priscus" },
+      "pbdb": "Varanus priscus"
+    },
+    {
+      "id": "smilodon",
+      "name": { "en": "Smilodon", "es": "Smilodon" },
+      "common": { "en": "Sabre-toothed cat", "es": "Tigre dientes de sable" },
+      "group": "mammal", "icon": "🐅", "life": "land",
+      "from": 2.5, "to": 0.01,
+      "sites": [
+        { "at": [-118.356, 34.0628], "place": { "en": "La Brea Tar Pits, Los Angeles, United States", "es": "Pozos de asfalto de La Brea, Los Ángeles, Estados Unidos" } },
+        { "at": [-43.89, -19.63], "place": { "en": "Lagoa Santa, Minas Gerais, Brazil", "es": "Lagoa Santa, Minas Gerais, Brasil" } },
+        { "at": [-59.105, -34.57], "place": { "en": "Luján, Buenos Aires, Argentina", "es": "Luján, Buenos Aires, Argentina" } }
+      ],
+      "len": 1.8, "mass": 280,
+      "diet": "meat",
+      "text": {
+        "en": "The sabre-toothed cat, though not a tiger: a stocky, powerful cat with upper canines up to 28 cm long, used to stab or slash the throat of big prey held down by its strong front legs. It lived across the Americas from about 2.5 million to 10,000 years ago. Remains of more than 2,000 have come out of the La Brea Tar Pits in Los Angeles, where they got stuck while coming to eat trapped animals.",
+        "es": "El felino de dientes de sable, aunque no era un tigre: un gato robusto y poderoso con colmillos superiores de hasta 28 cm, con los que apuñalaba o cortaba el cuello de grandes presas sujetas con sus fuertes patas delanteras. Vivió en toda América desde hace unos 2,5 millones de años hasta hace unos 10 000. De los pozos de asfalto de La Brea, en Los Ángeles, han salido restos de más de 2000, atrapados al venir a comer animales hundidos."
+      },
+      "kin": { "en": "Cats, from an extinct branch of their own", "es": "Los felinos, de una rama extinta propia" },
+      "wiki": { "en": "Smilodon", "es": "Smilodon" },
+      "pbdb": "Smilodon",
+      "item": "smilodon"
+    },
+    {
+      "id": "homo-habilis",
+      "name": { "en": "Homo habilis", "es": "Homo habilis" },
+      "common": { "en": "Handy man", "es": "Hombre hábil" },
+      "group": "human", "icon": "🪨", "life": "land",
+      "from": 2.4, "to": 1.4,
+      "sites": [
+        { "at": [35.35, -2.99], "place": { "en": "Olduvai Gorge, Tanzania", "es": "Garganta de Olduvai, Tanzania" } },
+        { "at": [36.2, 3.9], "place": { "en": "Koobi Fora, Lake Turkana, Kenya", "es": "Koobi Fora, lago Turkana, Kenia" } }
+      ],
+      "len": 1.2, "mass": 32,
+      "diet": "both",
+      "text": {
+        "en": "'Handy man' was named in 1964 because its bones were found at Olduvai Gorge, Tanzania, with simple stone tools: sharp flakes knocked off pebbles. It lived in East Africa from about 2.4 to 1.4 million years ago, stood just over a metre tall and had a brain about half the size of ours, bigger than a chimp's. Experts still argue about whether it belongs in our genus, Homo.",
+        "es": "El «hombre hábil» recibió su nombre en 1964 porque sus huesos aparecieron en la garganta de Olduvai, Tanzania, junto a herramientas de piedra sencillas: lascas afiladas sacadas de guijarros. Vivió en África oriental hace unos 2,4 a 1,4 millones de años, medía poco más de un metro y tenía un cerebro de la mitad del nuestro, mayor que el de un chimpancé. Los expertos aún discuten si pertenece a nuestro género, Homo."
+      },
+      "kin": { "en": "Us: modern humans", "es": "Nosotros, los humanos actuales" },
+      "wiki": { "en": "Homo habilis", "es": "Homo habilis" },
+      "pbdb": "Homo habilis"
+    },
+    {
+      "id": "homo-erectus",
+      "name": { "en": "Homo erectus", "es": "Homo erectus" },
+      "group": "human", "icon": "🚶", "life": "land",
+      "from": 2, "to": 0.11,
+      "sites": [
+        { "at": [111.35, -7.37], "place": { "en": "Trinil, Java, Indonesia", "es": "Trinil, Java, Indonesia" } },
+        { "at": [115.92, 39.69], "place": { "en": "Zhoukoudian, Beijing, China", "es": "Zhoukoudian, Pekín, China" } },
+        { "at": [35.86, 4.02], "place": { "en": "Nariokotome, West Turkana, Kenya", "es": "Nariokotome, Turkana Occidental, Kenia" } },
+        { "at": [44.34, 41.33], "place": { "en": "Dmanisi, Georgia", "es": "Dmanisi, Georgia" } }
+      ],
+      "len": 1.6, "mass": 55,
+      "diet": "both",
+      "text": {
+        "en": "The first humans with bodies like ours: tall, long-legged walkers, perhaps the first to run long distances and, later, to use fire. Homo erectus appeared in Africa about 2 million years ago and was the first to spread out of Africa, reaching Georgia, China and Java. It made teardrop-shaped hand axes and lasted almost 2 million years, longer than any other human species; on Java it survived until about 110,000 years ago.",
+        "es": "Los primeros humanos con cuerpos como el nuestro: altos, de piernas largas, quizá los primeros en correr largas distancias y, más tarde, en usar el fuego. Homo erectus apareció en África hace unos 2 millones de años y fue el primero en salir de África, hasta Georgia, China y Java. Hacía hachas de mano en forma de lágrima y duró casi 2 millones de años, más que ninguna otra especie humana; en Java vivió hasta hace unos 110 000 años."
+      },
+      "kin": { "en": "Us: modern humans", "es": "Nosotros, los humanos actuales" },
+      "wiki": { "en": "Homo erectus", "es": "Homo erectus" },
+      "pbdb": "Homo erectus"
+    },
+    {
+      "id": "gigantopithecus",
+      "name": { "en": "Gigantopithecus blacki", "es": "Gigantopithecus blacki" },
+      "group": "mammal", "icon": "🦍", "life": "land",
+      "from": 2.2, "to": 0.25,
+      "sites": [
+        { "at": [109.25, 24.67], "place": { "en": "Gigantopithecus Cave, Liucheng, Guangxi, China", "es": "Cueva del Gigantopithecus, Liucheng, Guangxi, China" } },
+        { "at": [107.5, 22.27], "place": { "en": "Chongzuo, Guangxi, China", "es": "Chongzuo, Guangxi, China" } },
+        { "at": [106.37, 21.95], "place": { "en": "Lang Son, Vietnam", "es": "Lang Son, Vietnam" } }
+      ],
+      "len": 3, "mass": 250,
+      "diet": "plants",
+      "text": {
+        "en": "The largest ape that ever lived, perhaps 3 metres tall and 200 to 300 kg, known almost only from teeth and four lower jaws. The first teeth turned up in 1935 in a Hong Kong pharmacy, sold as 'dragon teeth'. It lived in the forests of southern China and Vietnam and died out between 295,000 and 215,000 years ago, when the forests grew more open and seasonal and its favourite fruit became scarce.",
+        "es": "El simio más grande que ha existido, quizá de 3 metros de alto y de 200 a 300 kg, conocido casi solo por dientes y cuatro mandíbulas. Los primeros dientes aparecieron en 1935 en una farmacia de Hong Kong, donde se vendían como «dientes de dragón». Vivió en las selvas del sur de China y Vietnam y se extinguió hace entre 295 000 y 215 000 años, cuando los bosques se volvieron más abiertos y estacionales y escasearon sus frutos favoritos."
+      },
+      "kin": { "en": "Orangutans", "es": "Los orangutanes" },
+      "wiki": { "en": "Gigantopithecus", "es": "Gigantopithecus blacki" },
+      "pbdb": "Gigantopithecus"
+    },
+    {
+      "id": "diprotodon",
+      "name": { "en": "Diprotodon optatum", "es": "Diprotodon optatum" },
+      "group": "mammal", "icon": "🦛", "life": "land",
+      "from": 1.8, "to": 0.044,
+      "sites": [
+        { "at": [140.0939, -29.6669], "place": { "en": "Lake Callabonna, South Australia", "es": "Lago Callabonna, Australia Meridional" } },
+        { "at": [151.5, -27.5], "place": { "en": "Darling Downs, Queensland, Australia", "es": "Darling Downs, Queensland, Australia" } }
+      ],
+      "len": 3.8, "mass": 2700,
+      "diet": "plants",
+      "text": {
+        "en": "The largest marsupial that ever lived: a wombat-like plant-eater the size of a hippo, about 3.8 metres long and 2.7 tonnes. Hundreds of them got stuck in the mud of Lake Callabonna in South Australia, some still upright where they sank. The chemistry of its teeth shows it made seasonal journeys of about 200 kilometres. It died out about 44,000 years ago, after people reached Australia.",
+        "es": "El marsupial más grande que ha existido: un herbívoro parecido a un wombat, del tamaño de un hipopótamo, de unos 3,8 metros y 2,7 toneladas. Cientos de ellos quedaron atrapados en el barro del lago Callabonna, en Australia Meridional, algunos aún de pie donde se hundieron. La química de sus dientes muestra que hacía viajes de unos 200 kilómetros según la estación. Desapareció hace unos 44 000 años, después de la llegada de las personas a Australia."
+      },
+      "kin": { "en": "Wombats and koalas", "es": "Los wombats y los koalas" },
+      "wiki": { "en": "Diprotodon", "es": "Diprotodon" },
+      "pbdb": "Diprotodon",
+      "item": "diprotodon"
+    },
+    {
+      "id": "procoptodon",
+      "name": { "en": "Procoptodon goliah", "es": "Procoptodon goliah" },
+      "common": { "en": "Giant short-faced kangaroo", "es": "Canguro gigante de cara corta" },
+      "group": "mammal", "icon": "🦘", "life": "land",
+      "from": 2, "to": 0.045,
+      "sites": [
+        { "at": [140.77, -36.97], "place": { "en": "Naracoorte Caves, South Australia", "es": "Cuevas de Naracoorte, Australia Meridional" } },
+        { "at": [151.95, -27.55], "place": { "en": "Darling Downs, Queensland, Australia", "es": "Darling Downs, Queensland, Australia" } }
+      ],
+      "len": 2, "mass": 230,
+      "diet": "plants",
+      "text": {
+        "en": "A giant short-faced kangaroo about 2 metres tall and 230 kg, three times as heavy as the largest kangaroos today. It had a flat face, two very long clawed fingers on each hand for pulling down branches, and a single big toe on each foot, like a hoof. Unlike today's kangaroos it may have walked on two legs more than it hopped. It died out about 45,000 years ago.",
+        "es": "Un canguro gigante de cara corta, de unos 2 metros de alto y 230 kg, tres veces más pesado que los mayores canguros de hoy. Tenía la cara chata, dos dedos muy largos con garras en cada mano para bajar ramas y un solo dedo grande en cada pie, como una pezuña. A diferencia de los canguros actuales, quizá caminaba en dos patas más de lo que saltaba. Se extinguió hace unos 45 000 años."
+      },
+      "kin": { "en": "Kangaroos; its closest living relative is the banded hare-wallaby", "es": "Los canguros; su pariente vivo más cercano es el ualabí liebre rayado" },
+      "wiki": { "en": "Procoptodon", "es": "Procoptodon" },
+      "pbdb": "Procoptodon goliah"
+    },
+    {
+      "id": "doedicurus",
+      "name": { "en": "Doedicurus clavicaudatus", "es": "Doedicurus clavicaudatus" },
+      "group": "mammal", "icon": "🛡️", "life": "land",
+      "from": 1.8, "to": 0.011,
+      "sites": [
+        { "at": [-59.15, -34.6], "place": { "en": "Luján, Buenos Aires, Argentina", "es": "Luján, Buenos Aires, Argentina" } },
+        { "at": [-58.7, -38.57], "place": { "en": "Necochea, Buenos Aires, Argentina", "es": "Necochea, Buenos Aires, Argentina" } }
+      ],
+      "len": 4, "mass": 1400,
+      "diet": "plants",
+      "text": {
+        "en": "One of the biggest glyptodonts, giant relatives of armadillos: about 4 metres long and 1.4 tonnes, with a domed shell and a tail ending in a heavy club, probably once tipped with spikes. Damage on glyptodont shells suggests males fought by swinging their tails at each other. In 2016 ancient DNA from a Doedicurus shell showed that glyptodonts belong inside the armadillo family.",
+        "es": "Uno de los gliptodontes más grandes, parientes gigantes de los armadillos: unos 4 metros y 1,4 toneladas, con un caparazón en cúpula y una cola que terminaba en una pesada maza, probablemente con púas. Las heridas en caparazones de gliptodontes sugieren que los machos peleaban a golpes de cola. En 2016, ADN antiguo de un caparazón de Doedicurus mostró que los gliptodontes forman parte de la familia de los armadillos."
+      },
+      "kin": { "en": "Armadillos", "es": "Los armadillos" },
+      "wiki": { "en": "Doedicurus", "es": "Doedicurus clavicaudatus" },
+      "pbdb": "Doedicurus"
+    },
+    {
+      "id": "glyptodon",
+      "name": { "en": "Glyptodon", "es": "Glyptodon" },
+      "group": "mammal", "icon": "🛡️", "life": "land",
+      "from": 2.5, "to": 0.012,
+      "sites": [
+        { "at": [-61.6683, -38.9917], "place": { "en": "Monte Hermoso, Buenos Aires, Argentina", "es": "Monte Hermoso, Buenos Aires, Argentina" } },
+        { "at": [-64.73, -21.53], "place": { "en": "Tarija, Bolivia", "es": "Tarija, Bolivia" } }
+      ],
+      "len": 3.3, "mass": 2000,
+      "diet": "plants",
+      "text": {
+        "en": "A giant relative of armadillos, about the size of a small car: 3 metres long and up to 2 tonnes, under a domed shell made of more than a thousand bony plates. It grazed the grasslands of South America and died out about 12,000 years ago, after people arrived. Charles Darwin collected pieces of its armour in Argentina and Uruguay during the voyage of the Beagle.",
+        "es": "Un pariente gigante de los armadillos, del tamaño de un carro pequeño: 3 metros de largo y hasta 2 toneladas, bajo un caparazón en forma de cúpula hecho de más de mil placas de hueso. Pastaba en las praderas de Sudamérica y desapareció hace unos 12 000 años, después de la llegada de las personas. Charles Darwin recogió trozos de su coraza en Argentina y Uruguay durante el viaje del Beagle."
+      },
+      "kin": { "en": "Armadillos", "es": "Los armadillos" },
+      "wiki": { "en": "Glyptodon", "es": "Glyptodon" },
+      "item": "glyptodon"
+    },
+    {
+      "id": "dinornis",
+      "name": { "en": "Dinornis", "es": "Dinornis" },
+      "common": { "en": "Giant moa", "es": "Moa gigante" },
+      "group": "flyer", "icon": "🐦", "life": "land",
+      "from": 1, "to": 0.0006,
+      "sites": [
+        { "at": [172.65, -42.98], "place": { "en": "Pyramid Valley, North Canterbury, New Zealand", "es": "Pyramid Valley, Canterbury Norte, Nueva Zelanda" } },
+        { "at": [172.13, -41.17], "place": { "en": "Honeycomb Hill Cave, Oparara, New Zealand", "es": "Cueva Honeycomb Hill, Oparara, Nueva Zelanda" } }
+      ],
+      "mass": 230,
+      "diet": "plants",
+      "text": {
+        "en": "The giant moa of New Zealand: females, much bigger than males, reached 3.6 metres with their necks stretched up and weighed about 230 kg. Moa had no wings at all, not even tiny bones. They browsed shrubs and trees, and their only predator was Haast's eagle. Polynesian settlers, the ancestors of the Māori, arrived around 1280, and within about 150 years every moa had been hunted out.",
+        "es": "El moa gigante de Nueva Zelanda: las hembras, mucho más grandes que los machos, alcanzaban 3,6 metros con el cuello estirado y unos 230 kg. Los moas no tenían alas, ni siquiera huesos diminutos. Comían arbustos y árboles, y su único depredador era el águila de Haast. Los colonos polinesios, antepasados de los maoríes, llegaron hacia 1280, y en unos 150 años cazaron a todos los moas hasta extinguirlos."
+      },
+      "kin": { "en": "Tinamous of South America, which can fly; then kiwis and emus", "es": "Los tinamúes de Sudamérica, que sí vuelan; luego los kiwis y los emúes" },
+      "wiki": { "en": "Dinornis", "es": "Dinornis" },
+      "pbdb": "Dinornis",
+      "item": "moa"
+    },
+    {
+      "id": "haasts-eagle",
+      "name": { "en": "Hieraaetus moorei", "es": "Hieraaetus moorei" },
+      "common": { "en": "Haast's eagle", "es": "Águila de Haast" },
+      "group": "flyer", "icon": "🦅", "life": "air",
+      "from": 1, "to": 0.0006,
+      "sites": [
+        { "at": [172.77, -43.08], "place": { "en": "Glenmark, North Canterbury, New Zealand", "es": "Glenmark, Canterbury Norte, Nueva Zelanda" } }
+      ],
+      "mass": 13,
+      "diet": "meat",
+      "text": {
+        "en": "The largest eagle known: wings up to 3 metres across and up to 15 kg, about 40% heavier than the biggest eagles today. It hunted moa up to fifteen times its own weight, striking with talons as big as a tiger's claws. Its closest relative is the small little eagle of Australia, and in less than a million years its line grew about ten times heavier. It vanished with the moa, about 600 years ago.",
+        "es": "El águila más grande conocida: alas de hasta 3 metros y hasta 15 kg, cerca de un 40 % más pesada que las mayores águilas actuales. Cazaba moas de hasta quince veces su peso, golpeándolas con garras del tamaño de las de un tigre. Su pariente más cercano es una pequeña águila de Australia, y en menos de un millón de años su linaje se volvió unas diez veces más pesado. Desapareció junto con los moas, hace unos 600 años."
+      },
+      "kin": { "en": "The little eagle of Australia and the booted eagle", "es": "El águila pequeña de Australia y el águila calzada" },
+      "wiki": { "en": "Haast's eagle", "es": "Hieraaetus moorei" },
+      "item": "haasts-eagle"
+    },
+    {
+      "id": "homo-antecessor",
+      "name": { "en": "Homo antecessor", "es": "Homo antecessor" },
+      "group": "human", "icon": "🧍", "life": "land",
+      "from": 0.9, "to": 0.8,
+      "sites": [
+        { "at": [-3.52, 42.35], "place": { "en": "Gran Dolina, Sierra de Atapuerca, Burgos, Spain", "es": "Gran Dolina, sierra de Atapuerca, Burgos, España" } }
+      ],
+      "len": 1.7,
+      "diet": "both",
+      "text": {
+        "en": "Among the oldest humans of western Europe: about 850,000 years old, from the Gran Dolina cave at Atapuerca in Spain. Its face looked surprisingly modern. Cut marks on the bones show that some were butchered, one of the oldest known cases of cannibalism. Proteins from its tooth enamel show it was a close relative of the shared ancestor of Neanderthals, Denisovans and us.",
+        "es": "Uno de los humanos más antiguos de Europa occidental: unos 850 000 años, de la cueva de la Gran Dolina, en Atapuerca, España. Tenía una cara sorprendentemente moderna. Marcas de corte en los huesos muestran que algunos fueron descuartizados, uno de los casos de canibalismo más antiguos que se conocen. Proteínas del esmalte de sus dientes muestran que era pariente cercano del antepasado común de neandertales, denisovanos y nosotros."
+      },
+      "kin": { "en": "Us: modern humans", "es": "Nosotros, los humanos actuales" },
+      "wiki": { "en": "Homo antecessor", "es": "Homo antecessor" },
+      "pbdb": "Homo antecessor"
+    },
+    {
+      "id": "woolly-mammoth",
+      "name": { "en": "Mammuthus primigenius", "es": "Mammuthus primigenius" },
+      "common": { "en": "Woolly mammoth", "es": "Mamut lanudo" },
+      "group": "mammal", "icon": "🦣", "life": "land",
+      "from": 0.7, "to": 0.004,
+      "sites": [
+        { "at": [129.3, 71.8], "place": { "en": "Lena River delta, Siberia, Russia", "es": "Delta del río Lena, Siberia, Rusia" } },
+        { "at": [71, 68.9], "place": { "en": "Yuribey River, Yamal Peninsula, Russia", "es": "Río Yuribey, península de Yamal, Rusia" } },
+        { "at": [-179.5, 71.2], "place": { "en": "Wrangel Island, Russia", "es": "Isla de Wrangel, Rusia" } }
+      ],
+      "mass": 6000,
+      "diet": "plants",
+      "text": {
+        "en": "A shaggy elephant of the cold mammoth steppe, about as tall as an African elephant, with small ears, a short tail, a fatty hump, long curved tusks and long hair over thick underfur. It lived across northern Eurasia and North America from about 700,000 years ago. Frozen bodies like the baby Lyuba keep skin, hair and even stomach contents. The last ones lived on Wrangel Island until about 4,000 years ago.",
+        "es": "Un elefante peludo de la fría estepa del mamut, más o menos de la altura de un elefante africano, con orejas pequeñas, cola corta, joroba de grasa, largos colmillos curvos y pelo largo sobre una lanilla espesa. Vivió en el norte de Eurasia y Norteamérica desde hace unos 700 000 años. Cuerpos congelados como la cría Lyuba conservan piel, pelo y hasta comida en el estómago. Los últimos vivieron en la isla de Wrangel hasta hace unos 4000 años."
+      },
+      "kin": { "en": "The Asian elephant, its closest living relative; then African elephants", "es": "El elefante asiático, su pariente vivo más cercano; luego los africanos" },
+      "wiki": { "en": "Woolly mammoth", "es": "Mammuthus primigenius" },
+      "pbdb": "Mammuthus primigenius",
+      "item": "woolly-mammoth"
+    },
+    {
+      "id": "cave-lion",
+      "name": { "en": "Panthera spelaea", "es": "Panthera spelaea" },
+      "common": { "en": "Cave lion", "es": "León de las cavernas" },
+      "group": "mammal", "icon": "🦁", "life": "land",
+      "from": 0.5, "to": 0.013,
+      "sites": [
+        { "at": [11.33, 49.87], "place": { "en": "Zoolithenhöhle, Bavaria, Germany", "es": "Zoolithenhöhle, Baviera, Alemania" } },
+        { "at": [142.0, 69.0], "place": { "en": "Uyandina River, Yakutia, Russia", "es": "Río Uyandina, Yakutia, Rusia" } }
+      ],
+      "len": 2.1, "mass": 250,
+      "diet": "meat",
+      "text": {
+        "en": "A lion of the Ice Age, a little bigger than today's lions, that lived from Spain to Alaska. Stone Age people painted it on cave walls, as at Chauvet in France. Frozen cubs found in the Siberian permafrost in 2017 and 2018 still have their fur, whiskers and claws. Its DNA shows it was a separate species from today's lions, which split from it about half a million years ago.",
+        "es": "Un león de la Edad de Hielo, algo más grande que los leones actuales, que vivió desde España hasta Alaska. Las personas de la Edad de Piedra lo pintaron en las paredes de cuevas como la de Chauvet, en Francia. En 2017 y 2018 aparecieron en el suelo helado de Siberia cachorros congelados que aún conservan pelo, bigotes y garras. Su ADN muestra que era una especie distinta del león actual, separada hace medio millón de años."
+      },
+      "kin": { "en": "Lions; then tigers, leopards and jaguars", "es": "Los leones; luego los tigres, los leopardos y los jaguares" },
+      "wiki": { "en": "Panthera spelaea", "es": "Panthera spelaea" },
+      "pbdb": "Panthera spelaea",
+      "item": "cave-lion"
+    },
+    {
+      "id": "homo-heidelbergensis",
+      "name": { "en": "Homo heidelbergensis", "es": "Homo heidelbergensis" },
+      "group": "human", "icon": "🧍", "life": "land",
+      "from": 0.7, "to": 0.2,
+      "sites": [
+        { "at": [8.82, 49.34], "place": { "en": "Mauer, near Heidelberg, Germany", "es": "Mauer, cerca de Heidelberg, Alemania" } },
+        { "at": [28.43, -14.45], "place": { "en": "Kabwe (Broken Hill), Zambia", "es": "Kabwe (Broken Hill), Zambia" } },
+        { "at": [2.75, 42.8], "place": { "en": "Arago Cave, Tautavel, France", "es": "Cueva de Arago, Tautavel, Francia" } }
+      ],
+      "len": 1.7, "mass": 70,
+      "diet": "both",
+      "text": {
+        "en": "Named after a jaw found in a sandpit at Mauer, near Heidelberg in Germany, in 1907, about 600,000 years old. These were big, strong people with heavy brow ridges and brains nearly as large as ours, who hunted big animals with wooden spears. Many experts think they, or people like them, were the ancestors of Neanderthals in Europe and of us in Africa, though the name is debated.",
+        "es": "Su nombre viene de una mandíbula hallada en 1907 en un arenal de Mauer, cerca de Heidelberg, Alemania, de unos 600 000 años. Eran personas grandes y fuertes, con cejas muy marcadas y un cerebro casi tan grande como el nuestro, que cazaban grandes animales con lanzas de madera. Muchos expertos creen que ellos, o gente parecida, fueron antepasados de los neandertales en Europa y de nosotros en África, aunque el nombre se debate."
+      },
+      "kin": { "en": "Us: modern humans", "es": "Nosotros, los humanos actuales" },
+      "wiki": { "en": "Homo heidelbergensis", "es": "Homo heidelbergensis" },
+      "pbdb": "Homo heidelbergensis"
+    },
+    {
+      "id": "homo-floresiensis",
+      "name": { "en": "Homo floresiensis", "es": "Homo floresiensis" },
+      "common": { "en": "The hobbit", "es": "El hobbit" },
+      "group": "human", "icon": "🧍", "life": "land",
+      "from": 0.7, "to": 0.05,
+      "sites": [
+        { "at": [120.44, -8.53], "place": { "en": "Liang Bua cave, Flores, Indonesia", "es": "Cueva Liang Bua, Flores, Indonesia" } },
+        { "at": [121.1, -8.68], "place": { "en": "Mata Menge, Flores, Indonesia", "es": "Mata Menge, Flores, Indonesia" } }
+      ],
+      "len": 1.06, "mass": 28,
+      "diet": "both",
+      "text": {
+        "en": "Nicknamed 'the hobbit': a tiny human about 1.1 metres tall with a brain the size of a chimpanzee's, found in 2003 in Liang Bua cave on the island of Flores, Indonesia. Its ancestors probably reached the island long before and shrank over time, as other island animals do: 700,000-year-old fossils at Mata Menge are already small. It made stone tools and lived among dwarf elephants, Komodo dragons and giant storks.",
+        "es": "Apodado «el hobbit»: un humano diminuto de 1,1 metros con un cerebro del tamaño del de un chimpancé, hallado en 2003 en la cueva Liang Bua, en la isla de Flores, Indonesia. Sus antepasados llegaron a la isla mucho antes y probablemente se fueron achicando, como otros animales de islas: fósiles de 700 000 años en Mata Menge ya son pequeños. Hacía herramientas de piedra y vivió entre elefantes enanos, dragones de Komodo y cigüeñas gigantes."
+      },
+      "kin": { "en": "Us: modern humans", "es": "Nosotros, los humanos actuales" },
+      "wiki": { "en": "Homo floresiensis", "es": "Homo floresiensis" },
+      "pbdb": "Homo floresiensis"
+    },
+    {
+      "id": "aurochs",
+      "name": { "en": "Bos primigenius", "es": "Bos primigenius" },
+      "common": { "en": "Aurochs", "es": "Uro" },
+      "group": "mammal", "icon": "🐂", "life": "land",
+      "from": 0.8, "to": 0.0004,
+      "sites": [
+        { "at": [11.57, 55.85], "place": { "en": "Vig, Zealand, Denmark", "es": "Vig, Selandia, Dinamarca" } },
+        { "at": [38.9217, 37.2236], "place": { "en": "Göbekli Tepe, Turkey", "es": "Göbekli Tepe, Turquía" } },
+        { "at": [20.55, 52.09], "place": { "en": "Jaktorów Forest, Masovia, Poland", "es": "Bosque de Jaktorów, Mazovia, Polonia" } }
+      ],
+      "mass": 900,
+      "diet": "plants",
+      "text": {
+        "en": "The wild ancestor of cattle: a huge, long-horned ox, with bulls up to 1.8 metres at the shoulder and about 1,000 kg, black with a pale stripe down the back. It roamed Europe, Asia and North Africa, and was painted on cave walls, as in the Hall of the Bulls at Lascaux in France. People tamed it about 10,500 years ago in the Near East. The very last aurochs, a cow, died in Poland in 1627.",
+        "es": "El antepasado salvaje de las vacas: un buey enorme de cuernos largos, con toros de hasta 1,8 metros a la cruz y unos 1000 kg, negro con una franja clara en el lomo. Vivía en Europa, Asia y el norte de África, y aparece pintado en cuevas, como en la sala de los Toros de Lascaux, en Francia. Las personas lo domesticaron hace unos 10 500 años en el Cercano Oriente. El último uro, una hembra, murió en Polonia en 1627."
+      },
+      "kin": { "en": "Cattle, its tame descendants; then bison and yaks", "es": "El ganado vacuno, su descendiente doméstico; luego los bisontes y los yaks" },
+      "wiki": { "en": "Aurochs", "es": "Bos primigenius" },
+      "pbdb": "Bos primigenius",
+      "item": "aurochs"
+    },
+    {
+      "id": "woolly-rhinoceros",
+      "name": { "en": "Coelodonta antiquitatis", "es": "Coelodonta antiquitatis" },
+      "common": { "en": "Woolly rhinoceros", "es": "Rinoceronte lanudo" },
+      "group": "mammal", "icon": "🦏", "life": "land",
+      "from": 0.46, "to": 0.014,
+      "sites": [
+        { "at": [24.5, 48.7], "place": { "en": "Starunia, Ukraine", "es": "Starunia, Ucrania" } },
+        { "at": [146.0, 68.5], "place": { "en": "Abyisky district, Yakutia, Russia", "es": "Distrito de Abyisky, Yakutia, Rusia" } }
+      ],
+      "len": 3.5, "mass": 2000,
+      "diet": "plants",
+      "text": {
+        "en": "A rhinoceros with a thick coat for the Ice Age steppes and a front horn up to a metre long, flattened from side to side, perhaps worn by sweeping snow off the grass. It lived from Spain to eastern Siberia. Bodies with their fur still on have been found frozen in Yakutia, and the painters of Chauvet Cave drew it. It died out about 14,000 years ago, probably as the climate warmed and its grasslands shrank.",
+        "es": "Un rinoceronte con un abrigo espeso para las estepas de la Edad de Hielo y un cuerno delantero de hasta un metro, aplanado a los lados, quizá gastado al apartar la nieve del pasto. Vivió desde España hasta el este de Siberia. En el suelo helado de Yakutia se han hallado cuerpos con su pelo, y los pintores de la cueva de Chauvet lo dibujaron. Se extinguió hace unos 14 000 años, probablemente porque el clima se calentó y sus praderas se redujeron."
+      },
+      "kin": { "en": "The Sumatran rhinoceros; then other rhinos", "es": "El rinoceronte de Sumatra; luego los demás rinocerontes" },
+      "wiki": { "en": "Woolly rhinoceros", "es": "Coelodonta antiquitatis" },
+      "pbdb": "Coelodonta antiquitatis",
+      "item": "woolly-rhinoceros"
+    },
+    {
+      "id": "irish-elk",
+      "name": { "en": "Megaloceros giganteus", "es": "Megaloceros giganteus" },
+      "common": { "en": "Irish elk", "es": "Ciervo gigante" },
+      "group": "mammal", "icon": "🦌", "life": "land",
+      "from": 0.4, "to": 0.0077,
+      "sites": [
+        { "at": [-6.2, 53.24], "place": { "en": "Ballybetagh bog, near Dublin, Ireland", "es": "Turbera de Ballybetagh, cerca de Dublín, Irlanda" } },
+        { "at": [-8.53, 52.52], "place": { "en": "Lough Gur, Limerick, Ireland", "es": "Lough Gur, Limerick, Irlanda" } }
+      ],
+      "mass": 600,
+      "diet": "plants",
+      "text": {
+        "en": "Not only Irish and not an elk, but a giant deer: males carried the largest antlers of any deer ever, up to 3.6 metres across and 40 kg, grown afresh every year. It lived from Ireland to Siberia, and many skeletons come from Irish bogs, where they sank into the mud of old lakes. It survived in western Siberia until about 7,700 years ago. Its closest living relative is the fallow deer.",
+        "es": "No era solo irlandés ni era un alce, sino un ciervo gigante: los machos tenían las cornamentas más grandes de cualquier ciervo, de hasta 3,6 metros de punta a punta y 40 kg, que les crecían de nuevo cada año. Vivió desde Irlanda hasta Siberia, y muchos esqueletos salen de turberas irlandesas, donde se hundieron en el barro de antiguos lagos. Sobrevivió en Siberia occidental hasta hace unos 7700 años."
+      },
+      "kin": { "en": "The fallow deer", "es": "El gamo" },
+      "wiki": { "en": "Irish elk", "es": "Megaloceros giganteus" },
+      "pbdb": "Megaloceros giganteus",
+      "item": "megaloceros"
+    },
+    {
+      "id": "neanderthal",
+      "name": { "en": "Homo neanderthalensis", "es": "Homo neanderthalensis" },
+      "common": { "en": "Neanderthals", "es": "Neandertales" },
+      "group": "human", "icon": "🧔", "life": "land",
+      "from": 0.4, "to": 0.04,
+      "sites": [
+        { "at": [6.95, 51.23], "place": { "en": "Feldhofer Cave, Neander Valley, Germany", "es": "Cueva Feldhofer, valle de Neander, Alemania" } },
+        { "at": [44.22, 36.83], "place": { "en": "Shanidar Cave, Kurdistan, Iraq", "es": "Cueva de Shanidar, Kurdistán, Irak" } },
+        { "at": [1.72, 45.0], "place": { "en": "La Chapelle-aux-Saints, Corrèze, France", "es": "La Chapelle-aux-Saints, Corrèze, Francia" } },
+        { "at": [-5.35, 36.14], "place": { "en": "Forbes' Quarry and Gorham's Cave, Gibraltar", "es": "Cantera Forbes y cueva de Gorham, Gibraltar" } }
+      ],
+      "len": 1.65, "mass": 70,
+      "diet": "both",
+      "text": {
+        "en": "Our closest extinct relatives: stocky, strong people built for the cold, with big noses and brains as large as ours. They lived in Europe and western Asia from about 400,000 to 40,000 years ago, made fine stone tools, used fire and buried their dead. When our species arrived they met and had children together: people with roots outside Africa carry 1 to 2% Neanderthal DNA.",
+        "es": "Nuestros parientes extintos más cercanos: personas robustas y fuertes, hechas para el frío, con narices grandes y cerebros tan grandes como el nuestro. Vivieron en Europa y Asia occidental hace unos 400 000 a 40 000 años, hacían herramientas de piedra finas, usaban el fuego y enterraban a sus muertos. Cuando llegó nuestra especie tuvieron hijos juntos: quienes tienen raíces fuera de África llevan de un 1 a un 2 % de ADN neandertal."
+      },
+      "kin": { "en": "Us: modern humans, who carry some of their DNA", "es": "Nosotros, los humanos actuales, que llevamos parte de su ADN" },
+      "wiki": { "en": "Neanderthal", "es": "Homo neanderthalensis" },
+      "pbdb": "Homo neanderthalensis"
+    },
+    {
+      "id": "cave-bear",
+      "name": { "en": "Ursus spelaeus", "es": "Ursus spelaeus" },
+      "common": { "en": "Cave bear", "es": "Oso de las cavernas" },
+      "group": "mammal", "icon": "🐻", "life": "land",
+      "from": 0.3, "to": 0.024,
+      "sites": [
+        { "at": [22.5739, 46.5544], "place": { "en": "Bear Cave (Peștera Urșilor), Romania", "es": "Cueva de los Osos (Peștera Urșilor), Rumania" } },
+        { "at": [15.38, 47.33], "place": { "en": "Drachenhöhle, Mixnitz, Austria", "es": "Drachenhöhle, Mixnitz, Austria" } }
+      ],
+      "len": 2.7, "mass": 400,
+      "diet": "plants",
+      "text": {
+        "en": "A huge bear of Ice Age Europe, bigger than most brown bears, that spent the winter asleep in caves, where many died. Some caves hold the bones of tens of thousands of bears, once taken for dragons' bones. Despite its size, the chemistry of its bones shows it ate almost only plants. It died out about 24,000 years ago, perhaps as the cold thinned out its plants and people competed for its caves.",
+        "es": "Un oso enorme de la Europa de la Edad de Hielo, más grande que la mayoría de los osos pardos, que pasaba el invierno dormido en cuevas, donde muchos morían. Algunas cuevas guardan huesos de decenas de miles de osos, que antes se creían de dragones. Pese a su tamaño, la química de sus huesos muestra que comía casi solo plantas. Desapareció hace unos 24 000 años, quizá por el frío y por la competencia con las personas por las cuevas."
+      },
+      "kin": { "en": "Brown bears and polar bears", "es": "Los osos pardos y los osos polares" },
+      "wiki": { "en": "Cave bear", "es": "Ursus spelaeus" },
+      "pbdb": "Ursus spelaeus",
+      "item": "cave-bear"
+    },
+    {
+      "id": "homo-naledi",
+      "name": { "en": "Homo naledi", "es": "Homo naledi" },
+      "group": "human", "icon": "🔦", "life": "land",
+      "from": 0.34, "to": 0.24,
+      "sites": [
+        { "at": [27.73, -26.02], "place": { "en": "Rising Star Cave, Cradle of Humankind, South Africa", "es": "Cueva Rising Star, Cuna de la Humanidad, Sudáfrica" } }
+      ],
+      "len": 1.44, "mass": 40,
+      "diet": "both",
+      "text": {
+        "en": "In 2013 cavers squeezed through a gap 18 cm wide deep in the Rising Star cave in South Africa and found a chamber full of bones: over 1,500 pieces from at least 15 people of a new human species. Homo naledi had a small brain, like the earliest humans, yet lived surprisingly recently, about 335,000 to 236,000 years ago. How the bodies got so deep into the cave is still debated.",
+        "es": "En 2013, unos espeleólogos se colaron por una grieta de 18 cm de ancho en lo profundo de la cueva Rising Star, en Sudáfrica, y hallaron una cámara llena de huesos: más de 1500 fragmentos de al menos 15 individuos de una nueva especie humana. Homo naledi tenía un cerebro pequeño, como los primeros humanos, pero vivió hace relativamente poco, hace unos 335 000 a 236 000 años. Aún se debate cómo llegaron los cuerpos tan adentro de la cueva."
+      },
+      "kin": { "en": "Us: modern humans", "es": "Nosotros, los humanos actuales" },
+      "wiki": { "en": "Homo naledi", "es": "Homo naledi" }
+    },
+    {
+      "id": "denisovans",
+      "name": { "en": "Homo longi", "es": "Homo longi" },
+      "common": { "en": "Denisovans", "es": "Denisovanos" },
+      "group": "human", "icon": "🧬", "life": "land",
+      "from": 0.3, "to": 0.04,
+      "sites": [
+        { "at": [84.68, 51.4], "place": { "en": "Denisova Cave, Altai, Russia", "es": "Cueva de Denísova, Altái, Rusia" } },
+        { "at": [102.57, 35.45], "place": { "en": "Baishiya Karst Cave, Xiahe, Gansu, China", "es": "Cueva kárstica de Baishiya, Xiahe, Gansu, China" } },
+        { "at": [126.63, 45.75], "place": { "en": "Harbin, Heilongjiang, China", "es": "Harbin, Heilongjiang, China" } },
+        { "at": [119.9, 23.3], "place": { "en": "Penghu Channel, off Taiwan", "es": "Canal de Penghu, frente a Taiwán" } }
+      ],
+      "diet": "both",
+      "text": {
+        "en": "First known only from a finger bone in Denisova Cave, Siberia, whose DNA revealed in 2010 a human group nobody had suspected. A jaw from the Tibetan Plateau, a jaw dredged from the sea off Taiwan and the Harbin skull from China, named Homo longi, show they were big, strong people with huge teeth. People of New Guinea carry some of their DNA, and Tibetans got from them a gene for living high up.",
+        "es": "Al principio solo se conocían por un hueso de un dedo de la cueva de Denísova, en Siberia, cuyo ADN reveló en 2010 un grupo humano que nadie sospechaba. Una mandíbula de la meseta tibetana, otra sacada del mar frente a Taiwán y el cráneo de Harbin, en China, llamado Homo longi, muestran que eran personas grandes y fuertes, de dientes enormes. Los pueblos de Nueva Guinea llevan parte de su ADN, y los tibetanos heredaron de ellos un gen para vivir en las alturas."
+      },
+      "kin": { "en": "Neanderthals, now extinct; and us: many people in Asia and Oceania carry their DNA", "es": "Los neandertales, ya extintos; y nosotros: muchos pueblos de Asia y Oceanía llevan su ADN" },
+      "wiki": { "en": "Denisovan", "es": "Hombre de Denísova" }
+    },
+    {
+      "id": "modern-humans",
+      "name": { "en": "Homo sapiens", "es": "Homo sapiens" },
+      "common": { "en": "Modern humans", "es": "Humanos modernos" },
+      "group": "human", "icon": "🧑", "life": "land",
+      "from": 0.315, "to": 0, "alive": true,
+      "sites": [
+        { "at": [-8.87, 31.85], "place": { "en": "Jebel Irhoud, Morocco", "es": "Jebel Irhoud, Marruecos" } },
+        { "at": [35.95, 5.4], "place": { "en": "Omo Kibish, Ethiopia", "es": "Omo Kibish, Etiopía" } },
+        { "at": [40.53, 10.27], "place": { "en": "Herto, Middle Awash, Ethiopia", "es": "Herto, Awash Medio, Etiopía" } },
+        { "at": [21.22, -34.41], "place": { "en": "Blombos Cave, Western Cape, South Africa", "es": "Cueva de Blombos, Cabo Occidental, Sudáfrica" } }
+      ],
+      "len": 1.7, "mass": 65,
+      "diet": "both",
+      "text": {
+        "en": "Us. The oldest fossils of our species, about 315,000 years old, come from Jebel Irhoud in Morocco, which suggests we evolved across Africa, not in one spot. Our ancestors made art, jewellery and complex tools, spread out of Africa mainly from about 60,000 years ago, mixed with Neanderthals and Denisovans, and reached every continent except Antarctica. Today we are the only human species left.",
+        "es": "Nosotros. Los fósiles más antiguos de nuestra especie, de unos 315 000 años, vienen de Jebel Irhoud, en Marruecos, lo que sugiere que evolucionamos por toda África, no en un solo lugar. Nuestros antepasados hicieron arte, adornos y herramientas complejas, salieron de África sobre todo desde hace unos 60 000 años, se mezclaron con neandertales y denisovanos y llegaron a todos los continentes menos la Antártida. Hoy somos la única especie humana que queda."
+      },
+      "kin": { "en": "Chimpanzees and bonobos, our closest living relatives", "es": "Los chimpancés y los bonobos, nuestros parientes vivos más cercanos" },
+      "wiki": { "en": "Human", "es": "Homo sapiens" },
+      "pbdb": "Homo sapiens"
+    },
+    {
+      "id": "dire-wolf",
+      "name": { "en": "Aenocyon dirus", "es": "Aenocyon dirus" },
+      "common": { "en": "Dire wolf", "es": "Lobo terrible" },
+      "group": "mammal", "icon": "🐺", "life": "land",
+      "from": 0.25, "to": 0.013,
+      "sites": [
+        { "at": [-118.356, 34.0628], "place": { "en": "La Brea Tar Pits, Los Angeles, United States", "es": "Pozos de asfalto de La Brea, Los Ángeles, Estados Unidos" } },
+        { "at": [-87.5711, 37.9716], "place": { "en": "Ohio River, near Evansville, Indiana, United States", "es": "Río Ohio, cerca de Evansville, Indiana, Estados Unidos" } }
+      ],
+      "len": 1.5, "mass": 65,
+      "diet": "meat",
+      "text": {
+        "en": "A big wolf of the Americas, the size of the largest grey wolves today but with a heavier skull and a stronger bite, for hunting horses, bison and ground sloths. Remains of more than 4,000 have come out of the La Brea Tar Pits in Los Angeles. In 2021 its DNA showed it was not a close cousin of the grey wolf at all, but the last of an old American line that split off about 5.7 million years ago.",
+        "es": "Un lobo grande de América, del tamaño de los lobos grises más grandes de hoy pero con un cráneo más pesado y una mordida más fuerte, para cazar caballos, bisontes y perezosos terrestres. De los pozos de asfalto de La Brea, en Los Ángeles, han salido restos de más de 4000. En 2021, su ADN mostró que no era primo cercano del lobo gris, sino el último de un antiguo linaje americano separado hace unos 5,7 millones de años."
+      },
+      "kin": { "en": "Wolves, coyotes and jackals, but only distantly", "es": "Los lobos, los coyotes y los chacales, aunque de lejos" },
+      "wiki": { "en": "Dire wolf", "es": "Aenocyon dirus" },
+      "pbdb": "Aenocyon dirus",
+      "item": "dire-wolf"
+    },
+    {
+      "id": "dodo",
+      "name": { "en": "Raphus cucullatus", "es": "Raphus cucullatus" },
+      "common": { "en": "Dodo", "es": "Dodo" },
+      "group": "flyer", "icon": "🦤", "life": "land",
+      "from": 0.0117, "to": 0.00034,
+      "sites": [
+        { "at": [57.696, -20.447], "place": { "en": "Mare aux Songes, near Mahébourg, Mauritius", "es": "Mare aux Songes, cerca de Mahébourg, Mauricio" } }
+      ],
+      "len": 1, "mass": 12,
+      "diet": "plants",
+      "text": {
+        "en": "A big, flightless pigeon about 1 metre tall that lived only on the island of Mauritius in the Indian Ocean. With no predators there, it nested on the ground. Sailors arrived in 1598 and brought rats, pigs, monkeys and dogs that ate its eggs; the last dodos were seen between the 1660s and the 1680s. Its known bones are from the last few thousand years, though dodos surely lived there far longer.",
+        "es": "Una paloma grande que no volaba, de un metro de alto, que vivía solo en la isla Mauricio, en el océano Índico. Sin depredadores allí, anidaba en el suelo. Los marineros llegaron en 1598 y trajeron ratas, cerdos, monos y perros que se comían sus huevos; los últimos dodos se vieron entre las décadas de 1660 y 1680. Sus huesos conocidos son de los últimos miles de años, aunque seguramente vivieron allí mucho más tiempo."
+      },
+      "kin": { "en": "The Nicobar pigeon; then other pigeons and doves", "es": "La paloma de Nicobar; luego las demás palomas" },
+      "wiki": { "en": "Dodo", "es": "Raphus cucullatus" },
+      "pbdb": "Raphus",
+      "item": "dodo"
+    },
+    {
+      "id": "thylacine",
+      "name": { "en": "Thylacinus cynocephalus", "es": "Thylacinus cynocephalus" },
+      "common": { "en": "Thylacine", "es": "Tilacino" },
+      "group": "mammal", "icon": "🐺", "life": "land",
+      "from": 2, "to": 0.00009,
+      "sites": [
+        { "at": [147.3325, -42.8706], "place": { "en": "Beaumaris Zoo, Hobart, Tasmania, Australia", "es": "Zoológico de Beaumaris, Hobart, Tasmania, Australia" } },
+        { "at": [140.7976, -37.0361], "place": { "en": "Naracoorte Caves, South Australia", "es": "Cuevas de Naracoorte, Australia Meridional" } }
+      ],
+      "len": 1.7, "mass": 20,
+      "diet": "meat",
+      "text": {
+        "en": "The 'Tasmanian tiger': a striped, dog-like marsupial hunter, the largest meat-eating marsupial of recent times, in which both males and females had a pouch. It lived across Australia and New Guinea but vanished from the mainland about 3,000 years ago, after dingoes arrived and the climate changed. In Tasmania farmers were paid bounties to kill it; the last known one died at Hobart's zoo in 1936.",
+        "es": "El «tigre de Tasmania»: un cazador marsupial rayado, parecido a un perro, el mayor marsupial carnívoro de tiempos recientes, en el que machos y hembras tenían bolsa. Vivía en Australia y Nueva Guinea, pero desapareció del continente hace unos 3000 años, tras la llegada de los dingos y cambios en el clima. En Tasmania se pagaban recompensas por matarlo; el último conocido murió en el zoológico de Hobart en 1936."
+      },
+      "kin": { "en": "The Tasmanian devil, quolls and the numbat", "es": "El demonio de Tasmania, los cuoles y el numbat" },
+      "wiki": { "en": "Thylacine", "es": "Thylacinus cynocephalus" },
+      "pbdb": "Thylacinus cynocephalus",
+      "item": "thylacine"
+    },
+    {
+      "id": "stellers-sea-cow",
+      "name": { "en": "Hydrodamalis gigas", "es": "Hydrodamalis gigas" },
+      "common": { "en": "Steller's sea cow", "es": "Vaca marina de Steller" },
+      "group": "mammal", "icon": "🦭", "life": "sea",
+      "from": 1, "to": 0.00026,
+      "sites": [
+        { "at": [165.9, 55], "place": { "en": "Bering Island, Commander Islands, Russia", "es": "Isla de Bering, islas del Comandante, Rusia" } },
+        { "at": [179.2, 51.5], "place": { "en": "Amchitka Island, Aleutians, Alaska, United States", "es": "Isla Amchitka, Aleutianas, Alaska, Estados Unidos" } }
+      ],
+      "len": 8, "mass": 8000,
+      "diet": "plants",
+      "text": {
+        "en": "A giant sea cow up to 8 metres long and perhaps 8 to 10 tonnes, which floated in the cold waters around the Commander Islands in the Bering Sea, grazing on kelp. Long before, it had lived along North Pacific coasts from Japan to California. Georg Steller described it in 1741, after his ship was wrecked there. Hunters killed the last ones by 1768, only 27 years later.",
+        "es": "Una vaca marina gigante de hasta 8 metros y quizá de 8 a 10 toneladas, que flotaba en las aguas frías de las islas del Comandante, en el mar de Bering, comiendo algas. Mucho antes había vivido en las costas del Pacífico Norte, de Japón a California. Georg Steller la describió en 1741, tras naufragar allí. Los cazadores mataron a las últimas en 1768, solo 27 años después."
+      },
+      "kin": { "en": "Dugongs; then manatees", "es": "Los dugongos; luego los manatíes" },
+      "wiki": { "en": "Steller's sea cow", "es": "Hydrodamalis gigas" },
+      "pbdb": "Hydrodamalis gigas",
+      "item": "stellers-sea-cow"
+    },
+    {
+      "id": "great-auk",
+      "name": { "en": "Pinguinus impennis", "es": "Pinguinus impennis" },
+      "common": { "en": "Great auk", "es": "Alca gigante" },
+      "group": "flyer", "icon": "🐧", "life": "sea",
+      "from": 1, "to": 0.00018,
+      "sites": [
+        { "at": [-53.18, 49.76], "place": { "en": "Funk Island, Newfoundland, Canada", "es": "Isla Funk, Terranova, Canadá" } },
+        { "at": [-22.96, 63.74], "place": { "en": "Eldey, off Iceland", "es": "Eldey, frente a Islandia" } }
+      ],
+      "len": 0.8, "mass": 5,
+      "diet": "fish",
+      "text": {
+        "en": "A flightless seabird about 80 cm tall from the North Atlantic, from Canada to Norway. It looked like a penguin, and in fact it was the first bird called a penguin: the southern birds got the name from it. It swam superbly but waddled on land, where sailors killed huge numbers for meat, oil and feathers. The last known pair was killed on Eldey, off Iceland, in 1844.",
+        "es": "Un ave marina no voladora de unos 80 cm del Atlántico Norte, de Canadá a Noruega. Parecía un pingüino, y de hecho fue la primera ave llamada así: las aves del sur tomaron el nombre de ella. Nadaba de maravilla pero caminaba con torpeza en tierra, donde los marineros mataron muchísimas por su carne, su grasa y sus plumas. La última pareja conocida murió en Eldey, frente a Islandia, en 1844."
+      },
+      "kin": { "en": "The razorbill; then puffins and guillemots", "es": "El alca común; luego los frailecillos y los araos" },
+      "wiki": { "en": "Great auk", "es": "Pinguinus impennis" },
+      "pbdb": "Pinguinus impennis",
+      "item": "great-auk"
+    },
+    {
+      "id": "elephant-bird",
+      "name": { "en": "Aepyornis", "es": "Aepyornis" },
+      "common": { "en": "Elephant bird", "es": "Ave elefante" },
+      "group": "flyer", "icon": "🥚", "life": "land",
+      "from": 0.13, "to": 0.001,
+      "sites": [
+        { "at": [46.6331, -25.1986], "place": { "en": "Southern Madagascar", "es": "Sur de Madagascar" } }
+      ],
+      "diet": "plants",
+      "text": {
+        "en": "One of the largest birds ever: a flightless giant of Madagascar about 3 metres tall, which laid the largest eggs known from any animal, holding about 8 to 10 litres, as much as 150 hen's eggs. Its closest living relative is the small kiwi of New Zealand, so their flying ancestors must have crossed oceans. It died out about 1,000 years ago, after people settled the island.",
+        "es": "Una de las aves más grandes de la historia: un gigante no volador de Madagascar, de unos 3 metros de alto, que ponía los huevos más grandes de cualquier animal conocido, de unos 8 a 10 litros, como 150 huevos de gallina. Su pariente vivo más cercano es el pequeño kiwi de Nueva Zelanda, así que sus antepasados voladores debieron cruzar océanos. Desapareció hace unos 1000 años, después de que las personas se asentaran en la isla."
+      },
+      "kin": { "en": "Kiwis; then emus and cassowaries", "es": "Los kiwis; luego los emúes y los casuarios" },
+      "wiki": { "en": "Aepyornis", "es": "Aepyornis" },
+      "pbdb": "Aepyornis",
+      "item": "elephant-bird"
+    },
+    {
+      "id": "passenger-pigeon",
+      "name": { "en": "Ectopistes migratorius", "es": "Ectopistes migratorius" },
+      "common": { "en": "Passenger pigeon", "es": "Paloma migratoria" },
+      "group": "flyer", "icon": "🕊️", "life": "air",
+      "from": 1, "to": 0.00011,
+      "sites": [
+        { "at": [-84.5085, 39.145], "place": { "en": "Cincinnati Zoo, Ohio, United States", "es": "Zoológico de Cincinnati, Ohio, Estados Unidos" } }
+      ],
+      "len": 0.4, "mass": 0.34,
+      "diet": "plants",
+      "text": {
+        "en": "Once probably the most numerous bird on Earth: 3 to 5 billion lived in eastern North America, in flocks so big they darkened the sky for hours. They nested together in huge colonies and fed on acorns, beechnuts and chestnuts. In the 1800s they were shot and netted on an enormous scale and their forests were cut down. Martha, the last one, died at the Cincinnati Zoo on 1 September 1914.",
+        "es": "Quizá fue el ave más abundante de la Tierra: entre 3000 y 5000 millones vivían en el este de Norteamérica, en bandadas tan grandes que oscurecían el cielo durante horas. Anidaban juntas en enormes colonias y comían bellotas, hayucos y castañas. En el siglo XIX se cazaron con escopetas y redes a escala enorme y se talaron sus bosques. Martha, la última, murió en el zoológico de Cincinnati el 1 de septiembre de 1914."
+      },
+      "kin": { "en": "American pigeons such as the band-tailed pigeon", "es": "Las palomas americanas, como la paloma de collar" },
+      "wiki": { "en": "Passenger pigeon", "es": "Ectopistes migratorius" },
+      "pbdb": "Ectopistes migratorius",
+      "item": "passenger-pigeon"
+    }
+  ]
+}

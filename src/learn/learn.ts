@@ -56,7 +56,7 @@ function seeded(seed: number): () => number {
 /** FNV-1a: a number from a string (the day). */
 const hash = (str: string) => { let x = 0x811c9dc5; for (let i = 0; i < str.length; i++) { x ^= str.charCodeAt(i); x = Math.imul(x, 0x01000193); } return x >>> 0; };
 
-type QuizKind = 'seafeature' | 'zone' | 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor' | 'order' | 'detective' | 'daily' | 'world' | 'landed' | 'constellation' | 'element' | 'hop' | 'museum' | 'habitat' | 'lives' | 'grows' | 'season' | 'deep' | 'layers' | 'legacy';
+type QuizKind = 'seafeature' | 'zone' | 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor' | 'order' | 'detective' | 'daily' | 'world' | 'landed' | 'constellation' | 'element' | 'hop' | 'museum' | 'habitat' | 'lives' | 'grows' | 'season' | 'deep' | 'layers' | 'legacy' | 'deeporder';
 /** An item of a story collection, tagged with its collection. */
 interface QItem extends CollectionItem { kind: StoryKind; pop?: number }
 /** A site of data/layers/heritage.json (scripts/data/world-heritage/build.py). */
@@ -386,6 +386,7 @@ export class Learn {
       ['capital', '🏛️', L('Capitals', 'Capitales'), L('Pick the right capital city.', 'Elige la capital correcta.')],
       ['region', '🗺️', L('States and provinces', 'Estados y provincias'), L('Tap the state or province in the United States, Mexico, Canada and 45 more countries.', 'Toca el estado o la provincia en Estados Unidos, México, Canadá y 45 países más.')],
       ['hop', '🧭', L('Which country in between?', '¿Qué país hay en medio?'), L('Two countries that do not touch, and one country between them: which one do you cross?', 'Dos países que no se tocan y un país entre ellos: ¿cuál cruzas?')],
+      ['deeporder', '⏳', L('Which came first?', '¿Qué fue primero?'), L('Four moments of deep time, such as the first fish, the asteroid and the first flowers: put them in order, oldest first.', 'Cuatro momentos del tiempo profundo, como los primeros peces, el asteroide y las primeras flores: ordénalos, del más antiguo al más reciente.')],
       ['order', '🔢', L('Put them in order', 'Ordénalos en el tiempo'), L('Four things from the stories, such as a temple, an invention and a painting: put them in time, oldest first.', 'Cuatro cosas de las historias, como un templo, un invento y una pintura: ordénalas en el tiempo, de la más antigua a la más reciente.')],
       ['detective', '🕵️', L('Time detective', 'Detective del tiempo'), L('A map of old borders with no names on it: when is it from?', 'Un mapa de fronteras antiguas sin nombres: ¿de cuándo es?')],
       ['where', '📍', L('Where in the world?', '¿Dónde está?'), L('Tap on the globe where a monument, a work, a dish or a fossil comes from.', 'Toca en el globo de dónde es un monumento, una obra, un plato o un fósil.')],
@@ -452,7 +453,7 @@ export class Learn {
     };
     const table = this.quizTable();
     const list = h('div', { class: 'mode-list' }, ...table.slice(0, 5).map(card));
-    const games = h('div', { class: 'mode-list' }, ...table.filter(([k]) => k === 'order' || k === 'detective').map(card));
+    const games = h('div', { class: 'mode-list' }, ...table.filter(([k]) => k === 'order' || k === 'deeporder' || k === 'detective').map(card));
     const list2 = h('div', { class: 'mode-list' }, ...table.slice(7).map(card));
     this.shell.openPanel('quiz', L('Quiz', 'Concurso'), h('div', null, this.dailyCards(), h('h3', { class: 'sec-title' }, L('Region', 'Región')), regionRow, h('h3', { class: 'sec-title' }, L('Game', 'Juego')), list,
       h('h3', { class: 'sec-title' }, L('Games of time', 'Juegos del tiempo')), games,
@@ -512,7 +513,7 @@ export class Learn {
     if (kind === 'family') { await this.startFamilyQuiz(); return; }
     if (kind === 'capital' || kind === 'daily') await loadDeck();
     if (kind === 'daily') { await this.startDaily(); return; }
-    const qs = kind === 'world' ? await this.worldQs(10) : kind === 'landed' ? await this.landedQs(10) : kind === 'constellation' ? await this.constellationQs(10) : kind === 'element' ? await this.elementQs(10) : kind === 'order' ? await this.orderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : kind === 'hop' ? await this.hopQs(10, region) : kind === 'museum' ? await this.museumQs(10) : kind === 'habitat' ? await this.habitatQs(10) : kind === 'lives' ? await this.livesQs(10) : kind === 'grows' ? await this.growsQs(10) : kind === 'season' ? await this.seasonQs(10) : kind === 'seafeature' ? await this.seaFeatureQs(10) : kind === 'zone' ? await this.zoneQs(10) : kind === 'deep' ? await this.deepQs(10) : kind === 'layers' ? await this.downQs(8) : kind === 'legacy' ? await this.legacyQs(10) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
+    const qs = kind === 'world' ? await this.worldQs(10) : kind === 'landed' ? await this.landedQs(10) : kind === 'constellation' ? await this.constellationQs(10) : kind === 'element' ? await this.elementQs(10) : kind === 'order' ? await this.orderQs(10) : kind === 'deeporder' ? await this.deepOrderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : kind === 'hop' ? await this.hopQs(10, region) : kind === 'museum' ? await this.museumQs(10) : kind === 'habitat' ? await this.habitatQs(10) : kind === 'lives' ? await this.livesQs(10) : kind === 'grows' ? await this.growsQs(10) : kind === 'season' ? await this.seasonQs(10) : kind === 'seafeature' ? await this.seaFeatureQs(10) : kind === 'zone' ? await this.zoneQs(10) : kind === 'deep' ? await this.deepQs(10) : kind === 'layers' ? await this.downQs(8) : kind === 'legacy' ? await this.legacyQs(10) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
     if (!qs?.length) { this.needsData(kind === 'detective' ? L('This game needs its maps; check your connection.', 'Este juego necesita sus mapas; revisa tu conexión.') : kind === 'hop' ? L('This quiz needs the border data; check your connection.', 'Este concurso necesita los datos de fronteras; revisa tu conexión.') : kind === 'museum' ? L('This quiz needs the art guide; check your connection.', 'Este concurso necesita la guía de arte; revisa tu conexión.') : kind === 'habitat' || kind === 'lives' ? L('This quiz needs the animal data; check your connection.', 'Este concurso necesita los datos de animales; revisa tu conexión.') : kind === 'grows' || kind === 'season' ? L('This quiz needs the plant data; check your connection.', 'Este concurso necesita los datos de plantas; revisa tu conexión.') : kind === 'legacy' ? L('This quiz needs the legacies; check your connection.', 'Este concurso necesita los legados; revisa tu conexión.') : undefined); return; }
     await this.begin(kind, region, qs);
   }
@@ -1105,6 +1106,19 @@ export class Learn {
   private async orderQs(n: number): Promise<Q[] | null> {
     const pool = await this.orderPool();
     if (pool.length < 40) return null;
+    return orderRounds(pool, n, 4, rand, itemKey).map((set) => ({ id: 'order', kind: 'order' as QuizKind, set, picked: [] }));
+  }
+
+  /**
+   * Which came first? (v0.45.0): four moments of Deep time to put in order, oldest first (its events, nothing debated
+   * and no name that gives its date away), played as "Put them in order".
+   */
+  private async deepOrderQs(n: number): Promise<Q[] | null> {
+    let d: { kinds: { id: string; icon: string }[]; events: { id: string; kind: string; ma: number; name: { en: string; es: string }; sure?: string }[] };
+    try { d = await loadJSON('deeptime/deeptime.json'); } catch { return null; }
+    const pool = d.events.filter((e) => e.sure !== 'debated' && e.ma > 0 && !/\d/.test(`${e.name.en} ${e.name.es}`))
+      .map((e) => ({ id: `deeptime-${e.id}`, name: e.name, icon: d.kinds.find((k) => k.id === e.kind)?.icon ?? '•', date: String(-Math.round(e.ma * 1e6)), t: -e.ma * 1e6, kind: 'life' }) as unknown as QItem);
+    if (pool.length < 20) return null;
     return orderRounds(pool, n, 4, rand, itemKey).map((set) => ({ id: 'order', kind: 'order' as QuizKind, set, picked: [] }));
   }
 

@@ -11,6 +11,8 @@ export interface TimeBarOptions {
   /** Number of discrete steps (positions snap to i/(steps-1) when released); omit for continuous. */
   steps?: number;
   format: (pos: number) => string;
+  /** The start and end under the track ("From … to …"), when they need a shorter form than the big label. */
+  rangeFormat?: (f: number) => string;
   /** Second line under the big label (e.g. geological period and events); default: title. */
   caption?: (pos: number) => string;
   bands?: { from: number; to: number; color: string; label?: string }[];
@@ -203,7 +205,8 @@ export class TimeBar {
     this.yearEl.textContent = this.o.format(this.pos);
     if (this.o.caption) this.subEl.textContent = this.o.caption(this.pos) || this.o.title;
     clear(this.rangeLabel);
-    this.rangeLabel.append(h('span', null, `${t('tbFrom')} ${this.o.format(this.start)}`), h('span', null, `${t('tbTo')} ${this.o.format(this.end)}`));
+    const rf = this.o.rangeFormat ?? this.o.format;
+    this.rangeLabel.append(h('span', null, `${t('tbFrom')} ${rf(this.start)}`), h('span', null, `${t('tbTo')} ${rf(this.end)}`));
     // The screen stays on while the years play (borders through time, the moving continents).
     keepAwake('timebar', this.playing);
     clear(this.playBtn);

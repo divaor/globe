@@ -1,0 +1,898 @@
+{
+  "events": [
+    {
+      "id": "early-triassic-hothouse",
+      "kind": "climate",
+      "ma": 251.8, "to": 247,
+      "name": { "en": "A scorching world after the Great Dying", "es": "Un mundo abrasador tras la Gran Mortandad" },
+      "text": {
+        "en": "After the Great Dying the Earth stayed feverishly hot for millions of years. Oxygen atoms in the fossil teeth of conodonts, tiny eel-like animals, show tropical seas near 40 °C, as hot as a hot bath. Fish and reptiles fled the tropics, and for a while no coal formed anywhere because the forests had gone. Life took about 5 to 10 million years to recover fully.",
+        "es": "Después de la Gran Mortandad, la Tierra siguió ardiendo durante millones de años. El oxígeno de los dientes fósiles de los conodontos, diminutos animales parecidos a anguilas, revela mares tropicales cerca de los 40 °C, como un baño muy caliente. Peces y reptiles huyeron de los trópicos y, por un tiempo, no se formó carbón en ningún lugar porque los bosques habían desaparecido. La vida tardó entre 5 y 10 millones de años en recuperarse del todo."
+      },
+      "wiki": { "en": "Early Triassic", "es": "Triásico Inferior" }
+    },
+    {
+      "id": "first-frogs",
+      "kind": "life",
+      "first": true,
+      "ma": 250, "err": 1.5,
+      "name": { "en": "The first frogs", "es": "Las primeras ranas" },
+      "at": [49.24, -13.16],
+      "text": {
+        "en": "Triadobatrachus, from northern Madagascar, is the oldest known animal on the frog family line, about 250 million years old. About 10 cm long, it still had a stubby tail and more backbones than any frog today, so it probably kicked and swam rather than leapt. The first true jumping frogs, like Prosalirus from Arizona, came about 60 million years later.",
+        "es": "Triadobatrachus, hallado en el norte de Madagascar, es el animal más antiguo que se conoce del linaje de las ranas, con unos 250 millones de años. Medía unos 10 cm, todavía tenía una colita y más vértebras que cualquier rana actual, así que seguramente pataleaba y nadaba en vez de saltar. Las primeras ranas saltadoras de verdad, como Prosalirus de Arizona, llegaron unos 60 millones de años después."
+      },
+      "wiki": { "en": "Triadobatrachus", "es": "Triadobatrachus massinoti" }
+    },
+    {
+      "id": "carnian-pluvial",
+      "kind": "climate",
+      "ma": 234, "to": 232, "err": 0.5,
+      "name": { "en": "The Carnian rains", "es": "Las lluvias del Carniense" },
+      "text": {
+        "en": "For one to two million years the dry Triassic world turned wet. Huge eruptions in Wrangellia, rocks now in western Canada and Alaska, pumped out carbon dioxide; the planet warmed and monsoon rains drenched Pangea. Many plants and animals died out, but in the new world that followed, dinosaurs spread fast, and the first modern conifers, reef corals and tiny chalky plankton appeared.",
+        "es": "Durante uno o dos millones de años, el seco mundo del Triásico se volvió húmedo. Enormes erupciones en Wrangellia, rocas que hoy están en el oeste de Canadá y en Alaska, lanzaron dióxido de carbono; el planeta se calentó y lluvias de monzón empaparon Pangea. Muchas plantas y animales se extinguieron, pero en el mundo nuevo que siguió los dinosaurios se expandieron rápido y aparecieron las primeras coníferas modernas, los corales de arrecife actuales y un diminuto plancton con caparazón de cal."
+      },
+      "wiki": { "en": "Carnian pluvial episode", "es": "Evento pluvial Carniense" }
+    },
+    {
+      "id": "first-dinosaurs",
+      "kind": "life",
+      "first": true,
+      "ma": 233, "err": 2,
+      "name": { "en": "The first dinosaurs", "es": "Los primeros dinosaurios" },
+      "at": [-67.85, -30.1],
+      "text": {
+        "en": "In the Valley of the Moon at Ischigualasto, Argentina, rocks about 231 million years old hold some of the oldest dinosaurs: Eoraptor, a nimble two-legged animal about a metre long, and the bigger hunter Herrerasaurus. Similar ones from southern Brazil are slightly older, about 233 million years. At first dinosaurs were rare, living among many larger crocodile-like reptiles.",
+        "es": "En el Valle de la Luna de Ischigualasto, en Argentina, rocas de unos 231 millones de años guardan algunos de los dinosaurios más antiguos: Eoraptor, un animal ágil de dos patas de alrededor de un metro, y Herrerasaurus, un cazador más grande. Otros parecidos del sur de Brasil son un poco más antiguos, de unos 233 millones de años. Al principio los dinosaurios eran escasos y vivían entre muchos reptiles más grandes parecidos a cocodrilos."
+      },
+      "wiki": { "en": "Eoraptor", "es": "Eoraptor lunensis" },
+      "item": "eoraptor"
+    },
+    {
+      "id": "first-turtles",
+      "kind": "life",
+      "first": true,
+      "ma": 228, "err": 4,
+      "name": { "en": "The first turtles", "es": "Las primeras tortugas" },
+      "at": [105.42, 25.9],
+      "text": {
+        "en": "Odontochelys, from rocks laid down in a shallow sea in Guizhou, China, about 228 million years ago, is the oldest turtle with a shell, but only half of one: a hard plate covered its belly, while its back had only broad ribs. It also still had teeth. Older turtle relatives, like Pappochelys from Germany about 240 million years ago, show the shell beginning as thick ribs and belly bones.",
+        "es": "Odontochelys, de rocas que se formaron en un mar poco profundo de Guizhou, China, hace unos 228 millones de años, es la tortuga más antigua con caparazón, pero solo con la mitad: una placa dura le cubría la panza, mientras que en la espalda solo tenía costillas anchas. Además, todavía tenía dientes. Parientes aún más antiguos, como Pappochelys de Alemania, de hace unos 240 millones de años, muestran que el caparazón empezó como costillas gruesas y huesos en el vientre."
+      },
+      "wiki": { "en": "Odontochelys", "es": "Odontochelys" }
+    },
+    {
+      "id": "first-mammals",
+      "kind": "life",
+      "first": true,
+      "sure": "debated",
+      "ma": 225, "err": 5,
+      "name": { "en": "The first mammals", "es": "Los primeros mamíferos" },
+      "at": [-53.45, -29.56],
+      "text": {
+        "en": "Some of the oldest mammal relatives were tiny, shrew-like animals such as Brasilodon from southern Brazil, about 225 million years old, with teeth very like a mammal's; scientists debate whether it was a true early mammal or a close cousin. By about 200 million years ago Morganucodon, a mouse-sized insect-eater, lived in Wales and China. It was probably furry, active at night and fed its babies milk.",
+        "es": "Algunos de los parientes más antiguos de los mamíferos fueron animalitos parecidos a musarañas, como Brasilodon del sur de Brasil, de unos 225 millones de años, con dientes muy parecidos a los de un mamífero; se discute si era un verdadero mamífero primitivo o un primo cercano. Hace unos 200 millones de años, Morganucodon, un comedor de insectos del tamaño de un ratón, vivía en Gales y en China. Probablemente tenía pelo, salía de noche y alimentaba a sus crías con leche."
+      },
+      "wiki": { "en": "Mammaliaformes", "es": "Mammaliaformes" },
+      "item": "morganucodon"
+    },
+    {
+      "id": "first-pterosaurs",
+      "kind": "life",
+      "first": true,
+      "ma": 220, "err": 6,
+      "name": { "en": "The first pterosaurs", "es": "Los primeros pterosaurios" },
+      "at": [9.83, 45.78],
+      "text": {
+        "en": "Pterosaurs were the first animals with backbones to truly fly, flapping wings of skin stretched from an enormously long fourth finger. Some of the oldest known, like Eudimorphodon from limestone near Bergamo, Italy, are about 215–220 million years old and already flew well, catching fish with sharp teeth. Their closest relatives were small two-legged lagerpetids, so they probably took off a few million years earlier.",
+        "es": "Los pterosaurios fueron los primeros animales con columna vertebral que volaron de verdad, batiendo alas de piel estiradas desde un cuarto dedo larguísimo. Algunos de los más antiguos, como Eudimorphodon de las calizas cercanas a Bérgamo, en Italia, tienen entre 215 y 220 millones de años y ya volaban bien, atrapando peces con dientes afilados. Sus parientes más cercanos eran los lagerpétidos, pequeños y de dos patas, así que seguramente alzaron el vuelo unos millones de años antes."
+      },
+      "wiki": { "en": "Pterosaur", "es": "Pterosauria" },
+      "item": "eudimorphodon"
+    },
+    {
+      "id": "manicouagan",
+      "kind": "impact",
+      "ma": 214, "err": 1,
+      "name": { "en": "The Manicouagan impact", "es": "El impacto de Manicouagan" },
+      "at": [-68.7, 51.38],
+      "r": 45,
+      "text": {
+        "en": "A rock about 5 km wide hit what is now Quebec, Canada, leaving one of the largest craters still visible on Earth. Today a ring-shaped lake 70 km across, easy to see from space, fills the worn-down crater. It was once blamed for the end-Triassic extinction, but careful dating showed that it struck about 13 million years earlier.",
+        "es": "Una roca de unos 5 km de ancho chocó contra lo que hoy es Quebec, en Canadá, y dejó uno de los cráteres más grandes que aún se ven en la Tierra. Hoy un lago en forma de anillo de 70 km, fácil de ver desde el espacio, llena el cráter desgastado. Hubo quien lo culpó de la extinción del final del Triásico, pero una datación cuidadosa mostró que cayó unos 13 millones de años antes."
+      },
+      "wiki": { "en": "Manicouagan crater", "es": "Lago Manicouagan" }
+    },
+    {
+      "id": "camp",
+      "kind": "volcano",
+      "ma": 201.6, "to": 200.9, "err": 0.1,
+      "name": { "en": "The Central Atlantic eruptions", "es": "Las erupciones del Atlántico central" },
+      "at": [-11, 11],
+      "r": 2500,
+      "text": {
+        "en": "As Pangea began to tear apart, molten rock welled up along the rift in pulses over about 600,000 years. Lava and buried sheets of basalt spread across more than 10 million km² of what are now four continents: North and South America, Africa and Europe. Its carbon dioxide and sulfur gases heated the planet and soured the oceans, setting off the end-Triassic extinction. The Palisades cliffs by New York's Hudson River are part of it.",
+        "es": "Cuando Pangea empezó a desgarrarse, la roca fundida subió por la grieta en varios pulsos durante unos 600 000 años. La lava y capas de basalto enterradas se extendieron por más de 10 millones de km² de lo que hoy son cuatro continentes: América del Norte, América del Sur, África y Europa. Su dióxido de carbono y sus gases de azufre calentaron el planeta y acidificaron los océanos, y desataron la extinción del final del Triásico. Los acantilados de las Palisades, junto al río Hudson de Nueva York, son parte de ella."
+      },
+      "wiki": { "en": "Central Atlantic magmatic province", "es": "Provincia magmática del Atlántico Central" },
+      "item": "camp"
+    },
+    {
+      "id": "end-triassic-extinction",
+      "kind": "extinction",
+      "ma": 201.6, "to": 201.4, "err": 0.1,
+      "name": { "en": "The end-Triassic extinction", "es": "La extinción del final del Triásico" },
+      "text": {
+        "en": "About three quarters of all species died out in a geologically short time, perhaps tens of thousands of years. Conodonts, eel-like animals that had swum the seas for 300 million years, vanished, and so did most of the crocodile-like reptiles that ruled the land. The dinosaurs came through, and with their rivals gone they took over the Jurassic world.",
+        "es": "Cerca de tres cuartas partes de todas las especies desaparecieron en un tiempo muy corto para la geología, quizá unas decenas de miles de años. Se esfumaron los conodontos, animales parecidos a anguilas que nadaban en los mares desde hacía 300 millones de años, y también la mayoría de los reptiles parecidos a cocodrilos que dominaban la tierra. Los dinosaurios sobrevivieron y, sin sus rivales, se adueñaron del mundo jurásico."
+      },
+      "wiki": { "en": "Triassic–Jurassic extinction", "es": "Extinción masiva del Triásico-Jurásico" },
+      "item": "end-triassic-extinction"
+    },
+    {
+      "id": "pangea-breakup",
+      "kind": "continent",
+      "ma": 200, "err": 5,
+      "name": { "en": "Pangea begins to break up", "es": "Pangea empieza a romperse" },
+      "at": [-74.6, 40.4],
+      "text": {
+        "en": "Around 200 million years ago the supercontinent Pangea began to split. Rift valleys, like those in East Africa today, opened between North America and Africa and filled with lakes, where dinosaurs left their footprints in the mud. By about 180 million years ago the first ocean floor had formed between them: the newborn central Atlantic, which still widens by a few centimetres every year.",
+        "es": "Hace unos 200 millones de años, el supercontinente Pangea empezó a partirse. Entre América del Norte y África se abrieron valles de rift, como los de África oriental hoy, que se llenaron de lagos en cuyo lodo los dinosaurios dejaron sus huellas. Hace unos 180 millones de años ya se había formado el primer fondo oceánico entre ambos: el recién nacido Atlántico central, que todavía se ensancha unos centímetros cada año."
+      },
+      "wiki": { "en": "Pangaea", "es": "Pangea" }
+    },
+    {
+      "id": "karoo-ferrar",
+      "kind": "volcano",
+      "ma": 183.2, "to": 182.4, "err": 0.3,
+      "name": { "en": "The Karoo and Ferrar eruptions", "es": "Las erupciones de Karoo y Ferrar" },
+      "at": [28.5, -29.5],
+      "r": 1500,
+      "text": {
+        "en": "Huge floods of lava poured out across southern Africa and, at the same time, Antarctica, which were then joined in Gondwana. In southern Africa the lava piled up about 1.4 km thick; it now forms the high cliffs of the Drakensberg mountains in Lesotho and South Africa. Its gases are blamed for the Toarcian ocean crisis, when parts of the seas lost their oxygen.",
+        "es": "Enormes ríos de lava cubrieron el sur de África y, al mismo tiempo, la Antártida, que entonces estaban unidas en Gondwana. En el sur de África la lava se apiló hasta unos 1,4 km de espesor y hoy forma los altos acantilados de los montes Drakensberg, en Lesoto y Sudáfrica. Se culpa a sus gases de la crisis oceánica del Toarciense, cuando partes de los mares se quedaron sin oxígeno."
+      },
+      "wiki": { "en": "Karoo-Ferrar", "es": "" }
+    },
+    {
+      "id": "toarcian-oae",
+      "kind": "climate",
+      "ma": 183, "to": 182.5, "err": 0.2,
+      "name": { "en": "The Toarcian ocean crisis", "es": "La crisis oceánica del Toarciense" },
+      "text": {
+        "en": "Warming from the Karoo eruptions starved large parts of the oceans of oxygen. Dead plankton piled up on the dark, still seafloor and became black shale. At Holzmaden, Germany, these rocks preserved ichthyosaurs so well that some show the outline of their skin, and even mothers with unborn babies. Many sea creatures died out; those living on the seafloor suffered most.",
+        "es": "El calentamiento causado por las erupciones de Karoo dejó sin oxígeno grandes zonas de los océanos. El plancton muerto se acumuló en el fondo oscuro y quieto y se convirtió en lutita negra. En Holzmaden, Alemania, esas rocas conservaron tan bien a los ictiosaurios que algunos muestran el contorno de la piel, e incluso madres con crías sin nacer. Muchos animales marinos se extinguieron; los que vivían en el fondo fueron los más afectados."
+      },
+      "wiki": { "en": "Toarcian Oceanic Anoxic Event", "es": "" },
+      "item": "holzmaden"
+    },
+    {
+      "id": "gondwana-splits",
+      "kind": "continent",
+      "ma": 180, "to": 130, "err": 5,
+      "name": { "en": "Gondwana splits apart", "es": "Gondwana se divide" },
+      "at": [35, -18],
+      "text": {
+        "en": "The great southern continent Gondwana began to break in two. Africa and South America drifted away from Antarctica, India, Madagascar and Australia, and new seas opened between them off East Africa. Over the next 50 million years the pieces kept splitting. That is why fossils of the same land animals and plants, like Lystrosaurus and Glossopteris, are found in Africa, India and Antarctica.",
+        "es": "Gondwana, el gran continente del sur, empezó a partirse en dos. África y América del Sur se alejaron de la Antártida, la India, Madagascar y Australia, y entre ellos se abrieron mares nuevos frente a África oriental. Durante los siguientes 50 millones de años los pedazos siguieron separándose. Por eso se hallan fósiles de los mismos animales y plantas terrestres, como Lystrosaurus y Glossopteris, en África, la India y la Antártida."
+      },
+      "wiki": { "en": "Gondwana", "es": "Gondwana" }
+    },
+    {
+      "id": "first-birds",
+      "kind": "life",
+      "first": true,
+      "ma": 150, "err": 1,
+      "name": { "en": "The first birds", "es": "Las primeras aves" },
+      "at": [11.0, 48.9],
+      "text": {
+        "en": "In the limestone of Solnhofen, Germany, the fine mud of a warm lagoon preserved Archaeopteryx. About the size of a raven, it had feathered wings like a bird but teeth, clawed fingers and a long bony tail like a small dinosaur. Found in 1861, just after Darwin's On the Origin of Species, it showed how birds came from dinosaurs. Feathered dinosaurs from China, some even older, have since filled in the story.",
+        "es": "En la caliza de Solnhofen, Alemania, el lodo fino de una laguna cálida conservó a Archaeopteryx. Del tamaño de un cuervo, tenía alas con plumas como un ave, pero también dientes, dedos con garras y una larga cola de hueso como un pequeño dinosaurio. Hallado en 1861, justo después de El origen de las especies de Darwin, mostró que las aves vienen de los dinosaurios. Desde entonces, dinosaurios con plumas de China, algunos aún más antiguos, han completado la historia."
+      },
+      "wiki": { "en": "Archaeopteryx", "es": "Archaeopteryx" },
+      "item": "archaeopteryx"
+    },
+    {
+      "id": "parana-etendeka",
+      "kind": "volcano",
+      "ma": 134.5, "to": 132, "err": 1,
+      "name": { "en": "The Paraná and Etendeka eruptions", "es": "Las erupciones de Paraná y Etendeka" },
+      "at": [-52, -26],
+      "r": 800,
+      "text": {
+        "en": "As South America and Africa began to pull apart, lava flooded what are now southern Brazil, Uruguay, Paraguay and Argentina, with a smaller part, Etendeka, in Namibia. The basalt is up to 1.7 km thick in places, and the Iguazú Falls tumble over its layers. It erupted over the hot spot that today lies beneath the island of Tristan da Cunha in the South Atlantic.",
+        "es": "Cuando América del Sur y África empezaron a separarse, la lava inundó lo que hoy es el sur de Brasil, Uruguay, Paraguay y Argentina, y una parte más pequeña, Etendeka, en Namibia. El basalto llega a 1,7 km de espesor en algunos lugares, y las cataratas del Iguazú caen sobre sus capas. Brotó sobre el punto caliente que hoy está bajo la isla de Tristán de Acuña, en el Atlántico Sur."
+      },
+      "wiki": { "en": "Paraná and Etendeka traps", "es": "Traps de Paraná y Etendeka" }
+    },
+    {
+      "id": "south-atlantic-opens",
+      "kind": "continent",
+      "ma": 130, "to": 105, "err": 5,
+      "name": { "en": "The South Atlantic opens", "es": "Se abre el Atlántico Sur" },
+      "at": [-35, -8],
+      "text": {
+        "en": "South America and Africa unzipped from the south, like a zip opening from the bottom, and the South Atlantic Ocean was born. Long, salty lakes filled the rift first; their thick salt now seals in oil fields off Brazil and Angola. By about 105 million years ago the two continents had parted near the equator too. Their coastlines still fit together like jigsaw pieces.",
+        "es": "América del Sur y África se separaron desde el sur, como un cierre que se abre de abajo hacia arriba, y nació el océano Atlántico Sur. Primero, la grieta se llenó de lagos largos y salados; su gruesa capa de sal hoy sella yacimientos de petróleo frente a Brasil y Angola. Hace unos 105 millones de años, los dos continentes se separaron también cerca del ecuador. Sus costas todavía encajan como piezas de un rompecabezas."
+      },
+      "wiki": { "en": "Atlantic Ocean", "es": "Océano Atlántico" }
+    },
+    {
+      "id": "first-flowers",
+      "kind": "life",
+      "first": true,
+      "ma": 130, "err": 5,
+      "name": { "en": "The first flowers", "es": "Las primeras flores" },
+      "at": [120.83, 41.62],
+      "text": {
+        "en": "Tiny pollen grains show that flowering plants were around by about 130 million years ago. Among the oldest whole ones are Archaefructus, a water plant from the lakes of Liaoning, China, and Montsechia from Spain, both about 125 million years old. Their flowers were small and plain, without petals, but this new group spread fast: today flowering plants make up about nine in ten kinds of land plants.",
+        "es": "Diminutos granos de polen muestran que las plantas con flores ya existían hace unos 130 millones de años. Entre las más antiguas conservadas enteras están Archaefructus, una planta acuática de los lagos de Liaoning, China, y Montsechia, de España, ambas de unos 125 millones de años. Sus flores eran pequeñas y sencillas, sin pétalos, pero el nuevo grupo se extendió rápido: hoy las plantas con flores son cerca de nueve de cada diez especies de plantas terrestres."
+      },
+      "wiki": { "en": "Archaefructus", "es": "Archaefructus" },
+      "item": "archaefructus"
+    },
+    {
+      "id": "first-placentals",
+      "kind": "life",
+      "first": true,
+      "sure": "debated",
+      "ma": 125, "err": 1,
+      "name": { "en": "The placental family line begins", "es": "Comienza el linaje de los placentarios" },
+      "at": [121.42, 41.37],
+      "text": {
+        "en": "Most mammals today, from mice to whales and us, are placentals: their babies grow for a long time inside the mother, fed through a placenta. Eomaia, a 10 cm climber from 125-million-year-old rocks in Liaoning, China, is an early member of their wider family, the eutherians; Juramaia, also from China, may push it back to 160 million years. When the first true placentals appeared is still debated.",
+        "es": "La mayoría de los mamíferos actuales, desde los ratones hasta las ballenas y nosotros, son placentarios: sus crías crecen mucho tiempo dentro de la madre, alimentadas por una placenta. Eomaia, un trepador de 10 cm hallado en rocas de 125 millones de años en Liaoning, China, es uno de los primeros de su familia más amplia, los euterios; Juramaia, también de China, podría llevarla a 160 millones de años. Cuándo surgieron los verdaderos placentarios todavía se discute."
+      },
+      "wiki": { "en": "Eomaia", "es": "Eomaia" }
+    },
+    {
+      "id": "ontong-java",
+      "kind": "volcano",
+      "ma": 122, "to": 119, "err": 2,
+      "name": { "en": "The Ontong Java eruptions", "es": "Las erupciones de Ontong Java" },
+      "at": [159.5, 0.5],
+      "r": 800,
+      "text": {
+        "en": "The largest outpouring of lava we know of happened under the Pacific Ocean. In a few million years, eruptions on the seafloor built a plateau of basalt bigger than Alaska and up to 30 km thick; it later broke into the Ontong Java, Manihiki and Hikurangi plateaus. It may have set off an ocean crisis about 120 million years ago, when parts of the sea lost their oxygen.",
+        "es": "La mayor salida de lava que conocemos ocurrió bajo el océano Pacífico. En unos pocos millones de años, las erupciones en el fondo marino construyeron una meseta de basalto más grande que Alaska y de hasta 30 km de espesor, que luego se partió en las mesetas de Ontong Java, Manihiki y Hikurangi. Quizá provocó una crisis oceánica hace unos 120 millones de años, cuando partes del mar se quedaron sin oxígeno."
+      },
+      "wiki": { "en": "Ontong Java Plateau", "es": "" }
+    },
+    {
+      "id": "kerguelen",
+      "kind": "volcano",
+      "ma": 119, "to": 110, "err": 2,
+      "name": { "en": "The Kerguelen eruptions", "es": "Las erupciones de Kerguelen" },
+      "at": [77, -56],
+      "r": 900,
+      "text": {
+        "en": "In the southern Indian Ocean a hot spot poured out lava for tens of millions of years, building the Kerguelen Plateau, an underwater platform about three times the size of Japan. Its main part erupted between about 120 and 110 million years ago, with more on and off long after; some of the same lava, the Rajmahal Traps, lies in eastern India, then its neighbour. The windswept Kerguelen Islands are its tops above the sea.",
+        "es": "En el sur del océano Índico, un punto caliente derramó lava durante decenas de millones de años y construyó la meseta de Kerguelen, una plataforma submarina de unas tres veces el tamaño de Japón. Su parte principal brotó hace entre 120 y 110 millones de años, con más erupciones mucho tiempo después; parte de esa lava, los traps de Rajmahal, está en el este de la India, entonces su vecina. Las ventosas islas Kerguelen son sus cumbres que asoman del mar."
+      },
+      "wiki": { "en": "Kerguelen Plateau", "es": "Meseta Kerguelen" }
+    },
+    {
+      "id": "first-grasses",
+      "kind": "life",
+      "first": true,
+      "sure": "likely",
+      "ma": 113, "err": 3,
+      "name": { "en": "The first grasses", "es": "Los primeros pastos" },
+      "at": [97.58, 41.58],
+      "text": {
+        "en": "The oldest signs of grasses are microscopic: bits of grass leaf and their tiny glassy grains, called phytoliths, stuck to the teeth of a plant-eating dinosaur from Gansu, China, about 113 million years old. Grass bits in fossil dinosaur dung from India show that by 66 million years ago grasses were already varied, including relatives of rice. But wide grasslands would not spread for tens of millions of years.",
+        "es": "Las señales más antiguas de los pastos son microscópicas: trocitos de hoja y diminutos granos vidriosos llamados fitolitos, pegados a los dientes de un dinosaurio herbívoro de Gansu, China, de unos 113 millones de años. Restos de pasto en excremento fósil de dinosaurio de la India muestran que hace 66 millones de años ya había pastos variados, incluidos parientes del arroz. Pero las grandes praderas tardarían decenas de millones de años en extenderse."
+      },
+      "wiki": { "en": "Poaceae", "es": "Poaceae" }
+    },
+    {
+      "id": "western-interior-seaway",
+      "kind": "continent",
+      "ma": 100, "to": 70, "err": 3,
+      "name": { "en": "A sea splits North America", "es": "Un mar parte en dos a Norteamérica" },
+      "at": [-100.8, 38.9],
+      "text": {
+        "en": "Sea levels were so high, perhaps 100–250 m above today's, that a shallow sea split North America in two, from the Gulf of Mexico to the Arctic. Mosasaurs, plesiosaurs and giant fish swam over what are now Kansas and the prairies, with Pteranodon soaring above. Around the world, chalk built up from the shells of tiny plankton, giving the Cretaceous its name, from creta, Latin for chalk.",
+        "es": "El nivel del mar estaba tan alto, quizá entre 100 y 250 m por encima del actual, que un mar poco profundo partió en dos a América del Norte, del golfo de México al Ártico. Mosasaurios, plesiosaurios y peces gigantes nadaban sobre lo que hoy es Kansas y las praderas, y Pteranodon planeaba por encima. En todo el mundo se acumuló creta con los caparazones de un plancton diminuto; de ahí el nombre del Cretácico, del latín creta."
+      },
+      "wiki": { "en": "Western Interior Seaway", "es": "Mar interior occidental" }
+    },
+    {
+      "id": "oae2",
+      "kind": "climate",
+      "ma": 94.4, "to": 93.8, "err": 0.2,
+      "name": { "en": "The oceans lose their oxygen", "es": "Los océanos se quedan sin oxígeno" },
+      "text": {
+        "en": "At the peak of the Cretaceous heat, much of the deep ocean lost its oxygen for about half a million years. Undersea eruptions, perhaps in the Caribbean and the Arctic, warmed the planet and fed blooms of plankton, whose remains rotted and used up the oxygen. Black, carbon-rich mud settled in seas around the world. Many sea creatures died out, and the last ichthyosaurs disappeared around this time.",
+        "es": "En el momento más caluroso del Cretácico, gran parte del océano profundo se quedó sin oxígeno durante cerca de medio millón de años. Erupciones submarinas, quizá en el Caribe y el Ártico, calentaron el planeta y alimentaron explosiones de plancton cuyos restos se pudrieron y consumieron el oxígeno. Un lodo negro y rico en carbono se depositó en mares de todo el mundo. Muchos animales marinos se extinguieron, y por esta época desaparecieron los últimos ictiosaurios."
+      },
+      "wiki": { "en": "Cenomanian–Turonian boundary event", "es": "Evento Cenomiano-Turoniano" }
+    },
+    {
+      "id": "cretaceous-thermal-maximum",
+      "kind": "climate",
+      "ma": 93.9, "to": 89, "err": 1,
+      "name": { "en": "The Cretaceous hothouse peaks", "es": "El Cretácico alcanza su máximo calor" },
+      "text": {
+        "en": "Around 90 million years ago the Earth was about as hot as it has been at any time in the last 250 million years. Tropical seas reached about 35 °C and there was no lasting ice at either pole; a rainforest grew in West Antarctica, within about 900 km of the South Pole. In the Canadian Arctic, rocks of this age hold turtles and crocodile-like champsosaurs, animals of warm swamps.",
+        "es": "Hace unos 90 millones de años, la Tierra estaba casi tan caliente como en cualquier otro momento de los últimos 250 millones de años. Los mares tropicales llegaban a unos 35 °C y no había hielo permanente en ningún polo; una selva crecía en la Antártida occidental, a unos 900 km del polo sur. En el Ártico canadiense, rocas de esta edad guardan tortugas y champsosaurios parecidos a cocodrilos, animales de pantanos cálidos."
+      },
+      "wiki": { "en": "Cretaceous Thermal Maximum", "es": "" }
+    },
+    {
+      "id": "india-journey",
+      "kind": "continent",
+      "ma": 88, "to": 50, "err": 3,
+      "name": { "en": "India races north", "es": "La India corre hacia el norte" },
+      "at": [78, 21],
+      "text": {
+        "en": "Around 90 million years ago India broke away from Madagascar and began one of the fastest journeys any continent has made, speeding north at up to 15–20 cm a year, about as fast as hair grows. As an island continent it carried its own animals and plants across the ocean, and on the way it passed over the hot spot that erupted the Deccan Traps.",
+        "es": "Hace unos 90 millones de años, la India se separó de Madagascar y emprendió uno de los viajes más rápidos que ha hecho un continente: avanzó hacia el norte hasta 15 o 20 cm por año, más o menos lo que crece el pelo. Como un continente isla, llevó consigo sus propios animales y plantas a través del océano, y en el camino pasó sobre el punto caliente que formó los traps del Decán."
+      },
+      "wiki": { "en": "Indian plate", "es": "Placa índica" }
+    },
+    {
+      "id": "deccan-traps",
+      "kind": "volcano",
+      "ma": 66.3, "to": 65.5, "err": 0.1,
+      "name": { "en": "The Deccan Traps", "es": "Los traps del Decán" },
+      "at": [75, 19],
+      "r": 700,
+      "text": {
+        "en": "Over less than a million years, starting a little before the asteroid struck, lava flooded western India in flows that each covered thousands of square kilometres. Layer upon layer, they piled up more than 2 km thick; the step-like hills of the Western Ghats are made of them. Their gases changed the climate, and scientists still debate how much they added to the asteroid's damage.",
+        "es": "Durante menos de un millón de años, desde poco antes del impacto del asteroide, la lava inundó el oeste de la India en coladas que cubrían miles de kilómetros cuadrados cada una. Capa sobre capa, se apilaron más de 2 km; las colinas escalonadas de los Ghats occidentales están hechas de ellas. Sus gases cambiaron el clima, y todavía se discute cuánto sumaron al daño del asteroide."
+      },
+      "wiki": { "en": "Deccan Traps", "es": "Traps del Decán" },
+      "item": "deccan-traps"
+    },
+    {
+      "id": "chicxulub",
+      "kind": "impact",
+      "ma": 66.04, "err": 0.01,
+      "name": { "en": "The asteroid strikes", "es": "Impacta el asteroide" },
+      "at": [-89.52, 21.40],
+      "r": 90,
+      "text": {
+        "en": "A rock about 10 km wide hit the shallow sea off Mexico's Yucatán at around 20 km per second, blasting a crater 180 km wide. Within minutes and hours came giant tsunamis, earthquakes and a rain of hot debris that set off wildfires; soot and sulfur then darkened the skies for years and the climate chilled. A thin layer rich in iridium, a metal rare on Earth but common in asteroids, marks the moment worldwide.",
+        "es": "Una roca de unos 10 km de ancho chocó contra el mar poco profundo frente a Yucatán, en México, a unos 20 km por segundo, y abrió un cráter de 180 km. En minutos y horas llegaron tsunamis gigantes, terremotos y una lluvia de escombros ardientes que provocó incendios; luego el hollín y el azufre oscurecieron el cielo durante años y el clima se enfrió. Una delgada capa rica en iridio, un metal raro en la Tierra pero común en los asteroides, marca ese momento en todo el mundo."
+      },
+      "wiki": { "en": "Chicxulub crater", "es": "Cráter de Chicxulub" },
+      "item": "chicxulub-impact"
+    },
+    {
+      "id": "kpg-extinction",
+      "kind": "extinction",
+      "ma": 66.04, "to": 66, "err": 0.01,
+      "name": { "en": "The end-Cretaceous extinction", "es": "La extinción del final del Cretácico" },
+      "text": {
+        "en": "About three quarters of all species died, on land and in the sea. All the dinosaurs vanished except one branch, the birds; so did the pterosaurs, the great sea reptiles and the ammonites. Animals that could shelter, burrow or live on scraps, like small mammals, turtles, crocodiles and some birds, came through. The boundary is a thin clay layer; at Gubbio, Italy, its iridium gave the asteroid away in 1980.",
+        "es": "Cerca de tres cuartas partes de las especies murieron, en tierra y en el mar. Desaparecieron todos los dinosaurios menos una rama, las aves, y también los pterosaurios, los grandes reptiles marinos y los amonites. Sobrevivieron animales que podían refugiarse, excavar o vivir de restos, como pequeños mamíferos, tortugas, cocodrilos y algunas aves. El límite es una delgada capa de arcilla; en Gubbio, Italia, su iridio delató al asteroide en 1980."
+      },
+      "wiki": { "en": "Cretaceous–Paleogene extinction event", "es": "Extinción masiva del Cretácico-Paleógeno" },
+      "item": "gubbio-boundary"
+    },
+    {
+      "id": "north-atlantic-igneous",
+      "kind": "volcano",
+      "ma": 56.1, "to": 54.8, "err": 0.3,
+      "name": { "en": "The North Atlantic eruptions", "es": "Las erupciones del Atlántico Norte" },
+      "at": [-28, 68.5],
+      "r": 1000,
+      "text": {
+        "en": "As Greenland began to split from Europe, magma rose along the rift and erupted over a region from Baffin Island to Britain and Ireland. Hot magma also pushed into buried layers of carbon-rich mud, cooking out huge amounts of gas, a likely trigger of the Paleocene–Eocene heat spike. The Giant's Causeway in Northern Ireland and Fingal's Cave in Scotland are older lavas, about 60 million years old, from the same province.",
+        "es": "Cuando Groenlandia empezó a separarse de Europa, el magma subió por la grieta y entró en erupción en una región que va de la isla de Baffin a Gran Bretaña e Irlanda. El magma caliente también se metió entre capas enterradas de lodo rico en carbono y liberó enormes cantidades de gas, un probable detonante del gran calentamiento del Paleoceno-Eoceno. La Calzada del Gigante, en Irlanda del Norte, y la cueva de Fingal, en Escocia, son lavas más antiguas, de unos 60 millones de años, de la misma provincia."
+      },
+      "wiki": { "en": "North Atlantic Igneous Province", "es": "Provincia ígnea del Atlántico Norte" }
+    },
+    {
+      "id": "petm",
+      "kind": "climate",
+      "ma": 55.95, "to": 55.75, "err": 0.05,
+      "name": { "en": "The Paleocene–Eocene heat spike", "es": "El calentamiento del Paleoceno-Eoceno" },
+      "text": {
+        "en": "In a few thousand years a vast burst of carbon entered the air and oceans, perhaps from the North Atlantic eruptions cooking buried mud and from melting frozen methane. The already warm planet heated by another 5–8 °C and stayed hot for about 200,000 years. Seas turned more acidic and many tiny deep-sea creatures died out. It is our best ancient example of fast carbon warming, yet today's carbon release is about ten times faster.",
+        "es": "En unos pocos miles de años, una enorme descarga de carbono llegó al aire y a los océanos, quizá por las erupciones del Atlántico Norte que cocinaron lodo enterrado y por el deshielo de metano congelado. El planeta, ya cálido, se calentó otros 5 a 8 °C y siguió caliente unos 200 000 años. Los mares se acidificaron y muchos seres diminutos del fondo marino se extinguieron. Es nuestro mejor ejemplo antiguo de calentamiento rápido por carbono, pero hoy el carbono se libera unas diez veces más rápido."
+      },
+      "wiki": { "en": "Paleocene–Eocene thermal maximum", "es": "Máximo térmico del Paleoceno-Eoceno" },
+      "item": "petm"
+    },
+    {
+      "id": "first-primates",
+      "kind": "life",
+      "first": true,
+      "ma": 55.8, "err": 0.2,
+      "name": { "en": "The first primates", "es": "Los primeros primates" },
+      "at": [112.95, 27.08],
+      "text": {
+        "en": "As the Eocene began, during the great Paleocene–Eocene heat, primates of modern type appeared across Asia, Europe and North America. Teilhardina, found in Hunan, China, and also in Belgium and Wyoming, was a tree-dweller about the weight of a mouse, with grasping hands and nails instead of claws. Squirrel-like cousins called plesiadapiforms go back almost to the end of the dinosaurs.",
+        "es": "Al comenzar el Eoceno, durante el gran calor del Paleoceno-Eoceno, aparecieron primates de tipo moderno en Asia, Europa y América del Norte. Teilhardina, hallado en Hunan, China, y también en Bélgica y Wyoming, vivía en los árboles, pesaba como un ratón y tenía manos prensiles con uñas en vez de garras. Sus primos parecidos a ardillas, los plesiadapiformes, se remontan casi al final de los dinosaurios."
+      },
+      "wiki": { "en": "Teilhardina", "es": "Teilhardina" },
+      "item": "teilhardina"
+    },
+    {
+      "id": "first-horses",
+      "kind": "life",
+      "first": true,
+      "ma": 55.8, "err": 0.2,
+      "name": { "en": "The first horses", "es": "Los primeros caballos" },
+      "at": [-108.2, 44.3],
+      "text": {
+        "en": "The oldest known horse, Sifrhippus, lived in the forests of Wyoming at the start of the Eocene. It was the size of a small dog, with four toes on its front feet and three on its back feet, and it nibbled leaves. During the Paleocene–Eocene heat it shrank to about the size of a house cat, then grew again as the climate cooled. From such beginnings came today's big, one-toed grazing horses.",
+        "es": "El caballo más antiguo que se conoce, Sifrhippus, vivía en los bosques de Wyoming al comenzar el Eoceno. Era del tamaño de un perro pequeño, con cuatro dedos en las patas delanteras y tres en las traseras, y comía hojas. Durante el calor del Paleoceno-Eoceno se encogió hasta el tamaño de un gato doméstico y volvió a crecer cuando el clima se enfrió. De comienzos así vienen los grandes caballos actuales, de un solo dedo, que comen pasto."
+      },
+      "wiki": { "en": "Evolution of the horse", "es": "Evolución de los équidos" },
+      "item": "sifrhippus"
+    },
+    {
+      "id": "eocene-hothouse",
+      "kind": "climate",
+      "ma": 53.3, "to": 49.1, "err": 0.2,
+      "name": { "en": "The Eocene hothouse", "es": "El invernadero del Eoceno" },
+      "text": {
+        "en": "For about four million years the Earth stayed hotter than in any other long stretch since the dinosaurs died out, with carbon dioxide well above 1,000 parts per million. There was no ice at the poles; palms grew on the coast of Antarctica and alligator relatives lived in the Canadian Arctic. It ended as carbon dioxide slowly fell; one idea is that vast blooms of a little floating fern, Azolla, in the Arctic Ocean helped to draw it down.",
+        "es": "Durante unos cuatro millones de años, la Tierra estuvo más caliente que en cualquier otro periodo largo desde la extinción de los dinosaurios, con más de 1000 partes por millón de dióxido de carbono. No había hielo en los polos: crecían palmeras en la costa de la Antártida y parientes de los caimanes vivían en el Ártico canadiense. Terminó cuando el dióxido de carbono bajó poco a poco; una idea es que enormes mantos de un pequeño helecho flotante, Azolla, en el océano Ártico ayudaron a absorberlo."
+      },
+      "wiki": { "en": "Early Eocene Climatic Optimum", "es": "" }
+    },
+    {
+      "id": "first-bats",
+      "kind": "life",
+      "first": true,
+      "ma": 52, "err": 0.5,
+      "name": { "en": "The first bats", "es": "Los primeros murciélagos" },
+      "at": [-110.53, 41.82],
+      "text": {
+        "en": "Onychonycteris, from the Green River lake beds of Wyoming, is one of the oldest known bats, about 52 million years old. Its wings could already flap, but it still had claws on all five fingers, and its ears suggest it may not yet have found its way by echoes. So bats may have learned to fly first and to 'see with sound' later. They were the first, and are still the only, mammals that truly fly.",
+        "es": "Onychonycteris, de los antiguos lagos de Green River, en Wyoming, es uno de los murciélagos más antiguos que se conocen, con unos 52 millones de años. Sus alas ya podían batir, pero aún tenía garras en los cinco dedos, y sus oídos sugieren que quizá todavía no se orientaba con ecos. Así que los murciélagos tal vez aprendieron primero a volar y después a 'ver con sonidos'. Fueron los primeros mamíferos que volaron de verdad, y siguen siendo los únicos."
+      },
+      "wiki": { "en": "Onychonycteris", "es": "Onychonycteris" }
+    },
+    {
+      "id": "india-asia-collision",
+      "kind": "continent",
+      "ma": 50, "err": 5,
+      "name": { "en": "India hits Asia: the Himalayas rise", "es": "La India choca con Asia: nace el Himalaya" },
+      "at": [86.93, 27.99],
+      "text": {
+        "en": "India finally ran into Asia, around 55–50 million years ago. Neither continent would sink, so the crust crumpled and thickened, pushing up the Himalayas and the high plateau of Tibet. India still pushes north about 4–5 cm a year, and the mountains are still rising. The top of Mount Everest is limestone full of the fossils of sea creatures that lived on an ancient seafloor about 470 million years ago.",
+        "es": "Por fin la India chocó con Asia, hace entre 55 y 50 millones de años. Ninguno de los dos continentes se hundía, así que la corteza se arrugó y se engrosó, y levantó el Himalaya y la alta meseta del Tíbet. La India todavía empuja hacia el norte unos 4 o 5 cm por año, y las montañas siguen subiendo. La cima del Everest es caliza llena de fósiles de animales marinos que vivieron en un antiguo fondo marino hace unos 470 millones de años."
+      },
+      "wiki": { "en": "Himalayas", "es": "Himalaya" }
+    },
+    {
+      "id": "whales-return-to-sea",
+      "kind": "life",
+      "first": true,
+      "ma": 50, "err": 2,
+      "name": { "en": "Whales head back to the sea", "es": "Las ballenas vuelven al mar" },
+      "at": [71.92, 33.62],
+      "text": {
+        "en": "Whales began as land animals. Pakicetus, a wolf-sized, four-legged distant relative of hippos that lived on riverbanks in what is now Pakistan, about 50 million years ago, already had the thick ear bone that only whales have. Within about 10 million years its relatives went from waders, like Ambulocetus, to fully ocean-going giants like Basilosaurus, whose skeletons, with tiny hind legs, lie in Egypt's Valley of the Whales.",
+        "es": "Las ballenas empezaron como animales terrestres. Pakicetus, un pariente lejano de los hipopótamos, de cuatro patas y del tamaño de un lobo, que vivía a orillas de ríos de lo que hoy es Pakistán, hace unos 50 millones de años, ya tenía el hueso grueso del oído que solo tienen las ballenas. En unos 10 millones de años, sus parientes pasaron de vadear, como Ambulocetus, a ser gigantes del océano como Basilosaurus, cuyos esqueletos, con diminutas patas traseras, yacen en el Valle de las Ballenas de Egipto."
+      },
+      "wiki": { "en": "Pakicetus", "es": "Pakicetus" },
+      "item": "pakicetus"
+    },
+    {
+      "id": "australia-leaves-antarctica",
+      "kind": "continent",
+      "ma": 45, "to": 34, "err": 5,
+      "name": { "en": "Australia sets sail", "es": "Australia se hace a la mar" },
+      "at": [133, -31],
+      "text": {
+        "en": "Australia had begun to pull away from Antarctica about 85 million years ago, but very slowly. From around 45 million years ago it sped up and drifted north, and by about 34 million years ago deep ocean flowed between Tasmania and Antarctica. Isolated ever since, Australia became a land of kangaroos, koalas and other marsupials, while Antarctica was left alone over the South Pole.",
+        "es": "Australia había empezado a alejarse de la Antártida hace unos 85 millones de años, pero muy despacio. Desde hace unos 45 millones de años aceleró y derivó hacia el norte, y hace unos 34 millones de años ya corría océano profundo entre Tasmania y la Antártida. Aislada desde entonces, Australia se volvió tierra de canguros, koalas y otros marsupiales, mientras la Antártida quedaba sola sobre el polo sur."
+      },
+      "wiki": { "en": "Australian plate", "es": "Placa australiana" }
+    },
+    {
+      "id": "popigai",
+      "kind": "impact",
+      "ma": 35.7, "err": 0.2,
+      "name": { "en": "The Popigai impact", "es": "El impacto de Popigai" },
+      "at": [111.18, 71.65],
+      "r": 50,
+      "text": {
+        "en": "An asteroid perhaps 5–8 km wide struck northern Siberia and blasted a crater about 100 km across. The shock turned graphite in the ground into tiny diamonds in an instant, and the crater holds huge amounts of these 'impact diamonds', too small and odd to make jewels. It was one of two big strikes within a few hundred thousand years; the other made the crater under Chesapeake Bay.",
+        "es": "Un asteroide de quizá 5 a 8 km de ancho cayó en el norte de Siberia y abrió un cráter de unos 100 km. El choque convirtió en un instante el grafito del suelo en diamantes diminutos, y el cráter guarda enormes cantidades de estos 'diamantes de impacto', demasiado pequeños y raros para hacer joyas. Fue uno de dos grandes impactos ocurridos con unos cientos de miles de años de diferencia; el otro dejó el cráter bajo la bahía de Chesapeake."
+      },
+      "wiki": { "en": "Popigai impact structure", "es": "Cráter Popigai" }
+    },
+    {
+      "id": "chesapeake-bay-impact",
+      "kind": "impact",
+      "ma": 35.4, "err": 0.1,
+      "name": { "en": "The Chesapeake Bay impact", "es": "El impacto de la bahía de Chesapeake" },
+      "at": [-76.02, 37.28],
+      "r": 43,
+      "text": {
+        "en": "A rock about 3–5 km wide splashed into the shallow sea off what is now Virginia, in the United States, and dug a crater about 85 km wide, now buried under the mouth of Chesapeake Bay. Its tsunami swept the coast. The broken rocks underground still affect the region today: some wells there draw unusually salty water, and the crater helped decide where rivers flowed and the bay formed.",
+        "es": "Una roca de unos 3 a 5 km de ancho cayó en el mar poco profundo frente a lo que hoy es Virginia, en Estados Unidos, y abrió un cráter de unos 85 km, hoy enterrado bajo la boca de la bahía de Chesapeake. Su tsunami barrió la costa. Las rocas rotas del subsuelo todavía afectan la región: algunos pozos sacan agua inusualmente salada, y el cráter influyó en el curso de los ríos y en dónde se formó la bahía."
+      },
+      "wiki": { "en": "Chesapeake Bay impact crater", "es": "" }
+    },
+    {
+      "id": "antarctic-ice",
+      "kind": "ice",
+      "ma": 34, "to": 33.6, "err": 0.1,
+      "name": { "en": "Antarctica freezes over", "es": "La Antártida se congela" },
+      "text": {
+        "en": "As carbon dioxide slowly fell, the Earth crossed a tipping point. Within a few hundred thousand years a great ice sheet spread over Antarctica, which had been covered in forests. The oceans cooled, sea level dropped by tens of metres, and many animals died out, especially in Europe, where the change is called the 'Grande Coupure', the great break. Antarctica has been icy ever since.",
+        "es": "A medida que el dióxido de carbono bajaba lentamente, la Tierra cruzó un punto de inflexión. En unos cientos de miles de años, una gran capa de hielo cubrió la Antártida, que antes tenía bosques. Los océanos se enfriaron, el nivel del mar bajó decenas de metros y muchos animales se extinguieron, sobre todo en Europa, donde el cambio se llama la 'Grande Coupure', el gran corte. Desde entonces la Antártida ha estado helada."
+      },
+      "wiki": { "en": "Antarctic ice sheet", "es": "Indlandsis de la Antártida" },
+      "item": "antarctic-ice-sheet"
+    },
+    {
+      "id": "drake-passage",
+      "kind": "continent",
+      "sure": "debated",
+      "ma": 34, "err": 4,
+      "name": { "en": "The Drake Passage opens", "es": "Se abre el pasaje de Drake" },
+      "at": [-67.27, -55.98],
+      "text": {
+        "en": "South America finally let go of Antarctica, opening the Drake Passage. With both southern gateways open, a great current began to circle Antarctica: the Antarctic Circumpolar Current, today the largest ocean current on Earth. It walls Antarctica off from warmer waters and helps keep it frozen. When the passage became deep enough is debated, with estimates from about 41 to 30 million years ago.",
+        "es": "América del Sur por fin se soltó de la Antártida y se abrió el pasaje de Drake. Con los dos pasos del sur abiertos, una gran corriente empezó a girar alrededor de la Antártida: la corriente circumpolar antártica, hoy la mayor corriente oceánica de la Tierra. Aísla a la Antártida de las aguas más cálidas y ayuda a mantenerla helada. Cuándo el paso se volvió lo bastante profundo se discute: las estimaciones van de hace unos 41 a 30 millones de años."
+      },
+      "wiki": { "en": "Drake Passage", "es": "Pasaje de Drake" },
+      "item": "drake-passage"
+    },
+    {
+      "id": "mid-miocene-optimum",
+      "kind": "climate",
+      "ma": 16.9, "to": 14.7, "err": 0.1,
+      "name": { "en": "The Miocene warm spell", "es": "El calor del Mioceno" },
+      "text": {
+        "en": "For about two million years the Earth warmed again, to several degrees warmer than today, with carbon dioxide perhaps around 500 parts per million, not far above today's level. The Antarctic ice shrank, forests grew where there is tundra now, and apes spread across Europe and Asia. The Columbia River eruptions may have helped. Afterwards the planet cooled step by step towards the ice ages.",
+        "es": "Durante unos dos millones de años, la Tierra volvió a calentarse hasta varios grados más que hoy, con quizá unas 500 partes por millón de dióxido de carbono, no muy por encima del nivel actual. El hielo antártico se redujo, crecieron bosques donde hoy hay tundra y los simios se extendieron por Europa y Asia. Las erupciones del río Columbia quizá ayudaron. Después, el planeta se enfrió paso a paso hacia las glaciaciones."
+      },
+      "wiki": { "en": "Middle Miocene Climatic Optimum", "es": "" }
+    },
+    {
+      "id": "columbia-river-basalts",
+      "kind": "volcano",
+      "ma": 16.7, "to": 15.9, "err": 0.1,
+      "name": { "en": "The Columbia River lava floods", "es": "Las coladas del río Columbia" },
+      "at": [-119, 46.5],
+      "r": 300,
+      "text": {
+        "en": "Long cracks in the ground in what are now Washington, Oregon and Idaho poured out lava in floods so huge that some flows ran more than 500 km to the Pacific Ocean. In less than a million years they buried about 200,000 km² under layer upon layer of basalt, which the Columbia River cuts through today. It was probably the first great outburst of the hot spot now beneath Yellowstone.",
+        "es": "Largas grietas en el suelo de lo que hoy es Washington, Oregón e Idaho derramaron lava en inundaciones tan enormes que algunas coladas recorrieron más de 500 km hasta el océano Pacífico. En menos de un millón de años sepultaron unos 200 000 km² bajo capa tras capa de basalto, que hoy corta el río Columbia. Probablemente fue el primer gran estallido del punto caliente que hoy está bajo Yellowstone."
+      },
+      "wiki": { "en": "Columbia River Basalt Group", "es": "" }
+    },
+    {
+      "id": "ries",
+      "kind": "impact",
+      "ma": 14.81, "err": 0.04,
+      "name": { "en": "The Ries impact", "es": "El impacto de Ries" },
+      "at": [10.56, 48.88],
+      "r": 12,
+      "text": {
+        "en": "An asteroid about 1.5 km wide, perhaps with a small moon of its own, hit southern Germany and made the Ries crater, 24 km across; a smaller rock dug the nearby Steinheim crater at the same moment. The heat melted rock into green glass, moldavite, found up to 450 km away in the Czech Republic. The town of Nördlingen sits inside the crater, and its church is built of impact rock sprinkled with tiny diamonds.",
+        "es": "Un asteroide de unos 1,5 km de ancho, quizá con una pequeña luna propia, chocó contra el sur de Alemania y formó el cráter de Ries, de 24 km; una roca más pequeña abrió al mismo tiempo el cercano cráter de Steinheim. El calor derritió roca y la convirtió en vidrio verde, la moldavita, que se encuentra hasta a 450 km, en la República Checa. El pueblo de Nördlingen está dentro del cráter y su iglesia está hecha de roca de impacto salpicada de diamantes diminutos."
+      },
+      "wiki": { "en": "Nördlinger Ries", "es": "Ries de Nördlingen" }
+    },
+    {
+      "id": "c4-grasslands",
+      "kind": "life",
+      "first": true,
+      "ma": 8, "to": 6, "err": 1,
+      "name": { "en": "The first great savannas", "es": "Las primeras grandes sabanas" },
+      "text": {
+        "en": "Between about 8 and 6 million years ago, grasses with a different way of using sunlight, called C4 photosynthesis, spread across the tropics and warm lands. They cope better with heat, drought and low carbon dioxide. Fossil teeth record the change: in Pakistan, East Africa and the Americas, grazing animals switched to eating these grasses. The great savannas, home to vast herds, were born.",
+        "es": "Hace entre 8 y 6 millones de años, unos pastos con otra manera de aprovechar la luz del sol, llamada fotosíntesis C4, se extendieron por los trópicos y las tierras cálidas. Resisten mejor el calor, la sequía y el poco dióxido de carbono. Los dientes fósiles registran el cambio: en Pakistán, África oriental y América, los animales que pastan pasaron a comer estos pastos. Nacieron las grandes sabanas, hogar de enormes manadas."
+      },
+      "wiki": { "en": "C4 carbon fixation", "es": "Vía de 4 carbonos" }
+    },
+    {
+      "id": "first-hominins",
+      "kind": "human",
+      "first": true,
+      "sure": "debated",
+      "ma": 7, "err": 0.3,
+      "name": { "en": "The first hominins", "es": "Los primeros homininos" },
+      "at": [17.475, 16.24],
+      "text": {
+        "en": "In the desert of Chad, a skull nicknamed Toumaï, 'hope of life', belongs to an ape-like creature from about 7 million years ago with a short face and small canine teeth, features of the human line. Sahelanthropus may be one of the first hominins, on our side of the split from chimpanzees, and may have walked upright at times, but both points are debated. It lived by a lake that is now sand.",
+        "es": "En el desierto de Chad, un cráneo apodado Toumaï, 'esperanza de vida', pertenece a una criatura parecida a un simio de hace unos 7 millones de años, con la cara corta y caninos pequeños, rasgos del linaje humano. Sahelanthropus podría ser uno de los primeros homininos, de nuestro lado de la separación con los chimpancés, y quizá a veces caminaba erguido, pero ambas ideas se discuten. Vivía junto a un lago que hoy es arena."
+      },
+      "wiki": { "en": "Sahelanthropus", "es": "Sahelanthropus tchadensis" }
+    },
+    {
+      "id": "messinian-salinity-crisis",
+      "kind": "continent",
+      "ma": 5.97, "to": 5.33, "err": 0.01,
+      "name": { "en": "The Mediterranean dries up", "es": "El Mediterráneo se seca" },
+      "at": [14, 37.4],
+      "text": {
+        "en": "As Africa pushed against Europe, the sea gateways to the Atlantic near Gibraltar closed. Cut off, the Mediterranean lost water to the sun faster than its rivers could refill it, and it shrank into salty lakes far below sea level. Layers of salt more than 1 km thick lie under its floor, found by a drilling ship in 1970, and the Nile carved a canyon deeper than the Grand Canyon to reach the sunken sea.",
+        "es": "Mientras África empujaba contra Europa, los pasos marinos hacia el Atlántico cerca de Gibraltar se cerraron. Aislado, el Mediterráneo perdía agua por el sol más rápido de lo que sus ríos podían reponerla, y se redujo a lagos salados muy por debajo del nivel del mar. Bajo su fondo hay capas de sal de más de 1 km de espesor, que un barco de perforación halló en 1970, y el Nilo excavó un cañón más profundo que el Gran Cañón para llegar a ese mar hundido."
+      },
+      "wiki": { "en": "Messinian salinity crisis", "es": "Crisis salina del Messiniense" },
+      "item": "messinian-salinity-crisis"
+    },
+    {
+      "id": "zanclean-flood",
+      "kind": "continent",
+      "ma": 5.33, "err": 0.01,
+      "name": { "en": "The Zanclean flood", "es": "La inundación zancliense" },
+      "at": [-5.6, 35.95],
+      "text": {
+        "en": "About 5.33 million years ago the Atlantic broke back in through the Strait of Gibraltar. Some scientists think the Mediterranean refilled in a gigantic flood, perhaps in less than two years, pouring through a channel it carved hundreds of metres deep; others think it took longer. Either way the Mediterranean became a sea again, as it has been ever since, and the Pliocene began.",
+        "es": "Hace unos 5,33 millones de años, el Atlántico volvió a entrar por el estrecho de Gibraltar. Algunos científicos creen que el Mediterráneo se llenó en una inundación gigantesca, quizá en menos de dos años, a través de un canal que el agua excavó con cientos de metros de profundidad; otros creen que tardó más. De cualquier modo, el Mediterráneo volvió a ser un mar, como lo es desde entonces, y comenzó el Plioceno."
+      },
+      "wiki": { "en": "Zanclean flood", "es": "Inundación zancliense" },
+      "item": "zanclean-flood"
+    },
+    {
+      "id": "first-stone-tools",
+      "kind": "human",
+      "first": true,
+      "sure": "likely",
+      "ma": 3.3, "err": 0.05,
+      "name": { "en": "The first stone tools", "es": "Las primeras herramientas de piedra" },
+      "at": [35.88, 3.91],
+      "text": {
+        "en": "At Lomekwi, on the west shore of Lake Turkana in Kenya, archaeologists found sharp stone flakes and the heavy cores they were struck from, about 3.3 million years old: the oldest known stone tools. They are older than any fossil of our genus, Homo, so an earlier hominin probably made them. A few experts question the dating. Stone tools became common from about 2.6 million years ago.",
+        "es": "En Lomekwi, en la orilla oeste del lago Turkana, en Kenia, los arqueólogos hallaron lascas de piedra filosas y los núcleos pesados de los que se golpearon, de unos 3,3 millones de años: las herramientas de piedra más antiguas que se conocen. Son más antiguas que cualquier fósil de nuestro género, Homo, así que probablemente las hizo un hominino anterior. Algunos expertos dudan de su datación. Las herramientas de piedra se volvieron comunes desde hace unos 2,6 millones de años."
+      },
+      "wiki": { "en": "Lomekwi", "es": "Lomekwi" }
+    },
+    {
+      "id": "isthmus-of-panama",
+      "kind": "continent",
+      "sure": "likely",
+      "ma": 2.8, "err": 0.3,
+      "name": { "en": "Panama joins the Americas", "es": "Panamá une las Américas" },
+      "at": [-79.5, 9.0],
+      "text": {
+        "en": "As volcanic islands and sea floor rose between the Americas, the last seaway closed and the Isthmus of Panama joined North and South America. Animals crossed both ways in the Great American Interchange: armadillos, giant ground sloths and opossums went north, while cats, dogs, bears, horses and the ancestors of llamas went south. The new land also split the Caribbean from the Pacific. Some scientists argue that land links formed millions of years earlier.",
+        "es": "Al levantarse islas volcánicas y fondo marino entre las Américas, se cerró el último paso de mar y el istmo de Panamá unió América del Norte y del Sur. Los animales cruzaron en ambos sentidos en el Gran Intercambio Biótico Americano: armadillos, perezosos gigantes y zarigüeyas fueron al norte, mientras felinos, perros, osos, caballos y los ancestros de las llamas bajaron al sur. La nueva tierra también separó el Caribe del Pacífico. Algunos científicos creen que hubo uniones de tierra millones de años antes."
+      },
+      "wiki": { "en": "Isthmus of Panama", "es": "Istmo de Panamá" },
+      "item": "great-american-interchange"
+    },
+    {
+      "id": "genus-homo",
+      "kind": "human",
+      "first": true,
+      "ma": 2.8, "err": 0.05,
+      "name": { "en": "The first of our genus, Homo", "es": "El primero de nuestro género, Homo" },
+      "at": [40.85, 11.45],
+      "text": {
+        "en": "A jawbone found at Ledi-Geraru in the Afar region of Ethiopia, about 2.8 million years old, is the oldest fossil yet put in our own genus, Homo. Its teeth are smaller and more human-like than those of Lucy's kind, who lived in the same region some 400,000 years earlier. Over the next million years Homo grew bigger brains and made more and more stone tools, as Africa grew drier.",
+        "es": "Una mandíbula hallada en Ledi-Geraru, en la región de Afar, Etiopía, de unos 2,8 millones de años, es el fósil más antiguo atribuido hasta ahora a nuestro género, Homo. Sus dientes son más pequeños y humanos que los de la especie de Lucy, que vivió en la misma región unos 400 000 años antes. Durante el millón de años siguiente, Homo desarrolló cerebros más grandes y fabricó cada vez más herramientas de piedra, mientras África se volvía más seca."
+      },
+      "wiki": { "en": "Homo", "es": "Homo" }
+    },
+    {
+      "id": "northern-ice-sheets",
+      "kind": "ice",
+      "ma": 2.7, "err": 0.1,
+      "name": { "en": "Ice sheets in the north", "es": "Capas de hielo en el norte" },
+      "text": {
+        "en": "Around 2.7 million years ago great ice sheets began to grow in the north too, over North America, Greenland and northern Europe, and the Earth settled into a long rhythm of ice ages. Small wobbles in the Earth's orbit set the beat: about every 41,000 years the ice spread and then melted back. We still live in this ice age, in a warm pause between cold spells.",
+        "es": "Hace unos 2,7 millones de años empezaron a crecer grandes capas de hielo también en el norte, sobre América del Norte, Groenlandia y el norte de Europa, y la Tierra entró en un largo ritmo de glaciaciones. Pequeños vaivenes de la órbita terrestre marcaban el compás: cada unos 41 000 años el hielo avanzaba y luego se derretía. Todavía vivimos en esta era de hielo, en una pausa cálida entre periodos fríos."
+      },
+      "wiki": { "en": "Quaternary glaciation", "es": "Glaciación cuaternaria" },
+      "item": "quaternary-glaciation"
+    },
+    {
+      "id": "humans-leave-africa",
+      "kind": "human",
+      "first": true,
+      "ma": 1.8, "err": 0.05,
+      "name": { "en": "Humans leave Africa", "es": "Los humanos salen de África" },
+      "at": [44.34, 41.33],
+      "text": {
+        "en": "At Dmanisi, in Georgia between Europe and Asia, five skulls and stone tools about 1.8 million years old show that humans had already left Africa. They were small-brained early Homo erectus or close relatives, and one old individual lived for years after losing all its teeth, perhaps helped by others. Stone tools in China about 2.1 million years old suggest that some humans left even earlier.",
+        "es": "En Dmanisi, en Georgia, entre Europa y Asia, cinco cráneos y herramientas de piedra de unos 1,8 millones de años muestran que los humanos ya habían salido de África. Eran Homo erectus primitivos de cerebro pequeño, o parientes cercanos, y un individuo anciano vivió años después de perder todos los dientes, quizá ayudado por otros. Herramientas de piedra de China de unos 2,1 millones de años sugieren que algunos humanos salieron aún antes."
+      },
+      "wiki": { "en": "Dmanisi", "es": "Dmanisi" }
+    },
+    {
+      "id": "mid-pleistocene-transition",
+      "kind": "ice",
+      "ma": 1.25, "to": 0.7, "err": 0.05,
+      "name": { "en": "Ice ages grow longer and colder", "es": "Las glaciaciones se alargan y se enfrían" },
+      "text": {
+        "en": "Between about 1.25 million and 700,000 years ago the rhythm of the ice ages changed. Instead of short ice ages every 41,000 years came colder, longer ones about every 100,000 years, with ice sheets growing much bigger before melting quickly. Why it changed is still a puzzle: perhaps slowly falling carbon dioxide, or ice sheets that scraped away soft ground and could then grow thicker.",
+        "es": "Hace entre 1,25 millones y 700 000 años cambió el ritmo de las glaciaciones. En lugar de glaciaciones cortas cada 41 000 años, llegaron otras más frías y largas cada unos 100 000 años, con capas de hielo mucho más grandes que luego se derretían rápido. Por qué cambió sigue siendo un misterio: quizá por la lenta baja del dióxido de carbono, o porque el hielo raspó el suelo blando y después pudo crecer más grueso."
+      },
+      "wiki": { "en": "Mid-Pleistocene Transition", "es": "" }
+    },
+    {
+      "id": "first-fire",
+      "kind": "human",
+      "first": true,
+      "sure": "likely",
+      "ma": 1.0, "err": 0.1,
+      "name": { "en": "Taming fire", "es": "El dominio del fuego" },
+      "at": [23.554, -27.845],
+      "text": {
+        "en": "Deep inside Wonderwerk Cave in South Africa, layers about a million years old hold burnt bone and ash from small fires: the oldest clear sign that early humans, probably Homo erectus, used fire. Fire gave warmth, light and safety from predators, and cooked food, which is easier to chew and digest and may have helped our brains grow. Everyday use of fire became common only about 400,000 years ago.",
+        "es": "En lo profundo de la cueva Wonderwerk, en Sudáfrica, capas de alrededor de un millón de años guardan hueso quemado y ceniza de pequeñas fogatas: la señal clara más antigua de que los primeros humanos, probablemente Homo erectus, usaban el fuego. El fuego daba calor, luz y protección contra los depredadores, y permitía cocinar, lo que hace la comida más fácil de masticar y digerir y quizá ayudó a que creciera nuestro cerebro. El uso diario del fuego se volvió común hace solo unos 400 000 años."
+      },
+      "wiki": { "en": "Control of fire by early humans", "es": "Domesticación del fuego" }
+    },
+    {
+      "id": "yellowstone",
+      "kind": "volcano",
+      "ma": 0.631, "to": 0.63, "err": 0.004,
+      "name": { "en": "Yellowstone's supereruptions", "es": "Las supererupciones de Yellowstone" },
+      "at": [-110.6, 44.5],
+      "r": 40,
+      "text": {
+        "en": "Yellowstone, in the United States, sits over a hot spot that has erupted on a colossal scale three times: 2.1 million, 1.3 million and 631,000 years ago. The last, the Lava Creek eruption, emptied its magma chamber so fast that the ground collapsed into a caldera about 70 km wide, and its ash fell over much of North America. Its geysers and hot springs are still heated by the magma below.",
+        "es": "Yellowstone, en Estados Unidos, está sobre un punto caliente que ha hecho erupción a escala colosal tres veces: hace 2,1 millones, 1,3 millones y 631 000 años. La última, la erupción de Lava Creek, vació su cámara de magma tan rápido que el suelo se hundió en una caldera de unos 70 km, y su ceniza cayó sobre gran parte de América del Norte. Sus géiseres y aguas termales todavía se calientan con el magma de abajo."
+      },
+      "wiki": { "en": "Yellowstone Caldera", "es": "Caldera de Yellowstone" }
+    },
+    {
+      "id": "homo-sapiens",
+      "kind": "human",
+      "first": true,
+      "ma": 0.315, "err": 0.034,
+      "name": { "en": "Homo sapiens appears", "es": "Aparece el Homo sapiens" },
+      "at": [-8.87, 31.86],
+      "text": {
+        "en": "Skulls and tools from Jebel Irhoud in Morocco, about 300,000 years old, are the oldest known fossils of our own species, Homo sapiens. Their faces looked much like ours, but their braincases were longer and lower, so our rounded head shape came later. Finding them in North Africa, far from other early finds in Ethiopia and South Africa, suggests our species took shape across much of Africa.",
+        "es": "Cráneos y herramientas de Jebel Irhoud, en Marruecos, de unos 300 000 años, son los fósiles más antiguos que se conocen de nuestra especie, Homo sapiens. Sus caras se parecían mucho a las nuestras, pero su cráneo era más largo y bajo, así que nuestra cabeza redondeada llegó después. Hallarlos en el norte de África, lejos de otros hallazgos antiguos en Etiopía y Sudáfrica, sugiere que nuestra especie se formó en gran parte de África."
+      },
+      "wiki": { "en": "Jebel Irhoud", "es": "Djebel Irhoud" }
+    },
+    {
+      "id": "first-art",
+      "kind": "human",
+      "first": true,
+      "ma": 0.075, "err": 0.005,
+      "name": { "en": "The first art", "es": "El primer arte" },
+      "at": [21.22, -34.41],
+      "text": {
+        "en": "In Blombos Cave, on South Africa's south coast, people about 75,000 years ago scratched criss-cross patterns into pieces of red ochre and wore beads made of tiny shells, some of the oldest clear art and decoration we know. Far away on Sulawesi and the nearby island of Muna, in Indonesia, cave walls carry a hand stencil at least 67,800 years old and a painted scene of people and a pig at least 51,200 years old.",
+        "es": "En la cueva de Blombos, en la costa sur de Sudáfrica, hace unos 75 000 años la gente grababa dibujos en forma de rejilla sobre trozos de ocre rojo y usaba cuentas hechas de conchas diminutas: algunas de las obras de arte y adornos más antiguos que conocemos. Lejos de allí, en Sulawesi y la cercana isla de Muna, en Indonesia, las paredes de las cuevas tienen una mano estarcida de al menos 67 800 años y una escena pintada de personas y un cerdo de al menos 51 200 años."
+      },
+      "wiki": { "en": "Blombos Cave", "es": "Cueva de Blombos" }
+    },
+    {
+      "id": "toba",
+      "kind": "volcano",
+      "ma": 0.074, "to": 0.0735, "err": 0.0005,
+      "name": { "en": "The Toba supereruption", "es": "La supererupción del Toba" },
+      "at": [98.83, 2.6],
+      "r": 50,
+      "text": {
+        "en": "The Toba volcano on Sumatra, Indonesia, had the biggest eruption of the last two million years, throwing out about 2,800 km³ of rock and ash; the collapsed ground is now Lake Toba, 100 km long. Ash fell over India, 3,000 km away. It was once thought to have nearly wiped out our ancestors, but finds in India and South Africa show that people living through it carried on.",
+        "es": "El volcán Toba, en Sumatra, Indonesia, tuvo la mayor erupción de los últimos dos millones de años y lanzó unos 2800 km³ de roca y ceniza; el terreno hundido es hoy el lago Toba, de 100 km de largo. La ceniza cayó sobre la India, a 3000 km. Antes se pensaba que casi había acabado con nuestros antepasados, pero hallazgos en la India y Sudáfrica muestran que la gente que la vivió siguió adelante."
+      },
+      "wiki": { "en": "Youngest Toba eruption", "es": "Teoría de la catástrofe de Toba" }
+    },
+    {
+      "id": "out-of-africa",
+      "kind": "human",
+      "sure": "likely",
+      "ma": 0.07, "err": 0.01,
+      "name": { "en": "The great journey out of Africa", "es": "El gran viaje fuera de África" },
+      "at": [43.4, 12.6],
+      "text": {
+        "en": "Sometime around 70,000 to 50,000 years ago, small groups of modern humans left Africa, perhaps across the narrow southern end of the Red Sea, and spread along the coasts of Asia. Almost everyone whose family comes from outside Africa descends from them. On the way they met Neanderthals and Denisovans, and most people today carry a little of their DNA. Earlier groups had left too, but left few descendants.",
+        "es": "Hace entre unos 70 000 y 50 000 años, pequeños grupos de humanos modernos salieron de África, quizá por el estrecho extremo sur del mar Rojo, y se extendieron por las costas de Asia. Casi todas las personas con antepasados de fuera de África descienden de ellos. En el camino se encontraron con neandertales y denisovanos, y la mayoría de la gente hoy lleva un poco de su ADN. Hubo grupos que salieron antes, pero dejaron pocos descendientes."
+      },
+      "wiki": { "en": "Recent African origin of modern humans", "es": "Teoría del origen africano reciente de la humanidad" }
+    },
+    {
+      "id": "megafauna-extinction",
+      "kind": "extinction",
+      "ma": 0.05, "to": 0.01, "err": 0.005,
+      "name": { "en": "The giants disappear", "es": "Desaparecen los gigantes" },
+      "text": {
+        "en": "As modern humans spread around the world, many big animals vanished: about two thirds of the kinds of mammals heavier than 44 kg. Australia's giant wombat-like Diprotodon was gone by about 40,000 years ago; the mammoths, giant ground sloths and sabre-toothed cats of the Americas by about 11,000 years ago. Hunting, climate change or both are blamed, but the losses often followed soon after people arrived.",
+        "es": "A medida que los humanos modernos se extendían por el mundo, desaparecieron muchos animales grandes: cerca de dos tercios de los tipos de mamíferos de más de 44 kg. Diprotodon, un gigante parecido a un wombat, ya no existía en Australia hace unos 40 000 años; los mamuts, los perezosos gigantes y los tigres dientes de sable de América, hace unos 11 000 años. Se culpa a la caza, al cambio climático o a ambos, pero las pérdidas solían llegar poco después que la gente."
+      },
+      "wiki": { "en": "Late Pleistocene extinctions", "es": "Evento de extinción del Cuaternario" }
+    },
+    {
+      "id": "bering-land-bridge",
+      "kind": "continent",
+      "ma": 0.035, "to": 0.011, "err": 0.003,
+      "name": { "en": "The Bering land bridge", "es": "El puente de tierra de Bering" },
+      "at": [-169, 65.5],
+      "text": {
+        "en": "In the ice ages so much water was locked up in ice that the sea fell by up to 120 m, and the floor of the Bering Strait became land: Beringia, a cold, grassy plain up to 1,000 km wide joining Siberia and Alaska. Mammoths, horses, bison and, in the end, people crossed it. It was last dry land from about 35,000 to 11,000 years ago, until the rising sea drowned it again.",
+        "es": "En las glaciaciones, tanta agua quedó atrapada en el hielo que el mar bajó hasta 120 m y el fondo del estrecho de Bering se volvió tierra firme: Beringia, una llanura fría y con pastos de hasta 1000 km de ancho que unía Siberia y Alaska. Mamuts, caballos, bisontes y, por último, personas la cruzaron. Estuvo seca por última vez desde hace unos 35 000 hasta hace 11 000 años, cuando el mar al subir volvió a cubrirla."
+      },
+      "wiki": { "en": "Beringia", "es": "Puente de Beringia" },
+      "item": "beringia"
+    },
+    {
+      "id": "last-glacial-maximum",
+      "kind": "ice",
+      "ma": 0.026, "to": 0.019,
+      "name": { "en": "The Last Glacial Maximum", "es": "El último máximo glacial" },
+      "text": {
+        "en": "At the height of the last ice age, ice sheets up to 3–4 km thick covered Canada, the northern United States, Scandinavia and much of Britain, and the world was on average about 6 °C colder than before industry. Sea level was about 120 m lower, so you could walk from France to Britain and from Asia to America. Southern Europe was cold grassland where mammoths, woolly rhinos and reindeer roamed.",
+        "es": "En el punto más frío de la última glaciación, capas de hielo de hasta 3 o 4 km de espesor cubrían Canadá, el norte de Estados Unidos, Escandinavia y gran parte de Gran Bretaña, y el mundo estaba en promedio unos 6 °C más frío que antes de la industria. El mar estaba unos 120 m más bajo, así que se podía caminar de Francia a Gran Bretaña y de Asia a América. El sur de Europa era una pradera fría donde vagaban mamuts, rinocerontes lanudos y renos."
+      },
+      "wiki": { "en": "Last Glacial Maximum", "es": "Último máximo glacial" },
+      "item": "last-glacial-maximum"
+    },
+    {
+      "id": "first-americans",
+      "kind": "human",
+      "first": true,
+      "sure": "debated",
+      "ma": 0.023, "err": 0.002,
+      "name": { "en": "People reach the Americas", "es": "Los humanos llegan a América" },
+      "at": [-106.36, 32.86],
+      "text": {
+        "en": "Footprints pressed into mud at White Sands, New Mexico, have been dated to about 23,000–21,000 years ago, which would put people in North America at the coldest point of the last ice age. Several dating methods agree, but some experts still doubt it. Everyone agrees people had reached southern Chile by 14,500 years ago, at Monte Verde. The first Americans came from Asia, across or along Beringia.",
+        "es": "Huellas marcadas en el lodo de White Sands, Nuevo México, se han fechado hace unos 23 000 a 21 000 años, lo que pondría a personas en América del Norte en el momento más frío de la última glaciación. Varios métodos de datación coinciden, pero algunos expertos todavía dudan. Todos aceptan que había gente en el sur de Chile hace 14 500 años, en Monte Verde. Los primeros americanos llegaron de Asia, cruzando Beringia o bordeando su costa."
+      },
+      "wiki": { "en": "Peopling of the Americas", "es": "Poblamiento de América" }
+    },
+    {
+      "id": "end-of-ice-age",
+      "kind": "climate",
+      "ma": 0.0117,
+      "name": { "en": "The ice age ends", "es": "Termina la glaciación" },
+      "text": {
+        "en": "The great ice sheets began melting about 19,000 years ago, but the warming stalled in a sudden cold snap, the Younger Dryas. Then, about 11,700 years ago, Greenland warmed by around 10 °C within a few decades. This marks the start of the Holocene, our own warm and unusually steady age. As the ice melted, sea level rose about 120 m, drowning the Bering land bridge and the plains between Britain and Europe.",
+        "es": "Las grandes capas de hielo empezaron a derretirse hace unos 19 000 años, pero el calentamiento se frenó con un frío repentino, el Dryas Reciente. Luego, hace unos 11 700 años, Groenlandia se calentó cerca de 10 °C en pocas décadas. Así empezó el Holoceno, nuestra época cálida y extrañamente estable. Al derretirse el hielo, el mar subió unos 120 m e inundó el puente de tierra de Bering y las llanuras entre Gran Bretaña y Europa."
+      },
+      "wiki": { "en": "Holocene", "es": "Holoceno" },
+      "item": "younger-dryas"
+    },
+    {
+      "id": "first-farming",
+      "kind": "human",
+      "first": true,
+      "ma": 0.0115, "err": 0.0005,
+      "name": { "en": "The first farmers", "es": "Los primeros agricultores" },
+      "at": [39.0, 37.0],
+      "text": {
+        "en": "In the Fertile Crescent of the Middle East, people began to plant wild wheat, barley and lentils about 11,500 years ago, and soon to herd sheep and goats. Over the next few thousand years farming was invented again and again: rice and millet in China, maize and squash in Mexico, potatoes in the Andes, and more in New Guinea and Africa. Farming fed villages, then towns, and then the first cities.",
+        "es": "En la Media Luna Fértil de Oriente Medio, hace unos 11 500 años, la gente empezó a sembrar trigo, cebada y lentejas silvestres, y poco después a criar ovejas y cabras. En los milenios siguientes la agricultura se inventó una y otra vez: arroz y mijo en China, maíz y calabaza en México, papas en los Andes, y más en Nueva Guinea y África. La agricultura alimentó aldeas, luego pueblos y después las primeras ciudades."
+      },
+      "wiki": { "en": "Neolithic Revolution", "es": "Revolución neolítica" }
+    },
+    {
+      "id": "biodiversity-crisis",
+      "kind": "extinction",
+      "sure": "likely",
+      "ma": 0.0005, "to": 0,
+      "name": { "en": "Today's biodiversity crisis", "es": "La crisis de biodiversidad actual" },
+      "text": {
+        "en": "Humans are now driving species extinct far faster than the natural rate, by clearing forests, overfishing, hunting, spreading invasive species, polluting and changing the climate. Since 1500 more than 900 species are known to have died out, like the dodo and the passenger pigeon, and about a million may be at risk. Some scientists call this the sixth mass extinction; others say it is not one yet, but could become one if we do not act.",
+        "es": "Hoy los humanos están extinguiendo especies mucho más rápido que el ritmo natural, al talar bosques, pescar en exceso, cazar, llevar especies invasoras, contaminar y cambiar el clima. Desde 1500 se sabe que más de 900 especies desaparecieron, como el dodo y la paloma migratoria, y cerca de un millón podrían estar en peligro. Algunos científicos lo llaman la sexta extinción masiva; otros dicen que todavía no lo es, pero que podría serlo si no actuamos."
+      },
+      "wiki": { "en": "Holocene extinction", "es": "Extinción masiva del Holoceno" }
+    },
+    {
+      "id": "human-warming",
+      "kind": "climate",
+      "ma": 0.00017, "to": 0,
+      "name": { "en": "Humans warm the planet", "es": "Los humanos calientan el planeta" },
+      "text": {
+        "en": "Since the 1800s, burning coal, oil and gas has raised carbon dioxide from about 280 to over 420 parts per million, a level the Earth has not seen for millions of years. The planet is now about 1.3 °C warmer than before industry, and it is warming roughly ten times faster than at the end of the last ice age. Ice is melting and seas are rising; how much more it warms depends on what we do next.",
+        "es": "Desde el siglo XIX, quemar carbón, petróleo y gas ha elevado el dióxido de carbono de unas 280 a más de 420 partes por millón, un nivel que la Tierra no veía desde hace millones de años. El planeta ya está cerca de 1,3 °C más caliente que antes de la industria, y se calienta unas diez veces más rápido que al final de la última glaciación. El hielo se derrite y el mar sube; cuánto más se caliente depende de lo que hagamos ahora."
+      },
+      "wiki": { "en": "Climate change", "es": "Cambio climático" }
+    },
+    {
+      "id": "today",
+      "kind": "human",
+      "first": true,
+      "ma": 0,
+      "name": { "en": "Today", "es": "Hoy" },
+      "text": {
+        "en": "About 8 billion people now live on the Earth, and together we weigh several times as much as all the wild mammals put together. We are the first species to read the Earth's long story in its rocks, ice and fossils, the story you have just travelled through, and to see our planet whole from space. We are also the first able to change its climate and its life worldwide, and to choose what happens next.",
+        "es": "Hoy vivimos en la Tierra unos 8000 millones de personas, y juntos pesamos varias veces más que todos los mamíferos salvajes juntos. Somos la primera especie que lee la larga historia de la Tierra en sus rocas, su hielo y sus fósiles, la historia que acabas de recorrer, y que ve el planeta entero desde el espacio. También somos los primeros capaces de cambiar su clima y su vida en todo el mundo, y de elegir qué pasa después."
+      },
+      "wiki": { "en": "World population", "es": "Población mundial" }
+    }
+  ]
+}

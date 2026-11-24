@@ -48,8 +48,18 @@ export class Renderer {
   layerLabels = true;
   /** The states' and provinces' names (ambient mode hides them with the map's other names). */
   regionLabels = true;
-  /** Screen areas names keep off (ambient mode's caption), in CSS px. */
-  keepOut: (() => [number, number, number, number][]) | null = null;
+  /** Screen areas names keep off (the top bar's buttons, ambient mode's caption and clock), in CSS px. */
+  readonly keepOut = new Set<() => [number, number, number, number][]>();
+  /** Boxes around page elements (with a margin) in the map's px: what keepOut gives. Hidden ones are skipped. */
+  boxesOf(els: Iterable<Element>, pad = 4): [number, number, number, number][] {
+    const m = this.canvasRect(), out: [number, number, number, number][] = [];
+    for (const el of els) {
+      if ((el as HTMLElement).hidden) continue;
+      const c = el.getBoundingClientRect();
+      if (c.width) out.push([c.left - m.left - pad, c.top - m.top - pad, c.right - m.left + pad, c.bottom - m.top + pad]);
+    }
+    return out;
+  }
   /** Where the map's canvas is on the page (to turn a page element's place into the map's px). */
   canvasRect(): DOMRect { return this.fgCanvas.getBoundingClientRect(); }
   readonly gl: GLRaster | null;
@@ -624,7 +634,7 @@ export class Renderer {
     // ---- labels
     if (this.baseMap) this.baseLabels(rc);
     if (this.layerLabels) for (const l of this.layers) if (l.ready && l.def.labels) l.def.labels(rc, l);
-    if (this.keepOut) for (const b of this.keepOut()) this.labels.reserve(b[0], b[1], b[2], b[3]);
+    for (const f of this.keepOut) for (const b of f()) this.labels.reserve(b[0], b[1], b[2], b[3]);
     this.labels.draw(ctx);
     // A name is fading in: one more frame.
     if (this.labels.fading) this.requestRender();

@@ -1,0 +1,2173 @@
+{
+  "species": [
+    {
+      "id": "thrinaxodon",
+      "name": {"en":"Thrinaxodon liorhinus","es":"Thrinaxodon liorhinus"},
+      "group": "mammal",
+      "icon": "🦡",
+      "life": "land",
+      "from": 251.8,
+      "to": 247,
+      "sites": [
+        {"at":[25.97,-30.5],"place":{"en":"Karoo Basin, near Bethulie, Free State, South Africa","es":"Cuenca del Karoo, cerca de Bethulie, Estado Libre, Sudáfrica"}},
+        {"at":[29.13,-28.28],"place":{"en":"Near Harrismith, Free State, South Africa","es":"Cerca de Harrismith, Estado Libre, Sudáfrica"}},
+        {"at":[172.5,-85.05],"place":{"en":"Fremouw Formation, Transantarctic Mountains, Antarctica","es":"Formación Fremouw, montes Transantárticos, Antártida"}}
+      ],
+      "len": 0.45,
+      "diet": "small",
+      "text": {"en":"A cat-sized cousin of the ancestors of mammals that lived just after the Great Dying, the worst mass extinction ever. Tiny pits on its snout hint at whiskers, and a bony palate let it breathe while chewing. It dug burrows: one was found curled up asleep in its burrow beside an injured amphibian. Hiding underground may be how its kind got through the scorching world after the extinction.","es":"Un primo de los antepasados de los mamíferos, del tamaño de un gato, que vivió justo después de la Gran Mortandad, la peor extinción masiva de la historia. Unos poros diminutos en el hocico sugieren que tenía bigotes, y un paladar óseo le permitía respirar mientras masticaba. Cavaba madrigueras: uno se halló enroscado, dormido, junto a un anfibio herido. Esconderse bajo tierra quizá lo salvó del calor abrasador tras la extinción."},
+      "kin": {"en":"Mammals: it was a cynodont, from the group that mammals evolved from","es":"Los mamíferos: era un cinodonte, del grupo del que surgieron los mamíferos"},
+      "wiki": {"en":"Thrinaxodon","es":"Thrinaxodon"},
+      "pbdb": "Thrinaxodon",
+      "item": "thrinaxodon"
+    },
+    {
+      "id": "triadobatrachus",
+      "name": {"en":"Triadobatrachus massinoti","es":"Triadobatrachus massinoti"},
+      "group": "amphibian",
+      "icon": "🐸",
+      "life": "fresh",
+      "from": 250,
+      "to": 249,
+      "sites": [
+        {"at":[49.24,-13.16],"place":{"en":"Near Ambilobe, northern Madagascar","es":"Cerca de Ambilobe, norte de Madagascar"}}
+      ],
+      "len": 0.1,
+      "diet": "small",
+      "text": {"en":"The oldest known relative of frogs, about 250 million years old, from Madagascar. Only 10 cm long, it still had a short tail, more backbones than a frog and hind legs not yet built for leaping, so it probably swam with kicks rather than hopped. But its broad, flat skull already looked like a frog's. It shows frogs began soon after the Great Dying.","es":"El pariente más antiguo conocido de las ranas, de unos 250 millones de años, hallado en Madagascar. Medía solo 10 cm y aún tenía una colita, más vértebras que una rana y patas traseras que no servían para saltar, así que quizá nadaba a patadas. Pero su cráneo ancho y plano ya parecía de rana. Muestra que las ranas surgieron poco después de la Gran Mortandad."},
+      "kin": {"en":"Frogs and toads","es":"Las ranas y los sapos"},
+      "wiki": {"en":"Triadobatrachus","es":"Triadobatrachus massinoti"},
+      "pbdb": "Triadobatrachus"
+    },
+    {
+      "id": "cynognathus",
+      "name": {"en":"Cynognathus crateronotus","es":"Cynognathus crateronotus"},
+      "group": "mammal",
+      "icon": "🐺",
+      "life": "land",
+      "from": 247,
+      "to": 237,
+      "sites": [
+        {"at":[26.38,-31.6],"place":{"en":"Near Burgersdorp, Eastern Cape, South Africa","es":"Cerca de Burgersdorp, Cabo Oriental, Sudáfrica"}},
+        {"at":[16.47,-21.1],"place":{"en":"Omingonde Formation, central Namibia","es":"Formación Omingonde, centro de Namibia"}},
+        {"at":[-68.64,-34.88],"place":{"en":"Southern Mendoza, Argentina","es":"Sur de Mendoza, Argentina"}},
+        {"at":[164.05,-84.35],"place":{"en":"Fremouw Formation, Transantarctic Mountains, Antarctica","es":"Formación Fremouw, montes Transantárticos, Antártida"}}
+      ],
+      "len": 1.2,
+      "diet": "meat",
+      "text": {"en":"A wolf-sized hunter with a big head, sharp canine teeth and cheek teeth for slicing meat. It was a cynodont, from the group that gave rise to mammals, and may have had hair. Its bones are found in South Africa, Namibia, Argentina and Antarctica, lands that are now oceans apart: one of the clues that the continents were once joined in a single supercontinent, Pangea.","es":"Un cazador del tamaño de un lobo, con cabeza grande, colmillos afilados y muelas para cortar carne. Era un cinodonte, del grupo que dio origen a los mamíferos, y quizá tenía pelo. Sus huesos aparecen en Sudáfrica, Namibia, Argentina y la Antártida, tierras hoy separadas por océanos: una de las pistas de que los continentes estuvieron unidos en un solo supercontinente, Pangea."},
+      "kin": {"en":"Mammals: it belonged to the cynodonts, the group mammals came from","es":"Los mamíferos: pertenecía a los cinodontes, el grupo del que vienen"},
+      "wiki": {"en":"Cynognathus","es":"Cynognathus"},
+      "pbdb": "Cynognathus"
+    },
+    {
+      "id": "mixosaurus",
+      "name": {"en":"Mixosaurus cornalianus","es":"Mixosaurus cornalianus"},
+      "group": "reptile",
+      "icon": "🐬",
+      "life": "sea",
+      "from": 245,
+      "to": 238,
+      "sites": [
+        {"at":[8.94,45.91],"place":{"en":"Monte San Giorgio, Switzerland and Italy","es":"Monte San Giorgio, Suiza e Italia"}}
+      ],
+      "len": 1,
+      "diet": "fish",
+      "text": {"en":"One of the first dolphin-shaped ichthyosaurs, sea reptiles that breathed air and never came ashore. About a metre long, it had a long toothy snout, paddle-like flippers and a tail with a small fin. Its name means 'mixed lizard', because it seemed halfway between early and later ichthyosaurs. Many skeletons lie in the black shales of Monte San Giorgio, on the Swiss–Italian border.","es":"Uno de los primeros ictiosaurios con forma de delfín, reptiles marinos que respiraban aire y nunca salían a tierra. Medía cerca de un metro y tenía un hocico largo y dentado, aletas y una cola con una pequeña aleta. Su nombre significa 'lagarto mezclado', porque parecía a medio camino entre los ictiosaurios antiguos y los posteriores. Muchos esqueletos yacen en Monte San Giorgio, entre Suiza e Italia."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Mixosaurus","es":"Mixosaurus"},
+      "pbdb": "Mixosaurus",
+      "item": "mixosaurus"
+    },
+    {
+      "id": "cymbospondylus",
+      "name": {"en":"Cymbospondylus youngorum","es":"Cymbospondylus youngorum"},
+      "group": "reptile",
+      "icon": "🐋",
+      "life": "sea",
+      "from": 245,
+      "to": 243,
+      "sites": [
+        {"at":[-117.55,40.06],"place":{"en":"Augusta Mountains, Nevada, United States","es":"Montes Augusta, Nevada, Estados Unidos"}}
+      ],
+      "len": 17,
+      "mass": 45000,
+      "diet": "meat",
+      "text": {"en":"The first true giant of the oceans. Only about 7 million years after the Great Dying, this ichthyosaur grew to some 17 metres, as long as a sperm whale, with a skull 2 metres long. With its long, eel-like body and pointed teeth it hunted squid-like animals and fish in the sea over what is now Nevada. Ichthyosaurs became giants far faster than whales ever did.","es":"El primer verdadero gigante de los océanos. Apenas unos 7 millones de años después de la Gran Mortandad, este ictiosaurio alcanzó unos 17 metros, como un cachalote, con un cráneo de 2 metros. Con su cuerpo largo, como de anguila, y sus dientes puntiagudos cazaba animales parecidos a calamares y peces en el mar que cubría lo que hoy es Nevada. Los ictiosaurios se volvieron gigantes mucho más rápido que las ballenas."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Cymbospondylus","es":"Cymbospondylus"},
+      "pbdb": "Cymbospondylus",
+      "item": "cymbospondylus"
+    },
+    {
+      "id": "nothosaurus",
+      "name": {"en":"Nothosaurus","es":"Nothosaurus"},
+      "group": "reptile",
+      "icon": "🦭",
+      "life": "sea",
+      "from": 245,
+      "to": 228,
+      "sites": [
+        {"at":[9.7,49.12],"place":{"en":"Baden-Württemberg, Germany","es":"Baden-Wurtemberg, Alemania"}},
+        {"at":[6.75,51.97],"place":{"en":"Winterswijk, Netherlands","es":"Winterswijk, Países Bajos"}},
+        {"at":[8.95,45.91],"place":{"en":"Monte San Giorgio, Switzerland and Italy","es":"Monte San Giorgio, Suiza e Italia"}}
+      ],
+      "len": 4,
+      "diet": "fish",
+      "text": {"en":"A long-necked sea reptile that lived a bit like a seal, hunting fish in warm, shallow seas and probably resting on the shore. Its jaws bristled with long, interlocking fangs that worked like a fish trap. Some kinds were small, others up to 7 metres long. Nothosaurs were cousins of the plesiosaurs, which later took over the open oceans.","es":"Un reptil marino de cuello largo que vivía un poco como una foca: cazaba peces en mares cálidos y poco profundos y probablemente descansaba en la orilla. Sus mandíbulas estaban erizadas de colmillos largos que encajaban entre sí como una trampa para peces. Algunas especies eran pequeñas y otras medían hasta 7 metros. Eran primos de los plesiosaurios, que luego conquistaron el mar abierto."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Nothosaurus","es":"Nothosaurus"},
+      "pbdb": "Nothosaurus",
+      "item": "nothosaurus"
+    },
+    {
+      "id": "placodus",
+      "name": {"en":"Placodus gigas","es":"Placodus gigas"},
+      "group": "reptile",
+      "icon": "🦭",
+      "life": "sea",
+      "from": 245,
+      "to": 237,
+      "sites": [
+        {"at":[11.57,49.93],"place":{"en":"Near Bayreuth, Bavaria, Germany","es":"Cerca de Bayreuth, Baviera, Alemania"}},
+        {"at":[6.75,51.97],"place":{"en":"Winterswijk, Netherlands","es":"Winterswijk, Países Bajos"}}
+      ],
+      "len": 2,
+      "diet": "small",
+      "text": {"en":"A stocky sea reptile about 2 metres long with a mouth full of flat, pavement-like teeth. It plucked clams and other shellfish from the sea floor with its forward-pointing front teeth and crushed them with the broad ones on its palate. A row of bony knobs ran along its back. Placodonts lived only in the Triassic, in the shallow seas of Europe and China.","es":"Un reptil marino robusto de unos 2 metros con la boca llena de dientes planos como adoquines. Arrancaba almejas y otros mariscos del fondo con sus dientes delanteros, que apuntaban hacia adelante, y los trituraba con los dientes anchos de su paladar. Una fila de protuberancias óseas recorría su espalda. Los placodontos vivieron solo en el Triásico, en los mares poco profundos de Europa y China."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Placodus","es":"Placodus"},
+      "pbdb": "Placodus",
+      "item": "placodus"
+    },
+    {
+      "id": "tanystropheus",
+      "name": {"en":"Tanystropheus","es":"Tanystropheus"},
+      "group": "reptile",
+      "icon": "🦎",
+      "life": "shore",
+      "from": 245,
+      "to": 235,
+      "sites": [
+        {"at":[8.95,45.89],"place":{"en":"Monte San Giorgio, Switzerland and Italy","es":"Monte San Giorgio, Suiza e Italia"}}
+      ],
+      "len": 6,
+      "diet": "fish",
+      "text": {"en":"One of the strangest reptiles ever: its stiff neck, about 3 metres long in a 6-metre animal, was made of just 13 very long bones. It probably lived in shallow coastal water, ambushing fish and squid. A 2020 study found two kinds living side by side in the same lagoon: a big one that hunted fish and a small one that snapped up shrimp-like prey.","es":"Uno de los reptiles más extraños: su cuello rígido medía unos 3 metros en un animal de 6, y tenía solo 13 huesos larguísimos. Probablemente vivía en aguas costeras poco profundas, acechando peces y calamares. Un estudio de 2020 encontró dos especies que vivían juntas en la misma laguna: una grande que cazaba peces y una pequeña que atrapaba presas parecidas a camarones."},
+      "kin": {"en":"No close living relatives; a distant cousin of crocodiles and birds","es":"Ningún pariente cercano vivo; primo lejano de cocodrilos y aves"},
+      "wiki": {"en":"Tanystropheus","es":"Tanystropheus"},
+      "pbdb": "Tanystropheus",
+      "item": "tanystropheus"
+    },
+    {
+      "id": "mastodonsaurus",
+      "name": {"en":"Mastodonsaurus giganteus","es":"Mastodonsaurus giganteus"},
+      "group": "amphibian",
+      "icon": "🐸",
+      "life": "fresh",
+      "from": 246,
+      "to": 235,
+      "sites": [
+        {"at":[9.69,49.21],"place":{"en":"Kupferzell, Baden-Württemberg, Germany","es":"Kupferzell, Baden-Wurtemberg, Alemania"}},
+        {"at":[55.5,51.44],"place":{"en":"Near Sol-Iletsk, Orenburg, Russia","es":"Cerca de Sol-Iletsk, Oremburgo, Rusia"}},
+        {"at":[-1.58,52.29],"place":{"en":"Warwickshire, England","es":"Warwickshire, Inglaterra"}}
+      ],
+      "len": 6,
+      "diet": "meat",
+      "text": {"en":"One of the biggest amphibians that ever lived: a flat-headed giant up to 6 metres long, with a skull more than a metre long. It lurked in lakes and swamps like a crocodile, snapping up fish and any animal that came too close. When it shut its mouth, two big fangs in its lower jaw poked up through holes in the top of its snout.","es":"Uno de los anfibios más grandes que han existido: un gigante de cabeza plana de hasta 6 metros, con un cráneo de más de un metro. Acechaba en lagos y pantanos como un cocodrilo, atrapando peces y cualquier animal que se acercara demasiado. Al cerrar la boca, dos grandes colmillos de su mandíbula inferior asomaban por agujeros en la parte superior del hocico."},
+      "kin": {"en":"Distant cousins of frogs and salamanders; it was a temnospondyl, an extinct amphibian group","es":"Primo lejano de ranas y salamandras; era un temnospóndilo, un grupo extinto de anfibios"},
+      "wiki": {"en":"Mastodonsaurus","es":"Mastodonsaurus"},
+      "pbdb": "Mastodonsaurus"
+    },
+    {
+      "id": "megachirella",
+      "name": {"en":"Megachirella wachtleri","es":"Megachirella wachtleri"},
+      "group": "reptile",
+      "icon": "🦎",
+      "life": "land",
+      "from": 242,
+      "to": 241,
+      "sites": [
+        {"at":[12.12,46.74],"place":{"en":"Braies Dolomites, South Tyrol, Italy","es":"Dolomitas de Braies, Tirol del Sur, Italia"}}
+      ],
+      "len": 0.2,
+      "diet": "small",
+      "text": {"en":"A small lizard-like animal about 240 million years old from the Dolomites of Italy, now known as the oldest member of the squamates, the group of lizards and snakes. It was named in 2003, but only when scientists scanned it in 2018 did they spot hidden features of its skull and collarbone that only squamates have. So lizards and snakes go back to soon after the Great Dying.","es":"Un pequeño animal parecido a un lagarto, de unos 240 millones de años, hallado en los Dolomitas de Italia. Hoy se sabe que es el miembro más antiguo de los escamosos, el grupo de lagartos y serpientes. Fue descrito en 2003, pero solo al escanearlo en 2018 se vieron rasgos ocultos del cráneo y la clavícula propios de los escamosos. Así, lagartos y serpientes se remontan a poco después de la Gran Mortandad."},
+      "kin": {"en":"Lizards and snakes","es":"Los lagartos y las serpientes"},
+      "wiki": {"en":"Megachirella","es":""},
+      "pbdb": "Megachirella"
+    },
+    {
+      "id": "nyasasaurus",
+      "name": {"en":"Nyasasaurus parringtoni","es":"Nyasasaurus parringtoni"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 243,
+      "to": 241,
+      "sites": [
+        {"at":[34.75,-10.53],"place":{"en":"Manda Beds, near Lake Nyasa, Tanzania","es":"Capas de Manda, cerca del lago Nyasa, Tanzania"}}
+      ],
+      "len": 2.5,
+      "diet": "both",
+      "text": {"en":"Possibly the oldest dinosaur, or the closest relative of the dinosaurs, known only from an upper arm bone and a few backbones found in Tanzania in the 1930s and named in 2012. Its bone tissue grew fast and its arm bone has a crest for big muscles, both like a dinosaur's. If it was one, dinosaurs began about 243 million years ago, some 12 million years before the famous ones from Argentina.","es":"Quizá el dinosaurio más antiguo, o el pariente más cercano de los dinosaurios. Solo se conocen un hueso del brazo y algunas vértebras, hallados en Tanzania en la década de 1930 y nombrados en 2012. Su hueso crecía rápido y tiene una cresta para músculos grandes, como el de un dinosaurio. Si lo era, los dinosaurios surgieron hace unos 243 millones de años, unos 12 millones antes de los famosos de Argentina."},
+      "kin": {"en":"Birds, if it was a dinosaur; then crocodiles","es":"Las aves, si era un dinosaurio; luego los cocodrilos"},
+      "wiki": {"en":"Nyasasaurus","es":"Nyasasaurus parringtoni"},
+      "pbdb": "Nyasasaurus",
+      "item": "nyasasaurus"
+    },
+    {
+      "id": "eoraptor",
+      "name": {"en":"Eoraptor lunensis","es":"Eoraptor lunensis"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 231.4,
+      "to": 229,
+      "sites": [
+        {"at":[-67.88,-30.12],"place":{"en":"Ischigualasto (Valley of the Moon), San Juan, Argentina","es":"Ischigualasto (Valle de la Luna), San Juan, Argentina"}}
+      ],
+      "len": 1,
+      "mass": 10,
+      "diet": "both",
+      "text": {"en":"One of the first dinosaurs: a nimble animal about a metre long, the size of a fox, that ran on its back legs. Its leaf-shaped back teeth and sharper front ones suggest it ate both plants and small animals. Found in 1991 in the Valley of the Moon in Argentina, it shows how small and ordinary the ancestors of the giants were. Many think it was an early relative of the long-necked sauropods.","es":"Uno de los primeros dinosaurios: un animal ágil de un metro, del tamaño de un zorro, que corría sobre las patas traseras. Sus dientes traseros en forma de hoja y los delanteros más afilados sugieren que comía plantas y animalitos. Hallado en 1991 en el Valle de la Luna, en Argentina, muestra lo pequeños y comunes que eran los antepasados de los gigantes. Quizá era un pariente temprano de los saurópodos de cuello largo."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Eoraptor","es":"Eoraptor lunensis"},
+      "pbdb": "Eoraptor",
+      "item": "eoraptor"
+    },
+    {
+      "id": "herrerasaurus",
+      "name": {"en":"Herrerasaurus ischigualastensis","es":"Herrerasaurus ischigualastensis"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 231.4,
+      "to": 228,
+      "sites": [
+        {"at":[-67.88,-30.14],"place":{"en":"Ischigualasto (Valley of the Moon), San Juan, Argentina","es":"Ischigualasto (Valle de la Luna), San Juan, Argentina"}}
+      ],
+      "len": 4.5,
+      "mass": 250,
+      "diet": "meat",
+      "text": {"en":"One of the earliest big meat-eating dinosaurs, up to 6 metres long, from the same Argentine valley as Eoraptor. It had a flexible lower jaw for gripping struggling prey, sharp, backward-curving teeth and grasping hands with long claws. Its first bones were spotted in 1959 by Victorino Herrera, a local goat herder, and it is named after him.","es":"Uno de los primeros grandes dinosaurios carnívoros, de hasta 6 metros, del mismo valle argentino que el Eoraptor. Tenía una mandíbula inferior flexible para sujetar presas que forcejeaban, dientes afilados curvados hacia atrás y manos prensiles con garras largas. Sus primeros huesos los vio en 1959 Victorino Herrera, un pastor de cabras de la zona, y lleva su nombre."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Herrerasaurus","es":"Herrerasaurus ischigualastensis"},
+      "pbdb": "Herrerasaurus",
+      "item": "herrerasaurus"
+    },
+    {
+      "id": "postosuchus",
+      "name": {"en":"Postosuchus kirkpatricki","es":"Postosuchus kirkpatricki"},
+      "group": "reptile",
+      "icon": "🐊",
+      "life": "land",
+      "from": 228,
+      "to": 206,
+      "sites": [
+        {"at":[-101.32,33.52],"place":{"en":"Post Quarry, Garza County, Texas, United States","es":"Cantera Post, condado de Garza, Texas, Estados Unidos"}},
+        {"at":[-109.78,34.91],"place":{"en":"Petrified Forest National Park, Arizona, United States","es":"Parque Nacional del Bosque Petrificado, Arizona, Estados Unidos"}}
+      ],
+      "len": 4.5,
+      "mass": 300,
+      "diet": "meat",
+      "text": {"en":"A top predator of the Late Triassic that looked like a dinosaur but was a cousin of crocodiles. About 4.5 metres long, with a deep head and dagger-like teeth, it walked upright and may have reared up on its hind legs at times. Before the dinosaurs took over, animals like it ruled the land. It is named after the town of Post, in Texas, where it was found.","es":"Un gran depredador del Triásico Tardío que parecía un dinosaurio pero era primo de los cocodrilos. Medía unos 4,5 metros, tenía una cabeza alta y dientes como dagas, caminaba erguido y quizá a veces se alzaba sobre las patas traseras. Antes de que los dinosaurios dominaran, animales como él reinaban en tierra firme. Lleva el nombre de Post, el pueblo de Texas donde se halló."},
+      "kin": {"en":"Crocodiles and alligators","es":"Los cocodrilos y los aligátores"},
+      "wiki": {"en":"Postosuchus","es":"Postosuchus"},
+      "pbdb": "Postosuchus",
+      "item": "postosuchus"
+    },
+    {
+      "id": "desmatosuchus",
+      "name": {"en":"Desmatosuchus spurensis","es":"Desmatosuchus spurensis"},
+      "group": "reptile",
+      "icon": "🐊",
+      "life": "land",
+      "from": 226,
+      "to": 212,
+      "sites": [
+        {"at":[-101.11,33.59],"place":{"en":"Crosby County, near Spur, Texas, United States","es":"Condado de Crosby, cerca de Spur, Texas, Estados Unidos"}},
+        {"at":[-109.36,34.51],"place":{"en":"Petrified Forest area, Arizona, United States","es":"Zona del Bosque Petrificado, Arizona, Estados Unidos"}}
+      ],
+      "len": 4.5,
+      "diet": "plants",
+      "text": {"en":"A plant-eater built like a tank: 4.5 metres long, covered in bony plates, with long spikes sticking out sideways from its shoulders. Its shovel-like, pig-like snout may have rooted in the soil for roots and tubers. It belonged to the aetosaurs, armoured cousins of crocodiles that grazed the Triassic floodplains of what is now Texas and Arizona.","es":"Un herbívoro acorazado como un tanque: 4,5 metros de largo, cubierto de placas óseas y con largas púas que salían a los lados de sus hombros. Su hocico, como el de un cerdo, quizá hurgaba en la tierra en busca de raíces y tubérculos. Pertenecía a los aetosaurios, primos acorazados de los cocodrilos que pastaban en las llanuras del Triásico, en lo que hoy es Texas y Arizona."},
+      "kin": {"en":"Crocodiles and alligators","es":"Los cocodrilos y los aligátores"},
+      "wiki": {"en":"Desmatosuchus","es":"Desmatosuchus"},
+      "pbdb": "Desmatosuchus"
+    },
+    {
+      "id": "placerias",
+      "name": {"en":"Placerias hesternus","es":"Placerias hesternus"},
+      "group": "mammal",
+      "icon": "🦛",
+      "life": "land",
+      "from": 225,
+      "to": 212,
+      "sites": [
+        {"at":[-109.46,34.44],"place":{"en":"Placerias Quarry, near St. Johns, Arizona, United States","es":"Cantera Placerias, cerca de St. Johns, Arizona, Estados Unidos"}},
+        {"at":[-109.76,34.95],"place":{"en":"Petrified Forest National Park, Arizona, United States","es":"Parque Nacional del Bosque Petrificado, Arizona, Estados Unidos"}}
+      ],
+      "len": 2.5,
+      "mass": 1000,
+      "diet": "plants",
+      "text": {"en":"One of the last and biggest dicynodonts, beaked plant-eaters distantly related to mammals. About as heavy as a small car, it had a turtle-like beak and two short tusks, perhaps for digging up roots. About 40 Placerias were found together in a single quarry in Arizona, maybe a herd that died around a drying waterhole.","es":"Uno de los últimos y más grandes dicinodontos, herbívoros con pico, parientes lejanos de los mamíferos. Pesaba más o menos como un carro pequeño, tenía un pico como de tortuga y dos colmillos cortos, quizá para desenterrar raíces. En una sola cantera de Arizona se hallaron unos 40 Placerias juntos, tal vez una manada que murió junto a una charca que se secaba."},
+      "kin": {"en":"Mammals are distant cousins: dicynodonts were an early side branch of the mammal line","es":"Los mamíferos son primos lejanos: los dicinodontos fueron una rama temprana de su linaje"},
+      "wiki": {"en":"Placerias","es":"Placerias"},
+      "pbdb": "Placerias"
+    },
+    {
+      "id": "coelophysis",
+      "name": {"en":"Coelophysis bauri","es":"Coelophysis bauri"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 216,
+      "to": 203,
+      "sites": [
+        {"at":[-106.45,36.31],"place":{"en":"Ghost Ranch, New Mexico, United States","es":"Ghost Ranch, Nuevo México, Estados Unidos"}}
+      ],
+      "len": 3,
+      "mass": 20,
+      "diet": "meat",
+      "text": {"en":"A slender, 3-metre hunter with hollow bones, a long neck and narrow jaws full of small, saw-edged teeth. In 1947 a quarry at Ghost Ranch, New Mexico, gave up hundreds of skeletons, perhaps a group caught by a flood. In 1998 a Coelophysis skull rode the Space Shuttle Endeavour to the Mir space station, making it the second dinosaur in space.","es":"Un cazador esbelto de 3 metros, con huesos huecos, cuello largo y mandíbulas estrechas llenas de dientecillos aserrados. En 1947, una cantera de Ghost Ranch, en Nuevo México, reveló cientos de esqueletos, quizá un grupo atrapado por una inundación. En 1998, un cráneo de Coelophysis viajó en el transbordador Endeavour a la estación espacial Mir: fue el segundo dinosaurio en el espacio."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Coelophysis","es":"Coelophysis"},
+      "pbdb": "Coelophysis",
+      "item": "coelophysis"
+    },
+    {
+      "id": "plateosaurus",
+      "name": {"en":"Plateosaurus","es":"Plateosaurus"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 214,
+      "to": 204,
+      "sites": [
+        {"at":[8.64,48.08],"place":{"en":"Trossingen, Baden-Württemberg, Germany","es":"Trossingen, Baden-Wurtemberg, Alemania"}},
+        {"at":[8.02,47.5],"place":{"en":"Frick, Aargau, Switzerland","es":"Frick, Argovia, Suiza"}},
+        {"at":[11.07,51.9],"place":{"en":"Halberstadt, Saxony-Anhalt, Germany","es":"Halberstadt, Sajonia-Anhalt, Alemania"}}
+      ],
+      "len": 8,
+      "mass": 1000,
+      "diet": "plants",
+      "text": {"en":"One of the first big plant-eating dinosaurs, up to 10 metres long, and one of the best known: well over 100 skeletons have been dug up in Germany, Switzerland and France. It walked on its hind legs, with a long neck for reaching leaves and clawed hands that could not turn palm-down. Many seem to have died stuck in mud. It was an early cousin of the giant sauropods.","es":"Uno de los primeros grandes dinosaurios herbívoros, de hasta 10 metros, y de los mejor conocidos: se han desenterrado más de 100 esqueletos en Alemania, Suiza y Francia. Caminaba sobre las patas traseras, con un cuello largo para alcanzar hojas y manos con garras que no podían girar la palma hacia abajo. Muchos parecen haber muerto atascados en el lodo. Era primo temprano de los saurópodos gigantes."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Plateosaurus","es":"Plateosaurus"},
+      "pbdb": "Plateosaurus",
+      "item": "plateosaurus"
+    },
+    {
+      "id": "eudimorphodon",
+      "name": {"en":"Eudimorphodon ranzii","es":"Eudimorphodon ranzii"},
+      "group": "flyer",
+      "icon": "🦇",
+      "life": "air",
+      "from": 216,
+      "to": 203,
+      "sites": [
+        {"at":[9.83,45.78],"place":{"en":"Cene, near Bergamo, Italy","es":"Cene, cerca de Bérgamo, Italia"}}
+      ],
+      "diet": "fish",
+      "text": {"en":"One of the oldest known pterosaurs, the first animals with backbones to fly by flapping. Its wings, skin stretched from a hugely long fourth finger, spanned about a metre. Its jaws held more than 100 tiny teeth, many with several points, good for gripping slippery fish, and fish scales have been found in its stomach. It was found near Bergamo, Italy, in 1973.","es":"Uno de los pterosaurios más antiguos, los primeros animales con columna vertebral que volaron batiendo las alas. Sus alas, de piel estirada desde un cuarto dedo larguísimo, medían un metro de punta a punta. Sus mandíbulas tenían más de 100 dientes diminutos, muchos con varias puntas, buenos para sujetar peces resbalosos, y se han hallado escamas de pez en su estómago. Se descubrió cerca de Bérgamo, Italia, en 1973."},
+      "kin": {"en":"None alive: pterosaurs were cousins of the dinosaurs, so birds and crocodiles are their nearest kin","es":"Ninguno vivo: eran primos de los dinosaurios, así que sus parientes más cercanos son las aves y los cocodrilos"},
+      "wiki": {"en":"Eudimorphodon","es":"Eudimorphodon"},
+      "pbdb": "Eudimorphodon",
+      "item": "eudimorphodon"
+    },
+    {
+      "id": "shonisaurus",
+      "name": {"en":"Shonisaurus popularis","es":"Shonisaurus popularis"},
+      "group": "reptile",
+      "icon": "🐋",
+      "life": "sea",
+      "from": 227,
+      "to": 215,
+      "sites": [
+        {"at":[-117.59,38.88],"place":{"en":"Berlin–Ichthyosaur State Park, Nevada, United States","es":"Parque Estatal Berlin-Ichthyosaur, Nevada, Estados Unidos"}}
+      ],
+      "len": 15,
+      "diet": "meat",
+      "text": {"en":"A whale-sized ichthyosaur, about 15 metres long, with a deep body and long, narrow flippers. At least 37 of them lie together in a quarry in Nevada: maybe a place where females gathered to give birth, or a group killed by toxic algae; nobody knows for sure. It is Nevada's state fossil.","es":"Un ictiosaurio del tamaño de una ballena, de unos 15 metros, con el cuerpo alto y aletas largas y estrechas. Al menos 37 yacen juntos en una cantera de Nevada: quizá un lugar donde las hembras se reunían para parir, o un grupo envenenado por algas tóxicas; nadie lo sabe con certeza. Es el fósil oficial del estado de Nevada."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Shonisaurus","es":"Shonisaurus"},
+      "pbdb": "Shonisaurus",
+      "item": "shonisaurus"
+    },
+    {
+      "id": "proganochelys",
+      "name": {"en":"Proganochelys quenstedti","es":"Proganochelys quenstedti"},
+      "group": "reptile",
+      "icon": "🐢",
+      "life": "land",
+      "from": 212,
+      "to": 205,
+      "sites": [
+        {"at":[9.2,48.63],"place":{"en":"Near Stuttgart, Baden-Württemberg, Germany","es":"Cerca de Stuttgart, Baden-Wurtemberg, Alemania"}},
+        {"at":[11.07,51.9],"place":{"en":"Halberstadt, Saxony-Anhalt, Germany","es":"Halberstadt, Sajonia-Anhalt, Alemania"}},
+        {"at":[-22.54,71.26],"place":{"en":"Jameson Land, East Greenland","es":"Tierra de Jameson, este de Groenlandia"}}
+      ],
+      "len": 1,
+      "diet": "plants",
+      "text": {"en":"For a long time the oldest known turtle with a complete shell. About a metre long, it already had a hard shell and a toothless beak, but it still had small teeth on its palate, spiky armour on its neck and a club at the end of its tail, and it could not pull its head into its shell. It lived on land, in what is now Germany and Greenland, about 210 million years ago.","es":"Durante mucho tiempo, la tortuga con caparazón completo más antigua conocida. Medía un metro y ya tenía un caparazón duro y un pico sin dientes, pero conservaba dientecillos en el paladar, púas en el cuello y una maza al final de la cola, y no podía meter la cabeza en el caparazón. Vivía en tierra firme, en lo que hoy es Alemania y Groenlandia, hace unos 210 millones de años."},
+      "kin": {"en":"Turtles and tortoises","es":"Las tortugas"},
+      "wiki": {"en":"Proganochelys","es":"Proganochelys"},
+      "pbdb": "Proganochelys"
+    },
+    {
+      "id": "morganucodon",
+      "name": {"en":"Morganucodon watsoni","es":"Morganucodon watsoni"},
+      "group": "mammal",
+      "icon": "🐭",
+      "life": "land",
+      "from": 205,
+      "to": 190,
+      "sites": [
+        {"at":[-3.58,51.47],"place":{"en":"Limestone fissures in the Vale of Glamorgan, Wales","es":"Grietas en la caliza del valle de Glamorgan, Gales"}},
+        {"at":[102.08,25.17],"place":{"en":"Lufeng, Yunnan, China","es":"Lufeng, Yunnan, China"}}
+      ],
+      "len": 0.1,
+      "mass": 0.05,
+      "diet": "small",
+      "text": {"en":"One of the earliest mammals, or very nearly one: a shrew-like animal about 10 cm long that probably hunted insects at night. Thousands of its teeth and bones washed into cracks in limestone in Wales. Its jaw had two joints: the old reptile one and the new mammal one. Later in mammal history, the bones of the old joint shrank to become the tiny bones of our middle ear.","es":"Uno de los primeros mamíferos, o casi: un animal parecido a una musaraña, de unos 10 cm, que probablemente cazaba insectos de noche. Miles de sus dientes y huesos fueron arrastrados a grietas en la roca caliza de Gales. Su mandíbula tenía dos articulaciones: la antigua de los reptiles y la nueva de los mamíferos. Con el tiempo, los huesos de la vieja se convirtieron en los huesecillos de nuestro oído medio."},
+      "kin": {"en":"All living mammals, from platypuses to people; it sat at the root of their family tree","es":"Todos los mamíferos vivos, del ornitorrinco a las personas; estaba en la raíz de su árbol familiar"},
+      "wiki": {"en":"Morganucodon","es":"Morganucodon"},
+      "pbdb": "Morganucodon",
+      "item": "morganucodon"
+    },
+    {
+      "id": "hesperosuchus",
+      "name": {"en":"Hesperosuchus agilis","es":"Hesperosuchus agilis"},
+      "group": "reptile",
+      "icon": "🐊",
+      "life": "land",
+      "from": 220,
+      "to": 208,
+      "sites": [
+        {"at":[-109.83,35.03],"place":{"en":"Petrified Forest area, Arizona, United States","es":"Zona del Bosque Petrificado, Arizona, Estados Unidos"}},
+        {"at":[-106.47,36.33],"place":{"en":"Ghost Ranch, New Mexico, United States","es":"Ghost Ranch, Nuevo México, Estados Unidos"}}
+      ],
+      "len": 1.2,
+      "diet": "small",
+      "text": {"en":"An early crocodylomorph, from the group that includes today's crocodiles, but nothing like them: a slim, long-legged runner about a metre long that lived on dry land and chased lizards and insects. Crocodiles' ancestors began as small, fast land animals like this, and only later took to the water. Its bones were found alongside Coelophysis at Ghost Ranch, New Mexico.","es":"Un crocodilomorfo temprano, del grupo de los cocodrilos actuales, pero muy distinto: un corredor delgado de patas largas, de un metro, que vivía en tierra firme y perseguía lagartijas e insectos. Los antepasados de los cocodrilos empezaron como animales terrestres pequeños y veloces como este, y solo después se fueron al agua. Sus huesos se hallaron junto a los de Coelophysis en Ghost Ranch, Nuevo México."},
+      "kin": {"en":"Crocodiles and alligators","es":"Los cocodrilos y los aligátores"},
+      "wiki": {"en":"Hesperosuchus","es":"Hesperosuchus"},
+      "pbdb": "Hesperosuchus"
+    },
+    {
+      "id": "sharovipteryx",
+      "name": {"en":"Sharovipteryx mirabilis","es":"Sharovipteryx mirabilis"},
+      "group": "reptile",
+      "icon": "🦎",
+      "life": "air",
+      "from": 235,
+      "to": 230,
+      "sites": [
+        {"at":[70.18,40.07],"place":{"en":"Madygen, Batken, Kyrgyzstan","es":"Madygen, Batken, Kirguistán"}}
+      ],
+      "len": 0.2,
+      "diet": "small",
+      "text": {"en":"A tiny gliding reptile with its wings in an odd place: on its back legs. Skin stretched between its very long hind legs and its tail, making a delta-shaped wing like a paper dart. About 20 cm long, it glided between trees by a lake in what is now Kyrgyzstan, hunting insects. It shows how many different ways reptiles tried to take to the air.","es":"Un diminuto reptil planeador con las alas en un lugar raro: en las patas traseras. Una membrana de piel unía sus larguísimas patas traseras con la cola, formando un ala en delta como un avión de papel. Medía unos 20 cm y planeaba entre los árboles junto a un lago, en lo que hoy es Kirguistán, cazando insectos. Muestra cuántas formas distintas probaron los reptiles para conquistar el aire."},
+      "kin": {"en":"No close living relatives; a distant cousin of crocodiles and birds","es":"Ningún pariente cercano vivo; primo lejano de cocodrilos y aves"},
+      "wiki": {"en":"Sharovipteryx","es":"Sharovipteryx"},
+      "pbdb": "Sharovipteryx"
+    },
+    {
+      "id": "dicroidium",
+      "name": {"en":"Dicroidium","es":"Dicroidium"},
+      "common": {"en":"Seed fern","es":"Helecho con semillas"},
+      "group": "plant",
+      "icon": "🌿",
+      "life": "land",
+      "from": 254,
+      "to": 190,
+      "sites": [
+        {"at":[26.9,-31.4],"place":{"en":"Molteno Formation, Eastern Cape, South Africa","es":"Formación Molteno, Cabo Oriental, Sudáfrica"}},
+        {"at":[-69.11,-33.08],"place":{"en":"Potrerillos, Mendoza, Argentina","es":"Potrerillos, Mendoza, Argentina"}},
+        {"at":[152.76,-27.61],"place":{"en":"Ipswich, Queensland, Australia","es":"Ipswich, Queensland, Australia"}},
+        {"at":[159.67,-76.72],"place":{"en":"Allan Hills, Victoria Land, Antarctica","es":"Colinas Allan, Tierra de Victoria, Antártida"}}
+      ],
+      "diet": "light",
+      "text": {"en":"A seed fern: a plant with forked, fern-like leaves that made seeds instead of spores. Its first leaves appear just before the Great Dying, in what is now Jordan, and after the extinction it spread across the southern supercontinent, Gondwana, forming forests from South Africa and Argentina to Australia and Antarctica, which was green then. Finding the same leaves on all these lands helped show they were once joined.","es":"Un helecho con semillas: una planta de hojas bifurcadas, como de helecho, que producía semillas en vez de esporas. Sus primeras hojas aparecen justo antes de la Gran Mortandad, en lo que hoy es Jordania, y después se extendió por Gondwana, con bosques desde Sudáfrica y Argentina hasta Australia y la Antártida, entonces verde. Hallar las mismas hojas en tierras tan lejanas ayudó a mostrar que estuvieron unidas."},
+      "kin": {"en":"None alive; an early seed plant, a distant relative of conifers and flowering plants","es":"Ninguno vivo; una planta con semillas primitiva, pariente lejana de coníferas y plantas con flores"},
+      "wiki": {"en":"Dicroidium","es":"Dicroidium"},
+      "pbdb": "Dicroidium"
+    },
+    {
+      "id": "araucarioxylon",
+      "name": {"en":"Araucarioxylon arizonicum","es":"Araucarioxylon arizonicum"},
+      "common": {"en":"Petrified Forest tree","es":"Árbol del Bosque Petrificado"},
+      "group": "plant",
+      "icon": "🌲",
+      "life": "land",
+      "from": 225,
+      "to": 207,
+      "sites": [
+        {"at":[-109.78,34.86],"place":{"en":"Petrified Forest National Park, Arizona, United States","es":"Parque Nacional del Bosque Petrificado, Arizona, Estados Unidos"}}
+      ],
+      "diet": "light",
+      "text": {"en":"The giant trees of Arizona's Petrified Forest. Over 30 metres tall, they grew along rivers about 220 million years ago. Floods buried their fallen trunks in mud and volcanic ash, and water rich in silica slowly turned the wood to stone, in rainbow colours of quartz. It was long thought to be a relative of the monkey puzzle tree; its exact family is still debated.","es":"Los árboles gigantes del Bosque Petrificado de Arizona. Medían más de 30 metros y crecían junto a ríos hace unos 220 millones de años. Las crecidas sepultaron sus troncos caídos en lodo y ceniza volcánica, y el agua rica en sílice convirtió poco a poco la madera en piedra, con colores de arcoíris. Se pensó que era pariente de la araucaria; su familia exacta aún se discute."},
+      "kin": {"en":"Probably conifers such as the monkey puzzle and the Norfolk Island pine (debated)","es":"Probablemente coníferas como la araucaria y el pino de Norfolk (se discute)"},
+      "wiki": {"en":"Araucarioxylon arizonicum","es":"Araucarioxylon arizonicum"},
+      "pbdb": "Araucarioxylon arizonicum"
+    },
+    {
+      "id": "leptocycas",
+      "name": {"en":"Leptocycas gracilis","es":"Leptocycas gracilis"},
+      "common": {"en":"Cycad","es":"Cícada"},
+      "group": "plant",
+      "icon": "🌴",
+      "life": "land",
+      "from": 231,
+      "to": 227,
+      "sites": [
+        {"at":[-79.4,35.5],"place":{"en":"Pekin Formation, Chatham County, North Carolina, United States","es":"Formación Pekin, condado de Chatham, Carolina del Norte, Estados Unidos"}}
+      ],
+      "len": 1.5,
+      "diet": "light",
+      "text": {"en":"One of the oldest cycads known as a whole plant: a slender stem about 1.5 metres tall topped by a crown of stiff, feather-like leaves, from North Carolina rocks about 230 million years old. Cycads look like small palm trees but are not related to palms. They were so common in the age of dinosaurs that it is sometimes called the 'age of cycads', and about 350 kinds still live today.","es":"Una de las cícadas más antiguas que se conocen como planta completa: un tallo delgado de 1,5 metros coronado por hojas rígidas como plumas, hallado en rocas de Carolina del Norte de unos 230 millones de años. Las cícadas parecen palmeras pequeñas, pero no son parientes de las palmas. Eran tan comunes en la era de los dinosaurios que a veces se le llama 'la era de las cícadas'; hoy sobreviven unas 350 especies."},
+      "kin": {"en":"Living cycads, such as the sago palm","es":"Las cícadas actuales, como la palma sagú"},
+      "wiki": {"en":"Leptocycas","es":""},
+      "pbdb": "Leptocycas"
+    },
+    {
+      "id": "ceratites",
+      "name": {"en":"Ceratites nodosus","es":"Ceratites nodosus"},
+      "common": {"en":"Ammonoid","es":"Amonoideo"},
+      "group": "invertebrate",
+      "icon": "🐚",
+      "life": "sea",
+      "from": 243,
+      "to": 239,
+      "sites": [
+        {"at":[10.07,49.13],"place":{"en":"Crailsheim, Baden-Württemberg, Germany","es":"Crailsheim, Baden-Wurtemberg, Alemania"}},
+        {"at":[9.93,49.79],"place":{"en":"Near Würzburg, Bavaria, Germany","es":"Cerca de Wurzburgo, Baviera, Alemania"}}
+      ],
+      "len": 0.1,
+      "diet": "small",
+      "text": {"en":"A coiled shell with knobbly ribs, the classic fossil of the warm sea that covered much of Germany in the Triassic. Ceratites belonged to the ammonoids, relatives of squid with a gas-filled shell for floating, which bounced back fast from a handful of survivors of the Great Dying. The lines where its inner walls met the shell look like saw teeth, a pattern fossil hunters use to tell ammonoids apart.","es":"Una concha enrollada con costillas nudosas, el fósil clásico del mar cálido que cubría gran parte de Alemania en el Triásico. Pertenecía a los amonoideos, parientes de los calamares con una concha llena de gas para flotar, que se recuperaron rápido a partir de unos pocos sobrevivientes de la Gran Mortandad. Las líneas donde sus tabiques tocaban la concha parecen dientes de sierra y sirven para distinguir amonoideos."},
+      "kin": {"en":"Squid, octopuses and cuttlefish, more than the nautilus","es":"Los calamares, pulpos y sepias, más que el nautilo"},
+      "wiki": {"en":"Ceratites","es":"Ceratites"},
+      "pbdb": "Ceratites"
+    },
+    {
+      "id": "dilophosaurus",
+      "name": {"en":"Dilophosaurus wetherilli","es":"Dilophosaurus wetherilli"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 193,
+      "to": 183,
+      "sites": [
+        {"at":[-111.07,35.74],"place":{"en":"Kayenta Formation, near Tuba City, Arizona, United States","es":"Formación Kayenta, cerca de Tuba City, Arizona, Estados Unidos"}}
+      ],
+      "len": 7,
+      "mass": 400,
+      "diet": "meat",
+      "text": {"en":"A 7-metre meat-eater with two thin, bony crests on its head, probably for showing off. It was the biggest known land animal of its time in North America. Forget the film version: there is no evidence that it spat venom or had a frill around its neck, and it was much larger than in Jurassic Park. A 2020 study showed its jaws were strong, not weak as once thought.","es":"Un carnívoro de 7 metros con dos crestas óseas delgadas en la cabeza, probablemente para lucirse. Fue el animal terrestre más grande conocido de su época en América del Norte. Olvida la película: no hay pruebas de que escupiera veneno ni de que tuviera una gola alrededor del cuello, y era mucho más grande que en Jurassic Park. Un estudio de 2020 mostró que sus mandíbulas eran fuertes, no débiles como se creía."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Dilophosaurus","es":"Dilophosaurus wetherilli"},
+      "pbdb": "Dilophosaurus",
+      "item": "dilophosaurus"
+    },
+    {
+      "id": "massospondylus",
+      "name": {"en":"Massospondylus carinatus","es":"Massospondylus carinatus"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 200,
+      "to": 188,
+      "sites": [
+        {"at":[28.62,-28.51],"place":{"en":"Golden Gate Highlands National Park, Free State, South Africa","es":"Parque Nacional Golden Gate Highlands, Estado Libre, Sudáfrica"}},
+        {"at":[27.37,-28.98],"place":{"en":"Elliot Formation, near Clocolan, Free State, South Africa","es":"Formación Elliot, cerca de Clocolan, Estado Libre, Sudáfrica"}}
+      ],
+      "len": 5,
+      "diet": "plants",
+      "text": {"en":"A long-necked plant-eater about 5 metres long from southern Africa, one of the best-known early dinosaurs. In 2012 scientists described the oldest known dinosaur nesting ground, in the Golden Gate Highlands of South Africa: clutches of up to 34 eggs, some with tiny embryos inside, laid again and again in the same place. The babies walked on all fours and seem to have stayed in the nest for a while after hatching.","es":"Un herbívoro de cuello largo de unos 5 metros del sur de África, uno de los primeros dinosaurios mejor conocidos. En 2012 se describió el sitio de anidación de dinosaurios más antiguo conocido, en Golden Gate, Sudáfrica: nidadas de hasta 34 huevos, algunos con diminutos embriones, puestas una y otra vez en el mismo lugar. Las crías andaban en cuatro patas y parece que se quedaban un tiempo en el nido."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Massospondylus","es":"Massospondylus"},
+      "pbdb": "Massospondylus",
+      "item": "massospondylus"
+    },
+    {
+      "id": "scelidosaurus",
+      "name": {"en":"Scelidosaurus harrisonii","es":"Scelidosaurus harrisonii"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 193,
+      "to": 190,
+      "sites": [
+        {"at":[-2.9,50.74],"place":{"en":"Charmouth, Dorset, England","es":"Charmouth, Dorset, Inglaterra"}}
+      ],
+      "len": 4,
+      "diet": "plants",
+      "text": {"en":"One of the first armoured dinosaurs, about 4 metres long, with rows of bony studs and spikes set in its skin. It lived on land, but its body was washed out to sea and buried on the sea floor, in what is now the Dorset coast of England. Found in the 1850s, it was one of the first nearly complete dinosaur skeletons ever discovered. It was an early relative of both the stegosaurs and the ankylosaurs.","es":"Uno de los primeros dinosaurios acorazados, de unos 4 metros, con hileras de placas y púas óseas en la piel. Vivía en tierra, pero su cuerpo fue arrastrado al mar y sepultado en el fondo, en lo que hoy es la costa de Dorset, Inglaterra. Hallado en la década de 1850, fue uno de los primeros esqueletos de dinosaurio casi completos. Era pariente temprano de los estegosaurios y los anquilosaurios."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Scelidosaurus","es":"Scelidosaurus harrisonii"},
+      "pbdb": "Scelidosaurus",
+      "item": "scelidosaurus"
+    },
+    {
+      "id": "cryolophosaurus",
+      "name": {"en":"Cryolophosaurus ellioti","es":"Cryolophosaurus ellioti"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 194,
+      "to": 189,
+      "sites": [
+        {"at":[166.45,-84.33],"place":{"en":"Mount Kirkpatrick, Transantarctic Mountains, Antarctica","es":"Monte Kirkpatrick, montes Transantárticos, Antártida"}}
+      ],
+      "len": 6.5,
+      "mass": 465,
+      "diet": "meat",
+      "text": {"en":"The first meat-eating dinosaur found in Antarctica, dug out of a mountainside about 4,000 metres up and some 600 km from the South Pole in 1991. About 6.5 metres long, it had a strange crest across its head, curved like a comb or a quiff, which earned it the nickname 'Elvisaurus'. Antarctica then lay a little farther from the pole and was warm enough for forests.","es":"El primer dinosaurio carnívoro hallado en la Antártida, extraído en 1991 de una ladera a unos 4000 metros de altura y a unos 600 km del Polo Sur. Medía unos 6,5 metros y tenía una extraña cresta de lado a lado de la cabeza, curvada como una peineta o un copete, que le valió el apodo de 'Elvisaurio'. La Antártida estaba entonces algo más lejos del polo y era tan templada que tenía bosques."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Cryolophosaurus","es":"Cryolophosaurus ellioti"},
+      "pbdb": "Cryolophosaurus",
+      "item": "cryolophosaurus"
+    },
+    {
+      "id": "megalosaurus",
+      "name": {"en":"Megalosaurus bucklandii","es":"Megalosaurus bucklandii"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 168,
+      "to": 166,
+      "sites": [
+        {"at":[-1.43,51.86],"place":{"en":"Stonesfield, Oxfordshire, England","es":"Stonesfield, Oxfordshire, Inglaterra"}}
+      ],
+      "len": 6,
+      "mass": 700,
+      "diet": "meat",
+      "text": {"en":"The first dinosaur ever given a scientific name, in 1824, by William Buckland, from a jaw and other bones found in a slate quarry at Stonesfield, near Oxford. Back then nobody knew what a dinosaur was, and it was pictured as a giant four-legged lizard. In fact it was a 6-metre, two-legged meat-eater with a big head and blade-like teeth. Charles Dickens had one waddling up a London street in Bleak House.","es":"El primer dinosaurio que recibió un nombre científico, en 1824, de manos de William Buckland, a partir de una mandíbula y otros huesos de una cantera de pizarra en Stonesfield, cerca de Oxford. Entonces nadie sabía qué era un dinosaurio, y se lo imaginó como un lagarto gigante de cuatro patas. En realidad era un carnívoro bípedo de 6 metros, de cabeza grande y dientes como cuchillas. Dickens lo hizo pasear por Londres en Casa desolada."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Megalosaurus","es":"Megalosaurus bucklandii"},
+      "pbdb": "Megalosaurus",
+      "item": "megalosaurus"
+    },
+    {
+      "id": "mamenchisaurus",
+      "name": {"en":"Mamenchisaurus","es":"Mamenchisaurus"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 162,
+      "to": 150,
+      "sites": [
+        {"at":[104.52,28.7],"place":{"en":"Yibin, Sichuan, China","es":"Yibin, Sichuan, China"}},
+        {"at":[106.27,29.99],"place":{"en":"Hechuan, Chongqing, China","es":"Hechuan, Chongqing, China"}},
+        {"at":[88.92,45.17],"place":{"en":"Junggar Basin, Xinjiang, China","es":"Cuenca de Junggar, Xinjiang, China"}}
+      ],
+      "len": 22,
+      "diet": "plants",
+      "text": {"en":"The dinosaur with perhaps the longest neck of all for its size: in some species the neck was about half of the animal's length of 20 metres or more, held up by 19 long, hollow neck bones. It may have stood in one place and swept its head over a wide circle of plants, saving energy. It is named after a river crossing in Sichuan, China, where road builders found it in 1952.","es":"Quizá el dinosaurio con el cuello más largo en proporción a su cuerpo: en algunas especies el cuello era cerca de la mitad de sus más de 20 metros, sostenido por 19 vértebras largas y huecas. Tal vez se quedaba quieto y barría con la cabeza un amplio círculo de plantas, ahorrando energía. Lleva el nombre de un cruce de río en Sichuan, China, donde unos obreros que construían una carretera lo hallaron en 1952."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Mamenchisaurus","es":"Mamenchisaurus"},
+      "pbdb": "Mamenchisaurus",
+      "item": "mamenchisaurus"
+    },
+    {
+      "id": "anchiornis",
+      "name": {"en":"Anchiornis huxleyi","es":"Anchiornis huxleyi"},
+      "group": "dinosaur",
+      "icon": "🪶",
+      "life": "land",
+      "from": 161,
+      "to": 159,
+      "sites": [
+        {"at":[119.85,40.8],"place":{"en":"Jianchang, Liaoning, China","es":"Jianchang, Liaoning, China"}}
+      ],
+      "len": 0.4,
+      "mass": 0.11,
+      "diet": "small",
+      "text": {"en":"A crow-sized feathered dinosaur with long feathers on all four limbs, from China. In 2010 it became the first dinosaur whose colours were worked out for its whole body, from tiny pigment capsules called melanosomes preserved in its feathers: mostly grey, with black-and-white striped wings and a reddish crest on its head. It lived about 160 million years ago, some 10 million years before Archaeopteryx.","es":"Un dinosaurio emplumado del tamaño de un cuervo, con plumas largas en las cuatro extremidades, hallado en China. En 2010 fue el primer dinosaurio cuyos colores se descifraron en todo el cuerpo, gracias a diminutas cápsulas de pigmento llamadas melanosomas: casi todo gris, con alas a rayas blancas y negras y una cresta rojiza. Vivió hace unos 160 millones de años, unos 10 millones antes que el Archaeopteryx."},
+      "kin": {"en":"Birds, its living relatives","es":"Las aves, sus parientes vivas"},
+      "wiki": {"en":"Anchiornis","es":"Anchiornis huxleyi"},
+      "pbdb": "Anchiornis",
+      "item": "anchiornis"
+    },
+    {
+      "id": "yi-qi",
+      "name": {"en":"Yi qi","es":"Yi qi"},
+      "common": {"en":"Strange wing","es":"Ala extraña"},
+      "group": "dinosaur",
+      "icon": "🦇",
+      "life": "air",
+      "from": 160,
+      "to": 159,
+      "sites": [
+        {"at":[119.37,40.48],"place":{"en":"Mutoudeng, Qinglong, Hebei, China","es":"Mutoudeng, Qinglong, Hebei, China"}}
+      ],
+      "len": 0.3,
+      "mass": 0.38,
+      "diet": "small",
+      "text": {"en":"A pigeon-sized dinosaur with bat-like wings, the dinosaur with the shortest name and one of the strangest. Besides fuzzy feathers, it had a long, rod-shaped bone growing from each wrist that held up a skin membrane, like a bat's or a flying squirrel's. It probably glided rather than flapped. Found in China and named in 2015, it shows dinosaurs tried more than one kind of wing; this one led nowhere.","es":"Un dinosaurio del tamaño de una paloma con alas como de murciélago, el de nombre más corto y uno de los más raros. Además de plumas como pelusa, tenía un hueso largo, como una varilla, en cada muñeca, que sostenía una membrana de piel como la de un murciélago o una ardilla voladora. Probablemente planeaba en vez de aletear. Nombrado en 2015 en China, muestra que los dinosaurios probaron más de un tipo de ala."},
+      "kin": {"en":"Birds, its living relatives","es":"Las aves, sus parientes vivas"},
+      "wiki": {"en":"Yi (dinosaur)","es":"Yi qi"},
+      "pbdb": "Yi"
+    },
+    {
+      "id": "brachiosaurus",
+      "name": {"en":"Brachiosaurus altithorax","es":"Brachiosaurus altithorax"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 154,
+      "to": 150,
+      "sites": [
+        {"at":[-108.73,39.13],"place":{"en":"Riggs Hill, near Grand Junction, Colorado, United States","es":"Riggs Hill, cerca de Grand Junction, Colorado, Estados Unidos"}}
+      ],
+      "len": 22,
+      "mass": 40000,
+      "diet": "plants",
+      "text": {"en":"A giant plant-eater about 22 metres long whose front legs were longer than its back legs, so its back sloped down like a giraffe's and its head could reach leaves 9 metres up, as high as a three-storey building. Its name means 'arm lizard', for its long upper arms. The first skeleton was found in 1900 near Grand Junction, Colorado. The famous giant in Berlin, once called Brachiosaurus, is now its African cousin Giraffatitan.","es":"Un herbívoro gigante de unos 22 metros, con las patas delanteras más largas que las traseras: su espalda bajaba como la de una jirafa y su cabeza alcanzaba hojas a 9 metros, como un edificio de tres pisos. Su nombre significa 'lagarto brazo', por sus largos brazos. El primer esqueleto se halló en 1900 cerca de Grand Junction, Colorado. El famoso gigante de Berlín, antes llamado Brachiosaurus, es hoy su primo africano Giraffatitan."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Brachiosaurus","es":"Brachiosaurus altithorax"},
+      "pbdb": "Brachiosaurus",
+      "item": "brachiosaurus"
+    },
+    {
+      "id": "diplodocus",
+      "name": {"en":"Diplodocus","es":"Diplodocus"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 154,
+      "to": 150,
+      "sites": [
+        {"at":[-106.04,41.89],"place":{"en":"Sheep Creek, Albany County, Wyoming, United States","es":"Sheep Creek, condado de Albany, Wyoming, Estados Unidos"}},
+        {"at":[-109.3,40.44],"place":{"en":"Dinosaur National Monument, Utah, United States","es":"Monumento Nacional de los Dinosaurios, Utah, Estados Unidos"}}
+      ],
+      "len": 25,
+      "mass": 13000,
+      "diet": "plants",
+      "text": {"en":"One of the longest dinosaurs, about 25 metres from nose to tail tip, yet slim for its size. Its whip-like tail had about 80 bones and may have cracked like a whip to scare off predators. Peg-like teeth at the front of its jaws raked leaves off branches. Andrew Carnegie sent copies of 'Dippy', a skeleton found in Wyoming in 1899, to museums around the world, so it may be the most-seen dinosaur ever.","es":"Uno de los dinosaurios más largos, unos 25 metros de la nariz a la punta de la cola, pero esbelto para su tamaño. Su cola, con unas 80 vértebras, quizá chasqueaba como un látigo para asustar a los depredadores. Con sus dientes delanteros, como clavijas, arrancaba las hojas de las ramas. Andrew Carnegie regaló copias de 'Dippy', hallado en Wyoming en 1899, a museos de todo el mundo, como los de La Plata y Ciudad de México."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Diplodocus","es":"Diplodocus"},
+      "pbdb": "Diplodocus",
+      "item": "diplodocus"
+    },
+    {
+      "id": "apatosaurus",
+      "name": {"en":"Apatosaurus ajax","es":"Apatosaurus ajax"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 152,
+      "to": 151,
+      "sites": [
+        {"at":[-105.19,39.65],"place":{"en":"Morrison, Colorado, United States","es":"Morrison, Colorado, Estados Unidos"}},
+        {"at":[-109.3,40.44],"place":{"en":"Dinosaur National Monument, Utah, United States","es":"Monumento Nacional de los Dinosaurios, Utah, Estados Unidos"}},
+        {"at":[-106.06,41.88],"place":{"en":"Como Bluff, Wyoming, United States","es":"Como Bluff, Wyoming, Estados Unidos"}}
+      ],
+      "len": 22,
+      "mass": 20000,
+      "diet": "plants",
+      "text": {"en":"A massive long-necked dinosaur, about 22 metres long and some 20 tonnes, with a neck much thicker and sturdier than its relatives', maybe used for shoving matches between rivals. Its name means 'deceptive lizard'. It was named in 1877; two years later another skeleton was named Brontosaurus. For a century most scientists thought the two were the same animal, until a big 2015 study split them again.","es":"Un enorme dinosaurio de cuello largo, de unos 22 metros y unas 20 toneladas, con un cuello mucho más grueso y robusto que el de sus parientes, quizá para empujones entre rivales. Su nombre significa 'lagarto engañoso'. Fue nombrado en 1877; dos años después, otro esqueleto recibió el nombre de Brontosaurus. Durante un siglo casi todos creyeron que eran el mismo animal, hasta que un gran estudio de 2015 los separó."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Apatosaurus","es":"Apatosaurus"},
+      "pbdb": "Apatosaurus"
+    },
+    {
+      "id": "brontosaurus",
+      "name": {"en":"Brontosaurus excelsus","es":"Brontosaurus excelsus"},
+      "common": {"en":"Thunder lizard","es":"Lagarto trueno"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 156,
+      "to": 147,
+      "sites": [
+        {"at":[-106.06,41.92],"place":{"en":"Como Bluff, Wyoming, United States","es":"Como Bluff, Wyoming, Estados Unidos"}}
+      ],
+      "len": 22,
+      "mass": 15000,
+      "diet": "plants",
+      "text": {"en":"The 'thunder lizard' is back. Named in 1879 by Othniel Marsh from a skeleton found at Como Bluff, Wyoming, it became the most famous dinosaur of all, on stamps, in films and in cartoons. Then in 1903 scientists decided it was the same as Apatosaurus, and the name was dropped. In 2015 a study of dozens of skeletons found enough differences, such as a taller, narrower neck, to bring Brontosaurus back.","es":"El 'lagarto trueno' ha vuelto. Nombrado en 1879 por Othniel Marsh a partir de un esqueleto hallado en Como Bluff, Wyoming, se volvió el dinosaurio más famoso, en estampillas, películas y caricaturas. Pero en 1903 se decidió que era lo mismo que Apatosaurus y el nombre se abandonó. En 2015, un estudio de decenas de esqueletos halló suficientes diferencias, como un cuello más alto y estrecho, para devolverle su nombre."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Brontosaurus","es":"Brontosaurus"},
+      "pbdb": "Brontosaurus"
+    },
+    {
+      "id": "stegosaurus",
+      "name": {"en":"Stegosaurus","es":"Stegosaurus"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 155,
+      "to": 145,
+      "sites": [
+        {"at":[-105.22,38.54],"place":{"en":"Garden Park, near Cañon City, Colorado, United States","es":"Garden Park, cerca de Cañon City, Colorado, Estados Unidos"}},
+        {"at":[-106.06,41.92],"place":{"en":"Como Bluff, Wyoming, United States","es":"Como Bluff, Wyoming, Estados Unidos"}},
+        {"at":[-9.31,39.24],"place":{"en":"Lourinhã, Portugal","es":"Lourinhã, Portugal"}}
+      ],
+      "len": 7,
+      "mass": 4000,
+      "diet": "plants",
+      "text": {"en":"A 7-metre plant-eater with two rows of big, kite-shaped bony plates along its back and four long spikes on its tail, which it swung at predators: an Allosaurus backbone has a hole that matches a tail spike. The plates may have helped it show off or warm up in the sun. Its brain was tiny for such a big animal, but the idea that it had a 'second brain' in its hips is a myth.","es":"Un herbívoro de 7 metros con dos hileras de grandes placas óseas en el lomo y cuatro largas púas en la cola, que blandía contra los depredadores: una vértebra de Allosaurus tiene un agujero que encaja con una de esas púas. Las placas quizá servían para lucirse o calentarse al sol. Su cerebro era diminuto para un animal tan grande, pero la idea de que tenía un 'segundo cerebro' en la cadera es un mito."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Stegosaurus","es":"Stegosaurus"},
+      "pbdb": "Stegosaurus",
+      "item": "stegosaurus"
+    },
+    {
+      "id": "allosaurus",
+      "name": {"en":"Allosaurus fragilis","es":"Allosaurus fragilis"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 155,
+      "to": 145,
+      "sites": [
+        {"at":[-110.69,39.32],"place":{"en":"Cleveland-Lloyd Dinosaur Quarry, Utah, United States","es":"Cantera de dinosaurios Cleveland-Lloyd, Utah, Estados Unidos"}},
+        {"at":[-107.78,44.6],"place":{"en":"Near Shell, Bighorn Basin, Wyoming, United States","es":"Cerca de Shell, cuenca de Bighorn, Wyoming, Estados Unidos"}},
+        {"at":[-9.31,39.24],"place":{"en":"Lourinhã, Portugal","es":"Lourinhã, Portugal"}}
+      ],
+      "len": 8.5,
+      "mass": 1700,
+      "diet": "meat",
+      "text": {"en":"The top predator of the Late Jurassic in North America, about 8.5 metres long, with a pair of small horns above its eyes and a mouth full of saw-edged teeth. It may have struck with its open upper jaw like a hatchet. The Cleveland-Lloyd Quarry in Utah alone has given bones of more than 40 of them. 'Big Al', a young adult found in Wyoming in 1991, had 19 injuries and infections: a hunter's life was hard.","es":"El gran depredador del Jurásico Tardío en América del Norte, de unos 8,5 metros, con dos cuernitos sobre los ojos y la boca llena de dientes aserrados. Quizá golpeaba con la mandíbula superior abierta, como un hacha. Solo la cantera Cleveland-Lloyd, en Utah, ha dado huesos de más de 40 ejemplares. 'Big Al', un joven adulto hallado en Wyoming en 1991, tenía 19 heridas e infecciones: la vida de cazador era dura."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Allosaurus","es":"Allosaurus"},
+      "pbdb": "Allosaurus",
+      "item": "allosaurus"
+    },
+    {
+      "id": "compsognathus",
+      "name": {"en":"Compsognathus longipes","es":"Compsognathus longipes"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 151,
+      "to": 149,
+      "sites": [
+        {"at":[11.98,49.02],"place":{"en":"Near Kelheim, Bavaria, Germany","es":"Cerca de Kelheim, Baviera, Alemania"}},
+        {"at":[6.45,43.63],"place":{"en":"Canjuers plateau, Var, France","es":"Meseta de Canjuers, Var, Francia"}}
+      ],
+      "len": 1,
+      "mass": 3,
+      "diet": "small",
+      "text": {"en":"For a century the smallest dinosaur known, about the size of a turkey, and a quick hunter of lizards: one skeleton has a whole lizard, Bavarisaurus, inside its belly. It lived on dry islands in a warm, shallow sea that covered southern Germany and France, alongside Archaeopteryx. The German skeleton, found in the 1850s, was one of the first nearly complete dinosaur skeletons.","es":"Durante un siglo, el dinosaurio más pequeño conocido, del tamaño de un pavo, y un veloz cazador de lagartijas: un esqueleto tiene una lagartija entera, Bavarisaurus, en la panza. Vivía en islas secas de un mar cálido y poco profundo que cubría el sur de Alemania y Francia, junto con el Archaeopteryx. El esqueleto alemán, hallado en la década de 1850, fue uno de los primeros esqueletos de dinosaurio casi completos."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Compsognathus","es":"Compsognathus longipes"},
+      "pbdb": "Compsognathus",
+      "item": "compsognathus"
+    },
+    {
+      "id": "archaeopteryx",
+      "name": {"en":"Archaeopteryx lithographica","es":"Archaeopteryx lithographica"},
+      "group": "flyer",
+      "icon": "🐦",
+      "life": "air",
+      "from": 151,
+      "to": 149,
+      "sites": [
+        {"at":[10.98,48.89],"place":{"en":"Langenaltheim, near Solnhofen, Bavaria, Germany","es":"Langenaltheim, cerca de Solnhofen, Baviera, Alemania"}},
+        {"at":[11.2,48.99],"place":{"en":"Near Eichstätt, Bavaria, Germany","es":"Cerca de Eichstätt, Baviera, Alemania"}}
+      ],
+      "len": 0.5,
+      "mass": 0.8,
+      "diet": "small",
+      "text": {"en":"Half bird, half dinosaur: it had feathered wings and could probably fly, at least a little, but also teeth, clawed fingers and a long, bony tail. Its first skeleton was found in 1861 in the limestone of Solnhofen, Bavaria, two years after Darwin's On the Origin of Species, and it became the most famous 'missing link'. About the size of a raven, it is still one of the oldest known birds; about a dozen skeletons exist.","es":"Mitad ave, mitad dinosaurio: tenía alas con plumas y probablemente podía volar, al menos un poco, pero también dientes, dedos con garras y una larga cola ósea. Su primer esqueleto se halló en 1861 en las calizas de Solnhofen, Baviera, dos años después de El origen de las especies de Darwin, y se volvió el 'eslabón perdido' más famoso. Del tamaño de un cuervo, es una de las aves más antiguas; se conocen una docena de esqueletos."},
+      "kin": {"en":"Birds, its living relatives","es":"Las aves, sus parientes vivas"},
+      "wiki": {"en":"Archaeopteryx","es":"Archaeopteryx"},
+      "pbdb": "Archaeopteryx",
+      "item": "archaeopteryx"
+    },
+    {
+      "id": "rhamphorhynchus",
+      "name": {"en":"Rhamphorhynchus muensteri","es":"Rhamphorhynchus muensteri"},
+      "group": "flyer",
+      "icon": "🦇",
+      "life": "air",
+      "from": 151,
+      "to": 148,
+      "sites": [
+        {"at":[11.58,48.92],"place":{"en":"Solnhofen limestone, near Eichstätt, Bavaria, Germany","es":"Calizas de Solnhofen, cerca de Eichstätt, Baviera, Alemania"}}
+      ],
+      "diet": "fish",
+      "text": {"en":"A long-tailed pterosaur with wings up to 1.8 metres across and a diamond-shaped vane at the tip of its tail, like a rudder. Its forward-pointing, needle-like teeth were made for spearing fish. One fossil even shows a Rhamphorhynchus caught by a big fish, Aspidorhynchus, that died with it. Many skeletons from Solnhofen in Germany still show the outline of their wing membranes.","es":"Un pterosaurio de cola larga, con alas de hasta 1,8 metros de punta a punta y una aleta en forma de rombo en la punta de la cola, como un timón. Sus dientes, como agujas que apuntaban hacia adelante, servían para ensartar peces. Un fósil incluso muestra un Rhamphorhynchus atrapado por un gran pez, Aspidorhynchus, que murió con él. Muchos esqueletos de Solnhofen, Alemania, conservan el contorno de sus alas."},
+      "kin": {"en":"None alive: pterosaurs were cousins of the dinosaurs, so birds and crocodiles are their nearest kin","es":"Ninguno vivo: eran primos de los dinosaurios, así que sus parientes más cercanos son las aves y los cocodrilos"},
+      "wiki": {"en":"Rhamphorhynchus","es":"Rhamphorhynchus"},
+      "pbdb": "Rhamphorhynchus",
+      "item": "rhamphorhynchus"
+    },
+    {
+      "id": "pterodactylus",
+      "name": {"en":"Pterodactylus antiquus","es":"Pterodactylus antiquus"},
+      "group": "flyer",
+      "icon": "🦇",
+      "life": "air",
+      "from": 151,
+      "to": 148,
+      "sites": [
+        {"at":[11.18,48.89],"place":{"en":"Solnhofen limestone, near Eichstätt, Bavaria, Germany","es":"Calizas de Solnhofen, cerca de Eichstätt, Baviera, Alemania"}}
+      ],
+      "diet": "small",
+      "text": {"en":"The first pterosaur ever described, in 1784, from the Solnhofen limestone of Bavaria, long before anyone understood it: one scientist thought it swam, using its long fingers as paddles. Georges Cuvier showed it was a flying reptile and named it 'wing finger'. It was small, with wings about a metre across, a short tail and long jaws. People still call all pterosaurs 'pterodactyls'.","es":"El primer pterosaurio descrito, en 1784, de las calizas de Solnhofen, Baviera, mucho antes de que alguien lo entendiera: un científico creyó que nadaba usando sus largos dedos como remos. Georges Cuvier mostró que era un reptil volador y lo llamó 'dedo ala'. Era pequeño, con alas de un metro de punta a punta, cola corta y mandíbulas largas. Mucha gente todavía llama 'pterodáctilos' a todos los pterosaurios."},
+      "kin": {"en":"None alive: pterosaurs were cousins of the dinosaurs, so birds and crocodiles are their nearest kin","es":"Ninguno vivo: eran primos de los dinosaurios, así que sus parientes más cercanos son las aves y los cocodrilos"},
+      "wiki": {"en":"Pterodactylus","es":"Pterodactylus"},
+      "pbdb": "Pterodactylus",
+      "item": "pterodactylus"
+    },
+    {
+      "id": "ichthyosaurus",
+      "name": {"en":"Ichthyosaurus communis","es":"Ichthyosaurus communis"},
+      "group": "reptile",
+      "icon": "🐬",
+      "life": "sea",
+      "from": 201,
+      "to": 190,
+      "sites": [
+        {"at":[-2.73,51.12],"place":{"en":"Street, Somerset, England","es":"Street, Somerset, Inglaterra"}},
+        {"at":[-2.93,50.72],"place":{"en":"Lyme Regis, Dorset, England","es":"Lyme Regis, Dorset, Inglaterra"}}
+      ],
+      "len": 2,
+      "diet": "fish",
+      "text": {"en":"The 'fish lizard', a 2-metre reptile shaped like a dolphin, with huge eyes, a long toothy snout, flippers and a fish-like tail. Ichthyosaurs gave birth to live young at sea and never came ashore. Their fossils are among the commonest on England's Jurassic Coast, where Mary Anning and her brother found one of the first complete ichthyosaur skeletons in 1811–1812. It gave its name to the whole group.","es":"El 'pez lagarto', un reptil de 2 metros con forma de delfín, ojos enormes, hocico largo y dentado, aletas y una cola como de pez. Los ictiosaurios parían crías vivas en el mar y nunca salían a tierra. Sus fósiles están entre los más comunes de la Costa Jurásica de Inglaterra, donde Mary Anning y su hermano hallaron uno de los primeros esqueletos completos de ictiosaurio en 1811 y 1812. Dio nombre a todo el grupo."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Ichthyosaurus","es":"Ichthyosaurus"},
+      "pbdb": "Ichthyosaurus",
+      "item": "ichthyosaurus"
+    },
+    {
+      "id": "plesiosaurus",
+      "name": {"en":"Plesiosaurus dolichodeirus","es":"Plesiosaurus dolichodeirus"},
+      "group": "reptile",
+      "icon": "🦕",
+      "life": "sea",
+      "from": 199,
+      "to": 193,
+      "sites": [
+        {"at":[-2.91,50.73],"place":{"en":"Lyme Regis, Dorset, England","es":"Lyme Regis, Dorset, Inglaterra"}}
+      ],
+      "len": 3.5,
+      "diet": "fish",
+      "text": {"en":"A sea reptile with a small head on a very long neck, a broad body and four big flippers, like 'a snake threaded through a turtle', as one 19th-century scientist put it. Mary Anning found the first complete skeleton at Lyme Regis in 1823. It looked so odd that the great anatomist Georges Cuvier suspected a fake, until he saw it was real. It gave its name to the plesiosaurs, which swam the seas until the end of the dinosaurs.","es":"Un reptil marino de cabeza pequeña sobre un cuello muy largo, cuerpo ancho y cuatro grandes aletas, como 'una serpiente ensartada en una tortuga', dijo un científico del siglo XIX. Mary Anning halló el primer esqueleto completo en Lyme Regis en 1823. Parecía tan raro que el gran anatomista Georges Cuvier sospechó un fraude, hasta comprobar que era real. Dio nombre a los plesiosaurios, que vivieron hasta el fin de los dinosaurios."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Plesiosaurus","es":"Plesiosaurus"},
+      "pbdb": "Plesiosaurus",
+      "item": "plesiosaurus"
+    },
+    {
+      "id": "stenopterygius",
+      "name": {"en":"Stenopterygius quadriscissus","es":"Stenopterygius quadriscissus"},
+      "group": "reptile",
+      "icon": "🐬",
+      "life": "sea",
+      "from": 183,
+      "to": 172,
+      "sites": [
+        {"at":[9.53,48.62],"place":{"en":"Holzmaden, Baden-Württemberg, Germany","es":"Holzmaden, Baden-Wurtemberg, Alemania"}},
+        {"at":[-0.61,54.49],"place":{"en":"Whitby, North Yorkshire, England","es":"Whitby, Yorkshire del Norte, Inglaterra"}}
+      ],
+      "len": 3,
+      "diet": "fish",
+      "text": {"en":"A fast, tuna-shaped ichthyosaur about 3 metres long, best known from the oil shales of Holzmaden in Germany, where hundreds have been found. Some are mothers with unborn babies inside, and one has a baby caught being born tail-first, as whales and dolphins are today. Some even keep the outline of their skin, with a fin on the back, and a 2018 study found traces of blubber and dark-backed colouring.","es":"Un ictiosaurio veloz con forma de atún, de unos 3 metros, famoso por las pizarras bituminosas de Holzmaden, en Alemania, donde se han hallado cientos. Algunas son madres con crías dentro, y una tiene una cría a medio nacer, con la cola primero, como nacen hoy ballenas y delfines. Otros conservan el contorno de la piel, con una aleta dorsal, y un estudio de 2018 halló restos de grasa y un lomo oscuro."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Stenopterygius","es":"Stenopterygius"},
+      "pbdb": "Stenopterygius",
+      "item": "stenopterygius"
+    },
+    {
+      "id": "liopleurodon",
+      "name": {"en":"Liopleurodon ferox","es":"Liopleurodon ferox"},
+      "group": "reptile",
+      "icon": "🐋",
+      "life": "sea",
+      "from": 165,
+      "to": 160,
+      "sites": [
+        {"at":[-0.23,52.57],"place":{"en":"Oxford Clay, near Peterborough, England","es":"Arcilla de Oxford, cerca de Peterborough, Inglaterra"}}
+      ],
+      "len": 6.5,
+      "diet": "meat",
+      "text": {"en":"A pliosaur, a short-necked sea reptile with a huge head and jaws lined with big, cone-shaped teeth: a top predator of the seas that covered England and France 165 million years ago. Its size has been exaggerated: a television series made it 25 metres long, but the real animal was about 6–7 metres, still bigger than a great white shark. It may have sniffed out prey with water flowing through its nostrils.","es":"Un pliosaurio, un reptil marino de cuello corto, cabeza enorme y mandíbulas con grandes dientes cónicos: un superdepredador de los mares que cubrían Inglaterra y Francia hace 165 millones de años. Su tamaño se ha exagerado: una serie de televisión lo mostró de 25 metros, pero medía unos 6 o 7, más que un tiburón blanco. Quizá olfateaba a sus presas con el agua que fluía por sus fosas nasales."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Liopleurodon","es":"Liopleurodon"},
+      "pbdb": "Liopleurodon",
+      "item": "liopleurodon"
+    },
+    {
+      "id": "cryptoclidus",
+      "name": {"en":"Cryptoclidus eurymerus","es":"Cryptoclidus eurymerus"},
+      "group": "reptile",
+      "icon": "🦕",
+      "life": "sea",
+      "from": 165,
+      "to": 160,
+      "sites": [
+        {"at":[-0.25,52.54],"place":{"en":"Oxford Clay, near Peterborough, England","es":"Arcilla de Oxford, cerca de Peterborough, Inglaterra"}}
+      ],
+      "len": 4,
+      "diet": "fish",
+      "text": {"en":"A plesiosaur about 4 metres long with a long neck and a mouth like a cage of long, thin, interlocking teeth, perfect for trapping small fish, squid and shrimps. Dozens of skeletons have come out of the clay pits near Peterborough, England, where bricks were made, many collected in the late 1800s by the Leeds brothers. Its name means 'hidden collarbone'.","es":"Un plesiosaurio de unos 4 metros, de cuello largo y boca como una jaula de dientes largos y finos que encajaban entre sí, perfecta para atrapar peces pequeños, calamares y camarones. Decenas de esqueletos han salido de las canteras de arcilla para ladrillos cerca de Peterborough, Inglaterra, muchos reunidos a fines del siglo XIX por los hermanos Leeds. Su nombre significa 'clavícula oculta'."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Cryptoclidus","es":"Cryptoclidus"},
+      "pbdb": "Cryptoclidus"
+    },
+    {
+      "id": "metriorhynchus",
+      "name": {"en":"Metriorhynchus","es":"Metriorhynchus"},
+      "group": "reptile",
+      "icon": "🐊",
+      "life": "sea",
+      "from": 165,
+      "to": 157,
+      "sites": [
+        {"at":[-0.21,52.6],"place":{"en":"Oxford Clay, near Peterborough, England","es":"Arcilla de Oxford, cerca de Peterborough, Inglaterra"}},
+        {"at":[-0.22,49.18],"place":{"en":"Calvados, Normandy, France","es":"Calvados, Normandía, Francia"}}
+      ],
+      "len": 3,
+      "diet": "fish",
+      "text": {"en":"A crocodile relative that gave up the land for the open sea. It had no bony armour, flippers instead of legs, a shark-like fin on its tail and glands to get rid of extra salt, and it probably gave birth at sea, as ichthyosaurs did. About 3 metres long, it hunted fish and squid-like belemnites in the shallow seas that covered Europe 165 million years ago.","es":"Un pariente de los cocodrilos que dejó la tierra por el mar abierto. No tenía coraza ósea, sus patas eran aletas, su cola terminaba en una aleta como de tiburón y tenía glándulas para eliminar el exceso de sal; probablemente paría en el mar, como los ictiosaurios. Medía unos 3 metros y cazaba peces y belemnites, parecidos a calamares, en los mares poco profundos de Europa hace 165 millones de años."},
+      "kin": {"en":"Crocodiles and alligators","es":"Los cocodrilos y los aligátores"},
+      "wiki": {"en":"Metriorhynchus","es":"Metriorhynchus"},
+      "pbdb": "Metriorhynchus"
+    },
+    {
+      "id": "leedsichthys",
+      "name": {"en":"Leedsichthys problematicus","es":"Leedsichthys problematicus"},
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 165,
+      "to": 155,
+      "sites": [
+        {"at":[-0.24,52.55],"place":{"en":"Oxford Clay, near Peterborough, England","es":"Arcilla de Oxford, cerca de Peterborough, Inglaterra"}},
+        {"at":[-0.03,49.3],"place":{"en":"Villers-sur-Mer, Normandy, France","es":"Villers-sur-Mer, Normandía, Francia"}}
+      ],
+      "len": 16,
+      "diet": "filter",
+      "text": {"en":"Perhaps the biggest bony fish that ever lived, around 16 metres long, as long as a whale shark. Like a whale shark it was a gentle giant, swimming with its mouth open and sieving tiny shrimps and plankton through a mesh of fine bony gill rakers. Its skeleton was mostly gristle, so only scraps survive. It is named after Alfred Leeds, who found the first remains near Peterborough, England, in 1886.","es":"Quizá el pez óseo más grande que ha existido, de unos 16 metros, como un tiburón ballena. Igual que este, era un gigante pacífico que nadaba con la boca abierta, filtrando camaroncitos y plancton con una red de finas branquiespinas. Su esqueleto era casi todo cartílago, así que solo se conservan fragmentos. Lleva el nombre de Alfred Leeds, quien halló los primeros restos cerca de Peterborough, Inglaterra, en 1886."},
+      "kin": {"en":"Most living fish: it was a pachycormid, an early branch near the root of the teleosts","es":"La mayoría de los peces actuales: era un paquicórmido, una rama temprana cerca de la raíz de los teleósteos"},
+      "wiki": {"en":"Leedsichthys","es":""},
+      "pbdb": "Leedsichthys"
+    },
+    {
+      "id": "mawsonia",
+      "name": {"en":"Mawsonia gigas","es":"Mawsonia gigas"},
+      "common": {"en":"Giant coelacanth","es":"Celacanto gigante"},
+      "group": "fish",
+      "icon": "🐟",
+      "life": "fresh",
+      "from": 152,
+      "to": 94,
+      "sites": [
+        {"at":[-38.5,-12.9],"place":{"en":"Recôncavo Basin, near Salvador, Bahia, Brazil","es":"Cuenca del Recôncavo, cerca de Salvador, Bahía, Brasil"}},
+        {"at":[-56.02,-31.8],"place":{"en":"Tacuarembó, Uruguay","es":"Tacuarembó, Uruguay"}},
+        {"at":[-4.84,30.51],"place":{"en":"Kem Kem beds, south-eastern Morocco","es":"Capas de Kem Kem, sureste de Marruecos"}}
+      ],
+      "len": 4,
+      "diet": "fish",
+      "text": {"en":"A giant coelacanth up to about 5 metres long that lived in the rivers and estuaries of what are now Uruguay, Brazil and North Africa, then still joined. Coelacanths are lobe-finned fish, cousins of the fish that gave rise to four-legged animals. People thought they died out with the dinosaurs until a living one was caught off South Africa in 1938; Mawsonia belonged to a branch that really did vanish.","es":"Un celacanto gigante de hasta unos 5 metros que vivía en ríos y estuarios de lo que hoy son Uruguay, Brasil y el norte de África, entonces aún unidos. Los celacantos son peces de aletas lobuladas, primos de los peces que dieron origen a los animales de cuatro patas. Se creía que se extinguieron con los dinosaurios hasta que en 1938 se pescó uno vivo frente a Sudáfrica; Mawsonia pertenecía a una rama que sí desapareció."},
+      "kin": {"en":"The two living coelacanths, of the Indian Ocean and Indonesia","es":"Los dos celacantos vivos, del océano Índico y de Indonesia"},
+      "wiki": {"en":"Mawsonia (fish)","es":"Mawsonia"},
+      "pbdb": "Mawsonia"
+    },
+    {
+      "id": "dactylioceras",
+      "name": {"en":"Dactylioceras commune","es":"Dactylioceras commune"},
+      "common": {"en":"Ammonite","es":"Amonita"},
+      "group": "invertebrate",
+      "icon": "🐚",
+      "life": "sea",
+      "from": 184,
+      "to": 179,
+      "sites": [
+        {"at":[-0.61,54.49],"place":{"en":"Whitby, North Yorkshire, England","es":"Whitby, Yorkshire del Norte, Inglaterra"}},
+        {"at":[9.52,48.63],"place":{"en":"Holzmaden, Baden-Württemberg, Germany","es":"Holzmaden, Baden-Wurtemberg, Alemania"}}
+      ],
+      "len": 0.06,
+      "diet": "small",
+      "text": {"en":"One of the commonest ammonites, its tightly coiled, ribbed shell a few centimetres across, abundant in the cliffs of Whitby on the Yorkshire coast. People there once said they were snakes turned to stone by Saint Hilda, and sold them with snake heads carved on; the town's coat of arms still shows three ammonites. Ammonites were relatives of squid with a gas-filled shell, and they swarmed the seas for over 300 million years.","es":"Una de las amonitas más comunes, de concha enrollada y con costillas, de pocos centímetros, abundante en los acantilados de Whitby, en la costa de Yorkshire. Allí se decía que eran serpientes convertidas en piedra por santa Hilda, y se vendían con cabezas de serpiente talladas; el escudo del pueblo aún muestra tres amonitas. Eran parientes de los calamares con una concha llena de gas, y poblaron los mares durante más de 300 millones de años."},
+      "kin": {"en":"Squid, octopuses and cuttlefish, more than the nautilus","es":"Los calamares, pulpos y sepias, más que el nautilo"},
+      "wiki": {"en":"Dactylioceras","es":""},
+      "pbdb": "Dactylioceras"
+    },
+    {
+      "id": "passaloteuthis",
+      "name": {"en":"Passaloteuthis bisulcata","es":"Passaloteuthis bisulcata"},
+      "common": {"en":"Belemnite","es":"Belemnite"},
+      "group": "invertebrate",
+      "icon": "🦑",
+      "life": "sea",
+      "from": 193,
+      "to": 172,
+      "sites": [
+        {"at":[9.52,48.63],"place":{"en":"Holzmaden, Baden-Württemberg, Germany","es":"Holzmaden, Baden-Wurtemberg, Alemania"}},
+        {"at":[-2.85,50.72],"place":{"en":"Charmouth, Dorset, England","es":"Charmouth, Dorset, Inglaterra"}}
+      ],
+      "diet": "small",
+      "text": {"en":"Belemnites were squid-like animals with ten arms armed with tiny hooks and a heavy, bullet-shaped guard of calcite inside the back of the body, which helped them stay level as they swam. The guards fossilise by the million; people once called them thunderbolts, thinking they fell from the sky in storms. Rare belemnite fossils from Germany and England even keep the arms with their hooks.","es":"Los belemnites eran animales parecidos a calamares, con diez brazos armados de ganchitos y una pesada pieza de calcita en forma de bala dentro de la parte trasera del cuerpo, que los ayudaba a nadar nivelados. Esas piezas se fosilizan por millones; antes se las llamaba rayos, pues se creía que caían del cielo en las tormentas. Algunos raros fósiles de Alemania e Inglaterra conservan incluso los brazos con sus ganchos."},
+      "kin": {"en":"Squid and cuttlefish","es":"Los calamares y las sepias"},
+      "wiki": {"en":"Belemnitida","es":"Belemnitida"},
+      "pbdb": "Passaloteuthis"
+    },
+    {
+      "id": "juramaia",
+      "name": {"en":"Juramaia sinensis","es":"Juramaia sinensis"},
+      "group": "mammal",
+      "icon": "🐭",
+      "life": "land",
+      "from": 161,
+      "to": 159,
+      "sites": [
+        {"at":[119.79,40.82],"place":{"en":"Jianchang, Liaoning, China","es":"Jianchang, Liaoning, China"}}
+      ],
+      "len": 0.1,
+      "mass": 0.015,
+      "diet": "small",
+      "text": {"en":"A tiny, shrew-like climber about 160 million years old, described in 2011 as the oldest known eutherian: a member of the line that leads to placental mammals, the group that includes us, whales, bats and mice. Its hands were made for clambering in trees, and it ate insects. If its age and place in the family tree are right, our ancestors split from those of marsupials by the Jurassic; some scientists doubt both.","es":"Un diminuto trepador parecido a una musaraña, de unos 160 millones de años, descrito en 2011 como el euterio más antiguo: del linaje de los mamíferos placentarios, el grupo de los humanos, las ballenas, los murciélagos y los ratones. Sus manos servían para trepar a los árboles y comía insectos. Si su edad y su lugar en el árbol familiar son correctos, nuestro linaje se separó del de los marsupiales en el Jurásico; algunos lo dudan."},
+      "kin": {"en":"Placental mammals, from mice to whales and people, if it truly belongs to their line","es":"Los mamíferos placentarios, de ratones a ballenas y personas, si de verdad pertenece a su linaje"},
+      "wiki": {"en":"Juramaia","es":"Juramaia"},
+      "pbdb": "Juramaia"
+    },
+    {
+      "id": "castorocauda",
+      "name": {"en":"Castorocauda lutrasimilis","es":"Castorocauda lutrasimilis"},
+      "group": "mammal",
+      "icon": "🦫",
+      "life": "fresh",
+      "from": 165,
+      "to": 163,
+      "sites": [
+        {"at":[119.24,41.32],"place":{"en":"Daohugou, Ningcheng, Inner Mongolia, China","es":"Daohugou, Ningcheng, Mongolia Interior, China"}}
+      ],
+      "len": 0.45,
+      "mass": 0.6,
+      "diet": "fish",
+      "text": {"en":"A Jurassic 'beaver-otter' that overturned the idea that early mammals were all tiny shrews. About 45 cm long, it had a flat, scaly tail like a beaver's, webbed hind feet, seal-like teeth for catching fish and a coat of fur, one of the oldest ever found. It was a docodont, not related to beavers or otters: the same swimming lifestyle simply evolved again over 100 million years later.","es":"Un 'castor-nutria' jurásico que derribó la idea de que los primeros mamíferos eran todos musarañas diminutas. Medía unos 45 cm y tenía una cola plana y escamosa como la de un castor, patas traseras palmeadas, dientes como de foca para atrapar peces y un pelaje, de los más antiguos que se conocen. Era un docodonte, sin parentesco con castores ni nutrias: ese modo de vida volvió a surgir más de 100 millones de años después."},
+      "kin": {"en":"None close: docodonts left no descendants; all living mammals are distant cousins","es":"Ninguno cercano: los docodontes no dejaron descendientes; los mamíferos actuales son primos lejanos"},
+      "wiki": {"en":"Castorocauda","es":"Castorocauda"},
+      "pbdb": "Castorocauda"
+    },
+    {
+      "id": "ginkgo",
+      "name": {"en":"Ginkgo","es":"Ginkgo"},
+      "common": {"en":"Maidenhair tree","es":"Árbol de los cuarenta escudos"},
+      "group": "plant",
+      "icon": "🌳",
+      "life": "land",
+      "from": 170,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        {"at":[111.88,34.73],"place":{"en":"Yima, Henan, China","es":"Yima, Henan, China"}},
+        {"at":[-0.42,54.27],"place":{"en":"Yorkshire coast, England","es":"Costa de Yorkshire, Inglaterra"}}
+      ],
+      "diet": "light",
+      "text": {"en":"A living fossil: the ginkgo, or maidenhair tree, is the last survivor of a group of trees that grew worldwide in the age of dinosaurs. Leaves and seeds almost like today's are known from China 170 million years ago. Wild ginkgos nearly vanished, surviving only in a few mountain valleys of China, but monks planted them by temples. Now they line city streets worldwide, and several survived the atomic bomb at Hiroshima.","es":"Un fósil viviente: el ginkgo es el último sobreviviente de un grupo de árboles que crecía en todo el mundo en la era de los dinosaurios. En China hay hojas y semillas casi iguales a las actuales de hace 170 millones de años. Los ginkgos silvestres casi desaparecieron y solo quedaron en unos pocos valles de China, pero los monjes los plantaron junto a los templos. Hoy adornan calles de todo el mundo, y varios sobrevivieron a la bomba de Hiroshima."},
+      "kin": {"en":"It is the only living species of its group; its nearest relatives are probably the cycads","es":"Es la única especie viva de su grupo; sus parientes más cercanos quizá sean las cícadas"},
+      "wiki": {"en":"Ginkgo biloba","es":"Ginkgo biloba"},
+      "pbdb": "Ginkgo",
+      "item": "ginkgo"
+    },
+    {
+      "id": "araucaria-mirabilis",
+      "name": {"en":"Araucaria mirabilis","es":"Araucaria mirabilis"},
+      "group": "plant",
+      "icon": "🌲",
+      "life": "land",
+      "from": 165,
+      "to": 160,
+      "sites": [
+        {"at":[-68,-47.96],"place":{"en":"Cerro Cuadrado petrified forest, Santa Cruz, Argentina","es":"Bosque petrificado Cerro Cuadrado, Santa Cruz, Argentina"}}
+      ],
+      "diet": "light",
+      "text": {"en":"Cones up to about 8 cm across, turned to stone with every seed in place, from the petrified forest of Cerro Cuadrado in Patagonia, Argentina, about 160 million years old. They belong to an extinct monkey puzzle tree, part of the conifer forests that long-necked dinosaurs browsed. A volcanic eruption buried the forest in ash, which kept the cones so well that some show the tiny embryos inside their seeds.","es":"Piñas de hasta unos 8 cm, convertidas en piedra con todas sus semillas, del bosque petrificado de Cerro Cuadrado, en la Patagonia argentina, de unos 160 millones de años. Son de una araucaria extinta, parte de los bosques de coníferas donde comían los dinosaurios de cuello largo. Una erupción volcánica sepultó el bosque en ceniza, que conservó tan bien las piñas que algunas muestran los diminutos embriones de sus semillas."},
+      "kin": {"en":"The monkey puzzle, the Paraná pine and the Norfolk Island pine","es":"La araucaria o pehuén, el pino Paraná y el pino de Norfolk"},
+      "wiki": {"en":"Araucaria mirabilis","es":"Araucaria mirabilis"}
+    },
+    {
+      "id": "williamsonia",
+      "name": {"en":"Williamsonia (plant)","es":"Williamsonia (planta)"},
+      "group": "plant",
+      "icon": "🌴",
+      "life": "land",
+      "from": 230,
+      "to": 100,
+      "sites": [
+        {"at":[-0.4,54.22],"place":{"en":"Yorkshire coast, England","es":"Costa de Yorkshire, Inglaterra"}},
+        {"at":[87.5,25.14],"place":{"en":"Rajmahal Hills, Jharkhand, India","es":"Colinas de Rajmahal, Jharkhand, India"}},
+        {"at":[-97.6,17.6],"place":{"en":"Oaxaca, Mexico","es":"Oaxaca, México"}}
+      ],
+      "diet": "light",
+      "text": {"en":"A plant that looked like a cycad, with a stout trunk and a crown of stiff fronds, but carried flower-like cones ringed by petal-like bracts. It belonged to the bennettites, seed plants common all through the age of dinosaurs that vanished near its end. Their flower-like cones once led scientists to think they were ancestors of flowering plants; most now doubt it. Its fossils come from England, India and Mexico.","es":"Una planta parecida a una cícada, de tronco grueso y una corona de frondas rígidas, pero con conos como flores rodeados de brácteas parecidas a pétalos. Pertenecía a las benetitales, plantas con semillas comunes en toda la era de los dinosaurios que desaparecieron cerca de su final. Sus conos llevaron a pensar que eran antepasadas de las plantas con flores; hoy casi nadie lo cree. Hay fósiles en Inglaterra, la India y México."},
+      "kin": {"en":"None alive; bennettites were an extinct group of seed plants that looked like cycads","es":"Ninguno vivo; las benetitales fueron un grupo extinto de plantas con semillas parecidas a cícadas"},
+      "wiki": {"en":"Williamsonia (plant)","es":"Williamsonia (planta)"},
+      "pbdb": "Williamsonia"
+    },
+    {
+      "id": "prosalirus",
+      "name": {"en":"Prosalirus bitis","es":"Prosalirus bitis"},
+      "group": "amphibian",
+      "icon": "🐸",
+      "life": "fresh",
+      "from": 191,
+      "to": 189,
+      "sites": [
+        {"at":[-111.08,35.76],"place":{"en":"Kayenta Formation, near Cameron, Arizona, United States","es":"Formación Kayenta, cerca de Cameron, Arizona, Estados Unidos"}}
+      ],
+      "len": 0.05,
+      "diet": "small",
+      "text": {"en":"The oldest known frog that could jump. Found in Arizona in rocks about 190 million years old and named in 1995 by Neil Shubin and Farish Jenkins, it already had the long hip bones and the springy hind legs of a modern frog. Its name means 'to leap forward'. Some 60 million years after Triadobatrachus, frogs had become the leapers we know.","es":"La rana más antigua conocida que podía saltar. Hallada en Arizona en rocas de unos 190 millones de años y nombrada en 1995 por Neil Shubin y Farish Jenkins, ya tenía los huesos de la cadera largos y las patas traseras elásticas de una rana moderna. Su nombre significa 'saltar hacia adelante'. Unos 60 millones de años después del Triadobatrachus, las ranas ya eran las saltadoras que conocemos."},
+      "kin": {"en":"Frogs and toads","es":"Las ranas y los sapos"},
+      "wiki": {"en":"Prosalirus","es":"Prosalirus"},
+      "pbdb": "Prosalirus"
+    },
+    {
+      "id": "kalligramma",
+      "name": {"en":"Kalligramma","es":"Kalligramma"},
+      "common": {"en":"Butterfly-like lacewing","es":"Crisopa con aspecto de mariposa"},
+      "group": "flyer",
+      "icon": "🦋",
+      "life": "air",
+      "from": 165,
+      "to": 120,
+      "sites": [
+        {"at":[70,42.9],"place":{"en":"Karatau Mountains, Kazakhstan","es":"Montes Karatau, Kazajistán"}},
+        {"at":[119.24,41.32],"place":{"en":"Daohugou, Inner Mongolia, China","es":"Daohugou, Mongolia Interior, China"}},
+        {"at":[120.84,41.62],"place":{"en":"Yixian Formation, Liaoning, China","es":"Formación Yixian, Liaoning, China"}}
+      ],
+      "diet": "plants",
+      "text": {"en":"Not a butterfly but a lacewing that looked like one, with wings up to 16 cm across marked with eyespots, and a long, straw-like mouth for sipping sugary drops from seed plants. Kalligrammatids lived from about 165 to 120 million years ago, long before the first butterflies, and faded as flowering plants spread. Butterflies later evolved the same look and lifestyle all over again.","es":"No era una mariposa, sino una crisopa que parecía una: sus alas, de hasta 16 cm, tenían manchas como ojos, y su boca larga, como un tubito, servía para sorber gotas azucaradas de plantas con semillas. Los kaligramátidos vivieron hace unos 165 a 120 millones de años, mucho antes de las primeras mariposas, y desaparecieron al extenderse las plantas con flores. Las mariposas evolucionaron luego el mismo aspecto."},
+      "kin": {"en":"Lacewings and antlions","es":"Las crisopas y las hormigas león"},
+      "wiki": {"en":"Kalligramma","es":""},
+      "pbdb": "Kalligramma"
+    },
+    {
+      "id": "psittacosaurus",
+      "name": {"en":"Psittacosaurus","es":"Psittacosaurus"},
+      "common": {"en":"Parrot lizard","es":"Lagarto loro"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 126,
+      "to": 101,
+      "sites": [
+        {"at":[120.73,41.8],"place":{"en":"Lujiatun, Beipiao, Liaoning, China","es":"Lujiatun, Beipiao, Liaoning, China"}},
+        {"at":[102.73,44.24],"place":{"en":"Öösh, Övörkhangai, Mongolia","es":"Öösh, Övörjangai, Mongolia"}},
+        {"at":[87.96,55.9],"place":{"en":"Kemerovo region, Siberia, Russia","es":"Región de Kémerovo, Siberia, Rusia"}}
+      ],
+      "len": 1.8,
+      "mass": 20,
+      "diet": "plants",
+      "text": {"en":"A parrot-beaked plant-eater about the size of a big dog, and one of the best-known dinosaurs: hundreds of skeletons, from hatchlings to adults, have been found in China, Mongolia and Siberia. One specimen kept its skin so well that scientists worked out its colours: dark on top and pale underneath, camouflage for a shady forest. It had a tuft of long bristles on its tail, and it was an early relative of Triceratops.","es":"Un herbívoro con pico de loro del tamaño de un perro grande, uno de los dinosaurios mejor conocidos: se han hallado cientos de esqueletos, de crías a adultos, en China, Mongolia y Siberia. Un ejemplar conservó tan bien la piel que se descifraron sus colores: oscuro arriba y claro abajo, un camuflaje para bosques sombríos. Tenía un penacho de cerdas largas en la cola y era pariente temprano del Triceratops."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Psittacosaurus","es":"Psittacosaurus"},
+      "pbdb": "Psittacosaurus"
+    },
+    {
+      "id": "iguanodon",
+      "name": {"en":"Iguanodon bernissartensis","es":"Iguanodon bernissartensis"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 126,
+      "to": 122,
+      "sites": [
+        {"at":[3.64,50.48],"place":{"en":"Bernissart, Hainaut, Belgium","es":"Bernissart, Henao, Bélgica"}},
+        {"at":[-0.14,51.01],"place":{"en":"Cuckfield, Sussex, England","es":"Cuckfield, Sussex, Inglaterra"}},
+        {"at":[-1.3,50.64],"place":{"en":"Isle of Wight, England","es":"Isla de Wight, Inglaterra"}}
+      ],
+      "len": 10,
+      "mass": 3500,
+      "diet": "plants",
+      "text": {"en":"One of the first dinosaurs ever discovered: in the early 1820s Gideon Mantell found teeth in Sussex that looked like a giant iguana's. Early models showed it as a huge four-legged lizard with a horn on its nose; the 'horn' was really a spiky thumb. In 1878 coal miners at Bernissart, Belgium, found 38 skeletons 322 metres underground, which showed it was a 10-metre plant-eater that walked on two legs or four.","es":"Uno de los primeros dinosaurios descubiertos: a principios de la década de 1820, Gideon Mantell halló en Sussex unos dientes que parecían de una iguana gigante. Los primeros modelos lo mostraban como un enorme lagarto de cuatro patas con un cuerno en la nariz; el 'cuerno' era un pulgar en forma de púa. En 1878, unos mineros de Bernissart, Bélgica, hallaron 38 esqueletos a 322 metros bajo tierra: un herbívoro de 10 metros que andaba en dos o cuatro patas."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Iguanodon","es":"Iguanodon"},
+      "pbdb": "Iguanodon",
+      "item": "iguanodon"
+    },
+    {
+      "id": "sinosauropteryx",
+      "name": {"en":"Sinosauropteryx prima","es":"Sinosauropteryx prima"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 125,
+      "to": 122,
+      "sites": [
+        {"at":[120.87,41.61],"place":{"en":"Sihetun, Beipiao, Liaoning, China","es":"Sihetun, Beipiao, Liaoning, China"}}
+      ],
+      "len": 1,
+      "diet": "small",
+      "text": {"en":"The first dinosaur found with feathers, in 1996 in Liaoning, China: a small, long-tailed hunter covered in simple, hair-like fuzz. Pigment capsules preserved in that fuzz show it was ginger-brown with a pale belly, a striped tail like a raccoon's and a dark 'bandit mask' around its eyes. Some specimens have lizards and small mammals in their bellies.","es":"El primer dinosaurio hallado con plumas, en 1996, en Liaoning, China: un pequeño cazador de cola larga cubierto de una pelusa sencilla, como pelo. Las cápsulas de pigmento de esa pelusa muestran que era castaño rojizo, de vientre claro, con la cola a rayas como la de un mapache y un 'antifaz de bandido' oscuro alrededor de los ojos. En el vientre de algunos ejemplares hay lagartijas y mamíferos pequeños."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Sinosauropteryx","es":"Sinosauropteryx prima"},
+      "pbdb": "Sinosauropteryx",
+      "item": "sinosauropteryx"
+    },
+    {
+      "id": "microraptor",
+      "name": {"en":"Microraptor","es":"Microraptor"},
+      "group": "dinosaur",
+      "icon": "🪶",
+      "life": "air",
+      "from": 122,
+      "to": 119,
+      "sites": [
+        {"at":[120.23,41.5],"place":{"en":"Near Chaoyang, Liaoning, China","es":"Cerca de Chaoyang, Liaoning, China"}}
+      ],
+      "len": 0.8,
+      "mass": 1,
+      "diet": "meat",
+      "text": {"en":"A crow-sized dinosaur with four wings: long flight feathers on its arms and on its legs too. It could glide and probably fly short distances between trees. Its feathers were glossy black with a blue-green sheen, like a crow's or a starling's. Stomach contents show it ate whatever it could catch: a bird, a small mammal, a fish and a lizard have all been found inside different skeletons.","es":"Un dinosaurio del tamaño de un cuervo con cuatro alas: plumas largas de vuelo en los brazos y también en las patas. Podía planear y quizá volar distancias cortas entre los árboles. Sus plumas eran negras y brillantes, con reflejos azul verdoso, como las de un cuervo o un estornino. Su contenido estomacal muestra que comía lo que pudiera atrapar: en distintos esqueletos hay un ave, un mamífero pequeño, un pez y una lagartija."},
+      "kin": {"en":"Birds, its living relatives","es":"Las aves, sus parientes vivas"},
+      "wiki": {"en":"Microraptor","es":"Microraptor"},
+      "pbdb": "Microraptor",
+      "item": "microraptor"
+    },
+    {
+      "id": "yutyrannus",
+      "name": {"en":"Yutyrannus huali","es":"Yutyrannus huali"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 125,
+      "to": 122,
+      "sites": [
+        {"at":[120.76,41.47],"place":{"en":"Batu Yingzi, Beipiao, Liaoning, China","es":"Batu Yingzi, Beipiao, Liaoning, China"}}
+      ],
+      "len": 9,
+      "mass": 1400,
+      "diet": "meat",
+      "text": {"en":"The biggest feathered animal known: a 9-metre, 1.4-tonne early tyrannosaur covered in long, simple filaments, perhaps like a shaggy coat. Its name means 'beautiful feathered tyrant'. It lived in north-eastern China about 125 million years ago, when winters there were cool, so its fluff may have kept it warm. It suggests that even big relatives of T. rex could be feathered.","es":"El animal emplumado más grande conocido: un tiranosaurio primitivo de 9 metros y 1,4 toneladas cubierto de filamentos largos y sencillos, quizá como un abrigo peludo. Su nombre significa 'tirano emplumado hermoso'. Vivió en el noreste de China hace unos 125 millones de años, cuando los inviernos allí eran frescos, así que su pelusa quizá lo abrigaba. Sugiere que hasta los grandes parientes del T. rex podían tener plumas."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Yutyrannus","es":"Yutyrannus huali"},
+      "pbdb": "Yutyrannus",
+      "item": "yutyrannus"
+    },
+    {
+      "id": "deinonychus",
+      "name": {"en":"Deinonychus antirrhopus","es":"Deinonychus antirrhopus"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 115,
+      "to": 108,
+      "sites": [
+        {"at":[-108.16,45.44],"place":{"en":"Cloverly Formation, Big Horn County, Montana, United States","es":"Formación Cloverly, condado de Big Horn, Montana, Estados Unidos"}},
+        {"at":[-107.9,44.51],"place":{"en":"Cloverly Formation, Bighorn Basin, Wyoming, United States","es":"Formación Cloverly, cuenca de Bighorn, Wyoming, Estados Unidos"}},
+        {"at":[-95.82,34.15],"place":{"en":"Antlers Formation, Atoka County, Oklahoma, United States","es":"Formación Antlers, condado de Atoka, Oklahoma, Estados Unidos"}}
+      ],
+      "len": 3.4,
+      "mass": 73,
+      "diet": "meat",
+      "text": {"en":"A wolf-sized hunter with a huge, sickle-shaped claw on each foot, which it may have used to pin down prey, as hawks and eagles do. Its discovery in Montana in 1964 by John Ostrom showed that dinosaurs could be quick, active, warm-blooded animals, and that birds come from dinosaurs like it. The 'velociraptors' of Jurassic Park were really modelled on Deinonychus.","es":"Un cazador del tamaño de un lobo, con una enorme garra en forma de hoz en cada pie, que quizá usaba para inmovilizar a sus presas, como hacen halcones y águilas. Su descubrimiento en Montana en 1964, por John Ostrom, mostró que los dinosaurios podían ser animales rápidos, activos y de sangre caliente, y que las aves vienen de dinosaurios como él. Los 'velociraptores' de Jurassic Park en realidad se basaron en Deinonychus."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Deinonychus","es":"Deinonychus antirrhopus"},
+      "pbdb": "Deinonychus"
+    },
+    {
+      "id": "giganotosaurus",
+      "name": {"en":"Giganotosaurus carolinii","es":"Giganotosaurus carolinii"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 99.6,
+      "to": 97,
+      "sites": [
+        {"at":[-68.72,-39.21],"place":{"en":"Near Villa El Chocón, Neuquén, Argentina","es":"Cerca de Villa El Chocón, Neuquén, Argentina"}}
+      ],
+      "len": 12.5,
+      "mass": 7000,
+      "diet": "meat",
+      "text": {"en":"One of the biggest meat-eating dinosaurs, about 12–13 metres long, as long as T. rex or a little longer, but with a lighter, narrower skull and blade-like teeth for slicing flesh. An amateur fossil hunter, Rubén Carolini, found it in 1993 while driving a dune buggy through the badlands of Neuquén, Argentina. It shared its world with giant long-necked dinosaurs it may have hunted.","es":"Uno de los mayores dinosaurios carnívoros, de unos 12 o 13 metros, tan largo como el T. rex o un poco más, pero con un cráneo más liviano y estrecho y dientes como cuchillas para rebanar carne. Un aficionado, Rubén Carolini, lo encontró en 1993 mientras recorría en un buggy las tierras áridas de Neuquén, Argentina. Compartía su mundo con gigantescos dinosaurios de cuello largo que quizá cazaba."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Giganotosaurus","es":"Giganotosaurus carolinii"},
+      "pbdb": "Giganotosaurus",
+      "item": "giganotosaurus"
+    },
+    {
+      "id": "argentinosaurus",
+      "name": {"en":"Argentinosaurus huinculensis","es":"Argentinosaurus huinculensis"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 96,
+      "to": 93,
+      "sites": [
+        {"at":[-69.06,-38.92],"place":{"en":"Near Plaza Huincul, Neuquén, Argentina","es":"Cerca de Plaza Huincul, Neuquén, Argentina"}}
+      ],
+      "len": 35,
+      "mass": 70000,
+      "diet": "plants",
+      "text": {"en":"One of the largest animals ever to walk on land: about 35 metres long and perhaps 70 tonnes, as heavy as ten African elephants. Only a few bones are known, but they are enormous: a single backbone is taller than a person. A rancher found the first bone on his farm near Plaza Huincul, Argentina, in 1987, and thought it was a piece of petrified wood.","es":"Uno de los animales más grandes que han caminado sobre la Tierra: unos 35 metros y quizá 70 toneladas, como diez elefantes africanos. Solo se conocen unos pocos huesos, pero son enormes: una sola vértebra es más alta que una persona. Un ganadero halló el primer hueso en su campo, cerca de Plaza Huincul, Argentina, en 1987, y creyó que era un trozo de madera petrificada."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Argentinosaurus","es":"Argentinosaurus huinculensis"},
+      "pbdb": "Argentinosaurus",
+      "item": "argentinosaurus"
+    },
+    {
+      "id": "spinosaurus",
+      "name": {"en":"Spinosaurus aegyptiacus","es":"Spinosaurus aegyptiacus"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "fresh",
+      "from": 100,
+      "to": 94,
+      "sites": [
+        {"at":[28.91,28.43],"place":{"en":"Bahariya Oasis, Egypt","es":"Oasis de Bahariya, Egipto"}},
+        {"at":[-4.05,30.95],"place":{"en":"Kem Kem beds, near Erfoud, Morocco","es":"Capas de Kem Kem, cerca de Erfoud, Marruecos"}}
+      ],
+      "len": 14,
+      "mass": 7400,
+      "diet": "fish",
+      "text": {"en":"The longest meat-eating dinosaur known, about 14 metres, with a 'sail' of tall spines on its back and long, crocodile-like jaws for catching fish. Its first skeleton, found in Egypt in 1912, was destroyed when Munich was bombed in 1944. New fossils from Morocco show dense bones and a deep, paddle-like tail, so it spent much of its life in rivers; scientists still argue whether it swam after fish or waded like a giant heron.","es":"El dinosaurio carnívoro más largo conocido, de unos 14 metros, con una 'vela' de espinas altas en el lomo y mandíbulas largas como de cocodrilo para atrapar peces. Su primer esqueleto, hallado en Egipto en 1912, se destruyó en el bombardeo de Múnich en 1944. Fósiles de Marruecos muestran huesos densos y una cola alta como un remo, así que pasaba mucho tiempo en los ríos; aún se discute si nadaba o vadeaba como una garza gigante."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Spinosaurus","es":"Spinosaurus"},
+      "pbdb": "Spinosaurus",
+      "item": "spinosaurus"
+    },
+    {
+      "id": "carnotaurus",
+      "name": {"en":"Carnotaurus sastrei","es":"Carnotaurus sastrei"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 72,
+      "to": 69,
+      "sites": [
+        {"at":[-67.55,-43],"place":{"en":"Bajada Moreno, Telsen, Chubut, Argentina","es":"Bajada Moreno, Telsen, Chubut, Argentina"}}
+      ],
+      "len": 8,
+      "mass": 1350,
+      "diet": "meat",
+      "text": {"en":"The 'meat-eating bull', with two thick horns over its eyes, a short, deep head and arms so tiny they were almost useless, with stubby fingers that could barely move. Its only skeleton, found in Patagonia, Argentina, in 1984, kept large patches of skin: rows of small scales with bigger bumps, and no feathers. Long, muscular legs and a strong tail made it one of the fastest big meat-eaters.","es":"El 'toro carnívoro', con dos gruesos cuernos sobre los ojos, una cabeza corta y alta y unos brazos tan diminutos que casi no servían, con dedos rechonchos que apenas se movían. Su único esqueleto, hallado en la Patagonia argentina en 1984, conservó grandes trozos de piel: hileras de escamas pequeñas con protuberancias más grandes, y sin plumas. Sus patas largas y su cola musculosa lo hacían uno de los grandes carnívoros más veloces."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Carnotaurus","es":"Carnotaurus sastrei"},
+      "pbdb": "Carnotaurus"
+    },
+    {
+      "id": "maiasaura",
+      "name": {"en":"Maiasaura peeblesorum","es":"Maiasaura peeblesorum"},
+      "common": {"en":"Good mother lizard","es":"Lagarto buena madre"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 77,
+      "to": 75,
+      "sites": [
+        {"at":[-112.29,47.77],"place":{"en":"Egg Mountain, near Choteau, Montana, United States","es":"Egg Mountain, cerca de Choteau, Montana, Estados Unidos"}}
+      ],
+      "len": 9,
+      "mass": 3000,
+      "diet": "plants",
+      "text": {"en":"The 'good mother lizard'. In 1978 Jack Horner and Bob Makela found a nesting colony in Montana: bowl-shaped mounds of mud about 7 metres apart, with eggs, hatchlings and young. The babies' legs were not yet strong enough to walk far, so the parents probably brought them food: the first clear sign that some dinosaurs cared for their young. In 1985 a piece of its bone and eggshell flew into space.","es":"El 'lagarto buena madre'. En 1978, Jack Horner y Bob Makela hallaron una colonia de nidos en Montana: montículos de lodo en forma de tazón separados unos 7 metros, con huevos, recién nacidos y crías. Sus patas aún no eran fuertes para andar lejos, así que los padres quizá les llevaban comida: la primera señal clara de que algunos dinosaurios cuidaban a sus crías. En 1985, un trocito de su hueso y de un cascarón viajó al espacio."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Maiasaura","es":"Maiasaura peeblesorum"},
+      "pbdb": "Maiasaura"
+    },
+    {
+      "id": "parasaurolophus",
+      "name": {"en":"Parasaurolophus","es":"Parasaurolophus"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 77,
+      "to": 73,
+      "sites": [
+        {"at":[-111.49,50.75],"place":{"en":"Dinosaur Provincial Park, Alberta, Canada","es":"Parque Provincial de los Dinosaurios, Alberta, Canadá"}},
+        {"at":[-108.09,36.1],"place":{"en":"Kirtland Formation, San Juan Basin, New Mexico, United States","es":"Formación Kirtland, cuenca de San Juan, Nuevo México, Estados Unidos"}},
+        {"at":[-111.78,37.68],"place":{"en":"Kaiparowits Plateau, Utah, United States","es":"Meseta de Kaiparowits, Utah, Estados Unidos"}}
+      ],
+      "len": 9.5,
+      "mass": 2500,
+      "diet": "plants",
+      "text": {"en":"A duck-billed dinosaur with a long, hollow crest curving back from its head, up to a metre long. Air passages ran up inside the crest and back down to the nose, so it could probably make deep, booming calls like a trombone. In the 1990s scientists scanned a skull and used a computer to recreate the sound: a low rumble that could carry far across the plains of western North America.","es":"Un dinosaurio de pico de pato con una larga cresta hueca curvada hacia atrás, de hasta un metro. Por dentro de la cresta subían y bajaban conductos de aire hasta la nariz, así que probablemente emitía llamados graves y resonantes, como un trombón. En la década de 1990 se escaneó un cráneo y se recreó el sonido con una computadora: un retumbo grave que podía oírse lejos en las llanuras del oeste de América del Norte."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Parasaurolophus","es":"Parasaurolophus"},
+      "pbdb": "Parasaurolophus"
+    },
+    {
+      "id": "protoceratops",
+      "name": {"en":"Protoceratops andrewsi","es":"Protoceratops andrewsi"},
+      "group": "dinosaur",
+      "icon": "🦏",
+      "life": "land",
+      "from": 75,
+      "to": 71,
+      "sites": [
+        {"at":[103.69,44.16],"place":{"en":"Flaming Cliffs (Bayanzag), Gobi Desert, Mongolia","es":"Acantilados Llameantes (Bayanzag), desierto de Gobi, Mongolia"}},
+        {"at":[100.9,43.66],"place":{"en":"Tugrikin Shireh, Gobi Desert, Mongolia","es":"Tugrikin Shireh, desierto de Gobi, Mongolia"}}
+      ],
+      "len": 2,
+      "mass": 85,
+      "diet": "plants",
+      "text": {"en":"A sheep-sized plant-eater with a parrot-like beak and a bony frill, common in the deserts of Mongolia, where hundreds of skeletons from babies to adults have been found. The famous 'Fighting Dinosaurs' fossil shows a Protoceratops locked in battle with a Velociraptor, frozen as a sand dune collapsed on them. Some think its skulls, seen by ancient gold-seekers, inspired legends of the griffin.","es":"Un herbívoro del tamaño de una oveja, con pico de loro y una gola ósea, común en los desiertos de Mongolia, donde se han hallado cientos de esqueletos, de crías a adultos. El famoso fósil de los 'dinosaurios luchadores' muestra un Protoceratops trabado en combate con un Velociraptor, congelados cuando una duna se derrumbó sobre ellos. Hay quien cree que sus cráneos, vistos por antiguos buscadores de oro, inspiraron la leyenda del grifo."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Protoceratops","es":"Protoceratops"},
+      "pbdb": "Protoceratops",
+      "item": "protoceratops"
+    },
+    {
+      "id": "velociraptor",
+      "name": {"en":"Velociraptor mongoliensis","es":"Velociraptor mongoliensis"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 75,
+      "to": 71,
+      "sites": [
+        {"at":[103.7,44.16],"place":{"en":"Flaming Cliffs (Bayanzag), Gobi Desert, Mongolia","es":"Acantilados Llameantes (Bayanzag), desierto de Gobi, Mongolia"}},
+        {"at":[100.9,43.66],"place":{"en":"Tugrikin Shireh, Gobi Desert, Mongolia","es":"Tugrikin Shireh, desierto de Gobi, Mongolia"}}
+      ],
+      "len": 1.8,
+      "mass": 15,
+      "diet": "meat",
+      "text": {"en":"The real Velociraptor was the size of a turkey, about 1.8 metres long including its stiff tail, not the person-sized hunter of the films. It had a big sickle claw on each foot and bumps on its arm bones where wing feathers were anchored, so it had feathered arms, though it could not fly. It lived in the deserts of Mongolia; one was found locked in a fight with a Protoceratops.","es":"El verdadero Velociraptor era del tamaño de un pavo, de 1,8 metros con su cola rígida, no el cazador del tamaño de una persona de las películas. Tenía una gran garra en forma de hoz en cada pie y bultos en los huesos del brazo donde se sujetaban plumas de ala: tenía brazos emplumados, aunque no podía volar. Vivía en los desiertos de Mongolia; uno se halló trabado en pelea con un Protoceratops."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Velociraptor","es":"Velociraptor"},
+      "pbdb": "Velociraptor",
+      "item": "velociraptor"
+    },
+    {
+      "id": "therizinosaurus",
+      "name": {"en":"Therizinosaurus cheloniformis","es":"Therizinosaurus cheloniformis"},
+      "common": {"en":"Scythe lizard","es":"Lagarto guadaña"},
+      "group": "dinosaur",
+      "icon": "🦥",
+      "life": "land",
+      "from": 71,
+      "to": 68,
+      "sites": [
+        {"at":[101.28,43.49],"place":{"en":"Nemegt Basin, Gobi Desert, Mongolia","es":"Cuenca de Nemegt, desierto de Gobi, Mongolia"}},
+        {"at":[99.83,43.47],"place":{"en":"Hermiin Tsav, Gobi Desert, Mongolia","es":"Hermiin Tsav, desierto de Gobi, Mongolia"}}
+      ],
+      "len": 9.5,
+      "mass": 5000,
+      "diet": "plants",
+      "text": {"en":"A theropod, from the same big group as T. rex and Velociraptor, that turned to eating plants. About 10 metres long and 5 tonnes, with a small head, a long neck and a pot belly, it had the longest claws of any known animal, over half a metre long, like scythes. It probably used them to pull down branches and to defend itself. When its first claws were found in Mongolia, scientists thought they came from a giant turtle.","es":"Un terópodo, del mismo gran grupo que el T. rex y el Velociraptor, que se volvió herbívoro. Medía unos 10 metros y pesaba 5 toneladas, con cabeza pequeña, cuello largo y barriga prominente, y tenía las garras más largas de cualquier animal conocido, de más de medio metro, como guadañas. Quizá las usaba para bajar ramas y defenderse. Cuando se hallaron sus primeras garras en Mongolia, se creyó que eran de una tortuga gigante."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Therizinosaurus","es":"Therizinosaurus cheloniformis"},
+      "pbdb": "Therizinosaurus"
+    },
+    {
+      "id": "ankylosaurus",
+      "name": {"en":"Ankylosaurus magniventris","es":"Ankylosaurus magniventris"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 68,
+      "to": 66,
+      "sites": [
+        {"at":[-106.57,47.64],"place":{"en":"Hell Creek Formation, Garfield County, Montana, United States","es":"Formación Hell Creek, condado de Garfield, Montana, Estados Unidos"}},
+        {"at":[-113.01,51.86],"place":{"en":"Scollard Formation, Red Deer River, Alberta, Canada","es":"Formación Scollard, río Red Deer, Alberta, Canadá"}}
+      ],
+      "len": 7,
+      "mass": 5000,
+      "diet": "plants",
+      "text": {"en":"A living tank, up to 8 metres long and as heavy as an elephant, covered in bony plates and spikes, with a big bony club at the end of its tail. A swing of the club could break the leg bones of an attacker, though it may have been used mostly in fights between rivals. Despite its fame, only a few partial skeletons are known. It lived alongside T. rex at the very end of the age of dinosaurs.","es":"Un tanque viviente de hasta 8 metros, tan pesado como un elefante, cubierto de placas y púas óseas, con un gran mazo óseo al final de la cola. Un golpe de ese mazo podía romperle las patas a un atacante, aunque quizá se usaba sobre todo en peleas entre rivales. Pese a su fama, solo se conocen unos pocos esqueletos parciales. Vivió junto al T. rex al final mismo de la era de los dinosaurios."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Ankylosaurus","es":"Ankylosaurus magniventris"},
+      "pbdb": "Ankylosaurus"
+    },
+    {
+      "id": "pachycephalosaurus",
+      "name": {"en":"Pachycephalosaurus wyomingensis","es":"Pachycephalosaurus wyomingensis"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 68,
+      "to": 66,
+      "sites": [
+        {"at":[-106.23,47.7],"place":{"en":"Hell Creek Formation, McCone County, Montana, United States","es":"Formación Hell Creek, condado de McCone, Montana, Estados Unidos"}},
+        {"at":[-104.64,43.12],"place":{"en":"Lance Formation, Niobrara County, Wyoming, United States","es":"Formación Lance, condado de Niobrara, Wyoming, Estados Unidos"}}
+      ],
+      "len": 4.5,
+      "mass": 450,
+      "diet": "plants",
+      "text": {"en":"The 'thick-headed lizard', with a dome of solid bone up to 25 cm thick on top of its skull, ringed with knobs and spikes. Healed injuries on fossil domes suggest rivals did butt heads, or each other's sides. Its young had flatter heads with longer spikes, so some smaller 'species' may really be young Pachycephalosaurus. It was one of the last dinosaurs, alive until the asteroid struck.","es":"El 'lagarto de cabeza gruesa', con una cúpula de hueso macizo de hasta 25 cm de grosor sobre el cráneo, rodeada de bultos y púas. Lesiones curadas en las cúpulas fósiles sugieren que los rivales sí chocaban las cabezas, o se golpeaban los costados. Sus crías tenían la cabeza más plana y púas más largas, así que algunas 'especies' pequeñas quizá eran jóvenes. Fue uno de los últimos dinosaurios, vivo hasta el impacto del asteroide."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Pachycephalosaurus","es":"Pachycephalosaurus wyomingensis"},
+      "pbdb": "Pachycephalosaurus"
+    },
+    {
+      "id": "edmontosaurus",
+      "name": {"en":"Edmontosaurus","es":"Edmontosaurus"},
+      "group": "dinosaur",
+      "icon": "🦕",
+      "life": "land",
+      "from": 73,
+      "to": 66,
+      "sites": [
+        {"at":[-112.7,51.46],"place":{"en":"Horseshoe Canyon, near Drumheller, Alberta, Canada","es":"Cañón Horseshoe, cerca de Drumheller, Alberta, Canadá"}},
+        {"at":[-104.5,43.2],"place":{"en":"Lance Formation, eastern Wyoming, United States","es":"Formación Lance, este de Wyoming, Estados Unidos"}},
+        {"at":[-151.4,69.9],"place":{"en":"Colville River, North Slope, Alaska, United States","es":"Río Colville, North Slope, Alaska, Estados Unidos"}}
+      ],
+      "len": 12,
+      "mass": 6000,
+      "diet": "plants",
+      "text": {"en":"A big duck-billed dinosaur, about 12 metres long, with a toothless beak at the front and hundreds of grinding teeth behind, packed in rows that were always being replaced. Several 'mummies' keep its skin, and one showed a fleshy comb on its head, like a rooster's. Herds lived from Colorado to Alaska, where they lived through dark Arctic winters. One tail has a healed T. rex bite: that one got away.","es":"Un gran dinosaurio de pico de pato, de unos 12 metros, con un pico sin dientes adelante y cientos de dientes trituradores atrás, en hileras que se renovaban sin cesar. Varias 'momias' conservan su piel, y una mostró una cresta carnosa en la cabeza, como la de un gallo. Sus manadas vivían desde Colorado hasta Alaska, donde pasaban los oscuros inviernos árticos. Una cola tiene una mordida curada de T. rex: ese escapó."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Edmontosaurus","es":"Edmontosaurus"},
+      "pbdb": "Edmontosaurus"
+    },
+    {
+      "id": "triceratops",
+      "name": {"en":"Triceratops horridus","es":"Triceratops horridus"},
+      "group": "dinosaur",
+      "icon": "🦏",
+      "life": "land",
+      "from": 68,
+      "to": 66,
+      "sites": [
+        {"at":[-104.53,43.18],"place":{"en":"Lance Formation, Niobrara County, Wyoming, United States","es":"Formación Lance, condado de Niobrara, Wyoming, Estados Unidos"}},
+        {"at":[-106.9,47.6],"place":{"en":"Hell Creek Formation, Montana, United States","es":"Formación Hell Creek, Montana, Estados Unidos"}},
+        {"at":[-105,39.75],"place":{"en":"Denver Formation, Colorado, United States","es":"Formación Denver, Colorado, Estados Unidos"}}
+      ],
+      "len": 8.5,
+      "mass": 8000,
+      "diet": "plants",
+      "text": {"en":"The 'three-horned face': up to 9 metres long, with a parrot-like beak, a solid bony frill and three horns, the two over its eyes about a metre long. It was one of the commonest big animals in western North America in the last 2 million years of the dinosaurs, and many skulls bear wounds from horn-locking fights and T. rex teeth. When Othniel Marsh saw its first horns in 1887, he thought they came from a giant bison.","es":"La 'cara de tres cuernos': hasta 9 metros, con pico de loro, una gola ósea maciza y tres cuernos, los de los ojos de cerca de un metro. Fue uno de los animales grandes más comunes del oeste de América del Norte en los últimos 2 millones de años de los dinosaurios, y muchos cráneos tienen heridas de peleas con los cuernos trabados y de dientes de T. rex. Al ver sus primeros cuernos en 1887, Othniel Marsh creyó que eran de un bisonte gigante."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Triceratops","es":"Triceratops"},
+      "pbdb": "Triceratops",
+      "item": "triceratops"
+    },
+    {
+      "id": "tyrannosaurus",
+      "name": {"en":"Tyrannosaurus rex","es":"Tyrannosaurus rex"},
+      "common": {"en":"T. rex","es":"T. rex"},
+      "group": "dinosaur",
+      "icon": "🦖",
+      "life": "land",
+      "from": 68,
+      "to": 66,
+      "sites": [
+        {"at":[-107.08,47.54],"place":{"en":"Hell Creek Formation, near Jordan, Montana, United States","es":"Formación Hell Creek, cerca de Jordan, Montana, Estados Unidos"}},
+        {"at":[-102.04,45.02],"place":{"en":"Near Faith, South Dakota, United States, where 'Sue' was found","es":"Cerca de Faith, Dakota del Sur, Estados Unidos, donde se halló a 'Sue'"}},
+        {"at":[-108.8,49.5],"place":{"en":"Frenchman Formation, near Eastend, Saskatchewan, Canada","es":"Formación Frenchman, cerca de Eastend, Saskatchewan, Canadá"}}
+      ],
+      "len": 12.3,
+      "mass": 8400,
+      "diet": "meat",
+      "text": {"en":"One of the largest meat-eaters ever to walk the Earth: about 12 metres long and 8 tonnes, with a head 1.5 metres long and teeth the size of bananas. Its bite, strong enough to crush bone, was the most powerful of any land animal known. It had small but muscular two-fingered arms, a keen sense of smell and forward-facing eyes. It lived only in the last 2 million years before the asteroid struck, in western North America.","es":"Uno de los mayores carnívoros que han pisado la Tierra: unos 12 metros y 8 toneladas, con una cabeza de 1,5 metros y dientes del tamaño de plátanos. Su mordida, capaz de triturar huesos, era la más poderosa de cualquier animal terrestre conocido. Tenía brazos pequeños pero musculosos, con dos dedos, un gran olfato y ojos que miraban al frente. Vivió solo en los últimos 2 millones de años antes del asteroide, en el oeste de América del Norte."},
+      "kin": {"en":"Birds, the living dinosaurs; then crocodiles","es":"Las aves, los dinosaurios vivos; luego los cocodrilos"},
+      "wiki": {"en":"Tyrannosaurus","es":"Tyrannosaurus rex"},
+      "pbdb": "Tyrannosaurus",
+      "item": "tyrannosaurus"
+    },
+    {
+      "id": "confuciusornis",
+      "name": {"en":"Confuciusornis sanctus","es":"Confuciusornis sanctus"},
+      "group": "flyer",
+      "icon": "🐦",
+      "life": "air",
+      "from": 125,
+      "to": 120,
+      "sites": [
+        {"at":[120.88,41.6],"place":{"en":"Sihetun, Beipiao, Liaoning, China","es":"Sihetun, Beipiao, Liaoning, China"}}
+      ],
+      "mass": 0.2,
+      "diet": "both",
+      "text": {"en":"The oldest known bird with a true, toothless beak, about the size of a pigeon. Thousands of skeletons have been found in old lake beds in Liaoning, China, making it one of the best-known early birds. Many have two long, ribbon-like tail feathers, perhaps males showing off, like birds of paradise today. It could fly, but it still had big clawed fingers on its wings.","es":"El ave más antigua conocida con un verdadero pico sin dientes, del tamaño de una paloma. Se han hallado miles de esqueletos en antiguos lechos de lagos de Liaoning, China, así que es una de las aves primitivas mejor conocidas. Muchos tienen dos plumas largas como cintas en la cola, quizá machos luciéndose, como las aves del paraíso actuales. Podía volar, pero aún tenía grandes dedos con garras en las alas."},
+      "kin": {"en":"Birds; it was an early branch, not the ancestor of today's birds","es":"Las aves; era una rama temprana, no la antepasada de las aves actuales"},
+      "wiki": {"en":"Confuciusornis","es":"Confuciusornis"},
+      "pbdb": "Confuciusornis",
+      "item": "confuciusornis"
+    },
+    {
+      "id": "pteranodon",
+      "name": {"en":"Pteranodon longiceps","es":"Pteranodon longiceps"},
+      "group": "flyer",
+      "icon": "🦇",
+      "life": "air",
+      "from": 86,
+      "to": 81,
+      "sites": [
+        {"at":[-100.87,38.8],"place":{"en":"Smoky Hill Chalk, Logan County, Kansas, United States","es":"Creta de Smoky Hill, condado de Logan, Kansas, Estados Unidos"}},
+        {"at":[-102.9,43.67],"place":{"en":"Pierre Shale, South Dakota, United States","es":"Lutitas Pierre, Dakota del Sur, Estados Unidos"}}
+      ],
+      "mass": 25,
+      "diet": "fish",
+      "text": {"en":"A big pterosaur with wings up to 6 metres across, no teeth (its name means 'toothless wing') and a long crest pointing back from its head, bigger in the males. It soared far out over the inland sea that once split North America in two, diving or skimming for fish. More than 1,000 fossils come from the chalk of Kansas. Like all pterosaurs, it was a flying reptile, not a dinosaur.","es":"Un gran pterosaurio con alas de hasta 6 metros de punta a punta, sin dientes (su nombre significa 'ala sin dientes') y una larga cresta hacia atrás, más grande en los machos. Planeaba lejos sobre el mar interior que partía en dos a América del Norte, zambulléndose o rozando el agua para pescar. Hay más de 1000 fósiles en la creta de Kansas. Como todos los pterosaurios, era un reptil volador, no un dinosaurio."},
+      "kin": {"en":"None alive: pterosaurs were cousins of the dinosaurs, so birds and crocodiles are their nearest kin","es":"Ninguno vivo: eran primos de los dinosaurios, así que sus parientes más cercanos son las aves y los cocodrilos"},
+      "wiki": {"en":"Pteranodon","es":"Pteranodon"},
+      "pbdb": "Pteranodon",
+      "item": "pteranodon"
+    },
+    {
+      "id": "hatzegopteryx",
+      "name": {"en":"Hatzegopteryx thambema","es":"Hatzegopteryx thambema"},
+      "group": "flyer",
+      "icon": "🦇",
+      "life": "air",
+      "from": 70,
+      "to": 66,
+      "sites": [
+        {"at":[22.78,45.62],"place":{"en":"Hațeg Basin, Hunedoara, Romania","es":"Cuenca de Hațeg, Hunedoara, Rumania"}}
+      ],
+      "diet": "meat",
+      "text": {"en":"A giant pterosaur with wings about 10 metres across and a massive skull perhaps 3 metres long, far sturdier than its relatives'. It lived on Hațeg Island, now part of Romania, where the local dinosaurs were dwarfs. With no big meat-eating dinosaurs there, this pterosaur may have been the top predator, striding on all fours and gulping down small dinosaurs.","es":"Un pterosaurio gigante con alas de unos 10 metros de punta a punta y un cráneo macizo de quizá 3 metros, mucho más robusto que el de sus parientes. Vivía en la isla de Hațeg, hoy parte de Rumania, donde los dinosaurios locales eran enanos. Como allí no había grandes dinosaurios carnívoros, este pterosaurio quizá era el superdepredador: caminaba en cuatro patas y engullía dinosaurios pequeños."},
+      "kin": {"en":"None alive: pterosaurs were cousins of the dinosaurs, so birds and crocodiles are their nearest kin","es":"Ninguno vivo: eran primos de los dinosaurios, así que sus parientes más cercanos son las aves y los cocodrilos"},
+      "wiki": {"en":"Hatzegopteryx","es":"Hatzegopteryx"},
+      "pbdb": "Hatzegopteryx",
+      "item": "hatzegopteryx"
+    },
+    {
+      "id": "quetzalcoatlus",
+      "name": {"en":"Quetzalcoatlus northropi","es":"Quetzalcoatlus northropi"},
+      "group": "flyer",
+      "icon": "🦇",
+      "life": "air",
+      "from": 68,
+      "to": 66,
+      "sites": [
+        {"at":[-103.2,29.4],"place":{"en":"Big Bend National Park, Texas, United States","es":"Parque Nacional Big Bend, Texas, Estados Unidos"}}
+      ],
+      "mass": 250,
+      "diet": "meat",
+      "text": {"en":"One of the largest animals that ever flew: a pterosaur with wings about 10 metres across, as wide as a small plane, and when standing it was as tall as a giraffe. Yet it was light, perhaps 250 kg, with hollow bones full of air. It probably took off with a powerful leap on all fours, and it hunted on the ground like a giant stork. It is named after Quetzalcóatl, the feathered serpent god of the Aztecs.","es":"Uno de los animales más grandes que han volado: un pterosaurio con alas de unos 10 metros de punta a punta, como una avioneta, y de pie era tan alto como una jirafa. Aun así era liviano, quizá 250 kg, con huesos huecos llenos de aire. Probablemente despegaba con un potente salto en cuatro patas y cazaba en el suelo como una cigüeña gigante. Lleva el nombre de Quetzalcóatl, la serpiente emplumada de los mexicas."},
+      "kin": {"en":"None alive: pterosaurs were cousins of the dinosaurs, so birds and crocodiles are their nearest kin","es":"Ninguno vivo: eran primos de los dinosaurios, así que sus parientes más cercanos son las aves y los cocodrilos"},
+      "wiki": {"en":"Quetzalcoatlus","es":"Quetzalcoatlus"},
+      "pbdb": "Quetzalcoatlus",
+      "item": "quetzalcoatlus"
+    },
+    {
+      "id": "hesperornis",
+      "name": {"en":"Hesperornis regalis","es":"Hesperornis regalis"},
+      "group": "flyer",
+      "icon": "🐧",
+      "life": "sea",
+      "from": 84,
+      "to": 78,
+      "sites": [
+        {"at":[-100.4,38.9],"place":{"en":"Niobrara Chalk, western Kansas, United States","es":"Creta Niobrara, oeste de Kansas, Estados Unidos"}}
+      ],
+      "len": 1.8,
+      "diet": "fish",
+      "text": {"en":"A flightless seabird up to 1.8 metres long, with wings shrunk to tiny stubs. Big feet set far back on its body drove it through the water after fish, which it caught with a beak still lined with small teeth. It probably came ashore only to breed, shuffling clumsily on land. Fossils of it and its close relatives, from Kansas to the Canadian Arctic, show they swam the inland sea of North America.","es":"Un ave marina no voladora de hasta 1,8 metros, con las alas reducidas a muñones diminutos. Sus grandes patas, muy atrás en el cuerpo, la impulsaban bajo el agua tras los peces, que atrapaba con un pico que aún tenía dientecillos. Probablemente salía a tierra solo para criar, arrastrándose con torpeza. Fósiles suyos y de sus parientes, de Kansas al Ártico canadiense, muestran que nadaban en el mar interior de América del Norte."},
+      "kin": {"en":"Birds: it was an early branch; loons and grebes swim the same way but are not close kin","es":"Las aves: era una rama temprana; colimbos y zambullidores nadan igual, pero no son parientes cercanos"},
+      "wiki": {"en":"Hesperornis","es":"Hesperornis"},
+      "pbdb": "Hesperornis",
+      "item": "hesperornis"
+    },
+    {
+      "id": "ichthyornis",
+      "name": {"en":"Ichthyornis dispar","es":"Ichthyornis dispar"},
+      "group": "flyer",
+      "icon": "🐦",
+      "life": "air",
+      "from": 95,
+      "to": 83,
+      "sites": [
+        {"at":[-101,39],"place":{"en":"Niobrara Chalk, western Kansas, United States","es":"Creta Niobrara, oeste de Kansas, Estados Unidos"}},
+        {"at":[-88.02,32.76],"place":{"en":"Mooreville Chalk, Greene County, Alabama, United States","es":"Creta Mooreville, condado de Greene, Alabama, Estados Unidos"}}
+      ],
+      "diet": "fish",
+      "text": {"en":"A tern-sized seabird that mixed old and new: strong wings and a keeled breastbone like a modern bird's, and the start of a beak, but jaws still full of sharp teeth. When Othniel Marsh described such toothed birds in the 1870s, Charles Darwin wrote to him that they were the best support for his theory of evolution. New skulls studied in 2018 showed how the beak and brain of modern birds began to take shape.","es":"Un ave marina del tamaño de un charrán que mezclaba lo viejo y lo nuevo: alas fuertes y esternón con quilla como un ave moderna, y el inicio de un pico, pero mandíbulas llenas de dientes. Cuando Othniel Marsh describió estas aves dentadas en la década de 1870, Darwin le escribió que eran el mejor apoyo a su teoría de la evolución. Cráneos estudiados en 2018 mostraron cómo empezaron a formarse el pico y el cerebro de las aves actuales."},
+      "kin": {"en":"Birds: it was a close cousin of the group that includes all living birds","es":"Las aves: era primo cercano del grupo que incluye a todas las aves actuales"},
+      "wiki": {"en":"Ichthyornis","es":"Ichthyornis dispar"},
+      "pbdb": "Ichthyornis"
+    },
+    {
+      "id": "vegavis",
+      "name": {"en":"Vegavis iaai","es":"Vegavis iaai"},
+      "group": "flyer",
+      "icon": "🦆",
+      "life": "air",
+      "from": 69,
+      "to": 66,
+      "sites": [
+        {"at":[-57.57,-63.86],"place":{"en":"Vega Island, Antarctic Peninsula, Antarctica","es":"Isla Vega, península Antártica, Antártida"}}
+      ],
+      "diet": "fish",
+      "text": {"en":"A diving waterbird from Antarctica, 69 to 66 million years old, and one of the oldest known birds of the modern kind. A skeleton found on Vega Island in the early 1990s kept its syrinx, the voice box of birds, so it may have honked like a goose. A skull described in 2025 shows a pointed bill and strong neck muscles for diving after fish, like today's loons and grebes. Antarctica then had forests, not ice.","es":"Un ave acuática buceadora de la Antártida, de hace 69 a 66 millones de años, una de las aves más antiguas de tipo moderno. Un esqueleto hallado en la isla Vega a inicios de los años noventa conservó su siringe, el órgano de la voz de las aves, así que quizá graznaba como un ganso. Un cráneo descrito en 2025 muestra un pico puntiagudo y fuertes músculos del cuello para bucear tras los peces, como los colimbos actuales. La Antártida tenía bosques, no hielo."},
+      "kin": {"en":"Probably waterfowl such as ducks and geese; still debated","es":"Probablemente patos y gansos; aún se discute"},
+      "wiki": {"en":"Vegavis","es":"Vegavis iaai"},
+      "pbdb": "Vegavis"
+    },
+    {
+      "id": "mosasaurus",
+      "name": {"en":"Mosasaurus","es":"Mosasaurus"},
+      "group": "reptile",
+      "icon": "🐊",
+      "life": "sea",
+      "from": 82,
+      "to": 66,
+      "sites": [
+        {"at":[5.68,50.83],"place":{"en":"Maastricht, Limburg, Netherlands","es":"Maastricht, Limburgo, Países Bajos"}},
+        {"at":[-74.3,40.3],"place":{"en":"Monmouth County, New Jersey, United States","es":"Condado de Monmouth, Nueva Jersey, Estados Unidos"}},
+        {"at":[-6.79,32.77],"place":{"en":"Ouled Abdoun Basin, near Khouribga, Morocco","es":"Cuenca de Ouled Abdoun, cerca de Juribga, Marruecos"}}
+      ],
+      "len": 13,
+      "diet": "meat",
+      "text": {"en":"A giant sea lizard, a relative of today's monitor lizards, up to about 13 metres long, with a big head, flippers and a shark-like tail fin. It was a top predator of the last seas of the dinosaur age, eating fish, turtles, ammonites and other sea reptiles. A skull dug from a quarry near Maastricht, Netherlands, around 1780 was seized by French troops in 1794 and is still in Paris; it helped show that animals can go extinct.","es":"Un lagarto marino gigante, pariente de los varanos actuales, de hasta unos 13 metros, con cabeza grande, aletas y una cola con aleta como de tiburón. Fue un superdepredador de los últimos mares de la era de los dinosaurios: comía peces, tortugas, amonitas y otros reptiles marinos. Un cráneo extraído cerca de Maastricht, Países Bajos, hacia 1780, fue capturado por tropas francesas en 1794 y sigue en París; ayudó a mostrar que las especies se extinguen."},
+      "kin": {"en":"Monitor lizards such as the Komodo dragon, and perhaps snakes","es":"Los varanos, como el dragón de Komodo, y quizá las serpientes"},
+      "wiki": {"en":"Mosasaurus","es":"Mosasaurus"},
+      "pbdb": "Mosasaurus",
+      "item": "mosasaurus"
+    },
+    {
+      "id": "tylosaurus",
+      "name": {"en":"Tylosaurus proriger","es":"Tylosaurus proriger"},
+      "group": "reptile",
+      "icon": "🐊",
+      "life": "sea",
+      "from": 90,
+      "to": 70,
+      "sites": [
+        {"at":[-100.02,39.12],"place":{"en":"Niobrara Chalk, western Kansas, United States","es":"Creta Niobrara, oeste de Kansas, Estados Unidos"}}
+      ],
+      "len": 13,
+      "diet": "meat",
+      "text": {"en":"One of the biggest mosasaurs, up to about 13 metres long, with a long, bony, pointed snout it may have used to ram prey. It ate almost anything: fossils have been found with fish, sharks, a diving bird, a plesiosaur and even another mosasaur in their stomachs. It hunted in the inland sea that covered Kansas, where its skeletons now lie in the chalk.","es":"Uno de los mosasaurios más grandes, de hasta unos 13 metros, con un hocico largo, óseo y puntiagudo que quizá usaba para embestir a sus presas. Comía casi de todo: en el estómago de sus fósiles se han hallado peces, tiburones, un ave buceadora, un plesiosaurio y hasta otro mosasaurio. Cazaba en el mar interior que cubría Kansas, donde hoy sus esqueletos yacen en la creta."},
+      "kin": {"en":"Monitor lizards such as the Komodo dragon, and perhaps snakes","es":"Los varanos, como el dragón de Komodo, y quizá las serpientes"},
+      "wiki": {"en":"Tylosaurus","es":"Tylosaurus"},
+      "pbdb": "Tylosaurus",
+      "item": "tylosaurus"
+    },
+    {
+      "id": "elasmosaurus",
+      "name": {"en":"Elasmosaurus platyurus","es":"Elasmosaurus platyurus"},
+      "group": "reptile",
+      "icon": "🦕",
+      "life": "sea",
+      "from": 81,
+      "to": 80,
+      "sites": [
+        {"at":[-101.37,39.01],"place":{"en":"Near Fort Wallace, Logan County, Kansas, United States","es":"Cerca de Fort Wallace, condado de Logan, Kansas, Estados Unidos"}}
+      ],
+      "len": 10.3,
+      "diet": "fish",
+      "text": {"en":"A plesiosaur with one of the longest necks of any animal ever: about 7 metres of its 10-metre length, with 72 neck bones. When Edward Drinker Cope first described it in 1868, he put the head on the end of the tail. The mistake was soon spotted, and the story fuelled his bitter feud with Othniel Marsh, the 'Bone Wars'. It probably cruised slowly, reaching into shoals of fish with its neck.","es":"Un plesiosaurio con uno de los cuellos más largos de cualquier animal: unos 7 metros de sus 10 metros de largo, con 72 vértebras. Cuando Edward Drinker Cope lo describió en 1868, le puso la cabeza en la punta de la cola. El error se descubrió pronto y alimentó su amarga rivalidad con Othniel Marsh, la 'guerra de los huesos'. Probablemente nadaba despacio, metiendo el cuello en los cardúmenes de peces."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Elasmosaurus","es":"Elasmosaurus"},
+      "pbdb": "Elasmosaurus",
+      "item": "elasmosaurus"
+    },
+    {
+      "id": "kronosaurus",
+      "name": {"en":"Kronosaurus queenslandicus","es":"Kronosaurus queenslandicus"},
+      "group": "reptile",
+      "icon": "🐋",
+      "life": "sea",
+      "from": 115,
+      "to": 100,
+      "sites": [
+        {"at":[143.13,-20.73],"place":{"en":"Near Richmond, Queensland, Australia","es":"Cerca de Richmond, Queensland, Australia"}},
+        {"at":[144.2,-20.84],"place":{"en":"Near Hughenden, Queensland, Australia","es":"Cerca de Hughenden, Queensland, Australia"}}
+      ],
+      "len": 10,
+      "diet": "meat",
+      "text": {"en":"One of the largest pliosaurs, short-necked sea reptiles with huge heads: about 10 metres long, with a skull more than 2 metres long. It hunted in the shallow inland sea that once flooded much of Australia, eating turtles, plesiosaurs and anything else it could catch. A famous skeleton at Harvard University was mounted with too many backbones, making it look almost 13 metres long.","es":"Uno de los mayores pliosaurios, reptiles marinos de cuello corto y cabeza enorme: unos 10 metros, con un cráneo de más de 2 metros. Cazaba en el mar interior poco profundo que inundaba gran parte de Australia y comía tortugas, plesiosaurios y todo lo que pudiera atrapar. Un famoso esqueleto de la Universidad de Harvard se montó con demasiadas vértebras, lo que lo hacía parecer de casi 13 metros."},
+      "kin": {"en":"No close living relatives; the reptiles of today are only distant cousins","es":"Ningún pariente cercano vivo; los reptiles actuales son primos lejanos"},
+      "wiki": {"en":"Kronosaurus","es":"Kronosaurus"},
+      "pbdb": "Kronosaurus"
+    },
+    {
+      "id": "xiphactinus",
+      "name": {"en":"Xiphactinus audax","es":"Xiphactinus audax"},
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 100,
+      "to": 70,
+      "sites": [
+        {"at":[-100.45,38.9],"place":{"en":"Niobrara Chalk, Gove County, Kansas, United States","es":"Creta Niobrara, condado de Gove, Kansas, Estados Unidos"}},
+        {"at":[-98.92,39],"place":{"en":"Greenhorn Limestone, Russell County, Kansas, United States","es":"Caliza Greenhorn, condado de Russell, Kansas, Estados Unidos"}},
+        {"at":[-88.08,32.95],"place":{"en":"Mooreville Chalk, Alabama, United States","es":"Creta Mooreville, Alabama, Estados Unidos"}}
+      ],
+      "len": 5,
+      "diet": "fish",
+      "text": {"en":"A bony fish as long as a car, 5 metres or more, with a bulldog face and a mouth full of fang-like teeth. It swallowed big fish whole, and sometimes too big: the famous 'fish within a fish' from Kansas is a 4-metre Xiphactinus with a Gillicus nearly 2 metres long inside it. Both died soon after the meal, perhaps because the prey thrashed and tore its stomach.","es":"Un pez óseo tan largo como un carro, de 5 metros o más, con cara de bulldog y la boca llena de dientes como colmillos. Tragaba peces grandes enteros, a veces demasiado grandes: el famoso 'pez dentro de un pez' de Kansas es un Xiphactinus de 4 metros con un Gillicus de casi 2 metros adentro. Ambos murieron poco después de la comida, quizá porque la presa se sacudió y le desgarró el estómago."},
+      "kin": {"en":"Most living fish: it was an ichthyodectid, an early branch of the teleosts","es":"La mayoría de los peces actuales: era un ictiodéctido, una rama temprana de los teleósteos"},
+      "wiki": {"en":"Xiphactinus","es":"Xiphactinus"},
+      "pbdb": "Xiphactinus"
+    },
+    {
+      "id": "cretoxyrhina",
+      "name": {"en":"Cretoxyrhina mantelli","es":"Cretoxyrhina mantelli"},
+      "common": {"en":"Ginsu shark","es":"Tiburón Ginsu"},
+      "group": "fish",
+      "icon": "🦈",
+      "life": "sea",
+      "from": 107,
+      "to": 73,
+      "sites": [
+        {"at":[-100.45,38.85],"place":{"en":"Niobrara Chalk, Gove County, Kansas, United States","es":"Creta Niobrara, condado de Gove, Kansas, Estados Unidos"}},
+        {"at":[-0.01,50.87],"place":{"en":"Chalk of Lewes, Sussex, England","es":"Creta de Lewes, Sussex, Inglaterra"}}
+      ],
+      "len": 7,
+      "mass": 3400,
+      "diet": "meat",
+      "text": {"en":"A powerful shark up to 7 metres long, the size of a great white, which it looked like although it was not its ancestor. Its smooth, knife-like teeth sliced prey so well that it was nicknamed the 'Ginsu shark', after a kitchen knife sold on television. Bite marks and teeth stuck in bones show it hunted or scavenged mosasaurs, plesiosaurs, big fish and even Pteranodon.","es":"Un poderoso tiburón de hasta 7 metros, del tamaño de un tiburón blanco, al que se parecía aunque no era su antepasado. Sus dientes lisos, como cuchillos, cortaban tan bien que lo apodaron 'tiburón Ginsu', por un cuchillo de cocina anunciado en la televisión. Marcas de mordidas y dientes clavados en huesos muestran que cazaba o carroñaba mosasaurios, plesiosaurios, peces grandes y hasta pteranodontes."},
+      "kin": {"en":"Mackerel sharks such as the great white and the mako, as distant cousins","es":"Los tiburones lamniformes, como el blanco y el mako, primos lejanos"},
+      "wiki": {"en":"Cretoxyrhina","es":"Cretoxyrhina"},
+      "pbdb": "Cretoxyrhina"
+    },
+    {
+      "id": "archelon",
+      "name": {"en":"Archelon ischyros","es":"Archelon ischyros"},
+      "group": "reptile",
+      "icon": "🐢",
+      "life": "sea",
+      "from": 80,
+      "to": 74,
+      "sites": [
+        {"at":[-102.9,43.67],"place":{"en":"Pierre Shale, South Dakota, United States","es":"Lutitas Pierre, Dakota del Sur, Estados Unidos"}}
+      ],
+      "len": 4.6,
+      "mass": 2200,
+      "diet": "small",
+      "text": {"en":"The biggest turtle known, about 4.6 metres long and over 2 tonnes, as big as a small car. Its shell was not solid but a light frame of bony struts covered in tough, leathery skin, like a leatherback turtle's today. It swam the inland sea of North America with huge flippers, maybe eating jellyfish, squid and shellfish with its hooked beak. The best skeleton is missing a back flipper, perhaps bitten off by a mosasaur.","es":"La tortuga más grande conocida, de unos 4,6 metros y más de 2 toneladas, como un carro pequeño. Su caparazón no era macizo, sino un armazón ligero de varillas óseas cubierto de piel dura y correosa, como el de la tortuga laúd. Nadaba en el mar interior de América del Norte con enormes aletas y quizá comía medusas, calamares y mariscos con su pico ganchudo. Al mejor esqueleto le falta una aleta trasera, quizá arrancada por un mosasaurio."},
+      "kin": {"en":"Sea turtles, perhaps the leatherback most of all (debated)","es":"Las tortugas marinas, quizá sobre todo la laúd (se discute)"},
+      "wiki": {"en":"Archelon","es":"Archelon"},
+      "pbdb": "Archelon",
+      "item": "archelon"
+    },
+    {
+      "id": "nipponites",
+      "name": {"en":"Nipponites mirabilis","es":"Nipponites mirabilis"},
+      "common": {"en":"Ammonite","es":"Amonita"},
+      "group": "invertebrate",
+      "icon": "🐚",
+      "life": "sea",
+      "from": 92,
+      "to": 86,
+      "sites": [
+        {"at":[141.95,43.25],"place":{"en":"Yezo Group, central Hokkaido, Japan","es":"Grupo Yezo, centro de Hokkaido, Japón"}},
+        {"at":[140.94,37.15],"place":{"en":"Futaba Group, Fukushima, Japan","es":"Grupo Futaba, Fukushima, Japón"}}
+      ],
+      "len": 0.1,
+      "diet": "small",
+      "text": {"en":"The strangest ammonite of all: instead of a neat spiral, its shell grew in a tangle of U-turns, like a knot of intestines or a pile of paperclips. It was not a mistake: the shell followed simple rules, turning back and forth in a regular pattern that kept the animal balanced as it grew. It drifted in the sea around what is now Japan about 90 million years ago, probably near the bottom.","es":"La amonita más extraña de todas: en lugar de una espiral ordenada, su concha crecía en una maraña de vueltas en U, como un nudo de intestinos o un montón de clips. No era un error: la concha seguía reglas simples, girando de un lado a otro en un patrón regular que mantenía al animal equilibrado mientras crecía. Flotaba en el mar de lo que hoy es Japón hace unos 90 millones de años, probablemente cerca del fondo."},
+      "kin": {"en":"Squid, octopuses and cuttlefish, more than the nautilus","es":"Los calamares, pulpos y sepias, más que el nautilo"},
+      "wiki": {"en":"Nipponites","es":""},
+      "pbdb": "Nipponites"
+    },
+    {
+      "id": "sarcosuchus",
+      "name": {"en":"Sarcosuchus imperator","es":"Sarcosuchus imperator"},
+      "common": {"en":"SuperCroc","es":"Supercocodrilo"},
+      "group": "reptile",
+      "icon": "🐊",
+      "life": "fresh",
+      "from": 121,
+      "to": 112,
+      "sites": [
+        {"at":[9.17,16.47],"place":{"en":"Gadoufaoua, Ténéré Desert, Niger","es":"Gadoufaoua, desierto del Teneré, Níger"}}
+      ],
+      "len": 9.5,
+      "mass": 8000,
+      "diet": "meat",
+      "text": {"en":"'SuperCroc', one of the largest crocodile-like animals ever: about 9 metres long and 8 tonnes, as heavy as an elephant. Its long snout ended in a bulb, and its 132 teeth gripped fish, turtles and probably dinosaurs that came to drink. It lived in rivers that crossed what is now the Sahara in Niger, then green and wet. It kept growing for most of its long life, which may have lasted 50 or 60 years.","es":"El 'supercocodrilo', uno de los mayores animales parecidos a cocodrilos: unos 9 metros y 8 toneladas, tan pesado como un elefante. Su hocico largo terminaba en un bulbo, y sus 132 dientes sujetaban peces, tortugas y quizá dinosaurios que se acercaban a beber. Vivía en ríos que cruzaban lo que hoy es el Sahara, en Níger, entonces verde y húmedo. Seguía creciendo casi toda su larga vida, que pudo durar 50 o 60 años."},
+      "kin": {"en":"Crocodiles, as distant cousins; it was not a true crocodile","es":"Los cocodrilos, como primos lejanos; no era un cocodrilo verdadero"},
+      "wiki": {"en":"Sarcosuchus","es":"Sarcosuchus imperator"},
+      "pbdb": "Sarcosuchus"
+    },
+    {
+      "id": "deinosuchus",
+      "name": {"en":"Deinosuchus","es":"Deinosuchus"},
+      "group": "reptile",
+      "icon": "🐊",
+      "life": "shore",
+      "from": 82,
+      "to": 73,
+      "sites": [
+        {"at":[-103.52,29.32],"place":{"en":"Aguja Formation, Big Bend, Texas, United States","es":"Formación Aguja, Big Bend, Texas, Estados Unidos"}},
+        {"at":[-109.65,47.4],"place":{"en":"Judith River Formation, Montana, United States","es":"Formación Judith River, Montana, Estados Unidos"}},
+        {"at":[-86.65,32.15],"place":{"en":"Lowndes County, Alabama, United States","es":"Condado de Lowndes, Alabama, Estados Unidos"}}
+      ],
+      "len": 10,
+      "mass": 3000,
+      "diet": "meat",
+      "text": {"en":"A giant relative of alligators, up to about 10 metres long, that lurked in the estuaries and coasts on both sides of the sea that split North America. Its thick, blunt teeth were built for crushing, and bite marks on turtle shells and dinosaur bones show it ate both: it could probably ambush a big duck-billed dinosaur at the water's edge. Its name means 'terrible crocodile'.","es":"Un pariente gigante de los aligátores, de hasta unos 10 metros, que acechaba en estuarios y costas a ambos lados del mar que partía en dos a América del Norte. Sus dientes gruesos y romos servían para triturar, y las mordidas en caparazones de tortugas y huesos de dinosaurios muestran que comía ambos: quizá emboscaba a grandes dinosaurios de pico de pato en la orilla. Su nombre significa 'cocodrilo terrible'."},
+      "kin": {"en":"Alligators and caimans","es":"Los aligátores y los caimanes"},
+      "wiki": {"en":"Deinosuchus","es":"Deinosuchus"},
+      "pbdb": "Deinosuchus"
+    },
+    {
+      "id": "beelzebufo",
+      "name": {"en":"Beelzebufo ampinga","es":"Beelzebufo ampinga"},
+      "common": {"en":"Devil frog","es":"Rana diablo"},
+      "group": "amphibian",
+      "icon": "🐸",
+      "life": "fresh",
+      "from": 70,
+      "to": 66,
+      "sites": [
+        {"at":[46.58,-15.91],"place":{"en":"Maevarano Formation, near Berivotra, Madagascar","es":"Formación Maevarano, cerca de Berivotra, Madagascar"}}
+      ],
+      "len": 0.25,
+      "diet": "meat",
+      "text": {"en":"The 'devil frog', one of the biggest frogs ever, from Madagascar, with a huge mouth and bony armour on its head. Like the horned frogs of South America today, probably its closest living relatives, it likely sat and waited, then gulped down anything that fitted in its mouth: insects, lizards, other frogs, perhaps even baby dinosaurs. Its bite may have been as strong as a wolf's.","es":"La 'rana diablo', una de las ranas más grandes que han existido, de Madagascar, con una boca enorme y una coraza ósea en la cabeza. Como las ranas cornudas de Sudamérica, quizá sus parientes vivas más cercanas, probablemente esperaba inmóvil y engullía todo lo que le cupiera en la boca: insectos, lagartijas, otras ranas y quizá hasta crías de dinosaurio. Su mordida pudo ser tan fuerte como la de un lobo."},
+      "kin": {"en":"Probably the horned frogs (Ceratophrys) of South America","es":"Probablemente los escuerzos o ranas cornudas (Ceratophrys) de Sudamérica"},
+      "wiki": {"en":"Beelzebufo","es":""},
+      "pbdb": "Beelzebufo"
+    },
+    {
+      "id": "najash",
+      "name": {"en":"Najash rionegrina","es":"Najash rionegrina"},
+      "group": "reptile",
+      "icon": "🐍",
+      "life": "land",
+      "from": 99,
+      "to": 96,
+      "sites": [
+        {"at":[-68.7,-39.63],"place":{"en":"La Buitrera, Río Negro, Argentina","es":"La Buitrera, Río Negro, Argentina"}}
+      ],
+      "diet": "small",
+      "text": {"en":"A snake with back legs. Found in Patagonia and named after Nachash, the serpent of the Book of Genesis, it had a small pair of hind legs with knees and ankles, joined to its spine by hip bones. Well-preserved skulls described in 2019 show its head was already snake-like, with mobile jaws. It shows early snakes kept their back legs for millions of years, rather than losing them all at once.","es":"Una serpiente con patas traseras. Hallada en la Patagonia y nombrada por Najash, la serpiente del libro del Génesis, tenía un pequeño par de patas traseras con rodillas y tobillos, unidas a la columna por huesos de la cadera. Cráneos bien conservados descritos en 2019 muestran que su cabeza ya era de serpiente, con mandíbulas móviles. Muestra que las primeras serpientes conservaron sus patas traseras millones de años, en vez de perderlas de golpe."},
+      "kin": {"en":"Snakes, its living relatives; then lizards","es":"Las serpientes, sus parientes vivas; luego los lagartos"},
+      "wiki": {"en":"Najash","es":"Najash"},
+      "pbdb": "Najash"
+    },
+    {
+      "id": "repenomamus",
+      "name": {"en":"Repenomamus","es":"Repenomamus"},
+      "group": "mammal",
+      "icon": "🦡",
+      "life": "land",
+      "from": 125,
+      "to": 123,
+      "sites": [
+        {"at":[120.91,41.6],"place":{"en":"Lujiatun, Beipiao, Liaoning, China","es":"Lujiatun, Beipiao, Liaoning, China"}}
+      ],
+      "len": 1,
+      "mass": 12,
+      "diet": "meat",
+      "text": {"en":"A badger-sized mammal that ate dinosaurs. Most mammals then were small, but Repenomamus grew up to a metre long and over 10 kg, and one skeleton has the bones of a baby Psittacosaurus in its stomach. Another fossil, described in 2023, shows a Repenomamus attacking a Psittacosaurus bigger than itself, both buried in mid-fight by a volcanic mudflow.","es":"Un mamífero del tamaño de un tejón que comía dinosaurios. Casi todos los mamíferos de entonces eran pequeños, pero Repenomamus alcanzaba un metro y más de 10 kg, y un esqueleto tiene los huesos de una cría de Psittacosaurus en el estómago. Otro fósil, descrito en 2023, muestra a un Repenomamus atacando a un Psittacosaurus más grande que él, ambos sepultados en plena pelea por un flujo de lodo volcánico."},
+      "kin": {"en":"None close: it was a gobiconodont, an extinct branch; all living mammals are distant cousins","es":"Ninguno cercano: era un gobiconodonte, una rama extinta; los mamíferos actuales son primos lejanos"},
+      "wiki": {"en":"Repenomamus","es":"Repenomamus"},
+      "pbdb": "Repenomamus"
+    },
+    {
+      "id": "eomaia",
+      "name": {"en":"Eomaia scansoria","es":"Eomaia scansoria"},
+      "group": "mammal",
+      "icon": "🐭",
+      "life": "land",
+      "from": 125,
+      "to": 123,
+      "sites": [
+        {"at":[121.42,41.37],"place":{"en":"Dawangzhangzi, Lingyuan, Liaoning, China","es":"Dawangzhangzi, Lingyuan, Liaoning, China"}}
+      ],
+      "len": 0.1,
+      "mass": 0.025,
+      "diet": "small",
+      "text": {"en":"The 'dawn mother', a 10-cm climber with its fur preserved around it. When it was described from China in 2002 it was hailed as the oldest known member of the placental line; later studies suggest it may sit closer to the common ancestor of placentals and marsupials. Its feet were made for climbing in bushes and trees, and its narrow hips hint that it gave birth to tiny, undeveloped young, like a marsupial.","es":"La 'madre del amanecer', una trepadora de 10 cm con su pelaje conservado. Al describirse en China en 2002 se la presentó como el miembro más antiguo del linaje de los placentarios; estudios posteriores sugieren que quizá está más cerca del antepasado común de placentarios y marsupiales. Sus patas servían para trepar a arbustos y árboles, y su cadera estrecha sugiere que paría crías diminutas y poco desarrolladas, como un marsupial."},
+      "kin": {"en":"Placental mammals, or the shared ancestors of placentals and marsupials (debated)","es":"Los mamíferos placentarios, o los antepasados comunes de placentarios y marsupiales (se discute)"},
+      "wiki": {"en":"Eomaia","es":"Eomaia"},
+      "pbdb": "Eomaia"
+    },
+    {
+      "id": "archaefructus",
+      "name": {"en":"Archaefructus liaoningensis","es":"Archaefructus liaoningensis"},
+      "group": "plant",
+      "icon": "🌱",
+      "life": "fresh",
+      "from": 125,
+      "to": 122,
+      "sites": [
+        {"at":[120.84,41.62],"place":{"en":"Yixian Formation, Beipiao, Liaoning, China","es":"Formación Yixian, Beipiao, Liaoning, China"}}
+      ],
+      "len": 0.5,
+      "diet": "light",
+      "text": {"en":"One of the oldest known flowering plants, from the lakes of Liaoning, China, about 125 million years ago. A slender water plant about half a metre tall, it had no petals or sepals: its 'flowers' were bare stalks with pollen-making stamens below and small closed fruits above, each holding seeds. Whether it is a very early flowering plant or a water-lily relative that lost parts is still debated.","es":"Una de las plantas con flores más antiguas conocidas, de los lagos de Liaoning, China, hace unos 125 millones de años. Una planta acuática delgada de medio metro, sin pétalos ni sépalos: sus 'flores' eran tallos desnudos con estambres productores de polen abajo y frutitos cerrados arriba, cada uno con semillas. Aún se discute si es una planta con flores muy primitiva o una pariente de los nenúfares que perdió partes."},
+      "kin": {"en":"Flowering plants; perhaps closest to the water lilies (debated)","es":"Las plantas con flores; quizá más cercana a los nenúfares (se discute)"},
+      "wiki": {"en":"Archaefructus","es":"Archaefructus"},
+      "pbdb": "Archaefructus",
+      "item": "archaefructus"
+    },
+    {
+      "id": "montsechia",
+      "name": {"en":"Montsechia vidalii","es":"Montsechia vidalii"},
+      "group": "plant",
+      "icon": "🌱",
+      "life": "fresh",
+      "from": 130,
+      "to": 125,
+      "sites": [
+        {"at":[1,42.02],"place":{"en":"Montsec range, Lleida, Catalonia, Spain","es":"Sierra del Montsec, Lérida, Cataluña, España"}},
+        {"at":[-1.88,40.06],"place":{"en":"Las Hoyas, Cuenca, Spain","es":"Las Hoyas, Cuenca, España"}}
+      ],
+      "diet": "light",
+      "text": {"en":"Perhaps the oldest known flowering plant, 130 to 125 million years old, from old lake beds in Spain. It lived completely underwater, like the hornworts people keep in fish tanks, with no petals and no nectar: its pollen drifted through the water. Its fossils had been known for decades, but only in 2015 did a study of more than 1,000 specimens show it was a flowering plant.","es":"Quizá la planta con flores más antigua conocida, de 130 a 125 millones de años, hallada en antiguos lechos de lagos de España. Vivía totalmente bajo el agua, como las plantas que se ponen en las peceras, sin pétalos ni néctar: su polen flotaba en el agua. Sus fósiles se conocían desde hacía décadas, pero solo en 2015 un estudio de más de 1000 ejemplares mostró que era una planta con flores."},
+      "kin": {"en":"Probably the hornworts (Ceratophyllum), water plants of ponds and lakes","es":"Probablemente el Ceratophyllum, una planta acuática de estanques y lagos"},
+      "wiki": {"en":"Montsechia","es":"Montsechia vidalii"},
+      "pbdb": "Montsechia"
+    },
+    {
+      "id": "archaeanthus",
+      "name": {"en":"Archaeanthus linnenbergeri","es":"Archaeanthus linnenbergeri"},
+      "common": {"en":"Ancient magnolia","es":"Magnolia antigua"},
+      "group": "plant",
+      "icon": "🌸",
+      "life": "land",
+      "from": 100,
+      "to": 97,
+      "sites": [
+        {"at":[-98.65,38.9],"place":{"en":"Dakota Formation, Russell County, Kansas, United States","es":"Formación Dakota, condado de Russell, Kansas, Estados Unidos"}}
+      ],
+      "diet": "light",
+      "text": {"en":"One of the oldest flowers we can match with a living group: a big magnolia-like bloom with many petals around a cone of separate little fruits, from rocks about 100 million years old in Kansas. Its leaves were shaped like a tulip tree's. Magnolias and their relatives are among the oldest branches of the flowering plants, and many are still pollinated by beetles, as they probably were from the start.","es":"Una de las flores más antiguas que podemos relacionar con un grupo vivo: una gran flor parecida a una magnolia, con muchos pétalos alrededor de un cono de frutitos separados, de rocas de unos 100 millones de años en Kansas. Sus hojas tenían forma de hoja de tulipanero. Las magnolias y sus parientes son de las ramas más antiguas de las plantas con flores, y muchas aún las polinizan escarabajos, como seguramente desde el principio."},
+      "kin": {"en":"Magnolias and tulip trees","es":"Las magnolias y los tulipaneros"},
+      "wiki": {"en":"Archaeanthus","es":""},
+      "pbdb": "Archaeanthus"
+    },
+    {
+      "id": "microvictoria",
+      "name": {"en":"Microvictoria svitkoana","es":"Microvictoria svitkoana"},
+      "common": {"en":"Ancient water lily","es":"Nenúfar antiguo"},
+      "group": "plant",
+      "icon": "🌸",
+      "life": "fresh",
+      "from": 92,
+      "to": 89,
+      "sites": [
+        {"at":[-74.33,40.46],"place":{"en":"Sayreville, New Jersey, United States","es":"Sayreville, Nueva Jersey, Estados Unidos"}}
+      ],
+      "diet": "light",
+      "text": {"en":"A water-lily flower only about 2 mm across, found as a tiny charcoal fossil in 90-million-year-old clay in New Jersey. Its shape shows it was a close relative of Victoria, the giant water lily of the Amazon, whose round leaves, up to 3 metres wide, can hold up a small child. Water lilies are one of the oldest branches of the flowering plants, and fossils of their relatives go back more than 120 million years.","es":"Una flor de nenúfar de apenas 2 mm, hallada como un diminuto fósil carbonizado en arcilla de 90 millones de años en Nueva Jersey. Su forma muestra que era pariente cercana de Victoria, el nenúfar gigante del Amazonas, cuyas hojas redondas de hasta 3 metros pueden sostener a un niño pequeño. Los nenúfares son una de las ramas más antiguas de las plantas con flores, y los fósiles de sus parientes tienen más de 120 millones de años."},
+      "kin": {"en":"Victoria, the giant water lilies of South America","es":"Victoria, los nenúfares gigantes de Sudamérica"},
+      "wiki": {"en":"Microvictoria","es":""}
+    },
+    {
+      "id": "melittosphex",
+      "name": {"en":"Melittosphex burmensis","es":"Melittosphex burmensis"},
+      "common": {"en":"Oldest bee","es":"La abeja más antigua"},
+      "group": "flyer",
+      "icon": "🐝",
+      "life": "air",
+      "from": 100,
+      "to": 98,
+      "sites": [
+        {"at":[96.72,26.36],"place":{"en":"Hukawng Valley, Kachin, Myanmar","es":"Valle de Hukawng, Kachin, Myanmar"}}
+      ],
+      "len": 0.003,
+      "diet": "plants",
+      "text": {"en":"The oldest known bee, a tiny insect about 3 mm long trapped in amber in Myanmar about 100 million years ago. It mixes features of hunting wasps, from which bees evolved, with those of bees, such as branched hairs for carrying pollen. Bees and flowering plants rose together: the flowers offered food, and the bees carried their pollen from one flower to the next.","es":"La abeja más antigua conocida, un insecto diminuto de unos 3 mm atrapado en ámbar en Myanmar hace unos 100 millones de años. Mezcla rasgos de las avispas cazadoras, de las que surgieron las abejas, con rasgos de abeja, como pelos ramificados para cargar polen. Abejas y plantas con flores prosperaron juntas: las flores ofrecían alimento y las abejas llevaban su polen de una flor a otra."},
+      "kin": {"en":"Bees, and the hunting wasps they evolved from","es":"Las abejas y las avispas cazadoras de las que surgieron"},
+      "wiki": {"en":"Melittosphex burmensis","es":"Melittosphex burmensis"},
+      "pbdb": "Melittosphex"
+    },
+    {
+      "id": "sphecomyrma",
+      "name": {"en":"Sphecomyrma freyi","es":"Sphecomyrma freyi"},
+      "common": {"en":"Wasp ant","es":"Hormiga avispa"},
+      "group": "invertebrate",
+      "icon": "🐜",
+      "life": "land",
+      "from": 92,
+      "to": 79,
+      "sites": [
+        {"at":[-74.22,40.44],"place":{"en":"Cliffwood Beach, New Jersey, United States","es":"Playa Cliffwood, Nueva Jersey, Estados Unidos"}}
+      ],
+      "len": 0.004,
+      "diet": "small",
+      "text": {"en":"The first ant from the age of dinosaurs ever found: in 1966 a couple walking on a beach in New Jersey picked up a lump of amber with two workers about 4 mm long inside. They mixed wasp features with ant ones, such as the gland ants use to fight germs. Its name means 'wasp ant'. Ants stayed rare for millions of years before becoming the countless armies of today.","es":"La primera hormiga de la era de los dinosaurios que se halló: en 1966, una pareja que paseaba por una playa de Nueva Jersey recogió un trozo de ámbar con dos obreras de unos 4 mm dentro. Mezclaban rasgos de avispa y de hormiga, como la glándula que las hormigas usan contra los gérmenes. Su nombre significa 'hormiga avispa'. Las hormigas fueron raras durante millones de años antes de volverse los incontables ejércitos de hoy."},
+      "kin": {"en":"Ants; then wasps and bees","es":"Las hormigas; luego las avispas y las abejas"},
+      "wiki": {"en":"Sphecomyrma","es":"Sphecomyrma"},
+      "pbdb": "Sphecomyrma"
+    }
+  ]
+}
