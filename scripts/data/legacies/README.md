@@ -170,7 +170,19 @@ that went straight into Spanish in Mexico).
 
 `en` and/or `es`: the word today in English, Spanish or both (only one when the other language did not
 borrow it). `from`: the original word with its language, at most 90 characters. `means`: optional, what it
-meant. A `words` legacy can group many words on one theme ("Foods named in Nahuatl"), or tell the story of
+meant. `type`: what kind of word, left out for an ordinary word:
+
+| `type` | |
+|---|---|
+| `name` | a person's given name or surname still in use: Susan (Egyptian *sšn*, lotus), Alexander, Julia, Xóchitl, Kofi |
+| `place` | a place name still on the map: Mexico, Cádiz, Naples (*Neapolis*), Chicago, Ghana, Hawaii |
+| `calendar` | the name of a day or a month: July, Thursday, *lunes* |
+| `sky` | the name of a star, planet or constellation: Aldebaran, Mars, Orion, Matariki |
+
+**Words and names come first on a civilization's page** ("They gave us words like paper, ebony and oasis; names
+like Susan."), so give **several examples** wherever they really exist: a `words` legacy (or several, by theme)
+for everyday words, and separate ones for personal names, place names, days and months or stars when the
+civilization gave them. The builder warns when a civilization has fewer than 8 words and names in all. A `words` legacy can group many words on one theme ("Foods named in Nahuatl"), or tell the story of
 one word ("Chocolate"). Check etymologies in a good dictionary (Merriam-Webster, Oxford, Etymonline, the
 Real Academia Española's *Diccionario*); mark guesses with `sure: "likely"` or `"debated"`.
 

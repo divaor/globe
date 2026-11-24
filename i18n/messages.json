@@ -1,6 +1,6 @@
 {
  "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/data/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
- "count": 4649,
+ "count": 4659,
  "messages": [
   {
    "en": " (below sea level)",
@@ -69,7 +69,8 @@
    "en": "+{0} more",
    "es": "+{0} más",
    "where": [
-    "src/layers/choropleth.ts:174"
+    "src/layers/choropleth.ts:174",
+    "src/legacy/legacy.ts:502"
    ]
   },
   {
@@ -2063,7 +2064,7 @@
    "en": "All · {0}",
    "es": "Todos · {0}",
    "where": [
-    "src/legacy/legacy.ts:316"
+    "src/legacy/legacy.ts:328"
    ]
   },
   {
@@ -3278,7 +3279,7 @@
    "es": "Volver",
    "where": [
     "src/app/i18n.ts:37",
-    "src/legacy/legacy.ts:210",
+    "src/legacy/legacy.ts:219",
     "src/ui/welcome.ts:82"
    ]
   },
@@ -4006,7 +4007,7 @@
    "en": "Borrowed from the past",
    "es": "Heredado del pasado",
    "where": [
-    "src/legacy/legacy.ts:94"
+    "src/legacy/legacy.ts:103"
    ]
   },
   {
@@ -4329,7 +4330,7 @@
    "en": "Built on",
    "es": "Se basó en",
    "where": [
-    "src/legacy/legacy.ts:355"
+    "src/legacy/legacy.ts:367"
    ]
   },
   {
@@ -4399,7 +4400,7 @@
    "en": "By subject",
    "es": "Por tema",
    "where": [
-    "src/legacy/legacy.ts:270"
+    "src/legacy/legacy.ts:279"
    ]
   },
   {
@@ -4935,7 +4936,7 @@
    "en": "Civilizations",
    "es": "Civilizaciones",
    "where": [
-    "src/legacy/legacy.ts:278"
+    "src/legacy/legacy.ts:287"
    ]
   },
   {
@@ -6115,6 +6116,13 @@
    ]
   },
   {
+   "en": "Days and months",
+   "es": "Días y meses",
+   "where": [
+    "src/legacy/legacy.ts:66"
+   ]
+  },
+  {
    "en": "Days in each city",
    "es": "Días en cada ciudad",
    "where": [
@@ -6139,7 +6147,7 @@
    "en": "Debated",
    "es": "Debatido",
    "where": [
-    "src/legacy/legacy.ts:63"
+    "src/legacy/legacy.ts:72"
    ]
   },
   {
@@ -8171,14 +8179,14 @@
    "en": "Find a legacy",
    "es": "Buscar un legado",
    "where": [
-    "src/legacy/legacy.ts:250"
+    "src/legacy/legacy.ts:259"
    ]
   },
   {
    "en": "Find a legacy: tomato, algebra, the alphabet…",
    "es": "Busca un legado: tomate, álgebra, el alfabeto…",
    "where": [
-    "src/legacy/legacy.ts:250"
+    "src/legacy/legacy.ts:259"
    ]
   },
   {
@@ -10201,7 +10209,7 @@
    "en": "How it travelled",
    "es": "Cómo viajó",
    "where": [
-    "src/legacy/legacy.ts:401"
+    "src/legacy/legacy.ts:414"
    ]
   },
   {
@@ -11727,7 +11735,7 @@
    "en": "Its story",
    "es": "Su historia",
    "where": [
-    "src/legacy/legacy.ts:298"
+    "src/legacy/legacy.ts:307"
    ]
   },
   {
@@ -12538,27 +12546,27 @@
    "en": "Legacies",
    "es": "Legados",
    "where": [
-    "src/legacy/legacy.ts:210"
+    "src/legacy/legacy.ts:219"
    ]
   },
   {
    "en": "Legacies need their data; check your connection.",
    "es": "Los legados necesitan sus datos; revisa tu conexión.",
    "where": [
-    "src/legacy/legacy.ts:164",
-    "src/legacy/legacy.ts:172",
-    "src/legacy/legacy.ts:177",
-    "src/legacy/legacy.ts:748"
+    "src/legacy/legacy.ts:173",
+    "src/legacy/legacy.ts:181",
+    "src/legacy/legacy.ts:186",
+    "src/legacy/legacy.ts:796"
    ]
   },
   {
    "en": "Legacies of the past",
    "es": "Legados del pasado",
    "where": [
-    "src/legacy/legacy.ts:91",
-    "src/legacy/legacy.ts:106",
-    "src/legacy/legacy.ts:168",
-    "src/legacy/legacy.ts:471"
+    "src/legacy/legacy.ts:100",
+    "src/legacy/legacy.ts:115",
+    "src/legacy/legacy.ts:177",
+    "src/legacy/legacy.ts:519"
    ]
   },
   {
@@ -12566,7 +12574,7 @@
    "es": "Legado",
    "where": [
     "src/app/i18n.ts:322",
-    "src/legacy/legacy.ts:106"
+    "src/legacy/legacy.ts:115"
    ]
   },
   {
@@ -12651,7 +12659,7 @@
    "en": "Less",
    "es": "Menos",
    "where": [
-    "src/legacy/legacy.ts:357"
+    "src/legacy/legacy.ts:369"
    ]
   },
   {
@@ -12773,7 +12781,7 @@
    "en": "Likely",
    "es": "Probable",
    "where": [
-    "src/legacy/legacy.ts:62"
+    "src/legacy/legacy.ts:71"
    ]
   },
   {
@@ -14423,16 +14431,16 @@
    "es": "Más",
    "where": [
     "src/app/i18n.ts:36",
-    "src/legacy/legacy.ts:356",
-    "src/legacy/legacy.ts:357",
-    "src/legacy/legacy.ts:412"
+    "src/legacy/legacy.ts:368",
+    "src/legacy/legacy.ts:369",
+    "src/legacy/legacy.ts:425"
    ]
   },
   {
    "en": "More from them",
    "es": "Más de ellos",
    "where": [
-    "src/legacy/legacy.ts:418"
+    "src/legacy/legacy.ts:431"
    ]
   },
   {
@@ -14860,9 +14868,9 @@
    "where": [
     "src/fill/states.ts:26",
     "src/fill/states.ts:513",
+    "src/legacy/legacy.ts:64",
     "src/play/hop.ts:441",
-    "src/sky/sky.ts:281",
-    "src/space/space.ts:282"
+    "src/sky/sky.ts:281"
    ]
   },
   {
@@ -15374,7 +15382,7 @@
     "src/artguide/cards.ts:27",
     "src/green/cards.ts:64",
     "src/guide/guide.ts:154",
-    "src/legacy/legacy.ts:180",
+    "src/legacy/legacy.ts:189",
     "src/modes/stories.ts:740"
    ]
   },
@@ -15916,7 +15924,7 @@
    "en": "Not in {0}",
    "es": "No en {0}",
    "where": [
-    "src/legacy/legacy.ts:364"
+    "src/legacy/legacy.ts:376"
    ]
   },
   {
@@ -16018,7 +16026,7 @@
    "en": "Nothing by that name yet.",
    "es": "Aún no hay nada con ese nombre.",
    "where": [
-    "src/legacy/legacy.ts:258"
+    "src/legacy/legacy.ts:267"
    ]
   },
   {
@@ -16053,7 +16061,7 @@
    "en": "Nothing recorded for this country yet.",
    "es": "Aún no hay nada registrado para este país.",
    "where": [
-    "src/legacy/legacy.ts:449"
+    "src/legacy/legacy.ts:465"
    ]
   },
   {
@@ -16610,21 +16618,21 @@
    "en": "On the map: a line from every civilization it borrowed from, thicker for more.",
    "es": "En el mapa: una línea desde cada civilización de la que heredó, más gruesa cuanto más.",
    "where": [
-    "src/legacy/legacy.ts:429"
+    "src/legacy/legacy.ts:442"
    ]
   },
   {
    "en": "On the map: each civilization’s homeland at its height. Tap one to open it, or tap any country to see what it borrowed.",
    "es": "En el mapa: la tierra de cada civilización en su apogeo. Toca una para abrirla, o toca cualquier país para ver lo que heredó.",
    "where": [
-    "src/legacy/legacy.ts:283"
+    "src/legacy/legacy.ts:292"
    ]
   },
   {
    "en": "On the map: the countries that use what they gave, darker where more of it is used, and the lines of its journeys.",
    "es": "En el mapa: los países que usan lo que dejaron, más oscuros donde se usa más, y las líneas de sus viajes.",
    "where": [
-    "src/legacy/legacy.ts:328"
+    "src/legacy/legacy.ts:340"
    ]
   },
   {
@@ -17921,6 +17929,7 @@
    "es": "Lugares",
    "where": [
     "src/layers/timezones.ts:97",
+    "src/legacy/legacy.ts:65",
     "src/play/menu.ts:160",
     "src/ui/search.ts:86"
    ]
@@ -20904,7 +20913,7 @@
    "es": "Fuentes",
    "where": [
     "src/app/i18n.ts:202",
-    "src/legacy/legacy.ts:465"
+    "src/legacy/legacy.ts:513"
    ]
   },
   {
@@ -21130,6 +21139,13 @@
    "es": "¡Observador de estrellas! ✨",
    "where": [
     "src/learn/learn.ts:2029"
+   ]
+  },
+  {
+   "en": "Stars and planets",
+   "es": "Estrellas y planetas",
+   "where": [
+    "src/legacy/legacy.ts:67"
    ]
   },
   {
@@ -21640,7 +21656,7 @@
    "en": "Tap a country on the map",
    "es": "Toca un país en el mapa",
    "where": [
-    "src/legacy/legacy.ts:245"
+    "src/legacy/legacy.ts:254"
    ]
   },
   {
@@ -21747,7 +21763,7 @@
    "en": "Tap any country: what did it borrow from the past?",
    "es": "Toca cualquier país: ¿qué heredó del pasado?",
    "where": [
-    "src/legacy/legacy.ts:246"
+    "src/legacy/legacy.ts:255"
    ]
   },
   {
@@ -22175,7 +22191,7 @@
    "en": "Test yourself",
    "es": "Ponte a prueba",
    "where": [
-    "src/legacy/legacy.ts:282"
+    "src/legacy/legacy.ts:291"
    ]
   },
   {
@@ -25570,7 +25586,7 @@
    "en": "The words",
    "es": "Las palabras",
    "where": [
-    "src/legacy/legacy.ts:388"
+    "src/legacy/legacy.ts:401"
    ]
   },
   {
@@ -25704,6 +25720,13 @@
    "es": "Estos dos países no están unidos por tierra.",
    "where": [
     "src/play/hop.ts:195"
+   ]
+  },
+  {
+   "en": "They gave us {0}.",
+   "es": "Nos dieron {0}.",
+   "where": [
+    "src/legacy/legacy.ts:489"
    ]
   },
   {
@@ -27197,14 +27220,14 @@
    "en": "Used all over the world.",
    "es": "Se usa en todo el mundo.",
    "where": [
-    "src/legacy/legacy.ts:376"
+    "src/legacy/legacy.ts:388"
    ]
   },
   {
    "en": "Used in {0}",
    "es": "Se usa en {0}",
    "where": [
-    "src/legacy/legacy.ts:364"
+    "src/legacy/legacy.ts:376"
    ]
   },
   {
@@ -27779,7 +27802,7 @@
    "en": "What did {0} borrow from the past?",
    "es": "¿Qué heredó {0} del pasado?",
    "where": [
-    "src/legacy/legacy.ts:241"
+    "src/legacy/legacy.ts:250"
    ]
   },
   {
@@ -27840,7 +27863,7 @@
    "en": "What past civilizations gave the world that we still use, how it travelled and who uses it today: {0} things from {1} civilizations.",
    "es": "Lo que las civilizaciones del pasado le dieron al mundo y que aún usamos, cómo viajó y quién lo usa hoy: {0} cosas de {1} civilizaciones.",
    "where": [
-    "src/legacy/legacy.ts:234"
+    "src/legacy/legacy.ts:243"
    ]
   },
   {
@@ -27861,14 +27884,14 @@
    "en": "What they gave us",
    "es": "Lo que nos dieron",
    "where": [
-    "src/legacy/legacy.ts:326"
+    "src/legacy/legacy.ts:338"
    ]
   },
   {
    "en": "What they gave us: {0}",
    "es": "Lo que nos dieron: {0}",
    "where": [
-    "src/legacy/legacy.ts:480"
+    "src/legacy/legacy.ts:528"
    ]
   },
   {
@@ -28582,7 +28605,7 @@
    "en": "Where you live",
    "es": "Donde vives",
    "where": [
-    "src/legacy/legacy.ts:248"
+    "src/legacy/legacy.ts:257"
    ]
   },
   {
@@ -29172,7 +29195,7 @@
    "where": [
     "src/learn/learn.ts:417",
     "src/learn/learn.ts:1817",
-    "src/legacy/legacy.ts:280"
+    "src/legacy/legacy.ts:289"
    ]
   },
   {
@@ -29229,7 +29252,7 @@
    "en": "Who uses it today",
    "es": "Quién lo usa hoy",
    "where": [
-    "src/legacy/legacy.ts:362"
+    "src/legacy/legacy.ts:374"
    ]
   },
   {
@@ -29516,10 +29539,24 @@
    ]
   },
   {
+   "en": "Words",
+   "es": "Palabras",
+   "where": [
+    "src/legacy/legacy.ts:63"
+   ]
+  },
+  {
    "en": "Words and names",
    "es": "Palabras y nombres",
    "where": [
     "src/legacy/legacy.ts:46"
+   ]
+  },
+  {
+   "en": "Words and names they gave us",
+   "es": "Palabras y nombres que nos dieron",
+   "where": [
+    "src/legacy/legacy.ts:488"
    ]
   },
   {
@@ -30221,7 +30258,7 @@
    "en": "about {0}",
    "es": "hacia {0}",
    "where": [
-    "src/legacy/legacy.ts:147"
+    "src/legacy/legacy.ts:156"
    ]
   },
   {
@@ -31002,6 +31039,20 @@
    ]
   },
   {
+   "en": "names like {0}",
+   "es": "nombres como {0}",
+   "where": [
+    "src/legacy/legacy.ts:64"
+   ]
+  },
+  {
+   "en": "names of stars and planets like {0}",
+   "es": "nombres de estrellas y planetas como {0}",
+   "where": [
+    "src/legacy/legacy.ts:67"
+   ]
+  },
+  {
    "en": "natural",
    "es": "natural",
    "where": [
@@ -31234,6 +31285,13 @@
    "es": "por persona",
    "where": [
     "src/compare/model.ts:143"
+   ]
+  },
+  {
+   "en": "place names like {0}",
+   "es": "nombres de lugares como {0}",
+   "where": [
+    "src/legacy/legacy.ts:65"
    ]
   },
   {
@@ -31519,6 +31577,13 @@
    ]
   },
   {
+   "en": "the names of days and months like {0}",
+   "es": "nombres de días y meses como {0}",
+   "where": [
+    "src/legacy/legacy.ts:66"
+   ]
+  },
+  {
    "en": "the ocean",
    "es": "el océano",
    "where": [
@@ -31705,7 +31770,7 @@
    "en": "used everywhere",
    "es": "se usa en todas partes",
    "where": [
-    "src/legacy/legacy.ts:227"
+    "src/legacy/legacy.ts:236"
    ]
   },
   {
@@ -31743,6 +31808,13 @@
    "es": "del",
    "where": [
     "src/layers/packs/climate.ts:271"
+   ]
+  },
+  {
+   "en": "words like {0}",
+   "es": "palabras como {0}",
+   "where": [
+    "src/legacy/legacy.ts:63"
    ]
   },
   {
@@ -31822,7 +31894,7 @@
    "en": "{0, plural, one {# country} other {# countries}}",
    "es": "{0, plural, one {# país} other {# países}}",
    "where": [
-    "src/legacy/legacy.ts:373",
+    "src/legacy/legacy.ts:385",
     "src/mydata/mydata.ts:374",
     "src/ui/legend.ts:197"
    ]
@@ -31849,16 +31921,16 @@
    "en": "{0, plural, one {# legacy, oldest first} other {# legacies, oldest first}}",
    "es": "{0, plural, one {# legado, del más antiguo al más reciente} other {# legados, del más antiguo al más reciente}}",
    "where": [
-    "src/legacy/legacy.ts:458"
+    "src/legacy/legacy.ts:474"
    ]
   },
   {
    "en": "{0, plural, one {# legacy} other {# legacies}}",
    "es": "{0, plural, one {# legado} other {# legados}}",
    "where": [
-    "src/legacy/legacy.ts:275",
-    "src/legacy/legacy.ts:290",
-    "src/legacy/legacy.ts:480"
+    "src/legacy/legacy.ts:284",
+    "src/legacy/legacy.ts:299",
+    "src/legacy/legacy.ts:528"
    ]
   },
   {
@@ -31900,14 +31972,14 @@
    "en": "{0, plural, one {and # used everywhere} other {and # used everywhere}}",
    "es": "{0, plural, one {y # que se usa en todas partes} other {y # que se usan en todas partes}}",
    "where": [
-    "src/legacy/legacy.ts:443"
+    "src/legacy/legacy.ts:459"
    ]
   },
   {
    "en": "{0, plural, one {used in # country} other {used in # countries}}",
    "es": "{0, plural, one {se usa en # país} other {se usa en # países}}",
    "where": [
-    "src/legacy/legacy.ts:227"
+    "src/legacy/legacy.ts:236"
    ]
   },
   {
@@ -32666,7 +32738,7 @@
    "en": "{0} uses {1} things from {2} past civilizations.",
    "es": "{0} usa {1} cosas de {2} civilizaciones del pasado.",
    "where": [
-    "src/legacy/legacy.ts:428"
+    "src/legacy/legacy.ts:441"
    ]
   },
   {
@@ -32864,7 +32936,7 @@
    "en": "{0} BC",
    "es": "{0} a. C.",
    "where": [
-    "src/legacy/legacy.ts:682",
+    "src/legacy/legacy.ts:730",
     "src/modes/stories.ts:336"
    ]
   },
@@ -32872,7 +32944,7 @@
    "en": "{0} BC – AD {1}",
    "es": "{0} a. C. – {1} d. C.",
    "where": [
-    "src/legacy/legacy.ts:141",
+    "src/legacy/legacy.ts:150",
     "src/modes/stories.ts:360"
    ]
   },
@@ -32908,7 +32980,7 @@
    "en": "{0}–{1} BC",
    "es": "{0}–{1} a. C.",
    "where": [
-    "src/legacy/legacy.ts:140",
+    "src/legacy/legacy.ts:149",
     "src/modes/stories.ts:359"
    ]
   },

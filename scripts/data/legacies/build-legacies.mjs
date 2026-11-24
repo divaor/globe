@@ -50,6 +50,9 @@ const CAT_IDS = new Set(CATS.map((c) => c.id));
 // wild plant or animal, or kept it alive when others lost it.
 export const HOW = ['invented', 'developed', 'spread', 'named', 'tamed', 'kept'];
 export const SURE = ['known', 'likely', 'debated'];
+// What kind of word: a word of everyday language (left out), a person's name, a place's name, a day's or a month's
+// name, or the name of a star, planet or constellation.
+export const WORD_TYPES = ['word', 'name', 'place', 'calendar', 'sky'];
 
 // "where" groups: a country attribute (public/data/attributes/countries.json) and a value. "religion:islam"
 // matches "islam-sunni", "islam-shia" and so on (a value followed by "-").
@@ -269,8 +272,9 @@ function checkLegacy(l, where, civ) {
     if (!Array.isArray(l.words) || !l.words.length || l.words.length > 40) throw new Error(`${where}.words: a list of 1 to 40 words`);
     for (const [i, w] of l.words.entries()) {
       const ww = `${where}.words[${i}]`;
-      if (!w || typeof w !== 'object') throw new Error(`${ww}: { "en"?, "es"?, "from", "means"? }`);
-      known(w, ['en', 'es', 'from', 'means'], ww);
+      if (!w || typeof w !== 'object') throw new Error(`${ww}: { "en"?, "es"?, "from", "means"?, "type"? }`);
+      known(w, ['en', 'es', 'from', 'means', 'type'], ww);
+      if (w.type != null && !WORD_TYPES.includes(w.type)) throw new Error(`${ww}.type: one of ${WORD_TYPES.join(', ')} (leave it out for a word)`);
       if (!w.en && !w.es) throw new Error(`${ww}: the word today in English ("en"), Spanish ("es") or both`);
       for (const k of ['en', 'es']) if (w[k] != null && (typeof w[k] !== 'string' || !w[k].trim() || w[k].length > 40)) throw new Error(`${ww}.${k}: a word or short phrase (at most 40 characters)`);
       if (typeof w.from !== 'string' || !w.from.trim() || w.from.length > 90) throw new Error(`${ww}.from: the word it comes from, with its language ("tomatl (Nahuatl)"), at most 90 characters`);
@@ -323,6 +327,9 @@ function checkCiv(c, file) {
   }
   const cats = new Set(c.legacies.map((l) => l.cat));
   if (cats.size < 5) warn(`${where}: only ${cats.size} categories (${[...cats].join(', ')}); look wider`);
+  // Words and names they gave us: several examples, where the civilization gave any.
+  const ws = c.legacies.flatMap((l) => l.words ?? []);
+  if (ws.length < 8) warn(`${where}: only ${ws.length} words and names in all; give several examples where they exist (everyday words, people's names, place names, days and months, stars)`);
   return { story, checked };
 }
 
@@ -373,7 +380,7 @@ function civOut(c, story, checked) {
     if (l.strong) o.strong = l.strong;
     o.n = uses.length;
     o.note = tx(l.note);
-    if (l.words) o.words = l.words.map((w) => ({ ...(w.en ? { en: w.en } : {}), ...(w.es ? { es: w.es } : {}), from: w.from, ...(w.means ? { means: tx(w.means) } : {}) }));
+    if (l.words) o.words = l.words.map((w) => ({ ...(w.en ? { en: w.en } : {}), ...(w.es ? { es: w.es } : {}), from: w.from, ...(w.means ? { means: tx(w.means) } : {}), ...(w.type && w.type !== 'word' ? { type: w.type } : {}) }));
     if (see.length) o.see = see;
     if (l.wiki) o.wiki = { en: l.wiki.en, es: l.wiki.es };
     if (l.img) o.img = l.img;
@@ -403,7 +410,8 @@ function indexOut(full) {
       const e = { c: c.id, id: l.id, name: l.name, icon: l.icon, cat: l.cat, how: l.how, t: l.t, at: l.at, where: l.where };
       if (l.strong) e.strong = l.strong;
       if (l.sure) e.sure = l.sure;
-      if (l.words) e.w = l.words.map((w) => w.en ?? w.es).slice(0, 12);
+      // Its words (for the search, and a country's page): each in English and Spanish, and its kind.
+      if (l.words) e.w = l.words.map((w) => ({ ...(w.en ? { en: w.en } : {}), ...(w.es ? { es: w.es } : {}), ...(w.type && w.type !== 'word' ? { t: w.type } : {}) }));
       all.push(e);
     }
   }

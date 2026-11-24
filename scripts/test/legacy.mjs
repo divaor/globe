@@ -31,7 +31,7 @@ const mini = {
 };
 let k = 0;
 for (const c of mini.civs) {
-  mini.all.push({ c: c.id, id: `${c.id}-word`, name: T(`Word of ${c.id}`), icon: '🗣️', cat: 'words', how: 'named', t: -k++, at: c.at, where: ['lang:spa'], w: [`w${c.id}`] });
+  mini.all.push({ c: c.id, id: `${c.id}-word`, name: T(`Word of ${c.id}`), icon: '🗣️', cat: 'words', how: 'named', t: -k++, at: c.at, where: ['lang:spa'], w: [{ en: `w${c.id}`, es: `p${c.id}` }, { en: `Name${c.id}`, t: 'name' }] });
   mini.all.push({ c: c.id, id: `${c.id}-hour`, name: T(`Hour of ${c.id}`), icon: '📅', cat: 'time', how: 'invented', t: -k++, at: c.at, where: ['world'] });
 }
 mini.all.push({ c: 'a', id: 'a-shared', name: T('Shared thing'), icon: '⚙️', cat: 'time', how: 'spread', t: 0, at: [0, 0], where: ['branch:romance', '!ESP'], strong: ['MEX', 'JPN'] });
@@ -65,6 +65,12 @@ check(counts.get('MEX') === 3 && counts.get('ESP') === 2 && counts.get('JPN') ==
 const score = (q) => (s) => (s.toLowerCase().includes(q) ? 50 : 0);
 check(G.findLegacies('word of a', mini, score('word of a')).map((x) => x.b.id)[0] === 'a-word', 'search by name');
 check(G.findLegacies('wc', mini, score('wc')).some((x) => x.b.id === 'c-word'), 'search by a word it gave');
+check(G.findLegacies('pc', mini, score('pc')).some((x) => x.b.id === 'c-word'), 'search by its Spanish word');
+
+// Words and names by kind, each once, as the reader says them.
+const byType = G.wordsByType([{ id: 'x', words: [{ en: 'paper', es: 'papel', from: 'papyros' }, { en: 'Susan', es: 'Susana', from: 'sšn', type: 'name' }] }, { id: 'y', words: [{ en: 'paper', es: 'papel', from: 'papyros' }, { es: 'adobe', en: 'adobe', from: 'ḏbt' }] }], 'es');
+check(JSON.stringify([...byType].map(([t, l]) => [t, l.map((x) => x.w)])) === JSON.stringify([['word', ['papel', 'adobe']], ['name', ['Susana']]]), 'words and names by kind, once each, in Spanish');
+check(G.wordIn({ es: 'cacahuate' }, 'en') === 'cacahuate' && G.wordIn({ en: 'tomato', es: 'tomate' }, 'fr') === 'tomato', 'a word missing in a language falls back to the other');
 
 // Who gave us this?
 const qs = G.quizQuestions(mini, 30, G.seeded(7));

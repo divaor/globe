@@ -16,8 +16,8 @@ export interface CivMeta {
 export interface Brief {
   c: string; id: string; name: Tx; icon: string; cat: string; how: string; t: number; at: [number, number];
   where: string[]; strong?: string[]; sure?: string;
-  /** Its words today (the first few), for the search. */
-  w?: string[];
+  /** Its words today, in English and Spanish, and their kind (a person's name, a place...; a plain word has none). */
+  w?: IndexWord[];
 }
 export interface LegacyIndex {
   cats: Cat[]; how: string[]; civs: CivMeta[];
@@ -28,7 +28,31 @@ export interface LegacyIndex {
   all: Brief[];
 }
 export interface PathStep { at: [number, number]; place: Tx; date: string; circa?: boolean; by?: Tx; note?: Tx; from?: number }
-export interface Word { en?: string; es?: string; from: string; means?: Tx }
+/** What kind of word: a plain word, a person's name, a place's name, a day's or month's name, a star's or planet's. */
+export type WordType = 'word' | 'name' | 'place' | 'calendar' | 'sky';
+export const WORD_TYPES: WordType[] = ['word', 'name', 'place', 'calendar', 'sky'];
+export interface Word { en?: string; es?: string; from: string; means?: Tx; type?: WordType }
+export interface IndexWord { en?: string; es?: string; t?: WordType }
+
+/** A word as the reader says it: Spanish in Spanish, else English (Portuguese, French and German read the English). */
+export const wordIn = (w: { en?: string; es?: string }, lang: string) => (lang === 'es' ? w.es ?? w.en : w.en ?? w.es) ?? '';
+
+/**
+ * Words and names a civilization gave, by kind, each once (as the reader says it), with the legacy it is in: for the
+ * top of its page ("Words like paper, ebony and oasis; names like Susan").
+ */
+export function wordsByType(legacies: { id: string; words?: Word[] }[], lang: string): Map<WordType, { w: string; id: string }[]> {
+  const out = new Map<WordType, { w: string; id: string }[]>();
+  const seen = new Set<string>();
+  for (const l of legacies) for (const w of l.words ?? []) {
+    const t = w.type ?? 'word', text = wordIn(w, lang);
+    const key = `${t}|${text.toLowerCase()}`;
+    if (!text || seen.has(key)) continue;
+    seen.add(key);
+    (out.get(t) ?? out.set(t, []).get(t)!).push({ w: text, id: l.id });
+  }
+  return new Map(WORD_TYPES.filter((t) => out.has(t)).map((t) => [t, out.get(t)!]));
+}
 /** A link into a time-travel story: its kind, story, step (from 0), name and icon. */
 export interface SeeLink { k: string; s: string; st?: number; n: Tx; i: string }
 export interface Legacy {
@@ -120,7 +144,7 @@ export function findLegacies(q: string, idx: LegacyIndex, score: (s: string) => 
   const out: { b: Brief; s: number }[] = [];
   for (const b of idx.all) {
     const c = civ.get(b.c);
-    const s = Math.max(score(b.name.en), score(b.name.es), ...(b.w ?? []).map((w) => score(w) - 4), c ? Math.max(score(c.name.en), score(c.name.es)) - 30 : 0);
+    const s = Math.max(score(b.name.en), score(b.name.es), ...(b.w ?? []).flatMap((w) => [w.en, w.es]).filter((w): w is string => !!w).map((w) => score(w) - 4), c ? Math.max(score(c.name.en), score(c.name.es)) - 30 : 0);
     if (s > 0) out.push({ b, s });
   }
   return out.sort((a, b) => b.s - a.s || a.b.t - b.b.t).slice(0, max);

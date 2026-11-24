@@ -11,7 +11,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { h, clear, icon, englishNote } from '../ui/dom';
-import { L, tx, lang, flagEmoji, fmtNumber } from '../app/i18n';
+import { L, tx, lang, flagEmoji, fmtNumber, appLocale } from '../app/i18n';
 import { matcher } from '../ui/match';
 import { loadJSON, shapesFrom, type Shape } from '../data/store';
 import { fmtWhen, itemThumb, seaSafe, legacyHook } from '../modes/stories';
@@ -19,7 +19,7 @@ import { recordSeen } from '../learn/progress';
 import { shareText } from '../play/pin';
 import type { Topology } from 'topojson-specification';
 import {
-  members, usersOf, borrowed, reach, segments, findLegacies, everywhere, ofTheDay,
+  members, usersOf, borrowed, reach, segments, findLegacies, everywhere, ofTheDay, wordsByType, wordIn, type WordType,
   type LegacyIndex, type CivMeta, type Civ, type Legacy, type Brief, type Cat, type Tx,
 } from './logic';
 
@@ -58,6 +58,15 @@ const CAT_TEXT: Record<string, () => string> = {
   play: () => L('Games and sport', 'Juegos y deportes'),
   daily: () => L('Daily life', 'Vida cotidiana'),
 };
+/** The kinds of words, with an icon, the row's label and how the opening sentence says them. */
+const WORD_TEXT: Record<WordType, { icon: string; label: () => string; like: (list: string) => string }> = {
+  word: { icon: '🗣️', label: () => L('Words', 'Palabras'), like: (x) => L('words like {0}', 'palabras como {0}', x) },
+  name: { icon: '👤', label: () => L('Names', 'Nombres'), like: (x) => L('names like {0}', 'nombres como {0}', x) },
+  place: { icon: '📍', label: () => L('Places', 'Lugares'), like: (x) => L('place names like {0}', 'nombres de lugares como {0}', x) },
+  calendar: { icon: '📅', label: () => L('Days and months', 'Días y meses'), like: (x) => L('the names of days and months like {0}', 'nombres de días y meses como {0}', x) },
+  sky: { icon: '✨', label: () => L('Stars and planets', 'Estrellas y planetas'), like: (x) => L('names of stars and planets like {0}', 'nombres de estrellas y planetas como {0}', x) },
+};
+const andList = (xs: string[]) => new Intl.ListFormat(appLocale(), { type: 'conjunction' }).format(xs);
 const SURE_TEXT: Record<string, () => string> = {
   likely: () => L('Likely', 'Probable'),
   debated: () => L('Debated', 'Debatido'),
@@ -301,6 +310,9 @@ export class Legacies {
     }
     acts.append(this.shareButton(c.id));
     body.append(acts);
+    // Words and names first: what most readers recognise at once.
+    const words = this.wordsBlock(c);
+    if (words) body.append(...words);
     // Categories as filters.
     const chips = h('div', { class: 'chip-row', 'data-legacy': 'civ-cats' });
     const list = h('div', { class: 'guide-list', 'data-legacy': 'list' });
@@ -381,8 +393,9 @@ export class Legacies {
       for (const w of l.words) {
         const today = es ? (w.es ?? w.en) : (w.en ?? w.es);
         const other = es ? (w.en && w.en !== w.es ? w.en : '') : (w.es && w.es !== w.en ? w.es : '');
-        tbl.append(h('div', { class: 'legacy-word' },
-          h('span', { class: 'legacy-word-now' }, today ?? '', other ? h('span', { class: 'muted small' }, ` · ${other}`) : null),
+        const kind = w.type && w.type !== 'word' ? WORD_TEXT[w.type] : null;
+        tbl.append(h('div', { class: 'legacy-word', 'data-word-type': w.type ?? 'word' },
+          h('span', { class: 'legacy-word-now' }, kind ? `${kind.icon} ` : '', today ?? '', other ? h('span', { class: 'muted small' }, ` · ${other}`) : null),
           h('span', { class: 'legacy-word-from' }, `← ${w.from}${w.means ? ` “${tx(w.means)}”` : ''}`)));
       }
       body.append(h('h3', { class: 'sec-title' }, L('The words', 'Las palabras')), tbl);
@@ -434,6 +447,9 @@ export class Legacies {
       const head = h('button', { type: 'button', class: 'sec-title legacy-group-head', style: `--civ: ${g.civ.color}` }, `${g.civ.icon} ${this.civName(g.civ)} · ${g.own.length + g.world.length}`);
       head.addEventListener('click', () => void this.open({ v: 'civ', civ: g.civ.id }));
       sec.append(head);
+      // The words it took from them ("chocolate, tomate, aguacate…").
+      const ws = [...new Set([...g.own, ...g.world].flatMap((b) => (b.w ?? []).map((w) => wordIn(w, lang()))).filter(Boolean))];
+      if (ws.length) sec.append(h('p', { class: 'legacy-words-line', 'data-legacy': 'country-words' }, `🗣️ ${ws.length > 10 ? `${ws.slice(0, 10).join(', ')}…` : ws.join(', ')}`));
       const list = h('div', { class: 'guide-list' });
       for (const b of g.own) list.append(this.briefRow(b, false));
       sec.append(list);
@@ -459,6 +475,38 @@ export class Legacies {
     for (const b of items) list.append(this.briefRow(b, true));
     body.append(list);
     return body;
+  }
+
+  /**
+   * Words and names they gave us: a sentence ("They gave us words like paper, ebony and oasis; names like Susan.") and
+   * a row for each kind, each word a chip that opens the legacy it is in.
+   */
+  private wordsBlock(c: Civ): HTMLElement[] | null {
+    const by = wordsByType(c.legacies, lang());
+    if (!by.size) return null;
+    const parts = [...by].map(([t, list]) => WORD_TEXT[t].like(andList(list.slice(0, 4).map((x) => x.w))));
+    const out: HTMLElement[] = [h('h3', { class: 'sec-title' }, L('Words and names they gave us', 'Palabras y nombres que nos dieron')),
+      h('p', { class: 'legacy-words-lead', 'data-legacy': 'words-lead' }, L('They gave us {0}.', 'Nos dieron {0}.', parts.join('; ')))];
+    const box = h('div', { class: 'legacy-word-rows', 'data-legacy': 'civ-words' });
+    for (const [t, list] of by) {
+      const chips = h('div', { class: 'chip-row' });
+      const add = (from: number, to: number) => {
+        for (const x of list.slice(from, to)) {
+          const b = h('button', { type: 'button', class: 'chip sm', 'data-legacy-word': x.w }, x.w);
+          b.addEventListener('click', () => void this.open({ v: 'item', civ: c.id, id: x.id }));
+          chips.append(b);
+        }
+      };
+      add(0, 12);
+      if (list.length > 12) {
+        const more = h('button', { type: 'button', class: 'chip sm', 'data-legacy': 'more-words' }, L('+{0} more', '+{0} más', list.length - 12));
+        more.addEventListener('click', () => { more.remove(); add(12, list.length); });
+        chips.append(more);
+      }
+      box.append(h('div', { class: 'legacy-word-row', 'data-word-type': t }, h('span', { class: 'legacy-word-label' }, `${WORD_TEXT[t].icon} ${WORD_TEXT[t].label()} · ${list.length}`), chips));
+    }
+    out.push(box);
+    return out;
   }
 
   private sources(body: HTMLElement, c: Civ) {

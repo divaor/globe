@@ -1553,3 +1553,7 @@ textarea.trip-input { resize: vertical; }
 .legacy-group-head { display: block; width: 100%; text-align: left; background: none; border: 0; border-left: 4px solid var(--civ); padding: 2px 0 2px 8px; color: inherit; font: inherit; font-weight: var(--fw-semi); cursor: pointer; }
 .legacy .linklike { background: none; border: 0; padding: 0; margin: 0; color: var(--accent); font: inherit; cursor: pointer; text-align: left; }
 .legacy-path .linklike { color: inherit; }
+.legacy-words-lead { font-size: var(--fs-md); line-height: 1.45; margin: 0 0 var(--sp-2); }
+.legacy-word-rows { display: flex; flex-direction: column; gap: var(--sp-2); margin-bottom: var(--sp-2); }
+.legacy-word-label { display: block; font-size: var(--fs-xs); font-weight: var(--fw-semi); color: var(--muted); margin-bottom: 4px; }
+.legacy-words-line { margin: 2px 0 6px; font-size: var(--fs-sm); color: var(--muted); }

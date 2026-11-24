@@ -6673,9 +6673,21 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await page.click('[data-legacy-civ="egyptians"]');
   await page.waitForFunction(() => window.atlas.legacy.info.view?.v === 'civ', null, { timeout: 15000 }).catch(() => {});
   await page.waitForTimeout(2200);
-  const civ = await F(() => ({ info: window.atlas.legacy.info, rows: document.querySelectorAll('[data-legacy="list"] [data-legacy-item]').length, story: !!document.querySelector('[data-legacy="story"]') }));
+  const civ = await F(() => ({ info: window.atlas.legacy.info, rows: document.querySelectorAll('[data-legacy="list"] [data-legacy-item]').length, story: !!document.querySelector('[data-legacy="story"]'),
+    lead: document.querySelector('[data-legacy="words-lead"]')?.textContent ?? '', words: document.querySelectorAll('[data-legacy="civ-words"] [data-legacy-word]').length,
+    kinds: [...document.querySelectorAll('[data-legacy="civ-words"] [data-word-type]')].map((e) => e.dataset.wordType) }));
   check(civ.info.view?.civ === 'egyptians' && civ.rows >= 30 && civ.info.hits >= civ.rows * 0.5 && civ.story,
     `the Egyptians: ${civ.rows} legacies listed, ${civ.info.hits} dots on the map, a link to their story`);
+  check(/words like .+/.test(civ.lead) && civ.words >= 8 && civ.kinds.includes('word') && civ.kinds.length >= 2,
+    `the Egyptians' words and names: "${civ.lead}" (${civ.words} chips: ${civ.kinds.join(', ')})`);
+  // A word opens the legacy it is in.
+  const word = await F(() => document.querySelector('[data-legacy="civ-words"] [data-legacy-word]')?.dataset.legacyWord);
+  await page.click('[data-legacy="civ-words"] [data-legacy-word]');
+  await page.waitForTimeout(1500);
+  const fromWord = await F(() => ({ view: window.atlas.legacy.info.view, words: [...document.querySelectorAll('[data-legacy="words"] .legacy-word-now')].map((e) => e.textContent) }));
+  check(fromWord.view?.v === 'item' && fromWord.words.some((w) => w.includes(word)), `the word "${word}" opens its legacy (${fromWord.view?.id}: ${fromWord.words.slice(0, 5).join(', ')})`);
+  await page.click('[data-legacy="back"]');
+  await page.waitForTimeout(1500);
   // A legacy with a journey.
   const pick = await F(async () => {
     const c = await window.atlas.legacy.civ('egyptians');
@@ -6694,7 +6706,9 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   if (cardBtn) await cardBtn.click();
   await page.waitForFunction(() => window.atlas.legacy.info.view?.v === 'country', null, { timeout: 15000 }).catch(() => {});
   await page.waitForTimeout(2200);
-  const mx = await F(() => ({ info: window.atlas.legacy.info, groups: [...document.querySelectorAll('[data-legacy-group]')].map((e) => e.dataset.legacyGroup), text: document.querySelector('.legacy-text')?.textContent }));
+  const mx = await F(() => ({ info: window.atlas.legacy.info, groups: [...document.querySelectorAll('[data-legacy-group]')].map((e) => e.dataset.legacyGroup), text: document.querySelector('.legacy-text')?.textContent,
+    mexicaWords: document.querySelector('[data-legacy-group="mexica"] [data-legacy="country-words"]')?.textContent ?? '' }));
+  check(/chocolate|tomato|avocado|coyote/i.test(mx.mexicaWords), `Mexico's words from the Mexica: ${mx.mexicaWords}`);
   check(!!cardBtn && mx.info.view?.iso === 'MEX' && mx.groups.includes('mexica') && mx.groups.length >= 8 && mx.info.hits >= mx.groups.length,
     `"Borrowed from the past" on Mexico's card: ${mx.text} (${mx.groups.slice(0, 6).join(', ')}…), ${mx.info.hits} civilizations on the map`);
   // A tap on another country switches to it.
