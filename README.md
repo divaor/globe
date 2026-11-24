@@ -114,15 +114,15 @@ A backup made as Atlas Globe still opens.
   timeline, joined with the plate tectonics of Pangea to today. The continents move (the plate model back to a
   billion years ago, an impression before that), and the planet's look changes with time: a magma ocean, an orange
   haze before the air had oxygen, rusty bare land, Snowball Earths, ice caps that grow and shrink, green land once
-  plants spread. {EVENTS} events happen where they happened (the great eruptions glow while they last, and the
+  plants spread. 135 events happen where they happened (the great eruptions glow while they last, and the
   asteroid that ended the dinosaurs streaks in, flashes, sends shock rings round the globe and darkens the world),
-  firsts pulse when their moment comes, and {SPECIES} past species appear at their fossil sites, moved with their
+  firsts pulse when their moment comes, and 321 past species appear at their fossil sites, moved with their
   continents, while they lived (tap one for its card with a picture, its size, diet and closest living relatives).
   Always on screen: how long ago, the eon, era, period and epoch in their official colours, the cosmic calendar (all
   of time since the Big Bang in one year), and the Earth's vital signs (oxygen, carbon dioxide, temperature, day
   length, the Sun's brightness, the Moon's distance, sea level, ice, the ozone layer) with a plain verdict: could you
   survive here? What lived then lists everything alive at that moment, in the sea, on land and in the air. Play the
-  story flies through it all with {BEATS} narrated moments, read aloud or timed to read. A true scale shows how
+  story: it flies through it all with 80 narrated moments, read aloud or timed to read. A true scale shows how
   little of the time is ours; Continents only gives the plain plate view. Also: the search finds species and
   events, Life through time stories link both ways, "Which came first?" in Learn, Today in deep time, three badges,
   and #deeptime= links.

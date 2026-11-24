@@ -1,0 +1,2797 @@
+{
+  "species": [
+    {
+      "id": "stromatolite-builders",
+      "name": { "en": "Stromatolites", "es": "Estromatolitos" },
+      "common": { "en": "Mats of microbes", "es": "Tapetes de microbios" },
+      "group": "microbe",
+      "icon": "🦠",
+      "life": "sea",
+      "from": 3480,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        { "at": [119.37, -21.15], "place": { "en": "Dresser Formation, Pilbara, Western Australia", "es": "Formación Dresser, Pilbara, Australia Occidental" } },
+        { "at": [119.15, -21.19], "place": { "en": "Strelley Pool, Pilbara, Western Australia", "es": "Strelley Pool, Pilbara, Australia Occidental" } },
+        { "at": [114.18, -26.4], "place": { "en": "Hamelin Pool, Shark Bay, Western Australia (still growing)", "es": "Hamelin Pool, bahía Shark, Australia Occidental (aún crecen)" } }
+      ],
+      "diet": "light",
+      "text": {
+        "en": "Stromatolites are rocks built layer by layer by mats of microbes, sticky films that trap sand and grow up towards the light. Ones 3.48 billion years old in Australia are among the oldest signs of life. Later, cyanobacteria, microbes that live off sunlight, built them and filled the air with oxygen. Stromatolites ruled shallow seas for 3 billion years, and a few still grow in Shark Bay.",
+        "es": "Los estromatolitos son rocas construidas capa por capa por tapetes de microbios, películas pegajosas que atrapan arena y crecen hacia la luz. Los de Australia, de 3480 millones de años, están entre las señales de vida más antiguas. Más tarde los construyeron cianobacterias, microbios que viven de la luz del sol, que llenaron el aire de oxígeno. Dominaron los mares poco profundos durante 3000 millones de años y aún crecen en la bahía Shark."
+      },
+      "kin": {
+        "en": "Cyanobacteria, still everywhere; the green parts inside every plant cell came from them",
+        "es": "Las cianobacterias, que siguen en todas partes; las partes verdes de cada célula vegetal vienen de ellas"
+      },
+      "wiki": { "en": "Stromatolite", "es": "Estromatolito" },
+      "item": "dresser-stromatolites"
+    },
+    {
+      "id": "gunflintia",
+      "name": { "en": "Gunflintia", "es": "Gunflintia" },
+      "common": { "en": "Gunflint microbes", "es": "Microbios de Gunflint" },
+      "group": "microbe",
+      "icon": "🦠",
+      "life": "sea",
+      "from": 1880,
+      "to": 720,
+      "sites": [
+        { "at": [-87.27, 48.81], "place": { "en": "Schreiber, on Lake Superior, Ontario, Canada", "es": "Schreiber, a orillas del lago Superior, Ontario, Canadá" } }
+      ],
+      "len": 0.0001,
+      "diet": "light",
+      "text": {
+        "en": "In 1954, tiny threads and balls found in black chert by Lake Superior proved for the first time that microbes lived long before animals. Gunflintia is the commonest: threads of cells much thinner than a hair, about 1.88 billion years old, and found in rocks for a billion years more. Many were probably cyanobacteria, microbes that live off sunlight; some may have fed on iron dissolved in the sea.",
+        "es": "En 1954, unos diminutos hilos y bolitas hallados en un pedernal negro junto al lago Superior demostraron por primera vez que hubo microbios mucho antes que los animales. Gunflintia es el más común: hilos de células mucho más finos que un cabello, de unos 1880 millones de años, que aparecen en rocas durante mil millones de años más. Muchos eran quizá cianobacterias, microbios que viven de la luz del sol; algunos tal vez se alimentaban del hierro disuelto en el mar."
+      },
+      "kin": { "en": "Cyanobacteria and iron-eating bacteria living today", "es": "Las cianobacterias y las bacterias que comen hierro de hoy" },
+      "wiki": { "en": "Gunflint chert", "es": "Gunflint" },
+      "pbdb": "Gunflintia",
+      "item": "gunflint-chert"
+    },
+    {
+      "id": "grypania",
+      "name": { "en": "Grypania spiralis", "es": "Grypania spiralis" },
+      "group": "plant",
+      "icon": "🌀",
+      "life": "sea",
+      "from": 1874,
+      "to": 1400,
+      "sites": [
+        { "at": [-87.61, 46.45], "place": { "en": "Empire Mine, Negaunee, Michigan, United States", "es": "Mina Empire, Negaunee, Míchigan, Estados Unidos" } },
+        { "at": [-111.25, 46.49], "place": { "en": "Belt Supergroup, Montana, United States", "es": "Supergrupo Belt, Montana, Estados Unidos" } },
+        { "at": [117.45, 40.08], "place": { "en": "Jixian, Tianjin, China", "es": "Jixian, Tianjin, China" } }
+      ],
+      "diet": "light",
+      "text": {
+        "en": "A ribbon about 2 millimetres wide, coiled like a watch spring into loops the size of a coin. At 1.87 billion years old, Grypania is one of the oldest living things big enough to see without a microscope. Many scientists think it was an early alga, made of cells with a nucleus like ours; others think it could be a giant chain of bacteria.",
+        "es": "Una cinta de unos 2 milímetros de ancho, enrollada como el resorte de un reloj en vueltas del tamaño de una moneda. Con 1870 millones de años, Grypania es uno de los seres vivos más antiguos que se pueden ver sin microscopio. Muchos científicos creen que era una de las primeras algas, hecha de células con núcleo como las nuestras; otros piensan que podría ser una cadena gigante de bacterias."
+      },
+      "kin": {
+        "en": "Perhaps algae; if its cells had a nucleus, it was a distant cousin of plants, fungi and us",
+        "es": "Quizá las algas; si sus células tenían núcleo, era una prima lejana de plantas, hongos y de nosotros"
+      },
+      "wiki": { "en": "Grypania", "es": "Grypania spiralis" },
+      "pbdb": "Grypania",
+      "item": "grypania"
+    },
+    {
+      "id": "qingshania",
+      "name": { "en": "Qingshania magnifica", "es": "Qingshania magnifica" },
+      "group": "plant",
+      "icon": "🌱",
+      "life": "sea",
+      "from": 1640,
+      "to": 1630,
+      "sites": [
+        { "at": [118.48, 40.61], "place": { "en": "Chuanlinggou Formation, Yanshan, Hebei, China", "es": "Formación Chuanlinggou, Yanshan, Hebei, China" } }
+      ],
+      "diet": "light",
+      "text": {
+        "en": "Threads made of a single row of cells, found in 1.63-billion-year-old rocks in northern China and described in 2024. Qingshania is the oldest known living thing built of many eukaryotic cells, cells with a nucleus like ours, joined together. It probably lived like a simple seaweed, and it pushes back the step from single cells to many-celled life by hundreds of millions of years.",
+        "es": "Hilos formados por una sola fila de células, hallados en rocas de 1630 millones de años del norte de China y descritos en 2024. Qingshania es el ser vivo más antiguo conocido hecho de muchas células eucariotas, células con núcleo como las nuestras, unidas entre sí. Probablemente vivía como un alga sencilla, y adelanta cientos de millones de años el paso de las células sueltas a la vida con muchas células."
+      },
+      "kin": { "en": "Perhaps algae; its exact place in the tree of life is unknown", "es": "Quizá las algas; su lugar exacto en el árbol de la vida es desconocido" },
+      "wiki": { "en": "Qingshania", "es": "" },
+      "item": "qingshania"
+    },
+    {
+      "id": "bangiomorpha-pubescens",
+      "name": { "en": "Bangiomorpha pubescens", "es": "Bangiomorpha pubescens" },
+      "group": "plant",
+      "icon": "🌿",
+      "life": "sea",
+      "from": 1050,
+      "to": 1030,
+      "sites": [
+        { "at": [-94.77, 73.59], "place": { "en": "Hunting Formation, Somerset Island, Nunavut, Canada", "es": "Formación Hunting, isla Somerset, Nunavut, Canadá" } }
+      ],
+      "len": 0.002,
+      "diet": "light",
+      "text": {
+        "en": "A red seaweed only a couple of millimetres tall, from 1.05-billion-year-old rocks in Arctic Canada. Bangiomorpha is the oldest living thing we can name with different kinds of cells for different jobs, and the oldest with signs of sex: it made two kinds of spores, like males and females. It looks almost the same as Bangia, a red alga that grows on rocks by the sea today.",
+        "es": "Un alga roja de apenas un par de milímetros, de rocas de 1050 millones de años del Ártico canadiense. Bangiomorpha es el ser vivo más antiguo con nombre que tenía distintos tipos de células para distintas tareas, y el más antiguo con señales de sexo: hacía dos clases de esporas, como machos y hembras. Es casi igual a Bangia, un alga roja que hoy crece en las rocas junto al mar."
+      },
+      "kin": { "en": "Red seaweeds such as Bangia, and the nori used to wrap sushi", "es": "Las algas rojas como Bangia, y el nori que envuelve el sushi" },
+      "wiki": { "en": "Bangiomorpha", "es": "Bangiomorpha" },
+      "pbdb": "Bangiomorpha",
+      "item": "bangiomorpha"
+    },
+    {
+      "id": "proterocladus",
+      "name": { "en": "Proterocladus antiquus", "es": "Proterocladus antiquus" },
+      "group": "plant",
+      "icon": "🌱",
+      "life": "sea",
+      "from": 1000,
+      "to": 950,
+      "sites": [
+        { "at": [121.6, 38.9], "place": { "en": "Nanfen Formation, Dalian, Liaoning, China", "es": "Formación Nanfen, Dalian, Liaoning, China" } }
+      ],
+      "len": 0.002,
+      "diet": "light",
+      "text": {
+        "en": "Branching green threads up to 2 millimetres long, about a billion years old, from rocks near Dalian in northern China. Described in 2020, Proterocladus is the oldest known green seaweed. Green algae are the ancestors of every land plant, so this tiny fossil sits near the root of the family tree of mosses, trees, grasses and flowers. It looks much like Cladophora, which grows in seas and rivers today.",
+        "es": "Hilos verdes ramificados de hasta 2 milímetros, de unos 1000 millones de años, hallados cerca de Dalian, en el norte de China. Descrita en 2020, Proterocladus es el alga verde más antigua que se conoce. Las algas verdes son las antepasadas de todas las plantas terrestres, así que este fósil diminuto está cerca de la raíz del árbol familiar de musgos, árboles, pastos y flores. Se parece mucho a Cladophora, que hoy vive en mares y ríos."
+      },
+      "kin": {
+        "en": "Green seaweeds like Cladophora; through the green algae, every land plant",
+        "es": "Las algas verdes como Cladophora; a través de ellas, todas las plantas terrestres"
+      },
+      "wiki": { "en": "Proterocladus", "es": "Proterocladus" },
+      "pbdb": "Proterocladus",
+      "item": "proterocladus"
+    },
+    {
+      "id": "melanocyrillium",
+      "name": { "en": "Melanocyrillium", "es": "Melanocyrillium" },
+      "common": { "en": "Vase-shaped microfossils", "es": "Microfósiles en forma de jarrón" },
+      "group": "microbe",
+      "icon": "🏺",
+      "life": "sea",
+      "from": 790,
+      "to": 730,
+      "sites": [
+        { "at": [-111.89, 36.27], "place": { "en": "Chuar Group, Grand Canyon, Arizona, United States", "es": "Grupo Chuar, Gran Cañón, Arizona, Estados Unidos" } }
+      ],
+      "len": 0.0001,
+      "diet": "small",
+      "text": {
+        "en": "Tiny vases a tenth of a millimetre long, found by the thousand in Grand Canyon rocks about 750 million years old. They were the shells of amoebas, single cells that crawl about and swallow their food, much like the shelled amoebas living in ponds and moss today. Some shells have neat round holes, perhaps drilled by a hungry neighbour: one of the oldest signs of one living thing hunting another.",
+        "es": "Jarrones diminutos de una décima de milímetro, hallados por miles en rocas del Gran Cañón de unos 750 millones de años. Eran las conchas de amebas, células sueltas que se arrastran y se tragan su comida, muy parecidas a las amebas con concha que hoy viven en charcas y musgos. Algunas conchas tienen agujeros redondos y limpios, quizá perforados por un vecino hambriento: una de las señales más antiguas de un ser vivo cazando a otro."
+      },
+      "kin": {
+        "en": "Shelled amoebas (testate amoebae) living in ponds, bogs and moss today",
+        "es": "Las amebas con concha (tecamebas) que viven hoy en charcas, turberas y musgos"
+      },
+      "wiki": { "en": "Arcellinida", "es": "Arcellinida" },
+      "pbdb": "Melanocyrillium"
+    },
+    {
+      "id": "otavia",
+      "name": { "en": "Otavia antiqua", "es": "Otavia antiqua" },
+      "group": "invertebrate",
+      "icon": "🧽",
+      "life": "sea",
+      "from": 760,
+      "to": 550,
+      "sites": [
+        { "at": [17.34, -19.6], "place": { "en": "Otavi Group, Otavi Mountains, Namibia", "es": "Grupo Otavi, montes Otavi, Namibia" } }
+      ],
+      "len": 0.001,
+      "diet": "filter",
+      "text": {
+        "en": "Grains smaller than a pinhead, riddled with tiny holes, found in Namibian rocks from about 760 to 550 million years old. The scientists who found them think Otavia was a simple sponge, an animal that pumps water through its pores to catch food. If they are right, it is the oldest known animal, older than the Snowball Earth ice ages. Many other scientists doubt it.",
+        "es": "Granos más pequeños que la cabeza de un alfiler, llenos de agujeritos, hallados en rocas de Namibia de entre 760 y 550 millones de años. Quienes los descubrieron creen que Otavia era una esponja sencilla, un animal que bombea agua por sus poros para atrapar comida. Si tienen razón, es el animal más antiguo que se conoce, anterior a las glaciaciones de la Tierra bola de nieve. Muchos otros científicos lo dudan."
+      },
+      "kin": {
+        "en": "Sponges, if it was an animal; sponges may be the oldest branch of the animal family",
+        "es": "Las esponjas, si era un animal; quizá sean la rama más antigua de la familia de los animales"
+      },
+      "wiki": { "en": "Otavia", "es": "Otavia" },
+      "item": "otavia"
+    },
+    {
+      "id": "charnia",
+      "name": { "en": "Charnia masoni", "es": "Charnia masoni" },
+      "group": "invertebrate",
+      "icon": "🪸",
+      "life": "sea",
+      "from": 571,
+      "to": 550,
+      "sites": [
+        { "at": [-1.25, 52.7], "place": { "en": "Charnwood Forest, Leicestershire, England", "es": "Bosque de Charnwood, Leicestershire, Inglaterra" } },
+        { "at": [-53.16, 46.63], "place": { "en": "Mistaken Point, Newfoundland, Canada", "es": "Mistaken Point, Terranova, Canadá" } },
+        { "at": [39.77, 65.55], "place": { "en": "Zimnie Gory, White Sea coast, Russia", "es": "Zimnie Gori, costa del mar Blanco, Rusia" } }
+      ],
+      "len": 0.3,
+      "diet": "filter",
+      "text": {
+        "en": "A frond like a feather, held up from the deep sea floor by a disc. In the 1950s a schoolgirl, Tina Negus, spotted one in a quarry in England, but no one believed her: the rock was thought too old for fossils. Soon after, a schoolboy, Roger Mason, found it again, and Charnia, about 560 million years old, became the first Precambrian fossil accepted as real.",
+        "es": "Una fronda como una pluma, sujeta al fondo del mar profundo por un disco. En los años cincuenta una colegiala, Tina Negus, vio una en una cantera de Inglaterra, pero nadie le creyó: se pensaba que la roca era demasiado antigua para tener fósiles. Poco después un colegial, Roger Mason, la volvió a encontrar, y Charnia, de unos 560 millones de años, fue el primer fósil precámbrico aceptado como real."
+      },
+      "kin": {
+        "en": "Unknown: rangeomorphs left no descendants; they may be an early side branch of animals",
+        "es": "Desconocidos: los rangeomorfos no dejaron descendientes; quizá fueron una rama temprana de los animales"
+      },
+      "wiki": { "en": "Charnia", "es": "Charnia" },
+      "pbdb": "Charnia",
+      "item": "charnia"
+    },
+    {
+      "id": "fractofusus",
+      "name": { "en": "Fractofusus", "es": "Fractofusus" },
+      "group": "invertebrate",
+      "icon": "🪸",
+      "life": "sea",
+      "from": 571,
+      "to": 560,
+      "sites": [
+        { "at": [-53.16, 46.63], "place": { "en": "Mistaken Point, Newfoundland, Canada", "es": "Mistaken Point, Terranova, Canadá" } }
+      ],
+      "len": 0.2,
+      "diet": "filter",
+      "text": {
+        "en": "Spindle-shaped fronds that lay flat on the deep sea floor off what is now Newfoundland, about 565 million years ago, where volcanic ash buried whole meadows of them, like a Pompeii of the deep. Mapping where each one lay showed that Fractofusus spread like strawberry plants: big ones were ringed by smaller offspring, perhaps sent out along threads.",
+        "es": "Frondas en forma de huso que yacían planas en el fondo del mar profundo, frente a la actual Terranova, hace unos 565 millones de años, donde la ceniza volcánica sepultó praderas enteras, como una Pompeya de las profundidades. Al mapear dónde quedó cada una se vio que Fractofusus se extendía como las fresas: las grandes estaban rodeadas de crías más pequeñas, quizá lanzadas a lo largo de hilos."
+      },
+      "kin": { "en": "Unknown: rangeomorphs left no living relatives", "es": "Desconocidos: los rangeomorfos no dejaron parientes vivos" },
+      "wiki": { "en": "Fractofusus", "es": "" },
+      "pbdb": "Fractofusus",
+      "item": "fractofusus"
+    },
+    {
+      "id": "funisia",
+      "name": { "en": "Funisia dorothea", "es": "Funisia dorothea" },
+      "group": "invertebrate",
+      "icon": "🪸",
+      "life": "sea",
+      "from": 560,
+      "to": 550,
+      "sites": [
+        { "at": [138.2, -30.98], "place": { "en": "Nilpena, Flinders Ranges, South Australia", "es": "Nilpena, cordillera Flinders, Australia Meridional" } }
+      ],
+      "len": 0.3,
+      "diet": "filter",
+      "text": {
+        "en": "Soft tubes up to 30 cm long that grew packed together like a lawn on the sea floor. The tubes in each patch are all about the same size, as if they settled from the water at the same time: a hint that Funisia released eggs and sperm into the sea, as corals do. It is one of the oldest signs of sexual reproduction in animals.",
+        "es": "Tubos blandos de hasta 30 cm que crecían apretados como un césped en el fondo del mar. Los tubos de cada grupo tienen casi el mismo tamaño, como si se hubieran asentado desde el agua al mismo tiempo: una pista de que Funisia soltaba óvulos y espermatozoides al mar, como los corales. Es una de las señales más antiguas de reproducción sexual en animales."
+      },
+      "kin": { "en": "Perhaps sponges, or cnidarians such as corals and sea anemones", "es": "Quizá las esponjas, o los cnidarios como corales y anémonas de mar" },
+      "wiki": { "en": "Funisia", "es": "" },
+      "pbdb": "Funisia"
+    },
+    {
+      "id": "ikaria",
+      "name": { "en": "Ikaria wariootia", "es": "Ikaria wariootia" },
+      "group": "invertebrate",
+      "icon": "🪱",
+      "life": "sea",
+      "from": 560,
+      "to": 550,
+      "sites": [
+        { "at": [138.2, -30.98], "place": { "en": "Nilpena, Flinders Ranges, South Australia", "es": "Nilpena, cordillera Flinders, Australia Meridional" } }
+      ],
+      "len": 0.004,
+      "diet": "small",
+      "text": {
+        "en": "A worm-like animal the size of a grain of rice, described in 2020 from 3D scans of rocks in South Australia. Ikaria had a front and a back, a top and a bottom, and probably a mouth, a gut and an anus. Beside it are burrows it seems to have dug while eating its way through the sea floor. It is the oldest known bilaterian, the huge group with two matching sides that includes worms, insects and us.",
+        "es": "Un animal parecido a un gusano, del tamaño de un grano de arroz, descrito en 2020 gracias a escaneos 3D de rocas del sur de Australia. Ikaria tenía delante y detrás, arriba y abajo, y probablemente boca, intestino y ano. A su lado hay galerías que parece haber cavado mientras comía a través del fondo del mar. Es el bilaterio más antiguo conocido: el enorme grupo con dos lados iguales que incluye gusanos, insectos y a nosotros."
+      },
+      "kin": {
+        "en": "Bilaterians, animals with two matching sides: worms, insects, fish and us",
+        "es": "Los bilaterios, animales con dos lados iguales: gusanos, insectos, peces y nosotros"
+      },
+      "wiki": { "en": "Ikaria wariootia", "es": "Ikaria wariootia" },
+      "pbdb": "Ikaria"
+    },
+    {
+      "id": "dickinsonia",
+      "name": { "en": "Dickinsonia", "es": "Dickinsonia" },
+      "group": "invertebrate",
+      "icon": "🍂",
+      "life": "sea",
+      "from": 558,
+      "to": 550,
+      "sites": [
+        { "at": [138.13, -30.82], "place": { "en": "Ediacara Hills, Flinders Ranges, South Australia", "es": "Colinas de Ediacara, cordillera Flinders, Australia Meridional" } },
+        { "at": [39.77, 65.55], "place": { "en": "Zimnie Gory, White Sea coast, Russia", "es": "Zimnie Gori, costa del mar Blanco, Rusia" } }
+      ],
+      "len": 0.2,
+      "diet": "plants",
+      "text": {
+        "en": "A flat, ribbed oval like a bath mat, from a fingernail to over a metre long, that crept over the sea floor and digested the mats of microbes beneath it. For decades no one could say whether Dickinsonia was an animal, a lichen or a giant single cell. In 2018 scientists found traces of cholesterol, a molecule made by animals, in a fossil from Russia. It is one of the oldest animals we know for sure.",
+        "es": "Un óvalo plano y acanalado como un tapete de baño, desde el tamaño de una uña hasta más de un metro, que se arrastraba por el fondo del mar y digería los tapetes de microbios que tenía debajo. Por décadas nadie supo si Dickinsonia era un animal, un liquen o una célula gigante. En 2018 hallaron en un fósil de Rusia restos de colesterol, una molécula que fabrican los animales. Es uno de los animales más antiguos que conocemos con certeza."
+      },
+      "kin": {
+        "en": "Animals in general; perhaps close to placozoans, tiny flat blobs that live in the sea",
+        "es": "Los animales en general; quizá cercano a los placozoos, diminutas manchas planas que viven en el mar"
+      },
+      "wiki": { "en": "Dickinsonia", "es": "Dickinsonia" },
+      "pbdb": "Dickinsonia",
+      "item": "dickinsonia"
+    },
+    {
+      "id": "kimberella",
+      "name": { "en": "Kimberella quadrata", "es": "Kimberella quadrata" },
+      "group": "invertebrate",
+      "icon": "🐌",
+      "life": "sea",
+      "from": 558,
+      "to": 555,
+      "sites": [
+        { "at": [39.74, 65.44], "place": { "en": "White Sea coast, Arkhangelsk, Russia", "es": "Costa del mar Blanco, Arcángel, Rusia" } },
+        { "at": [138.13, -30.82], "place": { "en": "Ediacara Hills, Flinders Ranges, South Australia", "es": "Colinas de Ediacara, cordillera Flinders, Australia Meridional" } }
+      ],
+      "len": 0.15,
+      "diet": "plants",
+      "text": {
+        "en": "A slug-like animal up to 15 cm long with a tough, domed back and a frilly edge. Next to many fossils from Russia's White Sea are fan-shaped sets of scratches: Kimberella grazed the mat of microbes on the sea floor with a long snout that it swept back and forth, as a snail scrapes algae from a rock. Many scientists see it as an early relative of molluscs.",
+        "es": "Un animal parecido a una babosa, de hasta 15 cm, con el lomo abombado y duro y un borde ondulado. Junto a muchos fósiles del mar Blanco, en Rusia, hay grupos de rasguños en abanico: Kimberella raspaba el tapete de microbios del fondo con una trompa que movía de un lado a otro, como un caracol que raspa algas de una roca. Muchos científicos lo ven como un pariente temprano de los moluscos."
+      },
+      "kin": { "en": "Perhaps molluscs: snails, clams and octopuses", "es": "Quizá los moluscos: caracoles, almejas y pulpos" },
+      "wiki": { "en": "Kimberella", "es": "Kimberella" },
+      "pbdb": "Kimberella",
+      "item": "kimberella"
+    },
+    {
+      "id": "tribrachidium",
+      "name": { "en": "Tribrachidium heraldicum", "es": "Tribrachidium heraldicum" },
+      "group": "invertebrate",
+      "icon": "⭐",
+      "life": "sea",
+      "from": 558,
+      "to": 550,
+      "sites": [
+        { "at": [138.13, -30.82], "place": { "en": "Ediacara Hills, Flinders Ranges, South Australia", "es": "Colinas de Ediacara, cordillera Flinders, Australia Meridional" } },
+        { "at": [39.77, 65.55], "place": { "en": "Zimnie Gory, White Sea coast, Russia", "es": "Zimnie Gori, costa del mar Blanco, Rusia" } }
+      ],
+      "len": 0.04,
+      "diet": "filter",
+      "text": {
+        "en": "A small dome with three curved arms twisting round it, like the three-legged emblem of the Isle of Man. No animal alive today is built in threes like this. In 2015 scientists tested models of it in a water tank and found that its shape steered water towards its centre, so it probably fed on bits of food floating in the sea: one of the oldest animals to feed that way.",
+        "es": "Una pequeña cúpula con tres brazos curvos que giran a su alrededor, como el emblema de tres piernas de la isla de Man. Ningún animal actual está construido de tres en tres así. En 2015 unos científicos probaron modelos suyos en un tanque de agua y vieron que su forma llevaba el agua hacia el centro, así que probablemente comía partículas que flotaban en el mar: uno de los primeros animales en alimentarse así."
+      },
+      "kin": { "en": "Unknown: no living animal has a body in three parts", "es": "Desconocidos: ningún animal vivo tiene el cuerpo en tres partes" },
+      "wiki": { "en": "Tribrachidium", "es": "Tribrachidium" },
+      "pbdb": "Tribrachidium",
+      "item": "tribrachidium"
+    },
+    {
+      "id": "spriggina",
+      "name": { "en": "Spriggina floundersi", "es": "Spriggina floundersi" },
+      "group": "invertebrate",
+      "icon": "🐛",
+      "life": "sea",
+      "from": 555,
+      "to": 550,
+      "sites": [
+        { "at": [138.13, -30.82], "place": { "en": "Ediacara Hills, Flinders Ranges, South Australia", "es": "Colinas de Ediacara, cordillera Flinders, Australia Meridional" } }
+      ],
+      "len": 0.03,
+      "diet": "small",
+      "text": {
+        "en": "A small segmented animal up to 5 cm long with a horseshoe-shaped head. It is named after Reg Sprigg, who in 1946 found the first fossils in the Ediacara Hills and opened a window on Earth's first large animals. Spriggina may have been an early relative of arthropods, but its segments are offset like the teeth of a zip rather than paired, and no one is sure what it ate.",
+        "es": "Un pequeño animal segmentado de hasta 5 cm, con la cabeza en forma de herradura. Lleva el nombre de Reg Sprigg, quien en 1946 halló los primeros fósiles en las colinas de Ediacara y abrió una ventana a los primeros animales grandes de la Tierra. Spriggina quizá fue un pariente temprano de los artrópodos, pero sus segmentos están alternados como los dientes de un cierre, no en pares, y nadie sabe bien qué comía."
+      },
+      "kin": {
+        "en": "Uncertain: perhaps arthropods (insects, crabs), perhaps a lost branch",
+        "es": "Inciertos: quizá los artrópodos (insectos, cangrejos), quizá una rama perdida"
+      },
+      "wiki": { "en": "Spriggina", "es": "Spriggina" },
+      "pbdb": "Spriggina",
+      "item": "spriggina"
+    },
+    {
+      "id": "cloudina",
+      "name": { "en": "Cloudina", "es": "Cloudina" },
+      "group": "invertebrate",
+      "icon": "🐚",
+      "life": "sea",
+      "from": 551,
+      "to": 539,
+      "sites": [
+        { "at": [16.62, -24.05], "place": { "en": "Nama Group, Namibia", "es": "Grupo Nama, Namibia" } },
+        { "at": [-4.84, 39.36], "place": { "en": "Villarta Formation, central Spain", "es": "Formación Villarta, centro de España" } },
+        { "at": [106, 32.85], "place": { "en": "Gaojiashan, Shaanxi, China", "es": "Gaojiashan, Shaanxi, China" } }
+      ],
+      "len": 0.03,
+      "diet": "filter",
+      "text": {
+        "en": "Stacks of tiny cones, like ice-cream cones pushed one inside another, a few centimetres long. Cloudina was one of the first animals to build a hard skeleton, and it grew in such numbers that it formed small reefs. Some tubes have neat holes bored through the wall, among the oldest signs of predators. Hard parts may have been the first answer to being eaten.",
+        "es": "Pilas de conos diminutos, como barquillos de helado metidos uno dentro de otro, de unos pocos centímetros. Cloudina fue uno de los primeros animales en construir un esqueleto duro, y crecía en tal cantidad que formaba pequeños arrecifes. Algunos tubos tienen agujeros limpios que atraviesan la pared, de las señales más antiguas de depredadores. Las partes duras quizá fueron la primera respuesta a ser comido."
+      },
+      "kin": { "en": "Unknown; perhaps tube-building worms", "es": "Desconocidos; quizá gusanos que construyen tubos" },
+      "wiki": { "en": "Cloudinidae", "es": "Cloudina" },
+      "pbdb": "Cloudina",
+      "item": "cloudina"
+    },
+    {
+      "id": "saccorhytus",
+      "name": { "en": "Saccorhytus coronarius", "es": "Saccorhytus coronarius" },
+      "group": "invertebrate",
+      "icon": "🫧",
+      "life": "sea",
+      "from": 537,
+      "to": 533,
+      "sites": [
+        { "at": [107.77, 32.99], "place": { "en": "Kuanchuanpu Formation, Xixiang, Shaanxi, China", "es": "Formación Kuanchuanpu, Xixiang, Shaanxi, China" } }
+      ],
+      "len": 0.0013,
+      "diet": "small",
+      "text": {
+        "en": "A wrinkled bag about a millimetre across, with a huge mouth and rings of little cones round its body, from rocks about 535 million years old in China. When it was described in 2017 it was hailed as the oldest relative of vertebrates, and newspapers called it our tiny ancestor. In 2022 better scans showed it had no gill openings: it was more likely a relative of the moulting animals, like insects and roundworms.",
+        "es": "Una bolsa arrugada de un milímetro, con una boca enorme y anillos de conitos alrededor del cuerpo, de rocas chinas de unos 535 millones de años. Cuando se describió en 2017 se anunció como el pariente más antiguo de los vertebrados, y los periódicos la llamaron nuestro diminuto antepasado. En 2022, mejores escaneos mostraron que no tenía aberturas branquiales: más bien era pariente de los animales que mudan, como insectos y nematodos."
+      },
+      "kin": {
+        "en": "Probably the moulting animals (ecdysozoans): insects, spiders and roundworms",
+        "es": "Probablemente los animales que mudan (ecdisozoos): insectos, arañas y nematodos"
+      },
+      "wiki": { "en": "Saccorhytus", "es": "Saccorhytus" },
+      "pbdb": "Saccorhytus"
+    },
+    {
+      "id": "halkieria",
+      "name": { "en": "Halkieria", "es": "Halkieria" },
+      "group": "invertebrate",
+      "icon": "🐌",
+      "life": "sea",
+      "from": 535,
+      "to": 510,
+      "sites": [
+        { "at": [-42.23, 82.79], "place": { "en": "Sirius Passet, North Greenland", "es": "Sirius Passet, norte de Groenlandia" } },
+        { "at": [102.57, 24.73], "place": { "en": "Meishucun, Yunnan, China", "es": "Meishucun, Yunnan, China" } }
+      ],
+      "len": 0.06,
+      "diet": "plants",
+      "text": {
+        "en": "For years Halkieria was known only from tiny scales, among the 'small shelly fossils' that mark the start of the Cambrian. Then complete animals turned up at Sirius Passet in Greenland in 1989: a slug up to 8 cm long covered in overlapping scales like chain mail, with a little shell at each end. It probably grazed the sea floor. It may sit near the common ancestor of molluscs and brachiopods, the lamp shells.",
+        "es": "Durante años Halkieria solo se conoció por escamas diminutas, parte de los «pequeños fósiles con concha» que marcan el inicio del Cámbrico. En 1989 aparecieron animales completos en Sirius Passet, Groenlandia: una babosa de hasta 8 cm cubierta de escamas superpuestas como una cota de malla, con una conchita en cada extremo. Probablemente pastaba en el fondo marino. Quizá esté cerca del antepasado común de moluscos y braquiópodos."
+      },
+      "kin": {
+        "en": "Molluscs (snails, octopuses) and brachiopods (lamp shells); its exact place is debated",
+        "es": "Los moluscos (caracoles, pulpos) y los braquiópodos; su lugar exacto se discute"
+      },
+      "wiki": { "en": "Halkieria", "es": "Halkieria" },
+      "pbdb": "Halkieria",
+      "item": "halkieria"
+    },
+    {
+      "id": "dasyclad-algae",
+      "name": { "en": "Dasycladales", "es": "Dasycladales" },
+      "common": { "en": "Dasyclad green algae", "es": "Algas verdes dasicladales" },
+      "group": "plant",
+      "icon": "🌂",
+      "life": "sea",
+      "from": 530,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        { "at": [-104.86, 31.9], "place": { "en": "Capitan Reef, Guadalupe Mountains, Texas, United States", "es": "Arrecife Capitán, montes Guadalupe, Texas, Estados Unidos" } },
+        { "at": [11.85, 46.5], "place": { "en": "Dolomites, Italy", "es": "Dolomitas, Italia" } }
+      ],
+      "len": 0.05,
+      "diet": "light",
+      "text": {
+        "en": "Green seaweeds shaped like tiny umbrellas or bottle brushes, which coat themselves in lime. Their limy skeletons turn up in rocks from the Cambrian on, and in places they helped build whole mountains of limestone. One survivor, the mermaid's wineglass (Acetabularia), grows in warm shallow seas: up to 10 cm tall, yet the whole thing is a single giant cell with one nucleus, hidden in its foot.",
+        "es": "Algas verdes con forma de sombrillas diminutas o de cepillos para botellas, que se cubren de cal. Sus esqueletos calizos aparecen en rocas desde el Cámbrico, y en algunos lugares ayudaron a formar montañas enteras de caliza. Una sobreviviente, la copa de sirena (Acetabularia), crece en mares cálidos poco profundos: mide hasta 10 cm y, sin embargo, toda ella es una sola célula gigante con un único núcleo, escondido en su base."
+      },
+      "kin": { "en": "Green algae, and through them every land plant", "es": "Las algas verdes y, a través de ellas, todas las plantas terrestres" },
+      "wiki": { "en": "Dasycladales", "es": "Dasycladales" },
+      "pbdb": "Dasycladales"
+    },
+    {
+      "id": "archaeocyatha",
+      "name": { "en": "Archaeocyatha", "es": "Archaeocyatha" },
+      "common": { "en": "Archaeocyaths", "es": "Arqueociatos" },
+      "group": "invertebrate",
+      "icon": "🪸",
+      "life": "sea",
+      "from": 525,
+      "to": 500,
+      "sites": [
+        { "at": [127.58, 61.15], "place": { "en": "Lena Pillars, Yakutia, Russia", "es": "Pilares del Lena, Yakutia, Rusia" } },
+        { "at": [138.6, -31.3], "place": { "en": "Flinders Ranges, South Australia", "es": "Cordillera Flinders, Australia Meridional" } }
+      ],
+      "len": 0.05,
+      "diet": "filter",
+      "text": {
+        "en": "Cups of stone with a double wall full of pores, from finger-sized to as big as a bucket. About 525 million years ago they grew together with microbes into the first big reefs built by animals, in warm shallow seas from Siberia to Australia. Most scientists think archaeocyaths were sponges. Within about 15 million years nearly all of them had vanished, and reefs took a long time to return.",
+        "es": "Copas de piedra con doble pared llena de poros, desde el tamaño de un dedo hasta el de una cubeta. Hace unos 525 millones de años crecieron junto con microbios y formaron los primeros grandes arrecifes construidos por animales, en mares cálidos y poco profundos de Siberia a Australia. La mayoría de los científicos cree que eran esponjas. En unos 15 millones de años casi todos habían desaparecido, y los arrecifes tardaron mucho en volver."
+      },
+      "kin": { "en": "Sponges, most scientists think", "es": "Las esponjas, según la mayoría de los científicos" },
+      "wiki": { "en": "Archaeocyatha", "es": "Archaeocyatha" },
+      "pbdb": "Archaeocyatha",
+      "item": "archaeocyaths"
+    },
+    {
+      "id": "trilobita",
+      "name": { "en": "Trilobita", "es": "Trilobita" },
+      "common": { "en": "Trilobites", "es": "Trilobites" },
+      "group": "invertebrate",
+      "icon": "🦐",
+      "life": "sea",
+      "from": 521,
+      "to": 252,
+      "sites": [
+        { "at": [102.97, 24.67], "place": { "en": "Chengjiang, Yunnan, China", "es": "Chengjiang, Yunnan, China" } },
+        { "at": [-113.33, 39.25], "place": { "en": "House Range, Utah, United States", "es": "Sierra House, Utah, Estados Unidos" } },
+        { "at": [13.98, 49.78], "place": { "en": "Jince, Bohemia, Czech Republic", "es": "Jince, Bohemia, República Checa" } },
+        { "at": [-5.17, 31.11], "place": { "en": "Alnif, Morocco", "es": "Alnif, Marruecos" } }
+      ],
+      "len": 0.05,
+      "diet": "small",
+      "text": {
+        "en": "Armoured arthropods whose bodies were split lengthwise into three lobes, the source of their name. Trilobites had some of the first complex eyes, with lenses of calcite, a clear mineral, and many could roll up like woodlice. More than 20,000 species lived over nearly 270 million years, from the size of a flea to 70 cm. They survived every crisis until the last ones died in the Great Dying, 252 million years ago.",
+        "es": "Artrópodos acorazados con el cuerpo dividido a lo largo en tres lóbulos, de ahí su nombre. Los trilobites tuvieron algunos de los primeros ojos complejos, con lentes de calcita, un mineral transparente, y muchos podían enrollarse como cochinillas. Más de 20 000 especies vivieron durante casi 270 millones de años, del tamaño de una pulga hasta 70 cm. Sobrevivieron a todas las crisis hasta que los últimos murieron en la Gran Mortandad, hace 252 millones de años."
+      },
+      "kin": {
+        "en": "Arthropods: insects, crabs, spiders and horseshoe crabs; which is closest is debated",
+        "es": "Los artrópodos: insectos, cangrejos, arañas y cangrejos herradura; cuál es el más cercano se discute"
+      },
+      "wiki": { "en": "Trilobite", "es": "Trilobita" },
+      "pbdb": "Trilobita",
+      "item": "trilobites"
+    },
+    {
+      "id": "haikouichthys",
+      "name": { "en": "Haikouichthys ercaicunensis", "es": "Haikouichthys ercaicunensis" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 518,
+      "to": 516,
+      "sites": [
+        { "at": [102.6, 24.79], "place": { "en": "Haikou, Kunming, Yunnan, China", "es": "Haikou, Kunming, Yunnan, China" } }
+      ],
+      "len": 0.025,
+      "diet": "small",
+      "text": {
+        "en": "One of the first fish, and one of the first vertebrates, animals with a backbone: a little swimmer 2.5 cm long with a head, eyes, gills and a fin along its back. It had no jaws and no bone, only cartilage, the bendy stuff of our ears. Hundreds of them have been found near Kunming in China, in rocks 518 million years old.",
+        "es": "Uno de los primeros peces y de los primeros vertebrados, animales con columna: un pequeño nadador de 2,5 cm con cabeza, ojos, branquias y una aleta a lo largo del lomo. No tenía mandíbulas ni hueso, solo cartílago, el material flexible de nuestras orejas. Se han hallado cientos cerca de Kunming, en China, en rocas de 518 millones de años."
+      },
+      "kin": {
+        "en": "Lampreys and hagfish, jawless fish still alive; then every vertebrate, us included",
+        "es": "Las lampreas y los mixinos, peces sin mandíbulas aún vivos; luego todos los vertebrados, nosotros incluidos"
+      },
+      "wiki": { "en": "Haikouichthys", "es": "Haikouichthys" },
+      "pbdb": "Haikouichthys",
+      "item": "haikouichthys"
+    },
+    {
+      "id": "fuxianhuia",
+      "name": { "en": "Fuxianhuia protensa", "es": "Fuxianhuia protensa" },
+      "group": "invertebrate",
+      "icon": "🦐",
+      "life": "sea",
+      "from": 518,
+      "to": 516,
+      "sites": [
+        { "at": [102.97, 24.67], "place": { "en": "Chengjiang, Yunnan, China", "es": "Chengjiang, Yunnan, China" } }
+      ],
+      "len": 0.11,
+      "diet": "small",
+      "text": {
+        "en": "An arthropod up to 11 cm long from the Chengjiang fossil beds, named after Fuxian Lake in China. It is famous for what is preserved inside: in 2012 scientists found traces of its brain, and in 2014 its heart and blood vessels, the oldest known. Its brain was already divided into parts like those of insects and crabs, so complex brains go back to the Cambrian.",
+        "es": "Un artrópodo de hasta 11 cm de los yacimientos de Chengjiang, llamado así por el lago Fuxian, en China. Es famoso por lo que conserva por dentro: en 2012 se hallaron restos de su cerebro, y en 2014 su corazón y sus vasos sanguíneos, los más antiguos conocidos. Su cerebro ya estaba dividido en partes como el de insectos y cangrejos, así que los cerebros complejos se remontan al Cámbrico."
+      },
+      "kin": { "en": "Arthropods: an early cousin of insects, crabs and spiders", "es": "Los artrópodos: un primo temprano de insectos, cangrejos y arañas" },
+      "wiki": { "en": "Fuxianhuia", "es": "Fuxianhuia" },
+      "pbdb": "Fuxianhuia",
+      "item": "fuxianhuia"
+    },
+    {
+      "id": "hallucigenia",
+      "name": { "en": "Hallucigenia", "es": "Hallucigenia" },
+      "group": "invertebrate",
+      "icon": "🐛",
+      "life": "sea",
+      "from": 518,
+      "to": 505,
+      "sites": [
+        { "at": [-115.6, 51.78], "place": { "en": "Burgess Shale, Yoho National Park, British Columbia, Canada", "es": "Esquisto de Burgess, Parque Nacional Yoho, Columbia Británica, Canadá" } },
+        { "at": [102.97, 24.67], "place": { "en": "Chengjiang, Yunnan, China", "es": "Chengjiang, Yunnan, China" } }
+      ],
+      "len": 0.03,
+      "diet": "small",
+      "text": {
+        "en": "A worm with legs, 1 to 5 cm long, with pairs of long spines on its back; its name means 'like a dream'. When it was first rebuilt in 1977, scientists put it upside down, walking on its spines, and later found they also had its head at the wrong end. It probably clung to sponges, picking food from the water. Its living relatives are the velvet worms.",
+        "es": "Un gusano con patas, de 1 a 5 cm, con pares de espinas largas en el lomo; su nombre significa «como un sueño». Cuando se reconstruyó por primera vez en 1977, lo pusieron al revés, caminando sobre sus espinas, y más tarde se vio que también le habían puesto la cabeza en el extremo equivocado. Probablemente se aferraba a las esponjas y tomaba comida del agua. Sus parientes vivos son los gusanos aterciopelados."
+      },
+      "kin": {
+        "en": "Velvet worms, which live in damp tropical forests; more distantly, arthropods",
+        "es": "Los gusanos aterciopelados, que viven en selvas húmedas; más lejos, los artrópodos"
+      },
+      "wiki": { "en": "Hallucigenia", "es": "Hallucigenia" },
+      "pbdb": "Hallucigenia",
+      "item": "hallucigenia"
+    },
+    {
+      "id": "canadaspis",
+      "name": { "en": "Canadaspis", "es": "Canadaspis" },
+      "group": "invertebrate",
+      "icon": "🦐",
+      "life": "sea",
+      "from": 518,
+      "to": 500,
+      "sites": [
+        { "at": [-115.6, 51.78], "place": { "en": "Burgess Shale, Yoho National Park, British Columbia, Canada", "es": "Esquisto de Burgess, Parque Nacional Yoho, Columbia Británica, Canadá" } },
+        { "at": [102.97, 24.67], "place": { "en": "Chengjiang, Yunnan, China", "es": "Chengjiang, Yunnan, China" } }
+      ],
+      "len": 0.05,
+      "diet": "small",
+      "text": {
+        "en": "A shrimp-like animal with a shell folded over its back like a taco, one of the commonest animals of the Burgess Shale. It walked the sea floor on many pairs of legs and stirred up the mud for bits of food. Canadaspis was once called the oldest crustacean; now it is seen as an early cousin of the arthropods with mandibles, jaw-like mouthparts: crustaceans, insects and millipedes.",
+        "es": "Un animal parecido a un camarón, con un caparazón doblado sobre el lomo como un taco, uno de los más comunes del esquisto de Burgess. Caminaba por el fondo con muchos pares de patas y removía el lodo en busca de restos de comida. Canadaspis se llamó en su día el crustáceo más antiguo; hoy se ve como un primo temprano de los artrópodos con mandíbulas: crustáceos, insectos y milpiés."
+      },
+      "kin": { "en": "Crustaceans, insects and millipedes, the arthropods with jaw-like mandibles", "es": "Los crustáceos, insectos y milpiés, los artrópodos con mandíbulas" },
+      "wiki": { "en": "Canadaspis", "es": "Canadaspis" },
+      "pbdb": "Canadaspis"
+    },
+    {
+      "id": "anomalocaris",
+      "name": { "en": "Anomalocaris canadensis", "es": "Anomalocaris canadensis" },
+      "group": "invertebrate",
+      "icon": "🦞",
+      "life": "sea",
+      "from": 515,
+      "to": 500,
+      "sites": [
+        { "at": [-115.6, 51.78], "place": { "en": "Burgess Shale, Yoho National Park, British Columbia, Canada", "es": "Esquisto de Burgess, Parque Nacional Yoho, Columbia Británica, Canadá" } },
+        { "at": [-113.4, 39.22], "place": { "en": "Weeks Formation, House Range, Utah, United States", "es": "Formación Weeks, sierra House, Utah, Estados Unidos" } }
+      ],
+      "len": 0.4,
+      "diet": "meat",
+      "text": {
+        "en": "The biggest hunter of its time, up to about 40 cm long: a swimmer with flaps down its sides, two spiny grasping arms in front of a round mouth, and big eyes on stalks. Its parts were found separately and first named as three different animals: the arms as a shrimp, the mouth as a jellyfish and the body as a sea cucumber. Only in the 1980s was it put together. It belongs to an early branch of the arthropods.",
+        "es": "El mayor cazador de su época, de hasta unos 40 cm: un nadador con aletas a los lados, dos brazos espinosos para atrapar frente a una boca redonda y grandes ojos sobre tallos. Sus partes se hallaron por separado y primero se nombraron como tres animales distintos: los brazos como un camarón, la boca como una medusa y el cuerpo como un pepino de mar. Hasta los años ochenta no se armó entero. Pertenece a una rama temprana de los artrópodos."
+      },
+      "kin": {
+        "en": "Arthropods (insects, spiders, crabs), as an early side branch of their family",
+        "es": "Los artrópodos (insectos, arañas, cangrejos), como una rama temprana de su familia"
+      },
+      "wiki": { "en": "Anomalocaris", "es": "Anomalocaris" },
+      "pbdb": "Anomalocaris",
+      "item": "anomalocaris"
+    },
+    {
+      "id": "wiwaxia",
+      "name": { "en": "Wiwaxia corrugata", "es": "Wiwaxia corrugata" },
+      "group": "invertebrate",
+      "icon": "🦔",
+      "life": "sea",
+      "from": 515,
+      "to": 500,
+      "sites": [
+        { "at": [-115.6, 51.78], "place": { "en": "Burgess Shale, Yoho National Park, British Columbia, Canada", "es": "Esquisto de Burgess, Parque Nacional Yoho, Columbia Británica, Canadá" } }
+      ],
+      "len": 0.04,
+      "diet": "plants",
+      "text": {
+        "en": "An oval animal up to 5 cm long covered in overlapping scales and two rows of tall spines, like a tiny armoured hedgehog. It crawled on a soft foot and scraped food from the sea floor with a rasping mouth. Scientists have argued for decades whether Wiwaxia was an early mollusc or a relative of bristle worms; many now favour molluscs.",
+        "es": "Un animal ovalado de hasta 5 cm cubierto de escamas superpuestas y dos filas de espinas altas, como un diminuto erizo acorazado. Se arrastraba sobre un pie blando y raspaba comida del fondo del mar con una boca como una lima. Por décadas se ha discutido si Wiwaxia era un molusco temprano o un pariente de los gusanos poliquetos; hoy muchos se inclinan por los moluscos."
+      },
+      "kin": { "en": "Molluscs (snails, octopuses), many think; or bristle worms", "es": "Los moluscos (caracoles, pulpos), según muchos; o los gusanos poliquetos" },
+      "wiki": { "en": "Wiwaxia", "es": "Wiwaxia" },
+      "pbdb": "Wiwaxia"
+    },
+    {
+      "id": "marrella",
+      "name": { "en": "Marrella splendens", "es": "Marrella splendens" },
+      "group": "invertebrate",
+      "icon": "🦐",
+      "life": "sea",
+      "from": 510,
+      "to": 500,
+      "sites": [
+        { "at": [-115.6, 51.78], "place": { "en": "Burgess Shale, Yoho National Park, British Columbia, Canada", "es": "Esquisto de Burgess, Parque Nacional Yoho, Columbia Británica, Canadá" } }
+      ],
+      "len": 0.02,
+      "diet": "small",
+      "text": {
+        "en": "The commonest animal of the Burgess Shale, with tens of thousands of fossils: a little arthropod 2 cm long with two pairs of long, swept-back spines on its head and many feathery legs. Charles Walcott, who found it in 1909, nicknamed it the 'lace crab'. Fine grooves on its spines probably made them shimmer with rainbow colours, like a soap bubble.",
+        "es": "El animal más común del esquisto de Burgess, con decenas de miles de fósiles: un pequeño artrópodo de 2 cm con dos pares de espinas largas echadas hacia atrás en la cabeza y muchas patas plumosas. Charles Walcott, que lo halló en 1909, lo apodó el «cangrejo de encaje». Unos surcos finos en sus espinas probablemente las hacían brillar con colores de arcoíris, como una pompa de jabón."
+      },
+      "kin": { "en": "Arthropods: an early branch, the marrellomorphs, with no living members", "es": "Los artrópodos: una rama temprana, los marrelomorfos, sin miembros vivos" },
+      "wiki": { "en": "Marrella", "es": "Marrella" },
+      "pbdb": "Marrella",
+      "item": "marrella"
+    },
+    {
+      "id": "ottoia",
+      "name": { "en": "Ottoia prolifica", "es": "Ottoia prolifica" },
+      "group": "invertebrate",
+      "icon": "🪱",
+      "life": "sea",
+      "from": 510,
+      "to": 500,
+      "sites": [
+        { "at": [-115.6, 51.78], "place": { "en": "Burgess Shale, Yoho National Park, British Columbia, Canada", "es": "Esquisto de Burgess, Parque Nacional Yoho, Columbia Británica, Canadá" } }
+      ],
+      "len": 0.08,
+      "diet": "meat",
+      "text": {
+        "en": "A burrowing worm up to 15 cm long that turned its spiny throat inside out to grab prey. Ottoia fossils still hold their last meals: tiny shelled animals called hyoliths, swallowed whole, and sometimes other Ottoia, so it was a cannibal. Its living relatives, the priapulid worms, still hunt the same way in muddy sea floors.",
+        "es": "Un gusano excavador de hasta 15 cm que volteaba hacia afuera su garganta espinosa para atrapar presas. Los fósiles de Ottoia aún guardan su última comida: animalitos con concha llamados hiolítidos, tragados enteros, y a veces otros Ottoia, así que era caníbal. Sus parientes vivos, los gusanos priapúlidos, aún cazan igual en los fondos marinos fangosos."
+      },
+      "kin": { "en": "Priapulid worms, which still burrow in muddy sea floors", "es": "Los gusanos priapúlidos, que aún excavan en fondos marinos fangosos" },
+      "wiki": { "en": "Ottoia", "es": "Ottoia" },
+      "pbdb": "Ottoia"
+    },
+    {
+      "id": "opabinia",
+      "name": { "en": "Opabinia regalis", "es": "Opabinia regalis" },
+      "group": "invertebrate",
+      "icon": "🦐",
+      "life": "sea",
+      "from": 509,
+      "to": 505,
+      "sites": [
+        { "at": [-115.6, 51.78], "place": { "en": "Burgess Shale, Yoho National Park, British Columbia, Canada", "es": "Esquisto de Burgess, Parque Nacional Yoho, Columbia Británica, Canadá" } }
+      ],
+      "len": 0.06,
+      "diet": "small",
+      "text": {
+        "en": "Five eyes on top of its head and a long, bendy nozzle ending in a claw, which passed food back to its mouth. When Harry Whittington showed his reconstruction at a meeting in 1972, the audience burst out laughing, thinking it was a joke. Opabinia, 4 to 7 cm long, became a symbol of the strange animals of the Cambrian. It was an early cousin of the arthropods.",
+        "es": "Cinco ojos en lo alto de la cabeza y una trompa larga y flexible terminada en una pinza, que llevaba la comida a la boca. Cuando Harry Whittington mostró su reconstrucción en una reunión en 1972, el público soltó la carcajada, creyendo que era una broma. Opabinia, de 4 a 7 cm, se volvió un símbolo de los extraños animales del Cámbrico. Era un primo temprano de los artrópodos."
+      },
+      "kin": { "en": "Arthropods, as an early cousin, close to Anomalocaris", "es": "Los artrópodos, como un primo temprano, cercano a Anomalocaris" },
+      "wiki": { "en": "Opabinia", "es": "Opabinia" },
+      "pbdb": "Opabinia",
+      "item": "opabinia"
+    },
+    {
+      "id": "pikaia",
+      "name": { "en": "Pikaia gracilens", "es": "Pikaia gracilens" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 509,
+      "to": 505,
+      "sites": [
+        { "at": [-115.6, 51.78], "place": { "en": "Burgess Shale, Yoho National Park, British Columbia, Canada", "es": "Esquisto de Burgess, Parque Nacional Yoho, Columbia Británica, Canadá" } }
+      ],
+      "len": 0.04,
+      "diet": "small",
+      "text": {
+        "en": "A flattened, eel-like swimmer about 4 cm long with a stiff rod along its back, the notochord, and blocks of muscle in a zigzag like a fish's. Pikaia is one of the oldest known chordates, the group that includes vertebrates. It was long called the oldest ancestor of humans; now it is seen as a cousin of that ancestor. It swam by wriggling and probably ate bits floating in the water.",
+        "es": "Un nadador aplanado, parecido a una anguila, de unos 4 cm, con una varilla rígida a lo largo del lomo, la notocorda, y bloques de músculo en zigzag como los de un pez. Pikaia es uno de los cordados más antiguos conocidos, el grupo que incluye a los vertebrados. Mucho tiempo se le llamó el antepasado más antiguo de los humanos; hoy se ve como un primo de ese antepasado. Nadaba ondulando y comía partículas del agua."
+      },
+      "kin": {
+        "en": "Lancelets, small fish-like animals of sandy seas; then all vertebrates, us included",
+        "es": "Los anfioxos, animalitos con forma de pez de fondos arenosos; luego todos los vertebrados, nosotros incluidos"
+      },
+      "wiki": { "en": "Pikaia", "es": "Pikaia gracilens" },
+      "pbdb": "Pikaia",
+      "item": "pikaia"
+    },
+    {
+      "id": "metaspriggina",
+      "name": { "en": "Metaspriggina walcotti", "es": "Metaspriggina walcotti" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 509,
+      "to": 500,
+      "sites": [
+        { "at": [-115.36, 51.43], "place": { "en": "Marble Canyon, Kootenay National Park, British Columbia, Canada", "es": "Cañón Marble, Parque Nacional Kootenay, Columbia Británica, Canadá" } },
+        { "at": [-115.6, 51.78], "place": { "en": "Burgess Shale, Yoho National Park, British Columbia, Canada", "es": "Esquisto de Burgess, Parque Nacional Yoho, Columbia Británica, Canadá" } }
+      ],
+      "len": 0.06,
+      "diet": "small",
+      "text": {
+        "en": "A little fish about 6 cm long with two big eyes, a pair of nostrils and a row of gill arches, described in 2014 from fossils found at Marble Canyon in Canada. Its first pair of gill arches was a little sturdier than the rest; in later fish, that pair would become the jaws. Metaspriggina shows that the body plan of vertebrates was already in place about 505 million years ago.",
+        "es": "Un pececito de unos 6 cm con dos ojos grandes, un par de fosas nasales y una fila de arcos branquiales, descrito en 2014 a partir de fósiles del cañón Marble, en Canadá. Su primer par de arcos branquiales era algo más robusto que los demás; en peces posteriores, ese par se convertiría en las mandíbulas. Metaspriggina muestra que el plan corporal de los vertebrados ya existía hace unos 505 millones de años."
+      },
+      "kin": { "en": "Lampreys and hagfish; then all other vertebrates", "es": "Las lampreas y los mixinos; luego todos los demás vertebrados" },
+      "wiki": { "en": "Metaspriggina", "es": "Metaspriggina" },
+      "pbdb": "Metaspriggina"
+    },
+    {
+      "id": "waptia",
+      "name": { "en": "Waptia fieldensis", "es": "Waptia fieldensis" },
+      "group": "invertebrate",
+      "icon": "🦐",
+      "life": "sea",
+      "from": 509,
+      "to": 505,
+      "sites": [
+        { "at": [-115.6, 51.78], "place": { "en": "Burgess Shale, Yoho National Park, British Columbia, Canada", "es": "Esquisto de Burgess, Parque Nacional Yoho, Columbia Británica, Canadá" } }
+      ],
+      "len": 0.08,
+      "diet": "small",
+      "text": {
+        "en": "A shrimp-like arthropod up to 8 cm long with a two-part shell, big eyes and a forked tail. In 2015 scientists found Waptia fossils with clusters of eggs tucked under the shell, some with embryos inside: the oldest known parents carrying their young. Its name comes from Wapta, a mountain near the Burgess Shale.",
+        "es": "Un artrópodo parecido a un camarón, de hasta 8 cm, con un caparazón de dos piezas, ojos grandes y una cola en horquilla. En 2015 se hallaron fósiles de Waptia con racimos de huevos guardados bajo el caparazón, algunos con embriones dentro: los padres más antiguos conocidos que cargaban a sus crías. Su nombre viene del monte Wapta, cerca del esquisto de Burgess."
+      },
+      "kin": { "en": "Arthropods, perhaps an early cousin of crustaceans", "es": "Los artrópodos, quizá un primo temprano de los crustáceos" },
+      "wiki": { "en": "Waptia", "es": "Waptia" },
+      "pbdb": "Waptia"
+    },
+    {
+      "id": "elrathia",
+      "name": { "en": "Elrathia kingii", "es": "Elrathia kingii" },
+      "group": "invertebrate",
+      "icon": "🦐",
+      "life": "sea",
+      "from": 507,
+      "to": 500,
+      "sites": [
+        { "at": [-113.35, 39.23], "place": { "en": "Wheeler Shale, House Range, Utah, United States", "es": "Lutita Wheeler, sierra House, Utah, Estados Unidos" } }
+      ],
+      "len": 0.03,
+      "diet": "small",
+      "text": {
+        "en": "The trilobite in rock shops and museums all over the world: hundreds of thousands have been dug from the Wheeler Shale of Utah. Elrathia kingii was 1 to 4 cm long and lived on a muddy sea floor with little oxygen. Long before scientists studied it, the Ute people of Utah made necklaces and charms from these fossils.",
+        "es": "El trilobite de las tiendas de minerales y los museos de todo el mundo: se han extraído cientos de miles de la lutita Wheeler, en Utah. Elrathia kingii medía de 1 a 4 cm y vivía en un fondo marino fangoso con poco oxígeno. Mucho antes de que los científicos lo estudiaran, el pueblo ute de Utah hacía collares y amuletos con estos fósiles."
+      },
+      "kin": { "en": "Arthropods: insects, crabs, spiders and horseshoe crabs", "es": "Los artrópodos: insectos, cangrejos, arañas y cangrejos herradura" },
+      "wiki": { "en": "Elrathia", "es": "" },
+      "pbdb": "Elrathia",
+      "item": "elrathia-kingii"
+    },
+    {
+      "id": "graptolites",
+      "name": { "en": "Graptolithina", "es": "Graptolithina" },
+      "common": { "en": "Graptolites", "es": "Graptolitos" },
+      "group": "invertebrate",
+      "icon": "🪚",
+      "life": "sea",
+      "from": 506,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        { "at": [-3.27, 55.43], "place": { "en": "Dob's Linn, Moffat, Scotland", "es": "Dob's Linn, Moffat, Escocia" } },
+        { "at": [144.28, -36.76], "place": { "en": "Bendigo, Victoria, Australia", "es": "Bendigo, Victoria, Australia" } },
+        { "at": [-65.72, -23.19], "place": { "en": "Acoite, Jujuy, Argentina", "es": "Acoite, Jujuy, Argentina" } }
+      ],
+      "len": 0.05,
+      "diet": "filter",
+      "text": {
+        "en": "Graptolites lived in colonies of tiny animals, each in its own little tube, joined in branches. Many drifted in the open sea and changed so fast that their fossils, which look like pencil marks or tiny saw blades on rock, are used to tell the age of Ordovician and Silurian rocks. The drifting kinds died out almost 400 million years ago, but a few relatives that live in tubes on the sea floor, Rhabdopleura, survive today.",
+        "es": "Los graptolitos vivían en colonias de animalitos, cada uno en su propio tubito, unidos en ramas. Muchos flotaban en mar abierto y cambiaban tan rápido que sus fósiles, que parecen trazos de lápiz o sierras diminutas sobre la roca, sirven para saber la edad de las rocas del Ordovícico y el Silúrico. Los que flotaban se extinguieron hace casi 400 millones de años, pero unos parientes que viven en tubos en el fondo del mar, Rhabdopleura, siguen vivos."
+      },
+      "kin": {
+        "en": "Rhabdopleura, a living graptolite; then acorn worms and, more distantly, starfish",
+        "es": "Rhabdopleura, un graptolito vivo; luego los gusanos bellota y, más lejos, las estrellas de mar"
+      },
+      "wiki": { "en": "Graptolite", "es": "Graptolithina" },
+      "pbdb": "Graptolithina",
+      "item": "graptolites"
+    },
+    {
+      "id": "conodonts",
+      "name": { "en": "Conodonta", "es": "Conodonta" },
+      "common": { "en": "Conodonts", "es": "Conodontos" },
+      "group": "fish",
+      "icon": "🦷",
+      "life": "sea",
+      "from": 500,
+      "to": 201,
+      "sites": [
+        { "at": [-3.23, 55.98], "place": { "en": "Granton, Edinburgh, Scotland", "es": "Granton, Edimburgo, Escocia" } },
+        { "at": [18.89, -32.19], "place": { "en": "Soom Shale, Cederberg, South Africa", "es": "Lutita Soom, Cederberg, Sudáfrica" } }
+      ],
+      "len": 0.05,
+      "diet": "meat",
+      "text": {
+        "en": "For more than a century conodonts were known only as tiny tooth-like fossils, a millimetre long, found by the million in rocks from 500 to 200 million years old. Geologists use them to date rocks. In 1983 the first whole animal turned up near Edinburgh: an eel-like creature a few centimetres long with big eyes and its 'teeth' set in its throat. They were early vertebrates, and they died out at the end of the Triassic.",
+        "es": "Durante más de un siglo los conodontos se conocieron solo como fósiles diminutos parecidos a dientes, de un milímetro, hallados por millones en rocas de entre 500 y 200 millones de años. Los geólogos los usan para fechar rocas. En 1983 apareció cerca de Edimburgo el primer animal completo: un ser parecido a una anguila, de unos centímetros, con ojos grandes y los «dientes» en la garganta. Eran vertebrados primitivos y se extinguieron al final del Triásico."
+      },
+      "kin": {
+        "en": "Vertebrates: perhaps closest to lampreys, perhaps to jawed fish; this is debated",
+        "es": "Los vertebrados: quizá más cercanos a las lampreas, quizá a los peces con mandíbula; se discute"
+      },
+      "wiki": { "en": "Conodont", "es": "Conodonta" },
+      "pbdb": "Conodonta"
+    },
+    {
+      "id": "nautiloids",
+      "name": { "en": "Nautiloidea", "es": "Nautiloidea" },
+      "common": { "en": "Nautiloids", "es": "Nautiloideos" },
+      "group": "invertebrate",
+      "icon": "🐚",
+      "life": "sea",
+      "from": 500,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        { "at": [16.67, 56.73], "place": { "en": "Orthoceras limestone, Öland, Sweden", "es": "Caliza de Orthoceras, Öland, Suecia" } },
+        { "at": [-4.23, 31.43], "place": { "en": "Erfoud, Morocco", "es": "Erfoud, Marruecos" } }
+      ],
+      "len": 0.2,
+      "diet": "meat",
+      "text": {
+        "en": "Relatives of octopuses and squid that live in a shell divided into chambers, filled with gas so they can float. The first, about 500 million years ago, were tiny, but in Ordovician seas nautiloids with long straight shells became the top hunters. Many shapes came and went; today only a handful of species survive, the pearly nautiluses of the Indian and Pacific Oceans.",
+        "es": "Parientes de pulpos y calamares que viven en una concha dividida en cámaras, llenas de gas para poder flotar. Los primeros, hace unos 500 millones de años, eran diminutos, pero en los mares del Ordovícico los nautiloideos de conchas largas y rectas fueron los grandes cazadores. Muchas formas aparecieron y desaparecieron; hoy solo sobreviven unas pocas especies, los nautilos nacarados de los océanos Índico y Pacífico."
+      },
+      "kin": { "en": "The living nautiluses; then octopuses, squid and cuttlefish", "es": "Los nautilos vivos; luego pulpos, calamares y sepias" },
+      "wiki": { "en": "Nautiloid", "es": "Nautiloida" },
+      "pbdb": "Cephalopoda",
+      "item": "nautiloids"
+    },
+    {
+      "id": "crinoids",
+      "name": { "en": "Crinoidea", "es": "Crinoidea" },
+      "common": { "en": "Sea lilies", "es": "Lirios de mar" },
+      "group": "invertebrate",
+      "icon": "🪷",
+      "life": "sea",
+      "from": 485,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        { "at": [-86.9, 40.04], "place": { "en": "Crawfordsville, Indiana, United States", "es": "Crawfordsville, Indiana, Estados Unidos" } },
+        { "at": [-91.12, 40.81], "place": { "en": "Burlington, Iowa, United States", "es": "Burlington, Iowa, Estados Unidos" } },
+        { "at": [9.53, 48.63], "place": { "en": "Holzmaden, Germany", "es": "Holzmaden, Alemania" } }
+      ],
+      "len": 0.5,
+      "diet": "filter",
+      "text": {
+        "en": "Sea lilies look like flowers but are animals, relatives of starfish: a cup with feathery arms on a long stalk made of stacked discs. In the Paleozoic they grew in vast meadows, and whole layers of limestone are made of their broken stalks, which people once threaded as beads. Most living crinoids, the feather stars, have dropped the stalk and can swim; a few stalked ones survive in the deep sea.",
+        "es": "Los lirios de mar parecen flores pero son animales, parientes de las estrellas de mar: una copa con brazos plumosos sobre un tallo largo hecho de discos apilados. En el Paleozoico formaban enormes praderas, y capas enteras de caliza están hechas de sus tallos rotos, que antes se ensartaban como cuentas. Casi todos los crinoideos actuales, las estrellas pluma, perdieron el tallo y pueden nadar; unos pocos con tallo sobreviven en el mar profundo."
+      },
+      "kin": { "en": "Starfish, sea urchins and sea cucumbers", "es": "Las estrellas de mar, los erizos de mar y los pepinos de mar" },
+      "wiki": { "en": "Crinoid", "es": "Crinoidea" },
+      "pbdb": "Crinoidea"
+    },
+    {
+      "id": "bryozoans",
+      "name": { "en": "Bryozoa", "es": "Bryozoa" },
+      "common": { "en": "Moss animals", "es": "Briozoos" },
+      "group": "invertebrate",
+      "icon": "🪸",
+      "life": "sea",
+      "from": 482,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        { "at": [-84.51, 39.1], "place": { "en": "Cincinnati, Ohio, United States", "es": "Cincinnati, Ohio, Estados Unidos" } },
+        { "at": [24.75, 59.44], "place": { "en": "Tallinn, Estonia", "es": "Tallin, Estonia" } }
+      ],
+      "diet": "filter",
+      "text": {
+        "en": "Bryozoans, or moss animals, live in colonies of thousands of tiny animals, each less than a millimetre long, catching food with a crown of tentacles. They appeared early in the Ordovician and helped build its reefs; the rocks around Cincinnati are packed with them. About 6,000 species live today, as lacy crusts on seaweed, shells, rocks and the hulls of boats.",
+        "es": "Los briozoos viven en colonias de miles de animalitos, cada uno de menos de un milímetro, que atrapan comida con una corona de tentáculos. Aparecieron al principio del Ordovícico y ayudaron a construir sus arrecifes; las rocas de Cincinnati están repletas de ellos. Hoy viven unas 6000 especies, como costras de encaje sobre algas, conchas, rocas y cascos de barcos."
+      },
+      "kin": { "en": "Perhaps brachiopods (lamp shells) and horseshoe worms", "es": "Quizá los braquiópodos y los foronídeos, gusanos en forma de herradura" },
+      "wiki": { "en": "Bryozoa", "es": "Bryozoa" },
+      "pbdb": "Bryozoa"
+    },
+    {
+      "id": "aegirocassis",
+      "name": { "en": "Aegirocassis benmoulai", "es": "Aegirocassis benmoulai" },
+      "group": "invertebrate",
+      "icon": "🦞",
+      "life": "sea",
+      "from": 481,
+      "to": 477,
+      "sites": [
+        { "at": [-5.72, 30.58], "place": { "en": "Fezouata, Zagora, Morocco", "es": "Fezouata, Zagora, Marruecos" } }
+      ],
+      "len": 2,
+      "diet": "filter",
+      "text": {
+        "en": "A giant relative of Anomalocaris, 2 metres long, found in Morocco and described in 2015. Instead of grabbing prey, its front arms carried fine combs to sieve tiny plankton from the water, like a baleen whale 480 million years before whales. Along each side it had two rows of flaps, a clue to how arthropods got their legs that split into two branches.",
+        "es": "Un pariente gigante de Anomalocaris, de 2 metros, hallado en Marruecos y descrito en 2015. En vez de atrapar presas, sus brazos delanteros llevaban peines finos para colar plancton del agua, como una ballena barbada 480 millones de años antes de las ballenas. A cada lado tenía dos filas de aletas, una pista de cómo los artrópodos obtuvieron sus patas divididas en dos ramas."
+      },
+      "kin": { "en": "Arthropods (insects, crabs, spiders), as an early cousin", "es": "Los artrópodos (insectos, cangrejos, arañas), como un primo temprano" },
+      "wiki": { "en": "Aegirocassis", "es": "Aegirocassis" },
+      "pbdb": "Aegirocassis",
+      "item": "aegirocassis"
+    },
+    {
+      "id": "cameroceras",
+      "name": { "en": "Cameroceras", "es": "Cameroceras" },
+      "group": "invertebrate",
+      "icon": "🦑",
+      "life": "sea",
+      "from": 478,
+      "to": 443,
+      "sites": [
+        { "at": [-75.16, 43.27], "place": { "en": "Trenton Falls, New York, United States", "es": "Trenton Falls, Nueva York, Estados Unidos" } },
+        { "at": [15.2, 61.05], "place": { "en": "Dalarna, Sweden", "es": "Dalarna, Suecia" } }
+      ],
+      "len": 3,
+      "diet": "meat",
+      "text": {
+        "en": "A nautiloid with a long, straight, cone-shaped shell, one of the top hunters of Ordovician seas. Old books say it reached 9 metres, but those claims come from broken shells; the biggest shells of its group are estimated at a little under 6 metres. Cameroceras probably hovered near the sea floor, grabbing trilobites and other prey with its tentacles.",
+        "es": "Un nautiloideo con una concha larga, recta y en forma de cono, uno de los grandes cazadores de los mares del Ordovícico. Libros antiguos dicen que llegaba a 9 metros, pero se basan en conchas rotas; las conchas más grandes de su grupo se calculan en poco menos de 6 metros. Cameroceras probablemente flotaba cerca del fondo y atrapaba trilobites y otras presas con sus tentáculos."
+      },
+      "kin": { "en": "The nautilus, then octopuses, squid and cuttlefish", "es": "El nautilo, luego pulpos, calamares y sepias" },
+      "wiki": { "en": "Cameroceras", "es": "Cameroceras" },
+      "pbdb": "Cameroceras"
+    },
+    {
+      "id": "arandaspis",
+      "name": { "en": "Arandaspis prionotolepis", "es": "Arandaspis prionotolepis" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 475,
+      "to": 465,
+      "sites": [
+        { "at": [134.02, -24.72], "place": { "en": "Stairway Sandstone, Amadeus Basin, Northern Territory, Australia", "es": "Arenisca Stairway, cuenca Amadeus, Territorio del Norte, Australia" } }
+      ],
+      "len": 0.15,
+      "diet": "small",
+      "text": {
+        "en": "One of the oldest fish known from more than scraps: a jawless fish about 15 cm long, its front half wrapped in plates of bone, found in central Australia in rocks about 470 million years old. It had no jaws and no paired fins, only a tail, and tiny eyes at the very front. It probably swam near the sea floor, sucking up food from the mud.",
+        "es": "Uno de los peces más antiguos conocidos por algo más que fragmentos: un pez sin mandíbulas de unos 15 cm, con la mitad delantera envuelta en placas de hueso, hallado en el centro de Australia en rocas de unos 470 millones de años. No tenía mandíbulas ni aletas pares, solo cola, y unos ojitos en la punta. Probablemente nadaba cerca del fondo, sorbiendo comida del lodo."
+      },
+      "kin": {
+        "en": "No close living relatives; armoured jawless fish were early cousins of jawed fish, and of us",
+        "es": "Sin parientes vivos cercanos; los peces acorazados sin mandíbula eran primos de los peces con mandíbula, y nuestros"
+      },
+      "wiki": { "en": "Arandaspis", "es": "Arandaspis" },
+      "pbdb": "Arandaspis"
+    },
+    {
+      "id": "cryptospore-plants",
+      "name": { "en": "Cryptospore plants", "es": "Plantas criptospóricas" },
+      "common": { "en": "The first land plants", "es": "Las primeras plantas terrestres" },
+      "group": "plant",
+      "icon": "🌱",
+      "life": "shore",
+      "from": 472,
+      "to": 400,
+      "sites": [
+        { "at": [-65.4, -23.2], "place": { "en": "Central Andes, northwest Argentina", "es": "Andes centrales, noroeste de Argentina" } },
+        { "at": [43.2, 26.3], "place": { "en": "Qasim Formation, Al-Qassim, Saudi Arabia", "es": "Formación Qasim, Al-Qasim, Arabia Saudita" } }
+      ],
+      "len": 0.01,
+      "diet": "light",
+      "text": {
+        "en": "The first plants on land left almost nothing but their spores: tough, sealed specks stuck together in pairs or fours, found in rocks about 470 million years old in Argentina and then all over the world. The plants were probably small, flat and leafless, like today's liverworts, hugging damp ground near water. Helped by fungi, they began turning bare rock into soil.",
+        "es": "Las primeras plantas terrestres casi solo dejaron sus esporas: motas duras y selladas, unidas de dos en dos o de cuatro en cuatro, halladas en rocas de unos 470 millones de años en Argentina y luego en todo el mundo. Las plantas probablemente eran pequeñas, planas y sin hojas, como las hepáticas de hoy, pegadas al suelo húmedo junto al agua. Con ayuda de hongos empezaron a convertir la roca desnuda en suelo."
+      },
+      "kin": { "en": "Liverworts and mosses, the simplest land plants alive", "es": "Las hepáticas y los musgos, las plantas terrestres vivas más sencillas" },
+      "wiki": { "en": "Cryptospore", "es": "" },
+      "item": "argentina-cryptospores"
+    },
+    {
+      "id": "isotelus",
+      "name": { "en": "Isotelus", "es": "Isotelus" },
+      "group": "invertebrate",
+      "icon": "🦐",
+      "life": "sea",
+      "from": 470,
+      "to": 445,
+      "sites": [
+        { "at": [-84.51, 39.1], "place": { "en": "Cincinnati, Ohio, United States", "es": "Cincinnati, Ohio, Estados Unidos" } },
+        { "at": [-94.16, 58.77], "place": { "en": "Churchill, Manitoba, Canada", "es": "Churchill, Manitoba, Canadá" } }
+      ],
+      "len": 0.15,
+      "diet": "small",
+      "text": {
+        "en": "A big, smooth trilobite and the state fossil of Ohio. In 1998 a complete Isotelus rex 72 cm long was found near Churchill in northern Canada: the largest complete trilobite ever found. Isotelus had large eyes on raised stalks and strong legs, and it probably hunted or scavenged worms and other small animals on the sea floor.",
+        "es": "Un trilobite grande y liso, fósil oficial del estado de Ohio. En 1998 se halló cerca de Churchill, en el norte de Canadá, un Isotelus rex completo de 72 cm: el trilobite completo más grande jamás encontrado. Isotelus tenía ojos grandes sobre salientes y patas fuertes, y probablemente cazaba o carroñeaba gusanos y otros animalitos del fondo marino."
+      },
+      "kin": { "en": "Arthropods: insects, crabs, spiders and horseshoe crabs", "es": "Los artrópodos: insectos, cangrejos, arañas y cangrejos herradura" },
+      "wiki": { "en": "Isotelus", "es": "" },
+      "pbdb": "Isotelus"
+    },
+    {
+      "id": "receptaculites",
+      "name": { "en": "Receptaculites", "es": "Receptaculites" },
+      "common": { "en": "Sunflower coral", "es": "Coral girasol" },
+      "group": "plant",
+      "icon": "🌻",
+      "life": "sea",
+      "from": 470,
+      "to": 360,
+      "sites": [
+        { "at": [-90.43, 42.42], "place": { "en": "Galena, Illinois, United States", "es": "Galena, Illinois, Estados Unidos" } },
+        { "at": [-78.8, 44.67], "place": { "en": "Bobcaygeon, Ontario, Canada", "es": "Bobcaygeon, Ontario, Canadá" } }
+      ],
+      "len": 0.3,
+      "diet": "light",
+      "text": {
+        "en": "A dish up to 30 cm wide covered in rows of small stony tiles that spiral out from the centre like the seeds in a sunflower, which is why it is called the sunflower coral. It is not a coral. For 200 years scientists have argued whether it was a sponge or an alga; many now think it was a giant green alga, a kind of seaweed, that grew on Ordovician sea floors.",
+        "es": "Un plato de hasta 30 cm cubierto de filas de pequeñas placas de piedra que salen en espiral desde el centro como las semillas de un girasol, por eso lo llaman coral girasol. No es un coral. Desde hace 200 años se discute si era una esponja o un alga; hoy muchos creen que era un alga verde gigante que crecía en los fondos marinos del Ordovícico."
+      },
+      "kin": { "en": "Perhaps green algae such as the mermaid's wineglass, Acetabularia", "es": "Quizá algas verdes como la copa de sirena, Acetabularia" },
+      "wiki": { "en": "Receptaculites", "es": "" },
+      "pbdb": "Receptaculites"
+    },
+    {
+      "id": "pentecopterus",
+      "name": { "en": "Pentecopterus decorahensis", "es": "Pentecopterus decorahensis" },
+      "group": "invertebrate",
+      "icon": "🦂",
+      "life": "sea",
+      "from": 467,
+      "to": 460,
+      "sites": [
+        { "at": [-91.78, 43.31], "place": { "en": "Decorah, Iowa, United States", "es": "Decorah, Iowa, Estados Unidos" } }
+      ],
+      "len": 1.7,
+      "diet": "meat",
+      "text": {
+        "en": "The oldest known sea scorpion, described in 2015 from more than 150 fossils found in an ancient meteorite crater under Decorah, Iowa. Pentecopterus grew to 1.7 metres, with spiny front legs to trap prey and paddles to swim. It is named after the penteconter, an ancient Greek warship, because its outline looked like one.",
+        "es": "El escorpión marino más antiguo conocido, descrito en 2015 a partir de más de 150 fósiles hallados en un antiguo cráter de meteorito bajo Decorah, Iowa. Pentecopterus llegaba a 1,7 metros, con patas delanteras espinosas para atrapar presas y remos para nadar. Su nombre viene del pentecóntero, un barco de guerra de la antigua Grecia, porque su silueta se le parecía."
+      },
+      "kin": { "en": "Scorpions, spiders and horseshoe crabs", "es": "Los escorpiones, las arañas y los cangrejos herradura" },
+      "wiki": { "en": "Pentecopterus", "es": "Pentecopterus decorahensis" },
+      "pbdb": "Pentecopterus"
+    },
+    {
+      "id": "sacabambaspis",
+      "name": { "en": "Sacabambaspis janvieri", "es": "Sacabambaspis janvieri" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 467,
+      "to": 450,
+      "sites": [
+        { "at": [-65.75, -17.8], "place": { "en": "Sacabamba, Cochabamba, Bolivia", "es": "Sacabamba, Cochabamba, Bolivia" } },
+        { "at": [131.77, -23.83], "place": { "en": "Amadeus Basin, Northern Territory, Australia", "es": "Cuenca Amadeus, Territorio del Norte, Australia" } }
+      ],
+      "len": 0.3,
+      "diet": "small",
+      "text": {
+        "en": "A jawless fish about 30 cm long with a broad armoured head, eyes set at the very front like the headlights of a car, and a mouth that could not close, so it always looks surprised. Described from Bolivia in 1986, it became an internet favourite in 2023 when a museum model of it went viral. It swam in shallow seas off Gondwana about 460 million years ago.",
+        "es": "Un pez sin mandíbulas de unos 30 cm, con una cabeza ancha y acorazada, los ojos en la punta como los faros de un carro y una boca que no podía cerrar, así que siempre parece sorprendido. Descrito en 1986 a partir de fósiles de Bolivia, se volvió famoso en internet en 2023 cuando la maqueta de un museo se hizo viral. Nadaba en mares poco profundos frente a Gondwana hace unos 460 millones de años."
+      },
+      "kin": {
+        "en": "No close living relatives; armoured jawless fish were early cousins of jawed fish, and of us",
+        "es": "Sin parientes vivos cercanos; los peces acorazados sin mandíbula eran primos de los peces con mandíbula, y nuestros"
+      },
+      "wiki": { "en": "Sacabambaspis", "es": "Sacabambaspis" },
+      "pbdb": "Sacabambaspis"
+    },
+    {
+      "id": "halysites",
+      "name": { "en": "Halysites", "es": "Halysites" },
+      "common": { "en": "Chain coral", "es": "Coral cadena" },
+      "group": "invertebrate",
+      "icon": "🪸",
+      "life": "sea",
+      "from": 455,
+      "to": 415,
+      "sites": [
+        { "at": [18.3, 57.5], "place": { "en": "Gotland, Sweden", "es": "Gotland, Suecia" } },
+        { "at": [-63, 49.45], "place": { "en": "Anticosti Island, Quebec, Canada", "es": "Isla de Anticosti, Quebec, Canadá" } }
+      ],
+      "diet": "filter",
+      "text": {
+        "en": "A chain coral: its tiny tubes, each home to one polyp, were joined side by side in rows that loop like the links of a chain when seen from above. With other tabulate corals and sponges called stromatoporoids, it built reefs in warm Silurian seas. Tabulate corals all died out in the Great Dying; the reef corals of today belong to a different group.",
+        "es": "Un coral cadena: sus tubitos, cada uno hogar de un pólipo, se unían lado a lado en filas que, vistas desde arriba, forman lazos como los eslabones de una cadena. Con otros corales tabulados y esponjas llamadas estromatopóridos, construyó arrecifes en los mares cálidos del Silúrico. Los corales tabulados se extinguieron en la Gran Mortandad; los corales de arrecife de hoy son de otro grupo."
+      },
+      "kin": { "en": "Today's corals and sea anemones, as distant cousins", "es": "Los corales y las anémonas de mar actuales, como primos lejanos" },
+      "wiki": { "en": "Halysites", "es": "" },
+      "pbdb": "Halysites"
+    },
+    {
+      "id": "horseshoe-crabs",
+      "name": { "en": "Xiphosura", "es": "Xiphosura" },
+      "common": { "en": "Horseshoe crabs", "es": "Cangrejos herradura" },
+      "group": "invertebrate",
+      "icon": "🦀",
+      "life": "sea",
+      "from": 445,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        { "at": [-99.35, 53.83], "place": { "en": "Lunataspis site, Manitoba, Canada", "es": "Yacimiento de Lunataspis, Manitoba, Canadá" } },
+        { "at": [-88.3, 41.25], "place": { "en": "Mazon Creek, Illinois, United States", "es": "Mazon Creek, Illinois, Estados Unidos" } },
+        { "at": [11, 48.9], "place": { "en": "Solnhofen, Bavaria, Germany", "es": "Solnhofen, Baviera, Alemania" } }
+      ],
+      "len": 0.5,
+      "diet": "small",
+      "text": {
+        "en": "Horseshoe crabs are not crabs but cousins of spiders and scorpions, with a dome-shaped shell and a spiky tail. One of the oldest, Lunataspis, lived in a shallow sea over what is now Manitoba, Canada, about 445 million years ago, and already looked much like the four species alive today. Their blue blood is used to test medicines for germs, and their eggs feed millions of migrating birds.",
+        "es": "Los cangrejos herradura no son cangrejos sino primos de arañas y escorpiones, con un caparazón en forma de cúpula y una cola puntiaguda. Uno de los más antiguos, Lunataspis, vivía en un mar poco profundo sobre lo que hoy es Manitoba, Canadá, hace unos 445 millones de años, y ya se parecía mucho a las cuatro especies actuales. Su sangre azul se usa para comprobar que las medicinas no tengan gérmenes, y sus huevos alimentan a millones de aves migratorias."
+      },
+      "kin": { "en": "Spiders, scorpions and mites", "es": "Las arañas, los escorpiones y los ácaros" },
+      "wiki": { "en": "Horseshoe crab", "es": "Xiphosura" },
+      "pbdb": "Xiphosura"
+    },
+    {
+      "id": "parioscorpio",
+      "name": { "en": "Parioscorpio venator", "es": "Parioscorpio venator" },
+      "group": "invertebrate",
+      "icon": "🦂",
+      "life": "sea",
+      "from": 437,
+      "to": 434,
+      "sites": [
+        { "at": [-88.21, 43.03], "place": { "en": "Waukesha, Wisconsin, United States", "es": "Waukesha, Wisconsin, Estados Unidos" } }
+      ],
+      "len": 0.025,
+      "diet": "meat",
+      "text": {
+        "en": "The oldest known scorpion, about 437 million years old, from a quarry near Waukesha, Wisconsin, described in 2020. Only 2.5 cm long, it already had a stinger and grasping claws, and inside, a gut and blood system much like those of living scorpions and horseshoe crabs. It may have lived in water or come ashore at times, as scorpions slowly moved onto land.",
+        "es": "El escorpión más antiguo conocido, de unos 437 millones de años, de una cantera cerca de Waukesha, Wisconsin, descrito en 2020. Con solo 2,5 cm ya tenía aguijón y pinzas, y por dentro un intestino y un sistema de sangre muy parecidos a los de los escorpiones y cangrejos herradura actuales. Quizá vivía en el agua o salía a tierra a ratos, mientras los escorpiones se mudaban poco a poco a la tierra firme."
+      },
+      "kin": { "en": "Scorpions alive today; then spiders and horseshoe crabs", "es": "Los escorpiones actuales; luego las arañas y los cangrejos herradura" },
+      "wiki": { "en": "Parioscorpio", "es": "" },
+      "pbdb": "Parioscorpio"
+    },
+    {
+      "id": "cooksonia",
+      "name": { "en": "Cooksonia", "es": "Cooksonia" },
+      "group": "plant",
+      "icon": "🌱",
+      "life": "shore",
+      "from": 433,
+      "to": 393,
+      "sites": [
+        { "at": [-2.58, 52.07], "place": { "en": "Perton, Herefordshire, England", "es": "Perton, Herefordshire, Inglaterra" } },
+        { "at": [14.1, 49.95], "place": { "en": "Barrandian, near Prague, Czech Republic", "es": "Barrandiense, cerca de Praga, República Checa" } },
+        { "at": [-64.65, -21.38], "place": { "en": "Tarija, Bolivia", "es": "Tarija, Bolivia" } }
+      ],
+      "len": 0.05,
+      "diet": "light",
+      "text": {
+        "en": "One of the first plants with upright stems: a few centimetres tall, with no leaves and no roots, just slim green stems that forked in two and ended in little cups full of spores. Some fossils show tubes inside to carry water, the start of the plumbing of every tree. It grew in damp places from about 433 million years ago and is named after the Australian botanist Isabel Cookson.",
+        "es": "Una de las primeras plantas con tallos erguidos: de unos centímetros de alto, sin hojas ni raíces, solo tallos verdes y delgados que se dividían en dos y terminaban en copitas llenas de esporas. Algunos fósiles muestran tubos por dentro para llevar agua, el comienzo de la plomería de todos los árboles. Creció en lugares húmedos desde hace unos 433 millones de años y lleva el nombre de la botánica australiana Isabel Cookson."
+      },
+      "kin": {
+        "en": "Vascular plants: ferns, conifers and flowering plants, as an early cousin",
+        "es": "Las plantas vasculares: helechos, coníferas y plantas con flor, como una prima temprana"
+      },
+      "wiki": { "en": "Cooksonia", "es": "Cooksonia" },
+      "pbdb": "Cooksonia",
+      "item": "cooksonia"
+    },
+    {
+      "id": "eurypterus",
+      "name": { "en": "Eurypterus", "es": "Eurypterus" },
+      "group": "invertebrate",
+      "icon": "🦂",
+      "life": "sea",
+      "from": 432,
+      "to": 418,
+      "sites": [
+        { "at": [-74.99, 43.03], "place": { "en": "Herkimer County, New York, United States", "es": "Condado de Herkimer, Nueva York, Estados Unidos" } },
+        { "at": [22.5, 58.4], "place": { "en": "Saaremaa, Estonia", "es": "Saaremaa, Estonia" } }
+      ],
+      "len": 0.2,
+      "diet": "meat",
+      "text": {
+        "en": "The best-known sea scorpion, with thousands of fossils from New York, whose state fossil it is. Eurypterus was usually 10 to 20 cm long, with a pair of paddle-shaped legs for swimming and spiny legs for catching worms and other small animals. It lived in salty lagoons, and many of its fossils are moulted skins, shed as it grew.",
+        "es": "El escorpión marino más conocido, con miles de fósiles en Nueva York, donde es el fósil oficial del estado. Eurypterus solía medir de 10 a 20 cm, con un par de patas en forma de remo para nadar y patas espinosas para atrapar gusanos y otros animalitos. Vivía en lagunas saladas, y muchos de sus fósiles son mudas, la piel que soltaba al crecer."
+      },
+      "kin": { "en": "Scorpions, spiders and horseshoe crabs", "es": "Los escorpiones, las arañas y los cangrejos herradura" },
+      "wiki": { "en": "Eurypterus", "es": "Eurypterus" },
+      "pbdb": "Eurypterus",
+      "item": "eurypterids"
+    },
+    {
+      "id": "prototaxites",
+      "name": { "en": "Prototaxites", "es": "Prototaxites" },
+      "group": "plant",
+      "icon": "🍄",
+      "life": "land",
+      "from": 430,
+      "to": 360,
+      "sites": [
+        { "at": [-64.48, 48.83], "place": { "en": "Gaspé, Quebec, Canada", "es": "Gaspé, Quebec, Canadá" } },
+        { "at": [-2.84, 57.34], "place": { "en": "Rhynie, Aberdeenshire, Scotland", "es": "Rhynie, Aberdeenshire, Escocia" } }
+      ],
+      "len": 8,
+      "diet": "plants",
+      "text": {
+        "en": "Trunks up to 8 metres tall and a metre wide, made not of wood but of tangled tubes: the tallest living thing on land at a time when plants were knee-high. First thought to be a tree, then a giant fungus that fed on rotting matter, Prototaxites is still a puzzle. A 2025 study suggests it belonged to a lost branch of life with no living members.",
+        "es": "Troncos de hasta 8 metros de alto y un metro de ancho, hechos no de madera sino de tubos enredados: el ser vivo más alto en tierra cuando las plantas llegaban a la rodilla. Primero se creyó un árbol, luego un hongo gigante que comía materia en descomposición, y Prototaxites sigue siendo un misterio. Un estudio de 2025 sugiere que pertenecía a una rama perdida de la vida, sin miembros vivos."
+      },
+      "kin": { "en": "Unclear: perhaps fungi, perhaps a lost branch of life", "es": "No está claro: quizá los hongos, quizá una rama perdida de la vida" },
+      "wiki": { "en": "Prototaxites", "es": "Prototaxites" },
+      "pbdb": "Prototaxites",
+      "item": "prototaxites"
+    },
+    {
+      "id": "pterygotus",
+      "name": { "en": "Pterygotus", "es": "Pterygotus" },
+      "group": "invertebrate",
+      "icon": "🦂",
+      "life": "sea",
+      "from": 428,
+      "to": 380,
+      "sites": [
+        { "at": [-2.88, 56.64], "place": { "en": "Forfar, Angus, Scotland", "es": "Forfar, Angus, Escocia" } },
+        { "at": [-2.72, 52.37], "place": { "en": "Ludlow, Shropshire, England", "es": "Ludlow, Shropshire, Inglaterra" } }
+      ],
+      "len": 1.6,
+      "diet": "meat",
+      "text": {
+        "en": "A giant sea scorpion up to 1.6 metres long with long, toothed claws held out in front like a pair of shears. Scottish quarrymen who found pieces of its body in the 1800s called them 'seraphim', thinking they looked like angels' wings. Pterygotus had big forward-facing eyes and hunted fish and other animals in Silurian and Devonian waters.",
+        "es": "Un escorpión marino gigante de hasta 1,6 metros, con pinzas largas y dentadas que llevaba por delante como unas tijeras. Los canteros escoceses que hallaron trozos de su cuerpo en el siglo XIX los llamaron «serafines», porque les parecían alas de ángel. Pterygotus tenía grandes ojos mirando al frente y cazaba peces y otros animales en las aguas del Silúrico y el Devónico."
+      },
+      "kin": { "en": "Scorpions, spiders and horseshoe crabs", "es": "Los escorpiones, las arañas y los cangrejos herradura" },
+      "wiki": { "en": "Pterygotus", "es": "Pterygotus" },
+      "pbdb": "Pterygotus"
+    },
+    {
+      "id": "baragwanathia",
+      "name": { "en": "Baragwanathia longifolia", "es": "Baragwanathia longifolia" },
+      "group": "plant",
+      "icon": "🌿",
+      "life": "shore",
+      "from": 427,
+      "to": 400,
+      "sites": [
+        { "at": [145.4, -37.2], "place": { "en": "Yea, Victoria, Australia", "es": "Yea, Victoria, Australia" } }
+      ],
+      "diet": "light",
+      "text": {
+        "en": "A club moss with stems as thick as a finger, covered in spiralling leaves up to 4 cm long, from Victoria in Australia. Some of its fossils lie in rocks dated to about 427 million years ago, which would make it a surprisingly large, leafy plant for such an early time, though some scientists think those rocks are younger. Club mosses still live today, but only as small plants.",
+        "es": "Un licopodio con tallos tan gruesos como un dedo, cubiertos de hojas en espiral de hasta 4 cm, de Victoria, en Australia. Algunos de sus fósiles están en rocas fechadas en unos 427 millones de años, lo que la haría una planta sorprendentemente grande y frondosa para una época tan temprana, aunque algunos científicos creen que esas rocas son más jóvenes. Los licopodios siguen vivos, pero solo como plantas pequeñas."
+      },
+      "kin": { "en": "Club mosses (lycopods), still found on forest floors", "es": "Los licopodios, que aún crecen en el suelo de los bosques" },
+      "wiki": { "en": "Baragwanathia", "es": "Baragwanathia" },
+      "pbdb": "Baragwanathia"
+    },
+    {
+      "id": "guiyu",
+      "name": { "en": "Guiyu oneiros", "es": "Guiyu oneiros" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 427,
+      "to": 423,
+      "sites": [
+        { "at": [103.79, 25.49], "place": { "en": "Qujing, Yunnan, China", "es": "Qujing, Yunnan, China" } }
+      ],
+      "len": 0.33,
+      "diet": "meat",
+      "text": {
+        "en": "The oldest bony fish known from a nearly complete skeleton, about 425 million years old, found near Qujing in China and described in 2009. Guiyu, about 33 cm long, mixed features of both great groups of bony fish, with spines like early fish and the fleshy fins of lobe-finned fish. Its name means 'ghost fish'. It is on our side of the tree: lobe-finned fish led to animals with legs.",
+        "es": "El pez óseo más antiguo conocido por un esqueleto casi completo, de unos 425 millones de años, hallado cerca de Qujing, en China, y descrito en 2009. Guiyu, de unos 33 cm, mezclaba rasgos de los dos grandes grupos de peces óseos: espinas como los primeros peces y las aletas carnosas de los peces de aletas lobuladas. Su nombre significa «pez fantasma». Está en nuestro lado del árbol: esos peces dieron origen a los animales con patas."
+      },
+      "kin": {
+        "en": "Lobe-finned fish: coelacanths, lungfish and four-legged animals, us included",
+        "es": "Los peces de aletas lobuladas: celacantos, peces pulmonados y los animales de cuatro patas, nosotros incluidos"
+      },
+      "wiki": { "en": "Guiyu oneiros", "es": "Guiyu oneiros" },
+      "pbdb": "Guiyu"
+    },
+    {
+      "id": "kampecaris",
+      "name": { "en": "Kampecaris", "es": "Kampecaris" },
+      "group": "invertebrate",
+      "icon": "🐛",
+      "life": "land",
+      "from": 425,
+      "to": 413,
+      "sites": [
+        { "at": [-5.55, 56.39], "place": { "en": "Kerrera, near Oban, Scotland", "es": "Kerrera, cerca de Oban, Escocia" } },
+        { "at": [-2.88, 56.64], "place": { "en": "Forfar, Angus, Scotland", "es": "Forfar, Angus, Escocia" } }
+      ],
+      "len": 0.02,
+      "diet": "plants",
+      "text": {
+        "en": "A small millipede from the island of Kerrera in Scotland. In 2020 its rocks were dated to about 425 million years, making Kampecaris the oldest known animal that lived on land, a few million years older than any other. It probably fed on rotting plants, mosses and crusts of microbes on the ground. Millipedes may have been among the very first animals to leave the water.",
+        "es": "Un pequeño milpiés de la isla de Kerrera, en Escocia. En 2020 sus rocas se fecharon en unos 425 millones de años, lo que hace de Kampecaris el animal terrestre más antiguo conocido, unos millones de años más viejo que cualquier otro. Probablemente comía plantas podridas, musgos y costras de microbios del suelo. Los milpiés quizá estuvieron entre los primeros animales en salir del agua."
+      },
+      "kin": { "en": "Millipedes", "es": "Los milpiés" },
+      "wiki": { "en": "Kampecaris", "es": "" },
+      "pbdb": "Kampecaris",
+      "item": "kampecaris"
+    },
+    {
+      "id": "entelognathus",
+      "name": { "en": "Entelognathus primordialis", "es": "Entelognathus primordialis" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 424,
+      "to": 419,
+      "sites": [
+        { "at": [103.79, 25.49], "place": { "en": "Qujing, Yunnan, China", "es": "Qujing, Yunnan, China" } }
+      ],
+      "len": 0.2,
+      "diet": "meat",
+      "text": {
+        "en": "A small armoured fish about 20 cm long, from Silurian rocks near Qujing in China. It belonged to the placoderms, the first great group of fish with jaws, but its jaws were edged with the same bones as ours: the bones of the upper jaw and the lower jaw. Described in 2013, Entelognathus showed that our own jawbones go back to these early armoured fish.",
+        "es": "Un pequeño pez acorazado de unos 20 cm, de rocas del Silúrico cerca de Qujing, en China. Era un placodermo, el primer gran grupo de peces con mandíbulas, pero sus mandíbulas tenían en el borde los mismos huesos que las nuestras: los del maxilar superior y la mandíbula inferior. Descrito en 2013, Entelognathus mostró que nuestros huesos de la mandíbula vienen de estos antiguos peces acorazados."
+      },
+      "kin": { "en": "All jawed vertebrates: bony fish, sharks and us", "es": "Todos los vertebrados con mandíbula: peces óseos, tiburones y nosotros" },
+      "wiki": { "en": "Entelognathus", "es": "Entelognathus primordialis" },
+      "pbdb": "Entelognathus"
+    },
+    {
+      "id": "jaekelopterus",
+      "name": { "en": "Jaekelopterus", "es": "Jaekelopterus" },
+      "group": "invertebrate",
+      "icon": "🦂",
+      "life": "fresh",
+      "from": 417,
+      "to": 400,
+      "sites": [
+        { "at": [6.46, 50.25], "place": { "en": "Willwerath, Eifel, Germany", "es": "Willwerath, Eifel, Alemania" } },
+        { "at": [-109.62, 44.95], "place": { "en": "Beartooth Butte, Wyoming, United States", "es": "Beartooth Butte, Wyoming, Estados Unidos" } }
+      ],
+      "len": 2.5,
+      "diet": "meat",
+      "text": {
+        "en": "The largest arthropod ever known. In 2007 a claw 46 cm long was described from a quarry in Germany, and its owner must have been about 2.5 metres long, more than the height of a tall man. Jaekelopterus was a sea scorpion with huge spiny claws and sharp eyesight, hunting fish and other animals in rivers and coastal waters about 400 million years ago.",
+        "es": "El artrópodo más grande que se conoce. En 2007 se describió una pinza de 46 cm hallada en una cantera de Alemania, y su dueño debió medir unos 2,5 metros, más que un hombre alto. Jaekelopterus era un escorpión marino con enormes pinzas espinosas y buena vista, que cazaba peces y otros animales en ríos y aguas costeras hace unos 400 millones de años."
+      },
+      "kin": { "en": "Scorpions, spiders and horseshoe crabs", "es": "Los escorpiones, las arañas y los cangrejos herradura" },
+      "wiki": { "en": "Jaekelopterus", "es": "Jaekelopterus" },
+      "pbdb": "Jaekelopterus"
+    },
+    {
+      "id": "lungfish",
+      "name": { "en": "Dipnoi", "es": "Dipnoi" },
+      "common": { "en": "Lungfish", "es": "Peces pulmonados" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "fresh",
+      "from": 415,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        { "at": [-3.46, 58.47], "place": { "en": "Caithness, Scotland", "es": "Caithness, Escocia" } },
+        { "at": [125.95, -18.35], "place": { "en": "Gogo, Western Australia", "es": "Gogo, Australia Occidental" } }
+      ],
+      "len": 1,
+      "diet": "both",
+      "text": {
+        "en": "Fish with gills and lungs, which gulp air at the surface. Lungfish appeared about 415 million years ago and were common in Devonian seas and rivers; Dipterus from Scotland is one of the best known. Six species survive, in Africa, South America and Australia. African lungfish can sleep for months in a cocoon of mud when their pools dry up. They are our closest living relatives among fish.",
+        "es": "Peces con branquias y pulmones, que suben a tragar aire. Aparecieron hace unos 415 millones de años y eran comunes en los mares y ríos del Devónico; Dipterus, de Escocia, es uno de los más conocidos. Sobreviven seis especies, en África, Sudamérica y Australia. Los africanos pueden dormir meses en un capullo de barro cuando se secan sus charcas. Son nuestros parientes vivos más cercanos entre los peces."
+      },
+      "kin": { "en": "Four-legged animals: lungfish are the fish most closely related to us", "es": "Los animales de cuatro patas: son los peces más emparentados con nosotros" },
+      "wiki": { "en": "Lungfish", "es": "Dipnoi" },
+      "pbdb": "Dipnoi"
+    },
+    {
+      "id": "pneumodesmus",
+      "name": { "en": "Pneumodesmus newmani", "es": "Pneumodesmus newmani" },
+      "group": "invertebrate",
+      "icon": "🐛",
+      "life": "land",
+      "from": 414,
+      "to": 412,
+      "sites": [
+        { "at": [-2.19, 56.97], "place": { "en": "Cowie Harbour, Stonehaven, Scotland", "es": "Puerto de Cowie, Stonehaven, Escocia" } }
+      ],
+      "len": 0.01,
+      "diet": "plants",
+      "text": {
+        "en": "A millipede about a centimetre long, found on a beach near Stonehaven in Scotland by Mike Newman, a bus driver and amateur fossil hunter, and named after him in 2004. Its body has tiny holes called spiracles, which millipedes and insects use to breathe air, so it is the oldest animal we know for sure breathed on land. Its rocks were first thought to be 428 million years old; new dating says about 414.",
+        "es": "Un milpiés de un centímetro, hallado en una playa cerca de Stonehaven, Escocia, por Mike Newman, chofer de autobús y cazador de fósiles aficionado, y nombrado en su honor en 2004. Su cuerpo tiene agujeritos llamados espiráculos, que milpiés e insectos usan para respirar aire, así que es el animal más antiguo que sabemos con certeza que respiraba en tierra. Se creyó que sus rocas tenían 428 millones de años; nuevas dataciones dicen unos 414."
+      },
+      "kin": { "en": "Millipedes", "es": "Los milpiés" },
+      "wiki": { "en": "Pneumodesmus", "es": "Pneumodesmus newmani" },
+      "pbdb": "Pneumodesmus",
+      "item": "pneumodesmus"
+    },
+    {
+      "id": "rhynia",
+      "name": { "en": "Rhynia gwynne-vaughanii", "es": "Rhynia gwynne-vaughanii" },
+      "group": "plant",
+      "icon": "🌿",
+      "life": "shore",
+      "from": 411,
+      "to": 405,
+      "sites": [
+        { "at": [-2.84, 57.34], "place": { "en": "Rhynie, Aberdeenshire, Scotland", "es": "Rhynie, Aberdeenshire, Escocia" } }
+      ],
+      "len": 0.2,
+      "diet": "light",
+      "text": {
+        "en": "A leafless plant about 20 cm tall with forking stems tipped with spore cases, which grew around hot springs near Rhynie in Scotland about 407 million years ago. Hot water rich in silica flooded the plants and turned them to stone so fast that their cells, and even the fungi living inside them, are preserved. Rhynia and its neighbours give the best picture of the first plant communities on land.",
+        "es": "Una planta sin hojas de unos 20 cm, con tallos ramificados en horquilla y esporangios en las puntas, que crecía junto a aguas termales cerca de Rhynie, Escocia, hace unos 407 millones de años. El agua caliente rica en sílice inundó las plantas y las volvió piedra tan rápido que se conservan sus células e incluso los hongos que vivían dentro. Rhynia y sus vecinas dan la mejor imagen de las primeras comunidades de plantas terrestres."
+      },
+      "kin": {
+        "en": "Vascular plants: ferns, conifers and flowering plants, as an early cousin",
+        "es": "Las plantas vasculares: helechos, coníferas y plantas con flor, como una prima temprana"
+      },
+      "wiki": { "en": "Rhynia", "es": "Rhynia" },
+      "pbdb": "Rhynia"
+    },
+    {
+      "id": "rhyniognatha",
+      "name": { "en": "Rhyniognatha hirsti", "es": "Rhyniognatha hirsti" },
+      "group": "invertebrate",
+      "icon": "🦗",
+      "life": "land",
+      "from": 411,
+      "to": 405,
+      "sites": [
+        { "at": [-2.84, 57.34], "place": { "en": "Rhynie, Aberdeenshire, Scotland", "es": "Rhynie, Aberdeenshire, Escocia" } }
+      ],
+      "diet": "small",
+      "text": {
+        "en": "A pair of tiny jaws, less than a millimetre across, from the Rhynie chert, described in 1926 and long overlooked. In 2004 scientists said they belonged to the oldest known insect, perhaps even one with wings. In 2017 others argued that the jaws look more like those of a centipede. Either way, Rhyniognatha shows that small animals were already busy among the first plants.",
+        "es": "Un par de mandíbulas diminutas, de menos de un milímetro, del pedernal de Rhynie, descritas en 1926 y olvidadas por mucho tiempo. En 2004 unos científicos dijeron que eran del insecto más antiguo conocido, quizá incluso uno con alas. En 2017 otros argumentaron que se parecen más a las de un ciempiés. Sea como sea, Rhyniognatha muestra que ya había animalitos muy activos entre las primeras plantas."
+      },
+      "kin": { "en": "Insects, or centipedes: scientists disagree", "es": "Los insectos, o los ciempiés: los científicos no se ponen de acuerdo" },
+      "wiki": { "en": "Rhyniognatha", "es": "Rhyniognatha" },
+      "pbdb": "Rhyniognatha",
+      "item": "rhyniognatha"
+    },
+    {
+      "id": "coelacanths",
+      "name": { "en": "Actinistia", "es": "Actinistia" },
+      "common": { "en": "Coelacanths", "es": "Celacantos" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 410,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        { "at": [-66.37, 48.1], "place": { "en": "Miguasha, Quebec, Canada", "es": "Miguasha, Quebec, Canadá" } },
+        { "at": [27.43, -33.22], "place": { "en": "Chalumna River, South Africa (the living fish, 1938)", "es": "Río Chalumna, Sudáfrica (el pez vivo, 1938)" } }
+      ],
+      "len": 1.8,
+      "mass": 90,
+      "diet": "fish",
+      "text": {
+        "en": "Lobe-finned fish with fleshy fins that move almost like legs. Their fossils go back about 410 million years and vanish after the age of the dinosaurs, so they were thought long extinct. Then in 1938 a fishing boat off South Africa caught a live one, and Marjorie Courtenay-Latimer, a museum curator, saw that it was something extraordinary. Two species live today, in deep water off Africa and Indonesia.",
+        "es": "Peces de aletas lobuladas, con aletas carnosas que se mueven casi como patas. Sus fósiles se remontan a unos 410 millones de años y desaparecen tras la época de los dinosaurios, así que se creían extintos. En 1938 un barco pesquero capturó uno vivo frente a Sudáfrica, y Marjorie Courtenay-Latimer, encargada de un museo, vio que era algo extraordinario. Hoy viven dos especies, en aguas profundas frente a África e Indonesia."
+      },
+      "kin": { "en": "Lungfish and the four-legged animals, us included", "es": "Los peces pulmonados y los animales de cuatro patas, nosotros incluidos" },
+      "wiki": { "en": "Coelacanth", "es": "Actinistia" },
+      "pbdb": "Actinistia",
+      "item": "coelacanth"
+    },
+    {
+      "id": "ammonoids",
+      "name": { "en": "Ammonoidea", "es": "Ammonoidea" },
+      "common": { "en": "Ammonites", "es": "Amonites" },
+      "group": "invertebrate",
+      "icon": "🐚",
+      "life": "sea",
+      "from": 409,
+      "to": 66,
+      "sites": [
+        { "at": [-4.4, 31], "place": { "en": "Anti-Atlas, Morocco", "es": "Antiatlas, Marruecos" } },
+        { "at": [-2.94, 50.72], "place": { "en": "Lyme Regis, Dorset, England", "es": "Lyme Regis, Dorset, Inglaterra" } },
+        { "at": [-2.26, 43.3], "place": { "en": "Itzurun beach, Zumaia, Spain", "es": "Playa de Itzurun, Zumaia, España" } }
+      ],
+      "len": 0.2,
+      "diet": "small",
+      "text": {
+        "en": "Relatives of squid that lived in coiled, chambered shells, from the size of a coin to over 2 metres across. The first appeared about 409 million years ago. They nearly vanished three times, in the Late Devonian, the Great Dying and the end of the Triassic, but bounced back each time. They evolved so fast that they are used to date rocks, and the asteroid finally ended them 66 million years ago.",
+        "es": "Parientes de los calamares que vivían en conchas enrolladas y divididas en cámaras, desde el tamaño de una moneda hasta más de 2 metros. Los primeros aparecieron hace unos 409 millones de años. Casi desaparecieron tres veces, en el Devónico Superior, la Gran Mortandad y el final del Triásico, pero siempre se recuperaron. Cambiaban tan rápido que sirven para fechar rocas, y el asteroide acabó con ellos hace 66 millones de años."
+      },
+      "kin": { "en": "Octopuses, squid and cuttlefish, more than the nautilus", "es": "Los pulpos, calamares y sepias, más que el nautilo" },
+      "wiki": { "en": "Ammonoidea", "es": "Ammonoidea" },
+      "pbdb": "Ammonoidea",
+      "item": "ammonites"
+    },
+    {
+      "id": "bothriolepis",
+      "name": { "en": "Bothriolepis", "es": "Bothriolepis" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "fresh",
+      "from": 390,
+      "to": 359,
+      "sites": [
+        { "at": [-66.37, 48.1], "place": { "en": "Miguasha, Quebec, Canada", "es": "Miguasha, Quebec, Canadá" } },
+        { "at": [158.43, -78.54], "place": { "en": "Aztec Siltstone, Victoria Land, Antarctica", "es": "Limolita Aztec, Tierra de Victoria, Antártida" } }
+      ],
+      "len": 0.3,
+      "diet": "small",
+      "text": {
+        "en": "A boxy fish covered in bony plates, with two jointed, armoured fins sticking out at the front like a crab's legs. It belonged to the placoderms, the armoured fish. Bothriolepis is one of the most successful fish ever: dozens of species lived in rivers, lakes and coasts on every continent, Antarctica included, from about 390 to 359 million years ago. It grubbed in the mud for food.",
+        "es": "Un pez en forma de caja cubierto de placas de hueso, con dos aletas delanteras articuladas y acorazadas que salían como patas de cangrejo. Era un placodermo, un pez acorazado. Bothriolepis es uno de los peces de más éxito de la historia: decenas de especies vivieron en ríos, lagos y costas de todos los continentes, la Antártida incluida, hace entre 390 y 359 millones de años. Buscaba comida en el lodo."
+      },
+      "kin": { "en": "None alive: all jawed fish are its distant cousins", "es": "Ninguno vivo: todos los peces con mandíbula son primos lejanos suyos" },
+      "wiki": { "en": "Bothriolepis", "es": "Bothriolepis" },
+      "pbdb": "Bothriolepis"
+    },
+    {
+      "id": "wattieza",
+      "name": { "en": "Wattieza", "es": "Wattieza" },
+      "group": "plant",
+      "icon": "🌴",
+      "life": "land",
+      "from": 390,
+      "to": 375,
+      "sites": [
+        { "at": [-74.45, 42.4], "place": { "en": "Gilboa, Schoharie County, New York, United States", "es": "Gilboa, condado de Schoharie, Nueva York, Estados Unidos" } }
+      ],
+      "len": 8,
+      "diet": "light",
+      "text": {
+        "en": "One of the first trees, up to 8 metres tall: a straight trunk topped by a crown of branches like a feather duster, with no true leaves at all. Its stumps were found standing where they grew at Gilboa, New York, in the 1800s, but no one knew what the top looked like until complete fossils were described in 2007. Forests like these began to change the climate by pulling carbon dioxide from the air.",
+        "es": "Uno de los primeros árboles, de hasta 8 metros: un tronco recto coronado por ramas como un plumero, sin hojas verdaderas. Sus tocones se hallaron en pie, donde crecieron, en Gilboa, Nueva York, en el siglo XIX, pero nadie supo cómo era la copa hasta que se describieron fósiles completos en 2007. Bosques como estos empezaron a cambiar el clima al sacar dióxido de carbono del aire."
+      },
+      "kin": { "en": "Ferns and horsetails, as distant early cousins", "es": "Los helechos y las colas de caballo, como primos tempranos lejanos" },
+      "wiki": { "en": "Wattieza", "es": "Wattieza" },
+      "pbdb": "Wattieza",
+      "item": "gilboa-forest"
+    },
+    {
+      "id": "archaeopteris",
+      "name": { "en": "Archaeopteris", "es": "Archaeopteris" },
+      "group": "plant",
+      "icon": "🌲",
+      "life": "land",
+      "from": 386,
+      "to": 359,
+      "sites": [
+        { "at": [-73.98, 42.3], "place": { "en": "Cairo, New York, United States", "es": "Cairo, Nueva York, Estados Unidos" } },
+        { "at": [-7.08, 52.47], "place": { "en": "Kiltorcan, Kilkenny, Ireland", "es": "Kiltorcan, Kilkenny, Irlanda" } },
+        { "at": [-66.37, 48.1], "place": { "en": "Miguasha, Quebec, Canada", "es": "Miguasha, Quebec, Canadá" } }
+      ],
+      "len": 20,
+      "diet": "light",
+      "text": {
+        "en": "The first modern-looking tree: a trunk of real wood like a conifer's, more than 20 metres tall, with branches of fern-like leaves and roots that reached deep into the soil. It still made spores, not seeds. Archaeopteris spread across the world in the Late Devonian and formed the first great forests; the oldest known, at Cairo in New York, is about 386 million years old.",
+        "es": "El primer árbol de aspecto moderno: un tronco de madera verdadera como el de una conífera, de más de 20 metros, con ramas de hojas parecidas a las de un helecho y raíces que llegaban hondo en el suelo. Todavía hacía esporas, no semillas. Archaeopteris se extendió por el mundo en el Devónico Superior y formó los primeros grandes bosques; el más antiguo conocido, en Cairo, Nueva York, tiene unos 386 millones de años."
+      },
+      "kin": { "en": "Seed plants such as conifers: it was close to their ancestors", "es": "Las plantas con semilla como las coníferas: estaba cerca de sus antepasados" },
+      "wiki": { "en": "Archaeopteris", "es": "Archaeopteris" },
+      "pbdb": "Archaeopteris",
+      "item": "cairo-fossil-forest"
+    },
+    {
+      "id": "eusthenopteron",
+      "name": { "en": "Eusthenopteron", "es": "Eusthenopteron" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 385,
+      "to": 370,
+      "sites": [
+        { "at": [-66.37, 48.1], "place": { "en": "Miguasha, Quebec, Canada", "es": "Miguasha, Quebec, Canadá" } },
+        { "at": [25.38, 58.01], "place": { "en": "Gauja River, Latvia", "es": "Río Gauja, Letonia" } }
+      ],
+      "len": 1.5,
+      "diet": "fish",
+      "text": {
+        "en": "A lobe-finned fish up to 1.8 metres long, the 'prince of Miguasha' and one of the most studied fossil fish. Inside its front fins is a pattern we all carry: one bone, then two bones, then smaller ones, just like the bones of our upper arm, forearm and wrist. Eusthenopteron still lived in water, but its relatives were taking the first steps towards legs.",
+        "es": "Un pez de aletas lobuladas de hasta 1,8 metros, el «príncipe de Miguasha» y uno de los peces fósiles más estudiados. Dentro de sus aletas delanteras hay un patrón que todos llevamos: un hueso, luego dos, luego otros más pequeños, igual que los huesos de nuestro brazo, antebrazo y muñeca. Eusthenopteron aún vivía en el agua, pero sus parientes daban los primeros pasos hacia las patas."
+      },
+      "kin": { "en": "Four-legged animals, us included, and lungfish", "es": "Los animales de cuatro patas, nosotros incluidos, y los peces pulmonados" },
+      "wiki": { "en": "Eusthenopteron", "es": "Eusthenopteron" },
+      "pbdb": "Eusthenopteron"
+    },
+    {
+      "id": "dunkleosteus",
+      "name": { "en": "Dunkleosteus", "es": "Dunkleosteus" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 382,
+      "to": 359,
+      "sites": [
+        { "at": [-81.83, 41.45], "place": { "en": "Cleveland Shale, Ohio, United States", "es": "Lutita de Cleveland, Ohio, Estados Unidos" } },
+        { "at": [-4.3, 31], "place": { "en": "Tafilalt, Morocco", "es": "Tafilalt, Marruecos" } }
+      ],
+      "len": 3.4,
+      "mass": 1000,
+      "diet": "meat",
+      "text": {
+        "en": "One of the first giant hunters with a backbone: an armoured fish whose head and chest were wrapped in bony plates. Instead of teeth it had blades of bone that sharpened themselves as they rubbed together, and its jaws snapped open fast enough to suck in prey. Once thought to be 6 to 10 metres long, it is now estimated at about 3.4 metres. Many fossils come from the shale under Cleveland, Ohio.",
+        "es": "Uno de los primeros cazadores gigantes con columna: un pez acorazado con la cabeza y el pecho envueltos en placas de hueso. En lugar de dientes tenía cuchillas de hueso que se afilaban solas al rozarse, y abría la boca tan rápido que succionaba a sus presas. Antes se creía que medía de 6 a 10 metros; hoy se calcula en unos 3,4 metros. Muchos fósiles vienen de la lutita que hay bajo Cleveland, Ohio."
+      },
+      "kin": {
+        "en": "None alive: placoderms died out, and all jawed fish are its distant cousins",
+        "es": "Ninguno vivo: los placodermos se extinguieron y todos los peces con mandíbula son primos lejanos"
+      },
+      "wiki": { "en": "Dunkleosteus", "es": "Dunkleosteus" },
+      "pbdb": "Dunkleosteus",
+      "item": "dunkleosteus"
+    },
+    {
+      "id": "materpiscis",
+      "name": { "en": "Materpiscis attenboroughi", "es": "Materpiscis attenboroughi" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "sea",
+      "from": 382,
+      "to": 378,
+      "sites": [
+        { "at": [125.7, -18.26], "place": { "en": "Gogo Formation, Kimberley, Western Australia", "es": "Formación Gogo, Kimberley, Australia Occidental" } }
+      ],
+      "len": 0.25,
+      "diet": "small",
+      "text": {
+        "en": "The oldest known mother: a 25 cm armoured fish from the Gogo reef in Australia, about 380 million years old, with an embryo inside her still joined by an umbilical cord. Described in 2008, Materpiscis showed that some early fish mated and gave birth to live young, long before mammals did. Its name means 'mother fish', and its species is named after David Attenborough.",
+        "es": "La madre más antigua conocida: un pez acorazado de 25 cm del arrecife de Gogo, en Australia, de unos 380 millones de años, con un embrión dentro todavía unido por un cordón umbilical. Descrito en 2008, Materpiscis mostró que algunos peces primitivos se apareaban y daban a luz crías vivas, mucho antes que los mamíferos. Su nombre significa «pez madre», y su especie lleva el nombre de David Attenborough."
+      },
+      "kin": {
+        "en": "None alive: placoderms died out, and all jawed fish are its distant cousins",
+        "es": "Ninguno vivo: los placodermos se extinguieron y todos los peces con mandíbula son primos lejanos"
+      },
+      "wiki": { "en": "Materpiscis", "es": "Materpiscis" },
+      "pbdb": "Materpiscis",
+      "item": "materpiscis"
+    },
+    {
+      "id": "tiktaalik-roseae",
+      "name": { "en": "Tiktaalik roseae", "es": "Tiktaalik roseae" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "fresh",
+      "from": 378,
+      "to": 372,
+      "sites": [
+        { "at": [-86.27, 77.17], "place": { "en": "Ellesmere Island, Nunavut, Canada", "es": "Isla de Ellesmere, Nunavut, Canadá" } }
+      ],
+      "len": 2,
+      "diet": "fish",
+      "text": {
+        "en": "A fish with a neck, a flat head like a crocodile's and sturdy fins with wrist bones inside, able to prop itself up in shallow water. Neil Shubin's team found it in 2004 on Ellesmere Island in the Arctic, after years of searching rocks of just the right age, about 375 million years. Tiktaalik, 'large freshwater fish' in Inuktitut, is a classic in-between form between fish and four-legged animals.",
+        "es": "Un pez con cuello, una cabeza plana como la de un cocodrilo y aletas robustas con huesos de muñeca dentro, capaz de apoyarse en aguas poco profundas. El equipo de Neil Shubin lo halló en 2004 en la isla de Ellesmere, en el Ártico, tras años buscando en rocas de la edad justa, unos 375 millones de años. Tiktaalik, «pez grande de agua dulce» en inuktitut, es una forma intermedia clásica entre los peces y los animales de cuatro patas."
+      },
+      "kin": {
+        "en": "Four-legged animals: amphibians, reptiles, birds and mammals; then lungfish",
+        "es": "Los animales de cuatro patas: anfibios, reptiles, aves y mamíferos; luego los peces pulmonados"
+      },
+      "wiki": { "en": "Tiktaalik", "es": "Tiktaalik" },
+      "pbdb": "Tiktaalik",
+      "item": "tiktaalik"
+    },
+    {
+      "id": "stethacanthus",
+      "name": { "en": "Stethacanthus", "es": "Stethacanthus" },
+      "group": "fish",
+      "icon": "🦈",
+      "life": "sea",
+      "from": 370,
+      "to": 307,
+      "sites": [
+        { "at": [-81.83, 41.45], "place": { "en": "Cleveland Shale, Ohio, United States", "es": "Lutita de Cleveland, Ohio, Estados Unidos" } },
+        { "at": [-90.22, 38.91], "place": { "en": "Alton, Illinois, United States", "es": "Alton, Illinois, Estados Unidos" } },
+        { "at": [-87.32, 39.72], "place": { "en": "Linton, Indiana, United States", "es": "Linton, Indiana, Estados Unidos" } }
+      ],
+      "len": 0.7,
+      "diet": "fish",
+      "text": {
+        "en": "A small shark, about 70 cm long, with a strange crest on its back shaped like an anvil or an ironing board, topped with a brush of little tooth-like spikes, and a patch of the same spikes on its head. It seems that only adult males had the crest, so it was probably for showing off to females or scaring rivals. Stethacanthus swam in seas from the Late Devonian to the Carboniferous.",
+        "es": "Un tiburón pequeño, de unos 70 cm, con una extraña cresta en el lomo con forma de yunque o de tabla de planchar, cubierta de un cepillo de pinchos parecidos a dientes, y otro parche igual en la cabeza. Al parecer solo los machos adultos tenían la cresta, así que probablemente servía para lucirse ante las hembras o asustar a los rivales. Stethacanthus nadó en los mares desde el Devónico Superior hasta el Carbonífero."
+      },
+      "kin": { "en": "Sharks, rays and ratfish (chimaeras)", "es": "Los tiburones, las rayas y las quimeras" },
+      "wiki": { "en": "Stethacanthus", "es": "Stethacanthus" },
+      "pbdb": "Stethacanthus"
+    },
+    {
+      "id": "cladoselache",
+      "name": { "en": "Cladoselache", "es": "Cladoselache" },
+      "group": "fish",
+      "icon": "🦈",
+      "life": "sea",
+      "from": 370,
+      "to": 359,
+      "sites": [
+        { "at": [-81.85, 41.48], "place": { "en": "Cleveland Shale, Ohio, United States", "es": "Lutita de Cleveland, Ohio, Estados Unidos" } }
+      ],
+      "len": 1.5,
+      "diet": "fish",
+      "text": {
+        "en": "One of the earliest well-known sharks, up to 1.8 metres long, preserved in the black shale under Cleveland so finely that its muscles, kidneys and even last meals survive. Some had swallowed whole fish tail first, so it was a fast swimmer that chased prey from behind. Unlike today's sharks, its mouth was at the very front of its snout and its skin had almost no scales.",
+        "es": "Uno de los tiburones antiguos mejor conocidos, de hasta 1,8 metros, conservado en la lutita negra bajo Cleveland con tanto detalle que se ven sus músculos, sus riñones y hasta su última comida. Algunos se habían tragado peces enteros empezando por la cola, así que era un nadador rápido que perseguía a sus presas por detrás. A diferencia de los tiburones actuales, tenía la boca en la punta del hocico y casi no tenía escamas."
+      },
+      "kin": { "en": "Sharks, rays and ratfish, as an early cousin", "es": "Los tiburones, las rayas y las quimeras, como un primo temprano" },
+      "wiki": { "en": "Cladoselache", "es": "Cladoselache" },
+      "pbdb": "Cladoselache",
+      "item": "cladoselache"
+    },
+    {
+      "id": "hyneria",
+      "name": { "en": "Hyneria lindae", "es": "Hyneria lindae" },
+      "group": "fish",
+      "icon": "🐟",
+      "life": "fresh",
+      "from": 370,
+      "to": 360,
+      "sites": [
+        { "at": [-77.68, 41.34], "place": { "en": "Red Hill, Pennsylvania, United States", "es": "Red Hill, Pensilvania, Estados Unidos" } }
+      ],
+      "len": 2.5,
+      "diet": "meat",
+      "text": {
+        "en": "A giant lobe-finned fish of Devonian rivers in Pennsylvania, perhaps 2.5 metres long, with fangs 5 cm long and rather small eyes. It may have found prey by sensing movements in muddy water, and it shared its rivers with some of the first four-legged animals, small enough to be its food. Hyneria shows how dangerous the water was for the first creatures with legs.",
+        "es": "Un pez gigante de aletas lobuladas de los ríos del Devónico en Pensilvania, de quizá 2,5 metros, con colmillos de 5 cm y ojos más bien pequeños. Quizá encontraba a sus presas sintiendo los movimientos en el agua turbia, y compartía sus ríos con algunos de los primeros animales de cuatro patas, lo bastante pequeños para ser su comida. Hyneria muestra lo peligrosa que era el agua para los primeros seres con patas."
+      },
+      "kin": {
+        "en": "Four-legged animals and lungfish, as a cousin of their ancestors",
+        "es": "Los animales de cuatro patas y los peces pulmonados, como primo de sus antepasados"
+      },
+      "wiki": { "en": "Hyneria", "es": "Hyneria" },
+      "pbdb": "Hyneria"
+    },
+    {
+      "id": "elkinsia",
+      "name": { "en": "Elkinsia polymorpha", "es": "Elkinsia polymorpha" },
+      "group": "plant",
+      "icon": "🌰",
+      "life": "land",
+      "from": 365,
+      "to": 359,
+      "sites": [
+        { "at": [-79.85, 38.93], "place": { "en": "Elkins, West Virginia, United States", "es": "Elkins, Virginia Occidental, Estados Unidos" } }
+      ],
+      "diet": "light",
+      "text": {
+        "en": "Among the oldest known seeds, about 365 million years old, from rocks near Elkins in West Virginia. Elkinsia was a seed fern, a plant with fern-like leaves that made seeds instead of spores. Each seed, held in a little cup, was a packet with a tough coat and a store of food around the start of a new plant. Seeds let plants grow far from water and wait for good times, the step that led to conifers and flowers.",
+        "es": "De las semillas más antiguas conocidas, de unos 365 millones de años, de rocas cerca de Elkins, en Virginia Occidental. Elkinsia era un helecho con semillas: una planta de hojas como de helecho que hacía semillas en vez de esporas. Cada semilla, dentro de una copita, era un paquete con cubierta dura y reserva de comida alrededor del comienzo de una nueva planta. Las semillas dejaron a las plantas crecer lejos del agua y esperar tiempos mejores."
+      },
+      "kin": { "en": "Seed plants: conifers, cycads and flowering plants", "es": "Las plantas con semilla: coníferas, cícadas y plantas con flor" },
+      "wiki": { "en": "Pteridosperm", "es": "Pteridospermatophyta" },
+      "pbdb": "Elkinsia"
+    },
+    {
+      "id": "acanthostega",
+      "name": { "en": "Acanthostega gunnari", "es": "Acanthostega gunnari" },
+      "group": "amphibian",
+      "icon": "🦎",
+      "life": "fresh",
+      "from": 365,
+      "to": 360,
+      "sites": [
+        { "at": [-23.4, 73.3], "place": { "en": "Celsius Bjerg, East Greenland", "es": "Celsius Bjerg, este de Groenlandia" } }
+      ],
+      "len": 0.6,
+      "diet": "fish",
+      "text": {
+        "en": "An early four-legged animal about 60 cm long from East Greenland, with eight fingers on each front foot, legs too weak to walk well on land, gills and a tail fin. So legs and fingers evolved in the water, probably for pushing through weeds and shallow channels, before any animal walked on land. Jenny Clack's team found its best fossils in 1987.",
+        "es": "Uno de los primeros animales de cuatro patas, de unos 60 cm, del este de Groenlandia, con ocho dedos en cada pata delantera, patas demasiado débiles para caminar bien en tierra, branquias y una aleta en la cola. Así que las patas y los dedos aparecieron en el agua, quizá para abrirse paso entre plantas y canales poco profundos, antes de que ningún animal caminara en tierra. El equipo de Jenny Clack halló sus mejores fósiles en 1987."
+      },
+      "kin": { "en": "Four-legged animals: amphibians, reptiles, birds and mammals", "es": "Los animales de cuatro patas: anfibios, reptiles, aves y mamíferos" },
+      "wiki": { "en": "Acanthostega", "es": "Acanthostega" },
+      "pbdb": "Acanthostega gunnari",
+      "item": "acanthostega"
+    },
+    {
+      "id": "ichthyostega",
+      "name": { "en": "Ichthyostega", "es": "Ichthyostega" },
+      "group": "amphibian",
+      "icon": "🦎",
+      "life": "shore",
+      "from": 365,
+      "to": 360,
+      "sites": [
+        { "at": [-23.06, 73.13], "place": { "en": "Celsius Bjerg, East Greenland", "es": "Celsius Bjerg, este de Groenlandia" } }
+      ],
+      "len": 1.5,
+      "diet": "fish",
+      "text": {
+        "en": "A sturdier cousin of Acanthostega, up to 1.5 metres long, with seven toes on each hind foot, strong ribs and powerful shoulders. Found in East Greenland in the 1930s, it was for decades the oldest known four-legged animal. Its back legs were paddle-like, so on land it may have hauled itself along like a seal, while in the water it hunted fish.",
+        "es": "Un primo más robusto de Acanthostega, de hasta 1,5 metros, con siete dedos en cada pata trasera, costillas fuertes y hombros poderosos. Hallado en el este de Groenlandia en los años treinta, fue por décadas el animal de cuatro patas más antiguo conocido. Sus patas traseras eran como remos, así que en tierra quizá se arrastraba como una foca, mientras que en el agua cazaba peces."
+      },
+      "kin": { "en": "Four-legged animals: amphibians, reptiles, birds and mammals", "es": "Los animales de cuatro patas: anfibios, reptiles, aves y mamíferos" },
+      "wiki": { "en": "Ichthyostega", "es": "Ichthyostega" },
+      "pbdb": "Ichthyostega",
+      "item": "ichthyostega"
+    },
+    {
+      "id": "lepidodendron",
+      "name": { "en": "Lepidodendron", "es": "Lepidodendron" },
+      "common": { "en": "Scale tree", "es": "Árbol de escamas" },
+      "group": "plant",
+      "icon": "🌲",
+      "life": "land",
+      "from": 359,
+      "to": 260,
+      "sites": [
+        { "at": [-4.34, 55.87], "place": { "en": "Fossil Grove, Victoria Park, Glasgow, Scotland", "es": "Fossil Grove, parque Victoria, Glasgow, Escocia" } },
+        { "at": [-64.44, 45.69], "place": { "en": "Joggins Fossil Cliffs, Nova Scotia, Canada", "es": "Acantilados fósiles de Joggins, Nueva Escocia, Canadá" } }
+      ],
+      "len": 30,
+      "diet": "light",
+      "text": {
+        "en": "A giant club moss up to 30 metres tall, with bark covered in diamond-shaped leaf scars like the skin of a snake, which is why it is called a scale tree. It shot up fast, branched only at the top, and may have died once it had made its cones. Its trunks, fallen in swamps, became much of the coal that powered the Industrial Revolution. At Fossil Grove in Glasgow, its stumps still stand where they grew.",
+        "es": "Un licopodio gigante de hasta 30 metros, con la corteza cubierta de cicatrices de hojas en forma de rombo como la piel de una serpiente, por eso lo llaman árbol de escamas. Crecía muy rápido, solo se ramificaba arriba y quizá moría después de hacer sus conos. Sus troncos, caídos en los pantanos, formaron buena parte del carbón que movió la Revolución Industrial. En Fossil Grove, en Glasgow, sus tocones siguen en pie donde crecieron."
+      },
+      "kin": { "en": "Club mosses and quillworts, now small plants", "es": "Los licopodios y los isoetes, hoy plantas pequeñas" },
+      "wiki": { "en": "Lepidodendron", "es": "Lepidodendron" },
+      "pbdb": "Lepidodendron",
+      "item": "lepidodendron"
+    },
+    {
+      "id": "calamites",
+      "name": { "en": "Calamites", "es": "Calamites" },
+      "group": "plant",
+      "icon": "🎋",
+      "life": "land",
+      "from": 359,
+      "to": 252,
+      "sites": [
+        { "at": [-64.43, 45.71], "place": { "en": "Joggins Fossil Cliffs, Nova Scotia, Canada", "es": "Acantilados fósiles de Joggins, Nueva Escocia, Canadá" } },
+        { "at": [12.92, 50.83], "place": { "en": "Petrified forest, Chemnitz, Germany", "es": "Bosque petrificado, Chemnitz, Alemania" } }
+      ],
+      "len": 15,
+      "diet": "light",
+      "text": {
+        "en": "A giant horsetail up to 20 metres tall, with a hollow, jointed stem like bamboo and rings of needle-like leaves. Calamites grew in thick stands along rivers and swamp edges, spreading by underground stems, and could sprout again after being buried by floods. Its relatives, the horsetails, still grow in damp ditches, but rarely taller than a person.",
+        "es": "Una cola de caballo gigante de hasta 20 metros, con un tallo hueco y articulado como el bambú y anillos de hojas como agujas. Calamites crecía en matorrales densos junto a ríos y pantanos, se extendía con tallos subterráneos y podía volver a brotar después de quedar enterrada por las inundaciones. Sus parientes, las colas de caballo, aún crecen en zanjas húmedas, pero casi nunca más altas que una persona."
+      },
+      "kin": { "en": "Horsetails (Equisetum), which still grow in damp places", "es": "Las colas de caballo (Equisetum), que aún crecen en lugares húmedos" },
+      "wiki": { "en": "Calamites", "es": "Calamites" },
+      "pbdb": "Calamites",
+      "item": "calamites"
+    },
+    {
+      "id": "pederpes",
+      "name": { "en": "Pederpes finneyae", "es": "Pederpes finneyae" },
+      "group": "amphibian",
+      "icon": "🦎",
+      "life": "shore",
+      "from": 350,
+      "to": 346,
+      "sites": [
+        { "at": [-4.57, 55.95], "place": { "en": "Dumbarton, Scotland", "es": "Dumbarton, Escocia" } }
+      ],
+      "len": 1,
+      "diet": "meat",
+      "text": {
+        "en": "A four-legged animal about a metre long from about 348 million years ago, found in 1971 near Dumbarton in Scotland and first mistaken for a fish. Its feet faced forwards, made for walking rather than paddling, with five toes like ours. Pederpes was the first good fossil from 'Romer's gap', a stretch of 15 million years just after the Devonian from which hardly any land animals were known.",
+        "es": "Un animal de cuatro patas de un metro, de hace unos 348 millones de años, hallado en 1971 cerca de Dumbarton, Escocia, y confundido al principio con un pez. Sus pies miraban hacia delante, hechos para caminar y no para remar, con cinco dedos como los nuestros. Pederpes fue el primer buen fósil del «hueco de Romer», un lapso de 15 millones de años justo después del Devónico del que casi no se conocían animales terrestres."
+      },
+      "kin": { "en": "Four-legged animals, as an early cousin", "es": "Los animales de cuatro patas, como un primo temprano" },
+      "wiki": { "en": "Pederpes", "es": "Pederpes" },
+      "pbdb": "Pederpes"
+    },
+    {
+      "id": "arthropleura",
+      "name": { "en": "Arthropleura", "es": "Arthropleura" },
+      "group": "invertebrate",
+      "icon": "🐛",
+      "life": "land",
+      "from": 346,
+      "to": 290,
+      "sites": [
+        { "at": [-1.59, 55.45], "place": { "en": "Howick Bay, Northumberland, England", "es": "Bahía de Howick, Northumberland, Inglaterra" } },
+        { "at": [-64.44, 45.69], "place": { "en": "Joggins Fossil Cliffs, Nova Scotia, Canada", "es": "Acantilados fósiles de Joggins, Nueva Escocia, Canadá" } },
+        { "at": [4.37, 46.67], "place": { "en": "Montceau-les-Mines, France", "es": "Montceau-les-Mines, Francia" } }
+      ],
+      "len": 2.6,
+      "mass": 50,
+      "diet": "plants",
+      "text": {
+        "en": "The biggest invertebrate ever to live on land: a millipede up to 2.6 metres long and half a metre wide. Its tracks are found at Joggins in Canada, and a giant piece of one turned up in a fallen block on a beach in Northumberland in 2018. In 2024, fossils from France finally showed its head, with features of both millipedes and centipedes. It probably ate plants.",
+        "es": "El invertebrado más grande que ha vivido en tierra: un milpiés de hasta 2,6 metros de largo y medio metro de ancho. Sus huellas aparecen en Joggins, Canadá, y un gran trozo de uno apareció en 2018 en una roca caída en una playa de Northumberland. En 2024, fósiles de Francia mostraron por fin su cabeza, con rasgos de milpiés y de ciempiés. Probablemente comía plantas."
+      },
+      "kin": { "en": "Millipedes", "es": "Los milpiés" },
+      "wiki": { "en": "Arthropleura", "es": "Arthropleura" },
+      "pbdb": "Arthropleura",
+      "item": "arthropleura"
+    },
+    {
+      "id": "westlothiana",
+      "name": { "en": "Westlothiana lizziae", "es": "Westlothiana lizziae" },
+      "group": "amphibian",
+      "icon": "🦎",
+      "life": "land",
+      "from": 336,
+      "to": 333,
+      "sites": [
+        { "at": [-3.63, 55.9], "place": { "en": "East Kirkton, Bathgate, Scotland", "es": "East Kirkton, Bathgate, Escocia" } }
+      ],
+      "len": 0.2,
+      "diet": "small",
+      "text": {
+        "en": "A slim animal 20 cm long with short legs, nicknamed 'Lizzie the lizard' when it was found in 1984 at East Kirkton quarry in Scotland, where it lived around a volcanic lake about 335 million years ago. For a while it was called the oldest reptile. Now it is seen as a close cousin of the first amniotes, the animals that lay eggs on land: reptiles and, later, mammals.",
+        "es": "Un animal delgado de 20 cm con patas cortas, apodado «Lizzie la lagartija» cuando se halló en 1984 en la cantera de East Kirkton, Escocia, donde vivía junto a un lago volcánico hace unos 335 millones de años. Por un tiempo se le llamó el reptil más antiguo. Hoy se ve como un primo cercano de los primeros amniotas, los animales que ponen huevos en tierra: los reptiles y, después, los mamíferos."
+      },
+      "kin": { "en": "Amniotes (reptiles, birds and mammals), as an early cousin", "es": "Los amniotas (reptiles, aves y mamíferos), como un primo temprano" },
+      "wiki": { "en": "Westlothiana", "es": "Westlothiana lizziae" },
+      "pbdb": "Westlothiana"
+    },
+    {
+      "id": "pulmonoscorpius",
+      "name": { "en": "Pulmonoscorpius kirktonensis", "es": "Pulmonoscorpius kirktonensis" },
+      "group": "invertebrate",
+      "icon": "🦂",
+      "life": "land",
+      "from": 336,
+      "to": 333,
+      "sites": [
+        { "at": [-3.63, 55.9], "place": { "en": "East Kirkton, Bathgate, Scotland", "es": "East Kirkton, Bathgate, Escocia" } }
+      ],
+      "len": 0.7,
+      "diet": "meat",
+      "text": {
+        "en": "A giant land scorpion up to 70 cm long, about the size of a small dog, from East Kirkton in Scotland, about 335 million years old. Its name means 'breathing scorpion', because it had book lungs, stacks of thin plates for breathing air, like scorpions today. It probably hunted insects and small four-legged animals among the plants around a volcanic lake.",
+        "es": "Un escorpión terrestre gigante de hasta 70 cm, del tamaño de un perro pequeño, de East Kirkton, Escocia, de unos 335 millones de años. Su nombre significa «escorpión que respira», porque tenía pulmones en libro, pilas de láminas finas para respirar aire, como los escorpiones de hoy. Probablemente cazaba insectos y pequeños animales de cuatro patas entre las plantas de un lago volcánico."
+      },
+      "kin": { "en": "Scorpions alive today", "es": "Los escorpiones actuales" },
+      "wiki": { "en": "Pulmonoscorpius", "es": "Pulmonoscorpius" },
+      "pbdb": "Pulmonoscorpius"
+    },
+    {
+      "id": "crassigyrinus",
+      "name": { "en": "Crassigyrinus", "es": "Crassigyrinus" },
+      "group": "amphibian",
+      "icon": "🐊",
+      "life": "fresh",
+      "from": 335,
+      "to": 325,
+      "sites": [
+        { "at": [-3.13, 55.83], "place": { "en": "Gilmerton, Edinburgh, Scotland", "es": "Gilmerton, Edimburgo, Escocia" } },
+        { "at": [-80.88, 37.66], "place": { "en": "Hinton, West Virginia, United States", "es": "Hinton, Virginia Occidental, Estados Unidos" } }
+      ],
+      "len": 2,
+      "diet": "fish",
+      "text": {
+        "en": "A strange early four-legged animal about 2 metres long, with an enormous mouth full of fangs and front legs so tiny they were almost useless. Crassigyrinus, 'thick tadpole', spent its life in water, lurking in Scottish swamps like a crocodile and snapping up fish. It seems to have given up the land, or never quite reached it, while its cousins walked away.",
+        "es": "Un extraño animal de cuatro patas de unos 2 metros, con una boca enorme llena de colmillos y patas delanteras tan pequeñas que casi no servían. Crassigyrinus, «renacuajo grueso», pasaba la vida en el agua, acechando en los pantanos de Escocia como un cocodrilo y atrapando peces. Parece que dejó la tierra, o que nunca llegó a ella, mientras sus primos se alejaban caminando."
+      },
+      "kin": { "en": "Four-legged animals, as an early side branch", "es": "Los animales de cuatro patas, como una rama lateral temprana" },
+      "wiki": { "en": "Crassigyrinus", "es": "Crassigyrinus" },
+      "pbdb": "Crassigyrinus"
+    },
+    {
+      "id": "sigillaria",
+      "name": { "en": "Sigillaria", "es": "Sigillaria" },
+      "group": "plant",
+      "icon": "🌲",
+      "life": "land",
+      "from": 330,
+      "to": 260,
+      "sites": [
+        { "at": [-64.44, 45.69], "place": { "en": "Joggins Fossil Cliffs, Nova Scotia, Canada", "es": "Acantilados fósiles de Joggins, Nueva Escocia, Canadá" } },
+        { "at": [7.2, 51.5], "place": { "en": "Ruhr coalfield, Germany", "es": "Cuenca carbonífera del Ruhr, Alemania" } }
+      ],
+      "len": 25,
+      "diet": "light",
+      "text": {
+        "en": "A giant club moss up to 30 metres tall, with a thick trunk marked by straight rows of leaf scars, like the marks of a wax seal, which is what its name means, and tufts of long, grassy leaves at the top. At Joggins in Canada, hollow Sigillaria stumps buried by floods became traps for small animals, and inside them were found some of the first reptiles.",
+        "es": "Un licopodio gigante de hasta 30 metros, con un tronco grueso marcado por filas rectas de cicatrices de hojas, como las marcas de un sello, que es lo que significa su nombre, y penachos de hojas largas como pasto en la punta. En Joggins, Canadá, los tocones huecos de Sigillaria enterrados por las inundaciones atraparon animalitos, y dentro se hallaron algunos de los primeros reptiles."
+      },
+      "kin": { "en": "Club mosses and quillworts, now small plants", "es": "Los licopodios y los isoetes, hoy plantas pequeñas" },
+      "wiki": { "en": "Sigillaria", "es": "Sigillaria" },
+      "pbdb": "Sigillaria"
+    },
+    {
+      "id": "palaeodictyoptera",
+      "name": { "en": "Palaeodictyoptera", "es": "Palaeodictyoptera" },
+      "common": { "en": "Beaked flying insects", "es": "Insectos voladores con pico" },
+      "group": "flyer",
+      "icon": "🦋",
+      "life": "air",
+      "from": 325,
+      "to": 252,
+      "sites": [
+        { "at": [2.74, 46.29], "place": { "en": "Commentry, Allier, France", "es": "Commentry, Allier, Francia" } },
+        { "at": [-88.3, 41.25], "place": { "en": "Mazon Creek, Illinois, United States", "es": "Mazon Creek, Illinois, Estados Unidos" } }
+      ],
+      "len": 0.1,
+      "diet": "plants",
+      "text": {
+        "en": "Among the first insects to fly, from about 325 million years ago. They had a long beak for sucking juices from cones and stems, and many had a third pair of tiny wing flaps just behind the head. Some, like Mazothairos from Illinois, had wings over 50 cm across. They could not fold their wings back over the body, and they all vanished in the Great Dying.",
+        "es": "De los primeros insectos que volaron, desde hace unos 325 millones de años. Tenían un pico largo para chupar jugos de conos y tallos, y muchos tenían un tercer par de pequeñas aletas justo detrás de la cabeza. Algunos, como Mazothairos de Illinois, tenían alas de más de 50 cm de punta a punta. No podían plegar las alas sobre el cuerpo, y todos desaparecieron en la Gran Mortandad."
+      },
+      "kin": {
+        "en": "Insects; their closest living relatives are debated, perhaps mayflies and dragonflies",
+        "es": "Los insectos; sus parientes vivos más cercanos se discuten, quizá efímeras y libélulas"
+      },
+      "wiki": { "en": "Palaeodictyoptera", "es": "Palaeodictyoptera" },
+      "pbdb": "Palaeodictyoptera"
+    },
+    {
+      "id": "medullosa",
+      "name": { "en": "Medullosa", "es": "Medullosa" },
+      "common": { "en": "Seed fern", "es": "Helecho con semillas" },
+      "group": "plant",
+      "icon": "🌿",
+      "life": "land",
+      "from": 318,
+      "to": 290,
+      "sites": [
+        { "at": [-88.3, 41.25], "place": { "en": "Mazon Creek, Illinois, United States", "es": "Mazon Creek, Illinois, Estados Unidos" } },
+        { "at": [12.92, 50.83], "place": { "en": "Petrified forest, Chemnitz, Germany", "es": "Bosque petrificado, Chemnitz, Alemania" } }
+      ],
+      "len": 5,
+      "diet": "light",
+      "text": {
+        "en": "A seed fern: a plant with huge, fern-like fronds several metres long that made seeds instead of spores. Medullosa grew a few metres tall in the wetter parts of the coal swamps, and some of its relatives had seeds as big as a hen's egg. Seed ferns were not true ferns but early seed plants, and they were among the commonest plants of the Carboniferous.",
+        "es": "Un helecho con semillas: una planta con enormes frondas como de helecho, de varios metros, que hacía semillas en lugar de esporas. Medullosa crecía unos metros de alto en las partes más húmedas de los pantanos del carbón, y algunos parientes tenían semillas tan grandes como un huevo de gallina. No eran helechos verdaderos sino plantas con semilla primitivas, y estaban entre las más comunes del Carbonífero."
+      },
+      "kin": { "en": "Seed plants; perhaps closest to cycads", "es": "Las plantas con semilla; quizá más cercana a las cícadas" },
+      "wiki": { "en": "Medullosa", "es": "Medullosales" },
+      "pbdb": "Medullosa"
+    },
+    {
+      "id": "hylonomus",
+      "name": { "en": "Hylonomus lyelli", "es": "Hylonomus lyelli" },
+      "group": "reptile",
+      "icon": "🦎",
+      "life": "land",
+      "from": 318,
+      "to": 312,
+      "sites": [
+        { "at": [-64.45, 45.7], "place": { "en": "Joggins Fossil Cliffs, Nova Scotia, Canada", "es": "Acantilados fósiles de Joggins, Nueva Escocia, Canadá" } }
+      ],
+      "len": 0.2,
+      "diet": "small",
+      "text": {
+        "en": "The oldest known reptile, about 20 cm long, like a small lizard with sharp little teeth for crunching insects and millipedes. Its skeletons were found in the 1850s by William Dawson inside hollow fossil tree stumps in the sea cliffs of Joggins, Nova Scotia. Hylonomus probably laid eggs with a shell that could survive on dry land, freeing its kind from the water.",
+        "es": "El reptil más antiguo conocido, de unos 20 cm, como una lagartija pequeña con dientecitos afilados para triturar insectos y milpiés. Sus esqueletos los halló William Dawson en la década de 1850 dentro de tocones fósiles huecos en los acantilados de Joggins, Nueva Escocia. Hylonomus probablemente ponía huevos con cáscara que resistían en tierra seca, lo que liberó a su linaje del agua."
+      },
+      "kin": { "en": "Reptiles: lizards, snakes, turtles, crocodiles and birds", "es": "Los reptiles: lagartijas, serpientes, tortugas, cocodrilos y aves" },
+      "wiki": { "en": "Hylonomus", "es": "Hylonomus" },
+      "pbdb": "Hylonomus",
+      "item": "hylonomus"
+    },
+    {
+      "id": "amphibamus",
+      "name": { "en": "Amphibamus grandiceps", "es": "Amphibamus grandiceps" },
+      "group": "amphibian",
+      "icon": "🐸",
+      "life": "shore",
+      "from": 310,
+      "to": 307,
+      "sites": [
+        { "at": [-88.3, 41.25], "place": { "en": "Mazon Creek, Illinois, United States", "es": "Mazon Creek, Illinois, Estados Unidos" } }
+      ],
+      "len": 0.12,
+      "diet": "small",
+      "text": {
+        "en": "A little amphibian about 12 cm long with big eyes and a broad head, from Mazon Creek in Illinois, about 309 million years old. Amphibamus belonged to a group that many scientists think gave rise to frogs and salamanders. Fossils of its young show that they grew up in water and then changed into land-living adults, as many amphibians do today.",
+        "es": "Un pequeño anfibio de unos 12 cm con ojos grandes y cabeza ancha, de Mazon Creek, Illinois, de unos 309 millones de años. Amphibamus pertenecía a un grupo que muchos científicos creen que dio origen a ranas y salamandras. Los fósiles de sus crías muestran que crecían en el agua y luego se transformaban en adultos de tierra, como muchos anfibios de hoy."
+      },
+      "kin": { "en": "Frogs, toads and salamanders, many scientists think", "es": "Las ranas, los sapos y las salamandras, según muchos científicos" },
+      "wiki": { "en": "Amphibamus", "es": "Amphibamus" },
+      "pbdb": "Amphibamus"
+    },
+    {
+      "id": "tullimonstrum",
+      "name": { "en": "Tullimonstrum gregarium", "es": "Tullimonstrum gregarium" },
+      "common": { "en": "Tully monster", "es": "Monstruo de Tully" },
+      "group": "invertebrate",
+      "icon": "👾",
+      "life": "sea",
+      "from": 310,
+      "to": 306,
+      "sites": [
+        { "at": [-88.3, 41.25], "place": { "en": "Mazon Creek, Illinois, United States", "es": "Mazon Creek, Illinois, Estados Unidos" } }
+      ],
+      "len": 0.3,
+      "diet": "meat",
+      "text": {
+        "en": "The Tully monster, the state fossil of Illinois: a soft animal up to 35 cm long with a long snout ending in a claw full of tiny teeth, and eyes on the ends of a stiff bar across its body. Found by Francis Tully, an amateur collector, in the 1950s, it has been called a worm, a slug, a jawless fish and an arthropod relative. Thousands of fossils exist, and still no one is sure what it was.",
+        "es": "El monstruo de Tully, fósil oficial de Illinois: un animal blando de hasta 35 cm con un hocico largo terminado en una pinza llena de dientecitos, y ojos en los extremos de una barra rígida que cruzaba su cuerpo. Lo halló Francis Tully, un coleccionista aficionado, en los años cincuenta, y se ha dicho que era un gusano, una babosa, un pez sin mandíbulas o un pariente de los artrópodos. Hay miles de fósiles y aún nadie sabe con certeza qué era."
+      },
+      "kin": {
+        "en": "Unknown: perhaps a jawless fish like a lamprey, perhaps an invertebrate",
+        "es": "Desconocidos: quizá un pez sin mandíbulas como la lamprea, quizá un invertebrado"
+      },
+      "wiki": { "en": "Tullimonstrum", "es": "Tullimonstrum" },
+      "pbdb": "Tullimonstrum",
+      "item": "tully-monster"
+    },
+    {
+      "id": "archaeothyris",
+      "name": { "en": "Archaeothyris florensis", "es": "Archaeothyris florensis" },
+      "group": "mammal",
+      "icon": "🦎",
+      "life": "land",
+      "from": 308,
+      "to": 304,
+      "sites": [
+        { "at": [-60.27, 46.25], "place": { "en": "Florence, Cape Breton Island, Nova Scotia, Canada", "es": "Florence, isla del Cabo Bretón, Nueva Escocia, Canadá" } }
+      ],
+      "len": 0.5,
+      "diet": "small",
+      "text": {
+        "en": "The oldest known synapsid, about 306 million years old, found at Florence in Nova Scotia. Synapsids are the branch that leads to mammals: they have one opening in the skull behind each eye, where jaw muscles attach. Our own jaw muscles still pass through it, under the cheekbone. Archaeothyris looked like a lizard about 50 cm long and hunted insects and small animals.",
+        "es": "El sinápsido más antiguo conocido, de unos 306 millones de años, hallado en Florence, Nueva Escocia. Los sinápsidos son la rama que lleva a los mamíferos: tienen una abertura en el cráneo detrás de cada ojo, donde se sujetan los músculos de la mandíbula. Nuestros propios músculos de la mandíbula aún pasan por ella, bajo el pómulo. Archaeothyris parecía una lagartija de unos 50 cm y cazaba insectos y animalitos."
+      },
+      "kin": { "en": "Mammals, us included: it sits near the root of our own branch", "es": "Los mamíferos, nosotros incluidos: está cerca de la raíz de nuestra propia rama" },
+      "wiki": { "en": "Archaeothyris", "es": "Archaeothyris" },
+      "pbdb": "Archaeothyris",
+      "item": "archaeothyris"
+    },
+    {
+      "id": "mayflies",
+      "name": { "en": "Ephemeroptera", "es": "Ephemeroptera" },
+      "common": { "en": "Mayflies", "es": "Efímeras" },
+      "group": "flyer",
+      "icon": "🪰",
+      "life": "air",
+      "from": 307,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        { "at": [-88.3, 41.25], "place": { "en": "Mazon Creek, Illinois, United States", "es": "Mazon Creek, Illinois, Estados Unidos" } },
+        { "at": [2.74, 46.29], "place": { "en": "Commentry, Allier, France", "es": "Commentry, Allier, Francia" } }
+      ],
+      "len": 0.02,
+      "diet": "plants",
+      "text": {
+        "en": "The oldest group of winged insects still alive: their relatives already flew over the coal swamps more than 300 million years ago. Mayflies spend most of their lives as nymphs in rivers and lakes, eating algae. The winged adults have no working mouth and often live only a day, just long enough to mate and lay eggs, which is where their scientific name, meaning 'wings for a day', comes from.",
+        "es": "El grupo de insectos con alas más antiguo que sigue vivo: sus parientes ya volaban sobre los pantanos del carbón hace más de 300 millones de años. Las efímeras pasan casi toda su vida como ninfas en ríos y lagos, comiendo algas. Los adultos con alas no tienen boca que funcione y a menudo viven solo un día, lo justo para aparearse y poner huevos; de ahí su nombre científico, que significa «alas de un día»."
+      },
+      "kin": { "en": "Today's mayflies; then dragonflies and damselflies", "es": "Las efímeras actuales; luego las libélulas y los caballitos del diablo" },
+      "wiki": { "en": "Mayfly", "es": "Ephemeroptera" },
+      "pbdb": "Ephemeroptera"
+    },
+    {
+      "id": "diplocaulus",
+      "name": { "en": "Diplocaulus", "es": "Diplocaulus" },
+      "group": "amphibian",
+      "icon": "🪃",
+      "life": "fresh",
+      "from": 306,
+      "to": 255,
+      "sites": [
+        { "at": [-99, 33.7], "place": { "en": "Red Beds, Archer and Baylor counties, Texas, United States", "es": "Capas Rojas, condados de Archer y Baylor, Texas, Estados Unidos" } },
+        { "at": [-97.34, 36.16], "place": { "en": "Noble County, Oklahoma, United States", "es": "Condado de Noble, Oklahoma, Estados Unidos" } }
+      ],
+      "len": 1,
+      "diet": "fish",
+      "text": {
+        "en": "An amphibian about a metre long with a head shaped like a boomerang, much wider than it was long. Young Diplocaulus had ordinary heads, and the 'horns' grew as they aged. The odd shape may have worked like a wing to glide through water, or made it too wide for a predator to swallow. It lived in streams and pools in what is now Texas and Oklahoma.",
+        "es": "Un anfibio de un metro con la cabeza en forma de bumerán, mucho más ancha que larga. Las crías de Diplocaulus tenían la cabeza normal, y los «cuernos» crecían con la edad. La extraña forma quizá funcionaba como un ala para deslizarse en el agua, o lo hacía demasiado ancho para que un depredador se lo tragara. Vivía en arroyos y charcas de lo que hoy es Texas y Oklahoma."
+      },
+      "kin": { "en": "No close living relatives; perhaps distant cousins of salamanders", "es": "Sin parientes vivos cercanos; quizá primos lejanos de las salamandras" },
+      "wiki": { "en": "Diplocaulus", "es": "Diplocaulus" },
+      "pbdb": "Diplocaulus"
+    },
+    {
+      "id": "walchia",
+      "name": { "en": "Walchia", "es": "Walchia" },
+      "group": "plant",
+      "icon": "🌲",
+      "life": "land",
+      "from": 305,
+      "to": 275,
+      "sites": [
+        { "at": [-112.13, 36.07], "place": { "en": "Hermit Shale, Grand Canyon, Arizona, United States", "es": "Lutita Hermit, Gran Cañón, Arizona, Estados Unidos" } },
+        { "at": [7.8, 49.7], "place": { "en": "Saar-Nahe Basin, Germany", "es": "Cuenca del Sarre-Nahe, Alemania" } }
+      ],
+      "diet": "light",
+      "text": {
+        "en": "One of the first conifers, the group of pines and firs. Its branches, covered in small needle-like leaves, looked like those of a monkey puzzle or a Norfolk Island pine. Walchia grew in drier uplands at the end of the Carboniferous and spread as the coal swamps dried out, because conifers could cope with a dry season. Its fossils are common in red rocks from Arizona to Germany.",
+        "es": "Una de las primeras coníferas, el grupo de pinos y abetos. Sus ramas, cubiertas de hojitas como agujas, se parecían a las de una araucaria. Walchia crecía en tierras altas más secas al final del Carbonífero y se extendió cuando los pantanos del carbón se secaron, porque las coníferas soportaban una temporada seca. Sus fósiles son comunes en rocas rojas desde Arizona hasta Alemania."
+      },
+      "kin": { "en": "Conifers: pines, firs and monkey puzzle trees", "es": "Las coníferas: pinos, abetos y araucarias" },
+      "wiki": { "en": "Walchia", "es": "" },
+      "pbdb": "Walchia"
+    },
+    {
+      "id": "petrolacosaurus",
+      "name": { "en": "Petrolacosaurus kansensis", "es": "Petrolacosaurus kansensis" },
+      "group": "reptile",
+      "icon": "🦎",
+      "life": "land",
+      "from": 304,
+      "to": 302,
+      "sites": [
+        { "at": [-95.24, 38.28], "place": { "en": "Garnett, Kansas, United States", "es": "Garnett, Kansas, Estados Unidos" } }
+      ],
+      "len": 0.4,
+      "diet": "small",
+      "text": {
+        "en": "A slender reptile about 40 cm long, half of it tail, from Garnett, Kansas, about 302 million years old. It is the oldest known diapsid: a reptile with two openings in the skull behind each eye. That small feature marks the branch that later gave rise to lizards, snakes, crocodiles, dinosaurs and birds. Petrolacosaurus probably chased insects through the undergrowth.",
+        "es": "Un reptil esbelto de unos 40 cm, la mitad de cola, de Garnett, Kansas, de unos 302 millones de años. Es el diápsido más antiguo conocido: un reptil con dos aberturas en el cráneo detrás de cada ojo. Ese pequeño detalle marca la rama que luego dio origen a lagartijas, serpientes, cocodrilos, dinosaurios y aves. Petrolacosaurus probablemente perseguía insectos entre la maleza."
+      },
+      "kin": { "en": "Diapsids: lizards, snakes, crocodiles and birds", "es": "Los diápsidos: lagartijas, serpientes, cocodrilos y aves" },
+      "wiki": { "en": "Petrolacosaurus", "es": "Petrolacosaurus" },
+      "pbdb": "Petrolacosaurus"
+    },
+    {
+      "id": "meganeura",
+      "name": { "en": "Meganeura monyi", "es": "Meganeura monyi" },
+      "common": { "en": "Griffinfly", "es": "Libélula gigante" },
+      "group": "flyer",
+      "icon": "🪰",
+      "life": "air",
+      "from": 304,
+      "to": 299,
+      "sites": [
+        { "at": [2.74, 46.29], "place": { "en": "Commentry, Allier, France", "es": "Commentry, Allier, Francia" } }
+      ],
+      "len": 0.3,
+      "diet": "meat",
+      "text": {
+        "en": "A giant relative of dragonflies with wings about 70 cm across, as wide as a seagull's. Its fossils were found in coal mines at Commentry in France in the 1880s. Meganeura hunted other insects in the air over the coal swamps. Some scientists think insects could grow so big because the air then held more oxygen than today; others think it was because there were no birds yet to hunt them.",
+        "es": "Un pariente gigante de las libélulas con alas de unos 70 cm de punta a punta, tan grandes como las de una gaviota. Sus fósiles se hallaron en minas de carbón de Commentry, Francia, en la década de 1880. Meganeura cazaba otros insectos en el aire sobre los pantanos del carbón. Algunos científicos creen que los insectos crecían tanto porque el aire tenía más oxígeno que hoy; otros, porque aún no había aves que los cazaran."
+      },
+      "kin": { "en": "Dragonflies and damselflies", "es": "Las libélulas y los caballitos del diablo" },
+      "wiki": { "en": "Meganeura", "es": "Meganeura" },
+      "pbdb": "Meganeura",
+      "item": "meganeura"
+    },
+    {
+      "id": "edaphosaurus",
+      "name": { "en": "Edaphosaurus", "es": "Edaphosaurus" },
+      "group": "mammal",
+      "icon": "🦎",
+      "life": "land",
+      "from": 303,
+      "to": 275,
+      "sites": [
+        { "at": [-99, 33.7], "place": { "en": "Red Beds, Archer and Baylor counties, Texas, United States", "es": "Capas Rojas, condados de Archer y Baylor, Texas, Estados Unidos" } },
+        { "at": [-80.7, 40.06], "place": { "en": "Near Wheeling, West Virginia, United States", "es": "Cerca de Wheeling, Virginia Occidental, Estados Unidos" } }
+      ],
+      "len": 3,
+      "mass": 300,
+      "diet": "plants",
+      "text": {
+        "en": "One of the first big plant-eaters on land, up to 3.5 metres long, with a small head and a tall sail on its back. The spines of the sail carried little crossbars, like the masts of a ship. Its mouth was packed with blunt teeth for grinding tough plants. Edaphosaurus looks like Dimetrodon but ate plants; both were synapsids, early relatives of mammals.",
+        "es": "Uno de los primeros grandes herbívoros terrestres, de hasta 3,5 metros, con la cabeza pequeña y una vela alta en el lomo. Las espinas de la vela tenían barritas cruzadas, como los mástiles de un barco. Su boca estaba llena de dientes romos para moler plantas duras. Edaphosaurus se parece a Dimetrodon pero comía plantas; los dos eran sinápsidos, parientes tempranos de los mamíferos."
+      },
+      "kin": { "en": "Mammals, us included, as a distant early cousin", "es": "Los mamíferos, nosotros incluidos, como un primo temprano lejano" },
+      "wiki": { "en": "Edaphosaurus", "es": "Edaphosaurus" },
+      "pbdb": "Edaphosaurus",
+      "item": "edaphosaurus"
+    },
+    {
+      "id": "megarachne",
+      "name": { "en": "Megarachne servinei", "es": "Megarachne servinei" },
+      "group": "invertebrate",
+      "icon": "🦂",
+      "life": "fresh",
+      "from": 303,
+      "to": 299,
+      "sites": [
+        { "at": [-65.52, -32.25], "place": { "en": "Bajo de Véliz, San Luis, Argentina", "es": "Bajo de Véliz, San Luis, Argentina" } }
+      ],
+      "len": 0.54,
+      "diet": "small",
+      "text": {
+        "en": "In 1980 a fossil from Argentina was described as the biggest spider ever, with a body 34 cm long and legs 50 cm across, and it went into books and museums around the world. In 2005 a second fossil and a closer look showed that it was not a spider at all but a sea scorpion about 54 cm long, which lived in fresh water and probably raked the mud for small animals with its legs.",
+        "es": "En 1980 un fósil de Argentina se describió como la araña más grande de la historia, con un cuerpo de 34 cm y patas de 50 cm de punta a punta, y apareció en libros y museos de todo el mundo. En 2005 un segundo fósil y un examen más cuidadoso mostraron que no era una araña sino un escorpión marino de unos 54 cm, que vivía en agua dulce y probablemente rastrillaba el lodo con las patas en busca de animalitos."
+      },
+      "kin": { "en": "Scorpions, spiders and horseshoe crabs", "es": "Los escorpiones, las arañas y los cangrejos herradura" },
+      "wiki": { "en": "Megarachne", "es": "Megarachne" },
+      "pbdb": "Megarachne"
+    },
+    {
+      "id": "eryops",
+      "name": { "en": "Eryops megacephalus", "es": "Eryops megacephalus" },
+      "group": "amphibian",
+      "icon": "🐊",
+      "life": "shore",
+      "from": 300,
+      "to": 275,
+      "sites": [
+        { "at": [-99, 33.7], "place": { "en": "Red Beds, Archer and Baylor counties, Texas, United States", "es": "Capas Rojas, condados de Archer y Baylor, Texas, Estados Unidos" } },
+        { "at": [-106.05, 36.05], "place": { "en": "El Cobre Canyon, New Mexico, United States", "es": "Cañón El Cobre, Nuevo México, Estados Unidos" } }
+      ],
+      "len": 2,
+      "diet": "meat",
+      "text": {
+        "en": "One of the biggest land animals of its day, about 2 metres long, with a wide, flat head, strong legs and a mouth full of sharp teeth. Eryops was a temnospondyl, an early amphibian that lived rather like a crocodile, hunting fish and other animals in and around the swamps of Texas about 295 million years ago. Its name means 'long face'.",
+        "es": "Uno de los animales terrestres más grandes de su época, de unos 2 metros, con la cabeza ancha y plana, patas fuertes y una boca llena de dientes afilados. Eryops era un temnospóndilo, un anfibio primitivo que vivía casi como un cocodrilo, cazando peces y otros animales dentro y alrededor de los pantanos de Texas hace unos 295 millones de años. Su nombre significa «cara alargada»."
+      },
+      "kin": { "en": "Frogs and salamanders, as distant cousins", "es": "Las ranas y las salamandras, como primos lejanos" },
+      "wiki": { "en": "Eryops", "es": "Eryops megacephalus" },
+      "pbdb": "Eryops"
+    },
+    {
+      "id": "glossopteris",
+      "name": { "en": "Glossopteris", "es": "Glossopteris" },
+      "group": "plant",
+      "icon": "🍃",
+      "life": "land",
+      "from": 299,
+      "to": 251,
+      "sites": [
+        { "at": [163.93, -84.97], "place": { "en": "Mount Buckley, Beardmore Glacier, Antarctica", "es": "Monte Buckley, glaciar Beardmore, Antártida" } },
+        { "at": [87.1, 23.6], "place": { "en": "Raniganj, West Bengal, India", "es": "Raniganj, Bengala Occidental, India" } },
+        { "at": [150.9, -34.4], "place": { "en": "Illawarra, New South Wales, Australia", "es": "Illawarra, Nueva Gales del Sur, Australia" } },
+        { "at": [-49.5, -28.3], "place": { "en": "Santa Catarina, Brazil", "es": "Santa Catarina, Brasil" } }
+      ],
+      "len": 10,
+      "diet": "light",
+      "text": {
+        "en": "A tree with tongue-shaped leaves, which give it its name, that formed forests across the southern supercontinent Gondwana. Its fossils are found in South America, Africa, India, Australia and Antarctica, one of the first clues that these lands were once joined. Robert Falcon Scott's party hauled 16 kg of Glossopteris fossils from the Beardmore Glacier and still had them when they died in 1912.",
+        "es": "Un árbol de hojas en forma de lengua, de ahí su nombre, que formó bosques en todo el supercontinente del sur, Gondwana. Sus fósiles aparecen en Sudamérica, África, India, Australia y la Antártida, una de las primeras pistas de que esas tierras estuvieron unidas. El grupo de Robert Falcon Scott arrastró 16 kg de fósiles de Glossopteris desde el glaciar Beardmore y aún los llevaba cuando murieron en 1912."
+      },
+      "kin": {
+        "en": "Seed plants; perhaps distant cousins of flowering plants, though this is debated",
+        "es": "Las plantas con semilla; quizá primas lejanas de las plantas con flor, aunque se discute"
+      },
+      "wiki": { "en": "Glossopteris", "es": "Glossopteris" },
+      "pbdb": "Glossopteris",
+      "item": "glossopteris"
+    },
+    {
+      "id": "dimetrodon",
+      "name": { "en": "Dimetrodon", "es": "Dimetrodon" },
+      "group": "mammal",
+      "icon": "🦎",
+      "life": "land",
+      "from": 295,
+      "to": 272,
+      "sites": [
+        { "at": [-99.56, 33.73], "place": { "en": "Red Beds, Baylor County, Texas, United States", "es": "Capas Rojas, condado de Baylor, Texas, Estados Unidos" } },
+        { "at": [-97.77, 36.77], "place": { "en": "Garber, Oklahoma, United States", "es": "Garber, Oklahoma, Estados Unidos" } },
+        { "at": [10.62, 50.88], "place": { "en": "Bromacker, Thuringia, Germany", "es": "Bromacker, Turingia, Alemania" } }
+      ],
+      "len": 3.5,
+      "mass": 250,
+      "diet": "meat",
+      "text": {
+        "en": "The sail-backed hunter often mistaken for a dinosaur. It lived some 40 million years before the first dinosaurs and is in fact more closely related to us: it was a synapsid, an early cousin of mammals. Up to 4.6 metres long, it was the top predator of its time, with teeth of two different kinds, which is what its name means. The sail may have helped it warm up or show off.",
+        "es": "El cazador con vela en el lomo que muchos confunden con un dinosaurio. Vivió unos 40 millones de años antes de los primeros dinosaurios y en realidad está más emparentado con nosotros: era un sinápsido, un primo temprano de los mamíferos. Con hasta 4,6 metros, fue el mayor depredador de su tiempo, con dientes de dos tipos, que es lo que significa su nombre. La vela quizá le servía para calentarse o para lucirse."
+      },
+      "kin": {
+        "en": "Mammals, us included: it is closer to us than to lizards or dinosaurs",
+        "es": "Los mamíferos, nosotros incluidos: es más cercano a nosotros que a lagartijas o dinosaurios"
+      },
+      "wiki": { "en": "Dimetrodon", "es": "Dimetrodon" },
+      "pbdb": "Dimetrodon",
+      "item": "dimetrodon"
+    },
+    {
+      "id": "beetles",
+      "name": { "en": "Coleoptera", "es": "Coleoptera" },
+      "common": { "en": "Beetles", "es": "Escarabajos" },
+      "group": "flyer",
+      "icon": "🪲",
+      "life": "land",
+      "from": 295,
+      "to": 0,
+      "alive": true,
+      "sites": [
+        { "at": [7.21, 49.51], "place": { "en": "Grügelborn, Saarland, Germany", "es": "Grügelborn, Sarre, Alemania" } }
+      ],
+      "len": 0.01,
+      "diet": "both",
+      "text": {
+        "en": "Beetles have hard front wings that close like a case over their flying wings, so they can burrow and squeeze into tight places without damage. The oldest known, Coleopsis, lived about 295 million years ago in what is now Germany. Beetles came through the Great Dying and every crisis since, and today about 400,000 species are known: nearly one in four of all named animals.",
+        "es": "Los escarabajos tienen alas delanteras duras que se cierran como un estuche sobre las alas para volar, así que pueden excavar y meterse en sitios estrechos sin dañarse. El más antiguo conocido, Coleopsis, vivió hace unos 295 millones de años en lo que hoy es Alemania. Los escarabajos superaron la Gran Mortandad y todas las crisis posteriores, y hoy se conocen unas 400 000 especies: casi uno de cada cuatro animales con nombre."
+      },
+      "kin": { "en": "Today's beetles; then butterflies, bees and flies", "es": "Los escarabajos actuales; luego mariposas, abejas y moscas" },
+      "wiki": { "en": "Beetle", "es": "Coleoptera" },
+      "pbdb": "Coleoptera"
+    },
+    {
+      "id": "seymouria",
+      "name": { "en": "Seymouria", "es": "Seymouria" },
+      "group": "amphibian",
+      "icon": "🦎",
+      "life": "land",
+      "from": 290,
+      "to": 272,
+      "sites": [
+        { "at": [-99.26, 33.59], "place": { "en": "Seymour, Baylor County, Texas, United States", "es": "Seymour, condado de Baylor, Texas, Estados Unidos" } },
+        { "at": [10.62, 50.88], "place": { "en": "Bromacker, Thuringia, Germany", "es": "Bromacker, Turingia, Alemania" } }
+      ],
+      "len": 0.6,
+      "diet": "small",
+      "text": {
+        "en": "A sturdy animal about 60 cm long, named after the town of Seymour in Texas. It had strong legs for life on land and a skeleton so much like a reptile's that it was long thought to be one of their ancestors. Then fossils of its close relatives turned up whose young had gills, like tadpoles. Seymouria shows how hard it is to draw the line between amphibians and reptiles.",
+        "es": "Un animal robusto de unos 60 cm, llamado así por el pueblo de Seymour, en Texas. Tenía patas fuertes para vivir en tierra y un esqueleto tan parecido al de un reptil que por mucho tiempo se creyó uno de sus antepasados. Luego aparecieron fósiles de parientes cercanos cuyas crías tenían branquias, como renacuajos. Seymouria muestra lo difícil que es trazar la línea entre anfibios y reptiles."
+      },
+      "kin": { "en": "Amniotes (reptiles, birds, mammals), as a distant cousin", "es": "Los amniotas (reptiles, aves, mamíferos), como un primo lejano" },
+      "wiki": { "en": "Seymouria", "es": "Seymouria" },
+      "pbdb": "Seymouria"
+    },
+    {
+      "id": "helicoprion",
+      "name": { "en": "Helicoprion", "es": "Helicoprion" },
+      "group": "fish",
+      "icon": "🦈",
+      "life": "sea",
+      "from": 290,
+      "to": 268,
+      "sites": [
+        { "at": [-111.3, 42.32], "place": { "en": "Phosphoria Formation, Montpelier, Idaho, United States", "es": "Formación Phosphoria, Montpelier, Idaho, Estados Unidos" } },
+        { "at": [57.77, 56.61], "place": { "en": "Krasnoufimsk, Ural Mountains, Russia", "es": "Krasnoufimsk, montes Urales, Rusia" } }
+      ],
+      "len": 5,
+      "diet": "meat",
+      "text": {
+        "en": "A fish with a spiral of over 100 teeth in its lower jaw, like a circular saw. For more than a century only the tooth spirals were known, and people imagined them on its nose, its tail or curling out of its mouth. In 2013, scans of a fossil from Idaho showed the whorl filled the middle of the lower jaw, slicing soft prey like squid. Helicoprion was a relative of ratfish, not a true shark.",
+        "es": "Un pez con una espiral de más de 100 dientes en la mandíbula inferior, como una sierra circular. Durante más de un siglo solo se conocían las espirales, y se imaginaban en su nariz, en su cola o saliendo enrolladas de la boca. En 2013, escaneos de un fósil de Idaho mostraron que la espiral llenaba el centro de la mandíbula inferior y cortaba presas blandas como calamares. Helicoprion era pariente de las quimeras, no un tiburón verdadero."
+      },
+      "kin": { "en": "Ratfish (chimaeras), more than sharks", "es": "Las quimeras, más que los tiburones" },
+      "wiki": { "en": "Helicoprion", "es": "Helicoprion" },
+      "pbdb": "Helicoprion"
+    },
+    {
+      "id": "mesosaurus",
+      "name": { "en": "Mesosaurus tenuidens", "es": "Mesosaurus tenuidens" },
+      "group": "reptile",
+      "icon": "🦎",
+      "life": "sea",
+      "from": 288,
+      "to": 278,
+      "sites": [
+        { "at": [-50.38, -25.87], "place": { "en": "São Mateus do Sul, Paraná, Brazil", "es": "São Mateus do Sul, Paraná, Brasil" } },
+        { "at": [18.25, -26.32], "place": { "en": "Keetmanshoop, Namibia", "es": "Keetmanshoop, Namibia" } },
+        { "at": [-54.02, -31.93], "place": { "en": "Cerro Largo, Uruguay", "es": "Cerro Largo, Uruguay" } }
+      ],
+      "len": 1,
+      "diet": "small",
+      "text": {
+        "en": "One of the first reptiles to go back to the water: about a metre long, with webbed feet, a flattened tail and long jaws full of needle teeth for straining small shrimps. Mesosaurus lived in a shallow inland sea, yet its fossils are found in both Brazil and southern Africa. A small swimmer could never have crossed an ocean, so this helped show that the continents were once joined.",
+        "es": "Uno de los primeros reptiles que volvieron al agua: de un metro, con patas palmeadas, cola aplanada y mandíbulas largas llenas de dientes como agujas para colar camaroncitos. Mesosaurus vivía en un mar interior poco profundo, pero sus fósiles aparecen tanto en Brasil como en el sur de África. Un nadador tan pequeño nunca habría cruzado un océano, así que ayudó a demostrar que los continentes estuvieron unidos."
+      },
+      "kin": { "en": "Reptiles, as a very early branch with no living members", "es": "Los reptiles, como una rama muy temprana sin miembros vivos" },
+      "wiki": { "en": "Mesosaurus", "es": "Mesosaurus" },
+      "pbdb": "Mesosaurus",
+      "item": "mesosaurus"
+    },
+    {
+      "id": "meganeuropsis",
+      "name": { "en": "Meganeuropsis", "es": "Meganeuropsis" },
+      "common": { "en": "The biggest insect ever", "es": "El insecto más grande de la historia" },
+      "group": "flyer",
+      "icon": "🪰",
+      "life": "air",
+      "from": 288,
+      "to": 283,
+      "sites": [
+        { "at": [-97.21, 38.64], "place": { "en": "Elmo, Dickinson County, Kansas, United States", "es": "Elmo, condado de Dickinson, Kansas, Estados Unidos" } },
+        { "at": [-97.28, 36.33], "place": { "en": "Noble County, Oklahoma, United States", "es": "Condado de Noble, Oklahoma, Estados Unidos" } }
+      ],
+      "len": 0.43,
+      "diet": "meat",
+      "text": {
+        "en": "The biggest insect known: a griffinfly, a giant relative of dragonflies, with wings about 71 cm across and a body some 43 cm long. It hunted other insects over the lakes and swamps of Kansas and Oklahoma about 285 million years ago, early in the Permian. It is known mostly from pieces of wings, but their veins match those of complete smaller relatives, so its size is a careful estimate.",
+        "es": "El insecto más grande que se conoce: un meganisóptero, pariente gigante de las libélulas, con alas de unos 71 cm de punta a punta y un cuerpo de unos 43 cm. Cazaba otros insectos sobre los lagos y pantanos de Kansas y Oklahoma hace unos 285 millones de años, a comienzos del Pérmico. Se conoce sobre todo por trozos de alas, pero sus venas coinciden con las de parientes más pequeños completos, así que su tamaño es un cálculo cuidadoso."
+      },
+      "kin": { "en": "Dragonflies and damselflies", "es": "Las libélulas y los caballitos del diablo" },
+      "wiki": { "en": "Meganeuropsis", "es": "Meganeuropsis" },
+      "pbdb": "Meganeuropsis"
+    },
+    {
+      "id": "prionosuchus",
+      "name": { "en": "Prionosuchus plummeri", "es": "Prionosuchus plummeri" },
+      "group": "amphibian",
+      "icon": "🐊",
+      "life": "fresh",
+      "from": 280,
+      "to": 272,
+      "sites": [
+        { "at": [-42.08, -5.6], "place": { "en": "Pastos Bons, Maranhão, Brazil", "es": "Pastos Bons, Maranhão, Brasil" } }
+      ],
+      "len": 5,
+      "diet": "fish",
+      "text": {
+        "en": "A giant amphibian that looked and lived like a gharial, the fish-eating crocodile of India, with a long, narrow snout full of sharp teeth. It lived in rivers and lakes in what is now northeastern Brazil, about 275 million years ago. It is known only from pieces, so its size is uncertain: estimates range from about 5 to 9 metres. Either way, it may be the biggest amphibian that ever lived.",
+        "es": "Un anfibio gigante que se parecía y vivía como un gavial, el cocodrilo pescador de la India, con un hocico largo y estrecho lleno de dientes afilados. Vivía en ríos y lagos de lo que hoy es el noreste de Brasil, hace unos 275 millones de años. Solo se conoce por fragmentos, así que su tamaño es incierto: los cálculos van de unos 5 a 9 metros. Aun así, quizá sea el anfibio más grande que ha existido."
+      },
+      "kin": { "en": "Frogs and salamanders, as distant cousins", "es": "Las ranas y las salamandras, como primos lejanos" },
+      "wiki": { "en": "Prionosuchus", "es": "Prionosuchus" },
+      "pbdb": "Prionosuchus"
+    },
+    {
+      "id": "gigantopteris",
+      "name": { "en": "Gigantopteris", "es": "Gigantopteris" },
+      "group": "plant",
+      "icon": "🍃",
+      "life": "land",
+      "from": 270,
+      "to": 252,
+      "sites": [
+        { "at": [111.7, 27.7], "place": { "en": "Longtan Formation, Hunan, China", "es": "Formación Longtan, Hunan, China" } },
+        { "at": [116.7, 24.7], "place": { "en": "Fujian, China", "es": "Fujian, China" } }
+      ],
+      "diet": "light",
+      "text": {
+        "en": "A plant from Permian China with large leaves criss-crossed by a net of veins like the leaves of flowering plants, about 100 million years before flowers existed. Its stems may have climbed like vines. Gigantopteris even made oleanane, a chemical otherwise found almost only in flowering plants. It vanished in the Great Dying, so the likeness was a coincidence of evolution.",
+        "es": "Una planta del Pérmico de China con hojas grandes cruzadas por una red de venas como las de las plantas con flor, unos 100 millones de años antes de que existieran las flores. Sus tallos quizá trepaban como enredaderas. Gigantopteris incluso fabricaba oleanano, una sustancia que casi solo se encuentra en plantas con flor. Desapareció en la Gran Mortandad, así que el parecido fue una coincidencia de la evolución."
+      },
+      "kin": { "en": "Seed plants; its closest relatives are unknown", "es": "Las plantas con semilla; sus parientes más cercanos son desconocidos" },
+      "wiki": { "en": "Gigantopterid", "es": "" },
+      "pbdb": "Gigantopteris"
+    },
+    {
+      "id": "estemmenosuchus",
+      "name": { "en": "Estemmenosuchus", "es": "Estemmenosuchus" },
+      "group": "mammal",
+      "icon": "🦌",
+      "life": "land",
+      "from": 268,
+      "to": 264,
+      "sites": [
+        { "at": [54.71, 57.81], "place": { "en": "Ocher, Perm Krai, Russia", "es": "Ócher, krai de Perm, Rusia" } }
+      ],
+      "len": 3,
+      "diet": "both",
+      "text": {
+        "en": "A heavy, cow-sized relative of mammals with bony knobs and branching horns sticking out of its head, perhaps for display and head-to-head contests. Its name means 'crowned crocodile'. Fossils from Ocher, near the Ural Mountains, show traces of its skin: smooth and full of glands, with no scales and no hair. It probably ate mostly plants.",
+        "es": "Un pariente pesado de los mamíferos, del tamaño de una vaca, con protuberancias y cuernos ramificados de hueso en la cabeza, quizá para lucirse y enfrentarse cabeza con cabeza. Su nombre significa «cocodrilo coronado». Fósiles de Ócher, cerca de los Urales, muestran rastros de su piel: lisa y llena de glándulas, sin escamas ni pelo. Probablemente comía sobre todo plantas."
+      },
+      "kin": { "en": "Mammals, as a distant early cousin", "es": "Los mamíferos, como un primo temprano lejano" },
+      "wiki": { "en": "Estemmenosuchus", "es": "Estemmenosuchus" },
+      "pbdb": "Estemmenosuchus"
+    },
+    {
+      "id": "moschops",
+      "name": { "en": "Moschops capensis", "es": "Moschops capensis" },
+      "group": "mammal",
+      "icon": "🐂",
+      "life": "land",
+      "from": 265,
+      "to": 260,
+      "sites": [
+        { "at": [22, -32.6], "place": { "en": "Karoo, South Africa", "es": "Karoo, Sudáfrica" } }
+      ],
+      "len": 2.7,
+      "diet": "plants",
+      "text": {
+        "en": "A barrel-shaped plant-eater about 2.7 metres long, with short, sturdy legs and a skull up to 10 cm thick on top. Many scientists think rivals butted heads, like rams. Moschops lived in the Karoo of South Africa about 265 million years ago and starred in a British children's cartoon in 1983. It was a dinocephalian, 'terrible head', an early relative of mammals.",
+        "es": "Un herbívoro con forma de barril de unos 2,7 metros, con patas cortas y robustas y un cráneo de hasta 10 cm de grosor en la parte de arriba. Muchos científicos creen que los rivales chocaban la cabeza, como los carneros. Moschops vivió en el Karoo de Sudáfrica hace unos 265 millones de años y protagonizó una caricatura infantil británica en 1983. Era un dinocéfalo, «cabeza terrible», pariente temprano de los mamíferos."
+      },
+      "kin": { "en": "Mammals, as a distant early cousin", "es": "Los mamíferos, como un primo temprano lejano" },
+      "wiki": { "en": "Moschops", "es": "Moschops" },
+      "pbdb": "Moschops",
+      "item": "moschops"
+    },
+    {
+      "id": "gorgonops",
+      "name": { "en": "Gorgonops", "es": "Gorgonops" },
+      "group": "mammal",
+      "icon": "🐺",
+      "life": "land",
+      "from": 260,
+      "to": 254,
+      "sites": [
+        { "at": [22.58, -32.35], "place": { "en": "Karoo, near Beaufort West, South Africa", "es": "Karoo, cerca de Beaufort West, Sudáfrica" } },
+        { "at": [34.17, -10.7], "place": { "en": "Chiweta, Malawi", "es": "Chiweta, Malaui" } }
+      ],
+      "len": 2,
+      "diet": "meat",
+      "text": {
+        "en": "A sabre-toothed hunter about 2 metres long, one of the top predators of the Karoo in South Africa. Gorgonops gave its name to the gorgonopsians, after the Gorgons of Greek myth, monsters whose gaze turned people to stone. Its long canine teeth stabbed big plant-eaters like dicynodonts. Gorgonopsians were close relatives of mammals, and all of them died out in the Great Dying.",
+        "es": "Un cazador con dientes de sable de unos 2 metros, uno de los grandes depredadores del Karoo, en Sudáfrica. Gorgonops dio nombre a los gorgonópsidos, por las gorgonas de la mitología griega, monstruos cuya mirada convertía en piedra. Sus largos colmillos apuñalaban a grandes herbívoros como los dicinodontos. Los gorgonópsidos eran parientes cercanos de los mamíferos, y todos se extinguieron en la Gran Mortandad."
+      },
+      "kin": { "en": "Mammals, as a distant cousin", "es": "Los mamíferos, como un primo lejano" },
+      "wiki": { "en": "Gorgonops", "es": "Gorgonops" },
+      "pbdb": "Gorgonops"
+    },
+    {
+      "id": "inostrancevia",
+      "name": { "en": "Inostrancevia", "es": "Inostrancevia" },
+      "group": "mammal",
+      "icon": "🐅",
+      "life": "land",
+      "from": 259,
+      "to": 252,
+      "sites": [
+        { "at": [46.6, 61.25], "place": { "en": "Sokolki, Northern Dvina River, Russia", "es": "Sokolki, río Dvina Septentrional, Rusia" } },
+        { "at": [26, -30.55], "place": { "en": "Karoo Basin, South Africa", "es": "Cuenca del Karoo, Sudáfrica" } },
+        { "at": [35.1, -10.25], "place": { "en": "Ruhuhu Basin, Tanzania", "es": "Cuenca del Ruhuhu, Tanzania" } }
+      ],
+      "len": 3.5,
+      "mass": 300,
+      "diet": "meat",
+      "text": {
+        "en": "The largest gorgonopsian, about 3.5 metres long, with a skull 60 cm long and sabre teeth up to 15 cm. It was dug up in the 1890s in Russia by Vladimir Amalitsky's team along the Northern Dvina River. In 2023, fossils from South Africa showed that it had also moved into the Karoo, taking the place of local hunters that died out just before the Great Dying.",
+        "es": "El mayor de los gorgonópsidos, de unos 3,5 metros, con un cráneo de 60 cm y dientes de sable de hasta 15 cm. Lo desenterró en la década de 1890 el equipo de Vladímir Amalitski a orillas del río Dvina Septentrional, en Rusia. En 2023, fósiles de Sudáfrica mostraron que también llegó al Karoo, ocupando el lugar de cazadores locales que se extinguieron justo antes de la Gran Mortandad."
+      },
+      "kin": { "en": "Mammals, as a distant cousin", "es": "Los mamíferos, como un primo lejano" },
+      "wiki": { "en": "Inostrancevia", "es": "Inostrancevia" },
+      "pbdb": "Inostrancevia",
+      "item": "inostrancevia"
+    },
+    {
+      "id": "scutosaurus",
+      "name": { "en": "Scutosaurus karpinskii", "es": "Scutosaurus karpinskii" },
+      "group": "reptile",
+      "icon": "🐢",
+      "life": "land",
+      "from": 259,
+      "to": 254,
+      "sites": [
+        { "at": [46.6, 61.25], "place": { "en": "Sokolki, Northern Dvina River, Russia", "es": "Sokolki, río Dvina Septentrional, Rusia" } }
+      ],
+      "len": 2.5,
+      "diet": "plants",
+      "text": {
+        "en": "A heavy plant-eater about 2.5 metres long, covered in bony knobs and with spiky cheeks; its name means 'shield lizard'. It lived on the dry plains of what is now Russia about 255 million years ago and was dug up in the 1890s together with Inostrancevia, which probably hunted it. It belonged to the pareiasaurs, the biggest reptiles of the Permian.",
+        "es": "Un herbívoro pesado de unos 2,5 metros, cubierto de protuberancias de hueso y con mejillas puntiagudas; su nombre significa «lagarto escudo». Vivía en las llanuras secas de lo que hoy es Rusia hace unos 255 millones de años y se desenterró en la década de 1890 junto con Inostrancevia, que probablemente lo cazaba. Era un pareiasaurio, los reptiles más grandes del Pérmico."
+      },
+      "kin": {
+        "en": "Debated: perhaps an early branch near turtles, perhaps one with no living relatives",
+        "es": "Se discute: quizá una rama temprana cercana a las tortugas, quizá una sin parientes vivos"
+      },
+      "wiki": { "en": "Scutosaurus", "es": "Scutosaurus" },
+      "pbdb": "Scutosaurus",
+      "item": "scutosaurus"
+    },
+    {
+      "id": "procynosuchus",
+      "name": { "en": "Procynosuchus delaharpeae", "es": "Procynosuchus delaharpeae" },
+      "group": "mammal",
+      "icon": "🦦",
+      "life": "shore",
+      "from": 259,
+      "to": 252,
+      "sites": [
+        { "at": [24.55, -31.87], "place": { "en": "Karoo, near Graaff-Reinet, South Africa", "es": "Karoo, cerca de Graaff-Reinet, Sudáfrica" } },
+        { "at": [35.1, -10.25], "place": { "en": "Ruhuhu Basin, Tanzania", "es": "Cuenca del Ruhuhu, Tanzania" } },
+        { "at": [8.88, 51.26], "place": { "en": "Korbach, Hesse, Germany", "es": "Korbach, Hesse, Alemania" } }
+      ],
+      "len": 0.6,
+      "diet": "small",
+      "text": {
+        "en": "One of the first cynodonts, the group of mammal relatives that would give rise to mammals themselves. About 60 cm long, it had teeth of different kinds, like ours, and the start of a bony roof in its mouth that would later let mammals breathe while chewing. Its flexible tail suggests it may have swum like an otter. It lived in Africa and Europe in the last few million years of the Permian.",
+        "es": "Uno de los primeros cinodontos, el grupo de parientes de los mamíferos que daría origen a los propios mamíferos. De unos 60 cm, tenía dientes de distintos tipos, como los nuestros, y el comienzo de un techo de hueso en la boca que más tarde dejaría a los mamíferos respirar mientras mastican. Su cola flexible sugiere que quizá nadaba como una nutria. Vivió en África y Europa en los últimos millones de años del Pérmico."
+      },
+      "kin": { "en": "Mammals: cynodonts are the group that gave rise to them", "es": "Los mamíferos: los cinodontos son el grupo que les dio origen" },
+      "wiki": { "en": "Procynosuchus", "es": "Procynosuchus" },
+      "pbdb": "Procynosuchus"
+    },
+    {
+      "id": "dicynodon",
+      "name": { "en": "Dicynodon", "es": "Dicynodon" },
+      "group": "mammal",
+      "icon": "🐗",
+      "life": "land",
+      "from": 258,
+      "to": 252,
+      "sites": [
+        { "at": [24.53, -32.25], "place": { "en": "Graaff-Reinet, Eastern Cape, South Africa", "es": "Graaff-Reinet, Cabo Oriental, Sudáfrica" } },
+        { "at": [35.1, -10.25], "place": { "en": "Ruhuhu Basin, Tanzania", "es": "Cuenca del Ruhuhu, Tanzania" } }
+      ],
+      "len": 1.2,
+      "diet": "plants",
+      "text": {
+        "en": "Its name means 'two dog teeth': apart from a pair of tusks, it had no teeth, only a horny beak like a turtle's for snipping plants. Dicynodon, about 1.2 metres long, gave its name to the dicynodonts, the commonest plant-eaters of the Late Permian, from the size of a rat to the size of a rhinoceros. A few dicynodonts, like Lystrosaurus, survived the Great Dying.",
+        "es": "Su nombre significa «dos dientes de perro»: aparte de un par de colmillos, no tenía dientes, solo un pico córneo como el de una tortuga para cortar plantas. Dicynodon, de 1,2 metros, dio nombre a los dicinodontos, los herbívoros más comunes del Pérmico Superior, desde el tamaño de una rata hasta el de un rinoceronte. Unos pocos dicinodontos, como Lystrosaurus, sobrevivieron a la Gran Mortandad."
+      },
+      "kin": { "en": "Mammals, as a distant early cousin", "es": "Los mamíferos, como un primo temprano lejano" },
+      "wiki": { "en": "Dicynodon", "es": "Dicynodon" },
+      "pbdb": "Dicynodon"
+    },
+    {
+      "id": "protorosaurus",
+      "name": { "en": "Protorosaurus speneri", "es": "Protorosaurus speneri" },
+      "group": "reptile",
+      "icon": "🦎",
+      "life": "land",
+      "from": 258,
+      "to": 255,
+      "sites": [
+        { "at": [10.26, 50.88], "place": { "en": "Kupferschiefer, Thuringia, Germany", "es": "Kupferschiefer, Turingia, Alemania" } },
+        { "at": [-1.46, 54.73], "place": { "en": "Marl Slate, County Durham, England", "es": "Marl Slate, condado de Durham, Inglaterra" } }
+      ],
+      "len": 1.8,
+      "diet": "meat",
+      "text": {
+        "en": "A long-necked reptile up to 2 metres long, from the copper-rich shale of Germany and England, about 257 million years old. It was one of the first fossil reptiles ever described, in 1710, when it was taken for a crocodile. Protorosaurus is one of the oldest members of the branch that later led to crocodiles, dinosaurs and birds.",
+        "es": "Un reptil de cuello largo de hasta 2 metros, de las pizarras ricas en cobre de Alemania e Inglaterra, de unos 257 millones de años. Fue uno de los primeros reptiles fósiles descritos, en 1710, cuando se le tomó por un cocodrilo. Protorosaurus es uno de los miembros más antiguos de la rama que después llevó a los cocodrilos, los dinosaurios y las aves."
+      },
+      "kin": { "en": "Crocodiles and birds, as a very early cousin of their branch", "es": "Los cocodrilos y las aves, como un primo muy temprano de su rama" },
+      "wiki": { "en": "Protorosaurus", "es": "Protorosaurus" },
+      "pbdb": "Protorosaurus speneri"
+    },
+    {
+      "id": "coelurosauravus",
+      "name": { "en": "Coelurosauravus", "es": "Coelurosauravus" },
+      "group": "reptile",
+      "icon": "🦎",
+      "life": "air",
+      "from": 258,
+      "to": 252,
+      "sites": [
+        { "at": [44.42, -24], "place": { "en": "Sakamena River valley, southwestern Madagascar", "es": "Valle del río Sakamena, suroeste de Madagascar" } },
+        { "at": [11.52, 51.52], "place": { "en": "Eisleben, Saxony-Anhalt, Germany", "es": "Eisleben, Sajonia-Anhalt, Alemania" } }
+      ],
+      "len": 0.4,
+      "diet": "small",
+      "text": {
+        "en": "The first known gliding animal with a backbone: a lizard-like reptile about 40 cm long, from Madagascar and Germany, around 255 million years old. Along its sides it had long, thin rods that held out a wing of skin, like a folding fan. Unlike the gliding lizards of today, which use their ribs, these rods were extra bones. It glided from tree to tree hunting insects.",
+        "es": "El primer animal planeador con columna que se conoce: un reptil parecido a una lagartija de unos 40 cm, de Madagascar y Alemania, de unos 255 millones de años. A los lados tenía varillas largas y finas que sostenían un ala de piel, como un abanico plegable. A diferencia de las lagartijas planeadoras actuales, que usan las costillas, esas varillas eran huesos extra. Planeaba de árbol en árbol cazando insectos."
+      },
+      "kin": { "en": "No close living relatives: an early side branch of the reptiles", "es": "Sin parientes vivos cercanos: una rama lateral temprana de los reptiles" },
+      "wiki": { "en": "Coelurosauravus", "es": "Coelurosauravus" },
+      "pbdb": "Coelurosauravus"
+    },
+    {
+      "id": "lystrosaurus",
+      "name": { "en": "Lystrosaurus", "es": "Lystrosaurus" },
+      "group": "mammal",
+      "icon": "🐷",
+      "life": "land",
+      "from": 255,
+      "to": 248,
+      "sites": [
+        { "at": [25.97, -30.5], "place": { "en": "Karoo, South Africa", "es": "Karoo, Sudáfrica" } },
+        { "at": [86.97, 23.63], "place": { "en": "Panchet, West Bengal, India", "es": "Panchet, Bengala Occidental, India" } },
+        { "at": [162.4, -84.25], "place": { "en": "Coalsack Bluff, Transantarctic Mountains, Antarctica", "es": "Coalsack Bluff, montes Transantárticos, Antártida" } }
+      ],
+      "len": 1,
+      "diet": "plants",
+      "text": {
+        "en": "A pig-sized plant-eater with two tusks and a beak, and the great survivor of the Great Dying. Lystrosaurus appeared shortly before the extinction, and afterwards it was everywhere: in some South African rocks of that time, nearly nine in every ten skeletons are Lystrosaurus. It has been found in Africa, India, China, Russia and Antarctica, which were then all joined in Pangea.",
+        "es": "Un herbívoro del tamaño de un cerdo, con dos colmillos y un pico, y el gran sobreviviente de la Gran Mortandad. Lystrosaurus apareció poco antes de la extinción, y después estaba en todas partes: en algunas rocas sudafricanas de esa época, casi nueve de cada diez esqueletos son de Lystrosaurus. Se ha hallado en África, India, China, Rusia y la Antártida, que entonces estaban unidas en Pangea."
+      },
+      "kin": { "en": "Mammals, as a distant early cousin", "es": "Los mamíferos, como un primo temprano lejano" },
+      "wiki": { "en": "Lystrosaurus", "es": "Lystrosaurus" },
+      "pbdb": "Lystrosaurus",
+      "item": "lystrosaurus"
+    }
+  ]
+}
