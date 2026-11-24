@@ -386,3 +386,52 @@ export function cosmicSurvival(t: number): Verdict {
   if (t >= 380000 && t < sinceBang(13600)) r.push({ key: 'dark', level: 'ok' });
   return { level: 'no', reasons: r };
 }
+
+// ---- The pace of play (v0.46.1) ------------------------------------------------------------------------------------
+
+/**
+ * A play clock for a bar: seconds of play (at 1×) for each position, so playing goes quickly across quiet stretches
+ * and slowly where things happen. `marks` are moments (positions) that each get about `dur` seconds over ±`r` of the
+ * bar; `spans` are stretches of the bar that take at least `dur` seconds however short they are (the Moon gathering is
+ * 0.45% of the cosmos bar). Elsewhere the bar moves at `quiet` of its length a second. Where marks and spans overlap,
+ * the slowest wins (they do not add up), so a crowd of events does not stall the play.
+ */
+export interface PaceClock {
+  /** Seconds of play from the bar's start to a position. */
+  to(pos: number): number;
+  /** The position after `c` seconds of play. */
+  from(c: number): number;
+  /** Seconds of play for the whole bar. */
+  total: number;
+}
+export function paceClock(marks: { at: number; dur: number; r?: number }[], spans: { from: number; to: number; dur: number }[], quiet = 0.035): PaceClock {
+  const all = [
+    ...marks.map((m) => { const r = m.r ?? 0.004; return { a: m.at - r, b: m.at + r, dur: m.dur }; }),
+    ...spans.map((s) => ({ a: Math.min(s.from, s.to), b: Math.max(s.from, s.to), dur: s.dur })),
+  ].map((s) => ({ a: Math.max(0, s.a), b: Math.min(1, s.b), dur: s.dur })).filter((s) => s.b > s.a + 1e-9);
+  const cuts = [...new Set([0, 1, ...all.flatMap((s) => [s.a, s.b])])].sort((x, y) => x - y);
+  // Seconds per unit of bar, piece by piece.
+  const xs: number[] = [0], cs: number[] = [0];
+  for (let i = 0; i + 1 < cuts.length; i++) {
+    const a = cuts[i], b = cuts[i + 1], mid = (a + b) / 2;
+    let dens = 1 / quiet;
+    for (const s of all) if (s.a <= mid && mid <= s.b) dens = Math.max(dens, s.dur / (s.b - s.a));
+    xs.push(b);
+    cs.push(cs[cs.length - 1] + dens * (b - a));
+  }
+  const find = (arr: number[], v: number) => { let lo = 0, hi = arr.length - 1; while (hi - lo > 1) { const m = (lo + hi) >> 1; if (arr[m] <= v) lo = m; else hi = m; } return lo; };
+  const total = cs[cs.length - 1];
+  return {
+    total,
+    to(pos) {
+      const p = Math.max(0, Math.min(1, pos)), i = find(xs, p);
+      const span = xs[i + 1] - xs[i];
+      return cs[i] + (span > 0 ? (cs[i + 1] - cs[i]) * ((p - xs[i]) / span) : 0);
+    },
+    from(c) {
+      const v = Math.max(0, Math.min(total, c)), i = find(cs, v);
+      const span = cs[i + 1] - cs[i];
+      return xs[i] + (span > 0 ? (xs[i + 1] - xs[i]) * ((v - cs[i]) / span) : 0);
+    },
+  };
+}

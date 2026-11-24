@@ -26,6 +26,21 @@ export interface TimeBarOptions {
   onExit: () => void;
   onList?: () => void;
   listLabel?: string;
+  /**
+   * A play clock (v0.46.1): playing moves evenly in its seconds (`rate` is then in seconds a second, usually 1), so the
+   * owner can make quiet stretches go fast and busy ones slow.
+   */
+  warp?: { to: (pos: number) => number; from: (c: number) => number };
+  /** The speeds to choose from (default 0.5×, 1×, 2×, 4×), the one to start with, and a call when it changes. */
+  speeds?: number[];
+  speed?: number;
+  onSpeed?: (s: number) => void;
+  /** The play button pressed: return true when the owner plays something of its own (a narrated story) instead. */
+  onPlay?: () => boolean;
+  /** Whether the owner's own play is running (the button then shows Pause). */
+  busy?: () => boolean;
+  /** The reader moved the bar by hand. */
+  onScrub?: () => void;
 }
 
 export class TimeBar {
@@ -39,6 +54,7 @@ export class TimeBar {
   private subEl: HTMLElement;
   private rangeLabel: HTMLElement;
   private playBtn: HTMLButtonElement;
+  private speedSel: HTMLSelectElement;
   private raf = 0;
   private last = 0;
   playing = false;
@@ -54,13 +70,15 @@ export class TimeBar {
     this.subEl = h('div', { class: 'tb-sub' }, o.title, o.subtitle ? ` · ${o.subtitle}` : '');
     this.rangeLabel = h('div', { class: 'tb-range' });
     this.playBtn = h('button', { type: 'button', class: 'tb-play', 'aria-label': 'Play' }) as HTMLButtonElement;
-    this.playBtn.addEventListener('click', () => this.toggle());
+    this.playBtn.addEventListener('click', () => this.press());
     const restart = h('button', { type: 'button', class: 'icon-btn tb-restart', title: t('tbRestart'), 'aria-label': t('tbRestart') }, icon(SkipBack, 18));
-    restart.addEventListener('click', () => { this.setPos(this.start); if (!this.playing) this.toggle(); });
+    restart.addEventListener('click', () => { this.setPos(this.start, true); if (!this.playing && !o.busy?.()) this.press(); });
     const speed = h('select', { class: 'select tb-speed', 'aria-label': t('tbSpeed') }) as HTMLSelectElement;
-    for (const s of [0.5, 1, 2, 4]) speed.append(h('option', { value: String(s) }, `${s}×`));
-    speed.value = '1';
-    speed.addEventListener('change', () => { this.speed = Number(speed.value); });
+    for (const s of o.speeds ?? [0.5, 1, 2, 4]) speed.append(h('option', { value: String(s) }, `${s}×`));
+    this.speed = o.speed ?? 1;
+    speed.value = String(this.speed);
+    speed.addEventListener('change', () => { this.speed = Number(speed.value); o.onSpeed?.(this.speed); });
+    this.speedSel = speed;
     const exit = h('button', { type: 'button', class: 'icon-btn', title: t('close'), 'aria-label': t('close') }, icon(X, 18));
     exit.addEventListener('click', () => o.onExit());
     const list = o.onList ? h('button', { type: 'button', class: 'pill sm', title: o.listLabel }, icon(ListOrdered, 16), h('span', { class: 'tb-list-label' }, o.listLabel ?? '')) : null;
@@ -91,6 +109,7 @@ export class TimeBar {
     this.bindDrag(this.hEnd, (f) => { this.end = Math.max(f, this.start); this.render(); });
     this.track.addEventListener('pointerdown', (e) => {
       if (e.target !== this.track && !(e.target as HTMLElement).classList.contains('tb-band') && !(e.target as HTMLElement).classList.contains('tb-step')) return;
+      this.o.onScrub?.();
       this.setPos(this.fracAt(e.clientX), true);
       this.snap();
     });
@@ -98,7 +117,7 @@ export class TimeBar {
       const step = o.steps ? 1 / (o.steps - 1) : 0.01;
       if (e.key === 'ArrowRight') { this.setPos(Math.min(1, this.pos + step), true); e.preventDefault(); }
       if (e.key === 'ArrowLeft') { this.setPos(Math.max(0, this.pos - step), true); e.preventDefault(); }
-      if (e.key === ' ') { this.toggle(); e.preventDefault(); }
+      if (e.key === ' ') { this.press(); e.preventDefault(); }
     });
     this.render();
     window.addEventListener('resize', () => this.declutter());
@@ -115,6 +134,7 @@ export class TimeBar {
       e.stopPropagation();
       el.setPointerCapture(e.pointerId);
       if (this.playing) this.toggle();
+      this.o.onScrub?.();
       const move = (ev: PointerEvent) => fn(this.fracAt(ev.clientX));
       const up = () => { el.removeEventListener('pointermove', move); el.removeEventListener('pointerup', up); this.snap(); };
       el.addEventListener('pointermove', move);
@@ -137,16 +157,32 @@ export class TimeBar {
     this.o.onPos(this.pos);
   }
 
+  /** The play button: the owner's own play (a narrated story) when it takes it, else the bar's. */
+  press() {
+    if (!this.playing && this.o.onPlay?.()) { this.render(); return; }
+    this.toggle();
+  }
+
+  /** Sets the speed from the owner's own control. */
+  setSpeed(s: number) { this.speed = s; this.speedSel.value = String(s); }
+
+  /** Redraws the play button (after the owner's own play starts, pauses or stops). */
+  refresh() { this.render(); }
+
   toggle() {
     this.playing = !this.playing;
     if (this.playing) {
       if (this.pos >= this.end - 1e-6 || this.pos < this.start) this.setPos(this.start);
       this.last = performance.now();
+      const w = this.o.warp;
+      // On a play clock the bar keeps its clock reading between frames (positions alone lose it in flat stretches).
+      let c = w ? w.to(this.pos) : 0;
       const tick = (now: number) => {
         if (!this.playing) return;
         const dt = Math.min(100, now - this.last) / 1000;
         this.last = now;
-        let p = this.pos + this.o.rate * this.speed * dt;
+        let p: number;
+        if (w) { if (Math.abs(w.to(this.pos) - c) > 0.05) c = w.to(this.pos); c += this.o.rate * this.speed * dt; p = w.from(c); } else p = this.pos + this.o.rate * this.speed * dt;
         if (p >= this.end) { p = this.end; this.playing = false; }
         this.setPos(p);
         if (this.playing) this.raf = requestAnimationFrame(tick);
@@ -208,10 +244,11 @@ export class TimeBar {
     const rf = this.o.rangeFormat ?? this.o.format;
     this.rangeLabel.append(h('span', null, `${t('tbFrom')} ${rf(this.start)}`), h('span', null, `${t('tbTo')} ${rf(this.end)}`));
     // The screen stays on while the years play (borders through time, the moving continents).
-    keepAwake('timebar', this.playing);
+    const on = this.playing || !!this.o.busy?.();
+    keepAwake('timebar', on);
     clear(this.playBtn);
-    this.playBtn.append(icon(this.playing ? Pause : Play, 22));
-    this.playBtn.setAttribute('aria-label', this.playing ? 'Pause' : 'Play');
+    this.playBtn.append(icon(on ? Pause : Play, 22));
+    this.playBtn.setAttribute('aria-label', on ? 'Pause' : 'Play');
     this.track.setAttribute('aria-valuetext', this.o.format(this.pos));
   }
 

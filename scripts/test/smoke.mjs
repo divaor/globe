@@ -6835,6 +6835,37 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await page.waitForTimeout(500);
   const stopped = await F(() => ({ info: window.atlas.time.deep.info, cap: !!document.querySelector('[data-deeptime="caption"]') }));
   check(story.info.playing && story.text.length > 40 && !stopped.info.playing && !stopped.cap, `Play the story: "${story.text.slice(0, 70)}…" (moment ${story.info.beat + 1}), then Stop`);
+  // One play button (v0.46.1): with Narrated on it plays and pauses the story; Narrated off, it runs through the
+  // years on the play clock (quick in quiet stretches, slow at events), at the speed chosen under it.
+  const playLabel = () => F(() => document.querySelector('.dt-bar .tb-play')?.getAttribute('aria-label'));
+  await page.tap('.dt-bar .tb-play');
+  await page.waitForTimeout(1500);
+  const p1 = await F(() => window.atlas.time.deep.info);
+  const l1 = await playLabel();
+  await page.tap('.dt-bar .tb-play');
+  await page.waitForTimeout(400);
+  const p2 = await F(() => window.atlas.time.deep.info);
+  const l2 = await playLabel();
+  check(p1.narrated && p1.playing && !p1.barPlaying && l1 === 'Pause' && !p2.playing && l2 === 'Play',
+    `Narrated on: the one play button tells the story (${l1}) and pauses it (${l2})`);
+  await page.tap('[data-deeptime="story"]');
+  await page.waitForTimeout(400);
+  const off = await F(() => ({ info: window.atlas.time.deep.info, cap: !!document.querySelector('[data-deeptime="caption"]') }));
+  await F(() => window.atlas.time.deep.setMa(4000));
+  await page.waitForTimeout(300);
+  // The speed: one small button, slower first (1× → 0.5× → 0.25×); the bar's tools fit the phone's width.
+  const speeds = [await F(() => document.querySelector('[data-deeptime="speed"]')?.textContent)];
+  for (let i = 0; i < 2; i++) { await page.tap('[data-deeptime="speed"]'); speeds.push(await F(() => document.querySelector('[data-deeptime="speed"]')?.textContent)); }
+  const fits = await F(() => { const b = document.querySelector('.dt-bar').getBoundingClientRect(); return [...document.querySelectorAll('.dt-bar .tb-top .tb-play, .dt-bar .tb-tools > *')].filter((e) => getComputedStyle(e).display !== 'none').every((e) => e.getBoundingClientRect().right <= b.right + 0.5); });
+  await page.tap('.dt-bar .tb-play');
+  await page.waitForTimeout(2000);
+  const run1 = await F(() => window.atlas.time.deep.info);
+  await page.tap('.dt-bar .tb-play');
+  await page.waitForTimeout(300);
+  const run2 = await F(() => ({ info: window.atlas.time.deep.info, label: document.querySelector('.dt-bar .tb-play')?.getAttribute('aria-label') }));
+  check(!off.info.narrated && !off.info.playing && !off.cap && speeds.join(' ') === '1× 0.5× 0.25×' && fits && run1.barPlaying && run1.ma < 4000 && run1.speed === 0.25 && !run2.info.barPlaying && run2.label === 'Play' && run1.playSecs > 60 && run1.playSecs < 300,
+    `Narrated off: the play button runs through the years (4000 → ${run1.ma?.toFixed(0)} Ma in 2 s at ${run1.speed}×; ${run1.playSecs} s for the whole bar at 1×), the speed button going ${speeds.join(' → ')}, every tool inside the bar`);
+  for (let i = 0; i < 3; i++) await page.tap('[data-deeptime="speed"]');
   // The search finds a past species.
   await F(() => window.atlas.shell.search.open());
   await page.fill('.search-field', 'Tyrannosaurus');

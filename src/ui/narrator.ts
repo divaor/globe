@@ -1,7 +1,8 @@
 // Read aloud: tours, stories and the screensaver read by one of the device's own voices (the browser's speech
 // synthesis; the app records nothing and sends nothing). Spanish prefers a Latin American voice (Mexico, the
 // United States, Colombia, Argentina...) over a voice from Spain. A text is read a sentence at a time, which keeps
-// long texts going on browsers that stop a long utterance, and lets the page show the sentence being read. While a
+// long texts going on browsers that stop a long utterance, and lets the page show the sentence being read; or, for
+// Deep time's story (v0.46.1), in one go, so phones neither pause nor cut a word at every full stop. While a
 // voice reads, the stories' music is turned down. With Spain's Spanish chosen, a voice from Spain comes first, its
 // own choice of voice is kept apart, and it reads Spain's words.
 import { duckMusic } from './audio';
@@ -129,6 +130,40 @@ export interface SpeakOptions {
   lang: Lang;
   /** Called with the index of the sentence that starts (the parts as `sentences()` cuts them). */
   onSentence?: (i: number) => void;
+  /**
+   * Read the text in one go (v0.46.1) rather than a sentence at a time: no pause, and no cut first syllable, at every
+   * full stop on phones that start each sentence's sound afresh. Chrome's online voices on a computer, which stop a
+   * long text after about 15 seconds, still get it in pieces of a few sentences.
+   */
+  whole?: boolean;
+}
+
+/** The longest piece a voice is given in one go when reading whole texts. */
+function pieceMax(v: SpeechSynthesisVoice | null): number {
+  const ua = navigator.userAgent;
+  return v && !v.localService && /Chrome\//.test(ua) && !/Android|Mobile/.test(ua) ? 200 : 5000;
+}
+
+let hold: AudioContext | null = null;
+/**
+ * Keeps the sound output open while a narrated story plays (call it from a tap): some phones and Bluetooth speakers
+ * cut the start of a voice that begins after a silence. A running audio context plays silence, so the output stays on.
+ */
+export function holdAudio(on: boolean) {
+  try {
+    if (on) {
+      if (!hold) {
+        const AC = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+        if (!AC) return;
+        hold = new AC();
+        const osc = hold.createOscillator(), g = hold.createGain();
+        g.gain.value = 0;
+        osc.connect(g).connect(hold.destination);
+        osc.start();
+      }
+      void hold.resume().catch(() => { /* the next tap tries again */ });
+    } else if (hold && hold.state === 'running') void hold.suspend().catch(() => {});
+  } catch { /* no sound output to hold */ }
 }
 
 let run = 0;
@@ -145,11 +180,23 @@ export function speaking(): boolean { return active; }
  * (by stopSpeaking or by another text). Without a voice it resolves at once.
  */
 export function speak(text: string, o: SpeakOptions): Promise<boolean> {
+  // A voice still reading is cancelled; the next one then waits a moment (some phones cut the start of a voice that
+  // begins right after a cancel).
+  const busy = canSpeak() && (speechSynthesis.speaking || speechSynthesis.pending);
   stopSpeaking();
   if (!canSpeak() || !text.trim()) return Promise.resolve(false);
   const me = ++run;
-  const parts = sentences(text);
   const voice = voiceFor(o.lang);
+  const said = (t: string) => forSpeech(o.lang === 'es' && spainOn() ? toSpain(t) : t, o.lang);
+  // The pieces read in one go: each sentence, or (whole) as many sentences as the voice takes at once, with where
+  // each sentence starts in its piece.
+  const sents = sentences(text);
+  const parts: { text: string; first: number; starts: number[] }[] = [];
+  const max = o.whole ? pieceMax(voice) : 0;
+  for (const [k, x] of sents.map(said).entries()) {
+    const cur = parts[parts.length - 1];
+    if (cur && cur.text.length + 1 + x.length <= max) { cur.starts.push(cur.text.length + 1); cur.text += ` ${x}`; } else parts.push({ text: x, first: k, starts: [0] });
+  }
   active = true;
   duckMusic(true);
   for (const f of [...subs]) f();
@@ -169,27 +216,34 @@ export function speak(text: string, o: SpeakOptions): Promise<boolean> {
       clearInterval(watch);
       if (me !== run) { finish(false); return; }
       if (i >= parts.length) { finish(true); return; }
-      const k = i++;
-      const u = new SpeechSynthesisUtterance(forSpeech(o.lang === 'es' && spainOn() ? toSpain(parts[k]) : parts[k], o.lang));
+      const part = parts[i++];
+      const u = new SpeechSynthesisUtterance(part.text);
       u.lang = voice?.lang ?? (o.lang === 'es' ? (spainOn() ? 'es-ES' : 'es-MX') : { en: 'en-US', pt: 'pt-BR', fr: 'fr-FR', de: 'de-DE' }[o.lang]);
       if (voice) u.voice = voice;
       u.rate = voiceRate();
-      let ended = false;
+      let ended = false, started = false, at = part.first, t0 = 0, bounded = false;
+      const mark = (k: number) => { if (k !== at) { at = k; o.onSentence?.(k); } };
       const end = () => { if (ended) return; ended = true; next(); };
       u.onend = end;
       u.onerror = end;
-      u.onstart = () => o.onSentence?.(k);
-      // Some browsers drop the end event (or never start without a voice): when the synthesizer has gone quiet
-      // for a moment, the sentence is over.
-      let quiet = 0;
+      u.onstart = () => { started = true; t0 = performance.now(); o.onSentence?.(part.first); };
+      // In a piece of several sentences, the one being read: from the voice's word marks, or else from the time.
+      const sentenceAt = (c: number) => { let j = 0; while (j + 1 < part.starts.length && part.starts[j + 1] <= c) j++; return part.first + j; };
+      u.onboundary = (e: SpeechSynthesisEvent) => { bounded = true; mark(sentenceAt(e.charIndex)); };
+      // Some browsers drop the end event (or never start without a voice): once the voice has started (or after two
+      // seconds without a start) and the synthesizer stays quiet for a moment, the piece is over. Counting only
+      // after the start keeps a slow voice from being cut short.
+      let quiet = 0, waited = 0;
       watch = window.setInterval(() => {
         if (me !== run) { clearInterval(watch); return; }
+        if (started && !bounded && part.starts.length > 1) mark(sentenceAt(((performance.now() - t0) / 1000) * 14 * voiceRate()));
         if (speechSynthesis.speaking || speechSynthesis.pending) { quiet = 0; return; }
+        if (!started && ++waited < 5) return;
         if (++quiet >= 3) end();
       }, 400);
       speechSynthesis.speak(u);
     };
-    next();
+    if (busy) setTimeout(() => { if (me === run) next(); else finish(false); }, 150); else next();
   });
 }
 
