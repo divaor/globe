@@ -4782,7 +4782,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(tabs.map((t) => t.id).join() === 'map,explore,today,learn,play' && tabs.map((t) => t.label).join() === 'Map,Explore,Today,Learn,Play'
     && ['map', 'explore', 'learn', 'play'].every((t) => seen[t].open && seen[t].tab === t && seen[t].fits && seen[t].above && seen[t].tiles && seen[t].lit.join() === t && seen[t].closedAgain)
     && L('map') === 'filters,projection,mapstyle,terrain3d,search,ruler,compare,truesize,compare-filters,mydata,export4k' && seen.map.seps.join() === 'Tools'
-    && L('explore') === 'time,space,guide,art,nature,inside,deep,ambient' && L('learn') === 'master,quiz,tours,onthisday,progress' && L('play') === 'play,fill,onmap'
+    && L('explore') === 'time,legacy,space,guide,art,nature,inside,deep,ambient' && L('learn') === 'master,quiz,tours,onthisday,progress' && L('play') === 'play,fill,onmap'
     && seen.me.open && seen.me.under && seen.me.fits && /^settings,backup,share,export,exportphone,(fullscreen,)?about$/.test(L('me')),
     `five tabs (${tabs.map((t) => t.label).join(' · ')}), each list above its tab and on screen: Map ${L('map')} (${seen.map.seps}); Explore ${L('explore')}; Learn ${L('learn')}; Play ${L('play')}; top right ${L('me')}`);
   check(escClosed && reach.missing.length === 0 && outsideClosed && deep.open && !deep.menu && deep.lit.join() === 'explore' && zoom === 3,
