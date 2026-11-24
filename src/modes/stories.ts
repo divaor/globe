@@ -219,6 +219,8 @@ export const livesHook: {
 /** Where a work of art is now (set by the art guide, v0.27.0): its museum and city, and the city's art guide. */
 export const nowInHook: { get?: (itemId: string) => { name: string; open: (() => void) | null } | null } = {};
 export const worldHook: { show: ((id: string | null) => void) | null } = { show: null };
+/** Legacies of the past (set by legacy/legacy.ts, v0.44.0): a story's details link to what its civilization gave us. */
+export const legacyHook: { details?: (kind: string, id: string) => HTMLElement[] } = {};
 const worldOf = (x: { world?: string } | null | undefined) => x?.world ?? 'earth';
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number; outline?: MultiLineString | null }
@@ -2003,6 +2005,7 @@ export class StoryMode {
         if (c.casualtiesNote) body.append(h('p', { class: 'muted' }, tx(c.casualtiesNote)));
       }
     }
+    body.append(...(legacyHook.details?.(this.kind, c.id) ?? []));
     if (c.items) {
       const all = h('button', { type: 'button', class: 'pill story-browse-all' }, icon(Search, 16), t('storyBrowse'));
       all.addEventListener('click', () => this.browse());

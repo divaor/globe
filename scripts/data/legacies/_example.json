@@ -1,0 +1,66 @@
+{
+  "id": "egyptians",
+  "name": { "en": "Ancient Egyptians", "es": "Antiguos egipcios" },
+  "short": { "en": "Egyptians", "es": "Egipcios" },
+  "icon": "𓂀",
+  "color": "#c9952b",
+  "from": "-3100",
+  "to": "-30",
+  "at": [31.2, 27.5],
+  "zoom": 4,
+  "home": { "hist": "Egypt", "year": -1500 },
+  "intro": { "en": "For three thousand years kings ruled the Nile valley from the delta to Aswan, and its farmers, scribes and builders worked out things the whole world still uses.", "es": "Durante tres mil años, los reyes gobernaron el valle del Nilo desde el delta hasta Asuán, y sus agricultores, escribas y constructores idearon cosas que el mundo entero sigue usando." },
+  "today": { "en": "Egyptians today speak Arabic; Coptic, the last stage of the ancient language, lives on in the liturgy of the Coptic Church.", "es": "Hoy los egipcios hablan árabe; el copto, la última etapa de la lengua antigua, sigue vivo en la liturgia de la Iglesia copta." },
+  "story": "people/ancient-egypt",
+  "wiki": { "en": "Ancient Egypt", "es": "Antiguo Egipto" },
+  "sources": [
+    { "title": "British Museum: Ancient Egypt", "url": "https://www.britishmuseum.org/collection/death-and-memory/ancient-egypt" },
+    { "title": "Encyclopaedia Britannica: Egyptian calendar", "url": "https://www.britannica.com/science/Egyptian-calendar" },
+    { "title": "The Metropolitan Museum of Art: Egyptian Art", "url": "https://www.metmuseum.org/essays/egyptian-art" }
+  ],
+  "legacies": [
+    {
+      "id": "365-day-year",
+      "name": { "en": "The 365-day year", "es": "El año de 365 días" },
+      "cat": "time",
+      "icon": "📅",
+      "how": "invented",
+      "date": "-2900",
+      "circa": true,
+      "at": [31.13, 29.85],
+      "place": { "en": "Memphis, Egypt", "es": "Menfis, Egipto" },
+      "text": { "en": "Twelve months of 30 days plus five extra days: a civil calendar of 365 days, the ancestor of the one on your wall.", "es": "Doce meses de 30 días más cinco días extra: un calendario civil de 365 días, el antepasado del que tienes en la pared." },
+      "details": { "en": "Egyptian farmers lived by the Nile flood, which came back about every 365 days. Scribes fixed a year of twelve 30-day months and five extra feast days. It drifted a quarter of a day a year, so Ptolemy III tried to add a leap day in 238 BC; Julius Caesar, advised by the Alexandrian astronomer Sosigenes, finally did it in Rome in 46 BC. The Julian calendar, corrected by Pope Gregory XIII in 1582, is the calendar the world uses today.", "es": "Los agricultores egipcios vivían al ritmo de la crecida del Nilo, que volvía más o menos cada 365 días. Los escribas fijaron un año de doce meses de 30 días y cinco días de fiesta extra. Se desfasaba un cuarto de día por año, así que Ptolomeo III intentó añadir un día bisiesto en 238 a. C.; Julio César, aconsejado por el astrónomo alejandrino Sosígenes, lo hizo por fin en Roma en 46 a. C. El calendario juliano, corregido por el papa Gregorio XIII en 1582, es el que usa hoy el mundo." },
+      "roots": { "en": "Built on years of watching the star Sirius rise just before the flood.", "es": "Se basó en años de observar la salida de la estrella Sirio justo antes de la crecida." },
+      "path": [
+        { "at": [29.92, 31.2], "place": { "en": "Alexandria", "es": "Alejandría" }, "date": "-238", "note": { "en": "The Canopus Decree adds a leap day; it does not catch on.", "es": "El Decreto de Canopo añade un día bisiesto; no prospera." } },
+        { "at": [12.48, 41.89], "place": { "en": "Rome", "es": "Roma" }, "date": "-46", "by": { "en": "Julius Caesar and Sosigenes", "es": "Julio César y Sosígenes" }, "note": { "en": "The Julian calendar: 365 days and a leap day every four years.", "es": "El calendario juliano: 365 días y un día bisiesto cada cuatro años." } },
+        { "at": [12.45, 41.9], "place": { "en": "Rome", "es": "Roma" }, "date": "1582", "by": { "en": "Pope Gregory XIII", "es": "El papa Gregorio XIII" }, "note": { "en": "The Gregorian reform, now the world's civil calendar.", "es": "La reforma gregoriana, hoy el calendario civil del mundo." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Every country uses the Gregorian calendar for daily life; some also keep their own for religious dates.", "es": "Todos los países usan el calendario gregoriano en la vida diaria; algunos también conservan el suyo para fechas religiosas." },
+      "see": ["people/ancient-egypt"],
+      "wiki": { "en": "Ancient Egyptian calendar", "es": "Calendario egipcio" }
+    },
+    {
+      "id": "paper-word",
+      "name": { "en": "The word “paper”", "es": "La palabra «papel»" },
+      "cat": "words",
+      "icon": "📜",
+      "how": "named",
+      "date": "-3000",
+      "circa": true,
+      "at": [31.2, 30.5],
+      "place": { "en": "The Nile delta", "es": "El delta del Nilo" },
+      "text": { "en": "Papyrus, the reed the Egyptians wrote on, gave its Greek name to paper in English, Spanish, French and German.", "es": "El papiro, la caña sobre la que escribían los egipcios, dio su nombre griego al papel en español, inglés, francés y alemán." },
+      "where": ["script:latin", "!VNM"],
+      "strong": ["branch:romance"],
+      "note": { "en": "Used wherever a word from Latin papyrus names paper.", "es": "Se usa donde una palabra del latín papyrus nombra el papel." },
+      "words": [
+        { "en": "paper", "es": "papel", "from": "pápyros (Greek), perhaps from Egyptian", "means": { "en": "papyrus reed", "es": "caña de papiro" } }
+      ],
+      "sure": "likely",
+      "wiki": { "en": "Papyrus", "es": "Papiro" }
+    }
+  ]
+}

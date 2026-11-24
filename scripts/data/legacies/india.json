@@ -1,0 +1,1129 @@
+{
+  "id": "india",
+  "name": { "en": "Ancient India", "es": "India antigua" },
+  "short": { "en": "Ancient India", "es": "India antigua" },
+  "icon": "🪷",
+  "color": "#fb8c00",
+  "from": "-2600",
+  "to": "1200",
+  "at": [78.5, 23.0],
+  "zoom": 4,
+  "home": [
+    { "hist": "Mauryan Empire", "year": -200 },
+    { "hist": "Indus valley civilization", "year": -2000 },
+    { "and": [{ "hist": "Cholas", "year": 1100 }, "IND"] }
+  ],
+  "intro": {
+    "en": "From the Indus cities of about 2600 BC to the kingdoms of the Mauryas, the Guptas and the Cholas, the peoples of the Indian subcontinent built planned towns, composed some of the oldest scriptures and grammars still in use, and worked out numbers, games, cloth, spices and ideas that now travel the whole world.",
+    "es": "Desde las ciudades del Indo, hacia el 2600 a. C., hasta los reinos de los Maurya, los Gupta y los Chola, los pueblos del subcontinente indio construyeron ciudades planificadas, compusieron algunas de las escrituras sagradas y gramáticas más antiguas que aún se usan, y crearon números, juegos, telas, especias e ideas que hoy recorren el mundo entero."
+  },
+  "today": {
+    "en": "About 1.4 billion people live in India and nearly 2 billion in South Asia as a whole. Sanskrit is still chanted in Hindu, Buddhist and Jain rites, and Tamil, with poems some 2,000 years old, is spoken by about 80 million people.",
+    "es": "En la India viven unos 1400 millones de personas, y casi 2000 millones en todo el sur de Asia. El sánscrito se sigue recitando en ritos hindúes, budistas y jainistas, y el tamil, con poemas de unos 2000 años, lo hablan unos 80 millones de personas."
+  },
+  "story": "people/indus-valley",
+  "wiki": { "en": "History of India", "es": "Historia de la India" },
+  "sources": [
+    { "title": "The Metropolitan Museum of Art: South Asia, 8000–2000 B.C. (Heilbrunn Timeline of Art History)", "url": "https://www.metmuseum.org/toah/ht/02/ssa.html" },
+    { "title": "World History Encyclopedia: Indus Valley Civilization", "url": "https://www.worldhistory.org/Indus_Valley_Civilization/" },
+    { "title": "Encyclopaedia Britannica: Aryabhata", "url": "https://www.britannica.com/biography/Aryabhata-I" },
+    { "title": "History of Science in South Asia: The Bakhshālī Manuscript, a response to the Bodleian Library's radiocarbon dating", "url": "https://journals.library.ualberta.ca/hssa/index.php/hssa/article/view/22" },
+    { "title": "British Library: Britain's first nose job", "url": "https://www.bl.uk/stories/blogs/posts/britains-first-nose-job" },
+    { "title": "Sushruta: the father of Indian surgical history (Cureus, via PubMed Central)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11000756/" },
+    { "title": "Sotheby's: The Golconda treasure that enchanted a queen", "url": "https://www.sothebys.com/en/articles/the-golconda-treasure-that-enchanted-a-queen" }
+  ],
+  "legacies": [
+    {
+      "id": "zero",
+      "name": { "en": "Zero as a number", "es": "El cero como número" },
+      "cat": "numbers",
+      "icon": "0️⃣",
+      "how": "invented",
+      "date": "628",
+      "at": [72.27, 25.0],
+      "place": { "en": "Bhinmal, Rajasthan, India", "es": "Bhinmal, Rajastán, India" },
+      "text": {
+        "en": "Indian mathematicians were the first known to treat zero as a number in its own right, with rules for adding, subtracting and multiplying with it.",
+        "es": "Los matemáticos indios fueron los primeros conocidos en tratar el cero como un número en sí mismo, con reglas para sumar, restar y multiplicar con él."
+      },
+      "details": {
+        "en": "Many peoples left a gap or a sign to mark an empty place, but in AD 628 the astronomer Brahmagupta, writing at Bhinmal, set out rules for zero itself: a number minus itself is zero, and any number times zero is zero. Only dividing by zero defeated him, as it still puzzles students. The round sign appears in Indian and Southeast Asian inscriptions: a Khmer stone from Sambor in Cambodia is dated 683, and a temple wall at Gwalior writes 270 with a zero in 876. A dot used as zero in the Bakhshali manuscript has been radiocarbon dated anywhere between the 200s and the 900s, and scholars still argue over which. Arab scholars later carried the idea west.",
+        "es": "Muchos pueblos dejaban un hueco o un signo para marcar un lugar vacío, pero en el 628 d. C. el astrónomo Brahmagupta, que escribía en Bhinmal, fijó reglas para el propio cero: un número menos sí mismo da cero, y cualquier número por cero da cero. Solo la división entre cero lo venció, como aún desconcierta a los estudiantes. El signo redondo aparece en inscripciones de la India y del Sudeste Asiático: una piedra jemer de Sambor, en Camboya, está fechada en el 683, y el muro de un templo de Gwalior escribe 270 con un cero en el 876. Un punto usado como cero en el manuscrito Bakhshali se ha fechado por radiocarbono entre los siglos III y X, y los especialistas aún discuten cuál. Más tarde, los sabios árabes llevaron la idea hacia el oeste."
+      },
+      "roots": {
+        "en": "Built on older signs for an empty place, such as the Babylonian one, and on India's own place-value counting.",
+        "es": "Se basó en signos más antiguos para marcar un lugar vacío, como el babilónico, y en el sistema posicional de la propia India."
+      },
+      "path": [
+        { "at": [106.0, 12.77], "place": { "en": "Sambor, Kratié, Cambodia", "es": "Sambor, Kratié, Camboya" }, "date": "683", "note": { "en": "A Khmer inscription dated year 605 of the Saka era has one of the oldest dated zeros.", "es": "Una inscripción jemer fechada en el año 605 de la era saka tiene uno de los ceros fechados más antiguos." } },
+        { "at": [78.18, 26.22], "place": { "en": "Gwalior, Madhya Pradesh, India", "es": "Gwalior (Madhya Pradesh, India)" }, "date": "876", "from": 0, "note": { "en": "A temple inscription writes 270 and 50 with a round zero, much as we do.", "es": "Una inscripción de un templo escribe 270 y 50 con un cero redondo, casi como nosotros." } },
+        { "at": [44.36, 33.31], "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" }, "date": "825", "circa": true, "from": 0, "note": { "en": "Al-Khwarizmi explains Indian reckoning with zero; Arab scholars take it on towards Europe.", "es": "Al-Juarismi explica el cálculo indio con el cero; los sabios árabes lo llevan hacia Europa." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Every calculator, computer and price tag relies on zero.", "es": "Cada calculadora, computadora y etiqueta de precio depende del cero." },
+      "see": ["inventions:zero", "eras:brahmasphuta"],
+      "wiki": { "en": "0", "es": "Cero" }
+    },
+    {
+      "id": "decimal-digits",
+      "name": { "en": "Place-value digits", "es": "Las cifras con valor posicional" },
+      "cat": "numbers",
+      "icon": "🔢",
+      "how": "invented",
+      "date": "500",
+      "circa": true,
+      "at": [80.0, 25.0],
+      "place": { "en": "Northern India", "es": "Norte de la India" },
+      "text": {
+        "en": "Ten signs whose value depends on their place, so that 7 can mean seven, seventy or seven hundred: the Indian way of writing numbers is the one the whole world now uses.",
+        "es": "Diez signos cuyo valor depende del lugar que ocupan, de modo que 7 puede ser siete, setenta o setecientos: la forma india de escribir números es la que hoy usa el mundo entero."
+      },
+      "details": {
+        "en": "The shapes of our digits go back to the Brahmi numerals carved in India from the 200s BC, which still had separate signs for 10, 20, 100 and so on. By about the 400s and 500s AD, Indian astronomers wrote numbers by place instead, with only nine signs and zero; Aryabhata's work of 499 relies on it. The system made long multiplication and division easy enough for any merchant. Arab scholars called it 'Indian reckoning', and Europeans later called the digits 'Arabic numerals'. Indian scripts such as Devanagari and Bengali keep their own forms of the same digits.",
+        "es": "Las formas de nuestras cifras vienen de los numerales brahmi tallados en la India desde el siglo III a. C., que aún tenían signos distintos para 10, 20, 100, etc. Hacia los siglos V y VI d. C., los astrónomos indios ya escribían los números por posición, con solo nueve signos y el cero; la obra de Aryabhata del 499 se basa en ello. El sistema hizo tan fácil multiplicar y dividir que cualquier comerciante podía hacerlo. Los sabios árabes lo llamaron «cálculo indio», y los europeos llamaron después «números arábigos» a las cifras. Escrituras indias como la devanagari y la bengalí conservan sus propias formas de las mismas cifras."
+      },
+      "roots": {
+        "en": "Built on the Brahmi numerals and on counting in tens, which many peoples did.",
+        "es": "Se basó en los numerales brahmi y en contar de diez en diez, como hacían muchos pueblos."
+      },
+      "path": [
+        { "at": [44.36, 33.31], "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" }, "date": "825", "circa": true, "note": { "en": "Al-Khwarizmi writes a book on the Indian numbers.", "es": "Al-Juarismi escribe un libro sobre los números indios." } },
+        { "at": [-2.47, 42.36], "place": { "en": "Albelda, La Rioja, Spain", "es": "Albelda, La Rioja, España" }, "date": "976", "note": { "en": "The Codex Vigilanus, the first European manuscript with the digits 1 to 9.", "es": "El Códice Vigilano, el primer manuscrito europeo con las cifras del 1 al 9." } },
+        { "at": [10.4, 43.72], "place": { "en": "Pisa, Italy", "es": "Pisa, Italia" }, "date": "1202", "by": { "en": "Leonardo of Pisa (Fibonacci)", "es": "Leonardo de Pisa (Fibonacci)" }, "note": { "en": "His Liber Abaci teaches the new digits to European merchants.", "es": "Su Liber Abaci enseña las nuevas cifras a los comerciantes europeos." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Used for numbers in almost every country; Arabic, Persian, Bengali and other scripts write their own forms of the same digits.", "es": "Se usan para los números en casi todos los países; el árabe, el persa, el bengalí y otras escrituras tienen sus propias formas de las mismas cifras." },
+      "see": ["space:brahmagupta"],
+      "wiki": { "en": "Hindu–Arabic numeral system", "es": "Numeración indo-arábiga" }
+    },
+    {
+      "id": "sine",
+      "name": { "en": "The sine, and its name", "es": "El seno, y su nombre" },
+      "cat": "numbers",
+      "icon": "📐",
+      "how": "invented",
+      "date": "499",
+      "at": [85.14, 25.6],
+      "place": { "en": "Kusumapura (Patna), Bihar, India", "es": "Kusumapura (hoy Patna), Bihar, India" },
+      "text": {
+        "en": "Indian astronomers measured angles with half-chords, the sine of today's trigonometry, and their word for it, 'bowstring', became 'sine' through a famous misreading.",
+        "es": "Los astrónomos indios medían ángulos con semicuerdas, el seno de la trigonometría actual, y su palabra para ello, «cuerda de arco», se convirtió en «seno» por un famoso error de lectura."
+      },
+      "details": {
+        "en": "Greek astronomers worked with whole chords of a circle. Indian astronomers found half the chord simpler, and Aryabhata gave a table of its values in 499. The Sanskrit word was jyā or jīvā, 'bowstring'. Arab scholars wrote it jība, but Arabic script usually leaves out short vowels, and later readers took it for jayb, 'fold' or 'pocket'. Latin translators in Spain in the 1100s rendered that as sinus, 'fold, bay', which gave English sine and Spanish seno. Engineers, satellite navigation and sound software all rely on sines.",
+        "es": "Los astrónomos griegos trabajaban con cuerdas enteras de un círculo. Los indios vieron que media cuerda era más sencilla, y Aryabhata dio una tabla de sus valores en el 499. La palabra sánscrita era jyā o jīvā, «cuerda de arco». Los sabios árabes la escribieron jība, pero la escritura árabe suele omitir las vocales breves, y lectores posteriores la tomaron por jayb, «pliegue» o «bolsillo». Traductores latinos en España, en el siglo XII, la vertieron como sinus, «pliegue, bahía», de donde vienen el español seno y el inglés sine. La ingeniería, la navegación por satélite y los programas de sonido dependen de los senos."
+      },
+      "roots": {
+        "en": "Built on the chord tables of the Greek astronomers Hipparchus and Ptolemy.",
+        "es": "Se basó en las tablas de cuerdas de los astrónomos griegos Hiparco y Ptolomeo."
+      },
+      "path": [
+        { "at": [44.36, 33.31], "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" }, "date": "850", "circa": true, "note": { "en": "Arab astronomers adopt Indian sine tables and call the sine jība.", "es": "Los astrónomos árabes adoptan las tablas indias de senos y llaman jība al seno." } },
+        { "at": [-4.02, 39.86], "place": { "en": "Toledo, Spain", "es": "Toledo, España" }, "date": "1150", "circa": true, "note": { "en": "Latin translators turn jayb into sinus.", "es": "Los traductores latinos convierten jayb en sinus." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Taught in maths lessons everywhere and built into every scientific calculator.", "es": "Se enseña en las clases de matemáticas de todo el mundo y viene en cada calculadora científica." },
+      "words": [
+        { "en": "sine", "es": "seno", "from": "jyā, jīvā (Sanskrit), via Arabic jība, misread as jayb", "means": { "en": "bowstring", "es": "cuerda de arco" } }
+      ],
+      "wiki": { "en": "Sine and cosine", "es": "Seno (trigonometría)" }
+    },
+    {
+      "id": "lakh-crore",
+      "name": { "en": "Lakhs and crores", "es": "Lakhs y crores" },
+      "cat": "numbers",
+      "icon": "💯",
+      "how": "named",
+      "date": "-500",
+      "circa": true,
+      "at": [81.0, 26.5],
+      "place": { "en": "Ganges plain, India", "es": "Llanura del Ganges, India" },
+      "text": {
+        "en": "Across South Asia big numbers are counted in lakhs (100,000) and crores (10 million), written 1,00,000 and 1,00,00,000: names that come from Sanskrit.",
+        "es": "En todo el sur de Asia los números grandes se cuentan en lakhs (100.000) y crores (10 millones), escritos 1,00,000 y 1,00,00,000: nombres que vienen del sánscrito."
+      },
+      "details": {
+        "en": "Vedic texts already gave a name to each power of ten, far beyond what daily life needed, and later Sanskrit used lakṣa for a hundred thousand and koṭi for ten million. The habit lives on in Hindi, Urdu, Bengali, Nepali, Sinhala and the other languages of the region, and in their English. Newspapers in India, Pakistan, Bangladesh and Nepal report budgets in crores of rupees and prize money in lakhs, and the commas follow the names: after the first three digits, they come every two.",
+        "es": "Los textos védicos ya daban nombre a cada potencia de diez, mucho más allá de lo que hacía falta en la vida diaria, y el sánscrito posterior usó lakṣa para cien mil y koṭi para diez millones. La costumbre sigue viva en hindi, urdu, bengalí, nepalí, cingalés y otras lenguas de la región, y también en su inglés. Los periódicos de la India, Pakistán, Bangladés y Nepal hablan de presupuestos en crores de rupias y de premios en lakhs, y las comas siguen a los nombres: después de las tres primeras cifras, van cada dos."
+      },
+      "where": ["IND", "PAK", "BGD", "NPL", "LKA"],
+      "strong": ["IND", "PAK", "BGD", "NPL"],
+      "note": { "en": "Used every day in India, Pakistan, Bangladesh, Nepal and Sri Lanka, in speech, newspapers and banks.", "es": "Se usan a diario en la India, Pakistán, Bangladés, Nepal y Sri Lanka, al hablar, en los periódicos y en los bancos." },
+      "words": [
+        { "en": "lakh", "from": "lakṣa (Sanskrit)", "means": { "en": "a hundred thousand; a mark", "es": "cien mil; una marca" } },
+        { "en": "crore", "from": "koṭi (Sanskrit)", "means": { "en": "ten million; the highest point", "es": "diez millones; el punto más alto" } }
+      ],
+      "wiki": { "en": "Indian numbering system", "es": "" }
+    },
+    {
+      "id": "chess",
+      "name": { "en": "Chess, from chaturanga", "es": "El ajedrez, desde el chaturanga" },
+      "cat": "play",
+      "icon": "♟️",
+      "how": "invented",
+      "sure": "likely",
+      "date": "550",
+      "circa": true,
+      "at": [81.0, 25.4],
+      "place": { "en": "Northern India", "es": "Norte de la India" },
+      "text": {
+        "en": "Chaturanga, an Indian war game of foot soldiers, horses, elephants and chariots led by a king, is the oldest known ancestor of chess.",
+        "es": "El chaturanga, un juego de guerra indio con soldados de a pie, caballos, elefantes y carros dirigidos por un rey, es el antepasado más antiguo conocido del ajedrez."
+      },
+      "details": {
+        "en": "Its name means 'four limbs', the four branches of an Indian army. It was played on the 8×8 ashtapada board by the 500s or 600s: the poet Bana mentions it at King Harsha's court, and a Persian text tells how it reached the Sasanian court from India in the 500s. In Persia it became chatrang, and among the Arabs shatranj, which they took to Spain. In Europe the old counsellor piece became the powerful queen in the late 1400s, giving the modern game. Pawns are still foot soldiers and knights still horses.",
+        "es": "Su nombre significa «cuatro miembros», las cuatro ramas de un ejército indio. Se jugaba en el tablero de 8×8 llamado ashtapada hacia los siglos VI o VII: el poeta Bana lo menciona en la corte del rey Harsha, y un texto persa cuenta cómo llegó de la India a la corte sasánida en el siglo VI. En Persia se convirtió en chatrang, y entre los árabes en shatranj, que llevaron a España. En Europa, la vieja pieza del consejero se convirtió a finales del siglo XV en la poderosa dama, y así nació el juego moderno. Los peones siguen siendo soldados de a pie y los caballos, caballos."
+      },
+      "roots": {
+        "en": "Race games with dice on similar boards came first in India. A few historians argue for an origin elsewhere, but India is the most widely accepted.",
+        "es": "Antes hubo en la India juegos de carreras con dados en tableros parecidos. Algunos historiadores proponen otro origen, pero la India es el más aceptado."
+      },
+      "path": [
+        { "at": [44.58, 33.09], "place": { "en": "Ctesiphon, Iraq (the Persian capital)", "es": "Ctesifonte, Irak (la capital persa)" }, "date": "550", "circa": true, "note": { "en": "Chatrang is played at the Sasanian court.", "es": "El chatrang se juega en la corte sasánida." } },
+        { "at": [44.36, 33.31], "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" }, "date": "850", "circa": true, "note": { "en": "Arab masters of shatranj write the first chess books.", "es": "Los maestros árabes del shatranj escriben los primeros libros de ajedrez." } },
+        { "at": [-0.38, 39.47], "place": { "en": "Valencia, Spain", "es": "Valencia, España" }, "date": "1475", "circa": true, "note": { "en": "A poem records the first known games with the modern, powerful queen.", "es": "Un poema recoge las primeras partidas conocidas con la dama moderna y poderosa." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Played in every country, from parks and schools to world championships and online.", "es": "Se juega en todos los países, desde parques y escuelas hasta campeonatos mundiales y en línea." },
+      "see": ["people:shatranj"],
+      "wiki": { "en": "Chaturanga", "es": "Chaturanga" }
+    },
+    {
+      "id": "buddhism",
+      "name": { "en": "Buddhism", "es": "El budismo" },
+      "cat": "ideas",
+      "icon": "☸️",
+      "how": "developed",
+      "date": "-445",
+      "circa": true,
+      "at": [84.99, 24.7],
+      "place": { "en": "Bodh Gaya, Bihar, India", "es": "Bodh Gaya, en Bihar, India" },
+      "text": {
+        "en": "The teaching of the Buddha, who lived in the Ganges valley about 2,500 years ago, is followed today by some 500 million people, most of them in East and Southeast Asia.",
+        "es": "La enseñanza de Buda, que vivió en el valle del Ganges hace unos 2500 años, la siguen hoy unos 500 millones de personas, la mayoría en el este y el sudeste de Asia."
+      },
+      "details": {
+        "en": "Siddhartha Gautama, of the Shakya clan, taught a middle way between luxury and hardship, and an end to suffering through ethics, meditation and wisdom. Monks and nuns spread his teaching along trade routes. The emperor Ashoka supported it in the 200s BC and sent out missions; his son Mahinda is said to have taken it to Sri Lanka. Merchants and monks carried it over the Silk Road to China by the first century AD, and from there to Korea and Japan; it also reached Tibet and Southeast Asia. In India itself it later faded.",
+        "es": "Siddhartha Gautama, del clan de los Shakya, enseñó un camino medio entre el lujo y la penuria, y el fin del sufrimiento mediante la ética, la meditación y la sabiduría. Monjes y monjas difundieron su enseñanza por las rutas comerciales. El emperador Ashoka la apoyó en el siglo III a. C. y envió misiones; se dice que su hijo Mahinda la llevó a Sri Lanka. Comerciantes y monjes la llevaron por la Ruta de la Seda hasta China en el siglo I d. C., y de allí a Corea y Japón; también llegó al Tíbet y al Sudeste Asiático. En la propia India se fue apagando después."
+      },
+      "path": [
+        { "at": [80.4, 8.35], "place": { "en": "Anuradhapura, Sri Lanka", "es": "Anuradhapura, Sri Lanka" }, "date": "-250", "circa": true, "by": { "en": "Mahinda, Ashoka's son", "es": "Mahinda, hijo de Ashoka" }, "note": { "en": "Buddhism comes to Sri Lanka, where it remains the main faith.", "es": "El budismo llega a Sri Lanka, donde sigue siendo la fe principal." } },
+        { "at": [112.6, 34.72], "place": { "en": "Luoyang, Henan, China", "es": "Luoyang, Henan, China" }, "date": "68", "circa": true, "from": 0, "note": { "en": "The White Horse Temple, by tradition China's first Buddhist temple.", "es": "El Templo del Caballo Blanco, según la tradición el primer templo budista de China." } },
+        { "at": [126.19, 41.12], "place": { "en": "Gungnae (today Ji'an, Jilin, China)", "es": "Gungnae (hoy Ji'an, Jilin, China)" }, "date": "372", "note": { "en": "The Korean kingdom of Goguryeo receives Buddhism.", "es": "El reino coreano de Goguryeo recibe el budismo." } },
+        { "at": [135.82, 34.47], "place": { "en": "Asuka, Nara, Japan", "es": "Asuka, Nara, Japón" }, "date": "552", "circa": true, "note": { "en": "A Korean king sends Buddhist images and texts to Japan.", "es": "Un rey coreano envía imágenes y textos budistas a Japón." } },
+        { "at": [91.13, 29.65], "place": { "en": "Lhasa, Tibet", "es": "Lhasa, Tíbet" }, "date": "650", "circa": true, "from": 0, "note": { "en": "Tibet's kings adopt Buddhism.", "es": "Los reyes del Tíbet adoptan el budismo." } }
+      ],
+      "where": ["religion:buddhism", "CHN", "JPN", "KOR", "VNM", "TWN", "SGP"],
+      "strong": ["religion:buddhism"],
+      "note": { "en": "The main faith of Thailand, Myanmar, Cambodia, Laos, Sri Lanka, Bhutan and Mongolia, and widely followed in China, Japan, Korea and Vietnam.", "es": "Es la fe principal de Tailandia, Myanmar, Camboya, Laos, Sri Lanka, Bután y Mongolia, y está muy extendida en China, Japón, Corea y Vietnam." },
+      "words": [
+        { "en": "Buddha", "es": "Buda", "from": "buddha (Sanskrit)", "means": { "en": "awakened", "es": "despierto" } },
+        { "en": "dharma", "es": "dharma", "from": "dharma (Sanskrit)", "means": { "en": "law, duty, teaching", "es": "ley, deber, enseñanza" } }
+      ],
+      "see": ["beliefs/buddhism", "beliefs:the-buddha"],
+      "wiki": { "en": "Buddhism", "es": "Budismo" }
+    },
+    {
+      "id": "meditation",
+      "name": { "en": "Meditation and mindfulness", "es": "La meditación y la atención plena" },
+      "cat": "ideas",
+      "icon": "🧘",
+      "how": "invented",
+      "sure": "likely",
+      "date": "-500",
+      "circa": true,
+      "at": [83.5, 25.5],
+      "place": { "en": "Ganges valley, India", "es": "Valle del Ganges, India" },
+      "text": {
+        "en": "Sitting still to train the attention, as Indian sages and the Buddha taught, has become mindfulness in hospitals, schools and phone apps around the world.",
+        "es": "Sentarse en calma para entrenar la atención, como enseñaron los sabios indios y Buda, se ha convertido en mindfulness en hospitales, escuelas y aplicaciones de celular de todo el mundo."
+      },
+      "details": {
+        "en": "The Upanishads and early Buddhist texts, from about the 500s BC, describe dhyāna, deep meditation, and sati, mindful attention to the breath and body; Jains and Hindus had methods of their own. Dhyāna became Chan in China and Zen in Japan. In the 1900s teachers in Myanmar and India opened vipassana meditation to lay people, and in 1979 the American doctor Jon Kabat-Zinn built a secular stress-reduction course on it in Massachusetts. Mindfulness is now taught in clinics, schools and offices, often without its religious roots.",
+        "es": "Los Upanishads y los primeros textos budistas, hacia el siglo VI a. C., describen el dhyāna, la meditación profunda, y la sati, la atención plena a la respiración y al cuerpo; jainistas e hindúes tenían sus propios métodos. El dhyāna se convirtió en el chan en China y en el zen en Japón. En el siglo XX, maestros de Myanmar y la India abrieron la meditación vipassana a los laicos, y en 1979 el médico estadounidense Jon Kabat-Zinn creó con ella un curso laico para reducir el estrés en Massachusetts. Hoy el mindfulness se enseña en clínicas, escuelas y oficinas, muchas veces sin sus raíces religiosas."
+      },
+      "roots": {
+        "en": "Other traditions, such as Daoism in China, developed forms of meditation of their own.",
+        "es": "Otras tradiciones, como el taoísmo en China, desarrollaron sus propias formas de meditación."
+      },
+      "path": [
+        { "at": [108.94, 34.27], "place": { "en": "Chang'an (Xi'an), China", "es": "Chang'an (Xi'an), China" }, "date": "600", "circa": true, "note": { "en": "Dhyāna becomes Chan Buddhism.", "es": "El dhyāna se convierte en el budismo chan." } },
+        { "at": [135.77, 35.01], "place": { "en": "Kyoto, Japan", "es": "Kioto, Japón" }, "date": "1200", "circa": true, "note": { "en": "Japanese monks bring back Chan as Zen.", "es": "Monjes japoneses traen el chan como zen." } },
+        { "at": [-71.8, 42.26], "place": { "en": "Worcester, Massachusetts, USA", "es": "Worcester, Massachusetts, EE. UU." }, "date": "1979", "from": 0, "by": { "en": "Jon Kabat-Zinn", "es": "Jon Kabat-Zinn" }, "note": { "en": "Mindfulness-based stress reduction, a secular course, starts at a hospital.", "es": "La reducción del estrés basada en mindfulness, un curso laico, empieza en un hospital." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Practised worldwide, in temples and monasteries and in secular courses and apps.", "es": "Se practica en todo el mundo, en templos y monasterios y en cursos y aplicaciones laicas." },
+      "words": [
+        { "en": "zen", "es": "zen", "from": "dhyāna (Sanskrit), via Chinese chan and Japanese zen", "means": { "en": "meditation", "es": "meditación" } }
+      ],
+      "wiki": { "en": "Mindfulness", "es": "Conciencia plena" }
+    },
+    {
+      "id": "yoga",
+      "name": { "en": "Yoga", "es": "El yoga" },
+      "cat": "daily",
+      "icon": "🧘‍♀️",
+      "how": "invented",
+      "date": "-200",
+      "circa": true,
+      "at": [79.5, 27.0],
+      "place": { "en": "Northern India", "es": "Norte de la India" },
+      "text": {
+        "en": "Yoga began in India as a spiritual discipline of breath, posture and meditation; today millions practise it in every country, often as exercise.",
+        "es": "El yoga nació en la India como una disciplina espiritual de respiración, postura y meditación; hoy lo practican millones de personas en todos los países, muchas veces como ejercicio."
+      },
+      "details": {
+        "en": "The word means 'yoking' or 'union'. The Upanishads speak of it, and the Yoga Sutras credited to Patanjali, compiled perhaps between 200 BC and AD 400, set out its eight limbs, from ethics and breathing to meditation. Most of today's postures came later, from medieval hatha yoga and from teachers of the 1900s, such as Krishnamacharya in Mysore, who mixed them with gymnastics. Swami Vivekananda presented yoga philosophy to the West in Chicago in 1893. In 2014 the United Nations made 21 June the International Day of Yoga.",
+        "es": "La palabra significa «unir bajo el yugo» o «unión». Los Upanishads hablan de él, y los Yoga Sutras atribuidos a Patanjali, reunidos quizá entre el 200 a. C. y el 400 d. C., exponen sus ocho partes, desde la ética y la respiración hasta la meditación. La mayoría de las posturas actuales llegaron después, del hatha yoga medieval y de maestros del siglo XX, como Krishnamacharya en Mysore, que las mezclaron con la gimnasia. Swami Vivekananda presentó la filosofía del yoga a Occidente en Chicago en 1893. En 2014 las Naciones Unidas declararon el 21 de junio Día Internacional del Yoga."
+      },
+      "path": [
+        { "at": [-87.65, 41.85], "place": { "en": "Chicago, USA", "es": "Chicago, EE. UU." }, "date": "1893", "by": { "en": "Swami Vivekananda", "es": "Swami Vivekananda" }, "note": { "en": "His talks at the World's Parliament of Religions make yoga known in the West.", "es": "Sus charlas en el Parlamento Mundial de las Religiones dan a conocer el yoga en Occidente." } },
+        { "at": [76.64, 12.3], "place": { "en": "Mysore (Mysuru), Karnataka, India", "es": "Mysore (Mysuru), en Karnataka, India" }, "date": "1933", "circa": true, "from": 0, "by": { "en": "T. Krishnamacharya", "es": "T. Krishnamacharya" }, "note": { "en": "He teaches flowing sequences of postures to pupils who later take them worldwide.", "es": "Enseña secuencias fluidas de posturas a alumnos que después las llevan por todo el mundo." } },
+        { "at": [-73.95, 40.76], "place": { "en": "New York, USA (United Nations)", "es": "Nueva York, EE. UU. (Naciones Unidas)" }, "date": "2014", "note": { "en": "21 June is declared the International Day of Yoga.", "es": "El 21 de junio se declara Día Internacional del Yoga." } }
+      ],
+      "where": ["world"],
+      "strong": ["IND"],
+      "note": { "en": "Taught in gyms, parks and studios in almost every country.", "es": "Se enseña en gimnasios, parques y estudios de casi todos los países." },
+      "words": [
+        { "en": "yoga", "es": "yoga", "from": "yoga (Sanskrit)", "means": { "en": "yoking, union", "es": "unión, yugo" } }
+      ],
+      "wiki": { "en": "Yoga", "es": "Yoga" }
+    },
+    {
+      "id": "ahimsa",
+      "name": { "en": "Non-violence (ahimsa)", "es": "La no violencia (ahimsa)" },
+      "cat": "ideas",
+      "icon": "🕊️",
+      "how": "invented",
+      "date": "-500",
+      "circa": true,
+      "at": [85.13, 25.99],
+      "place": { "en": "Vaishali, Bihar, India", "es": "Vaishali, Bihar, India" },
+      "text": {
+        "en": "Ahimsa, 'not harming', taught by Jains, Buddhists and Hindus, inspired Gandhi's non-violent resistance, which protest movements across the world then took up.",
+        "es": "La ahimsa, «no dañar», enseñada por jainistas, budistas e hindúes, inspiró la resistencia no violenta de Gandhi, que luego adoptaron movimientos de protesta de todo el mundo."
+      },
+      "details": {
+        "en": "Mahavira, the great teacher of Jainism, born near Vaishali, made not harming any living being the first vow; the Buddha taught it too, and Ashoka's edicts of the 200s BC called for gentleness to people and animals. It shaped India's long tradition of vegetarianism. In the 1900s Mohandas Gandhi turned ahimsa into a political method, satyagraha, leading the Salt March of 1930. Martin Luther King Jr studied Gandhi, used his methods in the Montgomery bus boycott of 1955–56 and visited India in 1959.",
+        "es": "Mahavira, el gran maestro del jainismo, nacido cerca de Vaishali, hizo de no dañar a ningún ser vivo el primer voto; Buda también lo enseñó, y los edictos de Ashoka del siglo III a. C. pedían bondad con las personas y los animales. Moldeó la larga tradición vegetariana de la India. En el siglo XX, Mohandas Gandhi convirtió la ahimsa en un método político, la satyagraha, y encabezó la Marcha de la Sal de 1930. Martin Luther King estudió a Gandhi, usó sus métodos en el boicot a los autobuses de Montgomery de 1955–56 y visitó la India en 1959."
+      },
+      "path": [
+        { "at": [72.58, 23.06], "place": { "en": "Ahmedabad, Gujarat, India", "es": "Ahmedabad, Guyarat, India" }, "date": "1930", "by": { "en": "Mohandas Gandhi", "es": "Mohandas Gandhi" }, "note": { "en": "The Salt March sets out from Gandhi's ashram.", "es": "La Marcha de la Sal parte del áshram de Gandhi." } },
+        { "at": [-86.3, 32.37], "place": { "en": "Montgomery, Alabama, USA", "es": "Montgomery, Alabama, EE. UU." }, "date": "1955", "by": { "en": "Martin Luther King Jr and Rosa Parks", "es": "Martin Luther King y Rosa Parks" }, "note": { "en": "The bus boycott uses Gandhi's methods for civil rights.", "es": "El boicot a los autobuses usa los métodos de Gandhi por los derechos civiles." } }
+      ],
+      "where": ["world"],
+      "strong": ["IND"],
+      "note": { "en": "Non-violent protest is used by movements on every continent; ahimsa still guides millions of Jains, Hindus and Buddhists.", "es": "Movimientos de todos los continentes usan la protesta no violenta; la ahimsa sigue guiando a millones de jainistas, hindúes y budistas." },
+      "words": [
+        { "en": "ahimsa", "es": "ahimsa", "from": "ahiṃsā (Sanskrit)", "means": { "en": "not harming", "es": "no dañar" } }
+      ],
+      "wiki": { "en": "Ahimsa", "es": "Ahimsa" }
+    },
+    {
+      "id": "hinduism",
+      "name": { "en": "Hinduism", "es": "El hinduismo" },
+      "cat": "ideas",
+      "icon": "🕉️",
+      "how": "developed",
+      "date": "-1500",
+      "circa": true,
+      "at": [74.5, 31.0],
+      "place": { "en": "Punjab, the land of the Rigveda", "es": "Punyab, la tierra del Rigveda" },
+      "text": {
+        "en": "Hinduism, which grew from the hymns of the Rigveda and many local traditions, is the faith of about 1.2 billion people, the third largest religion in the world.",
+        "es": "El hinduismo, que creció a partir de los himnos del Rigveda y de muchas tradiciones locales, es la fe de unos 1200 millones de personas, la tercera religión más grande del mundo."
+      },
+      "details": {
+        "en": "It has no single founder. Its oldest text, the Rigveda, was composed in Sanskrit from about 1500 BC; the Upanishads, the great epics and the Puranas followed, with temple worship of gods such as Vishnu, Shiva and the goddess Devi. Traders and priests took it to Southeast Asia, where Java's Prambanan and Cambodia's Angkor Wat were built for Hindu gods, and Bali is still mainly Hindu. In the 1800s and 1900s Indian workers carried it to Mauritius, Fiji, the Caribbean and South Africa, and later migrants to Britain and North America.",
+        "es": "No tiene un único fundador. Su texto más antiguo, el Rigveda, se compuso en sánscrito desde hacia el 1500 a. C.; después vinieron los Upanishads, las grandes epopeyas y los Puranas, con el culto en templos a dioses como Visnú, Shiva y la diosa Devi. Comerciantes y sacerdotes lo llevaron al Sudeste Asiático, donde Prambanan, en Java, y Angkor Wat, en Camboya, se construyeron para dioses hindúes, y Bali sigue siendo sobre todo hindú. En los siglos XIX y XX, trabajadores indios lo llevaron a Mauricio, Fiyi, el Caribe y Sudáfrica, y migrantes posteriores a Gran Bretaña y Norteamérica."
+      },
+      "path": [
+        { "at": [110.49, -7.75], "place": { "en": "Prambanan, Java, Indonesia", "es": "Prambanan, Java, Indonesia" }, "date": "856", "note": { "en": "A great temple to Shiva, Vishnu and Brahma.", "es": "Un gran templo para Shiva, Visnú y Brahma." } },
+        { "at": [103.87, 13.41], "place": { "en": "Angkor, Cambodia", "es": "Angkor, Camboya" }, "date": "1150", "circa": true, "from": 0, "note": { "en": "Angkor Wat is built for Vishnu.", "es": "Angkor Wat se construye para Visnú." } },
+        { "at": [115.22, -8.6], "place": { "en": "Bali, Indonesia", "es": "Bali, Indonesia" }, "date": "1500", "circa": true, "from": 1, "note": { "en": "As Java turns to Islam, Bali keeps its Hindu faith.", "es": "Mientras Java se vuelve musulmana, Bali conserva su fe hindú." } }
+      ],
+      "where": ["religion:hinduism", "BGD", "LKA", "BTN", "GUY", "SUR", "TTO", "FJI"],
+      "strong": ["religion:hinduism"],
+      "note": { "en": "The main religion of India, Nepal and Mauritius and of Bali in Indonesia, with large communities from Fiji to the Caribbean.", "es": "Es la religión principal de la India, Nepal y Mauricio y de Bali, en Indonesia, con grandes comunidades desde Fiyi hasta el Caribe." },
+      "see": ["beliefs/hinduism"],
+      "wiki": { "en": "Hinduism", "es": "Hinduismo" }
+    },
+    {
+      "id": "cotton",
+      "name": { "en": "Cotton cloth", "es": "La tela de algodón" },
+      "cat": "tech",
+      "icon": "🧵",
+      "how": "invented",
+      "date": "-2600",
+      "circa": true,
+      "at": [68.14, 27.33],
+      "place": { "en": "Mohenjo-daro, Sindh, Pakistan", "es": "Mohenjo-daro, Sindh, Pakistán" },
+      "text": {
+        "en": "The people of the Indus valley were the first known to spin and weave cotton; today the world wears more cotton than any other natural fibre.",
+        "es": "Los pueblos del valle del Indo fueron los primeros conocidos en hilar y tejer algodón; hoy el mundo viste más algodón que ninguna otra fibra natural."
+      },
+      "details": {
+        "en": "A cotton thread preserved inside a copper bead at Mehrgarh, from about 5500 BC, is the oldest known, and scraps of cotton cloth survive from Mohenjo-daro. The Greek historian Herodotus wrote of Indian trees that grew wool. For some two thousand years India led the world in cotton cloth: fine muslins, bright prints and calicoes went by sea to Egypt, Arabia, Southeast Asia and, from the 1600s, Europe, until British mills copied them with machines. Cotton was tamed separately in the Americas, and most cotton grown today is an American species.",
+        "es": "Un hilo de algodón conservado dentro de una cuenta de cobre en Mehrgarh, de hacia el 5500 a. C., es el más antiguo conocido, y en Mohenjo-daro se conservan restos de tela de algodón. El historiador griego Heródoto escribió sobre árboles indios que daban lana. Durante unos dos mil años la India dominó el mundo en telas de algodón: muselinas finas, estampados vivos y calicós viajaban por mar a Egipto, Arabia, el Sudeste Asiático y, desde el siglo XVII, Europa, hasta que las fábricas británicas los copiaron con máquinas. El algodón también se domesticó por separado en América, y la mayor parte del que se cultiva hoy es una especie americana."
+      },
+      "roots": {
+        "en": "Built on the work of earlier farmers of the same region, at Mehrgarh, who were using cotton by about 5500 BC.",
+        "es": "Se basó en el trabajo de agricultores anteriores de la misma región, en Mehrgarh, que ya usaban algodón hacia el 5500 a. C."
+      },
+      "path": [
+        { "at": [31.23, 30.01], "place": { "en": "Fustat (Old Cairo), Egypt", "es": "Fustat (El Cairo antiguo), Egipto" }, "date": "1000", "circa": true, "note": { "en": "Block-printed cottons from Gujarat are traded here for centuries.", "es": "Durante siglos se comercian aquí algodones estampados con bloques de Guyarat." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1700", "circa": true, "note": { "en": "So many Indian cottons are imported that Britain restricts them by law in 1700 and 1721.", "es": "Se importan tantos algodones indios que Gran Bretaña los restringe por ley en 1700 y 1721." } },
+        { "at": [-2.24, 53.48], "place": { "en": "Manchester, England", "es": "Mánchester, Inglaterra" }, "date": "1780", "circa": true, "note": { "en": "Mills spin cotton by machine and start the factory age.", "es": "Las fábricas hilan algodón con máquinas e inician la era industrial." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Jeans, T-shirts and towels: cotton is grown in about 80 countries and worn in all of them.", "es": "Jeans, camisetas y toallas: el algodón se cultiva en unos 80 países y se usa en todos." },
+      "see": ["people:mehrgarh-cotton", "people/indus-valley"],
+      "wiki": { "en": "Cotton", "es": "Algodón" }
+    },
+    {
+      "id": "cloth-words",
+      "name": { "en": "Calico, khaki, pyjamas: cloth words", "es": "Calicó, caqui, pijama: palabras de tela" },
+      "cat": "words",
+      "icon": "👖",
+      "how": "named",
+      "date": "1500",
+      "circa": true,
+      "at": [75.78, 11.25],
+      "place": { "en": "Kozhikode (Calicut), Kerala, India", "es": "Kozhikode (antes Calicut), Kerala, India" },
+      "text": {
+        "en": "India's cloth trade gave English and Spanish words for fabrics and clothes: calico, chintz, dungarees, khaki, pyjamas, bandana, cashmere and madras.",
+        "es": "El comercio indio de telas dio al español y al inglés palabras de tejidos y ropa: calicó, caqui, pijama, cachemir, madrás y bandana."
+      },
+      "details": {
+        "en": "European traders named the cloths after the ports and words they met. Calico came from Calicut, where Vasco da Gama landed in 1498, and madras from the city now called Chennai; chintz from Hindi chīṇṭ, 'spotted, printed', and dungarees from a coarse cotton sold near Dongri in Mumbai. Pyjamas were the loose trousers worn in India, named with Persian words for 'leg garment'. British soldiers dyed their uniforms khaki, 'dust-coloured', from 1846. Bandanas were tie-dyed handkerchiefs, from bāndhnū, 'tying'.",
+        "es": "Los comerciantes europeos llamaron a las telas por los puertos y las palabras que encontraban. Calicó viene de Calicut, donde desembarcó Vasco da Gama en 1498, y madrás de la ciudad hoy llamada Chennai. El pijama era el pantalón holgado que se usaba en la India, nombrado con palabras persas que significan «prenda para las piernas». Los soldados británicos tiñeron sus uniformes de caqui, «color de polvo», desde 1846. El cachemir, la lana fina de las cabras de Cachemira, tomó el nombre de esa región, y la bandana, el pañuelo teñido con amarres, viene del hindi bāndhnū, «atar»."
+      },
+      "path": [
+        { "at": [-9.13, 38.73], "place": { "en": "Lisbon, Portugal", "es": "Lisboa, Portugal" }, "date": "1500", "circa": true, "note": { "en": "Portuguese ships bring Indian cottons straight to Europe.", "es": "Los barcos portugueses traen algodones indios directamente a Europa." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1650", "circa": true, "note": { "en": "The East India Company sells calicoes and chintzes, and the names stick.", "es": "La Compañía de las Indias Orientales vende calicós y chintz, y los nombres se quedan." } }
+      ],
+      "where": ["lang:eng", "lang:spa"],
+      "note": { "en": "Everyday words in English and Spanish; pyjamas, khaki and cashmere are used in many other languages too.", "es": "Son palabras cotidianas en español y en inglés; pijama, caqui y cachemir se usan también en muchas otras lenguas." },
+      "words": [
+        { "en": "calico", "es": "calicó", "from": "Calicut (Kozhikode), a port in Kerala", "means": { "en": "cloth from Calicut", "es": "tela de Calicut" } },
+        { "en": "chintz", "from": "chīṇṭ (Hindi)", "means": { "en": "spotted, printed cloth", "es": "tela moteada, estampada" } },
+        { "en": "dungarees", "from": "ḍuṅgrī (Hindi)", "means": { "en": "a coarse cotton cloth", "es": "una tela basta de algodón" } },
+        { "en": "khaki", "es": "caqui", "from": "khākī (Hindustani, from Persian), for Indian army uniforms", "means": { "en": "dust-coloured", "es": "color de polvo" } },
+        { "en": "pyjamas", "es": "pijama", "from": "pāy-jāma (Hindustani, from Persian), the Indian garment", "means": { "en": "leg garment", "es": "prenda para las piernas" } },
+        { "en": "bandana", "es": "bandana", "from": "bāndhnū (Hindi)", "means": { "en": "tie-dyeing", "es": "teñido con amarres" } },
+        { "en": "cashmere", "es": "cachemir", "from": "Kashmir, the region", "means": { "en": "wool of Kashmir goats", "es": "lana de las cabras de Cachemira" } },
+        { "en": "madras", "es": "madrás", "from": "Madras (Chennai), the city", "means": { "en": "cotton cloth from Madras", "es": "tela de algodón de Madrás" } }
+      ],
+      "wiki": { "en": "Khaki", "es": "Caqui (color)" }
+    },
+    {
+      "id": "everyday-words",
+      "name": { "en": "Jungle, bungalow, shampoo: everyday words", "es": "Jungla, bungaló, champú: palabras de cada día" },
+      "cat": "words",
+      "icon": "🌴",
+      "how": "named",
+      "date": "1700",
+      "circa": true,
+      "at": [88.36, 22.57],
+      "place": { "en": "Bengal and northern India", "es": "Bengala y el norte de la India" },
+      "text": {
+        "en": "Words picked up in India became plain English, and some plain Spanish too: jungle, bungalow, shampoo, loot, thug, catamaran and, perhaps, punch.",
+        "es": "Palabras aprendidas en la India se volvieron inglés corriente, y algunas también español: jungla, bungaló, champú, catamarán y, quizá, ponche."
+      },
+      "details": {
+        "en": "Jungle comes from Hindi jaṅgal, from Sanskrit jaṅgala, 'dry, rough land'; the British used it for any wild, overgrown place. A bungalow was a single-storey house 'in the Bengal style'. Shampoo was chāmpo, 'press!', a head and body massage: Sake Dean Mahomed, a Bengali who settled in England, opened 'shampooing' baths in Brighton in the 1810s, and the word moved on to hair washing. Catamaran is Tamil kaṭṭumaram, 'tied logs'. Punch, the drink, is often traced to pāñc, 'five', for its five ingredients, but that is not certain.",
+        "es": "Jungla viene del hindi jaṅgal, del sánscrito jaṅgala, «tierra seca y áspera»; los británicos lo usaron para cualquier lugar salvaje y enmarañado. Un bungaló era una casa de una sola planta «al estilo de Bengala». Champú era chāmpo, «¡aprieta!», un masaje de cabeza y cuerpo: Sake Dean Mahomed, un bengalí que se instaló en Inglaterra, abrió baños de «shampooing» en Brighton hacia 1815, y la palabra pasó al lavado del pelo. Catamarán es el tamil kaṭṭumaram, «troncos atados». Ponche, la bebida, se suele relacionar con pāñc, «cinco», por sus cinco ingredientes, pero no es seguro."
+      },
+      "path": [
+        { "at": [-0.13, 50.85], "place": { "en": "Brighton, England", "es": "Brighton, Inglaterra" }, "date": "1815", "circa": true, "by": { "en": "Sake Dean Mahomed", "es": "Sake Dean Mahomed" }, "note": { "en": "His 'shampooing' baths make the word fashionable.", "es": "Sus baños de «shampooing» ponen de moda la palabra." } }
+      ],
+      "where": ["lang:eng", "lang:spa"],
+      "note": { "en": "Shampoo and jungle are understood worldwide; bungalow names houses from Britain to Kenya and Australia.", "es": "Champú y jungla se entienden en todo el mundo; bungaló nombra casas desde Gran Bretaña hasta Kenia y Australia." },
+      "words": [
+        { "en": "jungle", "es": "jungla", "from": "jaṅgal (Hindi), from Sanskrit jaṅgala", "means": { "en": "dry, rough land", "es": "tierra seca y áspera" } },
+        { "en": "bungalow", "es": "bungaló", "from": "baṅglā (Hindi)", "means": { "en": "Bengali-style (house)", "es": "(casa) al estilo bengalí" } },
+        { "en": "shampoo", "es": "champú", "from": "chāmpo (Hindi), from chāmpnā", "means": { "en": "press! knead!", "es": "¡aprieta! ¡amasa!" } },
+        { "en": "loot", "from": "lūṭ (Hindi)", "means": { "en": "plunder", "es": "botín" } },
+        { "en": "thug", "from": "ṭhag (Hindi)", "means": { "en": "swindler", "es": "estafador" } },
+        { "en": "catamaran", "es": "catamarán", "from": "kaṭṭumaram (Tamil)", "means": { "en": "tied logs", "es": "troncos atados" } },
+        { "en": "punch", "es": "ponche", "from": "perhaps pāñc (Hindi), 'five' (uncertain)", "means": { "en": "a drink of five things", "es": "bebida de cinco cosas" } },
+        { "en": "cot", "from": "khāṭ (Hindi)", "means": { "en": "bedstead", "es": "armazón de cama" } }
+      ],
+      "wiki": { "en": "Bungalow", "es": "Bungaló" }
+    },
+    {
+      "id": "sanskrit-words",
+      "name": { "en": "Guru, karma, avatar: Sanskrit words", "es": "Gurú, karma, avatar: palabras del sánscrito" },
+      "cat": "words",
+      "icon": "📿",
+      "how": "named",
+      "date": "-500",
+      "circa": true,
+      "at": [83.0, 25.32],
+      "place": { "en": "Varanasi, an old centre of Sanskrit learning, India", "es": "Varanasi, antiguo centro del saber sánscrito, India" },
+      "text": {
+        "en": "From Sanskrit, the classical language of ancient India, English and Spanish took guru, karma, mantra, nirvana, avatar, mandala, pundit and juggernaut.",
+        "es": "Del sánscrito, la lengua clásica de la India antigua, el español y el inglés tomaron gurú, karma, mantra, nirvana, avatar y mandala."
+      },
+      "details": {
+        "en": "Sanskrit was the language of the Vedas, of Panini's grammar and of poets, scientists and philosophers for over two thousand years. Most of its words reached Europe from the late 1700s, when British scholars in India began translating its texts; Charles Wilkins published the Bhagavad Gita in English in 1785. Some words took new meanings. An avatar, a god's 'descent' to earth in a new body, became a player's figure in computer games in the 1980s, and a juggernaut, from the god Jagannath's huge temple chariot, became any unstoppable force.",
+        "es": "El sánscrito fue la lengua de los Vedas, de la gramática de Panini y de poetas, científicos y filósofos durante más de dos mil años. La mayoría de sus palabras llegaron a Europa desde finales del siglo XVIII, cuando estudiosos británicos en la India empezaron a traducir sus textos; Charles Wilkins publicó la Bhagavad Gita en inglés en 1785. Algunas palabras tomaron nuevos sentidos. Un avatar, el «descenso» de un dios a la tierra en un nuevo cuerpo, pasó a ser la figura de un jugador en los videojuegos de los años ochenta, y el gurú, el maestro espiritual, cualquier experto al que se sigue."
+      },
+      "path": [
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1785", "by": { "en": "Charles Wilkins", "es": "Charles Wilkins" }, "note": { "en": "The first English translation of the Bhagavad Gita.", "es": "La primera traducción al inglés de la Bhagavad Gita." } }
+      ],
+      "where": ["lang:eng", "lang:spa"],
+      "note": { "en": "Used daily in English and Spanish, and in most European languages.", "es": "Se usan a diario en español e inglés, y en la mayoría de las lenguas europeas." },
+      "words": [
+        { "en": "guru", "es": "gurú", "from": "guru (Sanskrit)", "means": { "en": "heavy; venerable teacher", "es": "pesado; maestro venerable" } },
+        { "en": "karma", "es": "karma", "from": "karma (Sanskrit)", "means": { "en": "action, deed", "es": "acción, obra" } },
+        { "en": "mantra", "es": "mantra", "from": "mantra (Sanskrit)", "means": { "en": "sacred formula", "es": "fórmula sagrada" } },
+        { "en": "nirvana", "es": "nirvana", "from": "nirvāṇa (Sanskrit)", "means": { "en": "blowing out", "es": "extinción, apagarse" } },
+        { "en": "avatar", "es": "avatar", "from": "avatāra (Sanskrit)", "means": { "en": "descent (of a god)", "es": "descenso (de un dios)" } },
+        { "en": "mandala", "es": "mandala", "from": "maṇḍala (Sanskrit)", "means": { "en": "circle", "es": "círculo" } },
+        { "en": "pundit", "from": "paṇḍita (Sanskrit)", "means": { "en": "learned man", "es": "erudito" } },
+        { "en": "juggernaut", "from": "Jagannātha (Sanskrit), a name of the god Vishnu", "means": { "en": "lord of the world", "es": "señor del mundo" } },
+        { "en": "chakra", "es": "chakra", "from": "cakra (Sanskrit)", "means": { "en": "wheel, circle", "es": "rueda, círculo" } }
+      ],
+      "wiki": { "en": "Sanskrit", "es": "Sánscrito" }
+    },
+    {
+      "id": "food-words",
+      "name": { "en": "Orange, ginger, aubergine: food words", "es": "Naranja, jengibre, berenjena: palabras de comida" },
+      "cat": "words",
+      "icon": "🍊",
+      "how": "named",
+      "date": "-300",
+      "circa": true,
+      "at": [78.5, 20.5],
+      "place": { "en": "India", "es": "India" },
+      "text": {
+        "en": "Many foods kept Indian names on their way west: orange, ginger, pepper, aubergine, mango and curry all go back to Sanskrit or Tamil.",
+        "es": "Muchos alimentos conservaron nombres indios en su viaje al oeste: naranja, jengibre, berenjena, mango, sándalo y curri vienen del sánscrito o del tamil."
+      },
+      "details": {
+        "en": "The words travelled with the goods, from language to language. Sanskrit nāraṅga became Persian nārang, Arabic nāranj and Spanish naranja; in French it gained an o- and became orange. Pippalī, long pepper, became Greek péperi and English pepper. Śṛṅgavera, ginger, went through Greek and Latin. Vātiṅgaṇa went through Persian and Arabic to Spanish berenjena and Catalan albergínia, the source of British 'aubergine'. Mango and curry came later, on Portuguese ships, from Malayalam and Tamil.",
+        "es": "Las palabras viajaban con las mercancías, de lengua en lengua. El sánscrito nāraṅga pasó al persa nārang, al árabe nāranj y al español naranja. Śṛṅgavera, el jengibre, pasó por el griego y el latín hasta llegar a jengibre. Vātiṅgaṇa pasó por el persa y el árabe hasta berenjena. Candana, también por el persa y el árabe, dio sándalo, y karpūra dio alcanfor. Mango y curri llegaron después, en barcos portugueses, del malayalam y del tamil."
+      },
+      "path": [
+        { "at": [44.58, 33.09], "place": { "en": "Ctesiphon, Iraq (Sasanian Persia)", "es": "Ctesifonte, Irak (Persia sasánida)" }, "date": "500", "circa": true, "note": { "en": "Persian nārang and bādingān.", "es": "En persa, nārang y bādingān." } },
+        { "at": [44.36, 33.31], "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" }, "date": "800", "circa": true, "note": { "en": "Arabic nāranj and bādhinjān.", "es": "En árabe, nāranj y bādhinjān." } },
+        { "at": [-4.78, 37.88], "place": { "en": "Córdoba, Spain", "es": "Córdoba, España" }, "date": "950", "circa": true, "note": { "en": "The words pass into the Spanish of al-Andalus: naranja, berenjena.", "es": "Las palabras pasan al romance de al-Ándalus: naranja, berenjena." } }
+      ],
+      "where": ["lang:eng", "lang:spa"],
+      "note": { "en": "In everyday use wherever English or Spanish is spoken.", "es": "De uso diario dondequiera que se hable español o inglés." },
+      "words": [
+        { "en": "orange", "es": "naranja", "from": "nāraṅga (Sanskrit), via Persian and Arabic", "means": { "en": "orange tree", "es": "naranjo" } },
+        { "en": "ginger", "es": "jengibre", "from": "śṛṅgavera (Sanskrit), via Greek and Latin", "means": { "en": "horn-shaped (root)", "es": "(raíz) con forma de cuerno" } },
+        { "en": "pepper", "from": "pippalī (Sanskrit), via Greek péperi", "means": { "en": "long pepper", "es": "pimienta larga" } },
+        { "en": "aubergine", "es": "berenjena", "from": "vātiṅgaṇa (Sanskrit), via Persian and Arabic", "means": { "en": "eggplant", "es": "berenjena" } },
+        { "en": "mango", "es": "mango", "from": "māṅṅa (Malayalam), via Portuguese manga" },
+        { "en": "curry", "es": "curri", "from": "kaṟi (Tamil)", "means": { "en": "sauce, relish", "es": "salsa, guiso" } },
+        { "en": "sandalwood", "es": "sándalo", "from": "candana (Sanskrit), via Persian and Arabic" },
+        { "en": "camphor", "es": "alcanfor", "from": "karpūra (Sanskrit), via Arabic kāfūr" },
+        { "en": "lacquer", "es": "laca", "from": "lākṣā (Sanskrit), via Persian and Arabic", "means": { "en": "lac, a resin made by insects", "es": "laca, una resina de insectos" } }
+      ],
+      "wiki": { "en": "Eggplant", "es": "Solanum melongena" }
+    },
+    {
+      "id": "place-names",
+      "name": { "en": "India, the Indies and Singapore: place names", "es": "India, las Indias y Singapur: nombres de lugar" },
+      "cat": "words",
+      "icon": "🗺️",
+      "how": "named",
+      "date": "-1500",
+      "circa": true,
+      "at": [68.5, 26.5],
+      "place": { "en": "The Indus river (Sindhu), Sindh, Pakistan", "es": "El río Indo (Sindhu), Sindh, Pakistán" },
+      "text": {
+        "en": "Sindhu, the Sanskrit name of the Indus river, became India, the Indies and Indonesia, and Sanskrit words name Singapore, the Himalaya and Sri Lanka.",
+        "es": "Sindhu, el nombre sánscrito del río Indo, dio India, las Indias e Indonesia, y palabras sánscritas nombran Singapur, el Himalaya y Sri Lanka."
+      },
+      "details": {
+        "en": "Persians said Hindu for Sindhu, and the Greeks, without the h, Indos: hence the Indus, India, Hindu and Hindi. When Columbus reached the Caribbean in 1492 he believed he was in the Indies, so its islands became the West Indies and their people 'Indians', a name later given to all the peoples of the Americas, and to the US state of Indiana. Indonesia, 'Indian islands', was coined in 1850. Further east, Indian culture left Sanskrit names: Singapore is 'lion city', Jakarta was Jayakarta, 'victorious city', and Cambodia comes from Kambuja.",
+        "es": "Los persas decían Hindu por Sindhu, y los griegos, sin la h, Indos: de ahí Indo, India, hindú e hindi. Cuando Colón llegó al Caribe en 1492 creyó estar en las Indias, así que sus islas se llamaron Indias Occidentales y sus habitantes «indios», nombre que luego se dio a todos los pueblos de América. Indonesia, «islas indias», se acuñó en 1850. Más al este, la cultura india dejó nombres sánscritos: Singapur es «ciudad del león», Yakarta fue Jayakarta, «ciudad victoriosa», y Camboya viene de Kambuja."
+      },
+      "path": [
+        { "at": [52.89, 29.93], "place": { "en": "Persepolis, Iran", "es": "Persépolis, Irán" }, "date": "-515", "circa": true, "note": { "en": "Darius I's inscriptions list Hindu, the Indus land, among his provinces.", "es": "Las inscripciones de Darío I incluyen Hindu, la tierra del Indo, entre sus provincias." } },
+        { "at": [23.73, 37.98], "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" }, "date": "-440", "circa": true, "note": { "en": "Herodotus writes of India and the Indians.", "es": "Heródoto escribe sobre la India y los indios." } },
+        { "at": [-70.5, 19.0], "place": { "en": "Hispaniola (Dominican Republic and Haiti)", "es": "La Española (República Dominicana y Haití)" }, "date": "1492", "by": { "en": "Christopher Columbus", "es": "Cristóbal Colón" }, "note": { "en": "Columbus thinks he has reached the Indies.", "es": "Colón cree haber llegado a las Indias." } },
+        { "at": [106.83, -6.25], "place": { "en": "Jakarta, Indonesia", "es": "Yakarta, Indonesia" }, "date": "1527", "from": 0, "note": { "en": "The port is renamed Jayakarta, Sanskrit for 'victorious city'.", "es": "El puerto recibe el nombre de Jayakarta, «ciudad victoriosa» en sánscrito." } }
+      ],
+      "where": ["world"],
+      "strong": ["IND", "IDN", "SGP", "LKA", "KHM", "NPL"],
+      "note": { "en": "India is called by its Indus name almost everywhere; Indonesia, Singapore, Sri Lanka and Cambodia carry Indian names.", "es": "A la India se la llama por el nombre del Indo casi en todas partes; Indonesia, Singapur, Sri Lanka y Camboya llevan nombres indios." },
+      "words": [
+        { "en": "India", "es": "India", "type": "place", "from": "Sindhu (Sanskrit), via Persian Hindu and Greek Indos", "means": { "en": "river; the Indus", "es": "río; el Indo" } },
+        { "en": "Indus", "es": "Indo", "type": "place", "from": "Sindhu (Sanskrit), via Persian and Greek", "means": { "en": "river", "es": "río" } },
+        { "en": "Hindu, Hindi", "es": "hindú, hindi", "from": "Hindu (Persian), from Sanskrit Sindhu", "means": { "en": "of the Indus land", "es": "de la tierra del Indo" } },
+        { "en": "West Indies", "es": "Indias Occidentales", "type": "place", "from": "India, by Columbus's mistake of 1492" },
+        { "en": "Indian (for Native Americans)", "es": "indio", "from": "India, by Columbus's mistake of 1492" },
+        { "en": "Indiana", "type": "place", "from": "Indian + Latin -a", "means": { "en": "land of the Indians", "es": "tierra de los indios" } },
+        { "en": "Indonesia", "es": "Indonesia", "type": "place", "from": "Indos + nēsos (Greek), coined in 1850", "means": { "en": "Indian islands", "es": "islas indias" } },
+        { "en": "Himalaya", "es": "Himalaya", "type": "place", "from": "himālaya (Sanskrit)", "means": { "en": "abode of snow", "es": "morada de la nieve" } },
+        { "en": "Singapore", "es": "Singapur", "type": "place", "from": "Siṃhapura (Sanskrit), via Malay Singapura", "means": { "en": "lion city", "es": "ciudad del león" } },
+        { "en": "Sri Lanka", "es": "Sri Lanka", "type": "place", "from": "śrī + Laṅkā (Sanskrit)", "means": { "en": "resplendent Lanka", "es": "Lanka resplandeciente" } },
+        { "en": "Jakarta", "es": "Yakarta", "type": "place", "from": "Jayakarta (Sanskrit)", "means": { "en": "victorious city", "es": "ciudad victoriosa" } },
+        { "en": "Cambodia", "es": "Camboya", "type": "place", "from": "Kambuja (Sanskrit)", "means": { "en": "born of Kambu, a legendary sage", "es": "nacidos de Kambu, un sabio legendario" } },
+        { "en": "Ayutthaya", "es": "Ayutthaya", "type": "place", "from": "Ayodhyā (Sanskrit), Rama's city", "means": { "en": "unconquerable", "es": "invencible" } }
+      ],
+      "wiki": { "en": "Names of India", "es": "" }
+    },
+    {
+      "id": "given-names",
+      "name": { "en": "Maya, Indira, Kamala: given names", "es": "Maya, Indira, Kamala: nombres de pila" },
+      "cat": "words",
+      "icon": "👶",
+      "how": "named",
+      "sure": "likely",
+      "date": "-500",
+      "circa": true,
+      "at": [82.0, 25.0],
+      "place": { "en": "India", "es": "India" },
+      "text": {
+        "en": "Sanskrit gave names now heard far beyond India: Indira, Kamala, Krishna, Ravi, Priya, Anand and, in part, Maya and Tara.",
+        "es": "El sánscrito dio nombres que hoy se oyen mucho más allá de la India: Indira, Kamala, Krishna, Ravi, Priya, Anand y, en parte, Maya y Tara."
+      },
+      "details": {
+        "en": "Many Indian names are Sanskrit words or names of gods: Kamala is 'lotus', Ravi 'sun', Priya 'beloved', Anand 'bliss', Krishna 'dark', the god of the Bhagavad Gita, and Indira a name of the goddess Lakshmi. Families of South Asian heritage carry them in Britain, North America, the Caribbean, East Africa and Fiji, and some became known everywhere through people such as Indira Gandhi. Maya and Tara are used widely, but each has more than one root: Maya is also the Greek Maia, and Tara also an Irish place name.",
+        "es": "Muchos nombres indios son palabras sánscritas o nombres de dioses: Kamala es «loto», Ravi «sol», Priya «amada», Anand «dicha», Krishna «oscuro», el dios de la Bhagavad Gita, e Indira es un nombre de la diosa Lakshmi. Las familias de origen surasiático los llevan en Gran Bretaña, Norteamérica, el Caribe, África oriental y Fiyi, y algunos se hicieron conocidos en todas partes por personas como Indira Gandhi; Indira también se usa en América Latina. Maya y Tara se usan mucho, pero cada uno tiene más de una raíz: Maya es también la griega Maia, y Tara un lugar de Irlanda."
+      },
+      "where": ["IND", "NPL", "LKA", "GBR", "USA", "CAN", "AUS", "TTO", "GUY", "FJI", "MUS"],
+      "strong": ["IND", "NPL"],
+      "note": { "en": "Common across South Asia and among its families abroad; Maya, Tara and Indira are also used in English- and Spanish-speaking countries.", "es": "Son comunes en el sur de Asia y entre sus familias en el extranjero; Maya, Tara e Indira también se usan en países de habla inglesa y española." },
+      "words": [
+        { "en": "Indira", "es": "Indira", "type": "name", "from": "Indirā (Sanskrit), a name of the goddess Lakshmi", "means": { "en": "beauty, splendour", "es": "belleza, esplendor" } },
+        { "en": "Kamala", "es": "Kamala", "type": "name", "from": "kamala (Sanskrit)", "means": { "en": "lotus", "es": "loto" } },
+        { "en": "Krishna", "es": "Krishna", "type": "name", "from": "kṛṣṇa (Sanskrit), the god", "means": { "en": "dark", "es": "oscuro" } },
+        { "en": "Ravi", "es": "Ravi", "type": "name", "from": "ravi (Sanskrit)", "means": { "en": "sun", "es": "sol" } },
+        { "en": "Priya", "es": "Priya", "type": "name", "from": "priyā (Sanskrit)", "means": { "en": "beloved", "es": "amada" } },
+        { "en": "Anand", "es": "Anand", "type": "name", "from": "ānanda (Sanskrit)", "means": { "en": "bliss", "es": "dicha" } },
+        { "en": "Maya", "es": "Maya", "type": "name", "from": "māyā (Sanskrit), the Buddha's mother; also Greek Maia", "means": { "en": "illusion, magic", "es": "ilusión, magia" } },
+        { "en": "Tara", "es": "Tara", "type": "name", "from": "tārā (Sanskrit); also an Irish place name", "means": { "en": "star", "es": "estrella" } }
+      ],
+      "wiki": { "en": "Indian name", "es": "" }
+    },
+    {
+      "id": "sugar",
+      "name": { "en": "Crystal sugar", "es": "El azúcar cristalizado" },
+      "cat": "food",
+      "icon": "🍬",
+      "how": "invented",
+      "sure": "likely",
+      "date": "350",
+      "circa": true,
+      "at": [80.5, 26.0],
+      "place": { "en": "Northern India", "es": "Norte de la India" },
+      "text": {
+        "en": "Indians were the first known to boil cane juice into solid crystals of sugar; the words sugar, azúcar and candy all come from Sanskrit.",
+        "es": "Los indios fueron los primeros conocidos en hervir el jugo de caña hasta lograr cristales sólidos de azúcar; las palabras azúcar, cande y el inglés sugar vienen del sánscrito."
+      },
+      "details": {
+        "en": "Sugar cane was first tamed in New Guinea, but in India people learned to boil its juice and let it set into lumps and grains, which keep and travel. Sanskrit texts name several grades, from dark guḍa to white crystals, khaṇḍa and śarkarā, 'grit'; crystal sugar was common by about the Gupta period. Persians grew cane and refined sugar in the following centuries; Arabs planted it around the Mediterranean, and Columbus took cane to the Caribbean in 1493, where plantations worked by enslaved Africans made sugar cheap and common.",
+        "es": "La caña de azúcar se domesticó primero en Nueva Guinea, pero en la India se aprendió a hervir su jugo y dejarlo cuajar en terrones y granos, que se conservan y viajan. Los textos sánscritos nombran varias clases, desde el oscuro guḍa hasta cristales blancos, khaṇḍa y śarkarā, «arenilla»; el azúcar cristalizado era común hacia la época gupta. Los persas cultivaron caña y refinaron azúcar en los siglos siguientes; los árabes la plantaron en torno al Mediterráneo, y Colón llevó caña al Caribe en 1493, donde las plantaciones trabajadas por africanos esclavizados abarataron el azúcar."
+      },
+      "roots": {
+        "en": "Built on sugar cane, first tamed in New Guinea thousands of years earlier.",
+        "es": "Se basó en la caña de azúcar, domesticada en Nueva Guinea miles de años antes."
+      },
+      "path": [
+        { "at": [48.55, 32.28], "place": { "en": "Gundeshapur, Khuzestan, Iran", "es": "Gundeshapur, Juzestán, Irán" }, "date": "600", "circa": true, "note": { "en": "Persian growers plant cane and refine sugar.", "es": "Los cultivadores persas siembran caña y refinan azúcar." } },
+        { "at": [-70.5, 19.0], "place": { "en": "Hispaniola (Dominican Republic and Haiti)", "es": "La Española (República Dominicana y Haití)" }, "date": "1493", "by": { "en": "Christopher Columbus", "es": "Cristóbal Colón" }, "note": { "en": "Sugar cane comes to the Americas on Columbus's second voyage.", "es": "La caña de azúcar llega a América en el segundo viaje de Colón." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Sugar sweetens food and drink in every country.", "es": "El azúcar endulza comidas y bebidas en todos los países." },
+      "words": [
+        { "en": "sugar", "es": "azúcar", "from": "śarkarā (Sanskrit), via Persian and Arabic sukkar", "means": { "en": "grit, gravel", "es": "arenilla, grava" } },
+        { "en": "candy", "es": "cande", "from": "khaṇḍa (Sanskrit), via Persian and Arabic qand", "means": { "en": "piece, lump of sugar", "es": "trozo, terrón de azúcar" } },
+        { "en": "jaggery", "from": "śarkarā (Sanskrit), via Malayalam and Portuguese", "means": { "en": "raw cane sugar", "es": "azúcar de caña sin refinar" } }
+      ],
+      "see": ["food:crystal-sugar"],
+      "wiki": { "en": "Sugar", "es": "Azúcar" }
+    },
+    {
+      "id": "black-pepper",
+      "name": { "en": "Black pepper", "es": "La pimienta negra" },
+      "cat": "food",
+      "icon": "🧂",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "-1213",
+      "at": [76.5, 10.2],
+      "place": { "en": "Malabar Coast, Kerala, India", "es": "Costa de Malabar, Kerala, India" },
+      "text": {
+        "en": "Black pepper, the world's most traded spice, comes from a vine of India's Malabar Coast, where it was first grown and sold far away.",
+        "es": "La pimienta negra, la especia más comerciada del mundo, viene de una enredadera de la costa de Malabar, en la India, donde se cultivó por primera vez y se vendió a tierras lejanas."
+      },
+      "details": {
+        "en": "Peppercorns from southern India were found in the nostrils of the mummy of Ramesses II, buried in 1213 BC. Under the Roman Empire, ships sailed with the monsoon winds to Muziris in Kerala to buy pepper with gold, and Pliny complained of the cost. Pepper drew Arab, Venetian and Portuguese traders, and Vasco da Gama's voyage of 1498 to Calicut was largely about it. Planters later took the vine to Southeast Asia and Brazil, and Vietnam is now the largest producer.",
+        "es": "En las fosas nasales de la momia de Ramsés II, enterrado en 1213 a. C., se hallaron granos de pimienta del sur de la India. En tiempos del Imperio romano, los barcos navegaban con los monzones hasta Muziris, en Kerala, para comprar pimienta con oro, y Plinio se quejaba de su precio. La pimienta atrajo a comerciantes árabes, venecianos y portugueses, y el viaje de Vasco da Gama a Calicut en 1498 tuvo mucho que ver con ella. Después, los plantadores llevaron la enredadera al Sudeste Asiático y a Brasil, y hoy Vietnam es el mayor productor."
+      },
+      "path": [
+        { "at": [32.64, 25.7], "place": { "en": "Luxor (Thebes), Egypt", "es": "Luxor (Tebas), Egipto" }, "date": "-1213", "note": { "en": "Peppercorns are placed in the mummy of Ramesses II.", "es": "Se colocan granos de pimienta en la momia de Ramsés II." } },
+        { "at": [12.48, 41.89], "place": { "en": "Rome, Italy", "es": "Roma, Italia" }, "date": "50", "circa": true, "from": 0, "note": { "en": "Roman ships buy pepper at Muziris; it fills Roman kitchens.", "es": "Los barcos romanos compran pimienta en Muziris; llena las cocinas romanas." } },
+        { "at": [-9.13, 38.73], "place": { "en": "Lisbon, Portugal", "es": "Lisboa, Portugal" }, "date": "1499", "from": 0, "by": { "en": "Vasco da Gama", "es": "Vasco da Gama" }, "note": { "en": "Back from Calicut with pepper, opening the sea route to India.", "es": "Vuelve de Calicut con pimienta y abre la ruta marítima a la India." } },
+        { "at": [108.05, 12.67], "place": { "en": "Central Highlands, Vietnam", "es": "Altiplanicies Centrales, Vietnam" }, "date": "2000", "circa": true, "from": 0, "note": { "en": "Vietnam becomes the world's largest grower.", "es": "Vietnam se convierte en el mayor productor del mundo." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "On tables and in kitchens everywhere; Vietnam, Brazil, Indonesia and India grow most of it.", "es": "Está en mesas y cocinas de todas partes; Vietnam, Brasil, Indonesia y la India producen la mayor parte." },
+      "see": ["food:black-pepper", "food/spices"],
+      "wiki": { "en": "Black pepper", "es": "Piper nigrum" }
+    },
+    {
+      "id": "turmeric",
+      "name": { "en": "Turmeric", "es": "La cúrcuma" },
+      "cat": "food",
+      "icon": "🟡",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "-2500",
+      "circa": true,
+      "at": [76.3, 29.05],
+      "place": { "en": "Farmana, Haryana, India", "es": "Farmana, Haryana, India" },
+      "text": {
+        "en": "Turmeric, the golden root of curries, was probably first grown in India, where traces of it were found on Indus cooking pots about 4,500 years old.",
+        "es": "La cúrcuma, la raíz dorada del curri, probablemente se cultivó primero en la India, donde se hallaron rastros suyos en ollas del Indo de unos 4500 años."
+      },
+      "details": {
+        "en": "Starch grains on cooking pots and on human teeth at Farmana, an Indus town, suggest that cooks there used turmeric and ginger around 2500 BC. Turmeric does not set seed and is grown from pieces of root, so it spread only where people carried it: to Southeast Asia, China and East Africa. It colours and flavours curries, gives mustard its yellow, and is used in Indian weddings, rituals and folk medicine. India grows and eats most of the world's turmeric.",
+        "es": "Granos de almidón en ollas y en dientes humanos de Farmana, una ciudad del Indo, indican que allí se cocinaba con cúrcuma y jengibre hacia el 2500 a. C. La cúrcuma no da semillas y se cultiva con trozos de raíz, así que solo se extendió adonde la llevó la gente: al Sudeste Asiático, a China y a África oriental. Da color y sabor al curri, pone el amarillo en la mostaza y se usa en bodas, rituales y remedios populares de la India. La India produce y consume la mayor parte de la cúrcuma del mundo."
+      },
+      "where": ["world"],
+      "strong": ["IND", "PAK", "BGD", "NPL", "LKA"],
+      "note": { "en": "Used in kitchens worldwide; India grows and eats most of it.", "es": "Se usa en cocinas de todo el mundo; la India produce y consume la mayor parte." },
+      "wiki": { "en": "Turmeric", "es": "Curcuma longa" }
+    },
+    {
+      "id": "indigo",
+      "name": { "en": "Indigo dye", "es": "El añil o índigo" },
+      "cat": "tech",
+      "icon": "🔵",
+      "how": "developed",
+      "date": "50",
+      "circa": true,
+      "at": [72.98, 21.7],
+      "place": { "en": "Barygaza (Bharuch), Gujarat, India", "es": "Barygaza (Bharuch), Guyarat, India" },
+      "text": {
+        "en": "India was the Old World's great source of indigo, the blue dye of jeans: the Greeks called it 'the Indian dye', and Spanish añil comes from Sanskrit nīlī.",
+        "es": "La India fue la gran fuente de índigo del Viejo Mundo, el tinte azul de los jeans: los griegos lo llamaron «el tinte indio», y el español añil viene del sánscrito nīlī."
+      },
+      "details": {
+        "en": "Dyers in India steeped indigo leaves in water, let them ferment and dried the blue sediment into cakes that kept for years. Greek and Roman merchants bought them at ports such as Barygaza, and the Greeks called the dye indikón, 'Indian', which gave indigo and índigo. Arabic an-nīl, from Sanskrit nīlī, 'dark blue', gave Spanish añil. In the 1800s Bengal supplied much of the world's indigo, until German chemists began selling a synthetic version in 1897. Synthetic indigo still dyes almost every pair of blue jeans.",
+        "es": "Los tintoreros indios remojaban hojas de índigo en agua, las dejaban fermentar y secaban el sedimento azul en panes que duraban años. Los mercaderes griegos y romanos los compraban en puertos como Barygaza, y los griegos llamaron al tinte indikón, «indio», de donde vienen índigo y el inglés indigo. El árabe an-nīl, del sánscrito nīlī, «azul oscuro», dio el español añil. En el siglo XIX Bengala producía buena parte del índigo del mundo, hasta que químicos alemanes empezaron a vender uno sintético en 1897. El índigo sintético sigue tiñendo casi todos los jeans."
+      },
+      "roots": {
+        "en": "Indigo dyes were also made, separately, in Peru more than 6,000 years ago, and in Africa and East Asia.",
+        "es": "También se hicieron tintes de índigo, por separado, en Perú hace más de 6000 años, y en África y Asia oriental."
+      },
+      "path": [
+        { "at": [12.48, 41.89], "place": { "en": "Rome, Italy", "es": "Roma, Italia" }, "date": "77", "by": { "en": "Pliny the Elder", "es": "Plinio el Viejo" }, "note": { "en": "Pliny describes indicum, the blue dye from India.", "es": "Plinio describe el indicum, el tinte azul de la India." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1810", "circa": true, "from": 0, "note": { "en": "Indigo from Bengal plantations dominates the world market.", "es": "El índigo de las plantaciones de Bengala domina el mercado mundial." } },
+        { "at": [-122.42, 37.77], "place": { "en": "San Francisco, USA", "es": "San Francisco, EE. UU." }, "date": "1873", "note": { "en": "Riveted work trousers of indigo-dyed denim, the first blue jeans, are patented.", "es": "Se patentan pantalones de trabajo con remaches, de mezclilla teñida con índigo: los primeros jeans." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Blue jeans, worn in every country, are dyed with indigo.", "es": "Los jeans, que se usan en todos los países, se tiñen con índigo." },
+      "words": [
+        { "en": "indigo", "es": "índigo", "from": "indikón (Greek)", "means": { "en": "Indian (dye)", "es": "(tinte) indio" } },
+        { "es": "añil", "from": "nīlī (Sanskrit), via Arabic an-nīl", "means": { "en": "dark blue", "es": "azul oscuro" } }
+      ],
+      "wiki": { "en": "Indigo dye", "es": "Colorante índigo" }
+    },
+    {
+      "id": "diamonds",
+      "name": { "en": "Diamonds as gems", "es": "Los diamantes como gemas" },
+      "cat": "daily",
+      "icon": "💎",
+      "how": "invented",
+      "sure": "likely",
+      "date": "-300",
+      "circa": true,
+      "at": [80.05, 16.68],
+      "place": { "en": "Krishna valley, Andhra Pradesh, India", "es": "Valle del Krishna, Andhra Pradesh, India" },
+      "text": {
+        "en": "For some 2,000 years India was the world's only known source of diamonds, and Indians were the first known to mine, grade and trade them.",
+        "es": "Durante unos 2000 años la India fue la única fuente conocida de diamantes del mundo, y los indios fueron los primeros conocidos en extraerlos, clasificarlos y comerciarlos."
+      },
+      "details": {
+        "en": "Diamonds were washed out of river gravels in the Krishna and Godavari valleys and elsewhere in India; the Arthashastra, a manual of statecraft from the last centuries BC, already describes them. The Romans knew them as adamas. Later the markets of Golconda sold the great stones, among them the Koh-i-Noor. When diamonds were found in Brazil in the 1720s and in South Africa in 1867, India's monopoly ended. But India came back: the city of Surat now cuts and polishes the great majority of the world's diamonds.",
+        "es": "Los diamantes se lavaban de las gravas de los ríos en los valles del Krishna y el Godavari y en otras partes de la India; el Arthashastra, un manual de gobierno de los últimos siglos antes de Cristo, ya los describe. Los romanos los conocían como adamas. Más tarde, los mercados de Golconda vendieron las grandes piedras, entre ellas el Koh-i-Noor. Cuando se hallaron diamantes en Brasil en la década de 1720 y en Sudáfrica en 1867, terminó el monopolio indio. Pero la India volvió: la ciudad de Surat talla y pule hoy la gran mayoría de los diamantes del mundo."
+      },
+      "path": [
+        { "at": [12.48, 41.89], "place": { "en": "Rome, Italy", "es": "Roma, Italia" }, "date": "77", "by": { "en": "Pliny the Elder", "es": "Plinio el Viejo" }, "note": { "en": "Pliny writes of adamas, the hardest and costliest of gems.", "es": "Plinio escribe sobre el adamas, la más dura y cara de las gemas." } },
+        { "at": [4.4, 51.22], "place": { "en": "Antwerp, Belgium", "es": "Amberes, Bélgica" }, "date": "1500", "circa": true, "from": 0, "note": { "en": "Indian stones arrive by sea and Antwerp becomes a cutting centre.", "es": "Las piedras indias llegan por mar y Amberes se convierte en un centro de talla." } },
+        { "at": [72.83, 21.17], "place": { "en": "Surat, Gujarat, India", "es": "Surat, Guyarat, India" }, "date": "1980", "circa": true, "from": 0, "note": { "en": "Surat becomes the world's diamond-cutting capital.", "es": "Surat se convierte en la capital mundial de la talla de diamantes." } }
+      ],
+      "where": ["world"],
+      "strong": ["IND"],
+      "note": { "en": "Diamond rings and jewellery are sold worldwide; most stones are cut in Surat, India.", "es": "Anillos y joyas de diamantes se venden en todo el mundo; la mayoría de las piedras se tallan en Surat, India." },
+      "wiki": { "en": "Diamond", "es": "Diamante" }
+    },
+    {
+      "id": "nose-surgery",
+      "name": { "en": "Plastic surgery of the nose", "es": "La cirugía plástica de la nariz" },
+      "cat": "science",
+      "icon": "👃",
+      "how": "invented",
+      "sure": "likely",
+      "date": "-200",
+      "circa": true,
+      "at": [83.0, 25.32],
+      "place": { "en": "Varanasi, Uttar Pradesh, India", "es": "Benarés (Varanasi), Uttar Pradesh, India" },
+      "text": {
+        "en": "The Sushruta Samhita describes rebuilding a lost nose with a flap of the patient's own skin, a method that, reported from India in 1794, helped start modern plastic surgery.",
+        "es": "El Sushruta Samhita describe cómo reconstruir una nariz perdida con un colgajo de la piel del propio paciente, un método que, conocido desde la India en 1794, ayudó a iniciar la cirugía plástica moderna."
+      },
+      "details": {
+        "en": "The Sushruta Samhita, a Sanskrit surgical text whose oldest layers may go back to the last centuries BC, though its dates are debated, describes more than a hundred instruments and how to cut a leaf-shaped flap from the cheek, still attached, and turn it over a lost nose. Indian surgeons kept the art alive. In 1794 a London magazine printed a report of a man named Cowasjee whose nose had been rebuilt near Pune with skin from his forehead. Joseph Carpue tried this 'Indian method' in London in 1814, and surgeons still use the forehead flap today.",
+        "es": "El Sushruta Samhita, un texto quirúrgico en sánscrito cuyas capas más antiguas podrían remontarse a los últimos siglos antes de Cristo, aunque sus fechas se discuten, describe más de cien instrumentos y cómo cortar en la mejilla un colgajo en forma de hoja, sin separarlo, y girarlo sobre una nariz perdida. Los cirujanos indios mantuvieron vivo ese arte. En 1794 una revista de Londres publicó el caso de un hombre llamado Cowasjee, al que cerca de Pune le habían reconstruido la nariz con piel de la frente. Joseph Carpue probó este «método indio» en Londres en 1814, y los cirujanos siguen usando el colgajo frontal."
+      },
+      "path": [
+        { "at": [73.86, 18.52], "place": { "en": "Pune, Maharashtra, India", "es": "Pune, Maharashtra, India" }, "date": "1793", "circa": true, "note": { "en": "Cowasjee's new nose is made with a forehead flap and reported by British surgeons.", "es": "La nueva nariz de Cowasjee se hace con un colgajo de la frente y la describen cirujanos británicos." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1814", "by": { "en": "Joseph Carpue", "es": "Joseph Carpue" }, "note": { "en": "Britain's first such operation, after the 1794 report.", "es": "La primera operación de este tipo en Gran Bretaña, tras el informe de 1794." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Skin-flap reconstruction is used by plastic surgeons worldwide.", "es": "Los cirujanos plásticos de todo el mundo usan la reconstrucción con colgajos de piel." },
+      "see": ["plagues:sushruta"],
+      "wiki": { "en": "Sushruta Samhita", "es": "Susruta-samhita" }
+    },
+    {
+      "id": "ayurveda",
+      "name": { "en": "Ayurveda", "es": "El ayurveda" },
+      "cat": "science",
+      "icon": "🌿",
+      "how": "invented",
+      "date": "-200",
+      "circa": true,
+      "at": [79.0, 27.0],
+      "place": { "en": "Northern India", "es": "Norte de la India" },
+      "text": {
+        "en": "Ayurveda, 'the knowledge of long life', a system of medicine set down in Sanskrit some 2,000 years ago, is still practised by many doctors in India and beyond.",
+        "es": "El ayurveda, «el conocimiento de la vida larga», un sistema de medicina escrito en sánscrito hace unos 2000 años, sigue practicándolo mucha gente en la India y fuera de ella."
+      },
+      "details": {
+        "en": "Its classic texts, the Charaka Samhita and the Sushruta Samhita, explain health as a balance of three doshas and describe diet, hundreds of medicinal plants and surgery. It travelled with Buddhism to Sri Lanka and Tibet, where it shaped Tibetan medicine, and Arab physicians translated Charaka in the 700s and 800s. Today India trains Ayurvedic doctors at universities and has a government ministry, AYUSH, for traditional medicine; Ayurvedic clinics and products are found worldwide. Many of its remedies have not been tested in modern clinical trials.",
+        "es": "Sus textos clásicos, el Charaka Samhita y el Sushruta Samhita, explican la salud como un equilibrio de tres doshas y describen dietas, cientos de plantas medicinales y cirugía. Viajó con el budismo a Sri Lanka y al Tíbet, donde moldeó la medicina tibetana, y los médicos árabes tradujeron a Charaka en los siglos VIII y IX. Hoy la India forma médicos ayurvédicos en universidades y tiene un ministerio, AYUSH, para la medicina tradicional; hay clínicas y productos ayurvédicos en todo el mundo. Muchos de sus remedios no se han probado en ensayos clínicos modernos."
+      },
+      "path": [
+        { "at": [91.13, 29.65], "place": { "en": "Lhasa, Tibet", "es": "Lhasa, Tíbet" }, "date": "800", "circa": true, "note": { "en": "Indian medical texts help shape Tibetan medicine.", "es": "Los textos médicos indios ayudan a formar la medicina tibetana." } },
+        { "at": [44.36, 33.31], "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" }, "date": "800", "circa": true, "from": 0, "note": { "en": "Charaka's book is translated into Arabic.", "es": "El libro de Charaka se traduce al árabe." } }
+      ],
+      "where": ["IND", "NPL", "LKA", "BGD"],
+      "strong": ["IND"],
+      "note": { "en": "Practised alongside modern medicine in India, Nepal and Sri Lanka, and offered in clinics and spas around the world.", "es": "Se practica junto a la medicina moderna en la India, Nepal y Sri Lanka, y se ofrece en clínicas y spas de todo el mundo." },
+      "see": ["plagues:ayurveda"],
+      "wiki": { "en": "Ayurveda", "es": "Ayurveda" }
+    },
+    {
+      "id": "zebu",
+      "name": { "en": "Zebu, the humped cattle", "es": "El cebú, el ganado con joroba" },
+      "cat": "food",
+      "icon": "🐂",
+      "how": "tamed",
+      "date": "-5500",
+      "circa": true,
+      "at": [67.62, 29.39],
+      "place": { "en": "Mehrgarh, Balochistan, Pakistan", "es": "Mehrgarh, Baluchistán, Pakistán" },
+      "text": {
+        "en": "Humped zebu cattle, tamed in the Indus region and shown on Indus seals, now make up most of the cattle of South Asia, tropical Africa and Brazil.",
+        "es": "El cebú, el ganado con joroba domesticado en la región del Indo y retratado en los sellos del Indo, forma hoy la mayor parte del ganado del sur de Asia, del África tropical y de Brasil."
+      },
+      "details": {
+        "en": "Zebu descend from the wild aurochs of South Asia, tamed by farmers at sites such as Mehrgarh, the forerunners of the Indus cities, by about 5500 BC. They bear heat, drought and ticks better than European cattle. Indus seal makers carved zebu bulls with care, and in India the cow became sacred. Zebu spread to Africa, where they mixed with local cattle, and from the late 1800s breeders shipped Indian bulls to Brazil and the United States. Brazil's Nelore breed, from Ongole cattle of Andhra Pradesh, now forms much of the world's largest commercial herd.",
+        "es": "El cebú desciende del uro salvaje del sur de Asia, domesticado por agricultores de lugares como Mehrgarh, precursores de las ciudades del Indo, hacia el 5500 a. C. Soporta el calor, la sequía y las garrapatas mejor que el ganado europeo. Los grabadores de sellos del Indo tallaron toros cebú con esmero, y en la India la vaca se volvió sagrada. El cebú llegó a África, donde se mezcló con el ganado local, y desde finales del siglo XIX los criadores enviaron toros indios a Brasil y Estados Unidos. La raza nelore de Brasil, que viene del ganado ongole de Andhra Pradesh, forma hoy buena parte del mayor rebaño comercial del mundo."
+      },
+      "path": [
+        { "at": [68.14, 27.33], "place": { "en": "Mohenjo-daro, Sindh, Pakistan", "es": "Mohenjo-daro, Sindh, Pakistán" }, "date": "-2500", "circa": true, "note": { "en": "Zebu bulls are carved on Indus seals.", "es": "Se tallan toros cebú en los sellos del Indo." } },
+        { "at": [-47.93, -19.75], "place": { "en": "Uberaba, Minas Gerais, Brazil", "es": "Uberaba, Minas Gerais, Brasil" }, "date": "1890", "circa": true, "note": { "en": "Indian bulls arrive; zebu breeds soon fill Brazil's pastures.", "es": "Llegan toros indios; las razas cebú pronto llenan los pastos de Brasil." } }
+      ],
+      "where": ["IND", "PAK", "BGD", "NPL", "LKA", "MMR", "BRA", "PRY", "BOL", "subregion:eastern-africa", "subregion:western-africa"],
+      "strong": ["IND", "BRA"],
+      "note": { "en": "Most cattle in India, Pakistan, Bangladesh, Brazil and tropical Africa are zebu or part zebu.", "es": "La mayor parte del ganado de la India, Pakistán, Bangladés, Brasil y el África tropical es cebú o en parte cebú." },
+      "see": ["people/indus-valley"],
+      "wiki": { "en": "Zebu", "es": "Bos indicus" }
+    },
+    {
+      "id": "sesame",
+      "name": { "en": "Sesame", "es": "El ajonjolí o sésamo" },
+      "cat": "food",
+      "icon": "🥯",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "-2600",
+      "circa": true,
+      "at": [72.86, 30.63],
+      "place": { "en": "Harappa, Punjab, Pakistan", "es": "Harappa, Punyab, Pakistán" },
+      "text": {
+        "en": "Sesame, the seed on burger buns and in tahini, halva and Asian cooking oils, was first farmed in South Asia, where it turns up at Harappan sites.",
+        "es": "El ajonjolí, la semilla de los panes de hamburguesa, del tahini, de la halva y de los aceites de la cocina asiática, se cultivó primero en el sur de Asia, donde aparece en sitios harappeos."
+      },
+      "details": {
+        "en": "Wild relatives of sesame grow in India, and charred seeds from Harappa and other Indus sites show it was farmed by about 2500 BC. It was one of the first plants grown for oil, which keeps well in hot weather. Sesame reached Mesopotamia and Egypt early, and China, where it was called 'foreign hemp'. Enslaved Africans brought it to the Americas, and in Mexico ajonjolí tops many a mole. Today it is grown mostly in Africa and Asia, from Sudan and Nigeria to India and Myanmar.",
+        "es": "En la India crecen parientes silvestres del ajonjolí, y semillas carbonizadas de Harappa y de otros sitios del Indo muestran que se cultivaba hacia el 2500 a. C. Fue una de las primeras plantas cultivadas por su aceite, que se conserva bien con calor. El ajonjolí llegó pronto a Mesopotamia y Egipto, y a China, donde lo llamaron «cáñamo extranjero». Los africanos esclavizados lo llevaron a América, y en México el ajonjolí corona muchos moles. Hoy se cultiva sobre todo en África y Asia, desde Sudán y Nigeria hasta la India y Myanmar."
+      },
+      "path": [
+        { "at": [44.42, 32.54], "place": { "en": "Babylon, Iraq", "es": "Babilonia, Irak" }, "date": "-2000", "circa": true, "note": { "en": "Sesame oil is pressed and traded in Mesopotamia.", "es": "En Mesopotamia se prensa y se comercia aceite de ajonjolí." } },
+        { "at": [108.94, 34.27], "place": { "en": "Chang'an (Xi'an), China", "es": "Chang'an (Xi'an), China" }, "date": "100", "circa": true, "from": 0, "note": { "en": "Grown in Han China as 'foreign hemp'.", "es": "Se cultiva en la China Han como «cáñamo extranjero»." } },
+        { "at": [-98.2, 19.04], "place": { "en": "Puebla, Mexico", "es": "Puebla, México" }, "date": "1600", "circa": true, "from": 1, "note": { "en": "Ajonjolí joins Mexican cooking and its moles.", "es": "El ajonjolí entra en la cocina mexicana y sus moles." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Eaten worldwide; most is grown in Africa and Asia.", "es": "Se come en todo el mundo; la mayor parte se cultiva en África y Asia." },
+      "wiki": { "en": "Sesame", "es": "Sesamum indicum" }
+    },
+    {
+      "id": "indica-rice",
+      "name": { "en": "Indica rice", "es": "El arroz índica" },
+      "cat": "food",
+      "icon": "🍚",
+      "how": "tamed",
+      "sure": "debated",
+      "date": "-2500",
+      "circa": true,
+      "at": [83.0, 26.0],
+      "place": { "en": "Ganges plain, India", "es": "Llanura del Ganges, India" },
+      "text": {
+        "en": "Long-grain rice, the kind most of the world eats, from basmati to jasmine, belongs to indica rice, which took shape in the Ganges plain.",
+        "es": "El arroz de grano largo, el que más se come en el mundo, del basmati al jazmín, pertenece al arroz índica, que tomó forma en la llanura del Ganges."
+      },
+      "details": {
+        "en": "Rice was first tamed in China's Yangtze valley, as japonica rice. In the Ganges plain people had long gathered and grown a local wild rice; when japonica arrived, perhaps around 2000 BC, crossing between the two produced indica, according to one leading view, while others think indica was tamed on its own. Either way, indica rice spread across South and Southeast Asia, then west to Persia and the Mediterranean, and with Europeans to the Americas and Africa. It now makes up most of the rice grown in the world.",
+        "es": "El arroz se domesticó primero en el valle del Yangtsé, en China, como arroz japónica. En la llanura del Ganges se recolectaba y cultivaba desde hacía mucho un arroz silvestre local; cuando llegó el japónica, quizá hacia el 2000 a. C., el cruce entre ambos dio el índica, según una de las principales teorías, aunque otros creen que el índica se domesticó por su cuenta. En todo caso, el arroz índica se extendió por el sur y el sudeste de Asia, luego al oeste, a Persia y al Mediterráneo, y con los europeos a América y África. Hoy es la mayor parte del arroz que se cultiva en el mundo."
+      },
+      "roots": {
+        "en": "Built on japonica rice, tamed in China thousands of years earlier, and on the wild rice of the Ganges plain.",
+        "es": "Se basó en el arroz japónica, domesticado en China miles de años antes, y en el arroz silvestre de la llanura del Ganges."
+      },
+      "path": [
+        { "at": [49.6, 37.2], "place": { "en": "Gilan, Iran", "es": "Guilán, Irán" }, "date": "700", "circa": true, "note": { "en": "Rice paddies along the Caspian Sea.", "es": "Arrozales junto al mar Caspio." } },
+        { "at": [-0.4, 39.4], "place": { "en": "Valencia, Spain", "es": "Valencia, España" }, "date": "950", "circa": true, "note": { "en": "Rice is grown in al-Andalus; arroz is an Arabic word.", "es": "Se cultiva arroz en al-Ándalus; arroz es una palabra árabe." } },
+        { "at": [-96.2, 19.1], "place": { "en": "Veracruz, Mexico", "es": "Veracruz, México" }, "date": "1520", "circa": true, "note": { "en": "Spaniards bring rice to the Americas.", "es": "Los españoles traen el arroz a América." } }
+      ],
+      "where": ["world"],
+      "strong": ["subregion:southern-asia", "subregion:south-eastern-asia"],
+      "note": { "en": "The everyday rice of South and Southeast Asia, Latin America and much of Africa.", "es": "Es el arroz de cada día en el sur y el sudeste de Asia, América Latina y buena parte de África." },
+      "see": ["food:indica-rice"],
+      "wiki": { "en": "Oryza sativa", "es": "Oryza sativa" }
+    },
+    {
+      "id": "brahmi-scripts",
+      "name": { "en": "Brahmi and its daughter scripts", "es": "El brahmi y sus escrituras hijas" },
+      "cat": "writing",
+      "icon": "✍️",
+      "how": "developed",
+      "sure": "likely",
+      "date": "-260",
+      "circa": true,
+      "at": [85.14, 25.6],
+      "place": { "en": "Pataliputra (Patna), Ashoka's capital, India", "es": "Pataliputra (Patna), capital de Ashoka, India" },
+      "text": {
+        "en": "Ashoka's edicts, carved in Brahmi in the 200s BC, are the ancestors of dozens of scripts: Devanagari, Bengali, Tamil, Sinhala, Tibetan, Thai, Khmer and more.",
+        "es": "Los edictos de Ashoka, tallados en brahmi en el siglo III a. C., son los antepasados de decenas de escrituras: devanagari, bengalí, tamil, cingalés, tibetano, tailandés, jemer y más."
+      },
+      "details": {
+        "en": "Brahmi is the oldest Indian script that can be read. Its origin is debated: many scholars think it was adapted from the Aramaic script of the Persian Empire, others argue for a local invention. Its letters are ordered by where sounds are made in the mouth, a scheme worked out by Indian grammarians, and each consonant carries a vowel that small marks can change. Over the centuries it split into the scripts of India and Sri Lanka and, with monks and traders, those of Tibet, Myanmar, Thailand, Laos, Cambodia and Indonesia. Well over a billion people write its descendants.",
+        "es": "El brahmi es la escritura india más antigua que se puede leer. Su origen se discute: muchos especialistas creen que se adaptó de la escritura aramea del Imperio persa, y otros defienden una invención local. Sus letras se ordenan según el lugar de la boca donde se forman los sonidos, un esquema de los gramáticos indios, y cada consonante lleva una vocal que pequeñas marcas pueden cambiar. Con los siglos se dividió en las escrituras de la India y Sri Lanka y, con monjes y comerciantes, en las del Tíbet, Myanmar, Tailandia, Laos, Camboya e Indonesia. Mucho más de mil millones de personas escriben con sus descendientes."
+      },
+      "roots": {
+        "en": "Perhaps adapted from the Aramaic script used in the Persian Empire; the older Indus script has not been read and is not known to be its ancestor.",
+        "es": "Quizá se adaptó de la escritura aramea del Imperio persa; la escritura del Indo, más antigua, no se ha descifrado y no se sabe que sea su antepasada."
+      },
+      "path": [
+        { "at": [80.4, 8.35], "place": { "en": "Anuradhapura, Sri Lanka", "es": "Anuradhapura, Sri Lanka" }, "date": "-250", "circa": true, "note": { "en": "Early Brahmi inscriptions; later the Sinhala script.", "es": "Primeras inscripciones en brahmi; después, la escritura cingalesa." } },
+        { "at": [104.98, 10.99], "place": { "en": "Angkor Borei, Takeo, Cambodia", "es": "Angkor Borei, Takeo, Camboya" }, "date": "611", "from": 0, "note": { "en": "The oldest dated inscription in the Khmer language, in an Indian script.", "es": "La inscripción fechada más antigua en lengua jemer, en una escritura india." } },
+        { "at": [91.13, 29.65], "place": { "en": "Lhasa, Tibet", "es": "Lhasa, Tíbet" }, "date": "650", "circa": true, "from": 0, "note": { "en": "The Tibetan script is made from an Indian model.", "es": "La escritura tibetana se crea a partir de un modelo indio." } },
+        { "at": [99.82, 17.01], "place": { "en": "Sukhothai, Thailand", "es": "Sukhothai, Tailandia" }, "date": "1283", "circa": true, "from": 2, "note": { "en": "The Thai script, adapted from Khmer, appears.", "es": "Aparece la escritura tailandesa, adaptada de la jemer." } }
+      ],
+      "where": ["IND", "NPL", "BGD", "LKA", "BTN", "MMR", "THA", "LAO", "KHM"],
+      "strong": ["IND", "NPL", "BGD", "LKA"],
+      "note": { "en": "Written every day in India, Nepal, Bangladesh, Sri Lanka, Bhutan, Myanmar, Thailand, Laos and Cambodia.", "es": "Se escriben a diario en la India, Nepal, Bangladés, Sri Lanka, Bután, Myanmar, Tailandia, Laos y Camboya." },
+      "see": ["lives/ashoka"],
+      "wiki": { "en": "Brahmi script", "es": "Brahmi" }
+    },
+    {
+      "id": "panini-grammar",
+      "name": { "en": "Panini's grammar and linguistics", "es": "La gramática de Panini y la lingüística" },
+      "cat": "science",
+      "icon": "📖",
+      "how": "invented",
+      "date": "-400",
+      "circa": true,
+      "at": [72.36, 34.02],
+      "place": { "en": "Gandhara, today northern Pakistan", "es": "Gandhara, hoy norte de Pakistán" },
+      "text": {
+        "en": "Panini described Sanskrit in about 4,000 short rules, the first known scientific grammar; modern linguistics and even computer science owe ideas to it.",
+        "es": "Panini describió el sánscrito en unas 4000 reglas breves, la primera gramática científica conocida; la lingüística moderna y hasta la informática le deben ideas."
+      },
+      "details": {
+        "en": "Panini's Ashtadhyayi, 'eight chapters', from about the 300s or 400s BC, starts from sounds and word roots and builds every correct form with compact, ordered rules, using symbols and rules about rules. It fixed Sanskrit as a classical language. When Europeans learned Sanskrit in the late 1700s, William Jones in Calcutta saw its kinship with Greek and Latin, which led to the study of the Indo-European family of languages. Ferdinand de Saussure taught Sanskrit before founding modern linguistics, and the notation used to define programming languages has been compared to Panini's.",
+        "es": "El Ashtadhyayi de Panini, «ocho capítulos», de hacia los siglos V o IV a. C., parte de los sonidos y las raíces de las palabras y construye cada forma correcta con reglas breves y ordenadas, usando símbolos y reglas sobre reglas. Fijó el sánscrito como lengua clásica. Cuando los europeos aprendieron sánscrito a finales del siglo XVIII, William Jones, en Calcuta, vio su parentesco con el griego y el latín, lo que llevó al estudio de la familia de lenguas indoeuropeas. Ferdinand de Saussure enseñó sánscrito antes de fundar la lingüística moderna, y la notación con que se definen los lenguajes de programación se ha comparado con la de Panini."
+      },
+      "path": [
+        { "at": [88.36, 22.57], "place": { "en": "Calcutta (Kolkata), India", "es": "Calcuta (Kolkata), India" }, "date": "1786", "by": { "en": "William Jones", "es": "William Jones" }, "note": { "en": "He links Sanskrit with Greek and Latin: the start of Indo-European studies.", "es": "Relaciona el sánscrito con el griego y el latín: el comienzo de los estudios indoeuropeos." } },
+        { "at": [6.14, 46.2], "place": { "en": "Geneva, Switzerland", "es": "Ginebra, Suiza" }, "date": "1916", "note": { "en": "Saussure's Course in General Linguistics, a founding book of modern linguistics.", "es": "El Curso de lingüística general de Saussure, libro fundador de la lingüística moderna." } }
+      ],
+      "where": ["IND", "NPL"],
+      "note": { "en": "Still the basis of Sanskrit teaching in India and Nepal, and studied by linguists worldwide.", "es": "Sigue siendo la base de la enseñanza del sánscrito en la India y Nepal, y la estudian lingüistas de todo el mundo." },
+      "wiki": { "en": "Pāṇini", "es": "Panini (gramático)" }
+    },
+    {
+      "id": "panchatantra",
+      "name": { "en": "The Panchatantra fables", "es": "Las fábulas del Panchatantra" },
+      "cat": "writing",
+      "icon": "🦊",
+      "how": "invented",
+      "date": "300",
+      "circa": true,
+      "at": [74.8, 34.08],
+      "place": { "en": "India (perhaps Kashmir)", "es": "India (quizá Cachemira)" },
+      "text": {
+        "en": "Animal fables written to teach princes, the Panchatantra became Kalila and Dimna in Persian and Arabic, Calila e Dimna in Spanish and, in part, La Fontaine's fables.",
+        "es": "Fábulas de animales escritas para educar príncipes, el Panchatantra se convirtió en Kalila y Dimna en persa y árabe, en el Calila e Dimna en español y, en parte, en las fábulas de La Fontaine."
+      },
+      "details": {
+        "en": "Its frame story has a wise Brahmin teach three dull princes through tales of jackals, lions, crows and monkeys. It was written in Sanskrit perhaps around AD 300, though proposed dates vary widely. In the 500s the Persian doctor Borzuy translated it for King Khosrow I. Ibn al-Muqaffa's Arabic version, Kalila wa-Dimna, of about 750, spread it across the Islamic world, and the future Alfonso X of Castile had it put into Spanish in 1251, one of the first books of Spanish prose. La Fontaine named 'Pilpay, an Indian sage' as a source.",
+        "es": "Su relato marco cuenta cómo un sabio brahmán educa a tres príncipes torpes con historias de chacales, leones, cuervos y monos. Se escribió en sánscrito quizá hacia el 300 d. C., aunque las fechas propuestas varían mucho. En el siglo VI, el médico persa Borzuy lo tradujo para el rey Cosroes I. La versión árabe de Ibn al-Muqaffa, Kalila wa-Dimna, de hacia el 750, lo difundió por el mundo islámico, y el futuro Alfonso X de Castilla lo mandó traducir al castellano en 1251, uno de los primeros libros de prosa en español. La Fontaine citó a «Pilpay, sabio indio» como fuente."
+      },
+      "path": [
+        { "at": [44.58, 33.09], "place": { "en": "Ctesiphon, Iraq (Sasanian Persia)", "es": "Ctesifonte, Irak (Persia sasánida)" }, "date": "570", "circa": true, "by": { "en": "Borzuy", "es": "Borzuy" }, "note": { "en": "Translated into Middle Persian for Khosrow I.", "es": "Traducido al persa medio para Cosroes I." } },
+        { "at": [44.36, 33.31], "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" }, "date": "750", "circa": true, "by": { "en": "Ibn al-Muqaffa", "es": "Ibn al-Muqaffa" }, "note": { "en": "Kalila wa-Dimna, a classic of Arabic prose.", "es": "Kalila wa-Dimna, un clásico de la prosa árabe." } },
+        { "at": [-4.02, 39.86], "place": { "en": "Toledo, Spain", "es": "Toledo, España" }, "date": "1251", "note": { "en": "Calila e Dimna is translated into Castilian.", "es": "Se traduce al castellano el Calila e Dimna." } },
+        { "at": [2.35, 48.86], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1678", "by": { "en": "Jean de La Fontaine", "es": "El fabulista Jean de La Fontaine" }, "note": { "en": "His second book of fables borrows from 'Pilpay'.", "es": "Su segundo libro de fábulas toma relatos de «Pilpay»." } }
+      ],
+      "where": ["IND", "NPL", "LKA", "BGD", "IRN", "lang:ara", "ESP", "FRA"],
+      "strong": ["IND"],
+      "note": { "en": "Read to children across South Asia; Kalila wa-Dimna is a classic in Arabic and Persian, and La Fontaine's fables are learned in French schools.", "es": "Se lee a los niños en todo el sur de Asia; Kalila wa-Dimna es un clásico en árabe y persa, y las fábulas de La Fontaine se aprenden en las escuelas francesas." },
+      "see": ["books:panchatantra"],
+      "wiki": { "en": "Panchatantra", "es": "Panchatantra" }
+    },
+    {
+      "id": "ramayana",
+      "name": { "en": "The Ramayana across Asia", "es": "El Ramayana por toda Asia" },
+      "cat": "arts",
+      "icon": "🏹",
+      "how": "invented",
+      "date": "-300",
+      "circa": true,
+      "at": [82.2, 26.8],
+      "place": { "en": "Ayodhya, Uttar Pradesh, India", "es": "Ayodhya, en Uttar Pradesh, India" },
+      "text": {
+        "en": "The epic of Prince Rama, his wife Sita and the monkey hero Hanuman is still staged, danced and retold from India to Thailand, Cambodia and Bali.",
+        "es": "La epopeya del príncipe Rama, su esposa Sita y el héroe mono Hanuman todavía se representa, se baila y se cuenta desde la India hasta Tailandia, Camboya y Bali."
+      },
+      "details": {
+        "en": "Valmiki's Sanskrit Ramayana took shape over several centuries BC, and poets later retold it in Tamil, Hindi and many other languages. Traders and priests carried it to Southeast Asia, where it was carved on the temples of Prambanan in Java and Angkor Wat in Cambodia and became each country's own: the Ramakien in Thailand, the Reamker in Cambodia, Phra Lak Phra Lam in Laos. Every autumn Ramlila plays act it out across northern India, and Diwali celebrates Rama's return home. Shadow puppets in Indonesia and masked dancers in Thailand still perform it.",
+        "es": "El Ramayana en sánscrito de Valmiki tomó forma a lo largo de varios siglos antes de Cristo, y después los poetas lo volvieron a contar en tamil, hindi y muchas otras lenguas. Comerciantes y sacerdotes lo llevaron al Sudeste Asiático, donde se talló en los templos de Prambanan, en Java, y de Angkor Wat, en Camboya, y cada país lo hizo suyo: el Ramakien en Tailandia, el Reamker en Camboya, el Phra Lak Phra Lam en Laos. Cada otoño, las obras de Ramlila lo representan en todo el norte de la India, y el Diwali celebra el regreso de Rama a casa. Las sombras chinescas de Indonesia y los bailarines enmascarados de Tailandia todavía lo representan."
+      },
+      "path": [
+        { "at": [110.49, -7.75], "place": { "en": "Prambanan, Java, Indonesia", "es": "Prambanan, Java, Indonesia" }, "date": "856", "circa": true, "note": { "en": "The Ramayana is carved around the temple of Shiva.", "es": "El Ramayana se talla alrededor del templo de Shiva." } },
+        { "at": [103.87, 13.41], "place": { "en": "Angkor, Cambodia", "es": "Angkor, Camboya" }, "date": "1150", "circa": true, "from": 0, "note": { "en": "Battle scenes from the epic on the walls of Angkor Wat.", "es": "Escenas de batalla de la epopeya en los muros de Angkor Wat." } },
+        { "at": [100.5, 13.75], "place": { "en": "Bangkok, Thailand", "es": "Bangkok, Tailandia" }, "date": "1797", "note": { "en": "King Rama I has the Thai Ramakien written down.", "es": "El rey Rama I manda escribir el Ramakien tailandés." } }
+      ],
+      "where": ["IND", "NPL", "LKA", "THA", "KHM", "LAO", "MMR", "IDN", "MYS", "MUS", "FJI", "GUY", "SUR", "TTO"],
+      "strong": ["IND", "NPL", "THA", "KHM"],
+      "note": { "en": "Performed across India and Nepal, in Thai, Cambodian, Lao and Indonesian dance and puppetry, and by Indian communities from Fiji to Trinidad.", "es": "Se representa en la India y Nepal, en la danza y los títeres de Tailandia, Camboya, Laos e Indonesia, y en las comunidades indias desde Fiyi hasta Trinidad." },
+      "wiki": { "en": "Ramayana", "es": "Ramayana" }
+    },
+    {
+      "id": "stupa",
+      "name": { "en": "The stupa, ancestor of the pagoda", "es": "La estupa, antepasada de la pagoda" },
+      "cat": "build",
+      "icon": "🛕",
+      "how": "invented",
+      "date": "-250",
+      "circa": true,
+      "at": [77.74, 23.48],
+      "place": { "en": "Sanchi, Madhya Pradesh, India", "es": "Sanchi, en Madhya Pradesh, India" },
+      "text": {
+        "en": "Indian Buddhists built domed stupas over relics of the Buddha; the form travelled across Asia and became the dagoba, the chorten and the many-storeyed pagoda.",
+        "es": "Los budistas indios construyeron estupas con cúpula sobre reliquias de Buda; la forma recorrió Asia y se convirtió en la dagoba, el chorten y la pagoda de muchos pisos."
+      },
+      "details": {
+        "en": "A stupa began as a burial mound. Ashoka is said to have shared out the Buddha's relics among thousands of them, and the Great Stupa at Sanchi, begun in his time, shows the classic form: a solid dome crowned by a railing and parasols, ringed by a path for walking around it. In Sri Lanka it became the bell-shaped dagoba, in Tibet the chorten, in Java the vast Borobudur. In China builders stacked the parasols into tall towers, the pagoda, which went on to Korea, Japan and Vietnam. Pilgrims still walk around them clockwise.",
+        "es": "La estupa nació como un túmulo funerario. Se dice que Ashoka repartió las reliquias de Buda entre miles de ellas, y la Gran Estupa de Sanchi, empezada en su época, muestra la forma clásica: una cúpula maciza coronada por una baranda y sombrillas, rodeada por un camino para caminar a su alrededor. En Sri Lanka se volvió la dagoba en forma de campana, en el Tíbet el chorten, en Java el inmenso Borobudur. En China los constructores apilaron las sombrillas en torres altas, la pagoda, que pasó a Corea, Japón y Vietnam. Los peregrinos todavía las rodean en el sentido de las agujas del reloj."
+      },
+      "path": [
+        { "at": [80.4, 8.35], "place": { "en": "Anuradhapura, Sri Lanka", "es": "Anuradhapura, Sri Lanka" }, "date": "-250", "circa": true, "note": { "en": "Thuparama, the first stupa of Sri Lanka.", "es": "Thuparama, la primera estupa de Sri Lanka." } },
+        { "at": [113.01, 34.5], "place": { "en": "Dengfeng, Henan, China", "es": "Dengfeng, Henan, China" }, "date": "523", "from": 0, "note": { "en": "The Songyue Pagoda, the oldest surviving brick pagoda.", "es": "La pagoda de Songyue, la pagoda de ladrillo más antigua que se conserva." } },
+        { "at": [135.73, 34.61], "place": { "en": "Hōryū-ji, Nara, Japan", "es": "Hōryū-ji, Nara, Japón" }, "date": "700", "circa": true, "note": { "en": "One of the oldest wooden pagodas in the world.", "es": "Una de las pagodas de madera más antiguas del mundo." } },
+        { "at": [110.2, -7.61], "place": { "en": "Borobudur, Java, Indonesia", "es": "Borobudur, Java, Indonesia" }, "date": "800", "circa": true, "from": 0, "note": { "en": "A mountain of terraces crowned with stupas.", "es": "Una montaña de terrazas coronada de estupas." } }
+      ],
+      "where": ["IND", "NPL", "LKA", "BTN", "MMR", "THA", "LAO", "KHM", "CHN", "JPN", "KOR", "VNM", "MNG", "IDN"],
+      "strong": ["LKA", "MMR", "THA", "LAO", "KHM", "BTN"],
+      "note": { "en": "Stupas and pagodas stand, and are still built, wherever Buddhism is practised.", "es": "Hay estupas y pagodas, y se siguen construyendo, dondequiera que se practica el budismo." },
+      "words": [
+        { "en": "stupa", "es": "estupa", "from": "stūpa (Sanskrit)", "means": { "en": "heap, mound", "es": "montón, túmulo" } }
+      ],
+      "see": ["structures:sanchi-stupa"],
+      "wiki": { "en": "Stupa", "es": "Estupa" }
+    },
+    {
+      "id": "lion-capital",
+      "name": { "en": "India's lion emblem and flag wheel", "es": "El emblema de los leones y la rueda de la bandera" },
+      "cat": "law",
+      "icon": "🦁",
+      "how": "invented",
+      "date": "-250",
+      "circa": true,
+      "at": [83.03, 25.38],
+      "place": { "en": "Sarnath, near Varanasi, India", "es": "Sarnath, cerca de Varanasi, India" },
+      "text": {
+        "en": "Four lions back to back from Ashoka's pillar at Sarnath are India's state emblem, and the wheel beneath them turns at the centre of India's flag.",
+        "es": "Los cuatro leones espalda con espalda del pilar de Ashoka en Sarnath son el emblema del Estado indio, y la rueda que tienen debajo gira en el centro de la bandera de la India."
+      },
+      "details": {
+        "en": "Ashoka, the Maurya emperor who turned to Buddhism after his bloody conquest of Kalinga, set up polished stone pillars carved with his edicts. The one at Sarnath, where the Buddha first taught, was crowned with four lions above a wheel of dharma, the moral law. When India became independent it chose Ashoka as a symbol of tolerance and just rule: the 24-spoked Ashoka Chakra was placed on the flag in 1947, and the lion capital became the state emblem on 26 January 1950. It appears on banknotes, coins, passports and official papers.",
+        "es": "Ashoka, el emperador maurya que se volvió al budismo tras su sangrienta conquista de Kalinga, levantó pilares de piedra pulida con sus edictos. El de Sarnath, donde Buda enseñó por primera vez, estaba coronado por cuatro leones sobre una rueda del dharma, la ley moral. Al independizarse, la India eligió a Ashoka como símbolo de tolerancia y buen gobierno: la Ashoka Chakra de 24 radios se puso en la bandera en 1947, y el capitel de los leones se convirtió en emblema del Estado el 26 de enero de 1950. Aparece en billetes, monedas, pasaportes y documentos oficiales."
+      },
+      "path": [
+        { "at": [77.21, 28.61], "place": { "en": "New Delhi, India", "es": "Nueva Delhi, India" }, "date": "1950", "note": { "en": "Adopted as the state emblem of the Republic of India.", "es": "Se adopta como emblema del Estado de la República de la India." } }
+      ],
+      "where": ["IND"],
+      "note": { "en": "On every Indian banknote, coin, passport and government paper, and on the national flag.", "es": "Está en cada billete, moneda, pasaporte y documento oficial indio, y en la bandera nacional." },
+      "see": ["lives/ashoka"],
+      "wiki": { "en": "Lion Capital of Ashoka", "es": "Capitel de Ashoka" }
+    },
+    {
+      "id": "saka-vikram-calendars",
+      "name": { "en": "Indian calendars and their day names", "es": "Los calendarios indios y sus nombres de días" },
+      "cat": "time",
+      "icon": "📅",
+      "how": "invented",
+      "date": "78",
+      "at": [75.78, 23.18],
+      "place": { "en": "Ujjain, Madhya Pradesh, India", "es": "Ujjain, en Madhya Pradesh, India" },
+      "text": {
+        "en": "Indian calendars count years from 57 BC (Vikram Samvat) or AD 78 (the Saka era): Nepal runs on the first, India's national calendar on the second, and Bali's new year follows it too.",
+        "es": "Los calendarios indios cuentan los años desde el 57 a. C. (Vikram Samvat) o el 78 d. C. (la era saka): Nepal se rige por el primero, el calendario nacional de la India por el segundo, y el año nuevo de Bali también lo sigue."
+      },
+      "details": {
+        "en": "Indian astronomers, with Ujjain as their prime meridian, kept a lunisolar calendar whose months follow the moon but are kept in step with the sun, and dated events by eras named after kings. The Saka era spread with Indian learning to Southeast Asia: Khmer and Javanese inscriptions use it, and in Bali, Nyepi, the day of silence, marks the Saka new year and is a national holiday in Indonesia. India adopted a reformed Saka calendar in 1957, and Nepal's official calendar is the Vikram Samvat. Hindi and Thai name the days of the week after the planets in Sanskrit.",
+        "es": "Los astrónomos indios, con Ujjain como meridiano principal, llevaban un calendario lunisolar cuyos meses siguen a la luna pero se mantienen al paso del sol, y fechaban los hechos por eras con nombres de reyes. La era saka se extendió con el saber indio al Sudeste Asiático: la usan inscripciones jemeres y javanesas, y en Bali el Nyepi, el día del silencio, marca el año nuevo saka y es feriado nacional en Indonesia. La India adoptó un calendario saka reformado en 1957, y el calendario oficial de Nepal es el Vikram Samvat. El hindi y el tailandés nombran los días de la semana por los planetas en sánscrito."
+      },
+      "roots": {
+        "en": "The seven-day week named after the planets came to India from the Hellenistic world; Indian astronomers gave it Sanskrit names.",
+        "es": "La semana de siete días con nombres de planetas llegó a la India desde el mundo helenístico; los astrónomos indios le dieron nombres sánscritos."
+      },
+      "path": [
+        { "at": [106.0, 12.77], "place": { "en": "Sambor, Kratié, Cambodia", "es": "Sambor, Kratié, Camboya" }, "date": "683", "note": { "en": "A Khmer inscription dated in the Saka era.", "es": "Una inscripción jemer fechada en la era saka." } },
+        { "at": [115.22, -8.6], "place": { "en": "Bali, Indonesia", "es": "Bali, Indonesia" }, "date": "900", "circa": true, "from": 0, "note": { "en": "Balinese inscriptions count Saka years; Nyepi still marks the Saka new year.", "es": "Las inscripciones de Bali cuentan años saka; el Nyepi aún marca el año nuevo saka." } },
+        { "at": [85.32, 27.71], "place": { "en": "Kathmandu, Nepal", "es": "Katmandú, Nepal" }, "date": "1900", "circa": true, "from": 0, "note": { "en": "Vikram Samvat becomes Nepal's official calendar.", "es": "El Vikram Samvat se convierte en el calendario oficial de Nepal." } },
+        { "at": [77.21, 28.61], "place": { "en": "New Delhi, India", "es": "Nueva Delhi, India" }, "date": "1957", "from": 0, "note": { "en": "India adopts a national calendar counting from the Saka era.", "es": "La India adopta un calendario nacional que cuenta desde la era saka." } }
+      ],
+      "where": ["IND", "NPL", "IDN", "THA"],
+      "strong": ["NPL", "IND"],
+      "note": { "en": "Official in Nepal and alongside the Gregorian calendar in India; Nyepi, the Saka new year, is a holiday in Indonesia, and Thai day names are Sanskrit.", "es": "Es oficial en Nepal y se usa junto al gregoriano en la India; el Nyepi, año nuevo saka, es feriado en Indonesia, y los días en tailandés tienen nombres sánscritos." },
+      "words": [
+        { "en": "Ravivar (Sunday in Hindi)", "es": "Ravivar (domingo en hindi)", "type": "calendar", "from": "Ravi (Sanskrit), the Sun" },
+        { "en": "Somvar (Monday in Hindi)", "es": "Somvar (lunes en hindi)", "type": "calendar", "from": "Soma (Sanskrit), the Moon" },
+        { "en": "Mangalvar (Tuesday in Hindi)", "es": "Mangalvar (martes en hindi)", "type": "calendar", "from": "Maṅgala (Sanskrit), Mars" },
+        { "en": "Budhvar (Wednesday in Hindi)", "es": "Budhvar (miércoles en hindi)", "type": "calendar", "from": "Budha (Sanskrit), Mercury" },
+        { "en": "Guruvar (Thursday in Hindi)", "es": "Guruvar (jueves en hindi)", "type": "calendar", "from": "Guru (Sanskrit), Jupiter" },
+        { "en": "Shukravar (Friday in Hindi)", "es": "Shukravar (viernes en hindi)", "type": "calendar", "from": "Śukra (Sanskrit), Venus" },
+        { "en": "Shanivar (Saturday in Hindi)", "es": "Shanivar (sábado en hindi)", "type": "calendar", "from": "Śani (Sanskrit), Saturn" },
+        { "en": "Wan Chan (Monday in Thai)", "es": "Wan Chan (lunes en tailandés)", "type": "calendar", "from": "Candra (Sanskrit), the Moon" },
+        { "en": "Mesayon (April in Thai)", "es": "Mesayon (abril en tailandés)", "type": "calendar", "from": "Meṣa (Sanskrit), Aries, the ram" },
+        { "en": "Chaitra (first month, Indian calendar)", "es": "Chaitra (primer mes, calendario indio)", "type": "calendar", "from": "Citrā (Sanskrit), the star Spica" }
+      ],
+      "wiki": { "en": "Hindu calendar", "es": "Calendario hindú" }
+    }
+  ]
+}

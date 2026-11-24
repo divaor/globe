@@ -1,0 +1,1222 @@
+{
+  "id": "west-africa",
+  "name": { "en": "West African kingdoms", "es": "Reinos de África occidental" },
+  "short": { "en": "West Africa", "es": "África occidental" },
+  "icon": "🥁",
+  "color": "#ad1457",
+  "from": "-1000",
+  "to": "1900",
+  "at": [-3.0, 12.0],
+  "zoom": 4,
+  "home": [
+    { "hist": "Mali", "year": 1300 },
+    { "hist": "Songhai", "year": 1500 },
+    { "hist": "Hausa States", "year": 1500 },
+    { "hist": "Oyo", "year": 1500 },
+    { "hist": "Benin", "year": 1500 },
+    { "hist": "Asante", "year": 1800 },
+    { "hist": "Dahomey", "year": 1800 }
+  ],
+  "intro": {
+    "en": "Between the Sahara and the Gulf of Guinea, farmers who tamed their own crops built towns and then kingdoms and empires: Ghana, Mali and Songhai in the savanna, the Hausa city-states, and Ife, Benin, Oyo, Dahomey and Asante in the forest. Their musicians, cooks, weavers, metal-casters and priests shaped the music, food and faiths of much of the world.",
+    "es": "Entre el Sahara y el golfo de Guinea, agricultores que domesticaron sus propios cultivos fundaron pueblos y luego reinos e imperios: Ghana, Mali y Songhai en la sabana, las ciudades-estado hausa, e Ife, Benín, Oyo, Dahomey y Asante en el bosque. Sus músicos, cocineros, tejedores, fundidores y sacerdotes moldearon la música, la comida y la fe de buena parte del mundo."
+  },
+  "today": {
+    "en": "More than 400 million people live in West Africa today, speaking Hausa, Yoruba, Igbo, Akan, Manding, Wolof, Fula and hundreds of other languages. The Asantehene, the Oba of Benin and the Ooni of Ife still reign as traditional rulers, and tens of millions in the Americas descend from West Africans.",
+    "es": "Hoy viven en África occidental más de 400 millones de personas, que hablan hausa, yoruba, igbo, akan, mandinga, wolof, fula y cientos de lenguas más. El asantehene, el oba de Benín y el ooni de Ife siguen reinando como gobernantes tradicionales, y decenas de millones de personas en América descienden de africanos occidentales."
+  },
+  "story": "people/west-african-empires",
+  "wiki": { "en": "History of West Africa", "es": "África Occidental" },
+  "sources": [
+    { "title": "UNESCO: Manden Charter, proclaimed in Kurukan Fuga", "url": "https://ich.unesco.org/en/RL/manden-charter-proclaimed-in-kurukan-fuga-00290" },
+    { "title": "UNESCO: Cultural space of Sosso-Bala", "url": "https://ich.unesco.org/en/RL/cultural-space-of-sosso-bala-00009" },
+    { "title": "UNESCO: Ifa divination system", "url": "https://ich.unesco.org/en/RL/ifa-divination-system-00146" },
+    { "title": "Archaeology magazine: Use of shea butter pushed back 1,000 years (2016)", "url": "https://archaeology.org/news/2016/03/22/160322-africa-shea-butter/" },
+    { "title": "Choi et al., The complex geography of domestication of the African rice Oryza glaberrima (PLoS Genetics, 2019)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6424484/" },
+    { "title": "Fuller et al., Pearl millet and the Sahel (African Archaeological Review, 2021)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8550313/" },
+    { "title": "Shen et al., Genomic analyses unveil helmeted guinea fowl domestication in West Africa (2021)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8214406/" },
+    { "title": "EurekAlert: Yam genomics supports West Africa as a major cradle of crop domestication (2019)", "url": "https://www.eurekalert.org/pub_releases/2019-05/aaft-gao043019.php" },
+    { "title": "Gestrich et al., Kola nut in eleventh-century Mali (African Archaeological Review, 2021)", "url": "https://link.springer.com/article/10.1007/s10437-021-09445-7" },
+    { "title": "NPR: The banjo's roots reconsidered", "url": "https://www.npr.org/2011/08/23/139880625/the-banjos-roots-reconsidered" },
+    { "title": "The Conversation: Kora, in search of the origins of West Africa's famed stringed instrument", "url": "https://theconversation.com/kora-in-search-of-the-origins-of-west-africas-famed-stringed-musical-instrument-216287" },
+    { "title": "Merriam-Webster: okra", "url": "https://www.merriam-webster.com/dictionary/okra" }
+  ],
+  "legacies": [
+    {
+      "id": "griots",
+      "name": { "en": "Griots, keepers of history", "es": "Los griots, guardianes de la historia" },
+      "cat": "arts",
+      "icon": "🎤",
+      "how": "invented",
+      "date": "1235",
+      "circa": true,
+      "at": [-8.41, 11.93],
+      "place": { "en": "Kangaba, Mali, heartland of the Mali Empire", "es": "Kangaba, Mali, corazón del Imperio de Mali" },
+      "text": {
+        "en": "Hereditary singers and storytellers, the jeli or griots, have kept the history of the Mande peoples by heart since at least the Mali Empire. They still sing at weddings, naming days and on world stages.",
+        "es": "Cantores y narradores hereditarios, los jeli o griots, guardan de memoria la historia de los pueblos mandingas al menos desde el Imperio de Mali. Todavía cantan en bodas, bautizos y escenarios de todo el mundo."
+      },
+      "details": {
+        "en": "Tradition says Sundiata Keita, who founded the Mali Empire around 1235, had his own griot, Balla Fasséké Kouyaté, and griot families such as the Kouyaté, Diabaté and Cissokho still pass the craft from parent to child. When Ibn Battuta visited Mansa Sulayman's court in 1352, he watched Dugha, the king's spokesman, perform with a chorus of women. Griots recite family trees, advise rulers, settle quarrels and sing the Epic of Sundiata, which takes hours to perform. The kora master Toumani Diabaté and the kora player Sona Jobarteh both come from griot families, and 'griot' is now used for anyone who keeps a community's memory.",
+        "es": "La tradición cuenta que Sundiata Keita, fundador del Imperio de Mali hacia 1235, tenía su propio griot, Balla Fasséké Kouyaté, y familias de griots como los Kouyaté, los Diabaté y los Cissokho todavía transmiten el oficio de padres a hijos. Cuando Ibn Battuta visitó la corte de Mansa Sulaymán en 1352, vio actuar a Dugha, el portavoz del rey, con un coro de mujeres. Los griots recitan genealogías, aconsejan a los gobernantes, resuelven disputas y cantan la Epopeya de Sundiata, que dura horas. El maestro de kora Toumani Diabaté y la intérprete Sona Jobarteh vienen de familias de griots, y hoy se llama «griot» a quien guarda la memoria de una comunidad."
+      },
+      "path": [
+        { "at": [-8.38, 11.38], "place": { "en": "Court of Mali (perhaps Niani, Guinea)", "es": "Corte de Mali (quizá Niani, Guinea)" }, "date": "1352", "by": { "en": "Ibn Battuta", "es": "Ibn Battuta" }, "note": { "en": "The Moroccan traveller describes Dugha performing for Mansa Sulayman.", "es": "El viajero marroquí describe a Dugha actuando para Mansa Sulaymán." } },
+        { "at": [-14.22, 12.28], "place": { "en": "Kaabu (Gabú, Guinea-Bissau)", "es": "Kaabu (Gabú, Guinea-Bisáu)" }, "date": "1500", "circa": true, "note": { "en": "Mande griots follow the empire west to Kaabu and the Gambia River.", "es": "Los griots mandingas siguen al imperio hacia el oeste, a Kaabu y al río Gambia." } }
+      ],
+      "where": ["MLI", "GIN", "SEN", "GMB", "GNB", "BFA", "CIV", "MRT", "NER"],
+      "strong": ["MLI", "GIN", "SEN", "GMB"],
+      "note": {
+        "en": "Griot families still sing in Mali, Guinea, Senegal, the Gambia and their neighbours, at family feasts, on the radio and on world tours.",
+        "es": "Las familias de griots siguen cantando en Mali, Guinea, Senegal, Gambia y los países vecinos, en fiestas familiares, en la radio y en giras mundiales."
+      },
+      "see": ["music:griot", "people/west-african-empires#4"],
+      "wiki": { "en": "Griot", "es": "Griot" }
+    },
+    {
+      "id": "kora",
+      "name": { "en": "The kora", "es": "La kora" },
+      "cat": "arts",
+      "icon": "🎵",
+      "how": "invented",
+      "sure": "likely",
+      "date": "1700",
+      "circa": true,
+      "at": [-14.22, 12.28],
+      "place": { "en": "Gabú, Guinea-Bissau, once the heart of Kaabu", "es": "Gabú, Guinea-Bisáu, antiguo corazón de Kaabu" },
+      "text": {
+        "en": "A harp-lute with 21 strings over a big half-calabash, the kora was made, griots say, in the Mandinka kingdom of Kaabu. Its rippling sound is now heard in concert halls and recordings worldwide.",
+        "es": "Un arpa-laúd de 21 cuerdas sobre media calabaza grande: según los griots, la kora nació en el reino mandinga de Kaabu. Su sonido ondulante se escucha hoy en salas de concierto y grabaciones de todo el mundo."
+      },
+      "details": {
+        "en": "Most griots say the first kora was played in Kaabu, a Mandinka kingdom in today's Guinea-Bissau and Senegal, and many credit a jali named Jali Mady Wuleng. Written records begin only at the end of the 1700s, and scholars think the kora is younger than the balafon. The player holds two upright handles and plucks with thumbs and forefingers, playing bass, melody and fast runs at the same time. In 2006 the kora master Toumani Diabaté and the guitarist Ali Farka Touré, both from Mali, won a Grammy, and kora players now perform and teach on every continent.",
+        "es": "La mayoría de los griots dice que la primera kora sonó en Kaabu, un reino mandinga en las actuales Guinea-Bisáu y Senegal, y muchos atribuyen su invención a un jali llamado Jali Mady Wuleng. Los registros escritos empiezan apenas a fines del siglo XVIII, y los estudiosos creen que la kora es más joven que el balafón. El músico sujeta dos asas verticales y pulsa con pulgares e índices, tocando a la vez bajo, melodía y pasajes rápidos. En 2006 el maestro de kora Toumani Diabaté y el guitarrista Ali Farka Touré, ambos de Mali, ganaron un Grammy, y hoy hay intérpretes y profesores de kora en todos los continentes."
+      },
+      "path": [
+        { "at": [-15.6, 13.4], "place": { "en": "The Gambia River", "es": "El río Gambia" }, "date": "1800", "circa": true, "note": { "en": "Mandinka jalis carry the kora along the Gambia and into Senegal.", "es": "Los jalis mandingas llevan la kora a lo largo del Gambia y hasta Senegal." } },
+        { "at": [-8.0, 12.64], "place": { "en": "Bamako, Mali", "es": "Bamako, Mali" }, "date": "2006", "by": { "en": "Toumani Diabaté and Ali Farka Touré", "es": "Toumani Diabaté y Ali Farka Touré" }, "note": { "en": "Their album In the Heart of the Moon wins a Grammy.", "es": "Su disco In the Heart of the Moon gana un Grammy." } }
+      ],
+      "where": ["GMB", "SEN", "GNB", "MLI", "GIN"],
+      "strong": ["GMB", "SEN", "GNB"],
+      "note": {
+        "en": "Played by jali families in the Gambia, Senegal, Guinea-Bissau, Mali and Guinea, and by learners and fans around the world.",
+        "es": "La tocan familias de jalis en Gambia, Senegal, Guinea-Bisáu, Mali y Guinea, y aprendices y aficionados de todo el mundo."
+      },
+      "see": ["music:kora"],
+      "wiki": { "en": "Kora (instrument)", "es": "Kora (instrumento)" }
+    },
+    {
+      "id": "balafon",
+      "name": { "en": "The balafon", "es": "El balafón" },
+      "cat": "arts",
+      "icon": "🎼",
+      "how": "invented",
+      "sure": "likely",
+      "date": "1235",
+      "circa": true,
+      "at": [-9.08, 12.33],
+      "place": { "en": "Niagassola, Guinea", "es": "Niagassola, Guinea" },
+      "text": {
+        "en": "Wooden keys over gourd resonators: the balafon is West Africa's xylophone. The Sosso Bala, said to be the first, is still kept and played by griots in a village in Guinea.",
+        "es": "Teclas de madera sobre resonadores de calabaza: el balafón es el xilófono de África occidental. El Sosso Bala, que se dice que fue el primero, todavía lo guardan y tocan griots en un pueblo de Guinea."
+      },
+      "details": {
+        "en": "Mande tradition says the Sosso Bala belonged to Soumaoro Kanté, king of Sosso, and passed to Sundiata's griot Balla Fasséké after Sundiata's victory around 1235. It is about 1.5 metres long, with 20 wooden slats. The Kouyaté griots of Niagassola still guard it in a round mud house, and only their patriarch, the Balatigui, may play it on great occasions. UNESCO proclaimed its cultural space a masterpiece in 2001 and listed it in 2008. In 1352 Ibn Battuta heard court music in Mali that historians read as the bala. Balafons are played today across Guinea, Mali, Burkina Faso, Senegal and Côte d'Ivoire.",
+        "es": "La tradición mandinga cuenta que el Sosso Bala perteneció a Soumaoro Kanté, rey de Sosso, y pasó al griot de Sundiata, Balla Fasséké, tras la victoria de Sundiata hacia 1235. Mide alrededor de 1,5 metros y tiene 20 láminas de madera. Los griots Kouyaté de Niagassola todavía lo guardan en una casa redonda de barro, y solo su patriarca, el Balatigui, puede tocarlo en las grandes ocasiones. La UNESCO proclamó su espacio cultural obra maestra en 2001 y lo inscribió en 2008. En 1352 Ibn Battuta oyó en la corte de Mali una música que los historiadores identifican con el bala. Hoy se toca balafón en Guinea, Mali, Burkina Faso, Senegal y Costa de Marfil."
+      },
+      "path": [
+        { "at": [-8.38, 11.38], "place": { "en": "Court of Mali (perhaps Niani, Guinea)", "es": "Corte de Mali (quizá Niani, Guinea)" }, "date": "1352", "by": { "en": "Ibn Battuta", "es": "Ibn Battuta" }, "note": { "en": "The traveller hears court music that historians read as the bala.", "es": "El viajero oye una música de corte que los historiadores identifican con el bala." } },
+        { "at": [-5.63, 9.46], "place": { "en": "Korhogo, Côte d'Ivoire", "es": "Korhogo, Costa de Marfil" }, "date": "1900", "circa": true, "note": { "en": "The Senufo of Côte d'Ivoire, Mali and Burkina Faso play balafon orchestras at funerals and festivals.", "es": "Los senufo de Costa de Marfil, Mali y Burkina Faso tocan en orquestas de balafones en funerales y fiestas." } }
+      ],
+      "where": ["GIN", "MLI", "BFA", "SEN", "CIV", "GMB", "GNB"],
+      "strong": ["GIN", "MLI", "BFA"],
+      "note": {
+        "en": "Played by griots and village bands in Guinea, Mali, Burkina Faso and their neighbours, and in world-music groups abroad.",
+        "es": "Lo tocan griots y bandas de pueblo en Guinea, Mali, Burkina Faso y sus vecinos, y grupos de música del mundo en el extranjero."
+      },
+      "see": ["music:balafon"],
+      "wiki": { "en": "Balafon", "es": "Balafón" }
+    },
+    {
+      "id": "djembe",
+      "name": { "en": "The djembe", "es": "El yembé" },
+      "cat": "arts",
+      "icon": "🪘",
+      "how": "invented",
+      "sure": "likely",
+      "date": "1200",
+      "circa": true,
+      "at": [-9.31, 10.39],
+      "place": { "en": "Manding lands (marker at Kankan, Guinea)", "es": "Tierras mandingas (marcador en Kankan, Guinea)" },
+      "text": {
+        "en": "The goblet-shaped drum played with bare hands comes from the Mande peoples of the Mali Empire's lands. Since the 1950s it has become one of the most played hand drums in the world.",
+        "es": "El tambor en forma de copa que se toca con las manos viene de los pueblos mandingas de las tierras del Imperio de Mali. Desde la década de 1950 se ha vuelto uno de los tambores de mano más tocados del mundo."
+      },
+      "details": {
+        "en": "Mande tradition links the djembe with the numu, the blacksmiths, who carved the drums from a single log and covered them with goatskin, and it has long been played at weddings, harvests and naming feasts in Guinea, Mali and their neighbours. When it began is not recorded. Its worldwide fame began in 1952, when the Guinean poet Fodéba Keïta founded Les Ballets Africains in Paris; after independence the troupe became Guinea's national ballet. Master drummers such as Mamady Keïta and Famoudou Konaté later taught students in Europe, the Americas and Japan, and djembe circles now meet in schools and parks across the world.",
+        "es": "La tradición mandinga relaciona el yembé con los numu, los herreros, que tallaban los tambores en un solo tronco y los cubrían con piel de cabra, y desde hace mucho suena en bodas, cosechas y bautizos en Guinea, Mali y los países vecinos. No se sabe cuándo apareció. Su fama mundial empezó en 1952, cuando el poeta guineano Fodéba Keïta fundó Les Ballets Africains en París; tras la independencia, la compañía pasó a ser el ballet nacional de Guinea. Maestros como Mamady Keïta y Famoudou Konaté enseñaron después a alumnos de Europa, América y Japón, y hoy hay círculos de yembé en escuelas y parques de todo el mundo."
+      },
+      "path": [
+        { "at": [2.35, 48.86], "place": { "en": "Paris", "es": "París" }, "date": "1952", "by": { "en": "Fodéba Keïta", "es": "Fodéba Keïta" }, "note": { "en": "Les Ballets Africains take djembe and balafon to stages worldwide.", "es": "Les Ballets Africains llevan el yembé y el balafón a escenarios de todo el mundo." } },
+        { "at": [-13.68, 9.51], "place": { "en": "Conakry, Guinea", "es": "Conakri, Guinea" }, "date": "1958", "note": { "en": "The troupe becomes the national ballet of newly independent Guinea.", "es": "La compañía se convierte en el ballet nacional de la Guinea recién independizada." } },
+        { "at": [4.35, 50.85], "place": { "en": "Brussels", "es": "Bruselas" }, "date": "1991", "by": { "en": "Mamady Keïta", "es": "Mamady Keïta" }, "note": { "en": "The Guinean master opens a djembe school whose branches spread across several continents.", "es": "El maestro guineano abre una escuela de yembé con filiales en varios continentes." } }
+      ],
+      "where": ["GIN", "MLI", "SEN", "CIV", "BFA", "GMB", "FRA", "BEL", "DEU", "GBR", "USA", "CAN", "JPN", "AUS", "BRA"],
+      "strong": ["GIN", "MLI"],
+      "note": {
+        "en": "Played at feasts across Guinea, Mali and their neighbours, and in drum classes and circles from Paris to Tokyo.",
+        "es": "Suena en fiestas de Guinea, Mali y sus vecinos, y en clases y círculos de tambor de París a Tokio."
+      },
+      "see": ["music:djembe"],
+      "wiki": { "en": "Djembe", "es": "Yembé" }
+    },
+    {
+      "id": "talking-drum",
+      "name": { "en": "The talking drum", "es": "El tambor parlante" },
+      "cat": "arts",
+      "icon": "🥁",
+      "how": "invented",
+      "date": "1500",
+      "circa": true,
+      "at": [3.93, 7.85],
+      "place": { "en": "Oyo, Yoruba country, Nigeria", "es": "Oyo, país yoruba, Nigeria" },
+      "text": {
+        "en": "Squeezing the cords of the hourglass drum bends its pitch, so it can copy the tones of Yoruba and other languages and 'speak'. Drummers still use it to praise, announce and play jùjú and fuji.",
+        "es": "Al apretar las cuerdas del tambor en forma de reloj de arena cambia su tono, así que puede imitar los tonos del yoruba y de otras lenguas y «hablar». Los tamborileros lo usan todavía para alabar, anunciar y tocar jùjú y fuji."
+      },
+      "details": {
+        "en": "Yoruba is a tonal language: the same syllables mean different things at high, middle or low pitch. The dùndún drummer squeezes the leather cords under his arm to raise or lower the drum's voice and follows the tones and rhythm of speech, so listeners recognise names, proverbs and praise poems. Royal drummers at courts such as Oyo greeted the king and recited his ancestors. The Akan, Dagomba, Hausa and Wolof have talking drums of their own. In the 20th century King Sunny Adé put the talking drum at the heart of jùjú music, and it is heard in Nigerian pop today.",
+        "es": "El yoruba es una lengua tonal: las mismas sílabas significan cosas distintas en tono alto, medio o bajo. El tamborilero de dùndún aprieta bajo el brazo las cuerdas de cuero para subir o bajar la voz del tambor y sigue los tonos y el ritmo del habla, de modo que los oyentes reconocen nombres, proverbios y poemas de alabanza. Los tamborileros reales de cortes como Oyo saludaban al rey y recitaban sus antepasados. Los akan, dagomba, hausa y wolof tienen sus propios tambores parlantes. En el siglo XX King Sunny Adé puso el tambor parlante en el centro de la música jùjú, y hoy se oye en el pop nigeriano."
+      },
+      "path": [
+        { "at": [-1.62, 6.69], "place": { "en": "Kumasi, Ghana", "es": "Kumasi, Ghana" }, "date": "1800", "circa": true, "note": { "en": "Akan atumpan drums speak in Twi at the Asantehene's court.", "es": "Los tambores atumpan de los akan hablan en twi en la corte del asantehene." } },
+        { "at": [3.38, 6.52], "place": { "en": "Lagos, Nigeria", "es": "Lagos, Nigeria" }, "date": "1970", "circa": true, "by": { "en": "King Sunny Adé", "es": "King Sunny Adé" }, "note": { "en": "Jùjú bands make the talking drum a star of Nigerian popular music.", "es": "Las bandas de jùjú convierten el tambor parlante en estrella de la música popular nigeriana." } }
+      ],
+      "where": ["NGA", "BEN", "GHA", "TGO", "SEN", "GMB", "NER"],
+      "strong": ["NGA"],
+      "note": {
+        "en": "Heard at Yoruba festivals and palaces in Nigeria and Benin, in Ghana's royal courts and in Nigerian and Senegalese pop.",
+        "es": "Se oye en fiestas y palacios yorubas de Nigeria y Benín, en las cortes reales de Ghana y en el pop nigeriano y senegalés."
+      },
+      "see": ["inventions:talking-drum"],
+      "wiki": { "en": "Talking drum", "es": "Tambor parlante" }
+    },
+    {
+      "id": "banjo",
+      "name": { "en": "The banjo's West African roots", "es": "Las raíces africanas del banjo" },
+      "cat": "arts",
+      "icon": "🪕",
+      "how": "invented",
+      "sure": "debated",
+      "date": "1678",
+      "at": [-61.07, 14.64],
+      "place": { "en": "Martinique, Caribbean (first record)", "es": "Martinica, Caribe (primer registro)" },
+      "text": {
+        "en": "Enslaved West Africans in the Caribbean made the first banjos from gourds, skin and wood, after the lutes they knew at home. It became the voice of American folk, bluegrass and early jazz.",
+        "es": "Africanos occidentales esclavizados en el Caribe hicieron los primeros banjos con calabazas, piel y madera, a imitación de los laúdes de su tierra. Se convirtió en la voz del folk estadounidense, el bluegrass y el primer jazz."
+      },
+      "details": {
+        "en": "The first written record, of a 'banza', comes from Martinique in 1678, and in Jamaica in 1688 the naturalist Hans Sloane drew gourd lutes played by enslaved Africans. Scholars long looked to the griots' lutes, the ngoni and the xalam, as the ancestors; since the 1980s the Gambian researcher Daniel Laemouahuma Jatta has pointed to the akonting of the Jola people, which, like early banjos, has a long neck through a gourd body and a short thumb string. Which is the true parent is still debated, and there may be several. In the 1800s white minstrel shows took up the banjo, and makers added frets and metal rims.",
+        "es": "El primer registro escrito, de una «banza», es de Martinica en 1678, y en Jamaica, en 1688, el naturalista Hans Sloane dibujó laúdes de calabaza tocados por africanos esclavizados. Durante mucho tiempo se buscó a los antepasados en los laúdes de los griots, el ngoni y el xalam; desde los años ochenta, el investigador gambiano Daniel Laemouahuma Jatta señala el akonting del pueblo jola, que, como los primeros banjos, tiene un mástil largo que atraviesa la calabaza y una cuerda corta para el pulgar. Cuál es el verdadero padre se sigue debatiendo, y puede que sean varios. En el siglo XIX los espectáculos de minstrels blancos adoptaron el banjo, y los fabricantes le añadieron trastes y aros de metal."
+      },
+      "roots": {
+        "en": "Modelled on West African gourd lutes: the akonting of the Jola, or the ngoni and xalam played by griots; scholars debate which.",
+        "es": "Imitó laúdes de calabaza de África occidental: el akonting de los jola, o el ngoni y el xalam de los griots; se debate cuál."
+      },
+      "path": [
+        { "at": [-76.96, 17.99], "place": { "en": "Jamaica", "es": "Jamaica" }, "date": "1688", "by": { "en": "Hans Sloane", "es": "Hans Sloane" }, "note": { "en": "Sloane draws the gourd lutes of enslaved Africans.", "es": "Sloane dibuja los laúdes de calabaza de los africanos esclavizados." } },
+        { "at": [-78.48, 38.03], "place": { "en": "Virginia, United States", "es": "Virginia, Estados Unidos" }, "date": "1781", "by": { "en": "Thomas Jefferson", "es": "Thomas Jefferson" }, "note": { "en": "Jefferson writes that enslaved Africans brought the 'banjar' from Africa.", "es": "Jefferson escribe que los africanos esclavizados trajeron el «banjar» de África." } },
+        { "at": [-86.78, 36.16], "place": { "en": "Nashville, Tennessee", "es": "Nashville, Tennessee" }, "date": "1945", "by": { "en": "Earl Scruggs", "es": "Earl Scruggs" }, "note": { "en": "Scruggs's three-finger picking makes the banjo the sound of bluegrass.", "es": "La técnica de tres dedos de Scruggs hace del banjo el sonido del bluegrass." } }
+      ],
+      "where": ["USA", "CAN", "GBR", "IRL", "AUS", "BRA"],
+      "strong": ["USA"],
+      "note": {
+        "en": "Heard in American folk, bluegrass and country, in Irish traditional music and in Brazilian samba and pagode.",
+        "es": "Suena en el folk, el bluegrass y el country de Estados Unidos, en la música tradicional irlandesa y en el samba y el pagode brasileños."
+      },
+      "see": ["music:banjo"],
+      "wiki": { "en": "Banjo", "es": "Banyo" }
+    },
+    {
+      "id": "afro-atlantic-music",
+      "name": { "en": "West African rhythm in the music of the Americas", "es": "Ritmos de África occidental en la música de América" },
+      "cat": "arts",
+      "icon": "🎷",
+      "how": "spread",
+      "sure": "likely",
+      "date": "1600",
+      "circa": true,
+      "at": [2.08, 6.36],
+      "place": { "en": "The West African coast (marker at Ouidah, Benin)", "es": "La costa de África occidental (marcador en Ouidah, Benín)" },
+      "text": {
+        "en": "Call and response, layered rhythms and dance drumming crossed the Atlantic with enslaved Africans. Their descendants built blues, jazz, gospel, samba, son and salsa on them.",
+        "es": "El canto de llamada y respuesta, los ritmos superpuestos y la percusión para bailar cruzaron el Atlántico con los africanos esclavizados. Sus descendientes construyeron sobre ellos el blues, el jazz, el góspel, el samba, el son y la salsa."
+      },
+      "details": {
+        "en": "Across West and Central Africa a leader sings a line and a chorus answers, while drums, bells and rattles play interlocking rhythms. About 12.5 million Africans were forced onto slave ships, and these habits survived slavery in work songs, church songs and dances. In the United States they shaped spirituals, the blues of the Mississippi Delta and New Orleans jazz; in Brazil, samba; in Cuba, son and rumba, later the base of salsa in New York. Scholars debate how much came from which region, and Central Africa gave as much as West Africa to Cuba and Brazil. The genres themselves were created in the Americas by the descendants of the enslaved.",
+        "es": "En toda África occidental y central, un solista canta un verso y un coro le responde, mientras tambores, campanas y sonajas tocan ritmos entrelazados. Unos 12,5 millones de africanos fueron embarcados a la fuerza en barcos negreros, y estas costumbres sobrevivieron a la esclavitud en cantos de trabajo, himnos y bailes. En Estados Unidos dieron forma a los espirituales, al blues del delta del Misisipi y al jazz de Nueva Orleans; en Brasil, al samba; en Cuba, al son y la rumba, base después de la salsa en Nueva York. Se debate cuánto vino de cada región, y África central aportó tanto como la occidental a Cuba y Brasil. Los géneros mismos los crearon en América los descendientes de los esclavizados."
+      },
+      "path": [
+        { "at": [-90.57, 34.2], "place": { "en": "Mississippi Delta, United States", "es": "Delta del Misisipi, Estados Unidos" }, "date": "1890", "circa": true, "note": { "en": "African Americans create the blues from work songs, field hollers and spirituals.", "es": "Los afroestadounidenses crean el blues a partir de cantos de trabajo y espirituales." } },
+        { "at": [-90.07, 29.95], "place": { "en": "New Orleans", "es": "Nueva Orleans" }, "date": "1905", "circa": true, "note": { "en": "Jazz is born.", "es": "Nace el jazz." } },
+        { "at": [-82.37, 23.13], "place": { "en": "Havana, Cuba", "es": "La Habana, Cuba" }, "date": "1880", "circa": true, "from": 0, "note": { "en": "Rumba and son grow from African drumming and Spanish song.", "es": "La rumba y el son nacen de la percusión africana y la canción española." } },
+        { "at": [-73.94, 40.79], "place": { "en": "New York", "es": "Nueva York" }, "date": "1964", "circa": true, "note": { "en": "Cuban and Puerto Rican musicians make salsa.", "es": "Músicos cubanos y puertorriqueños crean la salsa." } },
+        { "at": [-43.2, -22.9], "place": { "en": "Rio de Janeiro, Brazil", "es": "Río de Janeiro, Brasil" }, "date": "1916", "from": 0, "note": { "en": "The first recorded samba.", "es": "El primer samba grabado." } }
+      ],
+      "where": ["world"],
+      "strong": ["USA", "BRA", "CUB", "JAM", "HTI", "TTO", "DOM", "COL"],
+      "note": {
+        "en": "Blues, jazz, gospel, rock, hip hop, samba and salsa, heard worldwide, all carry these West and Central African roots.",
+        "es": "El blues, el jazz, el góspel, el rock, el hip hop, el samba y la salsa, que suenan en todo el mundo, llevan estas raíces de África occidental y central."
+      },
+      "see": ["music:blues", "music:jazz", "music:samba", "music:salsa"],
+      "wiki": { "en": "Call and response (music)", "es": "Llamada y respuesta (música)" }
+    },
+    {
+      "id": "african-rice",
+      "name": { "en": "African rice", "es": "El arroz africano" },
+      "cat": "food",
+      "icon": "🌾",
+      "how": "tamed",
+      "date": "-1000",
+      "circa": true,
+      "at": [-4.4, 14.4],
+      "place": { "en": "Inner Niger Delta, Mali", "es": "Delta interior del Níger, Mali" },
+      "text": {
+        "en": "A rice species of its own, Oryza glaberrima, was tamed about 3,000 years ago along the Niger. West African farmers still grow it, and it lent its toughness to new rices for Africa.",
+        "es": "Una especie de arroz propia, Oryza glaberrima, fue domesticada hace unos 3000 años a orillas del Níger. Los agricultores de África occidental todavía la cultivan, y prestó su resistencia a nuevos arroces para África."
+      },
+      "details": {
+        "en": "African rice was bred from a wild rice of the Sahel; it is a different species from Asia's rice. Most genetic studies place its home in the inland delta of the Niger in Mali, though one finds that several regions contributed. Farmers of the Mali and Songhai empires grew it on the floodplains, and coastal peoples from Senegal to Sierra Leone in mangrove swamps. Enslaved West Africans grew rice in South Carolina, and historians debate how much their skills shaped its plantations. In the 1990s the Sierra Leonean scientist Monty Jones and his team crossed African and Asian rice to make NERICA, 'New Rice for Africa'.",
+        "es": "El arroz africano se obtuvo de un arroz silvestre del Sahel; es una especie distinta del arroz asiático. La mayoría de los estudios genéticos sitúa su cuna en el delta interior del Níger, en Mali, aunque uno concluye que contribuyeron varias regiones. Los campesinos de los imperios de Mali y Songhai lo cultivaban en las llanuras inundables, y los pueblos de la costa, de Senegal a Sierra Leona, en manglares. Africanos esclavizados cultivaron arroz en Carolina del Sur, y los historiadores debaten cuánto debieron a su saber las plantaciones. En los años noventa, el científico sierraleonés Monty Jones y su equipo cruzaron arroz africano y asiático para crear el NERICA, «nuevo arroz para África»."
+      },
+      "path": [
+        { "at": [-16.27, 12.58], "place": { "en": "Casamance, Senegal", "es": "Casamance, Senegal" }, "date": "1500", "circa": true, "note": { "en": "Portuguese sailors find rice paddies in the coastal swamps of Upper Guinea.", "es": "Navegantes portugueses encuentran arrozales en los pantanos costeros de la Alta Guinea." } },
+        { "at": [-79.93, 32.78], "place": { "en": "Charleston, South Carolina", "es": "Charleston, Carolina del Sur" }, "date": "1700", "circa": true, "note": { "en": "Enslaved West Africans grow rice; how much the colony owed to their skills is debated.", "es": "Africanos esclavizados cultivan arroz; se debate cuánto debió la colonia a su saber." } },
+        { "at": [-5.03, 7.69], "place": { "en": "Bouaké, Côte d'Ivoire", "es": "Bouaké, Costa de Marfil" }, "date": "1994", "circa": true, "from": 0, "by": { "en": "Monty Jones and the West Africa Rice Development Association", "es": "Monty Jones y la Asociación para el Desarrollo del Arroz en África Occidental" }, "note": { "en": "NERICA crosses join African rice's hardiness to Asian rice's yield.", "es": "Los cruces NERICA unen la resistencia del arroz africano al rendimiento del asiático." } }
+      ],
+      "where": ["MLI", "GIN", "SLE", "LBR", "SEN", "GNB", "GMB", "NGA", "CIV", "BFA", "GHA", "NER", "TGO"],
+      "strong": ["MLI", "GIN", "SLE", "GNB"],
+      "note": {
+        "en": "Still grown by smallholders from Senegal to Nigeria, and NERICA rices bred from it are sown across Africa.",
+        "es": "Lo siguen cultivando pequeños agricultores de Senegal a Nigeria, y los arroces NERICA derivados de él se siembran en toda África."
+      },
+      "see": ["food:african-rice"],
+      "wiki": { "en": "Oryza glaberrima", "es": "Oryza glaberrima" }
+    },
+    {
+      "id": "pearl-millet",
+      "name": { "en": "Pearl millet", "es": "El mijo perla" },
+      "cat": "food",
+      "icon": "🌾",
+      "how": "tamed",
+      "date": "-2500",
+      "circa": true,
+      "at": [0.0, 17.2],
+      "place": { "en": "Tilemsi valley, northern Mali", "es": "Valle del Tilemsi, norte de Mali" },
+      "text": {
+        "en": "Long before the kingdoms, Sahel farmers tamed pearl millet, the grain that grows where little else will. It fed Ghana, Mali and Songhai and still feeds tens of millions in Africa and India.",
+        "es": "Mucho antes de los reinos, agricultores del Sahel domesticaron el mijo perla, el cereal que crece donde casi nada crece. Alimentó a Ghana, Mali y Songhai y todavía alimenta a decenas de millones en África y la India."
+      },
+      "details": {
+        "en": "Herders and farmers of the southern Sahara gathered wild millet and, by about 2500 BC, were growing domesticated pearl millet in the Tilemsi valley of northern Mali. The crop spread across the savanna and, by about 2000 BC, reached India, where it is called bajra and is now grown more than anywhere else. It fed the towns and armies of the West African empires, and it is still the porridge, couscous and flatbread of the Sahel. Because it survives heat, drought and poor soil, scientists now breed it for a warmer world.",
+        "es": "Pastores y agricultores del sur del Sahara recolectaban mijo silvestre y, hacia el 2500 a. C., ya cultivaban mijo perla domesticado en el valle del Tilemsi, en el norte de Mali. El cultivo se extendió por la sabana y hacia el 2000 a. C. llegó a la India, donde se llama bajra y hoy se cultiva más que en ningún otro lugar. Alimentó las ciudades y los ejércitos de los imperios de África occidental, y sigue siendo la papilla, el cuscús y el pan plano del Sahel. Como resiste el calor, la sequía y los suelos pobres, los científicos lo mejoran hoy para un mundo más cálido."
+      },
+      "roots": {
+        "en": "Tamed by Saharan herder-farmers more than a thousand years before the first West African towns and kingdoms.",
+        "es": "Lo domesticaron pastores y agricultores del Sahara más de mil años antes de los primeros pueblos y reinos de África occidental."
+      },
+      "path": [
+        { "at": [8.99, 13.8], "place": { "en": "The Sahel (here Zinder, Niger)", "es": "El Sahel (aquí Zinder, Níger)" }, "date": "-1500", "circa": true, "note": { "en": "Pearl millet spreads across the savanna belt.", "es": "El mijo perla se extiende por la franja de sabana." } },
+        { "at": [72.6, 23.0], "place": { "en": "Gujarat, India", "es": "Guyarat, India" }, "date": "-2000", "circa": true, "from": 0, "note": { "en": "It reaches India, where it is called bajra.", "es": "Llega a la India, donde se llama bajra." } }
+      ],
+      "where": ["IND", "NER", "NGA", "MLI", "BFA", "SEN", "TCD", "SDN", "PAK", "GMB", "MRT", "NAM", "YEM"],
+      "strong": ["IND", "NER", "NGA", "MLI"],
+      "note": {
+        "en": "India grows the most, as bajra; it is also the staple grain of Niger, Mali, Burkina Faso and northern Nigeria.",
+        "es": "La India es el mayor productor, con el nombre de bajra; también es el cereal básico de Níger, Mali, Burkina Faso y el norte de Nigeria."
+      },
+      "see": ["food:pearl-millet"],
+      "wiki": { "en": "Pearl millet", "es": "Cenchrus americanus" }
+    },
+    {
+      "id": "yams",
+      "name": { "en": "Yams and the word 'yam'", "es": "El ñame y su nombre" },
+      "cat": "food",
+      "icon": "🍠",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "-2000",
+      "circa": true,
+      "at": [2.6, 10.3],
+      "place": { "en": "Niger River basin (marker in northern Benin)", "es": "Cuenca del Níger (marcador en el norte de Benín)" },
+      "text": {
+        "en": "The white Guinea yam was tamed from a forest yam in the Niger basin. West Africa still grows nine-tenths of the world's yams, and New Yam festivals mark the harvest.",
+        "es": "El ñame blanco de Guinea se domesticó a partir de un ñame del bosque en la cuenca del Níger. África occidental todavía cultiva nueve de cada diez ñames del mundo, y las fiestas del Ñame Nuevo celebran la cosecha."
+      },
+      "details": {
+        "en": "A 2019 genome study traced the white Guinea yam to a forest species, Dioscorea praehensilis, and placed its first farming in the Niger basin, between eastern Ghana and Nigeria; nobody knows exactly when. Yams fed the forest kingdoms of Ife, Benin, Oyo and Asante, and the harvest is still a festival: the Igbo New Yam Festival and the Asante Odwira among them. Enslaved Africans carried the yam and its name to the Americas, and in the United States sweet potatoes came to be called 'yams'. English took the word from Portuguese inhame, which came from a West African word. Nigeria alone grows about two-thirds of the world's yams.",
+        "es": "Un estudio genómico de 2019 vinculó el ñame blanco de Guinea con una especie del bosque, Dioscorea praehensilis, y situó su primer cultivo en la cuenca del Níger, entre el este de Ghana y Nigeria; nadie sabe exactamente cuándo. El ñame alimentó a los reinos del bosque, como Ife, Benín, Oyo y Asante, y la cosecha sigue siendo una fiesta, como la del Ñame Nuevo de los igbo o el Odwira de los asante. Los africanos esclavizados llevaron el ñame y su nombre a América, y en Estados Unidos las batatas acabaron llamándose yams. El inglés tomó la palabra del portugués inhame, de origen africano, y el español ñame también es una voz africana. Solo Nigeria cultiva cerca de dos tercios de los ñames del mundo."
+      },
+      "path": [
+        { "at": [-77.3, 18.1], "place": { "en": "The Caribbean (here Jamaica)", "es": "El Caribe (aquí Jamaica)" }, "date": "1700", "circa": true, "note": { "en": "Yams, used as food on slave ships, become a Caribbean staple.", "es": "El ñame, alimento en los barcos negreros, se vuelve básico en el Caribe." } },
+        { "at": [-80.0, 33.2], "place": { "en": "The southern United States", "es": "El sur de Estados Unidos" }, "date": "1800", "circa": true, "note": { "en": "Sweet potatoes come to be called 'yams'.", "es": "Las batatas pasan a llamarse yams." } }
+      ],
+      "where": ["NGA", "GHA", "CIV", "BEN", "TGO", "CMR", "GIN", "JAM", "HTI", "CUB", "DOM", "BRA"],
+      "strong": ["NGA", "GHA", "CIV", "BEN"],
+      "note": {
+        "en": "Nigeria, Ghana, Côte d'Ivoire and Benin grow most of the world's yams; Caribbean kitchens use them every day.",
+        "es": "Nigeria, Ghana, Costa de Marfil y Benín cultivan la mayoría de los ñames del mundo; las cocinas del Caribe los usan a diario."
+      },
+      "words": [
+        { "en": "yam", "from": "inhame (Portuguese), from a West African word, perhaps Fula nyami", "means": { "en": "to eat (Fula)", "es": "comer (fula)" } },
+        { "es": "ñame", "from": "an African word, through Portuguese inhame" }
+      ],
+      "see": ["food:fufu"],
+      "wiki": { "en": "Dioscorea cayenensis subsp. rotundata", "es": "Dioscorea cayennensis" }
+    },
+    {
+      "id": "black-eyed-peas",
+      "name": { "en": "Black-eyed peas (cowpeas)", "es": "El caupí o frijol de ojo negro" },
+      "cat": "food",
+      "icon": "🫘",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "-1700",
+      "circa": true,
+      "at": [-1.73, 8.05],
+      "place": { "en": "Kintampo, central Ghana", "es": "Kintampo, centro de Ghana" },
+      "text": {
+        "en": "Cowpeas, black-eyed peas among them, were tamed in West Africa nearly 4,000 years ago. They became akara in Nigeria, acarajé in Brazil and the New Year's Hoppin' John of the American South.",
+        "es": "El caupí, del que forma parte el frijol de ojo negro, se domesticó en África occidental hace casi 4000 años. Se volvió akara en Nigeria, acarajé en Brasil y el Hoppin' John de Año Nuevo en el sur de Estados Unidos."
+      },
+      "details": {
+        "en": "Charred cowpeas from rock shelters near Kintampo in central Ghana, about 3,700 years old, are the oldest domesticated ones known, and the wild cowpeas of West Africa also point there, though some scientists think East Africa tamed them too. The bean survives drought and enriches the soil, and it fed the farmers of the savanna and the forest. Yoruba cooks fry bean-paste fritters called akara; enslaved Africans took them to Bahia, where women in white still sell acarajé on the streets. In the southern United States, black-eyed peas and rice are eaten on New Year's Day for luck. Nigeria and Niger grow the most today.",
+        "es": "Unos caupís carbonizados de abrigos rocosos cerca de Kintampo, en el centro de Ghana, de unos 3700 años, son los más antiguos domesticados que se conocen, y los caupís silvestres de África occidental también apuntan allí, aunque algunos científicos creen que también se domesticó en África oriental. Esta legumbre resiste la sequía y enriquece el suelo, y alimentó a los campesinos de la sabana y del bosque. Las cocineras yorubas fríen buñuelos de pasta de frijol llamados akara; los africanos esclavizados los llevaron a Bahía, donde mujeres vestidas de blanco todavía venden acarajé en la calle. En el sur de Estados Unidos se come frijol de ojo negro con arroz el día de Año Nuevo para tener suerte. Nigeria y Níger son hoy los mayores productores."
+      },
+      "path": [
+        { "at": [-38.5, -12.97], "place": { "en": "Salvador, Bahia, Brazil", "es": "Salvador de Bahía, Brasil" }, "date": "1800", "circa": true, "note": { "en": "Yoruba akara becomes acarajé, fried in palm oil.", "es": "La akara yoruba se convierte en acarajé, frito en aceite de palma." } },
+        { "at": [-79.93, 32.78], "place": { "en": "Charleston, South Carolina", "es": "Charleston, Carolina del Sur" }, "date": "1847", "from": 0, "note": { "en": "Hoppin' John, black-eyed peas with rice, is printed in The Carolina Housewife.", "es": "El Hoppin' John, frijol de ojo negro con arroz, aparece en el recetario The Carolina Housewife." } }
+      ],
+      "where": ["NGA", "NER", "BFA", "GHA", "SEN", "MLI", "CMR", "BRA", "USA", "CUB"],
+      "strong": ["NGA", "NER"],
+      "note": {
+        "en": "Nigeria and Niger grow the most; black-eyed peas are everyday food from West Africa to Bahia and the US South.",
+        "es": "Nigeria y Níger son los mayores productores; el frijol de ojo negro es comida de todos los días de África occidental a Bahía y el sur de Estados Unidos."
+      },
+      "see": ["food:akara"],
+      "wiki": { "en": "Cowpea", "es": "Vigna unguiculata" }
+    },
+    {
+      "id": "okra",
+      "name": { "en": "The word 'okra'", "es": "La palabra okra" },
+      "cat": "words",
+      "icon": "🌿",
+      "how": "named",
+      "sure": "likely",
+      "date": "1679",
+      "at": [7.5, 6.2],
+      "place": { "en": "Igbo lands, south-eastern Nigeria", "es": "Tierras igbo, sudeste de Nigeria" },
+      "text": {
+        "en": "English 'okra' comes from a West African word, probably Igbo ókùrù. Enslaved Africans carried the pod and its names to the Americas, where it thickens gumbo and Caribbean soups.",
+        "es": "La palabra inglesa okra viene de una lengua de África occidental, probablemente del igbo ókùrù. Los africanos esclavizados llevaron la vaina y sus nombres a América, donde espesa el gumbo y las sopas del Caribe."
+      },
+      "details": {
+        "en": "Okra is a relative of the hibiscus whose sticky pods thicken soups. Botanists disagree on where it was first grown: West Africa, Ethiopia or South Asia. West Africans have long cooked it in okra soups, and it crossed the Atlantic on slave ships; English 'okra' is recorded from 1679. Merriam-Webster links the word to Igbo ókùrù, and the Twi word nkruma is also suggested. Another African name for the plant, gumbo, came from Central Africa and gave Louisiana's famous stew its name; in Spanish it is quimbombó, also an African word.",
+        "es": "La okra es pariente del hibisco y sus vainas pegajosas espesan las sopas. Los botánicos no se ponen de acuerdo sobre dónde se cultivó primero: África occidental, Etiopía o el sur de Asia. En África occidental se cocina desde hace mucho en sopas, y cruzó el Atlántico en los barcos negreros; en inglés, okra aparece en 1679. El diccionario Merriam-Webster la relaciona con el igbo ókùrù, y también se propone el twi nkruma. Otro nombre africano de la planta, gumbo, vino de África central y dio nombre al famoso guiso de Luisiana; en español se llama quimbombó, otra voz africana."
+      },
+      "path": [
+        { "at": [-90.07, 29.95], "place": { "en": "Louisiana, United States", "es": "Luisiana, Estados Unidos" }, "date": "1802", "note": { "en": "Gumbo, thickened with okra, is first described.", "es": "Se describe por primera vez el gumbo, espesado con okra." } }
+      ],
+      "where": ["lang:eng"],
+      "strong": ["NGA", "GHA", "USA"],
+      "note": {
+        "en": "Said by English speakers everywhere; okra soup is everyday food in Nigeria and Ghana, and okra thickens gumbo in Louisiana.",
+        "es": "La usan los hablantes de inglés de todo el mundo; la sopa de okra es comida diaria en Nigeria y Ghana, y la okra espesa el gumbo de Luisiana."
+      },
+      "words": [
+        { "en": "okra", "from": "ókùrù (Igbo), or perhaps nkruma (Twi)", "means": { "en": "okra", "es": "quimbombó" } }
+      ],
+      "see": ["food:gumbo"],
+      "wiki": { "en": "Okra", "es": "Abelmoschus esculentus" }
+    },
+    {
+      "id": "kola-nut",
+      "name": { "en": "Kola nuts and the word 'cola'", "es": "La nuez de cola y su nombre" },
+      "cat": "food",
+      "icon": "🌰",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "1100",
+      "circa": true,
+      "at": [-11.5, 8.6],
+      "place": { "en": "Forests of Sierra Leone and Guinea", "es": "Bosques de Sierra Leona y Guinea" },
+      "text": {
+        "en": "Bitter kola nuts, full of caffeine, were planted in the forest and traded north across West Africa. They gave cola drinks their name and are still shared to welcome guests.",
+        "es": "Las amargas nueces de cola, llenas de cafeína, se plantaban en el bosque y se vendían hacia el norte por toda África occidental. Dieron su nombre a los refrescos de cola y todavía se comparten para dar la bienvenida."
+      },
+      "details": {
+        "en": "Kola nuts found at Togu Missiri in Mali, dated between the 11th and 14th centuries, show that forest kola already reached the cities of the Niger. Mande and Hausa merchants carried it in baskets lined with leaves, and in Muslim lands, where alcohol was forbidden, chewing kola became a sign of friendship. The Asante kingdom grew rich selling it to Hausa traders. Coca-Cola, first sold in Atlanta in 1886, was named after coca leaves and kola nuts. Most colas today contain no kola at all, but in Igbo homes a host still breaks kola nuts with a prayer before guests sit down.",
+        "es": "Unas nueces de cola halladas en Togu Missiri, en Mali, fechadas entre los siglos XI y XIV, muestran que la cola del bosque ya llegaba a las ciudades del Níger. Los mercaderes mandingas y hausa la transportaban en cestas forradas de hojas, y en tierras musulmanas, donde el alcohol estaba prohibido, masticar cola se volvió un gesto de amistad. El reino asante se enriqueció vendiéndola a comerciantes hausa. La Coca-Cola, que se vendió por primera vez en Atlanta en 1886, debe su nombre a las hojas de coca y a la nuez de cola. Hoy casi ningún refresco de cola la lleva, pero en los hogares igbo el anfitrión todavía parte nueces de cola con una oración antes de recibir a sus invitados."
+      },
+      "path": [
+        { "at": [-4.2, 14.3], "place": { "en": "Togu Missiri, Inner Niger Delta, Mali", "es": "Togu Missiri, delta interior del Níger, Mali" }, "date": "1100", "circa": true, "note": { "en": "Forest kola nuts reach the towns of the Niger.", "es": "Las nueces de cola del bosque llegan a los pueblos del Níger." } },
+        { "at": [8.52, 12.0], "place": { "en": "Kano, Nigeria", "es": "Kano, Nigeria" }, "date": "1800", "circa": true, "note": { "en": "Hausa caravans bring Asante kola to Kano and beyond.", "es": "Las caravanas hausa llevan cola asante a Kano y más allá." } },
+        { "at": [-84.39, 33.75], "place": { "en": "Atlanta, United States", "es": "Atlanta, Estados Unidos" }, "date": "1886", "by": { "en": "John Pemberton", "es": "John Pemberton" }, "note": { "en": "Coca-Cola is named after coca leaves and kola nuts.", "es": "La Coca-Cola recibe su nombre de la hoja de coca y la nuez de cola." } }
+      ],
+      "where": ["NGA", "GHA", "CIV", "SLE", "GIN", "LBR", "SEN", "MLI", "NER", "BFA", "GMB", "CMR"],
+      "strong": ["NGA", "GHA", "SLE"],
+      "note": {
+        "en": "Kola nuts are chewed and shared at weddings, naming days and visits across West Africa; the word 'cola' is on drinks everywhere.",
+        "es": "La nuez de cola se mastica y se comparte en bodas, bautizos y visitas en toda África occidental; la palabra «cola» está en refrescos de todo el mundo."
+      },
+      "words": [
+        { "en": "cola", "es": "cola", "from": "kola, from West African languages (compare Temne kola, Mandinka kolo)" }
+      ],
+      "wiki": { "en": "Kola nut", "es": "Cola (planta)" }
+    },
+    {
+      "id": "shea-butter",
+      "name": { "en": "Shea butter", "es": "La manteca de karité" },
+      "cat": "daily",
+      "icon": "🧴",
+      "how": "invented",
+      "sure": "likely",
+      "date": "100",
+      "circa": true,
+      "at": [-3.8, 11.7],
+      "place": { "en": "Kirikongo, western Burkina Faso", "es": "Kirikongo, oeste de Burkina Faso" },
+      "text": {
+        "en": "West African women have made shea butter from the nuts of the shea tree for at least 1,900 years. It now goes into creams, soaps and lip balms around the world, and into some chocolate.",
+        "es": "Las mujeres de África occidental hacen manteca de karité con las nueces del árbol de karité desde hace al menos 1900 años. Hoy va en cremas, jabones y bálsamos labiales de todo el mundo, y en algunos chocolates."
+      },
+      "details": {
+        "en": "Burnt shea-nut shells found in house after house at Kirikongo in Burkina Faso show that people were processing shea by about AD 100, a thousand years earlier than once thought. The trees are not planted in orchards but kept and tended in farmers' fields. Making the butter is women's work: they gather, boil, dry, roast and grind the kernels, then knead the paste with water and skim off the fat. It is used for cooking, for skin and hair, and in medicine. Today shea from Burkina Faso, Ghana, Mali, Nigeria and their neighbours goes to cosmetics and food makers, and European law allows a little shea fat in chocolate.",
+        "es": "Cáscaras quemadas de nuez de karité halladas casa tras casa en Kirikongo, en Burkina Faso, muestran que hacia el año 100 d. C. ya se procesaba el karité, mil años antes de lo que se creía. Los árboles no se plantan en huertos, sino que se conservan y cuidan en los campos de cultivo. Hacer la manteca es trabajo de mujeres: recogen, hierven, secan, tuestan y muelen las almendras, amasan la pasta con agua y recogen la grasa. Se usa para cocinar, para la piel y el pelo, y como medicina. Hoy el karité de Burkina Faso, Ghana, Mali, Nigeria y sus vecinos va a fabricantes de cosméticos y alimentos, y la ley europea permite un poco de grasa de karité en el chocolate."
+      },
+      "where": ["world"],
+      "strong": ["BFA", "GHA", "MLI", "NGA", "CIV", "BEN", "TGO"],
+      "note": {
+        "en": "Cooked with and rubbed on skin across the savanna; exported to cosmetics, soap and food makers worldwide.",
+        "es": "Se cocina con ella y se usa en la piel en toda la sabana; se exporta a fabricantes de cosméticos, jabones y alimentos de todo el mundo."
+      },
+      "wiki": { "en": "Shea butter", "es": "Vitellaria paradoxa" }
+    },
+    {
+      "id": "oil-palm",
+      "name": { "en": "The oil palm", "es": "La palma aceitera" },
+      "cat": "food",
+      "icon": "🌴",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "-2000",
+      "circa": true,
+      "at": [-1.73, 8.15],
+      "place": { "en": "Central Ghana, home of the Kintampo culture", "es": "Centro de Ghana, tierra de la cultura Kintampo" },
+      "text": {
+        "en": "The oil palm of the West African forest gives red palm oil, cooked in soups and stews for thousands of years. Planted across Southeast Asia, it now yields the world's most produced vegetable oil.",
+        "es": "La palma aceitera del bosque de África occidental da el aceite de palma rojo, que se usa en sopas y guisos desde hace miles de años. Plantada en todo el sudeste asiático, hoy da el aceite vegetal más producido del mundo."
+      },
+      "details": {
+        "en": "Kintampo farmers in central Ghana were already eating oil-palm nuts nearly 4,000 years ago, and forest peoples have long tended palms in groves for oil, palm wine and thatch. In the 1800s, as the Atlantic slave trade was outlawed, kingdoms such as Dahomey and the trading states of the Niger delta sold palm oil to Europe for soap, candles and machine grease. Four seedlings planted in Java in 1848 began the plantations of Indonesia and Malaysia, which now grow most of the world's palm oil, at a heavy cost to rainforests. In West Africa and Bahia, red palm oil, called dendê in Brazil, still colours soups, stews and acarajé.",
+        "es": "Los agricultores de Kintampo, en el centro de Ghana, ya comían frutos de palma aceitera hace casi 4000 años, y los pueblos del bosque cuidan desde hace mucho palmares para obtener aceite, vino de palma y techos. En el siglo XIX, al prohibirse la trata atlántica, reinos como Dahomey y los estados comerciantes del delta del Níger vendieron aceite de palma a Europa para jabón, velas y grasa de máquinas. Cuatro plántulas sembradas en Java en 1848 dieron origen a las plantaciones de Indonesia y Malasia, que hoy producen la mayor parte del aceite de palma del mundo, a un alto costo para las selvas. En África occidental y en Bahía, el aceite de palma rojo, llamado dendê en Brasil, sigue dando color a sopas, guisos y acarajé."
+      },
+      "path": [
+        { "at": [-38.5, -12.97], "place": { "en": "Salvador, Bahia, Brazil", "es": "Salvador de Bahía, Brasil" }, "date": "1700", "circa": true, "note": { "en": "Enslaved Africans bring the palm; dendê becomes the soul of Bahian cooking.", "es": "Los africanos esclavizados traen la palma; el dendê se vuelve el alma de la cocina bahiana." } },
+        { "at": [1.99, 7.18], "place": { "en": "Abomey, Benin", "es": "Abomey, Benín" }, "date": "1840", "circa": true, "from": 0, "by": { "en": "King Ghezo of Dahomey", "es": "El rey Ghezo de Dahomey" }, "note": { "en": "Dahomey turns to selling palm oil to Europe.", "es": "Dahomey empieza a vender aceite de palma a Europa." } },
+        { "at": [106.8, -6.6], "place": { "en": "Bogor, Java, Indonesia", "es": "Bogor, Java, Indonesia" }, "date": "1848", "note": { "en": "Four oil-palm seedlings are planted in the botanical garden.", "es": "Se plantan cuatro plántulas de palma aceitera en el jardín botánico." } },
+        { "at": [101.45, 3.35], "place": { "en": "Selangor, Malaysia", "es": "Selangor, Malasia" }, "date": "1917", "note": { "en": "The first commercial oil-palm estate in Malaya.", "es": "La primera plantación comercial de palma aceitera en Malasia." } }
+      ],
+      "where": ["world"],
+      "strong": ["IDN", "MYS", "THA", "NGA", "COL", "GHA", "CIV"],
+      "note": {
+        "en": "Palm oil is in foods, soaps and cosmetics everywhere; Indonesia and Malaysia grow most of it, and red palm oil is a staple across West Africa.",
+        "es": "El aceite de palma está en alimentos, jabones y cosméticos de todo el mundo; Indonesia y Malasia producen la mayor parte, y el aceite rojo es básico en África occidental."
+      },
+      "see": ["writing:oil-palm"],
+      "wiki": { "en": "Elaeis guineensis", "es": "Elaeis guineensis" }
+    },
+    {
+      "id": "guinea-fowl",
+      "name": { "en": "The guinea fowl", "es": "La gallina de Guinea" },
+      "cat": "food",
+      "icon": "🐓",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "500",
+      "circa": true,
+      "at": [-4.0, 13.5],
+      "place": { "en": "West Africa (marker in central Mali)", "es": "África occidental (marcador en el centro de Mali)" },
+      "text": {
+        "en": "The speckled guinea fowl was tamed from the wild helmeted guineafowl, most likely in West Africa. Portuguese sailors took it from the Guinea coast to Europe and the Caribbean.",
+        "es": "La gallina de Guinea, de plumas moteadas, se domesticó a partir de la pintada silvestre, muy probablemente en África occidental. Los navegantes portugueses la llevaron de la costa de Guinea a Europa y al Caribe."
+      },
+      "details": {
+        "en": "A 2021 genome study points to West Africa as the place where people tamed the helmeted guineafowl, sometime between 5,500 and 1,300 years ago; pictures and bones from Mali and Sudan suggest two centres within the last 2,000 years. The birds roam village yards across the savanna and are valued for eggs, meat and their loud alarm calls. The Greeks and Romans already kept guinea fowl, perhaps from North Africa. From the 1400s Portuguese ships brought birds from the Guinea coast, which gave them their English name, and they spread to Europe and the Caribbean. France is now Europe's biggest producer of guinea fowl, which it calls pintade.",
+        "es": "Un estudio genómico de 2021 señala África occidental como el lugar donde se domesticó la pintada, en algún momento entre hace 5500 y 1300 años; imágenes y huesos de Mali y Sudán sugieren dos centros en los últimos 2000 años. Las aves andan sueltas por los patios de los pueblos de la sabana y se aprecian por sus huevos, su carne y sus fuertes gritos de alarma. Griegos y romanos ya criaban gallinas de Guinea, quizá traídas del norte de África. Desde el siglo XV, los barcos portugueses las trajeron de la costa de Guinea, que les dio su nombre, y se extendieron por Europa y el Caribe. Francia es hoy el mayor productor de Europa."
+      },
+      "path": [
+        { "at": [-9.14, 38.72], "place": { "en": "Lisbon, Portugal", "es": "Lisboa, Portugal" }, "date": "1450", "circa": true, "by": { "en": "Portuguese sailors", "es": "Navegantes portugueses" }, "note": { "en": "Guinea fowl arrive from the Guinea coast.", "es": "Llegan gallinas de Guinea de la costa de Guinea." } },
+        { "at": [-69.9, 18.47], "place": { "en": "Hispaniola, Caribbean", "es": "La Española, Caribe" }, "date": "1550", "circa": true, "note": { "en": "Guinea fowl reach the Caribbean, where many still live half-wild.", "es": "Las gallinas de Guinea llegan al Caribe, donde muchas viven todavía casi en libertad." } }
+      ],
+      "where": ["continent:africa", "FRA", "ITA", "HTI", "DOM", "CUB", "BRA", "USA"],
+      "strong": ["BFA", "GHA", "NGA", "FRA"],
+      "note": {
+        "en": "Kept in village yards across Africa, farmed for meat in France and Italy, and running half-wild in the Caribbean.",
+        "es": "Se crían en los patios de los pueblos de toda África, en granjas de Francia e Italia, y andan casi en libertad en el Caribe."
+      },
+      "wiki": { "en": "Helmeted guinea fowl", "es": "Numida meleagris" }
+    },
+    {
+      "id": "jollof-rice",
+      "name": { "en": "Jollof rice", "es": "El arroz jollof" },
+      "cat": "food",
+      "icon": "🍛",
+      "how": "named",
+      "sure": "likely",
+      "date": "1800",
+      "circa": true,
+      "at": [-15.12, 15.39],
+      "place": { "en": "Senegal, land of the old Jolof empire", "es": "Senegal, tierra del antiguo imperio de Jolof" },
+      "text": {
+        "en": "One-pot rice cooked with tomatoes, peppers and spices is named after the Wolof empire of Jolof. It is the party dish of West Africa, and Ghana and Nigeria argue over whose is best.",
+        "es": "El arroz cocido en una sola olla con tomate, chiles y especias lleva el nombre del imperio wolof de Jolof. Es el plato de fiesta de África occidental, y Ghana y Nigeria discuten cuál es el mejor."
+      },
+      "details": {
+        "en": "The Jolof, or Wolof, empire ruled much of Senegal from the 14th to the 16th century. The rice dish that carries its name grew out of Senegal's thiéboudienne, rice cooked in a rich fish and vegetable broth; its tomato-red form, with tomatoes and peppers from the Americas, is probably no older than the 1800s. Traders, migrants and cooks spread it along the coast to the Gambia, Sierra Leone, Liberia, Ghana and Nigeria, and each country has its own version. Friendly 'jollof wars' fill social media, and jollof is served wherever West Africans live, from London to Houston.",
+        "es": "El imperio de Jolof, o wolof, gobernó buena parte de Senegal entre los siglos XIV y XVI. El arroz que lleva su nombre nació del thiéboudienne senegalés, arroz cocido en un rico caldo de pescado y verduras; su forma roja, con tomates y chiles llegados de América, probablemente no es anterior al siglo XIX. Comerciantes, migrantes y cocineros lo llevaron por la costa a Gambia, Sierra Leona, Liberia, Ghana y Nigeria, y cada país tiene su versión. Las amistosas «guerras del jollof» llenan las redes sociales, y el jollof se sirve dondequiera que vivan africanos occidentales, de Londres a Houston."
+      },
+      "path": [
+        { "at": [-0.19, 5.6], "place": { "en": "Accra, Ghana", "es": "Acra, Ghana" }, "date": "1900", "circa": true, "note": { "en": "Ghanaian jollof, often cooked with fragrant rice.", "es": "El jollof ghanés, a menudo con arroz aromático." } },
+        { "at": [3.38, 6.52], "place": { "en": "Lagos, Nigeria", "es": "Lagos, Nigeria" }, "date": "1900", "circa": true, "note": { "en": "Nigerian jollof, with its smoky 'party' taste.", "es": "El jollof nigeriano, con su sabor ahumado de fiesta." } },
+        { "at": [-0.12, 51.5], "place": { "en": "London", "es": "Londres" }, "date": "2000", "circa": true, "note": { "en": "Jollof becomes a favourite of the West African diaspora and beyond.", "es": "El jollof se vuelve favorito de la diáspora africana occidental y de muchos más." } }
+      ],
+      "where": ["SEN", "GMB", "GIN", "SLE", "LBR", "GHA", "NGA", "CMR", "TGO", "BEN", "GBR", "USA"],
+      "strong": ["SEN", "GHA", "NGA"],
+      "note": {
+        "en": "A festive dish from Senegal to Nigeria and Cameroon, and in West African homes and restaurants in Britain and the US.",
+        "es": "Un plato de fiesta de Senegal a Nigeria y Camerún, y en hogares y restaurantes africanos de Gran Bretaña y Estados Unidos."
+      },
+      "see": ["food:jollof-rice"],
+      "wiki": { "en": "Jollof rice", "es": "Arroz jollof" }
+    },
+    {
+      "id": "orisha-faiths",
+      "name": { "en": "The orishas and their faiths", "es": "Los orishas y sus religiones" },
+      "cat": "ideas",
+      "icon": "🌊",
+      "how": "developed",
+      "date": "1300",
+      "circa": true,
+      "at": [4.56, 7.47],
+      "place": { "en": "Ile-Ife, Nigeria", "es": "Ile-Ife, Nigeria" },
+      "text": {
+        "en": "The Yoruba honour the orishas, such as Ogun, Shango, Oshun and Yemoja. Carried across the Atlantic by enslaved Yoruba, they live on in Santería in Cuba, Candomblé in Brazil and the Orisha faith of Trinidad.",
+        "es": "Los yorubas honran a los orishas, como Ogún, Shangó, Oshún y Yemayá. Llevados a través del Atlántico por yorubas esclavizados, siguen vivos en la santería de Cuba, el candomblé de Brasil y la religión orisha de Trinidad."
+      },
+      "details": {
+        "en": "For the Yoruba, Ile-Ife is where the world began and the orishas first came to earth; Shango, master of thunder, is remembered as a king of Oyo. Towns and families honour their orishas with drumming, song, dance and offerings. When the Oyo empire collapsed in the early 1800s, wars sent many Yoruba onto slave ships to Cuba and Brazil. There, often under the cover of Catholic saints, their faith grew into Regla de Ocha, or Santería, and Candomblé, and Yemoja became the sea goddess Yemayá or Iemanjá, honoured with flowers every 2 February in Salvador. Millions follow these faiths, though counts are uncertain.",
+        "es": "Para los yorubas, Ile-Ife es donde empezó el mundo y donde los orishas bajaron por primera vez a la tierra; Shangó, señor del trueno, es recordado como un rey de Oyo. Pueblos y familias honran a sus orishas con tambores, cantos, danzas y ofrendas. Cuando el imperio de Oyo se derrumbó a comienzos del siglo XIX, las guerras llevaron a muchos yorubas a los barcos negreros rumbo a Cuba y Brasil. Allí, a menudo bajo la apariencia de santos católicos, su fe se convirtió en la Regla de Ocha, o santería, y en el candomblé, y Yemoja pasó a ser Yemayá o Iemanjá, la diosa del mar, a la que se llevan flores cada 2 de febrero en Salvador. Millones de personas practican estas religiones, aunque las cifras son inciertas."
+      },
+      "path": [
+        { "at": [4.03, 8.95], "place": { "en": "Oyo-Ile, Nigeria", "es": "Oyo-Ile, Nigeria" }, "date": "1830", "circa": true, "note": { "en": "The fall of Oyo sends many Yoruba into the Atlantic slave trade.", "es": "La caída de Oyo arrastra a muchos yorubas a la trata atlántica." } },
+        { "at": [-38.5, -12.97], "place": { "en": "Salvador, Bahia, Brazil", "es": "Salvador de Bahía, Brasil" }, "date": "1830", "circa": true, "note": { "en": "African women found the first Candomblé houses.", "es": "Mujeres africanas fundan las primeras casas de candomblé." } },
+        { "at": [-81.58, 23.04], "place": { "en": "Matanzas and Havana, Cuba", "es": "Matanzas y La Habana, Cuba" }, "date": "1880", "circa": true, "from": 1, "note": { "en": "Regla de Ocha, or Santería, takes shape.", "es": "Toma forma la Regla de Ocha, o santería." } },
+        { "at": [-61.51, 10.66], "place": { "en": "Trinidad", "es": "Trinidad" }, "date": "1860", "circa": true, "from": 1, "note": { "en": "Yoruba indentured workers keep the Orisha faith alive.", "es": "Trabajadores yorubas contratados mantienen viva la religión orisha." } },
+        { "at": [-80.19, 25.76], "place": { "en": "Miami, United States", "es": "Miami, Estados Unidos" }, "date": "1960", "circa": true, "from": 3, "note": { "en": "Cuban exiles bring Santería to the United States.", "es": "Los exiliados cubanos llevan la santería a Estados Unidos." } }
+      ],
+      "where": ["NGA", "BEN", "TGO", "CUB", "BRA", "TTO", "USA", "VEN"],
+      "strong": ["NGA", "CUB", "BRA"],
+      "note": {
+        "en": "Followed by many Yoruba in Nigeria and Benin and by millions in Cuba, Brazil, Trinidad, the United States and Venezuela.",
+        "es": "La practican muchos yorubas de Nigeria y Benín y millones de personas en Cuba, Brasil, Trinidad, Estados Unidos y Venezuela."
+      },
+      "see": ["beliefs/afro-atlantic", "beliefs:santeria", "beliefs:candomble", "beliefs:osun-osogbo"],
+      "wiki": { "en": "Orisha", "es": "Orisha" }
+    },
+    {
+      "id": "ifa",
+      "name": { "en": "Ifá divination", "es": "La adivinación de Ifá" },
+      "cat": "ideas",
+      "icon": "📿",
+      "how": "developed",
+      "date": "1300",
+      "circa": true,
+      "at": [4.57, 7.49],
+      "place": { "en": "Ile-Ife, Nigeria", "es": "Ile-Ife, Nigeria" },
+      "text": {
+        "en": "Ifá priests cast palm nuts or a divining chain to find one of 256 signs, each with verses of advice. UNESCO honours this Yoruba wisdom, still consulted in Nigeria, Benin and the Americas.",
+        "es": "Los sacerdotes de Ifá echan nueces de palma o una cadena adivinatoria para hallar uno de 256 signos, cada uno con versos de consejo. La UNESCO honra este saber yoruba, que se sigue consultando en Nigeria, Benín y América."
+      },
+      "details": {
+        "en": "Believers say Ifá was given by Orunmila, the orisha of wisdom, at Ile-Ife. A babalawo, 'father of secrets', marks the signs in powder on a carved tray. Each of the 256 odu holds an open-ended number of verses, called ese, full of stories, proverbs and remedies, which priests learn by heart over many years. People consult Ifá about marriage, travel, illness and work. The Fon call the same system Fá, and babalawos practise it in Cuba and Brazil. UNESCO proclaimed Ifá a masterpiece of humanity's heritage in 2005 and listed it in 2008, warning that fewer young people now train as priests.",
+        "es": "Los creyentes dicen que Ifá lo dio Orunmila, el orisha de la sabiduría, en Ile-Ife. Un babalawo, «padre de los secretos», marca los signos con polvo sobre una bandeja tallada. Cada uno de los 256 odu tiene un número abierto de versos, llamados ese, llenos de historias, proverbios y remedios, que los sacerdotes aprenden de memoria durante muchos años. La gente consulta a Ifá sobre matrimonio, viajes, enfermedades y trabajo. Los fon llaman Fá al mismo sistema, y hay babalawos en Cuba y Brasil. La UNESCO proclamó Ifá obra maestra del patrimonio de la humanidad en 2005 y lo inscribió en 2008, advirtiendo que cada vez menos jóvenes se forman como sacerdotes."
+      },
+      "path": [
+        { "at": [1.99, 7.18], "place": { "en": "Abomey, Benin", "es": "Abomey, Benín" }, "date": "1700", "circa": true, "note": { "en": "The Fon of Dahomey practise it as Fá.", "es": "Los fon de Dahomey lo practican como Fá." } },
+        { "at": [-82.37, 23.13], "place": { "en": "Havana, Cuba", "es": "La Habana, Cuba" }, "date": "1850", "circa": true, "from": 0, "note": { "en": "Enslaved Yoruba babalawos start Ifá lineages in Cuba.", "es": "Babalawos yorubas esclavizados inician linajes de Ifá en Cuba." } }
+      ],
+      "where": ["NGA", "BEN", "TGO", "CUB", "BRA", "USA"],
+      "strong": ["NGA", "BEN", "CUB"],
+      "note": {
+        "en": "Babalawos practise in Yoruba towns of Nigeria and Benin, among the Fon and Ewe, and in Cuba, Brazil and the United States.",
+        "es": "Hay babalawos en los pueblos yorubas de Nigeria y Benín, entre los fon y los ewe, y en Cuba, Brasil y Estados Unidos."
+      },
+      "see": ["beliefs:ifa"],
+      "wiki": { "en": "Ifá", "es": "Ifá" }
+    },
+    {
+      "id": "vodun",
+      "name": { "en": "Vodun and Vodou", "es": "El vudú" },
+      "cat": "ideas",
+      "icon": "🐍",
+      "how": "developed",
+      "date": "1600",
+      "circa": true,
+      "at": [2.08, 6.36],
+      "place": { "en": "Ouidah and Abomey, Benin", "es": "Ouidah y Abomey, Benín" },
+      "text": {
+        "en": "The Fon, Ewe and Aja honour spirits called vodun. Enslaved people from Dahomey and its neighbours took the faith to Haiti, where it became Vodou, and Benin now keeps a national Vodun Day.",
+        "es": "Los fon, ewe y aja honran a espíritus llamados vodun. Personas esclavizadas de Dahomey y sus vecinos llevaron esta fe a Haití, donde se volvió el vudú haitiano, y Benín celebra hoy un Día Nacional del Vudú."
+      },
+      "details": {
+        "en": "In the kingdom of Dahomey, founded in the early 1600s, and among its neighbours, the vodun were powers of sky, earth, sea, illness and the ancestors, served by priests with drumming, dance and possession; Ouidah's temple of the sacred python is still active. Dahomey also sold captives into the Atlantic slave trade, and many reached Saint-Domingue, where vodun blended with Kongo traditions and Catholic saints into Haitian Vodou. Hollywood turned 'voodoo' into a horror cliché, but for millions it is a living religion. Since the 1990s Benin has kept 10 January as Vodun Day, with ceremonies on the beach at Ouidah.",
+        "es": "En el reino de Dahomey, fundado a comienzos del siglo XVII, y entre sus vecinos, los vodun eran fuerzas del cielo, la tierra, el mar, la enfermedad y los antepasados, servidas por sacerdotes con tambores, danzas y posesión; el templo de la pitón sagrada de Ouidah sigue activo. Dahomey también vendía cautivos a la trata atlántica, y muchos llegaron a Saint-Domingue, donde los vodun se mezclaron con tradiciones del Congo y santos católicos en el vudú haitiano. Hollywood convirtió el vudú en un cliché de terror, pero para millones es una religión viva. Desde los años noventa, Benín celebra el 10 de enero como Día del Vudú, con ceremonias en la playa de Ouidah."
+      },
+      "path": [
+        { "at": [-72.29, 19.68], "place": { "en": "Bois Caïman, Haiti", "es": "Bois Caïman, Haití" }, "date": "1791-08-14", "note": { "en": "By tradition, a Vodou ceremony launches the revolt that frees Haiti.", "es": "Según la tradición, una ceremonia vudú da inicio a la revuelta que libera Haití." } },
+        { "at": [-90.07, 29.95], "place": { "en": "New Orleans, United States", "es": "Nueva Orleans, Estados Unidos" }, "date": "1809", "note": { "en": "Refugees from Saint-Domingue bring Vodou; Louisiana Voodoo grows.", "es": "Refugiados de Saint-Domingue traen el vudú; nace el vudú de Luisiana." } },
+        { "at": [-38.5, -12.97], "place": { "en": "Salvador, Bahia, Brazil", "es": "Salvador de Bahía, Brasil" }, "date": "1850", "circa": true, "from": 0, "note": { "en": "Fon traditions live on in the Jeje nation of Candomblé.", "es": "Las tradiciones fon perviven en la nación jeje del candomblé." } }
+      ],
+      "where": ["BEN", "TGO", "GHA", "HTI", "USA", "BRA", "DOM", "CUB"],
+      "strong": ["BEN", "TGO", "HTI"],
+      "note": {
+        "en": "Practised in Benin, Togo and south-eastern Ghana, by many Haitians at home and abroad, and in Louisiana Voodoo.",
+        "es": "Se practica en Benín, Togo y el sudeste de Ghana, entre muchos haitianos dentro y fuera de Haití, y en el vudú de Luisiana."
+      },
+      "words": [
+        { "en": "voodoo", "es": "vudú", "from": "vodun (Fon, Ewe)", "means": { "en": "spirit, deity", "es": "espíritu, deidad" } }
+      ],
+      "see": ["beliefs:vodun", "beliefs:vodun-day", "beliefs/afro-atlantic#2"],
+      "wiki": { "en": "West African Vodún", "es": "Vudú" }
+    },
+    {
+      "id": "ife-benin-casting",
+      "name": { "en": "Brass casting of Ife and Benin", "es": "La fundición en bronce de Ife y Benín" },
+      "cat": "arts",
+      "icon": "👑",
+      "how": "developed",
+      "date": "1300",
+      "circa": true,
+      "at": [4.55, 7.46],
+      "place": { "en": "Ile-Ife, Nigeria", "es": "Ile-Ife, Nigeria" },
+      "text": {
+        "en": "Ife's artists cast lifelike heads in copper alloy by the lost-wax method, and Benin's guild made thousands of brass plaques for its kings. In Benin City the same guild still casts today.",
+        "es": "Los artistas de Ife fundieron cabezas realistas en aleación de cobre con el método de la cera perdida, y el gremio de Benín hizo miles de placas de latón para sus reyes. En Benín City ese mismo gremio sigue fundiendo hoy."
+      },
+      "details": {
+        "en": "Between the 12th and 15th centuries Ife's artists made heads so naturalistic that European scholars at first refused to believe Africans had made them. Benin tradition says the Oba sent to Ife for a master caster, Iguegha, who taught the craft to Benin. Benin's guild, the Igun Eronmwon, worked for the king alone, casting heads for royal altars and plaques that recorded court life. British troops looted thousands of these works in 1897, and many are now being returned. Casters on Igun Street in Benin City still shape wax, clay and brass in the old way, for the palace and for buyers around the world.",
+        "es": "Entre los siglos XII y XV, los artistas de Ife hicieron cabezas tan naturalistas que los estudiosos europeos al principio se negaron a creer que fueran obra de africanos. La tradición de Benín cuenta que el oba mandó traer de Ife a un maestro fundidor, Iguegha, que enseñó el oficio en Benín. El gremio de Benín, los Igun Eronmwon, trabajaba solo para el rey: fundía cabezas para los altares reales y placas que retrataban la vida de la corte. Las tropas británicas saquearon miles de estas obras en 1897, y muchas están volviendo. En la calle Igun de Benín City, los fundidores siguen trabajando la cera, la arcilla y el latón a la manera antigua, para el palacio y para compradores de todo el mundo."
+      },
+      "roots": {
+        "en": "Built on older West African lost-wax casting, seen at Igbo-Ukwu in the 9th century.",
+        "es": "Se basó en la fundición a la cera perdida más antigua de África occidental, presente en Igbo-Ukwu en el siglo IX."
+      },
+      "path": [
+        { "at": [5.63, 6.34], "place": { "en": "Benin City, Nigeria", "es": "Benín City, Nigeria" }, "date": "1400", "circa": true, "by": { "en": "Iguegha, by tradition", "es": "Iguegha, según la tradición" }, "note": { "en": "Benin's brass-casters' guild begins, taught from Ife.", "es": "Nace el gremio de fundidores de Benín, con maestros de Ife." } },
+        { "at": [-0.13, 51.52], "place": { "en": "London", "es": "Londres" }, "date": "1897", "note": { "en": "British troops loot the Benin Bronzes; many end up in the British Museum.", "es": "Las tropas británicas saquean los bronces de Benín; muchos acaban en el Museo Británico." } },
+        { "at": [7.49, 9.06], "place": { "en": "Abuja, Nigeria", "es": "Abuya, Nigeria" }, "date": "2022-12-20", "note": { "en": "Germany hands back Benin Bronzes to Nigeria.", "es": "Alemania devuelve bronces de Benín a Nigeria." } }
+      ],
+      "where": ["NGA"],
+      "note": {
+        "en": "The Igun Eronmwon guild still casts brass in Benin City; works from Ife and Benin fill museums around the world.",
+        "es": "El gremio Igun Eronmwon sigue fundiendo latón en Benín City; obras de Ife y Benín llenan museos de todo el mundo."
+      },
+      "see": ["art:benin-bronzes", "art:ife-heads", "art:igbo-ukwu-bronzes", "people:kingdom-of-benin"],
+      "wiki": { "en": "Benin Bronzes", "es": "Bronces de Benín" }
+    },
+    {
+      "id": "kente",
+      "name": { "en": "Kente cloth", "es": "La tela kente" },
+      "cat": "daily",
+      "icon": "🧣",
+      "how": "invented",
+      "date": "1700",
+      "circa": true,
+      "at": [-1.46, 6.79],
+      "place": { "en": "Bonwire, near Kumasi, Ghana", "es": "Bonwire, cerca de Kumasi, Ghana" },
+      "text": {
+        "en": "Kente is woven in bright narrow strips that are sewn together into cloth. Once worn by Asante kings, it is now Ghana's best-known cloth and a symbol of pride for Africans and the diaspora.",
+        "es": "La kente se teje en franjas estrechas y brillantes que luego se cosen para formar la tela. Antes la vestían los reyes asante; hoy es la tela más conocida de Ghana y un símbolo de orgullo para los africanos y su diáspora."
+      },
+      "details": {
+        "en": "Asante weavers at Bonwire, near the royal capital Kumasi, were making kente by the 17th and 18th centuries, unravelling imported silk to weave patterns reserved for the king and his court; the Ewe of eastern Ghana and Togo weave their own kente too. Each pattern has a name and a meaning. Kwame Nkrumah, Ghana's first president, wore kente on state visits, and in the 1960s African Americans took it up as a sign of heritage. Today kente is worn at weddings, festivals and funerals in Ghana, kente stoles are a graduation custom in the United States, and printed copies sell worldwide.",
+        "es": "Los tejedores asante de Bonwire, cerca de la capital real Kumasi, ya hacían kente en los siglos XVII y XVIII, deshilando seda importada para tejer diseños reservados al rey y a su corte; los ewe del este de Ghana y de Togo tejen también su propia kente. Cada diseño tiene nombre y significado. Kwame Nkrumah, primer presidente de Ghana, vestía kente en sus visitas de Estado, y en los años sesenta los afroestadounidenses la adoptaron como signo de sus raíces. Hoy se usa en bodas, fiestas y funerales en Ghana, las estolas de kente son costumbre en las graduaciones de Estados Unidos y sus copias estampadas se venden en todo el mundo."
+      },
+      "path": [
+        { "at": [1.0, 6.03], "place": { "en": "Agbozume, Volta Region, Ghana", "es": "Agbozume, región del Volta, Ghana" }, "date": "1800", "circa": true, "note": { "en": "Ewe weavers make their own kente.", "es": "Los tejedores ewe hacen su propia kente." } },
+        { "at": [-77.04, 38.9], "place": { "en": "Washington, United States", "es": "Washington, Estados Unidos" }, "date": "1958", "from": 0, "by": { "en": "Kwame Nkrumah", "es": "Kwame Nkrumah" }, "note": { "en": "Ghana's leader wears kente on his visit to the United States.", "es": "El líder de Ghana viste kente en su visita a Estados Unidos." } },
+        { "at": [-84.39, 33.75], "place": { "en": "Atlanta, United States", "es": "Atlanta, Estados Unidos" }, "date": "1990", "circa": true, "note": { "en": "Kente stoles become a graduation custom for African American students.", "es": "Las estolas de kente se vuelven costumbre en las graduaciones de estudiantes afroestadounidenses." } }
+      ],
+      "where": ["GHA", "TGO", "USA", "GBR", "CAN", "NGA"],
+      "strong": ["GHA", "TGO"],
+      "note": {
+        "en": "Worn at festivals, weddings and funerals in Ghana and Togo, and as graduation stoles and festive wear across the African diaspora.",
+        "es": "Se viste en fiestas, bodas y funerales en Ghana y Togo, y como estola de graduación y ropa de fiesta en toda la diáspora africana."
+      },
+      "wiki": { "en": "Kente cloth", "es": "Tejido Kente" }
+    },
+    {
+      "id": "adinkra",
+      "name": { "en": "Adinkra symbols", "es": "Los símbolos adinkra" },
+      "cat": "arts",
+      "icon": "🔶",
+      "how": "invented",
+      "date": "1800",
+      "circa": true,
+      "at": [-1.46, 6.86],
+      "place": { "en": "Ntonso, near Kumasi, Ghana", "es": "Ntonso, cerca de Kumasi, Ghana" },
+      "text": {
+        "en": "Adinkra are Asante symbols, each standing for a proverb or idea, such as Sankofa, 'go back and fetch it'. First stamped on mourning cloth, they now appear on buildings, logos, jewellery and tattoos.",
+        "es": "Los adinkra son símbolos asante, cada uno con un proverbio o una idea, como Sankofa, «vuelve y recógelo». Primero se estampaban en telas de luto; hoy aparecen en edificios, logotipos, joyas y tatuajes."
+      },
+      "details": {
+        "en": "Asante cloth-printers carve the symbols into pieces of calabash and stamp them with a black dye made from tree bark onto cotton cloth, traditionally worn at funerals. One tradition links the name to Adinkra, a king of Gyaman defeated by the Asante in the early 1800s. A cloth taken from Kumasi by the British envoy Thomas Bowdich in 1817, now in the British Museum, is the oldest known. There are hundreds of symbols: Gye Nyame, 'except God', for God's power, and Dwennimmen, ram's horns, for humility and strength. Ghanaian universities, churches and businesses use them, and Sankofa has become an emblem of remembering the past across the African diaspora.",
+        "es": "Los estampadores asante tallan los símbolos en trozos de calabaza y los imprimen con un tinte negro hecho de corteza sobre tela de algodón, que se vestía tradicionalmente en los funerales. Una tradición vincula el nombre con Adinkra, un rey de Gyaman vencido por los asante a comienzos del siglo XIX. Una tela llevada de Kumasi por el enviado británico Thomas Bowdich en 1817, hoy en el Museo Británico, es la más antigua conocida. Hay cientos de símbolos: Gye Nyame, «excepto Dios», para el poder divino, y Dwennimmen, cuernos de carnero, para la humildad y la fuerza. Universidades, iglesias y empresas de Ghana los usan, y Sankofa se ha vuelto en toda la diáspora africana un emblema de recordar el pasado."
+      },
+      "path": [
+        { "at": [-0.13, 51.52], "place": { "en": "London", "es": "Londres" }, "date": "1818", "by": { "en": "Thomas Bowdich", "es": "Thomas Bowdich" }, "note": { "en": "The oldest known adinkra cloth reaches the British Museum.", "es": "La tela adinkra más antigua conocida llega al Museo Británico." } }
+      ],
+      "where": ["GHA", "CIV", "TGO", "USA", "GBR"],
+      "strong": ["GHA"],
+      "note": {
+        "en": "Seen all over Ghana on cloth, walls, logos and furniture, and used across the diaspora as symbols of heritage.",
+        "es": "Se ven por todo Ghana en telas, muros, logotipos y muebles, y la diáspora los usa como símbolos de sus raíces."
+      },
+      "wiki": { "en": "Adinkra symbols", "es": "Símbolos adinkra" }
+    },
+    {
+      "id": "sahel-mud-mosques",
+      "name": { "en": "Mud-brick mosques of the Sahel", "es": "Las mezquitas de adobe del Sahel" },
+      "cat": "build",
+      "icon": "🕌",
+      "how": "developed",
+      "date": "1250",
+      "circa": true,
+      "at": [-4.55, 13.91],
+      "place": { "en": "Djenné, Mali", "es": "Djenné, Mali" },
+      "text": {
+        "en": "Sun-dried mud bricks, palm-wood beams bristling from the walls and tall buttresses: the Sudano-Sahelian style of Djenné and Timbuktu. Every year the people of Djenné replaster their Great Mosque together.",
+        "es": "Ladrillos de barro secados al sol, vigas de palmera que asoman de los muros y altos contrafuertes: el estilo sudano-saheliano de Djenné y Tombuctú. Cada año la gente de Djenné vuelve a enlucir junta su Gran Mezquita."
+      },
+      "details": {
+        "en": "Builders of the Mali and Songhai empires raised mosques, palaces and houses of banco, mud mixed with rice husks and straw, around wooden frames. The bundles of palm wood, called toron, that stick out of the walls serve as built-in scaffolding for repairs. Timbuktu's Djinguereber mosque was ordered by Mansa Musa in 1327 and is still in use. Djenné's Great Mosque, rebuilt in 1907 by the town's guild of masons on the site of a 13th-century mosque, is the largest mud-brick building in the world. Each year, at the Crépissage, the whole town spreads fresh mud over its walls before the rains.",
+        "es": "Los constructores de los imperios de Mali y Songhai levantaron mezquitas, palacios y casas de banco, barro mezclado con cascarilla de arroz y paja, sobre armazones de madera. Los haces de madera de palmera que sobresalen de los muros, llamados toron, sirven de andamio fijo para las reparaciones. La mezquita de Djinguereber, en Tombuctú, la mandó construir Mansa Musa en 1327 y sigue en uso. La Gran Mezquita de Djenné, reconstruida en 1907 por el gremio de albañiles de la ciudad sobre una mezquita del siglo XIII, es el mayor edificio de adobe del mundo. Cada año, en el Crépissage, todo el pueblo cubre sus muros con barro fresco antes de las lluvias."
+      },
+      "path": [
+        { "at": [-3.01, 16.77], "place": { "en": "Timbuktu, Mali", "es": "Tombuctú, Mali" }, "date": "1327", "by": { "en": "Mansa Musa", "es": "Mansa Musa" }, "note": { "en": "The Djinguereber mosque, still used for prayer.", "es": "La mezquita de Djinguereber, que todavía se usa para rezar." } },
+        { "at": [7.99, 16.97], "place": { "en": "Agadez, Niger", "es": "Agadez, Níger" }, "date": "1515", "circa": true, "note": { "en": "The Great Mosque, with its 27-metre mud-brick minaret.", "es": "La Gran Mezquita, con su minarete de adobe de 27 metros." } },
+        { "at": [-4.29, 11.18], "place": { "en": "Bobo-Dioulasso, Burkina Faso", "es": "Bobo-Dioulasso, Burkina Faso" }, "date": "1880", "circa": true, "from": 0, "note": { "en": "The Grand Mosque is built in the same style.", "es": "Se construye la Gran Mezquita en el mismo estilo." } }
+      ],
+      "where": ["MLI", "BFA", "NER", "GIN", "CIV", "GHA", "MRT"],
+      "strong": ["MLI", "BFA", "NER"],
+      "note": {
+        "en": "Still built and kept up in Mali, Burkina Faso and Niger, and seen in old mosques of northern Ghana and Côte d'Ivoire.",
+        "es": "Se sigue construyendo y conservando en Mali, Burkina Faso y Níger, y se ve en antiguas mezquitas del norte de Ghana y Costa de Marfil."
+      },
+      "see": ["structures:djenne-mosque", "beliefs:djinguereber-mosque"],
+      "wiki": { "en": "Great Mosque of Djenné", "es": "Gran Mezquita de Djenné" }
+    },
+    {
+      "id": "ajami",
+      "name": { "en": "Ajami: African languages in Arabic letters", "es": "El ajami: lenguas africanas en letras árabes" },
+      "cat": "writing",
+      "icon": "✍️",
+      "how": "developed",
+      "date": "1600",
+      "circa": true,
+      "at": [8.52, 12.0],
+      "place": { "en": "Kano, Nigeria", "es": "Kano, Nigeria" },
+      "text": {
+        "en": "West African scholars adapted the Arabic alphabet to write Hausa, Fula, Wolof, Mandinka and other languages. Ajami is still used for poems, letters and religious teaching.",
+        "es": "Los sabios de África occidental adaptaron el alfabeto árabe para escribir hausa, fula, wolof, mandinga y otras lenguas. El ajami se sigue usando para poemas, cartas y enseñanza religiosa."
+      },
+      "details": {
+        "en": "Islam reached the Sahel along the trade routes, and Arabic writing came with it. By the early 1600s scholars in Kano were writing Hausa in Arabic letters, adding dots and signs for sounds Arabic lacks; Fula, Wolof, Mandinka, Songhay and Yoruba followed. In the early 1800s the reformer Usman dan Fodio and his daughter, the poet and teacher Nana Asma'u, wrote verse in Fula and Hausa ajami to teach ordinary people, women included. Senegal's Mouride brotherhood still writes Wolof in Arabic letters, called Wolofal, and ajami remains common in Quranic schools and religious poetry.",
+        "es": "El islam llegó al Sahel por las rutas comerciales, y con él la escritura árabe. A comienzos del siglo XVII, los sabios de Kano ya escribían el hausa en letras árabes, añadiendo puntos y signos para los sonidos que el árabe no tiene; después siguieron el fula, el wolof, el mandinga, el songhay y el yoruba. A comienzos del siglo XIX, el reformador Usman dan Fodio y su hija, la poeta y maestra Nana Asma'u, escribieron versos en ajami fula y hausa para enseñar a la gente común, mujeres incluidas. La cofradía muridí de Senegal todavía escribe el wolof en letras árabes, el llamado wolofal, y el ajami sigue siendo común en las escuelas coránicas y la poesía religiosa."
+      },
+      "roots": {
+        "en": "Built on the Arabic alphabet, brought across the Sahara by Muslim traders and scholars.",
+        "es": "Se basó en el alfabeto árabe, traído a través del Sahara por comerciantes y sabios musulmanes."
+      },
+      "path": [
+        { "at": [5.24, 13.06], "place": { "en": "Sokoto, Nigeria", "es": "Sokoto, Nigeria" }, "date": "1820", "circa": true, "by": { "en": "Usman dan Fodio and Nana Asma'u", "es": "Usman dan Fodio y Nana Asma'u" }, "note": { "en": "Poems in Fula and Hausa ajami teach faith and history.", "es": "Poemas en ajami fula y hausa enseñan religión e historia." } },
+        { "at": [-15.88, 14.85], "place": { "en": "Touba, Senegal", "es": "Touba, Senegal" }, "date": "1900", "circa": true, "from": 0, "note": { "en": "Followers of Amadou Bamba write Wolof poetry in Arabic letters.", "es": "Los seguidores de Amadou Bamba escriben poesía wolof en letras árabes." } }
+      ],
+      "where": ["NGA", "NER", "SEN", "GMB", "GIN", "MLI", "CMR"],
+      "strong": ["NGA", "SEN"],
+      "note": {
+        "en": "Used in Islamic schools, poetry and notes in northern Nigeria, Niger, Senegal, Guinea and their neighbours.",
+        "es": "Se usa en escuelas islámicas, poesía y notas en el norte de Nigeria, Níger, Senegal, Guinea y sus vecinos."
+      },
+      "see": ["writing:hausa"],
+      "wiki": { "en": "Ajami script", "es": "" }
+    },
+    {
+      "id": "timbuktu-manuscripts",
+      "name": { "en": "The manuscripts of Timbuktu", "es": "Los manuscritos de Tombuctú" },
+      "cat": "writing",
+      "icon": "📜",
+      "how": "kept",
+      "date": "1300",
+      "circa": true,
+      "at": [-3.0, 16.77],
+      "place": { "en": "Timbuktu, Mali", "es": "Tombuctú, Mali" },
+      "text": {
+        "en": "Timbuktu's families have copied and kept hundreds of thousands of handwritten books on law, astronomy, medicine and poetry for centuries. In 2012 and 2013 they smuggled most of them to safety.",
+        "es": "Las familias de Tombuctú han copiado y guardado durante siglos cientos de miles de libros manuscritos de derecho, astronomía, medicina y poesía. En 2012 y 2013 sacaron a escondidas la mayoría para salvarlos."
+      },
+      "details": {
+        "en": "Under Mali and Songhai, Timbuktu drew scholars to its mosques of Sankoré, Djinguereber and Sidi Yahya, and paper and books came across the Sahara from North Africa. Local scholars such as Ahmad Baba (1556–1627) wrote works still read today. Families hid their libraries through invasions and colonial rule. In 2012–2013, when armed groups held Timbuktu and burned thousands of manuscripts, librarians led by Abdel Kader Haidara carried about 350,000 to Bamako in sacks and boxes. The Ahmed Baba Institute and private libraries are now scanning them so that readers anywhere can study them.",
+        "es": "Bajo Mali y Songhai, Tombuctú atrajo a sabios a sus mezquitas de Sankoré, Djinguereber y Sidi Yahya, y el papel y los libros llegaban del norte de África a través del Sahara. Sabios locales como Ahmad Baba (1556-1627) escribieron obras que todavía se leen. Las familias escondieron sus bibliotecas durante invasiones y la época colonial. En 2012-2013, cuando grupos armados dominaban Tombuctú y quemaron miles de manuscritos, bibliotecarios encabezados por Abdel Kader Haidara llevaron unos 350 000 a Bamako en sacos y cajas. El Instituto Ahmed Baba y las bibliotecas privadas los están digitalizando para que cualquiera pueda estudiarlos."
+      },
+      "path": [
+        { "at": [-8.0, 12.64], "place": { "en": "Bamako, Mali", "es": "Bamako, Mali" }, "date": "2013", "by": { "en": "Abdel Kader Haidara and Timbuktu's librarians", "es": "Abdel Kader Haidara y los bibliotecarios de Tombuctú" }, "note": { "en": "About 350,000 manuscripts are smuggled to safety.", "es": "Unos 350 000 manuscritos se ponen a salvo a escondidas." } }
+      ],
+      "where": ["MLI"],
+      "note": {
+        "en": "Kept in Timbuktu and Bamako by families and the Ahmed Baba Institute; many are being put online for readers everywhere.",
+        "es": "Los guardan familias y el Instituto Ahmed Baba en Tombuctú y Bamako; muchos se están publicando en línea para lectores de todo el mundo."
+      },
+      "see": ["people:timbuktu-manuscripts", "heritage:timbuktu-manuscripts", "people:sankore"],
+      "wiki": { "en": "Timbuktu Manuscripts", "es": "Manuscritos de Tombuctú" }
+    },
+    {
+      "id": "manden-charter",
+      "name": { "en": "The Manden Charter", "es": "La Carta del Mandén" },
+      "cat": "law",
+      "icon": "⚖️",
+      "how": "invented",
+      "sure": "debated",
+      "date": "1236",
+      "circa": true,
+      "at": [-8.45, 11.95],
+      "place": { "en": "Kurukan Fuga, near Kangaba, Mali", "es": "Kurukan Fuga, cerca de Kangaba, Mali" },
+      "text": {
+        "en": "At Kurukan Fuga, tradition says, Sundiata and the Mande clans agreed the rules of the Mali Empire: on rule, kinship, property and respect for life. Griots still recite it, and UNESCO listed it in 2009.",
+        "es": "En Kurukan Fuga, según la tradición, Sundiata y los clanes mandingas acordaron las reglas del Imperio de Mali: gobierno, parentesco, propiedad y respeto a la vida. Los griots todavía la recitan, y la UNESCO la inscribió en 2009."
+      },
+      "details": {
+        "en": "The charter was never written down in old times: griots passed it on by word of mouth for centuries, so its exact words and date are uncertain. In the versions recited today it gives each clan, such as the royal Keita or the griot Kouyaté, its duties, and sets out the protection of women, children and strangers, rules for the land and the 'joking kinships', sanankuya, that still let families tease each other and ease quarrels. Some call it one of the world's first declarations of human rights; many historians see that as a modern reading of an oral tradition. Versions were only written down in the late 20th century.",
+        "es": "La carta nunca se escribió en la Antigüedad: los griots la transmitieron de boca en boca durante siglos, así que sus palabras exactas y su fecha son inciertas. En las versiones que se recitan hoy da a cada clan, como los Keita reales o los Kouyaté griots, sus deberes, y fija la protección de mujeres, niños y forasteros, reglas sobre la tierra y los «parentescos de broma», el sanankuya, que todavía permiten a las familias bromear entre sí y calmar disputas. Algunos la llaman una de las primeras declaraciones de derechos humanos del mundo; muchos historiadores creen que es una lectura moderna de una tradición oral. Sus versiones se pusieron por escrito apenas a fines del siglo XX."
+      },
+      "where": ["MLI", "GIN", "SEN", "GMB", "CIV", "BFA"],
+      "strong": ["MLI", "GIN"],
+      "note": {
+        "en": "Recited by griots in Mali and Guinea; its clan names and joking kinships still shape everyday life across the Mande world.",
+        "es": "La recitan griots en Mali y Guinea; sus apellidos de clan y parentescos de broma siguen marcando la vida diaria en todo el mundo mandinga."
+      },
+      "words": [
+        { "en": "Keita", "es": "Keita", "type": "name", "from": "Keita (Manding), the royal clan of Sundiata and the kings of Mali" },
+        { "en": "Konaté", "es": "Konaté", "type": "name", "from": "Konaté (Manding), clan of Sundiata's father in the epic" },
+        { "en": "Traoré", "es": "Traoré", "type": "name", "from": "Traoré (Manding), clan of Tiramakhan, Sundiata's general" },
+        { "en": "Camara", "es": "Camara", "type": "name", "from": "Kamara (Manding), one of the oldest Mande clans" },
+        { "en": "Kouyaté", "es": "Kouyaté", "type": "name", "from": "Kouyaté (Manding), griot clan of Balla Fasséké" },
+        { "en": "Diabaté", "es": "Diabaté", "type": "name", "from": "Diabaté (Manding), a griot clan" }
+      ],
+      "see": ["people:kouroukan-fouga", "people/west-african-empires#4"],
+      "wiki": { "en": "Kouroukan Fouga", "es": "Kurukan Fuga" }
+    },
+    {
+      "id": "golden-stool",
+      "name": { "en": "The Golden Stool of the Asante", "es": "El Taburete de Oro de los asante" },
+      "cat": "law",
+      "icon": "🪑",
+      "how": "invented",
+      "date": "1701",
+      "circa": true,
+      "at": [-1.62, 6.69],
+      "place": { "en": "Kumasi, Ghana", "es": "Kumasi, Ghana" },
+      "text": {
+        "en": "The Golden Stool, which tradition says came down from the sky about 1701, holds the soul of the Asante nation. No one sits on it, and the Asantehene who keeps it still reigns in Kumasi.",
+        "es": "El Taburete de Oro, que según la tradición bajó del cielo hacia 1701, guarda el alma de la nación asante. Nadie se sienta en él, y el asantehene que lo custodia sigue reinando en Kumasi."
+      },
+      "details": {
+        "en": "The priest Okomfo Anokye is said to have called the stool down for King Osei Tutu, uniting the Akan states into the Asante kingdom, which grew rich on gold and kola. Every Asantehene is enthroned beside it, and each chief has a stool of his own: in Ghana a chief is 'enstooled', not crowned. In 1900 a British governor demanded to sit on it; the queen mother Yaa Asantewaa led a war in its defence, and the stool stayed hidden for years. Queen mothers still help choose kings. Ghana's constitution recognises traditional rulers, and Otumfuo Osei Tutu II, enstooled in 1999, sits in state at great durbars.",
+        "es": "Se cuenta que el sacerdote Okomfo Anokye hizo bajar el taburete para el rey Osei Tutu, uniendo a los estados akan en el reino asante, que se enriqueció con el oro y la nuez de cola. Cada asantehene se entroniza junto a él, y cada jefe tiene su propio taburete: en Ghana un jefe no se corona, sino que se «entaburetea». En 1900 un gobernador británico exigió sentarse en él; la reina madre Yaa Asantewaa encabezó una guerra para defenderlo, y el taburete estuvo escondido durante años. Las reinas madres siguen ayudando a elegir a los reyes. La constitución de Ghana reconoce a los gobernantes tradicionales, y Otumfuo Osei Tutu II, entronizado en 1999, preside los grandes durbares."
+      },
+      "where": ["GHA"],
+      "note": {
+        "en": "The Asantehene and the Golden Stool remain at the heart of Asante life in Ghana; chiefs across southern Ghana still sit on stools.",
+        "es": "El asantehene y el Taburete de Oro siguen en el centro de la vida asante en Ghana; los jefes de todo el sur de Ghana todavía tienen sus taburetes."
+      },
+      "wiki": { "en": "Golden Stool", "es": "Taburete dorado" }
+    },
+    {
+      "id": "oware",
+      "name": { "en": "Oware, awalé and ayo", "es": "El oware, el awalé y el ayo" },
+      "cat": "play",
+      "icon": "🎲",
+      "how": "spread",
+      "sure": "likely",
+      "date": "1700",
+      "circa": true,
+      "at": [-1.6, 6.75],
+      "place": { "en": "Akan lands, Ghana", "es": "Tierras akan, Ghana" },
+      "text": {
+        "en": "Seeds sown around two rows of six pits: oware, a mancala game, is played across West Africa as awalé and ayo. Enslaved Africans took it to the Caribbean, and it is now taught and played worldwide.",
+        "es": "Semillas que se siembran en dos filas de seis hoyos: el oware, un juego de mancala, se juega en toda África occidental como awalé o ayo. Los africanos esclavizados lo llevaron al Caribe, y hoy se enseña y se juega en todo el mundo."
+      },
+      "details": {
+        "en": "Mancala games, in which players sow and capture seeds, are very old; the oldest known boards may come from Aksum, and nobody knows where they began. The Akan game oware, the Ivorian awalé and the Yoruba ayo share the two-row, six-pit board and the rules now used in tournaments. Kings and village elders played it, and a good player had to count fast and think ahead. Enslaved Africans brought it to the Caribbean, where it is still played as warri in Antigua and Barbados. Teachers use it for arithmetic, and in 2002 computer scientists 'solved' it: with perfect play, oware ends in a draw.",
+        "es": "Los juegos de mancala, en los que se siembran y capturan semillas, son muy antiguos; los tableros más viejos que se conocen quizá sean de Aksum, y nadie sabe dónde empezaron. El oware de los akan, el awalé de Costa de Marfil y el ayo de los yorubas comparten el tablero de dos filas de seis hoyos y las reglas que hoy se usan en torneos. Lo jugaban reyes y ancianos de los pueblos, y un buen jugador tenía que contar rápido y pensar por adelantado. Los africanos esclavizados lo llevaron al Caribe, donde todavía se juega como warri en Antigua y Barbados. Los maestros lo usan para enseñar aritmética, y en 2002 unos informáticos lo «resolvieron»: con un juego perfecto, el oware termina en empate."
+      },
+      "roots": {
+        "en": "One of the mancala family of games, whose oldest known boards may be Aksumite (6th–8th centuries).",
+        "es": "Pertenece a la familia de juegos de mancala, cuyos tableros más antiguos conocidos quizá sean aksumitas (siglos VI a VIII)."
+      },
+      "path": [
+        { "at": [-61.85, 17.12], "place": { "en": "Antigua, Caribbean", "es": "Antigua, Caribe" }, "date": "1750", "circa": true, "note": { "en": "Enslaved Africans play it as warri; it is still played today.", "es": "Los africanos esclavizados lo juegan como warri; todavía se juega hoy." } },
+        { "at": [-59.6, 13.1], "place": { "en": "Barbados", "es": "Barbados" }, "date": "1750", "circa": true, "from": 0, "note": { "en": "Warri becomes a Barbadian tradition.", "es": "El warri se vuelve una tradición de Barbados." } },
+        { "at": [4.87, 52.33], "place": { "en": "Amsterdam, Netherlands", "es": "Ámsterdam, Países Bajos" }, "date": "2002", "from": 0, "by": { "en": "John Romein and Henri Bal", "es": "John Romein y Henri Bal" }, "note": { "en": "Computers solve oware: perfect play ends in a draw.", "es": "Las computadoras resuelven el oware: el juego perfecto acaba en empate." } }
+      ],
+      "where": ["GHA", "CIV", "NGA", "BEN", "TGO", "SEN", "MLI", "BFA", "ATG", "BRB"],
+      "strong": ["GHA", "CIV", "NGA"],
+      "note": {
+        "en": "Played in Ghana, Côte d'Ivoire, Nigeria and their neighbours, as warri in Antigua and Barbados, and in game clubs and classrooms worldwide.",
+        "es": "Se juega en Ghana, Costa de Marfil, Nigeria y sus vecinos, como warri en Antigua y Barbados, y en clubes de juegos y aulas de todo el mundo."
+      },
+      "wiki": { "en": "Oware", "es": "Oware" }
+    },
+    {
+      "id": "kingdom-names",
+      "name": { "en": "Ghana, Mali, Timbuktu: kingdoms on today's map", "es": "Ghana, Mali, Tombuctú: reinos en el mapa de hoy" },
+      "cat": "words",
+      "icon": "🗺️",
+      "how": "named",
+      "date": "800",
+      "circa": true,
+      "at": [-7.98, 15.77],
+      "place": { "en": "Koumbi Saleh, Mauritania, capital of old Ghana", "es": "Kumbi Saleh, Mauritania, capital de la antigua Ghana" },
+      "text": {
+        "en": "At independence three states took the names of old kingdoms: Ghana in 1957, Mali in 1960 and Benin in 1975. The capitals of the old kingdoms, from Timbuktu to Kumasi, are still on the map.",
+        "es": "Al independizarse, tres países tomaron nombres de reinos antiguos: Ghana en 1957, Mali en 1960 y Benín en 1975. Las capitales de los viejos reinos, de Tombuctú a Kumasi, siguen en el mapa."
+      },
+      "details": {
+        "en": "The empire of Ghana, which its Soninke people called Wagadu, appears in Arabic books from the 8th century as a land of gold; 'ghana' was the title of its king. Kwame Nkrumah chose the name for the Gold Coast in 1957, although old Ghana lay far to the north-west, in today's Mauritania and Mali. In 1960 the former French Sudan named itself after the Mali Empire of Sundiata and Mansa Musa. In 1975 Dahomey became Benin, after the Bight of Benin, named after the Edo kingdom of Benin in today's Nigeria. Royal and trading cities such as Timbuktu, Gao, Djenné, Kano, Oyo, Ife, Abomey, Kumasi and Ouagadougou keep their names, and 'Timbuktu' became English for any faraway place.",
+        "es": "El imperio de Ghana, al que su pueblo soninké llamaba Wagadu, aparece en libros árabes desde el siglo VIII como una tierra del oro; «ghana» era el título de su rey. Kwame Nkrumah eligió ese nombre para Costa de Oro en 1957, aunque la antigua Ghana estaba mucho más al noroeste, en las actuales Mauritania y Mali. En 1960 el antiguo Sudán francés tomó el nombre del Imperio de Mali de Sundiata y Mansa Musa. En 1975 Dahomey pasó a llamarse Benín por el golfo de Benín, bautizado así por el reino edo de Benín, en la actual Nigeria. Ciudades reales y comerciales como Tombuctú, Gao, Djenné, Kano, Oyo, Ife, Abomey, Kumasi y Uagadugú conservan sus nombres, y en inglés «Timbuktu» llegó a significar cualquier lugar lejanísimo."
+      },
+      "path": [
+        { "at": [-0.19, 5.6], "place": { "en": "Accra, Ghana", "es": "Acra, Ghana" }, "date": "1957-03-06", "by": { "en": "Kwame Nkrumah", "es": "Kwame Nkrumah" }, "note": { "en": "The Gold Coast becomes independent as Ghana.", "es": "Costa de Oro se independiza con el nombre de Ghana." } },
+        { "at": [-8.0, 12.64], "place": { "en": "Bamako, Mali", "es": "Bamako, Mali" }, "date": "1960-09-22", "from": 0, "by": { "en": "Modibo Keïta", "es": "Modibo Keïta" }, "note": { "en": "The Republic of Mali is proclaimed.", "es": "Se proclama la República de Mali." } },
+        { "at": [2.63, 6.5], "place": { "en": "Porto-Novo, Benin", "es": "Porto Novo, Benín" }, "date": "1975-11-30", "from": 0, "note": { "en": "Dahomey is renamed Benin.", "es": "Dahomey pasa a llamarse Benín." } }
+      ],
+      "where": ["GHA", "MLI", "BEN"],
+      "note": {
+        "en": "About 70 million people live in countries named after old West African kingdoms, and millions more in their old capitals.",
+        "es": "Unos 70 millones de personas viven en países con nombres de antiguos reinos de África occidental, y millones más en sus viejas capitales."
+      },
+      "words": [
+        { "en": "Ghana", "es": "Ghana", "type": "place", "from": "ghana (Soninke), the title of the king of Wagadu", "means": { "en": "the king's title", "es": "el título del rey" } },
+        { "en": "Mali", "es": "Mali", "type": "place", "from": "Mali, the Manding empire of Sundiata" },
+        { "en": "Benin", "es": "Benín", "type": "place", "from": "Benin, the Edo kingdom, through the Bight of Benin" },
+        { "en": "Timbuktu", "es": "Tombuctú", "type": "place", "from": "Tumbutu (Songhay), Tunbuktu (Arabic), the trading city of Mali and Songhai" },
+        { "en": "Gao", "es": "Gao", "type": "place", "from": "Gao, capital of the Songhai Empire" },
+        { "en": "Djenné", "es": "Djenné", "type": "place", "from": "Djenné, trading city of the inland Niger delta" },
+        { "en": "Kano", "es": "Kano", "type": "place", "from": "Kano, capital of the Hausa kingdom of Kano" },
+        { "en": "Oyo", "es": "Oyo", "type": "place", "from": "Oyo, the Yoruba empire (its old capital lay farther north)" },
+        { "en": "Ife", "es": "Ife", "type": "place", "from": "Ile-Ife, the holy city of the Yoruba" },
+        { "en": "Abomey", "es": "Abomey", "type": "place", "from": "Abomey, capital of the kingdom of Dahomey" },
+        { "en": "Kumasi", "es": "Kumasi", "type": "place", "from": "Kumasi, capital of the Asante kingdom" },
+        { "en": "Ouagadougou", "es": "Uagadugú", "type": "place", "from": "Wogodogo, capital of a Mossi kingdom" }
+      ],
+      "see": ["people:empire-of-ghana", "people:republic-of-ghana", "people:republic-of-mali"],
+      "wiki": { "en": "Ghana Empire", "es": "Imperio de Ghana" }
+    },
+    {
+      "id": "akan-day-names",
+      "name": { "en": "Akan day names: Kofi, Kwame, Ama", "es": "Los nombres akan de los días: Kofi, Kwame, Ama" },
+      "cat": "words",
+      "icon": "👶",
+      "how": "invented",
+      "date": "1700",
+      "circa": true,
+      "at": [-1.65, 6.7],
+      "place": { "en": "Akan lands, Ghana", "es": "Tierras akan, Ghana" },
+      "text": {
+        "en": "Akan children get a name for the day of the week they were born: Kofi for a Friday boy, Ama for a Saturday girl. Kofi Annan and Kwame Nkrumah carried them, and so did Africans enslaved in Jamaica.",
+        "es": "Los niños akan reciben un nombre según el día de la semana en que nacen: Kofi para un niño de viernes, Ama para una niña de sábado. Los llevaron Kofi Annan y Kwame Nkrumah, y también africanos esclavizados en Jamaica."
+      },
+      "details": {
+        "en": "Each day has a boy's and a girl's name and its own spirit: Kwasi and Akosua for Sunday, Kwadwo and Adwoa for Monday, Kwabena and Abena for Tuesday, Kwaku and Akua for Wednesday, Yaw and Yaa for Thursday, Kofi and Afua for Friday, Kwame and Ama for Saturday. The Ewe and Ga use day names too. Enslaved Akan carried the names to the Caribbean and North America: the Jamaican Maroon leader Cudjoe (Kojo) signed a treaty with the British in 1739, and the American sea captain and abolitionist Paul Cuffe took his surname from his Akan-born father, Kofi. Nobody knows when the custom began.",
+        "es": "Cada día tiene un nombre de niño y otro de niña, y su propio espíritu: Kwasi y Akosua para el domingo, Kwadwo y Adwoa para el lunes, Kwabena y Abena para el martes, Kwaku y Akua para el miércoles, Yaw y Yaa para el jueves, Kofi y Afua para el viernes, Kwame y Ama para el sábado. Los ewe y los ga también usan nombres de días. Los akan esclavizados llevaron estos nombres al Caribe y a Norteamérica: el líder cimarrón jamaiquino Cudjoe (Kojo) firmó un tratado con los británicos en 1739, y el capitán y abolicionista estadounidense Paul Cuffe tomó su apellido de su padre, Kofi, nacido entre los akan. No se sabe desde cuándo existe la costumbre."
+      },
+      "path": [
+        { "at": [-77.75, 18.23], "place": { "en": "Cockpit Country, Jamaica", "es": "Cockpit Country, Jamaica" }, "date": "1739", "by": { "en": "Cudjoe (Kojo)", "es": "Cudjoe (Kojo)" }, "note": { "en": "The Maroon leader signs a peace treaty with the British.", "es": "El líder cimarrón firma un tratado de paz con los británicos." } },
+        { "at": [-71.08, 41.58], "place": { "en": "Westport, Massachusetts", "es": "Westport, Massachusetts" }, "date": "1780", "circa": true, "by": { "en": "Paul Cuffe", "es": "Paul Cuffe" }, "note": { "en": "The son of an Akan-born Kofi takes 'Cuffe' as his surname.", "es": "El hijo de un Kofi nacido entre los akan adopta el apellido Cuffe." } }
+      ],
+      "where": ["GHA", "CIV", "TGO"],
+      "strong": ["GHA"],
+      "note": {
+        "en": "Used by millions of Akan, Ewe and Ga in Ghana, Côte d'Ivoire and Togo, often alongside a Christian or Muslim name.",
+        "es": "Los usan millones de akan, ewe y ga en Ghana, Costa de Marfil y Togo, a menudo junto a un nombre cristiano o musulmán."
+      },
+      "words": [
+        { "en": "Kwasi", "es": "Kwasi", "type": "name", "from": "Kwasi (Akan)", "means": { "en": "boy born on a Sunday", "es": "niño nacido en domingo" } },
+        { "en": "Akosua", "es": "Akosua", "type": "name", "from": "Akosua (Akan)", "means": { "en": "girl born on a Sunday", "es": "niña nacida en domingo" } },
+        { "en": "Kojo", "es": "Kojo", "type": "name", "from": "Kwadwo, Kojo (Akan)", "means": { "en": "boy born on a Monday", "es": "niño nacido en lunes" } },
+        { "en": "Adwoa", "es": "Adwoa", "type": "name", "from": "Adwoa (Akan)", "means": { "en": "girl born on a Monday", "es": "niña nacida en lunes" } },
+        { "en": "Kwabena", "es": "Kwabena", "type": "name", "from": "Kwabena (Akan)", "means": { "en": "boy born on a Tuesday", "es": "niño nacido en martes" } },
+        { "en": "Abena", "es": "Abena", "type": "name", "from": "Abena (Akan)", "means": { "en": "girl born on a Tuesday", "es": "niña nacida en martes" } },
+        { "en": "Kwaku", "es": "Kwaku", "type": "name", "from": "Kwaku (Akan)", "means": { "en": "boy born on a Wednesday", "es": "niño nacido en miércoles" } },
+        { "en": "Akua", "es": "Akua", "type": "name", "from": "Akua (Akan)", "means": { "en": "girl born on a Wednesday", "es": "niña nacida en miércoles" } },
+        { "en": "Yaw", "es": "Yaw", "type": "name", "from": "Yaw (Akan)", "means": { "en": "boy born on a Thursday", "es": "niño nacido en jueves" } },
+        { "en": "Yaa", "es": "Yaa", "type": "name", "from": "Yaa (Akan)", "means": { "en": "girl born on a Thursday", "es": "niña nacida en jueves" } },
+        { "en": "Kofi", "es": "Kofi", "type": "name", "from": "Kofi (Akan)", "means": { "en": "boy born on a Friday", "es": "niño nacido en viernes" } },
+        { "en": "Afua", "es": "Afua", "type": "name", "from": "Afua (Akan)", "means": { "en": "girl born on a Friday", "es": "niña nacida en viernes" } },
+        { "en": "Kwame", "es": "Kwame", "type": "name", "from": "Kwame (Akan)", "means": { "en": "boy born on a Saturday", "es": "niño nacido en sábado" } },
+        { "en": "Ama", "es": "Ama", "type": "name", "from": "Ama (Akan)", "means": { "en": "girl born on a Saturday", "es": "niña nacida en sábado" } },
+        { "en": "Cuffe", "type": "name", "from": "Kofi (Akan), as a surname in the United States", "means": { "en": "boy born on a Friday", "es": "niño nacido en viernes" } }
+      ],
+      "wiki": { "en": "Akan name", "es": "" }
+    },
+    {
+      "id": "yoruba-names",
+      "name": { "en": "Yoruba names: Ade, Oluwa, Taiwo", "es": "Nombres yorubas: Ade, Oluwa, Taiwo" },
+      "cat": "words",
+      "icon": "🏷️",
+      "how": "invented",
+      "date": "1500",
+      "circa": true,
+      "at": [4.58, 7.5],
+      "place": { "en": "Yorubaland (marker at Ile-Ife, Nigeria)", "es": "País yoruba (marcador en Ile-Ife, Nigeria)" },
+      "text": {
+        "en": "Yoruba names are short sentences: Babatunde, 'father has returned'; Oluwaseun, 'God has done it'; Adebayo, 'the crown meets joy'. Tens of millions bear them in Nigeria, Benin and the diaspora.",
+        "es": "Los nombres yorubas son frases cortas: Babatunde, «el padre ha vuelto»; Oluwaseun, «Dios lo ha hecho»; Adebayo, «la corona encuentra la alegría». Decenas de millones los llevan en Nigeria, Benín y la diáspora."
+      },
+      "details": {
+        "en": "A Yoruba baby is named at a family ceremony some days after birth, and the names tell the family's story. Ade-, 'crown', marks a royal family; Olu- and Oluwa-, 'God' or 'lord'; Ogun- or Fa- point to families of Ogun or of Ifá. A boy born soon after a grandfather's death may be Babatunde, a girl after a grandmother's, Yetunde. Twins are always Taiwo, 'the first to taste the world', and Kehinde, 'the one who came after': Yorubaland has one of the highest twin birth rates on Earth. These names travelled with Yoruba Christians, Muslims and emigrants, and many African Americans chose names like Ayodele and Kehinde from the 1960s.",
+        "es": "Un bebé yoruba recibe su nombre en una ceremonia familiar unos días después de nacer, y los nombres cuentan la historia de la familia. Ade-, «corona», indica una familia real; Olu- y Oluwa-, «Dios» o «señor»; Ogun- o Fa- remiten a familias devotas de Ogún o de Ifá. Un niño nacido poco después de la muerte de un abuelo puede llamarse Babatunde, y una niña, tras la de una abuela, Yetunde. Los gemelos siempre se llaman Taiwo, «el primero en probar el mundo», y Kehinde, «el que vino después»: el país yoruba tiene una de las tasas de gemelos más altas del planeta. Estos nombres viajaron con yorubas cristianos, musulmanes y emigrantes, y desde los años sesenta muchos afroestadounidenses eligieron nombres como Ayodele y Kehinde."
+      },
+      "where": ["NGA", "BEN", "TGO", "USA", "GBR"],
+      "strong": ["NGA"],
+      "note": {
+        "en": "Borne by most of Nigeria's and Benin's Yoruba, some 48 million people, and by Nigerians and others abroad.",
+        "es": "Los llevan la mayoría de los yorubas de Nigeria y Benín, unos 48 millones de personas, y nigerianos y otros en el extranjero."
+      },
+      "words": [
+        { "en": "Babatunde", "es": "Babatunde", "type": "name", "from": "Babatúndé (Yoruba)", "means": { "en": "father has returned", "es": "el padre ha vuelto" } },
+        { "en": "Yetunde", "es": "Yetunde", "type": "name", "from": "Yétúndé (Yoruba)", "means": { "en": "mother has returned", "es": "la madre ha vuelto" } },
+        { "en": "Oluwaseun", "es": "Oluwaseun", "type": "name", "from": "Olúwaṣeun (Yoruba)", "means": { "en": "God has done it; thank God", "es": "Dios lo ha hecho; gracias a Dios" } },
+        { "en": "Olufemi", "es": "Olufemi", "type": "name", "from": "Olúfẹ́mi (Yoruba)", "means": { "en": "God loves me", "es": "Dios me ama" } },
+        { "en": "Adebayo", "es": "Adebayo", "type": "name", "from": "Adébáyọ̀ (Yoruba)", "means": { "en": "the crown meets joy", "es": "la corona encuentra la alegría" } },
+        { "en": "Ayodele", "es": "Ayodele", "type": "name", "from": "Ayọ̀délé (Yoruba)", "means": { "en": "joy has come home", "es": "la alegría ha llegado a casa" } },
+        { "en": "Abiodun", "es": "Abiodun", "type": "name", "from": "Abíọ́dún (Yoruba)", "means": { "en": "born at festival time", "es": "nacido en tiempo de fiesta" } },
+        { "en": "Taiwo", "es": "Taiwo", "type": "name", "from": "Táíwò (Yoruba), the first-born twin", "means": { "en": "the first to taste the world", "es": "el primero en probar el mundo" } },
+        { "en": "Kehinde", "es": "Kehinde", "type": "name", "from": "Kẹ́hìndé (Yoruba), the second-born twin", "means": { "en": "the one who came after", "es": "el que vino después" } }
+      ],
+      "see": ["writing:yoruba"],
+      "wiki": { "en": "Yoruba name", "es": "" }
+    },
+    {
+      "id": "west-african-words",
+      "name": { "en": "Words from West Africa", "es": "Palabras de África occidental" },
+      "cat": "words",
+      "icon": "🗣️",
+      "how": "named",
+      "sure": "likely",
+      "date": "1590",
+      "circa": true,
+      "at": [-16.9, 14.75],
+      "place": { "en": "Senegambia and the Guinea coast", "es": "Senegambia y la costa de Guinea" },
+      "text": {
+        "en": "Banana, jukebox, mumbo jumbo and dashiki in English, and fufú and mandinga in Spanish, probably came from Wolof, Mandinka, Hausa, Yoruba and Twi.",
+        "es": "Banana, jukebox, mumbo jumbo y dashiki en inglés, y fufú y mandinga en español, probablemente vienen del wolof, el mandinga, el hausa, el yoruba y el twi."
+      },
+      "details": {
+        "en": "Portuguese and Spanish sailors picked up 'banana' on the Guinea coast in the 1500s, probably from Wolof, although the fruit itself came from Asia. English travellers on the Gambia in the 1730s described a Mandinka masked figure, Mumbo Jumbo, and the name came to mean meaningless ritual. Gullah speakers in the Carolinas called a rowdy place 'juke', likely from Wolof or Bambara, which gave the juke joint and the jukebox. 'Dashiki' came in the 1960s from Yoruba, which took it from Hausa. In Cuba mashed plantain is fufú, from the Twi fufu, and in parts of South America the devil is 'el mandinga', after the Mandinka people.",
+        "es": "Los navegantes portugueses y españoles aprendieron la palabra banana en la costa de Guinea en el siglo XVI, probablemente del wolof, aunque la fruta vino de Asia. Viajeros ingleses en el río Gambia describieron en la década de 1730 a un personaje mandinga enmascarado, Mumbo Jumbo, y en inglés el nombre pasó a significar un ritual sin sentido. Los hablantes de gullah de las Carolinas llamaban juke a un lugar alborotado, probablemente del wolof o el bambara, de donde vienen los juke joints y la jukebox (la rocola). Dashiki llegó en los años sesenta del yoruba, que lo tomó del hausa. En Cuba el puré de plátano se llama fufú, del twi fufu, y en partes de Sudamérica al diablo se le dice «el mandinga», por el pueblo mandinga."
+      },
+      "where": ["lang:eng", "lang:spa"],
+      "strong": ["USA", "CUB", "ARG", "URY", "VEN"],
+      "note": {
+        "en": "Said every day by English and Spanish speakers, mostly without knowing that the words came from West Africa.",
+        "es": "Los dicen a diario hablantes de inglés y español, casi siempre sin saber que vienen de África occidental."
+      },
+      "words": [
+        { "en": "banana", "es": "banana", "from": "banana, probably Wolof banaana (through Portuguese)" },
+        { "en": "jukebox", "from": "juke (Gullah), perhaps from Wolof or Bambara", "means": { "en": "rowdy, wicked", "es": "alborotado, malvado" } },
+        { "en": "mumbo jumbo", "from": "Maamajomboo (Mandinka)", "means": { "en": "a masked dancer in ceremonies", "es": "un bailarín enmascarado de las ceremonias" } },
+        { "en": "dashiki", "from": "dàńṣíkí (Yoruba), from Hausa dan ciki", "means": { "en": "undergarment", "es": "prenda interior" } },
+        { "en": "fufu", "es": "fufú", "from": "fufu (Twi, Akan)" },
+        { "es": "mandinga", "from": "Mandinka, the people of the Mali Empire", "means": { "en": "the devil (in parts of South America)", "es": "el diablo (en partes de Sudamérica)" } }
+      ],
+      "see": ["food:gullah-geechee", "food:fufu"],
+      "wiki": { "en": "Gullah language", "es": "Idioma gulá" }
+    },
+    {
+      "id": "braids-cornrows",
+      "name": { "en": "Braids and cornrows", "es": "Las trenzas africanas" },
+      "cat": "daily",
+      "icon": "💇🏾‍♀️",
+      "how": "developed",
+      "sure": "likely",
+      "date": "-900",
+      "circa": true,
+      "at": [8.12, 9.48],
+      "place": { "en": "Nok, central Nigeria", "es": "Nok, centro de Nigeria" },
+      "text": {
+        "en": "Nok sculptures nearly 3,000 years old already show elaborate braided hairstyles. West African braiding, carried by enslaved Africans, lives on in cornrows, box braids and Fulani braids worn worldwide.",
+        "es": "Esculturas de Nok de casi 3000 años ya muestran peinados trenzados. El trenzado de África occidental, llevado por los africanos esclavizados, sigue vivo en las trenzas pegadas, las box braids y las trenzas fulani de todo el mundo."
+      },
+      "details": {
+        "en": "People braid hair in many cultures, but across West Africa hairstyles showed a person's age, status, people or stage of life, and braiding sessions were, and still are, social events. Terracotta heads of the Nok culture in central Nigeria, made from about 900 BC, show braids, buns and crests in fine detail, and Yoruba and Fulani styles have long histories of their own. On slave ships and plantations braiding survived as a link with home. In the 20th century cornrows, box braids and 'Fulani braids' spread through African American and Caribbean fashion to the whole world. Since 2019 many US states have passed CROWN Acts against discrimination over natural and braided hair.",
+        "es": "Muchas culturas trenzan el pelo, pero en África occidental el peinado indicaba la edad, la posición, el pueblo o la etapa de la vida, y las sesiones de trenzado eran, y siguen siendo, reuniones sociales. Las cabezas de terracota de la cultura Nok, en el centro de Nigeria, hechas desde hacia el 900 a. C., muestran trenzas, moños y crestas con gran detalle, y los peinados yorubas y fulani tienen una larga historia propia. En los barcos negreros y las plantaciones, el trenzado sobrevivió como un lazo con la tierra natal. En el siglo XX las trenzas pegadas, las box braids y las «trenzas fulani» pasaron de la moda afroestadounidense y caribeña al mundo entero. Desde 2019 muchos estados de Estados Unidos han aprobado leyes CROWN contra la discriminación por el pelo natural o trenzado."
+      },
+      "path": [
+        { "at": [-79.93, 32.78], "place": { "en": "The Americas (here South Carolina)", "es": "América (aquí Carolina del Sur)" }, "date": "1700", "circa": true, "note": { "en": "Braiding survives slavery as a link with Africa.", "es": "El trenzado sobrevive a la esclavitud como un lazo con África." } },
+        { "at": [-121.49, 38.58], "place": { "en": "Sacramento, California", "es": "Sacramento, California" }, "date": "2019", "note": { "en": "California passes the first CROWN Act protecting braided and natural hair.", "es": "California aprueba la primera ley CROWN, que protege el pelo trenzado y natural." } }
+      ],
+      "where": ["continent:africa", "USA", "BRA", "JAM", "GBR", "FRA", "CAN", "COL", "CUB", "HTI", "DOM", "TTO"],
+      "strong": ["NGA", "GHA", "SEN", "USA", "JAM", "BRA"],
+      "note": {
+        "en": "Worn across Africa and the African diaspora, from Lagos and Dakar to Kingston, Salvador, London and New York, and copied worldwide.",
+        "es": "Se usan en toda África y la diáspora africana, de Lagos y Dakar a Kingston, Salvador, Londres y Nueva York, y se imitan en todo el mundo."
+      },
+      "see": ["art:nok-terracottas"],
+      "wiki": { "en": "Cornrows", "es": "Trenza africana cosida" }
+    },
+    {
+      "id": "esusu",
+      "name": { "en": "Esusu and susu: saving together", "es": "Esusu y susu: ahorrar en grupo" },
+      "cat": "money",
+      "icon": "🪙",
+      "how": "developed",
+      "sure": "likely",
+      "date": "1800",
+      "circa": true,
+      "at": [3.93, 7.9],
+      "place": { "en": "Yorubaland, Nigeria", "es": "País yoruba, Nigeria" },
+      "text": {
+        "en": "In an esusu, friends pay into a pot every week or month and each takes the whole pot in turn. Carried to the Caribbean, it lives on as susu, sou-sou, 'partner' and asue.",
+        "es": "En un esusu, un grupo de amigos aporta a un fondo cada semana o cada mes y cada uno se lleva el fondo entero por turnos. Llevado al Caribe, sigue vivo como susu, sou-sou, partner o asue."
+      },
+      "details": {
+        "en": "Yoruba esusu groups, recorded in the 1800s and probably much older, let traders and farmers save and raise a lump sum without banks or interest; trust and the watchful eyes of the group keep everyone paying. In Ghana, susu collectors still walk the markets every day gathering savings. Enslaved Yoruba and other West Africans carried the idea across the Atlantic: it is sou-sou in Trinidad, 'partner' in Jamaica, asue in the Bahamas and box hand in Guyana. Caribbean migrants use it in Brooklyn, Toronto and London. Similar clubs arose on their own elsewhere, such as Mexico's tandas and China's hui.",
+        "es": "Los grupos esusu de los yorubas, registrados en el siglo XIX y probablemente mucho más antiguos, permiten a comerciantes y campesinos ahorrar y reunir una suma grande sin bancos ni intereses; la confianza y la mirada atenta del grupo hacen que todos paguen. En Ghana, los cobradores de susu todavía recorren los mercados cada día recogiendo ahorros. Yorubas y otros africanos occidentales esclavizados llevaron la idea a través del Atlántico: es sou-sou en Trinidad, partner en Jamaica, asue en las Bahamas y box hand en Guyana. Los migrantes caribeños la usan en Brooklyn, Toronto y Londres. Clubes parecidos surgieron por su cuenta en otros lugares, como las tandas de México y el hui de China."
+      },
+      "path": [
+        { "at": [-61.51, 10.66], "place": { "en": "Port of Spain, Trinidad", "es": "Puerto España, Trinidad" }, "date": "1850", "circa": true, "note": { "en": "The sou-sou becomes a Trinidadian habit.", "es": "El sou-sou se vuelve costumbre en Trinidad." } },
+        { "at": [-77.35, 25.05], "place": { "en": "Nassau, Bahamas", "es": "Nasáu, Bahamas" }, "date": "1850", "circa": true, "from": 0, "note": { "en": "Bahamians call it asue, from esusu.", "es": "Los bahameños lo llaman asue, de esusu." } },
+        { "at": [-73.95, 40.65], "place": { "en": "Brooklyn, New York", "es": "Brooklyn, Nueva York" }, "date": "1950", "circa": true, "from": 1, "note": { "en": "Caribbean migrants bring their savings clubs.", "es": "Los migrantes caribeños traen sus clubes de ahorro." } }
+      ],
+      "where": ["NGA", "GHA", "BEN", "TGO", "SLE", "TTO", "JAM", "BHS", "GUY", "BRB", "USA", "GBR", "CAN"],
+      "strong": ["NGA", "GHA", "TTO", "JAM"],
+      "note": {
+        "en": "Common in Nigeria and Ghana, across the Caribbean and among Caribbean and African communities in New York, Toronto and London.",
+        "es": "Es común en Nigeria y Ghana, en todo el Caribe y entre las comunidades caribeñas y africanas de Nueva York, Toronto y Londres."
+      },
+      "wiki": { "en": "Rotating savings and credit association", "es": "" }
+    }
+  ]
+}

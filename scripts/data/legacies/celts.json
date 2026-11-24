@@ -1,0 +1,911 @@
+{
+  "id": "celts",
+  "name": { "en": "Ancient Celts", "es": "Antiguos celtas" },
+  "short": { "en": "Celts", "es": "Celtas" },
+  "icon": "🌀",
+  "color": "#26a69a",
+  "from": "-800",
+  "to": "500",
+  "at": [5, 47.5],
+  "zoom": 3,
+  "home": [
+    { "hist": "Celts", "year": -300 },
+    { "land": [[-5.6, 49.6], [2.0, 51.6], [6.0, 52.0], [8.5, 51.0], [11.0, 51.0], [13.5, 51.0], [16.0, 50.5], [18.5, 49.5], [21.0, 48.5], [22.5, 47.0], [23.5, 46.0], [22.0, 44.5], [19.5, 44.0], [16.0, 45.0], [14.0, 45.6], [12.6, 45.6], [11.4, 45.0], [12.3, 44.2], [10.5, 44.0], [8.5, 44.6], [7.0, 44.3], [6.0, 43.5], [4.5, 43.4], [3.0, 43.0], [1.0, 42.8], [0.5, 44.0], [-1.5, 45.6], [-2.5, 47.0], [-5.6, 48.0]] },
+    { "land": [[-9.6, 43.9], [-5.0, 43.7], [-3.5, 43.3], [-2.0, 42.1], [-1.0, 41.0], [-2.0, 39.5], [-4.0, 38.5], [-7.0, 37.3], [-9.0, 36.9], [-9.7, 39.0]] },
+    { "land": [[31.0, 40.5], [34.5, 41.0], [35.6, 40.0], [34.5, 38.8], [32.5, 38.8], [31.0, 39.5]] }
+  ],
+  "intro": {
+    "en": "Celtic-speaking peoples spread from central Europe from about 800 BC. By about 275 BC they lived from Ireland and Britain across Gaul, the Alps and much of Iberia to the Danube and Galatia in Anatolia. They never formed an empire: Gauls, Britons, Celtiberians, Boii and Galatians were many tribes sharing related languages, gods and an art style. Rome conquered most of them, but Ireland and northern Britain kept Celtic ways.",
+    "es": "Los pueblos de lengua celta se extendieron desde Europa central a partir del 800 a. C. Hacia el 275 a. C. vivían desde Irlanda y Britania, por la Galia, los Alpes y buena parte de Iberia, hasta el Danubio y Galacia, en Anatolia. Nunca formaron un imperio: galos, britanos, celtíberos, boyos y gálatas eran muchas tribus con lenguas, dioses y un estilo artístico emparentados. Roma conquistó a la mayoría, pero Irlanda y el norte de Britania conservaron las costumbres celtas."
+  },
+  "today": {
+    "en": "Six Celtic languages survive: Irish, Scottish Gaelic and Manx, Welsh, Breton and Cornish. About 540,000 people in Wales speak Welsh, and Irish is an official language of Ireland and the EU. Ireland, Scotland, Wales, Brittany, Cornwall, the Isle of Man and Galicia celebrate a Celtic heritage.",
+    "es": "Sobreviven seis lenguas celtas: irlandés, gaélico escocés y manés, galés, bretón y córnico. Unas 540.000 personas hablan galés en Gales, y el irlandés es lengua oficial de Irlanda y de la UE. Irlanda, Escocia, Gales, Bretaña, Cornualles, la isla de Man y Galicia celebran una herencia celta."
+  },
+  "story": "people:celts",
+  "wiki": { "en": "Celts", "es": "Celta" },
+  "sources": [
+    { "title": "Encyclopaedia Britannica: Celt", "url": "https://www.britannica.com/topic/Celt-people" },
+    { "title": "World History Encyclopedia: Celt", "url": "https://www.worldhistory.org/celt/" },
+    { "title": "British Museum: Celts, art and identity (exhibition)", "url": "https://www.britishmuseum.org/exhibitions/celts-art-and-identity" },
+    { "title": "UNESCO World Heritage: Hallstatt-Dachstein / Salzkammergut Cultural Landscape", "url": "https://whc.unesco.org/en/list/806" },
+    { "title": "UNESCO Intangible Cultural Heritage: Hurling", "url": "https://ich.unesco.org/en/RL/hurling-01270" },
+    { "title": "Welsh Government: Welsh language in Wales (Census 2021)", "url": "https://www.gov.wales/welsh-language-wales-census-2021-html" }
+  ],
+  "legacies": [
+    {
+      "id": "halloween",
+      "name": { "en": "Halloween, from Samhain", "es": "Halloween, que viene de Samhain" },
+      "cat": "ideas",
+      "icon": "🎃",
+      "how": "developed",
+      "sure": "likely",
+      "date": "500",
+      "circa": true,
+      "at": [-6.61, 53.58],
+      "place": { "en": "Ireland (here Tara, County Meath)", "es": "Irlanda (aquí Tara, condado de Meath)" },
+      "text": {
+        "en": "Samhain, the Gaelic feast that opened winter on 1 November, is the main root of Halloween. Its Irish and Scottish customs, from guising to turnip lanterns, went to North America with emigrants and then around the world.",
+        "es": "Samhain, la fiesta gaélica que abría el invierno el 1 de noviembre, es la raíz principal de Halloween. Sus costumbres irlandesas y escocesas, de los disfraces a los faroles de nabo, viajaron a Norteamérica con emigrantes y de ahí al mundo."
+      },
+      "details": {
+        "en": "Early Irish stories set great events at Samhain, when the boundary with the Otherworld was thought to open and the dead and the fairy folk walked abroad. The Church kept All Saints' Day on 1 November, and the night before became All Hallows' Eve, Halloween. In Ireland and Scotland people lit bonfires, went guising from house to house in disguise and carved lanterns from turnips. Irish and Scottish emigrants, especially after the Famine of the 1840s, took the customs to the United States, where pumpkins replaced turnips. How much of Halloween is truly pre-Christian is still debated.",
+        "es": "Los relatos irlandeses antiguos sitúan grandes sucesos en Samhain, cuando se creía que se abría el límite con el Otro Mundo y los muertos y las hadas andaban sueltos. La Iglesia fijó el Día de Todos los Santos el 1 de noviembre, y la noche anterior se volvió All Hallows' Eve, Halloween. En Irlanda y Escocia se encendían hogueras, se iba de casa en casa disfrazado y se tallaban faroles en nabos. Los emigrantes irlandeses y escoceses, sobre todo tras la Gran Hambruna de la década de 1840, llevaron las costumbres a Estados Unidos, donde las calabazas sustituyeron a los nabos. Cuánto de Halloween es de verdad precristiano sigue en debate."
+      },
+      "roots": {
+        "en": "Shared with other Celtic peoples: the Welsh Calan Gaeaf also opened winter on 1 November.",
+        "es": "Compartida con otros pueblos celtas: el Calan Gaeaf galés también abría el invierno el 1 de noviembre."
+      },
+      "path": [
+        { "at": [-74.0, 40.71], "place": { "en": "New York", "es": "Nueva York" }, "date": "1850", "circa": true, "by": { "en": "Irish and Scottish emigrants", "es": "Emigrantes irlandeses y escoceses" }, "note": { "en": "Halloween customs reach the United States; pumpkins take the place of turnips.", "es": "Las costumbres de Halloween llegan a Estados Unidos; las calabazas ocupan el lugar de los nabos." } }
+      ],
+      "where": ["IRL", "GBR", "USA", "CAN", "AUS", "NZL", "IMN"],
+      "strong": ["IRL", "USA", "CAN", "GBR"],
+      "note": { "en": "Kept with costumes and pumpkins in Ireland, Britain, the US and Canada, and spreading in Latin America, Europe and East Asia; in Irish, November is still Samhain.", "es": "Se celebra con disfraces y calabazas en Irlanda, Gran Bretaña, EE. UU. y Canadá, y se extiende por América Latina, Europa y Asia oriental; en irlandés, noviembre sigue siendo Samhain." },
+      "words": [
+        { "en": "Samhain", "es": "Samhain", "from": "Samain (Old Irish)", "means": { "en": "the feast of 1 November; now the Irish for November", "es": "la fiesta del 1 de noviembre; hoy «noviembre» en irlandés" }, "type": "calendar" },
+        { "en": "Halloween", "es": "Halloween", "from": "All Hallows' Even (Scots), the Christian name for Samhain night", "means": { "en": "eve of All Saints", "es": "víspera de Todos los Santos" }, "type": "calendar" }
+      ],
+      "wiki": { "en": "Samhain", "es": "Samhain" }
+    },
+    {
+      "id": "imbolc-brigid",
+      "name": { "en": "St Brigid's Day (Imbolc)", "es": "Día de Santa Brígida (Imbolc)" },
+      "cat": "time",
+      "icon": "🌾",
+      "how": "developed",
+      "sure": "likely",
+      "date": "500",
+      "circa": true,
+      "at": [-6.91, 53.16],
+      "place": { "en": "Kildare, Ireland", "es": "Kildare, Irlanda" },
+      "text": {
+        "en": "Imbolc, the Gaelic feast of early spring on 1 February, became St Brigid's Day. Since 2023 it has been a public holiday in Ireland, the first named after a woman, and people still weave Brigid's crosses from rushes.",
+        "es": "Imbolc, la fiesta gaélica del inicio de la primavera, el 1 de febrero, se convirtió en el Día de Santa Brígida. Desde 2023 es feriado en Irlanda, el primero dedicado a una mujer, y aún se tejen cruces de Brígida con juncos."
+      },
+      "details": {
+        "en": "Imbolc was one of the four quarter days of the early Irish year, linked to lambing and the first milk of spring. Brigid was both a goddess of poetry, healing and smithcraft and, in Christian times, the abbess of Kildare who died about 525; how much the saint took from the goddess is debated. On the eve of 1 February families wove crosses of rushes and left out a cloth or ribbon, the brat Bríde, for the saint to bless. Ireland made the first Monday in February, or 1 February when it falls on a Friday, a public holiday from 2023.",
+        "es": "Imbolc era uno de los cuatro días cardinales del antiguo año irlandés, ligado al nacimiento de los corderos y a la primera leche de la primavera. Brígida era a la vez una diosa de la poesía, la curación y la herrería y, en época cristiana, la abadesa de Kildare que murió hacia 525; cuánto tomó la santa de la diosa se discute. La víspera del 1 de febrero las familias tejían cruces de junco y dejaban fuera un paño o una cinta, el brat Bríde, para que la santa lo bendijera. Irlanda declaró feriado desde 2023 el primer lunes de febrero, o el 1 de febrero cuando cae en viernes."
+      },
+      "path": [
+        { "at": [-6.26, 53.35], "place": { "en": "Dublin", "es": "Dublín" }, "date": "2023-02-06", "by": { "en": "Government of Ireland", "es": "Gobierno de Irlanda" }, "note": { "en": "The first St Brigid's Day public holiday.", "es": "El primer feriado del Día de Santa Brígida." } }
+      ],
+      "where": ["IRL", "GBR"],
+      "strong": ["IRL"],
+      "note": { "en": "A public holiday in Ireland; Brigid's crosses hang in Irish homes, and the day is also kept in Gaelic Scotland and by modern pagans.", "es": "Feriado en Irlanda; las cruces de Brígida cuelgan en los hogares irlandeses, y el día también se celebra en la Escocia gaélica y entre neopaganos." },
+      "words": [
+        { "en": "Imbolc", "es": "Imbolc", "from": "imbolc (Old Irish); meaning debated", "means": { "en": "the feast of 1 February", "es": "la fiesta del 1 de febrero" }, "type": "calendar" }
+      ],
+      "wiki": { "en": "Imbolc", "es": "Imbolc" }
+    },
+    {
+      "id": "gaelic-month-names",
+      "name": { "en": "Bealtaine, Lúnasa, Samhain: Irish month names", "es": "Bealtaine, Lúnasa, Samhain: meses en irlandés" },
+      "cat": "time",
+      "icon": "🔥",
+      "how": "named",
+      "date": "500",
+      "circa": true,
+      "at": [-7.56, 53.49],
+      "place": { "en": "Uisneach, County Westmeath, Ireland", "es": "Uisneach, condado de Westmeath, Irlanda" },
+      "text": {
+        "en": "The Gaelic year turned on four great feasts. Three still name months in Irish: Bealtaine is May, Lúnasa (from the god Lugh) is August and Samhain is November; Scottish Gaelic too has Lùnastal and an t-Samhain.",
+        "es": "El año gaélico giraba en torno a cuatro grandes fiestas. Tres siguen nombrando meses en irlandés: Bealtaine es mayo, Lúnasa (por el dios Lugh) es agosto y Samhain es noviembre; el gaélico escocés también tiene Lùnastal y an t-Samhain."
+      },
+      "details": {
+        "en": "Early Irish texts describe Bealtaine on 1 May, when cattle were driven between two fires for protection before going to summer pastures, and Lughnasadh on 1 August, the harvest assembly said to have been founded by the god Lugh at Tailtiu in memory of his foster-mother. The feasts lived on as May Day bonfires, hill pilgrimages at the end of July such as the climb of Croagh Patrick, and summer fairs like Puck Fair in Killorglin. Since 1988 a Beltane Fire Festival has been held on Calton Hill in Edinburgh, a modern revival.",
+        "es": "Los textos irlandeses antiguos describen Bealtaine, el 1 de mayo, cuando el ganado pasaba entre dos hogueras para protegerse antes de ir a los pastos de verano, y Lughnasadh, el 1 de agosto, la asamblea de la cosecha que, según la leyenda, fundó el dios Lugh en Tailtiu en memoria de su madre adoptiva. Las fiestas sobrevivieron en las hogueras de mayo, en peregrinaciones a los montes a fines de julio, como la subida al Croagh Patrick, y en ferias de verano como la Puck Fair de Killorglin. Desde 1988 se celebra un Festival del Fuego de Beltane en Calton Hill, en Edimburgo, como recreación moderna."
+      },
+      "roots": {
+        "en": "From Old Irish Beltaine (perhaps 'bright fire'), Lugnasad ('Lugh's assembly') and Samain.",
+        "es": "Del irlandés antiguo Beltaine (quizá «fuego brillante»), Lugnasad («asamblea de Lugh») y Samain."
+      },
+      "path": [
+        { "at": [-6.78, 53.7], "place": { "en": "Teltown (Tailtiu), County Meath", "es": "Teltown (Tailtiu), condado de Meath" }, "date": "600", "circa": true, "note": { "en": "The annals record the Óenach Tailten, the great Lughnasadh fair of the kings of Tara.", "es": "Los anales registran el Óenach Tailten, la gran feria de Lughnasadh de los reyes de Tara." } },
+        { "at": [-3.18, 55.955], "place": { "en": "Calton Hill, Edinburgh", "es": "Calton Hill, Edimburgo" }, "date": "1988", "note": { "en": "The Beltane Fire Festival revives May Eve fires.", "es": "El Festival del Fuego de Beltane revive las hogueras de la víspera de mayo." } }
+      ],
+      "where": ["IRL", "GBR"],
+      "strong": ["IRL"],
+      "note": { "en": "Every Irish-language calendar uses Bealtaine, Lúnasa and Samhain for May, August and November.", "es": "Todo calendario en irlandés usa Bealtaine, Lúnasa y Samhain para mayo, agosto y noviembre." },
+      "words": [
+        { "en": "Beltane", "es": "Beltane", "from": "Beltaine (Old Irish); Irish Bealtaine", "means": { "en": "May Day; now the Irish for May", "es": "el 1 de mayo; hoy «mayo» en irlandés" }, "type": "calendar" },
+        { "en": "Lughnasadh", "es": "Lughnasadh", "from": "Lugnasad (Old Irish); Irish Lúnasa", "means": { "en": "Lugh's assembly; now the Irish for August", "es": "asamblea de Lugh; hoy «agosto» en irlandés" }, "type": "calendar" }
+      ],
+      "wiki": { "en": "Beltane", "es": "Beltane" }
+    },
+    {
+      "id": "celtic-languages",
+      "name": { "en": "Six living Celtic languages", "es": "Seis lenguas celtas vivas" },
+      "cat": "words",
+      "icon": "💬",
+      "how": "developed",
+      "date": "-600",
+      "circa": true,
+      "at": [8.95, 46.0],
+      "place": { "en": "Lake Lugano, where the oldest Celtic inscriptions were found", "es": "Lago de Lugano, donde se hallaron las inscripciones celtas más antiguas" },
+      "text": {
+        "en": "Gaulish and Celtiberian died out, but six Celtic languages live on: Irish, Scottish Gaelic and Manx, Welsh, Cornish and Breton. Some 540,000 people in Wales speak Welsh, and Irish is an official EU language.",
+        "es": "El galo y el celtíbero se extinguieron, pero sobreviven seis lenguas celtas: irlandés, gaélico escocés y manés, galés, córnico y bretón. Unas 540.000 personas hablan galés en Gales, y el irlandés es lengua oficial de la UE."
+      },
+      "details": {
+        "en": "The oldest Celtic writing is in Lepontic, on stones near Lake Lugano from about 600 BC. Under Rome, Celtic speech faded on the continent but survived in Ireland and Britain, which split into a Gaelic branch (Irish, Scottish Gaelic, Manx) and a British one (Welsh, Cornish, Breton). Britons crossing to Armorica in the 400s and 500s took their language to Brittany, and Welsh emigrants took Welsh to Patagonia in 1865, where a few thousand people still speak it. Manx and Cornish lost their last native speakers but have been revived. The 2021 census counted 538,300 Welsh speakers, 17.8% of the people of Wales.",
+        "es": "La escritura celta más antigua está en lepóntico, en piedras cercanas al lago de Lugano de hacia el 600 a. C. Bajo Roma, el habla celta se apagó en el continente, pero sobrevivió en Irlanda y Britania, donde se dividió en una rama gaélica (irlandés, gaélico escocés, manés) y otra britónica (galés, córnico, bretón). Los britanos que cruzaron a Armórica en los siglos V y VI llevaron su lengua a Bretaña, y los emigrantes galeses llevaron el galés a la Patagonia en 1865, donde aún lo hablan unos miles de personas. El manés y el córnico perdieron a sus últimos hablantes nativos, pero se han revitalizado. El censo de 2021 contó 538.300 hablantes de galés, el 17,8 % de la población de Gales."
+      },
+      "roots": {
+        "en": "Built on Proto-Celtic, a branch of the Indo-European family; where it first arose is debated.",
+        "es": "Se basa en el protocelta, una rama de la familia indoeuropea; dónde surgió se discute."
+      },
+      "path": [
+        { "at": [-4.1, 48.0], "place": { "en": "Quimper, Brittany", "es": "Quimper, Bretaña" }, "date": "500", "circa": true, "note": { "en": "Britons settle Armorica, which becomes Brittany; their speech becomes Breton.", "es": "Los britanos se asientan en Armórica, que pasa a ser Bretaña; su habla se convierte en el bretón." } },
+        { "at": [-3.18, 51.48], "place": { "en": "Cardiff, Wales", "es": "Cardiff, Gales" }, "date": "2011", "from": 0, "note": { "en": "A Welsh law makes Welsh an official language in Wales.", "es": "Una ley galesa hace del galés lengua oficial en Gales." } },
+        { "at": [-65.04, -42.77], "place": { "en": "Puerto Madryn, Chubut, Argentina", "es": "Puerto Madryn (Chubut), Argentina" }, "date": "1865", "from": 2, "by": { "en": "Welsh settlers on the Mimosa", "es": "Colonos galeses del Mimosa" }, "note": { "en": "Welsh reaches Patagonia, where it is still spoken.", "es": "El galés llega a la Patagonia, donde aún se habla." } },
+        { "at": [4.35, 50.85], "place": { "en": "Brussels, Belgium", "es": "Bruselas, Bélgica" }, "date": "2007", "from": 0, "note": { "en": "Irish becomes an official language of the European Union (in full from 2022).", "es": "El irlandés se convierte en lengua oficial de la Unión Europea (de pleno desde 2022)." } }
+      ],
+      "where": ["IRL", "GBR", "IMN", "FRA", "ARG"],
+      "strong": ["IRL", "GBR"],
+      "note": { "en": "Spoken in Ireland, Wales, Scotland, the Isle of Man, Cornwall and Brittany, and by a few thousand Welsh speakers in Chubut, Argentina.", "es": "Se hablan en Irlanda, Gales, Escocia, la isla de Man, Cornualles y Bretaña, y unos miles de personas hablan galés en Chubut, Argentina." },
+      "words": [
+        { "en": "Gaelic", "es": "gaélico", "from": "Gàidhlig (Scottish Gaelic), from Old Irish Goídelc", "means": { "en": "the Gaelic language", "es": "la lengua gaélica" } }
+      ],
+      "see": ["writing:welsh"],
+      "wiki": { "en": "Celtic languages", "es": "Lenguas celtas" }
+    },
+    {
+      "id": "gaelic-words",
+      "name": { "en": "Slogan, clan, galore, bog: Celtic words in English", "es": "Slogan, clan, galore: palabras celtas en inglés" },
+      "cat": "words",
+      "icon": "🗣️",
+      "how": "named",
+      "date": "1500",
+      "circa": true,
+      "at": [-4.22, 57.48],
+      "place": { "en": "Scottish Highlands (here Inverness)", "es": "Tierras Altas de Escocia (aquí Inverness)" },
+      "text": {
+        "en": "English borrowed many words from Irish, Scottish Gaelic and Welsh: slogan (a battle cry), clan, galore, glen, bog, loch, smithereens, banshee, brogue, plaid, corgi and coracle among them.",
+        "es": "El inglés tomó muchas palabras del irlandés, el gaélico escocés y el galés: slogan (un grito de guerra), clan, galore, glen, bog, loch, smithereens, banshee, plaid y corgi, entre otras. El español adoptó clan y eslogan."
+      },
+      "details": {
+        "en": "A sluagh-ghairm was the 'host-cry' a Highland clan shouted in battle; by the 1700s English speakers used slogan for a party's motto, and later for advertising. Clann meant offspring (itself from Latin planta, 'sprout'). Go leor, 'enough', became galore. Bog comes from bog, 'soft'; smithereens from smidirín, 'little fragment'; banshee from bean sí, 'woman of the fairy mound'. Welsh gave corgi, 'dwarf dog', coracle and probably flannel. Most of these words came in long after the ancient Celts, from the Celtic languages that carried on in Ireland, Scotland and Wales. Whisky has its own entry.",
+        "es": "Un sluagh-ghairm era el «grito de la hueste» que lanzaba un clan de las Tierras Altas en batalla; en el siglo XVIII los angloparlantes ya usaban slogan para el lema de un partido, y luego para la publicidad. Clann significaba descendencia (y viene a su vez del latín planta, «brote»). Go leor, «suficiente», se volvió galore («en abundancia»). Bog (pantano) viene de bog, «blando»; smithereens (añicos), de smidirín, «fragmento pequeño»; banshee, de bean sí, «mujer del montículo de las hadas». El galés dio corgi, «perro enano», coracle (barca redonda) y probablemente flannel (franela). Casi todas llegaron mucho después de los antiguos celtas, desde las lenguas celtas que siguieron vivas en Irlanda, Escocia y Gales. El whisky tiene su propia ficha."
+      },
+      "path": [
+        { "at": [-0.13, 51.51], "place": { "en": "London", "es": "Londres" }, "date": "1700", "circa": true, "note": { "en": "Slogan and clan enter everyday English.", "es": "Slogan y clan entran en el inglés corriente." } },
+        { "at": [-99.13, 19.43], "place": { "en": "Mexico City", "es": "Ciudad de México" }, "date": "1950", "circa": true, "note": { "en": "Spanish takes eslogan and clan from English.", "es": "El español toma eslogan y clan del inglés." } }
+      ],
+      "where": ["lang:eng", "lang:spa"],
+      "strong": ["IRL", "GBR"],
+      "note": { "en": "English speakers use them every day; Spanish speakers say clan and eslogan.", "es": "Los angloparlantes las usan a diario; los hispanohablantes dicen clan y eslogan." },
+      "words": [
+        { "en": "slogan", "es": "eslogan", "from": "sluagh-ghairm (Scottish Gaelic)", "means": { "en": "host-cry, battle cry", "es": "grito de la hueste, grito de guerra" } },
+        { "en": "clan", "es": "clan", "from": "clann (Scottish Gaelic, Irish)", "means": { "en": "offspring, family", "es": "descendencia, familia" } },
+        { "en": "galore", "from": "go leor (Irish)", "means": { "en": "enough, plenty", "es": "suficiente, en abundancia" } },
+        { "en": "glen", "from": "gleann (Scottish Gaelic)", "means": { "en": "valley", "es": "valle" } },
+        { "en": "bog", "from": "bog (Irish, Scottish Gaelic)", "means": { "en": "soft", "es": "blando" } },
+        { "en": "loch", "from": "loch (Scottish Gaelic)", "means": { "en": "lake", "es": "lago" } },
+        { "en": "smithereens", "from": "smidirín (Irish)", "means": { "en": "little fragment", "es": "fragmento pequeño" } },
+        { "en": "banshee", "from": "bean sí (Irish)", "means": { "en": "woman of the fairy mound", "es": "mujer del montículo de las hadas" } },
+        { "en": "brogue", "from": "bróg (Irish, Scottish Gaelic)", "means": { "en": "shoe", "es": "zapato" } },
+        { "en": "plaid", "from": "plaide (Scottish Gaelic)", "means": { "en": "blanket", "es": "manta" } },
+        { "en": "crag", "from": "creag (Gaelic) or craig (Welsh)", "means": { "en": "rock", "es": "peña" } },
+        { "en": "Tory", "from": "tóraidhe (Irish)", "means": { "en": "outlaw, pursued man", "es": "proscrito, perseguido" } },
+        { "en": "corgi", "from": "corgi (Welsh)", "means": { "en": "dwarf dog", "es": "perro enano" } },
+        { "en": "coracle", "from": "corwgl (Welsh)", "means": { "en": "small round boat", "es": "barca redonda" } },
+        { "en": "flannel", "from": "gwlanen (Welsh), probably", "means": { "en": "woollen cloth", "es": "tela de lana" } },
+        { "en": "bard", "es": "bardo", "from": "bard (Irish, Welsh); Spanish via Latin bardus, from Gaulish", "means": { "en": "poet", "es": "poeta" } }
+      ],
+      "wiki": { "en": "Scottish Gaelic", "es": "Gaélico escocés" }
+    },
+    {
+      "id": "gaulish-words",
+      "name": { "en": "Gaulish words in Spanish and English", "es": "Palabras galas en español e inglés" },
+      "cat": "words",
+      "icon": "📝",
+      "how": "named",
+      "date": "-50",
+      "circa": true,
+      "at": [4.04, 46.92],
+      "place": { "en": "Gaul (here Bibracte, Burgundy)", "es": "La Galia (aquí Bibracte, Borgoña)" },
+      "text": {
+        "en": "Roman soldiers and traders picked up words from the Gauls and passed them on to the Romance languages. That is why Spanish says camino, cambiar, carpintero and legua, and English has change, carpenter and league.",
+        "es": "Soldados y comerciantes romanos tomaron palabras de los galos y las pasaron a las lenguas romances. Por eso el español dice camino, cambiar, carpintero y legua, y el inglés tiene change, carpenter y league."
+      },
+      "details": {
+        "en": "Caesar conquered Gaul in 58–50 BC, but people went on speaking Gaulish for centuries, and Latin borrowed words for things the Gauls knew well: roads and distances (camminus, leuga), vehicles (carpentum, a two-wheeled carriage, gave carpentarius, the cart-maker, then carpenter), exchange (cambiare), trees (betulla, birch). A Gaulish ambactus, 'servant, envoy', lies behind embajada and ambassador; vassus, 'servant', behind vassal. These words reached Spanish through spoken Latin, and English mostly through Norman French after 1066.",
+        "es": "César conquistó la Galia en 58-50 a. C., pero la gente siguió hablando galo durante siglos, y el latín tomó palabras para cosas que los galos conocían bien: caminos y distancias (camminus, leuga), vehículos (carpentum, un carruaje de dos ruedas, dio carpentarius, el que hacía carros, y de ahí carpintero), el intercambio (cambiare), los árboles (betulla, abedul). Un ambactus galo, «servidor, enviado», está detrás de embajada y ambassador; vassus, «servidor», detrás de vasallo. Estas palabras llegaron al español por el latín hablado, y al inglés sobre todo por el francés normando después de 1066."
+      },
+      "path": [
+        { "at": [12.48, 41.89], "place": { "en": "Rome", "es": "Roma" }, "date": "-50", "circa": true, "note": { "en": "Latin borrows Gaulish words such as carpentum and leuga.", "es": "El latín toma palabras galas como carpentum y leuga." } },
+        { "at": [-3.7, 42.34], "place": { "en": "Burgos, Castile", "es": "Burgos, Castilla" }, "date": "1000", "circa": true, "note": { "en": "Castilian inherits camino, cambiar and legua from spoken Latin.", "es": "El castellano hereda camino, cambiar y legua del latín hablado." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London", "es": "Londres" }, "date": "1100", "circa": true, "from": 1, "note": { "en": "Norman French brings change, carpenter and league to English.", "es": "El francés normando lleva change, carpenter y league al inglés." } }
+      ],
+      "where": ["branch:romance", "lang:eng"],
+      "note": { "en": "Used in every Romance language (camino, caminho, chemin, cammino) and, through French, in English.", "es": "Se usan en todas las lenguas romances (camino, caminho, chemin, cammino) y, por el francés, en inglés." },
+      "words": [
+        { "en": "change", "es": "cambiar", "from": "cambiare (Late Latin), from Gaulish", "means": { "en": "to exchange", "es": "intercambiar" } },
+        { "en": "carpenter", "es": "carpintero", "from": "carpentum (Latin), from Gaulish", "means": { "en": "two-wheeled carriage", "es": "carruaje de dos ruedas" } },
+        { "es": "camino", "from": "camminus (Late Latin), of Celtic origin", "means": { "en": "road", "es": "camino" } },
+        { "en": "league", "es": "legua", "from": "leuga (Late Latin), from Gaulish", "means": { "en": "a Gaulish distance of about 2.2 km", "es": "una distancia gala de unos 2,2 km" } },
+        { "es": "abedul", "from": "betulla (Latin), from Gaulish", "means": { "en": "birch", "es": "abedul" } },
+        { "en": "ambassador", "es": "embajada", "from": "ambactus (Latin), from Gaulish", "means": { "en": "servant, envoy", "es": "servidor, enviado" } },
+        { "en": "vassal", "es": "vasallo", "from": "vassus (Medieval Latin), of Celtic origin", "means": { "en": "servant", "es": "servidor" } },
+        { "en": "beak", "from": "beccus (Latin), from Gaulish", "means": { "en": "beak", "es": "pico" } },
+        { "es": "brío", "from": "brigos (Celtic), probably", "means": { "en": "strength", "es": "fuerza" } },
+        { "es": "colmena", "from": "kolmena (Celtic), probably", "means": { "en": "straw hive", "es": "colmena de paja" } }
+      ],
+      "wiki": { "en": "Gaulish", "es": "Idioma galo" }
+    },
+    {
+      "id": "car-carro",
+      "name": { "en": "Car, carry, cargo: the Gaulish wagon", "es": "Carro, carga y carretera: el carro galo" },
+      "cat": "words",
+      "icon": "🚗",
+      "how": "named",
+      "date": "-400",
+      "circa": true,
+      "at": [4.03, 49.25],
+      "place": { "en": "Gaul (here Champagne, where chariot burials are found)", "es": "La Galia (aquí Champaña, donde hay tumbas con carros)" },
+      "text": {
+        "en": "The Gaulish word for a wagon, karros, became Latin carrus. It gave English car, carry and cargo and Spanish carro, carga and carretera; in much of Latin America a car is still a carro.",
+        "es": "La palabra gala para el carro, karros, pasó al latín como carrus. De ahí vienen el inglés car, carry y cargo y el español carro, carga, cargar y carretera; en gran parte de América Latina un auto sigue siendo un carro."
+      },
+      "details": {
+        "en": "The Celts were famous wheelwrights. Their light two-wheeled chariots, buried with chiefs from Champagne to Yorkshire, had spoked wheels with iron tyres fitted hot so that they gripped tight as they cooled. The Romans borrowed both vehicles and names: carrus (a wagon), carpentum (a carriage), essedum (a war chariot). From carrus, Late Latin made carricare, 'to load a wagon', the source of charge, cargo and carga. When motor cars arrived around 1900, English shortened motor car to car, while Mexico, Colombia, Venezuela and Central America kept the old carro.",
+        "es": "Los celtas eran famosos carreteros. Sus ligeros carros de dos ruedas, enterrados con sus jefes de Champaña a Yorkshire, tenían ruedas de radios con llantas de hierro colocadas en caliente para que se ajustaran al enfriarse. Los romanos tomaron vehículos y nombres: carrus (carro), carpentum (carruaje), essedum (carro de guerra). De carrus, el latín tardío hizo carricare, «cargar un carro», origen de cargar, carga y del inglés charge y cargo. Cuando llegaron los automóviles, hacia 1900, el inglés abrevió motor car en car, mientras México, Colombia, Venezuela y Centroamérica conservaron el viejo carro."
+      },
+      "roots": {
+        "en": "Built on wheeled vehicles invented in western Asia and on the steppe thousands of years earlier.",
+        "es": "Se basa en los vehículos con ruedas inventados en Asia occidental y en la estepa miles de años antes."
+      },
+      "path": [
+        { "at": [12.48, 41.89], "place": { "en": "Rome", "es": "Roma" }, "date": "-50", "circa": true, "note": { "en": "Latin borrows carrus and carpentum from Gaulish.", "es": "El latín toma carrus y carpentum del galo." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London", "es": "Londres" }, "date": "1300", "circa": true, "note": { "en": "Car and carry come into English through Norman French.", "es": "Car y carry entran en inglés por el francés normando." } },
+        { "at": [-99.13, 19.43], "place": { "en": "Mexico City", "es": "Ciudad de México" }, "date": "1910", "circa": true, "from": 1, "note": { "en": "The motor car arrives; Mexicans call it a carro.", "es": "Llega el automóvil; los mexicanos lo llaman carro." } }
+      ],
+      "where": ["lang:eng", "branch:romance"],
+      "strong": ["MEX", "COL", "VEN", "PER", "GTM", "CRI"],
+      "note": { "en": "English car and carry; Spanish carro, carga and carretera; Portuguese carro too. In Mexico, Colombia, Venezuela and Central America a car is a carro.", "es": "El inglés car y carry; el español carro, carga y carretera; también el portugués carro. En México, Colombia, Venezuela y Centroamérica un auto es un carro." },
+      "words": [
+        { "en": "car", "es": "carro", "from": "karros (Gaulish), via Latin carrus", "means": { "en": "wagon", "es": "carro" } },
+        { "en": "carry", "es": "cargar", "from": "carricare (Late Latin), from carrus", "means": { "en": "to load a wagon", "es": "cargar un carro" } },
+        { "en": "cargo", "es": "carga", "from": "carricare (Late Latin); English via Spanish cargo", "means": { "en": "load", "es": "carga" } },
+        { "en": "charge", "from": "carricare (Late Latin), via French charger", "means": { "en": "to load", "es": "cargar" } },
+        { "en": "career", "es": "carrera", "from": "carraria (Late Latin), from carrus", "means": { "en": "road for wagons", "es": "camino de carros" } },
+        { "es": "carretera", "from": "carreta, from carro (Latin carrus)", "means": { "en": "road for carts", "es": "camino para carretas" } },
+        { "en": "carriage", "from": "cariage (Old French), from Latin carrus", "means": { "en": "carrying, a vehicle", "es": "transporte, vehículo" } }
+      ],
+      "wiki": { "en": "Chariot", "es": "Carro de guerra" }
+    },
+    {
+      "id": "cerveza",
+      "name": { "en": "Cerveza (the word)", "es": "Cerveza (la palabra)" },
+      "cat": "food",
+      "icon": "🍺",
+      "how": "named",
+      "date": "-500",
+      "circa": true,
+      "at": [9.0, 48.87],
+      "place": { "en": "Hochdorf, near Stuttgart, Germany", "es": "Hochdorf, cerca de Stuttgart, Alemania" },
+      "text": {
+        "en": "Pliny the Elder wrote that the Gauls called their beer cervesia. The Gaulish word lives on in Spanish cerveza, Portuguese cerveja and Catalan cervesa, ordered every day across Spain, Portugal, Brazil and Latin America.",
+        "es": "Plinio el Viejo escribió que los galos llamaban cervesia a su cerveza. La palabra gala sigue viva en el español cerveza, el portugués cerveja y el catalán cervesa, que se piden a diario en España, Portugal, Brasil y América Latina."
+      },
+      "details": {
+        "en": "Beer is far older than the Celts: Mesopotamians and Egyptians brewed it thousands of years before. But the Celts of temperate Europe brewed it from barley and drank it at feasts. At Hochdorf, near Stuttgart, archaeologists found ditches where barley was malted about 500 BC, and a chieftain's grave nearby held a huge bronze cauldron that had once held mead. Greek and Roman writers, who drank wine, looked down on beer as a barbarian drink. Pliny, writing about AD 77, listed the names of beers: zythum in Egypt, caelia and cerea in Spain, cervesia in Gaul.",
+        "es": "La cerveza es mucho más antigua que los celtas: mesopotámicos y egipcios la elaboraban miles de años antes. Pero los celtas de la Europa templada la hacían con cebada y la bebían en sus banquetes. En Hochdorf, cerca de Stuttgart, los arqueólogos hallaron zanjas donde se malteaba cebada hacia el 500 a. C., y la tumba de un jefe cercana guardaba un enorme caldero de bronce que había contenido hidromiel. Los escritores griegos y romanos, que bebían vino, despreciaban la cerveza como bebida de bárbaros. Plinio, hacia el 77 d. C., anotó los nombres de las cervezas: zythum en Egipto, caelia y cerea en Hispania, cervesia en la Galia."
+      },
+      "roots": {
+        "en": "Built on brewing invented in western Asia thousands of years earlier.",
+        "es": "Se basa en la elaboración de cerveza, inventada en Asia occidental miles de años antes."
+      },
+      "path": [
+        { "at": [12.48, 41.89], "place": { "en": "Rome", "es": "Roma" }, "date": "77", "circa": true, "by": { "en": "Pliny the Elder", "es": "Plinio el Viejo" }, "note": { "en": "The Natural History records cervesia as the Gauls' word for beer.", "es": "La Historia natural registra cervesia como la palabra gala para la cerveza." } }
+      ],
+      "where": ["lang:spa", "lang:por", "AND"],
+      "note": { "en": "Spanish and Portuguese speakers order a cerveza or a cerveja; Catalan speakers say cervesa.", "es": "Los hablantes de español y portugués piden una cerveza o una cerveja; los de catalán dicen cervesa." },
+      "words": [
+        { "es": "cerveza", "from": "cervesia (Latin), from Gaulish", "means": { "en": "beer", "es": "cerveza" } }
+      ],
+      "see": ["food:sumerian-beer"],
+      "wiki": { "en": "History of beer", "es": "Historia de la cerveza" }
+    },
+    {
+      "id": "whisky-word",
+      "name": { "en": "Whisky (the word)", "es": "Whisky (la palabra)" },
+      "cat": "food",
+      "icon": "🥃",
+      "how": "named",
+      "date": "1494",
+      "at": [-3.21, 56.35],
+      "place": { "en": "Lindores Abbey, Fife, Scotland", "es": "Abadía de Lindores, Fife, Escocia" },
+      "text": {
+        "en": "Whisky is the Gaelic uisce beatha or uisge beatha, 'water of life', a translation of the Latin aqua vitae. Irish and Scottish distillers made the drink famous, and the Gaelic name is now used around the world.",
+        "es": "Whisky viene del gaélico uisce beatha o uisge beatha, «agua de vida», traducción del latín aqua vitae. Los destiladores irlandeses y escoceses hicieron famosa la bebida, y el nombre gaélico se usa hoy en todo el mundo."
+      },
+      "details": {
+        "en": "Distilling reached Ireland and Scotland in the Middle Ages, probably through monks who knew European medical texts. Irish annals tell of a chieftain who died in 1405 after drinking too much aqua vitae at Christmas, and Scottish royal accounts of 1494 record malt sent to Friar John Cor of Lindores to make it. English speakers shortened usquebaugh to whisky in the 1700s. Today Scotch whisky and Irish whiskey are protected names, and whisky is also made in the United States, Canada, Japan, India and many other countries. The drink is medieval; the name comes from the Celtic languages.",
+        "es": "La destilación llegó a Irlanda y Escocia en la Edad Media, probablemente con monjes que conocían textos médicos europeos. Unos anales irlandeses cuentan que un jefe murió en 1405 por beber demasiada aqua vitae en Navidad, y las cuentas reales escocesas de 1494 registran malta enviada al fraile John Cor, de Lindores, para hacerla. Los angloparlantes abreviaron usquebaugh en whisky en el siglo XVIII. Hoy el whisky escocés y el whiskey irlandés son nombres protegidos, y también se hace whisky en Estados Unidos, Canadá, Japón, India y muchos otros países. La bebida es medieval; el nombre viene de las lenguas celtas."
+      },
+      "roots": {
+        "en": "Built on distilling, known to Greek and Arab scholars long before, and on the Latin name aqua vitae.",
+        "es": "Se basa en la destilación, conocida mucho antes por sabios griegos y árabes, y en el nombre latino aqua vitae."
+      },
+      "path": [
+        { "at": [-85.47, 37.81], "place": { "en": "Bardstown, Kentucky, USA", "es": "Bardstown, Kentucky, EE. UU." }, "date": "1790", "circa": true, "by": { "en": "Scots-Irish settlers", "es": "Colonos escocés-irlandeses" }, "note": { "en": "Whiskey distilling takes root in the United States.", "es": "La destilación de whiskey arraiga en Estados Unidos." } },
+        { "at": [135.67, 34.89], "place": { "en": "Yamazaki, near Kyoto, Japan", "es": "Yamazaki, cerca de Kioto, Japón" }, "date": "1923", "from": 0, "by": { "en": "Shinjiro Torii and Masataka Taketsuru", "es": "Shinjiro Torii y Masataka Taketsuru" }, "note": { "en": "Japan's first whisky distillery opens, with know-how learned in Scotland.", "es": "Abre la primera destilería de whisky de Japón, con técnicas aprendidas en Escocia." } }
+      ],
+      "where": ["continent:europe", "continent:north-america", "continent:south-america", "continent:oceania", "JPN", "IND", "KOR", "ZAF", "TWN", "PHL", "THA", "CHN"],
+      "strong": ["IRL", "GBR", "USA", "CAN", "JPN"],
+      "note": { "en": "Scotland and Ireland distil it, and the United States, Canada, Japan and India are big makers and drinkers.", "es": "Escocia e Irlanda lo destilan, y Estados Unidos, Canadá, Japón e India son grandes productores y consumidores." },
+      "words": [
+        { "en": "whisky", "es": "whisky", "from": "uisce beatha (Irish), uisge beatha (Scottish Gaelic)", "means": { "en": "water of life", "es": "agua de vida" } }
+      ],
+      "see": ["food:scotch-whisky"],
+      "wiki": { "en": "Whisky", "es": "Whisky" }
+    },
+    {
+      "id": "city-names",
+      "name": { "en": "Paris, Lyon, Milan: cities with Celtic names", "es": "París, Lyon, Milán: ciudades de nombre celta" },
+      "cat": "words",
+      "icon": "🏙️",
+      "how": "named",
+      "date": "-300",
+      "circa": true,
+      "at": [2.35, 48.86],
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "text": {
+        "en": "Many European cities still carry Celtic names: Paris (the Parisii tribe), Lyon (Lugdunum), Milan (Mediolanum), Verdun, Rouen, Mainz, Coimbra, York and Dublin. London's name may be Celtic too.",
+        "es": "Muchas ciudades europeas conservan nombres celtas: París (la tribu de los parisios), Lyon (Lugdunum), Milán (Mediolanum), Verdún, Ruan, Maguncia, Coímbra, York y Dublín. Quizá también Londres."
+      },
+      "details": {
+        "en": "Celtic towns were often named for a fort (dunon), a field or market (magos), a hill-fort (briga) or a god. Lugdunum, Lyon, was the fort of the god Lugus; Mediolanum, Milan, 'the middle of the plain'; Noviomagus, now Nijmegen, 'new field'; Rotomagus, Rouen. The Romans kept and Latinised the names, and Paris took the name of the Parisii who lived around Lutetia. In Britain, Eboracum (York) probably meant 'yew-tree place'; where Londinium's name comes from is unknown. Ireland's Dubh Linn, 'black pool', is Gaelic. Gaelic dùn, 'fort', also gave Edinburgh's Gaelic name, Dùn Èideann, which Scots carried to Dunedin in New Zealand.",
+        "es": "Las ciudades celtas solían llevar el nombre de un fuerte (dunon), un campo o mercado (magos), un castro (briga) o un dios. Lugdunum, Lyon, era el fuerte del dios Lugus; Mediolanum, Milán, «el medio de la llanura»; Noviomagus, hoy Nimega, «campo nuevo»; Rotomagus, Ruan. Los romanos conservaron y latinizaron los nombres, y París tomó el de los parisios, que vivían en torno a Lutecia. En Britania, Eboracum (York) probablemente significaba «lugar de tejos»; de dónde viene el nombre de Londinium no se sabe. El Dubh Linn irlandés, «estanque negro», es gaélico. El gaélico dùn, «fuerte», dio también el nombre gaélico de Edimburgo, Dùn Èideann, que los escoceses llevaron a Dunedin, en Nueva Zelanda."
+      },
+      "path": [
+        { "at": [4.83, 45.76], "place": { "en": "Lyon, France", "es": "Lyon, Francia" }, "date": "-43", "by": { "en": "Lucius Munatius Plancus", "es": "Lucio Munacio Planco" }, "note": { "en": "The Romans found the colony of Lugdunum, keeping the Celtic name.", "es": "Los romanos fundan la colonia de Lugdunum y conservan el nombre celta." } },
+        { "at": [-3.19, 55.95], "place": { "en": "Edinburgh, Scotland", "es": "Edimburgo, Escocia" }, "date": "600", "circa": true, "from": 0, "note": { "en": "Din Eidyn, a British hill-fort; in Gaelic it becomes Dùn Èideann.", "es": "Din Eidyn, un castro britano; en gaélico pasa a ser Dùn Èideann." } },
+        { "at": [170.5, -45.87], "place": { "en": "Dunedin, New Zealand", "es": "Dunedin, Nueva Zelanda" }, "date": "1848", "by": { "en": "Scottish settlers", "es": "Colonos escoceses" }, "note": { "en": "A new city is named after the Gaelic name of Edinburgh.", "es": "Una ciudad nueva recibe el nombre gaélico de Edimburgo." } }
+      ],
+      "where": ["FRA", "ITA", "DEU", "NLD", "PRT", "GBR", "IRL", "NZL"],
+      "strong": ["FRA", "GBR", "IRL"],
+      "note": { "en": "Millions live in cities with Celtic names, from Paris and Milan to York, Dublin and Dunedin.", "es": "Millones de personas viven en ciudades de nombre celta, de París y Milán a York, Dublín y Dunedin." },
+      "words": [
+        { "en": "Paris", "es": "París", "from": "Parisii (a Gaulish tribe)", "type": "place" },
+        { "en": "Lyon", "es": "Lyon", "from": "Lugdunum (Gaulish Lugudunon)", "means": { "en": "fort of Lugus", "es": "fuerte de Lugus" }, "type": "place" },
+        { "en": "Milan", "es": "Milán", "from": "Mediolanum (Gaulish)", "means": { "en": "middle of the plain", "es": "medio de la llanura" }, "type": "place" },
+        { "en": "Verdun", "es": "Verdún", "from": "Virodunum (Gaulish), a dunon or fort", "type": "place" },
+        { "en": "Rouen", "es": "Ruan", "from": "Rotomagus (Gaulish)", "type": "place" },
+        { "en": "Nijmegen", "es": "Nimega", "from": "Noviomagus (Gaulish)", "means": { "en": "new field", "es": "campo nuevo" }, "type": "place" },
+        { "en": "Mainz", "es": "Maguncia", "from": "Mogontiacum (Gaulish), after the god Mogons", "type": "place" },
+        { "en": "Bonn", "es": "Bonn", "from": "Bonna (probably Celtic)", "type": "place" },
+        { "en": "Coimbra", "es": "Coímbra", "from": "Conimbriga (Celtic briga, 'hill-fort')", "type": "place" },
+        { "en": "York", "es": "York", "from": "Eboracum (British Celtic), probably 'yew place'", "type": "place" },
+        { "en": "London", "es": "Londres", "from": "Londinium (origin unknown, perhaps Celtic)", "type": "place" },
+        { "en": "Carlisle", "es": "Carlisle", "from": "Luguvalium (British Celtic), after the god Lugus", "type": "place" },
+        { "en": "Dublin", "es": "Dublín", "from": "Dubh Linn (Irish)", "means": { "en": "black pool", "es": "estanque negro" }, "type": "place" },
+        { "en": "Dunedin", "es": "Dunedin", "from": "Dùn Èideann (Scottish Gaelic)", "means": { "en": "fort of Eidyn (Edinburgh)", "es": "fuerte de Eidyn (Edimburgo)" }, "type": "place" }
+      ],
+      "wiki": { "en": "Lugdunum", "es": "Lugdunum" }
+    },
+    {
+      "id": "region-names",
+      "name": { "en": "Belgium, Bohemia, Helvetia, Britain: Celtic names", "es": "Bélgica, Bohemia, Helvecia, Bretaña: nombres celtas" },
+      "cat": "words",
+      "icon": "🗺️",
+      "how": "named",
+      "date": "-58",
+      "at": [4.04, 46.92],
+      "place": { "en": "Gaul (here Bibracte, where Caesar defeated the Helvetii)", "es": "La Galia (aquí Bibracte, donde César venció a los helvecios)" },
+      "text": {
+        "en": "Celtic tribes named whole countries: Belgium (the Belgae), Bohemia (home of the Boii), Britain and Brittany (the Britons), Cornwall and Devon. Switzerland still calls itself Helvetia, after the Helvetii.",
+        "es": "Tribus celtas dieron nombre a países enteros: Bélgica (los belgas), Bohemia (hogar de los boyos), Gran Bretaña y Bretaña (los britanos), Cornualles y Devon. Suiza aún se llama Helvetia, por los helvecios."
+      },
+      "details": {
+        "en": "Caesar opened his Gallic War with the Helvetii and called the Belgae the bravest of the Gauls; the new kingdom of Belgium took their name in 1830. The Boii gave their name to Bohemia (Boiohaemum, 'home of the Boii'). The Greek explorer Pytheas, about 320 BC, called Britain the Prettanic islands, probably from a Celtic name for its people. Britons who crossed to Armorica in the 400s and 500s made it Brittany. Switzerland's coins and stamps, and its internet code, .ch for Confoederatio Helvetica, still use the Latin name. Galicia in Spain is named after the Gallaeci; whether their name is Celtic is debated.",
+        "es": "César abrió su Guerra de las Galias con los helvecios y llamó a los belgas los más valientes de los galos; el nuevo reino de Bélgica tomó su nombre en 1830. Los boyos dieron nombre a Bohemia (Boiohaemum, «hogar de los boyos»). El explorador griego Piteas, hacia el 320 a. C., llamó a Britania las islas Pretánicas, probablemente por un nombre celta de sus habitantes. Los britanos que cruzaron a Armórica en los siglos V y VI la convirtieron en Bretaña. Las monedas y sellos de Suiza, y su código de internet, .ch por Confoederatio Helvetica, aún usan el nombre latino. Galicia, en España, debe su nombre a los galaicos; si su nombre es celta se discute."
+      },
+      "path": [
+        { "at": [-4.1, 48.0], "place": { "en": "Quimper, Brittany", "es": "Quimper, Bretaña" }, "date": "500", "circa": true, "from": 0, "note": { "en": "Britons settle Armorica, which takes their name: Brittany.", "es": "Los britanos se asientan en Armórica, que toma su nombre: Bretaña." } },
+        { "at": [4.35, 50.85], "place": { "en": "Brussels, Belgium", "es": "Bruselas, Bélgica" }, "date": "1830", "from": 0, "note": { "en": "Belgium takes the name of the Belgae at independence.", "es": "Bélgica toma el nombre de los belgas al independizarse." } },
+        { "at": [7.45, 46.95], "place": { "en": "Bern, Switzerland", "es": "Berna, Suiza" }, "date": "1848", "from": 0, "note": { "en": "The Swiss federal state is founded; its coins and stamps say Helvetia.", "es": "Se funda el Estado federal suizo; sus monedas y sellos dicen Helvetia." } }
+      ],
+      "where": ["BEL", "CHE", "CZE", "FRA", "GBR", "ESP"],
+      "strong": ["BEL", "CHE"],
+      "note": { "en": "Belgians, Czechs in Bohemia, the Swiss, Bretons, the British and Galicians live under Celtic names.", "es": "Belgas, checos de Bohemia, suizos, bretones, británicos y gallegos viven bajo nombres celtas." },
+      "words": [
+        { "en": "Belgium", "es": "Bélgica", "from": "Belgae (a Gaulish people)", "type": "place" },
+        { "en": "Bohemia", "es": "Bohemia", "from": "Boiohaemum (Latin), 'home of the Boii'", "type": "place" },
+        { "en": "Helvetia", "es": "Helvecia", "from": "Helvetii (a Gaulish people)", "type": "place" },
+        { "en": "Britain", "es": "Gran Bretaña", "from": "Prettanikē (Greek), probably from a Celtic name", "type": "place" },
+        { "en": "Brittany", "es": "Bretaña", "from": "Britanni (Latin), the Britons who settled there", "type": "place" },
+        { "en": "Cornwall", "es": "Cornualles", "from": "Cornovii (a British tribe) + Old English wealas", "type": "place" },
+        { "en": "Devon", "es": "Devon", "from": "Dumnonii (a British tribe)", "type": "place" },
+        { "en": "Kent", "es": "Kent", "from": "Cantium (British Celtic)", "type": "place" },
+        { "en": "Cumbria", "es": "Cumbria", "from": "Cymry (British Celtic)", "means": { "en": "fellow countrymen", "es": "compatriotas" }, "type": "place" },
+        { "en": "Galicia", "es": "Galicia", "from": "Gallaeci (a people of Iberia; origin of the name debated)", "type": "place" }
+      ],
+      "wiki": { "en": "Belgae", "es": "Pueblo belga" }
+    },
+    {
+      "id": "river-names",
+      "name": { "en": "Rhine, Thames, Avon: Celtic river names", "es": "Rin, Támesis, Avon: ríos de nombre celta" },
+      "cat": "words",
+      "icon": "🏞️",
+      "how": "named",
+      "sure": "likely",
+      "date": "-500",
+      "circa": true,
+      "at": [7.59, 47.56],
+      "place": { "en": "The Rhine at Basel, Switzerland", "es": "El Rin en Basilea, Suiza" },
+      "text": {
+        "en": "Rivers kept their Celtic names long after the Celts were gone: the Rhine ('the flowing one'), the Thames, the Marne, the Seine, Britain's many Avons ('river'), and perhaps the Danube.",
+        "es": "Los ríos conservaron sus nombres celtas mucho después de que los celtas desaparecieran: el Rin («el que fluye»), el Támesis, el Marne, el Sena, los muchos Avon («río») de Gran Bretaña y quizá el Danubio."
+      },
+      "details": {
+        "en": "River names are among the oldest words on any map, because newcomers ask the locals what a river is called. The Rhine was Renos in Gaulish, from a root meaning 'to flow'. In Britain, Avon is simply British Celtic abona, 'river', so Stratford-upon-Avon means 'ford on the river River'; the Exe and the Usk share a word for water, isca. The Marne was Matrona, 'mother', a goddess; the Seine was the goddess Sequana; the Dee was Deva, 'goddess'. The Thames (Tamesis) is probably Celtic too, perhaps 'dark'. The Danube's name may be Celtic or Iranian.",
+        "es": "Los nombres de ríos están entre las palabras más antiguas de cualquier mapa, porque los recién llegados preguntan a los del lugar cómo se llama el río. El Rin era Renos en galo, de una raíz que significa «fluir». En Gran Bretaña, Avon es simplemente el britano abona, «río», así que Stratford-upon-Avon significa «vado sobre el río Río»; el Exe y el Usk comparten una palabra para el agua, isca. El Marne era Matrona, «madre», una diosa; el Sena era la diosa Sequana; el Dee era Deva, «diosa». El Támesis (Tamesis) probablemente también es celta, quizá «oscuro». El nombre del Danubio puede ser celta o iranio."
+      },
+      "roots": {
+        "en": "Some names may be older still, from languages spoken in Europe before Celtic.",
+        "es": "Algunos nombres quizá sean aún más antiguos, de lenguas habladas en Europa antes del celta."
+      },
+      "where": ["CHE", "LIE", "AUT", "DEU", "FRA", "NLD", "GBR"],
+      "strong": ["GBR", "FRA"],
+      "note": { "en": "People along the Rhine, the Seine, the Marne, the Thames and Britain's Avons use Celtic names every day.", "es": "Quienes viven junto al Rin, el Sena, el Marne, el Támesis y los Avon británicos usan nombres celtas cada día." },
+      "words": [
+        { "en": "Rhine", "es": "Rin", "from": "Renos (Gaulish)", "means": { "en": "the flowing one", "es": "el que fluye" }, "type": "place" },
+        { "en": "Thames", "es": "Támesis", "from": "Tamesis (British Celtic), perhaps 'dark'", "type": "place" },
+        { "en": "Avon", "es": "Avon", "from": "abona (British Celtic)", "means": { "en": "river", "es": "río" }, "type": "place" },
+        { "en": "Exe", "es": "Exe", "from": "isca (British Celtic)", "means": { "en": "water", "es": "agua" }, "type": "place" },
+        { "en": "Usk", "es": "Usk", "from": "isca (British Celtic)", "means": { "en": "water", "es": "agua" }, "type": "place" },
+        { "en": "Marne", "es": "Marne", "from": "Matrona (Gaulish)", "means": { "en": "mother (a goddess)", "es": "madre (una diosa)" }, "type": "place" },
+        { "en": "Seine", "es": "Sena", "from": "Sequana (a Gaulish goddess)", "type": "place" },
+        { "en": "Dee", "es": "Dee", "from": "Deva (British Celtic)", "means": { "en": "goddess", "es": "diosa" }, "type": "place" },
+        { "en": "Danube", "es": "Danubio", "from": "Danuvius (Latin), perhaps from Celtic", "type": "place" }
+      ],
+      "wiki": { "en": "Rhine", "es": "Rin" }
+    },
+    {
+      "id": "wooden-barrel",
+      "name": { "en": "The wooden barrel", "es": "El barril de madera" },
+      "cat": "tech",
+      "icon": "🛢️",
+      "how": "developed",
+      "sure": "likely",
+      "date": "-100",
+      "circa": true,
+      "at": [7.32, 45.74],
+      "place": { "en": "The Alps (here Aosta, Italy)", "es": "Los Alpes (aquí Aosta, Italia)" },
+      "text": {
+        "en": "Barrels of wooden staves held tight by hoops were a speciality of the Gauls and Alpine peoples. The Romans took them up, and barrels still age wine and whisky and give oil its unit of measure.",
+        "es": "Los toneles de duelas de madera sujetas con aros eran una especialidad de los galos y los pueblos alpinos. Los romanos los adoptaron, y aún hoy los barriles añejan vinos y whiskies y dan su unidad de medida al petróleo."
+      },
+      "details": {
+        "en": "Pliny the Elder noted that around the Alps people stored wine in wooden vessels bound with hoops, while Romans used clay amphorae. Barrels were lighter and tougher and could be rolled, so in the north-western provinces of the empire they gradually replaced amphorae; Trajan's Column in Rome shows barrels on boats on the Danube. The cooper's craft of bending oak staves with fire and water has hardly changed since. Oak barrels flavour wine, cognac, sherry and whisky, and the oil barrel of 42 US gallons (159 litres) is still the unit in which crude oil is priced.",
+        "es": "Plinio el Viejo anotó que en torno a los Alpes se guardaba el vino en recipientes de madera ceñidos con aros, mientras los romanos usaban ánforas de barro. Los barriles eran más ligeros y resistentes y podían rodarse, así que en las provincias del noroeste del imperio fueron sustituyendo a las ánforas; la Columna de Trajano, en Roma, muestra barriles en barcos del Danubio. El oficio del tonelero, que dobla duelas de roble con fuego y agua, apenas ha cambiado desde entonces. Los barriles de roble dan sabor al vino, el coñac, el jerez y el whisky, y el barril de petróleo de 42 galones estadounidenses (159 litros) sigue siendo la unidad en que se fija el precio del crudo."
+      },
+      "roots": {
+        "en": "Built on older stave-built buckets and tubs; who made the first true barrel is not known.",
+        "es": "Se basa en cubos y tinas de duelas más antiguos; no se sabe quién hizo el primer barril."
+      },
+      "path": [
+        { "at": [12.48, 41.9], "place": { "en": "Rome", "es": "Roma" }, "date": "113", "note": { "en": "Trajan's Column shows barrels carried on Danube boats.", "es": "La Columna de Trajano muestra barriles a bordo de barcos del Danubio." } },
+        { "at": [-0.58, 44.84], "place": { "en": "Bordeaux, France", "es": "Burdeos, Francia" }, "date": "1300", "circa": true, "from": 0, "note": { "en": "Bordeaux ships its wine to England in barrels; the barrel becomes a measure.", "es": "Burdeos envía su vino a Inglaterra en barriles; el barril se vuelve una medida." } },
+        { "at": [-79.67, 41.63], "place": { "en": "Titusville, Pennsylvania, USA", "es": "Titusville, Pensilvania, EE. UU." }, "date": "1866", "note": { "en": "Oil producers agree on the 42-gallon barrel, now the world's unit for crude oil.", "es": "Los productores de petróleo adoptan el barril de 42 galones, hoy la unidad mundial del crudo." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Wineries, distilleries and breweries use oak barrels, and every oil price in the world is quoted per barrel.", "es": "Bodegas, destilerías y cervecerías usan barriles de roble, y todo precio del petróleo en el mundo se da por barril." },
+      "wiki": { "en": "Barrel", "es": "Barril" }
+    },
+    {
+      "id": "chain-mail",
+      "name": { "en": "Chain mail", "es": "La cota de malla" },
+      "cat": "tech",
+      "icon": "🛡️",
+      "how": "invented",
+      "sure": "likely",
+      "date": "-300",
+      "circa": true,
+      "at": [22.33, 47.67],
+      "place": { "en": "Ciumești, Satu Mare, Romania", "es": "Ciumești, Satu Mare, Rumania" },
+      "text": {
+        "en": "Armour of thousands of linked iron rings was probably invented by the Celts: the oldest known mail shirt comes from a Celtic grave in Romania. The Romans adopted it, and steel mesh still protects butchers' hands.",
+        "es": "La armadura de anillas de hierro enlazadas fue probablemente invento celta: la cota más antigua conocida viene de una tumba celta en Rumania. Los romanos la adoptaron, y la malla de acero aún protege las manos de los carniceros."
+      },
+      "details": {
+        "en": "A chieftain buried at Ciumești, in north-western Romania, in the 3rd century BC wore a mail shirt and a helmet topped by a bronze raven with hinged wings. Making mail was slow: wire was drawn, wound, cut into rings, and each ring closed and linked to four others. Roman writers credited the Gauls with it, and the Roman army made it standard as the lorica hamata. Mail remained the armour of medieval knights. Today butchers, meat packers and oyster shuckers wear steel-mesh gloves, and divers wear mail suits to film sharks.",
+        "es": "Un jefe enterrado en Ciumești, en el noroeste de Rumania, en el siglo III a. C. llevaba una cota de malla y un casco coronado por un cuervo de bronce con alas articuladas. Hacer malla era lento: se estiraba el alambre, se enrollaba, se cortaba en anillas y cada anilla se cerraba y enlazaba con otras cuatro. Los escritores romanos atribuyeron el invento a los galos, y el ejército romano la hizo reglamentaria como lorica hamata. La malla siguió siendo la armadura de los caballeros medievales. Hoy carniceros, empacadores de carne y abridores de ostras usan guantes de malla de acero, y los buzos se ponen trajes de malla para filmar tiburones."
+      },
+      "path": [
+        { "at": [12.48, 41.89], "place": { "en": "Rome", "es": "Roma" }, "date": "-100", "circa": true, "note": { "en": "The Roman army adopts mail as the lorica hamata.", "es": "El ejército romano adopta la malla como lorica hamata." } },
+        { "at": [0.49, 50.91], "place": { "en": "Hastings, England", "es": "Hastings, Inglaterra" }, "date": "1066", "note": { "en": "Both armies fight in mail shirts, as the Bayeux Tapestry shows.", "es": "Los dos ejércitos luchan con cotas de malla, como muestra el tapiz de Bayeux." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Steel-mesh gloves and aprons are worn in meat plants, kitchens and fish markets around the world.", "es": "Guantes y delantales de malla de acero se usan en frigoríficos, cocinas y mercados de pescado de todo el mundo." },
+      "wiki": { "en": "Chain mail", "es": "Cota de malla" }
+    },
+    {
+      "id": "celtic-art",
+      "name": { "en": "Celtic spirals and knotwork", "es": "Espirales y lacerías celtas" },
+      "cat": "arts",
+      "icon": "➰",
+      "how": "developed",
+      "sure": "likely",
+      "date": "-450",
+      "circa": true,
+      "at": [7.02, 47.01],
+      "place": { "en": "La Tène, Lake Neuchâtel, Switzerland", "es": "La Tène, lago de Neuchâtel, Suiza" },
+      "text": {
+        "en": "The La Tène style of swirling curves, spirals and triskeles grew in Celtic Europe from about 450 BC. Irish and British monks wove it into the knotwork of the Book of Kells, and 'Celtic' designs still decorate jewellery and tattoos.",
+        "es": "El estilo de La Tène, de curvas, espirales y trisqueles, nació en la Europa celta hacia el 450 a. C. Los monjes de Irlanda y Britania lo convirtieron en las lacerías del Libro de Kells, y los diseños «celtas» aún adornan joyas y tatuajes."
+      },
+      "details": {
+        "en": "La Tène artists decorated swords, shields, torcs and mirrors with flowing, plant-like curves, borrowing motifs from Greek and Etruscan art and making them their own; the Battersea Shield in the British Museum is a famous example. In Ireland, which Rome never conquered, the style lived on. From the 600s monks combined its spirals with Germanic animal ornament and Mediterranean interlace in Insular art: the Book of Durrow, the Lindisfarne Gospels and the Book of Kells (about 800). The Celtic Revival of the 1800s brought these patterns back, and today they appear on everything from wedding rings to gravestones and tattoos.",
+        "es": "Los artistas de La Tène decoraban espadas, escudos, torques y espejos con curvas fluidas, como de plantas, tomando motivos del arte griego y etrusco y haciéndolos suyos; el escudo de Battersea, en el Museo Británico, es un ejemplo famoso. En Irlanda, que Roma nunca conquistó, el estilo siguió vivo. Desde el siglo VII los monjes combinaron sus espirales con la ornamentación animal germánica y el entrelazado mediterráneo en el arte insular: el Libro de Durrow, los Evangelios de Lindisfarne y el Libro de Kells (hacia 800). El renacimiento celta del siglo XIX recuperó estos motivos, y hoy aparecen en todo, desde anillos de boda hasta lápidas y tatuajes."
+      },
+      "roots": {
+        "en": "Built on Greek and Etruscan plant motifs; knotwork also owes much to Roman and Germanic art.",
+        "es": "Se basa en motivos vegetales griegos y etruscos; las lacerías también deben mucho al arte romano y germánico."
+      },
+      "path": [
+        { "at": [-6.88, 53.73], "place": { "en": "Kells, County Meath, Ireland", "es": "Kells, condado de Meath, Irlanda" }, "date": "800", "circa": true, "by": { "en": "Monks of Iona and Kells", "es": "Monjes de Iona y Kells" }, "note": { "en": "The Book of Kells, the masterpiece of Insular art.", "es": "El Libro de Kells, obra maestra del arte insular." } },
+        { "at": [-6.26, 53.34], "place": { "en": "Dublin", "es": "Dublín" }, "date": "1850", "circa": true, "note": { "en": "The Tara Brooch is found and copied by jewellers; the Celtic Revival begins.", "es": "Se halla el broche de Tara y los joyeros lo copian; empieza el renacimiento celta." } }
+      ],
+      "where": ["IRL", "GBR", "FRA", "USA", "CAN", "AUS", "NZL"],
+      "strong": ["IRL", "GBR"],
+      "note": { "en": "Seen in Irish, Scottish and Breton jewellery, crosses and tattoos, and wherever the Irish and Scots settled.", "es": "Se ve en joyas, cruces y tatuajes de Irlanda, Escocia y Bretaña, y dondequiera que se asentaron irlandeses y escoceses." },
+      "see": ["writing:la-tene-culture", "books:book-of-kells"],
+      "wiki": { "en": "La Tène culture", "es": "Cultura de La Tène" }
+    },
+    {
+      "id": "bards-eisteddfod",
+      "name": { "en": "Bards and the Eisteddfod", "es": "Los bardos y el Eisteddfod" },
+      "cat": "arts",
+      "icon": "🎶",
+      "how": "kept",
+      "date": "1176",
+      "at": [-4.66, 52.08],
+      "place": { "en": "Cardigan Castle, Wales", "es": "Castillo de Cardigan, Gales" },
+      "text": {
+        "en": "Greek and Roman writers described Celtic bards who sang the praises of chiefs. Welsh bards kept the tradition, and at the National Eisteddfod, held each summer since 1861, poets still compete for a chair and a crown.",
+        "es": "Griegos y romanos describieron a los bardos celtas, que cantaban loas a los jefes. Los bardos galeses siguieron la tradición, y en el Eisteddfod Nacional, cada verano desde 1861, los poetas aún compiten por una silla y una corona."
+      },
+      "details": {
+        "en": "About 100 BC the Greek writer Posidonius described bards in Gaul who sang to the lyre at feasts; in Ireland and Wales poets trained for years in strict metres and could make or break a king's name. In 1176 Lord Rhys held a gathering of poets and musicians at Cardigan Castle, the first recorded eisteddfod. The modern National Eisteddfod of Wales moves around the country and is held in Welsh; its Gorsedd of Bards, with druid-like robes, was invented by Iolo Morganwg in 1792. Scotland's Royal National Mòd (since 1892) and Ireland's Oireachtas are its Gaelic cousins, and Welsh Patagonia holds its own eisteddfod.",
+        "es": "Hacia el 100 a. C. el escritor griego Posidonio describió a los bardos de la Galia, que cantaban con la lira en los banquetes; en Irlanda y Gales los poetas se formaban durante años en métricas estrictas y podían hacer o deshacer la fama de un rey. En 1176 el señor Rhys reunió a poetas y músicos en el castillo de Cardigan: el primer eisteddfod registrado. El Eisteddfod Nacional de Gales cambia de sede cada año y se celebra en galés; su Gorsedd de Bardos, con túnicas de aire druídico, la inventó Iolo Morganwg en 1792. El Royal National Mòd escocés (desde 1892) y el Oireachtas irlandés son sus primos gaélicos, y la Patagonia galesa celebra su propio eisteddfod."
+      },
+      "roots": {
+        "en": "Built on the bards of the ancient Celts, described by Greek and Roman writers from about 100 BC.",
+        "es": "Se basa en los bardos de los antiguos celtas, descritos por escritores griegos y romanos desde el 100 a. C."
+      },
+      "path": [
+        { "at": [-3.45, 51.71], "place": { "en": "Aberdare, Wales", "es": "Aberdare, Gales" }, "date": "1861", "note": { "en": "The first National Eisteddfod in its modern form.", "es": "El primer Eisteddfod Nacional en su forma moderna." } },
+        { "at": [-65.3, -43.25], "place": { "en": "Trelew, Chubut, Argentina", "es": "Trelew, Chubut, Argentina" }, "date": "1880", "circa": true, "by": { "en": "Welsh settlers", "es": "Colonos galeses" }, "note": { "en": "Eisteddfodau take root in Welsh Patagonia.", "es": "Los eisteddfodau arraigan en la Patagonia galesa." } },
+        { "at": [-5.47, 56.41], "place": { "en": "Oban, Scotland", "es": "Oban, Escocia" }, "date": "1892", "from": 0, "note": { "en": "The first Mòd, Scotland's festival of Gaelic song and poetry.", "es": "El primer Mòd, el festival escocés de canto y poesía en gaélico." } }
+      ],
+      "where": ["GBR", "IRL", "ARG", "FRA"],
+      "strong": ["GBR"],
+      "note": { "en": "The National Eisteddfod is held every August in Wales; Scotland, Ireland, Brittany and Welsh Patagonia have their own festivals of Celtic poetry and music.", "es": "El Eisteddfod Nacional se celebra cada agosto en Gales; Escocia, Irlanda, Bretaña y la Patagonia galesa tienen sus propios festivales de poesía y música celtas." },
+      "words": [
+        { "en": "eisteddfod", "es": "eisteddfod", "from": "eisteddfod (Welsh), from eistedd, 'to sit'", "means": { "en": "a sitting, a session", "es": "una sesión" } }
+      ],
+      "wiki": { "en": "Eisteddfod", "es": "Eisteddfod" }
+    },
+    {
+      "id": "hurling",
+      "name": { "en": "Hurling and shinty", "es": "El hurling y el shinty" },
+      "cat": "play",
+      "icon": "🏑",
+      "how": "developed",
+      "sure": "likely",
+      "date": "700",
+      "circa": true,
+      "at": [-7.25, 52.65],
+      "place": { "en": "Ireland (here Kilkenny)", "es": "Irlanda (aquí Kilkenny)" },
+      "text": {
+        "en": "Hurling, played with a curved wooden stick and a small ball, appears in Ireland's oldest laws and legends. On UNESCO's heritage list since 2018, it is still Ireland's great summer game; shinty is its Scottish cousin.",
+        "es": "El hurling, con palo curvo de madera y pelota pequeña, aparece en las leyes y leyendas más antiguas de Irlanda. En la lista de la UNESCO desde 2018, sigue siendo el gran juego del verano irlandés; el shinty es su primo escocés."
+      },
+      "details": {
+        "en": "In the tales of the Ulster Cycle the boy Cú Chulainn earned his name after killing a guard dog with a hurling ball, and early Irish law texts set out compensation for injuries in the game. The Statutes of Kilkenny (1366) banned English settlers from playing it, with little effect. The Gaelic Athletic Association, founded in 1884, wrote down the modern rules, and the All-Ireland final at Croke Park draws over 80,000 spectators; the players are amateurs. Scotland's shinty (camanachd) shares the same roots, and the two meet in internationals under compromise rules.",
+        "es": "En los relatos del Ciclo del Úlster, el niño Cú Chulainn ganó su nombre al matar a un perro guardián con una pelota de hurling, y los antiguos textos legales irlandeses fijan compensaciones por las lesiones del juego. Los Estatutos de Kilkenny (1366) prohibieron jugarlo a los colonos ingleses, sin mucho éxito. La Asociación Atlética Gaélica, fundada en 1884, escribió las reglas modernas, y la final de toda Irlanda en Croke Park reúne a más de 80.000 espectadores; los jugadores son aficionados. El shinty (camanachd) escocés comparte las mismas raíces, y ambos se enfrentan en partidos internacionales con reglas de compromiso."
+      },
+      "roots": {
+        "en": "Stick-and-ball games exist in many cultures; hurling's ancient roots rest on legends and early law texts.",
+        "es": "Hay juegos de palo y pelota en muchas culturas; las raíces antiguas del hurling se apoyan en leyendas y textos legales antiguos."
+      },
+      "path": [
+        { "at": [-7.81, 52.68], "place": { "en": "Thurles, County Tipperary", "es": "Thurles, condado de Tipperary" }, "date": "1884", "by": { "en": "Michael Cusack and others", "es": "Michael Cusack y otros" }, "note": { "en": "The Gaelic Athletic Association is founded and sets the rules.", "es": "Se funda la Asociación Atlética Gaélica, que fija las reglas." } },
+        { "at": [-4.05, 57.08], "place": { "en": "Kingussie, Scotland", "es": "Kingussie, Escocia" }, "date": "1893", "from": 0, "note": { "en": "The Camanachd Association sets the rules of shinty.", "es": "La Camanachd Association fija las reglas del shinty." } }
+      ],
+      "where": ["IRL", "GBR"],
+      "strong": ["IRL"],
+      "note": { "en": "Played by clubs in every Irish county and by Irish communities abroad; shinty in the Scottish Highlands.", "es": "Lo juegan clubes de todos los condados de Irlanda y comunidades irlandesas en el extranjero; el shinty, en las Tierras Altas de Escocia." },
+      "wiki": { "en": "Hurling", "es": "Hurling" }
+    },
+    {
+      "id": "tartan",
+      "name": { "en": "Tartan and checked cloth", "es": "El tartán y las telas a cuadros" },
+      "cat": "daily",
+      "icon": "🧣",
+      "how": "developed",
+      "sure": "debated",
+      "date": "-600",
+      "circa": true,
+      "at": [13.65, 47.56],
+      "place": { "en": "Hallstatt, Austria", "es": "Hallstatt, Austria" },
+      "text": {
+        "en": "Checked twill cloth has been found in Hallstatt's salt mines and in a Roman-era pot near Falkirk in Scotland. Highland tartan may have grown from such cloth, and checked 'plaid' is now worn around the world.",
+        "es": "En las minas de sal de Hallstatt y en una vasija de época romana cerca de Falkirk (Escocia) se hallaron telas de sarga a cuadros. El tartán de las Tierras Altas quizá nació de ellas, y hoy los cuadros escoceses se usan en todo el mundo."
+      },
+      "details": {
+        "en": "Salt preserved scraps of colourful checked and striped woollen cloth in the Hallstatt mines, from the Bronze and Iron Ages. Greek and Roman writers described Gauls in striped or checked cloaks. The Falkirk tartan, a small check in two natural shades of wool, was used to plug a pot of Roman coins about AD 250. Whether a direct line runs from such cloth to the clan tartans of the Scottish Highlands, recorded from the 1500s, is debated. After the Jacobite rising the Dress Act of 1746 banned Highland dress; when it was repealed in 1782 tartan came back as a symbol of Scotland, and the Scottish Register of Tartans now lists thousands.",
+        "es": "La sal conservó en las minas de Hallstatt retazos de tela de lana a cuadros y a rayas, de colores vivos, de las edades del Bronce y del Hierro. Escritores griegos y romanos describieron a galos con capas a rayas o a cuadros. El tartán de Falkirk, un cuadro pequeño en dos tonos naturales de lana, se usó para tapar una vasija con monedas romanas hacia el 250 d. C. Si hay una línea directa entre esas telas y los tartanes de los clanes de las Tierras Altas, documentados desde el siglo XVI, se discute. Tras el levantamiento jacobita, la Ley de Vestimenta de 1746 prohibió el traje de las Tierras Altas; al derogarse en 1782, el tartán volvió como símbolo de Escocia, y el Registro Escocés de Tartanes recoge hoy miles."
+      },
+      "roots": {
+        "en": "Twill weaving and checked patterns were known across prehistoric Europe.",
+        "es": "El tejido de sarga y los cuadros se conocían en toda la Europa prehistórica."
+      },
+      "path": [
+        { "at": [-3.78, 56.0], "place": { "en": "Falkirk, Scotland", "es": "Falkirk, Escocia" }, "date": "250", "circa": true, "note": { "en": "The Falkirk tartan, the oldest checked cloth found in Scotland.", "es": "El tartán de Falkirk, la tela a cuadros más antigua hallada en Escocia." } },
+        { "at": [-3.19, 55.95], "place": { "en": "Edinburgh", "es": "Edimburgo" }, "date": "1822", "by": { "en": "King George IV and Walter Scott", "es": "El rey Jorge IV y Walter Scott" }, "note": { "en": "A royal visit in Highland dress makes tartan fashionable.", "es": "Una visita real con traje de las Tierras Altas pone de moda el tartán." } }
+      ],
+      "where": ["GBR", "IRL", "CAN", "USA", "AUS", "NZL"],
+      "strong": ["GBR"],
+      "note": { "en": "Worn in kilts and scarves in Scotland and by Scots abroad, and as checked shirts and skirts almost everywhere.", "es": "Se lleva en faldas escocesas y bufandas en Escocia y entre los escoceses del exterior, y en camisas y faldas a cuadros casi en todas partes." },
+      "wiki": { "en": "Tartan", "es": "Tartán" }
+    },
+    {
+      "id": "trousers",
+      "name": { "en": "Trousers in western Europe", "es": "Los pantalones en Europa occidental" },
+      "cat": "daily",
+      "icon": "👖",
+      "how": "spread",
+      "sure": "likely",
+      "date": "-300",
+      "circa": true,
+      "at": [3.0, 43.18],
+      "place": { "en": "Narbonne, France (Gallia Bracata)", "es": "Narbona, Francia (Gallia Bracata)" },
+      "text": {
+        "en": "Greeks and Romans wore tunics; Gauls wore trousers, braccae. Romans even called southern Gaul Gallia Bracata, 'trousered Gaul'. Soldiers adopted them, and the Gaulish word survives in Spanish bragas.",
+        "es": "Griegos y romanos vestían túnicas; los galos usaban pantalones, las braccae. Los romanos llamaban al sur de la Galia Gallia Bracata, «la Galia de los pantalones». Los soldados los adoptaron, y la palabra gala sobrevive en el español bragas."
+      },
+      "details": {
+        "en": "Trousers were invented by horse riders of the Eurasian steppe: the oldest known pair, from Yanghai in north-west China, is about 3,000 years old. Celts, Germans, Scythians and Persians all wore them, and to Romans they marked a barbarian. But Roman cavalry and soldiers on the cold northern frontier took to them, and in the late 300s the emperor Honorius tried to ban trousers in the city of Rome, without success. Latin braca, probably from Gaulish, gave Spanish bragas (once breeches, now underwear in Spain), French braguette and Italian brache, while English breeches is a Germanic cousin of the same word.",
+        "es": "Los pantalones los inventaron los jinetes de la estepa euroasiática: el par más antiguo conocido, de Yanghai, en el noroeste de China, tiene unos 3.000 años. Celtas, germanos, escitas y persas los usaban, y para los romanos eran señal de bárbaro. Pero la caballería romana y los soldados de la fría frontera norte los adoptaron, y a fines del siglo IV el emperador Honorio intentó prohibir los pantalones en la ciudad de Roma, sin éxito. El latín braca, probablemente del galo, dio el español bragas (antes calzones largos, hoy ropa interior en España), el francés braguette y el italiano brache, mientras que el inglés breeches es un primo germánico de la misma palabra."
+      },
+      "roots": {
+        "en": "Built on trousers invented by steppe horse riders, worn in Central Asia about 3,000 years ago.",
+        "es": "Se basa en los pantalones inventados por los jinetes de la estepa, usados en Asia central hace unos 3.000 años."
+      },
+      "path": [
+        { "at": [12.48, 41.89], "place": { "en": "Rome", "es": "Roma" }, "date": "397", "circa": true, "by": { "en": "Emperor Honorius", "es": "El emperador Honorio" }, "note": { "en": "A law tries to ban trousers inside the city of Rome.", "es": "Una ley intenta prohibir los pantalones dentro de la ciudad de Roma." } }
+      ],
+      "where": ["continent:europe", "continent:north-america", "continent:south-america", "continent:oceania"],
+      "strong": ["ESP", "FRA", "ITA"],
+      "note": { "en": "Trousers are worn worldwide; Spanish bragas, French braguette and Italian brache keep the Gaulish word.", "es": "Los pantalones se usan en todo el mundo; el español bragas, el francés braguette y el italiano brache conservan la palabra gala." },
+      "words": [
+        { "es": "bragas", "from": "braca (Latin), probably from Gaulish", "means": { "en": "breeches, trousers", "es": "calzones, pantalones" } }
+      ],
+      "wiki": { "en": "Trousers", "es": "Pantalón" }
+    },
+    {
+      "id": "ogham",
+      "name": { "en": "Ogham, the Irish stroke alphabet", "es": "El ogam, el alfabeto irlandés de trazos" },
+      "cat": "writing",
+      "icon": "🪨",
+      "how": "invented",
+      "date": "350",
+      "circa": true,
+      "at": [-9.69, 52.27],
+      "place": { "en": "Ratass Church, Tralee, County Kerry, Ireland", "es": "Iglesia de Ratass, Tralee, condado de Kerry, Irlanda" },
+      "text": {
+        "en": "Ogham, a script of strokes cut along the edge of a stone, was invented in Ireland around the 300s AD. About 400 inscribed stones survive, and its letters are used again today in art, jewellery and signs.",
+        "es": "El ogam, una escritura de trazos tallados en el borde de una piedra, se inventó en Irlanda hacia el siglo IV. Se conservan unas 400 piedras inscritas, y sus letras se usan hoy de nuevo en arte, joyas y carteles."
+      },
+      "details": {
+        "en": "Ogham has 20 main letters made of one to five strokes or notches on either side of, or across, a line, usually the corner of a standing stone, read from the bottom up. It was modelled on the sounds of the Latin alphabet, but its shapes are original. Most inscriptions just give a name and a father's name: 'X son of Y'. The stones are found mostly in southern Ireland, and also in Wales, Scotland, the Isle of Man and Cornwall, where Irish settlers raised them. Medieval scholars gave many letters the names of trees, such as beith (birch) for B. Ogham has been in Unicode since 1999.",
+        "es": "El ogam tiene 20 letras principales hechas de uno a cinco trazos o muescas a un lado u otro de una línea, o atravesándola; la línea suele ser la arista de una piedra erguida, y se lee de abajo arriba. Se basó en los sonidos del alfabeto latino, pero sus formas son originales. La mayoría de las inscripciones solo dan un nombre y el del padre: «X hijo de Y». Las piedras están sobre todo en el sur de Irlanda, y también en Gales, Escocia, la isla de Man y Cornualles, donde las levantaron colonos irlandeses. Los sabios medievales dieron a muchas letras nombres de árboles, como beith (abedul) para la B. El ogam está en Unicode desde 1999."
+      },
+      "roots": {
+        "en": "Built on the sounds of the Latin alphabet, which its inventors knew from Roman Britain.",
+        "es": "Se basa en los sonidos del alfabeto latino, que sus inventores conocían por la Britania romana."
+      },
+      "path": [
+        { "at": [-4.68, 52.08], "place": { "en": "St Dogmaels, Pembrokeshire, Wales", "es": "St Dogmaels, Pembrokeshire, Gales" }, "date": "500", "circa": true, "note": { "en": "Irish settlers in Wales raise stones with ogham and Latin side by side.", "es": "Colonos irlandeses en Gales levantan piedras con ogam y latín lado a lado." } }
+      ],
+      "where": ["IRL", "GBR", "IMN"],
+      "strong": ["IRL"],
+      "note": { "en": "Ogham stones stand in Irish fields and museums; the script is popular in Irish jewellery, tattoos and public art.", "es": "Las piedras de ogam están en campos y museos de Irlanda; la escritura es popular en joyas, tatuajes y arte público irlandeses." },
+      "see": ["writing:ogham"],
+      "wiki": { "en": "Ogham", "es": "Ogam" }
+    },
+    {
+      "id": "word-spaces",
+      "name": { "en": "Spaces between words", "es": "Los espacios entre palabras" },
+      "cat": "writing",
+      "icon": "📖",
+      "how": "developed",
+      "sure": "likely",
+      "date": "650",
+      "circa": true,
+      "at": [-5.67, 54.66],
+      "place": { "en": "Irish monasteries (here Bangor, County Down)", "es": "Monasterios irlandeses (aquí Bangor, condado de Down)" },
+      "text": {
+        "en": "Romans wrote Latin without spaces. Irish monks of the 600s and 700s, for whom Latin was a foreign language, began separating words to make it easier to read, a habit that spread across Europe and is in every book today.",
+        "es": "Los romanos escribían el latín sin espacios. Los monjes irlandeses de los siglos VII y VIII, para quienes era una lengua ajena, separaron las palabras para leerlo mejor, costumbre que se difundió por Europa y hoy está en todo libro."
+      },
+      "details": {
+        "en": "Ancient Latin texts were written in scriptio continua, a solid stream of letters that readers sounded out aloud. Irish scribes had not grown up speaking Latin, so, as the historian Paul Saenger argued, they began to leave spaces between words, and they also added new punctuation. Irish and English monks carried the practice to monasteries on the continent, such as Luxeuil, Bobbio and St Gallen, and by the 1100s word spacing was normal across Europe, helping people read silently. These monks were Christians, heirs of Celtic Ireland rather than ancient Celts themselves.",
+        "es": "Los textos latinos antiguos se escribían en scriptio continua, una corriente seguida de letras que el lector pronunciaba en voz alta. Los escribas irlandeses no se habían criado hablando latín, así que, como sostuvo el historiador Paul Saenger, empezaron a dejar espacios entre las palabras y añadieron además nuevos signos de puntuación. Monjes irlandeses e ingleses llevaron la práctica a monasterios del continente, como Luxeuil, Bobbio y Sankt Gallen, y hacia el siglo XII separar las palabras era normal en toda Europa, lo que ayudó a leer en silencio. Estos monjes eran cristianos, herederos de la Irlanda celta más que antiguos celtas."
+      },
+      "roots": {
+        "en": "Built on the Latin alphabet and books that came to Ireland with Christianity in the 400s.",
+        "es": "Se basa en el alfabeto latino y los libros que llegaron a Irlanda con el cristianismo en el siglo V."
+      },
+      "path": [
+        { "at": [9.39, 44.77], "place": { "en": "Bobbio, Italy", "es": "Bobbio, Italia" }, "date": "614", "by": { "en": "Columbanus", "es": "Columbano" }, "note": { "en": "The Irish monk founds a monastery with a great library in northern Italy.", "es": "El monje irlandés funda un monasterio con una gran biblioteca en el norte de Italia." } },
+        { "at": [9.38, 47.42], "place": { "en": "St Gallen, Switzerland", "es": "Sankt Gallen, Suiza" }, "date": "720", "circa": true, "note": { "en": "An abbey grows at the cell of the Irish hermit Gall and becomes a great centre of books.", "es": "Una abadía crece en la celda del ermitaño irlandés Galo y se convierte en un gran centro del libro." } },
+        { "at": [8.27, 50.0], "place": { "en": "Mainz, Germany", "es": "Maguncia, Alemania" }, "date": "1455", "circa": true, "by": { "en": "Johannes Gutenberg", "es": "Johannes Gutenberg" }, "note": { "en": "Printed books fix word spaces for good.", "es": "Los libros impresos fijan para siempre los espacios entre palabras." } }
+      ],
+      "where": ["script:latin"],
+      "note": { "en": "Every text in the Latin alphabet, from books to phone screens, leaves spaces between words.", "es": "Todo texto en alfabeto latino, de los libros a las pantallas de los celulares, deja espacios entre las palabras." },
+      "see": ["books:book-of-kells"],
+      "wiki": { "en": "Scriptio continua", "es": "Scriptio continua" }
+    },
+    {
+      "id": "hallstatt-salt",
+      "name": { "en": "The salt mine of Hallstatt", "es": "La mina de sal de Hallstatt" },
+      "cat": "food",
+      "icon": "🧂",
+      "how": "developed",
+      "date": "-800",
+      "circa": true,
+      "at": [13.64, 47.56],
+      "place": { "en": "Hallstatt, Upper Austria", "es": "Hallstatt, Alta Austria" },
+      "text": {
+        "en": "Iron Age miners grew rich digging salt in the mountain above Hallstatt, which gave its name to the Hallstatt culture of the early Celts. Salt is still mined there, in one of the oldest working salt mines in the world.",
+        "es": "Los mineros de la Edad del Hierro se enriquecieron extrayendo sal en la montaña sobre Hallstatt, que dio nombre a la cultura de Hallstatt de los primeros celtas. Allí aún se extrae sal, en una de las minas activas más antiguas del mundo."
+      },
+      "details": {
+        "en": "People mined rock salt at Hallstatt from the Bronze Age, and a wooden staircase found in the mine dates to about 1344 BC. Between about 800 and 400 BC the salt trade paid for rich graves full of bronze vessels, iron swords and amber; Johann Georg Ramsauer dug up nearly a thousand of them from 1846. Archaeologists use 'Hallstatt' for the early Iron Age culture of central Europe, often linked to the first Celts, though whether its people spoke a Celtic language is debated. Salt kept meat and fish through the winter. The mine still produces salt, and Hallstatt is a UNESCO World Heritage Site.",
+        "es": "En Hallstatt se extraía sal gema desde la Edad del Bronce, y una escalera de madera hallada en la mina data de hacia 1344 a. C. Entre el 800 y el 400 a. C., más o menos, el comercio de la sal pagó tumbas ricas llenas de vasijas de bronce, espadas de hierro y ámbar; Johann Georg Ramsauer excavó casi mil a partir de 1846. Los arqueólogos llaman «Hallstatt» a la cultura de la primera Edad del Hierro de Europa central, a menudo vinculada a los primeros celtas, aunque se discute si su gente hablaba una lengua celta. La sal conservaba la carne y el pescado durante el invierno. La mina sigue produciendo sal, y Hallstatt es Patrimonio de la Humanidad."
+      },
+      "roots": {
+        "en": "Built on Bronze Age salt mining that began here centuries earlier.",
+        "es": "Se basa en la minería de sal de la Edad del Bronce, que empezó aquí siglos antes."
+      },
+      "path": [
+        { "at": [13.08, 47.66], "place": { "en": "Dürrnberg, Hallein, Austria", "es": "Dürrnberg, Hallein, Austria" }, "date": "-600", "circa": true, "note": { "en": "A second Celtic salt-mining centre grows at the Dürrnberg.", "es": "Un segundo centro celta de minería de sal crece en el Dürrnberg." } }
+      ],
+      "where": ["AUT"],
+      "note": { "en": "Salt from the Salzkammergut is still sold across Austria, and the old mine welcomes visitors from all over the world.", "es": "La sal del Salzkammergut aún se vende en toda Austria, y la antigua mina recibe visitantes de todo el mundo." },
+      "wiki": { "en": "Hallstatt culture", "es": "Cultura de Hallstatt" }
+    },
+    {
+      "id": "oppida",
+      "name": { "en": "Oppida: the first towns north of the Alps", "es": "Los oppida: las primeras ciudades al norte de los Alpes" },
+      "cat": "build",
+      "icon": "🏘️",
+      "how": "developed",
+      "date": "-150",
+      "circa": true,
+      "at": [11.5, 48.72],
+      "place": { "en": "Manching, Bavaria, Germany", "es": "Manching, Baviera, Alemania" },
+      "text": {
+        "en": "In the last two centuries BC, Celts built large walled towns that Caesar called oppida, with streets, workshops and mints. Some grew into cities still lived in today, such as Besançon, Bourges and Chartres in France.",
+        "es": "En los siglos II y I a. C., los celtas construyeron grandes poblados amurallados que César llamó oppida, con calles, talleres y cecas. Algunos se volvieron ciudades aún habitadas, como Besanzón, Bourges y Chartres, en Francia."
+      },
+      "details": {
+        "en": "Oppida stretched from France to Hungary. Manching in Bavaria covered 380 hectares inside a wall seven kilometres long; Bibracte, the hill-town of the Aedui, had craftsmen's quarters, imported Roman wine and, in the winter of 52 BC, Caesar himself, who wrote part of his Gallic War there. Their walls of timber, earth and stone were what Caesar called the murus gallicus. Many oppida were abandoned after the Roman conquest for new towns in the valleys, but some, such as Vesontio (Besançon), Avaricum (Bourges) and Autricum (Chartres), kept growing into cities.",
+        "es": "Los oppida se extendían de Francia a Hungría. Manching, en Baviera, ocupaba 380 hectáreas dentro de una muralla de siete kilómetros; Bibracte, la ciudad en lo alto de los eduos, tenía barrios de artesanos, vino romano importado y, en el invierno del 52 a. C., al propio César, que escribió allí parte de su Guerra de las Galias. Sus murallas de madera, tierra y piedra eran lo que César llamó murus gallicus. Muchos oppida se abandonaron tras la conquista romana por ciudades nuevas en los valles, pero algunos, como Vesontio (Besanzón), Avaricum (Bourges) y Autricum (Chartres), siguieron creciendo hasta ser ciudades."
+      },
+      "roots": {
+        "en": "Built on earlier Celtic hill-forts and on trade with the Greek and Roman Mediterranean.",
+        "es": "Se basa en castros celtas anteriores y en el comercio con el Mediterráneo griego y romano."
+      },
+      "path": [
+        { "at": [4.04, 46.92], "place": { "en": "Bibracte, Burgundy, France", "es": "Bibracte, Borgoña, Francia" }, "date": "-52", "by": { "en": "Julius Caesar", "es": "Julio César" }, "note": { "en": "Caesar winters at Bibracte and writes part of his Gallic War.", "es": "César pasa el invierno en Bibracte y escribe parte de su Guerra de las Galias." } },
+        { "at": [6.02, 47.24], "place": { "en": "Besançon, France", "es": "Besanzón, Francia" }, "date": "-58", "from": 0, "note": { "en": "Caesar calls Vesontio the largest town of the Sequani; it grows into Besançon.", "es": "César llama a Vesontio la mayor ciudad de los sécuanos; crecerá hasta ser Besanzón." } }
+      ],
+      "where": ["FRA"],
+      "note": { "en": "Besançon, Bourges and Chartres stand on Gaulish oppida; Bibracte and Manching are museums and excavation sites.", "es": "Besanzón, Bourges y Chartres se levantan sobre oppida galos; Bibracte y Manching son museos y yacimientos." },
+      "wiki": { "en": "Oppidum", "es": "Oppidum" }
+    },
+    {
+      "id": "druids",
+      "name": { "en": "Druids (the name and the revival)", "es": "Los druidas (el nombre y su renacer)" },
+      "cat": "ideas",
+      "icon": "🌳",
+      "how": "named",
+      "sure": "debated",
+      "date": "-50",
+      "circa": true,
+      "at": [1.49, 48.45],
+      "place": { "en": "Gaul (here the land of the Carnutes, near Chartres)", "es": "La Galia (aquí la tierra de los carnutos, cerca de Chartres)" },
+      "text": {
+        "en": "Caesar described the druids as the priests, judges and teachers of Gaul. Rome suppressed them, but the name survived, and since the 1700s modern Druids have revived it for a nature-based spirituality.",
+        "es": "César describió a los druidas como los sacerdotes, jueces y maestros de la Galia. Roma los reprimió, pero el nombre sobrevivió, y desde el siglo XVIII los druidas modernos lo han revivido para una espiritualidad ligada a la naturaleza."
+      },
+      "details": {
+        "en": "According to Caesar, druids trained for up to twenty years, learned everything by heart, taught that the soul did not die and met once a year in the land of the Carnutes. Pliny describes a druid in white cutting mistletoe from an oak with a golden sickle. In AD 60 the Roman army attacked their stronghold on Anglesey. The druids wrote nothing down themselves. In the 1700s antiquarians such as William Stukeley wrongly linked them to Stonehenge, built two thousand years earlier; druid societies followed, and in 2010 the Charity Commission for England and Wales accepted the Druid Network as a religion. Modern Druidry is a revival, not an unbroken line.",
+        "es": "Según César, los druidas se formaban hasta veinte años, lo aprendían todo de memoria, enseñaban que el alma no moría y se reunían una vez al año en la tierra de los carnutos. Plinio describe a un druida vestido de blanco que corta muérdago de un roble con una hoz de oro. En el 60 d. C. el ejército romano atacó su bastión de Anglesey. Los druidas no dejaron nada escrito. En el siglo XVIII anticuarios como William Stukeley los vincularon por error con Stonehenge, construido dos mil años antes; luego surgieron sociedades druídicas, y en 2010 la Comisión de Beneficencia de Inglaterra y Gales aceptó a la Druid Network como religión. El druidismo moderno es una recreación, no una línea ininterrumpida."
+      },
+      "path": [
+        { "at": [-4.35, 53.25], "place": { "en": "Anglesey, Wales", "es": "Anglesey, Gales" }, "date": "60", "by": { "en": "Suetonius Paulinus", "es": "Suetonio Paulino" }, "note": { "en": "The Roman army attacks the druids' stronghold.", "es": "El ejército romano ataca el bastión de los druidas." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London", "es": "Londres" }, "date": "1781", "note": { "en": "The Ancient Order of Druids is founded, one of the first modern druid societies.", "es": "Se funda la Antigua Orden de los Druidas, una de las primeras sociedades druídicas modernas." } }
+      ],
+      "where": ["GBR", "IRL", "FRA", "USA", "CAN", "AUS"],
+      "strong": ["GBR"],
+      "note": { "en": "Some thousands of people follow modern Druidry, mostly in Britain, Ireland, Brittany and North America; the word druid is known almost everywhere.", "es": "Algunos miles de personas siguen el druidismo moderno, sobre todo en Gran Bretaña, Irlanda, Bretaña y América del Norte; la palabra druida se conoce casi en todas partes." },
+      "words": [
+        { "en": "druid", "es": "druida", "from": "druides (Latin), from Gaulish; Old Irish druí", "means": { "en": "perhaps 'oak-knower' or 'very wise' (debated)", "es": "quizá «conocedor del roble» o «muy sabio» (se discute)" } }
+      ],
+      "see": ["beliefs:anglesey-druids"],
+      "wiki": { "en": "Druid", "es": "Druida" }
+    },
+    {
+      "id": "celtic-first-names",
+      "name": { "en": "Brian, Kevin, Bridget, Dylan: Celtic names", "es": "Brian, Kevin, Brígida, Dylan: nombres celtas" },
+      "cat": "words",
+      "icon": "🧒",
+      "how": "named",
+      "date": "500",
+      "circa": true,
+      "at": [-6.33, 53.01],
+      "place": { "en": "Ireland (here Glendalough, County Wicklow)", "es": "Irlanda (aquí Glendalough, condado de Wicklow)" },
+      "text": {
+        "en": "Irish, Scottish and Welsh names travel the world: Brian, Kevin, Bridget, Donald, Duncan, Kennedy, Dylan, Morgan and Jennifer, a Cornish form of Guinevere. Mac and O' surnames mean 'son of' and 'grandson of'.",
+        "es": "Nombres irlandeses, escoceses y galeses recorren el mundo: Brian, Kevin, Brígida, Donald, Duncan, Kennedy, Dylan, Morgan y Jennifer, forma córnica de Ginebra. Los apellidos Mac y O' significan «hijo de» y «nieto de»."
+      },
+      "details": {
+        "en": "Many of these names belonged to saints and kings of early Christian Ireland and Britain: Kevin (Caoimhín, 'of gentle birth') founded Glendalough, Brigid led a monastery at Kildare, Brian Boru was High King of Ireland until 1014, and Donald and Duncan were kings of Scots. Fiona was coined by the Scottish poet James Macpherson in the 1700s from fionn, 'fair'. Emigrants carried the names abroad, and in recent decades Kevin, Brian and Jennifer have become very popular in Latin America, sometimes spelled Brayan or Yénifer. Arthur may come from a British Celtic word for bear, or from the Roman name Artorius.",
+        "es": "Muchos de estos nombres fueron de santos y reyes de la Irlanda y la Britania cristianas: Kevin (Caoimhín, «de noble nacimiento») fundó Glendalough, Brígida dirigió un monasterio en Kildare, Brian Boru fue rey supremo de Irlanda hasta 1014, y Donald y Duncan fueron reyes de los escoceses. Fiona lo creó el poeta escocés James Macpherson en el siglo XVIII a partir de fionn, «claro». Los emigrantes llevaron los nombres al exterior, y en las últimas décadas Kevin, Brian y Jennifer se han vuelto muy populares en América Latina, a veces escritos Brayan o Yénifer. Arturo quizá venga de una palabra britana para el oso, o del nombre romano Artorius."
+      },
+      "path": [
+        { "at": [-71.06, 42.36], "place": { "en": "Boston, USA", "es": "Boston, EE. UU." }, "date": "1850", "circa": true, "by": { "en": "Irish emigrants", "es": "Emigrantes irlandeses" }, "note": { "en": "Irish names and surnames spread across North America.", "es": "Los nombres y apellidos irlandeses se extienden por América del Norte." } },
+        { "at": [-99.13, 19.43], "place": { "en": "Mexico City", "es": "Ciudad de México" }, "date": "1990", "circa": true, "note": { "en": "Kevin, Brian and Jennifer become popular baby names in Latin America.", "es": "Kevin, Brian y Jennifer se vuelven nombres populares en América Latina." } }
+      ],
+      "where": ["IRL", "GBR", "USA", "CAN", "AUS", "NZL", "continent:south-america", "subregion:central-america"],
+      "strong": ["IRL", "GBR"],
+      "note": { "en": "Common across the English-speaking world, and Kevin, Brian and Jennifer are widespread in Latin America.", "es": "Son comunes en todo el mundo angloparlante, y Kevin, Brian y Jennifer están muy extendidos en América Latina." },
+      "words": [
+        { "en": "Brian", "es": "Brian", "from": "Brian (Old Irish); meaning uncertain", "type": "name" },
+        { "en": "Kevin", "es": "Kevin", "from": "Caoimhín (Irish)", "means": { "en": "of gentle birth", "es": "de noble nacimiento" }, "type": "name" },
+        { "en": "Bridget", "es": "Brígida", "from": "Brigit (Old Irish)", "means": { "en": "the exalted one", "es": "la excelsa" }, "type": "name" },
+        { "en": "Donald", "es": "Donald", "from": "Domnall (Gaelic)", "means": { "en": "world ruler", "es": "señor del mundo" }, "type": "name" },
+        { "en": "Duncan", "es": "Duncan", "from": "Donnchad (Gaelic)", "type": "name" },
+        { "en": "Kennedy", "es": "Kennedy", "from": "Ó Cinnéide (Irish)", "means": { "en": "descendant of Cinnéide", "es": "descendiente de Cinnéide" }, "type": "name" },
+        { "en": "Dylan", "es": "Dylan", "from": "Dylan (Welsh), a sea hero in the Mabinogi", "type": "name" },
+        { "en": "Morgan", "es": "Morgan", "from": "Morgan (Old Welsh); meaning debated", "type": "name" },
+        { "en": "Jennifer", "es": "Jennifer", "from": "Gwenhwyfar (Welsh), through Cornish", "means": { "en": "gwen, 'white, fair'", "es": "gwen, «blanca, clara»" }, "type": "name" },
+        { "en": "Fiona", "es": "Fiona", "from": "fionn (Scottish Gaelic), coined by James Macpherson", "means": { "en": "fair, white", "es": "clara, blanca" }, "type": "name" },
+        { "en": "Arthur", "es": "Arturo", "from": "British Celtic arto- 'bear', or Latin Artorius (debated)", "type": "name" },
+        { "en": "Alan", "es": "Alan", "from": "Breton, brought to England by Bretons with the Normans", "type": "name" },
+        { "en": "Tristan", "es": "Tristán", "from": "Drustan (British or Pictish)", "type": "name" },
+        { "en": "Mac-", "es": "Mac-", "from": "mac (Gaelic)", "means": { "en": "son", "es": "hijo" }, "type": "name" },
+        { "en": "O'", "es": "O'", "from": "ó, ua (Irish)", "means": { "en": "grandson, descendant", "es": "nieto, descendiente" }, "type": "name" }
+      ],
+      "wiki": { "en": "Brian Boru", "es": "Brian Boru" }
+    }
+  ]
+}

@@ -1,0 +1,1075 @@
+{
+  "id": "china",
+  "name": { "en": "Ancient China", "es": "China antigua" },
+  "short": { "en": "Ancient China", "es": "China antigua" },
+  "icon": "🐉",
+  "color": "#e0245e",
+  "from": "-1600",
+  "to": "1279",
+  "at": [110.0, 33.0],
+  "zoom": 4,
+  "home": [
+    { "hist": "Han", "year": 100 },
+    { "hist": "Tang Empire", "year": 800 }
+  ],
+  "intro": {
+    "en": "From the Shang kings, who wrote on oracle bones about 1250 BC, to the Song emperors, whose cities printed books and paper money, Chinese dynasties ruled the lands of the Yellow River and the Yangtze for more than two thousand years and gave the world paper, printing, silk, tea, porcelain and the compass.",
+    "es": "Desde los reyes Shang, que escribían en huesos oraculares hacia el 1250 a. C., hasta los emperadores Song, cuyas ciudades imprimían libros y papel moneda, las dinastías chinas gobernaron las tierras del río Amarillo y del Yangtsé durante más de dos mil años y dieron al mundo el papel, la imprenta, la seda, el té, la porcelana y la brújula."
+  },
+  "today": {
+    "en": "About 1.4 billion people live in China, with millions more in Taiwan, Singapore and a worldwide diaspora. Chinese, in Mandarin, Cantonese, Hokkien and its other forms, is the most spoken first language on Earth, still written with characters descended from the Shang's.",
+    "es": "En China viven unos 1400 millones de personas, y millones más en Taiwán, Singapur y una diáspora repartida por el mundo. El chino, en mandarín, cantonés, hokkien y sus otras formas, es la lengua materna más hablada del planeta, y se sigue escribiendo con caracteres que descienden de los de los Shang."
+  },
+  "story": "people/ancient-china",
+  "wiki": { "en": "History of China", "es": "Historia de China" },
+  "sources": [
+    { "title": "Encyclopaedia Britannica: Song dynasty", "url": "https://www.britannica.com/topic/Song-dynasty" },
+    { "title": "Encyclopaedia Britannica: Han dynasty", "url": "https://www.britannica.com/topic/Han-dynasty" },
+    { "title": "World History Encyclopedia: Ancient China", "url": "https://www.worldhistory.org/china/" },
+    { "title": "UNESCO: Acupuncture and moxibustion of traditional Chinese medicine", "url": "https://ich.unesco.org/en/RL/acupuncture-and-moxibustion-of-traditional-chinese-medicine-00425" },
+    { "title": "Government of China: UNESCO recognises the Spring Festival (December 2024)", "url": "https://english.www.gov.cn/news/202412/06/content_WS6752606fc6d0868f4e8edb73.html" },
+    { "title": "National Geographic: How was ketchup invented?", "url": "https://www.nationalgeographic.com/culture/article/how-was-ketchup-invented" }
+  ],
+  "legacies": [
+    {
+      "id": "paper",
+      "name": { "en": "Paper", "es": "El papel" },
+      "cat": "tech",
+      "icon": "📜",
+      "how": "invented",
+      "date": "105",
+      "at": [112.45, 34.62],
+      "place": { "en": "Luoyang, Henan, China (the Han capital)", "es": "Luoyang, Henan, China (la capital Han)" },
+      "text": {
+        "en": "Paper, made from plant fibres beaten to a pulp and dried on a screen, is a Chinese invention; Cai Lun's improved recipe of AD 105 made it cheap enough for books.",
+        "es": "El papel, hecho con fibras vegetales machacadas hasta formar una pasta y secadas sobre una rejilla, es un invento chino; la receta mejorada de Cai Lun, del 105 d. C., lo abarató tanto que sirvió para hacer libros."
+      },
+      "details": {
+        "en": "Scraps of hemp paper from the 100s BC, among them a map found at Fangmatan, show that paper existed before Cai Lun, a court official who in 105 presented paper made from tree bark, hemp, old rags and fishing nets. It slowly replaced bamboo strips and silk for writing, and was also used for wrapping, clothing and, later, toilet paper and money. Papermaking reached Korea and Japan, where tradition says a Korean monk taught it in 610, and Central Asia: by the 700s paper was made in Samarkand, from where the Islamic world carried it west.",
+        "es": "Restos de papel de cáñamo del siglo II a. C., entre ellos un mapa hallado en Fangmatan, muestran que el papel existía antes de Cai Lun, un funcionario de la corte que en el 105 presentó un papel hecho con corteza de árbol, cáñamo, trapos viejos y redes de pesca. Poco a poco sustituyó a las tiras de bambú y a la seda para escribir, y también se usó para envolver, para ropa y, más tarde, como papel higiénico y dinero. La fabricación de papel llegó a Corea y Japón, donde según la tradición un monje coreano la enseñó en el 610, y a Asia central: en el siglo VIII ya se hacía papel en Samarcanda, desde donde el mundo islámico lo llevó al oeste."
+      },
+      "roots": {
+        "en": "Built on the hemp papers of the Western Han, made a century or two before.",
+        "es": "Se basó en los papeles de cáñamo de los Han del Oeste, hechos uno o dos siglos antes."
+      },
+      "path": [
+        { "at": [135.82, 34.47], "place": { "en": "Asuka, Nara, Japan", "es": "Asuka, Nara, Japón" }, "date": "610", "note": { "en": "By tradition, the Korean monk Damjing teaches papermaking in Japan.", "es": "Según la tradición, el monje coreano Damjing enseña a fabricar papel en Japón." } },
+        { "at": [66.96, 39.65], "place": { "en": "Samarkand, Uzbekistan", "es": "Samarcanda, Uzbekistán" }, "date": "751", "circa": true, "from": 0, "note": { "en": "Paper is made in Samarkand; the Islamic world carries it west.", "es": "Se fabrica papel en Samarcanda; el mundo islámico lo lleva al oeste." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Books, boxes, tissues and banknotes: paper is used in every country.", "es": "Libros, cajas, pañuelos y billetes: el papel se usa en todos los países." },
+      "see": ["inventions:paper", "inventions/four-great-inventions"],
+      "wiki": { "en": "Paper", "es": "Papel" }
+    },
+    {
+      "id": "woodblock-printing",
+      "name": { "en": "Printing from wood blocks", "es": "La impresión con bloques de madera" },
+      "cat": "writing",
+      "icon": "🖨️",
+      "how": "invented",
+      "date": "650",
+      "circa": true,
+      "at": [108.94, 34.27],
+      "place": { "en": "Chang'an (Xi'an), Shaanxi, China", "es": "Chang'an (hoy Xi'an), Shaanxi, China" },
+      "text": {
+        "en": "Carving a whole page into a block of wood, inking it and pressing paper on it: Tang China's way of printing produced the oldest dated printed book, the Diamond Sutra of 868.",
+        "es": "Tallar una página entera en un bloque de madera, entintarlo y presionar el papel encima: la imprenta de la China Tang produjo el libro impreso fechado más antiguo, el Sutra del Diamante del 868."
+      },
+      "details": {
+        "en": "Seals and stamped textiles came first. By the 600s or 700s Buddhist monasteries printed charms and scriptures to spread merit; a Korean scroll from before 751 and a million charms ordered by Japan's Empress Shōtoku in the 760s are among the oldest survivors. The Diamond Sutra, found in a cave at Dunhuang, gives its own date: 868. Under the Song, printers turned out classics, calendars and paper money. Woodblocks were East Asia's main way of printing until the 1800s, and the same idea lives on in woodcut prints and rubber stamps.",
+        "es": "Primero vinieron los sellos y los tejidos estampados. Hacia los siglos VII u VIII, los monasterios budistas imprimían amuletos y escrituras para ganar méritos; un rollo coreano anterior al 751 y un millón de amuletos encargados por la emperatriz Shōtoku de Japón en la década de 760 están entre los más antiguos que se conservan. El Sutra del Diamante, hallado en una cueva de Dunhuang, lleva su propia fecha: 868. Con los Song, los impresores produjeron clásicos, calendarios y papel moneda. Los bloques de madera fueron la principal forma de imprimir en Asia oriental hasta el siglo XIX, y la misma idea sigue viva en los grabados en madera y los sellos de goma."
+      },
+      "path": [
+        { "at": [129.33, 35.79], "place": { "en": "Gyeongju, South Korea", "es": "Gyeongju, Corea del Sur" }, "date": "751", "circa": true, "note": { "en": "A printed sutra is sealed inside a pagoda.", "es": "Se guarda un sutra impreso dentro de una pagoda." } },
+        { "at": [135.8, 34.68], "place": { "en": "Nara, Japan", "es": "Nara, Japón" }, "date": "770", "circa": true, "note": { "en": "A million printed charms for Empress Shōtoku.", "es": "Un millón de amuletos impresos para la emperatriz Shōtoku." } },
+        { "at": [94.66, 40.14], "place": { "en": "Dunhuang, Gansu, China", "es": "Dunhuang, Gansu, China" }, "date": "868", "from": 0, "note": { "en": "The Diamond Sutra, the oldest dated printed book.", "es": "El Sutra del Diamante, el libro impreso fechado más antiguo." } }
+      ],
+      "where": ["CHN", "TWN", "JPN", "KOR"],
+      "note": { "en": "Still used for New Year prints in China, Japanese woodblock art and Tibetan scriptures; woodcut prints are made by artists worldwide.", "es": "Se sigue usando para las estampas de Año Nuevo en China, el grabado japonés y las escrituras tibetanas; artistas de todo el mundo hacen grabados en madera." },
+      "see": ["writing:woodblock-printing", "inventions:diamond-sutra"],
+      "wiki": { "en": "Woodblock printing", "es": "Xilografía" }
+    },
+    {
+      "id": "movable-type",
+      "name": { "en": "Movable type", "es": "Los tipos móviles" },
+      "cat": "writing",
+      "icon": "🔠",
+      "how": "invented",
+      "sure": "debated",
+      "date": "1040",
+      "circa": true,
+      "at": [115.68, 30.73],
+      "place": { "en": "Song China (Bi Sheng's gravestone was found in Yingshan, Hubei)", "es": "China Song (la lápida de Bi Sheng se halló en Yingshan, Hubei)" },
+      "text": {
+        "en": "Bi Sheng, a commoner of Song China, made the first known movable type, one baked-clay piece for each character, some 400 years before Gutenberg.",
+        "es": "Bi Sheng, un hombre común de la China Song, hizo los primeros tipos móviles conocidos, una pieza de arcilla cocida por cada carácter, unos 400 años antes que Gutenberg."
+      },
+      "details": {
+        "en": "We know of him from the scholar Shen Kuo, who described the method in about 1088: characters cut in clay, hardened by fire, set in an iron frame with wax and resin, and used again and again. With thousands of characters needed, movable type won ground more slowly in China than woodblocks, though wooden type was used later. Korea took it further: Jikji, printed with metal type in 1377, is the oldest surviving book of its kind. Whether Gutenberg, in Mainz around 1450, knew anything of East Asian type is unknown; most historians think he invented his separately.",
+        "es": "Lo conocemos por el erudito Shen Kuo, que describió el método hacia 1088: caracteres tallados en arcilla, endurecidos al fuego, colocados en un marco de hierro con cera y resina, y usados una y otra vez. Como hacían falta miles de caracteres, los tipos móviles avanzaron en China más despacio que los bloques de madera, aunque después se usaron tipos de madera. Corea fue más lejos: el Jikji, impreso con tipos de metal en 1377, es el libro más antiguo de su clase que se conserva. No se sabe si Gutenberg, en Maguncia hacia 1450, conocía los tipos de Asia oriental; la mayoría de los historiadores cree que inventó los suyos por separado."
+      },
+      "path": [
+        { "at": [127.49, 36.64], "place": { "en": "Cheongju, South Korea", "es": "Cheongju, Corea del Sur" }, "date": "1377", "note": { "en": "Jikji, the oldest surviving book printed with metal type.", "es": "El Jikji, el libro más antiguo que se conserva impreso con tipos de metal." } },
+        { "at": [8.27, 50.0], "place": { "en": "Mainz, Germany", "es": "Maguncia, Alemania" }, "date": "1450", "circa": true, "from": 0, "by": { "en": "Johannes Gutenberg", "es": "Johannes Gutenberg" }, "note": { "en": "Gutenberg's press; any link with Asian type is debated.", "es": "La imprenta de Gutenberg; cualquier vínculo con los tipos asiáticos se discute." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Printing with reusable letters made books for everyone; today's digital fonts still follow the idea.", "es": "Imprimir con letras reutilizables hizo libros para todos; las fuentes digitales de hoy siguen la misma idea." },
+      "see": ["inventions:movable-type", "inventions:bi-sheng"],
+      "wiki": { "en": "Movable type", "es": "Tipos móviles" }
+    },
+    {
+      "id": "compass",
+      "name": { "en": "The magnetic compass", "es": "La brújula" },
+      "cat": "tech",
+      "icon": "🧭",
+      "how": "invented",
+      "sure": "likely",
+      "date": "1088",
+      "circa": true,
+      "at": [119.45, 32.2],
+      "place": { "en": "Zhenjiang, Jiangsu, China (Shen Kuo's garden)", "es": "Zhenjiang, Jiangsu, China (el jardín de Shen Kuo)" },
+      "text": {
+        "en": "A needle rubbed on a lodestone points north and south: Song scholars described the magnetic compass, and Chinese sailors were the first known to steer by it.",
+        "es": "Una aguja frotada con una piedra imán señala el norte y el sur: los eruditos Song describieron la brújula, y los marinos chinos fueron los primeros conocidos en guiarse por ella."
+      },
+      "details": {
+        "en": "Chinese diviners used lodestone 'south-pointers' long before, but the first clear account of a magnetised needle comes from Shen Kuo in about 1088; he even noticed that it does not point exactly north. By around 1117 a writer reported ships' pilots at Guangzhou watching the needle when they could not see the sun or stars. The compass appears in Europe and the Islamic world about a century later; whether it travelled from China or was found again is still debated. Compasses still back up satellite navigation on ships and planes, and phones carry digital ones.",
+        "es": "Los adivinos chinos usaban mucho antes «señaladores del sur» de piedra imán, pero el primer relato claro de una aguja imantada es de Shen Kuo, hacia 1088; incluso notó que no apunta exactamente al norte. Hacia 1117, un escritor contó que los pilotos de los barcos de Cantón miraban la aguja cuando no veían el sol ni las estrellas. La brújula aparece en Europa y en el mundo islámico un siglo después; aún se discute si viajó desde China o se descubrió de nuevo. Las brújulas siguen respaldando la navegación por satélite en barcos y aviones, y los celulares llevan una digital."
+      },
+      "path": [
+        { "at": [113.26, 23.13], "place": { "en": "Guangzhou, Guangdong, China", "es": "Cantón (Guangzhou), Guangdong, China" }, "date": "1117", "circa": true, "note": { "en": "Ships' pilots steer by the needle in cloudy weather.", "es": "Los pilotos de los barcos se guían por la aguja cuando está nublado." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1190", "circa": true, "note": { "en": "Alexander Neckam gives the first European description; the link with China is debated.", "es": "Alexander Neckam da la primera descripción europea; el vínculo con China se discute." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "On every ship and aircraft, in hikers' pockets, and as the digital compass in phones.", "es": "En cada barco y avión, en el bolsillo de los excursionistas y como brújula digital en los celulares." },
+      "see": ["inventions:magnetic-compass", "inventions/four-great-inventions"],
+      "wiki": { "en": "Compass", "es": "Brújula" }
+    },
+    {
+      "id": "gunpowder",
+      "name": { "en": "Gunpowder", "es": "La pólvora" },
+      "cat": "tech",
+      "icon": "💥",
+      "how": "invented",
+      "date": "850",
+      "circa": true,
+      "at": [108.94, 34.27],
+      "place": { "en": "Tang China (Chang'an, today Xi'an)", "es": "China Tang (Chang'an, hoy Xi'an)" },
+      "text": {
+        "en": "Chinese alchemists looking for an elixir of life mixed saltpetre, sulphur and charcoal and got gunpowder, which went on to drive fireworks, guns and mining.",
+        "es": "Alquimistas chinos que buscaban un elixir de la vida mezclaron salitre, azufre y carbón y obtuvieron la pólvora, que luego impulsó fuegos artificiales, armas y minería."
+      },
+      "details": {
+        "en": "A Daoist text of the mid-800s warns that mixing these substances had burned people's beards and houses. In 1044 the Song military manual Wujing Zongyao printed the first known gunpowder recipes, for fire arrows and bombs, and fire lances and early guns followed. The Mongols carried gunpowder weapons across Asia in the 1200s, and the Arab world and Europe had recipes by the late 1200s. Gunpowder was the main explosive for blasting rock, roads and railway tunnels until dynamite in the 1860s, and black powder is still used in fireworks and flares.",
+        "es": "Un texto taoísta de mediados del siglo IX advierte que mezclar estas sustancias había quemado barbas y casas. En 1044, el manual militar Song Wujing Zongyao publicó las primeras recetas conocidas de pólvora, para flechas incendiarias y bombas, y después vinieron las lanzas de fuego y las primeras armas de fuego. Los mongoles llevaron armas de pólvora por Asia en el siglo XIII, y el mundo árabe y Europa tenían recetas a finales de ese siglo. La pólvora fue el principal explosivo para volar roca, abrir caminos y túneles de ferrocarril hasta la dinamita, en la década de 1860, y la pólvora negra se sigue usando en fuegos artificiales y bengalas."
+      },
+      "path": [
+        { "at": [114.31, 34.8], "place": { "en": "Kaifeng, Henan, China (the Song capital)", "es": "Kaifeng, Henan, China (la capital Song)" }, "date": "1044", "note": { "en": "The Wujing Zongyao prints the first known recipes.", "es": "El Wujing Zongyao publica las primeras recetas conocidas." } },
+        { "at": [2.35, 48.86], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1267", "circa": true, "by": { "en": "The English friar Roger Bacon", "es": "El fraile inglés Roger Bacon" }, "note": { "en": "One of the first European descriptions of a saltpetre powder.", "es": "Una de las primeras descripciones europeas de un polvo de salitre." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Black powder is still used in fireworks, signal flares, quarrying and old-style guns.", "es": "La pólvora negra se sigue usando en fuegos artificiales, bengalas de señales, canteras y armas antiguas." },
+      "see": ["inventions:gunpowder", "inventions/four-great-inventions"],
+      "wiki": { "en": "Gunpowder", "es": "Pólvora" }
+    },
+    {
+      "id": "fireworks",
+      "name": { "en": "Fireworks and firecrackers", "es": "Los fuegos artificiales y los petardos" },
+      "cat": "daily",
+      "icon": "🎆",
+      "how": "invented",
+      "date": "1000",
+      "circa": true,
+      "at": [114.31, 34.8],
+      "place": { "en": "Kaifeng, Henan, China (the Song capital)", "es": "Kaifeng, Henan, China (la capital Song)" },
+      "text": {
+        "en": "Bamboo thrown on fires to scare away evil spirits gave way, in Song China, to gunpowder firecrackers and rockets: the start of every New Year's fireworks show.",
+        "es": "La caña de bambú arrojada al fuego para espantar a los malos espíritus dio paso, en la China Song, a petardos y cohetes de pólvora: el comienzo de cada espectáculo de fuegos artificiales de Año Nuevo."
+      },
+      "details": {
+        "en": "For centuries Chinese families burned green bamboo, which bursts with a bang, at the New Year. Once gunpowder was known it was packed into bamboo and later paper tubes, and by the Song dynasty city crowds watched firecrackers, fountains and simple rockets at festivals; the Chinese word for firecracker, bàozhú, still means 'exploding bamboo'. Fireworks reached Europe by the 1300s, where Italian makers turned them into displays for princes. Liuyang in Hunan still makes a large share of the world's fireworks.",
+        "es": "Durante siglos, las familias chinas quemaban bambú verde, que estalla con un estruendo, en Año Nuevo. Cuando se conoció la pólvora, se metió en tubos de bambú y luego de papel, y en la dinastía Song las multitudes de las ciudades veían petardos, fuentes y cohetes sencillos en las fiestas; la palabra china para petardo, bàozhú, aún significa «bambú que estalla». Los fuegos artificiales llegaron a Europa hacia el siglo XIV, donde artesanos italianos los convirtieron en espectáculos para los príncipes. Liuyang, en Hunan, sigue fabricando buena parte de los fuegos artificiales del mundo."
+      },
+      "path": [
+        { "at": [-0.14, 51.5], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1749", "note": { "en": "A royal fireworks show, with music written for it by Handel.", "es": "Un espectáculo de fuegos artificiales reales, con música escrita para él por Händel." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Fireworks light up New Year's Eve, national days and festivals in almost every country.", "es": "Los fuegos artificiales iluminan el Año Nuevo, las fiestas patrias y otras celebraciones en casi todos los países." },
+      "see": ["music:music-for-the-royal-fireworks"],
+      "wiki": { "en": "Fireworks", "es": "Fuegos artificiales" }
+    },
+    {
+      "id": "silk",
+      "name": { "en": "Silk", "es": "La seda" },
+      "cat": "daily",
+      "icon": "👘",
+      "how": "invented",
+      "date": "-3600",
+      "circa": true,
+      "at": [113.38, 34.79],
+      "place": { "en": "Qingtai, near Zhengzhou, Henan, China", "es": "Qingtai, cerca de Zhengzhou, Henan, China" },
+      "text": {
+        "en": "Unwinding the cocoons of tamed silkworms and weaving the thread into cloth began in China over 5,000 years ago, and for millennia only China knew how.",
+        "es": "Desenrollar los capullos de gusanos de seda domesticados y tejer el hilo comenzó en China hace más de 5000 años, y durante milenios solo China sabía hacerlo."
+      },
+      "details": {
+        "en": "Silk scraps from Qingtai in Henan, about 3600 BC, are among the oldest; by Shang times weavers made fine patterned silks. Farmers fed silkworms on mulberry leaves and unreeled each cocoon as a single thread hundreds of metres long. Silk paid for horses, gifts and taxes and gave its name to the Silk Road, and Rome paid dearly for it. The secret leaked slowly, to Korea, Japan and Central Asia, and in the 550s to Byzantium, when monks smuggled silkworm eggs to Constantinople. China is still the largest producer.",
+        "es": "Restos de seda de Qingtai, en Henan, de hacia el 3600 a. C., están entre los más antiguos; en tiempos Shang ya se tejían sedas finas con dibujos. Los campesinos alimentaban a los gusanos con hojas de morera y desenrollaban cada capullo como un solo hilo de cientos de metros. La seda pagaba caballos, regalos e impuestos y dio nombre a la Ruta de la Seda, y Roma la pagaba muy cara. El secreto se filtró poco a poco, a Corea, Japón y Asia central, y en la década de 550 a Bizancio, cuando unos monjes llevaron a escondidas huevos de gusano de seda a Constantinopla. China sigue siendo el mayor productor."
+      },
+      "roots": {
+        "en": "First made by the Neolithic farmers of the Yellow River valley, long before the Shang.",
+        "es": "La hicieron primero los agricultores neolíticos del valle del río Amarillo, mucho antes de los Shang."
+      },
+      "path": [
+        { "at": [12.48, 41.89], "place": { "en": "Rome, Italy", "es": "Roma, Italia" }, "date": "16", "note": { "en": "Silk is so costly that the Senate tries to stop men wearing it.", "es": "La seda es tan cara que el Senado intenta prohibir que la usen los hombres." } },
+        { "at": [28.98, 41.01], "place": { "en": "Constantinople (Istanbul), Turkey", "es": "Constantinopla (Estambul), Turquía" }, "date": "552", "circa": true, "from": 0, "note": { "en": "Monks smuggle silkworm eggs to the Byzantine emperor.", "es": "Unos monjes llevan a escondidas huevos de gusano de seda al emperador bizantino." } },
+        { "at": [4.84, 45.76], "place": { "en": "Lyon, France", "es": "Lyon, Francia" }, "date": "1540", "circa": true, "note": { "en": "Lyon becomes Europe's great silk-weaving city.", "es": "Lyon se convierte en la gran ciudad europea del tejido de seda." } }
+      ],
+      "where": ["world"],
+      "strong": ["CHN", "IND"],
+      "note": { "en": "Worn everywhere; China and India produce most of the world's silk.", "es": "Se usa en todas partes; China y la India producen la mayor parte de la seda del mundo." },
+      "see": ["life:silkworm", "journeys/silk-road"],
+      "wiki": { "en": "Silk", "es": "Seda" }
+    },
+    {
+      "id": "tea",
+      "name": { "en": "Tea", "es": "El té" },
+      "cat": "food",
+      "icon": "🍵",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "-141",
+      "at": [108.94, 34.44],
+      "place": { "en": "Han Yangling, near Xi'an, China", "es": "Han Yangling, cerca de Xi'an, China" },
+      "text": {
+        "en": "Tea, the most drunk drink after water, was first grown and drunk in China; the oldest known tea leaves were buried with a Han emperor in 141 BC.",
+        "es": "El té, la bebida más consumida después del agua, se cultivó y se bebió primero en China; las hojas de té más antiguas que se conocen se enterraron con un emperador Han en el 141 a. C."
+      },
+      "details": {
+        "en": "The tea plant grows wild in the hills of southwest China and its neighbours, where it was first used, perhaps as a medicine. By Han times tea was traded in Sichuan, and tea buds were found in the tomb of Emperor Jing, who died in 141 BC. Under the Tang it became a national habit, and Lu Yu wrote The Classic of Tea in the 700s. Monks took it to Japan and Korea, caravans to Tibet and Mongolia. Dutch ships brought it to Europe in 1610, and the British later planted it in India, Sri Lanka and Kenya.",
+        "es": "La planta del té crece silvestre en las colinas del suroeste de China y de los países vecinos, donde se usó primero, quizá como medicina. En tiempos Han ya se comerciaba té en Sichuan, y en la tumba del emperador Jing, muerto en el 141 a. C., se hallaron brotes de té. Con los Tang se volvió una costumbre de todo el país, y Lu Yu escribió El clásico del té en el siglo VIII. Los monjes lo llevaron a Japón y Corea, y las caravanas al Tíbet y Mongolia. Los barcos holandeses lo trajeron a Europa en 1610, y más tarde los británicos lo plantaron en la India, Sri Lanka y Kenia."
+      },
+      "path": [
+        { "at": [135.77, 35.01], "place": { "en": "Kyoto, Japan", "es": "Kioto, Japón" }, "date": "1191", "circa": true, "by": { "en": "The monk Eisai", "es": "El monje Eisai" }, "note": { "en": "Tea seeds and the habit of powdered tea come back from China.", "es": "Vuelven de China semillas de té y la costumbre del té en polvo." } },
+        { "at": [4.9, 52.37], "place": { "en": "Amsterdam, Netherlands", "es": "Ámsterdam, Países Bajos" }, "date": "1610", "from": 0, "note": { "en": "Dutch ships bring the first tea to Europe.", "es": "Los barcos holandeses traen el primer té a Europa." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1660", "circa": true, "note": { "en": "Tea becomes fashionable; Britain turns into a nation of tea drinkers.", "es": "El té se pone de moda; Gran Bretaña se vuelve un país de bebedores de té." } },
+        { "at": [94.2, 26.75], "place": { "en": "Assam, India", "es": "Assam, India" }, "date": "1840", "circa": true, "note": { "en": "British planters start tea gardens in India.", "es": "Los plantadores británicos abren plantaciones de té en la India." } }
+      ],
+      "where": ["world"],
+      "strong": ["CHN", "IND", "TUR", "GBR", "IRL", "JPN", "MAR", "RUS", "PAK", "LKA", "KEN"],
+      "note": { "en": "Drunk in every country; China grows the most, and Turks, Irish, British and Moroccans drink some of the most per person.", "es": "Se bebe en todos los países; China produce la mayor parte, y turcos, irlandeses, británicos y marroquíes están entre los que más beben por persona." },
+      "see": ["food:tea", "food/coffee-tea-chocolate"],
+      "wiki": { "en": "Tea", "es": "Té" }
+    },
+    {
+      "id": "tea-words",
+      "name": { "en": "The words “tea” and “chai”", "es": "Las palabras «té» y «chai»" },
+      "cat": "words",
+      "icon": "🫖",
+      "how": "named",
+      "date": "760",
+      "circa": true,
+      "at": [118.0, 24.9],
+      "place": { "en": "Fujian and southern China", "es": "Fujian y el sur de China" },
+      "text": {
+        "en": "Almost every language names tea from Chinese: 'tea' and 'té' from te, the word in Fujian, carried by Dutch ships, and 'chai', 'chá' and 'shay' from cha, which went overland or with the Portuguese.",
+        "es": "Casi todas las lenguas nombran el té con una palabra china: «té» y el inglés tea vienen de te, la palabra de Fujian, que llevaron los barcos holandeses, y «chai», «chá» y «shay» de cha, que viajó por tierra o con los portugueses."
+      },
+      "details": {
+        "en": "The same character, 茶, is read te in the Min dialects of Fujian and cha in Mandarin and Cantonese. Tea that travelled overland on the Silk Road, or on Portuguese ships from Macau, kept cha: Persian and Hindi chāy, Russian chai, Arabic shāy, Turkish çay, Swahili chai, Portuguese chá. Tea bought by the Dutch in Fujian and Java came as te: English tea, Spanish té, French thé, German Tee, Malay teh. So a map of the words for tea shows how it travelled.",
+        "es": "El mismo carácter, 茶, se lee te en los dialectos min de Fujian y cha en mandarín y cantonés. El té que viajó por tierra por la Ruta de la Seda, o en barcos portugueses desde Macao, conservó cha: chāy en persa e hindi, chai en ruso, shāy en árabe, çay en turco, chai en suajili, chá en portugués. El que compraban los holandeses en Fujian y Java llegó como te: té en español, tea en inglés, thé en francés, Tee en alemán, teh en malayo. Así, un mapa de las palabras para el té muestra cómo viajó."
+      },
+      "path": [
+        { "at": [51.67, 32.65], "place": { "en": "Isfahan, Iran", "es": "Isfahán, Irán" }, "date": "1500", "circa": true, "note": { "en": "Overland tea brings cha: Persian chāy.", "es": "El té llegado por tierra trae cha: chāy en persa." } },
+        { "at": [-9.13, 38.73], "place": { "en": "Lisbon, Portugal", "es": "Lisboa, Portugal" }, "date": "1600", "circa": true, "from": 0, "note": { "en": "From Macau, the Portuguese bring chá.", "es": "Desde Macao, los portugueses traen chá." } },
+        { "at": [4.9, 52.37], "place": { "en": "Amsterdam, Netherlands", "es": "Ámsterdam, Países Bajos" }, "date": "1610", "from": 0, "note": { "en": "From Fujian and Java, the Dutch bring te: thee, tea, thé, té.", "es": "Desde Fujian y Java, los holandeses traen te: thee, tea, thé, té." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Te words rule Western Europe and maritime Southeast Asia; cha words run from Portugal and Russia to India, the Arab world, Turkey and East Africa.", "es": "Las palabras con te dominan en Europa occidental y el Sudeste Asiático marítimo; las de cha van de Portugal y Rusia a la India, el mundo árabe, Turquía y África oriental." },
+      "words": [
+        { "en": "tea", "es": "té", "from": "te (Min Chinese, Fujian), via Dutch thee" },
+        { "en": "chai", "es": "chai", "from": "cha (Mandarin and Cantonese), via Persian and Hindi chāy" }
+      ],
+      "wiki": { "en": "Chinese tea culture", "es": "Cultura china del té" }
+    },
+    {
+      "id": "porcelain",
+      "name": { "en": "Porcelain, or “china”", "es": "La porcelana" },
+      "cat": "tech",
+      "icon": "🏺",
+      "how": "invented",
+      "date": "200",
+      "circa": true,
+      "at": [120.87, 30.03],
+      "place": { "en": "Shangyu, Zhejiang, China (Eastern Han kilns)", "es": "Shangyu, Zhejiang, China (hornos de los Han del Este)" },
+      "text": {
+        "en": "Hard, white and translucent, porcelain was first made in China; English still calls fine dishes 'china', and its clay is called kaolin after a Chinese hill.",
+        "es": "Dura, blanca y translúcida, la porcelana se hizo por primera vez en China; en inglés la vajilla fina aún se llama china, y su arcilla se llama caolín por una colina china."
+      },
+      "details": {
+        "en": "Chinese potters learned to fire a mix of kaolin clay and porcelain stone at about 1,300 °C, far hotter than other kilns of the time, to make a glassy ware that rings when struck. Greenish porcelain appears under the Eastern Han; the Tang made fine white wares, and from the Song onwards Jingdezhen in Jiangxi became a city of kilns. Porcelain was shipped across Asia, to East Africa and later to Europe, where makers tried for centuries to copy it until Meissen succeeded in 1708–10. Kaolin is named after Gaoling, a hill near Jingdezhen.",
+        "es": "Los alfareros chinos aprendieron a cocer una mezcla de arcilla caolín y piedra de porcelana a unos 1300 °C, mucho más que otros hornos de la época, y obtuvieron una cerámica vítrea que suena al golpearla. La porcelana verdosa aparece con los Han del Este; los Tang hicieron finas piezas blancas, y desde los Song Jingdezhen, en Jiangxi, se volvió una ciudad de hornos. La porcelana se exportó por Asia, a África oriental y después a Europa, donde los artesanos intentaron copiarla durante siglos hasta que Meissen lo logró en 1708–10. El caolín debe su nombre a Gaoling, una colina cerca de Jingdezhen."
+      },
+      "path": [
+        { "at": [30.93, -20.27], "place": { "en": "Great Zimbabwe, Zimbabwe", "es": "Gran Zimbabue, Zimbabue" }, "date": "1350", "circa": true, "note": { "en": "Chinese porcelain reaches southern Africa through Indian Ocean trade.", "es": "La porcelana china llega al sur de África por el comercio del océano Índico." } },
+        { "at": [13.47, 51.16], "place": { "en": "Meissen, Germany", "es": "Meissen, Alemania" }, "date": "1710", "from": 0, "note": { "en": "Europe's first true porcelain factory.", "es": "La primera fábrica europea de porcelana verdadera." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Plates, cups, bathroom fittings and dental crowns are made of porcelain worldwide.", "es": "Platos, tazas, sanitarios y coronas dentales se hacen de porcelana en todo el mundo." },
+      "words": [
+        { "en": "china", "from": "China, the country", "means": { "en": "porcelain dishes", "es": "vajilla de porcelana" } },
+        { "en": "kaolin", "es": "caolín", "from": "Gāolǐng (Chinese), a hill near Jingdezhen", "means": { "en": "high ridge", "es": "cumbre alta" } }
+      ],
+      "see": ["journeys:porcelain", "people:chinese-porcelain"],
+      "wiki": { "en": "Porcelain", "es": "Porcelana" }
+    },
+    {
+      "id": "abacus",
+      "name": { "en": "The suanpan abacus", "es": "El ábaco suanpan" },
+      "cat": "numbers",
+      "icon": "🧮",
+      "how": "invented",
+      "sure": "debated",
+      "date": "190",
+      "circa": true,
+      "at": [112.45, 34.62],
+      "place": { "en": "Han China (Luoyang, Henan)", "es": "China Han (Luoyang, Henan)" },
+      "text": {
+        "en": "The Chinese abacus, beads on rods in a frame, let merchants add and multiply at speed; it is still taught, along with Japan's soroban, for mental arithmetic.",
+        "es": "El ábaco chino, cuentas en varillas dentro de un marco, permitía a los comerciantes sumar y multiplicar a toda velocidad; todavía se enseña, junto con el soroban japonés, para el cálculo mental."
+      },
+      "details": {
+        "en": "Chinese officials first calculated with counting rods laid out on a board, already a decimal place-value system. A book credited to Xu Yue, of about AD 190, mentions 'ball arithmetic', but what that looked like is unknown, and clear pictures of the bead abacus come only centuries later. From then on it was in every Chinese shop and office, and it spread to Japan as the soroban and to Korea and Vietnam. Calculators took over daily work, but abacus classes and mental-arithmetic contests are still popular, and in 2013 UNESCO listed Chinese abacus calculation as intangible heritage.",
+        "es": "Los funcionarios chinos calculaban primero con varillas de cálculo sobre un tablero, ya con un sistema decimal posicional. Un libro atribuido a Xu Yue, de hacia el 190 d. C., menciona la «aritmética de bolas», pero no se sabe cómo era, y las imágenes claras del ábaco de cuentas llegan siglos después. Desde entonces estuvo en cada tienda y oficina china, y pasó a Japón como soroban y a Corea y Vietnam. Las calculadoras lo sustituyeron en el trabajo diario, pero las clases de ábaco y los concursos de cálculo mental siguen siendo populares, y en 2013 la UNESCO declaró patrimonio inmaterial el cálculo con ábaco chino."
+      },
+      "roots": {
+        "en": "Built on Chinese counting rods; other peoples, from Mesopotamia to Rome, had counting boards and abacuses of their own.",
+        "es": "Se basó en las varillas de cálculo chinas; otros pueblos, de Mesopotamia a Roma, tuvieron sus propios tableros de cálculo y ábacos."
+      },
+      "path": [
+        { "at": [135.5, 34.69], "place": { "en": "Osaka, Japan", "es": "Osaka, Japón" }, "date": "1570", "circa": true, "note": { "en": "The abacus reaches Japan, where it becomes the soroban.", "es": "El ábaco llega a Japón, donde se convierte en el soroban." } }
+      ],
+      "where": ["CHN", "TWN", "JPN", "KOR", "SGP", "MYS", "VNM"],
+      "strong": ["CHN", "TWN", "JPN"],
+      "note": { "en": "Still taught in schools and clubs in China, Taiwan, Japan and Korea, and used by some shopkeepers.", "es": "Se sigue enseñando en escuelas y clubes de China, Taiwán, Japón y Corea, y algunos comerciantes lo usan." },
+      "wiki": { "en": "Suanpan", "es": "Suanpan" }
+    },
+    {
+      "id": "paper-money",
+      "name": { "en": "Paper money", "es": "El papel moneda" },
+      "cat": "money",
+      "icon": "💵",
+      "how": "invented",
+      "date": "1024",
+      "at": [104.07, 30.67],
+      "place": { "en": "Chengdu, Sichuan, China", "es": "Chengdu, Sichuan, China" },
+      "text": {
+        "en": "Merchants in Sichuan swapped heavy iron coins for paper receipts, and in 1024 the Song government issued the jiaozi, the world's first official paper money.",
+        "es": "Los comerciantes de Sichuan cambiaron las pesadas monedas de hierro por recibos de papel, y en 1024 el gobierno Song emitió el jiaozi, el primer papel moneda oficial del mundo."
+      },
+      "details": {
+        "en": "Sichuan used iron coins so heavy that buying a bolt of silk meant carrying many kilos of them, so merchant houses began issuing paper notes that could be swapped for coins. In 1023 the Song state took over and printed jiaozi with seals and patterns to stop forgers. Later dynasties printed so many notes that prices soared, a lesson learned again many times since. Marco Polo marvelled at the paper money of Mongol China in the 1200s. Europe's first banknotes came from Stockholm in 1661, and today every country prints them.",
+        "es": "En Sichuan se usaban monedas de hierro tan pesadas que comprar una pieza de seda obligaba a cargar muchos kilos, así que las casas de comercio empezaron a emitir notas de papel que se podían canjear por monedas. En 1023 el Estado Song tomó el control e imprimió jiaozi con sellos y dibujos para evitar falsificaciones. Dinastías posteriores imprimieron tantos billetes que los precios se dispararon, una lección que se ha vuelto a aprender muchas veces. Marco Polo se maravilló con el papel moneda de la China mongola en el siglo XIII. Los primeros billetes de Europa salieron de Estocolmo en 1661, y hoy todos los países los imprimen."
+      },
+      "path": [
+        { "at": [116.4, 39.9], "place": { "en": "Khanbaliq (Beijing), China", "es": "Janbalic (Pekín), China" }, "date": "1260", "note": { "en": "Mongol Yuan notes, later described by Marco Polo.", "es": "Los billetes de los Yuan mongoles, que después describe Marco Polo." } },
+        { "at": [46.29, 38.08], "place": { "en": "Tabriz, Iran", "es": "Tabriz, Irán" }, "date": "1294", "note": { "en": "Persia's Mongol rulers try Chinese-style notes; the experiment fails.", "es": "Los gobernantes mongoles de Persia prueban billetes al estilo chino; el intento fracasa." } },
+        { "at": [18.07, 59.33], "place": { "en": "Stockholm, Sweden", "es": "Estocolmo, Suecia" }, "date": "1661", "from": 0, "note": { "en": "Europe's first banknotes.", "es": "Los primeros billetes de Europa." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Every country issues banknotes, though cards and phones are replacing them.", "es": "Todos los países emiten billetes, aunque las tarjetas y los celulares los están reemplazando." },
+      "see": ["inventions:paper-money", "journeys:paper-money"],
+      "wiki": { "en": "Jiaozi (currency)", "es": "Jiaozi (moneda)" }
+    },
+    {
+      "id": "wheelbarrow",
+      "name": { "en": "The wheelbarrow", "es": "La carretilla" },
+      "cat": "tech",
+      "icon": "🛞",
+      "how": "invented",
+      "sure": "debated",
+      "date": "100",
+      "circa": true,
+      "at": [104.5, 30.3],
+      "place": { "en": "Sichuan, China", "es": "Sichuan, China" },
+      "text": {
+        "en": "Han tomb carvings from Sichuan show wheelbarrows nearly 2,000 years ago, about a thousand years before they appear in medieval Europe.",
+        "es": "Relieves de tumbas Han de Sichuan muestran carretillas hace casi 2000 años, unos mil años antes de que aparezcan en la Europa medieval."
+      },
+      "details": {
+        "en": "A single wheel lets one person move a load that would need two carriers. Chinese wheelbarrows often had a large wheel in the middle, so the weight sat over the axle; some even carried a sail. Later tradition credits the general Zhuge Liang, in the 200s, with a 'wooden ox' for army supplies, which may have been a wheelbarrow. Building accounts from ancient Greece may mention one-wheeled barrows too, so it may have been invented more than once. In Europe wheelbarrows appear from about 1200 and are now on every building site and in every garden.",
+        "es": "Una sola rueda permite a una persona mover una carga que necesitaría dos cargadores. Las carretillas chinas solían tener una rueda grande en el centro, de modo que el peso quedaba sobre el eje; algunas hasta llevaban vela. La tradición posterior atribuye al general Zhuge Liang, en el siglo III, un «buey de madera» para los suministros del ejército, que quizá era una carretilla. Cuentas de obras de la antigua Grecia podrían mencionar también carretillas de una rueda, así que tal vez se inventó más de una vez. En Europa aparecen hacia el 1200 y hoy están en cada obra y cada jardín."
+      },
+      "where": ["world"],
+      "note": { "en": "Used on building sites, farms and gardens in every country.", "es": "Se usa en obras, granjas y jardines de todos los países." },
+      "wiki": { "en": "Wheelbarrow", "es": "Carretilla" }
+    },
+    {
+      "id": "cast-iron",
+      "name": { "en": "Cast iron and the blast furnace", "es": "El hierro fundido y el alto horno" },
+      "cat": "tech",
+      "icon": "🍳",
+      "how": "invented",
+      "date": "-500",
+      "circa": true,
+      "at": [118.83, 32.34],
+      "place": { "en": "Luhe, Nanjing, Jiangsu, China", "es": "Luhe, Nankín, Jiangsu, China" },
+      "text": {
+        "en": "Chinese ironworkers were the first known to melt iron in blast furnaces and pour it into moulds, making cast-iron tools more than a thousand years before Europe.",
+        "es": "Los herreros chinos fueron los primeros conocidos en fundir hierro en altos hornos y verterlo en moldes, y hacían herramientas de hierro fundido más de mil años antes que Europa."
+      },
+      "details": {
+        "en": "Hot kilns developed for bronze and pottery let Chinese smiths reach the melting point of iron by about the 500s BC. They cast ploughshares, hoes and pots in moulds by the thousand, and under the Han the state ran great ironworks, some with water-powered bellows; they also learned to turn cast iron into steel. Blast furnaces appear in Europe in the Middle Ages, probably invented there separately. Cast-iron pans, engine blocks and manhole covers are still made in the same basic way.",
+        "es": "Los hornos calientes desarrollados para el bronce y la cerámica permitieron a los herreros chinos alcanzar el punto de fusión del hierro hacia el siglo VI a. C. Fundían en moldes rejas de arado, azadas y ollas por millares, y con los Han el Estado tenía grandes ferrerías, algunas con fuelles movidos por agua; también aprendieron a convertir el hierro fundido en acero. Los altos hornos aparecen en Europa en la Edad Media, probablemente inventados allí por separado. Las sartenes, los bloques de motor y las tapas de alcantarilla de hierro fundido se siguen haciendo de la misma forma básica."
+      },
+      "where": ["world"],
+      "note": { "en": "Cast iron is used worldwide for pans, pipes, manhole covers and engine parts.", "es": "El hierro fundido se usa en todo el mundo para sartenes, tuberías, tapas de alcantarilla y piezas de motor." },
+      "see": ["inventions:cast-iron"],
+      "wiki": { "en": "Cast iron", "es": "Fundición de hierro" }
+    },
+    {
+      "id": "rudder-bulkheads",
+      "name": { "en": "Stern rudders and watertight compartments", "es": "El timón de popa y los compartimentos estancos" },
+      "cat": "tech",
+      "icon": "🚢",
+      "how": "invented",
+      "sure": "likely",
+      "date": "100",
+      "circa": true,
+      "at": [113.26, 23.13],
+      "place": { "en": "Guangzhou, Guangdong, China", "es": "Cantón (Guangzhou), Guangdong, China" },
+      "text": {
+        "en": "Chinese ships had a rudder at the stern and hulls divided by watertight walls, so that one leak could not sink them: features of almost every large ship today.",
+        "es": "Los barcos chinos tenían un timón en la popa y cascos divididos por paredes estancas, para que una sola vía de agua no los hundiera: rasgos de casi todos los grandes barcos de hoy."
+      },
+      "details": {
+        "en": "A pottery boat from a Han tomb in Guangzhou, of the first century AD, already shows a rudder hung at the stern, centuries before Europe's sternpost rudder of about 1200, which may have been invented separately. Chinese junks were also built with bulkheads, cross-walls that split the hull into sealed compartments; a Song ship found at Quanzhou has thirteen. Marco Polo described them, and Benjamin Franklin suggested copying them in the 1780s. Today safety rules require watertight compartments in large ships.",
+        "es": "Un barco de cerámica de una tumba Han de Cantón, del siglo I d. C., ya muestra un timón colgado de la popa, siglos antes del timón de codaste europeo de hacia el 1200, que quizá se inventó por separado. Los juncos chinos también se construían con mamparos, paredes transversales que dividían el casco en compartimentos sellados; un barco Song hallado en Quanzhou tiene trece. Marco Polo los describió, y Benjamin Franklin propuso copiarlos en la década de 1780. Hoy las normas de seguridad exigen compartimentos estancos en los grandes barcos."
+      },
+      "path": [
+        { "at": [118.6, 24.95], "place": { "en": "Quanzhou, Fujian, China", "es": "Quanzhou, Fujian, China" }, "date": "1274", "circa": true, "note": { "en": "A Song ocean ship with thirteen sealed compartments.", "es": "Un barco de altura Song con trece compartimentos sellados." } },
+        { "at": [-75.16, 39.95], "place": { "en": "Philadelphia, USA", "es": "Filadelfia, EE. UU." }, "date": "1785", "circa": true, "by": { "en": "Benjamin Franklin", "es": "Benjamin Franklin" }, "note": { "en": "He urges Western shipbuilders to copy the Chinese compartments.", "es": "Pide a los constructores occidentales copiar los compartimentos chinos." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Stern rudders and watertight compartments are standard on ships worldwide.", "es": "El timón de popa y los compartimentos estancos son normales en los barcos de todo el mundo." },
+      "wiki": { "en": "Rudder", "es": "Timón" }
+    },
+    {
+      "id": "kites",
+      "name": { "en": "Kites", "es": "Los papalotes o cometas" },
+      "cat": "play",
+      "icon": "🪁",
+      "how": "invented",
+      "sure": "likely",
+      "date": "-450",
+      "circa": true,
+      "at": [116.99, 35.6],
+      "place": { "en": "State of Lu, today Shandong, China", "es": "Estado de Lu, hoy Shandong, China" },
+      "text": {
+        "en": "Kites were first flown in China, where tradition credits the thinker Mozi and the craftsman Lu Ban with wooden birds that flew about 2,400 years ago.",
+        "es": "Los papalotes se volaron primero en China, donde la tradición atribuye al pensador Mozi y al artesano Lu Ban unos pájaros de madera que volaban hace unos 2400 años."
+      },
+      "details": {
+        "en": "Early kites were made of wood, or of bamboo and silk; paper kites came later. Chinese armies used them for signalling and to measure distances, and people flew them at festivals, as they still do in Weifang. Kites spread to Korea, Japan and Southeast Asia, perhaps arose separately in the Pacific islands, and reached Europe in the 1500s and 1600s. There they became scientific tools: Benjamin Franklin flew one into a thunderstorm in 1752, and the Wright brothers tested their wings on kites.",
+        "es": "Los primeros papalotes eran de madera, o de bambú y seda; los de papel llegaron después. Los ejércitos chinos los usaban para hacer señales y medir distancias, y la gente los volaba en las fiestas, como todavía se hace en Weifang. Los papalotes pasaron a Corea, Japón y el Sudeste Asiático, quizá surgieron por separado en las islas del Pacífico, y llegaron a Europa en los siglos XVI y XVII. Allí se volvieron herramientas científicas: Benjamin Franklin voló uno en una tormenta en 1752, y los hermanos Wright probaron sus alas con cometas."
+      },
+      "path": [
+        { "at": [-75.16, 39.95], "place": { "en": "Philadelphia, USA", "es": "Filadelfia, EE. UU." }, "date": "1752", "by": { "en": "Benjamin Franklin", "es": "Benjamin Franklin" }, "note": { "en": "A kite in a thunderstorm shows that lightning is electricity.", "es": "Una cometa en una tormenta muestra que el rayo es electricidad." } },
+        { "at": [119.16, 36.71], "place": { "en": "Weifang, Shandong, China", "es": "Weifang, Shandong, China" }, "date": "1984", "from": 0, "note": { "en": "The first Weifang International Kite Festival.", "es": "El primer Festival Internacional de Cometas de Weifang." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Flown in parks and on beaches everywhere; kite festivals are huge in China, India, Afghanistan, Guatemala and Bali.", "es": "Se vuelan en parques y playas de todas partes; los festivales de papalotes son enormes en China, la India, Afganistán, Guatemala y Bali." },
+      "see": ["inventions:kite", "inventions:weifang-kites"],
+      "wiki": { "en": "Kite", "es": "Cometa (juguete)" }
+    },
+    {
+      "id": "chopsticks",
+      "name": { "en": "Chopsticks", "es": "Los palillos chinos" },
+      "cat": "daily",
+      "icon": "🥢",
+      "how": "invented",
+      "date": "-1200",
+      "circa": true,
+      "at": [114.31, 36.12],
+      "place": { "en": "Yinxu, Anyang, Henan, China", "es": "Yinxu, en Anyang, Henan, China" },
+      "text": {
+        "en": "Bronze chopsticks from the Shang capital at Anyang are among the oldest known; about a fifth of the world's people now eat with chopsticks.",
+        "es": "Unos palillos de bronce de la capital Shang en Anyang están entre los más antiguos conocidos; hoy cerca de una quinta parte de la humanidad come con palillos."
+      },
+      "details": {
+        "en": "At first chopsticks were for cooking, stirring and picking food out of the pot, while rice was eaten with spoons. By the Han dynasty they were used for eating, and as cooks cut food into small pieces for quick stir-frying, they became the main table tool. They spread to Vietnam, Korea and Japan, each with its own style: Korean ones are often flat and made of metal, Japanese ones short and pointed. Chinese and Japanese restaurants have taken them all over the world.",
+        "es": "Al principio los palillos servían para cocinar, remover y sacar la comida de la olla, mientras el arroz se comía con cuchara. En la dinastía Han ya se usaban para comer, y a medida que los cocineros cortaban la comida en trozos pequeños para saltearla rápido, se volvieron el principal utensilio de mesa. Pasaron a Vietnam, Corea y Japón, cada uno con su estilo: los coreanos suelen ser planos y de metal, los japoneses cortos y puntiagudos. Los restaurantes chinos y japoneses los han llevado a todo el mundo."
+      },
+      "path": [
+        { "at": [105.85, 21.03], "place": { "en": "Hanoi, Vietnam", "es": "Hanói, Vietnam" }, "date": "100", "circa": true, "note": { "en": "Chopsticks come to northern Vietnam under Han rule.", "es": "Los palillos llegan al norte de Vietnam bajo el dominio Han." } },
+        { "at": [135.8, 34.68], "place": { "en": "Nara, Japan", "es": "Nara, Japón" }, "date": "700", "circa": true, "from": 0, "note": { "en": "Chopsticks are in use at the Japanese court.", "es": "Los palillos se usan en la corte japonesa." } }
+      ],
+      "where": ["CHN", "TWN", "JPN", "KOR", "PRK", "VNM", "SGP"],
+      "strong": ["CHN", "TWN", "JPN", "KOR", "VNM"],
+      "note": { "en": "The everyday cutlery of China, Japan, Korea, Vietnam and Singapore, and found in Asian restaurants worldwide.", "es": "Son los cubiertos de cada día en China, Japón, Corea, Vietnam y Singapur, y están en los restaurantes asiáticos de todo el mundo." },
+      "wiki": { "en": "Chopsticks", "es": "Palillos" }
+    },
+    {
+      "id": "noodles",
+      "name": { "en": "Noodles", "es": "Los fideos" },
+      "cat": "food",
+      "icon": "🍜",
+      "how": "invented",
+      "sure": "debated",
+      "date": "-2000",
+      "circa": true,
+      "at": [102.82, 35.86],
+      "place": { "en": "Lajia, Minhe, Qinghai, China", "es": "Lajia, en Minhe, Qinghai, China" },
+      "text": {
+        "en": "A bowl of 4,000-year-old millet noodles found at Lajia may hold the oldest known; noodles took shape in China and spread across Asia.",
+        "es": "Un tazón con fideos de mijo de 4000 años hallado en Lajia podría contener los más antiguos conocidos; los fideos tomaron forma en China y se extendieron por Asia."
+      },
+      "details": {
+        "en": "In 2005 scientists reported thin yellow noodles preserved under an upturned bowl buried by an earthquake at Lajia, in the upper Yellow River valley; others later doubted that millet alone could make such noodles, so the find is still debated. Written records of noodle dishes come from the Han, when wheat milling spread. From China noodles went to Japan as udon and ramen, to Korea, Vietnam, Southeast Asia and Central Asia. Italian pasta has a separate history: the story that Marco Polo brought it from China is a myth.",
+        "es": "En 2005 unos científicos describieron fideos finos y amarillos conservados bajo un tazón volcado, sepultado por un terremoto en Lajia, en el alto valle del río Amarillo; otros dudaron después de que el mijo solo pudiera dar esos fideos, así que el hallazgo se sigue discutiendo. Los registros escritos de platos de fideos son de los Han, cuando se extendió la molienda del trigo. Desde China los fideos pasaron a Japón como udon y ramen, a Corea, Vietnam, el Sudeste Asiático y Asia central. La pasta italiana tiene otra historia: el relato de que Marco Polo la trajo de China es un mito."
+      },
+      "roots": {
+        "en": "Lajia belongs to the Qijia culture, a Neolithic forerunner of the Shang age.",
+        "es": "Lajia pertenece a la cultura de Qijia, una precursora neolítica de la época Shang."
+      },
+      "path": [
+        { "at": [139.78, 35.71], "place": { "en": "Tokyo, Japan", "es": "Tokio, Japón" }, "date": "1910", "note": { "en": "Chinese-style ramen shops open in Tokyo.", "es": "Abren en Tokio tiendas de ramen al estilo chino." } },
+        { "at": [135.43, 34.82], "place": { "en": "Ikeda, Osaka, Japan", "es": "Ikeda, Osaka, Japón" }, "date": "1958", "by": { "en": "Momofuku Ando", "es": "Momofuku Ando" }, "note": { "en": "Instant noodles are invented and spread worldwide.", "es": "Se inventan los fideos instantáneos, que se extienden por el mundo." } }
+      ],
+      "where": ["world"],
+      "strong": ["CHN", "JPN", "KOR", "VNM", "TWN"],
+      "note": { "en": "Eaten worldwide, from ramen bars to instant noodles; East and Southeast Asia eat the most.", "es": "Se comen en todo el mundo, de los bares de ramen a los fideos instantáneos; el este y el sudeste de Asia son los que más comen." },
+      "see": ["food:lajia-noodles", "inventions:instant-noodles"],
+      "wiki": { "en": "Chinese noodles", "es": "Fideos chinos" }
+    },
+    {
+      "id": "soybean",
+      "name": { "en": "Soybeans, tofu and soy sauce", "es": "La soya, el tofu y la salsa de soya" },
+      "cat": "food",
+      "icon": "🫘",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "-1000",
+      "circa": true,
+      "at": [114.5, 36.5],
+      "place": { "en": "Northern China", "es": "Norte de China" },
+      "text": {
+        "en": "Chinese farmers bred the soybean from a wild vine and turned it into soy sauce and tofu; soy is now one of the world's biggest crops, led by Brazil and the United States.",
+        "es": "Los campesinos chinos criaron la soya a partir de una enredadera silvestre y la convirtieron en salsa de soya y tofu; hoy es uno de los mayores cultivos del mundo, encabezado por Brasil y Estados Unidos."
+      },
+      "details": {
+        "en": "Soybeans were grown in northern China by the Zhou dynasty, and perhaps tamed in Korea and Japan too. They enrich the soil and are rich in protein. Fermented soy paste, jiang, was eaten under the Han, and soy sauce grew from it. Tofu, soy milk curdled and pressed into blocks, is said to date from the Han but is first clearly recorded around 950. Both went to Japan, whose words shōyu and tōfu gave English 'soy' and 'tofu'. Soybeans reached North America in the 1700s and are now fed to animals and people worldwide.",
+        "es": "La soya se cultivaba en el norte de China en la dinastía Zhou, y quizá también se domesticó en Corea y Japón. Enriquece el suelo y es rica en proteínas. La pasta fermentada de soya, jiang, se comía con los Han, y de ella salió la salsa de soya. Del tofu, leche de soya cuajada y prensada en bloques, se dice que es de época Han, pero el primer registro claro es de hacia el 950. Ambos pasaron a Japón, cuyas palabras shōyu y tōfu dieron «soya» y «tofu». La soya llegó a Norteamérica en el siglo XVIII y hoy alimenta a animales y personas en todo el mundo."
+      },
+      "path": [
+        { "at": [135.8, 34.68], "place": { "en": "Nara, Japan", "es": "Nara, Japón" }, "date": "700", "circa": true, "note": { "en": "Soy foods arrive with Buddhist monks and Chinese cooks.", "es": "Los alimentos de soya llegan con monjes budistas y cocineros chinos." } },
+        { "at": [-81.1, 32.08], "place": { "en": "Savannah, Georgia, USA", "es": "Savannah, Georgia, EE. UU." }, "date": "1765", "from": 0, "note": { "en": "First soybeans planted in North America.", "es": "Se siembra la primera soya en Norteamérica." } },
+        { "at": [-55.9, -12.6], "place": { "en": "Mato Grosso, Brazil", "es": "Mato Grosso, Brasil" }, "date": "1980", "circa": true, "note": { "en": "Soy fields spread across Brazil, now the largest grower.", "es": "Los campos de soya se extienden por Brasil, hoy el mayor productor." } }
+      ],
+      "where": ["world"],
+      "strong": ["CHN", "JPN", "KOR", "TWN", "BRA", "USA", "ARG"],
+      "note": { "en": "Tofu and soy sauce are staples of East Asia; Brazil, the United States and Argentina grow most of the world's soybeans.", "es": "El tofu y la salsa de soya son básicos en Asia oriental; Brasil, Estados Unidos y Argentina producen la mayor parte de la soya del mundo." },
+      "words": [
+        { "en": "soy", "es": "soya", "from": "shōyu (Japanese), from Chinese jiàngyóu", "means": { "en": "soy sauce", "es": "salsa de soya" } },
+        { "en": "tofu", "es": "tofu", "from": "tōfu (Japanese), from Chinese dòufu", "means": { "en": "curdled bean", "es": "frijol cuajado" } }
+      ],
+      "see": ["food:tofu", "food:soy-sauce"],
+      "wiki": { "en": "Soybean", "es": "Glycine max" }
+    },
+    {
+      "id": "lunar-new-year",
+      "name": { "en": "The Lunar New Year", "es": "El Año Nuevo lunar" },
+      "cat": "time",
+      "icon": "🧧",
+      "how": "invented",
+      "date": "-104",
+      "at": [108.94, 34.27],
+      "place": { "en": "Chang'an (Xi'an), Shaanxi, China", "es": "Chang'an (hoy Xi'an), Shaanxi, China" },
+      "text": {
+        "en": "China's moon-and-sun calendar starts the year at a new moon in late January or February, and the Spring Festival is now celebrated across East Asia and in Chinatowns everywhere.",
+        "es": "El calendario chino de luna y sol empieza el año con una luna nueva a finales de enero o en febrero, y la Fiesta de la Primavera se celebra hoy en toda Asia oriental y en los barrios chinos de todo el mundo."
+      },
+      "details": {
+        "en": "Chinese astronomers fitted months that follow the moon into the solar year by adding a leap month about every three years. In 104 BC the Han emperor Wu's Taichu calendar fixed the new year in early spring, where it has stayed. Families clean their homes, gather for a reunion dinner, give red envelopes of money, set off firecrackers and hang red scrolls. Vietnam celebrates it as Tết and Korea as Seollal, and Mongolia and Tibet keep their own new years on similar dates. In 2024 UNESCO listed the Spring Festival as intangible heritage.",
+        "es": "Los astrónomos chinos encajaban meses que siguen a la luna en el año solar añadiendo un mes bisiesto cada tres años, más o menos. En el 104 a. C., el calendario Taichu del emperador Wu de los Han fijó el año nuevo al comienzo de la primavera, donde sigue. Las familias limpian la casa, se reúnen para una cena, regalan sobres rojos con dinero, tiran petardos y cuelgan rollos rojos. Vietnam lo celebra como Tết y Corea como Seollal, y Mongolia y el Tíbet tienen sus propios años nuevos en fechas parecidas. En 2024 la UNESCO declaró patrimonio inmaterial la Fiesta de la Primavera."
+      },
+      "path": [
+        { "at": [105.85, 21.03], "place": { "en": "Hanoi, Vietnam", "es": "Hanói, Vietnam" }, "date": "1000", "circa": true, "note": { "en": "Tết Nguyên Đán, Vietnam's great festival.", "es": "El Tết Nguyên Đán, la gran fiesta de Vietnam." } },
+        { "at": [126.98, 37.57], "place": { "en": "Seoul, South Korea", "es": "Seúl, Corea del Sur" }, "date": "1000", "circa": true, "from": 0, "note": { "en": "Seollal, the Korean new year.", "es": "El Seollal, el año nuevo coreano." } },
+        { "at": [-122.41, 37.79], "place": { "en": "San Francisco, USA", "es": "San Francisco, EE. UU." }, "date": "1860", "circa": true, "from": 0, "note": { "en": "Chinese migrants start one of the oldest New Year parades outside Asia.", "es": "Los migrantes chinos inician uno de los desfiles de Año Nuevo más antiguos fuera de Asia." } }
+      ],
+      "where": ["CHN", "TWN", "VNM", "KOR", "PRK", "SGP", "MYS", "IDN", "PHL", "BRN", "MNG"],
+      "strong": ["CHN", "TWN", "VNM", "KOR", "SGP"],
+      "note": { "en": "A public holiday in China, Taiwan, Vietnam, both Koreas, Singapore, Malaysia, Indonesia and the Philippines, and celebrated in Chinatowns worldwide.", "es": "Es feriado en China, Taiwán, Vietnam, las dos Coreas, Singapur, Malasia, Indonesia y Filipinas, y se celebra en los barrios chinos de todo el mundo." },
+      "words": [
+        { "en": "Tết", "es": "Tết", "type": "calendar", "from": "tiết (Vietnamese), from Chinese jié", "means": { "en": "festival, season", "es": "fiesta, estación" } }
+      ],
+      "see": ["people/ancient-china"],
+      "wiki": { "en": "Chinese New Year", "es": "Año Nuevo chino" }
+    },
+    {
+      "id": "zodiac-animals",
+      "name": { "en": "The twelve zodiac animals", "es": "Los doce animales del zodiaco chino" },
+      "cat": "time",
+      "icon": "🐒",
+      "how": "invented",
+      "date": "-217",
+      "circa": true,
+      "at": [113.75, 31.06],
+      "place": { "en": "Shuihudi, Yunmeng, Hubei, China", "es": "Shuihudi, en Yunmeng, Hubei, China" },
+      "text": {
+        "en": "Rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog and pig: each year of a twelve-year cycle has its animal, from Japan to Vietnam.",
+        "es": "Rata, buey, tigre, conejo, dragón, serpiente, caballo, cabra, mono, gallo, perro y cerdo: cada año de un ciclo de doce tiene su animal, de Japón a Vietnam."
+      },
+      "details": {
+        "en": "The twelve 'earthly branches' were used to count days, months and hours from Shang times. Linking them with animals is first seen, with some differences from today's list, in bamboo strips from a Qin official's tomb at Shuihudi, of about 217 BC, and the list was settled by the first century AD. People still say they were born in the Year of the Dragon or the Horse, and many believe it shapes character. Japan, Korea, Vietnam and Mongolia use the same cycle; in Vietnam the cat takes the rabbit's place.",
+        "es": "Las doce «ramas terrestres» servían para contar días, meses y horas desde tiempos Shang. Su relación con animales aparece por primera vez, con algunas diferencias respecto a la lista actual, en tiras de bambú de la tumba de un funcionario Qin en Shuihudi, de hacia el 217 a. C., y la lista quedó fijada en el siglo I d. C. La gente sigue diciendo que nació en el año del Dragón o del Caballo, y muchos creen que eso marca el carácter. Japón, Corea, Vietnam y Mongolia usan el mismo ciclo; en Vietnam el gato ocupa el lugar del conejo."
+      },
+      "path": [
+        { "at": [135.82, 34.47], "place": { "en": "Asuka, Nara, Japan", "es": "Asuka, Nara, Japón" }, "date": "602", "by": { "en": "The Korean monk Gwalleuk", "es": "El monje coreano Gwalleuk" }, "note": { "en": "Chinese calendar books, with the twelve-year cycle, reach Japan.", "es": "Los libros de calendario chinos, con el ciclo de doce años, llegan a Japón." } }
+      ],
+      "where": ["CHN", "TWN", "JPN", "KOR", "PRK", "VNM", "MNG", "SGP", "MYS"],
+      "strong": ["CHN", "TWN", "VNM"],
+      "note": { "en": "Known across East and Southeast Asia, and printed on stamps, coins and greeting cards each new year.", "es": "Se conoce en todo el este y el sudeste de Asia, y aparece en sellos, monedas y tarjetas cada año nuevo." },
+      "wiki": { "en": "Chinese zodiac", "es": "Astrología china" }
+    },
+    {
+      "id": "chinese-characters",
+      "name": { "en": "Chinese characters", "es": "Los caracteres chinos" },
+      "cat": "writing",
+      "icon": "🀄",
+      "how": "invented",
+      "date": "-1250",
+      "circa": true,
+      "at": [114.35, 36.1],
+      "place": { "en": "Yinxu, Anyang, Henan, China", "es": "Yinxu, en Anyang (Henan, China)" },
+      "text": {
+        "en": "Characters first scratched on Shang oracle bones about 1250 BC are still read today: the oldest writing system in continuous use, written by well over a billion people.",
+        "es": "Los caracteres grabados en los huesos oraculares Shang hacia el 1250 a. C. se siguen leyendo hoy: es el sistema de escritura en uso continuo más antiguo, y lo escriben mucho más de mil millones de personas."
+      },
+      "details": {
+        "en": "Shang diviners carved questions to their ancestors on turtle shells and ox bones, and many of those signs are recognisable ancestors of modern characters. The First Emperor of Qin standardised them in the 200s BC. Each character stands for a word or syllable rather than a sound, so speakers of very different Chinese languages could read the same texts. Korea, Japan and Vietnam wrote in Chinese for centuries. Japan still mixes kanji with kana, syllables made from simplified characters, and Korea uses hanja for some words. China simplified many characters in the 1950s.",
+        "es": "Los adivinos Shang tallaban preguntas a sus antepasados en caparazones de tortuga y huesos de buey, y muchos de esos signos son antepasados reconocibles de los caracteres modernos. El Primer Emperador Qin los unificó en el siglo III a. C. Cada carácter representa una palabra o sílaba y no un sonido, así que hablantes de lenguas chinas muy distintas podían leer los mismos textos. Corea, Japón y Vietnam escribieron en chino durante siglos. Japón aún mezcla los kanji con los kana, sílabas creadas a partir de caracteres simplificados, y Corea usa hanja para algunas palabras. China simplificó muchos caracteres en la década de 1950."
+      },
+      "path": [
+        { "at": [129.21, 35.84], "place": { "en": "Korea (Gyeongju, the Silla capital)", "es": "Corea (Gyeongju, la capital de Silla)" }, "date": "-108", "circa": true, "note": { "en": "Chinese writing comes to Korea: hanja.", "es": "La escritura china llega a Corea: los hanja." } },
+        { "at": [139.48, 36.13], "place": { "en": "Gyōda, Saitama, Japan", "es": "Gyōda, Saitama, Japón" }, "date": "471", "circa": true, "note": { "en": "A sword inscribed in Chinese characters, an early Japanese use of kanji.", "es": "Una espada con caracteres chinos, uno de los primeros usos japoneses de los kanji." } }
+      ],
+      "where": ["CHN", "TWN", "SGP", "JPN"],
+      "strong": ["CHN", "TWN", "JPN"],
+      "note": { "en": "Written daily in China, Taiwan, Hong Kong, Macau, Singapore and Japan; Korea still teaches some hanja.", "es": "Se escriben a diario en China, Taiwán, Hong Kong, Macao, Singapur y Japón; Corea aún enseña algunos hanja." },
+      "words": [
+        { "en": "kanji", "es": "kanji", "from": "kanji (Japanese), from Chinese hànzì", "means": { "en": "Han characters", "es": "caracteres de los Han" } }
+      ],
+      "see": ["writing:chinese-characters", "people:oracle-bones"],
+      "wiki": { "en": "Chinese characters", "es": "Caracteres chinos" }
+    },
+    {
+      "id": "confucianism",
+      "name": { "en": "Confucian ideas", "es": "Las ideas de Confucio" },
+      "cat": "ideas",
+      "icon": "🎓",
+      "how": "invented",
+      "date": "-500",
+      "circa": true,
+      "at": [116.99, 35.6],
+      "place": { "en": "Qufu, Shandong, China", "es": "Qufu, Shandong, China" },
+      "text": {
+        "en": "Confucius taught respect for parents and elders, study, good manners and rulers who lead by example; his ideas still shape family life, schools and government in East Asia.",
+        "es": "Confucio enseñó el respeto a los padres y los mayores, el estudio, los buenos modales y gobernantes que guían con el ejemplo; sus ideas aún moldean la vida familiar, las escuelas y el gobierno en Asia oriental."
+      },
+      "details": {
+        "en": "Kong Fuzi, 'Master Kong' (551–479 BC), was a teacher in the small state of Lu, and his followers collected his sayings in the Analects. The Han dynasty made the Confucian books the core of education, and later of the imperial exams. With them went ancestor rites, respect for parents and the ideal of the scholar-official, across Korea, Japan and Vietnam. Jesuits translated the books into Latin in 1687, and thinkers of the Enlightenment such as Voltaire admired them. Temples of Confucius, from Qufu to Hanoi, still hold ceremonies.",
+        "es": "Kong Fuzi, el «maestro Kong» (551–479 a. C.), fue un maestro del pequeño Estado de Lu, y sus seguidores reunieron sus dichos en las Analectas. La dinastía Han hizo de los libros confucianos el centro de la educación, y más tarde de los exámenes imperiales. Con ellos viajaron los ritos a los antepasados, el respeto a los padres y el ideal del funcionario letrado, por Corea, Japón y Vietnam. Los jesuitas tradujeron los libros al latín en 1687, y pensadores de la Ilustración como Voltaire los admiraron. Los templos de Confucio, de Qufu a Hanói, siguen celebrando ceremonias."
+      },
+      "path": [
+        { "at": [105.84, 21.03], "place": { "en": "Hanoi, Vietnam", "es": "Hanói, Vietnam" }, "date": "1070", "note": { "en": "The Temple of Literature honours Confucius.", "es": "El Templo de la Literatura honra a Confucio." } },
+        { "at": [126.99, 37.59], "place": { "en": "Seoul, South Korea", "es": "Seúl, Corea del Sur" }, "date": "1398", "from": 0, "note": { "en": "Sungkyunkwan, Korea's Confucian academy, opens.", "es": "Abre Sungkyunkwan, la academia confuciana de Corea." } },
+        { "at": [2.35, 48.86], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1687", "from": 0, "note": { "en": "Jesuits publish Confucius in Latin for European readers.", "es": "Los jesuitas publican a Confucio en latín para los lectores europeos." } }
+      ],
+      "where": ["CHN", "TWN", "KOR", "PRK", "JPN", "VNM", "SGP"],
+      "strong": ["CHN", "TWN", "KOR"],
+      "note": { "en": "Its values run through family and school life in China, Taiwan, Korea, Japan, Vietnam and Singapore.", "es": "Sus valores atraviesan la vida familiar y escolar de China, Taiwán, Corea, Japón, Vietnam y Singapur." },
+      "words": [
+        { "en": "Confucius", "es": "Confucio", "type": "name", "from": "Kǒng Fūzǐ (Chinese), latinised by Jesuits", "means": { "en": "Master Kong", "es": "maestro Kong" } }
+      ],
+      "see": ["lives/confucius", "beliefs/east-asian-ways"],
+      "wiki": { "en": "Confucianism", "es": "Confucianismo" }
+    },
+    {
+      "id": "dao-yin-yang",
+      "name": { "en": "The Dao, and yin and yang", "es": "El tao, y el yin y el yang" },
+      "cat": "ideas",
+      "icon": "☯️",
+      "how": "invented",
+      "date": "-400",
+      "circa": true,
+      "at": [112.45, 34.62],
+      "place": { "en": "Zhou China (Luoyang, Henan)", "es": "China Zhou (Luoyang, Henan)" },
+      "text": {
+        "en": "The 'way' of nature taught in the Daodejing, and the pairing of yin and yang, shade and sun, are Chinese ideas known worldwide; yin and yang even sit on South Korea's flag.",
+        "es": "El «camino» de la naturaleza que enseña el Tao Te King y la pareja del yin y el yang, sombra y sol, son ideas chinas conocidas en todo el mundo; el yin y el yang están incluso en la bandera de Corea del Sur."
+      },
+      "details": {
+        "en": "The Daodejing, traditionally credited to Laozi and compiled perhaps in the 300s BC, teaches living simply and in tune with the Dao, the way of nature. Yin and yang describe opposite forces, such as shade and sunlight, that depend on each other and turn into each other; the idea runs through Chinese medicine, cooking and feng shui, and later through tai chi. Daoism became a religion with temples and priests. The circle of red and blue yin and yang sits at the centre of South Korea's flag, and the Daodejing is among the most translated books in the world.",
+        "es": "El Tao Te King, atribuido tradicionalmente a Laozi y reunido quizá en el siglo IV a. C., enseña a vivir con sencillez y en armonía con el tao, el camino de la naturaleza. El yin y el yang describen fuerzas opuestas, como la sombra y la luz del sol, que dependen una de otra y se transforman una en otra; la idea atraviesa la medicina china, la cocina y el feng shui, y más tarde el taichí. El taoísmo se convirtió en una religión con templos y sacerdotes. El círculo rojo y azul del yin y el yang está en el centro de la bandera de Corea del Sur, y el Tao Te King es uno de los libros más traducidos del mundo."
+      },
+      "path": [
+        { "at": [126.98, 37.57], "place": { "en": "Seoul, South Korea", "es": "Seúl, Corea del Sur" }, "date": "1883", "note": { "en": "The Taegukgi, with yin and yang at its centre, becomes Korea's flag.", "es": "La Taegukgi, con el yin y el yang en el centro, se convierte en la bandera de Corea." } }
+      ],
+      "where": ["CHN", "TWN", "KOR", "PRK", "JPN", "VNM", "SGP"],
+      "strong": ["CHN", "TWN", "KOR"],
+      "note": { "en": "Living ideas in East Asia; the yin-yang symbol and tai chi are known around the world.", "es": "Son ideas vivas en Asia oriental; el símbolo del yin y el yang y el taichí se conocen en todo el mundo." },
+      "words": [
+        { "en": "Tao, Taoism", "es": "tao, taoísmo", "from": "dào (Chinese)", "means": { "en": "way, path", "es": "camino" } },
+        { "en": "qi", "es": "chi", "from": "qì (Chinese)", "means": { "en": "breath, vital energy", "es": "aliento, energía vital" } }
+      ],
+      "wiki": { "en": "Yin and yang", "es": "Yin y yang" }
+    },
+    {
+      "id": "civil-service-exams",
+      "name": { "en": "Exams for government jobs", "es": "Los exámenes para cargos públicos" },
+      "cat": "law",
+      "icon": "📝",
+      "how": "invented",
+      "sure": "debated",
+      "date": "605",
+      "at": [112.45, 34.62],
+      "place": { "en": "Sui China (Luoyang, Henan)", "es": "China Sui (Luoyang, Henan)" },
+      "text": {
+        "en": "China chose officials by written exams for 1,300 years; the idea of hiring public servants on merit spread to Korea and Vietnam and perhaps, through admiring Europeans, to Britain.",
+        "es": "China eligió a sus funcionarios por exámenes escritos durante 1300 años; la idea de contratar servidores públicos por mérito pasó a Corea y Vietnam y quizá, a través de europeos que la admiraban, a Gran Bretaña."
+      },
+      "details": {
+        "en": "Han emperors already tested men recommended for office, but from 605 the Sui and Tang held regular exams on the Confucian classics, open in principle to men of any birth. Under the Song they became the main road to office, with candidates shut in cells for days. Korea adopted exams in 958 and Vietnam in 1075. European writers praised the system, and Britain, after the Northcote–Trevelyan report of 1854, began hiring civil servants by competitive exam; how much China inspired this is debated. China's exams ended in 1905, but the gaokao and civil-service tests carry on the idea.",
+        "es": "Los emperadores Han ya examinaban a hombres recomendados para cargos, pero desde el 605 los Sui y los Tang celebraron exámenes regulares sobre los clásicos confucianos, abiertos en principio a hombres de cualquier origen. Con los Song se convirtieron en el camino principal a los cargos, con candidatos encerrados en celdas durante días. Corea adoptó los exámenes en el 958 y Vietnam en 1075. Escritores europeos elogiaron el sistema, y Gran Bretaña, tras el informe Northcote-Trevelyan de 1854, empezó a contratar funcionarios por oposición; cuánto se inspiró en China se discute. Los exámenes chinos terminaron en 1905, pero el gaokao y las pruebas para funcionarios continúan la idea."
+      },
+      "path": [
+        { "at": [126.55, 37.97], "place": { "en": "Kaesong, North Korea (the Goryeo capital)", "es": "Kaesong, Corea del Norte (la capital Goryeo)" }, "date": "958", "note": { "en": "Korea's gwageo exams begin.", "es": "Empiezan los exámenes gwageo de Corea." } },
+        { "at": [105.85, 21.03], "place": { "en": "Hanoi, Vietnam", "es": "Hanói, Vietnam" }, "date": "1075", "from": 0, "note": { "en": "Vietnam holds its first court exams.", "es": "Vietnam celebra sus primeros exámenes de la corte." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1855", "from": 0, "note": { "en": "The Civil Service Commission begins examining candidates; the Chinese influence is debated.", "es": "La Comisión del Servicio Civil empieza a examinar candidatos; la influencia china se discute." } }
+      ],
+      "where": ["CHN", "TWN", "KOR", "JPN", "VNM", "SGP", "GBR", "IND"],
+      "strong": ["CHN", "TWN", "KOR"],
+      "note": { "en": "China's gaokao and civil-service tests, Korea's and Japan's public exams, and merit exams for civil services from Britain to India.", "es": "El gaokao y las pruebas de funcionarios de China, los exámenes públicos de Corea y Japón, y las oposiciones al servicio civil de Gran Bretaña a la India." },
+      "see": ["beliefs:imperial-examination", "beliefs:gwageo"],
+      "wiki": { "en": "Imperial examination", "es": "Sistema de examen imperial chino" }
+    },
+    {
+      "id": "acupuncture",
+      "name": { "en": "Acupuncture", "es": "La acupuntura" },
+      "cat": "science",
+      "icon": "📍",
+      "how": "invented",
+      "date": "-100",
+      "circa": true,
+      "at": [108.94, 34.27],
+      "place": { "en": "Han China (Chang'an, today Xi'an)", "es": "China Han (Chang'an, hoy Xi'an)" },
+      "text": {
+        "en": "Treating the body with fine needles at chosen points, described in the Han-era Inner Canon of the Yellow Emperor, is still practised in China and in clinics around the world.",
+        "es": "Tratar el cuerpo con agujas finas en puntos elegidos, como describe el Canon interno del Emperador Amarillo de época Han, se sigue practicando en China y en clínicas de todo el mundo."
+      },
+      "details": {
+        "en": "The Huangdi Neijing, compiled around the 100s BC, describes channels through which qi flows and needling to restore balance; medical texts from Mawangdui, buried in 168 BC, describe the channels but not yet the needles. Acupuncture reached Korea and Japan by the 500s. Jesuits reported it to Europe in the 1600s, but the Western boom began in 1971, after an American journalist wrote about the treatment he received in Beijing. UNESCO listed acupuncture and moxibustion as intangible heritage in 2010. Studies of how well it works give mixed results.",
+        "es": "El Huangdi Neijing, reunido hacia el siglo II a. C., describe canales por los que fluye el qi y la punción para restablecer el equilibrio; los textos médicos de Mawangdui, enterrados en el 168 a. C., describen los canales pero todavía no las agujas. La acupuntura llegó a Corea y Japón hacia el siglo VI. Los jesuitas la dieron a conocer en Europa en el siglo XVII, pero el auge en Occidente empezó en 1971, después de que un periodista estadounidense escribiera sobre el tratamiento que recibió en Pekín. La UNESCO declaró patrimonio inmaterial la acupuntura y la moxibustión en 2010. Los estudios sobre su eficacia dan resultados dispares."
+      },
+      "path": [
+        { "at": [135.8, 34.68], "place": { "en": "Nara, Japan", "es": "Nara, Japón" }, "date": "600", "circa": true, "note": { "en": "Chinese medicine reaches Japan by way of Korea.", "es": "La medicina china llega a Japón a través de Corea." } },
+        { "at": [-73.99, 40.75], "place": { "en": "New York, USA", "es": "Nueva York, EE. UU." }, "date": "1971", "from": 0, "note": { "en": "A newspaper report on acupuncture in Beijing starts a boom in the West.", "es": "Un artículo de prensa sobre la acupuntura en Pekín desata un auge en Occidente." } }
+      ],
+      "where": ["world"],
+      "strong": ["CHN", "TWN", "KOR", "JPN"],
+      "note": { "en": "Practised in China, Korea and Japan alongside modern medicine, and offered by clinics in most countries.", "es": "Se practica en China, Corea y Japón junto a la medicina moderna, y la ofrecen clínicas de la mayoría de los países." },
+      "wiki": { "en": "Acupuncture", "es": "Acupuntura" }
+    },
+    {
+      "id": "food-words",
+      "name": { "en": "Ketchup, lychee, wok: food words", "es": "Kétchup, lichi, wok: palabras de comida" },
+      "cat": "words",
+      "icon": "🥡",
+      "how": "named",
+      "sure": "likely",
+      "date": "1700",
+      "circa": true,
+      "at": [116.0, 24.0],
+      "place": { "en": "Fujian and Guangdong, China", "es": "Fujian y Guangdong, China" },
+      "text": {
+        "en": "Southern Chinese languages gave English and Spanish words for foods: ketchup, lychee, kumquat, bok choy, wok, dim sum, chow mein, ginseng and, in Peru, chaufa and sillao.",
+        "es": "Las lenguas del sur de China dieron al español y al inglés palabras de comida: kétchup, lichi, kumquat, wok, dim sum, ginseng y, en Perú, chaufa, kion y sillao."
+      },
+      "details": {
+        "en": "Most came with sailors, traders and migrants from Fujian and Guangdong, who spoke Hokkien and Cantonese. Ketchup was a Hokkien fish sauce, kê-tsiap; British sailors met it in Southeast Asia around 1700, perhaps through Malay kecap, and later cooks made it with mushrooms, walnuts and finally tomatoes. Kumquat is Cantonese for 'golden orange'. Chinese cooks who went to California and to Peru in the 1800s brought chow mein and the wok; in Peru they created chifa cooking, whose words, such as chaufa (fried rice) and sillao (soy sauce), are everyday Peruvian Spanish.",
+        "es": "La mayoría llegaron con marineros, comerciantes y migrantes de Fujian y Guangdong, que hablaban hokkien y cantonés. El kétchup era una salsa de pescado hokkien, kê-tsiap; los marineros británicos la conocieron en el Sudeste Asiático hacia 1700, quizá a través del malayo kecap, y después los cocineros la hicieron con hongos, nueces y por fin tomate. Kumquat es «naranja dorada» en cantonés. Los cocineros chinos que fueron a California y a Perú en el siglo XIX llevaron los fideos salteados y el wok; en Perú crearon la cocina chifa, cuyas palabras, como chaufa (arroz frito) y sillao (salsa de soya), son español peruano de todos los días."
+      },
+      "path": [
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1711", "circa": true, "note": { "en": "Ketchup appears in English cookbooks and dictionaries.", "es": "El kétchup aparece en recetarios y diccionarios ingleses." } },
+        { "at": [-77.04, -12.05], "place": { "en": "Lima, Peru", "es": "Lima, Perú" }, "date": "1849", "from": 0, "note": { "en": "Chinese workers arrive; chifa cooking and its words are born.", "es": "Llegan trabajadores chinos; nacen la cocina chifa y sus palabras." } },
+        { "at": [-122.41, 37.79], "place": { "en": "San Francisco, USA", "es": "San Francisco, EE. UU." }, "date": "1849", "circa": true, "from": 0, "note": { "en": "Gold Rush cooks bring chow mein and the wok.", "es": "Los cocineros de la fiebre del oro traen el chow mein y el wok." } }
+      ],
+      "where": ["lang:eng", "lang:spa"],
+      "strong": ["PER"],
+      "note": { "en": "Ketchup, wok and lychee are everyday words worldwide; Peru's Spanish is full of Cantonese food words.", "es": "Kétchup, wok y lichi son palabras de uso diario en todo el mundo; el español de Perú está lleno de palabras cantonesas de comida." },
+      "words": [
+        { "en": "ketchup", "es": "kétchup", "from": "kê-tsiap (Hokkien), perhaps via Malay kecap", "means": { "en": "fish sauce", "es": "salsa de pescado" } },
+        { "en": "lychee", "es": "lichi", "from": "lìzhī (Mandarin)" },
+        { "en": "kumquat", "es": "kumquat", "from": "gam-gwat (Cantonese)", "means": { "en": "golden orange", "es": "naranja dorada" } },
+        { "en": "bok choy", "from": "baak-choi (Cantonese)", "means": { "en": "white vegetable", "es": "verdura blanca" } },
+        { "en": "wok", "es": "wok", "from": "wok (Cantonese)", "means": { "en": "cooking pan", "es": "sartén" } },
+        { "en": "dim sum", "es": "dim sum", "from": "dim-sam (Cantonese)", "means": { "en": "touch the heart", "es": "tocar el corazón" } },
+        { "en": "chow mein", "from": "chaau-min (Cantonese)", "means": { "en": "fried noodles", "es": "fideos fritos" } },
+        { "en": "ginseng", "es": "ginseng", "from": "rénshēn (Chinese)", "means": { "en": "man root", "es": "raíz de hombre" } },
+        { "es": "chaufa", "from": "chaau-faan (Cantonese), in Peru", "means": { "en": "fried rice", "es": "arroz frito" } },
+        { "es": "sillao", "from": "si-yau (Cantonese), in Peru", "means": { "en": "soy sauce", "es": "salsa de soya" } },
+        { "es": "kion", "from": "geung (Cantonese), in Peru (likely)", "means": { "en": "ginger", "es": "jengibre" } }
+      ],
+      "wiki": { "en": "Ketchup", "es": "Kétchup" }
+    },
+    {
+      "id": "other-words",
+      "name": { "en": "Kowtow, kung fu, feng shui: words from Chinese", "es": "Kungfú, feng shui, tifón: palabras del chino" },
+      "cat": "words",
+      "icon": "🗣️",
+      "how": "named",
+      "date": "1800",
+      "circa": true,
+      "at": [113.26, 23.13],
+      "place": { "en": "Canton (Guangzhou) and Beijing, China", "es": "Cantón (Guangzhou) y Pekín, China" },
+      "text": {
+        "en": "English and Spanish borrowed many other Chinese words: kowtow, kung fu, feng shui, yin and yang, tai chi, gung-ho, tycoon and, perhaps, typhoon.",
+        "es": "El español y el inglés tomaron muchas otras palabras del chino: kungfú, feng shui, yin y yang, taichí, tifón y el inglés kowtow, «reverencia»."
+      },
+      "details": {
+        "en": "Kowtow, from kòutóu, 'knock the head', was the full bow that British envoys refused to make at the Qing court. Kung fu means skill won by hard work, and martial arts films from Hong Kong took the word round the world in the 1970s. Gung-ho, from gōnghé, 'work together', the slogan of Chinese workers' cooperatives, was taken up by US Marines in 1942. Tycoon came through Japanese taikun, 'great lord', itself built from Chinese. Typhoon may come from Cantonese daai-fung, 'big wind', but Greek Typhon and Arabic ṭūfān also played a part, so its origin is debated.",
+        "es": "El inglés kowtow, del chino kòutóu, «golpear con la cabeza», era la gran reverencia que los enviados británicos se negaron a hacer en la corte Qing. Kungfú significa habilidad lograda con esfuerzo, y las películas de artes marciales de Hong Kong llevaron la palabra por todo el mundo en los años setenta. El inglés gung-ho, del chino gōnghé, «trabajar juntos», lema de las cooperativas obreras chinas, lo adoptaron los marines de Estados Unidos en 1942. Tifón quizá venga del cantonés daai-fung, «gran viento», pero el griego Tifón y el árabe ṭūfān también influyeron, así que su origen se discute."
+      },
+      "path": [
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1804", "circa": true, "note": { "en": "Kowtow enters English, after the British embassies to the Qing court.", "es": "Kowtow entra en el inglés, tras las embajadas británicas a la corte Qing." } },
+        { "at": [114.18, 22.35], "place": { "en": "Hong Kong, China", "es": "Hong Kong, China" }, "date": "1971", "from": 0, "note": { "en": "Kung fu films make the word known worldwide.", "es": "Las películas de kungfú dan a conocer la palabra en todo el mundo." } }
+      ],
+      "where": ["lang:eng", "lang:spa"],
+      "note": { "en": "Used in English and Spanish; kung fu, feng shui and yin and yang are understood almost everywhere.", "es": "Se usan en español e inglés; kungfú, feng shui y yin y yang se entienden casi en todas partes." },
+      "words": [
+        { "en": "kowtow", "from": "kòutóu (Mandarin)", "means": { "en": "knock the head", "es": "golpear con la cabeza" } },
+        { "en": "kung fu", "es": "kungfú", "from": "gōngfu (Mandarin)", "means": { "en": "skill from hard work", "es": "habilidad lograda con esfuerzo" } },
+        { "en": "feng shui", "es": "feng shui", "from": "fēngshuǐ (Mandarin)", "means": { "en": "wind and water", "es": "viento y agua" } },
+        { "en": "yin and yang", "es": "yin y yang", "from": "yīn yáng (Mandarin)", "means": { "en": "shade and sun", "es": "sombra y sol" } },
+        { "en": "tai chi", "es": "taichí", "from": "tàijí (quán) (Mandarin)", "means": { "en": "supreme ultimate (boxing)", "es": "(boxeo del) supremo último" } },
+        { "en": "gung-ho", "from": "gōnghé (Mandarin)", "means": { "en": "work together", "es": "trabajar juntos" } },
+        { "en": "tycoon", "from": "taikun (Japanese), from Chinese dàjūn", "means": { "en": "great lord", "es": "gran señor" } },
+        { "en": "typhoon", "es": "tifón", "from": "perhaps daai-fung (Cantonese), mixed with Greek and Arabic words", "means": { "en": "big wind", "es": "gran viento" } },
+        { "en": "shih tzu", "es": "shih tzu", "from": "shīzi (Mandarin)", "means": { "en": "lion (dog)", "es": "(perro) león" } }
+      ],
+      "wiki": { "en": "Feng shui", "es": "Feng shui" }
+    },
+    {
+      "id": "name-china",
+      "name": { "en": "The name “China”", "es": "El nombre «China»" },
+      "cat": "words",
+      "icon": "🏯",
+      "how": "named",
+      "sure": "debated",
+      "date": "-221",
+      "at": [108.71, 34.33],
+      "place": { "en": "Xianyang, Shaanxi, China (the Qin capital)", "es": "Xianyang, Shaanxi, China (la capital Qin)" },
+      "text": {
+        "en": "China's name in English, Spanish and many other languages probably comes from Qin, the state whose king united the country in 221 BC, by way of Sanskrit Cīna.",
+        "es": "El nombre de China en español, inglés y muchas otras lenguas probablemente viene de Qin, el Estado cuyo rey unificó el país en el 221 a. C., a través del sánscrito Cīna."
+      },
+      "details": {
+        "en": "Chinese people call their country Zhōngguó, 'the Middle Kingdom'. The outside name travelled the other way: Sanskrit texts speak of the Cīna, Persian has Chīn, and Portuguese sailors of the 1500s brought 'China' to Europe. Most scholars link Cīna to the state of Qin, but some point to other early states or peoples, and some Sanskrit mentions may be older than the Qin empire, so the origin is debated. Latin Sinae, from the same root through Greek and Arabic, gave 'Sino-'. An older European name, Cathay, came from the Khitan people of the north and survives in Russian Kitai.",
+        "es": "Los chinos llaman a su país Zhōngguó, «el País del Centro». El nombre de fuera viajó en sentido contrario: los textos sánscritos hablan de los Cīna, el persa dice Chīn, y los marinos portugueses del siglo XVI llevaron «China» a Europa. La mayoría de los especialistas relaciona Cīna con el Estado de Qin, pero algunos señalan otros Estados o pueblos antiguos, y algunas menciones sánscritas podrían ser anteriores al imperio Qin, así que el origen se discute. El latín Sinae, de la misma raíz a través del griego y el árabe, dio «sino-». Un nombre europeo más antiguo, Catay, vino del pueblo jitán del norte y sobrevive en el ruso Kitái."
+      },
+      "path": [
+        { "at": [80.0, 26.0], "place": { "en": "Northern India", "es": "Norte de la India" }, "date": "1", "circa": true, "note": { "en": "Sanskrit texts name the Cīna.", "es": "Los textos sánscritos nombran a los Cīna." } },
+        { "at": [51.67, 32.65], "place": { "en": "Persia (Isfahan, Iran)", "es": "Persia (Isfahán, Irán)" }, "date": "600", "circa": true, "from": 0, "note": { "en": "Persian Chīn, and Arabic Ṣīn.", "es": "En persa Chīn, y en árabe Ṣīn." } },
+        { "at": [-9.13, 38.73], "place": { "en": "Lisbon, Portugal", "es": "Lisboa, Portugal" }, "date": "1516", "circa": true, "note": { "en": "Portuguese sailors bring the name China to Europe.", "es": "Los marinos portugueses llevan el nombre China a Europa." } }
+      ],
+      "where": ["world", "!RUS", "!BLR", "!UKR", "!BGR", "!KAZ", "!KGZ", "!MNG", "!CHN", "!TWN", "!JPN", "!KOR", "!PRK", "!VNM"],
+      "note": { "en": "Used in most of the world's languages; Russian and some neighbours say Kitai, from Cathay, and East Asia uses 'Middle Kingdom'.", "es": "Se usa en la mayoría de las lenguas del mundo; el ruso y algunas lenguas vecinas dicen Kitái, de Catay, y Asia oriental usa «País del Centro»." },
+      "words": [
+        { "en": "China", "es": "China", "type": "place", "from": "Cīna (Sanskrit), perhaps from Qin (Chinese)", "means": { "en": "the land of Qin (probably)", "es": "la tierra de Qin (probablemente)" } },
+        { "en": "Sino- (Sinology)", "es": "sino- (sinología)", "from": "Sinae (Latin), via Greek and Arabic Ṣīn, perhaps from Qin" }
+      ],
+      "see": ["people:qin-shi-huang"],
+      "wiki": { "en": "Names of China", "es": "Nombres de China" }
+    },
+    {
+      "id": "place-names",
+      "name": { "en": "Beijing, Hong Kong, Japan: place names", "es": "Pekín, Hong Kong, Japón: nombres de lugar" },
+      "cat": "words",
+      "icon": "🗺️",
+      "how": "named",
+      "sure": "likely",
+      "date": "700",
+      "circa": true,
+      "at": [108.94, 34.27],
+      "place": { "en": "Chang'an (Xi'an), the Tang capital", "es": "Chang'an (hoy Xi'an), la capital Tang" },
+      "text": {
+        "en": "Chinese names fill the map of East Asia: Beijing, 'northern capital', Shanghai, Hong Kong, 'fragrant harbour', and even Japan and Vietnam, both named with Chinese characters.",
+        "es": "Los nombres chinos llenan el mapa de Asia oriental: Pekín, «capital del norte», Shanghái, Hong Kong, «puerto fragante», y hasta Japón y Vietnam, ambos nombrados con caracteres chinos."
+      },
+      "details": {
+        "en": "Many Chinese place names describe what they are: Beijing and Nanjing are the 'northern' and 'southern' capitals, Shanghai lies 'on the sea', and Kowloon is 'nine dragons'. Japan called itself 日本, 'origin of the sun', in Chinese characters from about 700; an older Chinese reading of them passed through Malay to the Portuguese as Japão, hence Japan and Japón. In 1804 the Qing court approved the name Việt Nam, 'Viet of the south'. Portuguese sailors turned Guangdong into Canton and the bay of the goddess A-Ma into Macau.",
+        "es": "Muchos nombres de lugar chinos describen lo que son: Pekín y Nankín son las capitales «del norte» y «del sur», Shanghái está «sobre el mar», y Kowloon son «nueve dragones». Japón se llamó a sí mismo 日本, «origen del sol», con caracteres chinos desde hacia el 700; una lectura china antigua de esos caracteres pasó por el malayo a los portugueses como Japão, de donde vienen Japón y el inglés Japan. En 1804 la corte Qing aprobó el nombre Việt Nam, «los Viet del sur». Los marinos portugueses convirtieron Guangdong en Cantón y la bahía de la diosa A-Ma en Macao."
+      },
+      "path": [
+        { "at": [-9.13, 38.73], "place": { "en": "Lisbon, Portugal", "es": "Lisboa, Portugal" }, "date": "1550", "circa": true, "note": { "en": "Portuguese sailors bring Japão, Cantão and Macau to Europe.", "es": "Los marinos portugueses llevan Japão, Cantão y Macau a Europa." } },
+        { "at": [107.58, 16.46], "place": { "en": "Huế, Vietnam", "es": "Hue, Vietnam" }, "date": "1804", "from": 0, "note": { "en": "The name Việt Nam, approved by the Qing court, is adopted.", "es": "Se adopta el nombre Việt Nam, aprobado por la corte Qing." } },
+        { "at": [114.18, 22.35], "place": { "en": "Hong Kong, China", "es": "Hong Kong, China" }, "date": "1842", "from": 0, "note": { "en": "Britain takes Hong Kong island and keeps its Cantonese name.", "es": "Gran Bretaña toma la isla de Hong Kong y conserva su nombre cantonés." } }
+      ],
+      "where": ["world"],
+      "strong": ["CHN", "JPN", "VNM"],
+      "note": { "en": "These names are on every map and used in every language.", "es": "Estos nombres están en todos los mapas y se usan en todas las lenguas." },
+      "words": [
+        { "en": "Beijing (Peking)", "es": "Pekín (Beijing)", "type": "place", "from": "Běijīng (Mandarin)", "means": { "en": "northern capital", "es": "capital del norte" } },
+        { "en": "Nanjing (Nanking)", "es": "Nankín (Nanjing)", "type": "place", "from": "Nánjīng (Mandarin)", "means": { "en": "southern capital", "es": "capital del sur" } },
+        { "en": "Shanghai", "es": "Shanghái", "type": "place", "from": "Shànghǎi (Mandarin)", "means": { "en": "on the sea", "es": "sobre el mar" } },
+        { "en": "Hong Kong", "es": "Hong Kong", "type": "place", "from": "Heung Gong (Cantonese)", "means": { "en": "fragrant harbour", "es": "puerto fragante" } },
+        { "en": "Kowloon", "es": "Kowloon", "type": "place", "from": "Gau Lung (Cantonese)", "means": { "en": "nine dragons", "es": "nueve dragones" } },
+        { "en": "Japan", "es": "Japón", "type": "place", "from": "an old Chinese reading of 日本, via Malay and Portuguese", "means": { "en": "origin of the sun", "es": "origen del sol" } },
+        { "en": "Vietnam", "es": "Vietnam", "type": "place", "from": "Yuènán (Chinese), read Việt Nam", "means": { "en": "Viet of the south", "es": "los Viet del sur" } },
+        { "en": "Yangtze", "es": "Yangtsé", "type": "place", "from": "Yángzǐ (Mandarin), first the name of its lower reach" },
+        { "en": "Canton", "es": "Cantón", "type": "place", "from": "Guǎngdōng (Chinese), via Portuguese Cantão", "means": { "en": "broad east", "es": "este amplio" } },
+        { "en": "Macau", "es": "Macao", "type": "place", "from": "A-Ma-Gau (Cantonese), via Portuguese", "means": { "en": "bay of the goddess A-Ma", "es": "bahía de la diosa A-Ma" } }
+      ],
+      "wiki": { "en": "Beijing", "es": "Pekín" }
+    },
+    {
+      "id": "calligraphy-ink",
+      "name": { "en": "Brush, ink and calligraphy", "es": "El pincel, la tinta china y la caligrafía" },
+      "cat": "arts",
+      "icon": "🖌️",
+      "how": "invented",
+      "date": "353",
+      "at": [120.58, 30.0],
+      "place": { "en": "Shaoxing, Zhejiang, China (the Orchid Pavilion)", "es": "Shaoxing, Zhejiang, China (el Pabellón de las Orquídeas)" },
+      "text": {
+        "en": "Writing with a soft brush and ink made from soot became a high art in China; East Asia still practises calligraphy, and Spanish calls black drawing ink 'tinta china'.",
+        "es": "Escribir con un pincel suave y tinta de hollín se convirtió en un gran arte en China; Asia oriental sigue practicando la caligrafía, y en español la tinta negra de dibujo se llama tinta china."
+      },
+      "details": {
+        "en": "Brushes were used under the Shang, and by the Han ink was made from pine soot and glue pressed into sticks, then ground with water on a stone. Calligraphy came to be valued like painting: the preface that Wang Xizhi wrote at the Orchid Pavilion in 353 is the most famous work of all, and ink painting grew from the same brushwork. Japan's shodō and Korea's seoye carry it on, and UNESCO listed Chinese calligraphy as intangible heritage in 2009. The black ink reached Europe by trade; English calls it India ink, Spanish tinta china.",
+        "es": "Los pinceles ya se usaban con los Shang, y en tiempos Han la tinta se hacía con hollín de pino y cola prensados en barras, que se molían con agua sobre una piedra. La caligrafía llegó a valorarse como la pintura: el prefacio que Wang Xizhi escribió en el Pabellón de las Orquídeas en el 353 es la obra más famosa de todas, y la pintura a tinta nació de la misma pincelada. El shodō japonés y el seoye coreano la continúan, y la UNESCO declaró patrimonio inmaterial la caligrafía china en 2009. La tinta negra llegó a Europa por el comercio; en español se llama tinta china y en inglés, India ink."
+      },
+      "path": [
+        { "at": [135.8, 34.68], "place": { "en": "Nara, Japan", "es": "Nara, Japón" }, "date": "700", "circa": true, "note": { "en": "Brush, ink and Chinese calligraphy are part of Japanese court culture.", "es": "El pincel, la tinta y la caligrafía china forman parte de la cultura de la corte japonesa." } }
+      ],
+      "where": ["CHN", "TWN", "JPN", "KOR", "SGP"],
+      "note": { "en": "Taught in schools and practised as an art in China, Taiwan, Japan and Korea; Chinese ink is used by artists everywhere.", "es": "Se enseña en las escuelas y se practica como arte en China, Taiwán, Japón y Corea; artistas de todas partes usan tinta china." },
+      "words": [
+        { "es": "tinta china", "from": "China, where the ink stick was made", "means": { "en": "black drawing ink", "es": "tinta negra de dibujo" } }
+      ],
+      "wiki": { "en": "Chinese calligraphy", "es": "Caligrafía china" }
+    },
+    {
+      "id": "art-of-war",
+      "name": { "en": "The Art of War", "es": "El arte de la guerra" },
+      "cat": "ideas",
+      "icon": "⚔️",
+      "how": "invented",
+      "date": "-500",
+      "circa": true,
+      "at": [120.62, 31.3],
+      "place": { "en": "Wu, today Suzhou, Jiangsu, China", "es": "Wu, hoy Suzhou, Jiangsu, China" },
+      "text": {
+        "en": "Sunzi's Art of War, a short book of advice on strategy written over 2,000 years ago, is still read by generals, business people and sports coaches.",
+        "es": "El arte de la guerra de Sunzi, un libro breve de consejos de estrategia escrito hace más de 2000 años, lo siguen leyendo generales, empresarios y entrenadores deportivos."
+      },
+      "details": {
+        "en": "Tradition says Sun Wu served the king of Wu around 500 BC; the text we have was probably put together in the Warring States period. Its thirteen chapters teach that the best victory is won without fighting, that you must know your enemy and yourself, and that war depends on deception and planning. It became a classic in China, Japan and Korea. A French Jesuit, Joseph-Marie Amiot, translated it in 1772, and Lionel Giles's English version followed in 1910. Military academies and business schools around the world study it.",
+        "es": "Según la tradición, Sun Wu sirvió al rey de Wu hacia el 500 a. C.; el texto que conocemos probablemente se reunió en el periodo de los Reinos Combatientes. Sus trece capítulos enseñan que la mejor victoria se gana sin luchar, que hay que conocer al enemigo y a uno mismo, y que la guerra depende del engaño y la planificación. Se volvió un clásico en China, Japón y Corea. Un jesuita francés, Joseph-Marie Amiot, lo tradujo en 1772, y la versión inglesa de Lionel Giles llegó en 1910. Academias militares y escuelas de negocios de todo el mundo lo estudian."
+      },
+      "path": [
+        { "at": [2.35, 48.86], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1772", "by": { "en": "Joseph-Marie Amiot", "es": "Joseph-Marie Amiot" }, "note": { "en": "The first translation into a European language.", "es": "La primera traducción a una lengua europea." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1910", "by": { "en": "Lionel Giles", "es": "Lionel Giles" }, "note": { "en": "A full English translation.", "es": "Una traducción completa al inglés." } }
+      ],
+      "where": ["world"],
+      "strong": ["CHN", "TWN", "JPN", "KOR"],
+      "note": { "en": "Translated into dozens of languages and read in military academies and business schools worldwide.", "es": "Traducido a decenas de lenguas, se lee en academias militares y escuelas de negocios de todo el mundo." },
+      "wiki": { "en": "The Art of War", "es": "El arte de la guerra" }
+    },
+    {
+      "id": "go-weiqi",
+      "name": { "en": "Go (weiqi)", "es": "El go (weiqi)" },
+      "cat": "play",
+      "icon": "⚫",
+      "how": "invented",
+      "date": "-500",
+      "circa": true,
+      "at": [117.5, 36.2],
+      "place": { "en": "Eastern Zhou China (Shandong)", "es": "China de los Zhou del Este (Shandong)" },
+      "text": {
+        "en": "Go, the game of surrounding territory with black and white stones on a grid, was played in China by about 500 BC and may be the oldest board game still played in much its original form.",
+        "es": "El go, el juego de rodear territorio con piedras blancas y negras sobre una cuadrícula, ya se jugaba en China hacia el 500 a. C. y quizá sea el juego de tablero más antiguo que aún se juega casi en su forma original."
+      },
+      "details": {
+        "en": "Weiqi, 'the surrounding game', is mentioned in the Analects of Confucius and in the Zuo Zhuan chronicle; a Han tomb held a 17×17 board, and the 19×19 board was standard by the Tang. Its rules are simple, yet it has more possible positions than there are atoms in the observable universe. It reached Korea as baduk and Japan as igo, where professional houses refined it from the 1600s. In 2016 the program AlphaGo beat the champion Lee Sedol in Seoul, a milestone for artificial intelligence. Millions play it, most of them in China, Korea and Japan.",
+        "es": "El weiqi, «el juego de rodear», aparece en las Analectas de Confucio y en la crónica Zuo Zhuan; una tumba Han guardaba un tablero de 17×17, y el de 19×19 era el habitual con los Tang. Sus reglas son sencillas, pero tiene más posiciones posibles que átomos hay en el universo observable. Llegó a Corea como baduk y a Japón como igo, donde escuelas profesionales lo perfeccionaron desde el siglo XVII. En 2016 el programa AlphaGo venció al campeón Lee Sedol en Seúl, un hito para la inteligencia artificial. Lo juegan millones de personas, la mayoría en China, Corea y Japón."
+      },
+      "path": [
+        { "at": [135.8, 34.68], "place": { "en": "Nara, Japan", "es": "Nara, Japón" }, "date": "750", "circa": true, "note": { "en": "Go boards are kept among the treasures of the Japanese court.", "es": "Entre los tesoros de la corte japonesa se guardan tableros de go." } },
+        { "at": [126.98, 37.57], "place": { "en": "Seoul, South Korea", "es": "Seúl, Corea del Sur" }, "date": "2016", "from": 0, "note": { "en": "AlphaGo beats Lee Sedol.", "es": "AlphaGo vence a Lee Sedol." } }
+      ],
+      "where": ["world"],
+      "strong": ["CHN", "TWN", "KOR", "JPN"],
+      "note": { "en": "Played in clubs and online worldwide, with professional leagues in China, Korea, Japan and Taiwan.", "es": "Se juega en clubes y en línea en todo el mundo, con ligas profesionales en China, Corea, Japón y Taiwán." },
+      "words": [
+        { "en": "go", "es": "go", "from": "go (Japanese), from Chinese qí", "means": { "en": "board game", "es": "juego de tablero" } }
+      ],
+      "wiki": { "en": "Go (game)", "es": "Go" }
+    },
+    {
+      "id": "toilet-paper",
+      "name": { "en": "Toilet paper", "es": "El papel higiénico" },
+      "cat": "daily",
+      "icon": "🧻",
+      "how": "invented",
+      "date": "589",
+      "circa": true,
+      "at": [108.94, 34.27],
+      "place": { "en": "Sui China (Chang'an, today Xi'an)", "es": "China Sui (Chang'an, hoy Xi'an)" },
+      "text": {
+        "en": "A Chinese scholar wrote in the late 500s that he would not use paper bearing the words of the sages 'for the toilet': the oldest known mention of toilet paper.",
+        "es": "Un erudito chino escribió a finales del siglo VI que no usaría papel con palabras de los sabios «para el retrete»: la mención más antigua conocida del papel higiénico."
+      },
+      "details": {
+        "en": "By the 500s paper was cheap enough in China to be thrown away after a single use. Yan Zhitui's remark, in his advice to his family, shows the habit already existed. An Arab account of the 800s was surprised that the Chinese wiped with paper instead of washing with water. By the 1390s the Ming court ordered hundreds of thousands of sheets a year, some soft and perfumed for the emperor's family. Packaged toilet paper went on sale in New York in 1857 and rolls followed; today it is used in much of the world, though many people prefer water.",
+        "es": "En el siglo VI el papel ya era tan barato en China que se podía tirar después de usarlo una vez. El comentario de Yan Zhitui, en sus consejos a su familia, muestra que la costumbre ya existía. Un relato árabe del siglo IX se sorprendía de que los chinos se limpiaran con papel en lugar de lavarse con agua. Hacia la década de 1390 la corte Ming pedía cientos de miles de hojas al año, algunas suaves y perfumadas para la familia del emperador. El papel higiénico empaquetado se vendió en Nueva York en 1857 y después llegaron los rollos; hoy se usa en buena parte del mundo, aunque mucha gente prefiere el agua."
+      },
+      "path": [
+        { "at": [-73.99, 40.73], "place": { "en": "New York, USA", "es": "Nueva York, EE. UU." }, "date": "1857", "note": { "en": "The first packaged toilet paper is sold.", "es": "Se vende el primer papel higiénico empaquetado." } }
+      ],
+      "where": ["continent:europe", "continent:north-america", "continent:south-america", "continent:oceania", "subregion:eastern-asia"],
+      "note": { "en": "The everyday choice in Europe, the Americas, Oceania and East Asia; in much of South Asia and the Muslim world water is preferred.", "es": "Es lo habitual en Europa, América, Oceanía y Asia oriental; en buena parte del sur de Asia y del mundo musulmán se prefiere el agua." },
+      "see": ["inventions:toilet-paper"],
+      "wiki": { "en": "Toilet paper", "es": "Papel higiénico" }
+    },
+    {
+      "id": "stirrup",
+      "name": { "en": "Stirrups", "es": "Los estribos" },
+      "cat": "tech",
+      "icon": "🐎",
+      "how": "invented",
+      "sure": "likely",
+      "date": "302",
+      "at": [112.94, 28.23],
+      "place": { "en": "Changsha, Hunan, China", "es": "Changsha, Hunan, China" },
+      "text": {
+        "en": "A pottery rider from a Chinese tomb of 302 shows the oldest known stirrup; within decades Chinese riders used pairs, which spread across Asia to Europe.",
+        "es": "Un jinete de cerámica de una tumba china del 302 muestra el estribo más antiguo conocido; en pocas décadas los jinetes chinos usaban pares, que se extendieron por Asia hasta Europa."
+      },
+      "details": {
+        "en": "Riders in India had earlier used a loop for the big toe, but the first stirrups for the whole foot appear in China in the early 300s, first as a single mounting step, then as a pair, found in a tomb near Nanjing of about 322. Stirrups steadied riders, letting them fight, shoot and travel better. They spread to Korea and Japan, and west with the peoples of the steppe: the Avars brought them to Europe in the late 500s. Riders all over the world still put their feet in stirrups.",
+        "es": "Los jinetes de la India habían usado antes un lazo para el dedo gordo, pero los primeros estribos para todo el pie aparecen en China a comienzos del siglo IV, primero como un solo apoyo para montar y después en pareja, hallada en una tumba cerca de Nankín de hacia el 322. Los estribos daban estabilidad al jinete y le permitían luchar, disparar y viajar mejor. Pasaron a Corea y Japón, y al oeste con los pueblos de la estepa: los ávaros los llevaron a Europa a finales del siglo VI. Los jinetes de todo el mundo siguen poniendo los pies en los estribos."
+      },
+      "path": [
+        { "at": [118.8, 32.06], "place": { "en": "Nanjing, Jiangsu, China", "es": "Nankín, Jiangsu, China" }, "date": "322", "circa": true, "note": { "en": "The oldest known pair of stirrups.", "es": "El par de estribos más antiguo conocido." } },
+        { "at": [19.04, 47.5], "place": { "en": "Pannonia (today Hungary)", "es": "Panonia (hoy Hungría)" }, "date": "580", "circa": true, "note": { "en": "The Avars bring stirrups to Europe.", "es": "Los ávaros llevan los estribos a Europa." } }
+      ],
+      "where": ["world"],
+      "note": { "en": "Used by riders, from jockeys to herders, in every country with horses.", "es": "Los usan jinetes, de los jockeys a los pastores, en todos los países con caballos." },
+      "see": ["inventions:stirrup"],
+      "wiki": { "en": "Stirrup", "es": "Estribo" }
+    }
+  ]
+}

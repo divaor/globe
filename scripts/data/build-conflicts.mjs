@@ -401,6 +401,24 @@ function toD3(mp) {
   return out;
 }
 
+/**
+ * Area expressions (this file's syntax, above) resolved and encoded as one TopoJSON object "areas", one feature per
+ * `id`, simplified and quantised as the stories' territories are: for other builders (the civilizations' homelands
+ * of scripts/data/legacies, v0.44.0).
+ */
+export function areaTopology(list, where = 'areas', minArea = 2e-8) {
+  const features = list.map(({ id, expr, defs }) => {
+    const mp = toD3(resolve(expr, { defs: defs ?? {}, refs: new Map(), resolving: new Set(), prev: null, side: null }, `${where} ${id}`));
+    if (!mp.length) throw new Error(`${where} ${id}: the area is empty`);
+    return { type: 'Feature', id, properties: {}, geometry: { type: 'MultiPolygon', coordinates: mp } };
+  });
+  let topo = topology({ areas: { type: 'FeatureCollection', features } }, 1e5);
+  topo = quantize(simplify(presimplify(topo, sphericalTriangleArea), minArea), 1e5);
+  rewindTopology(topo);
+  for (const g of topo.objects.areas.geometries) if (g.type == null) throw new Error(`${where} ${g.id}: the area vanished when simplified (too small?)`);
+  return topo;
+}
+
 // ---------------------------------------------------------------------------------------------
 // Dates: "YYYY", "YYYY-MM" or "YYYY-MM-DD", and for steps hours apart "YYYY-MM-DDTHH:MM", the local time at
 // the place (Lisbon's 9:40 on 1 November 1755); negative years are BC (-334 = 334 BC, no year 0).

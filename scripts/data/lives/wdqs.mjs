@@ -28,7 +28,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function turn() {
   for (;;) {
-    const last = fs.existsSync(STAMP) ? Number(fs.readFileSync(STAMP, 'utf8')) || 0 : 0;
+    let last = fs.existsSync(STAMP) ? Number(fs.readFileSync(STAMP, 'utf8')) || 0 : 0;
+    // Two scripts writing at once can leave two times run together (a number far in the future): it would never
+    // come round, so it counts as no stamp at all.
+    if (last > Date.now() + GAP) last = 0;
     const wait = last + GAP - Date.now();
     if (wait <= 0) break;
     await sleep(Math.min(wait, 5_000));

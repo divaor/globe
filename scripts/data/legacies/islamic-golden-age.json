@@ -1,0 +1,1337 @@
+{
+  "id": "islamic-golden-age",
+  "name": { "en": "Arabs and the Islamic Golden Age", "es": "Los árabes y la Edad de Oro del islam" },
+  "short": { "en": "Islamic Golden Age", "es": "Edad de Oro del islam" },
+  "icon": "📚",
+  "color": "#43a047",
+  "from": "750",
+  "to": "1258",
+  "at": [30.0, 32.0],
+  "zoom": 3,
+  "home": [{ "hist": "Abbasid Caliphate", "year": 800 }, { "hist": "Emirate of Córdoba", "year": 800 }],
+  "intro": {
+    "en": "In 750 the Abbasid dynasty took over the Islamic caliphate and soon built Baghdad, one of the greatest cities on Earth. For five centuries, until the Mongols sacked it in 1258, scholars of many peoples and faiths, writing in Arabic, translated, tested and added to the learning of Greece, Persia and India, while traders and farmers carried crops, crafts and words from Central Asia to al-Andalus.",
+    "es": "En 750 la dinastía abasí tomó el califato islámico y pronto construyó Bagdad, una de las mayores ciudades del mundo. Durante cinco siglos, hasta que los mongoles la saquearon en 1258, sabios de muchos pueblos y religiones, escribiendo en árabe, tradujeron, pusieron a prueba y ampliaron el saber de Grecia, Persia y la India, mientras comerciantes y campesinos llevaban cultivos, oficios y palabras de Asia Central a al-Ándalus."
+  },
+  "today": {
+    "en": "About 400 million people speak Arabic, the official language of 22 Arab League states. The scholars' books are still printed and studied, and Baghdad, Cairo, Fez and Córdoba keep buildings from the age.",
+    "es": "Unos 400 millones de personas hablan árabe, lengua oficial de los 22 países de la Liga Árabe. Los libros de aquellos sabios se siguen imprimiendo y estudiando, y Bagdad, El Cairo, Fez y Córdoba conservan edificios de la época."
+  },
+  "story": "eras/islamic-golden-age",
+  "wiki": { "en": "Islamic Golden Age", "es": "Edad de Oro del islam" },
+  "sources": [
+    { "title": "Encyclopaedia Britannica: Abbasid caliphate", "url": "https://www.britannica.com/topic/Abbasid-caliphate" },
+    { "title": "Encyclopaedia Britannica: al-Khwārizmī", "url": "https://www.britannica.com/biography/al-Khwarizmi" },
+    { "title": "Encyclopaedia Britannica: Ibn al-Haytham", "url": "https://www.britannica.com/biography/Ibn-al-Haytham" },
+    { "title": "Encyclopaedia Britannica: Avicenna", "url": "https://www.britannica.com/biography/Avicenna" },
+    { "title": "UNESCO World Heritage Centre: Historic Centre of Cordoba", "url": "https://whc.unesco.org/en/list/313/" },
+    { "title": "UNESCO World Heritage Centre: Alhambra, Generalife and Albayzín, Granada", "url": "https://whc.unesco.org/en/list/314/" },
+    { "title": "UNESCO World Heritage Centre: Medina of Fez", "url": "https://whc.unesco.org/en/list/170/" },
+    { "title": "Online Etymology Dictionary: algorithm", "url": "https://www.etymonline.com/word/algorithm" },
+    { "title": "Online Etymology Dictionary: alcohol", "url": "https://www.etymonline.com/word/alcohol" },
+    { "title": "Real Academia Española, Diccionario: ojalá", "url": "https://dle.rae.es/ojal%C3%A1" }
+  ],
+  "legacies": [
+    {
+      "id": "arabic-numerals",
+      "name": { "en": "Arabic numerals (from India)", "es": "Los números arábigos (de la India)" },
+      "cat": "numbers",
+      "icon": "🔢",
+      "how": "spread",
+      "date": "825",
+      "circa": true,
+      "at": [44.37, 33.31],
+      "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" },
+      "text": {
+        "en": "The ten digits you use, 0 to 9, were invented in India; scholars in Baghdad adopted them, and Arabic books carried them to Spain and Europe. That is why English and Spanish call them Arabic numerals.",
+        "es": "Las diez cifras que usas, del 0 al 9, se inventaron en la India; los sabios de Bagdad las adoptaron y los libros árabes las llevaron a España y Europa. Por eso las llamamos números arábigos."
+      },
+      "details": {
+        "en": "Indian astronomical tables reached Baghdad around 770, and about 825 al-Khwarizmi, a scholar from Khwarazm working in Baghdad, wrote a book on calculating with the Indian numerals and zero. In 952 al-Uqlidisi of Damascus showed how to do sums with pen and paper instead of a dust board. In al-Andalus and North Africa the digits took the western shapes that became ours, and a monk at Albelda, in La Rioja, copied them into a manuscript in 976. Fibonacci learned them as a boy in Béjaïa, in Algeria, and his Liber Abaci (1202) won over Italian merchants. The Arab East and Iran use another family of the same digits. Arabic ṣifr, ‘empty’, a translation of Sanskrit śūnya, gave us both zero and cipher.",
+        "es": "Unas tablas astronómicas indias llegaron a Bagdad hacia 770, y hacia 825 al-Juarismi, un sabio de Corasmia que trabajaba en Bagdad, escribió un libro sobre cómo calcular con los números indios y el cero. En 952 al-Uqlidisi de Damasco enseñó a hacer cuentas con pluma y papel en lugar de un tablero de arena. En al-Ándalus y el norte de África las cifras tomaron las formas occidentales que son las nuestras, y un monje de Albelda, en La Rioja, las copió en un manuscrito en 976. Fibonacci las aprendió de niño en Bugía, en Argelia, y su Liber Abaci (1202) convenció a los mercaderes italianos. El Oriente árabe e Irán usan otra familia de las mismas cifras. El árabe ṣifr, «vacío», traducción del sánscrito śūnya, nos dio cero y cifra."
+      },
+      "roots": {
+        "en": "Invented in India, where place value with a zero was in use by the 7th century.",
+        "es": "Se inventaron en la India, donde el valor posicional con cero se usaba ya en el siglo VII."
+      },
+      "path": [
+        { "at": [36.29, 33.51], "place": { "en": "Damascus, Syria", "es": "Damasco, Siria" }, "date": "952", "by": { "en": "al-Uqlidisi", "es": "al-Uqlidisi" }, "note": { "en": "Arithmetic with pen and paper.", "es": "Aritmética con pluma y papel." } },
+        { "at": [-2.47, 42.36], "place": { "en": "Albelda de Iregua, La Rioja, Spain", "es": "Albelda de Iregua, La Rioja, España" }, "date": "976", "from": 0, "note": { "en": "The Codex Vigilanus, the first European manuscript with the digits 1 to 9.", "es": "El Códice Vigilano, el primer manuscrito europeo con las cifras del 1 al 9." } },
+        { "at": [5.08, 36.75], "place": { "en": "Béjaïa, Algeria", "es": "Bugía, Argelia" }, "date": "1185", "circa": true, "from": 0, "by": { "en": "The young Fibonacci", "es": "El joven Fibonacci" }, "note": { "en": "Learns Indian–Arabic arithmetic in this North African port.", "es": "Aprende la aritmética indoarábiga en este puerto del norte de África." } },
+        { "at": [10.4, 43.72], "place": { "en": "Pisa, Italy", "es": "Pisa, Italia" }, "date": "1202", "by": { "en": "Fibonacci", "es": "Fibonacci" }, "note": { "en": "Liber Abaci teaches the digits to European merchants.", "es": "El Liber Abaci enseña las cifras a los mercaderes europeos." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Used in every country; the Arab East, Iran and Afghanistan also use the eastern forms of the same digits (٠١٢٣).",
+        "es": "Se usan en todos los países; el Oriente árabe, Irán y Afganistán usan además las formas orientales de las mismas cifras (٠١٢٣)."
+      },
+      "words": [
+        { "en": "zero", "es": "cero", "from": "ṣifr (Arabic), via Medieval Latin zephirum and Italian", "means": { "en": "empty", "es": "vacío" } },
+        { "en": "cipher", "es": "cifra", "from": "ṣifr (Arabic), via Medieval Latin cifra", "means": { "en": "empty, zero", "es": "vacío, cero" } }
+      ],
+      "see": ["eras:al-khwarizmi"],
+      "wiki": { "en": "Hindu–Arabic numeral system", "es": "Numeración indo-arábiga" }
+    },
+    {
+      "id": "algebra",
+      "name": { "en": "Algebra", "es": "El álgebra" },
+      "cat": "numbers",
+      "icon": "➗",
+      "how": "developed",
+      "date": "820",
+      "circa": true,
+      "at": [44.39, 33.33],
+      "place": { "en": "House of Wisdom, Baghdad, Iraq", "es": "Casa de la Sabiduría, Bagdad, Irak" },
+      "text": {
+        "en": "Solving for an unknown by balancing the two sides of an equation: al-Khwarizmi's book of al-jabr, written in Baghdad about 820, gave the method its name, now taught in every secondary school.",
+        "es": "Despejar una incógnita equilibrando los dos lados de una ecuación: el libro de al-jabr de al-Juarismi, escrito en Bagdad hacia 820, dio su nombre al método que hoy se enseña en todas las escuelas secundarias."
+      },
+      "details": {
+        "en": "Al-Khwarizmi, a scholar from Khwarazm, south of the Aral Sea in today's Uzbekistan, wrote his Compendious Book on Calculation by al-jabr and al-muqābala for the caliph al-Ma'mun. Al-jabr, ‘restoring’, meant moving a subtracted term to the other side; al-muqābala, ‘balancing’, meant cancelling like terms. He wrote everything in words, with worked problems on inheritance, trade and land. Abu Kamil in Egypt and Omar Khayyam in Persia took algebra further, and in 1145 Robert of Chester translated the book into Latin in Segovia. In old Spanish an algebrista was also a bone-setter, from the same sense of ‘restoring’.",
+        "es": "Al-Juarismi, un sabio de Corasmia, al sur del mar de Aral, en el actual Uzbekistán, escribió para el califa al-Mamún su Compendio de cálculo por al-jabr y al-muqābala. Al-jabr, «restaurar», era pasar un término restado al otro lado; al-muqābala, «equilibrar», era cancelar términos iguales. Lo escribía todo con palabras, con problemas resueltos de herencias, comercio y tierras. Abu Kamil en Egipto y Omar Jayam en Persia llevaron el álgebra más lejos, y en 1145 Roberto de Chester tradujo el libro al latín en Segovia. En el español antiguo un algebrista era también un componedor de huesos, por el mismo sentido de «restaurar»."
+      },
+      "roots": {
+        "en": "Built on Babylonian problem-solving, Greek geometry and Indian arithmetic, including Brahmagupta's rules for equations.",
+        "es": "Se basó en la resolución de problemas babilonia, la geometría griega y la aritmética india, incluidas las reglas de Brahmagupta para ecuaciones."
+      },
+      "path": [
+        { "at": [31.24, 30.04], "place": { "en": "Cairo, Egypt", "es": "El Cairo, Egipto" }, "date": "900", "circa": true, "by": { "en": "Abu Kamil", "es": "Abu Kamil" }, "note": { "en": "Equations with irrational numbers.", "es": "Ecuaciones con números irracionales." } },
+        { "at": [66.97, 39.65], "place": { "en": "Samarkand, Uzbekistan", "es": "Samarcanda, Uzbekistán" }, "date": "1070", "circa": true, "from": 0, "by": { "en": "Omar Khayyam", "es": "Omar Jayam" }, "note": { "en": "Solves cubic equations with geometry.", "es": "Resuelve ecuaciones cúbicas con geometría." } },
+        { "at": [-4.12, 40.95], "place": { "en": "Segovia, Spain", "es": "Segovia, España" }, "date": "1145", "from": 0, "by": { "en": "Robert of Chester", "es": "Roberto de Chester" }, "note": { "en": "Latin translation: Liber algebrae et almucabola.", "es": "Traducción latina: Liber algebrae et almucabola." } },
+        { "at": [10.4, 43.72], "place": { "en": "Pisa, Italy", "es": "Pisa, Italia" }, "date": "1202", "by": { "en": "Fibonacci", "es": "Fibonacci" }, "note": { "en": "Liber Abaci includes al-Khwarizmi's methods.", "es": "El Liber Abaci incluye los métodos de al-Juarismi." } },
+        { "at": [4.49, 52.16], "place": { "en": "Leiden, Netherlands", "es": "Leiden, Países Bajos" }, "date": "1637", "by": { "en": "René Descartes", "es": "René Descartes" }, "note": { "en": "La Géométrie writes equations with x, y and z, as we do now.", "es": "La Géométrie escribe las ecuaciones con x, y y z, como hoy." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Taught to teenagers in every country and used in science, engineering, computing and finance.",
+        "es": "Se enseña a los adolescentes de todos los países y se usa en ciencia, ingeniería, informática y finanzas."
+      },
+      "words": [
+        { "en": "algebra", "es": "álgebra", "from": "al-jabr (Arabic)", "means": { "en": "restoring, setting broken parts", "es": "restauración, recomposición" } },
+        { "es": "algebrista", "from": "al-jabr (Arabic)", "means": { "en": "algebraist; once also a bone-setter", "es": "quien hace álgebra; antes también componedor de huesos" } }
+      ],
+      "see": ["eras:al-jabr"],
+      "wiki": { "en": "Al-Khwarizmi", "es": "Al-Juarismi" }
+    },
+    {
+      "id": "trigonometry",
+      "name": { "en": "Trigonometry and the sine", "es": "La trigonometría y el seno" },
+      "cat": "numbers",
+      "icon": "📐",
+      "how": "developed",
+      "date": "900",
+      "circa": true,
+      "at": [39.01, 35.95],
+      "place": { "en": "Raqqa, Syria", "es": "Raqqa, Siria" },
+      "text": {
+        "en": "Sines, cosines and tangents, used by surveyors, engineers and every calculator: astronomers of the Islamic world built trigonometry into a science of its own, and a misread Arabic word gave us ‘sine’.",
+        "es": "Senos, cosenos y tangentes, que usan topógrafos, ingenieros y toda calculadora: los astrónomos del mundo islámico hicieron de la trigonometría una ciencia propia, y una palabra árabe mal leída nos dio «seno»."
+      },
+      "details": {
+        "en": "Greek astronomers measured chords of circles, and Indian ones used the half-chord, jyā. Scholars in Baghdad wrote the Sanskrit word as jība; written without vowels, later readers took it for jayb, ‘fold’ or ‘pocket’, and Latin translators in Toledo turned that into sinus, the sine. Al-Battani, observing at Raqqa around 900, used sines instead of chords, and Abu al-Wafa in Baghdad added the tangent and new rules for triangles on a sphere, needed for astronomy and for finding the direction of Mecca. Nasir al-Din al-Tusi, at Maragheh, treated trigonometry as a science of its own in the 13th century. Regiomontanus's book on triangles brought much of this to Europe.",
+        "es": "Los astrónomos griegos medían cuerdas de círculos, y los indios usaban la media cuerda, jyā. Los sabios de Bagdad escribieron la palabra sánscrita como jība; escrita sin vocales, lectores posteriores la tomaron por jayb, «pliegue» o «bolsillo», y los traductores latinos de Toledo la hicieron sinus, el seno. Al-Battani, que observaba en Raqqa hacia 900, usó senos en vez de cuerdas, y Abu al-Wafa en Bagdad añadió la tangente y nuevas reglas para triángulos sobre una esfera, necesarias para la astronomía y para hallar la dirección de La Meca. Nasir al-Din al-Tusi, en Maragheh, trató la trigonometría como ciencia propia en el siglo XIII. El libro de Regiomontano sobre los triángulos llevó mucho de esto a Europa."
+      },
+      "roots": {
+        "en": "Built on Greek chord tables (Hipparchus, Ptolemy) and the Indian sine of Aryabhata.",
+        "es": "Se basó en las tablas de cuerdas griegas (Hiparco, Ptolomeo) y en el seno indio de Aryabhata."
+      },
+      "path": [
+        { "at": [44.37, 33.31], "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" }, "date": "980", "circa": true, "by": { "en": "Abu al-Wafa", "es": "Abu al-Wafa" }, "note": { "en": "The tangent and the sine rule for spherical triangles.", "es": "La tangente y el teorema del seno para triángulos esféricos." } },
+        { "at": [-4.02, 39.86], "place": { "en": "Toledo, Spain", "es": "Toledo, España" }, "date": "1150", "circa": true, "by": { "en": "Gerard of Cremona", "es": "Gerardo de Cremona" }, "note": { "en": "Translating from Arabic, he writes sinus: the sine.", "es": "Al traducir del árabe escribe sinus: el seno." } },
+        { "at": [46.24, 37.39], "place": { "en": "Maragheh, Iran", "es": "Maragheh, Irán" }, "date": "1260", "circa": true, "from": 1, "by": { "en": "Nasir al-Din al-Tusi", "es": "Nasir al-Din al-Tusi" }, "note": { "en": "Trigonometry becomes a science of its own.", "es": "La trigonometría se vuelve una ciencia propia." } },
+        { "at": [11.08, 49.45], "place": { "en": "Nuremberg, Germany", "es": "Núremberg, Alemania" }, "date": "1533", "from": 2, "by": { "en": "Regiomontanus", "es": "Regiomontano" }, "note": { "en": "His book on triangles, written in 1464, is printed.", "es": "Se imprime su libro sobre los triángulos, escrito en 1464." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Every scientific calculator has sin, cos and tan keys; surveyors, pilots, engineers and game designers use them daily.",
+        "es": "Toda calculadora científica tiene teclas sin, cos y tan; topógrafos, pilotos, ingenieros y diseñadores de videojuegos las usan a diario."
+      },
+      "words": [
+        { "en": "sine", "es": "seno", "from": "jayb (Arabic), a misreading of jība, from Sanskrit jyā", "means": { "en": "fold, pocket; Latin sinus", "es": "pliegue, bolsillo; en latín sinus" } }
+      ],
+      "see": ["eras:al-tusi"],
+      "wiki": { "en": "Sine and cosine", "es": "Seno (trigonometría)" }
+    },
+    {
+      "id": "algorithm",
+      "name": { "en": "The word algorithm", "es": "La palabra «algoritmo»" },
+      "cat": "words",
+      "icon": "💻",
+      "how": "named",
+      "date": "825",
+      "circa": true,
+      "at": [44.36, 33.3],
+      "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" },
+      "text": {
+        "en": "Every computer program runs on algorithms, named after al-Khwarizmi. Latin versions of his book on Indian numerals began ‘Dixit Algorizmi’, ‘so said al-Khwarizmi’, and his name became a word for calculating.",
+        "es": "Todo programa de computadora usa algoritmos, que llevan el nombre de al-Juarismi. Las versiones latinas de su libro sobre los números indios empezaban «Dixit Algorizmi», «así dijo al-Juarismi», y su nombre se volvió sinónimo de calcular."
+      },
+      "details": {
+        "en": "Al-Khwarizmi's Arabic book on reckoning with Indian numerals is lost, but a 12th-century Latin version survives, opening with the words Dixit Algorizmi. Medieval Europeans called the new written arithmetic algorismus, and textbooks such as John of Sacrobosco's Algorismus, written in Paris around 1230, taught it to students. Under the influence of Greek arithmos, ‘number’, the spelling shifted to algorithm, which came to mean any step-by-step method for solving a problem, and now the instructions that run computers. Spanish kept two words from his name: algoritmo and guarismo, a digit. His homeland, Khwarazm, lies in today's Uzbekistan and Turkmenistan.",
+        "es": "El libro árabe de al-Juarismi sobre el cálculo con números indios se perdió, pero se conserva una versión latina del siglo XII que empieza con las palabras Dixit Algorizmi. Los europeos medievales llamaron algorismus a la nueva aritmética escrita, y manuales como el Algorismus de Juan de Sacrobosco, escrito en París hacia 1230, la enseñaron a los estudiantes. Por influencia del griego arithmos, «número», la grafía cambió a algoritmo, que pasó a significar cualquier método paso a paso para resolver un problema, y hoy las instrucciones que hacen funcionar las computadoras. El español conserva dos palabras de su nombre: algoritmo y guarismo, una cifra. Su tierra, Corasmia, está en los actuales Uzbekistán y Turkmenistán."
+      },
+      "path": [
+        { "at": [-4.02, 39.86], "place": { "en": "Spain (perhaps Toledo)", "es": "España (quizá Toledo)" }, "date": "1140", "circa": true, "note": { "en": "A Latin version of his arithmetic: Dixit Algorizmi.", "es": "Una versión latina de su aritmética: Dixit Algorizmi." } },
+        { "at": [2.35, 48.85], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1230", "circa": true, "by": { "en": "John of Sacrobosco", "es": "Juan de Sacrobosco" }, "note": { "en": "Algorismus, a textbook of the new arithmetic.", "es": "Algorismus, un manual de la nueva aritmética." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Algorithm, algoritmo, Algorithmus, algorithme: one word for computer methods in almost every language.",
+        "es": "Algoritmo, algorithm, Algorithmus, algorithme: una sola palabra para los métodos de cálculo en casi todos los idiomas."
+      },
+      "words": [
+        { "en": "algorithm", "es": "algoritmo", "from": "al-Khwārizmī (Arabic name), via Latin Algorizmi", "means": { "en": "the man from Khwarazm", "es": "el de Corasmia" } },
+        { "en": "algorism", "from": "al-Khwārizmī (Arabic name), via Latin algorismus", "means": { "en": "calculating with Arabic numerals", "es": "cálculo con números arábigos" } },
+        { "es": "guarismo", "from": "al-Khwārizmī (Arabic name), via Old Spanish alguarismo", "means": { "en": "digit, figure", "es": "cifra" } }
+      ],
+      "see": ["eras:al-khwarizmi"],
+      "wiki": { "en": "Algorithm", "es": "Algoritmo" }
+    },
+    {
+      "id": "spanish-words",
+      "name": { "en": "Ojalá, almohada, alcalde: Spanish from Arabic", "es": "Ojalá, almohada, alcalde: el español del árabe" },
+      "cat": "words",
+      "icon": "🗣️",
+      "how": "named",
+      "date": "900",
+      "circa": true,
+      "at": [-4.78, 37.88],
+      "place": { "en": "Córdoba, Spain", "es": "Córdoba, España" },
+      "text": {
+        "en": "Spanish has some 4,000 words from Arabic, counting derived ones: aceite, almohada, alcalde, aldea, barrio, tarea, hasta and ojalá, from law šā' Allāh, ‘if God wills’.",
+        "es": "El español tiene unas 4000 palabras del árabe, contando las derivadas: aceite, almohada, alcalde, aldea, barrio, tarea, hasta y ojalá, de law šā' Allāh, «si Dios quiere»."
+      },
+      "details": {
+        "en": "For almost eight centuries Arabic was spoken in much of the Iberian Peninsula, and Andalusi Arabic lent Castilian words for farming, building, trade, government and the home. Many begin with al-, the Arabic article: almohada (pillow), alfombra (rug), albañil (builder), almacén (store). Others came without it: jarra, tarea, fulano. Christians living under Muslim rule, the Mozarabs, and Muslims under Christian kings, the Mudéjars, passed words between the languages, and settlers carried them south as the frontier moved. In 1492 Spanish crossed the Atlantic with all these words, so a Mexican, a Chilean and a Spaniard all say ojalá.",
+        "es": "Durante casi ocho siglos se habló árabe en gran parte de la península ibérica, y el árabe andalusí prestó al castellano palabras del campo, la construcción, el comercio, el gobierno y la casa. Muchas empiezan con al-, el artículo árabe: almohada, alfombra, albañil, almacén. Otras llegaron sin él: jarra, tarea, fulano. Los cristianos que vivían bajo dominio musulmán, los mozárabes, y los musulmanes bajo reyes cristianos, los mudéjares, pasaron palabras de una lengua a otra, y los colonos las llevaron al sur a medida que avanzaba la frontera. En 1492 el español cruzó el Atlántico con todas ellas, así que un mexicano, una chilena y un español dicen igual ojalá."
+      },
+      "path": [
+        { "at": [-4.02, 39.86], "place": { "en": "Toledo, Spain", "es": "Toledo, España" }, "date": "1085", "note": { "en": "Castile takes Toledo; its Arabic-speaking people keep many words alive.", "es": "Castilla toma Toledo; su población de habla árabe mantiene vivas muchas palabras." } },
+        { "at": [-69.93, 18.47], "place": { "en": "Santo Domingo", "es": "Santo Domingo" }, "date": "1496", "note": { "en": "Spanish, Arabic words and all, settles in the Americas.", "es": "El español, con sus palabras árabes, se asienta en América." } },
+        { "at": [-99.13, 19.43], "place": { "en": "Mexico City", "es": "Ciudad de México" }, "date": "1521", "note": { "en": "The language of New Spain.", "es": "La lengua de la Nueva España." } },
+        { "at": [-77.03, -12.05], "place": { "en": "Lima, Peru", "es": "Lima, Perú" }, "date": "1535", "from": 2, "note": { "en": "And of the viceroyalty of Peru.", "es": "Y del virreinato del Perú." } }
+      ],
+      "where": ["lang:spa"],
+      "note": {
+        "en": "Used every day by about 500 million native speakers of Spanish, from Spain and Mexico to Argentina and the United States.",
+        "es": "Las usan a diario unos 500 millones de hablantes nativos de español, de España y México a Argentina y Estados Unidos."
+      },
+      "words": [
+        { "es": "ojalá", "from": "law šā' Allāh (Andalusi Arabic)", "means": { "en": "if God wills", "es": "si Dios quiere" } },
+        { "es": "hasta", "from": "ḥattà (Arabic)", "means": { "en": "until", "es": "hasta" } },
+        { "es": "aceite", "from": "az-zayt (Arabic)", "means": { "en": "the oil", "es": "el aceite" } },
+        { "es": "almohada", "from": "al-mikhadda (Arabic)", "means": { "en": "cushion, pillow", "es": "cojín" } },
+        { "es": "alcalde", "from": "al-qāḍī (Arabic)", "means": { "en": "the judge", "es": "el juez" } },
+        { "es": "aldea", "from": "aḍ-ḍayʿa (Arabic)", "means": { "en": "farm, village", "es": "granja, aldea" } },
+        { "es": "barrio", "from": "barrī (Arabic)", "means": { "en": "outer, outside the walls", "es": "exterior, de fuera" } },
+        { "es": "tarea", "from": "ṭarīḥa (Arabic)", "means": { "en": "work assigned", "es": "trabajo asignado" } },
+        { "es": "almacén", "from": "al-makhzan (Arabic)", "means": { "en": "storehouse", "es": "depósito" } },
+        { "es": "alfombra", "from": "al-ḥanbal (Andalusi Arabic)", "means": { "en": "rug, blanket", "es": "tapiz, manta" } },
+        { "es": "albañil", "from": "al-bannī (Andalusi Arabic)", "means": { "en": "builder", "es": "constructor" } },
+        { "es": "azotea", "from": "as-suṭayḥa (Andalusi Arabic)", "means": { "en": "little flat roof", "es": "pequeño techo plano" } },
+        { "es": "fulano", "from": "fulān (Arabic)", "means": { "en": "so-and-so", "es": "tal persona" } },
+        { "es": "jarra", "from": "jarra (Arabic)", "means": { "en": "earthen jar", "es": "vasija de barro" } }
+      ],
+      "wiki": { "en": "Spanish language", "es": "Arabismo" }
+    },
+    {
+      "id": "english-words",
+      "name": { "en": "Admiral, sofa and magazine", "es": "Almirante, sofá y almacén" },
+      "cat": "words",
+      "icon": "⚓",
+      "how": "named",
+      "date": "1100",
+      "circa": true,
+      "at": [13.36, 38.12],
+      "place": { "en": "Arabic-speaking Mediterranean (here Palermo, Sicily)", "es": "El Mediterráneo de habla árabe (aquí Palermo, Sicilia)" },
+      "text": {
+        "en": "Arab sea power and trade lent Europe words: admiral (amīr al-, ‘commander of’), arsenal, magazine, tariff, sofa, mattress, alcove, syrup, monsoon and giraffe.",
+        "es": "El poder naval y el comercio árabes prestaron palabras a Europa: almirante (amīr al-, «comandante de»), arsenal, almacén, tarifa, sofá, alcoba, jarabe, monzón y jirafa."
+      },
+      "details": {
+        "en": "In Norman Sicily, where Arabic was still an official language, a powerful minister held the title amīr, and Latin documents turned amīr al- into amiratus: our admiral. Venice named its great shipyard the Arsenale, from dār aṣ-ṣināʿa, ‘house of manufacture’. Makhāzin, ‘storehouses’, became French magasin and English magazine, first a store of goods or gunpowder, then a store of articles. Taʿrīf, ‘notification’, became tariff, a list of duties. Ṣuffa, a raised bench, reached English through Turkish as sofa, maṭraḥ became mattress and al-qubba, a vaulted room, the alcove. Spanish has most of these too: almirante, arsenal, almacén, tarifa, sofá, alcoba.",
+        "es": "En la Sicilia normanda, donde el árabe seguía siendo lengua oficial, un poderoso ministro llevaba el título de amīr, y los documentos latinos convirtieron amīr al- en amiratus: nuestro almirante. Venecia llamó Arsenale a su gran astillero, de dār aṣ-ṣināʿa, «casa de fabricación». Makhāzin, «depósitos», dio el francés magasin y el inglés magazine, primero un depósito de mercancías o pólvora y luego una revista. Taʿrīf, «notificación», dio tarifa, una lista de derechos de aduana. Ṣuffa, un banco elevado, llegó por el turco como sofá, y al-qubba, una sala abovedada, dio alcoba. El inglés tiene casi todas estas palabras: admiral, arsenal, magazine, tariff, sofa, alcove."
+      },
+      "path": [
+        { "at": [12.35, 45.43], "place": { "en": "Venice, Italy", "es": "Venecia, Italia" }, "date": "1104", "circa": true, "note": { "en": "The Arsenale shipyard, named from Arabic.", "es": "El astillero del Arsenale, con nombre árabe." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London", "es": "Londres" }, "date": "1600", "circa": true, "note": { "en": "English takes magazine, arsenal and tariff, often through Italian and French.", "es": "El inglés adopta magazine, arsenal y tariff, a menudo por el italiano y el francés." } }
+      ],
+      "where": ["branch:romance", "branch:germanic"],
+      "note": {
+        "en": "Used in English, Spanish and many other European languages: almirante, arsenal, magasin, Matratze, sofá, tarif.",
+        "es": "Se usan en español, inglés y muchas otras lenguas europeas: almirante, arsenal, magasin, Matratze, sofa, tarif."
+      },
+      "words": [
+        { "en": "admiral", "es": "almirante", "from": "amīr al- (Arabic)", "means": { "en": "commander of", "es": "comandante de" } },
+        { "en": "arsenal", "es": "arsenal", "from": "dār aṣ-ṣināʿa (Arabic), via Venetian", "means": { "en": "house of manufacture", "es": "casa de fabricación" } },
+        { "en": "magazine", "es": "almacén", "from": "makhāzin, al-makhzan (Arabic)", "means": { "en": "storehouses", "es": "depósitos" } },
+        { "en": "tariff", "es": "tarifa", "from": "taʿrīf (Arabic)", "means": { "en": "notification", "es": "notificación" } },
+        { "en": "sofa", "es": "sofá", "from": "ṣuffa (Arabic), via Turkish", "means": { "en": "raised bench", "es": "banco elevado" } },
+        { "en": "mattress", "from": "maṭraḥ (Arabic), via Italian", "means": { "en": "cushion, place where something is laid", "es": "cojín, lugar donde se echa algo" } },
+        { "en": "alcove", "es": "alcoba", "from": "al-qubba (Arabic)", "means": { "en": "vault, vaulted room", "es": "bóveda, sala abovedada" } },
+        { "en": "syrup", "es": "jarabe", "from": "sharāb (Arabic)", "means": { "en": "drink", "es": "bebida" } },
+        { "en": "sherbet", "es": "sorbete", "from": "sharba (Arabic), via Turkish", "means": { "en": "a drink", "es": "una bebida" } },
+        { "en": "giraffe", "es": "jirafa", "from": "zarāfa (Arabic)" },
+        { "en": "monsoon", "es": "monzón", "from": "mawsim (Arabic), via Portuguese", "means": { "en": "season", "es": "estación" } },
+        { "en": "jar", "es": "jarra", "from": "jarra (Arabic)", "means": { "en": "earthen vessel", "es": "vasija de barro" } },
+        { "en": "carafe", "es": "garrafa", "from": "probably gharrāfa (Arabic), via Italian", "means": { "en": "jug", "es": "jarra" } },
+        { "en": "safari", "es": "safari", "from": "safar (Arabic), via Swahili", "means": { "en": "journey", "es": "viaje" } }
+      ],
+      "wiki": { "en": "Venetian Arsenal", "es": "Arsenal de Venecia" }
+    },
+    {
+      "id": "food-words",
+      "name": { "en": "Saffron, artichokes and albóndigas", "es": "Azafrán, alcachofas y albóndigas" },
+      "cat": "words",
+      "icon": "🥕",
+      "how": "named",
+      "date": "950",
+      "circa": true,
+      "at": [-5.99, 37.39],
+      "place": { "en": "Al-Andalus (here Seville, Spain)", "es": "Al-Ándalus (aquí Sevilla, España)" },
+      "text": {
+        "en": "Andalusi farmers and cooks named foods still eaten today: azafrán and saffron, alcachofa and artichoke, arroz, aceituna, zanahoria, sandía, albóndiga and escabeche.",
+        "es": "Los campesinos y cocineros andalusíes nombraron comidas que aún se comen: azafrán, alcachofa, arroz, aceituna, zanahoria, sandía, albahaca, albóndiga y escabeche."
+      },
+      "details": {
+        "en": "Arabic-speaking farmers in al-Andalus grew rice, saffron, artichokes, aubergines and carrots, and cooks wrote recipe books with meatballs, fritters and fish in vinegar. Many of their names passed into Castilian: arroz (ar-ruzz), aceituna (az-zaytūna, the olive), zanahoria, sandía (sindiyya, ‘from Sindh’), albahaca (al-ḥabaqa, basil). Some went further: zaʿfarān became saffron, and al-kharshūf reached English as artichoke through Italian. Sikbāj, a Baghdad dish of meat in vinegar with a Persian name, became escabeche, now cooked from Peru and Mexico to the Philippines, and al-bunduqa, ‘hazelnut’, gave the albóndigas of a Mexican sopa de albóndigas.",
+        "es": "Los campesinos de habla árabe de al-Ándalus cultivaban arroz, azafrán, alcachofas, berenjenas y zanahorias, y los cocineros escribían recetarios con albóndigas, buñuelos y pescado en vinagre. Muchos nombres pasaron al castellano: arroz (ar-ruzz), aceituna (az-zaytūna), zanahoria, sandía (sindiyya, «de Sind»), albahaca (al-ḥabaqa). Algunos llegaron más lejos: zaʿfarān dio azafrán y el inglés saffron, y al-kharshūf llegó al inglés como artichoke por el italiano. El sikbāj, un plato de Bagdad de carne en vinagre con nombre persa, se volvió el escabeche, que hoy se cocina de Perú y México a Filipinas, y al-bunduqa, «avellana», dio las albóndigas de la sopa de albóndigas mexicana."
+      },
+      "path": [
+        { "at": [-99.13, 19.43], "place": { "en": "Mexico City", "es": "Ciudad de México" }, "date": "1550", "circa": true, "note": { "en": "Albóndigas and escabeche cross to New Spain.", "es": "Las albóndigas y el escabeche llegan a la Nueva España." } },
+        { "at": [-77.03, -12.05], "place": { "en": "Lima, Peru", "es": "Lima, Perú" }, "date": "1600", "circa": true, "from": 0, "note": { "en": "Escabeche becomes a Peruvian classic.", "es": "El escabeche se vuelve un clásico peruano." } },
+        { "at": [120.98, 14.6], "place": { "en": "Manila, Philippines", "es": "Manila, Filipinas" }, "date": "1600", "circa": true, "from": 1, "note": { "en": "The Manila galleons bring escabeche and albondigas to the Philippines.", "es": "El galeón de Manila lleva el escabeche y las albóndigas a Filipinas." } }
+      ],
+      "where": ["lang:spa", "lang:eng", "PHL"],
+      "strong": ["lang:spa"],
+      "note": {
+        "en": "Every Spanish speaker uses these words; saffron, artichoke, apricot and tamarind are in English too, and escabeche is cooked from Peru to the Philippines.",
+        "es": "Todo hispanohablante usa estas palabras; azafrán, alcachofa, albaricoque y tamarindo están también en inglés, y el escabeche se cocina de Perú a Filipinas."
+      },
+      "words": [
+        { "en": "saffron", "es": "azafrán", "from": "zaʿfarān (Arabic)" },
+        { "en": "artichoke", "es": "alcachofa", "from": "al-kharshūf (Arabic), via Italian (en)" },
+        { "en": "apricot", "es": "albaricoque", "from": "al-barqūq (Arabic), from Greek, from Latin praecoquum", "means": { "en": "early-ripening", "es": "precoz" } },
+        { "en": "tamarind", "es": "tamarindo", "from": "tamr hindī (Arabic)", "means": { "en": "date of India", "es": "dátil de la India" } },
+        { "en": "escabeche", "es": "escabeche", "from": "sikbāj (Arabic), from Persian", "means": { "en": "meat or fish in vinegar", "es": "carne o pescado en vinagre" } },
+        { "es": "arroz", "from": "ar-ruzz (Arabic)", "means": { "en": "rice", "es": "arroz" } },
+        { "es": "aceituna", "from": "az-zaytūna (Arabic)", "means": { "en": "the olive", "es": "la aceituna" } },
+        { "es": "zanahoria", "from": "safunnāriyya (Andalusi Arabic)", "means": { "en": "carrot", "es": "zanahoria" } },
+        { "es": "sandía", "from": "sindiyya (Arabic)", "means": { "en": "from Sindh", "es": "de Sind" } },
+        { "es": "albahaca", "from": "al-ḥabaqa (Arabic)", "means": { "en": "basil", "es": "albahaca" } },
+        { "es": "albóndiga", "from": "al-bunduqa (Arabic)", "means": { "en": "hazelnut, little ball", "es": "avellana, bolita" } }
+      ],
+      "wiki": { "en": "Escabeche", "es": "Escabeche" }
+    },
+    {
+      "id": "place-names",
+      "name": { "en": "Gibraltar, Guadalquivir, Algarve: names of al-Andalus", "es": "Gibraltar, Guadalquivir, Algarve: nombres de al-Ándalus" },
+      "cat": "words",
+      "icon": "🗺️",
+      "how": "named",
+      "date": "711",
+      "at": [-5.35, 36.14],
+      "place": { "en": "Gibraltar", "es": "Gibraltar" },
+      "text": {
+        "en": "Hundreds of places in Spain and Portugal still carry Arabic names: Gibraltar is Jabal Ṭāriq, ‘Tariq's mountain’, the Guadalquivir ‘the great river’ and Portugal's Algarve ‘the west’.",
+        "es": "Cientos de lugares de España y Portugal conservan nombres árabes: Gibraltar es Jabal Ṭāriq, «el monte de Táriq», el Guadalquivir «el río grande» y el Algarve portugués «el occidente»."
+      },
+      "details": {
+        "en": "In 711 the Berber commander Tariq ibn Ziyad landed at the rock that now bears his name, and for centuries Arabic named the land. Rivers took wādī, ‘valley, river’: the Guadalquivir (al-wādī al-kabīr), Guadalajara (‘river of stones’) and hybrids like the Guadiana. Fortresses became Alcalá (al-qalʿa) and bridges Alcántara (al-qanṭara); towns were medina, ‘city’, as in Medinaceli. Algeciras is ‘the green island’, Almería probably ‘the watchtower’, Valencia's lagoon the Albufera, ‘the little sea’, and the Portuguese village of Fátima bears an Arabic woman's name. Even Madrid's name may be Arabic, though this is debated. Settlers took some names to the Americas, like Mexico's Guadalajara.",
+        "es": "En 711 el jefe bereber Táriq ibn Ziyad desembarcó en la roca que hoy lleva su nombre, y durante siglos el árabe nombró la tierra. Los ríos tomaron wādī, «valle, río»: el Guadalquivir (al-wādī al-kabīr), Guadalajara («río de piedras») y nombres mixtos como el Guadiana. Las fortalezas se volvieron Alcalá (al-qalʿa) y los puentes Alcántara (al-qanṭara); las ciudades eran medina, como en Medinaceli. Algeciras es «la isla verde», Almería probablemente «la atalaya», la laguna de Valencia la Albufera, «el pequeño mar», y el pueblo portugués de Fátima lleva un nombre árabe de mujer. Hasta el nombre de Madrid puede ser árabe, aunque se discute. Los colonos llevaron algunos nombres a América, como la Guadalajara de México."
+      },
+      "path": [
+        { "at": [-3.17, 40.63], "place": { "en": "Guadalajara, Spain", "es": "Guadalajara, España" }, "date": "800", "circa": true, "note": { "en": "Wādī al-ḥijāra, ‘river of stones’, a frontier town of al-Andalus.", "es": "Wādī al-ḥijāra, «río de piedras», una ciudad de la frontera de al-Ándalus." } },
+        { "at": [-103.35, 20.67], "place": { "en": "Guadalajara, Mexico", "es": "Guadalajara, México" }, "date": "1542", "note": { "en": "Settled on its present site and named after the Spanish town.", "es": "Se asienta en su sitio actual con el nombre de la ciudad española." } }
+      ],
+      "where": ["ESP", "PRT", "MEX"],
+      "strong": ["ESP", "PRT"],
+      "note": {
+        "en": "Spain and Portugal are full of them, from Guadalajara to the Algarve; Mexico's second city, Guadalajara, carries one across the Atlantic.",
+        "es": "España y Portugal están llenos de ellos, de Guadalajara al Algarve; la segunda ciudad de México, Guadalajara, lleva uno al otro lado del Atlántico."
+      },
+      "words": [
+        { "en": "Gibraltar", "es": "Gibraltar", "type": "place", "from": "Jabal Ṭāriq (Arabic)", "means": { "en": "Tariq's mountain", "es": "el monte de Táriq" } },
+        { "en": "Guadalquivir", "es": "Guadalquivir", "type": "place", "from": "al-wādī al-kabīr (Arabic)", "means": { "en": "the great river", "es": "el río grande" } },
+        { "en": "Guadalajara", "es": "Guadalajara", "type": "place", "from": "wādī al-ḥijāra (Arabic)", "means": { "en": "river of stones", "es": "río de piedras" } },
+        { "en": "Guadiana", "es": "Guadiana", "type": "place", "from": "wādī (Arabic) + Anas (the Latin river name)", "means": { "en": "river Anas", "es": "río Anas" } },
+        { "en": "Algarve", "es": "Algarve", "type": "place", "from": "al-gharb (Arabic)", "means": { "en": "the west", "es": "el occidente" } },
+        { "en": "Alcalá", "es": "Alcalá", "type": "place", "from": "al-qalʿa (Arabic)", "means": { "en": "the fortress", "es": "la fortaleza" } },
+        { "en": "Alcántara", "es": "Alcántara", "type": "place", "from": "al-qanṭara (Arabic)", "means": { "en": "the bridge", "es": "el puente" } },
+        { "en": "Medinaceli", "es": "Medinaceli", "type": "place", "from": "madīnat Sālim (Arabic)", "means": { "en": "Salim's city", "es": "la ciudad de Salim" } },
+        { "en": "Algeciras", "es": "Algeciras", "type": "place", "from": "al-jazīra al-khaḍrāʾ (Arabic)", "means": { "en": "the green island", "es": "la isla verde" } },
+        { "en": "Almería", "es": "Almería", "type": "place", "from": "probably al-mariyya (Arabic)", "means": { "en": "the watchtower", "es": "la atalaya" } },
+        { "en": "Calatayud", "es": "Calatayud", "type": "place", "from": "qalʿat Ayyūb (Arabic)", "means": { "en": "Ayyub's fortress", "es": "la fortaleza de Ayub" } },
+        { "en": "Albufera", "es": "Albufera", "type": "place", "from": "al-buḥayra (Arabic)", "means": { "en": "the little sea, lagoon", "es": "el pequeño mar, laguna" } },
+        { "en": "Fátima", "es": "Fátima", "type": "place", "from": "Fāṭima (Arabic woman's name)" },
+        { "en": "Madrid", "es": "Madrid", "type": "place", "from": "Mayrīṭ (Andalusi Arabic; origin debated)" }
+      ],
+      "see": ["people:al-andalus"],
+      "wiki": { "en": "Al-Andalus", "es": "Al-Ándalus" }
+    },
+    {
+      "id": "personal-names",
+      "name": { "en": "Omar, Leila, Fátima and Almudena", "es": "Omar, Leila, Fátima y Almudena" },
+      "cat": "words",
+      "icon": "👤",
+      "how": "named",
+      "date": "800",
+      "circa": true,
+      "at": [-3.71, 40.41],
+      "place": { "en": "Al-Andalus (here Madrid, whose patron is the Virgin of La Almudena)", "es": "Al-Ándalus (aquí Madrid, cuya patrona es la Virgen de la Almudena)" },
+      "text": {
+        "en": "Names from Arabic are given to children in English and Spanish: Omar, Ali, Leila, Amira, Soraya, Yamila and, through places in Spain and Portugal, Fátima and Almudena.",
+        "es": "Nombres del árabe se ponen a los niños en español y en inglés: Omar, Alí, Leila, Amira, Soraya, Yamila y, a través de lugares de España y Portugal, Fátima y Almudena."
+      },
+      "details": {
+        "en": "ʿUmar was the name of the second caliph, and Omar is now common in the Arab world, Latin America and English-speaking countries. Layla, ‘night’, is the heroine of the Arabic love story of Layla and Majnun, which inspired Eric Clapton's song ‘Layla’. Thurayyā, the Pleiades, became Persian Sorayya and Spanish Soraya; Jamīla, ‘beautiful’, is Yamila in Argentina. Some names came through places: Fātima, the Prophet's daughter, named a Portuguese village where Catholics believe the Virgin appeared in 1917, and Almudena, from al-mudayna, ‘the citadel’, is the patron of Madrid. Zoraida, the Moorish heroine of a tale in Don Quixote, and Zaida were names of al-Andalus.",
+        "es": "ʿUmar era el nombre del segundo califa, y hoy Omar es común en el mundo árabe, América Latina y los países de habla inglesa. Layla, «noche», es la heroína de la historia de amor árabe de Layla y Majnún, que inspiró la canción «Layla» de Eric Clapton. Thurayyā, las Pléyades, dio el persa Sorayya y el español Soraya; Jamīla, «hermosa», es Yamila en Argentina. Algunos nombres llegaron por lugares: Fátima, la hija del Profeta, dio nombre a un pueblo portugués donde los católicos creen que la Virgen se apareció en 1917, y Almudena, de al-mudayna, «la ciudadela», es la patrona de Madrid. Zoraida, la heroína mora de un relato del Quijote, y Zaida eran nombres de al-Ándalus."
+      },
+      "path": [
+        { "at": [-8.65, 39.62], "place": { "en": "Fátima, Portugal", "es": "Fátima, Portugal" }, "date": "1917", "note": { "en": "The village's fame spreads the name Fátima among Catholics worldwide.", "es": "La fama del pueblo extiende el nombre Fátima entre los católicos del mundo." } }
+      ],
+      "where": ["lang:spa", "lang:por", "lang:eng", "lang:ara"],
+      "strong": ["lang:ara"],
+      "note": {
+        "en": "Common in the Arab world and found across Spain, Portugal, Latin America and English-speaking countries: Omar, Leila, Fátima, Soraya, Almudena.",
+        "es": "Comunes en el mundo árabe y presentes en España, Portugal, América Latina y los países de habla inglesa: Omar, Leila, Fátima, Soraya, Almudena."
+      },
+      "words": [
+        { "en": "Omar", "es": "Omar", "type": "name", "from": "ʿUmar (Arabic)" },
+        { "en": "Ali", "es": "Alí", "type": "name", "from": "ʿAlī (Arabic)", "means": { "en": "high, noble", "es": "alto, noble" } },
+        { "en": "Layla", "es": "Leila", "type": "name", "from": "layla (Arabic)", "means": { "en": "night", "es": "noche" } },
+        { "en": "Amira", "es": "Amira", "type": "name", "from": "amīra (Arabic)", "means": { "en": "princess", "es": "princesa" } },
+        { "en": "Fatima", "es": "Fátima", "type": "name", "from": "Fāṭima (Arabic)" },
+        { "es": "Almudena", "type": "name", "from": "al-mudayna (Andalusi Arabic)", "means": { "en": "the citadel, little city", "es": "la ciudadela" } },
+        { "en": "Soraya", "es": "Soraya", "type": "name", "from": "thurayyā (Arabic), via Persian Sorayya", "means": { "en": "the Pleiades", "es": "las Pléyades" } },
+        { "en": "Jamila", "es": "Yamila", "type": "name", "from": "jamīla (Arabic)", "means": { "en": "beautiful", "es": "hermosa" } },
+        { "en": "Aisha", "es": "Aixa", "type": "name", "from": "ʿĀʾisha (Arabic)", "means": { "en": "living", "es": "la que vive" } },
+        { "es": "Zoraida", "type": "name", "from": "an Arabic name of al-Andalus (origin uncertain)" },
+        { "es": "Zaida", "type": "name", "from": "an Arabic name of al-Andalus (origin uncertain)" }
+      ],
+      "wiki": { "en": "Arabic name", "es": "Onomástica árabe" }
+    },
+    {
+      "id": "star-names",
+      "name": { "en": "Aldebaran, Betelgeuse and Vega: star names", "es": "Aldebarán, Betelgeuse y Vega: nombres de estrellas" },
+      "cat": "science",
+      "icon": "⭐",
+      "how": "named",
+      "date": "964",
+      "at": [51.67, 32.65],
+      "place": { "en": "Isfahan, Iran", "es": "Isfahán, Irán" },
+      "text": {
+        "en": "Look up at night and you see Arabic names: Aldebaran, Betelgeuse, Rigel, Altair, Vega, Deneb. Astronomers still use them, along with zenith, nadir and azimuth, words from Arabic.",
+        "es": "Mira el cielo de noche y verás nombres árabes: Aldebarán, Betelgeuse, Rigel, Altair, Vega, Deneb. Los astrónomos aún los usan, junto con cenit, nadir y acimut, palabras del árabe."
+      },
+      "details": {
+        "en": "Arabs named bright stars long before Islam, and astronomers of the Golden Age added names translated from Ptolemy's descriptions of the constellations. Abd al-Rahman al-Sufi, a Persian astronomer at Isfahan, combined both in his Book of Fixed Stars (964), which also gives the first known description of the Andromeda galaxy, as a ‘little cloud’. In Spain the names were engraved on astrolabes and copied into Latin, often garbled: yad al-jawzāʾ, ‘hand of al-Jawzāʾ’, became Betelgeuse. Since 2016 the International Astronomical Union has made many of these names official. Samt ar-raʾs, ‘path over the head’, became zenith; naẓīr, ‘opposite’, nadir; as-sumūt, ‘the directions’, azimuth.",
+        "es": "Los árabes nombraron las estrellas brillantes mucho antes del islam, y los astrónomos de la Edad de Oro añadieron nombres traducidos de las descripciones de las constelaciones de Ptolomeo. Abd al-Rahman al-Sufi, un astrónomo persa de Isfahán, reunió ambos en su Libro de las estrellas fijas (964), que además da la primera descripción conocida de la galaxia de Andrómeda, como una «pequeña nube». En España los nombres se grabaron en astrolabios y se copiaron al latín, a menudo deformados: yad al-jawzāʾ, «la mano de al-Jawzāʾ», se volvió Betelgeuse. Desde 2016 la Unión Astronómica Internacional ha hecho oficiales muchos de estos nombres. Samt ar-raʾs, «el camino sobre la cabeza», dio cenit; naẓīr, «opuesto», nadir; as-sumūt, «las direcciones», acimut."
+      },
+      "roots": {
+        "en": "Built on Arab star lore older than Islam and on Ptolemy's Greek star catalogue.",
+        "es": "Se basó en la tradición árabe de las estrellas, anterior al islam, y en el catálogo griego de Ptolomeo."
+      },
+      "path": [
+        { "at": [-4.02, 39.86], "place": { "en": "Toledo, Spain", "es": "Toledo, España" }, "date": "1270", "circa": true, "by": { "en": "Alfonso X's astronomers", "es": "Los astrónomos de Alfonso X" }, "note": { "en": "Castilian books of astronomy give the stars their Arabic names.", "es": "Los libros castellanos de astronomía dan a las estrellas sus nombres árabes." } },
+        { "at": [10.9, 48.37], "place": { "en": "Augsburg, Germany", "es": "Augsburgo, Alemania" }, "date": "1603", "by": { "en": "Johann Bayer", "es": "Johann Bayer" }, "note": { "en": "Uranometria, a star atlas full of Arabic names.", "es": "Uranometria, un atlas celeste lleno de nombres árabes." } },
+        { "at": [2.33, 48.85], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "2016", "note": { "en": "The International Astronomical Union starts fixing official star names.", "es": "La Unión Astronómica Internacional empieza a fijar los nombres oficiales de las estrellas." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Used by astronomers, navigators, planetariums and stargazing apps everywhere.",
+        "es": "Los usan astrónomos, navegantes, planetarios y aplicaciones para mirar el cielo en todo el mundo."
+      },
+      "words": [
+        { "en": "Aldebaran", "es": "Aldebarán", "type": "sky", "from": "al-dabarān (Arabic)", "means": { "en": "the follower (of the Pleiades)", "es": "el que sigue (a las Pléyades)" } },
+        { "en": "Betelgeuse", "es": "Betelgeuse", "type": "sky", "from": "yad al-jawzāʾ (Arabic), misread in Latin", "means": { "en": "hand of al-Jawzāʾ (Orion)", "es": "la mano de al-Jawzāʾ (Orión)" } },
+        { "en": "Rigel", "es": "Rigel", "type": "sky", "from": "rijl al-jawzāʾ (Arabic)", "means": { "en": "foot of al-Jawzāʾ", "es": "el pie de al-Jawzāʾ" } },
+        { "en": "Altair", "es": "Altair", "type": "sky", "from": "al-nasr al-ṭāʾir (Arabic)", "means": { "en": "the flying eagle", "es": "el águila que vuela" } },
+        { "en": "Vega", "es": "Vega", "type": "sky", "from": "al-nasr al-wāqiʿ (Arabic)", "means": { "en": "the swooping eagle", "es": "el águila que cae en picada" } },
+        { "en": "Deneb", "es": "Deneb", "type": "sky", "from": "dhanab al-dajāja (Arabic)", "means": { "en": "tail of the hen", "es": "la cola de la gallina" } },
+        { "en": "Algol", "es": "Algol", "type": "sky", "from": "raʾs al-ghūl (Arabic)", "means": { "en": "head of the demon", "es": "la cabeza del demonio" } },
+        { "en": "Fomalhaut", "es": "Fomalhaut", "type": "sky", "from": "fam al-ḥūt (Arabic)", "means": { "en": "mouth of the fish", "es": "la boca del pez" } },
+        { "en": "zenith", "es": "cenit", "type": "sky", "from": "samt ar-raʾs (Arabic), misread in Latin", "means": { "en": "path over the head", "es": "el camino sobre la cabeza" } },
+        { "en": "nadir", "es": "nadir", "type": "sky", "from": "naẓīr (Arabic)", "means": { "en": "opposite (the zenith)", "es": "opuesto (al cenit)" } },
+        { "en": "azimuth", "es": "acimut", "type": "sky", "from": "as-sumūt (Arabic)", "means": { "en": "the directions, ways", "es": "las direcciones, los caminos" } }
+      ],
+      "see": ["eras:al-sufi"],
+      "wiki": { "en": "The Book of Fixed Stars", "es": "Libro de las estrellas fijas" }
+    },
+    {
+      "id": "optics",
+      "name": { "en": "How we see: Ibn al-Haytham's optics", "es": "Cómo vemos: la óptica de Ibn al-Haytham" },
+      "cat": "science",
+      "icon": "👁️",
+      "how": "developed",
+      "date": "1021",
+      "at": [31.26, 30.05],
+      "place": { "en": "Cairo, Egypt", "es": "El Cairo, Egipto" },
+      "text": {
+        "en": "We see because light from objects enters the eye. Ibn al-Haytham showed it by experiment in Cairo and explained the camera obscura, the principle inside every camera.",
+        "es": "Vemos porque la luz de los objetos entra en el ojo. Ibn al-Haytham lo demostró con experimentos en El Cairo y explicó la cámara oscura, el principio de toda cámara."
+      },
+      "details": {
+        "en": "Ibn al-Haytham, known in Latin as Alhazen, was an Arab scholar born in Basra, in Iraq, around 965, who worked in Cairo. Greek thinkers had argued over whether the eye sends out rays. In his Book of Optics (1011–1021) he combined geometry, the anatomy of the eye and careful experiments with lamps, screens and dark rooms to show that light travels in straight lines from objects into the eye. He described how light through a small hole forms an upside-down image: the camera obscura. Translated into Latin around 1200, the book shaped Roger Bacon, Witelo and Kepler. Many historians see his insistence on testing ideas by experiment as an early step towards the scientific method, though how much later scientists owed him is debated.",
+        "es": "Ibn al-Haytham, llamado Alhacén en latín, fue un sabio árabe nacido en Basora, Irak, hacia 965, que trabajó en El Cairo. Los pensadores griegos habían discutido si el ojo lanza rayos. En su Libro de óptica (1011–1021) unió la geometría, la anatomía del ojo y experimentos cuidadosos con lámparas, pantallas y cuartos oscuros para mostrar que la luz viaja en línea recta desde los objetos hasta el ojo. Describió cómo la luz que pasa por un agujero pequeño forma una imagen invertida: la cámara oscura. Traducido al latín hacia 1200, el libro marcó a Roger Bacon, Witelo y Kepler. Muchos historiadores ven en su insistencia en poner a prueba las ideas con experimentos un primer paso hacia el método científico, aunque se discute cuánto le debieron los científicos posteriores."
+      },
+      "roots": {
+        "en": "Built on Greek optics (Euclid, Ptolemy) and on Greek and Arab medicine of the eye; the pinhole image had been noticed in China and Greece.",
+        "es": "Se basó en la óptica griega (Euclides, Ptolomeo) y en la medicina griega y árabe del ojo; la imagen por un agujero ya se había observado en China y Grecia."
+      },
+      "path": [
+        { "at": [-4.02, 39.86], "place": { "en": "Spain or Italy (uncertain; here Toledo)", "es": "España o Italia (incierto; aquí Toledo)" }, "date": "1200", "circa": true, "note": { "en": "Translated into Latin as De aspectibus.", "es": "Traducido al latín como De aspectibus." } },
+        { "at": [-1.26, 51.75], "place": { "en": "Oxford, England", "es": "Oxford, Inglaterra" }, "date": "1267", "by": { "en": "Roger Bacon", "es": "Roger Bacon" }, "note": { "en": "Builds on Alhazen in his Opus maius.", "es": "Se apoya en Alhacén en su Opus maius." } },
+        { "at": [7.59, 47.56], "place": { "en": "Basel, Switzerland", "es": "Basilea, Suiza" }, "date": "1572", "by": { "en": "Friedrich Risner", "es": "Friedrich Risner" }, "note": { "en": "A printed edition of Alhazen's Optics.", "es": "Una edición impresa de la Óptica de Alhacén." } },
+        { "at": [14.42, 50.09], "place": { "en": "Prague, Czech Republic", "es": "Praga, República Checa" }, "date": "1604", "by": { "en": "Johannes Kepler", "es": "Johannes Kepler" }, "note": { "en": "Explains how the eye's lens forms an image on the retina.", "es": "Explica cómo el cristalino forma una imagen en la retina." } },
+        { "at": [4.85, 46.78], "place": { "en": "Chalon-sur-Saône, France", "es": "Chalon-sur-Saône, Francia" }, "date": "1827", "by": { "en": "Nicéphore Niépce", "es": "Nicéphore Niépce" }, "note": { "en": "A camera obscura fixes one of the first lasting photographs.", "es": "Una cámara oscura fija una de las primeras fotografías duraderas." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Every camera, from phones to telescopes, works like a camera obscura; school physics everywhere teaches that we see by light entering the eye.",
+        "es": "Toda cámara, del celular al telescopio, funciona como una cámara oscura; la física escolar de todo el mundo enseña que vemos por la luz que entra en el ojo."
+      },
+      "see": ["eras:book-of-optics", "inventions:camera-obscura"],
+      "wiki": { "en": "Ibn al-Haytham", "es": "Alhacén" }
+    },
+    {
+      "id": "hospitals",
+      "name": { "en": "Hospitals with wards for every illness", "es": "Hospitales con salas para cada enfermedad" },
+      "cat": "science",
+      "icon": "🏥",
+      "how": "developed",
+      "sure": "debated",
+      "date": "805",
+      "circa": true,
+      "at": [44.4, 33.32],
+      "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" },
+      "text": {
+        "en": "Separate wards for fevers, eyes, surgery and mental illness, a pharmacy, trained doctors and free care for all: the bimaristans of Baghdad, Damascus and Cairo were hospitals much like ours.",
+        "es": "Salas separadas para fiebres, ojos, cirugía y enfermedades mentales, una farmacia, médicos formados y atención gratuita para todos: los bimaristanes de Bagdad, Damasco y El Cairo eran hospitales muy parecidos a los nuestros."
+      },
+      "details": {
+        "en": "Christian Byzantium and Sasanian Persia had houses for the sick, but the Abbasids built them on a new scale. Around 805 Harun al-Rashid founded Baghdad's first bimaristan (a Persian word, ‘place of the sick’), with doctors from the Christian Bukhtishu family. Later hospitals had wards for men and for women, for different diseases and for mental illness, a pharmacy, records and teaching: students learned at the bedside. Al-Razi, a Persian doctor who directed a hospital in Baghdad, told smallpox from measles. The Nur al-Din hospital in Damascus, founded in 1154, still stands. Whether Europe's hospitals copied them is debated, but the general hospital, open to all, took shape here.",
+        "es": "La Bizancio cristiana y la Persia sasánida tenían casas para enfermos, pero los abasíes las construyeron a otra escala. Hacia 805 Harún al-Rashid fundó el primer bimaristán de Bagdad (palabra persa, «lugar de los enfermos»), con médicos de la familia cristiana Bujtishu. Los hospitales posteriores tenían salas para hombres y para mujeres, para distintas enfermedades y para enfermos mentales, una farmacia, registros y enseñanza: los estudiantes aprendían junto a la cama del paciente. Al-Razi, un médico persa que dirigió un hospital en Bagdad, distinguió la viruela del sarampión. El hospital de Nur al-Din en Damasco, fundado en 1154, sigue en pie. Se discute si los hospitales de Europa los copiaron, pero aquí tomó forma el hospital general, abierto a todos."
+      },
+      "roots": {
+        "en": "Built on Byzantine Christian hospitals and on Persian and Greek medicine.",
+        "es": "Se basó en los hospitales cristianos bizantinos y en la medicina persa y griega."
+      },
+      "path": [
+        { "at": [31.23, 30.01], "place": { "en": "Fustat (Cairo), Egypt", "es": "Fustat (El Cairo), Egipto" }, "date": "872", "from": 0, "by": { "en": "Ahmad ibn Tulun", "es": "Ahmad ibn Tulun" }, "note": { "en": "A free hospital for the people of Egypt.", "es": "Un hospital gratuito para el pueblo de Egipto." } },
+        { "at": [44.36, 33.35], "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" }, "date": "982", "from": 0, "by": { "en": "Adud al-Dawla", "es": "Adud al-Dawla" }, "note": { "en": "The great Adudi hospital.", "es": "El gran hospital Adudi." } },
+        { "at": [36.3, 33.51], "place": { "en": "Damascus, Syria", "es": "Damasco, Siria" }, "date": "1154", "by": { "en": "Nur al-Din", "es": "Nur al-Din" }, "note": { "en": "A hospital and medical school that still stands in the old city.", "es": "Un hospital y escuela de medicina que sigue en pie en la ciudad vieja." } },
+        { "at": [31.26, 30.05], "place": { "en": "Cairo, Egypt", "es": "El Cairo, Egipto" }, "date": "1284", "by": { "en": "Sultan Qalawun", "es": "El sultán Qalawún" }, "note": { "en": "The Mansuri hospital treats rich and poor alike, for free.", "es": "El hospital Mansuri atiende gratis a ricos y pobres por igual." } },
+        { "at": [-3.59, 37.18], "place": { "en": "Granada, Spain", "es": "Granada, España" }, "date": "1367", "by": { "en": "Muhammad V", "es": "Muhammad V" }, "note": { "en": "The maristan of Nasrid Granada.", "es": "El maristán de la Granada nazarí." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Hospitals with wards for different illnesses, pharmacies and teaching at the bedside are now found in every country.",
+        "es": "Hoy hay en todos los países hospitales con salas para distintas enfermedades, farmacias y enseñanza junto a la cama del paciente."
+      },
+      "see": ["eras:bimaristan", "plagues:nur-al-din-bimaristan"],
+      "wiki": { "en": "Bimaristan", "es": "Bimaristán" }
+    },
+    {
+      "id": "canon-of-medicine",
+      "name": { "en": "Ibn Sina's Canon of Medicine", "es": "El Canon de medicina de Ibn Sina" },
+      "cat": "science",
+      "icon": "📕",
+      "how": "developed",
+      "date": "1025",
+      "circa": true,
+      "at": [48.51, 34.8],
+      "place": { "en": "Hamadan, Iran", "es": "Hamadán, Irán" },
+      "text": {
+        "en": "A five-book encyclopaedia of medicine, finished by Ibn Sina about 1025, was taught in European universities for 500 years, and it still guides Unani doctors in India and Pakistan.",
+        "es": "Una enciclopedia médica en cinco libros, terminada por Ibn Sina hacia 1025, se enseñó en las universidades europeas durante 500 años y aún guía a los médicos unani de la India y Pakistán."
+      },
+      "details": {
+        "en": "Ibn Sina (Avicenna), a Persian born near Bukhara in 980, was a court physician and vizier who wrote in Arabic. His Canon gathered Greek medicine (Hippocrates and Galen), Persian and Indian knowledge and his own observations into five books: general principles, simple drugs, diseases from head to toe, illnesses of the whole body, and compound remedies. He set out rules for testing medicines on patients. Gerard of Cremona translated it into Latin in Toledo in the 12th century; it was printed dozens of times and taught at universities such as Montpellier into the 17th century. In South Asia, Unani (‘Greek’) medicine, officially recognised in India, still follows its teachings.",
+        "es": "Ibn Sina (Avicena), un persa nacido cerca de Bujará en 980, fue médico de corte y visir, y escribía en árabe. Su Canon reunió la medicina griega (Hipócrates y Galeno), saberes persas e indios y sus propias observaciones en cinco libros: principios generales, medicamentos simples, enfermedades de la cabeza a los pies, males de todo el cuerpo y remedios compuestos. Fijó reglas para probar medicamentos en pacientes. Gerardo de Cremona lo tradujo al latín en Toledo en el siglo XII; se imprimió decenas de veces y se enseñó en universidades como Montpellier hasta el siglo XVII. En el sur de Asia, la medicina unani («griega»), reconocida oficialmente en la India, sigue sus enseñanzas."
+      },
+      "roots": {
+        "en": "Built on Hippocrates, Galen and other Greek doctors, and on Persian, Indian and earlier Arabic medicine such as al-Razi's.",
+        "es": "Se basó en Hipócrates, Galeno y otros médicos griegos, y en la medicina persa, india y árabe anterior, como la de al-Razi."
+      },
+      "path": [
+        { "at": [-4.02, 39.86], "place": { "en": "Toledo, Spain", "es": "Toledo, España" }, "date": "1170", "circa": true, "by": { "en": "Gerard of Cremona", "es": "Gerardo de Cremona" }, "note": { "en": "Latin translation: Canon medicinae.", "es": "Traducción latina: Canon medicinae." } },
+        { "at": [9.19, 45.46], "place": { "en": "Milan, Italy", "es": "Milán, Italia" }, "date": "1473", "note": { "en": "The first printed Latin edition.", "es": "La primera edición latina impresa." } },
+        { "at": [3.88, 43.61], "place": { "en": "Montpellier, France", "es": "Montpellier, Francia" }, "date": "1550", "circa": true, "note": { "en": "A set text at one of Europe's oldest medical schools.", "es": "Un texto obligatorio en una de las escuelas de medicina más antiguas de Europa." } },
+        { "at": [12.48, 41.9], "place": { "en": "Rome, Italy", "es": "Roma, Italia" }, "date": "1593", "from": 2, "note": { "en": "The Medici Press prints the Arabic text.", "es": "La imprenta medicea imprime el texto árabe." } },
+        { "at": [77.21, 28.65], "place": { "en": "Delhi, India", "es": "Delhi, India" }, "date": "1916", "from": 0, "by": { "en": "Hakim Ajmal Khan", "es": "Hakim Ajmal Khan" }, "note": { "en": "Founds a college of Unani and Ayurvedic medicine.", "es": "Funda un colegio de medicina unani y ayurvédica." } }
+      ],
+      "where": ["IND", "PAK", "BGD", "IRN"],
+      "strong": ["IND", "PAK"],
+      "note": {
+        "en": "Unani medicine, based on the Canon, is practised by registered hakims in India, Pakistan and Bangladesh; Iran keeps Ibn Sina's birthday as Doctors' Day.",
+        "es": "La medicina unani, basada en el Canon, la ejercen hakims registrados en la India, Pakistán y Bangladés; Irán celebra el Día del Médico en el cumpleaños de Ibn Sina."
+      },
+      "see": ["eras:canon", "lives/avicenna"],
+      "wiki": { "en": "The Canon of Medicine", "es": "El canon de medicina" }
+    },
+    {
+      "id": "distillation",
+      "name": { "en": "The alembic and the words of chemistry", "es": "El alambique y las palabras de la química" },
+      "cat": "science",
+      "icon": "⚗️",
+      "how": "developed",
+      "date": "850",
+      "circa": true,
+      "at": [44.38, 33.32],
+      "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" },
+      "text": {
+        "en": "Stills for perfume, rosewater and spirits, and the words alembic, alcohol, alkali, elixir and alchemy: chemists of the Islamic world refined distillation and passed it on to Europe.",
+        "es": "Alambiques para perfumes, agua de rosas y licores, y las palabras alambique, alcohol, álcali, elixir y alquimia: los químicos del mundo islámico perfeccionaron la destilación y la pasaron a Europa."
+      },
+      "details": {
+        "en": "Distillation was known in Roman Egypt, where alchemists used a still called the ambix. Chemists writing in Arabic improved it: al-Kindi, an Arab philosopher in Baghdad, described distilling perfumes and rosewater, and al-Razi, a Persian doctor, described the equipment and sorted substances by experiment; writings under the name of Jabir ibn Hayyan, whose authorship is debated, were widely read. The still became al-anbīq, our alembic. Al-kuḥl, a fine powder used as eye paint, came to mean any refined essence and, in 16th-century Europe, the spirit of wine: alcohol. Al-qalī, plant ash, gave alkali; al-iksīr, elixir; al-kīmiyāʾ, alchemy and then chemistry.",
+        "es": "La destilación se conocía en el Egipto romano, donde los alquimistas usaban un alambique llamado ambix. Los químicos que escribían en árabe la mejoraron: al-Kindi, un filósofo árabe de Bagdad, describió cómo destilar perfumes y agua de rosas, y al-Razi, un médico persa, describió los aparatos y clasificó sustancias con experimentos; los escritos atribuidos a Yabir ibn Hayyan, de autoría discutida, se leyeron mucho. El aparato se volvió al-anbīq, nuestro alambique. Al-kuḥl, un polvo fino usado para pintar los ojos, pasó a significar cualquier esencia refinada y, en la Europa del siglo XVI, el espíritu del vino: el alcohol. Al-qalī, ceniza de plantas, dio álcali; al-iksīr, elixir; al-kīmiyāʾ, alquimia y luego química."
+      },
+      "roots": {
+        "en": "Built on the stills of Greek-speaking alchemists in Roman Egypt, such as Maria the Jewess and Zosimos.",
+        "es": "Se basó en los alambiques de los alquimistas de habla griega del Egipto romano, como María la Judía y Zósimo."
+      },
+      "path": [
+        { "at": [51.43, 35.59], "place": { "en": "Ray, near Tehran, Iran", "es": "Rey, cerca de Teherán, Irán" }, "date": "900", "circa": true, "by": { "en": "al-Razi", "es": "al-Razi" }, "note": { "en": "Describes apparatus for distilling.", "es": "Describe aparatos para destilar." } },
+        { "at": [14.77, 40.68], "place": { "en": "Salerno, Italy", "es": "Salerno, Italia" }, "date": "1150", "circa": true, "note": { "en": "Physicians distil ‘burning water’ from wine.", "es": "Los médicos destilan «agua ardiente» del vino." } },
+        { "at": [3.88, 43.61], "place": { "en": "Montpellier, France", "es": "Montpellier, Francia" }, "date": "1300", "circa": true, "by": { "en": "Arnau de Vilanova", "es": "Arnau de Vilanova" }, "note": { "en": "Praises aqua vitae as a medicine.", "es": "Alaba el aqua vitae como medicina." } },
+        { "at": [-75.73, -14.07], "place": { "en": "Ica, Peru", "es": "Ica, Perú" }, "date": "1600", "circa": true, "note": { "en": "Copper alambiques make pisco.", "es": "Los alambiques de cobre producen pisco." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Distillation makes perfumes, medicines, fuels and spirits worldwide; alambique stills give pisco, cachaça, mezcal and brandy.",
+        "es": "La destilación produce perfumes, medicinas, combustibles y licores en todo el mundo; los alambiques dan pisco, cachaza, mezcal y brandy."
+      },
+      "words": [
+        { "en": "alembic", "es": "alambique", "from": "al-anbīq (Arabic), from Greek ambix", "means": { "en": "still, cup", "es": "alambique, copa" } },
+        { "en": "alcohol", "es": "alcohol", "from": "al-kuḥl (Arabic)", "means": { "en": "fine powder, kohl", "es": "polvo fino, kohl" } },
+        { "en": "alkali", "es": "álcali", "from": "al-qalī (Arabic)", "means": { "en": "plant ash", "es": "ceniza de plantas" } },
+        { "en": "elixir", "es": "elixir", "from": "al-iksīr (Arabic), from Greek xērion", "means": { "en": "drying powder", "es": "polvo secante" } },
+        { "en": "alchemy", "es": "alquimia", "from": "al-kīmiyāʾ (Arabic), from Greek khēmeia" },
+        { "es": "alquitara", "from": "al-qaṭṭāra (Andalusi Arabic)", "means": { "en": "the dripper, a still", "es": "la que gotea, un alambique" } }
+      ],
+      "wiki": { "en": "Alembic", "es": "Alambique" }
+    },
+    {
+      "id": "paper-mills",
+      "name": { "en": "Paper mills from Samarkand to Spain", "es": "Molinos de papel de Samarcanda a España" },
+      "cat": "tech",
+      "icon": "📜",
+      "how": "spread",
+      "date": "751",
+      "circa": true,
+      "at": [66.97, 39.65],
+      "place": { "en": "Samarkand, Uzbekistan", "es": "Samarcanda, Uzbekistán" },
+      "text": {
+        "en": "Paper was invented in China, but the Islamic world made it cheap and common: mills spread from Samarkand to Baghdad, Cairo and Spain, where Europe's first paper was made.",
+        "es": "El papel se inventó en China, pero el mundo islámico lo hizo barato y común: los molinos pasaron de Samarcanda a Bagdad, El Cairo y España, donde se hizo el primer papel de Europa."
+      },
+      "details": {
+        "en": "Paper was being made in Samarkand by the mid-8th century; the story that Chinese prisoners taken at the Battle of Talas in 751 taught the craft is old but uncertain. Baghdad had a paper mill by the 790s, and soon the caliphate's offices, scholars and booksellers wrote on paper instead of papyrus and parchment. Papermakers beat linen rags into pulp, often with water-powered hammers. The craft reached Cairo, Damascus and Fez, and in the 12th century al-Idrisi praised the paper of Xàtiva, near Valencia, as the best anywhere. From Spain and Sicily it passed to Italy, where Fabriano's mills were working by 1264. A ream, from Arabic rizma, ‘bundle’, still counts sheets.",
+        "es": "En Samarcanda se fabricaba papel a mediados del siglo VIII; la historia de que unos prisioneros chinos tomados en la batalla de Talas, en 751, enseñaron el oficio es antigua pero incierta. Bagdad tuvo un molino de papel hacia 790, y pronto las oficinas del califato, los sabios y los libreros escribían en papel en vez de papiro y pergamino. Los papeleros machacaban trapos de lino hasta hacer pasta, a menudo con mazos movidos por agua. El oficio llegó a El Cairo, Damasco y Fez, y en el siglo XII al-Idrisi alabó el papel de Játiva, cerca de Valencia, como el mejor del mundo. De España y Sicilia pasó a Italia, donde los molinos de Fabriano funcionaban en 1264. Una resma, del árabe rizma, «paquete», aún cuenta hojas."
+      },
+      "roots": {
+        "en": "Paper was invented in China, traditionally credited to Cai Lun in AD 105.",
+        "es": "El papel se inventó en China; la tradición lo atribuye a Cai Lun en el 105 d. C."
+      },
+      "path": [
+        { "at": [44.37, 33.31], "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" }, "date": "794", "circa": true, "note": { "en": "The first paper mill of the Abbasid capital.", "es": "El primer molino de papel de la capital abasí." } },
+        { "at": [31.24, 30.04], "place": { "en": "Cairo, Egypt", "es": "El Cairo, Egipto" }, "date": "900", "circa": true, "note": { "en": "Paper replaces papyrus in Egypt.", "es": "El papel sustituye al papiro en Egipto." } },
+        { "at": [-4.98, 34.06], "place": { "en": "Fez, Morocco", "es": "Fez, Marruecos" }, "date": "1100", "circa": true, "note": { "en": "Fez becomes a papermaking centre.", "es": "Fez se vuelve un centro papelero." } },
+        { "at": [-0.52, 38.99], "place": { "en": "Xàtiva, Valencia, Spain", "es": "Játiva, Valencia, España" }, "date": "1150", "circa": true, "note": { "en": "Europe's first paper mills, praised by al-Idrisi.", "es": "Los primeros molinos de papel de Europa, alabados por al-Idrisi." } },
+        { "at": [12.9, 43.34], "place": { "en": "Fabriano, Italy", "es": "Fabriano, Italia" }, "date": "1264", "note": { "en": "Italian mills, soon making watermarked paper.", "es": "Molinos italianos que pronto hacen papel con marca de agua." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Every sheet of paper, from books to banknotes, comes from a craft that crossed the Islamic world; a ream (resma) is still a pack of 500 sheets.",
+        "es": "Cada hoja de papel, de los libros a los billetes, viene de un oficio que cruzó el mundo islámico; una resma aún es un paquete de 500 hojas."
+      },
+      "words": [
+        { "en": "ream", "es": "resma", "from": "rizma (Arabic), via Spanish", "means": { "en": "bundle", "es": "paquete, fardo" } }
+      ],
+      "see": ["eras:samarkand-paper", "inventions:samarkand"],
+      "wiki": { "en": "Papermaking", "es": "Fabricación de papel" }
+    },
+    {
+      "id": "acequias",
+      "name": { "en": "Acequias and norias: watering the huerta", "es": "Acequias y norias: el riego de la huerta" },
+      "cat": "tech",
+      "icon": "💦",
+      "how": "spread",
+      "sure": "likely",
+      "date": "900",
+      "circa": true,
+      "at": [-0.38, 39.47],
+      "place": { "en": "Valencia, Spain", "es": "Valencia, España" },
+      "text": {
+        "en": "Canals shared by turns and water wheels lifting water to the fields: the irrigation of al-Andalus still waters Spain's huertas, and Spanish settlers took its acequias to Mexico and New Mexico.",
+        "es": "Canales repartidos por turnos y norias que suben el agua a los campos: el riego de al-Ándalus aún riega las huertas de España, y los colonos españoles llevaron sus acequias a México y Nuevo México."
+      },
+      "details": {
+        "en": "Andalusi farmers spread irrigation methods from the Middle East: canals (as-sāqiya, Spanish acequia) that share a river among neighbours by turns, dams (as-sudd, azud), cisterns (al-jubb, aljibe), pools (al-birka, alberca, a swimming pool in Mexico) and water wheels (nāʿūra, noria) turned by the current or by animals. Romans had irrigated Spain before, and historians debate how much was new, but the huertas of Valencia and Murcia still run on rules confirmed after the Christian conquest as those of Muslim times. The Spanish carried acequias to Mexico, and in New Mexico and Colorado hundreds of community acequias, each led by an elected mayordomo, still water fields. Today noria also means a Ferris wheel.",
+        "es": "Los campesinos andalusíes difundieron métodos de riego de Oriente Medio: canales (as-sāqiya, acequia) que reparten un río entre vecinos por turnos, presas (as-sudd, azud), cisternas (al-jubb, aljibe), estanques (al-birka, alberca, en México una piscina) y ruedas de agua (nāʿūra, noria) movidas por la corriente o por animales. Los romanos ya habían regado Hispania, y los historiadores discuten cuánto fue nuevo, pero las huertas de Valencia y Murcia aún funcionan con normas confirmadas tras la conquista cristiana como las de tiempos musulmanes. Los españoles llevaron las acequias a México, y en Nuevo México y Colorado cientos de acequias comunitarias, cada una con un mayordomo elegido, siguen regando campos. Hoy noria también es la rueda de la feria."
+      },
+      "roots": {
+        "en": "Built on Roman irrigation in Spain and on the water wheels and canals of Syria, Iraq and Persia.",
+        "es": "Se basó en el riego romano de Hispania y en las norias y canales de Siria, Irak y Persia."
+      },
+      "path": [
+        { "at": [-1.13, 37.99], "place": { "en": "Murcia, Spain", "es": "Murcia, España" }, "date": "1266", "note": { "en": "Under Castile, the Murcia huerta keeps its Andalusi canals.", "es": "Bajo Castilla, la huerta de Murcia conserva sus acequias andalusíes." } },
+        { "at": [-99.13, 19.43], "place": { "en": "Mexico City", "es": "Ciudad de México" }, "date": "1530", "circa": true, "from": 0, "note": { "en": "Spanish settlers dig acequias in New Spain.", "es": "Los colonos españoles excavan acequias en la Nueva España." } },
+        { "at": [-106.07, 36.05], "place": { "en": "San Gabriel, New Mexico, United States", "es": "San Gabriel, Nuevo México, Estados Unidos" }, "date": "1598", "note": { "en": "Settlers with Juan de Oñate dig the first acequia in New Mexico.", "es": "Los colonos de Juan de Oñate excavan la primera acequia de Nuevo México." } }
+      ],
+      "where": ["ESP", "MEX", "USA"],
+      "strong": ["ESP"],
+      "note": {
+        "en": "Still used in Spain's huertas (Valencia, Murcia, Granada), in Mexico, and by hundreds of community acequias in New Mexico and Colorado.",
+        "es": "Se siguen usando en las huertas de España (Valencia, Murcia, Granada), en México y en cientos de acequias comunitarias de Nuevo México y Colorado."
+      },
+      "words": [
+        { "es": "acequia", "from": "as-sāqiya (Arabic)", "means": { "en": "the irrigator, channel", "es": "la que riega, canal" } },
+        { "en": "noria", "es": "noria", "from": "nāʿūra (Arabic)", "means": { "en": "water wheel", "es": "rueda de agua" } },
+        { "es": "aljibe", "from": "al-jubb (Arabic)", "means": { "en": "cistern, well", "es": "cisterna, pozo" } },
+        { "es": "alberca", "from": "al-birka (Arabic)", "means": { "en": "pool", "es": "estanque" } },
+        { "es": "azud", "from": "as-sudd (Arabic)", "means": { "en": "dam", "es": "presa" } }
+      ],
+      "wiki": { "en": "Acequia", "es": "Acequia" }
+    },
+    {
+      "id": "water-tribunal",
+      "name": { "en": "The Water Tribunal of Valencia", "es": "El Tribunal de las Aguas de Valencia" },
+      "cat": "law",
+      "icon": "⚖️",
+      "how": "invented",
+      "sure": "likely",
+      "date": "1000",
+      "circa": true,
+      "at": [-0.38, 39.48],
+      "place": { "en": "Valencia Cathedral, Spain", "es": "Catedral de Valencia, España" },
+      "text": {
+        "en": "Every Thursday at noon, eight farmers in black smocks sit at the door of Valencia Cathedral to settle irrigation disputes aloud, in Valencian, as they probably have since al-Andalus.",
+        "es": "Cada jueves a mediodía, ocho campesinos con blusones negros se sientan a la puerta de la catedral de Valencia para resolver en voz alta, en valenciano, las disputas del riego, como probablemente se hace desde al-Ándalus."
+      },
+      "details": {
+        "en": "The Tribunal de las Aguas judges quarrels among farmers on the eight main canals of the Valencia huerta: who took water out of turn, who let a channel overflow. Its judges are elected farmers, hearings are oral and public, there are no lawyers and its rulings are final. Tradition dates it to the caliphs of Córdoba; written records begin after James I of Aragon conquered Valencia in 1238 and confirmed the irrigation customs of Muslim times. Murcia has a similar Council of Wise Men. In 2009 UNESCO listed both as intangible heritage of humanity. It is often called the oldest court of justice still working in Europe.",
+        "es": "El Tribunal de las Aguas juzga los pleitos entre campesinos de las ocho acequias principales de la huerta de Valencia: quién tomó agua fuera de turno, quién dejó desbordar un canal. Sus jueces son labradores elegidos, los juicios son orales y públicos, no hay abogados y sus fallos son inapelables. La tradición lo remonta a los califas de Córdoba; los registros escritos empiezan después de que Jaime I de Aragón conquistara Valencia en 1238 y confirmara las costumbres de riego de tiempos musulmanes. Murcia tiene un Consejo de Hombres Buenos parecido. En 2009 la UNESCO reconoció a ambos como patrimonio inmaterial de la humanidad. A menudo se le llama el tribunal de justicia más antiguo de Europa aún en funciones."
+      },
+      "roots": {
+        "en": "Built on the irrigation customs of al-Andalus, rooted in Roman and Middle Eastern practice.",
+        "es": "Se basó en las costumbres de riego de al-Ándalus, con raíces romanas y de Oriente Medio."
+      },
+      "path": [
+        { "at": [-1.13, 37.99], "place": { "en": "Murcia, Spain", "es": "Murcia, España" }, "date": "1266", "circa": true, "note": { "en": "Murcia's huerta keeps a similar council of farmers, the Consejo de Hombres Buenos.", "es": "La huerta de Murcia conserva un consejo de labradores parecido, el Consejo de Hombres Buenos." } }
+      ],
+      "where": ["ESP"],
+      "note": {
+        "en": "Still meets every Thursday at Valencia Cathedral; farmers of the huerta bring their disputes, and visitors come to watch.",
+        "es": "Se sigue reuniendo cada jueves en la catedral de Valencia; los labradores de la huerta llevan sus disputas y los visitantes van a verlo."
+      },
+      "wiki": { "en": "Water Tribunal of the plain of Valencia", "es": "Tribunal de las Aguas de Valencia" }
+    },
+    {
+      "id": "coffee",
+      "name": { "en": "Coffee and the coffeehouse", "es": "El café y las cafeterías" },
+      "cat": "food",
+      "icon": "☕",
+      "how": "invented",
+      "sure": "likely",
+      "date": "1450",
+      "circa": true,
+      "at": [43.25, 13.32],
+      "place": { "en": "Yemen (here the port of Mocha)", "es": "Yemen (aquí el puerto de Moca)" },
+      "text": {
+        "en": "Roasting coffee beans and brewing them into a hot drink began among Sufis in Yemen in the 15th century. From the coffeehouses of Mecca, Cairo and Istanbul the habit spread to the whole world.",
+        "es": "Tostar granos de café y prepararlos en una bebida caliente empezó entre los sufíes de Yemen en el siglo XV. Desde los cafés de La Meca, El Cairo y Estambul la costumbre llegó al mundo entero."
+      },
+      "details": {
+        "en": "The coffee plant grows wild in Ethiopia, but the first reliable reports of coffee as a drink come from Yemen in the mid-15th century, where Sufis drank it to stay awake for night prayers. Its Arabic name, qahwa, had once been a word for wine. Ports such as Mocha shipped the beans across the Red Sea. Coffeehouses opened in Mecca and Cairo, where some scholars tried to ban them, and Istanbul had its first in 1554. Venetian merchants brought coffee to Europe, and England's first coffeehouse opened in Oxford around 1650. Europeans later planted coffee in Java, the Caribbean and Brazil, often with forced and enslaved labour.",
+        "es": "El cafeto crece silvestre en Etiopía, pero las primeras noticias fiables del café como bebida vienen de Yemen a mediados del siglo XV, donde los sufíes lo tomaban para mantenerse despiertos en las oraciones nocturnas. Su nombre árabe, qahwa, había sido antes una palabra para el vino. Puertos como Moca enviaban los granos al otro lado del mar Rojo. Abrieron cafés en La Meca y El Cairo, donde algunos sabios intentaron prohibirlos, y Estambul tuvo el primero en 1554. Los mercaderes venecianos llevaron el café a Europa, y el primer café de Inglaterra abrió en Oxford hacia 1650. Luego los europeos plantaron café en Java, el Caribe y Brasil, a menudo con trabajo forzado y esclavo."
+      },
+      "roots": {
+        "en": "The coffee plant itself comes from the forests of Ethiopia.",
+        "es": "El cafeto mismo viene de los bosques de Etiopía."
+      },
+      "path": [
+        { "at": [39.83, 21.42], "place": { "en": "Mecca, Saudi Arabia", "es": "La Meca, Arabia Saudita" }, "date": "1511", "note": { "en": "A governor tries to ban coffee; the ban fails.", "es": "Un gobernador intenta prohibir el café; la prohibición fracasa." } },
+        { "at": [31.26, 30.05], "place": { "en": "Cairo, Egypt", "es": "El Cairo, Egipto" }, "date": "1530", "circa": true, "note": { "en": "Coffeehouses fill the city.", "es": "Los cafés llenan la ciudad." } },
+        { "at": [28.98, 41.01], "place": { "en": "Istanbul, Turkey", "es": "Estambul, Turquía" }, "date": "1554", "note": { "en": "The first coffeehouse of the Ottoman capital.", "es": "El primer café de la capital otomana." } },
+        { "at": [12.34, 45.44], "place": { "en": "Venice, Italy", "es": "Venecia, Italia" }, "date": "1645", "circa": true, "note": { "en": "Coffee reaches Europe through Venetian trade.", "es": "El café llega a Europa por el comercio veneciano." } },
+        { "at": [-1.26, 51.75], "place": { "en": "Oxford, England", "es": "Oxford, Inglaterra" }, "date": "1650", "circa": true, "note": { "en": "England's first coffeehouse.", "es": "El primer café de Inglaterra." } },
+        { "at": [-48.5, -1.46], "place": { "en": "Belém, Brazil", "es": "Belém, Brasil" }, "date": "1727", "from": 4, "note": { "en": "Coffee plants reach Brazil, now the world's largest grower.", "es": "Las plantas de café llegan a Brasil, hoy el mayor productor del mundo." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Drunk in every country; Brazil, Vietnam and Colombia grow the most, and the café is a meeting place from Istanbul to Buenos Aires.",
+        "es": "Se toma en todos los países; Brasil, Vietnam y Colombia son los mayores productores, y el café es lugar de encuentro de Estambul a Buenos Aires."
+      },
+      "words": [
+        { "en": "coffee", "es": "café", "from": "qahwa (Arabic), via Turkish kahve" },
+        { "en": "mocha", "es": "moca", "from": "al-Mukhā (Arabic), the Yemeni port" }
+      ],
+      "see": ["food:coffee", "food:turkish-coffee"],
+      "wiki": { "en": "History of coffee", "es": "Historia del café" }
+    },
+    {
+      "id": "oranges-and-lemons",
+      "name": { "en": "Oranges and lemons in Spain and beyond", "es": "Naranjas y limones en España y más allá" },
+      "cat": "food",
+      "icon": "🍋",
+      "how": "spread",
+      "date": "912",
+      "circa": true,
+      "at": [47.78, 30.51],
+      "place": { "en": "Basra, Iraq", "es": "Basora, Irak" },
+      "text": {
+        "en": "Bitter oranges and lemons came from India to Iraq in the 10th century and on to Sicily and al-Andalus. Seville's streets are still lined with orange trees, and Spanish ships took citrus to the Americas.",
+        "es": "Las naranjas amargas y los limones llegaron de la India a Irak en el siglo X y de allí a Sicilia y al-Ándalus. Las calles de Sevilla aún están llenas de naranjos, y los barcos españoles llevaron los cítricos a América."
+      },
+      "details": {
+        "en": "The historian al-Masudi wrote that the round citron, the bitter orange, was brought from India after AD 912 and planted in Oman, Basra, Iraq and Syria. Arab farmers carried it with the lemon to Egypt, Sicily and al-Andalus, where orange trees shaded courtyards such as the Patio de los Naranjos of Córdoba's Great Mosque. Andalusi farming manuals explained how to graft and water them. Columbus took citrus seeds to Hispaniola in 1493, and Spanish settlers planted them in Mexico and Florida. The sweet orange came later, brought from Asia by Portuguese ships. Seville's bitter oranges still go to Britain to make marmalade.",
+        "es": "El historiador al-Masudi escribió que la cidra redonda, la naranja amarga, se trajo de la India después del 912 y se plantó en Omán, Basora, Irak y Siria. Los campesinos árabes la llevaron con el limón a Egipto, Sicilia y al-Ándalus, donde los naranjos daban sombra a patios como el de los Naranjos de la mezquita de Córdoba. Los tratados agrícolas andalusíes explicaban cómo injertarlos y regarlos. Colón llevó semillas de cítricos a La Española en 1493, y los colonos españoles los plantaron en México y Florida. La naranja dulce llegó después, traída de Asia por barcos portugueses. Las naranjas amargas de Sevilla aún van a Gran Bretaña para hacer mermelada."
+      },
+      "roots": {
+        "en": "Citrus fruits were first grown in southern China, north-east India and South-East Asia.",
+        "es": "Los cítricos se cultivaron primero en el sur de China, el noreste de la India y el Sudeste Asiático."
+      },
+      "path": [
+        { "at": [13.36, 38.12], "place": { "en": "Palermo, Sicily", "es": "Palermo, Sicilia" }, "date": "1000", "circa": true, "note": { "en": "Citrus groves in Arab Sicily.", "es": "Huertos de cítricos en la Sicilia árabe." } },
+        { "at": [-5.99, 37.39], "place": { "en": "Seville, Spain", "es": "Sevilla, España" }, "date": "1150", "circa": true, "note": { "en": "Andalusi gardens and farming manuals.", "es": "Jardines y tratados agrícolas andalusíes." } },
+        { "at": [-71.07, 19.89], "place": { "en": "La Isabela, Dominican Republic", "es": "La Isabela, República Dominicana" }, "date": "1493", "by": { "en": "Christopher Columbus", "es": "Cristóbal Colón" }, "note": { "en": "Citrus seeds planted on his second voyage.", "es": "Semillas de cítricos plantadas en su segundo viaje." } },
+        { "at": [-81.31, 29.89], "place": { "en": "St. Augustine, Florida", "es": "San Agustín, Florida" }, "date": "1565", "circa": true, "note": { "en": "Spanish settlers plant orange trees in Florida.", "es": "Los colonos españoles plantan naranjos en Florida." } }
+      ],
+      "where": ["ESP", "PRT", "ITA", "MAR", "TUN", "EGY", "MEX", "USA", "DOM", "CUB"],
+      "strong": ["ESP"],
+      "note": {
+        "en": "Grown across the Mediterranean, Mexico and the United States; Spain is one of the world's biggest exporters of fresh oranges, and Seville's trees still feed British marmalade.",
+        "es": "Se cultivan en el Mediterráneo, México y Estados Unidos; España es uno de los mayores exportadores de naranjas frescas, y los naranjos de Sevilla aún dan la mermelada británica."
+      },
+      "wiki": { "en": "Lemon", "es": "Citrus × limon" }
+    },
+    {
+      "id": "sugar-cane",
+      "name": { "en": "Sugar cane to the Mediterranean and the Atlantic", "es": "La caña de azúcar al Mediterráneo y el Atlántico" },
+      "cat": "food",
+      "icon": "🍬",
+      "how": "spread",
+      "date": "700",
+      "circa": true,
+      "at": [48.67, 31.32],
+      "place": { "en": "Khuzestan, Iran", "es": "Juzestán, Irán" },
+      "text": {
+        "en": "Arab conquerors found sugar cane and refineries in Persian Khuzestan and planted cane in Egypt, Sicily and al-Andalus. From there it went to the Atlantic islands and the Americas, the start of the plantation world.",
+        "es": "Los conquistadores árabes encontraron caña de azúcar y refinerías en el Juzestán persa y plantaron caña en Egipto, Sicilia y al-Ándalus. De allí pasó a las islas del Atlántico y a América, el comienzo del mundo de las plantaciones."
+      },
+      "details": {
+        "en": "Sugar cane was domesticated in New Guinea, and Indians first made crystal sugar. Sasanian Persia grew and refined it in Khuzestan. After the conquests of the 7th century, cane spread to Iraq, Egypt, Syria, Cyprus, Sicily and Spain; the Calendar of Córdoba of 961 describes its planting. Egypt became a great sugar producer, and sugar went into syrups, sweets and medicines. In the 15th century the Portuguese and Spanish took cane to Madeira and the Canaries, and Columbus to Hispaniola in 1493. In Brazil and the Caribbean, plantations were worked by millions of enslaved Africans, a trade of immense suffering. Spain's Granada coast grew cane into the 21st century.",
+        "es": "La caña de azúcar se domesticó en Nueva Guinea, y los indios fueron los primeros en hacer azúcar cristalizado. La Persia sasánida la cultivaba y refinaba en el Juzestán. Tras las conquistas del siglo VII, la caña llegó a Irak, Egipto, Siria, Chipre, Sicilia y España; el Calendario de Córdoba de 961 describe su siembra. Egipto se volvió un gran productor, y el azúcar entraba en jarabes, dulces y medicinas. En el siglo XV portugueses y españoles llevaron la caña a Madeira y Canarias, y Colón a La Española en 1493. En Brasil y el Caribe, las plantaciones se trabajaron con millones de africanos esclavizados, un comercio de inmenso sufrimiento. La costa de Granada cultivó caña hasta el siglo XXI."
+      },
+      "roots": {
+        "en": "Sugar cane was domesticated in New Guinea and crystal sugar was first made in India.",
+        "es": "La caña se domesticó en Nueva Guinea y el azúcar cristalizado se hizo primero en la India."
+      },
+      "path": [
+        { "at": [31.24, 30.04], "place": { "en": "Cairo, Egypt", "es": "El Cairo, Egipto" }, "date": "900", "circa": true, "note": { "en": "Egypt becomes a great sugar producer.", "es": "Egipto se vuelve un gran productor de azúcar." } },
+        { "at": [13.36, 38.12], "place": { "en": "Palermo, Sicily", "es": "Palermo, Sicilia" }, "date": "950", "circa": true, "note": { "en": "Cane fields in Arab Sicily.", "es": "Cañaverales en la Sicilia árabe." } },
+        { "at": [-3.52, 36.75], "place": { "en": "Motril, Granada, Spain", "es": "Motril, Granada, España" }, "date": "961", "circa": true, "note": { "en": "Cane grows on the coast of al-Andalus.", "es": "La caña crece en la costa de al-Ándalus." } },
+        { "at": [-16.91, 32.65], "place": { "en": "Funchal, Madeira", "es": "Funchal, Madeira" }, "date": "1450", "circa": true, "note": { "en": "Portuguese sugar plantations on Madeira.", "es": "Plantaciones portuguesas de azúcar en Madeira." } },
+        { "at": [-71.07, 19.89], "place": { "en": "La Isabela, Dominican Republic", "es": "La Isabela, República Dominicana" }, "date": "1493", "by": { "en": "Christopher Columbus", "es": "Cristóbal Colón" }, "note": { "en": "Cane reaches the Americas.", "es": "La caña llega a América." } },
+        { "at": [-34.86, -8.01], "place": { "en": "Olinda, Pernambuco, Brazil", "es": "Olinda, Pernambuco, Brasil" }, "date": "1535", "circa": true, "from": 4, "note": { "en": "Brazil's sugar mills, worked by enslaved Africans.", "es": "Los ingenios de Brasil, trabajados por africanos esclavizados." } }
+      ],
+      "where": ["BRA", "CUB", "DOM", "HTI", "JAM", "MEX", "GTM", "COL", "PER", "ARG", "EGY", "MAR", "USA"],
+      "strong": ["BRA"],
+      "note": {
+        "en": "Brazil, the Caribbean and Latin America grow cane brought by this route; sugar, azúcar, sucre and Zucker all go back to Arabic sukkar.",
+        "es": "Brasil, el Caribe y América Latina cultivan la caña llegada por esta ruta; azúcar, sugar, sucre y Zucker vienen todas del árabe sukkar."
+      },
+      "words": [
+        { "en": "sugar", "es": "azúcar", "from": "sukkar (Arabic), from Persian shakar, from Sanskrit" }
+      ],
+      "wiki": { "en": "History of sugar", "es": "Historia del azúcar" }
+    },
+    {
+      "id": "olive-oil-soap",
+      "name": { "en": "Hard olive-oil soap", "es": "El jabón duro de aceite de oliva" },
+      "cat": "daily",
+      "icon": "🧼",
+      "how": "developed",
+      "sure": "likely",
+      "date": "1100",
+      "circa": true,
+      "at": [37.16, 36.2],
+      "place": { "en": "Aleppo, Syria", "es": "Alepo, Siria" },
+      "text": {
+        "en": "Bars of hard soap made by boiling olive oil with plant-ash alkali: Syria's Aleppo soap and the olive-oil soaps of Spain and Marseille grew from this medieval Middle Eastern craft.",
+        "es": "Pastillas de jabón duro hechas hirviendo aceite de oliva con álcali de cenizas de plantas: el jabón de Alepo y los jabones de aceite de España y Marsella nacieron de este oficio medieval de Oriente Medio."
+      },
+      "details": {
+        "en": "Soap-like mixtures go back to Mesopotamia, and Romans and Gauls made soft soaps with animal fat. In the medieval Islamic world, soap makers in Syria and Palestine boiled olive oil with alkali from the ashes of saltwort, al-qalī, and let it set into hard bars. Aleppo's makers add laurel-berry oil and still cut the soap into cubes and age it for months in tall stacks. The craft probably reached Spain and Italy through Mediterranean trade, giving the olive-oil Castile soap and later the savon de Marseille, whose recipe a French royal edict fixed in 1688. War has damaged Aleppo's workshops, but its soap is still made and sold worldwide.",
+        "es": "Las mezclas parecidas al jabón se remontan a Mesopotamia, y romanos y galos hacían jabones blandos con grasa animal. En el mundo islámico medieval, los jaboneros de Siria y Palestina hervían aceite de oliva con álcali de cenizas de barrilla, al-qalī, y lo dejaban endurecer en pastillas. Los de Alepo añaden aceite de laurel y aún cortan el jabón en cubos y lo dejan curar meses en altas pilas. El oficio llegó probablemente a España e Italia por el comercio mediterráneo y dio el jabón de Castilla, de aceite de oliva, y luego el jabón de Marsella, cuya receta fijó un edicto real francés en 1688. La guerra dañó los talleres de Alepo, pero su jabón se sigue haciendo y vendiendo en todo el mundo."
+      },
+      "roots": {
+        "en": "Built on older soap making in Mesopotamia and the Roman world.",
+        "es": "Se basó en la fabricación de jabón más antigua de Mesopotamia y del mundo romano."
+      },
+      "path": [
+        { "at": [35.26, 32.22], "place": { "en": "Nablus, Palestine", "es": "Nablus, Palestina" }, "date": "1200", "circa": true, "note": { "en": "Pure olive-oil soap, still made by a few families.", "es": "Jabón de puro aceite de oliva, que aún hacen algunas familias." } },
+        { "at": [-4.02, 39.86], "place": { "en": "Castile, Spain", "es": "Castilla, España" }, "date": "1500", "circa": true, "note": { "en": "Castile soap, made with olive oil, is sold across Europe.", "es": "El jabón de Castilla, de aceite de oliva, se vende por toda Europa." } },
+        { "at": [5.37, 43.3], "place": { "en": "Marseille, France", "es": "Marsella, Francia" }, "date": "1688", "note": { "en": "A royal edict fixes the recipe of Marseille soap: olive oil only.", "es": "Un edicto real fija la receta del jabón de Marsella: solo aceite de oliva." } }
+      ],
+      "where": ["SYR", "LBN", "TUR", "ESP", "FRA", "ITA", "GRC"],
+      "strong": ["SYR"],
+      "note": {
+        "en": "Aleppo, Nablus, Castile and Marseille soaps are still made and sold worldwide as natural olive-oil soaps.",
+        "es": "Los jabones de Alepo, Nablus, Castilla y Marsella se siguen haciendo y vendiendo en todo el mundo como jabones naturales de aceite de oliva."
+      },
+      "see": ["inventions:aleppo-soap"],
+      "wiki": { "en": "Aleppo soap", "es": "Jabón de Alepo" }
+    },
+    {
+      "id": "oud-and-lute",
+      "name": { "en": "The oud and the lute", "es": "El laúd árabe y el laúd" },
+      "cat": "arts",
+      "icon": "🪕",
+      "how": "spread",
+      "date": "800",
+      "circa": true,
+      "at": [44.37, 33.31],
+      "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" },
+      "text": {
+        "en": "The pear-shaped oud, king of Arab music, crossed to Spain with musicians from Baghdad. Europe's lute takes its name from al-ʿūd, ‘the wood’, and Spain, Cuba and the Philippines still play the laúd.",
+        "es": "El laúd árabe, el ʿūd de forma de pera y rey de la música árabe, llegó a España con músicos de Bagdad. El laúd europeo toma su nombre de al-ʿūd, «la madera», y España, Cuba y Filipinas aún tocan el laúd."
+      },
+      "details": {
+        "en": "The short-necked, fretless oud grew from older lutes of Persia and the Near East, such as the Persian barbat. At the Abbasid court it was the instrument of great singers, and theorists such as al-Kindi and al-Farabi used it to explain music. In 822 the singer Ziryab, trained in Baghdad, settled in Córdoba; legend says he added a fifth string. Through al-Andalus and Sicily the instrument reached Christian Europe, where the lute became the favourite of Renaissance musicians. The Spanish laúd, a later instrument of the cittern family, kept the name and plays in the rondallas of Spain and the Philippines and in Cuba's country music. The oud itself is still central to music from Morocco to Iraq.",
+        "es": "El ʿūd, de mástil corto y sin trastes, nació de laúdes más antiguos de Persia y Oriente Próximo, como el barbat persa. En la corte abasí era el instrumento de los grandes cantantes, y teóricos como al-Kindi y al-Farabi lo usaban para explicar la música. En 822 el cantante Ziryab, formado en Bagdad, se instaló en Córdoba; la leyenda dice que añadió una quinta cuerda. Por al-Ándalus y Sicilia el instrumento llegó a la Europa cristiana, donde el laúd fue el favorito de los músicos del Renacimiento. El laúd español, un instrumento posterior de la familia de la cítara, conservó el nombre y suena en las rondallas de España y Filipinas y en la música campesina de Cuba. El ʿūd sigue siendo central en la música de Marruecos a Irak."
+      },
+      "roots": {
+        "en": "Built on older lutes of Persia and Mesopotamia, such as the Sasanian barbat.",
+        "es": "Se basó en laúdes más antiguos de Persia y Mesopotamia, como el barbat sasánida."
+      },
+      "path": [
+        { "at": [-4.78, 37.88], "place": { "en": "Córdoba, Spain", "es": "Córdoba, España" }, "date": "822", "by": { "en": "Ziryab", "es": "Ziryab" }, "note": { "en": "The singer from Baghdad brings the oud to the court of Córdoba.", "es": "El cantante de Bagdad lleva el ʿūd a la corte de Córdoba." } },
+        { "at": [13.36, 38.12], "place": { "en": "Palermo, Sicily", "es": "Palermo, Sicilia" }, "date": "1150", "circa": true, "from": 0, "note": { "en": "Arab musicians play at the Norman court.", "es": "Músicos árabes tocan en la corte normanda." } },
+        { "at": [12.34, 45.44], "place": { "en": "Venice, Italy", "es": "Venecia, Italia" }, "date": "1507", "note": { "en": "The first printed books of lute music.", "es": "Los primeros libros impresos de música para laúd." } },
+        { "at": [-82.37, 23.13], "place": { "en": "Havana, Cuba", "es": "La Habana, Cuba" }, "date": "1800", "circa": true, "from": 1, "note": { "en": "The laúd joins Cuban country music.", "es": "El laúd entra en la música campesina cubana." } },
+        { "at": [120.98, 14.6], "place": { "en": "Manila, Philippines", "es": "Manila, Filipinas" }, "date": "1800", "circa": true, "from": 1, "note": { "en": "Rondallas play laúd and bandurria.", "es": "Las rondallas tocan laúd y bandurria." } }
+      ],
+      "where": ["lang:ara", "TUR", "IRN", "ARM", "GRC", "ESP", "CUB", "PHL"],
+      "strong": ["lang:ara"],
+      "note": {
+        "en": "The oud is central to music from Morocco to Iraq and in Turkey, Armenia and Greece; the laúd plays in Spain, Cuba and the Philippines.",
+        "es": "El ʿūd es central en la música de Marruecos a Irak y en Turquía, Armenia y Grecia; el laúd suena en España, Cuba y Filipinas."
+      },
+      "words": [
+        { "en": "lute", "es": "laúd", "from": "al-ʿūd (Arabic)", "means": { "en": "the wood", "es": "la madera" } }
+      ],
+      "see": ["music:oud", "eras:ziryab"],
+      "wiki": { "en": "Oud", "es": "Laúd árabe" }
+    },
+    {
+      "id": "geometric-tiles",
+      "name": { "en": "Geometric patterns, zellige and azulejos", "es": "Lacerías, zellige y azulejos" },
+      "cat": "arts",
+      "icon": "🔷",
+      "how": "developed",
+      "date": "850",
+      "circa": true,
+      "at": [43.87, 34.2],
+      "place": { "en": "Samarra, Iraq", "es": "Samarra, Irak" },
+      "text": {
+        "en": "Interlacing stars and polygons that repeat without end decorate mosques, palaces and homes from Morocco to Iran. Through al-Andalus they gave Spain and Portugal their azulejos, now also on façades in Brazil and Mexico.",
+        "es": "Estrellas y polígonos entrelazados que se repiten sin fin decoran mezquitas, palacios y casas de Marruecos a Irán. A través de al-Ándalus dieron a España y Portugal sus azulejos, que hoy cubren también fachadas de Brasil y México."
+      },
+      "details": {
+        "en": "Artists of the Islamic world built on Roman, Byzantine and Sasanian ornament to make patterns with compass and ruler alone: star polygons, interlaced bands and endless repeats. Abbasid Samarra covered its walls in carved stucco, and by the 14th century the Alhambra and the madrasas of Fez were clad in mosaics of cut glazed tile, zellige. Workshops in Seville turned the tradition into painted tiles, azulejos (from az-zulayj, ‘small polished stone’), which Portugal adopted with passion and took to Brazil. The Dutch artist M. C. Escher studied the Alhambra's tilings in 1936 and based his repeating drawings on them. Moroccan craftsmen still cut zellige by hand.",
+        "es": "Los artistas del mundo islámico partieron de los ornamentos romanos, bizantinos y sasánidas para crear dibujos solo con compás y regla: polígonos estrellados, lacerías y repeticiones sin fin. La Samarra abasí cubrió sus muros de estuco tallado, y en el siglo XIV la Alhambra y las madrasas de Fez se revestían de mosaicos de azulejo cortado, el zellige. Los talleres de Sevilla convirtieron la tradición en azulejos pintados (de az-zulayj, «piedrecita pulida»), que Portugal adoptó con pasión y llevó a Brasil. El artista neerlandés M. C. Escher estudió los alicatados de la Alhambra en 1936 y basó en ellos sus dibujos que se repiten. Los artesanos marroquíes aún cortan el zellige a mano."
+      },
+      "roots": {
+        "en": "Built on Roman and Byzantine mosaics, Sasanian ornament and Greek geometry.",
+        "es": "Se basó en los mosaicos romanos y bizantinos, el ornamento sasánida y la geometría griega."
+      },
+      "path": [
+        { "at": [-4.78, 37.88], "place": { "en": "Córdoba, Spain", "es": "Córdoba, España" }, "date": "965", "circa": true, "note": { "en": "Geometric ornament in the Great Mosque's new prayer hall.", "es": "Ornamento geométrico en la nueva sala de oración de la Mezquita." } },
+        { "at": [-3.59, 37.18], "place": { "en": "Alhambra, Granada, Spain", "es": "Alhambra, Granada, España" }, "date": "1370", "circa": true, "note": { "en": "Halls clad in tile mosaics.", "es": "Salas revestidas de alicatados." } },
+        { "at": [-4.98, 34.06], "place": { "en": "Fez, Morocco", "es": "Fez, Marruecos" }, "date": "1350", "circa": true, "from": 1, "note": { "en": "Marinid madrasas covered in zellige.", "es": "Madrasas meriníes cubiertas de zellige." } },
+        { "at": [-5.99, 37.38], "place": { "en": "Seville, Spain", "es": "Sevilla, España" }, "date": "1500", "circa": true, "from": 2, "note": { "en": "Triana workshops paint azulejos.", "es": "Los talleres de Triana pintan azulejos." } },
+        { "at": [-9.14, 38.71], "place": { "en": "Lisbon, Portugal", "es": "Lisboa, Portugal" }, "date": "1550", "circa": true, "note": { "en": "Portugal adopts azulejos.", "es": "Portugal adopta los azulejos." } },
+        { "at": [-38.51, -12.97], "place": { "en": "Salvador, Brazil", "es": "Salvador de Bahía, Brasil" }, "date": "1750", "circa": true, "note": { "en": "Azulejos on Brazil's churches and houses.", "es": "Azulejos en iglesias y casas de Brasil." } }
+      ],
+      "where": ["MAR", "ESP", "PRT", "BRA", "IRN", "TUR", "UZB", "EGY", "MEX"],
+      "strong": ["MAR", "PRT"],
+      "note": {
+        "en": "Zellige in Moroccan homes and fountains, azulejos on Portuguese and Brazilian façades, and geometric patterns in mosques and designs worldwide.",
+        "es": "Zellige en casas y fuentes de Marruecos, azulejos en fachadas de Portugal y Brasil, y lacerías en mezquitas y diseños de todo el mundo."
+      },
+      "words": [
+        { "en": "azulejo", "es": "azulejo", "from": "az-zulayj (Arabic)", "means": { "en": "small polished stone", "es": "piedrecita pulida" } },
+        { "en": "zellige", "es": "zellige", "from": "zallīj (Arabic)", "means": { "en": "glazed tile", "es": "azulejo vidriado" } }
+      ],
+      "see": ["structures:alhambra"],
+      "wiki": { "en": "Azulejo", "es": "Azulejo" }
+    },
+    {
+      "id": "tin-glazed-pottery",
+      "name": { "en": "White-glazed and lustre pottery", "es": "La loza blanca y de reflejo dorado" },
+      "cat": "arts",
+      "icon": "🏺",
+      "how": "developed",
+      "date": "850",
+      "circa": true,
+      "at": [47.78, 30.51],
+      "place": { "en": "Basra, Iraq", "es": "Basora, Irak" },
+      "text": {
+        "en": "Potters in Basra coated earthenware with an opaque white tin glaze to imitate Chinese porcelain and painted it with shimmering lustre. The craft passed through Spain to Italian maiolica, Delft and Mexico's Talavera.",
+        "es": "Los alfareros de Basora cubrieron el barro con un vidriado blanco de estaño para imitar la porcelana china y lo pintaron con un brillante reflejo metálico. El oficio pasó por España a la mayólica italiana, Delft y la Talavera de México."
+      },
+      "details": {
+        "en": "Chinese white wares reached Abbasid Iraq by sea in the 9th century, and Basra's potters, unable to make porcelain, found a substitute: an opaque white glaze made with tin over ordinary clay, painted in cobalt blue or with lustre, a metallic sheen fired onto the glaze. The techniques passed to Fatimid Egypt and then to al-Andalus, where Málaga and later Manises, near Valencia, made lustreware for Europe's courts. Italians named the imported wares maiolica after Majorca, through which they were shipped, and made their own; the French called theirs faience, after Faenza, and the Dutch made Delftware. Potters from Spain took the craft to Puebla, in Mexico, where Talavera is still made by hand.",
+        "es": "Las lozas blancas chinas llegaron por mar al Irak abasí en el siglo IX, y los alfareros de Basora, que no podían hacer porcelana, hallaron un sustituto: un vidriado blanco opaco hecho con estaño sobre barro común, pintado de azul cobalto o con reflejo metálico, un brillo de metal cocido sobre el vidriado. Las técnicas pasaron al Egipto fatimí y luego a al-Ándalus, donde Málaga y después Manises, cerca de Valencia, hicieron loza dorada para las cortes de Europa. Los italianos llamaron mayólica a esa loza importada, por Mallorca, por donde se embarcaba, e hicieron la suya; los franceses la llamaron fayenza, por Faenza, y los neerlandeses hicieron la loza de Delft. Alfareros de España llevaron el oficio a Puebla, en México, donde la Talavera aún se hace a mano."
+      },
+      "roots": {
+        "en": "Tin-whitened glazes had been used on bricks in ancient Mesopotamia; Chinese porcelain was the model.",
+        "es": "En la antigua Mesopotamia ya se usaban vidriados blanqueados con estaño en ladrillos; la porcelana china fue el modelo."
+      },
+      "path": [
+        { "at": [31.23, 30.01], "place": { "en": "Fustat (Cairo), Egypt", "es": "Fustat (El Cairo), Egipto" }, "date": "1000", "circa": true, "note": { "en": "Fatimid lustre pottery.", "es": "Loza dorada fatimí." } },
+        { "at": [-4.42, 36.72], "place": { "en": "Málaga, Spain", "es": "Málaga, España" }, "date": "1300", "circa": true, "note": { "en": "Nasrid lustreware shipped across Europe.", "es": "La loza dorada nazarí se embarca hacia toda Europa." } },
+        { "at": [-0.46, 39.49], "place": { "en": "Manises, Valencia, Spain", "es": "Manises, Valencia, España" }, "date": "1400", "circa": true, "note": { "en": "Mudéjar potters make Valencian lustreware.", "es": "Alfareros mudéjares hacen la loza dorada valenciana." } },
+        { "at": [11.88, 44.29], "place": { "en": "Faenza, Italy", "es": "Faenza, Italia" }, "date": "1500", "circa": true, "note": { "en": "Italian maiolica, named after Majorca.", "es": "La mayólica italiana, llamada así por Mallorca." } },
+        { "at": [4.36, 52.01], "place": { "en": "Delft, Netherlands", "es": "Delft, Países Bajos" }, "date": "1650", "circa": true, "note": { "en": "Blue-and-white Delftware.", "es": "La loza azul y blanca de Delft." } },
+        { "at": [-98.2, 19.04], "place": { "en": "Puebla, Mexico", "es": "Puebla, México" }, "date": "1580", "circa": true, "from": 3, "note": { "en": "Talavera poblana in New Spain.", "es": "La Talavera poblana en la Nueva España." } }
+      ],
+      "where": ["ESP", "MEX", "ITA", "NLD", "PRT", "FRA", "MAR", "IRN", "TUR"],
+      "strong": ["ESP", "MEX"],
+      "note": {
+        "en": "Still made by hand in Manises, Talavera de la Reina, Puebla, Deruta and Delft; UNESCO lists the Talavera making of Mexico and Spain.",
+        "es": "Se sigue haciendo a mano en Manises, Talavera de la Reina, Puebla, Deruta y Delft; la UNESCO reconoce la elaboración de la Talavera de México y España."
+      },
+      "wiki": { "en": "Tin-glazed pottery", "es": "Loza dorada" }
+    },
+    {
+      "id": "calligraphy",
+      "name": { "en": "Arabic calligraphy and the naskh script", "es": "La caligrafía árabe y la letra naskh" },
+      "cat": "arts",
+      "icon": "🖋️",
+      "how": "developed",
+      "date": "930",
+      "circa": true,
+      "at": [44.36, 33.34],
+      "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" },
+      "text": {
+        "en": "Ibn Muqla, a vizier of Baghdad, gave Arabic letters fixed proportions measured in dots. His rules shaped the classic scripts of calligraphy and naskh, the model for most Arabic print and screen fonts.",
+        "es": "Ibn Muqla, un visir de Bagdad, dio a las letras árabes proporciones fijas medidas en puntos. Sus reglas dieron forma a las letras clásicas de la caligrafía y al naskh, modelo de casi todas las fuentes árabes impresas y digitales."
+      },
+      "details": {
+        "en": "Early Qurans were written in angular Kufic. In the early 10th century Ibn Muqla measured every letter against the alif and the rhombic dot made by the pen, creating ‘proportioned script’. Ibn al-Bawwab refined it around 1000, and Yaqut al-Mustaʿsimi, who lived through the Mongol sack of Baghdad in 1258, codified the ‘six pens’, among them thuluth and naskh. Ottoman masters in Istanbul and Persian ones, who created nastaʿliq, carried the art on. Naskh, clear and compact, became the basis of printed Arabic and of most digital fonts. In 2021 UNESCO listed Arabic calligraphy as living heritage of 16 Arab countries.",
+        "es": "Los primeros Coranes se escribían en cúfico anguloso. A comienzos del siglo X Ibn Muqla midió cada letra con el alif y el punto romboidal que deja la pluma, creando la «escritura proporcionada». Ibn al-Bawwab la refinó hacia el año 1000, y Yaqut al-Mustaʿsimi, que vivió el saqueo mongol de Bagdad en 1258, fijó las «seis plumas», entre ellas el zuluz y el naskh. Los maestros otomanos de Estambul y los persas, que crearon el nastaliq, continuaron el arte. El naskh, claro y compacto, fue la base del árabe impreso y de la mayoría de las fuentes digitales. En 2021 la UNESCO reconoció la caligrafía árabe como patrimonio vivo de 16 países árabes."
+      },
+      "roots": {
+        "en": "Built on the Arabic script, which grew from Nabataean, and on early Kufic writing.",
+        "es": "Se basó en la escritura árabe, nacida del nabateo, y en la primera escritura cúfica."
+      },
+      "path": [
+        { "at": [28.98, 41.01], "place": { "en": "Istanbul, Turkey", "es": "Estambul, Turquía" }, "date": "1500", "circa": true, "by": { "en": "Sheikh Hamdullah", "es": "Şeyh Hamdullah" }, "note": { "en": "Ottoman calligraphers refine naskh and thuluth.", "es": "Los calígrafos otomanos refinan el naskh y el zuluz." } },
+        { "at": [46.29, 38.08], "place": { "en": "Tabriz, Iran", "es": "Tabriz, Irán" }, "date": "1400", "circa": true, "from": 0, "note": { "en": "Persian scribes create the flowing nastaʿliq.", "es": "Los escribas persas crean el fluido nastaliq." } },
+        { "at": [31.25, 30.06], "place": { "en": "Bulaq, Cairo, Egypt", "es": "Bulaq, El Cairo, Egipto" }, "date": "1822", "from": 1, "note": { "en": "The Bulaq press prints books in naskh type.", "es": "La imprenta de Bulaq imprime libros con tipos naskh." } }
+      ],
+      "where": ["script:arabic", "IRN", "PAK", "AFG", "TUR"],
+      "note": {
+        "en": "Seen in mosques, on banknotes, signs and book covers from Morocco to Indonesia; naskh-based fonts carry most Arabic text on screens.",
+        "es": "Se ve en mezquitas, billetes, letreros y portadas de Marruecos a Indonesia; las fuentes basadas en el naskh llevan casi todo el texto árabe en las pantallas."
+      },
+      "wiki": { "en": "Arabic calligraphy", "es": "Caligrafía árabe" }
+    },
+    {
+      "id": "thousand-and-one-nights",
+      "name": { "en": "The Thousand and One Nights", "es": "Las mil y una noches" },
+      "cat": "writing",
+      "icon": "🪔",
+      "how": "developed",
+      "date": "850",
+      "circa": true,
+      "at": [44.39, 33.3],
+      "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" },
+      "text": {
+        "en": "Shahrazad telling tales to save her life: the Arabic Thousand and One Nights, grown in Baghdad and Cairo from a Persian book, gave the world Sindbad, and its French translator added Aladdin and Ali Baba.",
+        "es": "Sherezade contando cuentos para salvar su vida: Las mil y una noches árabes, crecidas en Bagdad y El Cairo a partir de un libro persa, dieron al mundo a Simbad, y su traductor francés añadió a Aladino y Alí Babá."
+      },
+      "details": {
+        "en": "A Persian book called Hazār Afsān, ‘a thousand tales’, was translated into Arabic by the 9th century; a paper fragment from that time survives. Storytellers in Baghdad added tales of the caliph Harun al-Rashid, and later ones in Syria and Cairo added more. In 1704–1717 Antoine Galland published a French translation that made the Nights famous in Europe. Aladdin and Ali Baba are not in any older Arabic manuscript: Galland heard them in Paris in 1709 from Hanna Diyab, a Maronite Christian traveller from Aleppo. Since then the Nights have inspired Rimsky-Korsakov's Scheherazade, novels, films and cartoons in every language.",
+        "es": "Un libro persa llamado Hazār Afsān, «mil cuentos», se tradujo al árabe hacia el siglo IX; se conserva un fragmento en papel de esa época. Los narradores de Bagdad añadieron cuentos del califa Harún al-Rashid, y otros posteriores en Siria y El Cairo sumaron más. En 1704–1717 Antoine Galland publicó una traducción francesa que hizo famosas Las mil y una noches en Europa. Aladino y Alí Babá no aparecen en ningún manuscrito árabe anterior: Galland los oyó en París en 1709 de Hanna Diyab, un viajero cristiano maronita de Alepo. Desde entonces las Noches han inspirado la Scheherezade de Rimski-Kórsakov, novelas, películas y dibujos animados en todos los idiomas."
+      },
+      "roots": {
+        "en": "Built on the Persian Hazār Afsān and on Indian frame stories.",
+        "es": "Se basó en el Hazār Afsān persa y en relatos marco de la India."
+      },
+      "path": [
+        { "at": [31.26, 30.05], "place": { "en": "Cairo, Egypt", "es": "El Cairo, Egipto" }, "date": "1400", "circa": true, "note": { "en": "Syrian and Egyptian storytellers expand the collection.", "es": "Narradores sirios y egipcios amplían la colección." } },
+        { "at": [2.35, 48.86], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1704", "by": { "en": "Antoine Galland", "es": "Antoine Galland" }, "note": { "en": "Les Mille et une nuits, the first European translation; Hanna Diyab tells him Aladdin in 1709.", "es": "Les Mille et une nuits, la primera traducción europea; Hanna Diyab le cuenta Aladino en 1709." } },
+        { "at": [88.36, 22.57], "place": { "en": "Kolkata, India", "es": "Calcuta, India" }, "date": "1814", "from": 1, "note": { "en": "The first printed Arabic edition.", "es": "La primera edición impresa en árabe." } },
+        { "at": [30.32, 59.94], "place": { "en": "St Petersburg, Russia", "es": "San Petersburgo, Rusia" }, "date": "1888", "from": 2, "by": { "en": "Nikolai Rimsky-Korsakov", "es": "Nikolái Rimski-Kórsakov" }, "note": { "en": "The symphonic suite Scheherazade.", "es": "La suite sinfónica Scheherezade." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Read and retold in every language; Aladdin, Ali Baba and Sindbad are known worldwide through books, films and pantomimes.",
+        "es": "Se lee y se vuelve a contar en todos los idiomas; Aladino, Alí Babá y Simbad son conocidos en todo el mundo por libros, películas y obras de teatro."
+      },
+      "see": ["eras:thousand-nights"],
+      "wiki": { "en": "One Thousand and One Nights", "es": "Las mil y una noches" }
+    },
+    {
+      "id": "muqarnas",
+      "name": { "en": "Muqarnas: honeycomb vaults", "es": "Mocárabes: bóvedas de panal" },
+      "cat": "build",
+      "icon": "🕌",
+      "how": "invented",
+      "sure": "likely",
+      "date": "1000",
+      "circa": true,
+      "at": [43.88, 34.18],
+      "place": { "en": "Iraq and Iran (here Samarra, Iraq)", "es": "Irak e Irán (aquí Samarra, Irak)" },
+      "text": {
+        "en": "Hundreds of small niches stacked like a honeycomb turn a dome or doorway into a shower of light and shadow. Builders of the Islamic world invented muqarnas around the 11th century, and craftsmen still carve them.",
+        "es": "Cientos de nichos pequeños apilados como un panal convierten una cúpula o una puerta en una lluvia de luz y sombra. Los constructores del mundo islámico inventaron los mocárabes hacia el siglo XI, y los artesanos aún los tallan."
+      },
+      "details": {
+        "en": "Muqarnas (Spanish mocárabes) appeared in the 10th and 11th centuries in Iraq, Iran, Central Asia and North Africa; which came first is debated. Built of brick, stone, plaster or wood, tiers of little niches bridged the corners under domes and decorated portals, minarets and ceilings. Fatimid-trained craftsmen painted a wooden muqarnas ceiling for the Norman king Roger II in Palermo's Palatine Chapel in the 1140s, and the Hall of the Two Sisters in the Alhambra has one of the most dazzling plaster domes. Persian builders filled the portals of Isfahan's mosques with them, and Moroccan artisans made thousands for Casablanca's Hassan II Mosque, finished in 1993.",
+        "es": "Los mocárabes (muqarnas) aparecieron en los siglos X y XI en Irak, Irán, Asia Central y el norte de África; dónde surgieron primero se discute. De ladrillo, piedra, yeso o madera, sus pisos de nichos cubrían las esquinas bajo las cúpulas y decoraban portadas, alminares y techos. Artesanos formados en el arte fatimí pintaron un techo de mocárabes de madera para el rey normando Roger II en la Capilla Palatina de Palermo hacia 1140, y la Sala de las Dos Hermanas de la Alhambra tiene una de las cúpulas de yeso más deslumbrantes. Los constructores persas llenaron con ellos las portadas de las mezquitas de Isfahán, y artesanos marroquíes hicieron miles para la mezquita Hassan II de Casablanca, terminada en 1993."
+      },
+      "path": [
+        { "at": [4.79, 35.81], "place": { "en": "Qal'at Bani Hammad, Algeria", "es": "Qal'at Bani Hammad, Argelia" }, "date": "1050", "circa": true, "note": { "en": "Early muqarnas in a Berber palace city.", "es": "Mocárabes tempranos en una ciudad palacio bereber." } },
+        { "at": [13.36, 38.11], "place": { "en": "Palermo, Sicily", "es": "Palermo, Sicilia" }, "date": "1143", "circa": true, "note": { "en": "The Palatine Chapel's painted wooden ceiling.", "es": "El techo de madera pintada de la Capilla Palatina." } },
+        { "at": [-3.59, 37.18], "place": { "en": "Alhambra, Granada, Spain", "es": "Alhambra, Granada, España" }, "date": "1360", "circa": true, "note": { "en": "The Hall of the Two Sisters.", "es": "La Sala de las Dos Hermanas." } },
+        { "at": [51.68, 32.66], "place": { "en": "Isfahan, Iran", "es": "Isfahán, Irán" }, "date": "1620", "circa": true, "from": 0, "note": { "en": "The portal of the Shah Mosque.", "es": "La portada de la mezquita del Sah." } },
+        { "at": [-7.63, 33.61], "place": { "en": "Casablanca, Morocco", "es": "Casablanca, Marruecos" }, "date": "1993", "from": 3, "note": { "en": "The Hassan II Mosque.", "es": "La mezquita Hassan II." } }
+      ],
+      "where": ["MAR", "ESP", "IRN", "IRQ", "TUR", "EGY", "SYR", "UZB", "DZA", "TUN", "ITA"],
+      "strong": ["MAR", "IRN"],
+      "note": {
+        "en": "Still carved for new mosques and palaces in Morocco, Iran and Turkey, and admired in old ones from Granada to Samarkand.",
+        "es": "Se siguen tallando para nuevas mezquitas y palacios en Marruecos, Irán y Turquía, y se admiran en los antiguos de Granada a Samarcanda."
+      },
+      "wiki": { "en": "Muqarnas", "es": "Mocárabe" }
+    },
+    {
+      "id": "arabic-script",
+      "name": { "en": "The Arabic script across Asia and Africa", "es": "La escritura árabe por Asia y África" },
+      "cat": "writing",
+      "icon": "✍️",
+      "how": "spread",
+      "date": "750",
+      "circa": true,
+      "at": [44.35, 33.33],
+      "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" },
+      "text": {
+        "en": "The caliphate's script was taken up by peoples who did not speak Arabic: Persian, Urdu, Pashto, Kurdish, Uyghur and Malay have all been written in Arabic letters, and most still are.",
+        "es": "La escritura del califato la adoptaron pueblos que no hablaban árabe: el persa, el urdu, el pastún, el kurdo, el uigur y el malayo se han escrito con letras árabes, y la mayoría aún se escribe así."
+      },
+      "details": {
+        "en": "The Arabic alphabet grew out of the Nabataean script before Islam. As Islam and the caliphate spread, the Quran and government made it the script of a huge area. In the 9th and 10th centuries poets at the Samanid court in Bukhara wrote New Persian in Arabic letters, adding signs for sounds Arabic lacks, such as p, ch and g. Persian then carried the script to the Turks and to India, where Urdu, Sindhi and Punjabi in Pakistan use it; Malay was written in Jawi, and Swahili and Hausa in Ajami. Turkey switched to Latin letters in 1928, but Iran, Afghanistan and Pakistan still write in Arabic script, as do the Uyghurs and, alongside Latin, Brunei.",
+        "es": "El alfabeto árabe nació de la escritura nabatea antes del islam. Al extenderse el islam y el califato, el Corán y el gobierno lo hicieron la escritura de una zona enorme. En los siglos IX y X los poetas de la corte samánida de Bujará escribieron el persa nuevo con letras árabes, añadiendo signos para sonidos que el árabe no tiene, como p, ch y g. El persa llevó luego la escritura a los turcos y a la India, donde el urdu, el sindi y el panyabí de Pakistán la usan; el malayo se escribió en yawi, y el suajili y el hausa en ajami. Turquía pasó a las letras latinas en 1928, pero Irán, Afganistán y Pakistán siguen escribiendo con letras árabes, como los uigures y, junto al latín, Brunéi."
+      },
+      "roots": {
+        "en": "Built on the Nabataean form of the Aramaic alphabet.",
+        "es": "Se basó en la forma nabatea del alfabeto arameo."
+      },
+      "path": [
+        { "at": [64.42, 39.77], "place": { "en": "Bukhara, Uzbekistan", "es": "Bujará, Uzbekistán" }, "date": "900", "circa": true, "note": { "en": "New Persian written in Arabic letters.", "es": "El persa nuevo se escribe con letras árabes." } },
+        { "at": [77.23, 28.65], "place": { "en": "Delhi, India", "es": "Delhi, India" }, "date": "1206", "note": { "en": "The Delhi Sultanate brings Persian writing to India.", "es": "El sultanato de Delhi lleva la escritura persa a la India." } },
+        { "at": [102.25, 2.19], "place": { "en": "Malacca, Malaysia", "es": "Malaca, Malasia" }, "date": "1400", "circa": true, "from": 0, "note": { "en": "Malay written in Jawi.", "es": "El malayo se escribe en yawi." } },
+        { "at": [28.98, 41.01], "place": { "en": "Istanbul, Turkey", "es": "Estambul, Turquía" }, "date": "1453", "from": 1, "note": { "en": "Ottoman Turkish in Arabic letters, until 1928.", "es": "El turco otomano con letras árabes, hasta 1928." } },
+        { "at": [74.35, 31.55], "place": { "en": "Lahore, Pakistan", "es": "Lahore, Pakistán" }, "date": "1947", "from": 2, "note": { "en": "Urdu, in Arabic script, becomes Pakistan's national language.", "es": "El urdu, en escritura árabe, se vuelve la lengua nacional de Pakistán." } }
+      ],
+      "where": ["script:arabic", "PAK", "IRN", "AFG"],
+      "note": {
+        "en": "Used for Arabic, Persian, Urdu, Pashto, Kurdish, Sindhi and Uyghur by hundreds of millions of people from Morocco to Pakistan and western China.",
+        "es": "La usan para el árabe, el persa, el urdu, el pastún, el kurdo, el sindi y el uigur cientos de millones de personas, de Marruecos a Pakistán y el oeste de China."
+      },
+      "see": ["writing:arabic-alphabet"],
+      "wiki": { "en": "Arabic script", "es": "Alfabeto árabe" }
+    },
+    {
+      "id": "al-qarawiyyin",
+      "name": { "en": "Al-Qarawiyyin and al-Azhar, still teaching", "es": "Al-Qarawiyyin y al-Azhar, aún enseñando" },
+      "cat": "ideas",
+      "icon": "🎓",
+      "how": "developed",
+      "sure": "debated",
+      "date": "859",
+      "at": [-4.97, 34.06],
+      "place": { "en": "Fez, Morocco", "es": "Fez, Marruecos" },
+      "text": {
+        "en": "In 859 Fatima al-Fihri, a merchant's daughter, founded the mosque of al-Qarawiyyin in Fez, where teaching has gone on ever since. It and Cairo's al-Azhar are among the oldest places of learning still at work.",
+        "es": "En 859 Fátima al-Fihri, hija de un comerciante, fundó la mezquita de al-Qarawiyyin en Fez, donde se enseña desde entonces. Ella y al-Azhar de El Cairo están entre los centros de estudio más antiguos que siguen funcionando."
+      },
+      "details": {
+        "en": "Fatima al-Fihri's family had come to Fez from Kairouan, in Tunisia, and she spent her inheritance on a mosque for their community. Scholars taught law, grammar, theology, astronomy and medicine in its halls, and its library keeps manuscripts many centuries old; it reopened after restoration in 2016. In Cairo the Fatimids founded al-Azhar in 970, which became the leading centre of Sunni learning. UNESCO and Guinness World Records call al-Qarawiyyin the oldest existing degree-granting university, but historians debate the label: it became a university in the modern sense only in 1963, and Europe's universities grew from different roots. Either way, students still learn in both.",
+        "es": "La familia de Fátima al-Fihri había llegado a Fez desde Cairuán, en Túnez, y ella gastó su herencia en una mezquita para su comunidad. En sus salas los sabios enseñaban derecho, gramática, teología, astronomía y medicina, y su biblioteca guarda manuscritos de muchos siglos; reabrió tras su restauración en 2016. En El Cairo los fatimíes fundaron al-Azhar en 970, que se volvió el principal centro del saber suní. La UNESCO y los Récords Guinness llaman a al-Qarawiyyin la universidad más antigua que sigue otorgando títulos, pero los historiadores discuten la etiqueta: solo se volvió universidad en el sentido moderno en 1963, y las universidades europeas nacieron de otras raíces. En cualquier caso, en ambas se sigue estudiando."
+      },
+      "roots": {
+        "en": "Built on the study circles of mosques, where students gathered around a teacher.",
+        "es": "Se basó en los círculos de estudio de las mezquitas, donde los alumnos se reunían alrededor de un maestro."
+      },
+      "path": [
+        { "at": [31.26, 30.05], "place": { "en": "Cairo, Egypt", "es": "El Cairo, Egipto" }, "date": "972", "note": { "en": "Al-Azhar opens and soon becomes a great centre of learning.", "es": "Abre al-Azhar, que pronto se vuelve un gran centro de estudio." } },
+        { "at": [-3.01, 16.77], "place": { "en": "Timbuktu, Mali", "es": "Tombuctú, Malí" }, "date": "1400", "circa": true, "from": 0, "note": { "en": "Sankore mosque, a centre of learning in West Africa.", "es": "La mezquita de Sankoré, un centro de estudio en África Occidental." } }
+      ],
+      "where": ["MAR", "EGY"],
+      "note": {
+        "en": "Both still teach thousands of students; al-Azhar draws Muslims from many countries.",
+        "es": "Ambas siguen enseñando a miles de estudiantes; al-Azhar atrae a musulmanes de muchos países."
+      },
+      "see": ["eras:qarawiyyin", "eras:al-azhar"],
+      "wiki": { "en": "University of al-Qarawiyyin", "es": "Universidad de Qarawiyyin" }
+    },
+    {
+      "id": "greek-science-kept",
+      "name": { "en": "Greek science kept in Arabic", "es": "La ciencia griega conservada en árabe" },
+      "cat": "ideas",
+      "icon": "📚",
+      "how": "kept",
+      "date": "830",
+      "circa": true,
+      "at": [44.38, 33.34],
+      "place": { "en": "House of Wisdom, Baghdad, Iraq", "es": "Casa de la Sabiduría, Bagdad, Irak" },
+      "text": {
+        "en": "Christian, Sabian and Muslim translators in Baghdad put Aristotle, Euclid, Ptolemy and Galen into Arabic. Through Arabic, and later Latin, these works reached Europe; some survive only in Arabic.",
+        "es": "Traductores cristianos, sabeos y musulmanes de Bagdad pasaron al árabe a Aristóteles, Euclides, Ptolomeo y Galeno. Por el árabe, y luego el latín, esas obras llegaron a Europa; algunas solo se conservan en árabe."
+      },
+      "details": {
+        "en": "From the late 8th century caliphs, courtiers and doctors paid for translations of Greek books, often through Syriac. Al-Ma'mun's House of Wisdom gathered scholars such as Hunayn ibn Ishaq, a Nestorian Christian doctor who translated most of Galen, and Thabit ibn Qurra, a Sabian from Harran. Ptolemy's great book of astronomy is still called the Almagest, from Arabic al-majisṭī, ‘the greatest’. Some works, such as three books of Apollonius's Conics, survive only in Arabic. In 12th-century Toledo, Gerard of Cremona and others turned dozens of these Arabic books into Latin, and the commentaries of Ibn Rushd of Córdoba taught Europe to read Aristotle.",
+        "es": "Desde finales del siglo VIII califas, cortesanos y médicos pagaron traducciones de libros griegos, a menudo a través del siríaco. La Casa de la Sabiduría de al-Mamún reunió a sabios como Hunayn ibn Ishaq, un médico cristiano nestoriano que tradujo casi todo Galeno, y Thabit ibn Qurra, un sabeo de Harrán. El gran libro de astronomía de Ptolomeo aún se llama Almagesto, del árabe al-majisṭī, «el más grande». Algunas obras, como tres libros de las Cónicas de Apolonio, solo se conservan en árabe. En el Toledo del siglo XII, Gerardo de Cremona y otros pasaron decenas de estos libros árabes al latín, y los comentarios de Ibn Rushd (Averroes) de Córdoba enseñaron a Europa a leer a Aristóteles."
+      },
+      "roots": {
+        "en": "Built on Greek science and philosophy, much of it already translated into Syriac by Christian scholars.",
+        "es": "Se basó en la ciencia y la filosofía griegas, buena parte ya traducida al siríaco por sabios cristianos."
+      },
+      "path": [
+        { "at": [-4.78, 37.88], "place": { "en": "Córdoba, Spain", "es": "Córdoba, España" }, "date": "970", "circa": true, "by": { "en": "al-Hakam II", "es": "al-Hakam II" }, "note": { "en": "A great library gathers books from the East.", "es": "Una gran biblioteca reúne libros de Oriente." } },
+        { "at": [-4.02, 39.86], "place": { "en": "Toledo, Spain", "es": "Toledo, España" }, "date": "1150", "circa": true, "by": { "en": "Gerard of Cremona", "es": "Gerardo de Cremona" }, "note": { "en": "Translates the Almagest and dozens of other works into Latin.", "es": "Traduce al latín el Almagesto y decenas de obras más." } },
+        { "at": [2.35, 48.85], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1255", "note": { "en": "The university makes Aristotle, read with Ibn Rushd's commentaries, required study.", "es": "La universidad hace obligatorio a Aristóteles, leído con los comentarios de Averroes." } },
+        { "at": [12.34, 45.44], "place": { "en": "Venice, Italy", "es": "Venecia, Italia" }, "date": "1482", "by": { "en": "Erhard Ratdolt", "es": "Erhard Ratdolt" }, "note": { "en": "The first printed Euclid, in a Latin version made from Arabic.", "es": "El primer Euclides impreso, en una versión latina hecha del árabe." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Euclid's geometry, Aristotle's logic and the Greek roots of medicine and astronomy are taught everywhere; for some Greek works the Arabic is our only source.",
+        "es": "La geometría de Euclides, la lógica de Aristóteles y las raíces griegas de la medicina y la astronomía se enseñan en todas partes; de algunas obras griegas solo queda el árabe."
+      },
+      "words": [
+        { "en": "Almagest", "es": "Almagesto", "from": "al-majisṭī (Arabic), from Greek megistē", "means": { "en": "the greatest", "es": "el más grande" } }
+      ],
+      "see": ["eras:house-of-wisdom", "eras:toledo-translators"],
+      "wiki": { "en": "House of Wisdom", "es": "Casa de la Sabiduría" }
+    },
+    {
+      "id": "chess-to-europe",
+      "name": { "en": "Chess carried to Europe", "es": "El ajedrez llevado a Europa" },
+      "cat": "play",
+      "icon": "♟️",
+      "how": "spread",
+      "date": "900",
+      "circa": true,
+      "at": [44.38, 33.3],
+      "place": { "en": "Baghdad, Iraq", "es": "Bagdad, Irak" },
+      "text": {
+        "en": "Abbasid masters such as al-Suli made chess a game of study, with books of openings and problems, and Arabs carried it through al-Andalus and Sicily to Europe, from where it went round the world.",
+        "es": "Maestros abasíes como al-Suli hicieron del ajedrez un juego de estudio, con libros de aperturas y problemas, y los árabes lo llevaron por al-Ándalus y Sicilia a Europa, desde donde dio la vuelta al mundo."
+      },
+      "details": {
+        "en": "The Arabs learned shatranj in Persia, which had it from India. At the Abbasid court players were ranked, and al-Adli and al-Suli, the strongest of the 9th and 10th centuries, wrote books of openings and mansūbāt, chess problems. The game crossed to al-Andalus and Sicily, and the first sure mention in Christian Europe is the will of Count Ermengol I of Urgell, in Catalonia, who left chess pieces to a church around 1010. In 1283 Alfonso X of Castile had a Book of Games made, with problems taken from Arabic sources. The powerful modern queen and bishop appeared in Valencia around 1475, and the game took the form now played everywhere.",
+        "es": "Los árabes aprendieron el shatranj en Persia, que lo tenía de la India. En la corte abasí los jugadores tenían rangos, y al-Adli y al-Suli, los más fuertes de los siglos IX y X, escribieron libros de aperturas y de mansūbāt, problemas de ajedrez. El juego pasó a al-Ándalus y Sicilia, y la primera mención segura en la Europa cristiana es el testamento del conde Ermengol I de Urgel, en Cataluña, que dejó piezas de ajedrez a una iglesia hacia 1010. En 1283 Alfonso X de Castilla mandó hacer un Libro de los juegos, con problemas tomados de fuentes árabes. La poderosa dama y el alfil modernos aparecieron en Valencia hacia 1475, y el juego tomó la forma que hoy se juega en todas partes."
+      },
+      "roots": {
+        "en": "Chess was invented in India and passed to Persia (chatrang) before the Arabs learned it.",
+        "es": "El ajedrez se inventó en la India y pasó a Persia (chatrang) antes de que lo aprendieran los árabes."
+      },
+      "path": [
+        { "at": [1.46, 42.36], "place": { "en": "Urgell, Catalonia, Spain", "es": "Urgel, Cataluña, España" }, "date": "1010", "circa": true, "by": { "en": "Count Ermengol I", "es": "El conde Ermengol I" }, "note": { "en": "A will leaves chess pieces to a church: the first sure mention in Christian Europe.", "es": "Un testamento deja piezas de ajedrez a una iglesia: la primera mención segura en la Europa cristiana." } },
+        { "at": [-4.02, 39.86], "place": { "en": "Toledo, Spain", "es": "Toledo, España" }, "date": "1283", "by": { "en": "Alfonso X", "es": "Alfonso X" }, "note": { "en": "The Book of Games, with chess problems from Arabic sources.", "es": "El Libro de los juegos, con problemas de ajedrez de fuentes árabes." } },
+        { "at": [-0.38, 39.47], "place": { "en": "Valencia, Spain", "es": "Valencia, España" }, "date": "1475", "circa": true, "note": { "en": "The first known game with the modern, powerful queen.", "es": "La primera partida conocida con la dama moderna y poderosa." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Played in every country; FIDE, the world chess federation, has about 200 member federations.",
+        "es": "Se juega en todos los países; la FIDE, la federación mundial de ajedrez, tiene unas 200 federaciones miembro."
+      },
+      "words": [
+        { "es": "ajedrez", "from": "aš-šiṭranj (Arabic), from Middle Persian chatrang, from Sanskrit", "means": { "en": "chess", "es": "ajedrez" } }
+      ],
+      "see": ["people:shatranj"],
+      "wiki": { "en": "History of chess", "es": "Historia del ajedrez" }
+    },
+    {
+      "id": "hawala",
+      "name": { "en": "Hawala: sending money on trust", "es": "Hawala: enviar dinero con confianza" },
+      "cat": "money",
+      "icon": "💸",
+      "how": "developed",
+      "sure": "likely",
+      "date": "750",
+      "circa": true,
+      "at": [44.34, 33.32],
+      "place": { "en": "Iraq (here Baghdad)", "es": "Irak (aquí Bagdad)" },
+      "text": {
+        "en": "A worker in Dubai gives cash to a broker, and a day later a broker in Mogadishu or Kabul pays his family, with no money crossing the border. Hawala, a debt transfer described in early Islamic law, still moves billions.",
+        "es": "Un trabajador en Dubái da efectivo a un intermediario, y al día siguiente otro en Mogadiscio o Kabul paga a su familia sin que el dinero cruce la frontera. La hawala, descrita por el derecho islámico temprano, aún mueve miles de millones."
+      },
+      "details": {
+        "en": "Ḥawāla, ‘transfer’, was discussed by Muslim jurists of the 8th century as a way to pass a debt from one person to another. Merchants of the Abbasid world used it with suftaja, letters of credit that saved them from carrying coins along dangerous roads, and 11th-century letters from the Cairo Geniza show Jewish traders using such paper. Today's hawala brokers keep accounts with partners abroad and settle up later, through trade or banks. It is cheap and reaches places banks do not, so millions of migrants use it, especially in the Gulf, South Asia and Somalia, though governments watch it closely to stop money laundering. Some scholars link the cheque to Arabic ṣakk, but this is debated.",
+        "es": "La ḥawāla, «transferencia», la discutieron los juristas musulmanes del siglo VIII como forma de pasar una deuda de una persona a otra. Los mercaderes del mundo abasí la usaban con la suftaja, letras de crédito que les evitaban llevar monedas por caminos peligrosos, y cartas del siglo XI de la Guenizá de El Cairo muestran a comerciantes judíos usando esos papeles. Los intermediarios de hoy llevan cuentas con socios en el extranjero y saldan más tarde, por comercio o por bancos. Es barata y llega donde no llegan los bancos, así que la usan millones de migrantes, sobre todo en el Golfo, el sur de Asia y Somalia, aunque los gobiernos la vigilan para evitar el lavado de dinero. Algunos estudiosos relacionan el cheque con el árabe ṣakk, pero se discute."
+      },
+      "roots": {
+        "en": "Similar trust-based transfers, such as India's hundi, grew up separately.",
+        "es": "Transferencias parecidas basadas en la confianza, como el hundi de la India, surgieron por separado."
+      },
+      "path": [
+        { "at": [31.26, 30.05], "place": { "en": "Cairo, Egypt", "es": "El Cairo, Egipto" }, "date": "1050", "circa": true, "note": { "en": "Geniza letters show merchants sending money by suftaja.", "es": "Las cartas de la Guenizá muestran a mercaderes enviando dinero con suftajas." } },
+        { "at": [55.3, 25.26], "place": { "en": "Dubai, United Arab Emirates", "es": "Dubái, Emiratos Árabes Unidos" }, "date": "1975", "circa": true, "from": 0, "note": { "en": "Migrant workers in the Gulf send wages home through hawala brokers.", "es": "Los trabajadores migrantes del Golfo envían sus salarios a casa por medio de la hawala." } },
+        { "at": [45.34, 2.04], "place": { "en": "Mogadishu, Somalia", "es": "Mogadiscio, Somalia" }, "date": "1991", "note": { "en": "After Somalia's banks collapse, hawala companies carry remittances.", "es": "Tras el colapso de los bancos de Somalia, las empresas de hawala llevan las remesas." } },
+        { "at": [69.17, 34.53], "place": { "en": "Kabul, Afghanistan", "es": "Kabul, Afganistán" }, "date": "2001", "circa": true, "from": 2, "note": { "en": "Hawala remains Afghanistan's main way to move money.", "es": "La hawala sigue siendo la principal forma de mover dinero en Afganistán." } }
+      ],
+      "where": ["SOM", "AFG", "PAK", "IND", "BGD", "ARE", "SAU", "YEM", "SDN", "IRQ"],
+      "strong": ["SOM", "AFG"],
+      "note": {
+        "en": "Used by millions of migrants and their families, above all between the Gulf and Somalia, Afghanistan, Pakistan, India and Bangladesh.",
+        "es": "La usan millones de migrantes y sus familias, sobre todo entre el Golfo y Somalia, Afganistán, Pakistán, la India y Bangladés."
+      },
+      "words": [
+        { "en": "hawala", "es": "hawala", "from": "ḥawāla (Arabic)", "means": { "en": "transfer", "es": "transferencia" } }
+      ],
+      "wiki": { "en": "Hawala", "es": "Hawala" }
+    },
+    {
+      "id": "jalali-calendar",
+      "name": { "en": "The Jalali solar calendar", "es": "El calendario solar yalalí" },
+      "cat": "time",
+      "icon": "📅",
+      "how": "developed",
+      "date": "1079",
+      "at": [51.67, 32.66],
+      "place": { "en": "Isfahan, Iran", "es": "Isfahán, Irán" },
+      "text": {
+        "en": "In 1079 Omar Khayyam and other astronomers fixed a solar year that starts on the spring equinox. Its descendant is the official calendar of Iran, where the year begins at Nowruz.",
+        "es": "En 1079 Omar Jayam y otros astrónomos fijaron un año solar que empieza en el equinoccio de primavera. Su descendiente es el calendario oficial de Irán, donde el año comienza en Nouruz."
+      },
+      "details": {
+        "en": "The Seljuk sultan Malik-Shah, whose title Jalal al-Din gave the calendar its name, asked astronomers at Isfahan, among them the poet and mathematician Omar Khayyam, to reform the Persian solar calendar, which had drifted from the seasons. They began each year at the moment of the March equinox and added leap days as observation required, which kept the calendar in step with the seasons far better than the Julian calendar then used in Europe. Iran adopted a modern version, the Solar Hijri calendar, by law in 1925, keeping the old Persian month names. Its years count from Muhammad's migration to Medina in 622, and Afghanistan has long used the same solar reckoning.",
+        "es": "El sultán selyúcida Malik Shah, cuyo título Yalal al-Din dio nombre al calendario, pidió a los astrónomos de Isfahán, entre ellos el poeta y matemático Omar Jayam, reformar el calendario solar persa, que se había desfasado de las estaciones. Empezaron cada año en el momento del equinoccio de marzo y añadieron días bisiestos según lo pedía la observación, lo que mantuvo el calendario al paso de las estaciones mucho mejor que el calendario juliano que se usaba entonces en Europa. Irán adoptó por ley una versión moderna, el calendario hégira solar, en 1925, con los viejos nombres persas de los meses. Sus años se cuentan desde la emigración de Mahoma a Medina en 622, y Afganistán ha usado mucho tiempo el mismo cómputo solar."
+      },
+      "roots": {
+        "en": "Built on the ancient Persian solar calendar and its Zoroastrian month names.",
+        "es": "Se basó en el antiguo calendario solar persa y sus nombres zoroastrianos de los meses."
+      },
+      "path": [
+        { "at": [51.39, 35.69], "place": { "en": "Tehran, Iran", "es": "Teherán, Irán" }, "date": "1925", "note": { "en": "Iran's parliament makes the Solar Hijri calendar official.", "es": "El Parlamento de Irán hace oficial el calendario hégira solar." } }
+      ],
+      "where": ["IRN", "AFG"],
+      "strong": ["IRN"],
+      "note": {
+        "en": "Official in Iran, where newspapers, phones and the school year run on it, and long used in Afghanistan; the year begins at Nowruz.",
+        "es": "Oficial en Irán, donde lo usan periódicos, celulares y el año escolar, y usado mucho tiempo en Afganistán; el año empieza en Nouruz."
+      },
+      "see": ["eras:omar-khayyam"],
+      "wiki": { "en": "Jalali calendar", "es": "" }
+    }
+  ]
+}

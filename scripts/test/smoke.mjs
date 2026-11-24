@@ -4782,7 +4782,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(tabs.map((t) => t.id).join() === 'map,explore,today,learn,play' && tabs.map((t) => t.label).join() === 'Map,Explore,Today,Learn,Play'
     && ['map', 'explore', 'learn', 'play'].every((t) => seen[t].open && seen[t].tab === t && seen[t].fits && seen[t].above && seen[t].tiles && seen[t].lit.join() === t && seen[t].closedAgain)
     && L('map') === 'filters,projection,mapstyle,terrain3d,search,ruler,compare,truesize,compare-filters,mydata,export4k' && seen.map.seps.join() === 'Tools'
-    && L('explore') === 'time,space,guide,art,nature,inside,deep,ambient' && L('learn') === 'master,quiz,tours,onthisday,progress' && L('play') === 'play,fill,onmap'
+    && L('explore') === 'time,legacy,space,guide,art,nature,inside,deep,ambient' && L('learn') === 'master,quiz,tours,onthisday,progress' && L('play') === 'play,fill,onmap'
     && seen.me.open && seen.me.under && seen.me.fits && /^settings,backup,share,export,exportphone,(fullscreen,)?about$/.test(L('me')),
     `five tabs (${tabs.map((t) => t.label).join(' · ')}), each list above its tab and on screen: Map ${L('map')} (${seen.map.seps}); Explore ${L('explore')}; Learn ${L('learn')}; Play ${L('play')}; top right ${L('me')}`);
   check(escClosed && reach.missing.length === 0 && outsideClosed && deep.open && !deep.menu && deep.lit.join() === 'explore' && zoom === 3,
@@ -5669,7 +5669,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const n2 = await F(() => window.atlas.fill.states.info);
   check(n2.ans?.id === n1.cur.id && n2.ans?.ok && n2.ans.stars === 3, `a real tap on ${n1.cur.name} fills it in, ★★★`);
   // To the end.
-  await F(async () => { const g = window.atlas.fill.states; for (let k = 0; k < 80 && !g.info.done; k++) { if (g.info.ans) g.next(); else g.answer(g.info.cur.id); } });
+  await F(async () => { const g = window.atlas.fill.states; for (let k = 0; k < 400 && !g.info.done; k++) { if (g.info.ans) g.next(); else g.answer(g.info.cur.id); } });
   await page.waitForTimeout(1500);
   const d = await F(() => ({
     done: document.querySelector('[data-states="done"]')?.textContent ?? '', next: document.querySelector('[data-states="next-country"]')?.textContent ?? '',
@@ -5688,7 +5688,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.tap('[data-today-item="states"]');
   await page.waitForTimeout(3000);
   const dy = await F(() => window.atlas.fill.states.info);
-  await F(async () => { const g = window.atlas.fill.states; for (let k = 0; k < 80 && !g.info.done; k++) { if (g.info.ans) g.next(); else g.answer(g.info.cur.id); } });
+  await F(async () => { const g = window.atlas.fill.states; for (let k = 0; k < 400 && !g.info.done; k++) { if (g.info.ans) g.next(); else g.answer(g.info.cur.id); } });
   await page.waitForTimeout(800);
   const today = await F(() => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; });
   const rec = await F((t) => JSON.parse(localStorage.getItem('atlas-globe:fill') || '{}').stateDailies?.[t] ?? null, today);
@@ -6653,6 +6653,123 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   check(dots.every((d) => / ESH$/.test(d)), `the capitals question's dots for Western Sahara are in it: ${dots.join(', ')}`);
   check(!errors.length, `Western Sahara: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
+}
+// 57. Legacies of the past (v0.44.0), on a phone: Explore → Legacies opens the civilizations with their homelands
+// on the map; a civilization shows its legacies (a dot for each, lines of their journeys, its countries shaded); a
+// legacy shows its journey, who uses it today and its words; a country's card asks what it borrowed (lines from each
+// civilization); a tap on another country switches to it; the search finds a legacy by a word ("tomato"); a link
+// opens a civilization; a people story links to what its civilization gave us; "Who gave us this?" asks ten
+// questions and shows where the answer began; and the panel speaks Spanish.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,20,1.1&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  await F(() => window.__menu('Legacies of the past'));
+  await page.waitForFunction(() => window.atlas.legacy.info.view?.v === 'home', null, { timeout: 20000 }).catch(() => {});
+  await page.waitForTimeout(1800);
+  const home = await F(() => ({ info: window.atlas.legacy.info, rows: document.querySelectorAll('[data-legacy-civ]').length, cats: document.querySelectorAll('[data-legacy-cat]').length, title: document.querySelector('.sheet-title-text')?.textContent }));
+  check(home.info.view?.v === 'home' && home.rows === home.info.civs && home.rows >= 15 && home.cats >= 10 && home.info.hits > 0,
+    `Legacies opens from Explore: "${home.title}", ${home.rows} civilizations (${home.info.legacies} legacies), ${home.cats} subjects, ${home.info.hits} dots on the map`);
+  // A civilization.
+  await page.click('[data-legacy-civ="egyptians"]');
+  await page.waitForFunction(() => window.atlas.legacy.info.view?.v === 'civ', null, { timeout: 15000 }).catch(() => {});
+  await page.waitForTimeout(2200);
+  const civ = await F(() => ({ info: window.atlas.legacy.info, rows: document.querySelectorAll('[data-legacy="list"] [data-legacy-item]').length, story: !!document.querySelector('[data-legacy="story"]'),
+    lead: document.querySelector('[data-legacy="words-lead"]')?.textContent ?? '', words: document.querySelectorAll('[data-legacy="civ-words"] [data-legacy-word]').length,
+    kinds: [...document.querySelectorAll('[data-legacy="civ-words"] [data-word-type]')].map((e) => e.dataset.wordType) }));
+  check(civ.info.view?.civ === 'egyptians' && civ.rows >= 30 && civ.info.hits >= civ.rows * 0.5 && civ.story,
+    `the Egyptians: ${civ.rows} legacies listed, ${civ.info.hits} dots on the map, a link to their story`);
+  check(/words like .+/.test(civ.lead) && civ.words >= 8 && civ.kinds.includes('word') && civ.kinds.length >= 2,
+    `the Egyptians' words and names: "${civ.lead}" (${civ.words} chips: ${civ.kinds.join(', ')})`);
+  // A word opens the legacy it is in.
+  const word = await F(() => document.querySelector('[data-legacy="civ-words"] [data-legacy-word]')?.dataset.legacyWord);
+  await page.click('[data-legacy="civ-words"] [data-legacy-word]');
+  await page.waitForTimeout(1500);
+  const fromWord = await F(() => ({ view: window.atlas.legacy.info.view, words: [...document.querySelectorAll('[data-legacy="words"] .legacy-word-now')].map((e) => e.textContent) }));
+  check(fromWord.view?.v === 'item' && fromWord.words.some((w) => w.includes(word)), `the word "${word}" opens its legacy (${fromWord.view?.id}: ${fromWord.words.slice(0, 5).join(', ')})`);
+  await page.click('[data-legacy="back"]');
+  await page.waitForTimeout(1500);
+  // A legacy with a journey.
+  const pick = await F(async () => {
+    const c = await window.atlas.legacy.civ('egyptians');
+    return c.legacies.find((l) => (l.path?.length ?? 0) >= 2)?.id ?? c.legacies[0].id;
+  });
+  await page.click(`[data-legacy-item="egyptians/${pick}"]`);
+  await page.waitForFunction(() => window.atlas.legacy.info.view?.v === 'item', null, { timeout: 15000 }).catch(() => {});
+  await page.waitForTimeout(2200);
+  const item = await F(() => ({ info: window.atlas.legacy.info, path: document.querySelectorAll('[data-legacy="path"] li').length, text: document.querySelector('.legacy-text')?.textContent ?? '', seen: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').seen?.legacies ?? null }));
+  check(item.info.view?.id === pick && item.path >= 3 && item.text.length > 30 && item.info.hits >= 2,
+    `a legacy (${pick}): ${item.path} places on its journey, ${item.info.hits} on the map, "${item.text.slice(0, 60)}…"; seen: ${JSON.stringify(item.seen)}`);
+  // A country's card: what Mexico borrowed.
+  await F(() => { window.atlas.shell.sheet.close(); window.atlas.app.select('MEX'); });
+  await page.waitForTimeout(1200);
+  const cardBtn = await page.$('[data-legacy="card"]');
+  if (cardBtn) await cardBtn.click();
+  await page.waitForFunction(() => window.atlas.legacy.info.view?.v === 'country', null, { timeout: 15000 }).catch(() => {});
+  await page.waitForTimeout(2200);
+  const mx = await F(() => ({ info: window.atlas.legacy.info, groups: [...document.querySelectorAll('[data-legacy-group]')].map((e) => e.dataset.legacyGroup), text: document.querySelector('.legacy-text')?.textContent,
+    mexicaWords: document.querySelector('[data-legacy-group="mexica"] [data-legacy="country-words"]')?.textContent ?? '',
+    // The homelands on this side of the globe (those behind it have no dot to tap).
+    visible: window.atlas.legacy['idx'].civs.filter((c) => window.atlas.app.renderer.view.project(c.at[0], c.at[1]) && document.querySelector(`[data-legacy-group="${c.id}"]`)).length }));
+  check(/chocolate|tomato|avocado|coyote/i.test(mx.mexicaWords), `Mexico's words from the Mexica, plain words first: ${mx.mexicaWords}`);
+  check(!!cardBtn && mx.info.view?.iso === 'MEX' && mx.groups.includes('mexica') && mx.groups.length >= 8 && mx.visible >= 5 && mx.info.hits >= mx.visible - 1,
+    `"Borrowed from the past" on Mexico's card: ${mx.text} (${mx.groups.slice(0, 6).join(', ')}…), ${mx.info.hits} civilizations on the map (${mx.visible} on this side of the globe)`);
+  // A tap on another country switches to it.
+  const tapAt = await F(() => { const v = window.atlas.app.renderer.view, r = window.atlas.app.renderer.canvasRect(); const p = v.project(-102, 58); return p && [r.left + p[0], r.top + p[1]]; });
+  if (tapAt) await page.touchscreen.tap(tapAt[0], tapAt[1]);
+  await page.waitForTimeout(1500);
+  const can = await F(() => window.atlas.legacy.info.view);
+  check(can?.v === 'country' && can.iso === 'CAN', `a tap on Canada shows what it borrowed: ${JSON.stringify(can)}`);
+  // The search box.
+  await F(() => { window.atlas.shell.sheet.close(); window.atlas.shell.search.open(); });
+  await page.waitForTimeout(400);
+  await page.keyboard.type('tomato');
+  await page.waitForTimeout(900);
+  const hits = await F(() => [...document.querySelectorAll('.search-results [role="option"]')].map((e) => e.textContent).filter((t) => /Legac/.test(t)).slice(0, 3));
+  await F(() => [...document.querySelectorAll('.search-results [role="option"]')].find((e) => /Legac/.test(e.textContent))?.click());
+  await page.waitForTimeout(2000);
+  const found = await F(() => window.atlas.legacy.info.view);
+  check(hits.length > 0 && found?.v === 'item', `the search finds "tomato" in Legacies: ${hits.join(' | ').slice(0, 140)} → ${JSON.stringify(found)}`);
+  // A people story links to what its civilization gave us.
+  await F(() => window.atlas.shell.sheet.close());
+  await F(async () => { await window.atlas.legacy.load(); await window.atlas.time.stories.people.open('ancient-egypt', 0); });
+  await page.waitForTimeout(2000);
+  await F(() => window.atlas.time.stories.people['openDetails']());
+  await page.waitForTimeout(800);
+  const link = await page.$('[data-legacy="from-story"]');
+  const linkText = link ? await link.textContent() : '';
+  if (link) await link.click();
+  await page.waitForTimeout(2500);
+  const fromStory = await F(() => ({ view: window.atlas.legacy.info.view, mode: window.atlas.app.mode }));
+  check(!!link && fromStory.view?.v === 'civ' && fromStory.view.civ === 'egyptians' && !fromStory.mode, `the Ancient Egypt story links to its legacies ("${linkText}"), leaving the story: ${JSON.stringify(fromStory)}`);
+  // Who gave us this?
+  await F(() => { window.atlas.shell.sheet.close(); window.atlas.learn.startLegacyQuiz(); });
+  await page.waitForFunction(() => window.atlas.learn.quiz?.kind === 'legacy', null, { timeout: 15000 }).catch(() => {});
+  await page.waitForTimeout(1200);
+  const q0 = await F(() => { const q = window.atlas.learn.quiz; return q && { n: q.qs.length, opts: q.qs[0].options, right: q.qs[0].id, leg: q.qs[0].leg, item: document.querySelector('.quiz-item')?.textContent, buttons: document.querySelectorAll('.quiz-opts button').length }; });
+  await page.click('.quiz-opts button');
+  await page.waitForTimeout(1200);
+  const q1 = await F(() => ({ fb: document.querySelector('.quiz-fb')?.textContent ?? '', pin: window.atlas.learn['pin'] }));
+  check(q0?.n === 10 && q0.buttons === 4 && new Set(q0.opts).size === 4 && q0.opts.includes(q0.right) && !!q0.leg && /\S/.test(q0.item ?? '') && /It came from|Correct/.test(q1.fb) && !!q1.pin,
+    `"Who gave us this?": ${q0?.n} questions, "${q0?.item}" from ${q0?.opts?.join('/')} → "${q1.fb}", pinned at ${q1.pin?.lon},${q1.pin?.lat}`);
+  await F(() => window.atlas.learn.stopQuiz?.());
+  // Today: the legacy of the day.
+  await F(() => window.atlas.today.openPanel());
+  await page.waitForTimeout(1200);
+  const dayLine = await F(() => document.querySelector('[data-today-item="legacy"]')?.textContent ?? '');
+  await page.click('[data-today-item="legacy"]').catch(() => {});
+  await page.waitForTimeout(2000);
+  const dayView = await F(() => window.atlas.legacy.info.view);
+  check(/Legacy of the day/.test(dayLine) && dayView?.v === 'item', `Today has the legacy of the day: "${dayLine}" → ${JSON.stringify(dayView)}`);
+  check(!errors.length, `Legacies: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+  // A link to a civilization, in Spanish.
+  const es = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,20,1.1&lang=es&legacy=greeks');
+  await es.page.waitForFunction(() => window.atlas.legacy.info.view?.v === 'civ', null, { timeout: 20000 }).catch(() => {});
+  await es.page.waitForTimeout(1500);
+  const g = await es.page.evaluate(() => ({ view: window.atlas.legacy.info.view, title: document.querySelector('.sheet-title-text')?.textContent, sec: [...document.querySelectorAll('.legacy .sec-title')].map((e) => e.textContent) }));
+  check(g.view?.civ === 'greeks' && /griegos/i.test(g.title ?? '') && g.sec.some((t) => /Lo que nos dieron/.test(t)), `#legacy=greeks in Spanish: "${g.title}", ${g.sec.join(' / ')}`);
+  check(!es.errors.length, `Legacies link: no page errors${es.errors.length ? ': ' + es.errors.join(' | ') : ''}`);
+  await es.ctx.close();
 }
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');

@@ -40,6 +40,7 @@ import { loadArt, nm as artName, yearText, commons as commonsUrl, type ArtData }
 import type { RenderCtx } from '../layers/types';
 import type { Master } from '../master/master';
 import { loadDeck, deckCapital } from '../master/data';
+import { quizQuestions as legacyQuestions, type LegacyIndex } from '../legacy/logic';
 import { pickCountry, tapNear } from '../play/pick';
 import { recordAnswer, recordQuiz, recordDaily, recordDailySubjects, recordTour, dailyResult, dayKey, current, progress, progressPanel, BADGES, type Badge } from './progress';
 import { bell } from '../today/reminders';
@@ -55,7 +56,7 @@ function seeded(seed: number): () => number {
 /** FNV-1a: a number from a string (the day). */
 const hash = (str: string) => { let x = 0x811c9dc5; for (let i = 0; i < str.length; i++) { x ^= str.charCodeAt(i); x = Math.imul(x, 0x01000193); } return x >>> 0; };
 
-type QuizKind = 'seafeature' | 'zone' | 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor' | 'order' | 'detective' | 'daily' | 'world' | 'landed' | 'constellation' | 'element' | 'hop' | 'museum' | 'habitat' | 'lives' | 'grows' | 'season' | 'deep' | 'layers';
+type QuizKind = 'seafeature' | 'zone' | 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor' | 'order' | 'detective' | 'daily' | 'world' | 'landed' | 'constellation' | 'element' | 'hop' | 'museum' | 'habitat' | 'lives' | 'grows' | 'season' | 'deep' | 'layers' | 'legacy';
 /** An item of a story collection, tagged with its collection. */
 interface QItem extends CollectionItem { kind: StoryKind; pop?: number }
 /** A site of data/layers/heritage.json (scripts/data/world-heritage/build.py). */
@@ -85,6 +86,8 @@ interface Q {
   deep?: { a: string; b: string };
   /** Down to the core (v0.32.0): four things at their depths, and the player's order so far (their ids). */
   down?: DownThing[]; downPicked?: string[];
+  /** Who gave us this? (v0.44.0): a legacy of the past (the answer, `id`, is the civilization that gave it). */
+  leg?: { id: string; icon: string; name: { en: string; es: string }; at: [number, number] };
   /** v0.34.0: the Daily challenge's review question, a capital due in Master the world (it is not in the shared score). */
   review?: boolean;
 }
@@ -142,7 +145,7 @@ const MAP_QUIZZES: QuizKind[] = ['find', 'where', 'region', 'detective', 'hop', 
 /** The daily challenge: the same eight questions for everyone on a day (by the local date); the eighth's quiz changes daily. */
 const DAILY_FIRST = Date.UTC(2026, 10, 13);
 export const dailyNumber = (day: string) => { const [y, m, d] = day.split('-').map(Number); return Math.round((Date.UTC(y, m - 1, d) - DAILY_FIRST) / 864e5) + 1; };
-const DAILY_ROTATE: QuizKind[] = ['site', 'inventor', 'artist', 'habitat', 'dish', 'champion', 'era', 'civ', 'lives', 'journey', 'faith', 'plague', 'disaster', 'habitat', 'script', 'opening', 'period', 'lives', 'grows', 'season'];
+const DAILY_ROTATE: QuizKind[] = ['site', 'inventor', 'artist', 'habitat', 'dish', 'champion', 'era', 'civ', 'lives', 'journey', 'faith', 'plague', 'disaster', 'habitat', 'script', 'opening', 'period', 'lives', 'grows', 'season', 'legacy'];
 const marksOf = (qs: { ok?: boolean; review?: boolean }[]) => qs.filter((x) => !x.review).map((x) => (x.ok ? '🟩' : '🟥')).join('');
 /** The questions everyone gets (the Daily challenge's review question is the reader's own). */
 const shared = <T extends { review?: boolean }>(qs: T[]) => qs.filter((x) => !x.review);
@@ -411,6 +414,7 @@ export class Learn {
       ['season', '📅', L('When is it?', '¿Cuándo es?'), L('Cherry blossom in Kyoto, the wildebeest crossing the Mara…: pick the best month to see it.', 'Los cerezos en flor de Kioto, los ñus cruzando el Mara…: elige el mejor mes para verlo.')],
       ['seafeature', '🕳️', L('Name the sea feature', 'Nombra la forma submarina'), L('A pin under the sea: is it the Mariana Trench, the Mid-Atlantic Ridge or the Hawaiian–Emperor chain?', 'Un alfiler bajo el mar: ¿es la fosa de las Marianas, la dorsal mesoatlántica o la cadena Hawái-Emperador?')],
       ['zone', '🐙', L('Which ocean zone?', '¿Qué zona del océano?'), L('An animal of the sea: does it live in the sunlit zone, the twilight, the midnight zone, the abyss or the trenches?', 'Un animal del mar: ¿vive en la zona iluminada, la penumbra, la zona de medianoche, el abismo o las fosas?')],
+      ['legacy', '🏺', L('Who gave us this?', '¿Quién nos dio esto?'), L('Paper, algebra, the 365-day year, the tomato…: which past civilization gave it to us?', 'El papel, el álgebra, el año de 365 días, el tomate…: ¿qué civilización del pasado nos lo dio?')],
       ['inventor', '💡', L('Who invented it?', '¿Quién lo inventó?'), L('The telephone, paper, the World Wide Web...: pick who invented it.', 'El teléfono, el papel, la World Wide Web...: elige quién lo inventó.')],
       ['world', '🪐', L('Which world is this?', '¿Qué mundo es este?'), L('A planet, a moon or a dwarf planet turns on the globe, with no names: which one is it?', 'Un planeta, una luna o un planeta enano gira en el globo, sin nombres: ¿cuál es?')],
       ['landed', '🚀', L('Who landed here?', '¿Quién aterrizó aquí?'), L('A spot on the Moon or Mars: which mission landed there?', 'Un punto en la Luna o en Marte: ¿qué misión aterrizó allí?')],
@@ -497,6 +501,8 @@ export class Learn {
     this.shell.openPanel('progress', L('Your progress', 'Tu progreso'), progressPanel(() => this.openProgress()));
   }
 
+  /** Who gave us this? (v0.44.0), from Legacies of the past. */
+  startLegacyQuiz() { void this.startQuiz('legacy', 'world'); }
   private async startQuiz(kind: QuizKind, region: string) {
     this.beforeStart?.();
     this.stopTour();
@@ -506,8 +512,8 @@ export class Learn {
     if (kind === 'family') { await this.startFamilyQuiz(); return; }
     if (kind === 'capital' || kind === 'daily') await loadDeck();
     if (kind === 'daily') { await this.startDaily(); return; }
-    const qs = kind === 'world' ? await this.worldQs(10) : kind === 'landed' ? await this.landedQs(10) : kind === 'constellation' ? await this.constellationQs(10) : kind === 'element' ? await this.elementQs(10) : kind === 'order' ? await this.orderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : kind === 'hop' ? await this.hopQs(10, region) : kind === 'museum' ? await this.museumQs(10) : kind === 'habitat' ? await this.habitatQs(10) : kind === 'lives' ? await this.livesQs(10) : kind === 'grows' ? await this.growsQs(10) : kind === 'season' ? await this.seasonQs(10) : kind === 'seafeature' ? await this.seaFeatureQs(10) : kind === 'zone' ? await this.zoneQs(10) : kind === 'deep' ? await this.deepQs(10) : kind === 'layers' ? await this.downQs(8) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
-    if (!qs?.length) { this.needsData(kind === 'detective' ? L('This game needs its maps; check your connection.', 'Este juego necesita sus mapas; revisa tu conexión.') : kind === 'hop' ? L('This quiz needs the border data; check your connection.', 'Este concurso necesita los datos de fronteras; revisa tu conexión.') : kind === 'museum' ? L('This quiz needs the art guide; check your connection.', 'Este concurso necesita la guía de arte; revisa tu conexión.') : kind === 'habitat' || kind === 'lives' ? L('This quiz needs the animal data; check your connection.', 'Este concurso necesita los datos de animales; revisa tu conexión.') : kind === 'grows' || kind === 'season' ? L('This quiz needs the plant data; check your connection.', 'Este concurso necesita los datos de plantas; revisa tu conexión.') : undefined); return; }
+    const qs = kind === 'world' ? await this.worldQs(10) : kind === 'landed' ? await this.landedQs(10) : kind === 'constellation' ? await this.constellationQs(10) : kind === 'element' ? await this.elementQs(10) : kind === 'order' ? await this.orderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : kind === 'hop' ? await this.hopQs(10, region) : kind === 'museum' ? await this.museumQs(10) : kind === 'habitat' ? await this.habitatQs(10) : kind === 'lives' ? await this.livesQs(10) : kind === 'grows' ? await this.growsQs(10) : kind === 'season' ? await this.seasonQs(10) : kind === 'seafeature' ? await this.seaFeatureQs(10) : kind === 'zone' ? await this.zoneQs(10) : kind === 'deep' ? await this.deepQs(10) : kind === 'layers' ? await this.downQs(8) : kind === 'legacy' ? await this.legacyQs(10) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
+    if (!qs?.length) { this.needsData(kind === 'detective' ? L('This game needs its maps; check your connection.', 'Este juego necesita sus mapas; revisa tu conexión.') : kind === 'hop' ? L('This quiz needs the border data; check your connection.', 'Este concurso necesita los datos de fronteras; revisa tu conexión.') : kind === 'museum' ? L('This quiz needs the art guide; check your connection.', 'Este concurso necesita la guía de arte; revisa tu conexión.') : kind === 'habitat' || kind === 'lives' ? L('This quiz needs the animal data; check your connection.', 'Este concurso necesita los datos de animales; revisa tu conexión.') : kind === 'grows' || kind === 'season' ? L('This quiz needs the plant data; check your connection.', 'Este concurso necesita los datos de plantas; revisa tu conexión.') : kind === 'legacy' ? L('This quiz needs the legacies; check your connection.', 'Este concurso necesita los legados; revisa tu conexión.') : undefined); return; }
     await this.begin(kind, region, qs);
   }
 
@@ -1341,6 +1347,22 @@ export class Learn {
     }
     return out;
   }
+  // ---- Who gave us this? (v0.44.0)
+  private legacyIdx: LegacyIndex | null = null;
+  private async loadLegacyQuiz() { this.legacyIdx ??= await loadJSON<LegacyIndex>('legacies/index.json').catch(() => null); return this.legacyIdx; }
+  /** Questions: a legacy of the past and four civilizations, one of them the one that gave it. */
+  private async legacyQs(n: number): Promise<Q[]> {
+    const idx = await this.loadLegacyQuiz();
+    if (!idx || !n) return [];
+    return legacyQuestions(idx, n, () => rand()).map((x) => {
+      const b = idx.all.find((y) => y.c === x.c && y.id === x.id)!;
+      return { id: x.c, kind: 'legacy' as QuizKind, options: x.options, leg: { id: `${x.c}/${x.id}`, icon: b.icon, name: b.name, at: b.at } };
+    });
+  }
+  private civLabel(id: string): string {
+    const c = this.legacyIdx?.civs.find((x) => x.id === id);
+    return c ? `${c.icon} ${tx(c.name)}` : id;
+  }
   /** Questions: one of nature's spectacles and four months, one its best, three when it doesn't happen at all. */
   private async seasonQs(n: number): Promise<Q[]> {
     await this.loadGreenQuiz();
@@ -1519,13 +1541,13 @@ export class Learn {
     const num = dailyNumber(day);
     const last = DAILY_ROTATE[((num % DAILY_ROTATE.length) + DAILY_ROTATE.length) % DAILY_ROTATE.length];
     const wildDay = last === 'habitat' || last === 'lives', greenDay = last === 'grows' || last === 'season';
-    await Promise.all([this.orderPool(), this.loadDetective(), this.hopPairs(), this.itemQs('where', 0), this.itemQs('when', 0), wildDay ? this.loadWildQuiz() : greenDay ? this.loadGreenQuiz() : this.itemQs(last, 0)]);
+    await Promise.all([this.orderPool(), this.loadDetective(), this.hopPairs(), this.itemQs('where', 0), this.itemQs('when', 0), wildDay ? this.loadWildQuiz() : greenDay ? this.loadGreenQuiz() : last === 'legacy' ? this.loadLegacyQuiz() : this.itemQs(last, 0)]);
     // Left mid-way today: on from where it was (an answered question counts as done).
     if (run) { await this.begin('daily', 'world', run.qs, day, { i: run.i + (run.answered ? 1 : 0), score: run.score }); return; }
     rand = seeded(hash(`atlas-daily:${day}`));
     let qs: Q[] = [];
     try {
-      const parts = [this.countryQs('find', 'world', 1), this.countryQs('flag', 'world', 1), await this.hopQs(1), await this.itemQs('where', 1), await this.itemQs('when', 1), await this.orderQs(1), await this.detectiveQs(1), last === 'habitat' ? await this.habitatQs(1) : last === 'lives' ? await this.livesQs(1) : last === 'grows' ? await this.growsQs(1) : last === 'season' ? await this.seasonQs(1) : await this.itemQs(last, 1)];
+      const parts = [this.countryQs('find', 'world', 1), this.countryQs('flag', 'world', 1), await this.hopQs(1), await this.itemQs('where', 1), await this.itemQs('when', 1), await this.orderQs(1), await this.detectiveQs(1), last === 'habitat' ? await this.habitatQs(1) : last === 'lives' ? await this.livesQs(1) : last === 'grows' ? await this.growsQs(1) : last === 'season' ? await this.seasonQs(1) : last === 'legacy' ? await this.legacyQs(1) : await this.itemQs(last, 1)];
       qs = parts.flatMap((x) => x ?? []);
     } finally { rand = Math.random; }
     if (qs.length < 5) { this.needsData(); return; }
@@ -1764,6 +1786,7 @@ export class Learn {
       if (feedback) add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, this.nextButton()));
       else if (kind === 'find') add(this.card, h('div', { class: 'quiz-peek-q' }, L('Where is {0}?', '¿Dónde está {0}?', this.app.data.name(cur.id, lang()))));
       else if ((kind === 'where' || kind === 'habitat' || kind === 'grows') && cur.item) add(this.card, h('div', { class: 'quiz-peek-q' }, `${cur.item.icon} ${tx(cur.item.name)}`));
+      else if (kind === 'legacy' && cur.leg) add(this.card, h('div', { class: 'quiz-peek-q' }, `${cur.leg.icon} ${tx(cur.leg.name)}`));
       else if (kind === 'season' && cur.green) { const sp = this.calQuiz?.find((x) => x.id === cur.green!.spectacle); if (sp) add(this.card, h('div', { class: 'quiz-peek-q' }, `${sp.e} ${tt(sp.n)}`)); }
       else if (kind === 'region') { const r = this.regions?.list.find((x) => x.id === cur.id); if (r) add(this.card, h('div', { class: 'quiz-peek-q' }, L('Where is {0}?', '¿Dónde está {0}?', this.regionName(r)))); }
       else if (kind === 'detective') add(this.card, h('div', { class: 'quiz-peek-q' }, `🕵️ ${L('When is this map from?', '¿De cuándo es este mapa?')}`));
@@ -1791,6 +1814,7 @@ export class Learn {
     if (kind === 'lives' && cur.wild) add(this.card, h('div', { class: 'quiz-q' }, L('Which of these animals lives here, in the wild?', '¿Cuál de estos animales vive aquí, en libertad?')), h('div', { class: 'tool-hint' }, L('The globe shows the place.', 'El globo muestra el lugar.')));
     if (kind === 'deep' && cur.deep) add(this.card, h('div', { class: 'quiz-q' }, L('Which goes deeper?', '¿Cuál llega más hondo?')), h('div', { class: 'tool-hint' }, L('Measured down from the ground, or from the sea’s surface for trenches, wrecks and dives.', 'Medido desde el suelo, o desde la superficie del mar para fosas, naufragios y buceos.')));
     if (cur.sea) { add(this.card, h('div', { class: 'quiz-q' }, cur.sea.prompt)); if (cur.sea.item) add(this.card, h('div', { class: 'quiz-item' }, cur.sea.item)); }
+    if (kind === 'legacy' && cur.leg) add(this.card, h('div', { class: 'quiz-q' }, L('Who gave us this?', '¿Quién nos dio esto?')), h('div', { class: 'quiz-item' }, `${cur.leg.icon} ${tx(cur.leg.name)}`), h('div', { class: 'tool-hint' }, L('Something we still use today.', 'Algo que todavía usamos hoy.')));
     if (kind === 'season' && cur.green) {
       const sp = this.calQuiz?.find((x) => x.id === cur.green!.spectacle);
       if (sp) add(this.card, h('div', { class: 'quiz-q' }, L('When is the best month to see it?', '¿Cuál es el mejor mes para verlo?')), h('div', { class: 'quiz-item' }, `${sp.e} ${tt(sp.n)}`), h('div', { class: 'tool-hint' }, tt(sp.place)));
@@ -1798,7 +1822,7 @@ export class Learn {
     if (cur.options) {
       const opts = h('div', { class: 'quiz-opts' });
       for (const o of cur.options) {
-        const label = kind === 'capital' ? this.capital(o) : kind === 'museum' ? this.museumLabel(o) : kind === 'lives' ? this.animalLabel(o) : kind === 'season' ? this.monthLabel(o) : kind === 'deep' ? this.deepLabel(o) : cur.sea ? cur.sea.labels[o] ?? o : `${this.app.data.name(o, lang())}`;
+        const label = kind === 'capital' ? this.capital(o) : kind === 'museum' ? this.museumLabel(o) : kind === 'lives' ? this.animalLabel(o) : kind === 'season' ? this.monthLabel(o) : kind === 'deep' ? this.deepLabel(o) : kind === 'legacy' ? this.civLabel(o) : cur.sea ? cur.sea.labels[o] ?? o : `${this.app.data.name(o, lang())}`;
         const b = h('button', { type: 'button', class: 'pill quiz-opt' }, label) as HTMLButtonElement;
         if (q.answered) { b.disabled = true; if (o === cur.id) b.classList.add('ok'); else if (o === cur.pick) b.classList.add('bad'); }
         b.addEventListener('click', () => this.answerOption(o, b));
@@ -1864,8 +1888,15 @@ export class Learn {
     this.scored(ok);
     cur.ok = ok; cur.pick = o;
     if (cur.review && this.master) this.badgeToast(this.master.review(cur.id, ok));
-    cur.given = cur.item || cur.space || cur.sky ? this.optionLabel(kind, o, cur) : kind === 'capital' ? this.capital(o) : kind === 'museum' ? this.museumLabel(o) : kind === 'lives' ? this.animalLabel(o) : kind === 'season' ? this.monthLabel(o) : this.app.data.name(o, lang());
+    cur.given = cur.item || cur.space || cur.sky ? this.optionLabel(kind, o, cur) : kind === 'capital' ? this.capital(o) : kind === 'museum' ? this.museumLabel(o) : kind === 'lives' ? this.animalLabel(o) : kind === 'season' ? this.monthLabel(o) : kind === 'legacy' ? this.civLabel(o) : this.app.data.name(o, lang());
     b.classList.add(ok ? 'ok' : 'bad');
+    if (cur.leg) {
+      // Where it began, on the map.
+      this.pin = { lon: cur.leg.at[0], lat: cur.leg.at[1], text: `${cur.leg.icon} ${tx(cur.leg.name)}` };
+      this.app.flyTo(cur.leg.at[0], cur.leg.at[1], Math.max(2.5, Math.min(this.app.renderer.view.zoom, 5)));
+      this.renderQuiz({ ok, text: ok ? L('Correct! It came from: {0}.', '¡Correcto! Vino de: {0}.', this.civLabel(cur.id)) : L('It came from: {0}.', 'Vino de: {0}.', this.civLabel(cur.id)) });
+      return;
+    }
     if (cur.sea) {
       cur.given = cur.sea.labels[o] ?? o;
       if (cur.sea.at) { this.pin = { lon: cur.sea.at[0], lat: cur.sea.at[1], text: cur.sea.labels[cur.id] ?? '' }; this.app.renderer.requestRender(); }
@@ -1995,7 +2026,7 @@ export class Learn {
   /** The result: the score, then every question, right or wrong, with a small picture; a tap shows it on the map. */
   private renderResult() {
     const q = this.quiz!;
-    const top = q.kind === 'seafeature' || q.kind === 'zone' ? L('Ocean explorer! 🌊', '¡Explorador del océano! 🌊') : q.kind === 'deep' || q.kind === 'layers' ? L('Deep digger! ⛏️', '¡Gran excavador! ⛏️') : q.kind === 'habitat' || q.kind === 'lives' ? L('Nature expert! 🐾', '¡Experto en naturaleza! 🐾') : q.kind === 'grows' || q.kind === 'season' ? L('Green thumb! 🌿', '¡Mano verde! 🌿') : q.kind === 'order' ? L('Time keeper! ⏳', '¡Guardián del tiempo! ⏳') : q.kind === 'detective' ? L('Master detective! 🕵️', '¡Gran detective! 🕵️') : q.kind === 'site' ? L('Heritage explorer! 🏛️', '¡Explorador del patrimonio! 🏛️') : q.kind === 'world' || q.kind === 'landed' ? L('Space explorer! 🚀', '¡Explorador del espacio! 🚀') : q.kind === 'constellation' || q.kind === 'element' ? L('Star gazer! ✨', '¡Observador de estrellas! ✨') : q.kind === 'inventor' ? L('Inventive mind! 💡', '¡Mente inventiva! 💡') : q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : q.kind === 'plague' ? L('Disease detective! 🔬', '¡Detective de epidemias! 🔬') : q.kind === 'disaster' ? L('Disaster expert! 🌋', '¡Experto en desastres! 🌋') : q.kind === 'listen' ? L('Golden ears! 🎧', '¡Oído de oro! 🎧') : q.kind === 'opening' ? L('Bookworm! 📚', '¡Ratón de biblioteca! 📚') : q.kind === 'artist' ? L('Art expert! 🎨', '¡Experto en arte! 🎨') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
+    const top = q.kind === 'legacy' ? L('Heir of the ages! 🏺', '¡Heredero de los siglos! 🏺') : q.kind === 'seafeature' || q.kind === 'zone' ? L('Ocean explorer! 🌊', '¡Explorador del océano! 🌊') : q.kind === 'deep' || q.kind === 'layers' ? L('Deep digger! ⛏️', '¡Gran excavador! ⛏️') : q.kind === 'habitat' || q.kind === 'lives' ? L('Nature expert! 🐾', '¡Experto en naturaleza! 🐾') : q.kind === 'grows' || q.kind === 'season' ? L('Green thumb! 🌿', '¡Mano verde! 🌿') : q.kind === 'order' ? L('Time keeper! ⏳', '¡Guardián del tiempo! ⏳') : q.kind === 'detective' ? L('Master detective! 🕵️', '¡Gran detective! 🕵️') : q.kind === 'site' ? L('Heritage explorer! 🏛️', '¡Explorador del patrimonio! 🏛️') : q.kind === 'world' || q.kind === 'landed' ? L('Space explorer! 🚀', '¡Explorador del espacio! 🚀') : q.kind === 'constellation' || q.kind === 'element' ? L('Star gazer! ✨', '¡Observador de estrellas! ✨') : q.kind === 'inventor' ? L('Inventive mind! 💡', '¡Mente inventiva! 💡') : q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : q.kind === 'plague' ? L('Disease detective! 🔬', '¡Detective de epidemias! 🔬') : q.kind === 'disaster' ? L('Disaster expert! 🌋', '¡Experto en desastres! 🌋') : q.kind === 'listen' ? L('Golden ears! 🎧', '¡Oído de oro! 🎧') : q.kind === 'opening' ? L('Bookworm! 📚', '¡Ratón de biblioteca! 📚') : q.kind === 'artist' ? L('Art expert! 🎨', '¡Experto en arte! 🎨') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
     const msg = q.score >= 9 ? top : q.score >= 6 ? L('Great job! 🌍', '¡Muy bien! 🌍') : L('Keep exploring! 🧭', '¡Sigue explorando! 🧭');
     if (q.kind === 'daily') { this.renderDailyResult(); return; }
     add(this.card, this.quizHead(`${L('Result', 'Resultado')} ${q.score}/${q.qs.length}`, ''));
@@ -2047,12 +2078,12 @@ export class Learn {
           h('span', { class: 'quiz-sum-ans' }, cur.ok ? right.map((x) => this.depthLabel(x)).join(' · ') : cur.given ? L('you said {0}', 'dijiste {0}', cur.given) : L('no answer', 'sin respuesta'))),
         h('span', { class: 'quiz-sum-mark' }, cur.ok ? '✓' : '✗'));
     }
-    const name = it ? tx(it.name) : sp ? tt(sp.n) : cur.hop ? this.hopWay(cur) : cur.art ? this.workTitle(cur.art.work) : cur.deep ? L('Which goes deeper?', '¿Cuál llega más hondo?') : this.app.data.name(cur.id, lang());
+    const name = it ? tx(it.name) : sp ? tt(sp.n) : cur.hop ? this.hopWay(cur) : cur.art ? this.workTitle(cur.art.work) : cur.deep ? L('Which goes deeper?', '¿Cuál llega más hondo?') : cur.leg ? tx(cur.leg.name) : this.app.data.name(cur.id, lang());
     const right = it
       ? (kind === 'where' ? (it.place ? tx(it.place) : '') : kind === 'when' ? itemWhen(it, Math.min(...(cur.options ?? [cur.id]).map(Number))) : this.optionLabel(kind, cur.id, cur))
-      : kind === 'capital' ? this.capital(cur.id) : kind === 'museum' ? this.museumLabel(cur.id) : kind === 'lives' ? this.animalLabel(cur.id) : kind === 'season' ? this.monthLabel(cur.id) : kind === 'deep' ? this.deepLabel(cur.id, true) : cur.sea ? cur.sea.labels[cur.id] ?? '' : '';
+      : kind === 'capital' ? this.capital(cur.id) : kind === 'museum' ? this.museumLabel(cur.id) : kind === 'lives' ? this.animalLabel(cur.id) : kind === 'season' ? this.monthLabel(cur.id) : kind === 'deep' ? this.deepLabel(cur.id, true) : kind === 'legacy' ? this.civLabel(cur.id) : cur.sea ? cur.sea.labels[cur.id] ?? '' : '';
     const yours = cur.ok ? '' : kind === 'where' || kind === 'find' ? (cur.given ?? '') : cur.given ? L('you said {0}', 'dijiste {0}', cur.given) : L('no answer', 'sin respuesta');
-    const pic = h('span', { class: 'quiz-thumb' }, it ? it.icon : sp ? sp.e : '');
+    const pic = h('span', { class: 'quiz-thumb' }, it ? it.icon : sp ? sp.e : cur.leg ? cur.leg.icon : '');
     if (it) {
       void itemThumb(it).then((src) => {
         if (!src || !pic.isConnected) return;
