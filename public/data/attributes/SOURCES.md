@@ -244,8 +244,9 @@ Compiled by hand from well-established facts (no invented precise numbers):
 
 ## regional-languages.json (Regional languages filter)
 
-Languages spoken at home in 1,592 first-level regions (Natural Earth admin-1, as drawn by the app) of
-137 countries, 680 languages with English and Spanish names, family and approximate L1 speakers.
+Languages spoken at home in 1,669 first-level regions (the app's states and provinces: Natural Earth admin-1, and
+OCHA's for the countries updated in v0.47.0) of 137 countries, 691 languages with English and Spanish names, family
+and approximate L1 speakers.
 Each region lists its languages, the one most people speak at home first, then other languages that
 are widely spoken or co-official there; a few secondary entries are smaller minorities and say so in
 their note (Breton, Low German, Nahuatl, Scots). Regions that only speak the national main language

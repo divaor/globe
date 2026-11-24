@@ -77,6 +77,11 @@ export class Renderer {
   backdrop: ((bg: CanvasRenderingContext2D, w: number, h: number, globeY: number) => boolean) | null = null;
   private graticule = geoGraticule10();
   private raf = 0;
+  /**
+   * Held while the app starts (v0.47.0): the splash covers the globe, so frames would only cost time on a slow phone
+   * (each a few hundred milliseconds at full detail). `release()` draws the first frame.
+   */
+  private held = true;
   private lastFrame = 0;
   private physical: Partial<Record<'50m' | '10m', Physical>> = {};
   private physicalLoading = new Set<string>();
@@ -103,6 +108,20 @@ export class Renderer {
   overlays = new Set<Overlay>();
   /** Drawn after the globe's shading and rim, before the names (the Earth cut open). */
   afterShade = new Set<Overlay>();
+  /**
+   * The phone's text size against the design's (1 at its default; v0.47.0): the map's names grow and shrink with it,
+   * like the rest of the app's text (at most 1.6 times, so they still fit on the map).
+   */
+  readonly textScale = (() => {
+    try {
+      const p = document.createElement('span');
+      p.style.cssText = 'position:absolute;visibility:hidden;font-size:var(--fs-lg)';
+      document.body.append(p);
+      const k = parseFloat(getComputedStyle(p).fontSize) / 16;
+      p.remove();
+      return k > 0.5 && k < 4 ? Math.min(1.6, k) : 1;
+    } catch { return 1; }
+  })();
   /** Called after every frame (UI can sync zoom readouts, etc). */
   onFrame: (() => void) | null = null;
   fps = 60;
@@ -172,12 +191,42 @@ export class Renderer {
 
   requestRender() {
     this.fullDirty = true;
-    if (!this.raf) this.raf = requestAnimationFrame((t) => this.frame(t));
+    if (this.raf || this.held) return;
+    // A redraw asked while the globe is still (data arriving, a filter's legend) waits a little after the last one,
+    // twice as long as that took (at most 0.6 s): a slow phone, where a frame takes a few hundred milliseconds, is
+    // not kept busy redrawing as each file arrives. Moving, flying, animations and a view that changed since the last
+    // frame (a step with the arrow keys, a jump to a place) draw at once.
+    const still = !this.moving && !this.view.animating && !this.tickers.size && this.viewKey() === this.drawnView;
+    if (!still && this.paceTimer) { clearTimeout(this.paceTimer); this.paceTimer = 0; }
+    if (this.paceTimer) return;
+    const gap = Math.min(600, this.drawCost * 2) - (performance.now() - this.drawnAt);
+    if (gap > 4 && still) {
+      this.paceTimer = window.setTimeout(() => { this.paceTimer = 0; if (!this.raf && !this.held) this.raf = requestAnimationFrame((t) => this.frame(t)); }, gap);
+      return;
+    }
+    this.raf = requestAnimationFrame((t) => this.frame(t));
+  }
+  /** When the last full frame was drawn and how long it took (ms), for pacing redraws. */
+  private drawnAt = 0;
+  private drawCost = 0;
+  private paceTimer = 0;
+  /** The view as the last full frame drew it (where, how close, which projection, the canvas's size). */
+  private drawnView = '';
+  private viewKey(): string {
+    const v = this.view;
+    return `${v.lon}|${v.lat}|${v.zoom}|${v.current.id}|${v.w}|${v.h}`;
   }
 
   /** Schedule a frame that only redraws animated effects (the map stays as it is). */
   requestFx() {
-    if (!this.raf) this.raf = requestAnimationFrame((t) => this.frame(t));
+    if (!this.raf && !this.held) this.raf = requestAnimationFrame((t) => this.frame(t));
+  }
+
+  /** Lets frames be drawn (once the app has started), and draws the first. */
+  release() {
+    if (!this.held) return;
+    this.held = false;
+    this.requestRender();
   }
 
   private hasFx(): boolean {
@@ -204,12 +253,17 @@ export class Renderer {
     if (this.view.update(now)) busy = true;
     if (busy || this.fullDirty || !this.lastRc) {
       this.fullDirty = false;
+      const t0 = performance.now();
       this.draw(now);
+      this.drawnAt = performance.now();
+      this.drawCost = this.drawnAt - t0;
+      this.drawnView = this.viewKey();
       this.onFrame?.();
     }
     const fx = this.hasFx();
     this.drawFx(now, dt, fx);
-    if (busy || this.needsContinuous()) this.requestRender();
+    // Moving or animating: the next frame right away (not paced).
+    if (busy || this.needsContinuous()) { this.fullDirty = true; if (!this.raf) this.raf = requestAnimationFrame((t) => this.frame(t)); }
     else if (fx) this.requestFx();
     else this.lastFrame = 0;
   }
@@ -565,7 +619,8 @@ export class Renderer {
     // ---- states and provinces: thin dashed lines from country zoom on, fading in
     if (this.baseMap && !this.worldStyle && mapView.regions) {
       const rg = regions();
-      if (!rg) void loadRegions().then(() => this.requestRender(), () => {});
+      // The provinces (a large file) load as the map zooms in towards them, not at the start.
+      if (!rg) { if (view.webZoom >= 2) void loadRegions().then(() => this.requestRender(), () => {}); }
       else if (view.webZoom >= 2.6) {
         ctx.save();
         ctx.globalAlpha = Math.min(1, (view.webZoom - 2.6) / 0.8);
@@ -580,7 +635,7 @@ export class Renderer {
     }
 
     // Labels are collected from here on (overlays add some: a quiz pin, measured distances), drawn last.
-    this.labels.scale = this.settings.labelScale;
+    this.labels.scale = this.settings.labelScale * this.textScale;
     this.labels.begin(w, h);
 
     // ---- overlays from filters and tools
@@ -637,7 +692,8 @@ export class Renderer {
     for (const f of this.keepOut) for (const b of f()) this.labels.reserve(b[0], b[1], b[2], b[3]);
     this.labels.draw(ctx);
     // A name is fading in: one more frame.
-    if (this.labels.fading) this.requestRender();
+    // Names fading in or out: the next frame right away (not paced).
+    if (this.labels.fading) { this.fullDirty = true; if (!this.raf && !this.held) this.raf = requestAnimationFrame((t) => this.frame(t)); }
   }
 
   private drawSpace(bg: CanvasRenderingContext2D, w: number, h: number) {

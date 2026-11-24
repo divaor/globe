@@ -1,6 +1,7 @@
 // Pointer, touch, wheel and keyboard navigation: drag to rotate/pan with fling inertia, pinch and
 // wheel zoom around the fingers/cursor, double-tap zoom, tap to select.
 import type { Renderer, Ticker } from './renderer';
+import { reducedMotion } from './motion';
 
 export interface InteractionHandlers {
   onTap(sx: number, sy: number): void;
@@ -144,7 +145,8 @@ export class Interaction {
       const dt = Math.max(1, b.t - a.t);
       let vx = (b.x - a.x) / dt, vy = (b.y - a.y) / dt;
       const speed = Math.hypot(vx, vy);
-      if (speed > 0.15 && now - b.t < 80) {
+      // (Less motion: the globe stops where it was let go.)
+      if (speed > 0.15 && now - b.t < 80 && !reducedMotion()) {
         const view = this.r.view;
         this.inertia = (ms) => {
           const decay = Math.exp(-ms / 420);

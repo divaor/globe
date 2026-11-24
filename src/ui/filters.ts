@@ -158,7 +158,7 @@ function activeRow(app: App, inst: LayerInstance): HTMLElement {
         iconBtn(ArrowDown, 'Down', () => app.move(d.id, -1)),
         iconBtn(X, t('remove'), () => app.deactivate(d.id)))),
     h('div', { class: 'arow-opacity' }, h('span', { class: 'small muted' }, t('opacity')),
-      slider(inst.opacity, 0.1, 1, 0.05, (v) => app.setOpacity(d.id, v))));
+      slider(inst.opacity, 0.1, 1, 0.05, (v) => app.setOpacity(d.id, v), t('opacity'))));
   for (const o of d.options ?? []) {
     if (o.type === 'select') {
       const sel = h('select', { class: 'select' }) as HTMLSelectElement;

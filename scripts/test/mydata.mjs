@@ -60,6 +60,11 @@ check(m('South Africa') === 'ZAF' && m('Central African Republic') === 'CAF' && 
   const { p, b } = load('Country,State,Visitors\nMexico,Jalisco,120\nMexico,Ciudad de México,300\nMexico,Yucatán,95\nArgentina,Mendoza,40\n');
   check(p.geo === 'region' && b.matched === 4 && b.unmatched.length === 0, `states and provinces: 4 regions of 2 countries (${b.unmatched})`);
 }
+// States and provinces brought up to date (v0.47.0): Kenya's counties, Nepal's and Ethiopia's new provinces.
+{
+  const { p, b } = load('Country,Province,Value\nKenya,Mombasa County,1\nKenya,Nairobi,2\nNepal,Koshi Province,3\nEthiopia,Sidama Region,4\nViet Nam,Huế,5\n');
+  check(p.geo === 'region' && b.matched === 5 && b.unmatched.length === 0, `current provinces: Kenya's counties, Koshi, Sidama, Huế (${b.unmatched})`);
+}
 // Points.
 {
   const { p, b } = load('name,lat,lon,people\nLima,-12.05,-77.04,10000000\nQuito,-0.22,-78.51,2800000\n');

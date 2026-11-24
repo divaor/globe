@@ -29,6 +29,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { LayerDef, RenderCtx } from '../layers/types';
 import { spread, leader, leaderInk, type Spot } from '../layers/crowd';
+import { outside } from '../data/outside';
 
 type Text = { en: string; es: string };
 type Range = number | [number, number];
@@ -2050,7 +2051,7 @@ export function wikiThumb(wiki?: Text): Promise<string | null> {
       for (const [ll, title] of [[l, wiki[l]], ['en', wiki.en]] as const) {
         if (!title) continue;
         try {
-          const r = await fetch(`https://${ll}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title.replace(/ /g, '_'))}`);
+          const r = await outside(`https://${ll}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title.replace(/ /g, '_'))}`);
           if (!r.ok) continue;
           const j = (await r.json()) as { thumbnail?: { source: string } };
           if (j.thumbnail?.source) return j.thumbnail.source;

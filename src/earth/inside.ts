@@ -13,6 +13,7 @@ import { drawCut, kOf, type CutState } from './cut';
 import { digColumn, depthText } from './column';
 import { wavesPanel } from './waves';
 import { loadInside, loadCrust, crustAt, type Inside } from './data';
+import { outside } from '../data/outside';
 
 type Tab = 'layers' | 'dig' | 'waves';
 const PEEL_NAMES = (): string[] => [
@@ -23,7 +24,7 @@ const PEEL_NAMES = (): string[] => [
 /** What Macrostrat's geological map says is at the surface of a point (live). */
 interface Rock { name: string; lith: string; age: string; ma: [number, number] | null }
 async function rocksAt(lon: number, lat: number): Promise<Rock | null> {
-  const r = await fetch(`https://macrostrat.org/api/v2/geologic_units/map?lat=${lat.toFixed(4)}&lng=${lon.toFixed(4)}`);
+  const r = await outside(`https://macrostrat.org/api/v2/geologic_units/map?lat=${lat.toFixed(4)}&lng=${lon.toFixed(4)}`);
   if (!r.ok) throw new Error(String(r.status));
   const j = await r.json() as { success?: { data?: { name: string; lith: string; best_int_name: string; t_age: number; b_age: number; scale: string }[] } };
   const rows = j.success?.data ?? [];
@@ -222,7 +223,7 @@ export class InsideEarth {
         'La Tierra abierta, a escala: le falta una octava parte. Gira el globo y el corte gira con él; toca el globo para cavar en cualquier lugar.')),
       ...rows,
       h('div', { class: 'field' }, h('div', { class: 'field-label' }, L('Peel the layers away: ', 'Quitar capas: '), peelLabel),
-        slider(this.peelGoal, 0, 5, 1, (v) => { this.setPeel(v); peelLabel.textContent = PEEL_NAMES()[v]; })),
+        slider(this.peelGoal, 0, 5, 1, (v) => { this.setPeel(v); peelLabel.textContent = PEEL_NAMES()[v]; }, L('Peel the layers away: ', 'Quitar capas: '))),
       h('div', { class: 'toggles' }, toggle(this.st.names, (v) => { this.st.names = v; this.app.renderer.requestRender(); }, L('Names on the cut', 'Nombres en el corte'))),
       h('div', { class: 'hop-actions' }, dig, cut),
       this.facts?.moho ? h('p', { class: 'muted small' }, tx(this.facts.moho)) : null,

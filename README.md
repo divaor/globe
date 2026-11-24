@@ -31,6 +31,16 @@ A backup made as Atlas Globe still opens.
   and About. One bar above the map: a chip per filter, the top one carrying its legend's ⌃. Zoom and locate on the
   right. A first visit (not from a link) gets three short cards: how to move the globe and the language, Today, and
   where to start.
+- **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
+  (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
+  too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass
+  contrast in both themes; reduce motion (the phone's setting) stops flights, coasting, the screensaver's swaying and
+  deep time's impacts. A screen reader hears what the map shows: the projection, the place in the middle, how close,
+  the filters, the chosen country and, in time travel, the year; a move with the arrow keys or a new filter is read
+  out. Offline, what needs an outside service says so at once instead of waiting; iNaturalist is asked at most 60
+  times a minute, and Wikimedia's sites hear the app's name and version. **About and credits** lists all 75 sources
+  in nine groups (maps, nature, the Earth, space, history, words, pictures, what is read live, the code), each with
+  what it gives the app in plain words, who made it and its licence, in the app's language.
 - **Languages (v0.42.0):** English, Spanish (Latin America's or Spain's), Portuguese (Brazil), French and German,
   like the phone unless one is picked in Settings or on the first visit's card. In Portuguese, French and German:
   every word of the app; the map's names (countries, states and provinces, cities, seas, rivers and mountains, World
@@ -666,6 +676,25 @@ A backup made as Atlas Globe still opens.
 
 ## Development
 
+**The start, in two stages** (v0.47.0): `src/main.ts` builds only the app, the shell and the base map, draws the
+first frame (the renderer is `held` until `release()`, under the splash) and hides the splash; everything else (time
+travel, learn and play, the guides, deep time, the filter packs, links) is `src/features.ts`, its own chunk, loaded
+behind the globe, and `window.atlas` is set when it is done. A tab tapped before then opens once the lists are built
+(`shell.markReady()`). Idle redraws are paced to twice the last frame's cost (at most 600 ms apart); moving, flying
+and fading labels still draw every frame. States and provinces load from web zoom 2. Measured with
+`scripts/test/startup.mjs`-style runs: a Pixel 7 at 4× CPU slowdown on 4G (9 Mbps, 60 ms).
+
+**Outside services** (v0.47.0): every call to a website Mundora doesn't run goes through `outside()` (`src/data/outside.ts`):
+offline it fails at once (Wikipedia's summaries excepted: the service worker keeps them), it gives up after 15 s,
+iNaturalist gets at most 60 calls a minute (the rest wait; a 429 pauses it a minute), and Wikimedia's sites get an
+`Api-User-Agent` with the app's name and version (asked again without it if a site refuses the header). Map tiles keep
+their own loader (`src/engine/tiles.ts`), which serves saved areas offline.
+
+**Accessibility** (v0.47.0): `reducedMotion()` (`src/engine/motion.ts`) for the phone's reduce motion; the `--type-k`
+multiplier on the text and icon tokens (iOS's Dynamic Type through `font: -apple-system-body`), read by the renderer
+as `textScale`; 44-point hit areas on coarse pointers (`::after`, in `main.css`); `src/ui/mapsay.ts` keeps the map's
+description; a slider takes its name from `slider(…, label)` or from Settings' `field()`.
+
 **The design kit** (v0.40.0):
 - The tokens are at the top of `src/styles/main.css`: `--fs-*`, `--icon-*`, `--r-*`, `--sp-*`, `--shadow-*` and `--hue-*`. `node scripts/tools/css-tokens.mjs --check` (in `check:data`) fails on a px font size or radius off the kit; without `--check`, it puts them on the kit.
 - A feature's tile comes from `ftile(id)` (`src/ui/features.ts`). A panel's title gets it from its sheet id.
@@ -796,7 +825,10 @@ filters. Even simpler: add a field to `public/data/attributes/countries.json` (w
 ## Data
 
 All data are pre-built and committed under `public/data/`; the scripts that build them are in `scripts/data/`
-(each folder has a README) and every folder has a `SOURCES.md` with sources, licences and attribution.
+(each folder has a README), and most data folders have a `SOURCES.md` with sources, licences and attribution.
+Every source, library and font is in `public/data/credits/credits.json` (v0.47.0), in five languages, shown in About
+and credits; `scripts/test/credits.mjs` (in `check:data`) fails when a source named in a `SOURCES.md`, this README, a
+filter's credit line, an outside website the code calls, a library or a font is missing from it.
 Main sources: Natural Earth (public domain), NASA Blue Marble and GIBS, NOAA ETOPO1 and ERSST, ECMWF ERA-Interim,
 GPCP, Köppen–Geiger (Kottek/Rubel), GeoNames (CC BY 4.0), aourednik/historical-basemaps (GPL-3.0),
 Merdith et al. 2021 plate model (CC BY 4.0), PB2002 plates (ODC-By), CIA World Factbook, World Bank,
@@ -954,7 +986,9 @@ share an edge (323 land borders).
   route, scoring and challenge links.
 The states and provinces drawn on the map, their names (with Spanish names) and the one a tap or a born-here place is
 in come from Natural Earth's 1:10m admin-1 regions (public domain, `public/data/base/admin1.json`, loaded the first
-time they are shown). The States and provinces quiz uses Natural Earth's admin-1 regions (`scripts/data/build-regions.mjs`; France,
+time they are shown); for the 33 countries whose divisions changed since Natural Earth's data (Kenya's counties, DR
+Congo's and Nepal's provinces, Viet Nam's 34 provinces of 2025...), from OCHA's Common Operational Datasets (CC BY-IGO,
+v0.47.0; `scripts/data/README.md`, `public/data/base/SOURCES.md`). The States and provinces quiz uses Natural Earth's admin-1 regions (`scripts/data/build-regions.mjs`; France,
 Spain, Italy and the United Kingdom grouped into their regions). The Time travel stories are written from
 Wikipedia and the sources listed in each story
 (`scripts/data/conflicts/README.md`, `scripts/data/STORIES.md`); item pictures are Wikipedia page images,

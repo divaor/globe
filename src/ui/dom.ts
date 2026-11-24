@@ -67,8 +67,10 @@ export function segmented<T extends string>(value: T, options: { value: T; label
   return wrap;
 }
 
-export function slider(value: number, min: number, max: number, step: number, onInput: (v: number) => void) {
+/** A range slider; `label` names it for screen readers (v0.47.0; the words beside it are not tied to it). */
+export function slider(value: number, min: number, max: number, step: number, onInput: (v: number) => void, label?: string) {
   const s = h('input', { type: 'range', class: 'slider', min: String(min), max: String(max), step: String(step) }) as HTMLInputElement;
+  if (label) s.setAttribute('aria-label', label.replace(/[:\s]+$/, ''));
   s.value = String(value);
   s.addEventListener('input', () => onInput(Number(s.value)));
   return s;

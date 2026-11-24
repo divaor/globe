@@ -8,7 +8,8 @@
   --muted: #9fb2cf;
   --accent: #3fd0e0;
   --accent-2: #8c6cff;
-  --accent-grad: linear-gradient(135deg, #2fc4d9, #7c5cff);
+  /* White text sits on it (main buttons, badges): both ends dark enough for 4.5:1 (v0.47.0). */
+  --accent-grad: linear-gradient(135deg, #0b7d94, #6a4cf0);
   --danger: #ff6b6b;
   --chip: rgba(255, 255, 255, 0.07);
   --chip-on: rgba(63, 208, 224, 0.18);
@@ -21,16 +22,19 @@
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   /* The design kit (v0.40.0). Every text size and radius in this file is one of these (scripts/tools/css-tokens.mjs
      --check keeps it so). Text is in rem, so it follows the phone's own text size. */
-  --fs-xs: 0.6875rem;   /* 11: badges, the bottom bar's names, small print */
-  --fs-sm: 0.78125rem;  /* 12.5: descriptions, chips, section titles */
-  --fs-md: 0.875rem;    /* 14: body text, buttons, rows */
-  --fs-lg: 1rem;        /* 16: card titles, fields (16 keeps phones from zooming in) */
-  --fs-xl: 1.1875rem;   /* 19: panel titles, questions */
-  --fs-2xl: 1.625rem;   /* 26: big numbers */
-  --icon-sm: 1.125rem;  /* emoji and icons beside text */
-  --icon-md: 1.5rem;
-  --icon-lg: 1.75rem;
-  --icon-xl: 2.125rem;
+  --fs-xs: calc(0.6875rem * var(--type-k));   /* 11: badges, the bottom bar's names, small print */
+  --fs-sm: calc(0.78125rem * var(--type-k));  /* 12.5: descriptions, chips, section titles */
+  --fs-md: calc(0.875rem * var(--type-k));    /* 14: body text, buttons, rows */
+  --fs-lg: calc(1rem * var(--type-k));        /* 16: card titles, fields (16 keeps phones from zooming in) */
+  --fs-xl: calc(1.1875rem * var(--type-k));   /* 19: panel titles, questions */
+  --fs-2xl: calc(1.625rem * var(--type-k));   /* 26: big numbers */
+  --icon-sm: calc(1.125rem * var(--type-k));  /* emoji and icons beside text */
+  --icon-md: calc(1.5rem * var(--type-k));
+  --icon-lg: calc(1.75rem * var(--type-k));
+  --icon-xl: calc(2.125rem * var(--type-k));
+  /* 1, except on iPhones and iPads, where the root size is the phone's own text size (17 at its default): there the
+     sizes are scaled back by 16/17, so they match the design at the phone's default and grow and shrink with it. */
+  --type-k: 1;
   --fw-medium: 500;
   --fw-semi: 650;
   --fw-bold: 800;
@@ -64,7 +68,7 @@
   --line-strong: rgba(20, 30, 50, 0.2);
   --text: #18202e;
   --muted: #5b6880;
-  --accent: #0e8fa3;
+  --accent: #0a6e80; /* as text on the light theme's pale chips and panels: 4.5:1 or more (v0.47.0) */
   --accent-2: #6a48f0;
   --chip: rgba(20, 30, 50, 0.06);
   --chip-on: rgba(14, 143, 163, 0.14);
@@ -81,6 +85,12 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg); color: var(--text); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+/* The phone's text size (v0.47.0). Android's browser and app already scale rem with it; on iPhones and iPads the page
+   asks for it (Dynamic Type) through the system body font, whose size becomes the root size. */
+@supports (font: -apple-system-body) and (-webkit-touch-callout: none) {
+  html { font: -apple-system-body; font-family: var(--font); }
+  :root { --type-k: 0.941176; }
+}
 /* The app is not a page of text to select. A tap on the map opens a card under the finger, and phone
    browsers took that same tap as one on the card's words: selecting a word, or opening their dictionary
    bar. Fields, and the paragraphs of the side sheet (Details and the like), stay selectable. */
@@ -301,7 +311,17 @@ html:not(.mode-time):not(.has-quiz) .legend.collapsed { display: none; }
 .pill.on { background: var(--chip-on); color: var(--accent); border-color: transparent; }
 .pill:disabled { opacity: .55; cursor: default; }
 .settings-actions { margin: 18px 0 8px; display: flex; gap: 8px; flex-wrap: wrap; }
-.credits { padding-left: 18px; margin: 6px 0; font-size: var(--fs-sm); line-height: 1.5; }
+/* The credits by group (v0.47.0). */
+.cr-nav { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin: var(--sp-2) 0 var(--sp-3); }
+.cr-group { scroll-margin-top: var(--sp-3); margin-bottom: var(--sp-3); }
+.cr-title { font-size: var(--fs-md); font-weight: var(--fw-semi); margin: var(--sp-3) 0 var(--sp-2); color: var(--muted); text-transform: none; }
+.cr-item { padding: var(--sp-2) 0; border-top: 1px solid var(--line); }
+.cr-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px var(--sp-2); }
+.cr-name { font-weight: var(--fw-semi); font-size: var(--fs-md); color: var(--ink); }
+.cr-lic { font-size: var(--fs-xs); color: var(--muted); white-space: nowrap; }
+a.cr-lic { color: var(--accent); }
+.about .cr-what { margin: 2px 0 0; font-size: var(--fs-sm); line-height: 1.45; }
+.about .cr-by { margin: 2px 0 0; font-size: var(--fs-xs); color: var(--muted); line-height: 1.4; }
 .about p { line-height: 1.5; font-size: var(--fs-md); }
 .about .about-lead { font-size: var(--fs-lg); font-weight: var(--fw-semi); }
 .about .about-by { font-weight: var(--fw-semi); margin: 0 0 var(--sp-2); }
@@ -642,8 +662,32 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
   .card-grid { grid-template-columns: 1fr; }
   .quiz-opts { grid-template-columns: 1fr; }
 }
+/* Touch targets (v0.47.0): on a touch screen every button, chip and switch can be tapped across at least 44×44 (Apple's
+   and Android's guidance), without changing how it looks: a small control gets an invisible hit area centred on it.
+   Inputs, which cannot have one, are 44 tall. */
+@media (pointer: coarse) {
+  :is(.icon-btn, .brand, .search-btn, .fchip-main, .fchip-x, .fchip.add, .chip, .pill, .seg-btn, .dt-now, .today-remind, .switch, .menu-item, .mw-deck, .tb-play, .plan-star, .sky-place) { position: relative; }
+  :is(.icon-btn, .brand, .search-btn, .fchip-main, .fchip-x, .fchip.add, .chip, .pill, .seg-btn, .dt-now, .today-remind, .switch, .menu-item, .mw-deck, .tb-play, .plan-star, .sky-place)::after {
+    content: ''; position: absolute; left: 50%; top: 50%; width: max(100%, 44px); height: max(100%, 44px); transform: translate(-50%, -50%);
+  }
+  .fchip { overflow: visible; }
+  /* The time bars' track: its hit area lies under the thumb and the bands, so they still take the taps they had. */
+  :is(.tb-track, .wb-track) { position: relative; z-index: 0; }
+  :is(.tb-track, .wb-track)::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: max(100%, 44px); transform: translateY(-50%); z-index: -1; }
+  /* A story's steps along its bar sit close together: 44 tall, as wide as they are (the step buttons beside it are
+     the big way to move). */
+  .wb-tick::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 44px; transform: translateY(-50%); }
+  .slider, .search-input, .guide-search, .orr-input { min-height: 44px; }
+}
+/* Less motion (the phone's "reduce motion"): nothing slides, fades, pulses or scrolls smoothly (v0.47.0: the map too;
+   see engine/motion.ts). */
+/* Read by screen readers, not shown (v0.47.0). */
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+/* The map takes keyboard focus (arrows move it); a ring inside the screen's edge shows it. */
+#fg:focus { outline: none; }
+#fg:focus-visible { outline: 2px solid var(--accent); outline-offset: -4px; }
 @media (prefers-reduced-motion: reduce) {
-  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
 
 /* ---- Story collections (Eras, Food, Structures): items, cards with pictures, Browse ---- */

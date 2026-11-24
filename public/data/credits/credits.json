@@ -1,0 +1,1141 @@
+{
+  "app": { "licence": "GPL-3.0-or-later", "url": "https://github.com/divaor/globe" },
+  "groups": [
+    {
+      "id": "maps",
+      "items": [
+        {
+          "id": "natural-earth",
+          "name": "Natural Earth",
+          "by": "Natural Earth (volunteers, supported by NACIS)",
+          "what": {
+            "en": "The countries’ borders, coasts, cities, states, rivers, lakes, peaks and time zones, and many of their names in other languages.",
+            "es": "Las fronteras, costas, ciudades, estados, ríos, lagos, cumbres y husos horarios de los países, y muchos de sus nombres en otros idiomas.",
+            "pt": "As fronteiras, o litoral, as cidades, os estados, rios, lagos, picos e fusos horários dos países, e muitos de seus nomes em outros idiomas.",
+            "fr": "Les frontières, côtes, villes, régions, fleuves, lacs, sommets et fuseaux horaires des pays, et beaucoup de leurs noms en d’autres langues.",
+            "de": "Grenzen, Küsten, Städte, Regionen, Flüsse, Seen, Gipfel und Zeitzonen der Länder und viele ihrer Namen in anderen Sprachen."
+          },
+          "licence": "Public domain",
+          "licenceUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+          "url": "https://www.naturalearthdata.com/"
+        },
+        {
+          "id": "ocha-cod",
+          "name": "OCHA Common Operational Datasets",
+          "by": "UN OCHA and each country’s own agencies, on the Humanitarian Data Exchange; Kazakhstan’s from OpenStreetMap (© OpenStreetMap contributors, ODbL)",
+          "what": {
+            "en": "The states and provinces of 33 countries whose divisions changed after Natural Earth’s map was made, such as Kenya’s counties and Viet Nam’s provinces.",
+            "es": "Los estados y provincias de 33 países cuyas divisiones cambiaron después del mapa de Natural Earth, como los condados de Kenia y las provincias de Vietnam.",
+            "pt": "Os estados e províncias de 33 países cujas divisões mudaram depois do mapa da Natural Earth, como os condados do Quênia e as províncias do Vietnã.",
+            "fr": "Les régions et provinces de 33 pays dont les divisions ont changé après la carte de Natural Earth, comme les comtés du Kenya et les provinces du Viêt Nam.",
+            "de": "Die Provinzen und Bundesstaaten von 33 Ländern, deren Gliederung sich seit Natural Earths Karte geändert hat, etwa Kenias Countys und Vietnams Provinzen."
+          },
+          "licence": "CC BY-IGO 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/3.0/igo/",
+          "url": "https://data.humdata.org/"
+        },
+        {
+          "id": "geonames",
+          "name": "GeoNames",
+          "by": "GeoNames and its contributors",
+          "what": {
+            "en": "Where people live, for the population glow and the city lights, and the places and heights of many cities and towns.",
+            "es": "Dónde vive la gente, para el mapa de población y las luces de las ciudades, y la ubicación y altura de muchas ciudades y pueblos.",
+            "pt": "Onde as pessoas vivem, para o mapa de população e as luzes das cidades, e a posição e a altitude de muitas cidades.",
+            "fr": "Où vivent les gens, pour la carte de la population et les lumières des villes, et la position et l’altitude de nombreuses villes.",
+            "de": "Wo Menschen leben, für die Bevölkerungskarte und die Lichter der Städte, sowie Lage und Höhe vieler Städte und Orte."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://www.geonames.org/"
+        },
+        {
+          "id": "blue-marble",
+          "name": "NASA Blue Marble Next Generation",
+          "by": "NASA Earth Observatory (Stöckli et al. 2005), from matplotlib’s basemap data",
+          "what": {
+            "en": "The satellite picture of the whole Earth, with its forests, deserts and ice.",
+            "es": "La imagen satelital de toda la Tierra, con sus bosques, desiertos y hielos.",
+            "pt": "A imagem de satélite da Terra inteira, com suas florestas, desertos e gelo.",
+            "fr": "L’image satellite de la Terre entière, avec ses forêts, ses déserts et ses glaces.",
+            "de": "Das Satellitenbild der ganzen Erde mit ihren Wäldern, Wüsten und ihrem Eis."
+          },
+          "licence": "Public domain",
+          "url": "https://earthobservatory.nasa.gov/features/BlueMarble"
+        },
+        {
+          "id": "shaded-relief",
+          "name": "Shaded Relief",
+          "by": "Tom Patterson (shadedrelief.com, Natural Earth)",
+          "what": {
+            "en": "The shaded relief map, where mountains and valleys stand out.",
+            "es": "El mapa de relieve sombreado, donde resaltan montañas y valles.",
+            "pt": "O mapa de relevo sombreado, em que montanhas e vales se destacam.",
+            "fr": "La carte du relief ombré, où ressortent montagnes et vallées.",
+            "de": "Die schattierte Reliefkarte, auf der Berge und Täler hervortreten."
+          },
+          "licence": "Public domain",
+          "url": "https://www.shadedrelief.com/"
+        },
+        {
+          "id": "etopo",
+          "name": "ETOPO",
+          "by": "NOAA National Centers for Environmental Information (ETOPO1, Amante & Eakins 2009; ETOPO 2022)",
+          "what": {
+            "en": "The heights of the land and the depths of the sea floor, for the elevation map and the oceans.",
+            "es": "Las alturas de la tierra y las profundidades del fondo marino, para el mapa de elevación y los océanos.",
+            "pt": "As altitudes da terra e as profundidades do fundo do mar, para o mapa de altitude e os oceanos.",
+            "fr": "Les altitudes des terres et les profondeurs des fonds marins, pour la carte des altitudes et les océans.",
+            "de": "Die Höhen des Landes und die Tiefen des Meeresbodens, für die Höhenkarte und die Ozeane."
+          },
+          "licence": "Public domain",
+          "url": "https://www.ncei.noaa.gov/products/etopo-global-relief-model"
+        },
+        {
+          "id": "terrain-tiles",
+          "name": "Terrain Tiles",
+          "by": "Mapzen (Tilezen), on the AWS Registry of Open Data; heights from USGS 3DEP, SRTM and GMTED2010, NOAA ETOPO1, ArcticDEM (NSF), EU-DEM (Copernicus), Geoscience Australia, Canada (Open Government Licence – Canada), Austria (offene Daten Österreichs), Mexico (INEGI), New Zealand (LINZ), Norway (Kartverket) and the UK Environment Agency",
+          "what": {
+            "en": "Close-up heights, downloaded as you zoom in, for the detailed relief, the elevation colours and the 3D view.",
+            "es": "Alturas en detalle, que se descargan al acercar el mapa, para el relieve detallado, los colores de elevación y la vista 3D.",
+            "pt": "Altitudes em detalhe, baixadas quando você aproxima o mapa, para o relevo detalhado, as cores de altitude e a vista 3D.",
+            "fr": "Des altitudes détaillées, téléchargées quand tu zoomes, pour le relief détaillé, les couleurs d’altitude et la vue 3D.",
+            "de": "Genaue Höhen, beim Hineinzoomen geladen, für das detaillierte Relief, die Höhenfarben und die 3D-Ansicht."
+          },
+          "licence": "Free to use with attribution",
+          "licenceUrl": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+          "url": "https://registry.opendata.aws/terrain-tiles/"
+        },
+        {
+          "id": "sentinel-2-cloudless",
+          "name": "Sentinel-2 cloudless 2016",
+          "by": "EOX IT Services GmbH (contains modified Copernicus Sentinel data 2016 & 2017)",
+          "what": {
+            "en": "Close-up satellite pictures, sharp to about 10 m, downloaded as you zoom in.",
+            "es": "Imágenes satelitales en detalle, con unos 10 m de nitidez, que se descargan al acercar el mapa.",
+            "pt": "Imagens de satélite em detalhe, com cerca de 10 m de nitidez, baixadas quando você aproxima o mapa.",
+            "fr": "Des images satellite détaillées, précises à environ 10 m, téléchargées quand tu zoomes.",
+            "de": "Genaue Satellitenbilder mit etwa 10 m Auflösung, beim Hineinzoomen geladen."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://s2maps.eu"
+        },
+        {
+          "id": "nasa-gibs",
+          "name": "NASA GIBS and Worldview",
+          "by": "NASA EOSDIS: VIIRS and MODIS pictures, MODIS greenness (NDVI) and chlorophyll, AMSR2 sea ice",
+          "what": {
+            "en": "Yesterday’s real satellite view, and the monthly pictures of green land, ocean plankton and sea ice.",
+            "es": "La vista satelital real de ayer y las imágenes mensuales del verdor de la tierra, el plancton del océano y el hielo marino.",
+            "pt": "A vista real de satélite de ontem e as imagens mensais do verde da terra, do plâncton do oceano e do gelo marinho.",
+            "fr": "La vraie vue satellite d’hier, et les images mensuelles de la végétation, du plancton océanique et de la banquise.",
+            "de": "Die echte Satellitenansicht von gestern und die Monatsbilder des grünen Landes, des Planktons im Meer und des Meereises."
+          },
+          "licence": "Public domain",
+          "url": "https://worldview.earthdata.nasa.gov/"
+        },
+        {
+          "id": "world-factbook",
+          "name": "The World Factbook",
+          "by": "Central Intelligence Agency (United States), final edition, through the factbook.json mirror",
+          "what": {
+            "en": "Many facts on each country: people, health, economy, land, energy, transport, religions and national symbols.",
+            "es": "Muchos datos de cada país: población, salud, economía, territorio, energía, transporte, religiones y símbolos nacionales.",
+            "pt": "Muitos dados de cada país: população, saúde, economia, território, energia, transportes, religiões e símbolos nacionais.",
+            "fr": "La population, la santé, l’économie, le territoire, l’énergie, les transports, les religions et les symboles de chaque pays.",
+            "de": "Viele Daten zu jedem Land: Bevölkerung, Gesundheit, Wirtschaft, Land, Energie, Verkehr, Religionen und nationale Symbole."
+          },
+          "licence": "Public domain",
+          "url": "https://github.com/factbook/factbook.json"
+        },
+        {
+          "id": "mledoze-countries",
+          "name": "mledoze/countries",
+          "by": "Mohammed Le Doze and contributors",
+          "what": {
+            "en": "Each country’s capital, area, neighbours, languages, currency, calling code and web domain.",
+            "es": "La capital, superficie, vecinos, idiomas, moneda, código telefónico y dominio de internet de cada país.",
+            "pt": "A capital, a área, os vizinhos, os idiomas, a moeda, o código telefônico e o domínio de internet de cada país.",
+            "fr": "La capitale, la superficie, les voisins, les langues, la monnaie, l’indicatif téléphonique et le domaine internet de chaque pays.",
+            "de": "Hauptstadt, Fläche, Nachbarn, Sprachen, Währung, Vorwahl und Internetdomain jedes Landes."
+          },
+          "licence": "ODbL 1.0",
+          "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+          "url": "https://github.com/mledoze/countries"
+        },
+        {
+          "id": "world-bank",
+          "name": "World Bank Open Data",
+          "by": "World Bank (World Development Indicators and income groups), through DataHub",
+          "what": {
+            "en": "Each country’s population, economy and income group.",
+            "es": "La población, la economía y el nivel de ingresos de cada país.",
+            "pt": "A população, a economia e o grupo de renda de cada país.",
+            "fr": "La population, l’économie et le niveau de revenu de chaque pays.",
+            "de": "Bevölkerung, Wirtschaftsleistung und Einkommensgruppe jedes Landes."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://data.worldbank.org/"
+        },
+        {
+          "id": "our-world-in-data",
+          "name": "Our World in Data",
+          "by": "Global Change Data Lab; data from the Global Carbon Project, Ember, the Energy Institute, UNDP, the World Happiness Report (Wellbeing Research Centre, Gallup), NCD-RisC and the United Nations",
+          "what": {
+            "en": "Each country’s CO₂, energy, human development, happiness and height, and a sample table of life expectancy.",
+            "es": "El CO₂, la energía, el desarrollo humano, la felicidad y la estatura de cada país, y una tabla de ejemplo de esperanza de vida.",
+            "pt": "O CO₂, a energia, o desenvolvimento humano, a felicidade e a altura de cada país, e uma tabela de exemplo de expectativa de vida.",
+            "fr": "Le CO₂, l’énergie, le développement humain, le bonheur et la taille de chaque pays, et un tableau d’exemple sur l’espérance de vie.",
+            "de": "CO₂, Energie, menschliche Entwicklung, Glück und Körpergröße jedes Landes sowie eine Beispieltabelle zur Lebenserwartung."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://ourworldindata.org/"
+        },
+        {
+          "id": "country-coder",
+          "name": "country-coder",
+          "by": "Rapid editor contributors, from OpenStreetMap community data",
+          "what": {
+            "en": "Which side of the road each country drives on, and whether its signs show km/h or mph.",
+            "es": "De qué lado de la calle se maneja en cada país y si sus señales marcan km/h o mph.",
+            "pt": "De que lado da rua se dirige em cada país e se as placas mostram km/h ou mph.",
+            "fr": "De quel côté de la route on roule dans chaque pays, et si ses panneaux sont en km/h ou en mph.",
+            "de": "Auf welcher Straßenseite in jedem Land gefahren wird und ob die Schilder km/h oder mph zeigen."
+          },
+          "licence": "ISC",
+          "licenceUrl": "https://spdx.org/licenses/ISC.html",
+          "url": "https://github.com/rapideditor/country-coder"
+        },
+        {
+          "id": "iana-tz",
+          "name": "IANA Time Zone Database",
+          "by": "IANA and the tz contributors",
+          "what": {
+            "en": "Each capital’s time, and whether it moves its clocks for summer.",
+            "es": "La hora de cada capital y si adelanta el reloj en verano.",
+            "pt": "A hora de cada capital e se ela adota o horário de verão.",
+            "fr": "L’heure de chaque capitale, et si elle passe à l’heure d’été.",
+            "de": "Die Uhrzeit jeder Hauptstadt und ob sie im Sommer die Uhren umstellt."
+          },
+          "licence": "Public domain",
+          "url": "https://www.iana.org/time-zones"
+        },
+        {
+          "id": "countries-gem",
+          "name": "countries (Ruby gem)",
+          "by": "The countries project contributors",
+          "what": {
+            "en": "Country codes for matching lists, Europe’s VAT rates and each country’s letters on cars.",
+            "es": "Códigos de país para cruzar listas, las tasas de IVA de Europa y las letras de cada país en los autos.",
+            "pt": "Códigos de país para cruzar listas, as alíquotas de IVA da Europa e as siglas internacionais de cada país nos carros.",
+            "fr": "Les codes de pays pour croiser les listes, les taux de TVA en Europe et les lettres de chaque pays sur les voitures.",
+            "de": "Ländercodes zum Abgleich von Listen, die Mehrwertsteuersätze in Europa und die internationalen Kfz-Kennzeichen."
+          },
+          "licence": "MIT",
+          "licenceUrl": "https://spdx.org/licenses/MIT.html",
+          "url": "https://github.com/countries/countries"
+        },
+        {
+          "id": "country-json",
+          "name": "country-json",
+          "by": "Samayo and contributors",
+          "what": {
+            "en": "Each country’s national dish and average yearly temperature.",
+            "es": "El plato nacional y la temperatura media anual de cada país.",
+            "pt": "O prato nacional e a temperatura média anual de cada país.",
+            "fr": "Le plat national et la température moyenne annuelle de chaque pays.",
+            "de": "Das Nationalgericht und die mittlere Jahrestemperatur jedes Landes."
+          },
+          "licence": "MIT",
+          "licenceUrl": "https://spdx.org/licenses/MIT.html",
+          "url": "https://github.com/samayo/country-json"
+        },
+        {
+          "id": "olympedia",
+          "name": "Olympedia",
+          "by": "Olympedia, through Keith Galli’s Olympics Dataset",
+          "what": {
+            "en": "Olympic results, used to count a country’s medals where Wikipedia’s table has none.",
+            "es": "Resultados olímpicos, para contar las medallas de un país cuando la tabla de Wikipedia no las tiene.",
+            "pt": "Resultados olímpicos, usados para contar as medalhas de um país quando a tabela da Wikipédia não as traz.",
+            "fr": "Les résultats olympiques, pour compter les médailles d’un pays quand le tableau de Wikipédia n’en donne pas.",
+            "de": "Olympische Ergebnisse, um die Medaillen eines Landes zu zählen, wo die Tabelle der Wikipedia keine hat."
+          },
+          "licence": "MIT",
+          "licenceUrl": "https://spdx.org/licenses/MIT.html",
+          "url": "https://www.olympedia.org/"
+        },
+        {
+          "id": "mineral-commodity-summaries",
+          "name": "Mineral Commodity Summaries",
+          "by": "U.S. Geological Survey; uranium from the World Nuclear Association, diamonds from the Kimberley Process",
+          "what": {
+            "en": "Which countries mine or produce the most of each resource and element.",
+            "es": "Qué países extraen o producen más de cada recurso y elemento.",
+            "pt": "Quais países extraem ou produzem mais de cada recurso e elemento.",
+            "fr": "Les pays qui extraient ou produisent le plus chaque ressource et chaque élément.",
+            "de": "Welche Länder am meisten von jedem Rohstoff und Element fördern oder herstellen."
+          },
+          "licence": "Public domain",
+          "url": "https://www.usgs.gov/centers/national-minerals-information-center/mineral-commodity-summaries"
+        }
+      ]
+    },
+    {
+      "id": "nature",
+      "items": [
+        {
+          "id": "gbif",
+          "name": "GBIF",
+          "by": "Global Biodiversity Information Facility, and the people and institutions who share their sightings (GBIF.org)",
+          "what": {
+            "en": "Where each animal and plant lives, from sightings people shared, and any other species looked up live.",
+            "es": "Dónde vive cada animal y planta, según los avistamientos que compartió la gente, y cualquier otra especie consultada en vivo.",
+            "pt": "Onde vive cada animal e planta, a partir de avistamentos compartilhados, e qualquer outra espécie consultada ao vivo.",
+            "fr": "Où vit chaque animal et chaque plante, d’après les observations partagées, et toute autre espèce cherchée en direct.",
+            "de": "Wo jedes Tier und jede Pflanze lebt, nach geteilten Sichtungen, und jede andere Art, live nachgeschlagen."
+          },
+          "licence": "CC0 and CC BY 4.0",
+          "licenceUrl": "https://www.gbif.org/terms",
+          "url": "https://www.gbif.org/"
+        },
+        {
+          "id": "resolve-ecoregions",
+          "name": "RESOLVE Ecoregions 2017",
+          "by": "Dinerstein et al. (2017), RESOLVE",
+          "what": {
+            "en": "The world’s 846 ecoregions and their biomes, and the mangroves along the coasts.",
+            "es": "Las 846 ecorregiones del mundo y sus biomas, y los manglares de las costas.",
+            "pt": "As 846 ecorregiões do mundo e seus biomas, e os manguezais das costas.",
+            "fr": "Les 846 écorégions du monde et leurs biomes, et les mangroves des côtes.",
+            "de": "Die 846 Ökoregionen der Welt und ihre Biome sowie die Mangroven an den Küsten."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://doi.org/10.1093/biosci/bix014"
+        },
+        {
+          "id": "gebco-gazetteer",
+          "name": "GEBCO Gazetteer of Undersea Feature Names",
+          "by": "IHO and IOC (GEBCO), through NOAA NCEI",
+          "what": {
+            "en": "The names of undersea mountains, ridges and trenches, and how they got them.",
+            "es": "Los nombres de montañas, dorsales y fosas submarinas, y de dónde vienen.",
+            "pt": "Os nomes de montanhas, dorsais e fossas submarinas, e de onde eles vêm.",
+            "fr": "Les noms des montagnes, dorsales et fosses sous-marines, et leur origine.",
+            "de": "Die Namen von Unterwasserbergen, Rücken und Gräben und woher sie stammen."
+          },
+          "licence": "Free to use with attribution",
+          "url": "https://www.ngdc.noaa.gov/gazetteer/"
+        },
+        {
+          "id": "wallace-realms",
+          "name": "Wallace’s zoogeographic regions",
+          "by": "Alfred Russel Wallace (1876); Olson et al. (2001)",
+          "what": {
+            "en": "The eight animal realms and the Wallace Line, in a simplified drawing.",
+            "es": "Las ocho regiones zoogeográficas y la línea de Wallace, en un dibujo simplificado.",
+            "pt": "As oito regiões zoogeográficas e a Linha de Wallace, em um desenho simplificado.",
+            "fr": "Les huit régions zoogéographiques et la ligne de Wallace, dans un tracé simplifié.",
+            "de": "Die acht tiergeografischen Regionen und die Wallace-Linie in vereinfachter Form."
+          },
+          "licence": "Cited as a source",
+          "url": "https://en.wikipedia.org/wiki/Biogeographic_realm"
+        },
+        {
+          "id": "biodiversity-hotspots",
+          "name": "Biodiversity hotspots",
+          "by": "Conservation International",
+          "what": {
+            "en": "The 36 biodiversity hotspots, the places with the most unique and most threatened species.",
+            "es": "Los 36 puntos calientes de biodiversidad, los lugares con más especies únicas y amenazadas.",
+            "pt": "Os 36 hotspots de biodiversidade, os lugares com mais espécies únicas e ameaçadas.",
+            "fr": "Les 36 points chauds de biodiversité, les lieux aux espèces les plus uniques et les plus menacées.",
+            "de": "Die 36 Biodiversitäts-Hotspots, die Orte mit den meisten einzigartigen und bedrohten Arten."
+          },
+          "licence": "Cited as a source",
+          "url": "https://www.conservation.org/"
+        }
+      ]
+    },
+    {
+      "id": "earth",
+      "items": [
+        {
+          "id": "usgs-comcat",
+          "name": "ANSS Comprehensive Earthquake Catalog (ComCat)",
+          "by": "U.S. Geological Survey",
+          "what": {
+            "en": "Every earthquake of magnitude 5.5 or more since 1970, at its depth inside the Earth.",
+            "es": "Todos los sismos de magnitud 5.5 o más desde 1970, a la profundidad en que ocurrieron.",
+            "pt": "Todos os terremotos de magnitude 5,5 ou mais desde 1970, na profundidade em que ocorreram.",
+            "fr": "Tous les séismes de magnitude 5,5 ou plus depuis 1970, à leur profondeur sous la surface.",
+            "de": "Alle Erdbeben ab Magnitude 5,5 seit 1970, in der Tiefe, in der sie stattfanden."
+          },
+          "licence": "Public domain",
+          "url": "https://earthquake.usgs.gov/data/comcat/"
+        },
+        {
+          "id": "volcanoes-of-the-world",
+          "name": "Volcanoes of the World",
+          "by": "Global Volcanism Program, Smithsonian Institution (v5)",
+          "what": {
+            "en": "The 1,214 volcanoes of the last 10,000 years and their last eruptions.",
+            "es": "Los 1214 volcanes de los últimos 10 000 años y sus últimas erupciones.",
+            "pt": "Os 1.214 vulcões dos últimos 10.000 anos e suas últimas erupções.",
+            "fr": "Les 1 214 volcans des 10 000 dernières années et leurs dernières éruptions.",
+            "de": "Die 1.214 Vulkane der letzten 10.000 Jahre und ihre letzten Ausbrüche."
+          },
+          "licence": "Free to use with citation",
+          "url": "https://volcano.si.edu/"
+        },
+        {
+          "id": "crust1",
+          "name": "CRUST1.0",
+          "by": "Laske, Masters, Ma and Pasyanos (2013), University of California San Diego",
+          "what": {
+            "en": "How thick the crust is under each place, when you dig down to the centre of the Earth.",
+            "es": "El grosor de la corteza bajo cada lugar, cuando cavas hasta el centro de la Tierra.",
+            "pt": "A espessura da crosta sob cada lugar, quando você cava até o centro da Terra.",
+            "fr": "L’épaisseur de la croûte sous chaque lieu, quand tu creuses jusqu’au centre de la Terre.",
+            "de": "Wie dick die Kruste an jedem Ort ist, wenn du bis zum Erdmittelpunkt gräbst."
+          },
+          "licence": "Free to use with citation",
+          "url": "https://igppweb.ucsd.edu/~gabi/crust1.html"
+        },
+        {
+          "id": "world-magnetic-model",
+          "name": "World Magnetic Model 2025",
+          "by": "NOAA NCEI and the British Geological Survey; magnetic poles from gufm1 and IGRF",
+          "what": {
+            "en": "Where a compass points anywhere on Earth, and the magnetic poles’ journeys since 1590.",
+            "es": "Hacia dónde apunta una brújula en cualquier lugar, y el recorrido de los polos magnéticos desde 1590.",
+            "pt": "Para onde aponta uma bússola em qualquer lugar, e o caminho dos polos magnéticos desde 1590.",
+            "fr": "Où pointe une boussole partout sur Terre, et le trajet des pôles magnétiques depuis 1590.",
+            "de": "Wohin ein Kompass überall auf der Erde zeigt und wie die Magnetpole seit 1590 gewandert sind."
+          },
+          "licence": "Public domain",
+          "url": "https://www.ncei.noaa.gov/products/world-magnetic-model"
+        },
+        {
+          "id": "pb2002",
+          "name": "PB2002 plate boundaries",
+          "by": "Peter Bird (2003); in map form by Hugo Ahlenius (Nordpil)",
+          "what": {
+            "en": "The tectonic plates and the kinds of boundaries between them.",
+            "es": "Las placas tectónicas y los tipos de límites entre ellas.",
+            "pt": "As placas tectônicas e os tipos de limites entre elas.",
+            "fr": "Les plaques tectoniques et les types de frontières entre elles.",
+            "de": "Die tektonischen Platten und die Arten ihrer Grenzen."
+          },
+          "licence": "ODC-By 1.0",
+          "licenceUrl": "https://opendatacommons.org/licenses/by/1-0/",
+          "url": "https://github.com/fraxen/tectonicplates"
+        },
+        {
+          "id": "nnr-morvel56",
+          "name": "NNR-MORVEL56",
+          "by": "Argus, Gordon and DeMets (2011)",
+          "what": {
+            "en": "How fast and which way each part of the plates moves today.",
+            "es": "Qué tan rápido y hacia dónde se mueve hoy cada parte de las placas.",
+            "pt": "Com que velocidade e para onde cada parte das placas se move hoje.",
+            "fr": "À quelle vitesse et dans quelle direction chaque partie des plaques se déplace aujourd’hui.",
+            "de": "Wie schnell und in welche Richtung sich jeder Teil der Platten heute bewegt."
+          },
+          "licence": "Cited as a source",
+          "url": "https://doi.org/10.1029/2011GC003751"
+        },
+        {
+          "id": "merdith-2021",
+          "name": "Merdith et al. (2021) plate model",
+          "by": "Merdith, Williams, Collins and others (EarthByte), via GPlates",
+          "what": {
+            "en": "How the continents moved over the last billion years, from Rodinia to Pangaea and today.",
+            "es": "Cómo se movieron los continentes en los últimos mil millones de años, de Rodinia a Pangea y hasta hoy.",
+            "pt": "Como os continentes se moveram no último bilhão de anos, da Rodínia à Pangeia e até hoje.",
+            "fr": "Comment les continents ont bougé depuis un milliard d’années, de Rodinia à la Pangée et jusqu’à aujourd’hui.",
+            "de": "Wie sich die Kontinente in der letzten Milliarde Jahre bewegt haben, von Rodinia über Pangaea bis heute."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://doi.org/10.1016/j.earscirev.2020.103477"
+        },
+        {
+          "id": "ics-chart",
+          "name": "International Chronostratigraphic Chart",
+          "by": "International Commission on Stratigraphy (ICS; Cohen et al. 2013, updated); colours of the CGMW",
+          "what": {
+            "en": "The ages of the eons, eras and periods, and their colours on the time slider.",
+            "es": "Las edades de los eones, eras y periodos, y sus colores en la barra del tiempo.",
+            "pt": "As idades dos éons, eras e períodos, e suas cores na barra do tempo.",
+            "fr": "Les âges des éons, ères et périodes, et leurs couleurs sur la frise du temps.",
+            "de": "Das Alter der Äonen, Ären und Perioden und ihre Farben auf dem Zeitregler."
+          },
+          "licence": "Free to use with citation",
+          "url": "https://stratigraphy.org/chart"
+        },
+        {
+          "id": "paleobiology-database",
+          "name": "The Paleobiology Database",
+          "by": "Its contributors",
+          "what": {
+            "en": "The ages of past species and the places their fossils were found.",
+            "es": "La época de las especies del pasado y los lugares donde se hallaron sus fósiles.",
+            "pt": "A época das espécies do passado e os lugares onde seus fósseis foram encontrados.",
+            "fr": "L’âge des espèces disparues et les lieux où l’on a trouvé leurs fossiles.",
+            "de": "Das Alter ausgestorbener Arten und die Orte, an denen ihre Fossilien gefunden wurden."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://paleobiodb.org"
+        },
+        {
+          "id": "deep-time-papers",
+          "name": "Planck 2018 results and other papers",
+          "by": "Planck Collaboration (2020); Fixsen (2009); Gough (1981); Connelly et al. (2012); Kruijer et al. (2014, 2017); Dauphas and Pourmand (2011); Wang et al. (2017)",
+          "what": {
+            "en": "The universe’s age and temperature, the young Sun’s brightness and the solar system’s first millions of years.",
+            "es": "La edad y la temperatura del universo, el brillo del Sol joven y los primeros millones de años del sistema solar.",
+            "pt": "A idade e a temperatura do universo, o brilho do Sol jovem e os primeiros milhões de anos do Sistema Solar.",
+            "fr": "L’âge et la température de l’Univers, l’éclat du jeune Soleil et les premiers millions d’années du Système solaire.",
+            "de": "Alter und Temperatur des Universums, die Helligkeit der jungen Sonne und die ersten Millionen Jahre des Sonnensystems."
+          },
+          "licence": "Cited as a source",
+          "url": "https://doi.org/10.1051/0004-6361/201833910"
+        },
+        {
+          "id": "era-interim",
+          "name": "ERA-Interim",
+          "by": "ECMWF (Dee et al. 2011); contains modified ECMWF ERA-Interim data",
+          "what": {
+            "en": "The temperature map and the animated winds.",
+            "es": "El mapa de temperatura y los vientos animados.",
+            "pt": "O mapa de temperatura e os ventos animados.",
+            "fr": "La carte des températures et les vents animés.",
+            "de": "Die Temperaturkarte und die animierten Winde."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-interim"
+        },
+        {
+          "id": "gpcp",
+          "name": "GPCP monthly precipitation",
+          "by": "Global Precipitation Climatology Project, NASA GSFC and NOAA (Adler et al. 2003; Huffman et al. 2009)",
+          "what": {
+            "en": "How much rain and snow falls in a year, for the rainfall map.",
+            "es": "Cuánta lluvia y nieve cae en un año, para el mapa de lluvias.",
+            "pt": "Quanta chuva e neve cai em um ano, para o mapa de chuvas.",
+            "fr": "La quantité de pluie et de neige tombée en un an, pour la carte des pluies.",
+            "de": "Wie viel Regen und Schnee im Jahr fällt, für die Niederschlagskarte."
+          },
+          "licence": "Public domain",
+          "url": "https://psl.noaa.gov/data/gridded/data.gpcp.html"
+        },
+        {
+          "id": "ersst",
+          "name": "ERSST v5",
+          "by": "NOAA NCEI (Huang et al. 2017)",
+          "what": {
+            "en": "The sea temperature map, averaged over 1991 to 2020.",
+            "es": "El mapa de temperatura del mar, con el promedio de 1991 a 2020.",
+            "pt": "O mapa de temperatura do mar, com a média de 1991 a 2020.",
+            "fr": "La carte de la température de la mer, en moyenne de 1991 à 2020.",
+            "de": "Die Karte der Meerestemperatur, gemittelt über 1991 bis 2020."
+          },
+          "licence": "Public domain",
+          "url": "https://www.ncei.noaa.gov/products/extended-reconstructed-sst"
+        },
+        {
+          "id": "koppen-geiger",
+          "name": "Köppen–Geiger climate map",
+          "by": "Kottek et al. (2006) and Rubel et al. (2017), University of Veterinary Medicine Vienna; colours after Beck et al. (2018); through the koppen-climate-lookup package",
+          "what": {
+            "en": "The climate zones map, and the vegetation zones drawn from it.",
+            "es": "El mapa de zonas climáticas y las zonas de vegetación que se derivan de él.",
+            "pt": "O mapa de zonas climáticas e as zonas de vegetação derivadas dele.",
+            "fr": "La carte des zones climatiques, et les zones de végétation qui en découlent.",
+            "de": "Die Karte der Klimazonen und die daraus abgeleiteten Vegetationszonen."
+          },
+          "licence": "Free to use with citation",
+          "url": "https://koeppen-geiger.vu-wien.ac.at/"
+        },
+        {
+          "id": "cru-cl",
+          "name": "CRU CL 2.0",
+          "by": "Climatic Research Unit, University of East Anglia (New et al. 2002)",
+          "what": {
+            "en": "The weather in each travel guide city, month by month: warmth, rain and wet days.",
+            "es": "El clima de cada ciudad de la guía de viaje, mes a mes: temperatura, lluvia y días de lluvia.",
+            "pt": "O clima de cada cidade do guia de viagem, mês a mês: temperatura, chuva e dias chuvosos.",
+            "fr": "La météo de chaque ville du guide de voyage, mois par mois : températures, pluie et jours de pluie.",
+            "de": "Das Wetter jeder Stadt im Reiseführer, Monat für Monat: Wärme, Regen und Regentage."
+          },
+          "licence": "Free to use with citation",
+          "url": "https://doi.org/10.3354/cr021001"
+        }
+      ]
+    },
+    {
+      "id": "space",
+      "items": [
+        {
+          "id": "nasa-trek",
+          "name": "NASA Solar System Treks",
+          "by": "NASA, JPL, GSFC, USGS, JHUAPL, the Carnegie Institution, Arizona State University, DLR and the Space Science Institute, from MESSENGER, Magellan, LRO, Viking, MGS, Dawn, Galileo, Voyager and Cassini",
+          "what": {
+            "en": "The maps of the Moon, Mercury, Venus, Mars, Vesta, Io, Europa, Ganymede and Enceladus, and sharper tiles as you zoom in.",
+            "es": "Los mapas de la Luna, Mercurio, Venus, Marte, Vesta, Ío, Europa, Ganímedes y Encélado, más nítidos al acercar el mapa.",
+            "pt": "Os mapas da Lua, Mercúrio, Vênus, Marte, Vesta, Io, Europa, Ganimedes e Encélado, mais nítidos ao aproximar o mapa.",
+            "fr": "Les cartes de la Lune, Mercure, Vénus, Mars, Vesta, Io, Europe, Ganymède et Encelade, plus nettes quand tu zoomes.",
+            "de": "Die Karten von Mond, Merkur, Venus, Mars, Vesta, Io, Europa, Ganymed und Enceladus, die beim Hineinzoomen schärfer werden."
+          },
+          "licence": "Public domain",
+          "url": "https://trek.nasa.gov/"
+        },
+        {
+          "id": "usgs-astrogeology",
+          "name": "USGS Astrogeology Science Center",
+          "by": "U.S. Geological Survey, with NASA, JPL-Caltech, DLR, the Space Science Institute, JHUAPL and SwRI, from Dawn, Galileo, Voyager, Cassini and New Horizons",
+          "what": {
+            "en": "The maps of Ceres, Callisto, Titan, Triton, Pluto and Charon.",
+            "es": "Los mapas de Ceres, Calisto, Titán, Tritón, Plutón y Caronte.",
+            "pt": "Os mapas de Ceres, Calisto, Titã, Tritão, Plutão e Caronte.",
+            "fr": "Les cartes de Cérès, Callisto, Titan, Triton, Pluton et Charon.",
+            "de": "Die Karten von Ceres, Kallisto, Titan, Triton, Pluto und Charon."
+          },
+          "licence": "Public domain",
+          "url": "https://astrogeology.usgs.gov/"
+        },
+        {
+          "id": "planetary-nomenclature",
+          "name": "Gazetteer of Planetary Nomenclature",
+          "by": "IAU Working Group for Planetary System Nomenclature, kept by the USGS Astrogeology Science Center",
+          "what": {
+            "en": "The names of craters, mountains and plains on other worlds, and whom or what they are named after.",
+            "es": "Los nombres de cráteres, montañas y llanuras de otros mundos, y en honor de quién o de qué se llaman así.",
+            "pt": "Os nomes de crateras, montanhas e planícies de outros mundos, e quem ou o que eles homenageiam.",
+            "fr": "Les noms des cratères, montagnes et plaines des autres mondes, et ce ou ceux qu’ils honorent.",
+            "de": "Die Namen von Kratern, Bergen und Ebenen auf anderen Welten und nach wem oder was sie benannt sind."
+          },
+          "licence": "Public domain",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        },
+        {
+          "id": "solar-system-scope",
+          "name": "Solar System Scope textures",
+          "by": "Solar System Scope, based on NASA mission images",
+          "what": {
+            "en": "The maps of Jupiter, Saturn, Uranus and Neptune, and Venus’s clouds.",
+            "es": "Los mapas de Júpiter, Saturno, Urano y Neptuno, y las nubes de Venus.",
+            "pt": "Os mapas de Júpiter, Saturno, Urano e Netuno, e as nuvens de Vênus.",
+            "fr": "Les cartes de Jupiter, Saturne, Uranus et Neptune, et les nuages de Vénus.",
+            "de": "Die Karten von Jupiter, Saturn, Uranus und Neptun und die Wolken der Venus."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://www.solarsystemscope.com/textures/"
+        },
+        {
+          "id": "lola-mola",
+          "name": "LRO LOLA and MGS MOLA heights",
+          "by": "NASA GSFC, through NASA SVS’s CGI Moon Kit and the PDS Geosciences Node",
+          "what": {
+            "en": "The heights of the Moon and Mars, for their 3D landscapes.",
+            "es": "Las alturas de la Luna y Marte, para sus paisajes en 3D.",
+            "pt": "As altitudes da Lua e de Marte, para suas paisagens em 3D.",
+            "fr": "Les altitudes de la Lune et de Mars, pour leurs paysages en 3D.",
+            "de": "Die Höhen von Mond und Mars für ihre 3D-Landschaften."
+          },
+          "licence": "Public domain",
+          "url": "https://pds-geosciences.wustl.edu/"
+        },
+        {
+          "id": "jpl-ssd",
+          "name": "JPL Solar System Dynamics",
+          "by": "NASA Jet Propulsion Laboratory: approximate planet positions (E. M. Standish) and the Small-Body Database; NASA’s planetary fact sheets",
+          "what": {
+            "en": "Where the planets, dwarf planets and Halley’s Comet are on any date, and the worlds’ facts.",
+            "es": "Dónde están los planetas, los planetas enanos y el cometa Halley en cualquier fecha, y los datos de cada mundo.",
+            "pt": "Onde estão os planetas, os planetas anões e o cometa Halley em qualquer data, e os dados de cada mundo.",
+            "fr": "La position des planètes, des planètes naines et de la comète de Halley à toute date, et les données de chaque monde.",
+            "de": "Wo Planeten, Zwergplaneten und der Halleysche Komet an jedem Datum stehen, und die Daten jeder Welt."
+          },
+          "licence": "Public domain",
+          "url": "https://ssd.jpl.nasa.gov/"
+        },
+        {
+          "id": "d3-celestial",
+          "name": "d3-celestial",
+          "by": "Olaf Frohn; stars from XHIP (Anderson & Francis 2012) with names after the IAU Working Group on Star Names, Kostjuk (2002) and Smith (1996); borders from Davenhall & Leggett (1989, VizieR); Messier places from SEDS; translations from Stellarium’s sky cultures",
+          "what": {
+            "en": "The 5,000 stars, the constellations’ figures, borders and names, and where the Messier objects are.",
+            "es": "Las 5000 estrellas, las figuras, los límites y los nombres de las constelaciones, y dónde están los objetos Messier.",
+            "pt": "As 5.000 estrelas, as figuras, os limites e os nomes das constelações, e onde ficam os objetos Messier.",
+            "fr": "Les 5 000 étoiles, les figures, limites et noms des constellations, et la position des objets de Messier.",
+            "de": "Die 5.000 Sterne, Figuren, Grenzen und Namen der Sternbilder und wo die Messier-Objekte stehen."
+          },
+          "licence": "BSD 3-Clause",
+          "licenceUrl": "https://spdx.org/licenses/BSD-3-Clause.html",
+          "url": "https://github.com/ofrohn/d3-celestial"
+        },
+        {
+          "id": "eso-milky-way",
+          "name": "ESO pictures of the Milky Way",
+          "by": "ESO/S. Brunier (eso0932a); NASA/JPL-Caltech/ESO/R. Hurt (eso1339g)",
+          "what": {
+            "en": "The Milky Way across the sky, and the artist’s view of our galaxy from above.",
+            "es": "La Vía Láctea a lo largo del cielo y la ilustración de nuestra galaxia vista desde arriba.",
+            "pt": "A Via Láctea no céu e a ilustração da nossa galáxia vista de cima.",
+            "fr": "La Voie lactée dans le ciel, et la vue d’artiste de notre galaxie vue de dessus.",
+            "de": "Die Milchstraße am Himmel und die künstlerische Darstellung unserer Galaxie von oben."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://www.eso.org/public/images/eso0932a/"
+        },
+        {
+          "id": "johnson-2019",
+          "name": "Populating the periodic table",
+          "by": "Jennifer A. Johnson (2019), Science 363",
+          "what": {
+            "en": "Where in the universe each element was made: the Big Bang, stars or merging neutron stars.",
+            "es": "Dónde se formó cada elemento en el universo: el Big Bang, las estrellas o la fusión de estrellas de neutrones.",
+            "pt": "Onde cada elemento foi formado no universo: o Big Bang, as estrelas ou a fusão de estrelas de nêutrons.",
+            "fr": "Où chaque élément est né dans l’Univers : le Big Bang, les étoiles ou la fusion d’étoiles à neutrons.",
+            "de": "Wo im Universum jedes Element entstand: im Urknall, in Sternen oder beim Verschmelzen von Neutronensternen."
+          },
+          "licence": "Cited as a source",
+          "url": "https://doi.org/10.1126/science.aau9540"
+        },
+        {
+          "id": "astronomical-almanac",
+          "name": "The Astronomical Almanac",
+          "by": "US Naval Observatory and HM Nautical Almanac Office; with Lieske (1977) and Mallama & Hilton (2018)",
+          "what": {
+            "en": "The formulas for the Moon’s place and phase, the sky’s slow drift and the planets’ brightness.",
+            "es": "Las fórmulas de la posición y la fase de la Luna, el lento giro del cielo y el brillo de los planetas.",
+            "pt": "As fórmulas da posição e da fase da Lua, do lento giro do céu e do brilho dos planetas.",
+            "fr": "Les formules de la position et de la phase de la Lune, de la lente dérive du ciel et de l’éclat des planètes.",
+            "de": "Die Formeln für Ort und Phase des Mondes, die langsame Drift des Himmels und die Helligkeit der Planeten."
+          },
+          "licence": "Cited as a source",
+          "url": "https://en.wikipedia.org/wiki/Astronomical_Almanac"
+        }
+      ]
+    },
+    {
+      "id": "history",
+      "items": [
+        {
+          "id": "historical-basemaps",
+          "name": "historical-basemaps",
+          "by": "André Ourednik and contributors (part from ThinkQuest team C006628)",
+          "what": {
+            "en": "The borders of the world through time, from 123,000 BC to 2010.",
+            "es": "Las fronteras del mundo a lo largo del tiempo, del 123 000 a. C. a 2010.",
+            "pt": "As fronteiras do mundo ao longo do tempo, de 123.000 a.C. a 2010.",
+            "fr": "Les frontières du monde à travers le temps, de 123 000 av. J.-C. à 2010.",
+            "de": "Die Grenzen der Welt im Lauf der Zeit, von 123.000 v. Chr. bis 2010."
+          },
+          "licence": "GPL-3.0",
+          "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+          "url": "https://github.com/aourednik/historical-basemaps"
+        },
+        {
+          "id": "world-heritage-list",
+          "name": "World Heritage List",
+          "by": "UNESCO World Heritage Centre, read through Wikipedia and Wikidata",
+          "what": {
+            "en": "The World Heritage sites, the years they were listed, those in danger, and links to their pages.",
+            "es": "Los sitios del Patrimonio Mundial, el año de su inscripción, los que están en peligro y enlaces a sus páginas.",
+            "pt": "Os sítios do Patrimônio Mundial, o ano de sua inscrição, os que estão em perigo e links para suas páginas.",
+            "fr": "Les sites du patrimoine mondial, leur année d’inscription, ceux en péril et les liens vers leurs pages.",
+            "de": "Die Welterbestätten, das Jahr ihrer Aufnahme, die bedrohten Stätten und Links zu ihren Seiten."
+          },
+          "licence": "Cited as a source",
+          "url": "https://whc.unesco.org/en/list/"
+        },
+        {
+          "id": "slavevoyages",
+          "name": "SlaveVoyages",
+          "by": "Trans-Atlantic Slave Trade Database, as Wikipedia reports it",
+          "what": {
+            "en": "The numbers of the Atlantic slave trade in the Journeys and trade routes stories.",
+            "es": "Las cifras de la trata atlántica de esclavos en las historias de Viajes y rutas comerciales.",
+            "pt": "Os números do tráfico atlântico de escravizados nas histórias de Viagens e rotas comerciais.",
+            "fr": "Les chiffres de la traite atlantique dans les histoires de Voyages et routes commerciales.",
+            "de": "Die Zahlen des transatlantischen Sklavenhandels in den Geschichten von Reisen und Handelswege."
+          },
+          "licence": "Cited as a source",
+          "url": "https://www.slavevoyages.org/"
+        },
+        {
+          "id": "card-sources",
+          "name": "Sources on each card",
+          "by": "Museums, universities, encyclopaedias, park services, tourism boards, space agencies (NASA, ESA, CNSA, ISRO, JAXA), the WHO, UNAIDS, NOAA, FAO, WHOI, MBARI, the Schmidt Ocean Institute, InterRidge, the Earth Impact Database and scientific papers",
+          "what": {
+            "en": "The stories, legacies, migrations, wonders and facts written for the app; each lists its own sources.",
+            "es": "Las historias, legados, migraciones, maravillas y datos escritos para la app; cada uno indica sus fuentes.",
+            "pt": "As histórias, legados, migrações, maravilhas e fatos escritos para o app; cada um traz suas próprias fontes.",
+            "fr": "Les histoires, héritages, migrations, merveilles et faits écrits pour l’appli, chacun avec ses propres sources.",
+            "de": "Die für die App geschriebenen Geschichten, Vermächtnisse, Wanderungen, Wunder und Fakten, jeweils mit eigenen Quellen."
+          },
+          "licence": "Cited as a source",
+          "url": "https://github.com/divaor/globe"
+        }
+      ]
+    },
+    {
+      "id": "words",
+      "items": [
+        {
+          "id": "wikidata",
+          "name": "Wikidata",
+          "by": "Wikidata’s volunteers; asked through QLever (University of Freiburg)",
+          "what": {
+            "en": "Names in many languages, and facts on people, museums, buildings, parks, shipwrecks, animals and plants.",
+            "es": "Nombres en muchos idiomas y datos de personas, museos, edificios, parques, naufragios, animales y plantas.",
+            "pt": "Nomes em muitos idiomas e dados sobre pessoas, museus, edifícios, parques, naufrágios, animais e plantas.",
+            "fr": "Des noms dans de nombreuses langues, et des données sur les personnes, musées, bâtiments, parcs, épaves, animaux et plantes.",
+            "de": "Namen in vielen Sprachen und Daten zu Menschen, Museen, Gebäuden, Parks, Schiffswracks, Tieren und Pflanzen."
+          },
+          "licence": "CC0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "url": "https://www.wikidata.org/"
+        },
+        {
+          "id": "unicode-cldr",
+          "name": "Unicode CLDR",
+          "by": "Unicode Consortium",
+          "what": {
+            "en": "Names of languages, currencies and countries, and each country’s first day of the week, clock and paper size.",
+            "es": "Nombres de idiomas, monedas y países, y el primer día de la semana, el formato de hora y el tamaño de papel de cada país.",
+            "pt": "Nomes de idiomas, moedas e países, e o primeiro dia da semana, o formato de hora e o tamanho de papel de cada país.",
+            "fr": "Les noms des langues, monnaies et pays, et le premier jour de la semaine, le format horaire et le format de papier de chaque pays.",
+            "de": "Namen von Sprachen, Währungen und Ländern sowie erster Wochentag, Uhrzeitformat und Papierformat jedes Landes."
+          },
+          "licence": "Unicode License v3",
+          "licenceUrl": "https://www.unicode.org/license.txt",
+          "url": "https://cldr.unicode.org/"
+        },
+        {
+          "id": "wikisource",
+          "name": "Wikisource",
+          "by": "Wikisource’s volunteers",
+          "what": {
+            "en": "Quotes from old texts in their own languages.",
+            "es": "Citas de textos antiguos en su idioma original.",
+            "pt": "Citações de textos antigos em seu idioma original.",
+            "fr": "Des citations de textes anciens dans leur langue d’origine.",
+            "de": "Zitate aus alten Texten in ihrer Originalsprache."
+          },
+          "licence": "Public domain and CC BY-SA 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "https://wikisource.org/"
+        },
+        {
+          "id": "language-censuses",
+          "name": "National censuses and surveys",
+          "by": "IDESCAT, IGE, ISTAT, INEGI, INE (Guatemala, Bolivia), INEI (Peru) and others, many through citypopulation.de",
+          "what": {
+            "en": "Which languages people speak at home in each region.",
+            "es": "Qué idiomas habla la gente en casa en cada región.",
+            "pt": "Quais idiomas as pessoas falam em casa em cada região.",
+            "fr": "Les langues parlées à la maison dans chaque région.",
+            "de": "Welche Sprachen die Menschen in jeder Region zu Hause sprechen."
+          },
+          "licence": "Cited as a source",
+          "url": "https://www.citypopulation.de/"
+        }
+      ]
+    },
+    {
+      "id": "pictures",
+      "items": [
+        {
+          "id": "wikipedia",
+          "name": "Wikipedia",
+          "by": "Wikipedia’s volunteers",
+          "what": {
+            "en": "Card summaries and pictures, each day’s events and the articles behind the stories; each picture’s author and licence show on its card.",
+            "es": "Resúmenes e imágenes de las fichas, los hechos de cada día y los artículos detrás de las historias; cada imagen muestra su autor y licencia.",
+            "pt": "Resumos e imagens das fichas, os fatos de cada dia e os artigos por trás das histórias; cada imagem mostra seu autor e sua licença.",
+            "fr": "Les résumés et images des fiches, les événements du jour et les articles derrière les histoires ; chaque image indique auteur et licence.",
+            "de": "Texte und Bilder der Steckbriefe, die Ereignisse jedes Tages und die Artikel hinter den Geschichten; jedes Bild nennt Urheber und Lizenz."
+          },
+          "licence": "CC BY-SA 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "https://www.wikipedia.org/"
+        },
+        {
+          "id": "wikimedia-commons",
+          "name": "Wikimedia Commons",
+          "by": "The photographers, artists and recordists who share their work there",
+          "what": {
+            "en": "Pictures of art, buildings, people, animals and plants, and animal calls and music clips, each with its author and licence.",
+            "es": "Imágenes de arte, edificios, personas, animales y plantas, y sonidos de animales y fragmentos musicales, cada uno con su autor y licencia.",
+            "pt": "Imagens de arte, edifícios, pessoas, animais e plantas, e sons de animais e trechos de música, cada um com seu autor e licença.",
+            "fr": "Des images d’œuvres, de bâtiments, de gens, d’animaux et de plantes, des cris d’animaux et des extraits musicaux, avec auteur et licence.",
+            "de": "Bilder von Kunst, Gebäuden, Menschen, Tieren und Pflanzen sowie Tierstimmen und Musikausschnitte, jeweils mit Urheber und Lizenz."
+          },
+          "licence": "Each file’s own licence",
+          "licenceUrl": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+          "url": "https://commons.wikimedia.org/"
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "items": [
+        {
+          "id": "usgs-earthquake-feeds",
+          "name": "USGS earthquake feeds",
+          "by": "U.S. Geological Survey",
+          "what": {
+            "en": "The earthquakes of the past day, week or month, as they happen.",
+            "es": "Los sismos del último día, semana o mes, a medida que ocurren.",
+            "pt": "Os terremotos do último dia, semana ou mês, à medida que acontecem.",
+            "fr": "Les séismes du dernier jour, de la dernière semaine ou du dernier mois, en temps réel.",
+            "de": "Die Erdbeben des letzten Tages, der letzten Woche oder des letzten Monats, sobald sie geschehen."
+          },
+          "licence": "Public domain",
+          "url": "https://earthquake.usgs.gov/earthquakes/feed/"
+        },
+        {
+          "id": "open-meteo",
+          "name": "Open-Meteo",
+          "by": "Open-Meteo.com",
+          "what": {
+            "en": "The temperature, sky and wind right now in about 120 capitals and big cities.",
+            "es": "La temperatura, el cielo y el viento en este momento en unas 120 capitales y grandes ciudades.",
+            "pt": "A temperatura, o céu e o vento agora em cerca de 120 capitais e grandes cidades.",
+            "fr": "La température, le ciel et le vent en ce moment dans environ 120 capitales et grandes villes.",
+            "de": "Temperatur, Himmel und Wind in diesem Moment in etwa 120 Hauptstädten und Großstädten."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://open-meteo.com/"
+        },
+        {
+          "id": "wheretheiss",
+          "name": "Where the ISS at?",
+          "by": "wheretheiss.at",
+          "what": {
+            "en": "Where the International Space Station is right now.",
+            "es": "Dónde está ahora mismo la Estación Espacial Internacional.",
+            "pt": "Onde está a Estação Espacial Internacional neste momento.",
+            "fr": "Où se trouve la Station spatiale internationale en ce moment.",
+            "de": "Wo die Internationale Raumstation gerade ist."
+          },
+          "licence": "Free to use",
+          "url": "https://wheretheiss.at/"
+        },
+        {
+          "id": "inaturalist",
+          "name": "iNaturalist",
+          "by": "iNaturalist and the people who share their sightings",
+          "what": {
+            "en": "When each animal is seen and each plant flowers through the year, and what is seen most near a place, with photos.",
+            "es": "Cuándo se ve cada animal y florece cada planta a lo largo del año, y qué se ve más cerca de un lugar, con fotos.",
+            "pt": "Quando cada animal é visto e cada planta floresce ao longo do ano, e o que é mais visto perto de um lugar, com fotos.",
+            "fr": "Quand chaque animal est observé et chaque plante fleurit dans l’année, et ce qu’on voit le plus près d’un lieu, en photos.",
+            "de": "Wann jedes Tier gesichtet wird und jede Pflanze im Jahr blüht und was an einem Ort am häufigsten gesichtet wird, mit Fotos."
+          },
+          "licence": "Each photo’s own licence",
+          "licenceUrl": "https://www.inaturalist.org/pages/terms",
+          "url": "https://www.inaturalist.org/"
+        },
+        {
+          "id": "obis",
+          "name": "OBIS",
+          "by": "Ocean Biodiversity Information System (UNESCO’s IOC)",
+          "what": {
+            "en": "The sea life recorded near each dive.",
+            "es": "La vida marina registrada cerca de cada inmersión.",
+            "pt": "A vida marinha registrada perto de cada mergulho.",
+            "fr": "La vie marine observée près de chaque plongée.",
+            "de": "Das Meeresleben, das in der Nähe jedes Tauchgangs erfasst wurde."
+          },
+          "licence": "CC0 and CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://obis.org/"
+        },
+        {
+          "id": "macrostrat",
+          "name": "Macrostrat",
+          "by": "Macrostrat (University of Wisconsin–Madison) and its partners",
+          "what": {
+            "en": "The rocks under your feet wherever you dig down.",
+            "es": "Las rocas bajo tus pies dondequiera que caves.",
+            "pt": "As rochas sob seus pés onde quer que você cave.",
+            "fr": "Les roches sous tes pieds, là où tu creuses.",
+            "de": "Das Gestein unter deinen Füßen, wo immer du gräbst."
+          },
+          "licence": "CC BY 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "url": "https://macrostrat.org/"
+        },
+        {
+          "id": "wikivoyage",
+          "name": "Wikivoyage",
+          "by": "Wikivoyage’s volunteers",
+          "what": {
+            "en": "What to eat in each travel guide city, credited where it is shown.",
+            "es": "Qué comer en cada ciudad de la guía de viaje, con su crédito donde aparece.",
+            "pt": "O que comer em cada cidade do guia de viagem, creditado onde aparece.",
+            "fr": "Que manger dans chaque ville du guide de voyage, crédité là où il s’affiche.",
+            "de": "Was man in jeder Stadt des Reiseführers isst, mit Quellenangabe, wo es erscheint."
+          },
+          "licence": "CC BY-SA 4.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "https://www.wikivoyage.org/"
+        }
+      ]
+    },
+    {
+      "id": "code",
+      "items": [
+        {
+          "id": "d3",
+          "name": "D3",
+          "by": "Mike Bostock, Jason Davies, Philippe Rivière and contributors (d3-geo, d3-geo-projection, d3-geo-polygon and other modules)",
+          "what": {
+            "en": "Draws the globe in its 14 projections and works out shapes, areas and distances.",
+            "es": "Dibuja el globo en sus 14 proyecciones y calcula formas, áreas y distancias.",
+            "pt": "Desenha o globo em suas 14 projeções e calcula formas, áreas e distâncias.",
+            "fr": "Dessine le globe dans ses 14 projections et calcule formes, surfaces et distances.",
+            "de": "Zeichnet den Globus in seinen 14 Projektionen und berechnet Formen, Flächen und Entfernungen."
+          },
+          "licence": "ISC",
+          "licenceUrl": "https://spdx.org/licenses/ISC.html",
+          "url": "https://d3js.org/"
+        },
+        {
+          "id": "topojson-client",
+          "name": "topojson-client",
+          "by": "Mike Bostock",
+          "what": {
+            "en": "Unpacks the app’s compact map files into shapes.",
+            "es": "Descomprime los archivos de mapas compactos de la app en formas.",
+            "pt": "Descompacta os arquivos de mapa compactos do app em formas.",
+            "fr": "Décompresse les fichiers de cartes compacts de l’appli en formes.",
+            "de": "Entpackt die kompakten Kartendateien der App in Formen."
+          },
+          "licence": "ISC",
+          "licenceUrl": "https://spdx.org/licenses/ISC.html",
+          "url": "https://github.com/topojson/topojson-client"
+        },
+        {
+          "id": "lucide",
+          "name": "Lucide",
+          "by": "Lucide contributors; some icons from Feather (Cole Bemis, MIT)",
+          "what": {
+            "en": "The icons on the buttons and menus.",
+            "es": "Los íconos de los botones y menús.",
+            "pt": "Os ícones dos botões e menus.",
+            "fr": "Les icônes des boutons et des menus.",
+            "de": "Die Symbole auf Schaltflächen und in Menüs."
+          },
+          "licence": "ISC",
+          "licenceUrl": "https://spdx.org/licenses/ISC.html",
+          "url": "https://lucide.dev"
+        },
+        {
+          "id": "flag-icons",
+          "name": "flag-icons",
+          "by": "Panayiotis Lipiridis and contributors",
+          "what": {
+            "en": "The countries’ flags.",
+            "es": "Las banderas de los países.",
+            "pt": "As bandeiras dos países.",
+            "fr": "Les drapeaux des pays.",
+            "de": "Die Flaggen der Länder."
+          },
+          "licence": "MIT",
+          "licenceUrl": "https://spdx.org/licenses/MIT.html",
+          "url": "https://github.com/lipis/flag-icons"
+        },
+        {
+          "id": "capacitor",
+          "name": "Capacitor",
+          "by": "Ionic and OutSystems (core, Android, iOS and plugins)",
+          "what": {
+            "en": "Makes the Android and iPhone apps: sharing, reminders, vibration, location, files and the start screen.",
+            "es": "Hace posibles las apps para Android y iPhone: compartir, recordatorios, vibración, ubicación, archivos y la pantalla de inicio.",
+            "pt": "Torna possíveis os apps para Android e iPhone: compartilhar, lembretes, vibração, localização, arquivos e a tela inicial.",
+            "fr": "Fait fonctionner les applis Android et iPhone : partage, rappels, vibrations, position, fichiers et écran de démarrage.",
+            "de": "Macht die Apps für Android und iPhone möglich: Teilen, Erinnerungen, Vibration, Standort, Dateien und Startbildschirm."
+          },
+          "licence": "MIT",
+          "licenceUrl": "https://spdx.org/licenses/MIT.html",
+          "url": "https://capacitorjs.com"
+        },
+        {
+          "id": "capacitor-text-to-speech",
+          "name": "Capacitor Text to Speech",
+          "by": "Robin Genz (Capacitor Community)",
+          "what": {
+            "en": "Reads the stories aloud with the phone’s own voices in the apps.",
+            "es": "Lee las historias en voz alta con las voces del propio teléfono en las apps.",
+            "pt": "Lê as histórias em voz alta com as vozes do próprio celular nos apps.",
+            "fr": "Lit les histoires à voix haute avec les voix du téléphone dans les applis.",
+            "de": "Liest in den Apps die Geschichten mit den eigenen Stimmen des Telefons vor."
+          },
+          "licence": "MIT",
+          "licenceUrl": "https://spdx.org/licenses/MIT.html",
+          "url": "https://github.com/capacitor-community/text-to-speech"
+        },
+        {
+          "id": "workbox",
+          "name": "Workbox",
+          "by": "Google, set up by Vite PWA (Anthony Fu and contributors)",
+          "what": {
+            "en": "Keeps the web app working offline and up to date.",
+            "es": "Hace que la app web funcione sin conexión y se mantenga al día.",
+            "pt": "Mantém o app da web funcionando sem conexão e atualizado.",
+            "fr": "Permet à l’appli web de marcher hors ligne et de rester à jour.",
+            "de": "Hält die Web-App offline nutzbar und aktuell."
+          },
+          "licence": "MIT",
+          "licenceUrl": "https://spdx.org/licenses/MIT.html",
+          "url": "https://github.com/GoogleChrome/workbox"
+        },
+        {
+          "id": "noto-fonts",
+          "name": "Noto fonts",
+          "by": "The Noto Project Authors (Google)",
+          "what": {
+            "en": "The letters of the world’s writing systems in the script samples.",
+            "es": "Las letras de los sistemas de escritura del mundo en las muestras de escritura.",
+            "pt": "As letras dos sistemas de escrita do mundo nas amostras de escrita.",
+            "fr": "Les lettres des écritures du monde dans les exemples d’écriture.",
+            "de": "Die Zeichen der Schriftsysteme der Welt in den Schriftbeispielen."
+          },
+          "licence": "OFL 1.1",
+          "licenceUrl": "https://openfontlicense.org/",
+          "url": "https://notofonts.github.io/"
+        },
+        {
+          "id": "jigmo",
+          "name": "Jigmo",
+          "by": "Kamichi Koichi",
+          "what": {
+            "en": "Rare Chinese characters, such as those of Vietnamese chữ Nôm.",
+            "es": "Caracteres chinos poco comunes, como los del chữ Nôm vietnamita.",
+            "pt": "Caracteres chineses raros, como os do chữ Nôm vietnamita.",
+            "fr": "Des caractères chinois rares, comme ceux du chữ nôm vietnamien.",
+            "de": "Seltene chinesische Schriftzeichen, etwa die des vietnamesischen Chữ Nôm."
+          },
+          "licence": "CC0",
+          "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "url": "https://kamichikoichi.github.io/jigmo/"
+        }
+      ]
+    }
+  ]
+}

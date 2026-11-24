@@ -300,8 +300,8 @@ export function screensaverPanel(app: App, start: (id: string) => void, toast: (
     root.append(
       h('h3', { class: 'sec-title' }, L('Settings', 'Ajustes')),
       h('div', { class: 'field' }, h('div', { class: 'field-label' }, L('Seconds on each view: ', 'Segundos en cada vista: '), h('span', { class: 'ss-secs' }, String(amb.secs))),
-        slider(amb.secs, 15, 120, 5, (v) => { amb.secs = v; app.save(); const l = root.querySelector('.ss-secs'); if (l) l.textContent = String(v); })),
-      h('div', { class: 'field' }, h('div', { class: 'field-label' }, L('Rotation speed', 'Velocidad de giro')), slider(amb.speed, 0.25, 4, 0.25, (v) => { amb.speed = v; app.save(); })),
+        slider(amb.secs, 15, 120, 5, (v) => { amb.secs = v; app.save(); const l = root.querySelector('.ss-secs'); if (l) l.textContent = String(v); }, L('Seconds on each view: ', 'Segundos en cada vista: '))),
+      h('div', { class: 'field' }, h('div', { class: 'field-label' }, L('Rotation speed', 'Velocidad de giro')), slider(amb.speed, 0.25, 4, 0.25, (v) => { amb.speed = v; app.save(); }, L('Rotation speed', 'Velocidad de giro'))),
       ambientNamesField(app),
       h('div', { class: 'toggles' },
         ...(canSpeak() ? [toggle(amb.narrate, (v) => { amb.narrate = v; app.save(); }, L('Read each view aloud', 'Leer cada vista en voz alta'))] : []),

@@ -3,6 +3,7 @@
 // Phenology annotation, term 12, value 13). Used by the animal and plant finders (v0.30.0, v0.31.0) and the plant card.
 import { h } from '../ui/dom';
 import { lang, fmtCompact, L, tx, txs, monthName as calMonth, fileLang } from '../app/i18n';
+import { outside } from '../data/outside';
 
 const MONTHS = { en: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'], es: ['E', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'] };
 const MONTH_NAMES = { en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'] };
@@ -10,7 +11,7 @@ const MONTH_NAMES = { en: ['January', 'February', 'March', 'April', 'May', 'June
 /** iNaturalist's id for a species (for its months), by its Latin name. */
 const inatIds = new Map<string, Promise<number | null>>();
 export function inatId(sci: string): Promise<number | null> {
-  if (!inatIds.has(sci)) inatIds.set(sci, fetch(`https://api.inaturalist.org/v1/taxa?q=${encodeURIComponent(sci)}&rank=species,subspecies&per_page=5`)
+  if (!inatIds.has(sci)) inatIds.set(sci, outside(`https://api.inaturalist.org/v1/taxa?q=${encodeURIComponent(sci)}&rank=species,subspecies&per_page=5`)
     .then((r) => (r.ok ? r.json() : null))
     .then((j: { results?: { id: number; name: string }[] } | null) => j?.results?.find((t) => t.name.toLowerCase() === sci.toLowerCase())?.id ?? j?.results?.[0]?.id ?? null)
     .catch(() => { inatIds.delete(sci); return null; }));
@@ -23,7 +24,7 @@ export async function months(sci: string, at?: [number, number], km = 60, flower
   if (!id) return null;
   const where = at ? `&lat=${at[1]}&lng=${at[0]}&radius=${km}` : '';
   const flower = flowering ? '&term_id=12&term_value_id=13' : '';
-  const r = await fetch(`https://api.inaturalist.org/v1/observations/histogram?taxon_id=${id}&date_field=observed&interval=month_of_year&quality_grade=research${where}${flower}`).catch(() => null);
+  const r = await outside(`https://api.inaturalist.org/v1/observations/histogram?taxon_id=${id}&date_field=observed&interval=month_of_year&quality_grade=research${where}${flower}`).catch(() => null);
   if (!r?.ok) return null;
   const j = (await r.json()) as { results?: { month_of_year?: Record<string, number> } };
   const m = j.results?.month_of_year;

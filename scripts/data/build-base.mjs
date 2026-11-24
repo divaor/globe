@@ -10,7 +10,9 @@
 //   countries-110m.json / -50m.json / -10m.json   TopoJSON, object "countries", feature id = country id
 //   countries-meta.json                             per-country properties keyed by the same id
 //   cities.json                                     populated places (compact rows)
-//   admin1.json                                     states / provinces (lazy-loaded when zoomed in)
+//   admin1.json                                     states / provinces (lazy-loaded when zoomed in); the countries
+//                                                   whose divisions changed since Natural Earth's data have OCHA's
+//                                                   (v0.47.0, admin1-updates.mjs: --download fetches them too)
 //   land-110m.json / land-50m.json                  land polygons (for clipping)
 //   layers/physical-50m.json, physical-10m.json     lakes, rivers, glaciers, ice shelves
 //   layers/landforms.json, peaks.json, marine.json  ranges, deserts, plateaus... peaks, sea labels
@@ -22,6 +24,8 @@ import { fileURLToPath } from 'node:url';
 import mapshaper from 'mapshaper';
 import { rewindTopology } from './winding.mjs';
 import { fixPlaces } from './ne-fixes.mjs';
+import { feature } from 'topojson-client';
+import { downloadUpdates, updateProvinces, provinceFinder, UPDATES } from './admin1-updates.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const CACHE = path.join(ROOT, '.cache/ne');
@@ -60,6 +64,8 @@ async function download() {
     await fs.writeFile(file, Buffer.from(await res.arrayBuffer()));
     console.log('ok');
   }
+  // The states and provinces of countries whose divisions changed since (v0.47.0): OCHA's datasets, from HDX.
+  await downloadUpdates();
 }
 
 const run = (cmd) => mapshaper.runCommands(cmd);
@@ -161,14 +167,16 @@ async function wholeWesternSahara(file, key, mine) {
 
 /**
  * Western Sahara whole in a built TopoJSON file (its `object`), after simplification: the shapes are cut as they will
- * be drawn, and no other shape changes (simplifying again would move a few points everywhere).
+ * be drawn, and no other shape changes (simplifying again would move a few points everywhere). `edit` changes the
+ * features first (the states layer's updated countries).
  */
-async function westernSaharaIn(out, object, q, key, mine) {
+async function westernSaharaIn(out, object, q, key, mine, edit = null) {
   const tmp = path.join(PREP, `${object}-${path.basename(out, '.json')}.geojson`);
   await run(`-i "${out}" -o "${tmp}" format=geojson`);
   // mapshaper writes a TopoJSON feature id as the GeoJSON feature's id; the fix and the rebuild read it as a field.
   const fc = await readJSON(tmp);
   if (key === 'id') fc.features = fc.features.map((f) => ({ type: 'Feature', geometry: f.geometry, properties: { ...(f.properties ?? {}), id: f.id ?? f.properties?.id } }));
+  if (edit) fc.features = await edit(fc.features);
   await fs.writeFile(tmp, JSON.stringify(fc));
   await wholeWesternSahara(tmp, key, mine);
   await run(`-i "${tmp}" name=${object} -o "${out}" format=topojson quantization=${q}${key === 'id' ? ' id-field=id' : ''}`);
@@ -227,6 +235,10 @@ const RENAMED = { 'Nur-Sultan': ['Astana', 'Astaná'] };
 async function cities() {
   await countryIds();
   const fc = fixPlaces(await readJSON(src('ne_10m_populated_places')));
+  // In the countries whose provinces were updated (v0.47.0), a city's state is the one it lies in, by the dataset's own
+  // detailed lines (else by the built shapes: admin1-updates.mjs).
+  const topo = await readJSON(path.join(BASE, 'admin1.json'));
+  const provinceOf = provinceFinder(feature(topo, topo.objects.admin1).features);
   const rows = [];
   for (const f of fc.features) {
     const p = f.properties;
@@ -241,9 +253,10 @@ async function cities() {
     if (re) p.NAME_ES = re[1];
     // Western Sahara's towns are its own (v0.43.6), in its one region, as on the map.
     const ws = inWesternSahara(countryId(p.ADM0_A3), lon, lat);
+    const a1 = ws ? 'Western Sahara' : UPDATES[countryId(p.ADM0_A3)] ? provinceOf(countryId(p.ADM0_A3), lon, lat) : p.ADM1NAME;
     rows.push([round(lon), round(lat), name, p.NAME_ES && p.NAME_ES !== name ? p.NAME_ES : 0,
       p.POP_MAX || 0, Math.round((p.MIN_ZOOM || 10) * 10) / 10, cap, flags, ws ? 'ESH' : countryId(p.ADM0_A3),
-      p.TIMEZONE || 0, ws ? 'Western Sahara' : p.ADM1NAME || 0]);
+      p.TIMEZONE || 0, a1 || 0]);
   }
   // Most important first: lower min-zoom, then capitals, then population.
   rows.sort((a, b) => a[5] - b[5] || b[6] - a[6] || b[4] - a[4]);
@@ -264,8 +277,10 @@ async function admin1() {
   });
   const out = path.join(BASE, 'admin1.json');
   await run(`-i "${file}" name=admin1 -simplify 6% keep-shapes -o "${out}" format=topojson quantization=1e5`);
-  // Morocco's regions end at the boundary; Western Sahara is one region, the whole territory (v0.43.6).
-  await westernSaharaIn(out, 'admin1', '1e5', 'a', (p) => p.a === 'ESH');
+  // Morocco's regions end at the boundary; Western Sahara is one region, the whole territory (v0.43.6). Before that,
+  // the countries whose divisions changed since Natural Earth's data get their current ones (v0.47.0), cut to the
+  // outline their Natural Earth provinces have here, after simplification: no other shape moves.
+  await westernSaharaIn(out, 'admin1', '1e5', 'a', (p) => p.a === 'ESH', updateProvinces);
 }
 
 const named = (p) => {
@@ -341,7 +356,8 @@ if (process.argv.includes('--download')) {
   await fs.mkdir(BASE, { recursive: true });
   await fs.mkdir(LAYERS, { recursive: true });
   const only = process.argv.slice(2);
-  const steps = { countries, cities, admin1, physical, landforms, timezones, land };
+  // admin1 before cities: a city's state in an updated country is looked up in the built states.
+  const steps = { countries, admin1, cities, physical, landforms, timezones, land };
   for (const [name, fn] of Object.entries(steps)) {
     if (only.length && !only.includes(name)) continue;
     console.log(`== ${name}`);

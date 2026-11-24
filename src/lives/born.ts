@@ -5,6 +5,7 @@
 import { loadJSON } from '../data/store';
 import { lang, L, tx, nm as nameIn } from '../app/i18n';
 import type { InfoRow } from '../layers/types';
+import { outside } from '../data/outside';
 
 export type CardFn = (icon: string, title: string, sub: string, rows: InfoRow[], links?: { label: string; href?: string; onClick?: () => void }[], notes?: string[], image?: Promise<string | null>, extra?: HTMLElement | null) => void;
 
@@ -73,7 +74,7 @@ const pictures = new Map<string, Promise<string | null>>();
 /** A person's portrait: the picture Wikidata gives (P18), from Wikimedia Commons, asked live. */
 export function portrait(qid: string, width = 480): Promise<string | null> {
   if (!pictures.has(qid)) {
-    pictures.set(qid, fetch(`https://www.wikidata.org/w/api.php?action=wbgetclaims&format=json&origin=*&property=P18&entity=${qid}`)
+    pictures.set(qid, outside(`https://www.wikidata.org/w/api.php?action=wbgetclaims&format=json&origin=*&property=P18&entity=${qid}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((j: { claims?: { P18?: { mainsnak?: { datavalue?: { value?: string } } }[] } } | null) => j?.claims?.P18?.[0]?.mainsnak?.datavalue?.value ?? null)
       .catch(() => null));

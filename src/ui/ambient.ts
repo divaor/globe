@@ -10,6 +10,7 @@ import { playlist, itemTitle, itemWords, type PlayItem, type Playlist } from './
 import { canSpeak, speak, stopSpeaking } from './narrator';
 import type { ProjectionId } from '../engine/projections';
 import { appLocale } from '../app/i18n';
+import { reducedMotion } from '../engine/motion';
 
 export class Ambient {
   private ticker: Ticker | null = null;
@@ -130,8 +131,10 @@ export class Ambient {
       if (view.animating) return true;
       const p = this.place;
       // Around a place the globe sways gently, so the place stays in view; else it turns.
-      if (p) view.lon = p.lon + (9 / p.zoom) * Math.sin((performance.now() - p.t0) / 7000);
-      else view.lon += (dt / 1000) * 4 * app.ambient.speed;
+      // (Less motion: a quarter of the turn and the sway.)
+      const calm = reducedMotion() ? 0.25 : 1;
+      if (p) view.lon = p.lon + calm * (9 / p.zoom) * Math.sin((performance.now() - p.t0) / 7000);
+      else view.lon += (dt / 1000) * 4 * app.ambient.speed * calm;
       return true;
     };
     app.renderer.tickers.add(this.ticker);

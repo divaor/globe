@@ -2,7 +2,8 @@
 // Names in Portuguese (Brazil), French and German (v0.42.0): every name the app's data shows (countries, states and
 // provinces, cities, seas, rivers, mountains, World Heritage sites, animals, plants, people…), keyed by its English,
 // in public/data/i18n/<lang>-data.json. The app reads them through nm() and tx() (src/app/i18n.ts).
-//   - Natural Earth (public domain) has each country's, state's, city's, sea's and region's name in these languages.
+//   - Natural Earth (public domain) has each country's, state's, city's, sea's and region's name in these languages;
+//     the states and provinces taken from OCHA (v0.47.0) have theirs in scripts/data/admin1-updates.json.
 //   - For the rest, the Wikidata item (CC0) behind each name comes from the answers the data builds kept in .cache/,
 //     and its label in each language is asked from QLever (scripts/data/lives/wdqs.mjs).
 // Only names that appear in public/data and read differently from the English are written. Texts that are not names
@@ -93,6 +94,10 @@ fromNE('ne_10m_geography_regions_polys', 1, ['NAME', 'NAME_EN', 'name', 'name_en
 fromNE('ne_10m_geography_regions_points', 1, ['NAME', 'NAME_EN', 'name', 'name_en']);
 fromNE('ne_10m_geography_regions_elevation_points', 3, ['name', 'name_en']);
 fromNE('ne_10m_admin_1_states_provinces', 3, ['name', 'name_en']);
+// States and provinces updated since Natural Earth's data (v0.47.0, OCHA's): the names reviewed with their units.
+for (const units of Object.values(JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/data/admin1-updates.json'), 'utf8')).names)) {
+  for (const u of Object.values(units)) for (const l of LANGS) if (u[l]) offer(u.n, l, u[l], 1);
+}
 fromNE('ne_10m_populated_places', 3, ['NAME', 'NAME_EN']);
 fromNE('ne_10m_lakes', 3, ['name', 'name_en']);
 

@@ -6975,6 +6975,98 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   check(!ln.errors.length, `From the Big Bang link: no page errors${ln.errors.length ? ': ' + ln.errors.join(' | ') : ''}`);
   await ln.ctx.close();
 }
+// 60. Fast, sturdy, accessible (v0.47.0), on a phone. The start comes in two stages: the splash goes as soon as the
+// globe is drawn, before the rest of the app (window.atlas) has loaded. The map in words: the map's canvas describes
+// what it shows, and a move by keyboard or a new filter is read out. With reduce motion on, a flight lands at once.
+// Outside services: Wikimedia's sites hear the app's name and version (Api-User-Agent); iNaturalist is asked at most
+// 60 times a minute; offline, a call fails at once and On this day says it needs a connection, with no page errors.
+// The credits in About: every source by group, in plain words, in the app's language.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(MENU_HELPER);
+  await ctx.addInitScript(() => {
+    window.__boot = {};
+    const t0 = performance.now();
+    new MutationObserver(() => {
+      const s = document.getElementById('splash');
+      if (s?.classList.contains('hide') && !window.__boot.splash) window.__boot.splash = performance.now() - t0;
+      if (window.atlas && !window.__boot.atlas) window.__boot.atlas = performance.now() - t0;
+    }).observe(document, { subtree: true, childList: true, attributes: true });
+    const tick = () => { if (window.atlas && !window.__boot.atlas) window.__boot.atlas = performance.now() - t0; if (!window.__boot.atlas) setTimeout(tick, 20); };
+    tick();
+  });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  const named = [];
+  await ctx.route(/wikidata\.org\/w\/api\.php/, (r) => { named.push(r.request().headers()['api-user-agent'] ?? ''); return r.fulfill({ status: 200, contentType: 'application/json', body: '{}' }); });
+  let inat = 0;
+  await ctx.route(/api\.inaturalist\.org\//, (r) => { inat++; return r.fulfill({ status: 200, contentType: 'application/json', body: '{"results":[]}' }); });
+  await page.goto(url + '#p=globe&l=political&c=0,20,1.1&lang=en', { waitUntil: 'load' });
+  await page.waitForFunction(() => window.atlas && window.__boot.splash, null, { timeout: 60000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const boot = await page.evaluate(() => window.__boot);
+  check(boot.splash > 0 && boot.atlas > 0 && boot.splash <= boot.atlas, `the globe shows first: the splash goes at ${Math.round(boot.splash)} ms, the rest of the app is ready at ${Math.round(boot.atlas)} ms`);
+  // The map in words.
+  const said0 = await page.getAttribute('#fg', 'aria-label');
+  check(/^Globe map, centred on .+, showing the whole Earth\. .*Arrow keys/.test(said0 ?? '') && (await page.getAttribute('#fg', 'tabindex')) === '0', `the map describes itself: "${said0}"`);
+  await page.focus('#fg');
+  for (let i = 0; i < 4; i++) await page.keyboard.press('ArrowLeft');
+  await page.keyboard.press('+');
+  await page.waitForTimeout(2200);
+  const said1 = await page.textContent('[data-mapsay]');
+  await page.evaluate(() => window.atlas.app.activate('fact-gdp_usd'));
+  await page.waitForTimeout(2000);
+  const said2 = await page.textContent('[data-mapsay]');
+  check(/centred on/.test(said1 ?? '') && said1 !== said0 && /Showing: .*GDP/i.test(said2 ?? ''), `a move by keyboard is read out ("${said1}"), and a new filter ("${said2}")`);
+  // Outside services: the client name, iNaturalist's limit.
+  const v = await page.evaluate(() => window.atlas.outside.clientName());
+  await page.evaluate(() => window.atlas.outside.fetch('https://www.wikidata.org/w/api.php?action=wbgetclaims&format=json&origin=*&entity=Q90').catch(() => null));
+  check(/^Mundora\/0\.47\.\d+/.test(v) && named.length === 1 && named[0] === v, `Wikimedia hears who asks: "${named[0] ?? '(nothing)'}"`);
+  await page.evaluate(() => { for (let i = 0; i < 70; i++) void window.atlas.outside.fetch(`https://api.inaturalist.org/v1/taxa?q=x${i}`).catch(() => null); });
+  await page.waitForTimeout(2500);
+  const load = await page.evaluate(() => window.atlas.outside.inatLoad());
+  check(inat === 60 && load === 60, `iNaturalist is asked at most 60 times a minute: ${inat} of 70 calls went out at once, the rest wait`);
+  // Offline: a call fails at once; On this day (seen once online) keeps the stories' events and says Wikipedia's need
+  // a connection.
+  await page.evaluate(() => window.__menu('On this day'));
+  await page.waitForSelector('.otd-story', { timeout: 30000 }).catch(() => {});
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+  await page.waitForTimeout(400);
+  await ctx.setOffline(true);
+  const off = await page.evaluate(async () => { const t = performance.now(); const e = await window.atlas.outside.fetch('https://api.gbif.org/v1/species/search?q=oak').then(() => 'answered', (x) => x.name); return { e, ms: performance.now() - t }; });
+  await page.evaluate(() => window.__menu('On this day'));
+  await page.waitForFunction(() => /internet/.test(document.querySelector('.otd-wiki')?.textContent ?? ''), null, { timeout: 15000 }).catch(() => {});
+  const otd = await page.evaluate(() => ({ wiki: document.querySelector('.otd-wiki')?.textContent ?? '', stories: document.querySelectorAll('.otd-story').length }));
+  check(off.e === 'Offline' && off.ms < 100 && /^Needs an internet connection\.$/.test(otd.wiki.trim()) && otd.stories > 0, `offline: a call fails at once (${Math.round(off.ms)} ms); On this day keeps the stories' ${otd.stories} events and says "${otd.wiki.trim().slice(0, 60)}"`);
+  await ctx.setOffline(false);
+  check(!errors.length, `fast, sturdy, accessible: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+  // The credits: every source by group, in plain words, in the app's language (French here).
+  const cr = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&lang=fr');
+  await cr.page.evaluate(() => window.atlas.shell.openAbout(true));
+  await cr.page.waitForSelector('[data-credit-group]', { timeout: 20000 }).catch(() => {});
+  const credits = await cr.page.evaluate(() => {
+    const items = [...document.querySelectorAll('.about [data-credit]')];
+    const ne = document.querySelector('[data-credit="natural-earth"]');
+    return { groups: document.querySelectorAll('.about [data-credit-group]').length, items: items.length, nav: document.querySelectorAll('.cr-nav .chip').length,
+      title: document.querySelector('.cr-title')?.textContent ?? '', what: ne?.querySelector('.cr-what')?.textContent ?? '', lic: ne?.querySelector('.cr-lic')?.textContent ?? '',
+      links: items.every((i) => /^https:/.test(i.querySelector('.cr-name')?.getAttribute('href') ?? '')) };
+  });
+  check(credits.groups === 9 && credits.items >= 70 && credits.nav === 9 && credits.title === 'Cartes et données des pays' && /^Les frontières/.test(credits.what) && credits.lic === 'Domaine public' && credits.links,
+    `the credits: ${credits.items} sources in ${credits.groups} groups, in French ("${credits.title}"; Natural Earth: "${credits.what.slice(0, 40)}…", ${credits.lic})`);
+  check(!cr.errors.length, `the credits: no page errors${cr.errors.length ? ': ' + cr.errors.join(' | ') : ''}`);
+  await cr.ctx.close();
+  // Reduce motion: a flight lands at once, the globe doesn't coast after a fling.
+  const rm = await open({ ...devices['Pixel 7'], reducedMotion: 'reduce' }, '#p=globe&l=political&c=0,20,1.1&lang=en');
+  await rm.page.evaluate(() => window.atlas.app.flyTo(139.7, 35.7, 4));
+  await rm.page.waitForTimeout(120);
+  const flown = await rm.page.evaluate(() => { const v = window.atlas.app.renderer.view; return { lon: v.lon, lat: v.lat, animating: v.animating }; });
+  check(!flown.animating && Math.abs(flown.lon - 139.7) < 0.5 && Math.abs(flown.lat - 35.7) < 0.5, `with reduce motion a flight lands at once (${flown.lon.toFixed(1)}, ${flown.lat.toFixed(1)})`);
+  check(!rm.errors.length, `reduce motion: no page errors${rm.errors.length ? ': ' + rm.errors.join(' | ') : ''}`);
+  await rm.ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

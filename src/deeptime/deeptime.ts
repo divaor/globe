@@ -27,6 +27,7 @@ import { CosmosScene, SCENE_MOMENTS } from './cosmos';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { LayerDef, RenderCtx, InfoRow } from '../layers/types';
+import { reducedMotion } from '../engine/motion';
 
 type Pt = [number, number];
 /** The words for a survival reason. */
@@ -148,6 +149,17 @@ const mixColour = (a: string, b: string, f: number) => {
   const c = [0, 1, 2].map((i) => Math.round(p(a, i) + (p(b, i) - p(a, i)) * Math.max(0, Math.min(1, f))));
   return `#${c.map((v) => v.toString(16).padStart(2, '0')).join('')}`;
 };
+
+/** Text on an era's colour (v0.47.0): dark on light colours, light on dark ones (the dark ages' purple). */
+function inkOn(color: string): string {
+  const m = /^#?([0-9a-f]{6})$/i.exec(color.trim());
+  if (!m) return '#1b2433';
+  const n = parseInt(m[1], 16);
+  const lin = (v: number) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; };
+  const lum = 0.2126 * lin(n >> 16) + 0.7152 * lin((n >> 8) & 255) + 0.0722 * lin(n & 255);
+  // Whichever of the two gives the higher contrast.
+  return (lum + 0.05) / (0.0168 + 0.05) >= (1.05) / (lum + 0.05) ? '#1b2433' : '#f4f6fb';
+}
 
 /** An animation under way (an impact), in real time. */
 interface Anim { e: DEvent; t0: number }
@@ -424,6 +436,9 @@ export class DeepTime {
     return paceClock(marks, spans);
   }
 
+  /** An asteroid's strike, animated (not with less motion: the crater and the darkened world show without the flash). */
+  private impact(e: DEvent) { if (!reducedMotion()) this.anims.push({ e, t0: performance.now() }); }
+
   /** The chapters, to switch between. */
   private openChapters() {
     const list = h('div', { class: 'mode-list', 'data-deeptime': 'chapters' });
@@ -532,7 +547,7 @@ export class DeepTime {
     this.t = t;
     this.ma = ma;
     // Moving forward through an impact starts its animation.
-    if (this.data && !this.plain && ma < prev) for (const e of this.data.events) if (e.kind === 'impact' && e.ma <= prev && e.ma > ma && prev - ma < 5) this.anims.push({ e, t0: performance.now() });
+    if (this.data && !this.plain && ma < prev) for (const e of this.data.events) if (e.kind === 'impact' && e.ma <= prev && e.ma > ma && prev - ma < 5) this.impact(e);
     this.lastMa = prev;
     this.keepPlace();
     this.renderHud();
@@ -564,7 +579,7 @@ export class DeepTime {
     const chain = ['eon', 'era', 'period', 'epoch'].map((r) => w.unit(ma, r)).filter((u): u is Unit => !!u);
     this.top.append(
       h('div', { class: 'dt-ago', 'data-deeptime': 'ago' }, agoText(ma)),
-      h('div', { class: 'dt-chain', 'data-deeptime': 'eras' }, chain.map((u) => h('span', { class: 'dt-unit', style: `--u: ${u.color}` }, unitName(u)))),
+      h('div', { class: 'dt-chain', 'data-deeptime': 'eras' }, chain.map((u) => h('span', { class: 'dt-unit', style: `--u: ${u.color}; color: ${inkOn(u.color)}` }, unitName(u)))),
       h('div', { class: 'dt-cal', 'data-deeptime': 'calendar', title: L('All the time since the Big Bang squeezed into one year', 'Todo el tiempo desde el Big Bang comprimido en un año') },
         `🗓️ ${L('Cosmic calendar', 'Calendario cósmico')}: ${cosmicText(ma)}`),
     );
@@ -595,7 +610,7 @@ export class DeepTime {
     top.append(
       h('div', { class: 'dt-ago', 'data-deeptime': 'ago' }, whenText(t)),
       t >= 1e6 ? h('div', { class: 'dt-after muted small', 'data-deeptime': 'after' }, afterText(t)) : '',
-      h('div', { class: 'dt-chain', 'data-deeptime': 'eras' }, h('span', { class: 'dt-unit', style: `--u: ${era.color}` }, ERA[era.id]())),
+      h('div', { class: 'dt-chain', 'data-deeptime': 'eras' }, h('span', { class: 'dt-unit', style: `--u: ${era.color}; color: ${inkOn(era.color)}` }, ERA[era.id]())),
       h('div', { class: 'dt-cal', 'data-deeptime': 'calendar', title: L('All the time since the Big Bang squeezed into one year', 'Todo el tiempo desde el Big Bang comprimido en un año') },
         `🗓️ ${L('Cosmic calendar', 'Calendario cósmico')}: ${cosmicText(this.ma)}`),
     );
@@ -944,7 +959,7 @@ export class DeepTime {
     this.shell.card.showCustom(k?.icon ?? '•', tx(e.name), whenText(te), rows, links, [tx(e.text)], e.wiki ? wikiThumb(e.wiki) : undefined);
     if (cosmic) recordSeen('deeptime', `cosmos:${e.id}`);
     if (fly && e.at) { const at = this.place(e.at, e.pl, e.ma); this.app.flyTo(at[0], at[1], 2.5); }
-    if (e.kind === 'impact' && Math.abs(this.ma - e.ma) < 1) this.anims.push({ e, t0: performance.now() });
+    if (e.kind === 'impact' && Math.abs(this.ma - e.ma) < 1) this.impact(e);
   }
 
   /** What lived then: the eras, the vital signs, what is happening, and every species alive, by where they lived. */
@@ -1118,7 +1133,7 @@ export class DeepTime {
       const s = e ? null : this.species.find((x) => x.id === b.focus);
       const at = e?.at ? this.place(e.at, e.pl, b.ma) : s ? this.place(s.sites[0].at, s.sites[0].pl, b.ma) : null;
       if (at) this.app.flyTo(at[0], at[1], 2.2);
-      if (e?.kind === 'impact') this.anims.push({ e, t0: performance.now() });
+      if (e?.kind === 'impact') this.impact(e);
     } else if (b.cam) this.app.flyTo(b.cam[0], b.cam[1], b.cam[2]);
   }
 

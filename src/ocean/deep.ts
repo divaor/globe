@@ -11,6 +11,7 @@ import { loadJSON } from '../data/store';
 import { recordFeat } from '../learn/progress';
 import { loadDepths, heightAt, seaDepthAt, oceanAt, OCEAN_NAMES, zoneOf, depths } from './depth';
 import { diveColumn, animalsHere, metres, type SeaAnimal, type DeepMarker } from './dive';
+import { outside } from '../data/outside';
 
 type Tab = 'dive' | 'zones';
 interface ZoneFacts { id: string; top_m: number; bottom_m: number; name: { en: string; es: string }; light: { en: string; es: string }; temp: { en: string; es: string }; life: { en: string; es: string }; fact: { en: string; es: string } }
@@ -29,7 +30,7 @@ interface Obis { sci: string; cls: string; n: number }
 async function obisNear(lon: number, lat: number): Promise<Obis[]> {
   const d = 1.5, p = (x: number, y: number) => `${x.toFixed(2)} ${y.toFixed(2)}`;
   const ring = [p(lon - d, lat - d), p(lon + d, lat - d), p(lon + d, lat + d), p(lon - d, lat + d), p(lon - d, lat - d)].join(',');
-  const r = await fetch(`https://api.obis.org/v3/checklist?geometry=${encodeURIComponent(`POLYGON((${ring}))`)}&size=40`);
+  const r = await outside(`https://api.obis.org/v3/checklist?geometry=${encodeURIComponent(`POLYGON((${ring}))`)}&size=40`);
   if (!r.ok) throw new Error(String(r.status));
   const j = await r.json() as { results: { scientificName: string; taxonRank: string; records: number; class?: string }[] };
   return j.results.filter((x) => x.taxonRank === 'Species').slice(0, 12).map((x) => ({ sci: x.scientificName, cls: x.class ?? '', n: x.records }));

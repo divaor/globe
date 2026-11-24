@@ -131,20 +131,31 @@ function loadCountries() {
   return countries;
 }
 
-let admin1 = null; // A3 -> Map(name -> mp)
-function loadAdmin1() {
-  if (admin1) return admin1;
-  const topo = readJSON(path.join(DATA, 'base/admin1.json'));
-  admin1 = new Map();
+/** A3 -> Map(name -> mp), of a TopoJSON file of provinces (object "admin1", properties a and n). */
+function provincesOf(file) {
+  const topo = readJSON(file);
+  const out = new Map();
   for (const f of feature(topo, topo.objects.admin1).features) {
     const a = f.properties.a;
     if (!a || !f.properties.n) continue;
-    if (!admin1.has(a)) admin1.set(a, new Map());
-    const m = admin1.get(a);
+    if (!out.has(a)) out.set(a, new Map());
+    const m = out.get(a);
     const prev = m.get(f.properties.n);
     m.set(f.properties.n, prev ? prev.concat(multi(f.geometry)) : multi(f.geometry));
   }
+  return out;
+}
+let admin1 = null; // A3 -> Map(name -> mp)
+function loadAdmin1() {
+  admin1 ??= provincesOf(path.join(DATA, 'base/admin1.json'));
   return admin1;
+}
+// The provinces Natural Earth had where a country's divisions were updated since (v0.47.0,
+// scripts/data/admin1-updates.mjs): stories written before name these, and keep drawing them.
+let legacyAdmin1 = null;
+function loadLegacyAdmin1() {
+  legacyAdmin1 ??= provincesOf(path.join(ROOT, 'scripts/data/conflicts/_admin1-legacy.json'));
+  return legacyAdmin1;
 }
 
 let land = null; // [{ poly, box }]
@@ -308,7 +319,12 @@ function resolve(expr, ctx, where) {
   switch (key) {
     case 'country': return resolve(expr.country, ctx, where);
     case 'a1': {
-      const regions = loadAdmin1().get(expr.a1);
+      // A country whose provinces were updated (v0.47.0): names that were Natural Earth's (all of them, or none given:
+      // the whole country) draw Natural Earth's old shapes, as the stories written for them did; "now": true, or a
+      // name of today's provinces, draws today's.
+      const old = loadLegacyAdmin1().get(expr.a1);
+      const named = [...(expr.names ?? []), ...(expr.except ?? [])];
+      const regions = old && !expr.now && named.every((n) => old.has(n)) ? old : loadAdmin1().get(expr.a1);
       if (!regions) throw new Error(`${where}: no provinces for country "${expr.a1}"`);
       const pick = expr.names ?? [...regions.keys()].filter((n) => !(expr.except ?? []).includes(n));
       for (const n of [...(expr.names ?? []), ...(expr.except ?? [])]) {

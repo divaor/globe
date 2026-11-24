@@ -2,6 +2,7 @@
 // it (layers/crowd.ts), a place, or a state's outline.
 import type { App } from '../app/app';
 import type { GeoPermissibleObjects } from 'd3-geo';
+import { reducedMotion } from '../engine/motion';
 
 let stop: (() => void) | null = null;
 
@@ -13,9 +14,12 @@ export function ring(app: App, o: { at?: () => [number, number] | null; shape?: 
   stop?.();
   const r = app.renderer;
   const t0 = performance.now(), ms = o.ms ?? 4500, color = o.color ?? '#ffd43b';
+  // Less motion: a still ring (it neither pulses nor blinks) for the same time.
+  const still = reducedMotion();
   const overlay = (rc: Parameters<Parameters<typeof r.overlays.add>[0]>[0]) => {
-    const k = (performance.now() - t0) / ms;
-    if (k >= 1) return;
+    const real = (performance.now() - t0) / ms;
+    if (real >= 1) return;
+    const k = still ? 0.3 : real;
     const { ctx } = rc;
     ctx.save();
     if (o.shape) {

@@ -18,6 +18,7 @@ import { animalCard, parkCard, statusBadge, type CardFn } from './cards';
 import { decodeTile } from './mvt';
 import { months, monthBars } from './inat';
 import { links, showFocus, currentFocus, type Focus } from '../layers/packs/wild';
+import { outside } from '../data/outside';
 
 const BASIS = ['HUMAN_OBSERVATION', 'PRESERVED_SPECIMEN', 'MACHINE_OBSERVATION', 'OCCURRENCE', 'MATERIAL_SAMPLE'];
 
@@ -29,7 +30,7 @@ export async function liveRange(key: number): Promise<{ cells: Int32Array; count
   const q = new URLSearchParams({ srs: 'EPSG:4326', taxonKey: String(key), bin: 'square', squareSize: '32' });
   for (const b of BASIS) q.append('basisOfRecord', b);
   const tiles = await Promise.all([0, 1].map(async (x) => {
-    const r = await fetch(`https://api.gbif.org/v2/map/occurrence/density/0/${x}/0.mvt?${q}`);
+    const r = await outside(`https://api.gbif.org/v2/map/occurrence/density/0/${x}/0.mvt?${q}`);
     if (r.status === 204) return [] as [number, number][];
     if (!r.ok) throw new Error(String(r.status));
     const out: [number, number][] = [];
@@ -182,7 +183,7 @@ export class Wild {
   /** GBIF's species whose name matches (scientific or common, in any language), animals only. */
   private async liveSearch(q: string, _d: WildData): Promise<Live[] | null> {
     try {
-      const r = await fetch(`https://api.gbif.org/v1/species/search?q=${encodeURIComponent(q)}&rank=SPECIES&status=ACCEPTED&highertaxonKey=1&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c&limit=12`);
+      const r = await outside(`https://api.gbif.org/v1/species/search?q=${encodeURIComponent(q)}&rank=SPECIES&status=ACCEPTED&highertaxonKey=1&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c&limit=12`);
       if (!r.ok) return null;
       const j = (await r.json()) as { results?: { key: number; nubKey?: number; canonicalName?: string; scientificName: string; class?: string; family?: string; vernacularNames?: { vernacularName: string; language?: string }[] }[] };
       const want = L('eng', 'spa');
@@ -206,7 +207,7 @@ export class Wild {
     await this.load();
     // A species found by name only (What lives here?): its GBIF key first.
     if (!s.key) {
-      const r = await fetch(`https://api.gbif.org/v1/species/match?kingdom=Animalia&name=${encodeURIComponent(s.sci)}`).catch(() => null);
+      const r = await outside(`https://api.gbif.org/v1/species/match?kingdom=Animalia&name=${encodeURIComponent(s.sci)}`).catch(() => null);
       const j = r?.ok ? ((await r.json()) as { usageKey?: number; acceptedUsageKey?: number; family?: string }) : null;
       if (!j?.usageKey) { this.shell.toast(L('GBIF didn’t answer; check your connection.', 'GBIF no respondió; revisa tu conexión.')); return; }
       s = { ...s, key: j.acceptedUsageKey ?? j.usageKey, family: j.family ?? null };
@@ -323,7 +324,7 @@ export class Wild {
     this.app.flyTo(at[0], at[1], Math.max(this.app.renderer.view.zoom, 12));
     const known = new Map((d?.animals ?? []).map((a) => [a.sci.toLowerCase(), a]));
     try {
-      const r = await fetch(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=${ICONIC[group].taxa}&per_page=30&locale=${inatLocale()}`);
+      const r = await outside(`https://api.inaturalist.org/v1/observations/species_counts?lat=${at[1]}&lng=${at[0]}&radius=50&quality_grade=research&iconic_taxa=${ICONIC[group].taxa}&per_page=30&locale=${inatLocale()}`);
       if (!r.ok) throw new Error(String(r.status));
       const j = (await r.json()) as { results?: { count: number; taxon: { id: number; name: string; preferred_common_name?: string; iconic_taxon_name?: string; default_photo?: { square_url?: string; attribution?: string } } }[] };
       clear(list);
