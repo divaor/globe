@@ -1580,12 +1580,17 @@ textarea.trip-input { resize: vertical; }
 .dt-reasons li[data-level='no'] { color: #e74c3c; }
 .dt-reasons li[data-level='hard'] { color: #e67e22; }
 .dt-more { margin-top: 4px; }
-.dt-caption { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(220px + var(--safe-b)); width: min(720px, calc(100vw - 24px)); padding: 12px 14px 8px; border-radius: var(--r-md); z-index: 4; }
+.dt-caption { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(var(--dt-bar-h, 220px) + 8px); width: min(720px, calc(100vw - 24px)); padding: 12px 14px 8px; border-radius: var(--r-md); z-index: 4; }
 .dt-cap-text { font-size: var(--fs-md); line-height: 1.45; }
 .dt-cap-tools { display: flex; justify-content: flex-end; align-items: center; gap: 4px; margin-top: 6px; }
 .dt-cap-n { margin-right: auto; }
 .timebar .icon-btn.on { background: var(--accent); color: #fff; }
-.deeptime .guide-list { margin-bottom: var(--sp-2); }
+.deeptime .guide-list { display: flex; flex-direction: column; gap: 4px; margin-bottom: var(--sp-2); }
+.deeptime .guide-row { width: 100%; text-align: left; padding: 8px 10px; border-radius: var(--r-md); border: 1px solid var(--line); background: var(--chip); color: inherit; font: inherit; cursor: pointer; }
+.deeptime .guide-icon { flex: none; width: 1.6em; font-size: 1.3em; text-align: center; }
+.deeptime .guide-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.deeptime .guide-name { font-weight: var(--fw-semi); }
+.deeptime .guide-sub { font-size: var(--fs-sm); color: var(--muted); }
 .dt-now-when { font-weight: var(--fw-semi); }
 .dt-now-verdict { font-weight: var(--fw-bold); margin: var(--sp-1) 0 0; }
 .dt-now-verdict[data-level='no'] { color: #e74c3c; }
@@ -1593,9 +1598,15 @@ textarea.trip-input { resize: vertical; }
 @media (max-width: 600px) {
   .dt-top { top: calc(60px + var(--safe-t)); padding: 6px 10px; }
   .dt-ago { font-size: var(--fs-md); }
-  .dt-vitals { top: auto; bottom: calc(230px + var(--safe-b)); width: 190px; padding: 8px 10px; font-size: var(--fs-xs); }
+  .dt-vitals { top: auto; bottom: calc(var(--dt-bar-h, 230px) + 8px); width: 190px; padding: 8px 10px; font-size: var(--fs-xs); }
   .dt-vitals:not(.open) .dt-row:nth-child(n+3) { display: none; }
-  .dt-caption { bottom: calc(200px + var(--safe-b)); }
+  .dt-caption { bottom: calc(var(--dt-bar-h, 200px) + 8px); }
+  /* The top line already says how long ago: on a phone the bar keeps its room for its buttons. */
+  .timebar.dt-bar .tb-title { display: none; }
+  /* A species' or an event's card sits above the bar; the vital signs make way for it and for the story's caption. */
+  html.mode-deeptime .country-card { bottom: calc(var(--dt-bar-h, 230px) + 8px); max-height: calc(100dvh - var(--dt-bar-h, 230px) - 150px); z-index: 4; }
+  html.mode-deeptime:has(.country-card:not([hidden])) .dt-vitals, html.dt-playing .dt-vitals { display: none; }
+  .timebar.dt-bar .tb-top { justify-content: space-between; gap: 4px; }
   .dt-cap-text { font-size: var(--fs-sm); }
 }
 .dt-sources { margin-top: var(--sp-2); font-size: var(--fs-sm); color: var(--muted); }

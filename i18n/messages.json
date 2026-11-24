@@ -637,7 +637,7 @@
    "en": "A day lasts",
    "es": "Un día dura",
    "where": [
-    "src/deeptime/deeptime.ts:307"
+    "src/deeptime/deeptime.ts:326"
    ]
   },
   {
@@ -729,7 +729,7 @@
    "en": "A first",
    "es": "Un primero",
    "where": [
-    "src/deeptime/deeptime.ts:579"
+    "src/deeptime/deeptime.ts:598"
    ]
   },
   {
@@ -2062,7 +2062,7 @@
    "en": "All the time since the Big Bang squeezed into one year",
    "es": "Todo el tiempo desde el Big Bang comprimido en un año",
    "where": [
-    "src/deeptime/deeptime.ts:279"
+    "src/deeptime/deeptime.ts:298"
    ]
   },
   {
@@ -2267,7 +2267,7 @@
    "en": "An ice age at its peak",
    "es": "Una glaciación en su apogeo",
    "where": [
-    "src/deeptime/deeptime.ts:316"
+    "src/deeptime/deeptime.ts:335"
    ]
   },
   {
@@ -2590,7 +2590,7 @@
    "en": "Approximate values from rock and fossil records. Tap to close.",
    "es": "Valores aproximados según rocas y fósiles. Toca para cerrar.",
    "where": [
-    "src/deeptime/deeptime.ts:322"
+    "src/deeptime/deeptime.ts:341"
    ]
   },
   {
@@ -3276,7 +3276,7 @@
    "en": "Average temperature",
    "es": "Temperatura media",
    "where": [
-    "src/deeptime/deeptime.ts:306"
+    "src/deeptime/deeptime.ts:325"
    ]
   },
   {
@@ -3342,7 +3342,7 @@
    "es": "Volver",
    "where": [
     "src/app/i18n.ts:37",
-    "src/deeptime/deeptime.ts:709",
+    "src/deeptime/deeptime.ts:729",
     "src/legacy/legacy.ts:219",
     "src/ui/welcome.ts:82"
    ]
@@ -3536,7 +3536,7 @@
    "en": "Before a billion years ago no one knows where the land was: the continents here are an impression.",
    "es": "Antes de hace mil millones de años nadie sabe dónde estaba la tierra: estos continentes son una impresión.",
    "where": [
-    "src/deeptime/deeptime.ts:288"
+    "src/deeptime/deeptime.ts:307"
    ]
   },
   {
@@ -4153,7 +4153,7 @@
    "en": "Both poles",
    "es": "Ambos polos",
    "where": [
-    "src/deeptime/deeptime.ts:316"
+    "src/deeptime/deeptime.ts:335"
    ]
   },
   {
@@ -4660,7 +4660,7 @@
    "en": "Carbon dioxide",
    "es": "Dióxido de carbono",
    "where": [
-    "src/deeptime/deeptime.ts:305"
+    "src/deeptime/deeptime.ts:324"
    ]
   },
   {
@@ -4768,7 +4768,7 @@
    "en": "Certainty",
    "es": "Certeza",
    "where": [
-    "src/deeptime/deeptime.ts:578"
+    "src/deeptime/deeptime.ts:597"
    ]
   },
   {
@@ -5180,7 +5180,7 @@
    "en": "Closest living relatives",
    "es": "Parientes vivos más cercanos",
    "where": [
-    "src/deeptime/deeptime.ts:563"
+    "src/deeptime/deeptime.ts:582"
    ]
   },
   {
@@ -5498,7 +5498,7 @@
    "en": "Continents only",
    "es": "Solo continentes",
    "where": [
-    "src/deeptime/deeptime.ts:227"
+    "src/deeptime/deeptime.ts:236"
    ]
   },
   {
@@ -5624,7 +5624,7 @@
    "en": "Cosmic calendar",
    "es": "Calendario cósmico",
    "where": [
-    "src/deeptime/deeptime.ts:280"
+    "src/deeptime/deeptime.ts:299"
    ]
   },
   {
@@ -6267,7 +6267,7 @@
    "en": "Days in a year",
    "es": "Días en un año",
    "where": [
-    "src/deeptime/deeptime.ts:311"
+    "src/deeptime/deeptime.ts:330"
    ]
   },
   {
@@ -6302,7 +6302,7 @@
    "en": "Debated",
    "es": "Debatido",
    "where": [
-    "src/deeptime/deeptime.ts:578",
+    "src/deeptime/deeptime.ts:597",
     "src/legacy/legacy.ts:72"
    ]
   },
@@ -6355,8 +6355,8 @@
    "where": [
     "src/deeptime/deeptime.ts:118",
     "src/deeptime/deeptime.ts:129",
-    "src/deeptime/deeptime.ts:211",
-    "src/deeptime/deeptime.ts:787",
+    "src/deeptime/deeptime.ts:218",
+    "src/deeptime/deeptime.ts:807",
     "src/modes/index.ts:45"
    ]
   },
@@ -6364,8 +6364,8 @@
    "en": "Deep time · {0}",
    "es": "Tiempo profundo · {0}",
    "where": [
-    "src/deeptime/deeptime.ts:744",
-    "src/deeptime/deeptime.ts:748"
+    "src/deeptime/deeptime.ts:764",
+    "src/deeptime/deeptime.ts:768"
    ]
   },
   {
@@ -8766,7 +8766,7 @@
    "en": "Fossils found at",
    "es": "Fósiles hallados en",
    "where": [
-    "src/deeptime/deeptime.ts:557"
+    "src/deeptime/deeptime.ts:576"
    ]
   },
   {
@@ -9085,7 +9085,7 @@
    "en": "From {0} to today",
    "es": "Desde {0} hasta hoy",
    "where": [
-    "src/deeptime/deeptime.ts:549"
+    "src/deeptime/deeptime.ts:568"
    ]
   },
   {
@@ -9495,14 +9495,14 @@
    "en": "Go to its time",
    "es": "Ir a su época",
    "where": [
-    "src/deeptime/deeptime.ts:567"
+    "src/deeptime/deeptime.ts:586"
    ]
   },
   {
    "en": "Go to that moment",
    "es": "Ir a ese momento",
    "where": [
-    "src/deeptime/deeptime.ts:583"
+    "src/deeptime/deeptime.ts:602"
    ]
   },
   {
@@ -9931,7 +9931,7 @@
    "en": "Happening around now",
    "es": "Sucediendo por estas fechas",
    "where": [
-    "src/deeptime/deeptime.ts:601"
+    "src/deeptime/deeptime.ts:620"
    ]
   },
   {
@@ -10664,7 +10664,7 @@
    "en": "Ice",
    "es": "Hielo",
    "where": [
-    "src/deeptime/deeptime.ts:316"
+    "src/deeptime/deeptime.ts:335"
    ]
   },
   {
@@ -11151,7 +11151,7 @@
    "en": "In rivers, lakes and on shores",
    "es": "En ríos, lagos y costas",
    "where": [
-    "src/deeptime/deeptime.ts:613"
+    "src/deeptime/deeptime.ts:632"
    ]
   },
   {
@@ -11764,7 +11764,7 @@
    "en": "It ate",
    "es": "Comía",
    "where": [
-    "src/deeptime/deeptime.ts:559"
+    "src/deeptime/deeptime.ts:578"
    ]
   },
   {
@@ -12357,7 +12357,7 @@
    "es": "Tipo",
    "where": [
     "src/artguide/cards.ts:33",
-    "src/deeptime/deeptime.ts:577",
+    "src/deeptime/deeptime.ts:596",
     "src/green/cards.ts:88",
     "src/layers/packs/artmap.ts:109",
     "src/space/surface.ts:267"
@@ -12367,7 +12367,7 @@
    "en": "Kinds of sea animals known from fossils",
    "es": "Tipos de animales marinos conocidos por fósiles",
    "where": [
-    "src/deeptime/deeptime.ts:314"
+    "src/deeptime/deeptime.ts:333"
    ]
   },
   {
@@ -13238,7 +13238,7 @@
    "es": "Vivió",
    "where": [
     "src/app/i18n.ts:347",
-    "src/deeptime/deeptime.ts:556"
+    "src/deeptime/deeptime.ts:575"
    ]
   },
   {
@@ -15734,7 +15734,7 @@
    "en": "Next",
    "es": "Siguiente",
    "where": [
-    "src/deeptime/deeptime.ts:710",
+    "src/deeptime/deeptime.ts:730",
     "src/fill/fill.ts:415",
     "src/fill/states.ts:327",
     "src/learn/learn.ts:1773",
@@ -15945,7 +15945,7 @@
    "en": "No life yet that we know of.",
    "es": "Aún no hay vida que conozcamos.",
    "where": [
-    "src/deeptime/deeptime.ts:618"
+    "src/deeptime/deeptime.ts:637"
    ]
   },
   {
@@ -16001,7 +16001,7 @@
    "en": "No permanent ice",
    "es": "Sin hielo permanente",
    "where": [
-    "src/deeptime/deeptime.ts:316"
+    "src/deeptime/deeptime.ts:335"
    ]
   },
   {
@@ -16310,7 +16310,7 @@
    "en": "Not yet",
    "es": "Todavía no",
    "where": [
-    "src/deeptime/deeptime.ts:315"
+    "src/deeptime/deeptime.ts:334"
    ]
   },
   {
@@ -16916,14 +16916,14 @@
    "en": "On the cosmic calendar, today is {0}: the Earth has not formed yet",
    "es": "En el calendario cósmico, hoy es {0}: la Tierra aún no se ha formado",
    "where": [
-    "src/deeptime/deeptime.ts:761"
+    "src/deeptime/deeptime.ts:781"
    ]
   },
   {
    "en": "On the cosmic calendar, today is {0}: {1}",
    "es": "En el calendario cósmico, hoy es {0}: {1}",
    "where": [
-    "src/deeptime/deeptime.ts:763"
+    "src/deeptime/deeptime.ts:783"
    ]
   },
   {
@@ -17189,7 +17189,7 @@
    "en": "Only microbes, too small to see.",
    "es": "Solo microbios, demasiado pequeños para verlos.",
    "where": [
-    "src/deeptime/deeptime.ts:618"
+    "src/deeptime/deeptime.ts:637"
    ]
   },
   {
@@ -17266,8 +17266,8 @@
    "en": "Open its story",
    "es": "Abrir su historia",
    "where": [
-    "src/deeptime/deeptime.ts:568",
-    "src/deeptime/deeptime.ts:584",
+    "src/deeptime/deeptime.ts:587",
+    "src/deeptime/deeptime.ts:603",
     "src/green/cards.ts:200",
     "src/layers/packs/heritage.ts:468",
     "src/wild/cards.ts:71"
@@ -17560,7 +17560,7 @@
    "en": "Oxygen",
    "es": "Oxígeno",
    "where": [
-    "src/deeptime/deeptime.ts:304"
+    "src/deeptime/deeptime.ts:323"
    ]
   },
   {
@@ -17581,7 +17581,7 @@
    "en": "Ozone layer",
    "es": "Capa de ozono",
    "where": [
-    "src/deeptime/deeptime.ts:315"
+    "src/deeptime/deeptime.ts:334"
    ]
   },
   {
@@ -17857,7 +17857,7 @@
    "en": "Pause",
    "es": "Pausa",
    "where": [
-    "src/deeptime/deeptime.ts:708",
+    "src/deeptime/deeptime.ts:728",
     "src/learn/learn.ts:2653",
     "src/master/master.ts:837",
     "src/ui/audio.ts:203",
@@ -18450,7 +18450,7 @@
    "en": "Plants and algae",
    "es": "Plantas y algas",
    "where": [
-    "src/deeptime/deeptime.ts:616"
+    "src/deeptime/deeptime.ts:635"
    ]
   },
   {
@@ -18599,14 +18599,14 @@
    "en": "Play the story",
    "es": "Reproducir la historia",
    "where": [
-    "src/deeptime/deeptime.ts:223"
+    "src/deeptime/deeptime.ts:232"
    ]
   },
   {
    "en": "Play the story, narrated",
    "es": "Reproducir la historia narrada",
    "where": [
-    "src/deeptime/deeptime.ts:223"
+    "src/deeptime/deeptime.ts:232"
    ]
   },
   {
@@ -19063,7 +19063,7 @@
    "en": "Read aloud",
    "es": "Leer en voz alta",
    "where": [
-    "src/deeptime/deeptime.ts:712",
+    "src/deeptime/deeptime.ts:732",
     "src/learn/learn.ts:2668",
     "src/modes/stories.ts:1732",
     "src/ui/ambient.ts:76"
@@ -20188,7 +20188,7 @@
    "en": "Sea level",
    "es": "Nivel del mar",
    "where": [
-    "src/deeptime/deeptime.ts:313",
+    "src/deeptime/deeptime.ts:332",
     "src/layers/packs/ocean.ts:140"
    ]
   },
@@ -20535,7 +20535,7 @@
    "en": "Share of all time since the Big Bang that came after this moment: {0}%.",
    "es": "Parte de todo el tiempo desde el Big Bang que vino después de este momento: {0}%.",
    "where": [
-    "src/deeptime/deeptime.ts:631"
+    "src/deeptime/deeptime.ts:650"
    ]
   },
   {
@@ -21033,7 +21033,7 @@
    "es": "Tamaño",
    "where": [
     "src/app/i18n.ts:336",
-    "src/deeptime/deeptime.ts:562",
+    "src/deeptime/deeptime.ts:581",
     "src/sky/galaxy.ts:362",
     "src/sky/sky.ts:697",
     "src/sky/sky.ts:710"
@@ -21099,7 +21099,7 @@
    "en": "Small caps",
    "es": "Casquetes pequeños",
    "where": [
-    "src/deeptime/deeptime.ts:316"
+    "src/deeptime/deeptime.ts:335"
    ]
   },
   {
@@ -21756,7 +21756,7 @@
    "en": "Stop",
    "es": "Detener",
    "where": [
-    "src/deeptime/deeptime.ts:711",
+    "src/deeptime/deeptime.ts:731",
     "src/ui/audio.ts:252"
    ]
   },
@@ -21807,14 +21807,14 @@
    "en": "Story scale",
    "es": "Escala de historia",
    "where": [
-    "src/deeptime/deeptime.ts:226"
+    "src/deeptime/deeptime.ts:235"
    ]
   },
   {
    "en": "Story scale: more room for the busy recent past",
    "es": "Escala de historia: más espacio para el pasado reciente",
    "where": [
-    "src/deeptime/deeptime.ts:225"
+    "src/deeptime/deeptime.ts:234"
    ]
   },
   {
@@ -22269,7 +22269,7 @@
    "en": "Tap for more",
    "es": "Toca para ver más",
    "where": [
-    "src/deeptime/deeptime.ts:322"
+    "src/deeptime/deeptime.ts:341"
    ]
   },
   {
@@ -23751,7 +23751,7 @@
    "en": "The Moon",
    "es": "La Luna",
    "where": [
-    "src/deeptime/deeptime.ts:312",
+    "src/deeptime/deeptime.ts:331",
     "src/learn/tours.ts:816",
     "src/space/worlds.ts:78"
    ]
@@ -24069,7 +24069,7 @@
    "en": "The Sun",
    "es": "El Sol",
    "where": [
-    "src/deeptime/deeptime.ts:308"
+    "src/deeptime/deeptime.ts:327"
    ]
   },
   {
@@ -24982,7 +24982,7 @@
    "en": "The first time in Earth’s history",
    "es": "La primera vez en la historia de la Tierra",
    "where": [
-    "src/deeptime/deeptime.ts:579"
+    "src/deeptime/deeptime.ts:598"
    ]
   },
   {
@@ -25834,7 +25834,7 @@
    "en": "The south pole",
    "es": "El polo sur",
    "where": [
-    "src/deeptime/deeptime.ts:316"
+    "src/deeptime/deeptime.ts:335"
    ]
   },
   {
@@ -26065,7 +26065,7 @@
    "en": "The whole Earth",
    "es": "La Tierra entera",
    "where": [
-    "src/deeptime/deeptime.ts:316",
+    "src/deeptime/deeptime.ts:335",
     "src/earth/inside.ts:19"
    ]
   },
@@ -26297,7 +26297,7 @@
    "en": "Thin",
    "es": "Delgada",
    "where": [
-    "src/deeptime/deeptime.ts:315"
+    "src/deeptime/deeptime.ts:334"
    ]
   },
   {
@@ -26844,7 +26844,7 @@
     "src/app/i18n.ts:269",
     "src/app/i18n.ts:337",
     "src/deeptime/deeptime.ts:63",
-    "src/deeptime/deeptime.ts:209",
+    "src/deeptime/deeptime.ts:216",
     "src/green/cards.ts:116"
    ]
   },
@@ -27180,14 +27180,14 @@
    "en": "True scale: every million years the same width",
    "es": "Escala real: cada millón de años del mismo ancho",
    "where": [
-    "src/deeptime/deeptime.ts:225"
+    "src/deeptime/deeptime.ts:234"
    ]
   },
   {
    "en": "True scale: see how little of the time is ours",
    "es": "Escala real: mira qué poco del tiempo es nuestro",
    "where": [
-    "src/deeptime/deeptime.ts:226"
+    "src/deeptime/deeptime.ts:235"
    ]
   },
   {
@@ -28447,8 +28447,8 @@
    "en": "What lived then",
    "es": "Qué vivía entonces",
    "where": [
-    "src/deeptime/deeptime.ts:219",
-    "src/deeptime/deeptime.ts:634"
+    "src/deeptime/deeptime.ts:228",
+    "src/deeptime/deeptime.ts:653"
    ]
   },
   {
@@ -28535,7 +28535,7 @@
    "es": "Cuándo",
    "where": [
     "src/app/i18n.ts:331",
-    "src/deeptime/deeptime.ts:576",
+    "src/deeptime/deeptime.ts:595",
     "src/green/cards.ts:173",
     "src/layers/packs/heritage.ts:461",
     "src/layers/packs/live.ts:132"
@@ -28979,7 +28979,7 @@
    "en": "Where it lived",
    "es": "Dónde vivía",
    "where": [
-    "src/deeptime/deeptime.ts:558",
+    "src/deeptime/deeptime.ts:577",
     "src/wild/cards.ts:67"
    ]
   },
@@ -29080,7 +29080,7 @@
    "en": "Where the vital signs come from",
    "es": "De dónde salen los signos vitales",
    "where": [
-    "src/deeptime/deeptime.ts:632"
+    "src/deeptime/deeptime.ts:651"
    ]
   },
   {
@@ -30372,7 +30372,7 @@
    "es": "Sí",
    "where": [
     "src/compare/model.ts:101",
-    "src/deeptime/deeptime.ts:315",
+    "src/deeptime/deeptime.ts:334",
     "src/layers/packs/facts.ts:62",
     "src/wild/cards.ts:90"
    ]
@@ -32331,6 +32331,7 @@
    "es": "hoy",
    "where": [
     "src/app/i18n.ts:230",
+    "src/deeptime/deeptime.ts:221",
     "src/master/master.ts:883"
    ]
   },
@@ -32940,7 +32941,7 @@
    "en": "{0} genera",
    "es": "{0} géneros",
    "where": [
-    "src/deeptime/deeptime.ts:314"
+    "src/deeptime/deeptime.ts:333"
    ]
   },
   {
@@ -32968,7 +32969,7 @@
    "en": "{0} hours",
    "es": "{0} horas",
    "where": [
-    "src/deeptime/deeptime.ts:307"
+    "src/deeptime/deeptime.ts:326"
    ]
   },
   {
@@ -33068,7 +33069,7 @@
    "en": "{0} km away",
    "es": "a {0} km",
    "where": [
-    "src/deeptime/deeptime.ts:312",
+    "src/deeptime/deeptime.ts:331",
     "src/learn/learn.ts:1728"
    ]
   },
@@ -33399,7 +33400,7 @@
    "en": "{0} tonnes",
    "es": "{0} toneladas",
    "where": [
-    "src/deeptime/deeptime.ts:561"
+    "src/deeptime/deeptime.ts:580"
    ]
   },
   {
@@ -33503,7 +33504,7 @@
    "en": "{0}% as bright as today",
    "es": "{0}% del brillo actual",
    "where": [
-    "src/deeptime/deeptime.ts:308"
+    "src/deeptime/deeptime.ts:327"
    ]
   },
   {

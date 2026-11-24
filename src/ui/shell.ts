@@ -70,7 +70,7 @@ export class Shell {
     const root = app.root;
     this.top = h('header', { class: 'topbar' });
     // The map runs under the top bar: its names keep off the brand, the search button and the button for you.
-    app.renderer.keepOut.add(() => app.renderer.boxesOf(this.top.querySelectorAll('.brand, .search-btn, .me-btn')));
+    app.renderer.keepOut.add(() => app.renderer.boxesOf(root.querySelectorAll('.topbar .brand, .topbar .search-btn, .topbar .me-btn, .zoombar')));
     this.chips = h('div', { class: 'chips', role: 'toolbar' });
     this.dock = h('nav', { class: 'dock glass', 'aria-label': L('Main', 'Principal') });
     this.menu = h('div', { class: 'menu glass', hidden: true, role: 'menu' });

@@ -167,12 +167,16 @@ export class DeepTime {
     this.vitalsEl = h('div', { class: 'dt-vitals glass', 'data-deeptime': 'vitals' });
     this.vitalsEl.addEventListener('click', () => { this.vitalsOpen = !this.vitalsOpen; this.renderVitals(); });
     app.root.append(this.top, this.vitalsEl);
+    app.renderer.keepOut.add(this.keepNames);
+    window.addEventListener('resize', this.fitBar);
     this.renderHud();
     if (app.renderer.view.current.kind === 'globe') app.renderer.view.flyTo({ lon: 15, lat: 10, zoom: 1 }, 1200);
     app.emit('mode', 'deeptime');
     app.renderer.requestRender();
   }
   private saved: { stack: string[]; projection: string } = { stack: [], projection: '' };
+  /** The map's names keep off the panels over it: the top line, the vital signs and the story's caption. */
+  private keepNames = () => this.app.renderer.boxesOf([this.top, this.vitalsEl, this.caption].filter((e): e is HTMLElement => !!e));
 
   async exit() {
     if (!this.active) return;
@@ -184,8 +188,11 @@ export class DeepTime {
     this.caption?.remove(); this.caption = null;
     this.anims = [];
     app.renderer.view.insetBottom = 0;
+    app.renderer.keepOut.delete(this.keepNames);
+    window.removeEventListener('resize', this.fitBar);
+    document.documentElement.style.removeProperty('--dt-bar-h');
     app.mode = null;
-    document.documentElement.classList.remove('mode-time', 'mode-deeptime');
+    document.documentElement.classList.remove('mode-time', 'mode-deeptime', 'dt-playing');
     app.renderer.baseMap = true;
     this.shell.card.hide();
     if (this.shell.sheet.isOpen('deeptime')) this.shell.sheet.close();
@@ -210,6 +217,8 @@ export class DeepTime {
     this.bar = new TimeBar({
       title: L('Deep time', 'El tiempo profundo'),
       format: (f) => agoText(maAt(f, this.scale)),
+      // "From 4.54 Ga to today", in the ticks' units ("From 4.54 billion years ago" read "Desde Hace…" in Spanish).
+      rangeFormat: (f) => { const m = maAt(f, this.scale); return m < 0.0005 ? L('today', 'hoy') : m < 1 ? `${fmtNumber(m * 1000, 0)} ka` : m < 1000 ? `${fmtNumber(m, m < 10 ? 1 : 0)} Ma` : `${fmtNumber(m / 1000, 2)} Ga`; },
       caption: (f) => this.captionFor(maAt(f, this.scale)),
       bands, ticks, start: 0, end: 1, pos: pos(this.ma),
       rate: 0.012,
@@ -227,8 +236,18 @@ export class DeepTime {
     const plain = h('button', { type: 'button', class: `icon-btn${this.plain ? ' on' : ''}`, 'data-deeptime': 'plain', title: L('Continents only', 'Solo continentes'), 'aria-pressed': String(this.plain) }, icon(Layers, 18));
     plain.addEventListener('click', () => { this.plain = !this.plain; this.buildBar(); this.renderHud(); this.app.renderer.requestRender(); });
     tools?.prepend(story, scale, plain);
+    this.bar.el.classList.add('dt-bar');
     this.app.root.append(this.bar.el);
-    requestAnimationFrame(() => { if (this.bar) { this.app.renderer.view.insetBottom = this.bar.coveredHeight(); this.app.renderer.requestRender(); } });
+    requestAnimationFrame(() => this.fitBar());
+  }
+
+  /** Keep the map, the vital signs and the story's caption above the time bar (its height changes with the screen). */
+  private fitBar = () => {
+    if (!this.bar) return;
+    const hgt = this.bar.coveredHeight();
+    this.app.renderer.view.insetBottom = hgt;
+    document.documentElement.style.setProperty('--dt-bar-h', `${Math.round(hgt)}px`);
+    this.app.renderer.requestRender();
   }
 
   private captionFor(ma: number): string {
@@ -645,6 +664,7 @@ export class DeepTime {
     let i = from ?? Math.max(0, d.beats.findIndex((b) => b.ma <= this.ma + 1e-9));
     if (i < 0 || (from == null && this.ma < 0.001)) i = 0;
     this.player = { i, token: my, paused: false };
+    document.documentElement.classList.add('dt-playing');
     if (this.bar?.playing) this.bar.toggle();
     this.shell.card.hide();
     this.buildCaption();
@@ -724,14 +744,14 @@ export class DeepTime {
       h('div', { class: 'dt-cap-text', 'aria-live': 'polite' }, ''),
       h('div', { class: 'dt-cap-tools' }, h('span', { class: 'dt-cap-n muted small' }, ''), prev, pause, next, voice, stop));
     this.app.root.append(this.caption);
-    if (this.bar) this.caption.style.bottom = `${this.bar.coveredHeight() + 10}px`;
+    this.fitBar();
   }
 
   stopStory(remove = true) {
     this.token++;
     this.player = null;
     stopSpeaking();
-    if (remove) { this.caption?.remove(); this.caption = null; }
+    if (remove) { this.caption?.remove(); this.caption = null; document.documentElement.classList.remove('dt-playing'); }
   }
 
   /** The search: past species and events, each opening Deep time at its time. */
