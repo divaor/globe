@@ -192,6 +192,7 @@ export class App {
   }
 
   deactivate(id: string, notify = true) {
+    this.pending.delete(id);
     const i = this.layers.findIndex((l) => l.def.id === id);
     if (i < 0) return;
     const [inst] = this.layers.splice(i, 1);
@@ -207,6 +208,7 @@ export class App {
   /** Replace the whole stack (used by tours, quizzes and ambient cycling). */
   async setStack(ids: string[]) {
     const seq = ++this.stackSeq;
+    for (const id of [...this.pending.keys()]) if (!ids.includes(id)) this.pending.delete(id);
     for (const l of [...this.layers]) if (!ids.includes(l.def.id)) this.deactivate(l.def.id, false);
     // A filter that loads is waited for; if another stack was asked for meanwhile, that one wins.
     for (const id of ids) {
@@ -439,7 +441,11 @@ export class App {
   // ---- persistence ------------------------------------------------------------------------
   /** The filters on the map now, as they are saved. */
   activeNow(): ActiveSpec[] {
-    return this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options }));
+    const on = this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options }));
+    // v0.47.0: filters asked for whose pack is still loading (the app saves itself before the packs are in) are kept too,
+    // or a link's or last visit's filters would be lost from the address and the saved state.
+    const waiting = [...this.pending].filter(([id]) => !on.some((a) => a.id === id)).map(([id, spec]) => ({ id, opacity: spec.opacity ?? 1, options: spec.options }));
+    return [...on, ...waiting];
   }
   /** A game or quiz hides the map's names or puts its filters away: until it gives them back, they are saved as they were. */
   lend(owner: object, what: Lent) { if (!this.lends.has(owner)) this.lends.set(owner, what); }
