@@ -13,8 +13,8 @@
 //    Time travel stories and of the legacies, the art guide's artists and architects (any Wikidata id or Wikipedia
 //    article named in public/data that is a human on Wikidata).
 // more.json, loaded after it: each country's own best-known people below the global list (by the current country,
-// P17, of their birthplace), down to FLOOR Wikipedias and up to a share scaled to the country's population (capOf),
-// and the people readers asked for by name (ASKED) when they reach the floor.
+// P17, of their birthplace), down to FLOOR Wikipedias and up to a share scaled to the country's population (capOf).
+// No one is added by hand: someone who misses their country's share is not listed (v0.47.3).
 // Everyone needs a year of birth and a place of birth. A birthplace with no coordinates of its own takes the point
 // of the nearest place it lies in (P131, up to three steps up: Coyoacán takes Mexico City's), and keeps its own name.
 // Each keeps a name in English and Spanish, the years of birth and death, where they were born and (if they have
@@ -45,8 +45,6 @@ const FLOOR = 8;
 export const capOf = (pop) => Math.round(Math.min(400, Math.max(35, 35 + (2.5 * (pop || 0)) / 1e6)));
 /** The second file's size, at most (bytes): about 2.5 MB, with a little room for the next fetch. */
 const MORE_MAX = 2_600_000;
-/** People readers asked for by name: in the second file whatever their country's share, if they reach the floor. */
-const ASKED = { Q524664: 'Andrés Quintana Roo', Q2832483: 'Aleks Syntek', Q2454225: 'Carlos Loret de Mola' };
 /** Folders of public/data not searched for featured people: this list itself, and what is built from it. */
 const NOT_FEATURED = new Set(['born', 'fill', 'i18n']);
 
@@ -275,8 +273,6 @@ async function fetchAll() {
     const rows = await ask(CACHE, `country-people-${pt}-${String(i / 25).padStart(2, '0')}`, `SELECT DISTINCT ?p ?sl ?cty WHERE { VALUES (?cty ?min) { ${values} } ?x wdt:P17 ?cty . ?p wdt:P19 ?x . ?p wikibase:sitelinks ?sl . FILTER(?sl >= ?min && ?sl < ${min}) ?p wdt:P31 wd:Q5 . }`);
     for (const b of rows) { const p = qidOf(val(b, 'p')); if (p && !global.has(p)) add(p, Number(val(b, 'sl')), qidOf(val(b, 'cty'))); }
   }
-  for (const b of await askMany('asked', 'p', Object.keys(ASKED), '?p ?cty', '?p wdt:P19 ?x . ?x wdt:P17 ?cty .')) add(qidOf(val(b, 'p')), 0, qidOf(val(b, 'cty')));
-  for (const p of Object.keys(ASKED)) add(p, 0, null);
 
   // ---- 4. What Wikidata says of everyone outside the global list.
   const others = [...new Set([...featured, ...depth.keys()])].filter((p) => !global.has(p)).sort((a, b) => qn(a) - qn(b));
@@ -433,7 +429,7 @@ export function build() {
   const main = rowsOf(first.people.filter((p) => !dropped(p)), a);
   const listed = new Set(main.map((r) => r[0]));
   // The second: each country's best known below the global list, up to its share (the best known first, then the
-  // older Wikidata item), and the people readers asked for.
+  // older Wikidata item).
   const cands = second.people.filter((p) => !listed.has(p.id) && p.sl >= FLOOR && !dropped(p));
   const byCountry = new Map();
   for (const p of cands) for (const c of p.ctys) (byCountry.get(c) ?? byCountry.set(c, []).get(c)).push(p);
@@ -443,7 +439,6 @@ export function build() {
     for (const p of list) chosen.add(p.id);
     shares[c] = list.length;
   }
-  for (const p of cands) if (ASKED[p.id]) chosen.add(p.id);
   const b = tables();
   const more = rowsOf(second.people.filter((p) => chosen.has(p.id)), b);
   return {
@@ -490,7 +485,6 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
       const raw = new Map([...first.people, ...second.people].map((p) => [p.id, p]));
       const featured = first.featured.filter((q) => raw.has(q) && !dropped(raw.get(q)));
       const inMain = new Set(out.people.map((p) => p[0]));
-      const loret = raw.get('Q2454225');
       const short = Object.entries(second.countries).filter(([c, [pop, , cut]]) => shares[c] < capOf(pop) && cut > FLOOR).map(([, x]) => x[1]);
       const checks = [
         [out.people.length >= 9000, `${out.people.length} people`],
@@ -502,8 +496,8 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
         [field('Q91') === 'leaders', 'Lincoln: a leader'],
         [born('Q5588')?.[0] === 'Coyoacán' && city('Q5588') === 'mexico-city' && mexican('Q5588') && field('Q5588') === 'arts', `Frida Kahlo: born in Coyoacán (no coordinates of its own: Mexico City's), in the guide's Mexico City, art`],
         [inMain.has('Q738404') && mexican('Q738404'), `Juan Gabriel (a life in Lives on the map): ${where('Q738404')}, Mexico`],
-        ...[['Q1453045', 'Armando Manzanero'], ['Q2832483', 'Aleks Syntek'], ['Q524664', 'Andrés Quintana Roo']].map(([q, n]) => [mexican(q), `${n}: ${where(q)}, Mexico`]),
-        [!!loret && (!!find('Q2454225') === loret.sl >= FLOOR), `Carlos Loret de Mola: ${loret ? `${loret.sl} Wikipedias, ${find('Q2454225') ? `listed (${where('Q2454225')})` : `below the floor of ${FLOOR}, not listed`}` : 'not asked'}`],
+        [mexican('Q1453045'), `Armando Manzanero (Mexico's own share): ${where('Q1453045')}, Mexico`],
+        [more.people.length <= Object.values(shares).reduce((s, n) => s + n, 0), `more.json holds only each country's share, no one added by hand (${more.people.length} people)`],
         [featured.every((q) => inMain.has(q)), `everyone the app features with a place and year of birth is in people.json (${featured.length} of ${first.featured.length})`],
         [out.people.every((p) => p[3] != null && out.places[p[5]]) && more.people.every((p) => p[3] != null && more.places[p[5]]), 'everyone has a year and a place of birth'],
         [[out, more].every((f) => f.people.filter((p) => p[4] == null).every((p) => p[8] === -1)), 'no place of death for anyone without a year of death'],
