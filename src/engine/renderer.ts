@@ -191,12 +191,16 @@ export class Renderer {
 
   requestRender() {
     this.fullDirty = true;
-    if (this.raf || this.held || this.paceTimer) return;
+    if (this.raf || this.held) return;
     // A redraw asked while the globe is still (data arriving, a filter's legend) waits a little after the last one,
     // twice as long as that took (at most 0.6 s): a slow phone, where a frame takes a few hundred milliseconds, is
-    // not kept busy redrawing as each file arrives. Moving, flying and animations draw every frame.
+    // not kept busy redrawing as each file arrives. Moving, flying, animations and a view that changed since the last
+    // frame (a step with the arrow keys, a jump to a place) draw at once.
+    const still = !this.moving && !this.view.animating && !this.tickers.size && this.viewKey() === this.drawnView;
+    if (!still && this.paceTimer) { clearTimeout(this.paceTimer); this.paceTimer = 0; }
+    if (this.paceTimer) return;
     const gap = Math.min(600, this.drawCost * 2) - (performance.now() - this.drawnAt);
-    if (gap > 4 && !this.moving && !this.view.animating && !this.tickers.size) {
+    if (gap > 4 && still) {
       this.paceTimer = window.setTimeout(() => { this.paceTimer = 0; if (!this.raf && !this.held) this.raf = requestAnimationFrame((t) => this.frame(t)); }, gap);
       return;
     }
@@ -206,6 +210,12 @@ export class Renderer {
   private drawnAt = 0;
   private drawCost = 0;
   private paceTimer = 0;
+  /** The view as the last full frame drew it (where, how close, which projection, the canvas's size). */
+  private drawnView = '';
+  private viewKey(): string {
+    const v = this.view;
+    return `${v.lon}|${v.lat}|${v.zoom}|${v.current.id}|${v.w}|${v.h}`;
+  }
 
   /** Schedule a frame that only redraws animated effects (the map stays as it is). */
   requestFx() {
@@ -247,6 +257,7 @@ export class Renderer {
       this.draw(now);
       this.drawnAt = performance.now();
       this.drawCost = this.drawnAt - t0;
+      this.drawnView = this.viewKey();
       this.onFrame?.();
     }
     const fx = this.hasFx();

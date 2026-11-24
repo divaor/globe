@@ -233,7 +233,7 @@ export async function startFeatures(app: App, shell: Shell, shared: URLSearchPar
   setTimeout(() => void registerScriptFonts(), 2500);
   app.emit('layers');
   // v0.41.1: a first visit is welcomed with three short cards (not one opened from a link to somewhere).
-  if (shouldWelcome()) {
+  if (shouldWelcome(shared.toString())) {
     showWelcome(app, {
       today: () => void today.openPanel(), games: () => shell.openTab('play'), stories: () => time.open(), map: () => shell.openTab('map'),
     });
@@ -251,9 +251,10 @@ export async function startFeatures(app: App, shell: Shell, shared: URLSearchPar
   if (shared.get('today')) setTimeout(() => void today.openPanel(), 500);
   // Home-screen shortcut: open straight into ambient mode.
   // A playlist link (#ambient=1&playlist=planet, or the reader's own in #mine=...).
-  if (/ambient=1/.test(location.hash)) {
-    const shared = playlistFromLink(location.hash);
-    const id = shared ? MINE_ID : /[#&]playlist=([a-z]+)/.exec(location.hash)?.[1];
+  // (v0.47.0: read from the address as it was opened; by now the app has written its own state there.)
+  if (shared.get('ambient') === '1') {
+    const mine = playlistFromLink(`#${shared.toString()}`);
+    const id = mine ? MINE_ID : /^[a-z]+$/.exec(shared.get('playlist') ?? '')?.[0];
     setTimeout(() => void shell.ambient.start(id ?? undefined), 600);
   }
   // A Border hop challenge: #hop=ESP-CHN&goal=people&beat=870.

@@ -11,12 +11,13 @@ export interface WelcomeActions { today: () => void; games: () => void; stories:
 
 const KEY = 'atlas-globe:welcomed';
 
-/** Whether to welcome: never seen the app on this device, and not opened from a link to somewhere. */
-export function shouldWelcome(): boolean {
+/** Whether to welcome: never seen the app on this device, and not opened from a link to somewhere. `opened` is the
+ *  address's hash as the page opened (v0.47.0: by the time this is asked the app has written its own state there). */
+export function shouldWelcome(opened: string): boolean {
   try {
     if (localStorage.getItem(KEY) || localStorage.getItem('atlas-globe:hinted')) return false;
   } catch { return false; }
-  return !location.hash.slice(1);
+  return !opened.replace(/^#/, '');
 }
 
 export function showWelcome(app: App, act: WelcomeActions): HTMLElement {
