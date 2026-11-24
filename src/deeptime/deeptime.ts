@@ -403,7 +403,7 @@ export class DeepTime {
     const e = this.data?.events.find((x) => x.id === k);
     if (e) return tx(e.name);
     const words: Record<string, () => string> = {
-      jupiter: () => L('Jupiter', 'Júpiter'), earth: () => L('The Earth', 'La Tierra'), theia: () => L('Theia', 'Tea'),
+      jupiter: () => L('Jupiter', 'Júpiter'), mars: () => L('Mars', 'Marte'), earth: () => L('The Earth', 'La Tierra'), theia: () => L('Theia', 'Tea'),
       moon: () => L('The Moon', 'La Luna'), 'sun-here': () => L('The Sun will form here', 'Aquí se formará el Sol'),
     };
     return words[k]?.() ?? null;
@@ -448,12 +448,13 @@ export class DeepTime {
     const ma = Math.max(0, maOfT(t));
     this.t = t;
     this.ma = ma;
-    this.syncScene();
     // Moving forward through an impact starts its animation.
     if (this.data && !this.plain && ma < prev) for (const e of this.data.events) if (e.kind === 'impact' && e.ma <= prev && e.ma > ma && prev - ma < 5) this.anims.push({ e, t0: performance.now() });
     this.lastMa = prev;
     this.keepPlace();
     this.renderHud();
+    // After the heads-up display, whose height the scene keeps clear of.
+    this.syncScene();
     this.app.renderer.requestRender();
   }
 
@@ -845,7 +846,13 @@ export class DeepTime {
     if (cosmic && te >= 1e6) rows.push({ icon: '💥', label: L('Age of the universe', 'Edad del universo'), value: ageText(te) });
     if (k) rows.push({ icon: k.icon, label: L('Kind', 'Tipo'), value: tx(k.name) });
     if (e.sure === 'debated') rows.push({ icon: '❓', label: L('Certainty', 'Certeza'), value: L('Debated', 'Debatido') });
-    if (e.first) rows.push({ icon: '🥇', label: L('A first', 'Un primero'), value: L('The first time in Earth’s history', 'La primera vez en la historia de la Tierra') });
+    if (e.first) {
+      // Before the Earth, a first is the universe's (or, in the Sun's disc, the solar system's).
+      const where = e.ma <= EARTH_MA ? L('The first time in Earth’s history', 'La primera vez en la historia de la Tierra')
+        : e.kind === 'planet' ? L('The first time in the solar system’s history', 'La primera vez en la historia del sistema solar')
+        : L('The first time in the universe’s history', 'La primera vez en la historia del universo');
+      rows.push({ icon: '🥇', label: L('A first', 'Un primero'), value: where });
+    }
     const links: { label: string; href?: string; onClick?: () => void }[] = [];
     const href = wikiHref(e.wiki);
     if (href) links.push({ label: 'Wikipedia', href });

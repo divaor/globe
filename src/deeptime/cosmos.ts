@@ -70,6 +70,8 @@ export class CosmosScene {
   focus: string | null = null;
   /** The part of the screen the scene has to itself: below the top line, above the bar (CSS px). */
   inset = { top: 0, bottom: 0 };
+  /** The inset the scene is drawn with: it eases to `inset`, so the middle glides when the heads-up display grows. */
+  private at = { top: -1, bottom: -1 };
   private noise: HTMLCanvasElement | null = null;
   private cmb: HTMLCanvasElement | null = null;
   private galaxy: HTMLCanvasElement | null = null;
@@ -77,12 +79,14 @@ export class CosmosScene {
   private nodes: { x: number; y: number; m: number; at: number; spiral: boolean; rot: number }[] = [];
   private edges: [number, number][] = [];
   private home = 0;
+  /** A knot whose galaxy holds an early giant black hole (a quasar). */
+  private quasar = 1;
   private parts: { x: number; y: number; k: number; ph: number }[] = [];
   private flashes: { i: number; t0: number }[] = [];
 
   /**
    * `has(id)`: whether an event exists (only those get a spot); `name(key)`: the words for a label (an event's name,
-   * or "jupiter", "earth", "theia", "moon", "sun-here"), or null for none; `tap(id)`: a spot tapped.
+   * or "jupiter", "mars", "earth", "theia", "moon", "sun-here"), or null for none; `tap(id)`: a spot tapped.
    */
   constructor(private has: (id: string) => boolean, private name: (key: string) => string | null, private tap: (id: string) => void) {
     this.el = document.createElement('canvas');
@@ -116,7 +120,7 @@ export class CosmosScene {
     if (on === this.shown) return;
     this.shown = on;
     this.el.classList.toggle('on', on);
-    if (on) { this.build(); this.raf = requestAnimationFrame(this.loop); } else { cancelAnimationFrame(this.raf); this.spots = []; }
+    if (on) { this.at = { top: -1, bottom: -1 }; this.build(); this.raf = requestAnimationFrame(this.loop); } else { cancelAnimationFrame(this.raf); this.spots = []; }
   }
 
   setTime(t: number) {
@@ -202,6 +206,8 @@ export class CosmosScene {
     this.home = this.nodes.map((p, i) => ({ i, d: Math.hypot(p.x - 0.05, p.y + 0.02) })).sort((a, b) => a.d - b.d)[0].i;
     this.nodes[this.home].spiral = true;
     this.nodes[this.home].m = 1;
+    // The quasar: the biggest early knot near the middle, but not home.
+    this.quasar = this.nodes.map((p, i) => ({ i, k: p.m - p.at - Math.hypot(p.x, p.y) * 0.8 })).filter((o) => o.i !== this.home).sort((a, b) => b.k - a.k)[0].i;
     // Particles of the first minutes: positions and a kind (0–2 quarks, 3 proton, 4 neutron, 5 helium).
     this.parts = Array.from({ length: 180 }, () => ({ x: r() * 2 - 1, y: r() * 2 - 1, k: Math.floor(r() * 6), ph: r() * Math.PI * 2 }));
   }
@@ -229,7 +235,9 @@ export class CosmosScene {
     this.spots = [];
     const t = this.t;
     const lt = t > 0 ? Math.log10(t) : -50;
-    const top = Math.min(this.inset.top, h * 0.45), bottom = Math.min(this.inset.bottom, h * 0.45);
+    const at = this.at, ease = (a: number, b: number) => (a < 0 || Math.abs(b - a) < 0.5 ? b : a + (b - a) * 0.18);
+    at.top = ease(at.top, this.inset.top); at.bottom = ease(at.bottom, this.inset.bottom);
+    const top = Math.min(at.top, h * 0.45), bottom = Math.min(at.bottom, h * 0.45);
     const cx = w / 2, cy = top + (h - top - bottom) / 2;
     // The stage: wide things (the disc, the web) may use the width even when the height is short.
     const R = Math.max(60, Math.min(w * 0.45, (h - top - bottom) * 0.6));
@@ -259,6 +267,11 @@ export class CosmosScene {
     const { ctx } = this;
     ctx.save();
     ctx.font = '600 13px system-ui, -apple-system, "Segoe UI", sans-serif';
+    const tw = ctx.measureText(text).width, w = this.w;
+    if (align === 'left' && x + tw > w - 6) { align = 'right'; x -= 28; }
+    if (align === 'center') x = Math.max(tw / 2 + 6, Math.min(w - tw / 2 - 6, x));
+    else if (align === 'right') x = Math.max(tw + 6, x);
+    else x = Math.min(w - tw - 6, x);
     ctx.textAlign = align;
     ctx.textBaseline = 'middle';
     ctx.lineWidth = 4;
@@ -324,7 +337,7 @@ export class CosmosScene {
       ctx.restore();
     }
     // The whole fog is the thing to tap: what is happening now.
-    const now = lt < -35.5 ? 'inflation' : lt < -7 ? 'first-protons' : lt < 3 ? 'first-nuclei' : 'first-atoms';
+    const now = lt < -35.5 ? 'inflation' : lt < -7 ? 'first-protons' : lt < 4.4 ? 'first-nuclei' : lt < 5.4 ? 'dark-matter-clumps' : 'first-atoms';
     this.spot(now, cx, cy, R);
   }
 
@@ -380,6 +393,26 @@ export class CosmosScene {
     if (lt < 8) this.spot('dark-ages', S.cx, S.cy, S.R);
     // The first stars light up along the web, knot after knot, then galaxies grow where they were.
     const lit = (i: number) => t > lerp(T.starsOn, T.starsAll, this.nodes[i].at);
+    // Reionisation: bubbles of ionised gas grow round each galaxy and join until they fill space.
+    const ion = ramp(t, sinceBang(13550), sinceBang(12700));
+    const ionA = (1 - ramp(t, sinceBang(12850), sinceBang(12500))) * fade;
+    if (ion > 0 && ionA > 0.01) {
+      ctx.save();
+      ctx.fillStyle = `rgba(120,160,255,${0.05 * ionA})`;
+      ctx.strokeStyle = `rgba(150,190,255,${0.16 * ionA})`;
+      ctx.lineWidth = 1;
+      for (let i = 0; i < this.nodes.length; i++) {
+        if (!lit(i)) continue;
+        const [x, y] = this.nodeAt(i, S, zoom);
+        const r = (6 + ion * S.R * 0.6) * (0.5 + this.nodes[i].m * 0.5);
+        ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      }
+      ctx.restore();
+      if (ion < 1) this.spot('reionization', S.cx, S.cy, S.R * 0.95);
+    }
+    // Cosmic noon: galaxies making stars faster than ever (pink knots of newborn stars).
+    const noon = ramp(t, sinceBang(11800), sinceBang(11000)) * (1 - ramp(t, sinceBang(9800), sinceBang(9200))) * fade;
+    if (noon > 0.3 && zoom < 0.5) this.spot('cosmic-noon', S.cx, S.cy, S.R);
     const gal = ramp(t, T.galaxiesOn, T.spirals);
     let firstStar: [number, number] | null = null, firstGalaxy: [number, number] | null = null;
     ctx.save();
@@ -391,6 +424,14 @@ export class CosmosScene {
       if (x < -60 || y < -60 || x > S.w + 60 || y > S.h + 60) continue;
       if (i === this.home && zoom > 0.05) continue;
       const big = 1.6 + n.m * 2.2 + gal * n.m * 4.5 * (1 + zoom * 6);
+      if (noon > 0.01) {
+        for (let k = 0; k < 4; k++) {
+          const a = n.rot + k * 1.7, d = big * (0.5 + ((i * 7 + k * 3) % 5) * 0.18);
+          const tw = 0.6 + 0.4 * Math.sin(live * 0.003 + i + k * 2);
+          ctx.fillStyle = `rgba(255,120,190,${noon * 0.45 * tw})`;
+          ctx.beginPath(); ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d * 0.6, 1.1, 0, Math.PI * 2); ctx.fill();
+        }
+      }
       if (gal > 0.05 && n.spiral && t > T.spirals) {
         ctx.save();
         ctx.globalAlpha = fade * Math.min(1, gal * 1.4);
@@ -407,7 +448,7 @@ export class CosmosScene {
       }
       const d = Math.hypot(x - S.cx, y - S.cy);
       if (!firstStar || d < Math.hypot(firstStar[0] - S.cx, firstStar[1] - S.cy)) firstStar = [x, y];
-      if (gal > 0.1 && (!firstGalaxy || d < Math.hypot(firstGalaxy[0] - S.cx, firstGalaxy[1] - S.cy))) firstGalaxy = [x, y];
+      if (gal > 0.1 && i !== this.home && (!firstGalaxy || d < Math.hypot(firstGalaxy[0] - S.cx, firstGalaxy[1] - S.cy))) firstGalaxy = [x, y];
     }
     // Supernovae: now and then one of the first giant stars explodes.
     if (t > T.starsOn && t < T.spirals && live) {
@@ -421,9 +462,31 @@ export class CosmosScene {
         ctx.strokeStyle = `rgba(255,240,220,${(1 - k) * 0.8 * fade})`; ctx.lineWidth = 2;
         ctx.beginPath(); ctx.arc(x, y, 4 + k * 26, 0, Math.PI * 2); ctx.stroke();
         ctx.fillStyle = `rgba(255,255,255,${(1 - k) * fade})`; ctx.beginPath(); ctx.arc(x, y, 3 + (1 - k) * 3, 0, Math.PI * 2); ctx.fill();
+        if (k < 0.75) this.spot('first-supernovae', x, y, 22);
       }
     }
+    // An early quasar: a giant black hole feeding at a galaxy's heart, with two jets.
+    if (lit(this.quasar) && t > sinceBang(13400) && t < T.zoomFrom) {
+      const [x, y] = this.nodeAt(this.quasar, S, zoom), a = this.nodes[this.quasar].rot, j = 14 + gal * 10;
+      ctx.strokeStyle = `rgba(160,200,255,${0.75 * fade})`; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(x - Math.cos(a) * j, y - Math.sin(a) * j); ctx.lineTo(x + Math.cos(a) * j, y + Math.sin(a) * j); ctx.stroke();
+      ctx.fillStyle = `rgba(255,255,255,${fade})`; ctx.beginPath(); ctx.arc(x, y, 2.6, 0, Math.PI * 2); ctx.fill();
+      this.spot('first-black-holes', x, y, 16);
+    }
     ctx.restore();
+    // Our galaxy, before the camera goes in: its knot, and an old star with rocky planets in it (Kepler-444).
+    if (zoom < 0.6 && t > sinceBang(13150)) {
+      const [x, y] = this.nodeAt(this.home, S, zoom);
+      this.spot('milky-way-forms', x, y, 18);
+      if (t < T.zoomFrom) this.label(this.name('milky-way-forms'), x, y + 30);
+      if (t > sinceBang(11500) && t < sinceBang(10600)) {
+        const kx = x + 16, ky = y - 12;
+        ctx.strokeStyle = 'rgba(255,190,120,0.6)'; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.ellipse(kx, ky, 7, 3, 0, 0, Math.PI * 2); ctx.stroke();
+        ctx.fillStyle = 'rgb(255,170,90)'; ctx.beginPath(); ctx.arc(kx, ky, 2.4, 0, Math.PI * 2); ctx.fill();
+        this.spot('kepler-444', kx, ky, 12);
+      }
+    }
     if (firstStar && gal < 0.1) { this.spot('first-stars', firstStar[0], firstStar[1], 18); this.label(this.name('first-stars'), firstStar[0], firstStar[1] - 26); }
     if (firstGalaxy && gal >= 0.1 && zoom < 0.2) { this.spot('first-galaxies', firstGalaxy[0], firstGalaxy[1], 24); if (t < T.spirals) this.label(this.name('first-galaxies'), firstGalaxy[0], firstGalaxy[1] - 30); }
   }
@@ -434,7 +497,7 @@ export class CosmosScene {
     const { t, live } = S;
     const zoom = ramp(t, T.zoomFrom, T.zoomTo);
     const [hx, hy] = this.nodeAt(this.home, S, zoom);
-    const size = lerp(S.R * 0.12, S.R * 2.1, smooth(zoom));
+    const size = lerp(S.R * 0.32, S.R * 2.1, smooth(zoom));
     // Into the Sun's neighbourhood: the galaxy grows past the screen and fades.
     const into = ramp(t, T.nebulaFrom, T.nebulaFull);
     const x = lerp(hx, S.cx, zoom), y = lerp(hy, S.cy, zoom);
@@ -444,10 +507,40 @@ export class CosmosScene {
     const sx = x + Math.cos(-0.75) * sunR, sy = y + Math.sin(-0.75) * sunR * 0.55;
     const grow = 1 + into * 9, gx = lerp(x, x - (sx - x) * 9, into), gy = lerp(y, y - (sy - y) * 9, into);
     ctx.save();
-    ctx.globalAlpha = Math.min(1, zoom * 2) * (1 - into);
+    ctx.globalAlpha = Math.min(1, 0.6 + zoom * 2) * (1 - into);
     ctx.translate(gx, gy); ctx.scale(1, 0.55); ctx.rotate(ang);
     ctx.drawImage(this.galaxy!, -size * grow / 2, -size * grow / 2, size * grow, size * grow);
     ctx.restore();
+    // Gaia-Enceladus: a smaller galaxy falls in, is torn apart, and its stars trail round ours.
+    const fall = ramp(t, sinceBang(10400), sinceBang(10000)), torn = ramp(t, sinceBang(10050), sinceBang(9850));
+    const trail = torn * (1 - ramp(t, sinceBang(9300), sinceBang(8600)));
+    const seen = Math.min(1, 0.6 + zoom * 2) * (1 - into);
+    if (fall > 0 && torn < 1 && seen > 0.01) {
+      const f = smooth(fall), dx = lerp(x - size * 1.3, x - size * 0.12, f), dy = lerp(y - size * 0.55, y, f), ds = size * 0.5;
+      ctx.save();
+      ctx.globalAlpha = seen * (1 - torn);
+      ctx.translate(dx, dy); ctx.rotate(0.6);
+      ctx.drawImage(this.galaxy!, -ds / 2, -ds * 0.3, ds, ds * 0.6);
+      ctx.restore();
+      this.spot('gaia-enceladus', dx, dy, Math.max(14, ds * 0.35));
+    }
+    if (trail > 0.01 && seen > 0.01) {
+      ctx.save();
+      for (const [i, p] of this.parts.entries()) {
+        if (i % 2) continue;
+        const a = p.ph + live * 0.00005, rr = size * (0.42 + (p.x + 1) * 0.08);
+        ctx.fillStyle = `rgba(255,215,170,${trail * seen * 0.6})`;
+        ctx.fillRect(x + Math.cos(a) * rr, y + Math.sin(a) * rr * 0.75, 1.6, 1.6);
+      }
+      ctx.restore();
+      this.spot('gaia-enceladus', x - size * 0.5, y, Math.max(14, size * 0.12));
+    }
+    // Dark energy: from about 6 billion years ago space between the galaxies stretches faster and faster.
+    if (t > sinceBang(7000) && t < sinceBang(4800) && into < 0.5) this.spot('dark-energy', S.cx, S.cy, S.R * 1.3);
+    if (zoom > 0.6 && into < 0.2 && t > sinceBang(8600)) {
+      // The thin disc, where the Sun will be born.
+      this.spot('thin-disc', x + Math.cos(2.5) * size * 0.33, y + Math.sin(2.5) * size * 0.33 * 0.55, Math.max(14, size * 0.1));
+    }
     if (zoom > 0.6 && into < 0.2) {
       this.spot('milky-way-forms', x, y, size * 0.25);
       this.label(this.name('milky-way-forms'), x, y - size * 0.32);
@@ -509,14 +602,27 @@ export class CosmosScene {
       ctx.globalCompositeOperation = 'destination-out';
       for (const gap of [0.31, 0.47, 0.63]) { ctx.strokeStyle = `rgba(0,0,0,${0.35 * discA})`; ctx.lineWidth = R * 0.025; ctx.beginPath(); ctx.arc(0, 0, R * gap, 0, Math.PI * 2); ctx.stroke(); }
       ctx.restore();
-      this.spot('first-solids', cx + R * 0.8, cy, R * 0.2);
+      this.spot(t < sinceBang(4564.5) ? 'first-solids' : 'nebula-clears', cx + R * 0.8, cy, R * 0.2);
+      // The first small worlds (planetesimals): lumps going round in the disc.
+      const lumps = ramp(t, sinceBang(4567.2), sinceBang(4566.6)) * (1 - ramp(t, sinceBang(4552), T.discEnd));
+      if (lumps > 0.01) {
+        ctx.save();
+        for (const [i, p] of this.parts.entries()) {
+          if (i % 3) continue;
+          const rad = 0.18 + (p.x + 1) * 0.4, a = p.ph - (t / 1e5) * Math.pow(rad, -1.5) * 0.004 - live * 0.00025 * Math.pow(rad, -1.5);
+          ctx.fillStyle = `rgba(190,165,140,${lumps * discA * 0.9})`;
+          ctx.beginPath(); ctx.arc(cx + Math.cos(a) * R * rad, cy + Math.sin(a) * R * rad * 0.34, 1.3, 0, Math.PI * 2); ctx.fill();
+        }
+        ctx.restore();
+        this.spot('first-planetesimals', cx - R * 0.7, cy + R * 0.05, R * 0.16);
+      }
     }
     if (sunA > 0.01) {
       const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, sr * 3.5);
       g.addColorStop(0, `rgba(255,255,240,${sunA})`); g.addColorStop(0.3, `rgba(255,220,120,${sunA})`); g.addColorStop(1, 'rgba(255,160,40,0)');
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, sr * 3.5, 0, Math.PI * 2); ctx.fill();
       this.spot('sun-forms', cx, cy, Math.max(16, sr * 1.2));
-      this.label(this.name('sun-forms'), cx, cy - sr * 3.5 - 8);
+      if (t < sinceBang(4558)) this.label(this.name('sun-forms'), cx, cy - sr * 3.5 - 8);
     }
     // The planets: each grows from dust, going round (faster nearer the Sun).
     const ma = maOfT(t);
@@ -532,6 +638,7 @@ export class CosmosScene {
       ctx.fillStyle = p.c; ctx.beginPath(); ctx.arc(x, y, Math.max(1.2, r), 0, Math.PI * 2); ctx.fill();
       ctx.restore();
       if (p.id === 'jupiter') { this.spot('jupiter-forms', x, y, Math.max(12, r * 1.6)); this.label(this.name('jupiter'), x, y - r - 12); }
+      if (p.id === 'mars' && ma > EARTH_MA + 12) { this.spot('mars-forms', x, y, 12); if (ma > 4558) this.label(this.name('mars'), x, y - r - 12); }
       if (p.id === 'earth' && ma <= EARTH_MA + 12) { this.spot('earth-forms', x, y, 14); this.label(this.name('earth'), x, y - r - 12); }
     }
   }
