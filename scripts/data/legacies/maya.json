@@ -1,0 +1,824 @@
+{
+  "id": "maya",
+  "name": { "en": "Maya", "es": "Mayas" },
+  "icon": "🌽",
+  "color": "#00897b",
+  "from": "-2000",
+  "to": "1697",
+  "at": [-89.6, 17.3],
+  "zoom": 5,
+  "home": {
+    "land": [[-94.2, 18.7], [-93.8, 17.3], [-93.4, 16.4], [-93.9, 15.7], [-92.6, 14.0], [-90.0, 13.3], [-88.7, 13.0], [-88.6, 13.8], [-88.4, 14.5], [-87.8, 15.0], [-87.6, 16.0], [-87.5, 16.5], [-86.6, 18.0], [-86.4, 21.8], [-90.6, 21.8], [-91.6, 19.0], [-92.5, 18.9]]
+  },
+  "intro": {
+    "en": "The Maya built cities of stone temples and palaces across the Yucatán Peninsula, Guatemala, Belize and parts of Honduras and El Salvador. Their first villages date from about 2000–1000 BC; their kings ruled Tikal, Calakmul, Copán and Palenque at their height, between AD 250 and 900; and the last independent Maya kingdom, the Itza capital Nojpetén, fell to Spain in 1697. They built on Olmec and other older traditions, and millions of Maya live in the same lands today.",
+    "es": "Los mayas levantaron ciudades de templos y palacios de piedra en la península de Yucatán, Guatemala, Belice y partes de Honduras y El Salvador. Sus primeras aldeas datan de entre el 2000 y el 1000 a. C.; sus reyes gobernaron Tikal, Calakmul, Copán y Palenque en su apogeo, entre el 250 y el 900 d. C.; y el último reino maya independiente, Nojpetén, capital de los itzaes, cayó ante España en 1697. Se apoyaron en tradiciones olmecas y otras más antiguas, y millones de mayas viven hoy en las mismas tierras."
+  },
+  "today": {
+    "en": "About six million people speak one of some 30 Mayan languages, in Guatemala (which recognises 22 by law), southern Mexico, Belize and Honduras. K’iche’, Q’eqchi’, Yucatec, Kaqchikel, Mam, Tseltal and Tsotsil each have hundreds of thousands of speakers.",
+    "es": "Unos seis millones de personas hablan alguna de las cerca de 30 lenguas mayas, en Guatemala (que por ley reconoce 22), el sur de México, Belice y Honduras. El k’iche’, el q’eqchi’, el maya yucateco, el kaqchikel, el mam, el tseltal y el tsotsil tienen cada uno cientos de miles de hablantes."
+  },
+  "story": "people/olmecs-maya",
+  "wiki": { "en": "Maya civilization", "es": "Cultura maya" },
+  "sources": [
+    { "title": "Encyclopaedia Britannica: Maya", "url": "https://www.britannica.com/topic/Maya-people" },
+    { "title": "World History Encyclopedia: Maya Civilization", "url": "https://www.worldhistory.org/Maya_Civilization/" },
+    { "title": "Mesoweb: An exploration of Mesoamerican cultures", "url": "https://www.mesoweb.com/" },
+    { "title": "UNESCO World Heritage: Tikal National Park", "url": "https://whc.unesco.org/en/list/64" },
+    { "title": "UNESCO World Heritage: Pre-Hispanic City of Chichen-Itza", "url": "https://whc.unesco.org/en/list/483" },
+    { "title": "UNESCO Intangible Heritage: Rabinal Achí dance drama tradition", "url": "https://ich.unesco.org/en/RL/rabinal-achi-dance-drama-tradition-00144" },
+    { "title": "Encyclopaedia Britannica: Popol Vuh", "url": "https://www.britannica.com/topic/Popol-Vuh" },
+    { "title": "Etymonline: cigar", "url": "https://www.etymonline.com/word/cigar" }
+  ],
+  "legacies": [
+    {
+      "id": "zero",
+      "name": { "en": "A Maya zero", "es": "El cero maya" },
+      "cat": "numbers",
+      "icon": "🐚",
+      "how": "invented",
+      "sure": "likely",
+      "date": "350",
+      "circa": true,
+      "at": [-89.63, 17.39],
+      "place": { "en": "Uaxactún, Petén, Guatemala", "es": "Uaxactún, Petén, Guatemala" },
+      "text": {
+        "en": "By the 4th century AD Maya scribes wrote a sign for zero, often a shell, in their dates: one of the few independent inventions of zero. Schools in Mexico and Guatemala teach it today.",
+        "es": "En el siglo IV d. C. los escribas mayas ya escribían en sus fechas un signo para el cero, a menudo una concha: una de las pocas invenciones independientes del cero. Hoy se enseña en escuelas de México y Guatemala."
+      },
+      "details": {
+        "en": "The Long Count counted the days since a starting point in 3114 BC, in places worth 1, 20, 360, 7,200 days and more. To write a date such as 9.0.0.0.0, a scribe needed a sign for an empty place. The oldest Long Count dates, from the 1st century BC, come from Chiapas and the Isthmus of Tehuantepec, outside the Maya area; Maya monuments with written zeros follow, among the earliest at Uaxactún and Tikal. Babylonian astronomers had used a placeholder earlier, and Indian mathematicians made zero a number of its own; the Maya reached the idea on their own, without any contact with the Old World.",
+        "es": "La Cuenta Larga contaba los días desde un punto de partida en el 3114 a. C., en posiciones que valían 1, 20, 360, 7200 días y más. Para escribir una fecha como 9.0.0.0.0, el escriba necesitaba un signo para el lugar vacío. Las fechas de Cuenta Larga más antiguas, del siglo I a. C., vienen de Chiapas y del istmo de Tehuantepec, fuera del área maya; después aparecen monumentos mayas con ceros escritos, entre los primeros en Uaxactún y Tikal. Los astrónomos babilonios habían usado antes un signo de lugar vacío, y los matemáticos de la India hicieron del cero un número; los mayas llegaron a la idea por su cuenta, sin ningún contacto con el Viejo Mundo."
+      },
+      "roots": {
+        "en": "The Long Count and its place-value dates began among the Epi-Olmec and other peoples of the Isthmus, heirs of the Olmec, by 36 BC.",
+        "es": "La Cuenta Larga y sus fechas posicionales surgieron entre los epiolmecas y otros pueblos del istmo, herederos de los olmecas, hacia el 36 a. C."
+      },
+      "path": [
+        { "at": [13.74, 51.05], "place": { "en": "Dresden, Germany", "es": "Dresde, Alemania" }, "date": "1880", "circa": true, "by": { "en": "Ernst Förstemann", "es": "Ernst Förstemann" }, "note": { "en": "Studying the Dresden Codex, a librarian works out the Maya numbers and their zero.", "es": "Al estudiar el Códice de Dresde, un bibliotecario descifra los números mayas y su cero." } }
+      ],
+      "where": ["MEX", "GTM"],
+      "note": {
+        "en": "Taught in primary schools in Mexico and Guatemala as part of the Maya way of counting.",
+        "es": "Se enseña en las primarias de México y Guatemala como parte de la numeración maya."
+      },
+      "see": ["inventions:maya-zero", "people/olmecs-maya#4"],
+      "wiki": { "en": "Mesoamerican Long Count calendar", "es": "Cuenta larga" }
+    },
+    {
+      "id": "numerals",
+      "name": { "en": "Bar-and-dot numbers", "es": "La numeración de puntos y barras" },
+      "cat": "numbers",
+      "icon": "🔢",
+      "how": "developed",
+      "date": "-100",
+      "circa": true,
+      "at": [-89.62, 17.22],
+      "place": { "en": "Tikal, Petén, Guatemala", "es": "Tikal, Petén, Guatemala" },
+      "text": {
+        "en": "A dot for one, a bar for five, a shell for zero, stacked in levels of twenty: Maya numbers appear on Guatemalan banknotes and are taught in schools in Mexico and Guatemala.",
+        "es": "Un punto es uno, una barra cinco, una concha cero, apilados en niveles de veinte: los números mayas aparecen en los billetes de Guatemala y se enseñan en escuelas de México y Guatemala."
+      },
+      "details": {
+        "en": "With only three signs any number can be written. Up to 19 they are dots and bars; above that a new level is stacked on top, worth twenty times more, so the system works by position like ours, but in base 20. Guatemala’s school curriculum includes Maya mathematics, and its quetzal banknotes show their value in Maya numbers. Mayan languages still count in twenties: in K’iche’, ‘twenty’ is juwinaq, ‘one person’, for all the fingers and toes. In 2018 the Unicode standard added the Mayan numerals, so they can be typed on phones and computers.",
+        "es": "Con solo tres signos se puede escribir cualquier número. Hasta el 19 son puntos y barras; a partir de ahí se apila un nuevo nivel encima, que representa veinte veces más, así que el sistema funciona por posición como el nuestro, pero en base 20. El currículo escolar de Guatemala incluye la matemática maya, y sus billetes de quetzal muestran su valor en números mayas. Las lenguas mayas todavía cuentan de veinte en veinte: en k’iche’, «veinte» es juwinaq, «una persona», por todos los dedos de manos y pies. En 2018 el estándar Unicode añadió los numerales mayas, que ya se pueden escribir en celulares y computadoras."
+      },
+      "roots": {
+        "en": "Bar-and-dot numbers were used earlier by the Zapotecs and the Olmec-era peoples of Oaxaca and the Gulf coast.",
+        "es": "Los números de puntos y barras los usaron antes los zapotecos y los pueblos de época olmeca de Oaxaca y la costa del Golfo."
+      },
+      "where": ["GTM", "MEX"],
+      "strong": ["GTM"],
+      "note": {
+        "en": "On Guatemala’s quetzal banknotes and in schoolbooks in Guatemala and Mexico; part of Unicode since 2018.",
+        "es": "En los billetes de quetzal de Guatemala y en libros de texto de Guatemala y México; en Unicode desde 2018."
+      },
+      "words": [
+        { "es": "juwinaq", "from": "juwinaq (K’iche’)", "means": { "en": "twenty: ‘one person’", "es": "veinte: «una persona»" } }
+      ],
+      "wiki": { "en": "Maya numerals", "es": "Numeración maya" }
+    },
+    {
+      "id": "260-day-count",
+      "name": { "en": "The 260-day calendar and its daykeepers", "es": "El calendario de 260 días y sus guías" },
+      "cat": "time",
+      "icon": "📅",
+      "how": "kept",
+      "date": "-250",
+      "circa": true,
+      "at": [-89.38, 17.53],
+      "place": { "en": "San Bartolo, Petén, Guatemala", "es": "San Bartolo, departamento de Petén, Guatemala" },
+      "text": {
+        "en": "Twenty day names combined with the numbers 1 to 13 make a cycle of 260 days. In highland Guatemala, Maya daykeepers (ajq’ijab’) still keep the count to guide ceremonies, births and healing.",
+        "es": "Veinte nombres de días combinados con los números del 1 al 13 forman un ciclo de 260 días. En el altiplano de Guatemala, los ajq’ijab’ mayas siguen llevando la cuenta para guiar ceremonias, nacimientos y curaciones."
+      },
+      "details": {
+        "en": "The cycle, called Cholq’ij in K’iche’ and often Tzolk’in in books, ran beside a 365-day year and the Long Count. The Long Count fell out of use centuries before the Spanish arrived, and much more was lost after the conquest, but the 260-day count never stopped in many highland towns. Daykeepers in Momostenango, Totonicapán and the Ixil region train for years; each person’s birth day, such as 8 B’atz’ or 1 Aj, is believed to shape their character, and new daykeepers are initiated on Wajxaqib’ B’atz’ (8 Thread). A painted ‘7 Deer’ at San Bartolo, from about 200 BC, is among the oldest Maya calendar signs.",
+        "es": "El ciclo, llamado Cholq’ij en k’iche’ y a menudo Tzolk’in en los libros, corría junto a un año de 365 días y la Cuenta Larga. La Cuenta Larga se dejó de usar siglos antes de que llegaran los españoles, y mucho más se perdió tras la conquista, pero la cuenta de 260 días nunca se interrumpió en muchos pueblos del altiplano. Los ajq’ijab’ de Momostenango, Totonicapán y la región ixil se preparan durante años; se cree que el día de nacimiento de cada persona, como 8 B’atz’ o 1 Aj, marca su carácter, y los nuevos guías se inician en el Wajxaqib’ B’atz’ (8 Hilo). Un «7 Venado» pintado en San Bartolo, de hacia el 200 a. C., está entre los signos de calendario mayas más antiguos."
+      },
+      "roots": {
+        "en": "The 260-day count was shared across Mesoamerica and is older than Maya writing; Zapotecs and Olmec-era peoples used it too.",
+        "es": "La cuenta de 260 días se compartía en toda Mesoamérica y es más antigua que la escritura maya; también la usaban los zapotecos y pueblos de época olmeca."
+      },
+      "path": [
+        { "at": [-91.41, 15.04], "place": { "en": "Momostenango, Totonicapán, Guatemala", "es": "Momostenango, Totonicapán, Guatemala" }, "date": "2000", "circa": true, "note": { "en": "Daykeepers keep the count unbroken in highland towns such as Momostenango.", "es": "Los guías mantienen la cuenta sin interrupción en pueblos del altiplano como Momostenango." } }
+      ],
+      "where": ["GTM", "MEX"],
+      "strong": ["GTM"],
+      "note": {
+        "en": "Kept by thousands of daykeepers in highland Guatemala and by some communities in southern Mexico; Maya calendars are printed and sold each year.",
+        "es": "La llevan miles de guías espirituales en el altiplano de Guatemala y algunas comunidades del sur de México; cada año se imprimen y venden calendarios mayas."
+      },
+      "words": [
+        { "es": "Cholq’ij", "from": "cholq’ij (K’iche’)", "means": { "en": "order of the days", "es": "orden de los días" }, "type": "calendar" },
+        { "es": "B’atz’", "from": "b’atz’ (K’iche’)", "means": { "en": "monkey; thread", "es": "mono; hilo" }, "type": "calendar" },
+        { "es": "Kej", "from": "kej (K’iche’)", "means": { "en": "deer", "es": "venado" }, "type": "calendar" },
+        { "es": "Aj", "from": "aj (K’iche’)", "means": { "en": "cane, reed", "es": "caña" }, "type": "calendar" },
+        { "es": "No’j", "from": "no’j (K’iche’)", "means": { "en": "thought, wisdom", "es": "pensamiento, sabiduría" }, "type": "calendar" },
+        { "es": "Tz’ikin", "from": "tz’ikin (K’iche’)", "means": { "en": "bird", "es": "pájaro" }, "type": "calendar" },
+        { "es": "Iq’", "from": "iq’ (K’iche’)", "means": { "en": "wind", "es": "viento" }, "type": "calendar" },
+        { "es": "Tz’i’", "from": "tz’i’ (K’iche’)", "means": { "en": "dog", "es": "perro" }, "type": "calendar" },
+        { "es": "Ajpu", "from": "ajpu (K’iche’)", "means": { "en": "blowgun hunter", "es": "cazador con cerbatana" }, "type": "calendar" },
+        { "es": "Ajq’ij", "from": "ajq’ij (K’iche’)", "means": { "en": "daykeeper, ‘he of the days’", "es": "guía, «el de los días»" } }
+      ],
+      "see": ["people/olmecs-maya#15"],
+      "wiki": { "en": "Tzolkʼin", "es": "Tzolkin" }
+    },
+    {
+      "id": "maya-writing",
+      "name": { "en": "Maya writing, read again", "es": "La escritura maya, leída de nuevo" },
+      "cat": "writing",
+      "icon": "✍️",
+      "how": "developed",
+      "date": "-300",
+      "circa": true,
+      "at": [-89.38, 17.53],
+      "place": { "en": "San Bartolo, Petén, Guatemala", "es": "San Bartolo, departamento de Petén, Guatemala" },
+      "text": {
+        "en": "The Maya wrote full sentences in hundreds of glyphs on stone, pottery and bark-paper books. Deciphered in the 20th century, the script is read again and taught to Maya speakers.",
+        "es": "Los mayas escribían oraciones completas con cientos de glifos en piedra, cerámica y libros de papel de corteza. Descifrada en el siglo XX, la escritura vuelve a leerse y se enseña a hablantes de lenguas mayas."
+      },
+      "details": {
+        "en": "Maya script mixes signs for whole words with signs for syllables, and records a language ancestral to today’s Ch’orti’. Spanish priests burnt most books, and only four codices survive. Ernst Förstemann worked out the numbers and calendar in the 1880s; in 1952 the Soviet scholar Yuri Knorozov showed that many signs stand for syllables, and in 1960 Tatiana Proskouriakoff proved that monuments told the lives of real kings. Today most texts can be read. Since the late 1980s workshops in Guatemala and Mexico have taught Maya people to read and write glyphs, which now appear on murals and crafts.",
+        "es": "La escritura maya combina signos de palabras completas con signos de sílabas, y registra una lengua antepasada del ch’orti’ actual. Los sacerdotes españoles quemaron casi todos los libros, y solo sobreviven cuatro códices. Ernst Förstemann descifró los números y el calendario en la década de 1880; en 1952 el estudioso soviético Yuri Knórozov demostró que muchos signos son sílabas, y en 1960 Tatiana Proskouriakoff probó que los monumentos narraban la vida de reyes reales. Hoy se puede leer la mayoría de los textos. Desde fines de los años ochenta, talleres en Guatemala y México enseñan a personas mayas a leer y escribir glifos, que ya aparecen en murales y artesanías."
+      },
+      "roots": {
+        "en": "Writing in Mesoamerica began earlier among the Zapotecs and in the Olmec world; Maya script grew out of that tradition.",
+        "es": "La escritura en Mesoamérica comenzó antes entre los zapotecos y en el mundo olmeca; la escritura maya nació de esa tradición."
+      },
+      "path": [
+        { "at": [-89.14, 14.84], "place": { "en": "Copán, Honduras", "es": "Copán, Honduras" }, "date": "755", "note": { "en": "The Hieroglyphic Stairway, the longest known Maya text, with more than 2,000 glyphs.", "es": "La Escalinata Jeroglífica, el texto maya más largo conocido, con más de 2000 glifos." } },
+        { "at": [13.74, 51.05], "place": { "en": "Dresden, Germany", "es": "Dresde, Alemania" }, "date": "1739", "note": { "en": "A Maya codex bought in Vienna reaches the royal library of Dresden.", "es": "Un códice maya comprado en Viena llega a la biblioteca real de Dresde." } },
+        { "at": [30.31, 59.94], "place": { "en": "Leningrad (Saint Petersburg), Russia", "es": "Leningrado (San Petersburgo), Rusia" }, "date": "1952", "by": { "en": "Yuri Knorozov", "es": "Yuri Knórozov" }, "note": { "en": "Shows that many glyphs stand for syllables, the key to the decipherment.", "es": "Demuestra que muchos glifos son sílabas, la clave del desciframiento." } },
+        { "at": [-90.73, 14.56], "place": { "en": "Antigua Guatemala, Guatemala", "es": "Antigua Guatemala, Guatemala" }, "date": "1987", "by": { "en": "Linda Schele and Nikolai Grube", "es": "Linda Schele y Nikolai Grube" }, "note": { "en": "A first workshop teaches Maya speakers to read the glyphs of their ancestors.", "es": "Un primer taller enseña a hablantes mayas a leer los glifos de sus antepasados." } }
+      ],
+      "where": ["GTM", "MEX", "BLZ", "HND"],
+      "strong": ["GTM", "MEX"],
+      "note": {
+        "en": "Read by epigraphers worldwide and taught in Maya communities in Guatemala and Mexico.",
+        "es": "La leen epigrafistas de todo el mundo y se enseña en comunidades mayas de Guatemala y México."
+      },
+      "see": ["writing:maya-script", "people/olmecs-maya#9", "books:maya-codices"],
+      "wiki": { "en": "Maya script", "es": "Escritura maya" }
+    },
+    {
+      "id": "popol-vuh",
+      "name": { "en": "The Popol Vuh", "es": "El Popol Vuh" },
+      "cat": "ideas",
+      "icon": "📕",
+      "how": "kept",
+      "date": "1554",
+      "circa": true,
+      "at": [-91.15, 15.03],
+      "place": { "en": "Santa Cruz del Quiché, Guatemala", "es": "Santa Cruz del Quiché, departamento de Quiché, Guatemala" },
+      "text": {
+        "en": "The ‘Book of the Community’ tells how the gods made people from maize and how the Hero Twins beat the lords of the underworld. Written by K’iche’ nobles in the 1550s, it is Guatemala’s national book.",
+        "es": "El «libro de la comunidad» cuenta cómo los dioses hicieron a la gente de maíz y cómo los Gemelos Héroes vencieron a los señores del inframundo. Escrito por nobles k’iche’ hacia 1550, es el libro nacional de Guatemala."
+      },
+      "details": {
+        "en": "After the Spanish conquest, K’iche’ lords wrote down their ancient stories and the history of their kings in their own language, using Latin letters, perhaps from an older painted book. Around 1701 the Dominican friar Francisco Ximénez copied and translated it in Chichicastenango; his manuscript is now in the Newberry Library in Chicago. Scenes of the Hero Twins, Hunahpu and Xbalanque, appear on Classic Maya vases, so the stories are far older than the book. Miguel Ángel Asturias drew on it for Hombres de maíz (1949), and it has been translated into many languages.",
+        "es": "Después de la conquista española, señores k’iche’ escribieron sus historias antiguas y la de sus reyes en su propia lengua, con letras latinas, quizá a partir de un libro pintado más antiguo. Hacia 1701 el fraile dominico Francisco Ximénez lo copió y tradujo en Chichicastenango; su manuscrito está hoy en la Biblioteca Newberry de Chicago. En vasijas mayas del periodo clásico aparecen escenas de los Gemelos Héroes, Hunahpú e Ixbalanqué, así que las historias son mucho más antiguas que el libro. Miguel Ángel Asturias se inspiró en él para Hombres de maíz (1949), y se ha traducido a muchas lenguas."
+      },
+      "roots": {
+        "en": "The stories go back at least to the Classic period, when the Hero Twins and the Maize God were painted on pottery.",
+        "es": "Las historias se remontan al menos al periodo clásico, cuando los Gemelos Héroes y el dios del maíz se pintaban en la cerámica."
+      },
+      "path": [
+        { "at": [-91.11, 14.94], "place": { "en": "Chichicastenango, Guatemala", "es": "Chichicastenango, Guatemala" }, "date": "1701", "circa": true, "by": { "en": "Francisco Ximénez", "es": "Francisco Ximénez" }, "note": { "en": "The only surviving copy, with a Spanish translation.", "es": "La única copia que se conserva, con traducción al español." } },
+        { "at": [2.35, 48.86], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1861", "by": { "en": "Charles Étienne Brasseur de Bourbourg", "es": "El abate Charles Étienne Brasseur de Bourbourg" }, "note": { "en": "Published in K’iche’ and French, it becomes known to the world.", "es": "Publicado en k’iche’ y francés, se da a conocer al mundo." } },
+        { "at": [-87.63, 41.9], "place": { "en": "Chicago, United States", "es": "Chicago, Estados Unidos" }, "date": "1911", "circa": true, "note": { "en": "Ximénez’s manuscript reaches the Newberry Library.", "es": "El manuscrito de Ximénez llega a la Biblioteca Newberry." } }
+      ],
+      "where": ["GTM", "MEX"],
+      "strong": ["GTM"],
+      "note": {
+        "en": "Taught in Guatemalan schools, staged and retold in K’iche’ and Spanish, and read worldwide in translation.",
+        "es": "Se enseña en las escuelas de Guatemala, se representa y se vuelve a contar en k’iche’ y español, y se lee en todo el mundo traducido."
+      },
+      "see": ["books:popol-vuh", "people/olmecs-maya#15"],
+      "wiki": { "en": "Popol Vuh", "es": "Popol Vuh" }
+    },
+    {
+      "id": "rabinal-achi",
+      "name": { "en": "Rabinal Achí, a Maya dance-drama", "es": "El Rabinal Achí" },
+      "cat": "arts",
+      "icon": "🎭",
+      "how": "invented",
+      "date": "1450",
+      "circa": true,
+      "at": [-90.49, 15.08],
+      "place": { "en": "Rabinal, Baja Verapaz, Guatemala", "es": "Rabinal, departamento de Baja Verapaz, Guatemala" },
+      "text": {
+        "en": "A captured K’iche’ warrior faces the lords of Rabinal in a masked drama spoken in Achi Maya. Its story dates from the 15th century, and Rabinal still stages it each January.",
+        "es": "Un guerrero k’iche’ capturado se enfrenta a los señores de Rabinal en un drama con máscaras hablado en maya achi. Su historia viene del siglo XV, y Rabinal lo sigue representando cada enero."
+      },
+      "details": {
+        "en": "The play, also called Xajooj Tun, ‘dance of the trumpet’, follows the trial of the K’iche’ Achi, captured after raiding the Rabinal kingdom. In long speeches, with long trumpets and a slit drum and dances, the two warriors argue before the captive is put to death. It survived through oral tradition and was written down in 1850 by Bartolo Sis; the French priest Brasseur de Bourbourg published it in 1862. UNESCO proclaimed it a masterpiece of the oral and intangible heritage of humanity in 2005. Rabinal’s families perform it around 25 January, the feast of Saint Paul.",
+        "es": "La obra, llamada también Xajooj Tun, «danza del tun», sigue el juicio del K’iche’ Achi, capturado tras atacar el reino de Rabinal. En largos parlamentos, con trompetas largas, un tambor de lengüetas y danzas, los dos guerreros discuten antes de que el cautivo sea ejecutado. Sobrevivió por tradición oral y Bartolo Sis la escribió en 1850; el sacerdote francés Brasseur de Bourbourg la publicó en 1862. La UNESCO la proclamó obra maestra del patrimonio oral e inmaterial de la humanidad en 2005. Las familias de Rabinal la representan hacia el 25 de enero, fiesta de San Pablo."
+      },
+      "path": [
+        { "at": [2.35, 48.86], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1862", "by": { "en": "Charles Étienne Brasseur de Bourbourg", "es": "El abate Charles Étienne Brasseur de Bourbourg" }, "note": { "en": "Published in Achi and French.", "es": "Se publica en achi y francés." } }
+      ],
+      "where": ["GTM"],
+      "note": {
+        "en": "Performed every year in Rabinal by local families, who pass the roles and masks down the generations.",
+        "es": "La representan cada año familias de Rabinal, que heredan los papeles y las máscaras de generación en generación."
+      },
+      "wiki": { "en": "Rabinal Achí", "es": "Rabinal achí" }
+    },
+    {
+      "id": "ball-game",
+      "name": { "en": "The rubber ball game", "es": "El juego de pelota" },
+      "cat": "play",
+      "icon": "⚫",
+      "how": "developed",
+      "date": "-500",
+      "circa": true,
+      "at": [-89.8, 17.0],
+      "place": { "en": "Maya lowlands, Petén, Guatemala", "es": "Tierras bajas mayas, Petén, Guatemala" },
+      "text": {
+        "en": "Players kept a heavy rubber ball in play with their hips on stone courts. The Maya game, with Olmec roots, is played again in Mexico and Guatemala, and its cousin ulama survives in Sinaloa.",
+        "es": "Los jugadores mantenían en juego una pesada pelota de hule con la cadera, en canchas de piedra. El juego maya, de raíces olmecas, se vuelve a jugar en México y Guatemala, y su pariente, el ulama, sobrevive en Sinaloa."
+      },
+      "details": {
+        "en": "Mesoamericans made rubber more than 3,000 years ago by mixing the latex of the Castilla tree with the juice of a morning-glory vine, which made the balls bounce, long before Charles Goodyear’s vulcanisation (1839). Nearly every Maya city had a court; Chichén Itzá’s is the largest. The game was sport, gambling and ritual: in the Popol Vuh the Hero Twins play it against the lords of death. In Sinaloa hip ulama, whose name comes from Nahuatl ōllamaliztli, has survived in a few villages. Since the 2000s teams in Yucatán, Chiapas and Guatemala have revived a Maya version, sometimes called pok-ta-pok.",
+        "es": "Los mesoamericanos fabricaban hule hace más de 3000 años mezclando el látex del árbol Castilla con el jugo de una enredadera de la familia de la campanilla, lo que hacía rebotar las pelotas, mucho antes de la vulcanización de Charles Goodyear (1839). Casi todas las ciudades mayas tenían cancha; la de Chichén Itzá es la más grande. El juego era deporte, apuesta y rito: en el Popol Vuh los Gemelos Héroes juegan contra los señores de la muerte. En Sinaloa el ulama de cadera, cuyo nombre viene del náhuatl ōllamaliztli, ha sobrevivido en algunos pueblos. Desde los años 2000, equipos de Yucatán, Chiapas y Guatemala han revivido una versión maya, a veces llamada pok-ta-pok."
+      },
+      "roots": {
+        "en": "The Olmec made the oldest known rubber balls, at El Manatí about 1600 BC, and the oldest known court was built at Paso de la Amada, Chiapas, about 1650 BC.",
+        "es": "Los olmecas hicieron las pelotas de hule más antiguas conocidas, en El Manatí hacia el 1600 a. C., y la cancha más antigua conocida se construyó en Paso de la Amada, Chiapas, hacia el 1650 a. C."
+      },
+      "path": [
+        { "at": [-88.57, 20.68], "place": { "en": "Chichén Itzá, Yucatán, Mexico", "es": "Chichén Itzá, Yucatán, México" }, "date": "900", "circa": true, "note": { "en": "The largest ball court in Mesoamerica, about 168 metres long.", "es": "La cancha de pelota más grande de Mesoamérica, de unos 168 metros de largo." } },
+        { "at": [-106.42, 23.23], "place": { "en": "Near Mazatlán, Sinaloa, Mexico", "es": "Cerca de Mazatlán, Sinaloa, México" }, "date": "2000", "circa": true, "from": 0, "note": { "en": "Villages in Sinaloa still play hip ulama, a living descendant of the ancient game.", "es": "Pueblos de Sinaloa siguen jugando ulama de cadera, descendiente vivo del juego antiguo." } }
+      ],
+      "where": ["MEX", "GTM"],
+      "strong": ["MEX"],
+      "note": {
+        "en": "Played by revival teams in Mexico and Guatemala and by ulama players in Sinaloa; ball courts can be visited at almost every Maya site.",
+        "es": "Lo juegan equipos de México y Guatemala y los jugadores de ulama de Sinaloa; se pueden visitar canchas en casi todas las zonas arqueológicas mayas."
+      },
+      "words": [
+        { "es": "ulama", "from": "ōllamaliztli (Nahuatl)", "means": { "en": "playing the rubber ball game", "es": "jugar a la pelota de hule" } }
+      ],
+      "see": ["inventions:mesoamerican-ballgame", "people:great-ball-court", "inventions:rubber"],
+      "wiki": { "en": "Mesoamerican ballgame", "es": "Juego de pelota mesoamericano" }
+    },
+    {
+      "id": "cacao-drinks",
+      "name": { "en": "Cacao drinks (kakaw)", "es": "Las bebidas de cacao (kakaw)" },
+      "cat": "food",
+      "icon": "☕",
+      "how": "developed",
+      "date": "500",
+      "circa": true,
+      "at": [-89.42, 17.75],
+      "place": { "en": "Río Azul, Petén, Guatemala", "es": "Río Azul, departamento de Petén, Guatemala" },
+      "text": {
+        "en": "The Maya frothed cacao into drinks for kings and gods, and wrote its name, kakaw, on their cups. Maya families in Guatemala, Belize and southern Mexico still grow it and grind it at home.",
+        "es": "Los mayas batían el cacao en bebidas para reyes y dioses, y escribían su nombre, kakaw, en sus vasos. Familias mayas de Guatemala, Belice y el sur de México lo siguen cultivando y moliendo en casa."
+      },
+      "details": {
+        "en": "A lidded pot from a royal tomb at Río Azul, Guatemala, painted with the glyphs for kakaw around AD 500, still held traces of theobromine, cacao’s chemical signature. Maya vases show cacao being poured from a height to raise foam. In 1544 Dominican friars took a group of Q’eqchi’ Maya nobles from the Verapaz to meet Prince Philip in Spain; their gifts included beaten chocolate, the first known record of chocolate in Spain. Today Q’eqchi’ and Mopan farmers in Belize’s Toledo district grow cacao for fine chocolate, and pozol, a drink of maize and cacao, is drunk every day in Tabasco and Chiapas.",
+        "es": "Una vasija con tapa de una tumba real de Río Azul, Guatemala, pintada con los glifos de kakaw hacia el 500 d. C., aún tenía restos de teobromina, la huella química del cacao. Los vasos mayas muestran el cacao vertido desde lo alto para levantar espuma. En 1544 frailes dominicos llevaron a un grupo de nobles mayas q’eqchi’ de la Verapaz a ver al príncipe Felipe en España; entre sus regalos había chocolate batido, el primer registro conocido del chocolate en España. Hoy campesinos q’eqchi’ y mopanes del distrito de Toledo, en Belice, cultivan cacao para chocolate fino, y el pozol, bebida de maíz y cacao, se toma a diario en Tabasco y Chiapas."
+      },
+      "roots": {
+        "en": "Cacao was first domesticated in the upper Amazon; Mokaya and Olmec peoples were drinking it by about 1900 BC, and kakaw was probably borrowed from a Mixe-Zoquean language.",
+        "es": "El cacao se domesticó primero en la Alta Amazonía; los mokayas y olmecas ya lo bebían hacia el 1900 a. C., y la palabra kakaw probablemente se tomó de una lengua mixe-zoque."
+      },
+      "path": [
+        { "at": [-90.37, 15.47], "place": { "en": "Cobán, Alta Verapaz, Guatemala", "es": "Cobán, departamento de Alta Verapaz, Guatemala" }, "date": "1544", "by": { "en": "Q’eqchi’ Maya nobles and Dominican friars", "es": "Nobles mayas q’eqchi’ y frailes dominicos" }, "note": { "en": "The delegation sets out for Spain with gifts that include cacao.", "es": "La delegación parte hacia España con regalos que incluyen cacao." } },
+        { "at": [-4.72, 41.65], "place": { "en": "Spain, at the court of Prince Philip", "es": "España, en la corte del príncipe Felipe" }, "date": "1544", "note": { "en": "Beaten chocolate offered at court: the first known record of chocolate in Spain.", "es": "Se ofrece chocolate batido en la corte: el primer registro conocido del chocolate en España." } },
+        { "at": [-88.8, 16.1], "place": { "en": "Toledo district, Belize", "es": "Distrito de Toledo, Belice" }, "date": "2000", "circa": true, "from": 0, "note": { "en": "Maya farmers grow cacao for fine-chocolate makers around the world.", "es": "Campesinos mayas cultivan cacao para chocolateros finos de todo el mundo." } }
+      ],
+      "where": ["GTM", "BLZ", "MEX", "HND", "SLV"],
+      "strong": ["GTM", "BLZ", "MEX"],
+      "note": {
+        "en": "Grown and drunk in Maya homes in Guatemala, Belize and southern Mexico; cacao from Maya farms goes into fine chocolate worldwide.",
+        "es": "Se cultiva y se bebe en hogares mayas de Guatemala, Belice y el sur de México; el cacao de parcelas mayas llega a chocolates finos de todo el mundo."
+      },
+      "words": [
+        { "en": "cacao", "es": "cacao", "from": "kakaw (Classic Maya), probably from Mixe-Zoque, via Nahuatl" },
+        { "es": "pozol", "from": "pozōlli (Nahuatl)" }
+      ],
+      "see": ["food/coffee-tea-chocolate#3", "food:cacao-drink"],
+      "wiki": { "en": "Theobroma cacao", "es": "Theobroma cacao" }
+    },
+    {
+      "id": "chewing-gum",
+      "name": { "en": "Chewing gum (chicle)", "es": "El chicle" },
+      "cat": "daily",
+      "icon": "🫧",
+      "how": "invented",
+      "sure": "likely",
+      "date": "250",
+      "circa": true,
+      "at": [-89.62, 17.22],
+      "place": { "en": "Petén, Guatemala", "es": "Petén, Guatemala" },
+      "text": {
+        "en": "The Maya chewed chicle, the gum of the sapodilla tree. In the 1870s it became the base of the first modern chewing gums, tapped by Maya chicleros in the forests of Yucatán, Petén and Belize.",
+        "es": "Los mayas mascaban chicle, la resina del chicozapote. En la década de 1870 se volvió la base de los primeros chicles modernos, extraído por chicleros mayas en las selvas de Yucatán, Petén y Belice."
+      },
+      "details": {
+        "en": "Chicle is the milky latex of the chicozapote, or sapodilla, boiled down into a gum; its name comes from Nahuatl tzictli, for the Mexica chewed it too. In 1869 the exiled Mexican general Antonio López de Santa Anna gave chicle to the New York inventor Thomas Adams, who tried to make rubber from it and ended up selling chewing gum instead. Wrigley and others followed, and chicleros, many of them Maya, cut zigzag grooves in the trees to bleed the latex. Most gum today is synthetic, but cooperatives in Quintana Roo still sell natural chicle gum.",
+        "es": "El chicle es el látex lechoso del chicozapote, hervido hasta volverse goma; su nombre viene del náhuatl tzictli, porque los mexicas también lo mascaban. En 1869 el general mexicano exiliado Antonio López de Santa Anna dio chicle al inventor neoyorquino Thomas Adams, que intentó hacer caucho con él y terminó vendiendo goma de mascar. Wrigley y otros lo siguieron, y los chicleros, muchos de ellos mayas, hacían cortes en zigzag en los árboles para sangrar el látex. Casi todo el chicle de hoy es sintético, pero cooperativas de Quintana Roo siguen vendiendo chicle natural."
+      },
+      "roots": {
+        "en": "People around the world have chewed tree resins since prehistoric times; the Mexica chewed chicle too.",
+        "es": "En todo el mundo se han mascado resinas de árboles desde la prehistoria; los mexicas también mascaban chicle."
+      },
+      "path": [
+        { "at": [-74.15, 40.58], "place": { "en": "Staten Island, New York, United States", "es": "Staten Island, Nueva York, Estados Unidos" }, "date": "1869", "by": { "en": "Antonio López de Santa Anna and Thomas Adams", "es": "Antonio López de Santa Anna y Thomas Adams" }, "note": { "en": "Chicle fails as rubber; Adams sells it as chewing gum instead.", "es": "El chicle fracasa como caucho; Adams lo vende como goma de mascar." } },
+        { "at": [-87.63, 41.89], "place": { "en": "Chicago, United States", "es": "Chicago, Estados Unidos" }, "date": "1893", "by": { "en": "William Wrigley Jr.", "es": "William Wrigley Jr." }, "note": { "en": "Wrigley’s gums turn chicle into a mass product.", "es": "Los chicles de Wrigley vuelven el chicle un producto masivo." } },
+        { "at": [-88.05, 19.58], "place": { "en": "Felipe Carrillo Puerto, Quintana Roo, Mexico", "es": "Felipe Carrillo Puerto, Quintana Roo, México" }, "date": "2009", "circa": true, "from": 0, "note": { "en": "A cooperative of chicleros launches natural chicle gum, sold in Mexico and Europe.", "es": "Una cooperativa de chicleros lanza chicle natural, que se vende en México y Europa." } }
+      ],
+      "where": ["world"],
+      "strong": ["MEX", "GTM", "BLZ"],
+      "note": {
+        "en": "Chewing gum is sold everywhere, though mostly synthetic now; natural chicle is still tapped in Quintana Roo, Campeche and Petén.",
+        "es": "La goma de mascar se vende en todas partes, aunque hoy casi toda es sintética; el chicle natural se sigue extrayendo en Quintana Roo, Campeche y Petén."
+      },
+      "words": [
+        { "en": "chicle", "es": "chicle", "from": "tzictli (Nahuatl)", "means": { "en": "sticky resin", "es": "resina pegajosa" } }
+      ],
+      "wiki": { "en": "Chicle", "es": "Chicle" }
+    },
+    {
+      "id": "milpa",
+      "name": { "en": "The milpa: maize, beans and squash", "es": "La milpa: maíz, frijol y calabaza" },
+      "cat": "food",
+      "icon": "🫘",
+      "how": "developed",
+      "date": "-1000",
+      "circa": true,
+      "at": [-88.9, 20.4],
+      "place": { "en": "Yucatán Peninsula, Mexico", "es": "Península de Yucatán, México" },
+      "text": {
+        "en": "Maize, beans and squash grown together in a forest clearing, which is then left to rest: Maya families in Yucatán, Guatemala and Belize still farm the milpa as their ancestors did.",
+        "es": "Maíz, frijol y calabaza sembrados juntos en un claro del monte, que luego se deja descansar: familias mayas de Yucatán, Guatemala y Belice siguen trabajando la milpa como sus antepasados."
+      },
+      "details": {
+        "en": "In a milpa (kool in Yucatec Maya), beans climb the maize stalks and add nitrogen to the soil, while the broad squash leaves keep weeds down and the ground moist. Chillies, tomatoes and herbs grow among them. After two or three years the field is left to grow back into forest for many years, part of a rotation the Maya combined with home gardens, orchards and managed forests. Milpa is a Nahuatl word, but for the Maya maize was sacred: in the Popol Vuh people are made of maize dough. Researchers now study the milpa as a model of farming that keeps soils and seeds alive.",
+        "es": "En la milpa (kool en maya yucateco), el frijol trepa por las cañas del maíz y aporta nitrógeno al suelo, mientras las grandes hojas de la calabaza frenan la maleza y guardan la humedad. Entre ellos crecen chiles, jitomates y hierbas. Tras dos o tres años, el terreno se deja volver a ser monte durante muchos años, en una rotación que los mayas combinaban con huertos familiares, frutales y selvas manejadas. Milpa es palabra náhuatl, pero para los mayas el maíz era sagrado: en el Popol Vuh la gente está hecha de masa de maíz. Hoy los investigadores estudian la milpa como un modelo de agricultura que mantiene vivos los suelos y las semillas."
+      },
+      "roots": {
+        "en": "Maize, beans and squash were domesticated in Mexico thousands of years earlier, and mixed fields were farmed across Mesoamerica.",
+        "es": "El maíz, el frijol y la calabaza se domesticaron en México miles de años antes, y las siembras mezcladas se hacían en toda Mesoamérica."
+      },
+      "where": ["MEX", "GTM", "BLZ", "HND", "SLV"],
+      "strong": ["GTM", "MEX"],
+      "note": {
+        "en": "Farmed by Maya families across Yucatán, Chiapas, Guatemala and Belize, and by many other peoples of Mexico and Central America.",
+        "es": "La trabajan familias mayas de Yucatán, Chiapas, Guatemala y Belice, y muchos otros pueblos de México y Centroamérica."
+      },
+      "words": [
+        { "es": "kool", "from": "kool (Yucatec Maya)", "means": { "en": "maize field", "es": "milpa" } }
+      ],
+      "see": ["food/maize#6", "food:three-sisters"],
+      "wiki": { "en": "Milpa", "es": "Milpa" }
+    },
+    {
+      "id": "stingless-bees",
+      "name": { "en": "Stingless bee-keeping", "es": "La meliponicultura" },
+      "cat": "food",
+      "icon": "🐝",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "-300",
+      "circa": true,
+      "at": [-89.0, 20.5],
+      "place": { "en": "Yucatán, Mexico", "es": "Yucatán, México" },
+      "text": {
+        "en": "Long before honeybees came from Europe, the Maya kept stingless bees in hollow logs for honey and wax. Maya beekeepers in Yucatán still tend the xunáan kab, the ‘lady bee’.",
+        "es": "Mucho antes de que llegaran las abejas europeas, los mayas criaban abejas sin aguijón en troncos huecos para obtener miel y cera. Meliponicultores mayas de Yucatán siguen cuidando a la xunáan kab, la «señora abeja»."
+      },
+      "details": {
+        "en": "The bee, Melipona beecheii, cannot sting. Beekeepers keep the colonies in logs called jobones, sealed at the ends with stone or clay plugs, and open them a few times a year to take the honey stored in small wax pots. The Madrid Codex has pages on bees and the bee god, and honey and wax were among the goods Yucatán paid in tribute under Spanish rule. The honey is thin and slightly sour, and is valued as a medicine for eyes and wounds. The tradition is declining as farmers switch to European bees, but cooperatives and researchers are working to save it.",
+        "es": "La abeja, Melipona beecheii, no pica. Los meliponicultores guardan las colonias en troncos llamados jobones, tapados en los extremos con discos de piedra o barro, y los abren unas cuantas veces al año para sacar la miel guardada en pequeñas ollitas de cera. El Códice de Madrid tiene páginas sobre las abejas y el dios de las abejas, y la miel y la cera estaban entre los tributos que Yucatán pagaba bajo el dominio español. La miel es ligera y un poco ácida, y se aprecia como medicina para los ojos y las heridas. La tradición decae porque los campesinos prefieren la abeja europea, pero cooperativas e investigadores trabajan para salvarla."
+      },
+      "roots": {
+        "en": "Stingless bees are native to the American tropics; other peoples, as in Brazil, kept them too.",
+        "es": "Las abejas sin aguijón son nativas del trópico americano; otros pueblos, como en Brasil, también las criaban."
+      },
+      "where": ["MEX", "GTM", "BLZ"],
+      "strong": ["MEX"],
+      "note": {
+        "en": "Practised by Maya families in Yucatán, Quintana Roo and Campeche, and in parts of Guatemala and Belize.",
+        "es": "La practican familias mayas de Yucatán, Quintana Roo y Campeche, y de partes de Guatemala y Belice."
+      },
+      "words": [
+        { "es": "xunáan kab", "from": "xunáan kab (Yucatec Maya)", "means": { "en": "lady bee", "es": "señora abeja" } }
+      ],
+      "wiki": { "en": "Melipona beecheii", "es": "Melipona beecheii" }
+    },
+    {
+      "id": "chaya",
+      "name": { "en": "Chaya, the Maya spinach", "es": "La chaya" },
+      "cat": "food",
+      "icon": "🥬",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "-500",
+      "circa": true,
+      "at": [-89.62, 20.97],
+      "place": { "en": "Yucatán, Mexico", "es": "Yucatán, México" },
+      "text": {
+        "en": "The Maya domesticated chaya, a fast-growing shrub whose cooked leaves are richer in protein and iron than spinach. It grows in Yucatán’s home gardens and is now planted in other tropical lands.",
+        "es": "Los mayas domesticaron la chaya, un arbusto de crecimiento rápido cuyas hojas cocidas tienen más proteína y hierro que la espinaca. Crece en los huertos de Yucatán y hoy se siembra en otras tierras tropicales."
+      },
+      "details": {
+        "en": "Chaya (Cnidoscolus aconitifolius) grows from cuttings and survives both drought and heavy rain. The garden form, unlike the wild one, has few or no stinging hairs, which suggests long selection by Maya gardeners. Raw leaves contain substances that release cyanide, so they are always cooked, usually for about 20 minutes. In Yucatán chaya goes into tamales, scrambled eggs and cool drinks such as agua de chaya; its name comes from Yucatec chay. Agricultural researchers promote it as a cheap, nourishing vegetable in other tropical countries.",
+        "es": "La chaya (Cnidoscolus aconitifolius) crece de esquejes y aguanta tanto la sequía como las lluvias fuertes. La forma de huerto, a diferencia de la silvestre, tiene pocos o ningún pelo urticante, lo que sugiere una larga selección por los hortelanos mayas. Las hojas crudas contienen sustancias que liberan cianuro, así que siempre se cuecen, por lo general unos 20 minutos. En Yucatán la chaya va en tamales, huevos revueltos y bebidas frescas como el agua de chaya; su nombre viene del yucateco chay. Los agrónomos la promueven como verdura barata y nutritiva en otros países tropicales."
+      },
+      "where": ["MEX", "GTM", "BLZ", "HND", "SLV", "NIC", "CRI"],
+      "strong": ["MEX"],
+      "note": {
+        "en": "Eaten every day in Yucatán and grown in home gardens across Central America.",
+        "es": "Se come a diario en Yucatán y se cultiva en huertos familiares de toda Centroamérica."
+      },
+      "words": [
+        { "es": "chaya", "en": "chaya", "from": "chay (Yucatec Maya)" }
+      ],
+      "wiki": { "en": "Cnidoscolus aconitifolius", "es": "Cnidoscolus aconitifolius" }
+    },
+    {
+      "id": "tamales",
+      "name": { "en": "Tamales", "es": "Los tamales" },
+      "cat": "food",
+      "icon": "🫔",
+      "how": "invented",
+      "sure": "debated",
+      "date": "-100",
+      "circa": true,
+      "at": [-89.38, 17.53],
+      "place": { "en": "San Bartolo, Petén, Guatemala", "es": "San Bartolo, departamento de Petén, Guatemala" },
+      "text": {
+        "en": "Maize dough steamed in a leaf: the oldest known picture of tamales is in a Maya mural at San Bartolo, about 2,100 years old. Tamales are eaten today from Mexico to Argentina.",
+        "es": "Masa de maíz cocida al vapor en una hoja: la imagen más antigua conocida de tamales está en un mural maya de San Bartolo, de hace unos 2100 años. Hoy se comen de México a Argentina."
+      },
+      "details": {
+        "en": "In the San Bartolo murals, painted inside a small pyramid in Petén, the Maize God receives offerings that include a basket of tamales. Classic Maya pots name a food, wa’, usually read as tamal or maize bread. Wrapping dough in maize husks, and later in banana leaves, and steaming it makes a food that is easy to carry and keeps for days, good for travellers, armies and festivals. The word tamal comes from Nahuatl tamalli. Guatemala’s Christmas tamales colorados, Yucatán’s pibipollo and Mexico’s countless regional kinds belong to the family; whether Andean humitas share the same origin is debated.",
+        "es": "En los murales de San Bartolo, pintados dentro de una pequeña pirámide en Petén, el dios del maíz recibe ofrendas, entre ellas una canasta de tamales. Las vasijas mayas clásicas nombran un alimento, wa’, que suele leerse como tamal o pan de maíz. Envolver la masa en hojas de maíz, y después de plátano, y cocerla al vapor da una comida fácil de llevar que dura días, buena para viajeros, ejércitos y fiestas. La palabra tamal viene del náhuatl tamalli. Los tamales colorados de Navidad de Guatemala, el pibipollo de Yucatán y las incontables variedades regionales de México son de la misma familia; si las humitas andinas tienen el mismo origen se discute."
+      },
+      "roots": {
+        "en": "Tamales were probably made across Mesoamerica; who made them first is unknown.",
+        "es": "Los tamales probablemente se hacían en toda Mesoamérica; no se sabe quién los hizo primero."
+      },
+      "path": [
+        { "at": [-99.13, 19.43], "place": { "en": "Tenochtitlan (Mexico City)", "es": "Tenochtitlan (Ciudad de México)" }, "date": "1500", "circa": true, "note": { "en": "The Mexica call them tamalli, the name Spanish spreads across the Americas.", "es": "Los mexicas los llaman tamalli, el nombre que el español extiende por América." } }
+      ],
+      "where": ["MEX", "GTM", "SLV", "HND", "NIC", "CRI", "PAN", "COL", "VEN", "ECU", "PER", "BOL", "ARG", "CUB", "PRI", "USA"],
+      "strong": ["MEX", "GTM"],
+      "note": {
+        "en": "Eaten across Mexico and Central America, above all at Christmas, Candlemas and Day of the Dead, and in many forms in the Caribbean and South America.",
+        "es": "Se comen en todo México y Centroamérica, sobre todo en Navidad, el Día de la Candelaria y Día de Muertos, y de muchas formas en el Caribe y Sudamérica."
+      },
+      "words": [
+        { "es": "wa’", "from": "wa’ (Classic Maya)", "means": { "en": "tamal, maize bread", "es": "tamal, pan de maíz" } }
+      ],
+      "see": ["food:tamales"],
+      "wiki": { "en": "Tamale", "es": "Tamal" }
+    },
+    {
+      "id": "pib",
+      "name": { "en": "Pib: cooking in an earth oven", "es": "El pib y la cochinita pibil" },
+      "cat": "food",
+      "icon": "🔥",
+      "how": "named",
+      "date": "-500",
+      "circa": true,
+      "at": [-89.62, 20.97],
+      "place": { "en": "Mérida, Yucatán, Mexico", "es": "Mérida, Yucatán, México" },
+      "text": {
+        "en": "Yucatec Maya cooks still bury food in a pib, a pit lined with hot stones. Cochinita pibil, pork in achiote cooked this way, is Yucatán’s best-known dish.",
+        "es": "Las cocineras mayas de Yucatán siguen enterrando la comida en un pib, un hoyo con piedras calientes. La cochinita pibil, cerdo en achiote cocido así, es el platillo más conocido de Yucatán."
+      },
+      "details": {
+        "en": "To make a pib, a pit is dug and a fire burns down on stones; food wrapped in leaves is laid on them and covered with earth to cook slowly for hours. Pibil means ‘cooked in the pib’ in Yucatec Maya. Before the Spanish brought pigs, deer, turkey and other game were cooked this way. For Hanal Pixán, ‘food of the souls’, Yucatán’s Day of the Dead, families bake mucbipollo, a big tamal of maize dough, chicken and achiote cooked in the pib, and share it with the dead and the living.",
+        "es": "Para hacer un pib se cava un hoyo y se deja consumir el fuego sobre piedras; la comida envuelta en hojas se pone encima y se cubre de tierra para que se cueza despacio durante horas. Pibil quiere decir «cocido en el pib» en maya yucateco. Antes de que los españoles trajeran el cerdo, así se cocían el venado, el pavo de monte y otras presas. Para el Hanal Pixán, «comida de las ánimas», el Día de Muertos de Yucatán, las familias hornean el mucbipollo, un gran tamal de masa, pollo y achiote cocido en el pib, y lo comparten con los muertos y los vivos."
+      },
+      "roots": {
+        "en": "Earth ovens are used around the world; Maya cooks gave this one its name and its dishes.",
+        "es": "Los hornos de tierra se usan en todo el mundo; las cocineras mayas le dieron a este su nombre y sus platillos."
+      },
+      "where": ["MEX"],
+      "note": {
+        "en": "Cooked every day in Yucatán, Campeche and Quintana Roo, and served in Mexican restaurants worldwide; mucbipollo fills homes at Hanal Pixán.",
+        "es": "Se cocina a diario en Yucatán, Campeche y Quintana Roo, y se sirve en restaurantes mexicanos de todo el mundo; el mucbipollo llena las casas en Hanal Pixán."
+      },
+      "words": [
+        { "es": "pibil", "from": "pibil (Yucatec Maya)", "means": { "en": "cooked in an earth oven", "es": "cocido en el pib" } },
+        { "es": "mucbipollo", "from": "muk’bil (Yucatec Maya) + Spanish pollo", "means": { "en": "buried chicken", "es": "pollo enterrado" } },
+        { "es": "Hanal Pixán", "from": "janal pixan (Yucatec Maya)", "means": { "en": "food of the souls", "es": "comida de las ánimas" } }
+      ],
+      "wiki": { "en": "Cochinita pibil", "es": "Cochinita pibil" }
+    },
+    {
+      "id": "henequen-sisal",
+      "name": { "en": "Henequen and sisal rope", "es": "El henequén y el sisal" },
+      "cat": "tech",
+      "icon": "🪢",
+      "how": "tamed",
+      "sure": "likely",
+      "date": "500",
+      "circa": true,
+      "at": [-89.62, 20.97],
+      "place": { "en": "Yucatán, Mexico", "es": "Yucatán, México" },
+      "text": {
+        "en": "The Maya grew henequen, an agave of Yucatán, for its tough fibre. Through the port of Sisal it lent its name to sisal, still made into rope, twine and mats in Brazil, Tanzania and Kenya.",
+        "es": "Los mayas cultivaban el henequén, un agave de Yucatán, por su fibra resistente. A través del puerto de Sisal dio nombre al sisal, que aún se convierte en cuerdas, cordel y tapetes en Brasil, Tanzania y Kenia."
+      },
+      "details": {
+        "en": "Maya farmers bred henequen (Agave fourcroydes, ki in Yucatec) from a wild agave and twisted its fibre into ropes, bags, hammocks and sandals. In the 19th century the reaping machines of North American farmers needed binder twine, and Yucatán’s plantations boomed: ‘green gold’ made Mérida rich, while Maya workers lived in debt bondage on the haciendas. The fibre was shipped through the port of Sisal, whose name passed to a related plant, Agave sisalana. Taken to Florida, and in 1893 to German East Africa, sisal became a major crop in Tanzania and Kenya, and later in Brazil, now the largest grower.",
+        "es": "Los campesinos mayas obtuvieron el henequén (Agave fourcroydes, ki en yucateco) de un agave silvestre y torcían su fibra para hacer cuerdas, bolsas, hamacas y sandalias. En el siglo XIX las segadoras de los granjeros norteamericanos necesitaban cordel para atar, y las haciendas de Yucatán vivieron un auge: el «oro verde» enriqueció a Mérida, mientras los peones mayas vivían endeudados y atados a las haciendas. La fibra salía por el puerto de Sisal, cuyo nombre pasó a una planta pariente, Agave sisalana. Llevado a Florida, y en 1893 al África Oriental Alemana, el sisal se volvió un gran cultivo en Tanzania y Kenia, y después en Brasil, hoy el mayor productor."
+      },
+      "roots": {
+        "en": "Agave fibres were used across Mesoamerica for thousands of years; sisal’s own origin, probably in southern Mexico, is uncertain.",
+        "es": "Las fibras de agave se usaban en Mesoamérica desde hacía miles de años; el origen del sisal, probablemente en el sur de México, es incierto."
+      },
+      "path": [
+        { "at": [-90.03, 21.17], "place": { "en": "Sisal, Yucatán, Mexico", "es": "Sisal, Yucatán, México" }, "date": "1830", "circa": true, "note": { "en": "The port gives its name to the fibre shipped abroad.", "es": "El puerto da su nombre a la fibra que se embarca al extranjero." } },
+        { "at": [-80.35, 25.6], "place": { "en": "Southern Florida, United States", "es": "Sur de Florida, Estados Unidos" }, "date": "1836", "circa": true, "by": { "en": "Henry Perrine", "es": "Henry Perrine" }, "note": { "en": "Agave plants from Yucatán are grown in southern Florida.", "es": "Se cultivan en el sur de Florida agaves traídos de Yucatán." } },
+        { "at": [39.1, -5.07], "place": { "en": "Tanga, Tanzania", "es": "Tanga, Tanzania" }, "date": "1893", "note": { "en": "Sisal is planted in German East Africa, today’s Tanzania.", "es": "Se planta sisal en el África Oriental Alemana, hoy Tanzania." } }
+      ],
+      "where": ["MEX", "BRA", "TZA", "KEN", "MDG", "CHN"],
+      "strong": ["BRA", "TZA", "MEX"],
+      "note": {
+        "en": "Brazil, Tanzania and Kenya grow most of the world’s sisal; Yucatán still makes henequen rope, bags and hammocks.",
+        "es": "Brasil, Tanzania y Kenia producen la mayor parte del sisal del mundo; Yucatán sigue haciendo cuerdas, bolsas y hamacas de henequén."
+      },
+      "words": [
+        { "en": "sisal", "es": "sisal", "from": "Sisal, a port of Yucatán" }
+      ],
+      "wiki": { "en": "Agave fourcroydes", "es": "Agave fourcroydes" }
+    },
+    {
+      "id": "backstrap-loom",
+      "name": { "en": "Backstrap looms and huipiles", "es": "El telar de cintura y el huipil" },
+      "cat": "daily",
+      "icon": "🧵",
+      "how": "developed",
+      "date": "700",
+      "circa": true,
+      "at": [-90.48, 20.24],
+      "place": { "en": "Jaina Island, Campeche, Mexico", "es": "Isla de Jaina, Campeche, México" },
+      "text": {
+        "en": "Maya women still weave on the backstrap loom, as their ancestors do on Classic-period figurines. Their huipiles, woven blouses, show which town a weaver comes from.",
+        "es": "Las mujeres mayas siguen tejiendo en telar de cintura, como sus antepasadas en las figurillas del periodo clásico. Sus huipiles muestran de qué pueblo viene cada tejedora."
+      },
+      "details": {
+        "en": "The loom is a set of sticks: one end is tied to a tree or post, the other to a strap around the weaver’s hips, and she controls the tension by leaning back. A Late Classic clay figurine from Jaina Island, Campeche, shows a woman weaving this way. The word huipil comes from Nahuatl huīpīlli, but the designs are Maya: diamonds, zigzags, birds and plants, different in every town and full of meaning. In Guatemala and Chiapas many Maya women wear their town’s huipil every day, and weavers’ groups have campaigned to have their designs recognised as collective intellectual property.",
+        "es": "El telar es un juego de palos: un extremo se ata a un árbol o un poste, y el otro a una faja que rodea la cadera de la tejedora, que controla la tensión echándose hacia atrás. Una figurilla de barro del Clásico tardío de la isla de Jaina, Campeche, muestra a una mujer tejiendo así. La palabra huipil viene del náhuatl huīpīlli, pero los diseños son mayas: rombos, grecas, aves y plantas, distintos en cada pueblo y llenos de significado. En Guatemala y Chiapas muchas mujeres mayas visten a diario el huipil de su pueblo, y grupos de tejedoras han luchado porque sus diseños se reconozcan como propiedad intelectual colectiva."
+      },
+      "roots": {
+        "en": "Backstrap looms were used across the Americas long before the Classic Maya, and cotton was domesticated in Mesoamerica thousands of years earlier.",
+        "es": "El telar de cintura se usaba en toda América mucho antes de los mayas clásicos, y el algodón se domesticó en Mesoamérica miles de años antes."
+      },
+      "where": ["GTM", "MEX", "BLZ", "HND"],
+      "strong": ["GTM"],
+      "note": {
+        "en": "Woven and worn every day by Maya women in Guatemala and Chiapas; huipiles are sold and collected worldwide.",
+        "es": "Las mujeres mayas de Guatemala y Chiapas los tejen y visten a diario; los huipiles se venden y coleccionan en todo el mundo."
+      },
+      "wiki": { "en": "Huipil", "es": "Huipil" }
+    },
+    {
+      "id": "mayan-languages",
+      "name": { "en": "Mayan languages and words", "es": "Las lenguas mayas y sus palabras" },
+      "cat": "words",
+      "icon": "🗣️",
+      "how": "kept",
+      "date": "-2000",
+      "circa": true,
+      "at": [-91.5, 15.6],
+      "place": { "en": "Cuchumatanes highlands, Guatemala", "es": "Sierra de los Cuchumatanes, Guatemala" },
+      "text": {
+        "en": "About six million people speak Mayan languages today, and Yucatán’s Spanish is full of Maya words: a cenote is a sinkhole well, a pib an earth oven, xix the leftovers.",
+        "es": "Unos seis millones de personas hablan hoy lenguas mayas, y el español de Yucatán está lleno de palabras mayas: un cenote es un pozo natural, el pib un horno de tierra, el xix lo que sobra."
+      },
+      "details": {
+        "en": "The Mayan family has about 30 languages, which split from a common ancestor spoken perhaps 4,000 years ago, probably in the highlands of Guatemala. Guatemala recognises 22 of them by law; K’iche’, Q’eqchi’ and Kaqchikel are the largest. In Mexico, Yucatec Maya has about 775,000 speakers, and Tseltal and Tsotsil more than half a million each. Yucatec gave Spanish and English the word cenote (from ts’onot), used for the sinkhole pools that draw swimmers and divers to the Riviera Maya. Radio, schoolbooks, rap and social media now use Mayan languages too.",
+        "es": "La familia maya tiene unas 30 lenguas, que se separaron de un antepasado común hablado quizá hace 4000 años, probablemente en el altiplano de Guatemala. Guatemala reconoce 22 por ley; el k’iche’, el q’eqchi’ y el kaqchikel son las más habladas. En México, el maya yucateco tiene unos 775 000 hablantes, y el tseltal y el tsotsil más de medio millón cada uno. El yucateco dio al español y al inglés la palabra cenote (de ts’onot), que nombra los pozos naturales que atraen a nadadores y buzos a la Riviera Maya. La radio, los libros de texto, el rap y las redes sociales también usan hoy lenguas mayas."
+      },
+      "where": ["GTM", "MEX", "BLZ", "HND"],
+      "strong": ["GTM"],
+      "note": {
+        "en": "Spoken by about six million people in Guatemala, southern Mexico, Belize and Honduras; cenote is used across the Spanish-speaking world and in English.",
+        "es": "Las hablan unos seis millones de personas en Guatemala, el sur de México, Belice y Honduras; cenote se usa en todo el mundo hispano y en inglés."
+      },
+      "words": [
+        { "en": "cenote", "es": "cenote", "from": "ts’onot (Yucatec Maya)", "means": { "en": "well, sinkhole", "es": "pozo, hondonada" } },
+        { "es": "xix", "from": "xi’ix (Yucatec Maya)", "means": { "en": "leftovers, dregs", "es": "sobras, residuo" } },
+        { "es": "tuch", "from": "tuuch (Yucatec Maya)", "means": { "en": "navel", "es": "ombligo" } },
+        { "es": "kekén", "from": "k’éek’en (Yucatec Maya)", "means": { "en": "pig", "es": "cerdo" } },
+        { "es": "huech", "from": "wech (Yucatec Maya)", "means": { "en": "armadillo", "es": "armadillo" } },
+        { "es": "Mayab", "from": "Ma’yab (Yucatec Maya)", "means": { "en": "the Maya land of Yucatán", "es": "la tierra maya de Yucatán" }, "type": "place" }
+      ],
+      "see": ["people:mayan-languages", "writing:mayan-languages"],
+      "wiki": { "en": "Mayan languages", "es": "Lenguas mayenses" }
+    },
+    {
+      "id": "maya-names",
+      "name": { "en": "Maya surnames and first names", "es": "Apellidos y nombres mayas" },
+      "cat": "words",
+      "icon": "🪪",
+      "how": "kept",
+      "date": "1550",
+      "circa": true,
+      "at": [-89.62, 20.97],
+      "place": { "en": "Mérida, Yucatán, Mexico", "es": "Mérida, Yucatán, México" },
+      "text": {
+        "en": "Pech, Balam, Chan, Canul, Tun and Ek are among the commonest surnames in Yucatán, kept by Maya families since before the conquest; names such as Nicté and Zazil are given to girls.",
+        "es": "Pech, Balam, Chan, Canul, Tun y Ek están entre los apellidos más comunes de Yucatán, conservados por familias mayas desde antes de la conquista; nombres como Nicté y Zazil se ponen a las niñas."
+      },
+      "details": {
+        "en": "When Yucatec Maya were baptised, they took a Christian first name but kept their family name, passed down the father’s line, alongside the Spanish surnames of the mestizo world. Many are words: Balam is ‘jaguar’, Pech ‘tick’, Chan ‘small’, Tun ‘stone’, Ek’ ‘star’ and Dzul ‘foreigner’ or ‘lord’. Cocom was the name of the ruling family of Mayapán. Today these surnames are found on shop signs, in football teams and in parliament across the peninsula, and with migration they are now common in Cancún, Mexico City and California. Girls’ names such as Nicté (‘flower’) and Zazil (‘light’) are also used.",
+        "es": "Cuando los mayas yucatecos fueron bautizados, tomaron un nombre de pila cristiano pero conservaron su apellido, que se hereda por línea paterna, junto a los apellidos españoles del mundo mestizo. Muchos son palabras: Balam es «jaguar», Pech «garrapata», Chan «pequeño», Tun «piedra», Ek’ «estrella» y Dzul «extranjero» o «señor». Cocom era el linaje gobernante de Mayapán. Hoy estos apellidos se ven en letreros de tiendas, equipos de futbol y congresos de toda la península, y con la migración son comunes en Cancún, la Ciudad de México y California. También se usan nombres de niña como Nicté («flor») y Zazil («luz»)."
+      },
+      "where": ["MEX", "GTM", "BLZ", "USA"],
+      "strong": ["MEX"],
+      "note": {
+        "en": "Carried by hundreds of thousands of people in Yucatán, Campeche and Quintana Roo, and by their relatives across Mexico and the United States.",
+        "es": "Los llevan cientos de miles de personas en Yucatán, Campeche y Quintana Roo, y sus familiares en todo México y Estados Unidos."
+      },
+      "words": [
+        { "es": "Balam", "from": "báalam (Yucatec Maya)", "means": { "en": "jaguar", "es": "jaguar" }, "type": "name" },
+        { "es": "Pech", "from": "pech’ (Yucatec Maya)", "means": { "en": "tick", "es": "garrapata" }, "type": "name" },
+        { "es": "Chan", "from": "chan (Yucatec Maya)", "means": { "en": "small", "es": "pequeño" }, "type": "name" },
+        { "es": "Tun", "from": "tuun (Yucatec Maya)", "means": { "en": "stone", "es": "piedra" }, "type": "name" },
+        { "es": "Ek", "from": "ek’ (Yucatec Maya)", "means": { "en": "star", "es": "estrella" }, "type": "name" },
+        { "es": "Dzul", "from": "ts’uul (Yucatec Maya)", "means": { "en": "foreigner, lord", "es": "extranjero, señor" }, "type": "name" },
+        { "es": "Canul", "from": "Kanul (Yucatec Maya)", "type": "name" },
+        { "es": "Cocom", "from": "Kokom (Yucatec Maya), rulers of Mayapán", "type": "name" },
+        { "es": "Chi", "from": "chi’ (Yucatec Maya)", "means": { "en": "mouth", "es": "boca" }, "type": "name" },
+        { "es": "Nicté", "from": "nikte’ (Yucatec Maya)", "means": { "en": "flower (plumeria)", "es": "flor (flor de mayo)" }, "type": "name" },
+        { "es": "Zazil", "from": "sáasil (Yucatec Maya)", "means": { "en": "light, clarity", "es": "luz, claridad" }, "type": "name" }
+      ],
+      "wiki": { "en": "Yucatec Maya language", "es": "Idioma maya" }
+    },
+    {
+      "id": "place-names",
+      "name": { "en": "Maya place names", "es": "Topónimos mayas" },
+      "cat": "words",
+      "icon": "🗺️",
+      "how": "named",
+      "sure": "likely",
+      "date": "600",
+      "circa": true,
+      "at": [-88.57, 20.68],
+      "place": { "en": "Chichén Itzá, Yucatán, Mexico", "es": "Chichén Itzá, Yucatán, México" },
+      "text": {
+        "en": "Chichén Itzá, Tulum, Cozumel, Petén and Sololá keep their Maya names, and Yucatán and Cancún may come from Maya too, though their origins are debated.",
+        "es": "Chichén Itzá, Tulum, Cozumel, Petén y Sololá conservan sus nombres mayas, y Yucatán y Cancún quizá también vengan del maya, aunque su origen se discute."
+      },
+      "details": {
+        "en": "Chichén Itzá means ‘at the mouth of the well of the Itzá’, after its great cenote. Tulum, ‘wall’, was the name later given to the walled port the Maya called Zamá. Cozumel comes from Kusaamil, ‘place of swallows’, and Petén means ‘island’, after the island city of Nojpetén. The origin of Yucatán is unclear: a popular story says it meant ‘I don’t understand you’, the answer Maya people gave to Spanish sailors, but there is no good evidence for it. Many Guatemalan towns, on the other hand, have Nahuatl names given by Spanish allies from central Mexico.",
+        "es": "Chichén Itzá quiere decir «en la boca del pozo de los itzaes», por su gran cenote. Tulum, «muralla», es el nombre que se dio después al puerto amurallado que los mayas llamaban Zamá. Cozumel viene de Kusaamil, «lugar de golondrinas», y Petén quiere decir «isla», por la ciudad isleña de Nojpetén. El origen de Yucatán no está claro: una historia popular dice que significaba «no te entiendo», la respuesta de los mayas a marineros españoles, pero no hay pruebas sólidas. En cambio, muchos pueblos de Guatemala tienen nombres en náhuatl que les dieron aliados de los españoles venidos del centro de México."
+      },
+      "where": ["MEX", "GTM", "BLZ", "HND"],
+      "strong": ["MEX", "GTM"],
+      "note": {
+        "en": "On road signs and maps of Yucatán, Chiapas and Guatemala, and on millions of holiday photos from Cancún and Tulum.",
+        "es": "En letreros y mapas de Yucatán, Chiapas y Guatemala, y en millones de fotos de vacaciones de Cancún y Tulum."
+      },
+      "words": [
+        { "es": "Chichén Itzá", "from": "chi’ (mouth) + ch’e’en (well) + Itza’ (Yucatec Maya)", "means": { "en": "at the mouth of the well of the Itzá", "es": "en la boca del pozo de los itzaes" }, "type": "place" },
+        { "es": "Tulum", "from": "tulum (Yucatec Maya)", "means": { "en": "wall", "es": "muralla" }, "type": "place" },
+        { "es": "Cozumel", "from": "Kusaamil (Yucatec Maya)", "means": { "en": "place of swallows", "es": "lugar de golondrinas" }, "type": "place" },
+        { "es": "Petén", "from": "petén (Yucatec Maya)", "means": { "en": "island", "es": "isla" }, "type": "place" },
+        { "es": "Sololá", "from": "Tz’olojya’ (Kaqchikel)", "means": { "en": "water of the elder trees", "es": "agua de saúcos" }, "type": "place" },
+        { "es": "Mayapán", "from": "Mayapan (Yucatec Maya)", "type": "place" },
+        { "en": "Cancún", "es": "Cancún", "from": "Kaan kun (Yucatec Maya), perhaps; meaning debated", "type": "place" },
+        { "en": "Yucatán", "es": "Yucatán", "from": "origin debated, perhaps Maya", "type": "place" }
+      ],
+      "see": ["people:chichen-itza"],
+      "wiki": { "en": "Chichen Itza", "es": "Chichén Itzá" }
+    },
+    {
+      "id": "cigar",
+      "name": { "en": "Cigar (the word)", "es": "La palabra «cigarro»" },
+      "cat": "words",
+      "icon": "🚬",
+      "how": "named",
+      "sure": "debated",
+      "date": "1500",
+      "circa": true,
+      "at": [-89.0, 20.0],
+      "place": { "en": "Yucatán Peninsula, Mexico", "es": "Península de Yucatán, México" },
+      "text": {
+        "en": "Spanish cigarro, which gave English cigar and the word cigarette in most languages, may come from Maya sik’ar, ‘to smoke’. Dictionaries call its origin uncertain.",
+        "es": "Cigarro, de donde vienen el inglés cigar y la palabra cigarrillo en casi todas las lenguas, podría venir del maya sik’ar, «fumar». Los diccionarios consideran incierto su origen."
+      },
+      "details": {
+        "en": "The Maya smoked tobacco rolled in leaves, and Classic Maya vases show lords and gods smoking. Spanish writers recorded cigarro from the late 16th century; one theory links it to a Maya verb for smoking, written sik’ar or siyar, while another derives it from Spanish cigarra, ‘cicada’, for the shape. English took cigar from Spanish in the 18th century, and French made the diminutive cigarette, which spread to most of the world’s languages, from Russian sigareta to Turkish sigara and Arabic sījāra. The word tobacco itself comes from the Caribbean.",
+        "es": "Los mayas fumaban tabaco enrollado en hojas, y en vasijas mayas clásicas aparecen señores y dioses fumando. Los escritores españoles registraron cigarro desde fines del siglo XVI; una teoría lo relaciona con un verbo maya para fumar, escrito sik’ar o siyar, y otra lo deriva del español cigarra, por la forma. El inglés tomó cigar del español en el siglo XVIII, y el francés creó el diminutivo cigarette, que pasó a casi todas las lenguas del mundo, del ruso sigareta al turco sigara y el árabe sīŷāra. La palabra tabaco viene del Caribe."
+      },
+      "roots": {
+        "en": "Tobacco was domesticated in South America and smoked across the Americas long before the Maya.",
+        "es": "El tabaco se domesticó en Sudamérica y se fumaba en toda América mucho antes de los mayas."
+      },
+      "path": [
+        { "at": [-5.99, 37.39], "place": { "en": "Seville, Spain", "es": "Sevilla, España" }, "date": "1620", "circa": true, "note": { "en": "Cigarros are rolled in Seville from American tobacco.", "es": "En Sevilla se tuercen cigarros con tabaco americano." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London, England", "es": "Londres, Inglaterra" }, "date": "1735", "circa": true, "note": { "en": "English borrows cigar from Spanish.", "es": "El inglés toma cigar del español." } },
+        { "at": [2.35, 48.86], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1830", "circa": true, "from": 1, "note": { "en": "French cigarette, ‘little cigar’, spreads around the world.", "es": "El francés cigarette, «cigarrito», recorre el mundo." } }
+      ],
+      "where": ["world"],
+      "note": {
+        "en": "Cigar and cigarette, in one form or another, are used in most of the world’s languages.",
+        "es": "Cigarro y cigarrillo, de una forma u otra, se usan en la mayoría de las lenguas del mundo."
+      },
+      "words": [
+        { "en": "cigar", "es": "cigarro", "from": "sik’ar (Maya), ‘to smoke’? Origin uncertain" },
+        { "en": "cigarette", "es": "cigarrillo", "from": "French cigarette, from Spanish cigarro" }
+      ],
+      "wiki": { "en": "Cigar", "es": "Puro" }
+    },
+    {
+      "id": "maya-revival",
+      "name": { "en": "Maya Revival architecture", "es": "La arquitectura neomaya" },
+      "cat": "build",
+      "icon": "🔺",
+      "how": "invented",
+      "date": "600",
+      "circa": true,
+      "at": [-89.77, 20.36],
+      "place": { "en": "Uxmal, Yucatán, Mexico", "es": "Uxmal, Yucatán, México" },
+      "text": {
+        "en": "The stepped temples, corbel vaults and stone mosaics of Maya cities inspired the ‘Maya Revival’ of the 1920s, seen in Frank Lloyd Wright’s houses and in cinemas and hotels in the US and Mexico.",
+        "es": "Los templos escalonados, las bóvedas falsas y los mosaicos de piedra de las ciudades mayas inspiraron el estilo neomaya de los años veinte, que se ve en casas de Frank Lloyd Wright y en cines y hoteles de Estados Unidos y México."
+      },
+      "details": {
+        "en": "Maya builders raised temples on stepped platforms, roofed rooms with corbel vaults, in which each row of stones juts further in until they meet, and covered façades with stone mosaics, as at Uxmal. Casts of Uxmal’s buildings shown at the 1893 world’s fair in Chicago, and photographs of the ruins, made these forms popular in the United States. Frank Lloyd Wright drew on them in the Hollyhock House (1921) and the Ennis House (1924) in Los Angeles; the Mayan, a theatre of 1927 in the same city, and many Art Deco buildings followed. In Mexico, neo-Maya monuments went up in Mérida.",
+        "es": "Los constructores mayas levantaban templos sobre plataformas escalonadas, techaban los cuartos con bóvedas falsas, en las que cada hilera de piedras avanza un poco más hasta cerrarse, y cubrían las fachadas con mosaicos de piedra, como en Uxmal. Las réplicas de los edificios de Uxmal expuestas en la feria mundial de Chicago de 1893, y las fotos de las ruinas, popularizaron estas formas en Estados Unidos. Frank Lloyd Wright se inspiró en ellas para la Casa Hollyhock (1921) y la Casa Ennis (1924) en Los Ángeles; el Mayan Theater (1927), en la misma ciudad, y muchos edificios art déco vinieron después. En México se levantaron monumentos neomayas en Mérida."
+      },
+      "roots": {
+        "en": "Stepped platforms were built across Mesoamerica; the Maya added corbel vaults, roof combs and fine mosaic façades.",
+        "es": "En toda Mesoamérica se construían plataformas escalonadas; los mayas añadieron bóvedas falsas, cresterías y finas fachadas de mosaico."
+      },
+      "path": [
+        { "at": [-87.58, 41.79], "place": { "en": "Chicago, United States", "es": "Chicago, Estados Unidos" }, "date": "1893", "note": { "en": "Casts of Uxmal’s buildings are shown at the World’s Columbian Exposition.", "es": "Se exhiben réplicas de edificios de Uxmal en la Exposición Mundial Colombina." } },
+        { "at": [-118.29, 34.1], "place": { "en": "Los Angeles, United States", "es": "Los Ángeles, Estados Unidos" }, "date": "1921", "by": { "en": "Frank Lloyd Wright", "es": "Frank Lloyd Wright" }, "note": { "en": "The Hollyhock House, with Maya-style roofs and walls.", "es": "La Casa Hollyhock, con techos y muros de estilo maya." } },
+        { "at": [-89.62, 20.97], "place": { "en": "Mérida, Yucatán, Mexico", "es": "Mérida, Yucatán, México" }, "date": "1945", "circa": true, "from": 0, "note": { "en": "Neo-Maya monuments go up in the Yucatecan capital.", "es": "Se levantan monumentos neomayas en la capital yucateca." } }
+      ],
+      "where": ["USA", "MEX"],
+      "note": {
+        "en": "Seen in buildings across the United States and Mexico, and copied in countless hotels and theme parks.",
+        "es": "Se ve en edificios de Estados Unidos y México, y se copia en incontables hoteles y parques temáticos."
+      },
+      "wiki": { "en": "Mayan Revival architecture", "es": "" }
+    },
+    {
+      "id": "equinox-serpent",
+      "name": { "en": "The equinox serpent of Chichén Itzá", "es": "La serpiente del equinoccio en Chichén Itzá" },
+      "cat": "science",
+      "icon": "🐍",
+      "how": "invented",
+      "sure": "debated",
+      "date": "900",
+      "circa": true,
+      "at": [-88.57, 20.68],
+      "place": { "en": "Chichén Itzá, Yucatán, Mexico", "es": "Chichén Itzá, Yucatán, México" },
+      "text": {
+        "en": "At the spring and autumn equinoxes, the afternoon sun casts a zigzag of light down a stairway of the Castillo, joining a serpent’s stone head. Tens of thousands gather to watch.",
+        "es": "En los equinoccios de primavera y otoño, el sol de la tarde dibuja un zigzag de luz en una escalera de El Castillo que se une a una cabeza de serpiente de piedra. Decenas de miles de personas se reúnen a verlo."
+      },
+      "details": {
+        "en": "The Castillo, or Temple of Kukulcán, the feathered serpent, has 91 steps on each of its four sides, which with the top platform make 365, the days of the year. Whether its builders meant to create the equinox effect is debated: the pattern of light can be seen for several days around each equinox. Maya astronomy itself is not in doubt. The Dresden Codex tracks the 584-day cycle of Venus with remarkable accuracy and warns of possible eclipses, and many Maya buildings line up with sunrises and sunsets on key days of the year.",
+        "es": "El Castillo, o Templo de Kukulcán, la serpiente emplumada, tiene 91 escalones en cada uno de sus cuatro lados, que con la plataforma superior suman 365, los días del año. Se discute si sus constructores quisieron crear el efecto del equinoccio: el juego de luz se ve durante varios días alrededor de cada equinoccio. La astronomía maya, en cambio, no está en duda. El Códice de Dresde sigue el ciclo de 584 días de Venus con notable precisión y advierte de posibles eclipses, y muchos edificios mayas se alinean con salidas y puestas del sol en días clave del año."
+      },
+      "roots": {
+        "en": "Mesoamerican peoples watched the sun, moon and Venus for many centuries before Chichén Itzá; its builders drew on older Maya astronomy.",
+        "es": "Los pueblos mesoamericanos observaron el sol, la luna y Venus durante siglos antes de Chichén Itzá; sus constructores se apoyaron en una astronomía maya más antigua."
+      },
+      "where": ["MEX"],
+      "note": {
+        "en": "Each spring equinox tens of thousands of people gather at Chichén Itzá, one of the most visited archaeological sites in Mexico.",
+        "es": "Cada equinoccio de primavera decenas de miles de personas se reúnen en Chichén Itzá, una de las zonas arqueológicas más visitadas de México."
+      },
+      "words": [
+        { "es": "Kukulcán", "from": "K’uk’ulkan (Yucatec Maya)", "means": { "en": "feathered serpent", "es": "serpiente emplumada" } }
+      ],
+      "see": ["people:chichen-itza", "people:dresden-codex"],
+      "wiki": { "en": "El Castillo, Chichen Itza", "es": "Templo de Kukulcán" }
+    }
+  ]
+}
