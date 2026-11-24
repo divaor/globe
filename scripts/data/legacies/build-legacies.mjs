@@ -28,6 +28,8 @@ const DATA = path.join(ROOT, 'public/data');
 let OUT = path.join(DATA, 'legacies');
 const CACHE = path.join(ROOT, '.cache/legacies');
 const readJSON = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
+/** The smallest triangle (in steradians) a homeland's outline keeps when simplified. */
+const HOME_DETAIL = 3e-7;
 
 export const CATS = [
   ['words', '🗣️', '#8e44ad', 'Words and names', 'Palabras y nombres'],
@@ -483,7 +485,7 @@ async function main() {
       const { story, checked } = checkCiv(c, f);
       homes.push({ id: c.id, expr: c.home, defs: c.defs });
       // The homeland on its own, so that a mistake names its file.
-      areaTopology([{ id: c.id, expr: c.home, defs: c.defs }], `${f} home`);
+      areaTopology([{ id: c.id, expr: c.home, defs: c.defs }], `${f} home`, HOME_DETAIL);
       full.push(civOut(c, story, checked));
       console.log(`ok ${f}: ${c.legacies.length} legacies`);
     } catch (e) { failed++; console.error(`FAIL ${f}: ${e.message}`); }
@@ -502,7 +504,8 @@ async function main() {
   // --only checks those files and writes nothing (other files may be half-written).
   if (only) { console.log(`checked ${only.join(', ')}: run without --only to build`); return; }
   if (!full.length) { console.log('no civilizations yet'); return; }
-  const out = { 'index.json': indexOut(full), 'areas.json': areaTopology(homes, 'home') };
+  // Homelands are washes of colour seen whole, never close up: simplified harder than the stories' territories.
+  const out = { 'index.json': indexOut(full), 'areas.json': areaTopology(homes, 'home', HOME_DETAIL) };
   for (const c of full) out[`${c.id}.json`] = c;
   if (check) {
     let stale = 0;

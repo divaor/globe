@@ -406,14 +406,14 @@ function toD3(mp) {
  * `id`, simplified and quantised as the stories' territories are: for other builders (the civilizations' homelands
  * of scripts/data/legacies, v0.44.0).
  */
-export function areaTopology(list, where = 'areas') {
+export function areaTopology(list, where = 'areas', minArea = 2e-8) {
   const features = list.map(({ id, expr, defs }) => {
     const mp = toD3(resolve(expr, { defs: defs ?? {}, refs: new Map(), resolving: new Set(), prev: null, side: null }, `${where} ${id}`));
     if (!mp.length) throw new Error(`${where} ${id}: the area is empty`);
     return { type: 'Feature', id, properties: {}, geometry: { type: 'MultiPolygon', coordinates: mp } };
   });
   let topo = topology({ areas: { type: 'FeatureCollection', features } }, 1e5);
-  topo = quantize(simplify(presimplify(topo, sphericalTriangleArea), 2e-8), 1e5);
+  topo = quantize(simplify(presimplify(topo, sphericalTriangleArea), minArea), 1e5);
   rewindTopology(topo);
   for (const g of topo.objects.areas.geometries) if (g.type == null) throw new Error(`${where} ${g.id}: the area vanished when simplified (too small?)`);
   return topo;

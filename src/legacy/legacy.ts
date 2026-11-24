@@ -729,12 +729,13 @@ export class Legacies {
         const y = Number(/^-?\d+/.exec(p.date)?.[0]);
         const date = y < 0 ? L('{0} BC', '{0} a. C.', -y) : String(y);
         const near = spots.find((x) => Math.hypot(x.p[0] - pp[0], x.p[1] - pp[1]) < 26);
-        if (near) { if (!near.dates.includes(date)) near.dates.push(date); } else spots.push({ p: pp, name: tx(p.place), dates: [date] });
+        // On the map, the place's first part only ("Cumae", not "Cumae, near Naples, Italy"): the panel has the rest.
+        if (near) { if (!near.dates.includes(date)) near.dates.push(date); } else spots.push({ p: pp, name: tx(p.place).split(/[,(]/)[0].trim(), dates: [date] });
         this.hits.push({ x: pp[0], y: pp[1], r: 14, go: () => this.app.flyTo(p.at[0], p.at[1], 5) });
       });
       for (const sp of spots) this.label(rc, sp.p, `${sp.name} · ${sp.dates.join(', ')}`, 13, false);
       const p0 = this.dot(rc, l.at, l.icon, color, null, 13);
-      if (p0) this.label(rc, p0, tx(l.place), 22);
+      if (p0) this.label(rc, p0, tx(l.place).split(/[,(]/)[0].trim(), 22);
       return;
     }
     if (v.v === 'country') {
