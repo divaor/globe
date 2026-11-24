@@ -6699,6 +6699,10 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const item = await F(() => ({ info: window.atlas.legacy.info, path: document.querySelectorAll('[data-legacy="path"] li').length, text: document.querySelector('.legacy-text')?.textContent ?? '', seen: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').seen?.legacies ?? null }));
   check(item.info.view?.id === pick && item.path >= 3 && item.text.length > 30 && item.info.hits >= 2,
     `a legacy (${pick}): ${item.path} places on its journey, ${item.info.hits} on the map, "${item.text.slice(0, 60)}…"; seen: ${JSON.stringify(item.seen)}`);
+  // v0.44.1: the journey's names go through the map's labels, above the map's own names, which make way for them.
+  const named = await F(() => window.atlas.app.renderer.labels.drawn.map((d) => d.text));
+  const journey = named.filter((t) => / · /.test(t));
+  check(journey.length >= 2, `the journey's names are among the map's labels, so none is drawn over another (${journey.slice(0, 4).join(' / ')}; ${named.length} names in all)`);
   // A country's card: what Mexico borrowed.
   await F(() => { window.atlas.shell.sheet.close(); window.atlas.app.select('MEX'); });
   await page.waitForTimeout(1200);

@@ -765,8 +765,12 @@
       },
       "words": [
         {
-          "es": "rocoto, locoto",
+          "es": "rocoto",
           "from": "ruqutu (Quechua)"
+        },
+        {
+          "es": "locoto",
+          "from": "ruqutu (Quechua), as it is called in Bolivia"
         }
       ],
       "wiki": {
@@ -2590,7 +2594,15 @@
         },
         {
           "en": "lagniappe",
-          "es": "yapa, ñapa",
+          "es": "yapa",
+          "from": "yapa (Quechua)",
+          "means": {
+            "en": "something added",
+            "es": "añadidura"
+          }
+        },
+        {
+          "es": "ñapa",
           "from": "yapa (Quechua)",
           "means": {
             "en": "something added",
@@ -2965,7 +2977,7 @@
       },
       "words": [
         {
-          "en": "quipu, khipu",
+          "en": "quipu",
           "es": "quipu",
           "from": "khipu (Quechua)",
           "means": {
@@ -3045,7 +3057,8 @@
           "means": {
             "en": "do not steal, do not lie, do not be lazy",
             "es": "no robes, no mientas, no seas ocioso"
-          }
+          },
+          "phrase": true
         }
       ],
       "wiki": {

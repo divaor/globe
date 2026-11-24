@@ -19,7 +19,7 @@ import { recordSeen } from '../learn/progress';
 import { shareText } from '../play/pin';
 import type { Topology } from 'topojson-specification';
 import {
-  members, usersOf, borrowed, reach, segments, findLegacies, everywhere, ofTheDay, wordsByType, wordIn, WORD_TYPES, type WordType,
+  members, usersOf, borrowed, reach, segments, findLegacies, everywhere, ofTheDay, wordsByType, wordIn, inText, WORD_TYPES, type WordType,
   type LegacyIndex, type CivMeta, type Civ, type Legacy, type Brief, type Cat, type Tx,
 } from './logic';
 
@@ -451,7 +451,8 @@ export class Legacies {
       // days and months, stars (the sort keeps each kind in the order of its legacies).
       const kind = (t?: WordType) => WORD_TYPES.indexOf(t ?? 'word');
       const ws = [...new Set([...g.own, ...g.world].flatMap((b) => b.w ?? []).sort((a, b) => kind(a.t) - kind(b.t)).map((w) => wordIn(w, lang())).filter(Boolean))];
-      if (ws.length) sec.append(h('p', { class: 'legacy-words-line', 'data-legacy': 'country-words' }, `🗣️ ${ws.length > 10 ? `${ws.slice(0, 10).join(', ')}…` : ws.join(', ')}`));
+      const line = ws.slice(0, 10).map((w) => inText(w, lang())).join(', ');
+      if (ws.length) sec.append(h('p', { class: 'legacy-words-line', 'data-legacy': 'country-words' }, `🗣️ ${line}${ws.length > 10 ? '…' : ''}`));
       const list = h('div', { class: 'guide-list' });
       for (const b of g.own) list.append(this.briefRow(b, false));
       sec.append(list);
@@ -486,7 +487,7 @@ export class Legacies {
   private wordsBlock(c: Civ): HTMLElement[] | null {
     const by = wordsByType(c.legacies, lang());
     if (!by.size) return null;
-    const parts = [...by].map(([t, list]) => WORD_TEXT[t].like(andList(list.slice(0, 4).map((x) => x.w))));
+    const parts = [...by].map(([t, list]) => WORD_TEXT[t].like(andList(list.slice(0, 4).map((x) => inText(x.w, lang())))));
     const out: HTMLElement[] = [h('h3', { class: 'sec-title' }, L('Words and names they gave us', 'Palabras y nombres que nos dieron')),
       h('p', { class: 'legacy-words-lead', 'data-legacy': 'words-lead' }, L('They gave us {0}.', 'Nos dieron {0}.', parts.join('; ')))];
     const box = h('div', { class: 'legacy-word-rows', 'data-legacy': 'civ-words' });
@@ -655,16 +656,24 @@ export class Legacies {
     ctx.fillText(emoji, p[0], p[1] + 0.5);
     ctx.restore();
     if (go) this.hits.push({ x: p[0], y: p[1], r: r + 6, go });
+    this.keepClear(rc, p, r);
     return p;
   }
-  private label(rc: RenderCtx, p: [number, number], text: string, dy = 18, bold = true) {
-    const { ctx } = rc;
-    ctx.save();
-    ctx.font = `${bold ? 650 : 500} 12px system-ui, sans-serif`;
-    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.lineWidth = 3.5; ctx.strokeStyle = halo(rc.theme.dark); ctx.strokeText(text, p[0], p[1] + dy);
-    ctx.fillStyle = rc.theme.dark ? '#f2f5fa' : '#1b2433'; ctx.fillText(text, p[0], p[1] + dy);
-    ctx.restore();
+  /** The map's own names keep off a marker drawn here (v0.44.1: they were drawn over the dots and their names). */
+  private keepClear(rc: RenderCtx, p: [number, number], r: number) {
+    rc.labels.reserve(p[0] - r, p[1] - r, p[0] + r, p[1] + r);
+  }
+  /**
+   * A marker's name, through the map's labels (v0.44.1): beside its marker of radius `r`, on whichever side is free,
+   * and above the map's own names (cities, countries), which make way; of two of ours that meet, the higher
+   * `priority` stays.
+   */
+  private label(rc: RenderCtx, p: [number, number], text: string, r: number, priority: number, bold = true) {
+    const own: [number, number, number, number] = [p[0] - r, p[1] - r, p[0] + r, p[1] + r];
+    rc.labels.add({
+      text, x: p[0], y: p[1], gap: r + 4, avoid: [own], own, priority, size: 12, weight: bold ? 650 : 500,
+      color: rc.theme.dark ? '#f2f5fa' : '#1b2433', halo: halo(rc.theme.dark),
+    });
   }
 
   private draw(rc: RenderCtx) {
@@ -680,7 +689,7 @@ export class Legacies {
       for (const c of idx.civs) this.homeland(rc, c.id, col(c), 0.5);
       for (const c of idx.civs) {
         const p = this.dot(rc, c.at, c.icon, col(c), () => void this.open({ v: 'civ', civ: c.id }), 12);
-        if (p && this.app.renderer.view.zoom >= 1.6) this.label(rc, p, this.civName(c, true));
+        if (p && this.app.renderer.view.zoom >= 1.6) this.label(rc, p, this.civName(c, true), 12, 3000);
       }
       return;
     }
@@ -728,6 +737,7 @@ export class Legacies {
         if (!pp) return;
         rc.ctx.save(); rc.ctx.beginPath(); rc.ctx.arc(pp[0], pp[1], 4, 0, Math.PI * 2);
         rc.ctx.fillStyle = line; rc.ctx.fill(); rc.ctx.lineWidth = 1.5; rc.ctx.strokeStyle = halo(dark); rc.ctx.stroke(); rc.ctx.restore();
+        this.keepClear(rc, pp, 4);
         const y = Number(/^-?\d+/.exec(p.date)?.[0]);
         const date = y < 0 ? L('{0} BC', '{0} a. C.', -y) : String(y);
         const near = spots.find((x) => Math.hypot(x.p[0] - pp[0], x.p[1] - pp[1]) < 26);
@@ -735,9 +745,10 @@ export class Legacies {
         if (near) { if (!near.dates.includes(date)) near.dates.push(date); } else spots.push({ p: pp, name: tx(p.place).split(/[,(]/)[0].trim(), dates: [date] });
         this.hits.push({ x: pp[0], y: pp[1], r: 14, go: () => this.app.flyTo(p.at[0], p.at[1], 5) });
       });
-      for (const sp of spots) this.label(rc, sp.p, `${sp.name} · ${sp.dates.join(', ')}`, 13, false);
+      // The journey's names: where it began first, then each step in order (an early step stays if two meet).
+      spots.forEach((sp, i) => this.label(rc, sp.p, `${sp.name} · ${sp.dates.join(', ')}`, 4, 3500 - i, false));
       const p0 = this.dot(rc, l.at, l.icon, color, null, 13);
-      if (p0) this.label(rc, p0, tx(l.place).split(/[,(]/)[0].trim(), 22);
+      if (p0) this.label(rc, p0, tx(l.place).split(/[,(]/)[0].trim(), 13, 3600);
       return;
     }
     if (v.v === 'country') {
@@ -755,7 +766,7 @@ export class Legacies {
       }
       for (const g of groups) {
         const p = this.dot(rc, g.civ.at, g.civ.icon, col(g.civ), () => void this.open({ v: 'civ', civ: g.civ.id }), 11);
-        if (p && this.app.renderer.view.zoom >= 1.4) this.label(rc, p, `${this.civName(g.civ, true)} · ${g.own.length + g.world.length}`);
+        if (p && this.app.renderer.view.zoom >= 1.4) this.label(rc, p, `${this.civName(g.civ, true)} · ${g.own.length + g.world.length}`, 11, 3000 + g.own.length + g.world.length);
       }
       return;
     }

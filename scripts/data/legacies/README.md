@@ -170,7 +170,14 @@ that went straight into Spanish in Mexico).
 
 `en` and/or `es`: the word today in English, Spanish or both (only one when the other language did not
 borrow it). `from`: the original word with its language, at most 90 characters. `means`: optional, what it
-meant. `type`: what kind of word, left out for an ordinary word:
+meant.
+
+**One word per entry.** Two words are two entries: `cacao` and `cocoa`, not `"cacao, cocoa"`, and `a.m.` and
+`p.m.`, not `"a.m. / p.m."`. What a word means or where it is goes in `means`, not in brackets: `Ravivar` with
+`means` "Sunday in Hindi", not `"Ravivar (Sunday in Hindi)"`. A saying that has commas in it ("veni, vidi, vici")
+says `"phrase": true`; the app puts it in quotation marks when it lists words in a sentence. The builder stops at a
+word with a slash or brackets, or with a comma and no `"phrase": true`. `type`: what kind of word, left out for an
+ordinary word:
 
 | `type` | |
 |---|---|

@@ -721,7 +721,8 @@
       "strong": ["CHN", "TWN", "KOR"],
       "note": { "en": "Living ideas in East Asia; the yin-yang symbol and tai chi are known around the world.", "es": "Son ideas vivas en Asia oriental; el símbolo del yin y el yang y el taichí se conocen en todo el mundo." },
       "words": [
-        { "en": "Tao, Taoism", "es": "tao, taoísmo", "from": "dào (Chinese)", "means": { "en": "way, path", "es": "camino" } },
+        { "en": "Tao", "es": "tao", "from": "dào (Chinese)", "means": { "en": "way, path", "es": "camino" } },
+        { "en": "Taoism", "es": "taoísmo", "from": "dào (Chinese), the way" },
         { "en": "qi", "es": "chi", "from": "qì (Chinese)", "means": { "en": "breath, vital energy", "es": "aliento, energía vital" } }
       ],
       "wiki": { "en": "Yin and yang", "es": "Yin y yang" }
@@ -888,7 +889,8 @@
       "note": { "en": "Used in most of the world's languages; Russian and some neighbours say Kitai, from Cathay, and East Asia uses 'Middle Kingdom'.", "es": "Se usa en la mayoría de las lenguas del mundo; el ruso y algunas lenguas vecinas dicen Kitái, de Catay, y Asia oriental usa «País del Centro»." },
       "words": [
         { "en": "China", "es": "China", "type": "place", "from": "Cīna (Sanskrit), perhaps from Qin (Chinese)", "means": { "en": "the land of Qin (probably)", "es": "la tierra de Qin (probablemente)" } },
-        { "en": "Sino- (Sinology)", "es": "sino- (sinología)", "from": "Sinae (Latin), via Greek and Arabic Ṣīn, perhaps from Qin" }
+        { "en": "Sino-", "es": "sino-", "from": "Sinae (Latin), via Greek and Arabic Ṣīn, perhaps from Qin", "means": { "en": "Chinese, as in Sino-Japanese", "es": "chino, como en sinojaponés" } },
+        { "en": "Sinology", "es": "sinología", "from": "Sinae (Latin), via Greek and Arabic Ṣīn, perhaps from Qin", "means": { "en": "the study of China", "es": "el estudio de China" } }
       ],
       "see": ["people:qin-shi-huang"],
       "wiki": { "en": "Names of China", "es": "Nombres de China" }
@@ -921,8 +923,8 @@
       "strong": ["CHN", "JPN", "VNM"],
       "note": { "en": "These names are on every map and used in every language.", "es": "Estos nombres están en todos los mapas y se usan en todas las lenguas." },
       "words": [
-        { "en": "Beijing (Peking)", "es": "Pekín (Beijing)", "type": "place", "from": "Běijīng (Mandarin)", "means": { "en": "northern capital", "es": "capital del norte" } },
-        { "en": "Nanjing (Nanking)", "es": "Nankín (Nanjing)", "type": "place", "from": "Nánjīng (Mandarin)", "means": { "en": "southern capital", "es": "capital del sur" } },
+        { "en": "Beijing", "es": "Pekín", "type": "place", "from": "Běijīng (Mandarin)", "means": { "en": "northern capital; once spelled Peking in English", "es": "capital del norte; también Beijing" } },
+        { "en": "Nanjing", "es": "Nankín", "type": "place", "from": "Nánjīng (Mandarin)", "means": { "en": "southern capital; once spelled Nanking in English", "es": "capital del sur; también Nanjing" } },
         { "en": "Shanghai", "es": "Shanghái", "type": "place", "from": "Shànghǎi (Mandarin)", "means": { "en": "on the sea", "es": "sobre el mar" } },
         { "en": "Hong Kong", "es": "Hong Kong", "type": "place", "from": "Heung Gong (Cantonese)", "means": { "en": "fragrant harbour", "es": "puerto fragante" } },
         { "en": "Kowloon", "es": "Kowloon", "type": "place", "from": "Gau Lung (Cantonese)", "means": { "en": "nine dragons", "es": "nueve dragones" } },
