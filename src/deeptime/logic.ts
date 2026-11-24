@@ -10,6 +10,8 @@ export interface Ice { from: number; to: number; kind: IceKind }
 export interface Group { id: string; icon: string; color: string; name: Tx }
 export interface DEvent {
   id: string; kind: string; ma: number; to?: number; err?: number; name: Tx; at?: [number, number]; pl?: string; r?: number;
+  /** Years after the Big Bang, for the first million years (their `ma` all round to 13,787). */
+  t?: number;
   text: Tx; first?: true; sure?: string; wiki?: Tx; species?: string[]; item?: string; img?: string;
   /** Its Life through time story and step (from `item`). */
   story?: [string, number];
@@ -20,10 +22,12 @@ export interface Species {
   sites: Site[]; len?: number; mass?: number; diet: string; text: Tx; kin?: Tx; wiki: Tx; pbdb?: string; item?: string;
   story?: [string, number];
 }
-export interface Beat { id: string; ma: number; focus?: string; cam?: [number, number, number]; text: Tx }
+export interface Beat { id: string; ma: number; t?: number; focus?: string; cam?: [number, number, number]; text: Tx }
 export interface DeepData {
   groups: Group[]; kinds: Group[]; series: Series[]; ice: Ice[]; sources: { id: string; title: string; url: string }[];
   events: DEvent[]; beats: Beat[];
+  /** The cosmos chapter's narration, from the Big Bang to the Earth (v0.46.0). */
+  beatsCosmos?: Beat[];
 }
 
 /** The Big Bang and the Earth's first days (Ma). */
@@ -242,3 +246,143 @@ export function look(ma: number, v: Pick<Vitals, 'o2' | 'ice' | 'temp'>): Look {
 
 /** How long a narrated beat waits when nothing reads it aloud: time to read it, at least 5 seconds. */
 export const readingTime = (text: string) => Math.max(5, Math.min(20, text.split(/\s+/).length * 0.32 + 1.5));
+
+
+// ---- The cosmos (v0.46.0) ------------------------------------------------------------------------------------------
+
+/**
+ * The chapters: the cosmos (the Big Bang to the Earth and the Moon, drawn as a scene), the Earth (its first days to
+ * today, on the globe) and the two joined ("Big Bang to today").
+ */
+export type Chapter = 'cosmos' | 'earth' | 'all';
+/** The cosmos chapter ends once the Moon has formed; in "Big Bang to today" the globe takes over then (Ma). */
+export const COSMOS_END = 4500;
+/** Years after the Big Bang of an age in Ma, and back. */
+export const sinceBang = (ma: number) => Math.max(0, (BIG_BANG_MA - ma) * 1e6);
+export const maOfT = (t: number) => BIG_BANG_MA - t / 1e6;
+/** When something happened, in years after the Big Bang (`t` when it has one: the first million years). */
+export const tOf = (x: { t?: number; ma: number }) => (x.t != null ? x.t : sinceBang(x.ma));
+
+/** The first 380,000 years on the story scale: a log scale from 10⁻³² seconds (log₁₀ of years). */
+const LOG_T0 = -39.5;
+const LOG_T1 = Math.log10(380000);
+/** The share of the cosmos chapter's story bar the first 380,000 years get. */
+const COSMOS_LOG = 0.16;
+/** The rest of the cosmos chapter's story scale: [position, Ma]. */
+const COSMOS_KNOTS: [number, number][] = [
+  [COSMOS_LOG, BIG_BANG_MA - 0.38], [0.28, 13600], [0.4, 13300], [0.5, 12800], [0.6, 11000], [0.68, 10000], [0.76, 8800],
+  [0.84, 6500], [0.9, 4600], [0.94, 4568], [0.97, EARTH_MA], [1, COSMOS_END],
+];
+/** In "Big Bang to today", the cosmos chapter's share of the story bar; the Earth's starts from the Moon's birth. */
+const ALL_SPLIT = 0.3;
+const ALL_EARTH_KNOTS: [number, number][] = [[0, COSMOS_END], ...STORY_KNOTS.slice(1)];
+
+function cosmosT(pos: number, scale: Scale): number {
+  if (scale === 'true') return Math.max(0, Math.min(1, pos)) * sinceBang(COSMOS_END);
+  if (pos <= 0) return 0;
+  if (pos < COSMOS_LOG) return 10 ** (LOG_T0 + (LOG_T1 - LOG_T0) * (pos / COSMOS_LOG));
+  return sinceBang(along(COSMOS_KNOTS, pos, 0));
+}
+function cosmosPos(t: number, scale: Scale): number {
+  if (scale === 'true') return Math.max(0, Math.min(1, t / sinceBang(COSMOS_END)));
+  if (t <= 0) return 0;
+  if (t < 380000) return Math.max(0, Math.min(1, (Math.log10(t) - LOG_T0) / (LOG_T1 - LOG_T0))) * COSMOS_LOG;
+  return along(COSMOS_KNOTS, maOfT(t), 1);
+}
+
+/** The moment (years after the Big Bang) at a position of a chapter's bar. */
+export function tAt(pos: number, scale: Scale, ch: Chapter): number {
+  if (ch === 'earth') return sinceBang(maAt(pos, scale));
+  if (ch === 'cosmos') return cosmosT(pos, scale);
+  if (scale === 'true') return Math.max(0, Math.min(1, pos)) * sinceBang(0);
+  if (pos < ALL_SPLIT) return cosmosT(pos / ALL_SPLIT, 'story');
+  return sinceBang(along(ALL_EARTH_KNOTS, (pos - ALL_SPLIT) / (1 - ALL_SPLIT), 0));
+}
+/** A moment's position on a chapter's bar (clamped to the chapter). */
+export function posOfT(t: number, scale: Scale, ch: Chapter): number {
+  if (ch === 'earth') return posOf(Math.max(0, Math.min(EARTH_MA, maOfT(t))), scale);
+  if (ch === 'cosmos') return cosmosPos(Math.min(t, sinceBang(COSMOS_END)), scale);
+  if (scale === 'true') return Math.max(0, Math.min(1, t / sinceBang(0)));
+  if (t <= sinceBang(COSMOS_END)) return cosmosPos(t, 'story') * ALL_SPLIT;
+  return ALL_SPLIT + along(ALL_EARTH_KNOTS, maOfT(t), 1) * (1 - ALL_SPLIT);
+}
+/** The chapter a moment belongs to when nothing else says (before the Earth: the cosmos). */
+export const chapterFor = (ma: number): Chapter => (ma > EARTH_MA ? 'cosmos' : 'earth');
+
+/** How long after the Big Bang, in a unit people read. */
+export function afterBang(t: number): { n: number; unit: 'bang' | 'tiny' | 'seconds' | 'minutes' | 'years' | 'thousand' | 'million' | 'billion'; exp?: number } {
+  const secs = t * 365.25 * 86400;
+  if (t <= 0) return { n: 0, unit: 'bang' };
+  if (secs < 0.01) return { n: 10, unit: 'tiny', exp: Math.round(Math.log10(secs)) };
+  if (secs < 120) return { n: Math.round(secs * 100) / 100, unit: 'seconds' };
+  if (t < 1 / 365.25 / 24) return { n: Math.round(secs / 60), unit: 'minutes' };
+  if (t < 10000) return { n: Math.round(t * 10) / 10, unit: 'years' };
+  if (t < 1e6) return { n: Math.round(t / 1000), unit: 'thousand' };
+  if (t < 1e9) return { n: Math.round(t / 1e6), unit: 'million' };
+  return { n: Math.round(t / 1e7) / 100, unit: 'billion' };
+}
+
+// The universe's expansion: flat ΛCDM with Planck 2018's values, a table of the scale factor (its size compared with
+// today) against time, by integrating the Friedmann equation in ln a.
+const H0 = 67.66, OM = 0.3111, OL = 0.6889, OR = 9.0e-5;
+const HUBBLE_YEARS = (977.79 / H0) * 1e9;
+let TABLE: { la: Float64Array; t: Float64Array } | null = null;
+function table() {
+  if (TABLE) return TABLE;
+  const n = 4000, la0 = Math.log(1e-14);
+  const la = new Float64Array(n), t = new Float64Array(n);
+  const invE = (l: number) => { const a = Math.exp(l); return 1 / Math.sqrt(OR / a ** 4 + OM / a ** 3 + OL); };
+  la[0] = la0;
+  t[0] = (Math.exp(2 * la0) / (2 * Math.sqrt(OR))) * HUBBLE_YEARS;
+  for (let i = 1; i < n; i++) {
+    la[i] = la0 * (1 - i / (n - 1));
+    t[i] = t[i - 1] + ((invE(la[i - 1]) + invE(la[i])) / 2) * (la[i] - la[i - 1]) * HUBBLE_YEARS;
+  }
+  // The age comes out at 13.79 billion years; scale it to exactly the app's.
+  const k = (BIG_BANG_MA * 1e6) / t[n - 1];
+  for (let i = 0; i < n; i++) t[i] *= k;
+  return (TABLE = { la, t });
+}
+/** The universe's size compared with today (the scale factor, 1 today) at `t` years after the Big Bang. */
+export function scaleFactor(t: number): number {
+  const { la, t: tt } = table();
+  if (t <= 0) return 0;
+  if (t <= tt[0]) return Math.sqrt((2 * Math.sqrt(OR) * t) / HUBBLE_YEARS);
+  if (t >= tt[tt.length - 1]) return 1;
+  let lo = 0, hi = tt.length - 1;
+  while (hi - lo > 1) { const m = (lo + hi) >> 1; if (tt[m] <= t) lo = m; else hi = m; }
+  const f = (t - tt[lo]) / (tt[hi] - tt[lo]);
+  return Math.exp(la[lo] + (la[hi] - la[lo]) * f);
+}
+/** The temperature of the light filling space (the cosmic background), in kelvin: 2.7255 K today. */
+export const spaceTemp = (t: number) => (t <= 0 ? Infinity : 2.7255 / scaleFactor(t));
+
+/** The universe's eras, for the bar's bands and the scene. */
+export type CosmicEra = 'bang' | 'plasma' | 'dark' | 'stars' | 'galaxies' | 'milkyway' | 'nebula' | 'disc' | 'earth';
+export const COSMIC_ERAS: { id: CosmicEra; from: number; color: string }[] = [
+  { id: 'bang', from: 0, color: '#fff1c1' },
+  { id: 'plasma', from: 3.17e-8, color: '#ff9a3c' },
+  { id: 'dark', from: 380000, color: '#3b2f5c' },
+  { id: 'stars', from: sinceBang(13600), color: '#4f6dd6' },
+  { id: 'galaxies', from: sinceBang(13300), color: '#7b5ea7' },
+  { id: 'milkyway', from: sinceBang(8800), color: '#a29bfe' },
+  { id: 'nebula', from: sinceBang(4600), color: '#b5651d' },
+  { id: 'disc', from: sinceBang(4568), color: '#f9ca24' },
+  { id: 'earth', from: sinceBang(EARTH_MA), color: '#e17055' },
+];
+export function cosmicEra(t: number): CosmicEra {
+  let e: CosmicEra = 'bang';
+  for (const x of COSMIC_ERAS) if (t >= x.from) e = x.id;
+  return e;
+}
+
+/** Could you survive in the universe before the Earth? Never; these say why. */
+export function cosmicSurvival(t: number): Verdict {
+  const r: { key: string; level: Level }[] = [{ key: 'no-earth', level: 'no' }];
+  const temp = spaceTemp(t);
+  if (t < 380000) r.push({ key: 'opaque', level: 'no' });
+  if (temp > 400) r.push({ key: 'scorching-space', level: 'no' });
+  else if (temp >= 273 && temp <= 373) r.push({ key: 'warm-space', level: 'ok' });
+  if (t >= 380000 && t < sinceBang(13600)) r.push({ key: 'dark', level: 'ok' });
+  return { level: 'no', reasons: r };
+}

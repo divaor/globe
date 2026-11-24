@@ -33,6 +33,10 @@ Every time is in **Ma**, millions of years ago, as a number: `66.04` is 66.04 mi
 app's `public/data/paleo/timescale.json` has them) and the best current dates for events. Where the date is
 uncertain, give the best estimate in `ma` and the uncertainty in `err` (± Ma), and say so in the text.
 
+**The first million years** (the cosmos chapter, v0.46.0) give `t` instead: years after the Big Bang, as a number
+(`0` is the Big Bang, `3.17e-40` is 10⁻³² seconds, `5.7e-6` is three minutes, `380000` is 380,000 years). In Ma they
+would all read 13,787. Give `t` or `ma`, not both; the builder works out `ma` (the Big Bang is 13,787 Ma, Planck 2018).
+
 ## The files
 
 | File | What | Written by |
@@ -41,6 +45,8 @@ uncertain, give the best estimate in `ma` and the uncertainty in `err` (± Ma), 
 | `events-*.json` | events: planet, climate, life's firsts, extinctions, impacts, eruptions, ice ages, continents; any number of files (`events-precambrian.json`…), all are read | research helpers |
 | `species-*.json` | past species, any number of files (`species-paleozoic.json`, `species-mesozoic.json`…); all are read | research helpers |
 | `script.json` | the narration of "Play the whole story": ordered beats | written last, from the events and species |
+| `events-cosmos.json` | (v0.46.0) the cosmos chapter: the Big Bang, the first atoms, stars and galaxies, the Milky Way, the Sun and the planets forming | research helper |
+| `script-cosmos.json` | (v0.46.0) the cosmos chapter's narration, from the Big Bang to just before the Earth forms (the Earth's own beats, from 4,540 Ma, stay in `script.json`) | research helper |
 
 Files starting with `_` are ignored.
 
@@ -149,7 +155,34 @@ points:
 | `life` | a milestone of life (with `first: true` for the firsts) |
 | `extinction` | a mass extinction (`ma` to `to`), with how much died in `text` |
 | `human` | our own story: the first humans, fire, art, farming |
-| `cosmic` | (v0.46.0) the universe, the Sun and the solar system before the Earth |
+| `cosmic` | (v0.46.0) the universe as a whole: the Big Bang, the first atoms, the dark ages, dark energy |
+| `star` | (v0.46.0) stars: the first stars, supernovae, the Sun's birth |
+| `galaxy` | (v0.46.0) galaxies: the first galaxies, quasars, the Milky Way |
+
+`cosmic`, `star` and `galaxy` events come before the Earth (4,540 Ma) and have no `at`. The solar system's first
+solids and planets (from 4,568 Ma) are `planet`.
+
+### The cosmos chapter's events (v0.46.0)
+
+The cosmos chapter is drawn as a scene, not on the globe, and these ids are tied to it (the scene's spots open
+their cards), so `events-cosmos.json` must have them, with these ids:
+
+| id | kind | roughly |
+|---|---|---|
+| `big-bang` | cosmic | `t`: 0 |
+| `inflation` | cosmic | `t`: 3.17e-40 (10⁻³² s) |
+| `first-protons` | cosmic | `t`: about 3e-13 (a hundred-thousandth of a second) |
+| `first-nuclei` | cosmic | `t`: about 6e-6 (three minutes) |
+| `first-atoms` | cosmic | `t`: 380000: the first atoms, the light we see as the cosmic microwave background |
+| `dark-ages` | cosmic | `t`: 380000, `to`: when the first stars light up |
+| `first-stars` | star | about 13,600 Ma |
+| `first-galaxies` | galaxy | about 13,500 Ma |
+| `milky-way-forms` | galaxy | |
+| `solar-nebula` | star | the cloud that became the Sun collapses |
+| `sun-forms` | star | 4,568 Ma |
+| `jupiter-forms` | planet | |
+
+The Earth (`earth-forms`, 4,540 Ma) and the Moon (`theia-impact`, 4,510 Ma) are in `events-early.json`.
 
 ## `species-*.json`
 
@@ -227,6 +260,10 @@ giants and the strange ones. Cover the sea, the land and the air, the plants too
 
 Beats are in order, from the oldest to today. The app flies between them faster through quiet times and slower
 through busy ones.
+
+`script-cosmos.json` (v0.46.0) is the same, for the cosmos chapter: from the Big Bang to just before the Earth forms
+(every beat older than 4,540 Ma), with `t` instead of `ma` in the first million years. "Big Bang to today" plays it
+and then `script.json`.
 
 ## Style
 

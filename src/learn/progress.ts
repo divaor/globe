@@ -139,6 +139,7 @@ export const BADGES: Badge[] = [
   // v0.45.0 Deep time: past species opened, the whole narrated story watched ("story:life"), the asteroid seen.
   { id: 'app-fossils', icon: '🦴', en: 'Fossil hunter', es: 'Cazador de fósiles', how: { en: 'Open 30 past species in Deep time', es: 'Abre 30 especies del pasado en el tiempo profundo' }, goal: 30, have: (p) => (p.seen.deeptime ?? []).filter((k) => !k.includes(':')).length },
   { id: 'app-timetraveller', icon: '⏳', en: 'Time traveller', es: 'Viajero del tiempo', how: { en: 'Watch Deep time’s whole story', es: 'Mira toda la historia del tiempo profundo' }, goal: 1, have: (p) => ((p.seen.deeptime ?? []).includes('story:life') ? 1 : 0) },
+  { id: 'app-stardust', icon: '🌌', en: 'Stardust', es: 'Polvo de estrellas', how: { en: 'Watch the story of the universe from the Big Bang', es: 'Mira la historia del universo desde el Big Bang' }, goal: 1, have: (p) => ((p.seen.deeptime ?? []).some((k) => k === 'story:cosmos' || k === 'story:all') ? 1 : 0) },
   { id: 'app-witness', icon: '☄️', en: 'Witness', es: 'Testigo', how: { en: 'See the asteroid that ended the dinosaurs strike', es: 'Mira impactar el asteroide que acabó con los dinosaurios' }, goal: 1, have: (p) => ((p.seen.deeptime ?? []).includes('impact:chicxulub') ? 1 : 0) },
   // v0.33.0: a dive below 6,000 m (Into the deep).
   { id: 'app-diver', icon: '🤿', en: 'Diver', es: 'Buzo', how: { en: 'Dive below 6,000 m', es: 'Bucea a más de 6 000 m' }, goal: 1, have: (p) => Number(p.feats.includes('dive-6000')) },

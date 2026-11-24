@@ -44,6 +44,38 @@ check(!keys(at(4400)).includes('molten') && G.look(4400, G.vitalsAt(d, 4400)).ma
 check(keys(at(700)).includes('snowball'), 'a Snowball Earth is frozen');
 check(G.survival({ ...G.vitalsAt(d, 0), co2: { v: 50000 } }).level === 'no', 'air with 5% carbon dioxide would kill you');
 
+// ---- The cosmos (v0.46.0): the chapters' time scales, the expansion, the eras, the verdict.
+{
+  const near = (a, b, tol) => Math.abs(a - b) <= tol;
+  for (const ch of ['cosmos', 'earth', 'all']) for (const sc of ['story', 'true']) {
+    let ok = true, prev = -1;
+    for (let i = 0; i <= 200; i++) {
+      const p = i / 200, t = G.tAt(p, sc, ch);
+      if (!(t >= prev - 1e-9)) ok = false;
+      prev = t;
+      const back = G.posOfT(t, sc, ch);
+      if (!near(back, p, 1e-6) && t > 1e-30) ok = false;
+    }
+    check(ok, `${ch}, ${sc} scale: time only moves forward along the bar, and a moment finds its place again`);
+  }
+  check(G.tAt(0, 'story', 'cosmos') === 0 && near(G.maOfT(G.tAt(1, 'story', 'cosmos')), G.COSMOS_END, 1e-6) && near(G.maOfT(G.tAt(1, 'story', 'all')), 0, 1e-9), 'the cosmos chapter runs from the Big Bang to the Moon; Big Bang to today, to today');
+  const tNuclei = 3 * 60 / (365.25 * 86400);
+  check(G.posOfT(tNuclei, 'story', 'cosmos') > 0.05 && G.posOfT(380000, 'story', 'cosmos') < 0.2, 'the story scale gives the first 380,000 years room: the first three minutes are not squeezed to nothing');
+  check(near(G.posOfT(G.sinceBang(G.EARTH_MA), 'true', 'all'), 1 - G.EARTH_MA / G.BIG_BANG_MA, 1e-9), 'on the true scale the Earth forms two thirds of the way along');
+  const a380 = G.scaleFactor(380000);
+  check(near(1 / a380, 1090, 60) && near(G.spaceTemp(380000), 2970, 150), `when the first atoms formed the universe was about 1/1,100 of today's size and 3,000 K (${Math.round(1 / a380)}, ${Math.round(G.spaceTemp(380000))} K)`);
+  check(near(G.scaleFactor(G.sinceBang(0)), 1, 1e-6) && near(G.spaceTemp(G.sinceBang(0)), 2.7255, 1e-3), 'today: the scale factor is 1 and space is 2.7 K');
+  const half = G.scaleFactor(G.sinceBang(G.BIG_BANG_MA - 5800));
+  check(near(half, 0.5, 0.05), `at about 5.8 billion years the universe was half today's size (${half.toFixed(3)})`);
+  const warm = G.spaceTemp(15e6);
+  check(warm > 273 && warm < 373 && G.cosmicSurvival(15e6).reasons.some((r) => r.key === 'warm-space'), `fifteen million years after the Big Bang space itself was as warm as a summer's day (${Math.round(warm - 273)} °C)`);
+  check(G.cosmicSurvival(100).reasons.some((r) => r.key === 'opaque') && G.cosmicSurvival(100).level === 'no', 'before the first atoms the universe was a glowing fog');
+  check(G.cosmicEra(0) === 'bang' && G.cosmicEra(1000) === 'plasma' && G.cosmicEra(1e7) === 'dark' && G.cosmicEra(G.sinceBang(13500)) === 'stars' && G.cosmicEra(G.sinceBang(4569)) === 'nebula' && G.cosmicEra(G.sinceBang(4520)) === 'earth', 'the eras in order');
+  const ab = G.afterBang(3.17e-40);
+  check(ab.unit === 'tiny' && ab.exp === -32 && G.afterBang(tNuclei).unit === 'minutes' && G.afterBang(380000).n === 380 && G.afterBang(G.sinceBang(13600)).unit === 'million', `how long after the Big Bang, in words (10^${ab.exp} s, ${G.afterBang(tNuclei).n} minutes)`);
+  check(G.chapterFor(13000) === 'cosmos' && G.chapterFor(4000) === 'earth', 'a moment before the Earth opens the cosmos chapter');
+}
+
 // ---- Life and events.
 const sp = [
   { id: 'a', from: 100, to: 66 }, { id: 'b', from: 66, to: 0, alive: true }, { id: 'c', from: 300, to: 252 },

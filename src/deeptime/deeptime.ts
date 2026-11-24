@@ -4,8 +4,10 @@
 // where they happened, the asteroid strikes, and past species appear at their fossil sites while they lived. At any
 // moment: the eon, era and period, the Earth's vital signs with a plain "could you survive here?", and what lived
 // then. "Play the story" flies through it with a narration that waits for the voice (or for time to read).
+// v0.46.0 adds the chapter before: from the Big Bang to the Earth and the Moon, drawn as a scene (cosmos.ts) with
+// the universe's own vital signs, and "Big Bang to today", the two chapters joined.
 // The parts that need no page are in logic.ts (scripts/test/deeptime.mjs).
-import { Hourglass, Clapperboard, Scale, Layers, SkipForward, SkipBack, Square, Pause, Play, Volume2, VolumeX } from 'lucide';
+import { Hourglass, Clapperboard, Scale, Layers, SkipForward, SkipBack, Square, Pause, Play, Volume2, VolumeX, Orbit, Sparkles } from 'lucide';
 import { geoCircle } from 'd3-geo';
 import { h, icon, clear } from '../ui/dom';
 import { L, Lc, tx, lang, fmtNumber, appLocale, wikiHref } from '../app/i18n';
@@ -16,9 +18,11 @@ import { wikiThumb } from '../modes/stories';
 import { speak, stopSpeaking, narrationOn, setNarrationOn, canSpeak } from '../ui/narrator';
 import { recordSeen } from '../learn/progress';
 import {
-  vitalsAt, survival, aliveAt, eventsAt, maAt, posOf, ago, cosmicDate, shareSince, look, crust, readingTime, EARTH_MA,
-  type DeepData, type Species, type DEvent, type Scale as TimeScale, type Vitals, type Level,
+  vitalsAt, survival, aliveAt, eventsAt, ago, cosmicDate, shareSince, look, crust, readingTime, EARTH_MA, BIG_BANG_MA,
+  tAt, posOfT, sinceBang, maOfT, tOf, chapterFor, afterBang, scaleFactor, spaceTemp, cosmicEra, cosmicSurvival, COSMIC_ERAS, COSMOS_END,
+  type DeepData, type Species, type DEvent, type Beat, type Scale as TimeScale, type Vitals, type Level, type Chapter, type CosmicEra,
 } from './logic';
+import { CosmosScene } from './cosmos';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { LayerDef, RenderCtx, InfoRow } from '../layers/types';
@@ -40,7 +44,66 @@ const REASON: Record<string, () => string> = {
   cold: () => L('Colder than today.', 'Más frío que hoy.'),
   'no-ozone': () => L('No ozone layer: the Sun would burn your skin in minutes.', 'Sin capa de ozono: el Sol te quemaría la piel en minutos.'),
   'thin-ozone': () => L('A thin ozone layer: strong sunburn.', 'Una capa de ozono delgada: quemaduras fuertes.'),
+  'no-earth': () => L('There is no Earth yet: nothing to stand on and no air to breathe.', 'Aún no hay Tierra: nada que pisar y nada de aire que respirar.'),
+  opaque: () => L('The universe is a glowing fog: light cannot get through it.', 'El universo es una niebla brillante: la luz no puede atravesarla.'),
+  'scorching-space': () => L('Space itself is hotter than an oven.', 'El propio espacio está más caliente que un horno.'),
+  'warm-space': () => L('Space itself is as warm as a summer’s day, but there is still nothing to breathe.', 'El propio espacio está tibio como un día de verano, pero aún no hay nada que respirar.'),
+  dark: () => L('No stars yet: complete darkness.', 'Aún no hay estrellas: oscuridad total.'),
 };
+/** The universe's eras, as the bar and the top line name them. */
+const ERA: Record<CosmicEra, () => string> = {
+  bang: () => L('The first second', 'El primer segundo'),
+  plasma: () => L('The glowing fog', 'La niebla brillante'),
+  dark: () => L('The dark ages', 'La edad oscura'),
+  stars: () => L('The first stars', 'Las primeras estrellas'),
+  galaxies: () => L('Galaxies', 'Galaxias'),
+  milkyway: () => L('The Milky Way', 'La Vía Láctea'),
+  nebula: () => L('The Sun’s cloud', 'La nube del Sol'),
+  disc: () => L('The Sun and its planets', 'El Sol y sus planetas'),
+  earth: () => L('The Earth and the Moon', 'La Tierra y la Luna'),
+};
+const CHAPTER: Record<Chapter, () => string> = {
+  cosmos: () => L('From the Big Bang', 'Desde el Big Bang'),
+  earth: () => L('The story of life', 'La historia de la vida'),
+  all: () => L('Big Bang to today', 'Del Big Bang a hoy'),
+};
+const CHAPTER_ICON: Record<Chapter, string> = { cosmos: '🌌', earth: '🌍', all: '✨' };
+const sup = (n: number) => String(n).replace(/[-0-9]/g, (c) => '⁻⁰¹²³⁴⁵⁶⁷⁸⁹'['-0123456789'.indexOf(c)]);
+/** How long after the Big Bang, in words ("3 minutes after the Big Bang"). */
+export function afterText(t: number): string {
+  const a = afterBang(t);
+  if (a.unit === 'bang') return L('The Big Bang', 'El Big Bang');
+  if (a.unit === 'tiny') return L('10{0} seconds after the Big Bang', '10{0} segundos después del Big Bang', sup(a.exp ?? 0));
+  if (a.unit === 'seconds') return L('{0} seconds after the Big Bang', '{0} segundos después del Big Bang', fmtNumber(a.n, a.n < 10 ? 2 : 0));
+  if (a.unit === 'minutes') return L('{0} minutes after the Big Bang', '{0} minutos después del Big Bang', fmtNumber(a.n));
+  if (a.unit === 'years') return L('{0} years after the Big Bang', '{0} años después del Big Bang', fmtNumber(a.n, a.n < 10 ? 1 : 0));
+  if (a.unit === 'thousand') return L('{0} thousand years after the Big Bang', '{0} mil años después del Big Bang', fmtNumber(a.n));
+  if (a.unit === 'million') return L('{0} million years after the Big Bang', '{0} millones de años después del Big Bang', fmtNumber(a.n));
+  return L('{0} billion years after the Big Bang', '{0} mil millones de años después del Big Bang', fmtNumber(a.n, 2));
+}
+/** The universe's age at `t` ("3 minutes", "9.2 billion years"). */
+function ageText(t: number): string {
+  const a = afterBang(t);
+  if (a.unit === 'bang') return L('Zero', 'Cero');
+  if (a.unit === 'tiny') return `10${sup(a.exp ?? 0)} s`;
+  if (a.unit === 'seconds') return `${fmtNumber(a.n, a.n < 10 ? 2 : 0)} s`;
+  if (a.unit === 'minutes') return L('{0} minutes', '{0} minutos', fmtNumber(a.n));
+  if (a.unit === 'years') return L('{0} years', '{0} años', fmtNumber(a.n, a.n < 10 ? 1 : 0));
+  if (a.unit === 'thousand') return L('{0} thousand years', '{0} mil años', fmtNumber(a.n));
+  if (a.unit === 'million') return L('{0} million years', '{0} millones de años', fmtNumber(a.n));
+  return L('{0} billion years', '{0} mil millones de años', fmtNumber(a.n, 2));
+}
+/** A moment in words: after the Big Bang in its first million years, how long ago after that. */
+export const whenText = (t: number) => (t < 1e6 ? afterText(t) : agoText(maOfT(t)));
+/** A temperature from kelvin, in degrees Celsius people can read (10²⁷ °C, 3 billion °C, 2,700 °C, −270 °C). */
+function heatText(k: number): string {
+  if (!Number.isFinite(k)) return '—';
+  if (k >= 1e12) return `10${sup(Math.round(Math.log10(k)))} °C`;
+  if (k >= 1e9) return L('{0} billion °C', '{0} mil millones de °C', fmtNumber(k / 1e9, k < 1e10 ? 1 : 0));
+  if (k >= 1e6) return L('{0} million °C', '{0} millones de °C', fmtNumber(k / 1e6, k < 1e7 ? 1 : 0));
+  const c = k - 273.15;
+  return `${fmtNumber(Math.abs(c) >= 100 ? Math.round(c / 10) * 10 : Math.round(c))} °C`;
+}
 const VERDICT: Record<Level, () => string> = {
   ok: () => L('Could you survive here? Yes', '¿Podrías sobrevivir aquí? Sí'),
   hard: () => L('Could you survive here? Barely', '¿Podrías sobrevivir aquí? A duras penas'),
@@ -94,6 +157,10 @@ export class DeepTime {
   private data: DeepData | null = null;
   private species: Species[] = [];
   private ma = 250;
+  /** The same moment in years after the Big Bang (precise in the first million years, where `ma` is not). */
+  private t = sinceBang(250);
+  private chapter: Chapter = 'earth';
+  private scene: CosmosScene | null = null;
   private scale: TimeScale = 'story';
   private bar: TimeBar | null = null;
   private top: HTMLElement | null = null;
@@ -134,7 +201,11 @@ export class DeepTime {
 
   get active() { return this.app.mode === 'deeptime'; }
   get info() {
-    return { active: this.active, ma: this.ma, scale: this.scale, plain: this.plain, loaded: !!this.data, species: this.species.length, events: this.data?.events.length ?? 0, hits: this.hits.length, anims: this.anims.length, playing: !!this.player && !this.player.paused, beat: this.player?.i ?? null };
+    return {
+      active: this.active, ma: this.ma, t: this.t, chapter: this.chapter, scale: this.scale, plain: this.plain, loaded: !!this.data, species: this.species.length, events: this.data?.events.length ?? 0,
+      hits: this.hits.length, anims: this.anims.length, playing: !!this.player && !this.player.paused, beat: this.player?.i ?? null, beats: this.beats().length,
+      scene: !!this.scene?.visible, spots: this.scene?.spots.map((s) => s.id) ?? [],
+    };
   }
 
   async load(): Promise<DeepData> {
@@ -146,8 +217,9 @@ export class DeepTime {
   }
 
   /** Opens Deep time at `ma` (Pangea, 250 million years ago, by default). */
-  async enter(ma = 250, o: { plain?: boolean } = {}) {
-    if (this.active) { this.setMa(ma); return; }
+  async enter(ma = 250, o: { plain?: boolean; chapter?: Chapter; t?: number } = {}) {
+    const t = o.t ?? sinceBang(ma);
+    if (this.active) { if (o.chapter && o.chapter !== this.chapter) this.setChapter(o.chapter, t); else this.setT(t); return; }
     await this.leaveMode();
     this.shell.toast(L('Loading deep time…', 'Cargando el tiempo profundo…'), 1500);
     const [world] = await Promise.all([loadPaleo(this.app), this.load()]);
@@ -160,8 +232,14 @@ export class DeepTime {
     app.select(null);
     app.renderer.baseMap = false;
     await app.setStack(['deeptime']);
-    this.ma = Math.max(0, Math.min(EARTH_MA, ma));
+    this.chapter = o.chapter ?? chapterFor(maOfT(t));
+    this.t = this.clampT(t);
+    this.ma = Math.max(0, maOfT(this.t));
     this.lastMa = this.ma;
+    this.scene = new CosmosScene((id) => !!this.data?.events.some((e) => e.id === id), (k) => this.sceneWord(k), (id) => { const e = this.data?.events.find((x) => x.id === id); if (e) this.showEvent(e); });
+    // Just above the map's canvases, under everything else on the page.
+    const fg = app.root.querySelector('#fg');
+    if (fg) fg.after(this.scene.el); else app.root.prepend(this.scene.el);
     this.buildBar();
     this.top = h('div', { class: 'dt-top glass', 'data-deeptime': 'top' });
     this.vitalsEl = h('div', { class: 'dt-vitals glass', 'data-deeptime': 'vitals' });
@@ -170,6 +248,8 @@ export class DeepTime {
     app.renderer.keepOut.add(this.keepNames);
     window.addEventListener('resize', this.fitBar);
     this.renderHud();
+    this.syncScene();
+    if (this.chapter !== 'earth') recordSeen('deeptime', 'chapter:cosmos');
     if (app.renderer.view.current.kind === 'globe') app.renderer.view.flyTo({ lon: 15, lat: 10, zoom: 1 }, 1200);
     app.emit('mode', 'deeptime');
     app.renderer.requestRender();
@@ -186,13 +266,14 @@ export class DeepTime {
     this.top?.remove(); this.top = null;
     this.vitalsEl?.remove(); this.vitalsEl = null;
     this.caption?.remove(); this.caption = null;
+    this.scene?.destroy(); this.scene = null;
     this.anims = [];
     app.renderer.view.insetBottom = 0;
     app.renderer.keepOut.delete(this.keepNames);
     window.removeEventListener('resize', this.fitBar);
     document.documentElement.style.removeProperty('--dt-bar-h');
     app.mode = null;
-    document.documentElement.classList.remove('mode-time', 'mode-deeptime', 'dt-playing');
+    document.documentElement.classList.remove('mode-time', 'mode-deeptime', 'dt-playing', 'dt-cosmos');
     app.renderer.baseMap = true;
     this.shell.card.hide();
     if (this.shell.sheet.isOpen('deeptime')) this.shell.sheet.close();
@@ -207,38 +288,125 @@ export class DeepTime {
   private buildBar() {
     this.bar?.destroy();
     const units = this.world!.units;
-    const sc = this.scale;
-    const pos = (ma: number) => posOf(ma, sc);
+    const sc = this.scale, ch = this.chapter;
+    const pos = (ma: number) => posOfT(sinceBang(ma), sc, ch);
     const eons = units.filter((u) => u.rank === 'eon');
     const periods = units.filter((u) => u.rank === 'period');
-    const bands = (sc === 'story' ? [...eons.filter((u) => u.end >= 541), ...periods.filter((u) => u.start <= 541)] : eons)
-      .map((u) => ({ from: pos(Math.min(u.start, EARTH_MA)), to: pos(u.end), color: u.color, label: unitName(u) }));
-    const ticks = (sc === 'story' ? [4000, 2500, 1000, 541, 252, 66, 0] : [4000, 3000, 2000, 1000, 0]).map((m) => ({ at: pos(m), label: m ? (m >= 1000 ? `${fmtNumber(m / 1000, 1)} Ga` : `${m} Ma`) : L('Today', 'Hoy') }));
+    // The bands: the universe's eras before the Earth, the eons and (on the story scale) the periods after.
+    const bands: { from: number; to: number; color: string; label?: string }[] = [];
+    if (ch !== 'earth') {
+      for (const [i, e] of COSMIC_ERAS.entries()) {
+        const next = COSMIC_ERAS[i + 1]?.from ?? sinceBang(COSMOS_END);
+        if (ch === 'all' && e.id === 'earth') continue;
+        bands.push({ from: posOfT(e.from, sc, ch), to: posOfT(ch === 'all' && i === COSMIC_ERAS.length - 2 ? sinceBang(EARTH_MA) : next, sc, ch), color: e.color, label: ERA[e.id]() });
+      }
+    }
+    if (ch !== 'cosmos') {
+      for (const u of sc === 'story' ? [...eons.filter((x) => x.end >= 541), ...periods.filter((x) => x.start <= 541)] : eons) bands.push({ from: pos(Math.min(u.start, EARTH_MA)), to: pos(u.end), color: u.color, label: unitName(u) });
+    }
+    const ga = (m: number) => (m >= 1000 ? `${fmtNumber(m / 1000, m % 1000 ? 1 : 0)} Ga` : m ? `${m} Ma` : L('Today', 'Hoy'));
+    const tickMa = ch === 'cosmos' ? (sc === 'story' ? [13000, 10000, 4600] : [12000, 10000, 8000, 6000]) : ch === 'all' ? (sc === 'story' ? [EARTH_MA, 1000, 252, 66, 0] : [10000, 5000, 0]) : sc === 'story' ? [4000, 2500, 1000, 541, 252, 66, 0] : [4000, 3000, 2000, 1000, 0];
+    const ticks = tickMa.map((m) => ({ at: pos(m), label: ga(m) }));
+    if (ch !== 'earth') ticks.unshift({ at: 0, label: L('Big Bang', 'Big Bang') });
     this.bar = new TimeBar({
       title: L('Deep time', 'El tiempo profundo'),
-      format: (f) => agoText(maAt(f, this.scale)),
+      format: (f) => whenText(tAt(f, this.scale, this.chapter)),
       // "From 4.54 Ga to today", in the ticks' units ("From 4.54 billion years ago" read "Desde Hace…" in Spanish).
-      rangeFormat: (f) => { const m = maAt(f, this.scale); return m < 0.0005 ? L('today', 'hoy') : m < 1 ? `${fmtNumber(m * 1000, 0)} ka` : m < 1000 ? `${fmtNumber(m, m < 10 ? 1 : 0)} Ma` : `${fmtNumber(m / 1000, 2)} Ga`; },
-      caption: (f) => this.captionFor(maAt(f, this.scale)),
-      bands, ticks, start: 0, end: 1, pos: pos(this.ma),
+      rangeFormat: (f) => {
+        const t = tAt(f, this.scale, this.chapter), m = maOfT(t);
+        if (t < 1e6) return `${fmtNumber(BIG_BANG_MA / 1000, 1)} Ga`;
+        return m < 0.0005 ? L('today', 'hoy') : m < 1 ? `${fmtNumber(m * 1000, 0)} ka` : m < 1000 ? `${fmtNumber(m, m < 10 ? 1 : 0)} Ma` : `${fmtNumber(m / 1000, 2)} Ga`;
+      },
+      caption: (f) => this.captionAt(tAt(f, this.scale, this.chapter)),
+      bands, ticks, start: 0, end: 1, pos: posOfT(this.t, sc, ch),
       rate: 0.012,
-      onPos: (f) => this.onTime(maAt(f, this.scale)),
+      onPos: (f) => this.onTime(tAt(f, this.scale, this.chapter)),
       onExit: () => void this.exit(),
       onList: () => this.openNow(),
       listLabel: L('What lived then', 'Qué vivía entonces'),
     });
-    // The bar's own tools: play the story, the scale, continents only.
+    // The bar's own tools: the chapter, play the story, the scale, continents only.
     const tools = this.bar.el.querySelector('.tb-tools');
+    const chapter = h('button', { type: 'button', class: 'icon-btn', 'data-deeptime': 'chapter', title: L('Chapter: {0}', 'Capítulo: {0}', CHAPTER[ch]()), 'aria-label': L('Chapter: {0}', 'Capítulo: {0}', CHAPTER[ch]()) }, icon(ch === 'earth' ? Orbit : Sparkles, 18));
+    chapter.addEventListener('click', () => this.openChapters());
     const story = h('button', { type: 'button', class: 'pill sm', 'data-deeptime': 'story', title: L('Play the story, narrated', 'Reproducir la historia narrada') }, icon(Clapperboard, 16), h('span', { class: 'tb-list-label' }, L('Play the story', 'Reproducir la historia')));
     story.addEventListener('click', () => void this.playStory());
     const scale = h('button', { type: 'button', class: 'icon-btn', 'data-deeptime': 'scale', title: this.scale === 'story' ? L('True scale: every million years the same width', 'Escala real: cada millón de años del mismo ancho') : L('Story scale: more room for the busy recent past', 'Escala de historia: más espacio para el pasado reciente') }, icon(Scale, 18));
     scale.addEventListener('click', () => { this.scale = this.scale === 'story' ? 'true' : 'story'; this.buildBar(); this.shell.toast(this.scale === 'true' ? L('True scale: see how little of the time is ours', 'Escala real: mira qué poco del tiempo es nuestro') : L('Story scale', 'Escala de historia'), 2500); });
-    const plain = h('button', { type: 'button', class: `icon-btn${this.plain ? ' on' : ''}`, 'data-deeptime': 'plain', title: L('Continents only', 'Solo continentes'), 'aria-pressed': String(this.plain) }, icon(Layers, 18));
+    const plain = h('button', { type: 'button', class: `icon-btn${this.plain ? ' on' : ''}`, 'data-deeptime': 'plain', title: L('Continents only', 'Solo continentes'), 'aria-pressed': String(this.plain), hidden: ch === 'cosmos' }, icon(Layers, 18));
     plain.addEventListener('click', () => { this.plain = !this.plain; this.buildBar(); this.renderHud(); this.app.renderer.requestRender(); });
-    tools?.prepend(story, scale, plain);
+    tools?.prepend(chapter, story, scale, plain);
     this.bar.el.classList.add('dt-bar');
     this.app.root.append(this.bar.el);
     requestAnimationFrame(() => this.fitBar());
+  }
+
+  /** The chapters, to switch between. */
+  private openChapters() {
+    const list = h('div', { class: 'mode-list', 'data-deeptime': 'chapters' });
+    const desc: Record<Chapter, () => string> = {
+      cosmos: () => L('The universe from its first instant: the first atoms, stars and galaxies, the Milky Way, the Sun, the Earth and the Moon.', 'El universo desde su primer instante: los primeros átomos, estrellas y galaxias, la Vía Láctea, el Sol, la Tierra y la Luna.'),
+      earth: () => L('The Earth from its first days to today: moving continents, past life, ice ages, the asteroid.', 'La Tierra desde sus primeros días hasta hoy: continentes en movimiento, vida del pasado, glaciaciones, el asteroide.'),
+      all: () => L('Both chapters in one: 13.8 billion years, and how little of it is ours.', 'Los dos capítulos en uno: 13 800 millones de años, y qué poco de ese tiempo es nuestro.'),
+    };
+    for (const ch of ['cosmos', 'earth', 'all'] as Chapter[]) {
+      const on = ch === this.chapter;
+      const b = h('button', { type: 'button', class: `mode-card${on ? ' on' : ''}`, 'data-deeptime-chapter': ch },
+        h('span', { class: 'mode-icon' }, CHAPTER_ICON[ch]),
+        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, CHAPTER[ch]()), h('span', { class: 'mode-desc' }, desc[ch]())));
+      b.addEventListener('click', () => { this.shell.sheet.close(); if (!on) this.setChapter(ch, ch === 'earth' && this.ma > EARTH_MA ? sinceBang(EARTH_MA) : ch === 'cosmos' && this.ma < COSMOS_END ? 0 : this.t); });
+      list.append(b);
+    }
+    this.shell.openPanel('deeptime-chapter', L('Deep time', 'El tiempo profundo'), list);
+  }
+
+  /** Switches chapter, at moment `t` (kept inside the chapter). */
+  setChapter(ch: Chapter, t = this.t) {
+    if (!this.active) return;
+    if (this.player) this.stopStory();
+    this.chapter = ch;
+    this.t = this.clampT(t);
+    this.ma = Math.max(0, maOfT(this.t));
+    this.buildBar();
+    this.renderHud();
+    this.syncScene();
+    this.keepPlace();
+    if (ch !== 'earth') recordSeen('deeptime', 'chapter:cosmos');
+    this.app.renderer.requestRender();
+  }
+
+  /** A moment kept inside the present chapter. */
+  private clampT(t: number) {
+    const lo = this.chapter === 'earth' ? sinceBang(EARTH_MA) : 0, hi = this.chapter === 'cosmos' ? sinceBang(COSMOS_END) : sinceBang(0);
+    return Math.max(lo, Math.min(hi, t));
+  }
+
+  /** The scene of the cosmos, over the globe while the moment is before the Moon (in the cosmos chapters). */
+  private syncScene() {
+    const sc = this.scene;
+    if (!sc) return;
+    const on = this.chapter !== 'earth' && this.ma > COSMOS_END;
+    document.documentElement.classList.toggle('dt-cosmos', on);
+    if (on) {
+      const top = this.top?.getBoundingClientRect(), root = this.app.root.getBoundingClientRect();
+      const v = this.vitalsEl && !this.vitalsEl.hidden ? this.vitalsEl.getBoundingClientRect() : null;
+      // On a phone the vital signs sit over the middle: the scene keeps above them.
+      const over = v && v.height && v.right > root.left + root.width * 0.4 ? root.bottom - v.top + 6 : 0;
+      sc.inset = { top: top && top.height ? top.bottom - root.top + 6 : 0, bottom: Math.max(this.bar?.coveredHeight() ?? 0, over) };
+    }
+    sc.show(on);
+    sc.setTime(this.t);
+  }
+
+  /** The scene's words: an event's name, or a few labels of its own. */
+  private sceneWord(k: string): string | null {
+    const e = this.data?.events.find((x) => x.id === k);
+    if (e) return tx(e.name);
+    const words: Record<string, () => string> = {
+      jupiter: () => L('Jupiter', 'Júpiter'), earth: () => L('The Earth', 'La Tierra'), theia: () => L('Theia', 'Tea'),
+      moon: () => L('The Moon', 'La Luna'), 'sun-here': () => L('The Sun will form here', 'Aquí se formará el Sol'),
+    };
+    return words[k]?.() ?? null;
   }
 
   /** Keep the map, the vital signs and the story's caption above the time bar (its height changes with the screen). */
@@ -250,6 +418,12 @@ export class DeepTime {
     this.app.renderer.requestRender();
   }
 
+  /** The bar's second line: the universe's era before the Earth, the period, era and eon after. */
+  private captionAt(t: number): string {
+    const ma = maOfT(t);
+    return ma > EARTH_MA ? ERA[cosmicEra(t)]() : this.captionFor(ma);
+  }
+
   private captionFor(ma: number): string {
     const w = this.world;
     if (!w) return '';
@@ -258,14 +432,23 @@ export class DeepTime {
   }
 
   /** Moves to `ma` (from code: the story, a card's "Go to its time", a link). */
-  setMa(ma: number) {
+  setMa(ma: number) { this.setT(sinceBang(ma)); }
+
+  /** Moves to `t` years after the Big Bang; to the chapter it belongs to when it is outside this one. */
+  setT(t: number) {
     if (!this.bar) return;
-    this.bar.setPos(posOf(Math.max(0, Math.min(EARTH_MA, ma)), this.scale));
+    const ma = maOfT(t);
+    if (this.chapter === 'earth' && ma > EARTH_MA + 1e-9) { this.setChapter('cosmos', t); return; }
+    if (this.chapter === 'cosmos' && ma < COSMOS_END - 1e-9) { this.setChapter('earth', t); return; }
+    this.bar.setPos(posOfT(t, this.scale, this.chapter));
   }
 
-  private onTime(ma: number) {
+  private onTime(t: number) {
     const prev = this.ma;
+    const ma = Math.max(0, maOfT(t));
+    this.t = t;
     this.ma = ma;
+    this.syncScene();
     // Moving forward through an impact starts its animation.
     if (this.data && !this.plain && ma < prev) for (const e of this.data.events) if (e.kind === 'impact' && e.ma <= prev && e.ma > ma && prev - ma < 5) this.anims.push({ e, t0: performance.now() });
     this.lastMa = prev;
@@ -280,8 +463,10 @@ export class DeepTime {
     const now = performance.now();
     if (now - this.placeAt < 400) return;
     this.placeAt = now;
-    const v = this.ma >= 100 ? Math.round(this.ma) : this.ma >= 1 ? Math.round(this.ma * 10) / 10 : Math.round(this.ma * 10000) / 10000;
-    history.replaceState(history.state, '', `#deeptime=${v}&p=${this.app.projection}&lang=${lang()}`);
+    // The first million years by "t" (years after the Big Bang), since in Ma they all read 13,787.
+    const v = this.t < 1e6 ? `t${Number(this.t.toPrecision(3))}` : this.ma >= 100 ? Math.round(this.ma) : this.ma >= 1 ? Math.round(this.ma * 10) / 10 : Math.round(this.ma * 10000) / 10000;
+    const ch = this.chapter !== chapterFor(this.ma) ? `&ch=${this.chapter}` : '';
+    history.replaceState(history.state, '', `#deeptime=${v}${ch}&p=${this.app.projection}&lang=${lang()}`);
   }
 
   // ---- The heads-up display ----------------------------------------------------------------------------------------
@@ -291,6 +476,7 @@ export class DeepTime {
     if (!w || !d || !this.top) return;
     const ma = this.ma;
     clear(this.top);
+    if (ma > EARTH_MA) { this.renderCosmosHud(); return; }
     const chain = ['eon', 'era', 'period', 'epoch'].map((r) => w.unit(ma, r)).filter((u): u is Unit => !!u);
     this.top.append(
       h('div', { class: 'dt-ago', 'data-deeptime': 'ago' }, agoText(ma)),
@@ -304,14 +490,74 @@ export class DeepTime {
       b.addEventListener('click', () => this.showEvent(e));
       this.top.append(b);
     }
-    if (ma > PALEO_MAX_MA && !this.plain) this.top.append(h('div', { class: 'dt-note muted small' }, L('Before a billion years ago no one knows where the land was: the continents here are an impression.', 'Antes de hace mil millones de años nadie sabe dónde estaba la tierra: estos continentes son una impresión.')));
+    if (ma > PALEO_MAX_MA && !this.plain && !(this.chapter !== 'earth' && ma > COSMOS_END)) this.top.append(h('div', { class: 'dt-note muted small' }, L('Before a billion years ago no one knows where the land was: the continents here are an impression.', 'Antes de hace mil millones de años nadie sabe dónde estaba la tierra: estos continentes son una impresión.')));
     this.renderVitals();
+  }
+
+  /** Events around a moment: by tenfolds of time in the first million years (seconds, minutes…), by Ma after. */
+  private eventsNear(t: number, wide = 1): DEvent[] {
+    const d = this.data;
+    if (!d) return [];
+    if (t < 1e6) {
+      const lt = t > 0 ? Math.log10(t) : -50;
+      return d.events.filter((e) => e.t != null && (e.t <= 0 ? lt < -36 : Math.abs(Math.log10(e.t) - lt) <= 1.2 * wide)).sort((a, b) => Math.abs(tOf(a) - t) - Math.abs(tOf(b) - t));
+    }
+    return eventsAt(d.events.filter((e) => e.t == null || e.t >= 1e6 || (e.to != null && maOfT(t) <= e.ma && maOfT(t) >= e.to)), maOfT(t), this.window(maOfT(t)) * wide);
+  }
+
+  /** The top line before the Earth: how long after the Big Bang (or ago), the universe's era, the cosmic calendar. */
+  private renderCosmosHud() {
+    const top = this.top!, t = this.t, era = COSMIC_ERAS.find((x) => x.id === cosmicEra(t))!;
+    top.append(
+      h('div', { class: 'dt-ago', 'data-deeptime': 'ago' }, whenText(t)),
+      t >= 1e6 ? h('div', { class: 'dt-after muted small', 'data-deeptime': 'after' }, afterText(t)) : '',
+      h('div', { class: 'dt-chain', 'data-deeptime': 'eras' }, h('span', { class: 'dt-unit', style: `--u: ${era.color}` }, ERA[era.id]())),
+      h('div', { class: 'dt-cal', 'data-deeptime': 'calendar', title: L('All the time since the Big Bang squeezed into one year', 'Todo el tiempo desde el Big Bang comprimido en un año') },
+        `🗓️ ${L('Cosmic calendar', 'Calendario cósmico')}: ${cosmicText(this.ma)}`),
+    );
+    for (const e of this.eventsNear(t).slice(0, 2)) {
+      const b = h('button', { type: 'button', class: 'dt-now', 'data-deeptime-event': e.id }, `${this.kindIcon(e.kind)} ${tx(e.name)}`);
+      b.addEventListener('click', () => this.showEvent(e));
+      top.append(b);
+    }
+    this.renderVitals();
+  }
+
+  /** The universe's vital signs, before the Earth: its age, how hot space is, its size, what is in it, light. */
+  private universeRows(t: number): [string, string, string][] {
+    const a = scaleFactor(t), k = spaceTemp(t), era = cosmicEra(t);
+    const size = a <= 0 ? L('A point', 'Un punto') : a < 0.01 ? L('1/{0} of today’s', '1/{0} del actual', fmtNumber(Math.round(1 / a))) : a < 0.995 ? L('{0}% of today’s', '{0}% del actual', fmtNumber(a * 100, a < 0.1 ? 1 : 0)) : L('Today’s', 'El actual');
+    const made = t < 3.17e-13 ? L('Quarks, electrons and light', 'Quarks, electrones y luz') : t < 6e-6 ? L('Protons, neutrons, electrons and light', 'Protones, neutrones, electrones y luz')
+      : t < 380000 ? L('Hydrogen and helium nuclei, electrons and light', 'Núcleos de hidrógeno y helio, electrones y luz') : era === 'dark' ? L('Hydrogen and helium gas, and dark matter', 'Gas de hidrógeno y helio, y materia oscura')
+        : era === 'nebula' || era === 'disc' || era === 'earth' ? L('Gas and dust made by many stars before the Sun', 'Gas y polvo hechos por muchas estrellas antes del Sol') : L('Stars are making carbon, oxygen and iron', 'Las estrellas fabrican carbono, oxígeno y hierro');
+    const light = t < 380000 ? L('None gets through: a glowing fog', 'Ninguna la atraviesa: una niebla brillante') : era === 'dark' ? L('No stars yet: darkness', 'Aún no hay estrellas: oscuridad')
+      : era === 'stars' ? L('The first stars', 'Las primeras estrellas') : era === 'nebula' || era === 'disc' || era === 'earth' ? L('Our Sun, among billions of stars', 'Nuestro Sol, entre miles de millones de estrellas') : L('Billions of galaxies', 'Miles de millones de galaxias');
+    return [
+      ['⏳', L('Age of the universe', 'Edad del universo'), ageText(t)],
+      ['🌡️', L('Temperature of space', 'Temperatura del espacio'), heatText(k)],
+      ['📏', L('Size compared with today', 'Tamaño comparado con hoy'), size],
+      ['⚛️', L('What it is made of', 'De qué está hecho'), made],
+      ['💡', L('Light', 'Luz'), light],
+    ];
   }
 
   private renderVitals() {
     const el = this.vitalsEl, d = this.data;
     if (!el || !d) return;
     el.hidden = this.plain;
+    if (!this.plain && this.ma > EARTH_MA) {
+      const verdict = cosmicSurvival(this.t);
+      const rows = this.universeRows(this.t);
+      clear(el);
+      el.dataset.level = verdict.level;
+      el.classList.toggle('open', this.vitalsOpen);
+      el.append(
+        h('div', { class: 'dt-verdict', 'data-deeptime': 'verdict' }, VERDICT[verdict.level]()),
+        h('div', { class: 'dt-rows' }, (this.vitalsOpen ? rows : rows.slice(1, 2)).map(([i, label, value]) => h('div', { class: 'dt-row' }, h('span', { class: 'dt-ri' }, i), h('span', { class: 'dt-rl' }, label), h('span', { class: 'dt-rv' }, value)))));
+      if (this.vitalsOpen) el.append(h('ul', { class: 'dt-reasons' }, verdict.reasons.map((r) => h('li', { 'data-level': r.level }, REASON[r.key]?.() ?? r.key))));
+      el.append(h('div', { class: 'dt-more muted small' }, this.vitalsOpen ? L('From the Planck satellite’s measurements of the oldest light. Tap to close.', 'Según las mediciones de la luz más antigua del satélite Planck. Toca para cerrar.') : L('Tap for more', 'Toca para ver más')));
+      return;
+    }
     if (this.plain) return;
     const v = vitalsAt(d, this.ma);
     const verdict = survival(v);
@@ -350,7 +596,7 @@ export class DeepTime {
 
   private drawPlanet(rc: RenderCtx) {
     const w = this.world, d = this.data;
-    if (!w || !d || !this.active) return;
+    if (!w || !d || !this.active || this.scene?.visible) return;
     const { ctx, path } = rc;
     const ma = this.ma, dark = rc.theme.dark;
     const v = vitalsAt(d, ma);
@@ -475,7 +721,7 @@ export class DeepTime {
   private drawMarks(rc: RenderCtx) {
     this.hits = [];
     const d = this.data;
-    if (!this.active || !d || this.plain) return;
+    if (!this.active || !d || this.plain || this.scene?.visible) return;
     const ma = this.ma, zoom = this.app.renderer.view.zoom;
     // Past species at their fossil sites (the first site; all of them when zoomed in).
     for (const s of aliveAt(this.species, ma)) {
@@ -592,16 +838,21 @@ export class DeepTime {
 
   showEvent(e: DEvent, fly = false) {
     const k = this.data?.kinds.find((x) => x.id === e.kind);
-    const rows: InfoRow[] = [{ icon: '📅', label: L('When', 'Cuándo'), value: e.to != null ? this.when(e.ma, e.to) : `${agoText(e.ma)}${e.err ? ` (± ${fmtNumber(e.err, e.err < 1 ? 2 : 0)} Ma)` : ''}` }];
+    const te = tOf(e);
+    const cosmic = e.ma > EARTH_MA;
+    const whenValue = te < 1e6 && e.to == null ? afterText(te) : e.to != null ? `${whenText(te)} → ${agoText(e.to).toLowerCase()}` : `${agoText(e.ma)}${e.err ? ` (± ${fmtNumber(e.err, e.err < 1 ? 2 : 0)} Ma)` : ''}`;
+    const rows: InfoRow[] = [{ icon: '📅', label: L('When', 'Cuándo'), value: whenValue }];
+    if (cosmic && te >= 1e6) rows.push({ icon: '💥', label: L('Age of the universe', 'Edad del universo'), value: ageText(te) });
     if (k) rows.push({ icon: k.icon, label: L('Kind', 'Tipo'), value: tx(k.name) });
     if (e.sure === 'debated') rows.push({ icon: '❓', label: L('Certainty', 'Certeza'), value: L('Debated', 'Debatido') });
     if (e.first) rows.push({ icon: '🥇', label: L('A first', 'Un primero'), value: L('The first time in Earth’s history', 'La primera vez en la historia de la Tierra') });
     const links: { label: string; href?: string; onClick?: () => void }[] = [];
     const href = wikiHref(e.wiki);
     if (href) links.push({ label: 'Wikipedia', href });
-    if (Math.abs(this.ma - e.ma) > this.window(this.ma)) links.push({ label: L('Go to that moment', 'Ir a ese momento'), onClick: () => this.setMa(e.ma) });
+    if (Math.abs(posOfT(te, this.scale, this.chapter) - posOfT(this.t, this.scale, this.chapter)) > 0.004 || (this.chapter === 'earth' && cosmic)) links.push({ label: L('Go to that moment', 'Ir a ese momento'), onClick: () => this.setT(te) });
     if (e.story) links.push({ label: L('Open its story', 'Abrir su historia'), onClick: () => void this.exit().then(() => this.app.emit('open-story', 'life', e.story![0], e.story![1])) });
-    this.shell.card.showCustom(k?.icon ?? '•', tx(e.name), agoText(e.ma), rows, links, [tx(e.text)], e.wiki ? wikiThumb(e.wiki) : undefined);
+    this.shell.card.showCustom(k?.icon ?? '•', tx(e.name), whenText(te), rows, links, [tx(e.text)], e.wiki ? wikiThumb(e.wiki) : undefined);
+    if (cosmic) recordSeen('deeptime', `cosmos:${e.id}`);
     if (fly && e.at) { const at = this.place(e.at, e.pl, e.ma); this.app.flyTo(at[0], at[1], 2.5); }
     if (e.kind === 'impact' && Math.abs(this.ma - e.ma) < 1) this.anims.push({ e, t0: performance.now() });
   }
@@ -611,6 +862,7 @@ export class DeepTime {
     const d = this.data, w = this.world;
     if (!d || !w) return;
     const ma = this.ma;
+    if (ma > EARTH_MA) { this.openUniverse(); return; }
     const body = h('div', { class: 'guide deeptime', 'data-deeptime': 'now' });
     body.append(h('p', { class: 'dt-now-when' }, `${agoText(ma)} · ${this.captionFor(ma)}`));
     const verdict = survival(vitalsAt(d, ma));
@@ -653,24 +905,60 @@ export class DeepTime {
     this.shell.openPanel('deeptime', L('What lived then', 'Qué vivía entonces'), body);
   }
 
+  /** What there was then, before the Earth: no life yet, the universe's vital signs, what is happening. */
+  private openUniverse() {
+    const t = this.t;
+    const body = h('div', { class: 'guide deeptime', 'data-deeptime': 'now' });
+    body.append(h('p', { class: 'dt-now-when' }, `${whenText(t)} · ${ERA[cosmicEra(t)]()}`));
+    if (t >= 1e6) body.append(h('p', { class: 'muted small' }, afterText(t)));
+    const verdict = cosmicSurvival(t);
+    body.append(h('p', { class: 'dt-now-verdict', 'data-level': verdict.level }, VERDICT[verdict.level]()), h('ul', { class: 'dt-reasons' }, verdict.reasons.map((r) => h('li', { 'data-level': r.level }, REASON[r.key]?.() ?? r.key))));
+    body.append(h('p', { class: 'muted', 'data-deeptime-life': 'none' }, L('No life yet: there is no Earth.', 'Aún no hay vida: no existe la Tierra.')));
+    body.append(h('h3', { class: 'sec-title' }, L('The universe then', 'El universo entonces')),
+      h('div', { class: 'dt-rows' }, this.universeRows(t).map(([i, label, value]) => h('div', { class: 'dt-row' }, h('span', { class: 'dt-ri' }, i), h('span', { class: 'dt-rl' }, label), h('span', { class: 'dt-rv' }, value)))));
+    const evs = this.eventsNear(t, 2.5);
+    if (evs.length) {
+      body.append(h('h3', { class: 'sec-title' }, L('Happening around now', 'Sucediendo por estas fechas')));
+      const list = h('div', { class: 'guide-list' });
+      for (const e of evs) {
+        const b = h('button', { type: 'button', class: 'guide-row', 'data-deeptime-event': e.id }, h('span', { class: 'guide-icon' }, this.kindIcon(e.kind)), h('span', { class: 'guide-text' }, h('span', { class: 'guide-name' }, tx(e.name)), h('span', { class: 'guide-sub' }, whenText(tOf(e)))));
+        b.addEventListener('click', () => this.showEvent(e));
+        list.append(b);
+      }
+      body.append(list);
+    }
+    body.append(h('p', { class: 'muted small' }, L('Share of all time since the Big Bang that came after this moment: {0}%.', 'Parte de todo el tiempo desde el Big Bang que vino después de este momento: {0}%.', fmtNumber(shareSince(this.ma) * 100, 1))));
+    body.append(h('p', { class: 'muted small' }, L('The universe’s age, temperature and size: the Planck satellite’s 2018 results.', 'La edad, la temperatura y el tamaño del universo: los resultados de 2018 del satélite Planck.')));
+    this.shell.openPanel('deeptime', L('What there was then', 'Qué había entonces'), body);
+  }
+
   // ---- Play the story ----------------------------------------------------------------------------------------------
 
   /** Plays the narrated story from the beat nearest after the present moment (or from the start). */
-  async playStory(from?: number) {
+  /** The chapter's beats: the cosmos's then the Earth's own ones up to the Moon, the Earth's, or all of them. */
+  private beats(): Beat[] {
     const d = this.data;
-    if (!d?.beats.length) return;
+    if (!d) return [];
+    const cosmos = d.beatsCosmos ?? [];
+    return this.chapter === 'earth' ? d.beats : this.chapter === 'cosmos' ? [...cosmos, ...d.beats.filter((b) => b.ma >= COSMOS_END)] : [...cosmos, ...d.beats];
+  }
+
+  async playStory(from?: number) {
+    const beats = this.beats();
+    if (!beats.length) return;
     this.stopStory(false);
     const my = ++this.token;
-    let i = from ?? Math.max(0, d.beats.findIndex((b) => b.ma <= this.ma + 1e-9));
-    if (i < 0 || (from == null && this.ma < 0.001)) i = 0;
+    const end = this.chapter === 'cosmos' ? sinceBang(COSMOS_END) : sinceBang(0);
+    let i = from ?? Math.max(0, beats.findIndex((b) => tOf(b) >= this.t - 1e-9));
+    if (i < 0 || (from == null && this.t >= end - 1)) i = 0;
     this.player = { i, token: my, paused: false };
     document.documentElement.classList.add('dt-playing');
     if (this.bar?.playing) this.bar.toggle();
     this.shell.card.hide();
     this.buildCaption();
-    while (this.player && this.player.token === my && this.player.i < d.beats.length) {
-      const b = d.beats[this.player.i];
-      await this.glide(b.ma, my);
+    while (this.player && this.player.token === my && this.player.i < beats.length) {
+      const b = beats[this.player.i];
+      await this.glide(tOf(b), my);
       if (this.player?.token !== my) return;
       this.showBeat(b);
       const text = tx(b.text);
@@ -680,7 +968,7 @@ export class DeepTime {
       if (this.player?.token !== my) return;
       this.player.i++;
     }
-    if (this.player?.token === my) { this.stopStory(); recordSeen('deeptime', 'story:life'); }
+    if (this.player?.token === my) { this.stopStory(); recordSeen('deeptime', this.chapter === 'earth' ? 'story:life' : `story:${this.chapter}`); }
   }
 
   private wait(ms: number, my: number) {
@@ -691,29 +979,32 @@ export class DeepTime {
     });
   }
 
-  /** Moves the bar to `ma` smoothly: faster across quiet stretches (seconds by the story scale's distance). */
-  private async glide(ma: number, my: number) {
-    const p0 = posOf(this.ma, 'story'), p1 = posOf(ma, 'story');
+  /** Moves the bar to `t` smoothly: faster across quiet stretches (seconds by the story scale's distance). */
+  private async glide(t: number, my: number) {
+    const ch = this.chapter;
+    const p0 = posOfT(this.t, 'story', ch), p1 = posOfT(t, 'story', ch);
     const secs = Math.max(1.2, Math.min(8, Math.abs(p1 - p0) * 60));
     const t0 = performance.now();
     while (this.player?.token === my) {
       if (this.player.paused) { await this.wait(200, my); continue; }
       const f = Math.min(1, (performance.now() - t0) / (secs * 1000));
       const e = f < 0.5 ? 2 * f * f : 1 - (-2 * f + 2) ** 2 / 2;
-      this.setMa(maAt(p0 + (p1 - p0) * e, 'story'));
+      this.setT(f >= 1 ? t : tAt(p0 + (p1 - p0) * e, 'story', ch));
       if (f >= 1) return;
       await new Promise((r) => requestAnimationFrame(r));
     }
   }
 
-  private showBeat(b: DeepData['beats'][number]) {
+  private showBeat(b: Beat) {
     const d = this.data!;
     if (this.caption) {
       const txt = this.caption.querySelector('.dt-cap-text');
       if (txt) txt.textContent = tx(b.text);
       const n = this.caption.querySelector('.dt-cap-n');
-      if (n) n.textContent = `${(this.player?.i ?? 0) + 1}/${d.beats.length}`;
+      if (n) n.textContent = `${(this.player?.i ?? 0) + 1}/${this.beats().length}`;
     }
+    // In the cosmos, the scene points at the beat's spot.
+    if (this.scene) this.scene.focus = b.focus ?? null;
     if (b.focus) {
       const e = d.events.find((x) => x.id === b.focus);
       const s = e ? null : this.species.find((x) => x.id === b.focus);
@@ -736,7 +1027,7 @@ export class DeepTime {
       if (this.player.paused) stopSpeaking();
       clear(pause); pause.append(icon(this.player.paused ? Play : Pause, 18));
     });
-    next.addEventListener('click', () => { if (this.player) void this.playStory(Math.min((this.data?.beats.length ?? 1) - 1, this.player.i + 1)); });
+    next.addEventListener('click', () => { if (this.player) void this.playStory(Math.min(this.beats().length - 1, this.player.i + 1)); });
     prev.addEventListener('click', () => { if (this.player) void this.playStory(Math.max(0, this.player.i - 1)); });
     stop.addEventListener('click', () => this.stopStory());
     voice?.addEventListener('click', () => { setNarrationOn(!narrationOn()); clear(voice); voice.append(icon(narrationOn() ? Volume2 : VolumeX, 18)); });
@@ -750,6 +1041,7 @@ export class DeepTime {
   stopStory(remove = true) {
     this.token++;
     this.player = null;
+    if (this.scene) this.scene.focus = null;
     stopSpeaking();
     if (remove) { this.caption?.remove(); this.caption = null; document.documentElement.classList.remove('dt-playing'); }
   }
@@ -765,7 +1057,7 @@ export class DeepTime {
     }
     for (const e of this.data.events) {
       const sc = Math.max(score(e.name.en), score(e.name.es));
-      if (sc > 0) out.push({ s: sc - 2, label: tx(e.name), sub: L('Deep time · {0}', 'Tiempo profundo · {0}', agoText(e.ma)), icon: this.kindIcon(e.kind), at: e.at ?? [0, 0], go: () => void this.enter(e.ma).then(() => { this.setMa(e.ma); this.showEvent(e, true); }) });
+      if (sc > 0) out.push({ s: sc - 2, label: tx(e.name), sub: L('Deep time · {0}', 'Tiempo profundo · {0}', whenText(tOf(e))), icon: this.kindIcon(e.kind), at: e.at ?? [0, 0], go: () => void this.enter(e.ma, { t: tOf(e) }).then(() => { this.setT(tOf(e)); this.showEvent(e, true); }) });
     }
     return out.sort((a, b) => b.s - a.s).slice(0, 12);
   }
@@ -778,32 +1070,43 @@ export class DeepTime {
   }
   dayLine(day: string): string | null {
     const ma = this.calendarMa(day);
-    if (ma > EARTH_MA) return L('On the cosmic calendar, today is {0}: the Earth has not formed yet', 'En el calendario cósmico, hoy es {0}: la Tierra aún no se ha formado', agoText(ma).toLowerCase());
-    const e = this.data?.events.slice().sort((a, b) => Math.abs(a.ma - ma) - Math.abs(b.ma - ma))[0];
-    return e ? L('On the cosmic calendar, today is {0}: {1}', 'En el calendario cósmico, hoy es {0}: {1}', agoText(ma).toLowerCase(), tx(e.name)) : null;
+    // The nearest event on either side of the Earth's birth (the cosmos's before September, the Earth's after).
+    const pool = this.data?.events.filter((e) => (ma > EARTH_MA) === (e.ma > EARTH_MA)) ?? [];
+    const e = pool.slice().sort((a, b) => Math.abs(a.ma - ma) - Math.abs(b.ma - ma))[0];
+    if (!e) return ma > EARTH_MA ? L('On the cosmic calendar, today is {0}: the Earth has not formed yet', 'En el calendario cósmico, hoy es {0}: la Tierra aún no se ha formado', agoText(ma).toLowerCase()) : null;
+    return L('On the cosmic calendar, today is {0}: {1}', 'En el calendario cósmico, hoy es {0}: {1}', agoText(ma).toLowerCase(), tx(e.name));
   }
   async openDay(day: string) {
     await this.load();
-    const ma = Math.min(EARTH_MA, this.calendarMa(day));
-    await this.enter(ma);
+    const ma = this.calendarMa(day);
+    await this.enter(ma, { chapter: chapterFor(ma) });
     this.setMa(ma);
   }
 
-  /** A link: #deeptime=66 (an age in Ma) or #deeptime=tyrannosaurus (a species or an event, at its time). */
-  async openLink(v: string) {
+  /**
+   * A link: #deeptime=66 (an age in Ma), #deeptime=t380000 (years after the Big Bang, for the first million years) or
+   * #deeptime=tyrannosaurus (a species or an event, at its time); &ch=all for Big Bang to today.
+   */
+  async openLink(v: string, chapterParam?: string) {
     await this.load();
+    // The chapter comes with the link (main.ts reads it before the app rewrites the address).
+    const ch = (chapterParam ?? new URLSearchParams(location.hash.slice(1)).get('ch')) as Chapter | null;
+    const chapter = ch === 'cosmos' || ch === 'earth' || ch === 'all' ? ch : undefined;
     const n = Number(v);
-    if (v.trim() && Number.isFinite(n)) { await this.enter(n); this.setMa(n); return; }
+    const tv = /^t[0-9.e+-]+$/i.test(v.trim()) ? Number(v.trim().slice(1)) : NaN;
+    if (Number.isFinite(tv)) { await this.enter(maOfT(tv), { chapter, t: tv }); this.setT(tv); return; }
+    if (v.trim() && Number.isFinite(n)) { await this.enter(n, { chapter }); this.setMa(n); return; }
     const e = this.data?.events.find((x) => x.id === v);
     const s = e ? null : this.species.find((x) => x.id === v);
-    const ma = e ? e.ma : s ? (s.alive ? s.from / 2 : (s.from + s.to) / 2) : 250;
-    await this.enter(ma);
-    this.setMa(ma);
+    const t = e ? tOf(e) : sinceBang(s ? (s.alive ? s.from / 2 : (s.from + s.to) / 2) : 250);
+    await this.enter(maOfT(t), { chapter, t });
+    this.setT(t);
     if (e) this.showEvent(e, true); else if (s) this.showSpecies(s, true);
   }
 
   /** The menu entry. */
   menu() {
-    this.shell.addMenu({ id: 'deeptime', icon: Hourglass, label: () => L('Deep time', 'El tiempo profundo'), order: 10.5, group: 'explore', onClick: () => void this.enter(this.active ? this.ma : 4540) });
+    this.shell.addMenu({ id: 'deeptime', icon: Hourglass, label: () => L('Deep time', 'El tiempo profundo'), order: 10.5, group: 'explore', onClick: () => void (this.active ? this.setChapter('earth', this.ma > EARTH_MA ? sinceBang(EARTH_MA) : this.t) : this.enter(EARTH_MA, { chapter: 'earth' })) });
+    this.shell.addMenu({ id: 'bigbang', icon: Orbit, label: () => L('From the Big Bang', 'Desde el Big Bang'), order: 10.6, group: 'explore', onClick: () => void (this.active ? this.setChapter('cosmos', 0) : this.enter(BIG_BANG_MA, { chapter: 'cosmos', t: 0 })) });
   }
 }

@@ -55,7 +55,7 @@ export class TimeBar {
     this.rangeLabel = h('div', { class: 'tb-range' });
     this.playBtn = h('button', { type: 'button', class: 'tb-play', 'aria-label': 'Play' }) as HTMLButtonElement;
     this.playBtn.addEventListener('click', () => this.toggle());
-    const restart = h('button', { type: 'button', class: 'icon-btn', title: t('tbRestart'), 'aria-label': t('tbRestart') }, icon(SkipBack, 18));
+    const restart = h('button', { type: 'button', class: 'icon-btn tb-restart', title: t('tbRestart'), 'aria-label': t('tbRestart') }, icon(SkipBack, 18));
     restart.addEventListener('click', () => { this.setPos(this.start); if (!this.playing) this.toggle(); });
     const speed = h('select', { class: 'select tb-speed', 'aria-label': t('tbSpeed') }) as HTMLSelectElement;
     for (const s of [0.5, 1, 2, 4]) speed.append(h('option', { value: String(s) }, `${s}×`));

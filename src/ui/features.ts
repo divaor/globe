@@ -39,6 +39,7 @@ export const FEATURES: Record<string, Feature> = {
   ambient: { icon: MonitorPlay, hue: 'explore' },
   legacy: { icon: Landmark, hue: 'time' },
   deeptime: { icon: Hourglass, hue: 'time' },
+  bigbang: { icon: Orbit, hue: 'time' },
   // Time and space
   time: { icon: History, hue: 'time' },
   space: { icon: Orbit, hue: 'space' },
