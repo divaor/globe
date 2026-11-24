@@ -619,8 +619,9 @@ export class Renderer {
     // ---- states and provinces: thin dashed lines from country zoom on, fading in
     if (this.baseMap && !this.worldStyle && mapView.regions) {
       const rg = regions();
-      // The provinces (a large file) load as the map zooms in towards them, not at the start.
-      if (!rg) { if (view.webZoom >= 2) void loadRegions().then(() => this.requestRender(), () => {}); }
+      // The provinces (a large file) are read when the app is idle after the start (features.ts), or here if the map
+      // zooms in before that.
+      if (!rg) { if (view.webZoom >= 2.4) void loadRegions().then(() => this.requestRender(), () => {}); }
       else if (view.webZoom >= 2.6) {
         ctx.save();
         ctx.globalAlpha = Math.min(1, (view.webZoom - 2.6) / 0.8);

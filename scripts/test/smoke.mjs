@@ -7007,6 +7007,10 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await page.waitForTimeout(1500);
   const boot = await page.evaluate(() => window.__boot);
   check(boot.splash > 0 && boot.atlas > 0 && boot.splash <= boot.atlas, `the globe shows first: the splash goes at ${Math.round(boot.splash)} ms, the rest of the app is ready at ${Math.round(boot.atlas)} ms`);
+  // v0.47.1: states and provinces (a long file) are read once the app is idle after the start, not during it.
+  await page.waitForFunction(() => performance.getEntriesByType('resource').some((e) => /admin1\.json/.test(e.name)), null, { timeout: 15000 }).catch(() => {});
+  const admin1 = await page.evaluate(() => performance.getEntriesByType('resource').find((e) => /admin1\.json/.test(e.name))?.startTime ?? -1);
+  check(admin1 >= boot.atlas, `states and provinces are read after the start (from ${Math.round(admin1)} ms; the app was ready at ${Math.round(boot.atlas)} ms)`);
   // The map in words.
   const said0 = await page.getAttribute('#fg', 'aria-label');
   check(/^Globe map, centred on .+, showing the whole Earth\. .*Arrow keys/.test(said0 ?? '') && (await page.getAttribute('#fg', 'tabindex')) === '0', `the map describes itself: "${said0}"`);

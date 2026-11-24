@@ -40,6 +40,8 @@ import { Lives } from './lives/lives';
 import { Wild } from './wild/finder';
 import { Plants } from './green/finder';
 import { mapSay } from './ui/mapsay';
+import { loadRegions } from './engine/regions';
+import { mapView } from './engine/style';
 import { outside, inatLoad, clientName } from './data/outside';
 import { InsideEarth } from './earth/inside';
 import { DeepSea } from './ocean/deep';
@@ -229,6 +231,10 @@ export async function startFeatures(app: App, shell: Shell, shared: URLSearchPar
   mapSay(app);
   // The tabs' lists are complete: a tab tapped while they were being built opens now.
   shell.markReady();
+  // States and provinces (v0.47.1): not needed for the first frames, but a long file to read. It is read once the
+  // browser is idle after the start, so a first zoom-in (a game's flight to a region, say) doesn't wait on it.
+  const idle: (f: () => void, o?: { timeout: number }) => void = window.requestIdleCallback?.bind(window) ?? ((f) => window.setTimeout(f, 1500));
+  idle(() => { if (mapView.regions) void loadRegions().then(() => app.renderer.requestRender(), () => {}); }, { timeout: 4000 });
   // The fonts for rare scripts: only registered here (a small list); a file is fetched when a letter shows.
   setTimeout(() => void registerScriptFonts(), 2500);
   app.emit('layers');
