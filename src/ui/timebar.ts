@@ -54,6 +54,7 @@ export class TimeBar {
   private subEl: HTMLElement;
   private rangeLabel: HTMLElement;
   private playBtn: HTMLButtonElement;
+  private speedSel: HTMLSelectElement;
   private raf = 0;
   private last = 0;
   playing = false;
@@ -77,6 +78,7 @@ export class TimeBar {
     this.speed = o.speed ?? 1;
     speed.value = String(this.speed);
     speed.addEventListener('change', () => { this.speed = Number(speed.value); o.onSpeed?.(this.speed); });
+    this.speedSel = speed;
     const exit = h('button', { type: 'button', class: 'icon-btn', title: t('close'), 'aria-label': t('close') }, icon(X, 18));
     exit.addEventListener('click', () => o.onExit());
     const list = o.onList ? h('button', { type: 'button', class: 'pill sm', title: o.listLabel }, icon(ListOrdered, 16), h('span', { class: 'tb-list-label' }, o.listLabel ?? '')) : null;
@@ -160,6 +162,9 @@ export class TimeBar {
     if (!this.playing && this.o.onPlay?.()) { this.render(); return; }
     this.toggle();
   }
+
+  /** Sets the speed from the owner's own control. */
+  setSpeed(s: number) { this.speed = s; this.speedSel.value = String(s); }
 
   /** Redraws the play button (after the owner's own play starts, pauses or stops). */
   refresh() { this.render(); }

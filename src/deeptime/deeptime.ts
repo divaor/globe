@@ -10,7 +10,7 @@
 import { Hourglass, Clapperboard, Scale, Layers, SkipForward, SkipBack, Square, Volume2, VolumeX, Orbit, Sparkles } from 'lucide';
 import { geoCircle } from 'd3-geo';
 import { h, icon, clear } from '../ui/dom';
-import { L, Lc, tx, lang, fmtNumber, appLocale, wikiHref } from '../app/i18n';
+import { L, Lc, t, tx, lang, fmtNumber, appLocale, wikiHref } from '../app/i18n';
 import { TimeBar } from '../ui/timebar';
 import { loadJSON } from '../data/store';
 import { loadPaleo, unitName, PALEO_MAX_MA, type PaleoWorld, type Unit } from '../modes/paleo';
@@ -363,7 +363,19 @@ export class DeepTime {
     scale.addEventListener('click', () => { this.scale = this.scale === 'story' ? 'true' : 'story'; this.buildBar(); this.shell.toast(this.scale === 'true' ? L('True scale: see how little of the time is ours', 'Escala real: mira qué poco del tiempo es nuestro') : L('Story scale', 'Escala de historia'), 2500); });
     const plain = h('button', { type: 'button', class: `icon-btn${this.plain ? ' on' : ''}`, 'data-deeptime': 'plain', title: L('Continents only', 'Solo continentes'), 'aria-pressed': String(this.plain), hidden: ch === 'cosmos' }, icon(Layers, 18));
     plain.addEventListener('click', () => { this.plain = !this.plain; this.buildBar(); this.renderHud(); this.app.renderer.requestRender(); });
-    tools?.prepend(chapter, story, scale, plain);
+    // The speed: one small button (the bar's own list does not fit a phone), slower first: 1× → 0.5× → 0.25× → 4× → 2×.
+    const speedLabel = () => `${fmtNumber(this.speed, this.speed < 1 ? 2 : 0)}×`;
+    const speedBtn = h('button', { type: 'button', class: 'icon-btn dt-speed', 'data-deeptime': 'speed', title: `${t('tbSpeed')}: ${speedLabel()}`, 'aria-label': `${t('tbSpeed')}: ${speedLabel()}` }, speedLabel());
+    speedBtn.addEventListener('click', () => {
+      const order = [1, 0.5, 0.25, 4, 2];
+      this.speed = order[(order.indexOf(this.speed) + 1) % order.length];
+      try { localStorage.setItem('atlas-dt-speed', String(this.speed)); } catch { /* not kept */ }
+      this.bar?.setSpeed(this.speed);
+      speedBtn.textContent = speedLabel();
+      speedBtn.setAttribute('aria-label', `${t('tbSpeed')}: ${speedLabel()}`);
+      speedBtn.title = `${t('tbSpeed')}: ${speedLabel()}`;
+    });
+    tools?.prepend(chapter, story, scale, plain, speedBtn);
     this.bar.el.classList.add('dt-bar');
     this.app.root.append(this.bar.el);
     requestAnimationFrame(() => this.fitBar());
@@ -1035,9 +1047,12 @@ export class DeepTime {
     this.bar?.refresh();
     this.shell.card.hide();
     this.buildCaption();
+    let first = true;
     while (this.player && this.player.token === my && this.player.i < beats.length) {
       const b = beats[this.player.i];
-      await this.glide(tOf(b), my);
+      // The way to the first moment is quick (the story starts soon); the rest go at the pace of what happens.
+      await this.glide(tOf(b), my, first ? 3 : 14);
+      first = false;
       if (this.player?.token !== my) return;
       this.showBeat(b);
       const text = tx(b.text);
@@ -1067,11 +1082,11 @@ export class DeepTime {
    * Moves the bar to `t` smoothly on the play clock: quickly across quiet stretches, slowly through events and the
    * scene's moments (the Moon gathering); a glide takes 1.5 to 14 seconds at 1×, divided by the speed.
    */
-  private async glide(t: number, my: number) {
+  private async glide(t: number, my: number, most = 14) {
     const ch = this.chapter, sc = this.scale;
     const clock = this.clock ?? (this.clock = this.makeClock());
     const c0 = clock.to(posOfT(this.t, sc, ch)), c1 = clock.to(posOfT(t, sc, ch));
-    const secs = Math.max(1.5, Math.min(14, Math.abs(c1 - c0)));
+    const secs = Math.max(Math.min(1.5, most), Math.min(most, Math.abs(c1 - c0)));
     let done = 0, last = performance.now();
     while (this.player?.token === my) {
       const now = performance.now();
@@ -1090,6 +1105,7 @@ export class DeepTime {
   private showBeat(b: Beat) {
     const d = this.data!;
     if (this.caption) {
+      this.caption.classList.remove('empty');
       const txt = this.caption.querySelector('.dt-cap-text');
       if (txt) txt.textContent = tx(b.text);
       const n = this.caption.querySelector('.dt-cap-n');
@@ -1116,7 +1132,7 @@ export class DeepTime {
     prev.addEventListener('click', () => { if (this.player) void this.playStory(Math.max(0, this.player.i - 1)); });
     stop.addEventListener('click', () => this.stopStory());
     voice?.addEventListener('click', () => { setNarrationOn(!narrationOn()); holdAudio(narrationOn()); clear(voice); voice.append(icon(narrationOn() ? Volume2 : VolumeX, 18)); });
-    this.caption = h('div', { class: 'dt-caption glass', 'data-deeptime': 'caption' },
+    this.caption = h('div', { class: 'dt-caption glass empty', 'data-deeptime': 'caption' },
       h('div', { class: 'dt-cap-text', 'aria-live': 'polite' }, ''),
       h('div', { class: 'dt-cap-tools' }, h('span', { class: 'dt-cap-n muted small' }, ''), prev, next, voice, stop));
     this.app.root.append(this.caption);

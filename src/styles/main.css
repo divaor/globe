@@ -1580,6 +1580,10 @@ textarea.trip-input { resize: vertical; }
 .dt-reasons li[data-level='no'] { color: #e74c3c; }
 .dt-reasons li[data-level='hard'] { color: #e67e22; }
 .dt-more { margin-top: 4px; }
+/* Deep time's speed (v0.46.1): one small button on every screen, in place of the bar's list. */
+.timebar.dt-bar .tb-speed { display: none; }
+.timebar .dt-speed { font-size: var(--fs-sm); font-weight: 600; font-variant-numeric: tabular-nums; }
+.dt-caption.empty { display: none; }
 .dt-caption { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(var(--dt-bar-h, 220px) + 8px); width: min(720px, calc(100vw - 24px)); padding: 12px 14px 8px; border-radius: var(--r-md); z-index: 4; }
 .dt-cap-text { font-size: var(--fs-md); line-height: 1.45; }
 .dt-cap-tools { display: flex; justify-content: flex-end; align-items: center; gap: 4px; margin-top: 6px; }
@@ -1615,8 +1619,9 @@ html.dt-cosmos .brand-name { color: #f2f5fa; text-shadow: 0 1px 6px rgba(0,0,0,.
   html.mode-deeptime .country-card { bottom: calc(var(--dt-bar-h, 230px) + 8px); max-height: calc(100dvh - var(--dt-bar-h, 230px) - 150px); z-index: 4; }
   html.mode-deeptime:has(.country-card:not([hidden])) .dt-vitals, html.dt-playing .dt-vitals { display: none; }
   .timebar.dt-bar .tb-top { justify-content: space-between; gap: 4px; }
-  /* Deep time keeps its speed on a phone (v0.46.1): slow it down to watch the Moon gather. */
-  .timebar.dt-bar .tb-speed { display: inline-block; height: 32px; padding: 0 4px; font-size: var(--fs-sm); min-width: 52px; }
+  /* Seven tools and the play button fit a 360-pixel phone (v0.46.1). */
+  .timebar.dt-bar .tb-tools { gap: 2px; }
+  .timebar.dt-bar .tb-tools > .icon-btn, .timebar.dt-bar .tb-tools > .pill.sm { width: 36px; min-width: 36px; padding: 0; justify-content: center; }
   .dt-cap-text { font-size: var(--fs-sm); }
 }
 .dt-sources { margin-top: var(--sp-2); font-size: var(--fs-sm); color: var(--muted); }

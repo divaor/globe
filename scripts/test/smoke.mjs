@@ -6850,19 +6850,22 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
     `Narrated on: the one play button tells the story (${l1}) and pauses it (${l2})`);
   await page.tap('[data-deeptime="story"]');
   await page.waitForTimeout(400);
-  const off = await F(() => ({ info: window.atlas.time.deep.info, cap: !!document.querySelector('[data-deeptime="caption"]'), speed: (() => { const s = document.querySelector('.dt-bar .tb-speed'); return s ? { shown: getComputedStyle(s).display !== 'none', opts: [...s.options].map((o) => o.value) } : null; })() }));
+  const off = await F(() => ({ info: window.atlas.time.deep.info, cap: !!document.querySelector('[data-deeptime="caption"]') }));
   await F(() => window.atlas.time.deep.setMa(4000));
   await page.waitForTimeout(300);
-  await page.selectOption('.dt-bar .tb-speed', '0.25');
+  // The speed: one small button, slower first (1× → 0.5× → 0.25×); the bar's tools fit the phone's width.
+  const speeds = [await F(() => document.querySelector('[data-deeptime="speed"]')?.textContent)];
+  for (let i = 0; i < 2; i++) { await page.tap('[data-deeptime="speed"]'); speeds.push(await F(() => document.querySelector('[data-deeptime="speed"]')?.textContent)); }
+  const fits = await F(() => { const b = document.querySelector('.dt-bar').getBoundingClientRect(); return [...document.querySelectorAll('.dt-bar .tb-top .tb-play, .dt-bar .tb-tools > *')].filter((e) => getComputedStyle(e).display !== 'none').every((e) => e.getBoundingClientRect().right <= b.right + 0.5); });
   await page.tap('.dt-bar .tb-play');
   await page.waitForTimeout(2000);
   const run1 = await F(() => window.atlas.time.deep.info);
   await page.tap('.dt-bar .tb-play');
   await page.waitForTimeout(300);
   const run2 = await F(() => ({ info: window.atlas.time.deep.info, label: document.querySelector('.dt-bar .tb-play')?.getAttribute('aria-label') }));
-  check(!off.info.narrated && !off.info.playing && !off.cap && off.speed?.shown && off.speed.opts.includes('0.25') && run1.barPlaying && run1.ma < 4000 && run1.speed === 0.25 && !run2.info.barPlaying && run2.label === 'Play' && run1.playSecs > 60 && run1.playSecs < 300,
-    `Narrated off: the play button runs through the years (4000 → ${run1.ma?.toFixed(0)} Ma in 2 s at ${run1.speed}×; ${run1.playSecs} s for the whole bar at 1×), with the speed on the phone (${off.speed?.opts.join(', ')})`);
-  await page.selectOption('.dt-bar .tb-speed', '1');
+  check(!off.info.narrated && !off.info.playing && !off.cap && speeds.join(' ') === '1× 0.5× 0.25×' && fits && run1.barPlaying && run1.ma < 4000 && run1.speed === 0.25 && !run2.info.barPlaying && run2.label === 'Play' && run1.playSecs > 60 && run1.playSecs < 300,
+    `Narrated off: the play button runs through the years (4000 → ${run1.ma?.toFixed(0)} Ma in 2 s at ${run1.speed}×; ${run1.playSecs} s for the whole bar at 1×), the speed button going ${speeds.join(' → ')}, every tool inside the bar`);
+  for (let i = 0; i < 3; i++) await page.tap('[data-deeptime="speed"]');
   // The search finds a past species.
   await F(() => window.atlas.shell.search.open());
   await page.fill('.search-field', 'Tyrannosaurus');
