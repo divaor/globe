@@ -243,11 +243,13 @@ A backup made as Atlas Globe still opens.
     year to eight years a second); a tap on a site opens its picture, Wikipedia's summary, its year,
     criteria and UNESCO's page, and a country's card counts its sites.
   - Where things were invented: the inventions of the Inventions stories where they were made, by age and field.
-  - Who was born here?: where 12,215 of the world's best-known people were born (or died), from Wikidata: a dot is a
-    place, in the colour of its best-known person's field, bigger for more people; by field (leaders, science,
-    writers, art, music, film and stage, sport, thought, explorers) and by when they were born. A tap lists the
-    place's people; a person's card has their portrait, years, birth and death places, Wikipedia, their life in
-    Lives on the map when there is one, and the city's guide. Living people appear by birthplace only.
+  - Who was born here?: where 34,767 well-known people were born (or died), from Wikidata: the world's best known and
+    everyone the app features elsewhere (15,993, loaded first), then each country's own best known (18,774, loaded
+    in the background and joined to the same dots, places, search and city guides). A dot is a place, in the colour
+    of its best-known person's field, bigger for more people; by field (leaders, science, writers, art, music, film
+    and stage, sport, thought, explorers) and by when they were born. A tap lists the place's people; a person's card
+    has their portrait, years, birth and death places, Wikipedia, their life in Lives on the map when there is one,
+    and the city's guide. Living people appear by birthplace only.
   - Close up, the dots of these filters that overlap (two museums in one building, a city's birthplaces) move
     apart, each with a thin line to its true place, so every one can be tapped; the layout holds still while
     you drag the map.
@@ -865,9 +867,13 @@ kept in `scripts/data/artguide/`; pictures are Wikimedia Commons files, loaded b
 built by `scripts/data/build-conflicts.mjs --kind lives`): written from Wikipedia and the sources each life lists,
 checked against Wikidata's dates and places (the build warns where they differ) and against the GeoNames gazetteer
 (CC BY 4.0) for the coordinates. **Who was born here?** (`scripts/data/born/build-born.mjs` builds
-`public/data/born/`): people with articles in 48 Wikipedias or more, with their places of birth and death, from
-Wikidata (CC0) through the QLever SPARQL service of the University of Freiburg; people known for a crime are left
-out. Portraits are read live from Wikidata and Wikimedia Commons, with their licences.
+`public/data/born/`): in `people.json`, people with articles in 48 Wikipedias or more and everyone the app features
+elsewhere (lives, the people of the stories and legacies, the art guide's artists and architects), whatever their
+fame; in `more.json`, loaded after it, each country's own best known below that, by the country of their birthplace,
+down to 8 Wikipedias and up to a share scaled to its population (35 people and 2.5 more per million, up to 400:
+Mexico 366). A birthplace with no coordinates takes those of the place it lies in (Coyoacán, Mexico City's). With
+their places of birth and death, from Wikidata (CC0) through the QLever SPARQL service of the University of Freiburg;
+people known for a crime are left out. Portraits are read live from Wikidata and Wikimedia Commons, with their licences.
 
 **Wild world** (`scripts/data/wild/`: `fetch-wild.mjs` asks once and keeps the answers in `.cache/wild`;
 `build-wild.mjs` builds `public/data/wild/` with no network). The animals: species on Wikidata (CC0, through QLever)

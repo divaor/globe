@@ -20,7 +20,7 @@
    "en": " BC",
    "es": " a. C.",
    "where": [
-    "src/lives/born.ts:58"
+    "src/lives/born.ts:104"
    ]
   },
   {
@@ -239,7 +239,7 @@
    "en": "1500–1800",
    "es": "1500–1800",
    "where": [
-    "src/layers/packs/born.ts:24",
+    "src/layers/packs/born.ts:25",
     "src/layers/packs/heritage.ts:345"
    ]
   },
@@ -255,7 +255,7 @@
    "es": "1800–1900",
    "where": [
     "src/artguide/data.ts:100",
-    "src/layers/packs/born.ts:25",
+    "src/layers/packs/born.ts:26",
     "src/layers/packs/heritage.ts:346"
    ]
   },
@@ -270,7 +270,7 @@
    "en": "1900–1950",
    "es": "1900–1950",
    "where": [
-    "src/layers/packs/born.ts:26"
+    "src/layers/packs/born.ts:27"
    ]
   },
   {
@@ -363,7 +363,7 @@
    "en": "500–1500",
    "es": "500–1500",
    "where": [
-    "src/layers/packs/born.ts:23",
+    "src/layers/packs/born.ts:24",
     "src/layers/packs/heritage.ts:344"
    ]
   },
@@ -690,10 +690,10 @@
    ]
   },
   {
-   "en": "A dot is a place, in the colour of its best-known person; bigger, more people. Zoom in for more places, and tap one for its people. People with articles in 48 Wikipedias or more.",
-   "es": "Un punto es un lugar, del color de su persona más conocida; más grande, más personas. Acerca el mapa para ver más lugares, y toca uno para ver a su gente. Personas con artículos en 48 Wikipedias o más.",
+   "en": "A dot is a place, in the colour of its best-known person; bigger, more people. Zoom in for more places, and tap one for its people. The world’s best known (articles in 48 Wikipedias or more), each country’s own (8 or more) and everyone the app features elsewhere.",
+   "es": "Un punto es un lugar, del color de su persona más conocida; más grande, más personas. Acerca el mapa para ver más lugares, y toca uno para ver a su gente. Las más conocidas del mundo (con artículos en 48 Wikipedias o más), las de cada país (8 o más) y todas las que la app presenta en otras partes.",
    "where": [
-    "src/layers/packs/born.ts:129"
+    "src/layers/packs/born.ts:131"
    ]
   },
   {
@@ -2529,7 +2529,7 @@
    "es": "Cualquier época",
    "where": [
     "src/artguide/data.ts:95",
-    "src/layers/packs/born.ts:21"
+    "src/layers/packs/born.ts:22"
    ]
   },
   {
@@ -2888,7 +2888,7 @@
     "src/artguide/artguide.ts:31",
     "src/artguide/artguide.ts:126",
     "src/artguide/artguide.ts:142",
-    "src/lives/born.ts:27"
+    "src/lives/born.ts:33"
    ]
   },
   {
@@ -3572,7 +3572,7 @@
    "es": "Antes de 500",
    "where": [
     "src/artguide/data.ts:96",
-    "src/layers/packs/born.ts:22",
+    "src/layers/packs/born.ts:23",
     "src/layers/packs/heritage.ts:343"
    ]
   },
@@ -4094,7 +4094,7 @@
    "es": "Nació",
    "where": [
     "src/app/i18n.ts:280",
-    "src/lives/born.ts:102"
+    "src/lives/born.ts:148"
    ]
   },
   {
@@ -4129,7 +4129,7 @@
    "en": "Born in {0}",
    "es": "Nacieron en {0}",
    "where": [
-    "src/layers/packs/born.ts:185",
+    "src/layers/packs/born.ts:187",
     "src/lives/lives.ts:174"
    ]
   },
@@ -6702,14 +6702,14 @@
    "es": "Murió",
    "where": [
     "src/app/i18n.ts:281",
-    "src/lives/born.ts:103"
+    "src/lives/born.ts:149"
    ]
   },
   {
    "en": "Died in {0}",
    "es": "Murieron en {0}",
    "where": [
-    "src/layers/packs/born.ts:185",
+    "src/layers/packs/born.ts:187",
     "src/lives/lives.ts:175"
    ]
   },
@@ -7996,7 +7996,7 @@
    "en": "Everyone",
    "es": "Todos",
    "where": [
-    "src/layers/packs/born.ts:93"
+    "src/layers/packs/born.ts:95"
    ]
   },
   {
@@ -8068,7 +8068,7 @@
    "en": "Explorers",
    "es": "Exploradores",
    "where": [
-    "src/lives/born.ts:32"
+    "src/lives/born.ts:38"
    ]
   },
   {
@@ -8266,9 +8266,9 @@
    "en": "Field",
    "es": "Campo",
    "where": [
-    "src/layers/packs/born.ts:93",
+    "src/layers/packs/born.ts:95",
     "src/layers/packs/heritage.ts:385",
-    "src/lives/born.ts:104"
+    "src/lives/born.ts:150"
    ]
   },
   {
@@ -8429,7 +8429,7 @@
    "en": "Film and stage",
    "es": "Cine y teatro",
    "where": [
-    "src/lives/born.ts:29"
+    "src/lives/born.ts:35"
    ]
   },
   {
@@ -8791,7 +8791,7 @@
    "es": "Seguir su vida",
    "where": [
     "src/app/i18n.ts:282",
-    "src/lives/born.ts:106"
+    "src/lives/born.ts:152"
    ]
   },
   {
@@ -12981,7 +12981,7 @@
    "en": "Leaders and public life",
    "es": "Líderes y vida pública",
    "where": [
-    "src/lives/born.ts:24"
+    "src/lives/born.ts:30"
    ]
   },
   {
@@ -15178,7 +15178,7 @@
    "en": "Music",
    "es": "Música",
    "where": [
-    "src/lives/born.ts:28"
+    "src/lives/born.ts:34"
    ]
   },
   {
@@ -17676,7 +17676,7 @@
    "en": "Others",
    "es": "Otros",
    "where": [
-    "src/lives/born.ts:33"
+    "src/lives/born.ts:39"
    ]
   },
   {
@@ -20406,7 +20406,7 @@
    "en": "Science and learning",
    "es": "Ciencia y saber",
    "where": [
-    "src/lives/born.ts:25"
+    "src/lives/born.ts:31"
    ]
   },
   {
@@ -20978,7 +20978,7 @@
    "en": "Show",
    "es": "Mostrar",
    "where": [
-    "src/layers/packs/born.ts:95",
+    "src/layers/packs/born.ts:97",
     "src/layers/packs/earth.ts:228",
     "src/layers/packs/facts.ts:85",
     "src/layers/packs/facts.ts:193",
@@ -21258,7 +21258,7 @@
    "en": "Since 1950",
    "es": "Desde 1950",
    "where": [
-    "src/layers/packs/born.ts:27"
+    "src/layers/packs/born.ts:28"
    ]
   },
   {
@@ -21852,7 +21852,7 @@
    "es": "Deporte",
    "where": [
     "src/learn/progress.ts:19",
-    "src/lives/born.ts:30"
+    "src/lives/born.ts:36"
    ]
   },
   {
@@ -27103,7 +27103,7 @@
    "en": "Thought and religion",
    "es": "Pensamiento y religión",
    "where": [
-    "src/lives/born.ts:31"
+    "src/lives/born.ts:37"
    ]
   },
   {
@@ -29264,10 +29264,10 @@
    ]
   },
   {
-   "en": "Where 12,000 of the world’s best-known people were born: scientists, writers, artists, musicians, leaders and athletes. Tap a place for its people.",
-   "es": "Dónde nacieron 12 000 de las personas más conocidas del mundo: científicos, escritores, artistas, músicos, líderes y deportistas. Toca un lugar para ver a su gente.",
+   "en": "Where 35,000 well-known people were born, the world’s best known and each country’s own: scientists, writers, artists, musicians, leaders and athletes. Tap a place for its people.",
+   "es": "Dónde nacieron 35 000 personas conocidas, las más conocidas del mundo y las de cada país: científicos, escritores, artistas, músicos, líderes y deportistas. Toca un lugar para ver a su gente.",
    "where": [
-    "src/layers/packs/born.ts:89"
+    "src/layers/packs/born.ts:91"
    ]
   },
   {
@@ -29668,14 +29668,14 @@
    "en": "Where they died",
    "es": "Dónde murieron",
    "where": [
-    "src/layers/packs/born.ts:95"
+    "src/layers/packs/born.ts:97"
    ]
   },
   {
    "en": "Where they were born",
    "es": "Dónde nacieron",
    "where": [
-    "src/layers/packs/born.ts:95"
+    "src/layers/packs/born.ts:97"
    ]
   },
   {
@@ -29801,14 +29801,14 @@
    "en": "Where {0} people died",
    "es": "Dónde murieron {0} personas",
    "where": [
-    "src/layers/packs/born.ts:127"
+    "src/layers/packs/born.ts:129"
    ]
   },
   {
    "en": "Where {0} people were born",
    "es": "Dónde nacieron {0} personas",
    "where": [
-    "src/layers/packs/born.ts:127"
+    "src/layers/packs/born.ts:129"
    ]
   },
   {
@@ -30441,7 +30441,7 @@
    "en": "Who was born here?",
    "es": "¿Quién nació aquí?",
    "where": [
-    "src/layers/packs/born.ts:88"
+    "src/layers/packs/born.ts:90"
    ]
   },
   {
@@ -30851,7 +30851,7 @@
    "en": "Writers",
    "es": "Escritores",
    "where": [
-    "src/lives/born.ts:26"
+    "src/lives/born.ts:32"
    ]
   },
   {
@@ -31347,7 +31347,7 @@
    "en": "Born",
    "es": "Nacidos",
    "where": [
-    "src/layers/packs/born.ts:94"
+    "src/layers/packs/born.ts:96"
    ]
   },
   {
@@ -31706,7 +31706,7 @@
    "en": "born {0}{1}",
    "es": "n. {0}{1}",
    "where": [
-    "src/lives/born.ts:59"
+    "src/lives/born.ts:105"
    ]
   },
   {
@@ -32455,7 +32455,7 @@
    "en": "people born there",
    "es": "personas nacidas allí",
    "where": [
-    "src/layers/packs/born.ts:140"
+    "src/layers/packs/born.ts:142"
    ]
   },
   {
@@ -33200,7 +33200,7 @@
    "en": "{0, plural, one {# well-known person} other {# well-known people}}: {1}",
    "es": "{0, plural, one {# persona conocida} other {# personas conocidas}}: {1}",
    "where": [
-    "src/layers/packs/born.ts:171"
+    "src/layers/packs/born.ts:173"
    ]
   },
   {
@@ -33239,7 +33239,7 @@
     "src/green/data.ts:140",
     "src/guide/guide.ts:551",
     "src/layers/packs/heritage.ts:358",
-    "src/lives/born.ts:101"
+    "src/lives/born.ts:147"
    ]
   },
   {
@@ -34098,7 +34098,7 @@
    "en": "{0} well-known people, the best known first. Tap one for their card.",
    "es": "{0} personas conocidas, las más conocidas primero. Toca una para ver su ficha.",
    "where": [
-    "src/layers/packs/born.ts:192"
+    "src/layers/packs/born.ts:194"
    ]
   },
   {
@@ -34245,8 +34245,8 @@
    "en": "{0}: the guide",
    "es": "{0}: la guía",
    "where": [
-    "src/layers/packs/born.ts:196",
-    "src/lives/born.ts:108"
+    "src/layers/packs/born.ts:198",
+    "src/lives/born.ts:154"
    ]
   },
   {
@@ -34572,7 +34572,7 @@
    "en": "…and {0} more.",
    "es": "…y {0} más.",
    "where": [
-    "src/layers/packs/born.ts:82"
+    "src/layers/packs/born.ts:84"
    ]
   },
   {
