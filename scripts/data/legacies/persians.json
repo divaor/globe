@@ -1,0 +1,990 @@
+{
+  "id": "persians",
+  "name": { "en": "Ancient Persians", "es": "Antiguos persas" },
+  "short": { "en": "Persians", "es": "Persas" },
+  "icon": "👑",
+  "color": "#00acc1",
+  "from": "-550",
+  "to": "651",
+  "at": [53.0, 32.0],
+  "zoom": 4,
+  "home": { "hist": "Achaemenid Empire", "year": -500 },
+  "intro": {
+    "en": "In 550 BC Cyrus the Great, king of the Persians of Fars, began building the Achaemenid Empire, which soon stretched from Egypt and the Aegean to the Indus. After Alexander's conquest, the Parthians and then the Sasanians ruled Iran and Iraq, rivals of Rome and traders on the Silk Road, until the Arab conquest of 651.",
+    "es": "En el 550 a. C. Ciro el Grande, rey de los persas de Fars, empezó a construir el Imperio aqueménida, que pronto se extendió de Egipto y el Egeo hasta el Indo. Tras la conquista de Alejandro, los partos y luego los sasánidas gobernaron Irán e Irak, rivales de Roma y comerciantes de la Ruta de la Seda, hasta la conquista árabe del 651."
+  },
+  "today": {
+    "en": "Persian, as Farsi in Iran, Dari in Afghanistan and Tajik in Tajikistan, is spoken by more than 100 million people. Iranians keep Nowruz and Yalda, and Zoroastrians in Iran and the Parsis of India still tend the old sacred fires.",
+    "es": "El persa, llamado farsi en Irán, darí en Afganistán y tayiko en Tayikistán, lo hablan más de 100 millones de personas. Los iraníes celebran Nouruz y Yalda, y los zoroastrianos de Irán y los parsis de la India siguen cuidando los antiguos fuegos sagrados."
+  },
+  "story": "people/persia",
+  "wiki": { "en": "Achaemenid Empire", "es": "Imperio aqueménida" },
+  "sources": [
+    { "title": "UNESCO World Heritage Centre: The Persian Qanat", "url": "https://whc.unesco.org/en/list/1506/" },
+    { "title": "UNESCO World Heritage Centre: The Persian Garden", "url": "https://whc.unesco.org/en/list/1372/" },
+    { "title": "UNESCO Intangible Cultural Heritage: Nawrouz, Novruz, Nowrouz…", "url": "https://ich.unesco.org/en/RL/nawrouz-novruz-nowrouz-nowrouz-nawrouz-nauryz-nooruz-nowruz-navruz-nevruz-nowruz-navruz-02097" },
+    { "title": "UNESCO Tentative List: Asbads (windmills) of Iran", "url": "https://whc.unesco.org/en/tentativelists/6192/" },
+    { "title": "World History Encyclopedia: The Cyrus Cylinder", "url": "https://www.worldhistory.org/article/166/the-cyrus-cylinder/" },
+    { "title": "World History Encyclopedia: Inventions and Innovations of Ancient Persia", "url": "https://www.worldhistory.org/article/1505/inventions--innovations-of-ancient-persia/" },
+    { "title": "Encyclopaedia Britannica: Polo", "url": "https://www.britannica.com/sports/polo" },
+    { "title": "Encyclopaedia Iranica: Borzūya", "url": "https://www.iranicaonline.org/articles/borzuya-also-burzoe-a-physician-of-the-time-of-kosrow-i-/" },
+    { "title": "Encyclopaedia Iranica: Iranian languages and scripts, writing systems", "url": "https://www.iranicaonline.org/articles/iran-vi3-writing-systems/" },
+    { "title": "U.S. Postal Facts: No official motto", "url": "https://facts.usps.com/no-official-motto/" },
+    { "title": "Online Etymology Dictionary: paradise", "url": "https://www.etymonline.com/word/paradise" },
+    { "title": "Online Etymology Dictionary: checkmate", "url": "https://www.etymonline.com/word/checkmate" }
+  ],
+  "legacies": [
+    {
+      "id": "relay-post",
+      "name": { "en": "Relay posts and the postal motto", "es": "El correo de postas y su lema" },
+      "cat": "law",
+      "icon": "🐎",
+      "how": "developed",
+      "sure": "likely",
+      "date": "-500",
+      "circa": true,
+      "at": [48.26, 32.19],
+      "place": { "en": "Susa, Khuzestan, Iran", "es": "Susa, Juzestán, Irán" },
+      "text": {
+        "en": "Darius's riders passed royal letters from station to station along a road 2,500 km long. Postal relays copied the idea for centuries, and Herodotus's praise of the couriers is carved on New York's great post office.",
+        "es": "Los jinetes de Darío se pasaban las cartas reales de posta en posta por un camino de 2500 km. Los correos imitaron la idea durante siglos, y el elogio de Heródoto a esos mensajeros está grabado en el gran correo de Nueva York."
+      },
+      "details": {
+        "en": "The Royal Road ran about 2,500 km from Sardis, near the Aegean, to Susa, with 111 staging posts. Ordinary travellers needed some three months. Royal messages went far faster: at each post a fresh rider and horse took over, each covering a day's stage. Herodotus wrote that nothing mortal travels faster, and that neither snow nor rain nor heat nor darkness keeps them from their task. For New York's General Post Office, opened in 1914 and now the James A. Farley Building, an architect reworded his line to run across the front. It is often taken for the motto of the US Postal Service, though the service says it has none.",
+        "es": "El Camino Real iba unos 2500 km desde Sardes, cerca del Egeo, hasta Susa, con 111 postas. Un viajero común tardaba unos tres meses. Los mensajes del rey iban mucho más rápido: en cada posta un jinete y un caballo descansados tomaban el relevo, y cada uno cubría una jornada. Heródoto escribió que nada mortal viaja más rápido, y que ni la nieve ni la lluvia ni el calor ni la oscuridad los detienen. Para el Correo General de Nueva York, inaugurado en 1914 y hoy edificio James A. Farley, un arquitecto adaptó su frase y la grabó en la fachada. Muchos la creen el lema del Servicio Postal de Estados Unidos, aunque el servicio dice no tener ninguno."
+      },
+      "roots": {
+        "en": "Built on Assyrian royal roads and relay stations, which the Persians extended across a far larger empire.",
+        "es": "Se basó en los caminos reales y las postas de Asiria, que los persas extendieron por un imperio mucho mayor."
+      },
+      "path": [
+        { "at": [28.04, 38.49], "place": { "en": "Sardis, Turkey", "es": "Sardes, Turquía" }, "date": "-500", "circa": true, "note": { "en": "The western end of the Royal Road.", "es": "El extremo occidental del Camino Real." } },
+        { "at": [12.48, 41.89], "place": { "en": "Rome", "es": "Roma" }, "date": "-20", "circa": true, "by": { "en": "Augustus", "es": "Augusto" }, "note": { "en": "The cursus publicus: a state relay of couriers and post houses across the empire.", "es": "El cursus publicus: un relevo estatal de correos y postas por todo el imperio." } },
+        { "at": [44.37, 33.31], "place": { "en": "Baghdad", "es": "Bagdad" }, "date": "800", "circa": true, "note": { "en": "The caliphs' barid, built on Persian and Byzantine posts, carries letters and news.", "es": "El barid de los califas, heredero de las postas persas y bizantinas, lleva cartas y noticias." } },
+        { "at": [-73.99, 40.75], "place": { "en": "New York", "es": "Nueva York" }, "date": "1914", "note": { "en": "‘Neither snow nor rain…’, Herodotus on the Persian couriers, is carved on the new General Post Office.", "es": "«Ni la nieve ni la lluvia…», Heródoto sobre los correos persas, queda grabado en el nuevo Correo General." } }
+      ],
+      "where": ["world"],
+      "strong": ["USA"],
+      "note": {
+        "en": "Every country has a postal service; Herodotus's words on the Persian riders, ‘neither snow nor rain…’, run across New York's James A. Farley Building.",
+        "es": "Todos los países tienen correo; las palabras de Heródoto sobre los jinetes persas, «ni la nieve ni la lluvia…», recorren el edificio James A. Farley de Nueva York."
+      },
+      "see": ["people:royal-road"],
+      "wiki": { "en": "Royal Road", "es": "Camino Real Persa" }
+    },
+    {
+      "id": "qanats",
+      "name": { "en": "Qanats: underground canals", "es": "Qanats: canales subterráneos" },
+      "cat": "tech",
+      "icon": "💧",
+      "how": "invented",
+      "sure": "likely",
+      "date": "-800",
+      "circa": true,
+      "at": [58.68, 34.35],
+      "place": { "en": "Gonabad, Razavi Khorasan, Iran", "es": "Gonabad, Jorasán Razaví, Irán" },
+      "text": {
+        "en": "Gently sloping tunnels bring water from a hillside aquifer to the fields by gravity alone, with no pumps. Iran still has tens of thousands of qanats, and the idea spread from Oman to Morocco and China.",
+        "es": "Túneles con una leve pendiente llevan el agua de un acuífero de las colinas a los campos solo por gravedad, sin bombas. Irán aún tiene decenas de miles de qanats, y la idea llegó de Omán a Marruecos y China."
+      },
+      "details": {
+        "en": "A qanat starts with a mother well dug down to the water table at the foot of the hills. From there a tunnel runs for kilometres to the fields, sloping just enough for the water to flow, with a line of shafts for air and for hauling out earth. The water runs all year and hardly evaporates. Qanats were probably first dug in Iran early in the first millennium BC, though some scholars argue for Arabia. Under Persian rule they appeared in Egypt's Kharga oasis, and they later spread as aflaj in Oman, foggaras in the Algerian Sahara, khettaras in Morocco and karez in Afghanistan and Turpan. In 2016 UNESCO listed eleven Iranian qanats, among them Zarch, about 71 km long.",
+        "es": "Un qanat empieza con un pozo madre excavado hasta el agua subterránea al pie de las colinas. Desde allí un túnel corre kilómetros hasta los campos, con la pendiente justa para que el agua fluya, y una hilera de pozos para el aire y para sacar la tierra. El agua corre todo el año y casi no se evapora. Los qanats se excavaron probablemente primero en Irán a comienzos del primer milenio a. C., aunque algunos estudiosos proponen Arabia. Bajo dominio persa aparecieron en el oasis egipcio de Jarga, y luego se difundieron como aflaj en Omán, foggaras en el Sahara argelino, jettaras en Marruecos y karez en Afganistán y Turfán. En 2016 la UNESCO declaró patrimonio once qanats iraníes, entre ellos el de Zarch, de unos 71 km."
+      },
+      "path": [
+        { "at": [30.55, 25.44], "place": { "en": "Kharga oasis, Egypt", "es": "Oasis de Jarga, Egipto" }, "date": "-500", "circa": true, "note": { "en": "Under Persian rule, qanats water new fields in the Western Desert.", "es": "Bajo dominio persa, los qanats riegan nuevos campos en el desierto occidental." } },
+        { "at": [57.53, 22.93], "place": { "en": "Nizwa, Oman", "es": "Nizwa, Omán" }, "date": "-500", "circa": true, "from": 0, "note": { "en": "Oman's aflaj, some perhaps as old as Iran's qanats, still water date gardens.", "es": "Los aflaj de Omán, algunos quizá tan antiguos como los qanats iraníes, aún riegan palmerales." } },
+        { "at": [-0.29, 27.87], "place": { "en": "Adrar, Algeria", "es": "Adrar, Argelia" }, "date": "1100", "circa": true, "note": { "en": "Foggaras water the oases of the Touat in the Sahara.", "es": "Las foggaras riegan los oasis del Tuat, en el Sahara." } },
+        { "at": [-3.7, 40.42], "place": { "en": "Madrid, Spain", "es": "Madrid, España" }, "date": "1600", "circa": true, "note": { "en": "The ‘viajes de agua’, qanat-like galleries, supply Madrid's fountains until the 19th century.", "es": "Los «viajes de agua», galerías como qanats, abastecen las fuentes de Madrid hasta el siglo XIX." } },
+        { "at": [89.19, 42.95], "place": { "en": "Turpan, China", "es": "Turfán, China" }, "date": "1800", "circa": true, "from": 0, "note": { "en": "The karez of Turpan still water vineyards; how the technique got there is debated.", "es": "Los karez de Turfán aún riegan viñedos; cómo llegó allí la técnica se discute." } }
+      ],
+      "where": ["IRN", "AFG", "PAK", "OMN", "ARE", "DZA", "MAR", "CHN"],
+      "strong": ["IRN", "OMN"],
+      "note": {
+        "en": "Still used in Iran, Afghanistan, Pakistan, Oman, the Emirates, Algeria, Morocco and western China, though many dry up as modern wells lower the water table.",
+        "es": "Se siguen usando en Irán, Afganistán, Pakistán, Omán, los Emiratos, Argelia, Marruecos y el oeste de China, aunque muchos se secan porque los pozos modernos bajan el nivel del agua."
+      },
+      "see": ["people:qanat"],
+      "wiki": { "en": "Qanat", "es": "Qanat" }
+    },
+    {
+      "id": "windcatchers",
+      "name": { "en": "Windcatchers (bādgir)", "es": "Torres de viento (bādgir)" },
+      "cat": "build",
+      "icon": "🌬️",
+      "how": "developed",
+      "sure": "debated",
+      "date": "1000",
+      "circa": true,
+      "at": [54.37, 31.9],
+      "place": { "en": "Yazd, Iran", "es": "Yazd, Irán" },
+      "text": {
+        "en": "Tall towers open at the top catch the breeze and send it down into the house, cooling rooms without electricity. Yazd is the ‘city of windcatchers’, and architects in the Gulf and beyond still build them.",
+        "es": "Torres altas abiertas arriba atrapan la brisa y la bajan a la casa, refrescando los cuartos sin electricidad. Yazd es la «ciudad de las torres de viento», y en el Golfo y otros lugares los arquitectos aún las construyen."
+      },
+      "details": {
+        "en": "A bādgir (Persian for ‘wind-catcher’) is a tower open to the prevailing wind. Moving air is drawn down into the rooms, sometimes over a pool or a qanat channel that cools it, while warm air escapes through other openings. Ice houses (yakhchāl) used similar tricks to keep ice into the summer. Who built the first is debated: paintings in Egyptian tombs of about 1300 BC show roof vents, written records of Iranian towers are medieval, and many think they are older. Merchants from Bastak, in southern Iran, brought them to Dubai, whose Al Fahidi quarter still bristles with them, and today's green architects copy them to save energy.",
+        "es": "Un bādgir («atrapavientos» en persa) es una torre abierta al viento dominante. El aire en movimiento baja a los cuartos, a veces pasando sobre un estanque o un canal de qanat que lo enfría, mientras el aire caliente sale por otras aberturas. Las neveras (yakhchāl) usaban trucos parecidos para guardar hielo hasta el verano. Quién hizo la primera se discute: pinturas de tumbas egipcias de hacia el 1300 a. C. muestran respiraderos en los techos, los registros escritos de torres iraníes son medievales y muchos creen que son más antiguas. Comerciantes de Bastak, en el sur de Irán, las llevaron a Dubái, cuyo barrio de Al Fahidi aún está lleno de ellas, y hoy los arquitectos ecológicos las copian para ahorrar energía."
+      },
+      "roots": {
+        "en": "Similar roof vents (malqaf) were used in ancient Egypt.",
+        "es": "En el antiguo Egipto se usaban respiraderos parecidos en los techos (malqaf)."
+      },
+      "path": [
+        { "at": [54.37, 27.2], "place": { "en": "Bastak, Iran", "es": "Bastak, Irán" }, "date": "1890", "circa": true, "note": { "en": "Merchants of Bastak, near the Gulf, move to Dubai with their builders.", "es": "Comerciantes de Bastak, cerca del Golfo, se mudan a Dubái con sus constructores." } },
+        { "at": [55.3, 25.26], "place": { "en": "Al Fahidi, Dubai", "es": "Al Fahidi, Dubái" }, "date": "1900", "circa": true, "note": { "en": "The Bastakiya quarter fills with windcatchers; it still stands.", "es": "El barrio de Bastakiya se llena de torres de viento; todavía sigue en pie." } },
+        { "at": [54.62, 24.43], "place": { "en": "Masdar City, Abu Dhabi", "es": "Ciudad de Masdar, Abu Dabi" }, "date": "2010", "circa": true, "note": { "en": "A modern wind tower cools a public square.", "es": "Una torre de viento moderna refresca una plaza pública." } }
+      ],
+      "where": ["IRN", "ARE", "QAT", "BHR", "KWT", "OMN", "EGY", "PAK"],
+      "strong": ["IRN", "ARE"],
+      "note": {
+        "en": "Seen and still built in Iran (Yazd, Kashan), the Gulf states, Egypt and Sindh in Pakistan; new ‘passive cooling’ buildings copy them.",
+        "es": "Se ven y se siguen construyendo en Irán (Yazd, Kashán), los países del Golfo, Egipto y el Sind, en Pakistán; los nuevos edificios de «enfriamiento pasivo» las copian."
+      },
+      "see": ["inventions:yakhchal"],
+      "wiki": { "en": "Windcatcher", "es": "Captador de viento" }
+    },
+    {
+      "id": "persian-garden",
+      "name": { "en": "The four-part Persian garden", "es": "El jardín persa de cuatro partes" },
+      "cat": "build",
+      "icon": "🌳",
+      "how": "invented",
+      "date": "-546",
+      "circa": true,
+      "at": [53.17, 30.2],
+      "place": { "en": "Pasargadae, Fars, Iran", "es": "Pasargada, Fars, Irán" },
+      "text": {
+        "en": "Walls, shade trees and channels of water dividing the garden into four: Cyrus's garden at Pasargadae is the first known chahar bagh, the plan behind the gardens of the Alhambra and the Taj Mahal.",
+        "es": "Muros, árboles de sombra y canales de agua que dividen el jardín en cuatro: el jardín de Ciro en Pasargada es el primer chahar bagh conocido, el plano detrás de los jardines de la Alhambra y del Taj Mahal."
+      },
+      "details": {
+        "en": "Around 546 BC Cyrus the Great laid out the garden of his palace at Pasargadae with stone water channels and beds in a geometric plan. The chahar bagh (‘four gardens’), a walled garden crossed by water, became the model for Persian gardens for more than two thousand years: a cool, green refuge from the desert. After the conquest of Persia, Arab rulers built such gardens across their empire, and the Mughal emperors, whose family came from Persian-speaking Central Asia, made them in India. UNESCO listed nine Persian gardens in 2011, noting that they shaped garden art as far away as India and Spain.",
+        "es": "Hacia el 546 a. C. Ciro el Grande trazó el jardín de su palacio en Pasargada con canales de piedra y parterres en un plano geométrico. El chahar bagh («cuatro jardines»), un jardín amurallado cruzado por agua, fue el modelo de los jardines persas durante más de dos mil años: un refugio verde y fresco frente al desierto. Tras conquistar Persia, los gobernantes árabes construyeron jardines así en todo su imperio, y los emperadores mogoles, cuya familia venía del Asia Central de habla persa, los llevaron a la India. La UNESCO declaró patrimonio nueve jardines persas en 2011 y señaló que influyeron en el arte de los jardines hasta la India y España."
+      },
+      "path": [
+        { "at": [-3.59, 37.18], "place": { "en": "Alhambra, Granada, Spain", "es": "Alhambra, Granada, España" }, "date": "1370", "circa": true, "by": { "en": "The Nasrid sultans", "es": "Los sultanes nazaríes" }, "note": { "en": "The Court of the Lions, crossed by four channels of water.", "es": "El Patio de los Leones, cruzado por cuatro canales de agua." } },
+        { "at": [69.17, 34.5], "place": { "en": "Kabul, Afghanistan", "es": "Kabul, Afganistán" }, "date": "1528", "circa": true, "from": 0, "by": { "en": "Babur", "es": "Babur" }, "note": { "en": "The first Mughal emperor lays out gardens in Kabul and takes the plan to India.", "es": "El primer emperador mogol traza jardines en Kabul y lleva el plano a la India." } },
+        { "at": [77.25, 28.59], "place": { "en": "Delhi, India", "es": "Delhi, India" }, "date": "1570", "note": { "en": "Humayun's tomb rises in the middle of a chahar bagh.", "es": "La tumba de Humayun se alza en medio de un chahar bagh." } },
+        { "at": [78.04, 27.18], "place": { "en": "Agra, India", "es": "Agra, India" }, "date": "1648", "note": { "en": "The Taj Mahal's garden: four quarters divided by water channels.", "es": "El jardín del Taj Mahal: cuatro cuartos divididos por canales de agua." } }
+      ],
+      "where": ["IRN", "IND", "PAK", "AFG", "ESP", "MAR"],
+      "strong": ["IRN"],
+      "note": {
+        "en": "Iran's historic gardens, the Mughal gardens of India and Pakistan and the Alhambra keep the plan; garden designers everywhere still borrow it.",
+        "es": "Los jardines históricos de Irán, los jardines mogoles de la India y Pakistán y la Alhambra conservan el plano; los paisajistas de todo el mundo aún lo toman prestado."
+      },
+      "see": ["people:persian-garden"],
+      "wiki": { "en": "Persian gardens", "es": "Jardín persa" }
+    },
+    {
+      "id": "paradise",
+      "name": { "en": "Paradise (the word)", "es": "La palabra «paraíso»" },
+      "cat": "words",
+      "icon": "🌺",
+      "how": "named",
+      "date": "-500",
+      "circa": true,
+      "at": [52.89, 29.93],
+      "place": { "en": "Persepolis, Fars, Iran", "es": "Persépolis, Fars, Irán" },
+      "text": {
+        "en": "The walled parks of Persian kings were called by an Iranian word meaning ‘walled around’. Greek made it paradeisos, the Bible used it for the garden of Eden, and it became our paradise and paraíso.",
+        "es": "Los parques amurallados de los reyes persas tenían un nombre iranio que significaba «cercado». El griego lo hizo paradeisos, la Biblia lo usó para el jardín del Edén y se volvió nuestro paraíso."
+      },
+      "details": {
+        "en": "Old Iranian pairidaēza joined pairi, ‘around’, to a word for building a wall. Xenophon, a Greek soldier who served in Persia around 400 BC, described the paradeisoi of Persian kings and nobles: hunting parks and orchards with trees planted in rows. When Jewish scholars in Alexandria translated the Hebrew Bible into Greek, they called the garden of Eden paradeisos, and the word passed through Latin paradisus into English, Spanish and many other languages, coming to mean heaven itself. Arabic has it as firdaws, and modern Persian uses pardis.",
+        "es": "El iranio antiguo pairidaēza unía pairi, «alrededor», a una palabra para levantar un muro. Jenofonte, un soldado griego que sirvió en Persia hacia el 400 a. C., describió los paradeisoi de reyes y nobles persas: parques de caza y huertos con árboles en hileras. Cuando sabios judíos de Alejandría tradujeron la Biblia hebrea al griego, llamaron paradeisos al jardín del Edén, y la palabra pasó por el latín paradisus al español, al inglés y a muchas otras lenguas, hasta significar el cielo mismo. En árabe es firdaws, y el persa moderno dice pardis."
+      },
+      "path": [
+        { "at": [23.73, 37.98], "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" }, "date": "-370", "circa": true, "by": { "en": "Xenophon", "es": "Jenofonte" }, "note": { "en": "Describes the paradeisoi, the parks of Persian nobles.", "es": "Describe los paradeisoi, los parques de los nobles persas." } },
+        { "at": [29.92, 31.2], "place": { "en": "Alexandria, Egypt", "es": "Alejandría, Egipto" }, "date": "-250", "circa": true, "note": { "en": "The Greek Bible calls the garden of Eden paradeisos.", "es": "La Biblia griega llama paradeisos al jardín del Edén." } },
+        { "at": [12.48, 41.89], "place": { "en": "Rome", "es": "Roma" }, "date": "400", "circa": true, "by": { "en": "Jerome", "es": "Jerónimo" }, "note": { "en": "The Latin Bible has paradisus, the source of paradise and paraíso.", "es": "La Biblia latina dice paradisus, origen de paraíso y paradise." } }
+      ],
+      "where": ["branch:romance", "branch:germanic", "branch:hellenic", "lang:ara", "IRN"],
+      "note": {
+        "en": "English paradise, Spanish paraíso, French paradis, German Paradies, Arabic firdaws and Persian pardis all go back to the Persian word.",
+        "es": "El español paraíso, el inglés paradise, el francés paradis, el alemán Paradies, el árabe firdaws y el persa pardis vienen todos de la palabra persa."
+      },
+      "words": [
+        { "en": "paradise", "es": "paraíso", "from": "pairidaēza (Avestan, Old Iranian), via Greek paradeisos", "means": { "en": "walled around, enclosure", "es": "cercado" } }
+      ],
+      "wiki": { "en": "Paradise", "es": "Paraíso" }
+    },
+    {
+      "id": "magic-and-magi",
+      "name": { "en": "Magic and the Magi", "es": "La magia y los Reyes Magos" },
+      "cat": "words",
+      "icon": "✨",
+      "how": "named",
+      "date": "-500",
+      "circa": true,
+      "at": [48.51, 34.8],
+      "place": { "en": "Media (here Hamadan, Iran)", "es": "Media (aquí Hamadán, Irán)" },
+      "text": {
+        "en": "The magi were priests of ancient Iran. Through Greek magos came magic and magician, the Magi who follow the star in the Christmas story, and the Reyes Magos who bring presents on 6 January.",
+        "es": "Los magos eran sacerdotes del antiguo Irán. Del griego magos vienen magia y mago, los Magos que siguen la estrella en el relato de Navidad y los Reyes Magos que traen regalos el 6 de enero."
+      },
+      "details": {
+        "en": "Old Persian maguš named a priest. Herodotus says the magi were a tribe of the Medes who read dreams and led sacred rites, and Zoroastrian priests are still called mobeds, from an old title meaning ‘chief of the magi’. Greeks saw the magi as wise men and wonder-workers, so magikē, ‘the art of the magi’, came to mean magic. The Gospel of Matthew tells of magi from the East who followed a star to Bethlehem; later tradition made them three kings, Melchior, Caspar and Balthasar. In Spain and Latin America children still wait for los Reyes Magos on the night of 5 January.",
+        "es": "En persa antiguo maguš era un sacerdote. Heródoto dice que los magos eran una tribu de los medos que interpretaba sueños y dirigía los ritos sagrados, y los sacerdotes zoroastrianos todavía se llaman mobeds, de un viejo título que significa «jefe de los magos». Los griegos veían a los magos como sabios y hacedores de prodigios, así que magikē, «el arte de los magos», pasó a significar magia. El Evangelio de Mateo habla de magos de Oriente que siguieron una estrella hasta Belén; la tradición los convirtió en tres reyes, Melchor, Gaspar y Baltasar. En España y América Latina los niños aún esperan a los Reyes Magos la noche del 5 de enero."
+      },
+      "path": [
+        { "at": [23.73, 37.98], "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" }, "date": "-440", "circa": true, "by": { "en": "Herodotus", "es": "Heródoto" }, "note": { "en": "Describes the magi of the Medes; Greek magos and magikē follow.", "es": "Describe a los magos de los medos; luego vienen el griego magos y magikē." } },
+        { "at": [35.2, 31.7], "place": { "en": "Bethlehem", "es": "Belén" }, "date": "80", "circa": true, "note": { "en": "Matthew's Gospel tells of the magi who followed the star.", "es": "El Evangelio de Mateo habla de los magos que siguieron la estrella." } },
+        { "at": [-3.7, 40.42], "place": { "en": "Spain", "es": "España" }, "date": "1800", "circa": true, "note": { "en": "Children leave out their shoes for the Reyes Magos; the custom crosses to Latin America.", "es": "Los niños dejan sus zapatos para los Reyes Magos; la costumbre pasa a América Latina." } }
+      ],
+      "where": ["branch:romance", "branch:germanic", "branch:slavic", "branch:hellenic"],
+      "strong": ["lang:spa", "!ESH"],
+      "note": {
+        "en": "Magic, magia, magie and Magie are used across Europe and the Americas; 6 January, Día de Reyes, is a family feast in Spain and much of Latin America.",
+        "es": "Magia, magic, magie y Magie se usan en Europa y América; el 6 de enero, Día de Reyes, es fiesta familiar en España y buena parte de América Latina."
+      },
+      "words": [
+        { "en": "magic", "es": "magia", "from": "magikē (Greek), from magos, from Old Persian maguš", "means": { "en": "the art of the magi", "es": "el arte de los magos" } },
+        { "en": "magician", "es": "mago", "from": "magos (Greek), from Old Persian maguš", "means": { "en": "priest, wise man", "es": "sacerdote, sabio" } },
+        { "en": "Magi", "es": "Reyes Magos", "from": "maguš (Old Persian), via Greek and Latin magi", "means": { "en": "priests", "es": "sacerdotes" } }
+      ],
+      "wiki": { "en": "Biblical Magi", "es": "Reyes Magos" }
+    },
+    {
+      "id": "chess-words",
+      "name": { "en": "Check and checkmate", "es": "Jaque y jaque mate" },
+      "cat": "words",
+      "icon": "♟️",
+      "how": "named",
+      "date": "600",
+      "circa": true,
+      "at": [44.58, 33.09],
+      "place": { "en": "Ctesiphon, near Baghdad, Iraq", "es": "Ctesifonte, cerca de Bagdad, Irak" },
+      "text": {
+        "en": "Saying ‘check’, ‘checkmate’ or ‘jaque mate’ is speaking Persian: shāh, ‘king’, and shāh māt. The rook, the Spanish alfil and even the word chess come from Persian too.",
+        "es": "Decir «jaque» o «jaque mate» es hablar persa: shāh, «rey», y shāh māt. El alfil, el enroque y la palabra inglesa chess también vienen del persa."
+      },
+      "details": {
+        "en": "Chess was invented in India and reached the court of Sasanian Persia in the 6th century, where it was called chatrang; a Middle Persian text tells how it arrived. Players warned ‘shāh!’ when the king was attacked, and the game ended with shāh māt, perhaps ‘the king is helpless’ (Arabic speakers heard ‘the king is dead’). The Arabs learned the game in Persia and carried it to Spain and Sicily, words and all. Shāh became Spanish jaque, French échec, English check, German Schach and Russian shakhmaty; Persian rukh became the rook, and pīl, ‘elephant’, became Arabic al-fīl, the Spanish alfil. Even English chess, the chequered pattern and Britain's Exchequer go back to shāh.",
+        "es": "El ajedrez se inventó en la India y llegó a la corte de la Persia sasánida en el siglo VI, donde se llamó chatrang; un texto en persa medio cuenta su llegada. Los jugadores avisaban «¡shāh!» cuando atacaban al rey, y la partida terminaba con shāh māt, quizá «el rey está indefenso» (los árabes entendieron «el rey ha muerto»). Los árabes aprendieron el juego en Persia y lo llevaron a España y Sicilia, con sus palabras. Shāh se volvió el español jaque, el francés échec, el inglés check, el alemán Schach y el ruso shájmaty; el persa rukh dio el inglés rook y el español enroque, y pīl, «elefante», dio el árabe al-fīl, nuestro alfil."
+      },
+      "roots": {
+        "en": "Chess itself was invented in India (chaturanga).",
+        "es": "El ajedrez mismo se inventó en la India (chaturanga)."
+      },
+      "path": [
+        { "at": [44.37, 33.31], "place": { "en": "Baghdad", "es": "Bagdad" }, "date": "800", "circa": true, "note": { "en": "Arabic shatranj keeps the Persian words shāh, rukh and pīl.", "es": "El shatranj árabe conserva las palabras persas shāh, rukh y pīl." } },
+        { "at": [-4.02, 39.86], "place": { "en": "Toledo, Spain", "es": "Toledo, España" }, "date": "1283", "by": { "en": "Alfonso X", "es": "Alfonso X" }, "note": { "en": "His Book of Games writes xaque and mate.", "es": "Su Libro de los juegos escribe xaque y mate." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London", "es": "Londres" }, "date": "1300", "circa": true, "note": { "en": "Middle English chek, chekmat and ches.", "es": "El inglés medio dice chek, chekmat y ches." } }
+      ],
+      "where": ["family:indo-european", "family:turkic", "family:uralic"],
+      "note": {
+        "en": "Chess players across Europe, the Americas, Iran, Turkey and Central Asia use words from Persian shāh: check, jaque, échec, Schach, şah.",
+        "es": "Los ajedrecistas de Europa, América, Irán, Turquía y Asia Central usan palabras del persa shāh: jaque, check, échec, Schach, şah."
+      },
+      "words": [
+        { "en": "check", "es": "jaque", "from": "shāh (Persian), via Arabic", "means": { "en": "king", "es": "rey" } },
+        { "en": "checkmate", "es": "jaque mate", "from": "shāh māt (Persian), via Arabic", "means": { "en": "the king is helpless (or dead)", "es": "el rey está indefenso (o muerto)" } },
+        { "en": "chess", "from": "shāh (Persian), via Old French esches, ‘checks’", "means": { "en": "king", "es": "rey" } },
+        { "en": "rook", "es": "enroque", "from": "rukh (Persian), via Arabic rukhkh", "means": { "en": "the chariot piece (meaning uncertain)", "es": "la pieza del carro (significado incierto)" } },
+        { "es": "alfil", "from": "pīl (Persian), via Arabic al-fīl", "means": { "en": "elephant", "es": "elefante" } }
+      ],
+      "see": ["people:shatranj"],
+      "wiki": { "en": "Checkmate", "es": "Jaque mate" }
+    },
+    {
+      "id": "polo",
+      "name": { "en": "Polo", "es": "El polo" },
+      "cat": "play",
+      "icon": "🏇",
+      "how": "invented",
+      "sure": "likely",
+      "date": "-500",
+      "circa": true,
+      "at": [52.6, 29.6],
+      "place": { "en": "Persia (Iran)", "es": "Persia (Irán)" },
+      "text": {
+        "en": "Riders with long mallets chasing a ball: chowgan was the game of Persian kings and horsemen. British officers learned it in north-east India in the 1850s and made modern polo, now played from Argentina to England.",
+        "es": "Jinetes con mazos largos tras una bola: el chowgán era el juego de los reyes y jinetes persas. Oficiales británicos lo aprendieron en el noreste de la India hacia 1850 y crearon el polo moderno, que hoy se juega de Argentina a Inglaterra."
+      },
+      "details": {
+        "en": "Some of the earliest records of the game come from Persia, and Sasanian texts and later Ferdowsi's Shahnameh describe princes playing chowgan, which also trained cavalry. In Isfahan the stone goalposts of a 17th-century polo ground still stand in Naqsh-e Jahan Square. The game spread to Byzantium, Central Asia, Tibet, China and India, though some historians think it began on the Central Asian steppe. In the 1850s British officers and tea planters in Assam learned the Manipuri game and founded the first polo club at Silchar; the name polo comes from a Balti word for ‘ball’. The rules were written in England in the 1870s, and Argentina now breeds the best ponies and players.",
+        "es": "Algunos de los registros más antiguos del juego vienen de Persia, y textos sasánidas y luego el Shahnameh de Ferdousí describen a príncipes jugando al chowgán, que además entrenaba a la caballería. En Isfahán aún se ven en la plaza Naqsh-e Yahán los postes de piedra de una cancha del siglo XVII. El juego llegó a Bizancio, Asia Central, el Tíbet, China y la India, aunque algunos historiadores creen que nació en la estepa de Asia Central. En la década de 1850, oficiales y plantadores de té británicos en Assam aprendieron el juego de Manipur y fundaron el primer club de polo en Silchar; el nombre polo viene de una palabra balti que significa «bola». Las reglas se escribieron en Inglaterra en la década de 1870, y hoy Argentina cría los mejores caballos y jugadores."
+      },
+      "roots": {
+        "en": "Horseback ball games were also played on the Central Asian steppe; the game's exact birthplace is uncertain.",
+        "es": "En la estepa de Asia Central también se jugaba a la pelota a caballo; el lugar exacto de origen es incierto."
+      },
+      "path": [
+        { "at": [28.98, 41.01], "place": { "en": "Constantinople (Istanbul)", "es": "Constantinopla (Estambul)" }, "date": "450", "circa": true, "note": { "en": "Byzantine emperors play tzykanion in a court at their palace.", "es": "Los emperadores bizantinos juegan al tzykanion en una cancha de su palacio." } },
+        { "at": [108.94, 34.26], "place": { "en": "Chang'an (Xi'an), China", "es": "Chang'an (Xi'an), China" }, "date": "700", "circa": true, "from": 0, "note": { "en": "Tang nobles, women among them, play polo.", "es": "Nobles de la dinastía Tang, también mujeres, juegan al polo." } },
+        { "at": [92.8, 24.83], "place": { "en": "Silchar, Assam, India", "es": "Silchar, Assam, India" }, "date": "1859", "circa": true, "from": 0, "note": { "en": "British players learn from Manipuris and found the first modern polo club.", "es": "Jugadores británicos aprenden de los manipuríes y fundan el primer club de polo moderno." } },
+        { "at": [-0.2, 51.47], "place": { "en": "Hurlingham, London", "es": "Hurlingham, Londres" }, "date": "1874", "circa": true, "note": { "en": "The Hurlingham Club draws up rules for the game.", "es": "El club Hurlingham redacta las reglas del juego." } },
+        { "at": [-58.43, -34.57], "place": { "en": "Palermo, Buenos Aires", "es": "Palermo, Buenos Aires" }, "date": "1893", "circa": true, "note": { "en": "The Argentine Open begins; Argentina becomes the heart of polo.", "es": "Empieza el Abierto Argentino; Argentina se vuelve el corazón del polo." } }
+      ],
+      "where": ["ARG", "GBR", "USA", "IND", "PAK", "IRN", "AZE", "AUS", "NZL", "ZAF", "FRA", "ESP", "CHL", "URY", "BRA", "MEX", "ARE"],
+      "strong": ["ARG", "GBR", "IRN"],
+      "note": {
+        "en": "Played in dozens of countries, above all Argentina, Britain, the United States and India; Iran and Azerbaijan keep the old game, with music, as chowgan and chovqan.",
+        "es": "Se juega en decenas de países, sobre todo Argentina, Reino Unido, Estados Unidos y la India; Irán y Azerbaiyán conservan el juego antiguo, con música, como chowgán y chovqan."
+      },
+      "wiki": { "en": "Polo", "es": "Polo (deporte)" }
+    },
+    {
+      "id": "nard",
+      "name": { "en": "Nard, backgammon's cousin", "es": "El nard, primo del backgammon" },
+      "cat": "play",
+      "icon": "🎲",
+      "how": "developed",
+      "sure": "debated",
+      "date": "550",
+      "circa": true,
+      "at": [44.6, 33.12],
+      "place": { "en": "Ctesiphon, near Baghdad, Iraq", "es": "Ctesifonte, cerca de Bagdad, Irak" },
+      "text": {
+        "en": "Two dice, fifteen pieces each and a race round the board: nard, played in Sasanian Persia, is still the game of homes and tea houses from Tehran to Baku and Yerevan, where it is called nardy or nardi.",
+        "es": "Dos dados, quince fichas por jugador y una carrera alrededor del tablero: el nard, jugado en la Persia sasánida, sigue siendo el juego de casas y teterías de Teherán a Bakú y Ereván, donde se llama nardy o nardi."
+      },
+      "details": {
+        "en": "A Middle Persian text tells how Wuzurgmihr (Bozorgmehr), minister of Khosrow I, invented nard to answer an Indian king who had sent chess as a riddle. The story is a legend. Race games with dice are far older, from the Royal Game of Ur to a board found at Shahr-e Sukhteh in eastern Iran, and the Roman tabula already had the 24-point board of backgammon. But nard, under its Persian name, became the form played across Iran, the Caucasus, Central Asia and Russia, where nardy is a favourite pastime. European backgammon and Turkish tavla are close relatives.",
+        "es": "Un texto en persa medio cuenta que Wuzurgmihr (Bozorgmehr), ministro de Cosroes I, inventó el nard para responder a un rey indio que le había enviado el ajedrez como acertijo. La historia es una leyenda. Los juegos de carrera con dados son mucho más antiguos, desde el Juego Real de Ur hasta un tablero hallado en Shahr-e Sukhteh, en el este de Irán, y la tabula romana ya tenía el tablero de 24 casillas del backgammon. Pero el nard, con su nombre persa, se convirtió en la forma jugada en Irán, el Cáucaso, Asia Central y Rusia, donde el nardy es un pasatiempo favorito. El backgammon europeo y el tavla turco son parientes cercanos."
+      },
+      "roots": {
+        "en": "Built on older race games with dice, such as the Roman tabula.",
+        "es": "Se basó en juegos de carrera con dados más antiguos, como la tabula romana."
+      },
+      "where": ["IRN", "AZE", "ARM", "GEO", "RUS", "UZB", "TJK", "TKM", "KAZ", "KGZ", "AFG", "IRQ"],
+      "strong": ["IRN", "AZE", "ARM"],
+      "note": {
+        "en": "Played in cafés, homes and parks in Iran (takhte nard), Azerbaijan, Armenia, Georgia, Russia and Central Asia.",
+        "es": "Se juega en cafés, casas y parques de Irán (takhte nard), Azerbaiyán, Armenia, Georgia, Rusia y Asia Central."
+      },
+      "wiki": { "en": "Backgammon", "es": "Backgammon" }
+    },
+    {
+      "id": "zoroastrianism",
+      "name": { "en": "Zoroastrianism, still practised", "es": "El zoroastrismo, aún vivo" },
+      "cat": "ideas",
+      "icon": "🔥",
+      "how": "developed",
+      "date": "-1000",
+      "circa": true,
+      "at": [66.9, 36.76],
+      "place": { "en": "Eastern Iran or Central Asia (uncertain; here Balkh, Afghanistan)", "es": "Este de Irán o Asia Central (incierto; aquí Balj, Afganistán)" },
+      "text": {
+        "en": "The faith taught by Zarathustra, of one wise god, Ahura Mazda, and a struggle between truth and the lie, was the religion of Persia's kings. Parsis in India and Zoroastrians in Iran still keep its sacred fires burning.",
+        "es": "La fe que enseñó Zaratustra, de un dios sabio, Ahura Mazda, y una lucha entre la verdad y la mentira, fue la religión de los reyes de Persia. Los parsis de la India y los zoroastrianos de Irán mantienen encendidos sus fuegos sagrados."
+      },
+      "details": {
+        "en": "Zarathustra (Zoroaster) lived in eastern Iran or Central Asia, perhaps around 1000 BC; scholars disagree by centuries. His hymns, the Gathas, call each person to choose good thoughts, good words and good deeds. Darius I praised Ahura Mazda in his inscriptions, and the Sasanians made Zoroastrianism the state religion. After the Arab conquest most Iranians became Muslim over the following centuries; some Zoroastrians sailed to Gujarat, in India, and became the Parsis. Perhaps 100,000 to 200,000 followers remain. Some historians think ideas such as a last judgement, heaven and hell, and angels passed from Zoroastrianism to Judaism, Christianity and Islam; others think they grew independently.",
+        "es": "Zaratustra (Zoroastro) vivió en el este de Irán o en Asia Central, quizá hacia el 1000 a. C.; los estudiosos discrepan por siglos. Sus himnos, los Gathas, llaman a cada persona a elegir buenos pensamientos, buenas palabras y buenas obras. Darío I alabó a Ahura Mazda en sus inscripciones, y los sasánidas hicieron del zoroastrismo la religión del Estado. Tras la conquista árabe la mayoría de los iraníes se hicieron musulmanes a lo largo de los siglos siguientes; algunos zoroastrianos navegaron a Guyarat, en la India, y se convirtieron en los parsis. Quedan quizá entre 100 000 y 200 000 fieles. Algunos historiadores creen que ideas como un juicio final, el cielo y el infierno, y los ángeles pasaron del zoroastrismo al judaísmo, el cristianismo y el islam; otros creen que surgieron por separado."
+      },
+      "path": [
+        { "at": [52.89, 29.93], "place": { "en": "Persepolis, Iran", "es": "Persépolis, Irán" }, "date": "-500", "circa": true, "by": { "en": "Darius I", "es": "Darío I" }, "note": { "en": "Darius rules ‘by the favour of Ahura Mazda’.", "es": "Darío reina «por la gracia de Ahura Mazda»." } },
+        { "at": [47.24, 36.6], "place": { "en": "Takht-e Soleyman, Iran", "es": "Takht-e Soleyman, Irán" }, "date": "500", "circa": true, "note": { "en": "Adur Gushnasp, one of the great fire temples of Sasanian Iran.", "es": "Adur Gushnasp, uno de los grandes templos del fuego del Irán sasánida." } },
+        { "at": [72.8, 20.2], "place": { "en": "Sanjan, Gujarat, India", "es": "Sanjan, Guyarat, India" }, "date": "900", "circa": true, "note": { "en": "Zoroastrians from Iran land in Gujarat: the Parsis (the date is debated).", "es": "Zoroastrianos de Irán desembarcan en Guyarat: los parsis (la fecha se discute)." } },
+        { "at": [72.88, 19.08], "place": { "en": "Mumbai, India", "es": "Bombay, India" }, "date": "1800", "circa": true, "note": { "en": "The Parsis grow into a leading community of Bombay.", "es": "Los parsis se vuelven una comunidad destacada de Bombay." } }
+      ],
+      "where": ["IND", "IRN", "PAK", "USA", "CAN", "GBR", "AUS"],
+      "strong": ["IND", "IRN"],
+      "note": {
+        "en": "Perhaps 100,000 to 200,000 followers, mostly Parsis in India and Zoroastrians in Iran, with communities in Pakistan, North America, Britain and Australia.",
+        "es": "Quizá entre 100 000 y 200 000 fieles, sobre todo parsis en la India y zoroastrianos en Irán, con comunidades en Pakistán, América del Norte, Reino Unido y Australia."
+      },
+      "see": ["people:zoroastrianism", "beliefs:zoroaster"],
+      "wiki": { "en": "Zoroastrianism", "es": "Zoroastrismo" }
+    },
+    {
+      "id": "cyrus-cylinder",
+      "name": { "en": "The Cyrus Cylinder", "es": "El cilindro de Ciro" },
+      "cat": "law",
+      "icon": "📜",
+      "how": "invented",
+      "sure": "debated",
+      "date": "-539",
+      "at": [44.42, 32.54],
+      "place": { "en": "Babylon, Iraq", "es": "Babilonia, Irak" },
+      "text": {
+        "en": "After taking Babylon in 539 BC, Cyrus had a clay cylinder written saying he let deported peoples go home and restored their temples. A copy stands at the United Nations; calling it the first charter of human rights is debated.",
+        "es": "Tras tomar Babilonia en el 539 a. C., Ciro mandó escribir un cilindro de barro: dice que dejó volver a los pueblos deportados y restauró sus templos. Hay una copia en la ONU; llamarlo la primera carta de derechos humanos se discute."
+      },
+      "details": {
+        "en": "The cylinder, written in Babylonian cuneiform, was buried in the foundations of Babylon's walls and found in 1879; it is now in the British Museum. Like older Mesopotamian royal inscriptions, it praises the new king and condemns the old one, Nabonidus. It also says Cyrus returned the statues of gods to their cities and let their peoples go home, which fits the Bible's account of the Jews returning from exile to Jerusalem. In 1971 Iran's last shah hailed it as the first declaration of human rights and gave the UN a copy. Most historians see it as royal propaganda in an old tradition, though one that records a policy of tolerance.",
+        "es": "El cilindro, escrito en cuneiforme babilonio, se enterró en los cimientos de las murallas de Babilonia y se halló en 1879; hoy está en el Museo Británico. Como otras inscripciones reales mesopotámicas más antiguas, alaba al nuevo rey y condena al anterior, Nabonido. También dice que Ciro devolvió las estatuas de los dioses a sus ciudades y dejó volver a sus pueblos, lo que coincide con el relato bíblico del regreso de los judíos a Jerusalén. En 1971 el último sah de Irán lo presentó como la primera declaración de derechos humanos y regaló una copia a la ONU. La mayoría de los historiadores lo ven como propaganda real de una vieja tradición, aunque refleja una política de tolerancia."
+      },
+      "roots": {
+        "en": "Follows the form of older Babylonian and Assyrian building inscriptions.",
+        "es": "Sigue el modelo de inscripciones de construcción babilonias y asirias más antiguas."
+      },
+      "path": [
+        { "at": [-0.13, 51.52], "place": { "en": "British Museum, London", "es": "Museo Británico, Londres" }, "date": "1879", "by": { "en": "Hormuzd Rassam", "es": "Hormuzd Rassam" }, "note": { "en": "Found at Babylon and taken to the British Museum.", "es": "Hallado en Babilonia y llevado al Museo Británico." } },
+        { "at": [-73.97, 40.75], "place": { "en": "United Nations, New York", "es": "Naciones Unidas, Nueva York" }, "date": "1971", "note": { "en": "Iran gives the UN a replica, shown at its headquarters.", "es": "Irán regala a la ONU una réplica, expuesta en su sede." } },
+        { "at": [51.41, 35.69], "place": { "en": "Tehran, Iran", "es": "Teherán, Irán" }, "date": "2010", "note": { "en": "Lent to Iran's National Museum, it draws huge crowds.", "es": "Prestado al Museo Nacional de Irán, atrae multitudes." } }
+      ],
+      "where": ["IRN"],
+      "note": {
+        "en": "A national symbol in Iran, on show in the British Museum, with a replica at the United Nations in New York.",
+        "es": "Un símbolo nacional en Irán, expuesto en el Museo Británico, con una réplica en las Naciones Unidas en Nueva York."
+      },
+      "see": ["people:cyrus-cylinder"],
+      "wiki": { "en": "Cyrus Cylinder", "es": "Cilindro de Ciro" }
+    },
+    {
+      "id": "aramaic-letters",
+      "name": { "en": "Aramaic letters across an empire", "es": "Las letras arameas de un imperio" },
+      "cat": "writing",
+      "icon": "✍️",
+      "how": "spread",
+      "date": "-500",
+      "circa": true,
+      "at": [52.88, 29.95],
+      "place": { "en": "Persepolis, Fars, Iran", "es": "Persépolis, Fars, Irán" },
+      "text": {
+        "en": "The Persian kings ran their empire in Aramaic, written with a short alphabet, from Egypt to India. Its letters grew into the Hebrew, Arabic and traditional Mongolian scripts still used today.",
+        "es": "Los reyes persas gobernaban su imperio en arameo, escrito con un alfabeto breve, de Egipto a la India. De sus letras salieron las escrituras hebrea, árabe y mongola tradicional que se usan hoy."
+      },
+      "details": {
+        "en": "Darius and his successors sent orders and kept accounts in Imperial Aramaic: clerks used it at Persepolis, at Elephantine on the Nile and in Bactria. When the empire fell, the script stayed and split into local branches. Jews in the Persian province of Yehud adopted it for Hebrew: the square letters of every Hebrew book today. The Nabataeans of Petra developed a flowing hand that became the Arabic alphabet. In Central Asia the Sogdian form passed to the Uyghurs and, in 1204, to the Mongols, whose vertical script is still used in China's Inner Mongolia and taught in Mongolia. Middle Persian itself was written in letters of Aramaic origin.",
+        "es": "Darío y sus sucesores enviaban órdenes y llevaban cuentas en arameo imperial: lo usaban los escribas de Persépolis, de Elefantina, en el Nilo, y de Bactriana. Cuando cayó el imperio, la escritura se quedó y se dividió en ramas locales. Los judíos de la provincia persa de Yehud la adoptaron para el hebreo: las letras cuadradas de todo libro hebreo actual. Los nabateos de Petra crearon una letra cursiva que se volvió el alfabeto árabe. En Asia Central la forma sogdiana pasó a los uigures y, en 1204, a los mongoles, cuya escritura vertical aún se usa en Mongolia Interior, en China, y se enseña en Mongolia. El persa medio también se escribía con letras de origen arameo."
+      },
+      "roots": {
+        "en": "Built on the Aramaic alphabet of the Aramaeans, itself from the Phoenician alphabet.",
+        "es": "Se basó en el alfabeto arameo de los arameos, que viene del alfabeto fenicio."
+      },
+      "path": [
+        { "at": [32.89, 24.09], "place": { "en": "Elephantine, Aswan, Egypt", "es": "Elefantina, Asuán, Egipto" }, "date": "-450", "circa": true, "note": { "en": "Jewish soldiers of the Persian garrison write letters in Aramaic.", "es": "Soldados judíos de la guarnición persa escriben cartas en arameo." } },
+        { "at": [35.23, 31.78], "place": { "en": "Jerusalem", "es": "Jerusalén" }, "date": "-400", "circa": true, "from": 0, "note": { "en": "Hebrew is now written in the square Aramaic letters.", "es": "El hebreo pasa a escribirse con las letras cuadradas arameas." } },
+        { "at": [35.44, 30.33], "place": { "en": "Petra, Jordan", "es": "Petra, Jordania" }, "date": "-100", "circa": true, "from": 0, "note": { "en": "The Nabataeans develop their own Aramaic hand.", "es": "Los nabateos crean su propia letra aramea." } },
+        { "at": [39.61, 24.47], "place": { "en": "Medina, Saudi Arabia", "es": "Medina, Arabia Saudita" }, "date": "650", "circa": true, "note": { "en": "The Arabic alphabet, grown from Nabataean, writes the Quran.", "es": "El alfabeto árabe, salido del nabateo, escribe el Corán." } },
+        { "at": [66.97, 39.65], "place": { "en": "Samarkand, Uzbekistan", "es": "Samarcanda, Uzbekistán" }, "date": "500", "circa": true, "from": 0, "note": { "en": "Sogdian merchants write in a script of Aramaic origin.", "es": "Los mercaderes sogdianos escriben con letras de origen arameo." } },
+        { "at": [102.83, 47.2], "place": { "en": "Mongolia", "es": "Mongolia" }, "date": "1204", "note": { "en": "Genghis Khan's Mongols adopt the Uyghur form of the script.", "es": "Los mongoles de Gengis Kan adoptan la forma uigur de la escritura." } }
+      ],
+      "where": ["ISR", "script:arabic", "PAK", "IRN", "AFG", "MNG"],
+      "note": {
+        "en": "Every Hebrew text and every page in Arabic script, from Morocco to Pakistan, uses letters that descend from the Aramaic of the Persian chancery.",
+        "es": "Todo texto hebreo y toda página en escritura árabe, de Marruecos a Pakistán, usa letras que descienden del arameo de la cancillería persa."
+      },
+      "see": ["writing:arabic-alphabet"],
+      "wiki": { "en": "Aramaic alphabet", "es": "Alfabeto arameo" }
+    },
+    {
+      "id": "kalila-and-dimna",
+      "name": { "en": "Kalila and Dimna: fables that travelled", "es": "Calila e Dimna: fábulas viajeras" },
+      "cat": "writing",
+      "icon": "🦊",
+      "how": "spread",
+      "date": "570",
+      "circa": true,
+      "at": [44.56, 33.07],
+      "place": { "en": "Ctesiphon, near Baghdad, Iraq", "es": "Ctesifonte, cerca de Bagdad, Irak" },
+      "text": {
+        "en": "About AD 570 the physician Borzuya put Indian animal fables into Middle Persian for Khosrow I. From his lost book come the Arabic Kalila wa Dimna, the Spanish Calila e Dimna and some of La Fontaine's fables.",
+        "es": "Hacia el 570 d. C. el médico Borzuya pasó al persa medio unas fábulas indias de animales para Cosroes I. De su libro perdido vienen el árabe Kalila wa Dimna, el castellano Calila e Dimna y algunas fábulas de La Fontaine."
+      },
+      "details": {
+        "en": "The stories began in India's Panchatantra: two jackals, Kalila and Dimna, scheming at a lion's court, with tales inside tales about friendship and cunning. Borzuya, a doctor at the Sasanian court, brought them to Persia and put them into Middle Persian. Around 750 Ibn al-Muqaffa, a Persian writing in Arabic, translated that version, and his Kalila wa Dimna is a classic of Arabic prose. From the Arabic came Persian, Hebrew, Greek, Latin and, in 1251, Castilian versions; the Spanish one, made for the future Alfonso X, is among the first works of Castilian prose. La Fontaine named ‘Pilpay, the Indian sage’ as a source for his later fables.",
+        "es": "Las historias nacieron en el Panchatantra de la India: dos chacales, Calila y Dimna, intrigan en la corte de un león, con cuentos dentro de cuentos sobre la amistad y la astucia. Borzuya, médico de la corte sasánida, las llevó a Persia y las pasó al persa medio. Hacia el 750 Ibn al-Muqaffa, un persa que escribía en árabe, tradujo esa versión, y su Kalila wa Dimna es un clásico de la prosa árabe. Del árabe salieron versiones en persa, hebreo, griego, latín y, en 1251, castellano; la castellana, hecha para el futuro Alfonso X, está entre las primeras obras de la prosa castellana. La Fontaine citó a «Pilpay, sabio indio» como fuente de sus últimas fábulas."
+      },
+      "roots": {
+        "en": "Built on India's Panchatantra.",
+        "es": "Se basó en el Panchatantra de la India."
+      },
+      "path": [
+        { "at": [47.78, 30.51], "place": { "en": "Basra, Iraq", "es": "Basora, Irak" }, "date": "750", "circa": true, "by": { "en": "Ibn al-Muqaffa", "es": "Ibn al-Muqaffa" }, "note": { "en": "Translated into Arabic as Kalila wa Dimna.", "es": "Traducido al árabe como Kalila wa Dimna." } },
+        { "at": [-4.02, 39.86], "place": { "en": "Castile, Spain", "es": "Castilla, España" }, "date": "1251", "note": { "en": "Calila e Dimna, translated for the future Alfonso X.", "es": "Calila e Dimna, traducido para el futuro Alfonso X." } },
+        { "at": [2.35, 48.86], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1678", "by": { "en": "Jean de La Fontaine", "es": "El fabulista La Fontaine" }, "note": { "en": "His second collection of fables names Pilpay as a source.", "es": "Su segunda colección de fábulas cita a Pilpay como fuente." } }
+      ],
+      "where": ["lang:ara", "IRN", "AFG", "TJK", "IND", "FRA", "ESP"],
+      "strong": ["lang:ara", "IRN"],
+      "note": {
+        "en": "Read in schools across the Arab world and Iran; its fables live on in La Fontaine, studied in France, and in Spain's medieval Calila e Dimna.",
+        "es": "Se lee en las escuelas del mundo árabe y de Irán; sus fábulas siguen vivas en La Fontaine, que se estudia en Francia, y en el Calila e Dimna medieval."
+      },
+      "see": ["eras:kalila"],
+      "wiki": { "en": "Kalīla wa-Dimna", "es": "Calila y Dimna" }
+    },
+    {
+      "id": "persian-carpets",
+      "name": { "en": "Knotted Persian carpets", "es": "Las alfombras persas anudadas" },
+      "cat": "arts",
+      "icon": "🧶",
+      "how": "developed",
+      "sure": "debated",
+      "date": "-400",
+      "circa": true,
+      "at": [88.57, 50.75],
+      "place": { "en": "Pazyryk valley, Altai, Russia (where the oldest known knotted carpet was found)", "es": "Valle de Pazyryk, Altái, Rusia (donde se halló la alfombra anudada más antigua)" },
+      "text": {
+        "en": "Wool knots tied by hand, by the hundred thousand, into gardens, medallions and flowers: Persian carpets are prized in homes and mosques worldwide. The oldest knotted carpet known, of about 400 BC, may be Persian work.",
+        "es": "Nudos de lana atados a mano, por cientos de miles, que forman jardines, medallones y flores: las alfombras persas se aprecian en casas y mezquitas de todo el mundo. La alfombra anudada más antigua, de hacia el 400 a. C., quizá sea persa."
+      },
+      "details": {
+        "en": "The Pazyryk carpet was found frozen in a nomad chieftain's tomb in the Altai mountains of Siberia in 1949 and is now in the Hermitage, St Petersburg. Its horsemen and deer recall the reliefs of Persepolis, so many scholars think it was made in the Achaemenid Empire; others argue for Armenian or local weavers. Arab historians describe the huge ‘Spring of Khosrow’ carpet in the Sasanian palace at Ctesiphon, cut up as booty in 637. Under the Safavids (1501–1736), court workshops in Tabriz, Kashan and Isfahan wove carpets that European kings and churches collected. UNESCO lists the carpet-weaving skills of Fars and Kashan as living heritage.",
+        "es": "La alfombra de Pazyryk se halló congelada en la tumba de un jefe nómada de los montes Altái, en Siberia, en 1949, y hoy está en el Hermitage de San Petersburgo. Sus jinetes y ciervos recuerdan los relieves de Persépolis, así que muchos estudiosos creen que se hizo en el Imperio aqueménida; otros proponen tejedores armenios o locales. Los historiadores árabes describen la enorme alfombra «Primavera de Cosroes» del palacio sasánida de Ctesifonte, cortada como botín en el 637. Con los safávidas (1501–1736), los talleres de la corte en Tabriz, Kashán e Isfahán tejieron alfombras que coleccionaron reyes e iglesias de Europa. La UNESCO reconoce como patrimonio vivo el tejido de alfombras de Fars y de Kashán."
+      },
+      "roots": {
+        "en": "Pile weaving was probably first done by peoples of Central Asia and Iran; who began it is unknown.",
+        "es": "El tejido de nudo lo hicieron probablemente primero pueblos de Asia Central e Irán; no se sabe quién empezó."
+      },
+      "path": [
+        { "at": [44.58, 33.09], "place": { "en": "Ctesiphon, Iraq", "es": "Ctesifonte, Irak" }, "date": "637", "note": { "en": "Arab soldiers cut up the great ‘Spring of Khosrow’ carpet.", "es": "Soldados árabes cortan la gran alfombra «Primavera de Cosroes»." } },
+        { "at": [46.29, 38.08], "place": { "en": "Tabriz, Iran", "es": "Tabriz, Irán" }, "date": "1540", "circa": true, "note": { "en": "Safavid workshops weave masterpieces such as the Ardabil carpet.", "es": "Los talleres safávidas tejen obras maestras como la alfombra de Ardabil." } },
+        { "at": [-0.17, 51.5], "place": { "en": "Victoria and Albert Museum, London", "es": "Museo Victoria and Albert, Londres" }, "date": "1893", "note": { "en": "The Ardabil carpet goes on show in London.", "es": "La alfombra de Ardabil se expone en Londres." } }
+      ],
+      "where": ["IRN", "AFG", "TUR", "PAK", "IND", "AZE", "ARM", "TKM"],
+      "strong": ["IRN"],
+      "note": {
+        "en": "Hand-knotted in Iran, Afghanistan, Turkey, the Caucasus, Turkmenistan, Pakistan and India, and laid in homes, palaces and mosques around the world.",
+        "es": "Se anudan a mano en Irán, Afganistán, Turquía, el Cáucaso, Turkmenistán, Pakistán y la India, y cubren casas, palacios y mezquitas de todo el mundo."
+      },
+      "wiki": { "en": "Persian carpet", "es": "Alfombra persa" }
+    },
+    {
+      "id": "windmills",
+      "name": { "en": "The first known windmills", "es": "Los primeros molinos de viento conocidos" },
+      "cat": "tech",
+      "icon": "🌀",
+      "how": "invented",
+      "sure": "debated",
+      "date": "900",
+      "circa": true,
+      "at": [61.49, 31.03],
+      "place": { "en": "Sistan, on the Iran–Afghanistan border", "es": "Sistán, en la frontera entre Irán y Afganistán" },
+      "text": {
+        "en": "In windy Sistan, sails of reed matting turned on an upright shaft to grind grain. These are the first windmills on record, and at Nashtifan, in eastern Iran, some still work.",
+        "es": "En el ventoso Sistán, aspas de estera de juncos giraban sobre un eje vertical para moler grano. Son los primeros molinos de viento documentados, y en Nashtifán, en el este de Irán, algunos todavía funcionan."
+      },
+      "details": {
+        "en": "The Persian windmill (āsbād) spins round a vertical axis inside a tall mud-brick wall that funnels the strong ‘wind of 120 days’ onto its sails, and the shaft turns the millstone directly, with no gears. Geographers writing in Arabic described such mills in Sistan in the 10th century; an older story placing a Persian millwright at the court of Caliph Umar in the 640s may be legend. Europe's windmills, which appear in England and France in the 1180s, have horizontal axles and may have been invented separately; historians still debate any link. At Nashtifan a row of old mills still grinds flour, and Iran has put its windmills on its list for UNESCO.",
+        "es": "El molino persa (āsbād) gira sobre un eje vertical dentro de un alto muro de adobe que dirige hacia sus aspas el fuerte «viento de los 120 días», y el eje mueve la piedra de moler directamente, sin engranajes. Geógrafos que escribían en árabe describieron estos molinos en Sistán en el siglo X; una historia anterior que pone a un molinero persa en la corte del califa Omar en la década de 640 puede ser leyenda. Los molinos europeos, que aparecen en Inglaterra y Francia hacia 1180, tienen ejes horizontales y quizá se inventaron por separado; los historiadores aún discuten si hubo relación. En Nashtifán una hilera de molinos antiguos sigue moliendo harina, e Irán los ha propuesto a la UNESCO."
+      },
+      "path": [
+        { "at": [60.18, 34.43], "place": { "en": "Nashtifan, Razavi Khorasan, Iran", "es": "Nashtifán, Jorasán Razaví, Irán" }, "date": "1600", "circa": true, "note": { "en": "A row of tall windmills, some still grinding today.", "es": "Una hilera de altos molinos, algunos aún en uso." } }
+      ],
+      "where": ["IRN"],
+      "note": {
+        "en": "A few traditional windmills still grind grain at Nashtifan, in Iran; modern wind power grew from a later, separate line, but harnessing wind for mills is first recorded here.",
+        "es": "Unos pocos molinos tradicionales aún muelen grano en Nashtifán, Irán; la energía eólica moderna viene de otra línea posterior, pero el uso del viento para moler se documenta aquí por primera vez."
+      },
+      "see": ["food:persian-windmills", "inventions:windmill"],
+      "wiki": { "en": "Windmill", "es": "Molino de viento" }
+    },
+    {
+      "id": "iwan-and-squinch",
+      "name": { "en": "The iwan and the dome on squinches", "es": "El iwán y la cúpula sobre trompas" },
+      "cat": "build",
+      "icon": "🕌",
+      "how": "developed",
+      "sure": "likely",
+      "date": "224",
+      "circa": true,
+      "at": [52.53, 28.89],
+      "place": { "en": "Palace of Ardashir, Firuzabad, Fars, Iran", "es": "Palacio de Ardashir, Firuzabad, Fars, Irán" },
+      "text": {
+        "en": "A vaulted hall open at one end, and a round dome set on a square room with arches across the corners: Parthian and Sasanian builders worked them out, and mosques, madrasas and the Taj Mahal still use them.",
+        "es": "Una sala abovedada abierta por un extremo, y una cúpula redonda sobre un cuarto cuadrado con arcos en las esquinas: los constructores partos y sasánidas los idearon, y mezquitas, madrasas y el Taj Mahal todavía los usan."
+      },
+      "details": {
+        "en": "Parthian builders in Mesopotamia raised the iwan, a great barrel-vaulted hall walled on three sides and open on the fourth. Around AD 224 Ardashir I, founder of the Sasanian dynasty, built a palace at Firuzabad whose domes rest on squinches, arches thrown across the corners of a square room to turn it into an octagon. His successors built the Taq Kasra at Ctesiphon, whose brick iwan vault, about 35 m high, still partly stands. After the Arab conquest both forms passed into Islamic architecture: the four-iwan courtyard of Isfahan's Friday Mosque, the portals of Samarkand's Registan and the arched entrances of the Taj Mahal.",
+        "es": "Los constructores partos de Mesopotamia levantaron el iwán, una gran sala con bóveda de cañón cerrada por tres lados y abierta por el cuarto. Hacia el 224 d. C. Ardashir I, fundador de la dinastía sasánida, construyó en Firuzabad un palacio cuyas cúpulas descansan sobre trompas, arcos tendidos en las esquinas de un cuarto cuadrado para convertirlo en octógono. Sus sucesores construyeron el Taq Kasra de Ctesifonte, cuya bóveda de ladrillo, de unos 35 m de alto, sigue en parte en pie. Tras la conquista árabe ambas formas pasaron a la arquitectura islámica: el patio de cuatro iwanes de la mezquita del Viernes de Isfahán, los portales del Registán de Samarcanda y las entradas en arco del Taj Mahal."
+      },
+      "roots": {
+        "en": "Built on Mesopotamian brick vaulting.",
+        "es": "Se basó en las bóvedas de ladrillo de Mesopotamia."
+      },
+      "path": [
+        { "at": [44.58, 33.09], "place": { "en": "Ctesiphon, Iraq", "es": "Ctesifonte, Irak" }, "date": "540", "circa": true, "note": { "en": "The Taq Kasra, the largest brick vault of its age.", "es": "El Taq Kasra, la mayor bóveda de ladrillo de su época." } },
+        { "at": [51.68, 32.67], "place": { "en": "Isfahan, Iran", "es": "Isfahán, Irán" }, "date": "1120", "circa": true, "note": { "en": "Seljuk builders give the Friday Mosque four iwans round a courtyard.", "es": "Los constructores selyúcidas dan a la mezquita del Viernes cuatro iwanes alrededor de un patio." } },
+        { "at": [66.98, 39.65], "place": { "en": "Samarkand, Uzbekistan", "es": "Samarcanda, Uzbekistán" }, "date": "1420", "circa": true, "note": { "en": "The Registan's madrasas open with huge iwan portals.", "es": "Las madrasas del Registán se abren con enormes portales de iwán." } },
+        { "at": [78.04, 27.18], "place": { "en": "Agra, India", "es": "Agra, India" }, "date": "1648", "note": { "en": "The Taj Mahal: a dome over arched iwans.", "es": "El Taj Mahal: una cúpula sobre iwanes en arco." } }
+      ],
+      "where": ["IRN", "IRQ", "AFG", "PAK", "IND", "UZB", "TJK", "TKM", "TUR", "EGY", "SYR", "AZE"],
+      "strong": ["IRN", "UZB"],
+      "note": {
+        "en": "Iwans and domes on squinches shape mosques, shrines and madrasas from Egypt and Turkey to Iran, Central Asia and India.",
+        "es": "Los iwanes y las cúpulas sobre trompas dan forma a mezquitas, santuarios y madrasas desde Egipto y Turquía hasta Irán, Asia Central y la India."
+      },
+      "see": ["people:ctesiphon"],
+      "wiki": { "en": "Iwan", "es": "Iwán" }
+    },
+    {
+      "id": "alfalfa",
+      "name": { "en": "Alfalfa, the ‘Median grass’", "es": "La alfalfa, la «hierba de Media»" },
+      "cat": "food",
+      "icon": "🌱",
+      "how": "spread",
+      "sure": "likely",
+      "date": "-490",
+      "circa": true,
+      "at": [48.53, 34.78],
+      "place": { "en": "Media, western Iran (here Hamadan)", "es": "Media, oeste de Irán (aquí Hamadán)" },
+      "text": {
+        "en": "The world's main hay for cattle and horses was called ‘Median grass’ by the Greeks, who got it from Persia during the wars of Darius. Its English and Spanish name, alfalfa, is Persian too, by way of Arabic.",
+        "es": "El principal forraje del mundo para vacas y caballos se llamaba «hierba de Media» entre los griegos, que lo recibieron de Persia en las guerras de Darío. Su nombre, alfalfa, también es persa, a través del árabe."
+      },
+      "details": {
+        "en": "Alfalfa, or lucerne, was probably first grown in Iran and its neighbours, where rich hay fed the famous horses of the Medes and Persians. The Roman writer Pliny says it was brought to Greece from Media during the Persian Wars, which is why Greeks and Romans called it medikē or medica and botanists still name it Medicago. In al-Andalus farmers knew it by an Arabic name taken from Persian aspast, which became Spanish alfalfa. The Spanish took it to the Americas, and in the 1850s it reached California from Chile, carrying its Spanish name into American English. Today it is grown on every inhabited continent.",
+        "es": "La alfalfa se cultivó probablemente primero en Irán y sus vecinos, donde un heno rico alimentaba los famosos caballos de medos y persas. El escritor romano Plinio cuenta que llegó a Grecia desde Media durante las guerras médicas, por eso griegos y romanos la llamaban medikē o medica y los botánicos aún la llaman Medicago. En al-Ándalus los campesinos la conocían por un nombre árabe tomado del persa aspast, que dio el español alfalfa. Los españoles la llevaron a América, y en la década de 1850 llegó de Chile a California, con lo que su nombre español pasó al inglés de Estados Unidos. Hoy se cultiva en todos los continentes habitados."
+      },
+      "roots": {
+        "en": "First grown, it seems, by farmers of Iran, Anatolia and the Caucasus.",
+        "es": "Al parecer la cultivaron primero campesinos de Irán, Anatolia y el Cáucaso."
+      },
+      "path": [
+        { "at": [23.73, 37.98], "place": { "en": "Greece", "es": "Grecia" }, "date": "-490", "circa": true, "note": { "en": "Brought from Media during the Persian Wars, says Pliny.", "es": "Traída de Media durante las guerras médicas, según Plinio." } },
+        { "at": [12.48, 41.89], "place": { "en": "Rome", "es": "Roma" }, "date": "60", "circa": true, "by": { "en": "Columella", "es": "Columela" }, "note": { "en": "Roman farm writers praise medica as the best fodder.", "es": "Los agrónomos romanos alaban la medica como el mejor forraje." } },
+        { "at": [-4.78, 37.88], "place": { "en": "Córdoba, Spain", "es": "Córdoba, España" }, "date": "1000", "circa": true, "note": { "en": "Andalusi farmers call it by an Arabic name from Persian aspast: alfalfa.", "es": "Los campesinos andalusíes la llaman con un nombre árabe del persa aspast: alfalfa." } },
+        { "at": [-70.65, -33.45], "place": { "en": "Santiago, Chile", "es": "Santiago de Chile" }, "date": "1550", "circa": true, "note": { "en": "The Spanish bring alfalfa to the Americas.", "es": "Los españoles llevan la alfalfa a América." } },
+        { "at": [-121.49, 38.58], "place": { "en": "California, United States", "es": "California, Estados Unidos" }, "date": "1850", "circa": true, "note": { "en": "Brought from Chile in the gold rush; American English adopts ‘alfalfa’.", "es": "Llega de Chile durante la fiebre del oro; el inglés estadounidense adopta «alfalfa»." } }
+      ],
+      "where": ["USA", "CAN", "MEX", "ARG", "CHL", "URY", "PER", "ESP", "FRA", "ITA", "RUS", "KAZ", "CHN", "IRN", "TUR", "SAU", "EGY", "AUS", "ZAF"],
+      "strong": ["USA", "ARG"],
+      "note": {
+        "en": "Grown for hay from the United States and Argentina to Spain, Iran, Saudi Arabia and China; English and Spanish speakers call it by its Persian-born name.",
+        "es": "Se cultiva como forraje de Estados Unidos y Argentina a España, Irán, Arabia Saudita y China; en español e inglés se llama con su nombre de origen persa."
+      },
+      "words": [
+        { "en": "alfalfa", "es": "alfalfa", "from": "aspast (Middle Persian), via Arabic al-fiṣfiṣa", "means": { "en": "horse fodder (probably)", "es": "forraje para caballos (probablemente)" } }
+      ],
+      "wiki": { "en": "Alfalfa", "es": "Medicago sativa" }
+    },
+    {
+      "id": "nowruz",
+      "name": { "en": "Nowruz, the spring new year", "es": "Nouruz, el año nuevo de primavera" },
+      "cat": "time",
+      "icon": "🌷",
+      "how": "invented",
+      "sure": "likely",
+      "date": "-500",
+      "circa": true,
+      "at": [52.9, 29.94],
+      "place": { "en": "Persepolis, Fars, Iran", "es": "Persépolis, Fars, Irán" },
+      "text": {
+        "en": "At the spring equinox more than 300 million people celebrate Nowruz, ‘new day’, the Iranian new year: houses are cleaned, bonfires are jumped and a table of seven things whose Persian names begin with S is laid.",
+        "es": "En el equinoccio de primavera más de 300 millones de personas celebran Nouruz, «día nuevo», el año nuevo iraní: se limpian las casas, se salta sobre hogueras y se pone una mesa con siete cosas cuyo nombre persa empieza por S."
+      },
+      "details": {
+        "en": "Nowruz falls on the March equinox, the first day of the Iranian solar year. Its roots lie in ancient Iran and Zoroastrian tradition; some scholars think the reliefs of Persepolis, where delegates from across the empire bring gifts, show a New Year ceremony, though this is debated. The Sasanian kings kept it as a great court festival, and it survived the Arab conquest, spreading with Persian culture to Central Asia, the Caucasus, the Kurds and South Asia. Families set a haft-sin table with sprouts, apples and garlic, visit relatives and picnic outdoors on the thirteenth day. In 2010 the UN made 21 March the International Day of Nowruz.",
+        "es": "Nouruz cae en el equinoccio de marzo, el primer día del año solar iraní. Sus raíces están en el antiguo Irán y la tradición zoroastriana; algunos estudiosos creen que los relieves de Persépolis, donde delegados de todo el imperio traen regalos, muestran una ceremonia de año nuevo, aunque se discute. Los reyes sasánidas la celebraban como una gran fiesta de la corte, y sobrevivió a la conquista árabe, extendiéndose con la cultura persa a Asia Central, el Cáucaso, los kurdos y el sur de Asia. Las familias ponen la mesa del haft-sin con brotes, manzanas y ajo, visitan a sus parientes y salen de picnic el día trece. En 2010 la ONU declaró el 21 de marzo Día Internacional de Nouruz."
+      },
+      "path": [
+        { "at": [44.58, 33.09], "place": { "en": "Ctesiphon, Iraq", "es": "Ctesifonte, Irak" }, "date": "500", "circa": true, "note": { "en": "A great festival of the Sasanian court.", "es": "Una gran fiesta de la corte sasánida." } },
+        { "at": [64.42, 39.77], "place": { "en": "Bukhara, Uzbekistan", "es": "Bujará, Uzbekistán" }, "date": "950", "circa": true, "note": { "en": "Kept at the Persian-speaking Samanid court and by the peoples of Central Asia.", "es": "La celebran la corte samánida, de habla persa, y los pueblos de Asia Central." } },
+        { "at": [77.66, 27.09], "place": { "en": "Fatehpur Sikri, India", "es": "Fatehpur Sikri, India" }, "date": "1582", "circa": true, "by": { "en": "Akbar", "es": "Akbar" }, "note": { "en": "The Mughal court celebrates Nowruz with great feasts.", "es": "La corte mogola celebra Nouruz con grandes fiestas." } },
+        { "at": [-73.97, 40.75], "place": { "en": "United Nations, New York", "es": "Naciones Unidas, Nueva York" }, "date": "2010", "note": { "en": "21 March becomes the International Day of Nowruz.", "es": "El 21 de marzo se vuelve el Día Internacional de Nouruz." } }
+      ],
+      "where": ["AFG", "AZE", "IND", "IRN", "IRQ", "KAZ", "KGZ", "UZB", "PAK", "TJK", "TUR", "TKM", "MNG"],
+      "strong": ["IRN", "TJK", "AZE"],
+      "note": {
+        "en": "A national holiday in Iran, Central Asia and Azerbaijan, kept by Kurds, Parsis and Iranians abroad; UNESCO lists it for 13 countries.",
+        "es": "Fiesta nacional en Irán, Asia Central y Azerbaiyán, celebrada por kurdos, parsis e iraníes en el extranjero; la UNESCO la reconoce en 13 países."
+      },
+      "see": ["people:nowruz"],
+      "wiki": { "en": "Nowruz", "es": "Nouruz" }
+    },
+    {
+      "id": "yalda",
+      "name": { "en": "Yalda, the longest night", "es": "Yalda, la noche más larga" },
+      "cat": "time",
+      "icon": "🍉",
+      "how": "invented",
+      "sure": "likely",
+      "date": "500",
+      "circa": true,
+      "at": [51.39, 35.69],
+      "place": { "en": "Iran", "es": "Irán" },
+      "text": {
+        "en": "On the winter solstice, Iranian and Afghan families stay up through the longest night eating pomegranates and watermelon and reading Hafez's poems, to greet the returning sun.",
+        "es": "En el solsticio de invierno, las familias iraníes y afganas pasan en vela la noche más larga comiendo granadas y sandía y leyendo poemas de Hafez, para recibir el regreso del sol."
+      },
+      "details": {
+        "en": "Shab-e Yalda, also called Chelleh, is the night before the days start to lengthen. Its roots are pre-Islamic: in ancient Iran the solstice was linked with the victory of light over darkness, and some connect it with the god Mithra, though the details are uncertain. The word yalda itself is Syriac for ‘birth’, probably borrowed from Christians in Sasanian Persia. Families gather at the home of the eldest relatives, eat red fruit and nuts and open a book of Hafez at random to read their fortune. In 2022 UNESCO listed Yalda and Chella as living heritage of Iran and Afghanistan.",
+        "es": "Shab-e Yalda, también llamada Chelleh, es la noche antes de que los días empiecen a alargarse. Sus raíces son anteriores al islam: en el antiguo Irán el solsticio se asociaba con la victoria de la luz sobre la oscuridad, y algunos lo relacionan con el dios Mitra, aunque los detalles son inciertos. La palabra yalda es siríaca y significa «nacimiento», probablemente tomada de los cristianos de la Persia sasánida. Las familias se reúnen en casa de los parientes mayores, comen frutas rojas y frutos secos y abren al azar un libro de Hafez para leer su suerte. En 2022 la UNESCO reconoció Yalda y Chella como patrimonio vivo de Irán y Afganistán."
+      },
+      "where": ["IRN", "AFG"],
+      "note": {
+        "en": "Kept by families in Iran and Afghanistan and by Iranians abroad; in 2022 UNESCO listed it for both countries.",
+        "es": "La celebran las familias de Irán y Afganistán y los iraníes en el extranjero; en 2022 la UNESCO la reconoció en ambos países."
+      },
+      "wiki": { "en": "Yalda Night", "es": "Yalda" }
+    },
+    {
+      "id": "month-names",
+      "name": { "en": "Iran's month names", "es": "Los nombres de los meses en Irán" },
+      "cat": "time",
+      "icon": "🗓️",
+      "how": "named",
+      "sure": "likely",
+      "date": "-400",
+      "circa": true,
+      "at": [52.87, 29.92],
+      "place": { "en": "Achaemenid Persia (here Persepolis)", "es": "Persia aqueménida (aquí Persépolis)" },
+      "text": {
+        "en": "Farvardin, Ordibehesht, Khordad…: the twelve months of Iran's official calendar carry the names of Zoroastrian divine beings, names some 2,400 years old.",
+        "es": "Farvardín, Ordibehesht, Jordad…: los doce meses del calendario oficial de Irán llevan los nombres de seres divinos zoroastrianos, nombres de unos 2400 años."
+      },
+      "details": {
+        "en": "The Zoroastrian calendar named its twelve months after divine beings: Farvardin for the guardian spirits (fravashis), Ordibehesht for ‘best truth’, Mehr for Mithra, Azar for fire, Aban for the waters, Bahman for ‘good mind’. It may have been introduced under the later Achaemenid kings, though the date is debated. After the Arab conquest Zoroastrians kept it, and in 1925 Iran made a solar calendar with these month names its official one; the year begins on 1 Farvardin, at Nowruz. Afghanistan uses the same solar reckoning but names its months after the signs of the zodiac.",
+        "es": "El calendario zoroastriano dio a sus doce meses nombres de seres divinos: Farvardín por los espíritus guardianes (fravashis), Ordibehesht por la «mejor verdad», Mehr por Mitra, Azar por el fuego, Abán por las aguas, Bahmán por el «buen pensamiento». Quizá se introdujo con los últimos reyes aqueménidas, aunque la fecha se discute. Tras la conquista árabe los zoroastrianos lo conservaron, y en 1925 Irán hizo oficial un calendario solar con estos nombres de meses; el año empieza el 1 de Farvardín, en Nouruz. Afganistán usa el mismo cómputo solar, pero llama a sus meses por los signos del zodiaco."
+      },
+      "path": [
+        { "at": [51.67, 32.65], "place": { "en": "Isfahan, Iran", "es": "Isfahán, Irán" }, "date": "1079", "by": { "en": "Omar Khayyam and colleagues", "es": "Omar Jayam y sus colegas" }, "note": { "en": "The Jalali reform fixes the Persian solar year.", "es": "La reforma yalalí fija el año solar persa." } },
+        { "at": [51.39, 35.69], "place": { "en": "Tehran, Iran", "es": "Teherán, Irán" }, "date": "1925", "note": { "en": "Parliament makes the solar calendar, with the old month names, official.", "es": "El Parlamento hace oficial el calendario solar, con los viejos nombres de los meses." } }
+      ],
+      "where": ["IRN"],
+      "note": {
+        "en": "Every date in Iran, on newspapers, phones and official forms, uses these month names; Zoroastrians worldwide keep them too.",
+        "es": "Toda fecha en Irán, en periódicos, celulares y formularios oficiales, usa estos nombres; los zoroastrianos de todo el mundo también los conservan."
+      },
+      "words": [
+        { "en": "Farvardin", "es": "Farvardín", "type": "calendar", "from": "fravashi (Avestan)", "means": { "en": "the guardian spirits", "es": "los espíritus guardianes" } },
+        { "en": "Ordibehesht", "es": "Ordibehesht", "type": "calendar", "from": "Asha Vahishta (Avestan)", "means": { "en": "best truth", "es": "la mejor verdad" } },
+        { "en": "Khordad", "es": "Jordad", "type": "calendar", "from": "Haurvatat (Avestan)", "means": { "en": "wholeness", "es": "plenitud" } },
+        { "en": "Tir", "es": "Tir", "type": "calendar", "from": "Tīr, a god of rain and the star Sirius (Middle Persian; debated)", "means": { "en": "Tishtrya, the rain star", "es": "Tishtrya, la estrella de la lluvia" } },
+        { "en": "Mordad", "es": "Mordad", "type": "calendar", "from": "Ameretat (Avestan)", "means": { "en": "immortality", "es": "inmortalidad" } },
+        { "en": "Shahrivar", "es": "Shahrivar", "type": "calendar", "from": "Khshathra Vairya (Avestan)", "means": { "en": "desirable rule", "es": "el reino deseable" } },
+        { "en": "Mehr", "es": "Mehr", "type": "calendar", "from": "Mithra (Avestan)", "means": { "en": "covenant; the god Mithra", "es": "pacto; el dios Mitra" } },
+        { "en": "Aban", "es": "Abán", "type": "calendar", "from": "āpō (Avestan)", "means": { "en": "the waters", "es": "las aguas" } },
+        { "en": "Azar", "es": "Azar", "type": "calendar", "from": "ātar (Avestan)", "means": { "en": "fire", "es": "fuego" } },
+        { "en": "Dey", "es": "Dey", "type": "calendar", "from": "dadvah (Avestan)", "means": { "en": "the creator", "es": "el creador" } },
+        { "en": "Bahman", "es": "Bahmán", "type": "calendar", "from": "Vohu Manah (Avestan)", "means": { "en": "good mind", "es": "buen pensamiento" } },
+        { "en": "Esfand", "es": "Esfand", "type": "calendar", "from": "Spenta Armaiti (Avestan)", "means": { "en": "holy devotion", "es": "devoción santa" } }
+      ],
+      "wiki": { "en": "Solar Hijri calendar", "es": "Calendario persa" }
+    },
+    {
+      "id": "market-words",
+      "name": { "en": "Bazaar, caravan and kiosk", "es": "Bazar, caravana y quiosco" },
+      "cat": "words",
+      "icon": "🐪",
+      "how": "named",
+      "date": "300",
+      "circa": true,
+      "at": [46.29, 38.08],
+      "place": { "en": "Persia (here Tabriz's covered bazaar, Iran)", "es": "Persia (aquí el bazar cubierto de Tabriz, Irán)" },
+      "text": {
+        "en": "Persian traders and travellers gave the world words for the road and the market: bazaar, caravan, caravanserai, kiosk and divan, and the Spanish aduana, the customs house.",
+        "es": "Los comerciantes y viajeros persas dieron al mundo palabras del camino y del mercado: bazar, caravana, caravasar, quiosco y diván, y también aduana."
+      },
+      "details": {
+        "en": "Bāzār is the Persian market street, often roofed with brick vaults; Tabriz's covered bazaar is a UNESCO site. A kārvān was a company of travellers and camels, and a kārvānsarāy the walled inn where they spent the night. Kushk, a garden pavilion, went through Turkish köşk to French kiosque and on to newspaper stands. Dēvān, a register of accounts, named government offices, then the cushioned bench where officials sat, the divan, and, through Arabic, the customs house: Spanish aduana and French douane. A satrap was a Persian provincial governor. Most of these words travelled west through Arabic, Turkish and Italian.",
+        "es": "Bāzār es la calle mercado persa, a menudo techada con bóvedas de ladrillo; el bazar cubierto de Tabriz es patrimonio de la UNESCO. Un kārvān era un grupo de viajeros y camellos, y un kārvānsarāy la posada amurallada donde pasaban la noche. Kushk, un pabellón de jardín, pasó por el turco köşk al francés kiosque y luego a los puestos de periódicos. Dēvān, un registro de cuentas, nombró las oficinas del gobierno, luego el banco con cojines donde se sentaban los funcionarios, el diván, y, a través del árabe, la aduana. Un sátrapa era un gobernador de provincia persa. Casi todas estas palabras viajaron al oeste por el árabe, el turco y el italiano."
+      },
+      "path": [
+        { "at": [28.98, 41.01], "place": { "en": "Istanbul, Turkey", "es": "Estambul, Turquía" }, "date": "1500", "circa": true, "note": { "en": "Ottoman Turkish köşk, divan and kervan.", "es": "El turco otomano köşk, divan y kervan." } },
+        { "at": [12.34, 45.44], "place": { "en": "Venice, Italy", "es": "Venecia, Italia" }, "date": "1500", "circa": true, "note": { "en": "Italian traders bring home bazar and carovana.", "es": "Los comerciantes italianos traen bazar y carovana." } },
+        { "at": [-0.13, 51.51], "place": { "en": "London", "es": "Londres" }, "date": "1600", "circa": true, "note": { "en": "English takes bazaar, caravan and divan.", "es": "El inglés adopta bazaar, caravan y divan." } }
+      ],
+      "where": ["branch:romance", "branch:germanic", "IRN", "AFG", "TJK", "TUR", "IND", "PAK"],
+      "note": {
+        "en": "From a Moroccan souk sold as a ‘bazaar’ to a newspaper kiosk in Buenos Aires, these Persian words are used across Europe, the Americas and Asia.",
+        "es": "Del bazar de cualquier ciudad al quiosco de periódicos de Buenos Aires, estas palabras persas se usan en Europa, América y Asia."
+      },
+      "words": [
+        { "en": "bazaar", "es": "bazar", "from": "bāzār (Persian)", "means": { "en": "market", "es": "mercado" } },
+        { "en": "caravan", "es": "caravana", "from": "kārvān (Persian)", "means": { "en": "company of travellers", "es": "grupo de viajeros" } },
+        { "en": "caravanserai", "es": "caravasar", "from": "kārvānsarāy (Persian)", "means": { "en": "caravan inn", "es": "posada de caravanas" } },
+        { "en": "kiosk", "es": "quiosco", "from": "kušk (Persian), via Turkish köşk", "means": { "en": "pavilion", "es": "pabellón" } },
+        { "en": "divan", "es": "diván", "from": "dēvān (Persian), via Turkish", "means": { "en": "register, council", "es": "registro, consejo" } },
+        { "es": "aduana", "from": "dēvān (Persian), via Arabic ad-dīwān", "means": { "en": "office, register", "es": "oficina, registro" } },
+        { "en": "satrap", "es": "sátrapa", "from": "xšaçapāvan (Old Persian), via Greek", "means": { "en": "protector of the province", "es": "protector de la provincia" } },
+        { "en": "shah", "es": "sah", "from": "šāh (Persian)", "means": { "en": "king", "es": "rey" } },
+        { "es": "taza", "from": "tašt (Persian), via Arabic ṭassa", "means": { "en": "bowl", "es": "cuenco" } }
+      ],
+      "wiki": { "en": "Bazaar", "es": "Bazar" }
+    },
+    {
+      "id": "clothes-words",
+      "name": { "en": "Pyjamas, shawls and khaki", "es": "Pijamas, chales y caqui" },
+      "cat": "words",
+      "icon": "🧣",
+      "how": "named",
+      "date": "1600",
+      "circa": true,
+      "at": [77.23, 28.65],
+      "place": { "en": "Persian of Mughal India (here Delhi)", "es": "El persa de la India mogola (aquí Delhi)" },
+      "text": {
+        "en": "Pyjamas (‘leg garment’), shawl, khaki (‘dust-coloured’), cummerbund (‘waist band’), seersucker (‘milk and sugar’), turban and taffeta all come from Persian, many through the languages of India.",
+        "es": "Pijama («prenda para las piernas»), chal, caqui («color de polvo»), turbante y tafetán vienen del persa, muchos a través de las lenguas de la India."
+      },
+      "details": {
+        "en": "Persian was the court language of Mughal India, and many Persian words passed into Hindustani and from there to British traders and soldiers. Pāy-jāma, ‘leg garment’, were loose trousers; British men in India took to sleeping in them, and pyjamas spread worldwide. Khāk means dust, and khaki uniforms were first dyed for British troops in India in the 1840s. Kamar-band, a waist sash, became the cummerbund, and shīr-o-shakar, ‘milk and sugar’, a striped cloth, seersucker. Older borrowings came through Turkish and Italian: turban from Persian dulband, and taffeta from tāfta, ‘twisted’, a crisp silk.",
+        "es": "El persa era la lengua de la corte de la India mogola, y muchas palabras persas pasaron al indostaní y de ahí a comerciantes y soldados británicos. Pāy-jāma, «prenda para las piernas», eran pantalones holgados; los británicos en la India empezaron a dormir con ellos, y el pijama se extendió por el mundo. Khāk significa polvo, y los uniformes caqui se tiñeron por primera vez para tropas británicas en la India en la década de 1840. Kamar-band, una faja, dio el inglés cummerbund, y shīr-o-shakar, «leche y azúcar», una tela rayada, el seersucker. Préstamos más antiguos llegaron por el turco y el italiano: turbante, del persa dulband, y tafetán, de tāfta, «torcido», una seda crujiente."
+      },
+      "path": [
+        { "at": [-0.13, 51.51], "place": { "en": "London", "es": "Londres" }, "date": "1850", "circa": true, "note": { "en": "English adopts pyjamas, shawl and khaki.", "es": "El inglés adopta pyjamas, shawl y khaki." } },
+        { "at": [-3.7, 40.42], "place": { "en": "Madrid, Spain", "es": "Madrid, España" }, "date": "1920", "circa": true, "note": { "en": "Spanish takes pijama from English.", "es": "El español toma pijama del inglés." } }
+      ],
+      "where": ["lang:eng", "lang:spa", "branch:romance", "branch:germanic", "IND", "PAK"],
+      "note": {
+        "en": "Pyjamas and khaki are worn and named almost everywhere; shawl, turban and taffeta are shared by English, Spanish and many other languages.",
+        "es": "El pijama y el caqui se usan y se nombran casi en todas partes; chal, turbante y tafetán los comparten el español, el inglés y muchas otras lenguas."
+      },
+      "words": [
+        { "en": "pyjamas", "es": "pijama", "from": "pāy-jāma (Persian), via Hindustani", "means": { "en": "leg garment", "es": "prenda para las piernas" } },
+        { "en": "shawl", "es": "chal", "from": "šāl (Persian)", "means": { "en": "shawl, mantle", "es": "chal, manto" } },
+        { "en": "khaki", "es": "caqui", "from": "khāk (Persian), via Hindustani khākī", "means": { "en": "dust; dust-coloured", "es": "polvo; color de polvo" } },
+        { "en": "cummerbund", "from": "kamar-band (Persian)", "means": { "en": "waist band", "es": "faja de cintura" } },
+        { "en": "seersucker", "from": "šīr-o-šakar (Persian)", "means": { "en": "milk and sugar", "es": "leche y azúcar" } },
+        { "en": "turban", "es": "turbante", "from": "dulband (Persian), via Turkish tülbent", "means": { "en": "turban, sash", "es": "turbante, banda" } },
+        { "en": "taffeta", "es": "tafetán", "from": "tāfta (Persian), via Italian", "means": { "en": "twisted, spun", "es": "torcido, hilado" } }
+      ],
+      "wiki": { "en": "Pajamas", "es": "Pijama" }
+    },
+    {
+      "id": "food-words",
+      "name": { "en": "Oranges, lemons and spinach", "es": "Naranjas, limones y espinacas" },
+      "cat": "words",
+      "icon": "🍊",
+      "how": "named",
+      "date": "800",
+      "circa": true,
+      "at": [52.53, 29.61],
+      "place": { "en": "Persia (here Shiraz, Iran); the words went west through Arabic", "es": "Persia (aquí Shiraz, Irán); las palabras viajaron al oeste por el árabe" },
+      "text": {
+        "en": "Orange and naranja, lemon and limón, spinach and espinaca, aubergine and berenjena, pistachio, candy and julep: the names of many foods are Persian, carried west by Arabic-speaking traders and farmers.",
+        "es": "Naranja, limón, espinaca, berenjena, pistacho y julepe: los nombres de muchos alimentos son persas, llevados al oeste por comerciantes y campesinos de habla árabe."
+      },
+      "details": {
+        "en": "Persian nārang named the bitter orange, a fruit from India; Arabic made it nāranj and Spanish naranja, while in French the first n was taken for part of une, giving orange. Līmū gave lemon and lime; aspanākh, spinach; bādingān became Arabic bādhinjān, Spanish berenjena and, through Catalan, aubergine. Pista travelled through Greek and Latin to become pistachio. Qand, cane sugar, gave Arabic qandī and English candy, and gulāb, rosewater, gave julep. Some of these words are older than Persian (nārang comes from Sanskrit), but Persian is the link through which they reached Arabic and then Europe.",
+        "es": "El persa nārang nombraba la naranja amarga, una fruta de la India; el árabe la hizo nāranj y el español naranja, mientras que en francés la primera n se tomó por parte de une y quedó orange. Līmū dio limón y lima; aspanākh, espinaca; bādingān pasó al árabe bādhinjān y al español berenjena. Pista viajó por el griego y el latín hasta volverse pistacho. Qand, azúcar de caña, dio el árabe qandī, el azúcar cande y el inglés candy, y gulāb, agua de rosas, dio julepe. Algunas de estas palabras son más antiguas que el persa (nārang viene del sánscrito), pero el persa es el eslabón por el que llegaron al árabe y luego a Europa."
+      },
+      "path": [
+        { "at": [44.37, 33.31], "place": { "en": "Baghdad", "es": "Bagdad" }, "date": "850", "circa": true, "note": { "en": "Arabic takes nāranj, laymūn, isbānakh and bādhinjān.", "es": "El árabe adopta nāranj, laymūn, isbānakh y bādhinjān." } },
+        { "at": [-4.78, 37.88], "place": { "en": "Córdoba, Spain", "es": "Córdoba, España" }, "date": "950", "circa": true, "note": { "en": "Andalusi Arabic passes them to Spanish: naranja, limón, espinaca, berenjena.", "es": "El árabe andalusí los pasa al español: naranja, limón, espinaca, berenjena." } },
+        { "at": [2.35, 48.86], "place": { "en": "Paris, France", "es": "París, Francia" }, "date": "1300", "circa": true, "note": { "en": "French orange and espinache, soon English orange and spinach.", "es": "El francés orange y espinache, pronto el inglés orange y spinach." } }
+      ],
+      "where": ["branch:romance", "branch:germanic", "lang:ara", "IRN"],
+      "note": {
+        "en": "Used every day in English, Spanish, French, Italian, Portuguese and Arabic, and in many other languages that took the same words.",
+        "es": "Se usan a diario en español, inglés, francés, italiano, portugués y árabe, y en muchas otras lenguas que tomaron las mismas palabras."
+      },
+      "words": [
+        { "en": "orange", "es": "naranja", "from": "nārang (Persian), via Arabic nāranj", "means": { "en": "bitter orange", "es": "naranja amarga" } },
+        { "en": "lemon", "es": "limón", "from": "līmū(n) (Persian), via Arabic laymūn" },
+        { "en": "lime", "es": "lima", "from": "līmū (Persian), via Arabic līma" },
+        { "en": "spinach", "es": "espinaca", "from": "aspanākh (Persian), via Arabic isbānakh" },
+        { "en": "aubergine", "es": "berenjena", "from": "bādingān (Persian), via Arabic bādhinjān" },
+        { "en": "pistachio", "es": "pistacho", "from": "pista (Persian), via Greek pistákion" },
+        { "en": "candy", "es": "cande", "from": "qand (Persian), via Arabic qandī", "means": { "en": "cane sugar", "es": "azúcar de caña" } },
+        { "en": "julep", "es": "julepe", "from": "gulāb (Persian), via Arabic julāb", "means": { "en": "rosewater", "es": "agua de rosas" } },
+        { "en": "caviar", "es": "caviar", "from": "probably khāviyār (Persian), via Turkish havyar", "means": { "en": "egg-bearing (fish)", "es": "(pez) que lleva huevas" } }
+      ],
+      "wiki": { "en": "Bitter orange", "es": "Citrus × aurantium" }
+    },
+    {
+      "id": "flower-and-colour-words",
+      "name": { "en": "Jasmine, lilac, tulip and azure", "es": "Jazmín, lila, tulipán y azul" },
+      "cat": "words",
+      "icon": "💐",
+      "how": "named",
+      "date": "800",
+      "circa": true,
+      "at": [51.67, 32.65],
+      "place": { "en": "Persia (here Isfahan, Iran)", "es": "Persia (aquí Isfahán, Irán)" },
+      "text": {
+        "en": "Persian yāsaman gave jasmine and jazmín; līlak, ‘bluish’, gave lilac and lila; dulband, a turban, gave tulip; and lājvard, lapis lazuli, gave azure and the everyday Spanish word azul.",
+        "es": "El persa yāsaman dio jazmín; līlak, «azulado», dio lila; dulband, un turbante, dio tulipán; y lājvard, el lapislázuli, dio azur y la palabra de todos los días: azul."
+      },
+      "details": {
+        "en": "Persian gardens and dyers named flowers and colours that Europe later loved. Yāsaman passed through Arabic yāsamīn to jasmine. Līlak, from nīl, ‘indigo’, named the lilac bush and its pale purple. Tulips reached Europe from the Ottoman Empire in the 16th century; their name comes from Turkish tülbend, from Persian dulband, because the flower looked like a turban. Lājvard was the deep-blue lapis lazuli mined in Badakhshan, in today's Afghanistan. Arabic lāzaward gave Medieval Latin azurium and English azure, and in Spanish, with the first l taken for an article, azul. Mushk gave musk and almizcle.",
+        "es": "Los jardines y tintoreros persas nombraron flores y colores que luego Europa amó. Yāsaman pasó por el árabe yāsamīn a jazmín. Līlak, de nīl, «índigo», nombró la lila y su color morado pálido. Los tulipanes llegaron a Europa desde el Imperio otomano en el siglo XVI; su nombre viene del turco tülbend, del persa dulband, porque la flor parecía un turbante. Lājvard era el lapislázuli azul intenso de Badajshán, en el actual Afganistán. El árabe lāzaward dio el latín medieval azurium y el inglés azure, y en español, tomando la primera l por artículo, azul. Mushk dio almizcle y el inglés musk."
+      },
+      "path": [
+        { "at": [44.37, 33.31], "place": { "en": "Baghdad", "es": "Bagdad" }, "date": "850", "circa": true, "note": { "en": "Arabic yāsamīn, līlak and lāzaward.", "es": "El árabe yāsamīn, līlak y lāzaward." } },
+        { "at": [-4.78, 37.88], "place": { "en": "Córdoba, Spain", "es": "Córdoba, España" }, "date": "1000", "circa": true, "note": { "en": "Andalusi Arabic lāzaward becomes Spanish azul.", "es": "El árabe andalusí lāzaward se vuelve el español azul." } },
+        { "at": [28.98, 41.01], "place": { "en": "Istanbul, Turkey", "es": "Estambul, Turquía" }, "date": "1555", "circa": true, "from": 0, "note": { "en": "European envoys see Ottoman tulips and send bulbs west.", "es": "Enviados europeos ven los tulipanes otomanos y mandan bulbos al oeste." } },
+        { "at": [4.49, 52.16], "place": { "en": "Leiden, Netherlands", "es": "Leiden, Países Bajos" }, "date": "1593", "by": { "en": "Carolus Clusius", "es": "Carolus Clusius" }, "note": { "en": "Tulips bloom in Leiden's botanic garden; the Dutch tulip craze follows.", "es": "Los tulipanes florecen en el jardín botánico de Leiden; sigue la fiebre holandesa de los tulipanes." } }
+      ],
+      "where": ["branch:romance", "branch:germanic", "lang:ara", "IRN"],
+      "note": {
+        "en": "Spanish speakers say azul every day; jasmine, lilac and tulip are shared by English, Spanish and most European languages.",
+        "es": "Los hispanohablantes dicen azul todos los días; jazmín, lila y tulipán los comparten el español, el inglés y casi todas las lenguas europeas."
+      },
+      "words": [
+        { "en": "jasmine", "es": "jazmín", "from": "yāsaman (Persian), via Arabic yāsamīn" },
+        { "en": "lilac", "es": "lila", "from": "līlak (Persian), via Arabic", "means": { "en": "bluish", "es": "azulado" } },
+        { "en": "tulip", "es": "tulipán", "from": "dulband (Persian), via Turkish tülbend", "means": { "en": "turban", "es": "turbante" } },
+        { "en": "azure", "es": "azul", "from": "lājvard (Persian), via Arabic lāzaward", "means": { "en": "lapis lazuli", "es": "lapislázuli" } },
+        { "en": "musk", "es": "almizcle", "from": "mušk (Persian), via Greek (en) and Arabic al-misk (es)" }
+      ],
+      "wiki": { "en": "Lapis lazuli", "es": "Lapislázuli" }
+    },
+    {
+      "id": "personal-names",
+      "name": { "en": "Cyrus, Darius, Roxanne and Jasmine", "es": "Ciro, Darío, Roxana y Jazmín" },
+      "cat": "words",
+      "icon": "👤",
+      "how": "named",
+      "date": "-550",
+      "circa": true,
+      "at": [53.19, 30.19],
+      "place": { "en": "Pasargadae, Fars, Iran", "es": "Pasargada, Fars, Irán" },
+      "text": {
+        "en": "Names first borne in ancient Iran are still given to children: Cyrus and Ciro, Darius and Darío, Roxanne and Roxana, and the flower name Jasmine, Yasmin or Jazmín.",
+        "es": "Nombres que se llevaron primero en el antiguo Irán se siguen poniendo a los niños: Ciro, Darío, Roxana y el nombre de flor Jazmín o Yasmín."
+      },
+      "details": {
+        "en": "Kūruš (Cyrus) and Dārayavauš (Darius, ‘he who holds firm the good’) were Persian kings; Greek historians passed their names on, and the Bible made Cyrus famous as the king who let the Jews go home. The Nicaraguan poet Rubén Darío made Darío a name known to every Spanish speaker. Roxane, Greek Rhōxanē from an Iranian name meaning ‘bright’, was the Bactrian wife of Alexander the Great. Jasmine, from Persian yāsaman, became a popular girls' name in English, and Yasmin and Jazmín are common across the Arab world and Latin America. Gaspar (Jasper), one of the Magi, may come from a Persian word for ‘treasurer’, though this is uncertain.",
+        "es": "Kūruš (Ciro) y Dārayavauš (Darío, «el que sostiene el bien») fueron reyes persas; los historiadores griegos transmitieron sus nombres, y la Biblia hizo famoso a Ciro como el rey que dejó volver a los judíos. El poeta nicaragüense Rubén Darío hizo de Darío un nombre conocido por todo hispanohablante. Roxana, en griego Rhōxanē, de un nombre iranio que significa «brillante», fue la esposa bactriana de Alejandro Magno. Jazmín, del persa yāsaman, es un nombre común en América Latina, y Yasmín en el mundo árabe y en inglés. Gaspar, uno de los Reyes Magos, quizá venga de una palabra persa para «tesorero», aunque es incierto."
+      },
+      "path": [
+        { "at": [23.73, 37.98], "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" }, "date": "-430", "circa": true, "by": { "en": "Herodotus", "es": "Heródoto" }, "note": { "en": "Greek histories make Cyrus and Darius famous.", "es": "Las historias griegas hacen famosos a Ciro y Darío." } },
+        { "at": [-71.62, -33.05], "place": { "en": "Valparaíso, Chile", "es": "Valparaíso, Chile" }, "date": "1888", "by": { "en": "Rubén Darío", "es": "Rubén Darío" }, "note": { "en": "His book Azul…, signed Darío, launches Spanish-American modernismo.", "es": "Su libro Azul…, firmado Darío, inicia el modernismo hispanoamericano." } }
+      ],
+      "where": ["branch:romance", "branch:germanic", "lang:ara", "IRN"],
+      "note": {
+        "en": "Cyrus, Darius, Roxanne and Jasmine are given in English-speaking countries; Ciro, Darío, Roxana and Jazmín across Spain and Latin America; Yasmin in the Arab world and Iran.",
+        "es": "Ciro, Darío, Roxana y Jazmín se ponen en España y América Latina; Cyrus, Darius, Roxanne y Jasmine en los países de habla inglesa; Yasmín en el mundo árabe e Irán."
+      },
+      "words": [
+        { "en": "Cyrus", "es": "Ciro", "type": "name", "from": "Kūruš (Old Persian), via Greek Kŷros" },
+        { "en": "Darius", "es": "Darío", "type": "name", "from": "Dārayavauš (Old Persian), via Greek Dareîos", "means": { "en": "he who holds firm the good", "es": "el que sostiene el bien" } },
+        { "en": "Roxanne", "es": "Roxana", "type": "name", "from": "an Iranian name (Bactrian), via Greek Rhōxanē", "means": { "en": "bright, shining", "es": "brillante" } },
+        { "en": "Jasmine", "es": "Jazmín", "type": "name", "from": "yāsaman (Persian)", "means": { "en": "jasmine flower", "es": "flor de jazmín" } },
+        { "en": "Yasmin", "es": "Yasmín", "type": "name", "from": "yāsaman (Persian), via Arabic yāsamīn", "means": { "en": "jasmine flower", "es": "flor de jazmín" } },
+        { "en": "Jasper", "es": "Gaspar", "type": "name", "from": "perhaps ganzabara (Old Persian), uncertain", "means": { "en": "treasurer", "es": "tesorero" } }
+      ],
+      "wiki": { "en": "Cyrus the Great", "es": "Ciro el Grande" }
+    },
+    {
+      "id": "place-names",
+      "name": { "en": "Afghanistan, Pakistan and the -stan lands", "es": "Afganistán, Pakistán y las tierras en -stán" },
+      "cat": "words",
+      "icon": "🗺️",
+      "how": "named",
+      "date": "-500",
+      "circa": true,
+      "at": [52.91, 29.92],
+      "place": { "en": "Persepolis, Fars, Iran, where Darius listed the lands of his empire", "es": "Persépolis, Fars, Irán, donde Darío enumeró las tierras de su imperio" },
+      "text": {
+        "en": "Seven countries end in -stan, Persian for ‘land of’: Afghanistan, Pakistan, Uzbekistan, Kazakhstan, Kyrgyzstan, Tajikistan and Turkmenistan. Punjab and Iran are Persian names too, and India reached Greek through Persian.",
+        "es": "Siete países terminan en -stán, «tierra de» en persa: Afganistán, Pakistán, Uzbekistán, Kazajistán, Kirguistán, Tayikistán y Turkmenistán. Panyab e Irán también son nombres persas, e India llegó al griego a través del persa."
+      },
+      "details": {
+        "en": "Old Persian stāna, ‘place’, became the ending -stān, as in Hindustan or Kurdistan, and Persian, the language of courts from Baghdad to Delhi, spread it across Central and South Asia. In 1933 Choudhry Rahmat Ali coined Pakistan with it; pāk means ‘pure’. Darius's inscriptions call the Indus lands Hinduš, the Persian form of Sanskrit Sindhu, ‘river’; Greek turned it into Indos and India. Punjab is Persian panj āb, ‘five waters’, for its five rivers. Azerbaijan probably keeps the name of Atropates, a Persian governor of the region, and Iran itself comes from Middle Persian Ērān, ‘(land) of the Aryans’, used by the Sasanian kings.",
+        "es": "El persa antiguo stāna, «lugar», se volvió la terminación -stān, como en Indostán o Kurdistán, y el persa, lengua de las cortes de Bagdad a Delhi, la extendió por Asia Central y del Sur. En 1933 Choudhry Rahmat Ali creó con ella el nombre Pakistán; pāk significa «puro». Las inscripciones de Darío llaman Hinduš a las tierras del Indo, la forma persa del sánscrito Sindhu, «río»; el griego la convirtió en Indos e India. Panyab es el persa panj āb, «cinco aguas», por sus cinco ríos. Azerbaiyán conserva probablemente el nombre de Atropates, un gobernador persa de la región, e Irán viene del persa medio Ērān, «(tierra) de los arios», que usaban los reyes sasánidas."
+      },
+      "path": [
+        { "at": [23.73, 37.98], "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" }, "date": "-430", "circa": true, "by": { "en": "Herodotus", "es": "Heródoto" }, "note": { "en": "Greek Indos and India, from Persian Hinduš.", "es": "El griego Indos e India, del persa Hinduš." } },
+        { "at": [74.35, 31.55], "place": { "en": "Lahore, Pakistan", "es": "Lahore, Pakistán" }, "date": "1600", "circa": true, "from": 0, "note": { "en": "Persian is the language of the Mughal court; the Punjab and Hindustan are named in it.", "es": "El persa es la lengua de la corte mogola; en él se nombran el Panyab e Indostán." } },
+        { "at": [0.12, 52.21], "place": { "en": "Cambridge, England", "es": "Cambridge, Inglaterra" }, "date": "1933", "by": { "en": "Choudhry Rahmat Ali", "es": "Choudhry Rahmat Ali" }, "note": { "en": "Coins the name Pakistan.", "es": "Crea el nombre Pakistán." } }
+      ],
+      "where": ["AFG", "PAK", "UZB", "KAZ", "KGZ", "TJK", "TKM", "IND", "IRN", "AZE"],
+      "strong": ["AFG", "PAK", "UZB", "KAZ", "KGZ", "TJK", "TKM"],
+      "note": {
+        "en": "Seven countries of Central and South Asia bear the Persian ending -stan; Iran, Punjab and Azerbaijan have Persian names, and India's came west through Persian.",
+        "es": "Siete países de Asia Central y del Sur llevan la terminación persa -stán; Irán, Panyab y Azerbaiyán tienen nombres persas, y el de la India llegó al oeste por el persa."
+      },
+      "words": [
+        { "en": "Afghanistan", "es": "Afganistán", "type": "place", "from": "Afghān + -stān (Persian)", "means": { "en": "land of the Afghans", "es": "tierra de los afganos" } },
+        { "en": "Pakistan", "es": "Pakistán", "type": "place", "from": "pāk + -stān (Persian, Urdu), coined in 1933", "means": { "en": "land of the pure", "es": "tierra de los puros" } },
+        { "en": "Uzbekistan", "es": "Uzbekistán", "type": "place", "from": "Uzbek + -stān (Persian)", "means": { "en": "land of the Uzbeks", "es": "tierra de los uzbekos" } },
+        { "en": "Kazakhstan", "es": "Kazajistán", "type": "place", "from": "Kazakh + -stān (Persian)", "means": { "en": "land of the Kazakhs", "es": "tierra de los kazajos" } },
+        { "en": "Kyrgyzstan", "es": "Kirguistán", "type": "place", "from": "Kyrgyz + -stān (Persian)", "means": { "en": "land of the Kyrgyz", "es": "tierra de los kirguises" } },
+        { "en": "Tajikistan", "es": "Tayikistán", "type": "place", "from": "Tajik + -stān (Persian)", "means": { "en": "land of the Tajiks", "es": "tierra de los tayikos" } },
+        { "en": "Turkmenistan", "es": "Turkmenistán", "type": "place", "from": "Turkmen + -stān (Persian)", "means": { "en": "land of the Turkmen", "es": "tierra de los turcomanos" } },
+        { "en": "Punjab", "es": "Panyab", "type": "place", "from": "panj āb (Persian)", "means": { "en": "five waters", "es": "cinco aguas" } },
+        { "en": "Iran", "es": "Irán", "type": "place", "from": "Ērān (Middle Persian)", "means": { "en": "(land) of the Aryans", "es": "(tierra) de los arios" } },
+        { "en": "Azerbaijan", "es": "Azerbaiyán", "type": "place", "from": "probably Āturpātakān (Middle Persian), from Atropates", "means": { "en": "land of Atropates, ‘protected by fire’", "es": "tierra de Atropates, «protegido por el fuego»" } }
+      ],
+      "wiki": { "en": "-stan", "es": "-stán" }
+    }
+  ]
+}

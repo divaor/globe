@@ -111,10 +111,10 @@ A backup made as Atlas Globe still opens.
   deep? now with sea animals and wrecks; two tours, Wonders of the deep and Famous shipwrecks; the Time travel story
   Into the deep: exploring the ocean floor; and an Into the deep playlist for ambient mode.
 - **Legacies of the past (Explore → Legacies of the past, v0.44.0):** what past civilizations gave the world that we
-  still use, and how connected that makes us: {CIVS} civilizations (the Sumerians, Babylonians and Assyrians,
+  still use, and how connected that makes us: 20 civilizations (the Sumerians, Babylonians and Assyrians,
   Egyptians, Phoenicians, Greeks, Romans, Persians, the Islamic Golden Age, Ancient India and China, the Maya, Mexica,
   Incas, Taíno, Norse, Celts, Polynesians, the First Peoples of North America, the West African kingdoms and Aksum)
-  and {LEGACIES} legacies in 14 subjects: words and names, writing, numbers, time and calendars, science, buildings,
+  and 628 legacies in 14 subjects: words and names, writing, numbers, time and calendars, science, buildings,
   tools, food, money, law, ideas, the arts, games and daily life. Each civilization has its homeland at its height on
   the map, its intro, its heirs today, a link to its time-travel story and, first, the words and names it gave us
   ("They gave us words like paper, ebony and oasis; names like Susan"), by kind (words, people's names, place names,
