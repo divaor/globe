@@ -11,6 +11,7 @@
 //   --titles     check the Wikipedia titles on QLever (NODE_USE_ENV_PROXY=1)
 //   --pbdb       compare species' ages with the Paleobiology Database (cached in .cache/deeptime/pbdb)
 //   --check      fail if public/data/deeptime is not what the sources build
+//   --draft      build even if the events, species or script are not written yet (to look at the app meanwhile)
 //   --find en|es <words>    Wikipedia titles with these words, with the other language's title
 //   --list events|species|beats|items [words]   ids in use; markers of the Life through time stories
 import fs from 'node:fs';
@@ -429,7 +430,12 @@ async function main() {
   }
   const n = `${got.events.length} events, ${got.species.length} species, ${got.beats.length} beats${got.vitals ? `, ${Object.keys(got.vitals.series).length} vital signs` : ''}`;
   if (checking) { console.log(`ok: ${n} (checked; run without --only to build)`); return; }
-  for (const part of ['vitals', 'events', 'species', 'beats']) if (!got[part] || (Array.isArray(got[part]) && !got[part].length)) { console.error(`FAIL nothing to build yet: ${part} is missing`); process.exit(1); }
+  // --draft builds what there is (to look at the app while helpers still write a part); a release builds all four.
+  const draft = args.includes('--draft') && !args.includes('--check');
+  for (const part of ['vitals', 'events', 'species', 'beats']) if (!got[part] || (Array.isArray(got[part]) && !got[part].length)) {
+    if (draft && part !== 'vitals') { console.warn(`warn --draft: ${part} is missing`); continue; }
+    console.error(`FAIL nothing to build yet: ${part} is missing`); process.exit(1);
+  }
   const files = build(got);
   if (args.includes('--check')) {
     let stale = 0;
