@@ -150,7 +150,7 @@ const regional: LayerDef = {
     es: 'Lenguas por región, no por país: catalán, euskera, cantonés, maya, quechua, kurdo, tamil, javanés y muchas más, donde se hablan.',
   },
   keywords: 'regional languages minority dialect catalan basque galician cantonese maya quechua lenguas regionales minoritarias catalan euskera gallego cantones',
-  credit: 'Regional languages compiled from Wikipedia and national census figures (CC BY-SA 4.0); regions: Natural Earth',
+  credit: 'Regional languages compiled from Wikipedia and national census figures (CC BY-SA 4.0); regions: Natural Earth and OCHA (CC BY-IGO)',
   load: async () => { await load(); },
   drawFill(rc: RenderCtx, inst) {
     const { ctx, path } = rc;

@@ -38,7 +38,7 @@ A backup made as Atlas Globe still opens.
   deep time's impacts. A screen reader hears what the map shows: the projection, the place in the middle, how close,
   the filters, the chosen country and, in time travel, the year; a move with the arrow keys or a new filter is read
   out. Offline, what needs an outside service says so at once instead of waiting; iNaturalist is asked at most 60
-  times a minute, and Wikimedia's sites hear the app's name and version. **About and credits** lists all 74 sources
+  times a minute, and Wikimedia's sites hear the app's name and version. **About and credits** lists all 75 sources
   in nine groups (maps, nature, the Earth, space, history, words, pictures, what is read live, the code), each with
   what it gives the app in plain words, who made it and its licence, in the app's language.
 - **Languages (v0.42.0):** English, Spanish (Latin America's or Spain's), Portuguese (Brazil), French and German,
@@ -986,7 +986,9 @@ share an edge (323 land borders).
   route, scoring and challenge links.
 The states and provinces drawn on the map, their names (with Spanish names) and the one a tap or a born-here place is
 in come from Natural Earth's 1:10m admin-1 regions (public domain, `public/data/base/admin1.json`, loaded the first
-time they are shown). The States and provinces quiz uses Natural Earth's admin-1 regions (`scripts/data/build-regions.mjs`; France,
+time they are shown); for the 33 countries whose divisions changed since Natural Earth's data (Kenya's counties, DR
+Congo's and Nepal's provinces, Viet Nam's 34 provinces of 2025...), from OCHA's Common Operational Datasets (CC BY-IGO,
+v0.47.0; `scripts/data/README.md`, `public/data/base/SOURCES.md`). The States and provinces quiz uses Natural Earth's admin-1 regions (`scripts/data/build-regions.mjs`; France,
 Spain, Italy and the United Kingdom grouped into their regions). The Time travel stories are written from
 Wikipedia and the sources listed in each story
 (`scripts/data/conflicts/README.md`, `scripts/data/STORIES.md`); item pictures are Wikipedia page images,

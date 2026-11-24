@@ -35,7 +35,7 @@ const REQUIRED = ['id', 'name', 'what', 'licence', 'url'];
 const OPTIONAL = ['by', 'licenceUrl'];
 const MAX = 160;
 /** Licences the screen shows, in the short form; those before the break have a licence text to link to. */
-const WITH_TEXT = ['CC0', 'CC BY 4.0', 'CC BY-SA 4.0', 'CC0 and CC BY 4.0', 'Public domain and CC BY-SA 4.0', 'ODbL 1.0',
+const WITH_TEXT = ['CC0', 'CC BY 4.0', 'CC BY-SA 4.0', 'CC BY-IGO 3.0', 'CC0 and CC BY 4.0', 'Public domain and CC BY-SA 4.0', 'ODbL 1.0',
   'ODC-By 1.0', 'GPL-3.0', 'MIT', 'ISC', 'BSD 3-Clause', 'OFL 1.1', 'Unicode License v3', 'Each file’s own licence', 'Each photo’s own licence'];
 const LICENCES = [...WITH_TEXT, 'Public domain', 'Free to use', 'Free to use with attribution', 'Free to use with citation', 'Cited as a source'];
 
@@ -114,7 +114,7 @@ const hay = new Map(items.map((it) => [it.id, norm([it.name, it.by ?? '', it.id,
  *  an item's name, maker, id or address holds any of them. */
 const KNOWN = [
   // Maps and country facts.
-  'natural earth', 'geonames', 'blue marble', 'stockli', 'basemap', 'tom patterson|shadedrelief', 'etopo', 'amante',
+  'natural earth', 'ocha|humanitarian data exchange', 'geonames', 'blue marble', 'stockli', 'basemap', 'tom patterson|shadedrelief', 'etopo', 'amante',
   'terrain tiles', 'mapzen|tilezen', 'aws', '3dep', 'srtm', 'gmted2010|gmted', 'arcticdem', 'eu dem', 'copernicus',
   'geoscience australia', 'open government licence canada', 'offene daten osterreichs', 'inegi', 'land information new zealand|linz',
   'kartverket', 'environment agency', 'sentinel 2 cloudless', 'eox', 'gibs', 'worldview', 'eosdis', 'modis', 'viirs', 'amsr2',

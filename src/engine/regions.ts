@@ -1,4 +1,5 @@
-// States and provinces (first-level divisions of every country, Natural Earth 1:10m, public domain): the lines
+// States and provinces (first-level divisions of every country, Natural Earth 1:10m, public domain; since v0.47.0
+// OCHA's for the countries whose divisions changed since, CC BY-IGO: scripts/data/admin1-updates.mjs): the lines
 // between them, drawn from country zoom on (see Renderer), their names, and which one a point is in.
 import { geoArea, geoContains } from 'd3-geo';
 import { mesh } from 'topojson-client';
@@ -37,7 +38,7 @@ let pending: Promise<Regions> | null = null;
 /** The regions, once loaded (null before). */
 export function regions(): Regions | null { return data; }
 
-/** Loads the regions (about 1.5 MB, once). */
+/** Loads the regions (about 1.8 MB, once). */
 export function loadRegions(): Promise<Regions> {
   pending ??= loadJSON<Topology>('base/admin1.json').then((topo) => {
     const obj = topo.objects.admin1 as GeometryCollection<RegionProps>;
@@ -84,6 +85,7 @@ const TYPES_ES: Record<string, string> = {
   Emirate: 'Emirato', Division: 'División', Island: 'Isla', 'Island council': 'Isla', 'Commune|Municipality': 'Comuna',
   Commune: 'Comuna', 'Statistical Region': 'Región', 'Unitary Authority': 'Autoridad unitaria', Voivodeship: 'Voivodato',
   'Autonomous Province': 'Provincia autónoma', 'Capital City': 'Ciudad capital', Area: 'Área', Zone: 'Zona',
+  'Autonomous District': 'Distrito autónomo', 'Chartered City': 'Ciudad autónoma', 'Special region': 'Región especial', City: 'Ciudad',
 };
 
 /** "State", "Province"… in the reader's language (the data's words, through nm); null when Natural Earth does not say. */

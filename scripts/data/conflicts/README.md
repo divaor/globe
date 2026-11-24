@@ -74,7 +74,7 @@ sources disagree, and say in the note when figures are ancient and unreliable.
 | Expression | Meaning |
 |---|---|
 | `"DEU"` | a country of today (ISO A3, see `--list countries`) |
-| `{ "a1": "ESP", "names": ["Navarre", "Gipuzkoa"] }` | provinces/states (`"except": [...]` or all of them) |
+| `{ "a1": "ESP", "names": ["Navarre", "Gipuzkoa"] }` | provinces/states (`"except": [...]` or all of them; `--list admin1 ESP`) |
 | `{ "hist": "Mongol Empire", "year": 1279 }` | a polity on a historical map (exact name, see `--list hist`) |
 | `{ "poly": [[lon, lat], ...] }` | a polygon you draw (no more than 180° wide; don't cross ±180°) |
 | `{ "land": [[lon, lat], ...] }` | the land inside a drawn polygon (real coastlines; the best way to draw) |
@@ -86,6 +86,11 @@ sources disagree, and say in the note when figures are ancient and unreliable.
 | `[a, b, ...]` / `{ "union": [...] }` | union |
 | `{ "and": [a, b] }` | intersection: `{ "and": ["RUS", { "poly": ... }] }` = the part of Russia inside the polygon |
 | `{ "minus": [a, b, ...] }` | `a` without `b`, ... |
+
+The states and provinces of 33 countries were brought up to date in v0.47.0 (Kenya's counties, Viet Nam's provinces of
+2025...: `scripts/data/README.md`). For those countries, an `a1` whose names were all Natural Earth's (or that names
+none: the whole country) still draws Natural Earth's old shapes, kept in `_admin1-legacy.json`, so the stories written
+before look as they did; name today's provinces (or add `"now": true`) to draw today's.
 
 A side's `derive` is an expression evaluated at every step that doesn't set that side, for example
 `"derive": { "minus": [{ "ref": "persian_empire" }, { "cur": "mac" }] }`: Persia is whatever of its
