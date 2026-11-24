@@ -278,7 +278,7 @@ async function boot() {
   if (shared.get('hop')) setTimeout(() => void hop.startChallenge(`#${shared.toString()}`), 500);
   // A shared trip (#trip=lima,cusco) or a city's guide (#guide=kyoto).
   if (shared.get('legacy') !== null) setTimeout(() => void legacy.openLink(shared.get('legacy') ?? ''), 500);
-  if (shared.get('deeptime') !== null) setTimeout(() => void time.deep.openLink(shared.get('deeptime') ?? ''), 500);
+  if (shared.get('deeptime') !== null) setTimeout(() => void time.deep.openLink(shared.get('deeptime') ?? '', shared.get('ch') ?? undefined), 500);
   if (shared.get('trip')) setTimeout(() => void guide.openShared(shared.get('trip')!, shared.get('tp')), 500);
   else if (shared.get('guide')) setTimeout(() => void guide.openCity(shared.get('guide')!), 500);
   // A shared world: #world=moon&c=lon,lat,zoom (and &map=elev).

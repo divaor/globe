@@ -53,7 +53,13 @@ export const KINDS = [
   ['extinction', '💀', '#7b241c', 'Mass extinctions', 'Extinciones masivas'],
   ['human', '🔥', '#e67e22', 'Humans', 'Humanos'],
   ['cosmic', '✨', '#6c5ce7', 'The universe', 'El universo'],
+  ['star', '⭐', '#f1c40f', 'Stars and the Sun', 'Las estrellas y el Sol'],
+  ['galaxy', '🌌', '#8e44ad', 'Galaxies', 'Galaxias'],
 ];
+/** The kinds of the cosmos chapter (v0.46.0): they come before the Earth. */
+export const COSMIC_KINDS = ['cosmic', 'star', 'galaxy'];
+/** The first million years are told in years after the Big Bang ("t"): in millions of years ago they would all read 13,787. */
+const T_MAX = 1e6;
 export const LIFE = ['sea', 'fresh', 'shore', 'land', 'air'];
 export const DIETS = ['meat', 'plants', 'both', 'filter', 'small', 'light', 'chem', 'fish'];
 export const ICE = ['snowball', 'south', 'north', 'glacial', 'caps'];
@@ -175,13 +181,29 @@ function checkVitals(v) {
   return { series: out, ice, notes: v.notes ?? {}, sources: v.sources };
 }
 
+/**
+ * An event or a beat in the first million years gives "t", years after the Big Bang (1e-32 seconds is 3.17e-40
+ * years); everything later gives "ma". Either one, not both; "ma" is worked out from "t".
+ */
+function withT(x, where) {
+  if (x == null || typeof x !== 'object') return x;
+  if (x.t == null) return x;
+  if (x.ma != null) throw new Error(`${where}: "t" (years after the Big Bang) or "ma", not both`);
+  num(x.t, `${where}.t`, 0, T_MAX);
+  return { ...x, ma: BIG_BANG_MA - x.t / 1e6 };
+}
+/** Order from the oldest: by "t" in the first million years (their "ma" all round to the Big Bang), by "ma" after. */
+const sinceBang = (x) => (x.t != null ? x.t : (BIG_BANG_MA - x.ma) * 1e6);
+
 function checkEvent(e, i, file) {
   const where = `${file} events[${i}]${e?.id ? ` (${e.id})` : ''}`;
-  known(e, ['id', 'kind', 'ma', 'to', 'err', 'name', 'at', 'r', 'text', 'first', 'sure', 'wiki', 'species', 'item', 'img'], where);
+  known(e, ['id', 'kind', 't', 'ma', 'to', 'err', 'name', 'at', 'r', 'text', 'first', 'sure', 'wiki', 'species', 'item', 'img'], where);
+  e = withT(e, where);
   if (!ID.test(e.id ?? '')) throw new Error(`${where}.id: lowercase letters, digits and hyphens`);
   if (!KINDS.some((k) => k[0] === e.kind)) throw new Error(`${where}.kind: one of ${KINDS.map((k) => k[0]).join(', ')}`);
   num(e.ma, `${where}.ma`, 0, BIG_BANG_MA);
-  if (e.kind === 'cosmic' ? e.ma < EARTH_MA - 50 : e.ma > EARTH_MA + 30) throw new Error(`${where}: ${e.kind === 'cosmic' ? 'a cosmic event comes before the Earth' : 'only cosmic events come before the Earth (4540 Ma)'}`);
+  const cosmic = COSMIC_KINDS.includes(e.kind);
+  if (cosmic ? e.ma < EARTH_MA - 50 : e.ma > EARTH_MA + 30) throw new Error(`${where}: ${cosmic ? `a ${e.kind} event comes before the Earth` : `only ${COSMIC_KINDS.join(', ')} events come before the Earth (4540 Ma)`}`);
   if (e.to != null) { num(e.to, `${where}.to`, 0, BIG_BANG_MA); if (!(e.to < e.ma)) throw new Error(`${where}.to: younger (smaller) than ma`); }
   if (e.err != null) num(e.err, `${where}.err`, 0, 2000);
   text(e.name, `${where}.name`, { max: 50 });
@@ -240,12 +262,14 @@ function checkSpecies(s, i, file) {
   return { ...s, sites };
 }
 
-function checkBeat(b, i, prev, ids) {
-  const where = `script.json beats[${i}]${b?.id ? ` (${b.id})` : ''}`;
-  known(b, ['id', 'ma', 'focus', 'cam', 'text'], where);
+function checkBeat(b0, i, prev, ids, file = 'script.json') {
+  const where = `${file} beats[${i}]${b0?.id ? ` (${b0.id})` : ''}`;
+  known(b0, ['id', 't', 'ma', 'focus', 'cam', 'text'], where);
+  const b = withT(b0, where);
   if (!/^beat-[a-z0-9-]+$/.test(b.id ?? '')) throw new Error(`${where}.id: "beat-…"`);
   num(b.ma, `${where}.ma`, 0, BIG_BANG_MA);
-  if (prev != null && b.ma > prev) throw new Error(`${where}: beats go from the oldest to today (${b.ma} Ma after ${prev} Ma)`);
+  if (prev != null && sinceBang(b) < sinceBang(prev)) throw new Error(`${where}: beats go from the oldest to today`);
+  if (file === 'script-cosmos.json' && b.ma <= EARTH_MA) throw new Error(`${where}: the cosmos chapter's beats come before the Earth (4540 Ma); the Earth's own are in script.json`);
   if (b.focus != null && !ids.has(b.focus)) throw new Error(`${where}.focus: no event or species "${b.focus}"`);
   if (b.cam != null) {
     if (!Array.isArray(b.cam) || b.cam.length !== 3) throw new Error(`${where}.cam: [lon, lat, zoom]`);
@@ -253,6 +277,7 @@ function checkBeat(b, i, prev, ids) {
   }
   text(b.text, `${where}.text`, { min: 80, max: 420 });
   for (const l of ['en', 'es']) if (/[()[\]]/.test(b.text[l])) warn(`${where}.text.${l}: brackets read badly aloud`);
+  return b;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -335,7 +360,7 @@ const sourceFiles = () => fs.readdirSync(SRC).filter((f) => f.endsWith('.json') 
 function checkAll(only, partial) {
   const files = sourceFiles().filter((f) => !only || only.includes(f.replace(/\.json$/, '')));
   const has = (f) => files.includes(f);
-  const got = { vitals: null, events: [], species: [], beats: [] };
+  const got = { vitals: null, events: [], species: [], beats: [], beatsCosmos: [] };
   const ids = new Map();
   const claim = (id, where) => { if (ids.has(id)) throw new Error(`${where}: id "${id}" is used again (first in ${ids.get(id)})`); ids.set(id, where); };
   if (has('vitals.json')) got.vitals = checkVitals(readJSON(path.join(SRC, 'vitals.json')));
@@ -344,7 +369,7 @@ function checkAll(only, partial) {
     known(j, ['events'], f);
     for (const [i, e] of (j.events ?? []).entries()) { const o = checkEvent(e, i, f); claim(o.id, f); got.events.push(o); }
   }
-  got.events.sort((a, b) => b.ma - a.ma || a.id.localeCompare(b.id));
+  got.events.sort((a, b) => sinceBang(a) - sinceBang(b) || a.id.localeCompare(b.id));
   for (const f of files.filter((x) => /^species-.*\.json$/.test(x))) {
     const j = readJSON(path.join(SRC, f));
     known(j, ['species'], f);
@@ -369,8 +394,19 @@ function checkAll(only, partial) {
     const all = new Set([...got.events.map((e) => e.id), ...got.species.map((s) => s.id)]);
     if (partial && (!got.events.length || !got.species.length)) for (const b of j.beats) if (b.focus) all.add(b.focus);
     let prev = null;
-    for (const [i, b] of j.beats.entries()) { checkBeat(b, i, prev, all); claim(b.id, 'script.json'); prev = b.ma; }
+    for (const [i, b] of j.beats.entries()) { prev = checkBeat(b, i, prev, all); claim(b.id, 'script.json'); }
     got.beats = j.beats;
+  }
+  // The cosmos chapter's narration (v0.46.0): from the Big Bang to the Earth.
+  if (has('script-cosmos.json')) {
+    const f = 'script-cosmos.json';
+    const j = readJSON(path.join(SRC, f));
+    known(j, ['beats'], f);
+    if (!Array.isArray(j.beats) || j.beats.length < 10) throw new Error(`${f} beats: at least 10`);
+    const all = new Set(got.events.map((e) => e.id));
+    if (partial && !got.events.length) for (const b of j.beats) if (b.focus) all.add(b.focus);
+    let prev = null;
+    got.beatsCosmos = j.beats.map((b, i) => { prev = checkBeat(b, i, prev, all, f); claim(b.id, f); return prev; });
   }
   // Coverage: every period has species, firsts are there, the big five are there.
   if (!partial && got.species.length) {
@@ -393,6 +429,7 @@ function build(got) {
     sources: got.vitals.sources,
     events: got.events,
     beats: got.beats,
+    beatsCosmos: got.beatsCosmos,
   };
   const species = { species: got.species };
   return { 'deeptime.json': deeptime, 'species.json': species };
@@ -428,11 +465,11 @@ async function main() {
     if (bad) process.exit(1);
     console.log(`titles: all ${list.length} items' articles exist`);
   }
-  const n = `${got.events.length} events, ${got.species.length} species, ${got.beats.length} beats${got.vitals ? `, ${Object.keys(got.vitals.series).length} vital signs` : ''}`;
+  const n = `${got.events.length} events, ${got.species.length} species, ${got.beats.length} beats${got.beatsCosmos.length ? ` and ${got.beatsCosmos.length} in the cosmos` : ''}${got.vitals ? `, ${Object.keys(got.vitals.series).length} vital signs` : ''}`;
   if (checking) { console.log(`ok: ${n} (checked; run without --only to build)`); return; }
   // --draft builds what there is (to look at the app while helpers still write a part); a release builds all four.
   const draft = args.includes('--draft') && !args.includes('--check');
-  for (const part of ['vitals', 'events', 'species', 'beats']) if (!got[part] || (Array.isArray(got[part]) && !got[part].length)) {
+  for (const part of ['vitals', 'events', 'species', 'beats', 'beatsCosmos']) if (!got[part] || (Array.isArray(got[part]) && !got[part].length)) {
     if (draft && part !== 'vitals') { console.warn(`warn --draft: ${part} is missing`); continue; }
     console.error(`FAIL nothing to build yet: ${part} is missing`); process.exit(1);
   }

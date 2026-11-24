@@ -1585,6 +1585,13 @@ textarea.trip-input { resize: vertical; }
 .dt-cap-tools { display: flex; justify-content: flex-end; align-items: center; gap: 4px; margin-top: 6px; }
 .dt-cap-n { margin-right: auto; }
 .timebar .icon-btn.on { background: var(--accent); color: #fff; }
+/* The cosmos chapter's scene (v0.46.0): over the globe, under everything else. */
+#app canvas.dt-scene { display: none; touch-action: none; background: #03030a; }
+#app canvas.dt-scene.on { display: block; }
+html.dt-cosmos .zoombar { display: none; }
+/* Over the dark scene the wordmark reads light. */
+html.dt-cosmos .brand-name { color: #f2f5fa; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+.dt-after { width: 100%; }
 .deeptime .guide-list { display: flex; flex-direction: column; gap: 4px; margin-bottom: var(--sp-2); }
 .deeptime .guide-row { width: 100%; text-align: left; padding: 8px 10px; border-radius: var(--r-md); border: 1px solid var(--line); background: var(--chip); color: inherit; font: inherit; cursor: pointer; }
 .deeptime .guide-icon { flex: none; width: 1.6em; font-size: 1.3em; text-align: center; }
@@ -1603,6 +1610,7 @@ textarea.trip-input { resize: vertical; }
   .dt-caption { bottom: calc(var(--dt-bar-h, 200px) + 8px); }
   /* The top line already says how long ago: on a phone the bar keeps its room for its buttons. */
   .timebar.dt-bar .tb-title { display: none; }
+  .timebar.dt-bar .tb-restart { display: none; }
   /* A species' or an event's card sits above the bar; the vital signs make way for it and for the story's caption. */
   html.mode-deeptime .country-card { bottom: calc(var(--dt-bar-h, 230px) + 8px); max-height: calc(100dvh - var(--dt-bar-h, 230px) - 150px); z-index: 4; }
   html.mode-deeptime:has(.country-card:not([hidden])) .dt-vitals, html.dt-playing .dt-vitals { display: none; }

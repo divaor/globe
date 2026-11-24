@@ -1114,9 +1114,10 @@ export class Learn {
    * and no name that gives its date away), played as "Put them in order".
    */
   private async deepOrderQs(n: number): Promise<Q[] | null> {
-    let d: { kinds: { id: string; icon: string }[]; events: { id: string; kind: string; ma: number; name: { en: string; es: string }; sure?: string }[] };
+    let d: { kinds: { id: string; icon: string }[]; events: { id: string; kind: string; ma: number; t?: number; name: { en: string; es: string }; sure?: string }[] };
     try { d = await loadJSON('deeptime/deeptime.json'); } catch { return null; }
-    const pool = d.events.filter((e) => e.sure !== 'debated' && e.ma > 0 && !/\d/.test(`${e.name.en} ${e.name.es}`))
+    // The first instants (inflation, the first protons and nuclei) are all at 13,787 Ma: too close to order; the Big Bang stays.
+    const pool = d.events.filter((e) => e.sure !== 'debated' && e.ma > 0 && !(e.t != null && e.t > 0 && e.t < 3e5) && !/\d/.test(`${e.name.en} ${e.name.es}`))
       .map((e) => ({ id: `deeptime-${e.id}`, name: e.name, icon: d.kinds.find((k) => k.id === e.kind)?.icon ?? '•', date: String(-Math.round(e.ma * 1e6)), t: -e.ma * 1e6, kind: 'life' }) as unknown as QItem);
     if (pool.length < 20) return null;
     return orderRounds(pool, n, 4, rand, itemKey).map((set) => ({ id: 'order', kind: 'order' as QuizKind, set, picked: [] }));

@@ -4784,7 +4784,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(tabs.map((t) => t.id).join() === 'map,explore,today,learn,play' && tabs.map((t) => t.label).join() === 'Map,Explore,Today,Learn,Play'
     && ['map', 'explore', 'learn', 'play'].every((t) => seen[t].open && seen[t].tab === t && seen[t].fits && seen[t].above && seen[t].tiles && seen[t].lit.join() === t && seen[t].closedAgain)
     && L('map') === 'filters,projection,mapstyle,terrain3d,search,ruler,compare,truesize,compare-filters,mydata,export4k' && seen.map.seps.join() === 'Tools'
-    && L('explore') === 'time,deeptime,legacy,space,guide,art,nature,inside,deep,ambient' && L('learn') === 'master,quiz,tours,onthisday,progress' && L('play') === 'play,fill,onmap'
+    && L('explore') === 'time,deeptime,bigbang,legacy,space,guide,art,nature,inside,deep,ambient' && L('learn') === 'master,quiz,tours,onthisday,progress' && L('play') === 'play,fill,onmap'
     && seen.me.open && seen.me.under && seen.me.fits && /^settings,backup,share,export,exportphone,(fullscreen,)?about$/.test(L('me')),
     `five tabs (${tabs.map((t) => t.label).join(' · ')}), each list above its tab and on screen: Map ${L('map')} (${seen.map.seps}); Explore ${L('explore')}; Learn ${L('learn')}; Play ${L('play')}; top right ${L('me')}`);
   check(escClosed && reach.missing.length === 0 && outsideClosed && deep.open && !deep.menu && deep.lit.join() === 'explore' && zoom === 3,
@@ -6862,6 +6862,86 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const li = await ln.page.evaluate(() => window.atlas.time.deep.info);
   check(li.active && Math.abs(li.ma - 66) < 1, `#deeptime=66 opens Deep time at ${li.ma.toFixed(1)} million years ago`);
   check(!ln.errors.length, `Deep time link: no page errors${ln.errors.length ? ': ' + ln.errors.join(' | ') : ''}`);
+  await ln.ctx.close();
+}
+// 59. From the Big Bang (v0.46.0), on a phone: Explore → From the Big Bang opens the cosmos chapter at the Big Bang,
+// drawn as a scene over the globe ("Could you survive here? No"); the first minutes in time after the Big Bang; the
+// oldest light with the universe's vital signs (the temperature of space, its size); the first stars, a spot to tap for
+// their card; the Milky Way; the chapter switch to Big Bang to today, whose true scale puts the Earth two thirds of the
+// way along; past the Moon the globe takes over; the cosmos's narration starts; a #deeptime=t380000 link.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=0,20,1.1&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  await page.tap('[data-dock="explore"]');
+  await page.waitForTimeout(300);
+  await page.tap('.menu [data-menu="bigbang"]');
+  await page.waitForFunction(() => window.atlas.time.deep.info.active && window.atlas.time.deep.info.loaded, null, { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(2000);
+  const hud = () => F(() => ({ info: window.atlas.time.deep.info, ago: document.querySelector('[data-deeptime="ago"]')?.textContent ?? '', eras: document.querySelector('[data-deeptime="eras"]')?.textContent ?? '', verdict: document.querySelector('[data-deeptime="verdict"]')?.textContent ?? '', level: document.querySelector('[data-deeptime="vitals"]')?.dataset.level ?? '', canvas: (() => { const c = document.querySelector('canvas.dt-scene'); return c ? getComputedStyle(c).display : 'none'; })() }));
+  const bb = await hud();
+  check(bb.info.chapter === 'cosmos' && bb.info.t === 0 && bb.info.scene && bb.canvas === 'block' && /Big Bang/.test(bb.ago) && bb.level === 'no' && bb.info.spots.includes('big-bang'),
+    `Explore → From the Big Bang opens the cosmos at "${bb.ago}" (${bb.eras}), drawn as a scene; "${bb.verdict}"; spots: ${bb.info.spots.join(', ')}`);
+  await F(() => window.atlas.time.deep.setT(3 * 60 / (365.25 * 86400)));
+  await page.waitForTimeout(700);
+  const mins = await hud();
+  check(/minutes after the Big Bang/.test(mins.ago) && mins.info.spots.includes('first-nuclei'), `three minutes in: "${mins.ago}" (${mins.eras}); the first nuclei are the spot`);
+  await F(() => window.atlas.time.deep.setT(400000));
+  await page.waitForTimeout(700);
+  await page.tap('[data-deeptime="vitals"]');
+  await page.waitForTimeout(400);
+  const light = await F(() => ({ info: window.atlas.time.deep.info, rows: [...document.querySelectorAll('[data-deeptime="vitals"] .dt-row')].map((r) => r.textContent), reasons: [...document.querySelectorAll('[data-deeptime="vitals"] .dt-reasons li')].map((r) => r.textContent) }));
+  check(light.info.spots.includes('first-atoms') && light.rows.some((r) => /Temperature of space/.test(r) && /°C/.test(r)) && light.rows.some((r) => /Size compared with today/.test(r) && /1\/1[,.]?\d/.test(r)) && light.reasons.some((r) => /no Earth/.test(r)),
+    `the oldest light, and the universe's vital signs: ${light.rows.slice(0, 3).join(' | ')}`);
+  await page.tap('[data-deeptime="vitals"]');
+  // The first stars: their spot opens their card.
+  await F(() => window.atlas.time.deep.setMa(13580));
+  await page.waitForTimeout(1500);
+  const spot = await F(() => window.atlas.time.deep['scene']?.spots.find((s) => s.id === 'first-stars') ?? null);
+  if (spot) await page.mouse.click(spot.x, spot.y);
+  await page.waitForTimeout(1200);
+  const starCard = await F(() => document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '');
+  check(!!spot && /star/i.test(starCard), `the first stars: a spot on the scene opens "${starCard}"`);
+  await F(() => window.atlas.shell.card.hide());
+  await F(() => window.atlas.time.deep.setMa(6000));
+  await page.waitForTimeout(1200);
+  const mw = await hud();
+  check(mw.info.spots.includes('milky-way-forms') && /billion years ago/.test(mw.ago) && /Milky Way/.test(mw.eras), `the Milky Way: "${mw.ago}", ${mw.eras}`);
+  // The chapters: Big Bang to today, on the true scale.
+  await page.tap('[data-deeptime="chapter"]');
+  await page.waitForTimeout(500);
+  const chapters = await F(() => [...document.querySelectorAll('[data-deeptime-chapter]')].map((b) => b.dataset.deeptimeChapter));
+  await page.tap('[data-deeptime-chapter="all"]');
+  await page.waitForTimeout(800);
+  await page.tap('[data-deeptime="scale"]');
+  await page.waitForTimeout(500);
+  await F(() => window.atlas.time.deep.setMa(4540));
+  await page.waitForTimeout(500);
+  const all = await F(() => ({ info: window.atlas.time.deep.info, pos: window.atlas.time.deep['bar']?.pos ?? -1 }));
+  check(chapters.join(',') === 'cosmos,earth,all' && all.info.chapter === 'all' && all.info.scale === 'true' && Math.abs(all.pos - 0.67) < 0.01,
+    `the chapter switch (${chapters.join(', ')}); Big Bang to today on the true scale: the Earth forms ${Math.round(all.pos * 100)}% of the way along`);
+  await F(() => window.atlas.time.deep.setMa(4000));
+  await page.waitForTimeout(1200);
+  const globe = await hud();
+  check(globe.info.chapter === 'all' && !globe.info.scene && globe.canvas === 'none' && /Archean|Hadean/.test(globe.eras), `past the Moon the globe takes over: "${globe.ago}", ${globe.eras}`);
+  // The cosmos's narration.
+  await page.tap('[data-deeptime="chapter"]');
+  await page.waitForTimeout(400);
+  await page.tap('[data-deeptime-chapter="cosmos"]');
+  await page.waitForTimeout(600);
+  await F(() => window.atlas.time.deep.setT(0));
+  await page.tap('[data-deeptime="story"]');
+  await page.waitForTimeout(6000);
+  const story = await F(() => ({ info: window.atlas.time.deep.info, text: document.querySelector('.dt-cap-text')?.textContent ?? '' }));
+  await page.tap('[data-deeptime="stop"]').catch(() => {});
+  check(story.info.playing && story.info.chapter === 'cosmos' && story.info.beats >= 15 && story.text.length > 40, `the cosmos's narration (${story.info.beats} moments): "${story.text.slice(0, 70)}…"`);
+  check(!errors.length, `From the Big Bang: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+  const ln = await open({ ...devices['Pixel 7'] }, '#deeptime=t380000&p=globe&lang=en');
+  await ln.page.waitForFunction(() => window.atlas?.time?.deep?.info.active, null, { timeout: 30000 }).catch(() => {});
+  await ln.page.waitForTimeout(2000);
+  const li = await ln.page.evaluate(() => window.atlas.time.deep.info);
+  check(li.active && li.chapter === 'cosmos' && Math.abs(li.t - 380000) < 1000 && li.scene, `#deeptime=t380000 opens the cosmos at ${Math.round(li.t)} years after the Big Bang`);
+  check(!ln.errors.length, `From the Big Bang link: no page errors${ln.errors.length ? ': ' + ln.errors.join(' | ') : ''}`);
   await ln.ctx.close();
 }
 await browser.close();

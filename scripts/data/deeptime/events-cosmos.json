@@ -1,0 +1,292 @@
+{
+  "events": [
+    {
+      "id": "big-bang",
+      "kind": "cosmic",
+      "t": 0, "err": 20,
+      "name": { "en": "The Big Bang", "es": "El Big Bang" },
+      "text": {
+        "en": "About 13.8 billion years ago, everything we can see today was packed into a tiny, unimaginably hot and dense state, and it began to expand. It was not an explosion in space: space itself began to stretch, and it still does. We know because distant galaxies are rushing away from us, because the whole sky still glows faintly with the Big Bang's leftover heat, and because the amounts of hydrogen and helium match its predictions. The Planck satellite gives an age of 13,787 million years. What came before, if anything, no one knows.",
+        "es": "Hace unos 13 800 millones de años, todo lo que hoy podemos ver estaba concentrado en un estado diminuto, increíblemente caliente y denso, y empezó a expandirse. No fue una explosión en el espacio: fue el propio espacio el que empezó a estirarse, y todavía lo hace. Lo sabemos porque las galaxias lejanas se alejan de nosotros, porque todo el cielo aún brilla débilmente con el calor que dejó el Big Bang y porque las cantidades de hidrógeno y helio coinciden con lo previsto. El satélite Planck le calcula 13 787 millones de años. Qué hubo antes, si hubo algo, nadie lo sabe."
+      },
+      "wiki": { "en": "Big Bang", "es": "Big Bang" }
+    },
+    {
+      "id": "inflation",
+      "kind": "cosmic",
+      "t": 3.17e-40,
+      "sure": "likely",
+      "name": { "en": "Inflation: the great stretch", "es": "La inflación: el gran estirón" },
+      "text": {
+        "en": "In a tiny fraction of a second, space swelled by a factor of at least 10²⁶, a 1 followed by 26 zeros. A patch smaller than an atom grew to perhaps the size of a grapefruit, smoothing the universe out and stretching tiny quantum jitters into the ripples that later seeded the galaxies. When this 'inflation' ended, about 10⁻³² seconds after the start, its energy turned into a hot soup of particles. Alan Guth proposed the idea in 1980. Most cosmologists accept it, because it explains why the young universe was so even, but it is not yet proven.",
+        "es": "En una mínima fracción de segundo, el espacio se infló por un factor de al menos 10²⁶, un 1 seguido de 26 ceros. Una región menor que un átomo creció quizá hasta el tamaño de una toronja: alisó el universo y estiró diminutas vibraciones cuánticas en las ondulaciones que luego sembraron las galaxias. Cuando esta «inflación» terminó, unos 10⁻³² segundos después del inicio, su energía se convirtió en una sopa caliente de partículas. Alan Guth propuso la idea en 1980. La mayoría de los cosmólogos la acepta, porque explica por qué el universo joven era tan uniforme, pero no está demostrada."
+      },
+      "wiki": { "en": "Cosmic inflation", "es": "Inflación cósmica" }
+    },
+    {
+      "id": "first-protons",
+      "kind": "cosmic",
+      "t": 3.2e-13,
+      "first": true,
+      "name": { "en": "Quarks make protons and neutrons", "es": "Los quarks forman protones y neutrones" },
+      "text": {
+        "en": "For a moment the universe was a soup of quarks and gluons, hotter than 2 trillion degrees. About a hundred-thousandth of a second after the start, it had cooled enough for quarks to clump in threes, making the first protons and neutrons. Matter and antimatter then destroyed each other in flashes of light, but for every billion pairs a single extra particle of matter was left over. Everything in the universe today is made of those leftovers; why there were any is still a mystery. Particle colliders recreate the quark soup for an instant.",
+        "es": "Por un momento, el universo fue una sopa de quarks y gluones a más de 2 billones de grados. Hacia la cienmilésima de segundo ya se había enfriado lo suficiente para que los quarks se agruparan de tres en tres y formaran los primeros protones y neutrones. Luego la materia y la antimateria se destruyeron entre sí en destellos de luz, pero por cada mil millones de pares sobró una partícula de materia. Todo lo que hay hoy en el universo está hecho de esas sobras, y por qué las hubo sigue siendo un misterio. Los grandes aceleradores recrean esa sopa de quarks por un instante."
+      },
+      "wiki": { "en": "Proton", "es": "Protón" }
+    },
+    {
+      "id": "first-nuclei",
+      "kind": "cosmic",
+      "t": 5.7e-6,
+      "first": true,
+      "name": { "en": "The first nuclei: hydrogen and helium", "es": "Los primeros núcleos: hidrógeno y helio" },
+      "text": {
+        "en": "Between about three and twenty minutes after the Big Bang, the whole universe was a nuclear furnace. Protons and neutrons fused into nuclei of helium, with a little heavy hydrogen and a trace of lithium; then it grew too cool and thin to make more. The result, about three-quarters hydrogen and one-quarter helium by weight, is just what we find in the oldest stars and gas clouds. One puzzle remains: old stars hold only about a third of the lithium predicted. The hydrogen in the water you drink dates from these first minutes.",
+        "es": "Entre unos tres y veinte minutos después del Big Bang, todo el universo fue un horno nuclear. Los protones y los neutrones se fusionaron en núcleos de helio, con un poco de hidrógeno pesado y una pizca de litio; luego se volvió demasiado frío y tenue para fabricar más. El resultado, unas tres cuartas partes de hidrógeno y una cuarta parte de helio en peso, es justo lo que vemos en las estrellas y nubes de gas más antiguas. Queda un enigma: las estrellas viejas tienen solo un tercio del litio previsto. El hidrógeno del agua que tomas viene de esos primeros minutos."
+      },
+      "wiki": { "en": "Big Bang nucleosynthesis", "es": "Nucleosíntesis primordial" }
+    },
+    {
+      "id": "dark-matter-clumps",
+      "kind": "cosmic",
+      "t": 50000,
+      "name": { "en": "Dark matter starts to clump", "es": "La materia oscura empieza a agruparse" },
+      "text": {
+        "en": "About 50,000 years after the Big Bang, matter began to outweigh light, and dark matter could start to gather into clumps and threads. No one knows what dark matter is. It gives off no light, but there is about five times more of it than ordinary matter, and its pull shows in how galaxies spin and how they bend light. Its clumps grew into a vast 'cosmic web' of knots and threads. Gas later fell into the knots and made galaxies: without dark matter, galaxies like ours might never have formed.",
+        "es": "Unos 50 000 años después del Big Bang, la materia empezó a pesar más que la luz, y la materia oscura pudo empezar a juntarse en grumos e hilos. Nadie sabe qué es la materia oscura. No emite luz, pero hay unas cinco veces más que materia común, y su atracción se nota en cómo giran las galaxias y en cómo desvían la luz. Sus grumos crecieron hasta formar una enorme «red cósmica» de nudos y filamentos. Más tarde el gas cayó en los nudos y formó galaxias: sin materia oscura, quizá nunca se habrían formado galaxias como la nuestra."
+      },
+      "wiki": { "en": "Cosmic web", "es": "Red cósmica" }
+    },
+    {
+      "id": "first-atoms",
+      "kind": "cosmic",
+      "t": 380000,
+      "first": true,
+      "name": { "en": "The first atoms: the fog clears", "es": "Los primeros átomos: se despeja la niebla" },
+      "text": {
+        "en": "For 380,000 years the universe was a glowing fog: light kept bouncing off free electrons and could not travel far. When it cooled to about 2,700 °C, electrons joined nuclei to make the first atoms, and the light was set free. That light still fills the sky, stretched by the expansion into faint microwaves: the cosmic microwave background, found by accident in 1965. The COBE satellite and later Planck mapped its tiny ripples, of one part in 100,000. They are the seeds of every galaxy, and they tell us the universe's age and what it is made of.",
+        "es": "Durante 380 000 años, el universo fue una niebla brillante: la luz rebotaba en los electrones libres y no podía avanzar. Cuando se enfrió a unos 2700 °C, los electrones se unieron a los núcleos y formaron los primeros átomos, y la luz quedó libre. Esa luz todavía llena el cielo, estirada por la expansión en débiles microondas: es el fondo cósmico de microondas, descubierto por casualidad en 1965. El satélite COBE y después Planck cartografiaron sus diminutas ondulaciones, de una parte en 100 000. Son las semillas de todas las galaxias, y nos dicen la edad del universo y de qué está hecho."
+      },
+      "wiki": { "en": "Cosmic microwave background", "es": "Radiación de fondo de microondas" }
+    },
+    {
+      "id": "dark-ages",
+      "kind": "cosmic",
+      "t": 380000, "to": 13600,
+      "name": { "en": "The dark ages", "es": "La edad oscura" },
+      "text": {
+        "en": "After the first atoms formed, the universe went dark. There were no stars yet, only hydrogen and helium gas, slowly pulled into clumps by dark matter. The afterglow of the Big Bang faded through red into invisible infrared. These dark ages lasted perhaps 100 to 200 million years. The gas gave off one faint signal, radio waves 21 cm long from hydrogen atoms, and radio telescopes, some of them planned for the far side of the Moon, are trying to catch it.",
+        "es": "Después de formarse los primeros átomos, el universo se quedó a oscuras. Todavía no había estrellas, solo gas de hidrógeno y helio que la materia oscura juntaba poco a poco en grumos. El resplandor del Big Bang se apagó, del rojo al infrarrojo invisible. Esta edad oscura duró quizá entre 100 y 200 millones de años. El gas emitía una sola señal débil, ondas de radio de 21 cm de los átomos de hidrógeno, y algunos radiotelescopios, unos planeados para la cara oculta de la Luna, intentan captarla."
+      },
+      "wiki": { "en": "Chronology of the universe", "es": "Historia del universo" }
+    },
+    {
+      "id": "first-stars",
+      "kind": "star",
+      "ma": 13600, "err": 100,
+      "first": true,
+      "sure": "likely",
+      "name": { "en": "The first stars light up", "es": "Se encienden las primeras estrellas" },
+      "text": {
+        "en": "In the densest clumps of gas, gravity at last squeezed hard enough to light the first stars, probably 100 to 250 million years after the Big Bang. Made only of hydrogen and helium, they were unlike the Sun: many were tens to hundreds of times heavier, blazing blue-white and burning out in a few million years. Astronomers call them Population III stars. None has been seen for certain, as they are so far away and faint, but the James Webb Space Telescope is hunting for them. Their light ended the dark ages.",
+        "es": "En los grumos de gas más densos, la gravedad por fin apretó lo suficiente para encender las primeras estrellas, probablemente entre 100 y 250 millones de años después del Big Bang. Hechas solo de hidrógeno y helio, eran distintas del Sol: muchas pesaban decenas o cientos de veces más, brillaban con un blanco azulado y se apagaban en unos pocos millones de años. Los astrónomos las llaman estrellas de población III. Nadie ha visto una con certeza, porque están lejísimos y son muy débiles, pero el telescopio espacial James Webb las busca. Su luz puso fin a la edad oscura."
+      },
+      "wiki": { "en": "Stellar population", "es": "Población estelar" }
+    },
+    {
+      "id": "first-supernovae",
+      "kind": "star",
+      "ma": 13597, "err": 100,
+      "first": true,
+      "name": { "en": "The first supernovae make new elements", "es": "Las primeras supernovas forjan nuevos elementos" },
+      "text": {
+        "en": "Inside the first stars, hydrogen and helium were fused into carbon, oxygen, silicon and iron. When these short-lived giants died, many blew up as supernovae and scattered the new elements into space, where later stars and, much later, planets were made from them. Almost all the carbon in your body and the oxygen you breathe were made inside stars, and the first supernovae began that work. Some very old stars in the Milky Way, such as SMSS J0313−6708, have less than a ten-millionth of the Sun's iron: they seem to carry the ashes of a single first star.",
+        "es": "En las primeras estrellas, el hidrógeno y el helio se fusionaron en carbono, oxígeno, silicio y hierro. Al morir, muchos de estos gigantes estallaron como supernovas y lanzaron al espacio los nuevos elementos, que formaron otras estrellas y, mucho después, planetas. Casi todo el carbono de tu cuerpo y el oxígeno que respiras se hicieron en estrellas, y las primeras supernovas empezaron esa tarea. Algunas estrellas viejísimas de la Vía Láctea, como SMSS J0313−6708, tienen menos de una diezmillonésima del hierro del Sol: parecen hechas con las cenizas de una sola de las primeras estrellas."
+      },
+      "wiki": { "en": "Supernova", "es": "Supernova" }
+    },
+    {
+      "id": "reionization",
+      "kind": "cosmic",
+      "ma": 13550, "to": 12700,
+      "name": { "en": "Reionisation: the hydrogen fog lifts", "es": "La reionización: se disipa la niebla de hidrógeno" },
+      "text": {
+        "en": "Ultraviolet light from the first stars, galaxies and black holes began to split the hydrogen atoms between the galaxies back into protons and electrons. Bubbles of this 'ionised' gas grew around each galaxy and joined up, and by about a billion years after the Big Bang they filled all space. The thin gas became clear to ultraviolet light, as it still is. We know from the light of distant quasars, which shows the shadow of hydrogen before then, from the microwave background, and from the Webb telescope's views of the small galaxies that probably did most of the work.",
+        "es": "La luz ultravioleta de las primeras estrellas, galaxias y agujeros negros empezó a romper los átomos de hidrógeno entre las galaxias en protones y electrones. Burbujas de este gas «ionizado» crecieron en torno a cada galaxia y se unieron, y unos mil millones de años después del Big Bang llenaban todo el espacio. El gas se volvió transparente a la luz ultravioleta, como hoy. Lo sabemos por la luz de cuásares lejanos, que muestra la sombra del hidrógeno anterior, por el fondo de microondas y por el telescopio Webb, que ve las pequeñas galaxias que probablemente hicieron casi todo el trabajo."
+      },
+      "wiki": { "en": "Reionization", "es": "Reionización" }
+    },
+    {
+      "id": "first-galaxies",
+      "kind": "galaxy",
+      "ma": 13500, "err": 100,
+      "first": true,
+      "name": { "en": "The first galaxies", "es": "Las primeras galaxias" },
+      "text": {
+        "en": "Within a few hundred million years, stars gathered into the first small galaxies. The James Webb Space Telescope, launched in 2021, sees them as they were then, because their light has taken over 13 billion years to reach us. JADES-GS-z14-0, found in 2024, shines from about 290 million years after the Big Bang. It is already 1,600 light-years across and holds oxygen made by earlier stars. In 2025 MoM-z14, at about 280 million years, beat it, and the record will probably fall again. Many early galaxies are brighter than expected.",
+        "es": "En unos pocos cientos de millones de años, las estrellas se reunieron en las primeras galaxias pequeñas. El telescopio espacial James Webb, lanzado en 2021, las ve como eran entonces, porque su luz ha tardado más de 13 000 millones de años en llegarnos. JADES-GS-z14-0, hallada en 2024, brilla desde unos 290 millones de años después del Big Bang. Ya mide 1600 años luz de ancho y contiene oxígeno fabricado por estrellas anteriores. En 2025, MoM-z14, a unos 280 millones de años, le quitó el récord, que probablemente volverá a caer. Muchas galaxias tempranas son más brillantes de lo esperado."
+      },
+      "wiki": { "en": "JADES-GS-z14-0", "es": "JADES-GS-z14-0" }
+    },
+    {
+      "id": "first-black-holes",
+      "kind": "galaxy",
+      "ma": 13320,
+      "first": true,
+      "name": { "en": "Giant black holes, surprisingly early", "es": "Agujeros negros gigantes, muy pronto" },
+      "text": {
+        "en": "Black holes as heavy as millions of Suns grew at the hearts of galaxies astonishingly early. In UHZ1, seen 470 million years after the Big Bang by the Chandra X-ray telescope and the James Webb Space Telescope together, one weighs tens of millions of Suns. Feeding on gas, the brightest became quasars, outshining their whole galaxy. How they grew so big so fast is debated: some may have been born huge, from collapsing clouds of gas, rather than from dead stars. Every big galaxy, ours included, has a giant black hole at its centre.",
+        "es": "Agujeros negros de millones de veces la masa del Sol crecieron en el corazón de las galaxias asombrosamente pronto. En UHZ1, vista 470 millones de años después del Big Bang por el telescopio de rayos X Chandra y el telescopio James Webb a la vez, uno pesa decenas de millones de soles. Al tragar gas, los más brillantes se volvieron cuásares, que eclipsan a toda su galaxia. Cómo crecieron tanto y tan rápido se discute: algunos quizá nacieron ya enormes, del colapso de nubes de gas, y no de estrellas muertas. Toda galaxia grande, incluida la nuestra, tiene un agujero negro gigante en el centro."
+      },
+      "wiki": { "en": "UHZ1", "es": "UHZ1" }
+    },
+    {
+      "id": "milky-way-forms",
+      "kind": "galaxy",
+      "ma": 13000, "err": 500,
+      "name": { "en": "The Milky Way begins", "es": "Nace la Vía Láctea" },
+      "text": {
+        "en": "Our galaxy grew from smaller clumps of gas and stars that merged more than 13 billion years ago. The European Gaia space telescope, which measured the positions and motions of nearly two billion stars, found its oldest parts: an ancient 'heart' of stars near the centre, and perhaps two of its first building blocks, named Shakti and Shiva. A thick, puffy disc of stars began forming about 13 billion years ago. Today the Milky Way holds some 100 to 400 billion stars in a disc about 100,000 light-years across.",
+        "es": "Nuestra galaxia creció a partir de grupos más pequeños de gas y estrellas que se fusionaron hace más de 13 000 millones de años. El telescopio espacial europeo Gaia, que midió las posiciones y los movimientos de casi dos mil millones de estrellas, encontró sus partes más antiguas: un viejo «corazón» de estrellas cerca del centro y quizá dos de sus primeros bloques, llamados Shakti y Shiva. Un disco grueso de estrellas empezó a formarse hace unos 13 000 millones de años. Hoy la Vía Láctea tiene entre 100 000 y 400 000 millones de estrellas en un disco de unos 100 000 años luz de ancho."
+      },
+      "wiki": { "en": "Milky Way", "es": "Vía Láctea" }
+    },
+    {
+      "id": "kepler-444",
+      "kind": "star",
+      "ma": 11200, "err": 1000,
+      "first": true,
+      "name": { "en": "The oldest known rocky planets", "es": "Los planetas rocosos más antiguos conocidos" },
+      "text": {
+        "en": "Around Kepler-444, an orange star 117 light-years away, five planets smaller than the Earth, between the sizes of Mercury and Venus, circle very close in. By measuring tiny flickers in the star's brightness, its 'starquakes', astronomers found it is about 11.2 billion years old: its planets formed when the universe was a fifth of its present age. By then, generations of stars had made enough heavy elements to build rocks. The Earth is far from the first rocky planet: such worlds were forming over 6 billion years before it.",
+        "es": "Alrededor de Kepler-444, una estrella anaranjada a 117 años luz, giran muy cerca cinco planetas más pequeños que la Tierra, de tamaños entre el de Mercurio y el de Venus. Midiendo los diminutos parpadeos de su brillo, sus «terremotos estelares», los astrónomos calcularon que tiene unos 11 200 millones de años: sus planetas nacieron cuando el universo tenía un quinto de su edad actual. Para entonces, generaciones de estrellas ya habían hecho bastantes elementos pesados para formar rocas. La Tierra no fue el primer planeta rocoso: estos mundos se formaban más de 6000 millones de años antes."
+      },
+      "wiki": { "en": "Kepler-444", "es": "Kepler-444" }
+    },
+    {
+      "id": "cosmic-noon",
+      "kind": "galaxy",
+      "ma": 11600, "to": 9500,
+      "name": { "en": "Cosmic noon: the busiest time for stars", "es": "El mediodía cósmico: el auge de las estrellas" },
+      "text": {
+        "en": "About 10 billion years ago, galaxies were making new stars faster than at any other time, about nine times faster than today, and their central black holes were feeding hardest too. Astronomers call it 'cosmic noon'. Galaxies were full of gas and often colliding. About half of all the stars in the universe today had formed by 9 billion years ago. Since then star-making has slowly declined, as galaxies use up their gas. We know by counting the stars and glowing gas in deep images of the sky, like those of the Hubble and Webb space telescopes.",
+        "es": "Hace unos 10 000 millones de años, las galaxias formaban estrellas más rápido que en ninguna otra época, unas nueve veces más que hoy, y sus agujeros negros centrales comían como nunca. Los astrónomos lo llaman el «mediodía cósmico». Las galaxias estaban llenas de gas y chocaban a menudo. Hace 9000 millones de años ya se había formado cerca de la mitad de las estrellas actuales. Desde entonces, la formación de estrellas ha ido bajando, porque las galaxias gastan su gas. Lo sabemos contando estrellas y gas brillante en imágenes profundas del cielo, como las de los telescopios Hubble y Webb."
+      },
+      "wiki": { "en": "Hubble Ultra-Deep Field", "es": "Campo ultraprofundo del Hubble" }
+    },
+    {
+      "id": "gaia-enceladus",
+      "kind": "galaxy",
+      "ma": 10000, "err": 1000,
+      "name": { "en": "The Milky Way swallows Gaia-Enceladus", "es": "La Vía Láctea se traga a Gaia-Encélado" },
+      "text": {
+        "en": "About 10 billion years ago, a smaller galaxy, perhaps a quarter of the Milky Way's mass, crashed into ours and was torn apart. Its stars still swarm around us on long, stretched orbits, some even going round the wrong way. The Gaia telescope picked them out in 2018. Astronomers named the lost galaxy Gaia-Enceladus, after a giant of Greek myth, a son of Gaia, and also the 'Gaia Sausage', after the shape its stars make on a chart of their motions. The crash puffed up the Milky Way's young disc and built much of its halo of stars.",
+        "es": "Hace unos 10 000 millones de años, una galaxia más pequeña, de quizá un cuarto de la masa de la Vía Láctea, chocó contra la nuestra y quedó despedazada. Sus estrellas aún pululan a nuestro alrededor en órbitas largas y estiradas, algunas incluso girando al revés. El telescopio Gaia las descubrió en 2018. La galaxia perdida se llama Gaia-Encélado, por un gigante de la mitología griega, hijo de Gea, y también «salchicha de Gaia», por la forma que dibujan sus estrellas en un gráfico de sus movimientos. El choque infló el joven disco de la Vía Láctea y formó gran parte de su halo de estrellas."
+      },
+      "wiki": { "en": "Gaia Sausage", "es": "Gaia-Encélado" }
+    },
+    {
+      "id": "thin-disc",
+      "kind": "galaxy",
+      "ma": 8000, "err": 1000,
+      "sure": "debated",
+      "name": { "en": "The thin disc, the Sun's home, grows", "es": "Crece el disco delgado, el hogar del Sol" },
+      "text": {
+        "en": "After the big crash, gas settled calmly into a flat, thin, spinning disc, about 1,000 light-years thick and 100,000 across, with spiral arms where new stars are born. Most of the galaxy's new stars have formed in this thin disc since about 8 billion years ago, and the Sun was born there. When the thin disc began is debated: some studies of Gaia data find thin-disc stars over 13 billion years old. Seen from inside, this disc is the band of light across a dark night sky that gave the Milky Way its name.",
+        "es": "Después del gran choque, el gas se asentó con calma en un disco plano, delgado y giratorio, de unos 1000 años luz de grosor y 100 000 de ancho, con brazos espirales donde nacen estrellas nuevas. Desde hace unos 8000 millones de años, la mayoría de las estrellas nuevas de la galaxia se han formado en este disco delgado, y ahí nació el Sol. Cuándo empezó se discute: algunos estudios con datos de Gaia encuentran estrellas del disco delgado de más de 13 000 millones de años. Visto desde dentro, este disco es la franja de luz que cruza el cielo oscuro y que dio nombre a la Vía Láctea."
+      },
+      "wiki": { "en": "Galactic disc", "es": "Disco galáctico" }
+    },
+    {
+      "id": "dark-energy",
+      "kind": "cosmic",
+      "ma": 6000, "err": 1000,
+      "name": { "en": "Dark energy takes over", "es": "La energía oscura toma el control" },
+      "text": {
+        "en": "For billions of years, gravity had been slowing the universe's expansion. Then, about 5 to 6 billion years ago, the expansion began to speed up: matter had thinned out, and a mysterious 'dark energy', which seems to come with space itself, took over. It makes up about 68% of everything in the universe, yet no one knows what it is. It was discovered in 1998 from exploding stars that looked fainter, and so farther away, than expected, a find that won the 2011 Nobel Prize. Recent maps of galaxies hint that it may be weakening; that is still debated.",
+        "es": "Durante miles de millones de años, la gravedad fue frenando la expansión del universo. Luego, hace unos 5000 o 6000 millones de años, la expansión empezó a acelerarse: la materia se había diluido y tomó el control una misteriosa «energía oscura», que parece venir con el propio espacio. Es cerca del 68 % de todo el universo, y nadie sabe qué es. Se descubrió en 1998 con estrellas en explosión que se veían más débiles, y por tanto más lejanas, de lo esperado, un hallazgo que ganó el Nobel de 2011. Mapas recientes de galaxias sugieren que podría estar debilitándose; aún se discute."
+      },
+      "wiki": { "en": "Dark energy", "es": "Energía oscura" }
+    },
+    {
+      "id": "solar-nebula",
+      "kind": "star",
+      "ma": 4569, "err": 1,
+      "name": { "en": "A cloud collapses: the solar nebula", "es": "Una nube colapsa: la nebulosa solar" },
+      "text": {
+        "en": "About 4.57 billion years ago, part of a cold cloud of gas and dust in the Milky Way's disc collapsed under its own gravity. As it shrank it spun faster and flattened into a disc, with the young Sun forming at its centre. The Sun was probably born in a crowd of 1,000 to 10,000 stars that have long since drifted apart. A nearby supernova may have triggered the collapse: the oldest meteorites held aluminium-26, a short-lived radioactive aluminium made in giant stars. Others think a giant star's winds brought it; this is debated.",
+        "es": "Hace unos 4570 millones de años, una parte de una nube fría de gas y polvo del disco de la Vía Láctea colapsó por su propia gravedad. Al encogerse giró más rápido y se aplanó en un disco, con el joven Sol formándose en el centro. El Sol probablemente nació en un grupo de 1000 a 10 000 estrellas que hace mucho se dispersaron. Quizá una supernova cercana provocó el colapso: los meteoritos más antiguos contenían aluminio-26, un aluminio radiactivo de vida corta que fabrican las estrellas gigantes. Otros creen que lo trajeron los vientos de una estrella gigante; se discute."
+      },
+      "wiki": { "en": "Formation and evolution of the Solar System", "es": "Formación y evolución del sistema solar" }
+    },
+    {
+      "id": "sun-forms",
+      "kind": "star",
+      "ma": 4568, "err": 1,
+      "name": { "en": "The Sun is born", "es": "Nace el Sol" },
+      "text": {
+        "en": "At the centre of the collapsing cloud, gas piled up into a hot, glowing ball: the young Sun, which holds 99.8% of all the mass in the solar system. At first it shone from the heat of its own squeezing, spinning fast and throwing out giant flares. Over the next few tens of millions of years its core grew hot enough, over 10 million degrees, to fuse hydrogen into helium steadily, as it still does. The young Sun was about 30% dimmer than today. Its age, about 4,568 million years, comes from the oldest meteorites.",
+        "es": "En el centro de la nube que colapsaba, el gas se amontonó en una bola caliente y brillante: el joven Sol, que reúne el 99,8 % de toda la masa del sistema solar. Al principio brillaba por el calor de su propia compresión, giraba rápido y lanzaba enormes llamaradas. En las siguientes decenas de millones de años, su núcleo se calentó lo suficiente, a más de 10 millones de grados, para fusionar hidrógeno en helio de forma estable, como sigue haciendo. El joven Sol brillaba un 30 % menos que hoy. Su edad, unos 4568 millones de años, sale de los meteoritos más antiguos."
+      },
+      "wiki": { "en": "Sun", "es": "Sol" }
+    },
+    {
+      "id": "first-solids",
+      "kind": "planet",
+      "ma": 4567.3, "err": 0.2,
+      "first": true,
+      "name": { "en": "The first solids of the solar system", "es": "Los primeros sólidos del sistema solar" },
+      "text": {
+        "en": "In the hot disc around the young Sun, the first minerals condensed from the gas: pale grains and pebbles rich in calcium and aluminium, called CAIs. Many meteorites, like the Allende meteorite that fell in Mexico in 1969, still contain them. Measuring the lead made by their uranium dates them to 4,567.3 million years ago, give or take 0.2 million: the birthday of the solar system. Over the next 3 million years, molten droplets called chondrules formed too, and the dust began to stick together into bigger lumps.",
+        "es": "En el disco caliente que rodeaba al joven Sol, los primeros minerales se condensaron a partir del gas: granos y guijarros claros, ricos en calcio y aluminio, que los científicos llaman CAI. Muchos meteoritos, como el de Allende, que cayó en México en 1969, todavía los contienen. Midiendo el plomo que produjo su uranio, se les calcula una edad de 4567,3 millones de años, con un margen de 0,2 millones: el cumpleaños del sistema solar. Durante los 3 millones de años siguientes se formaron también gotitas fundidas llamadas cóndrulos, y el polvo empezó a pegarse en trozos más grandes."
+      },
+      "wiki": { "en": "Calcium–aluminium-rich inclusion", "es": "Allende (meteorito)" }
+    },
+    {
+      "id": "first-planetesimals",
+      "kind": "planet",
+      "ma": 4567, "err": 0.3,
+      "name": { "en": "The first small worlds melt", "es": "Se funden los primeros mundos pequeños" },
+      "text": {
+        "en": "Within a few hundred thousand years, dust and pebbles gathered into the first planetesimals: small worlds tens to hundreds of kilometres wide. Heated from inside by radioactive aluminium-26, many melted, and their iron sank to form a core, as the Earth's would later. Most were smashed apart. Iron meteorites are pieces of their cores, and the tungsten in them shows the cores formed within a million or two years of the first solids. Survivors such as the asteroid Vesta still orbit between Mars and Jupiter.",
+        "es": "En unos cientos de miles de años, el polvo y los guijarros se juntaron en los primeros planetesimales: pequeños mundos de decenas a cientos de kilómetros de ancho. Calentados por dentro por el aluminio-26 radiactivo, muchos se fundieron, y su hierro se hundió y formó un núcleo, como haría después el de la Tierra. La mayoría acabaron destrozados. Los meteoritos metálicos son trozos de sus núcleos, y el tungsteno que contienen muestra que esos núcleos se formaron en uno o dos millones de años. Algunos sobrevivientes, como el asteroide Vesta, aún giran entre Marte y Júpiter."
+      },
+      "wiki": { "en": "Iron meteorite", "es": "Meteorito metálico" }
+    },
+    {
+      "id": "jupiter-forms",
+      "kind": "planet",
+      "ma": 4566.3, "err": 0.5,
+      "first": true,
+      "name": { "en": "Jupiter, the first planet", "es": "Júpiter, el primer planeta" },
+      "text": {
+        "en": "Far from the Sun, beyond the 'snow line', it was cold enough for water to freeze, so there was far more solid material to build with. There Jupiter grew fastest. Its core probably reached about 20 times the Earth's mass within a million years of the first solids, making it the oldest planet, and then it pulled in huge amounts of gas. We know because Jupiter split the disc in two: meteorites from inside and outside its orbit have different chemistry, a gap that dates from then. Its pull shaped everything after, even where the Earth could grow.",
+        "es": "Lejos del Sol, más allá de la «línea de la nieve», hacía tanto frío que el agua se congelaba, así que había mucho más material sólido para construir. Allí Júpiter creció más rápido. Su núcleo probablemente llegó a unas 20 veces la masa de la Tierra en un millón de años desde los primeros sólidos, así que es el planeta más antiguo, y luego atrajo muchísimo gas. Lo sabemos porque Júpiter partió el disco en dos: los meteoritos de dentro y de fuera de su órbita tienen una química distinta, una brecha que data de entonces. Su gravedad moldeó todo lo demás, incluso dónde pudo crecer la Tierra."
+      },
+      "wiki": { "en": "Jupiter", "es": "Júpiter (planeta)" }
+    },
+    {
+      "id": "mars-forms",
+      "kind": "planet",
+      "ma": 4565.5, "to": 4563.5,
+      "name": { "en": "Mars grows fast and stays small", "es": "Marte crece rápido y se queda pequeño" },
+      "text": {
+        "en": "Mars grew remarkably fast. Hafnium and tungsten in Martian meteorites show it reached half its size within about 2 million years of the first solids and was nearly finished within about 4 million. Then it stopped growing, which is why it has only about a tenth of the Earth's mass: it may be a 'planetary embryo' that never merged into a bigger planet. Why so little material was left near Mars is debated. One idea, the 'Grand Tack', says Jupiter wandered in towards the Sun and swept the region before moving back out.",
+        "es": "Marte creció muy rápido. El hafnio y el tungsteno de los meteoritos marcianos muestran que alcanzó la mitad de su tamaño en unos 2 millones de años desde los primeros sólidos y que estaba casi terminado en unos 4 millones. Luego dejó de crecer, y por eso tiene apenas una décima parte de la masa de la Tierra: podría ser un «embrión planetario» que nunca se unió a un planeta mayor. Por qué quedó tan poco material cerca de Marte se discute. Una idea, el «gran viraje», propone que Júpiter se acercó al Sol y barrió esa zona antes de alejarse otra vez."
+      },
+      "wiki": { "en": "Mars", "es": "Marte (planeta)" }
+    },
+    {
+      "id": "nebula-clears",
+      "kind": "planet",
+      "ma": 4563.6, "err": 0.3,
+      "name": { "en": "The gas clears; the planets keep growing", "es": "Se va el gas; los planetas siguen creciendo" },
+      "text": {
+        "en": "Within about 4 million years of the first solids, the young Sun's light and winds had cleared the gas from the inner disc. Tiny magnetic grains in volcanic meteorites, which recorded the disc's magnetic field and then its disappearance, tell us when. Jupiter and Saturn must already have gathered their gas, since giant planets cannot form without it. Closer to the Sun, rocky bodies the size of the Moon and Mars kept colliding for tens of millions of years, building Mercury, Venus and, finally, the Earth.",
+        "es": "En unos 4 millones de años desde los primeros sólidos, la luz y los vientos del joven Sol habían despejado el gas del disco interior. Unos diminutos granos magnéticos de meteoritos volcánicos, que registraron el campo magnético del disco y luego su desaparición, nos dicen cuándo. Júpiter y Saturno ya debían de haber reunido su gas, porque sin él no se forman planetas gigantes. Más cerca del Sol, cuerpos rocosos del tamaño de la Luna y de Marte siguieron chocando durante decenas de millones de años y formaron Mercurio, Venus y, por último, la Tierra."
+      },
+      "wiki": { "en": "Protoplanetary disk", "es": "Disco protoplanetario" }
+    }
+  ]
+}
