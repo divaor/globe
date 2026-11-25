@@ -7095,12 +7095,24 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const pages = [];
   for (const page of ['privacy', 'support', 'credits']) for (const l of ['en', 'es', 'pt', 'fr', 'de']) {
     const r = await p.goto(`${url}${page}${l === 'en' ? '' : `.${l}`}.html?lang=${l}`, { waitUntil: 'load' });
-    pages.push(await p.evaluate(([pageId, l2, status]) => ({ id: `${pageId}.${l2}`, ok: status === 200 && document.documentElement.lang === l2 && !!document.querySelector('main h1')?.textContent?.trim() && document.querySelectorAll('.langs a').length === 5, h1: document.querySelector('main h1')?.textContent ?? '', items: document.querySelectorAll('main article').length, faq: document.querySelectorAll('main details').length, donate: document.querySelectorAll('[data-donate]').length }), [page, l, r?.status() ?? 0]));
+    pages.push(await p.evaluate(([pageId, l2, status]) => ({ id: `${pageId}.${l2}`, ok: status === 200 && document.documentElement.lang === l2 && !!document.querySelector('main h1')?.textContent?.trim() && document.querySelectorAll('.langs a').length === 5, h1: document.querySelector('main h1')?.textContent ?? '', items: document.querySelectorAll('main article').length, faq: document.querySelectorAll('main details').length, donate: document.querySelectorAll('[data-donate]').length, kofi: document.querySelector('[data-kofi]')?.getAttribute('href') ?? '', koFiText: /Ko-fi/.test(document.querySelector('main')?.textContent ?? '') }), [page, l, r?.status() ?? 0]));
   }
   const bad = pages.filter((x) => !x.ok).map((x) => x.id);
   const deCredits = pages.find((x) => x.id === 'credits.de'), frHelp = pages.find((x) => x.id === 'support.fr');
-  check(!bad.length && deCredits.items >= 70 && frHelp.faq === 8 && pages.every((x) => x.donate === 0),
-    `15 pages in five languages${bad.length ? `; broken: ${bad.join(', ')}` : ''}: "${deCredits.h1}" lists ${deCredits.items} sources, "${frHelp.h1}" ${frHelp.faq} questions; no donation parts while there is no Ko-fi page`);
+  // The donation parts: on the help page and in the privacy policy once there is a Ko-fi page (src/app/donate.json).
+  const kofi = (JSON.parse(fs.readFileSync('src/app/donate.json', 'utf8')).kofi ?? '').trim();
+  const donateOk = kofi
+    ? pages.filter((x) => x.id.startsWith('support.')).every((x) => x.donate === 1 && x.kofi === `https://ko-fi.com/${kofi}`) && pages.filter((x) => x.id.startsWith('privacy.')).every((x) => x.koFiText) && pages.filter((x) => x.id.startsWith('credits.')).every((x) => x.donate === 0)
+    : pages.every((x) => x.donate === 0 && !x.koFiText);
+  check(!bad.length && deCredits.items >= 70 && frHelp.faq === 8 && donateOk,
+    `15 pages in five languages${bad.length ? `; broken: ${bad.join(', ')}` : ''}: "${deCredits.h1}" lists ${deCredits.items} sources, "${frHelp.h1}" ${frHelp.faq} questions; ${kofi ? `the help pages' Ko-fi button goes to ${pages.find((x) => x.id === 'support.en').kofi}` : 'no donation parts while there is no Ko-fi page'}`);
+  if (kofi) {
+    // Opened from the apps (?app=1): no donation part, and the pages' own links keep ?app=1.
+    await p.goto(`${url}support.html?lang=en&app=1`, { waitUntil: 'load' });
+    await p.waitForTimeout(300);
+    const fromApp = await p.evaluate(() => ({ shown: [...document.querySelectorAll('[data-donate]')].some((x) => getComputedStyle(x).display !== 'none'), privacy: document.querySelector('nav.pages a[href*="privacy"]')?.getAttribute('href') ?? '' }));
+    check(!fromApp.shown && /app=1/.test(fromApp.privacy), `the help page opened from the apps hides the Ko-fi button, and its links keep ?app=1 (${fromApp.privacy})`);
+  }
   check(!perr.length, `the pages: no page errors${perr.length ? ': ' + perr.join(' | ') : ''}`);
   await pg.close();
 
