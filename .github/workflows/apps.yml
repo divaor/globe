@@ -2,8 +2,8 @@ name: Apps
 
 # The iOS and Android apps (v0.43.0), built from the same code as the website (capacitor.config.ts).
 # Every run checks that both build: an Android app to install (debug APK) and an iOS build for the simulator.
-# Started by hand with "upload", it also sends them to the testers: Android to Play's internal test and iOS to
-# TestFlight. That needs these repository secrets (Settings → Secrets and variables → Actions):
+# Started by hand with "upload", it also sends them to the testers: Android to Play's internal test (or, with track
+# alpha, the closed test) and iOS to TestFlight. That needs these repository secrets (Settings → Secrets and variables → Actions):
 #   Android: ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD,
 #            PLAY_SERVICE_ACCOUNT_JSON
 #   iOS:     APPLE_TEAM_ID, ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 (App Store Connect API key, "App Manager" role)
@@ -15,6 +15,11 @@ on:
         description: Send the builds to TestFlight and Play's internal test
         type: boolean
         default: false
+      track:
+        description: "Play's track: internal (internal test) or alpha (closed test: the 12 testers for 14 days, v0.48.0)"
+        type: choice
+        options: [internal, alpha]
+        default: internal
   pull_request:
     paths: [android/**, ios/**, src/native/**, capacitor.config.ts, package.json, package-lock.json, resources/**, .github/workflows/apps.yml]
   push:
@@ -76,7 +81,7 @@ jobs:
           serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
           packageName: io.github.divaor.globe
           releaseFiles: android/app/build/outputs/bundle/release/*.aab
-          track: internal
+          track: ${{ inputs.track || 'internal' }}
           status: draft
 
   ios:

@@ -16,6 +16,7 @@ import { matcher } from '../ui/match';
 import { loadJSON, shapesFrom, type Shape } from '../data/store';
 import { fmtWhen, itemThumb, seaSafe, legacyHook } from '../modes/stories';
 import { recordSeen } from '../learn/progress';
+import { hereCountry, regionCountry, locateCountry } from '../app/here';
 import { shareText } from '../play/pin';
 import type { Topology } from 'topojson-specification';
 import {
@@ -155,14 +156,24 @@ export class Legacies {
     const d = fmtWhen(l.date, Number(l.date) < 0 ? 1 : -1);
     return l.circa ? L('about {0}', 'hacia {0}', d) : d;
   }
-  /** The reader's country: the one selected, else the one of the phone's language settings ("es-MX"). */
+  /**
+   * The reader's country: the one selected, else the one the device is in (v0.48.0: from its location, src/app/here.ts),
+   * else the one of the phone's region settings ("es-MX").
+   */
   private home(): string | null {
     const sel = this.app.selection;
     if (sel && this.app.data.meta[sel]) return sel;
-    const region = (navigator.language.split('-')[1] ?? '').toUpperCase();
-    if (!region) return null;
-    for (const [iso, m] of Object.entries(this.app.data.meta)) if ((m as { a2?: string }).a2 === region) return iso;
-    return null;
+    return hereCountry() ?? regionCountry(this.app);
+  }
+  /** Redraws the parts of the open panel that name the reader's country (set by each panel). */
+  private mineUpdate: (() => void) | null = null;
+  /** Finds the country the device is in (asking the first time, or when `ask`), then updates the open panel. */
+  private whereNow(my: number, ask = false) {
+    const before = this.home();
+    void locateCountry(this.app, ask).then((iso) => {
+      if (ask && !iso) this.shell.toast(L('Couldn’t find where you are.', 'No se pudo saber dónde estás.'));
+      if (this.token === my && (ask || this.home() !== before)) this.mineUpdate?.();
+    });
   }
 
   // ---- panels --------------------------------------------------------------------------------------------------
@@ -193,7 +204,8 @@ export class Legacies {
     this.view = v;
     this.animAt = performance.now();
     const my = ++this.token;
-    this.shell.openPanel('legacy', title, body, () => { if (this.token === my) { this.view = null; this.stack = []; this.inset(false); } });
+    this.shell.openPanel('legacy', title, body, () => { if (this.token === my) { this.view = null; this.stack = []; this.inset(false); this.mineUpdate = null; } });
+    if (v.v === 'home' || v.v === 'item') this.whereNow(my);
     const sb = this.shell.sheet.el.querySelector('.sheet-body');
     if (sb) sb.scrollTop = 0;
     this.inset(true);
@@ -243,17 +255,27 @@ export class Legacies {
     body.append(h('p', { class: 'muted small' }, L('What past civilizations gave the world that we still use, how it travelled and who uses it today: {0} things from {1} civilizations.', 'Lo que las civilizaciones del pasado le dieron al mundo y que aún usamos, cómo viajó y quién lo usa hoy: {0} cosas de {1} civilizaciones.', fmtNumber(idx.all.length), idx.civs.length)));
     const note = englishNote();
     if (note) body.append(note);
-    // Your country.
-    const me = this.home();
-    const mine = h('div', { class: 'chip-row' });
-    if (me) {
-      const b = h('button', { type: 'button', class: 'pill', 'data-legacy': 'mine' }, `${this.flag(me)} ${L('What did {0} borrow from the past?', '¿Qué heredó {0} del pasado?', this.country(me))}`);
-      b.addEventListener('click', () => void this.open({ v: 'country', iso: me }));
-      mine.append(b);
-    }
-    const pick = h('button', { type: 'button', class: 'pill', 'data-legacy': 'pick' }, `👆 ${L('Tap a country on the map', 'Toca un país en el mapa')}`);
-    pick.addEventListener('click', () => this.shell.toast(L('Tap any country: what did it borrow from the past?', 'Toca cualquier país: ¿qué heredó del pasado?'), 3500));
-    mine.append(pick);
+    // Your country: the one the device is in (asked for the first time Legacies opens), else the phone's region.
+    const mine = h('div', { class: 'chip-row', 'data-legacy': 'where' });
+    const fillMine = () => {
+      const me = this.home();
+      clear(mine);
+      if (me) {
+        const b = h('button', { type: 'button', class: 'pill', 'data-legacy': 'mine', 'data-iso': me }, `${this.flag(me)} ${L('What did {0} borrow from the past?', '¿Qué heredó {0} del pasado?', this.country(me))}`);
+        b.addEventListener('click', () => void this.open({ v: 'country', iso: me }));
+        mine.append(b);
+      }
+      if (!hereCountry() && navigator.geolocation) {
+        const here = h('button', { type: 'button', class: 'pill', 'data-legacy': 'locate' }, `📍 ${L('Use where I am', 'Usar dónde estoy')}`);
+        here.addEventListener('click', () => this.whereNow(this.token, true));
+        mine.append(here);
+      }
+      const pick = h('button', { type: 'button', class: 'pill', 'data-legacy': 'pick' }, `👆 ${L('Tap a country on the map', 'Toca un país en el mapa')}`);
+      pick.addEventListener('click', () => this.shell.toast(L('Tap any country: what did it borrow from the past?', 'Toca cualquier país: ¿qué heredó del pasado?'), 3500));
+      mine.append(pick);
+    };
+    fillMine();
+    this.mineUpdate = fillMine;
     body.append(h('h3', { class: 'sec-title' }, L('Where you live', 'Donde vives')), mine);
     // Search.
     const input = h('input', { type: 'search', class: 'guide-search', 'data-legacy': 'find', placeholder: L('Find a legacy: tomato, algebra, the alphabet…', 'Busca un legado: tomate, álgebra, el alfabeto…'), 'aria-label': L('Find a legacy', 'Buscar un legado') }) as HTMLInputElement;
@@ -372,8 +394,15 @@ export class Legacies {
     // Who uses it today.
     const u = usersOf(l, idx);
     body.append(h('h3', { class: 'sec-title' }, L('Who uses it today', 'Quién lo usa hoy')), h('p', null, tx(l.note)));
-    const me = this.home();
-    if (me) body.append(h('p', { class: 'legacy-mine', 'data-legacy': 'mine-use' }, u.all.has(me) ? `✅ ${L('Used in {0}', 'Se usa en {0}', this.country(me))}` : `➖ ${L('Not in {0}', 'No en {0}', this.country(me))}`));
+    // Used where you are? (The country the device is in, once known: v0.48.0.)
+    const useBox = h('div', { 'data-legacy': 'mine-box' });
+    const fillUse = () => {
+      const me = this.home();
+      useBox.replaceChildren(...(me ? [h('p', { class: 'legacy-mine', 'data-legacy': 'mine-use', 'data-iso': me }, u.all.has(me) ? `✅ ${L('Used in {0}', 'Se usa en {0}', this.country(me))}` : `➖ ${L('Not in {0}', 'No en {0}', this.country(me))}`)] : []));
+    };
+    fillUse();
+    this.mineUpdate = fillUse;
+    body.append(useBox);
     if (!everywhere(l.where)) {
       const isos = [...u.all].sort((a, b) => Number(u.strong.has(b)) - Number(u.strong.has(a)) || this.country(a).localeCompare(this.country(b), lang()));
       const box = h('div', { class: 'legacy-countries', hidden: true });

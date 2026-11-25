@@ -1,5 +1,6 @@
 // Settings and About/credits panels.
 import { creditsList } from './credits';
+import { donateUrl, sitePage } from './donate';
 import { Download } from 'lucide';
 import { h, icon, toggle, segmented, slider, fillSelect } from './dom';
 import { canSpeak, narrationOn, setNarrationOn, voicesFor, voiceFor, setVoice, voiceRate, setVoiceRate, voiceRegion, speak, onNarration } from './narrator';
@@ -112,10 +113,25 @@ export function aboutPanel(app: App): HTMLElement {
     h('p', { class: 'about-by', 'data-about': 'by' }, L('Made by {0}.', 'Hecho por {0}.', 'Diego Valencia')),
     h('p', { class: 'muted small' }, L('Open source (GPL-3.0). Every map and story names its sources; the data keep their own licences.', 'Código abierto (GPL-3.0). Cada mapa e historia nombra sus fuentes; los datos conservan sus propias licencias.')),
     h('p', { class: 'small' }, h('a', { href: 'https://github.com/divaor/globe', target: '_blank', rel: 'noopener' }, 'github.com/divaor/globe')),
+    // v0.48.0: the website's privacy policy and help, in the app's language.
+    h('p', { class: 'about-links', 'data-about': 'links' },
+      h('a', { href: sitePage('privacy'), target: '_blank', rel: 'noopener', 'data-site': 'privacy' }, L('Privacy policy', 'Política de privacidad')), ' · ',
+      h('a', { href: sitePage('support'), target: '_blank', rel: 'noopener', 'data-site': 'support' }, L('Help and support', 'Ayuda y soporte'))),
+    donateBox(),
     // v0.47.0: every source by group, in plain words (it was a list of filters by credit line).
     h('h3', { class: 'sec-title' }, L('Credits', 'Créditos')),
     creditsList(app),
   );
+}
+
+/** Supporting Mundora (v0.48.0): on the website only, once there is a Ko-fi page (src/ui/donate.ts). */
+function donateBox(): HTMLElement | null {
+  const url = donateUrl();
+  if (!url) return null;
+  return h('section', { class: 'about-donate', 'data-section': 'donate', 'data-donate': '' },
+    h('h3', { class: 'sec-title' }, L('Support Mundora', 'Apoya a Mundora')),
+    h('p', null, L('Mundora is free and has no ads. If you enjoy it, you can buy me a coffee on Ko-fi: it helps pay for the app stores and the time to keep adding to the globe.', 'Mundora es gratis y no tiene anuncios. Si te gusta, puedes invitarme un café en Ko-fi: ayuda a pagar las tiendas de apps y el tiempo para seguir agregando cosas al globo.')),
+    h('a', { class: 'pill primary', href: url, target: '_blank', rel: 'noopener', 'data-kofi': '' }, '☕ ', L('Donate on Ko-fi', 'Donar en Ko-fi')));
 }
 
 /** Reading aloud: on or off, the voice for the app's language (Latin American Spanish voices first), its speed, and

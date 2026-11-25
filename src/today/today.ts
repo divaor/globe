@@ -104,11 +104,13 @@ export class Today {
       const n = games.filter((x) => safe(() => x.done(), false)).length;
       body.append(h('h3', { class: 'sec-title' }, `${L('Map games', 'Juegos en el mapa')} · ${n}/${games.length}`), grid);
     }
-    // Something to read.
+    // Something to read: one list under one title, each line the full width (v0.48.0).
+    const reads = h('div', { class: 'mode-list', 'data-today': 'reads' });
     for (const r of this.reads) {
       const el = safe(() => r.card(), null);
-      if (el) { el.dataset.todayItem = r.id; body.append(h('h3', { class: 'sec-title' }, L('To read', 'Para leer')), this.dress(el, r.id, false)); }
+      if (el) { el.dataset.todayItem = r.id; reads.append(this.dress(el, r.id, false)); }
     }
+    if (reads.childElementCount) body.append(h('h3', { class: 'sec-title' }, L('To read', 'Para leer')), reads);
   }
 
   /** "Share my day": the date, how many are done, the streak, and a line for each done. */
