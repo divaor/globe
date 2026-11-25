@@ -111,7 +111,7 @@ function shape(page, lang) {
   return {
     h: (s.match(/<h[12][ >]/g) ?? []).length,
     q: (s.match(/<summary>/g) ?? []).length,
-    links: (s.match(/href="https?:[^"]+"/g) ?? []).sort().join(' '),
+    links: (s.match(/href="(?:https?|mailto):[^"]+"/g) ?? []).sort().join(' '),
     donate: (s.match(/<!--\/?donate-->/g) ?? []).length,
     rows: (s.match(/<tr>/g) ?? []).length,
   };

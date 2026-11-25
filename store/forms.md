@@ -11,7 +11,7 @@ Only the developer account's owner can fill these in. If the app changes how it 
 | Privacy policy | `https://divaor.github.io/globe/privacy.html` (App Store: per language, `privacy.es.html`, `privacy.pt.html`, `privacy.fr.html`, `privacy.de.html`) |
 | Support | `https://divaor.github.io/globe/support.html?app=1` (`?app=1` hides the website's donation part from the apps' readers) |
 | Marketing / website | `https://divaor.github.io/globe/` |
-| Support email | Not chosen yet (decision P12): both stores need one before the first submission. |
+| Support email | divaor@gmail.com (decision P12, Diego, 25 November 2026): shown on both stores' listings and on the help page |
 | Category | Education; second category Reference (App Store), Education (Play) |
 | Price | Free, no in-app purchases, no ads |
 

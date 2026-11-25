@@ -29,7 +29,7 @@ Only the developer accounts' owner can do the steps marked **(you)**.
 
 1. **(you)** Open the developer accounts (decision P6): Apple Developer Program as an individual (still to open),
    Google Play Console with a personal account (open since November 2026).
-2. **(you)** Choose the support email (decision P12) and add it to both stores' contact details.
+2. **(you)** Add the support email (decision P12: divaor@gmail.com, also on the help page) to both stores' contact details.
 3. **(you)** Create the apps:
    - App Store Connect: bundle id `io.github.divaor.globe`, name "Mundora: Globe & Geography", primary language
      English (U.K.) or English (U.S.).
