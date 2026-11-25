@@ -31,6 +31,15 @@ A backup made as Atlas Globe still opens.
   and About. One bar above the map: a chip per filter, the top one carrying its legend's ⌃. Zoom and locate on the
   right. A first visit (not from a link) gets three short cards: how to move the globe and the language, Today, and
   where to start.
+- **Store-ready (v0.48.0):** the website has its own pages in the five languages: a privacy policy in plain words
+  (nothing is collected; what stays on the device; the services read live and what each is asked; the location,
+  rounded to about 10 km for iNaturalist and otherwise used on the device only), help and support (questions and
+  answers, and where to ask), and the credits. About links to them in the app's language. **Support Mundora**: a
+  Ko-fi button in the round button's list and in About, on the website only (never in the apps). Legacies of the past
+  names the country the device is in (from its location, asked once, with the phone's region if refused) instead of
+  guessing from the phone's language. Today's reads are one list. Typing an answer on a phone (Outline, Master the
+  world's outlines, flags and landmarks), the picture shrinks so the card stays above the keyboard. Everything the
+  stores ask for is in `store/`: listings, screenshots in every language, and the answers for their forms.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass
@@ -698,6 +707,16 @@ multiplier on the text and icon tokens (iOS's Dynamic Type through `font: -apple
 as `textScale`; 44-point hit areas on coarse pointers (`::after`, in `main.css`); `src/ui/mapsay.ts` keeps the map's
 description; a slider takes its name from `slider(…, label)` or from Settings' `field()`.
 
+**The website's own pages** (v0.48.0): `site/<page>/<lang>.html` holds the text of the privacy policy and the help
+page in each language (a fragment, no menu); `scripts/site/build.mjs` wraps them, adds the credits from
+`public/data/credits/credits.json`, and writes `public/privacy.html`, `public/privacy.es.html`… on every build (they
+are not kept in git). `--check` (in `check:data`) fails when a language's page loses a section, a question, a link or
+the donation markers the English has. The English page sends a reader to their browser's language unless the address
+says `?lang=en`; `?app=1` (links from the apps) hides the donation parts. The Ko-fi page's name is in
+`src/app/donate.json`: with none, nothing about donations shows anywhere. `src/ui/donate.ts` gives the button (never in
+the apps) and the pages' addresses. Where the reader is: `src/app/here.ts` turns the device's location into a country
+on the device and keeps only the country.
+
 **The design kit** (v0.40.0):
 - The tokens are at the top of `src/styles/main.css`: `--fs-*`, `--icon-*`, `--r-*`, `--sp-*`, `--shadow-*` and `--hue-*`. `node scripts/tools/css-tokens.mjs --check` (in `check:data`) fails on a px font size or radius off the kit; without `--check`, it puts them on the kit.
 - A feature's tile comes from `ftile(id)` (`src/ui/features.ts`). A panel's title gets it from its sheet id.
@@ -1036,4 +1055,6 @@ Jigmo (CC0), made by `scripts/data/build-fonts.mjs` (`public/data/fonts/`, with 
 
 ## Licence
 
-Code: GPL-3.0-or-later. Data keep their own licences as listed in the SOURCES files.
+Code: GPL-3.0-or-later, with one additional permission (v0.48.0, decision P11) that lets the apps be distributed
+through the App Store and Google Play, whose terms add restrictions of their own: see `NOTICE`. Data keep their own
+licences as listed in the SOURCES files.

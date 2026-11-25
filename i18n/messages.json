@@ -1,6 +1,6 @@
 {
  "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/data/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
- "count": 4846,
+ "count": 4852,
  "messages": [
   {
    "en": " (below sea level)",
@@ -70,7 +70,7 @@
    "es": "+{0} más",
    "where": [
     "src/layers/choropleth.ts:174",
-    "src/legacy/legacy.ts:505"
+    "src/legacy/legacy.ts:534"
    ]
   },
   {
@@ -319,7 +319,7 @@
    "en": "3D terrain",
    "es": "Relieve en 3D",
    "where": [
-    "src/ui/shell.ts:113",
+    "src/ui/shell.ts:114",
     "src/ui/terrain3d.ts:164",
     "src/ui/terrain3d.ts:165"
    ]
@@ -2143,7 +2143,7 @@
    "en": "All · {0}",
    "es": "Todos · {0}",
    "where": [
-    "src/legacy/legacy.ts:328"
+    "src/legacy/legacy.ts:350"
    ]
   },
   {
@@ -2960,7 +2960,7 @@
    "en": "Arts and music",
    "es": "Artes y música",
    "where": [
-    "src/legacy/legacy.ts:57"
+    "src/legacy/legacy.ts:58"
    ]
   },
   {
@@ -3387,7 +3387,7 @@
    "where": [
     "src/app/i18n.ts:37",
     "src/deeptime/deeptime.ts:1142",
-    "src/legacy/legacy.ts:219",
+    "src/legacy/legacy.ts:231",
     "src/ui/welcome.ts:83"
    ]
   },
@@ -3416,7 +3416,7 @@
    "en": "Back to the game",
    "es": "Volver al juego",
    "where": [
-    "src/play/host.ts:127"
+    "src/play/host.ts:156"
    ]
   },
   {
@@ -4137,7 +4137,7 @@
    "en": "Borrowed from the past",
    "es": "Heredado del pasado",
    "where": [
-    "src/legacy/legacy.ts:103"
+    "src/legacy/legacy.ts:104"
    ]
   },
   {
@@ -4438,7 +4438,7 @@
    "en": "Buildings and cities",
    "es": "Edificios y ciudades",
    "where": [
-    "src/legacy/legacy.ts:51"
+    "src/legacy/legacy.ts:52"
    ]
   },
   {
@@ -4474,7 +4474,7 @@
    "en": "Built on",
    "es": "Se basó en",
    "where": [
-    "src/legacy/legacy.ts:367"
+    "src/legacy/legacy.ts:389"
    ]
   },
   {
@@ -4544,7 +4544,7 @@
    "en": "By subject",
    "es": "Por tema",
    "where": [
-    "src/legacy/legacy.ts:279"
+    "src/legacy/legacy.ts:301"
    ]
   },
   {
@@ -5137,7 +5137,7 @@
    "en": "Civilizations",
    "es": "Civilizaciones",
    "where": [
-    "src/legacy/legacy.ts:287"
+    "src/legacy/legacy.ts:309"
    ]
   },
   {
@@ -5784,6 +5784,7 @@
    "es": "No se pudo saber dónde estás.",
    "where": [
     "src/green/finder.ts:91",
+    "src/legacy/legacy.ts:174",
     "src/wild/finder.ts:141"
    ]
   },
@@ -5928,7 +5929,7 @@
    "en": "Credits",
    "es": "Créditos",
    "where": [
-    "src/ui/settings.ts:116"
+    "src/ui/settings.ts:122"
    ]
   },
   {
@@ -6220,7 +6221,7 @@
    "en": "Daily life",
    "es": "Vida cotidiana",
    "where": [
-    "src/legacy/legacy.ts:59"
+    "src/legacy/legacy.ts:60"
    ]
   },
   {
@@ -6370,7 +6371,7 @@
    "en": "Days and months",
    "es": "Días y meses",
    "where": [
-    "src/legacy/legacy.ts:66"
+    "src/legacy/legacy.ts:67"
    ]
   },
   {
@@ -6413,7 +6414,7 @@
    "es": "Debatido",
    "where": [
     "src/deeptime/deeptime.ts:946",
-    "src/legacy/legacy.ts:72"
+    "src/legacy/legacy.ts:73"
    ]
   },
   {
@@ -6630,7 +6631,7 @@
    "en": "Detailed terrain",
    "es": "Relieve detallado",
    "where": [
-    "src/ui/settings.ts:84"
+    "src/ui/settings.ts:85"
    ]
   },
   {
@@ -6644,7 +6645,7 @@
    "en": "Developed",
    "es": "Desarrollado",
    "where": [
-    "src/legacy/legacy.ts:38"
+    "src/legacy/legacy.ts:39"
    ]
   },
   {
@@ -6846,6 +6847,13 @@
    ]
   },
   {
+   "en": "Donate on Ko-fi",
+   "es": "Donar en Ko-fi",
+   "where": [
+    "src/ui/settings.ts:134"
+   ]
+  },
+  {
    "en": "Done",
    "es": "Hecho",
    "where": [
@@ -6860,7 +6868,7 @@
    "en": "Done today",
    "es": "Hecho hoy",
    "where": [
-    "src/today/today.ts:149"
+    "src/today/today.ts:151"
    ]
   },
   {
@@ -8061,7 +8069,7 @@
    "en": "Explore {0} maps, travel through time with hundreds of stories, plan a trip with the travel guide, and learn every country, capital and flag with games and a challenge each day.",
    "es": "Explora {0} mapas, viaja en el tiempo con cientos de historias, planea un viaje con la guía y aprende todos los países, capitales y banderas con juegos y un reto cada día.",
    "where": [
-    "src/ui/settings.ts:110"
+    "src/ui/settings.ts:111"
    ]
   },
   {
@@ -8485,14 +8493,14 @@
    "en": "Find a legacy",
    "es": "Buscar un legado",
    "where": [
-    "src/legacy/legacy.ts:259"
+    "src/legacy/legacy.ts:281"
    ]
   },
   {
    "en": "Find a legacy: tomato, algebra, the alphabet…",
    "es": "Busca un legado: tomate, álgebra, el alfabeto…",
    "where": [
-    "src/legacy/legacy.ts:259"
+    "src/legacy/legacy.ts:281"
    ]
   },
   {
@@ -8755,7 +8763,7 @@
    "en": "Fold the legend",
    "es": "Ocultar la leyenda",
    "where": [
-    "src/ui/shell.ts:238"
+    "src/ui/shell.ts:241"
    ]
   },
   {
@@ -8805,7 +8813,7 @@
    "en": "Food and farming",
    "es": "Comida y agricultura",
    "where": [
-    "src/legacy/legacy.ts:53"
+    "src/legacy/legacy.ts:54"
    ]
   },
   {
@@ -9413,7 +9421,7 @@
    "es": "Juego",
    "where": [
     "src/learn/learn.ts:459",
-    "src/play/host.ts:129"
+    "src/play/host.ts:158"
    ]
   },
   {
@@ -9428,7 +9436,7 @@
    "en": "Games and sport",
    "es": "Juegos y deportes",
    "where": [
-    "src/legacy/legacy.ts:58"
+    "src/legacy/legacy.ts:59"
    ]
   },
   {
@@ -10245,7 +10253,7 @@
    "en": "Hello. This is how the tours and stories will sound.",
    "es": "Hola. Así sonarán las visitas guiadas y las historias.",
    "where": [
-    "src/ui/settings.ts:143"
+    "src/ui/settings.ts:159"
    ]
   },
   {
@@ -10253,6 +10261,13 @@
    "es": "Heloísa Nabuco de Oliveira, de una antigua familia carioca, bautizó su dulce en honor al brigadier, y las mujeres lo vendían para su campaña. Gomes perdió ante el general Dutra, pero el brigadeiro conquistó Brasil.",
    "where": [
     "src/learn/tours.ts:347"
+   ]
+  },
+  {
+   "en": "Help and support",
+   "es": "Ayuda y soporte",
+   "where": [
+    "src/ui/settings.ts:119"
    ]
   },
   {
@@ -10630,7 +10645,7 @@
    "en": "How it travelled",
    "es": "Cómo viajó",
    "where": [
-    "src/legacy/legacy.ts:414"
+    "src/legacy/legacy.ts:443"
    ]
   },
   {
@@ -10883,7 +10898,7 @@
    "en": "Ideas and beliefs",
    "es": "Ideas y creencias",
    "where": [
-    "src/legacy/legacy.ts:56"
+    "src/legacy/legacy.ts:57"
    ]
   },
   {
@@ -11858,7 +11873,7 @@
    "en": "Invented",
    "es": "Inventado",
    "where": [
-    "src/legacy/legacy.ts:37"
+    "src/legacy/legacy.ts:38"
    ]
   },
   {
@@ -12219,7 +12234,7 @@
    "en": "Its story",
    "es": "Su historia",
    "where": [
-    "src/legacy/legacy.ts:307"
+    "src/legacy/legacy.ts:329"
    ]
   },
   {
@@ -12519,7 +12534,7 @@
    "en": "Kept alive",
    "es": "Preservado",
    "where": [
-    "src/legacy/legacy.ts:42"
+    "src/legacy/legacy.ts:43"
    ]
   },
   {
@@ -12967,7 +12982,7 @@
    "en": "Law and government",
    "es": "Leyes y gobierno",
    "where": [
-    "src/legacy/legacy.ts:55"
+    "src/legacy/legacy.ts:56"
    ]
   },
   {
@@ -13017,7 +13032,7 @@
    "en": "Leave full screen",
    "es": "Salir de pantalla completa",
    "where": [
-    "src/ui/shell.ts:122"
+    "src/ui/shell.ts:123"
    ]
   },
   {
@@ -13031,27 +13046,27 @@
    "en": "Legacies",
    "es": "Legados",
    "where": [
-    "src/legacy/legacy.ts:219"
+    "src/legacy/legacy.ts:231"
    ]
   },
   {
    "en": "Legacies need their data; check your connection.",
    "es": "Los legados necesitan sus datos; revisa tu conexión.",
    "where": [
-    "src/legacy/legacy.ts:173",
-    "src/legacy/legacy.ts:181",
-    "src/legacy/legacy.ts:186",
-    "src/legacy/legacy.ts:810"
+    "src/legacy/legacy.ts:184",
+    "src/legacy/legacy.ts:192",
+    "src/legacy/legacy.ts:197",
+    "src/legacy/legacy.ts:839"
    ]
   },
   {
    "en": "Legacies of the past",
    "es": "Legados del pasado",
    "where": [
-    "src/legacy/legacy.ts:100",
-    "src/legacy/legacy.ts:115",
-    "src/legacy/legacy.ts:177",
-    "src/legacy/legacy.ts:522"
+    "src/legacy/legacy.ts:101",
+    "src/legacy/legacy.ts:116",
+    "src/legacy/legacy.ts:188",
+    "src/legacy/legacy.ts:551"
    ]
   },
   {
@@ -13059,7 +13074,7 @@
    "es": "Legado",
    "where": [
     "src/app/i18n.ts:322",
-    "src/legacy/legacy.ts:115"
+    "src/legacy/legacy.ts:116"
    ]
   },
   {
@@ -13144,7 +13159,7 @@
    "en": "Less",
    "es": "Menos",
    "where": [
-    "src/legacy/legacy.ts:369"
+    "src/legacy/legacy.ts:391"
    ]
   },
   {
@@ -13273,7 +13288,7 @@
    "en": "Likely",
    "es": "Probable",
    "where": [
-    "src/legacy/legacy.ts:71"
+    "src/legacy/legacy.ts:72"
    ]
   },
   {
@@ -13525,7 +13540,7 @@
    "where": [
     "src/guide/guide.ts:452",
     "src/ui/credits.ts:42",
-    "src/ui/shell.ts:267"
+    "src/ui/shell.ts:270"
    ]
   },
   {
@@ -13843,7 +13858,7 @@
    "en": "Made by {0}.",
    "es": "Hecho por {0}.",
    "where": [
-    "src/ui/settings.ts:112"
+    "src/ui/settings.ts:113"
    ]
   },
   {
@@ -13921,7 +13936,7 @@
    "en": "Main",
    "es": "Principal",
    "where": [
-    "src/ui/shell.ts:75"
+    "src/ui/shell.ts:76"
    ]
   },
   {
@@ -14088,9 +14103,9 @@
    "where": [
     "src/compare/compare.ts:342",
     "src/learn/learn.ts:1766",
-    "src/play/host.ts:129",
+    "src/play/host.ts:158",
     "src/ui/mapstyle.ts:10",
-    "src/ui/shell.ts:39"
+    "src/ui/shell.ts:40"
    ]
   },
   {
@@ -14137,7 +14152,7 @@
    "en": "Map style and states",
    "es": "Estilo del mapa y estados",
    "where": [
-    "src/ui/shell.ts:112"
+    "src/ui/shell.ts:113"
    ]
   },
   {
@@ -14843,7 +14858,7 @@
    "en": "Money and trade",
    "es": "Dinero y comercio",
    "where": [
-    "src/legacy/legacy.ts:54"
+    "src/legacy/legacy.ts:55"
    ]
   },
   {
@@ -14948,16 +14963,16 @@
    "es": "Más",
    "where": [
     "src/app/i18n.ts:36",
-    "src/legacy/legacy.ts:368",
-    "src/legacy/legacy.ts:369",
-    "src/legacy/legacy.ts:425"
+    "src/legacy/legacy.ts:390",
+    "src/legacy/legacy.ts:391",
+    "src/legacy/legacy.ts:454"
    ]
   },
   {
    "en": "More from them",
    "es": "Más de ellos",
    "where": [
-    "src/legacy/legacy.ts:431"
+    "src/legacy/legacy.ts:460"
    ]
   },
   {
@@ -15101,6 +15116,13 @@
    ]
   },
   {
+   "en": "Mundora is free and has no ads. If you enjoy it, you can buy me a coffee on Ko-fi: it helps pay for the app stores and the time to keep adding to the globe.",
+   "es": "Mundora es gratis y no tiene anuncios. Si te gusta, puedes invitarme un café en Ko-fi: ayuda a pagar las tiendas de apps y el tiempo para seguir agregando cosas al globo.",
+   "where": [
+    "src/ui/settings.ts:133"
+   ]
+  },
+  {
    "en": "Mundora is made from the work of many people and organisations. Here are all {0} sources: what each gives the app, who made it, and its licence.",
    "es": "Mundora está hecha con el trabajo de muchas personas y organizaciones. Aquí están las {0} fuentes: qué le da cada una a la app, quién la hizo y su licencia.",
    "where": [
@@ -15111,7 +15133,7 @@
    "en": "Mundora is the world on one globe: its countries and cities, its nature, its history and its sky.",
    "es": "Mundora es el mundo en un solo globo: sus países y ciudades, su naturaleza, su historia y su cielo.",
    "where": [
-    "src/ui/settings.ts:109"
+    "src/ui/settings.ts:110"
    ]
   },
   {
@@ -15229,7 +15251,7 @@
    "en": "My day on Mundora",
    "es": "Mi día en Mundora",
    "where": [
-    "src/today/today.ts:127"
+    "src/today/today.ts:129"
    ]
   },
   {
@@ -15376,7 +15398,7 @@
    "en": "Named",
    "es": "Nombrado",
    "where": [
-    "src/legacy/legacy.ts:40"
+    "src/legacy/legacy.ts:41"
    ]
   },
   {
@@ -15392,7 +15414,7 @@
    "where": [
     "src/fill/states.ts:26",
     "src/fill/states.ts:513",
-    "src/legacy/legacy.ts:64",
+    "src/legacy/legacy.ts:65",
     "src/play/hop.ts:441",
     "src/sky/sky.ts:281"
    ]
@@ -15942,7 +15964,7 @@
     "src/artguide/cards.ts:27",
     "src/green/cards.ts:64",
     "src/guide/guide.ts:155",
-    "src/legacy/legacy.ts:189",
+    "src/legacy/legacy.ts:200",
     "src/modes/stories.ts:741"
    ]
   },
@@ -16097,7 +16119,7 @@
    "en": "No account and no ads. What you do stays on this device; to take it to another, use Settings → Your data on another device.",
    "es": "Sin cuenta y sin anuncios. Lo que haces se queda en este dispositivo; para llevarlo a otro, usa Ajustes → Tus datos en otro dispositivo.",
    "where": [
-    "src/ui/settings.ts:111"
+    "src/ui/settings.ts:112"
    ]
   },
   {
@@ -16533,7 +16555,7 @@
    "en": "Not in {0}",
    "es": "No en {0}",
    "where": [
-    "src/legacy/legacy.ts:376"
+    "src/legacy/legacy.ts:401"
    ]
   },
   {
@@ -16642,7 +16664,7 @@
    "en": "Nothing by that name yet.",
    "es": "Aún no hay nada con ese nombre.",
    "where": [
-    "src/legacy/legacy.ts:267"
+    "src/legacy/legacy.ts:289"
    ]
   },
   {
@@ -16677,7 +16699,7 @@
    "en": "Nothing recorded for this country yet.",
    "es": "Aún no hay nada registrado para este país.",
    "where": [
-    "src/legacy/legacy.ts:468"
+    "src/legacy/legacy.ts:497"
    ]
   },
   {
@@ -16742,21 +16764,21 @@
    "en": "Numbers and dates as on your phone: {0}",
    "es": "Números y fechas como en tu teléfono: {0}",
    "where": [
-    "src/ui/settings.ts:62"
+    "src/ui/settings.ts:63"
    ]
   },
   {
    "en": "Numbers and dates: {0}",
    "es": "Números y fechas: {0}",
    "where": [
-    "src/ui/settings.ts:62"
+    "src/ui/settings.ts:63"
    ]
   },
   {
    "en": "Numbers and maths",
    "es": "Números y matemáticas",
    "where": [
-    "src/legacy/legacy.ts:48"
+    "src/legacy/legacy.ts:49"
    ]
   },
   {
@@ -17255,21 +17277,21 @@
    "en": "On the map: a line from every civilization it borrowed from, thicker for more.",
    "es": "En el mapa: una línea desde cada civilización de la que heredó, más gruesa cuanto más.",
    "where": [
-    "src/legacy/legacy.ts:442"
+    "src/legacy/legacy.ts:471"
    ]
   },
   {
    "en": "On the map: each civilization’s homeland at its height. Tap one to open it, or tap any country to see what it borrowed.",
    "es": "En el mapa: la tierra de cada civilización en su apogeo. Toca una para abrirla, o toca cualquier país para ver lo que heredó.",
    "where": [
-    "src/legacy/legacy.ts:292"
+    "src/legacy/legacy.ts:314"
    ]
   },
   {
    "en": "On the map: the countries that use what they gave, darker where more of it is used, and the lines of its journeys.",
    "es": "En el mapa: los países que usan lo que dejaron, más oscuros donde se usa más, y las líneas de sus viajes.",
    "where": [
-    "src/legacy/legacy.ts:340"
+    "src/legacy/legacy.ts:362"
    ]
   },
   {
@@ -17377,7 +17399,7 @@
    "en": "One of your device’s own voices reads; the app records and sends nothing.",
    "es": "Lee una voz de tu dispositivo; la app no graba ni envía nada.",
    "where": [
-    "src/ui/settings.ts:148"
+    "src/ui/settings.ts:164"
    ]
   },
   {
@@ -17556,7 +17578,7 @@
    "en": "Open source (GPL-3.0). Every map and story names its sources; the data keep their own licences.",
    "es": "Código abierto (GPL-3.0). Cada mapa e historia nombra sus fuentes; los datos conservan sus propias licencias.",
    "where": [
-    "src/ui/settings.ts:113"
+    "src/ui/settings.ts:114"
    ]
   },
   {
@@ -18619,7 +18641,7 @@
    "es": "Lugares",
    "where": [
     "src/layers/timezones.ts:97",
-    "src/legacy/legacy.ts:65",
+    "src/legacy/legacy.ts:66",
     "src/play/menu.ts:160",
     "src/ui/search.ts:86"
    ]
@@ -19107,6 +19129,13 @@
    ]
   },
   {
+   "en": "Privacy policy",
+   "es": "Política de privacidad",
+   "where": [
+    "src/ui/settings.ts:118"
+   ]
+  },
+  {
    "en": "Projection",
    "es": "Proyección",
    "where": [
@@ -19380,7 +19409,7 @@
    "en": "Read each ambient view aloud",
    "es": "Leer cada vista del modo ambiente en voz alta",
    "where": [
-    "src/ui/settings.ts:92"
+    "src/ui/settings.ts:93"
    ]
   },
   {
@@ -19422,14 +19451,14 @@
    "en": "Read tours and stories aloud",
    "es": "Leer en voz alta las visitas guiadas y las historias",
    "where": [
-    "src/ui/settings.ts:133"
+    "src/ui/settings.ts:149"
    ]
   },
   {
    "en": "Reading aloud",
    "es": "Lectura en voz alta",
    "where": [
-    "src/ui/settings.ts:86"
+    "src/ui/settings.ts:87"
    ]
   },
   {
@@ -20413,7 +20442,7 @@
    "en": "Science and medicine",
    "es": "Ciencia y medicina",
    "where": [
-    "src/legacy/legacy.ts:50"
+    "src/legacy/legacy.ts:51"
    ]
   },
   {
@@ -20691,7 +20720,7 @@
    "where": [
     "src/compare/compare.ts:340",
     "src/learn/learn.ts:1764",
-    "src/play/host.ts:127"
+    "src/play/host.ts:156"
    ]
   },
   {
@@ -20789,9 +20818,9 @@
    "en": "Settings and more",
    "es": "Ajustes y más",
    "where": [
-    "src/ui/shell.ts:197",
-    "src/ui/shell.ts:197",
-    "src/ui/shell.ts:307"
+    "src/ui/shell.ts:200",
+    "src/ui/shell.ts:200",
+    "src/ui/shell.ts:310"
    ]
   },
   {
@@ -21081,7 +21110,7 @@
    "en": "Show the legend",
    "es": "Mostrar la leyenda",
    "where": [
-    "src/ui/shell.ts:238"
+    "src/ui/shell.ts:241"
    ]
   },
   {
@@ -21693,7 +21722,7 @@
    "es": "Fuentes",
    "where": [
     "src/app/i18n.ts:202",
-    "src/legacy/legacy.ts:516"
+    "src/legacy/legacy.ts:545"
    ]
   },
   {
@@ -21837,7 +21866,7 @@
    "where": [
     "src/app/i18n.ts:172",
     "src/ui/legend.ts:146",
-    "src/ui/settings.ts:146"
+    "src/ui/settings.ts:162"
    ]
   },
   {
@@ -21866,7 +21895,7 @@
    "en": "Spread",
    "es": "Difundido",
    "where": [
-    "src/legacy/legacy.ts:39"
+    "src/legacy/legacy.ts:40"
    ]
   },
   {
@@ -21953,7 +21982,7 @@
    "en": "Stars and planets",
    "es": "Estrellas y planetas",
    "where": [
-    "src/legacy/legacy.ts:67"
+    "src/legacy/legacy.ts:68"
    ]
   },
   {
@@ -22028,7 +22057,7 @@
    "en": "State or province",
    "es": "Estado o provincia",
    "where": [
-    "src/ui/shell.ts:465"
+    "src/ui/shell.ts:470"
    ]
   },
   {
@@ -22361,6 +22390,14 @@
    ]
   },
   {
+   "en": "Support Mundora",
+   "es": "Apoya a Mundora",
+   "where": [
+    "src/ui/settings.ts:132",
+    "src/ui/shell.ts:126"
+   ]
+  },
+  {
    "en": "Surface",
    "es": "Superficie",
    "where": [
@@ -22444,7 +22481,7 @@
    "en": "Tamed",
    "es": "Domesticado",
    "where": [
-    "src/legacy/legacy.ts:41"
+    "src/legacy/legacy.ts:42"
    ]
   },
   {
@@ -22493,7 +22530,7 @@
    "en": "Tap a country on the map",
    "es": "Toca un país en el mapa",
    "where": [
-    "src/legacy/legacy.ts:254"
+    "src/legacy/legacy.ts:273"
    ]
   },
   {
@@ -22600,7 +22637,7 @@
    "en": "Tap any country: what did it borrow from the past?",
    "es": "Toca cualquier país: ¿qué heredó del pasado?",
    "where": [
-    "src/legacy/legacy.ts:255"
+    "src/legacy/legacy.ts:274"
    ]
   },
   {
@@ -23043,7 +23080,7 @@
    "en": "Test yourself",
    "es": "Ponte a prueba",
    "where": [
-    "src/legacy/legacy.ts:291"
+    "src/legacy/legacy.ts:313"
    ]
   },
   {
@@ -26167,7 +26204,7 @@
    "en": "The screensaver’s playlists are in Explore → Ambient mode.",
    "es": "Las listas de reproducción del salvapantallas están en Explorar → Modo ambiente.",
    "where": [
-    "src/ui/settings.ts:95"
+    "src/ui/settings.ts:96"
    ]
   },
   {
@@ -26640,7 +26677,7 @@
    "en": "The words",
    "es": "Las palabras",
    "where": [
-    "src/legacy/legacy.ts:401"
+    "src/legacy/legacy.ts:430"
    ]
   },
   {
@@ -26801,7 +26838,7 @@
    "en": "They gave us {0}.",
    "es": "Nos dieron {0}.",
    "where": [
-    "src/legacy/legacy.ts:492"
+    "src/legacy/legacy.ts:521"
    ]
   },
   {
@@ -26843,7 +26880,7 @@
    "en": "This browser cannot read aloud.",
    "es": "Este navegador no puede leer en voz alta.",
    "where": [
-    "src/ui/settings.ts:126"
+    "src/ui/settings.ts:142"
    ]
   },
   {
@@ -26886,7 +26923,7 @@
    "en": "This device has no voices in {0}. You can add one in the system’s text-to-speech settings.",
    "es": "Este dispositivo no tiene voces en {0}. Puedes agregar una en los ajustes de texto a voz del sistema.",
    "where": [
-    "src/ui/settings.ts:135"
+    "src/ui/settings.ts:151"
    ]
   },
   {
@@ -27210,7 +27247,7 @@
    "en": "Time and calendars",
    "es": "Tiempo y calendarios",
    "where": [
-    "src/legacy/legacy.ts:49"
+    "src/legacy/legacy.ts:50"
    ]
   },
   {
@@ -27331,7 +27368,7 @@
    "en": "To install: in Chrome use the ⋮ menu → \"Install app\" / \"Add to Home screen\". On iPhone: Share → \"Add to Home Screen\".",
    "es": "Para instalar: en Chrome usa el menú ⋮ → «Instalar app» / «Añadir a pantalla de inicio». En iPhone: Compartir → «Añadir a pantalla de inicio».",
    "where": [
-    "src/ui/settings.ts:44"
+    "src/ui/settings.ts:45"
    ]
   },
   {
@@ -27345,7 +27382,7 @@
    "en": "To read",
    "es": "Para leer",
    "where": [
-    "src/today/today.ts:110"
+    "src/today/today.ts:113"
    ]
   },
   {
@@ -27546,7 +27583,7 @@
    "en": "Tools and technology",
    "es": "Herramientas y técnica",
    "where": [
-    "src/legacy/legacy.ts:52"
+    "src/legacy/legacy.ts:53"
    ]
   },
   {
@@ -28341,17 +28378,24 @@
    ]
   },
   {
+   "en": "Use where I am",
+   "es": "Usar dónde estoy",
+   "where": [
+    "src/legacy/legacy.ts:269"
+   ]
+  },
+  {
    "en": "Used all over the world.",
    "es": "Se usa en todo el mundo.",
    "where": [
-    "src/legacy/legacy.ts:388"
+    "src/legacy/legacy.ts:417"
    ]
   },
   {
    "en": "Used in {0}",
    "es": "Se usa en {0}",
    "where": [
-    "src/legacy/legacy.ts:376"
+    "src/legacy/legacy.ts:401"
    ]
   },
   {
@@ -28593,8 +28637,8 @@
    "en": "Voice",
    "es": "Voz",
    "where": [
-    "src/ui/settings.ts:138",
-    "src/ui/settings.ts:145"
+    "src/ui/settings.ts:154",
+    "src/ui/settings.ts:161"
    ]
   },
   {
@@ -28947,7 +28991,7 @@
    "en": "What did {0} borrow from the past?",
    "es": "¿Qué heredó {0} del pasado?",
    "where": [
-    "src/legacy/legacy.ts:250"
+    "src/legacy/legacy.ts:264"
    ]
   },
   {
@@ -29023,7 +29067,7 @@
    "en": "What past civilizations gave the world that we still use, how it travelled and who uses it today: {0} things from {1} civilizations.",
    "es": "Lo que las civilizaciones del pasado le dieron al mundo y que aún usamos, cómo viajó y quién lo usa hoy: {0} cosas de {1} civilizaciones.",
    "where": [
-    "src/legacy/legacy.ts:243"
+    "src/legacy/legacy.ts:255"
    ]
   },
   {
@@ -29051,14 +29095,14 @@
    "en": "What they gave us",
    "es": "Lo que nos dieron",
    "where": [
-    "src/legacy/legacy.ts:338"
+    "src/legacy/legacy.ts:360"
    ]
   },
   {
    "en": "What they gave us: {0}",
    "es": "Lo que nos dieron: {0}",
    "where": [
-    "src/legacy/legacy.ts:531"
+    "src/legacy/legacy.ts:560"
    ]
   },
   {
@@ -29780,7 +29824,7 @@
    "en": "Where you live",
    "es": "Donde vives",
    "where": [
-    "src/legacy/legacy.ts:257"
+    "src/legacy/legacy.ts:279"
    ]
   },
   {
@@ -30377,7 +30421,7 @@
    "where": [
     "src/learn/learn.ts:419",
     "src/learn/learn.ts:1833",
-    "src/legacy/legacy.ts:289"
+    "src/legacy/legacy.ts:311"
    ]
   },
   {
@@ -30434,7 +30478,7 @@
    "en": "Who uses it today",
    "es": "Quién lo usa hoy",
    "where": [
-    "src/legacy/legacy.ts:374"
+    "src/legacy/legacy.ts:396"
    ]
   },
   {
@@ -30731,21 +30775,21 @@
    "en": "Words",
    "es": "Palabras",
    "where": [
-    "src/legacy/legacy.ts:63"
+    "src/legacy/legacy.ts:64"
    ]
   },
   {
    "en": "Words and names",
    "es": "Palabras y nombres",
    "where": [
-    "src/legacy/legacy.ts:46"
+    "src/legacy/legacy.ts:47"
    ]
   },
   {
    "en": "Words and names they gave us",
    "es": "Palabras y nombres que nos dieron",
    "where": [
-    "src/legacy/legacy.ts:491"
+    "src/legacy/legacy.ts:520"
    ]
   },
   {
@@ -30858,7 +30902,7 @@
    "en": "Writing and books",
    "es": "Escritura y libros",
    "where": [
-    "src/legacy/legacy.ts:47"
+    "src/legacy/legacy.ts:48"
    ]
   },
   {
@@ -31069,8 +31113,8 @@
    "en": "Your data on another device",
    "es": "Tus datos en otro dispositivo",
    "where": [
-    "src/ui/settings.ts:98",
-    "src/ui/shell.ts:118"
+    "src/ui/settings.ts:99",
+    "src/ui/shell.ts:119"
    ]
   },
   {
@@ -31476,7 +31520,7 @@
    "en": "about {0}",
    "es": "hacia {0}",
    "where": [
-    "src/legacy/legacy.ts:156"
+    "src/legacy/legacy.ts:157"
    ]
   },
   {
@@ -32269,14 +32313,14 @@
    "en": "names like {0}",
    "es": "nombres como {0}",
    "where": [
-    "src/legacy/legacy.ts:64"
+    "src/legacy/legacy.ts:65"
    ]
   },
   {
    "en": "names of stars and planets like {0}",
    "es": "nombres de estrellas y planetas como {0}",
    "where": [
-    "src/legacy/legacy.ts:67"
+    "src/legacy/legacy.ts:68"
    ]
   },
   {
@@ -32518,7 +32562,7 @@
    "en": "place names like {0}",
    "es": "nombres de lugares como {0}",
    "where": [
-    "src/legacy/legacy.ts:65"
+    "src/legacy/legacy.ts:66"
    ]
   },
   {
@@ -32807,7 +32851,7 @@
    "en": "the names of days and months like {0}",
    "es": "nombres de días y meses como {0}",
    "where": [
-    "src/legacy/legacy.ts:66"
+    "src/legacy/legacy.ts:67"
    ]
   },
   {
@@ -33005,7 +33049,7 @@
    "en": "used everywhere",
    "es": "se usa en todas partes",
    "where": [
-    "src/legacy/legacy.ts:236"
+    "src/legacy/legacy.ts:248"
    ]
   },
   {
@@ -33049,7 +33093,7 @@
    "en": "words like {0}",
    "es": "palabras como {0}",
    "where": [
-    "src/legacy/legacy.ts:63"
+    "src/legacy/legacy.ts:64"
    ]
   },
   {
@@ -33129,7 +33173,7 @@
    "en": "{0, plural, one {# country} other {# countries}}",
    "es": "{0, plural, one {# país} other {# países}}",
    "where": [
-    "src/legacy/legacy.ts:385",
+    "src/legacy/legacy.ts:414",
     "src/mydata/mydata.ts:374",
     "src/ui/legend.ts:197"
    ]
@@ -33156,16 +33200,16 @@
    "en": "{0, plural, one {# legacy, oldest first} other {# legacies, oldest first}}",
    "es": "{0, plural, one {# legado, del más antiguo al más reciente} other {# legados, del más antiguo al más reciente}}",
    "where": [
-    "src/legacy/legacy.ts:477"
+    "src/legacy/legacy.ts:506"
    ]
   },
   {
    "en": "{0, plural, one {# legacy} other {# legacies}}",
    "es": "{0, plural, one {# legado} other {# legados}}",
    "where": [
-    "src/legacy/legacy.ts:284",
-    "src/legacy/legacy.ts:299",
-    "src/legacy/legacy.ts:531"
+    "src/legacy/legacy.ts:306",
+    "src/legacy/legacy.ts:321",
+    "src/legacy/legacy.ts:560"
    ]
   },
   {
@@ -33207,14 +33251,14 @@
    "en": "{0, plural, one {and # used everywhere} other {and # used everywhere}}",
    "es": "{0, plural, one {y # que se usa en todas partes} other {y # que se usan en todas partes}}",
    "where": [
-    "src/legacy/legacy.ts:462"
+    "src/legacy/legacy.ts:491"
    ]
   },
   {
    "en": "{0, plural, one {used in # country} other {used in # countries}}",
    "es": "{0, plural, one {se usa en # país} other {se usa en # países}}",
    "where": [
-    "src/legacy/legacy.ts:236"
+    "src/legacy/legacy.ts:248"
    ]
   },
   {
@@ -34075,7 +34119,7 @@
    "en": "{0} uses {1} things from {2} past civilizations.",
    "es": "{0} usa {1} cosas de {2} civilizaciones del pasado.",
    "where": [
-    "src/legacy/legacy.ts:441"
+    "src/legacy/legacy.ts:470"
    ]
   },
   {
@@ -34295,7 +34339,7 @@
    "en": "{0} BC",
    "es": "{0} a. C.",
    "where": [
-    "src/legacy/legacy.ts:742",
+    "src/legacy/legacy.ts:771",
     "src/modes/stories.ts:337"
    ]
   },
@@ -34303,7 +34347,7 @@
    "en": "{0} BC – AD {1}",
    "es": "{0} a. C. – {1} d. C.",
    "where": [
-    "src/legacy/legacy.ts:150",
+    "src/legacy/legacy.ts:151",
     "src/modes/stories.ts:361"
    ]
   },
@@ -34339,7 +34383,7 @@
    "en": "{0}–{1} BC",
    "es": "{0}–{1} a. C.",
    "where": [
-    "src/legacy/legacy.ts:149",
+    "src/legacy/legacy.ts:150",
     "src/modes/stories.ts:360"
    ]
   },
@@ -34609,7 +34653,7 @@
    "en": "▶ Try the voice",
    "es": "▶ Probar la voz",
    "where": [
-    "src/ui/settings.ts:142"
+    "src/ui/settings.ts:158"
    ]
   },
   {
@@ -34812,8 +34856,8 @@
    "en": "📱 Like my phone",
    "es": "📱 Como mi teléfono",
    "where": [
-    "src/ui/settings.ts:52",
-    "src/ui/settings.ts:67"
+    "src/ui/settings.ts:53",
+    "src/ui/settings.ts:68"
    ]
   },
   {

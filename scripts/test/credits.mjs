@@ -229,7 +229,9 @@ for (const f of srcFiles) {
     hosts.set(h, [...(hosts.get(h) ?? []), f]);
   }
 }
-const hostOk = (h) => (ALIAS[h] && byId.has(ALIAS[h])) || itemHosts.some((i) => i && (h.replace(/^www\./, '') === i || h.endsWith(`.${i}`)));
+/** Hosts that are not sources (v0.48.0): the app's own website (its privacy and help pages) and its donation page. */
+const NOT_SOURCES = new Set(['divaor.github.io', 'ko-fi.com']);
+const hostOk = (h) => NOT_SOURCES.has(h) || (ALIAS[h] && byId.has(ALIAS[h])) || itemHosts.some((i) => i && (h.replace(/^www\./, '') === i || h.endsWith(`.${i}`)));
 const uncredited = [...hosts].filter(([h]) => !hostOk(h)).map(([h, f]) => `${h} (${[...new Set(f)].join(', ')})`);
 check(hosts.size > 10 && !uncredited.length, `each of the ${hosts.size} outside hosts the app calls is credited`, uncredited);
 

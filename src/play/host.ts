@@ -53,6 +53,8 @@ export class PlayHost {
         const v = this.app.renderer.view;
         const covered = vv ? Math.max(0, Math.round(window.innerHeight - vv.height - vv.offsetTop)) : 0;
         const kb = covered > 80 ? covered : 0;
+        if (kb && this.card.classList.contains('typing')) this.fitPicture();
+        if (!kb && !this.card.contains(document.activeElement)) this.typing(false);
         if (kb === v.keyboard) return;
         v.keyboard = kb;
         this.current?.refit?.();
@@ -60,9 +62,36 @@ export class PlayHost {
       }, 150);
     };
     vv?.addEventListener('resize', keyboard);
+    // Typing on a phone (v0.48.0): the card's picture (Outline's shape, a flag, a photo) shrinks as soon as the
+    // answer box has the focus, before the keyboard opens, so the whole card fits above the keyboard and the phone
+    // does not push the page up to show the box (which hid the top of the card: the shape itself).
+    const coarse = matchMedia('(pointer: coarse)');
+    this.card.addEventListener('focusin', (e) => {
+      const t = e.target as Element | null;
+      if (coarse.matches && t?.matches?.('input:not([type]), input[type=text], input[type=search]')) this.typing(true);
+    });
+    this.card.addEventListener('focusout', () => setTimeout(() => { if (!this.card.contains(document.activeElement)) this.typing(false); }, 0));
     // (Where the page itself shrinks for the keyboard, the map does too: the question is framed again all the same.)
     let resized = 0;
     addEventListener('resize', () => { clearTimeout(resized); resized = window.setTimeout(() => this.current?.refit?.(), 200); });
+  }
+
+  private typing(on: boolean) {
+    this.card.classList.toggle('typing', on);
+    if (!on) this.card.style.removeProperty('--pic');
+  }
+
+  /** With the keyboard up: the picture takes the room left between the card's top and the keyboard. */
+  private fitPicture() {
+    const vv = window.visualViewport;
+    const pic = this.card.querySelector<HTMLElement>('.outline-canvas, .mw-flag-big, .mw-photo');
+    if (!vv || !pic) return;
+    const top = this.card.getBoundingClientRect().top;
+    const room = vv.offsetTop + vv.height - 8 - top;
+    const now = pic.getBoundingClientRect().height;
+    const natural = pic instanceof HTMLCanvasElement ? pic.height / Math.min(2, window.devicePixelRatio || 1) : 160;
+    const want = Math.round(Math.max(64, Math.min(natural, now + room - this.card.scrollHeight)));
+    if (Math.abs(want - now) > 4) this.card.style.setProperty('--pic', `${want}px`);
   }
 
   /**

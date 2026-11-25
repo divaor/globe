@@ -7026,7 +7026,7 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   // Outside services: the client name, iNaturalist's limit.
   const v = await page.evaluate(() => window.atlas.outside.clientName());
   await page.evaluate(() => window.atlas.outside.fetch('https://www.wikidata.org/w/api.php?action=wbgetclaims&format=json&origin=*&entity=Q90').catch(() => null));
-  check(/^Mundora\/0\.47\.\d+/.test(v) && named.length === 1 && named[0] === v, `Wikimedia hears who asks: "${named[0] ?? '(nothing)'}"`);
+  check(/^Mundora\/\d+\.\d+\.\d+/.test(v) && named.length === 1 && named[0] === v, `Wikimedia hears who asks: "${named[0] ?? '(nothing)'}"`);
   await page.evaluate(() => { for (let i = 0; i < 70; i++) void window.atlas.outside.fetch(`https://api.inaturalist.org/v1/taxa?q=x${i}`).catch(() => null); });
   await page.waitForTimeout(2500);
   const load = await page.evaluate(() => window.atlas.outside.inatLoad());
@@ -7069,6 +7069,124 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   check(!flown.animating && Math.abs(flown.lon - 139.7) < 0.5 && Math.abs(flown.lat - 35.7) < 0.5, `with reduce motion a flight lands at once (${flown.lon.toFixed(1)}, ${flown.lat.toFixed(1)})`);
   check(!rm.errors.length, `reduce motion: no page errors${rm.errors.length ? ': ' + rm.errors.join(' | ') : ''}`);
   await rm.ctx.close();
+}
+
+// 61. Store-ready (v0.48.0). The website's own pages: the privacy policy, help and support, and the credits, in five
+// languages; the English page sends a reader to their browser's language, unless the address asks for English. About
+// links to them in the app's language (the website's own address in the apps, marked ?app=1). Supporting Mundora: a
+// Ko-fi button in the round button's list and in About, on the website only, never in the apps. And the fixes from the
+// phone test: Today's reads are one "To read" list of full-width lines; Legacies of the past names the country the
+// device is in (from its location), with the phone's region when the location is refused; the Outline game's shape
+// shrinks while the answer box has the focus on a phone, so the card stays above the keyboard.
+{
+  // The pages.
+  const pg = await browser.newContext({ locale: 'es-MX', viewport: { width: 390, height: 844 } });
+  const p = await pg.newPage();
+  const perr = [];
+  p.on('pageerror', (e) => perr.push(e.message));
+  await p.goto(`${url}privacy.html`, { waitUntil: 'load' });
+  await p.waitForURL(/privacy\.es\.html/, { timeout: 5000 }).catch(() => {});
+  const es = await p.evaluate(() => ({ at: location.pathname, lang: document.documentElement.lang, h1: document.querySelector('h1')?.textContent ?? '', langs: document.querySelectorAll('.langs a').length, sky: /Usar mi ubicación/.test(document.body.textContent ?? '') }));
+  await p.goto(`${url}privacy.html?lang=en`, { waitUntil: 'load' });
+  await p.waitForTimeout(500);
+  const en = await p.evaluate(() => ({ at: location.pathname, h1: document.querySelector('h1')?.textContent ?? '', rows: document.querySelectorAll('tbody tr').length, nav: [...document.querySelectorAll('nav.pages a')].map((a) => a.getAttribute('href')).join(' ') }));
+  check(/privacy\.es\.html$/.test(es.at) && es.lang === 'es' && es.h1 === 'Política de privacidad' && es.langs === 5 && es.sky && /privacy\.html$/.test(en.at) && en.h1 === 'Privacy policy' && en.rows >= 9 && en.nav === 'privacy.html support.html credits.html',
+    `the privacy policy: a Spanish browser gets "${es.h1}" (${es.at}), ?lang=en keeps "${en.h1}" with ${en.rows} services; menu ${en.nav}`);
+  const pages = [];
+  for (const page of ['privacy', 'support', 'credits']) for (const l of ['en', 'es', 'pt', 'fr', 'de']) {
+    const r = await p.goto(`${url}${page}${l === 'en' ? '' : `.${l}`}.html?lang=${l}`, { waitUntil: 'load' });
+    pages.push(await p.evaluate(([pageId, l2, status]) => ({ id: `${pageId}.${l2}`, ok: status === 200 && document.documentElement.lang === l2 && !!document.querySelector('main h1')?.textContent?.trim() && document.querySelectorAll('.langs a').length === 5, h1: document.querySelector('main h1')?.textContent ?? '', items: document.querySelectorAll('main article').length, faq: document.querySelectorAll('main details').length, donate: document.querySelectorAll('[data-donate]').length }), [page, l, r?.status() ?? 0]));
+  }
+  const bad = pages.filter((x) => !x.ok).map((x) => x.id);
+  const deCredits = pages.find((x) => x.id === 'credits.de'), frHelp = pages.find((x) => x.id === 'support.fr');
+  check(!bad.length && deCredits.items >= 70 && frHelp.faq === 8 && pages.every((x) => x.donate === 0),
+    `15 pages in five languages${bad.length ? `; broken: ${bad.join(', ')}` : ''}: "${deCredits.h1}" lists ${deCredits.items} sources, "${frHelp.h1}" ${frHelp.faq} questions; no donation parts while there is no Ko-fi page`);
+  check(!perr.length, `the pages: no page errors${perr.length ? ': ' + perr.join(' | ') : ''}`);
+  await pg.close();
+
+  // About's links and the donation button on the website (a Ko-fi page set for the test).
+  const web = await browser.newContext({ ...devices['Pixel 7'] });
+  await web.addInitScript(MENU_HELPER);
+  await web.addInitScript(() => { window.__atlasKofi = 'mundora'; });
+  const w = await web.newPage();
+  const werr = [];
+  w.on('pageerror', (e) => werr.push(e.message));
+  await w.goto(url + '#p=globe&l=political&c=0,20,1.1&lang=fr', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await w.waitForFunction(() => window.atlas, null, { timeout: 60000 });
+  await w.waitForTimeout(800);
+  const row = await w.evaluate(() => window.atlas.shell['menuItems'].find((m) => m.id === 'donate')?.label() ?? '');
+  await w.evaluate(() => window.__menu('Soutenir Mundora'));
+  await w.waitForSelector('.about [data-kofi]', { timeout: 10000 }).catch(() => {});
+  await w.waitForTimeout(600);
+  const about = await w.evaluate(() => {
+    const box = document.querySelector('.about [data-donate]'), sb = document.querySelector('.sheet-body');
+    return { kofi: document.querySelector('.about [data-kofi]')?.getAttribute('href') ?? '', priv: document.querySelector('.about [data-site="privacy"]')?.getAttribute('href') ?? '', help: document.querySelector('.about [data-site="support"]')?.getAttribute('href') ?? '',
+      shown: !!box && !!sb && box.getBoundingClientRect().top < sb.getBoundingClientRect().bottom && box.getBoundingClientRect().bottom > sb.getBoundingClientRect().top };
+  });
+  check(row === 'Soutenir Mundora' && about.kofi === 'https://ko-fi.com/mundora' && about.shown && about.priv === 'privacy.fr.html' && about.help === 'support.fr.html',
+    `the website: "${row}" opens About at the Ko-fi button (${about.kofi}); About links to ${about.priv} and ${about.help}`);
+  check(!werr.length, `the donation button: no page errors${werr.length ? ': ' + werr.join(' | ') : ''}`);
+  await web.close();
+  // In the apps (the pretend app): no donation anywhere, and the links go to the website, marked as from the app.
+  const app = await browser.newContext({ ...devices['Pixel 7'] });
+  await app.addInitScript(() => { window.__atlasNative = 'android'; window.__atlasKofi = 'mundora'; });
+  const a = await app.newPage();
+  await a.goto(url + '#p=globe&l=political&c=0,20,1.1&lang=de', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await a.waitForFunction(() => window.atlas, null, { timeout: 60000 });
+  await a.waitForTimeout(800);
+  await a.evaluate(() => window.atlas.shell.openAbout(true));
+  await a.waitForSelector('.about [data-site="privacy"]', { timeout: 10000 }).catch(() => {});
+  const inApp = await a.evaluate(() => ({ row: !!window.atlas.shell['menuItems'].find((m) => m.id === 'donate'), kofi: document.querySelectorAll('.about [data-donate], .about [data-kofi]').length, priv: document.querySelector('.about [data-site="privacy"]')?.getAttribute('href') ?? '' }));
+  check(!inApp.row && !inApp.kofi && inApp.priv === 'https://divaor.github.io/globe/privacy.de.html?app=1', `the apps: no donation button or row; the privacy policy is ${inApp.priv}`);
+  await app.close();
+
+  // Today: one "To read" list, every line the same width.
+  const td = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=0,20,1.1&lang=en');
+  await td.page.evaluate(() => window.atlas.today.openPanel());
+  await td.page.waitForSelector('[data-today="reads"]', { timeout: 15000 }).catch(() => {});
+  await td.page.waitForTimeout(600);
+  const reads = await td.page.evaluate(() => ({ titles: [...document.querySelectorAll('.today-panel .sec-title')].filter((x) => /To read/.test(x.textContent ?? '')).length,
+    ids: [...document.querySelectorAll('[data-today="reads"] > [data-today-item]')].map((x) => x.dataset.todayItem), widths: [...document.querySelectorAll('[data-today="reads"] > [data-today-item]')].map((x) => Math.round(x.getBoundingClientRect().width)) }));
+  check(reads.titles === 1 && reads.ids.includes('legacy') && reads.ids.length >= 3 && new Set(reads.widths).size === 1,
+    `Today: one "To read" list (${reads.ids.join(', ')}), every line ${reads.widths[0]} px wide`);
+  check(!td.errors.length, `Today: no page errors${td.errors.length ? ': ' + td.errors.join(' | ') : ''}`);
+  await td.ctx.close();
+
+  // Legacies: a Mexican phone in Paris says France; with the location refused, the phone's region (Mexico).
+  const lg = await open({ ...devices['Pixel 7'], locale: 'es-MX', geolocation: { latitude: 48.86, longitude: 2.35 }, permissions: ['geolocation'] }, '#p=globe&l=political&c=0,20,1.1&lang=es');
+  await lg.page.evaluate(() => window.atlas.legacy.open({ v: 'home' }));
+  await lg.page.waitForSelector('[data-legacy="mine"][data-iso="FRA"]', { timeout: 15000 }).catch(() => {});
+  const home = await lg.page.evaluate(() => ({ iso: document.querySelector('[data-legacy="mine"]')?.getAttribute('data-iso') ?? '', text: document.querySelector('[data-legacy="mine"]')?.textContent ?? '', locate: !!document.querySelector('[data-legacy="locate"]'), kept: localStorage.getItem('atlas-globe:here') ?? '' }));
+  await lg.page.evaluate(() => window.atlas.legacy.open({ v: 'item', civ: 'romans', id: 'latin-alphabet' }));
+  await lg.page.waitForSelector('[data-legacy="mine-use"]', { timeout: 15000 }).catch(() => {});
+  const use = await lg.page.evaluate(() => ({ iso: document.querySelector('[data-legacy="mine-use"]')?.getAttribute('data-iso') ?? '', text: document.querySelector('[data-legacy="mine-use"]')?.textContent ?? '' }));
+  check(home.iso === 'FRA' && /Francia/.test(home.text) && !home.locate && /"iso":"FRA"/.test(home.kept) && !/lat|lon/.test(home.kept) && use.iso === 'FRA' && /Francia/.test(use.text),
+    `Legacies, a Mexican phone in Paris: "${home.text}", and on a legacy "${use.text}" (kept on the device: ${home.kept.replace(/,"t":\d+/, '')})`);
+  check(!lg.errors.length, `Legacies with the location: no page errors${lg.errors.length ? ': ' + lg.errors.join(' | ') : ''}`);
+  await lg.ctx.close();
+  const nolg = await open({ ...devices['Pixel 7'], locale: 'es-MX', permissions: [] }, '#p=globe&l=political&c=0,20,1.1&lang=es');
+  await nolg.page.evaluate(() => window.atlas.legacy.open({ v: 'home' }));
+  await nolg.page.waitForSelector('[data-legacy="mine"]', { timeout: 15000 }).catch(() => {});
+  await nolg.page.waitForTimeout(1500);
+  const refused = await nolg.page.evaluate(() => ({ iso: document.querySelector('[data-legacy="mine"]')?.getAttribute('data-iso') ?? '', locate: document.querySelector('[data-legacy="locate"]')?.textContent ?? '' }));
+  check(refused.iso === 'MEX' && /Usar dónde estoy/.test(refused.locate), `Legacies with the location refused: the phone's region (${refused.iso}), and "${refused.locate.trim()}"`);
+  await nolg.ctx.close();
+
+  // The Outline game on a phone: the shape shrinks while the answer box has the focus, and grows back after.
+  const ol = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=0,20,1.1&lang=en');
+  await ol.page.evaluate(() => window.atlas.play.outline.start());
+  await ol.page.waitForSelector('.play-card .outline-canvas', { timeout: 15000 }).catch(() => {});
+  await ol.page.waitForTimeout(400);
+  await ol.page.focus('.play-card .names-input').catch(() => {});
+  await ol.page.waitForTimeout(400);
+  const typing = await ol.page.evaluate(() => { const c = document.querySelector('.play-card'), cv = c?.querySelector('.outline-canvas'); return { on: !!c?.classList.contains('typing'), h: Math.round(cv?.getBoundingClientRect().height ?? 0), bottom: Math.round(c?.getBoundingClientRect().bottom ?? 0), vh: innerHeight }; });
+  await ol.page.evaluate(() => document.activeElement?.blur());
+  await ol.page.waitForTimeout(300);
+  const after = await ol.page.evaluate(() => { const c = document.querySelector('.play-card'); return { on: !!c?.classList.contains('typing'), h: Math.round(c?.querySelector('.outline-canvas')?.getBoundingClientRect().height ?? 0) }; });
+  check(typing.on && typing.h <= 100 && typing.bottom < typing.vh * 0.55 && !after.on && after.h > typing.h,
+    `Outline on a phone: typing, the shape is ${typing.h} px tall and the card ends at ${typing.bottom} of ${typing.vh} px (above where a keyboard opens); after, ${after.h} px again`);
+  check(!ol.errors.length, `Outline while typing: no page errors${ol.errors.length ? ': ' + ol.errors.join(' | ') : ''}`);
+  await ol.ctx.close();
 }
 
 await browser.close();

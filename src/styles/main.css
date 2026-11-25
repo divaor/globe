@@ -1079,6 +1079,9 @@ html.orrery-open .learn-card { z-index: 26; }
 @keyframes names-miss { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
 .names-recent { max-height: 110px; overflow-y: auto; }
 #app .outline-canvas { position: static; inset: auto; display: block; margin: 8px auto 4px; border-radius: var(--r-md); background: rgba(8,14,26,.55); }
+/* Typing on a phone (v0.48.0): the card's picture shrinks so the card stays above the keyboard (play/host.ts). */
+#app .play-card.typing .outline-canvas, #app .play-card.typing .mw-flag-big { height: var(--pic, 96px) !important; width: auto !important; max-width: 100%; }
+#app .play-card.typing .mw-photo { max-height: var(--pic, 96px); }
 /* Higher or lower: the two countries, and their values once answered. */
 .hilo-opt { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 .hilo-val { flex-basis: 100%; font-size: var(--fs-sm); font-weight: 800; color: var(--text); }
@@ -1669,3 +1672,7 @@ html.dt-cosmos .brand-name { color: #f2f5fa; text-shadow: 0 1px 6px rgba(0,0,0,.
   .dt-cap-text { font-size: var(--fs-sm); }
 }
 .dt-sources { margin-top: var(--sp-2); font-size: var(--fs-sm); color: var(--muted); }
+/* About (v0.48.0): the website's privacy policy and help, and supporting Mundora (on the website only). */
+.about .about-links { font-size: var(--fs-sm); }
+.about .about-donate { margin: var(--sp-3) 0; padding: var(--sp-1) var(--sp-3) var(--sp-3); border: 1px solid var(--line); border-radius: var(--r-md); background: var(--chip); }
+.about .about-donate .sec-title { margin-top: var(--sp-2); }

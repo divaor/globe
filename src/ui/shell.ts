@@ -1,7 +1,7 @@
 // The app chrome: brand + search (top left), the button for you (top right: settings, sharing, your data, about),
 // zoom and locate, the one bar of filters above the map, and the five tabs (bottom: Map, Explore, Today, Learn,
 // Play, v0.41.1), plus sheets, legend, card, tooltip and toasts.
-import { Layers, Layers2, Globe, Map as MapIcon, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Settings, Info, X, Mountain, Telescope, Gamepad2, GraduationCap, Link, ChevronUp, ChevronDown, CircleUserRound, HardDriveDownload } from 'lucide';
+import { Layers, Layers2, Globe, Map as MapIcon, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Settings, Info, X, Mountain, Telescope, Gamepad2, GraduationCap, Link, ChevronUp, ChevronDown, CircleUserRound, HardDriveDownload, Heart } from 'lucide';
 import { terrainActions } from '../layers/terrainActions';
 import { FEATURES, ftile, featureOfSheet } from './features';
 import { h, icon, button, clear, add } from './dom';
@@ -16,6 +16,7 @@ import { SearchBox } from './search';
 import { Ambient } from './ambient';
 import { screensaverPanel } from './playlists';
 import { settingsPanel, aboutPanel } from './settings';
+import { donateUrl } from './donate';
 import { MapStyleMenu } from './mapstyle';
 import { mapView } from '../engine/style';
 import { regionAt, regionType, regionName } from '../engine/regions';
@@ -121,6 +122,8 @@ export class Shell {
     if (document.fullscreenEnabled && !matchMedia('(display-mode: standalone)').matches) {
       this.addMenu({ id: 'fullscreen', icon: Maximize, label: () => (document.fullscreenElement ? L('Leave full screen', 'Salir de pantalla completa') : t('fullscreen')), order: 50, group: 'me', onClick: () => this.toggleFullscreen() });
     }
+    // Supporting Mundora (v0.48.0): on the website only, once there is a Ko-fi page; it opens About at that part.
+    if (donateUrl()) this.addMenu({ id: 'donate', icon: Heart, label: () => L('Support Mundora', 'Apoya a Mundora'), order: 85, group: 'me', onClick: () => this.openAbout(true, 'donate') });
     this.addMenu({ id: 'about', icon: Info, label: () => t('about'), order: 90, group: 'me', onClick: () => this.openAbout() });
 
     this.renderTop();
@@ -347,10 +350,12 @@ export class Shell {
     if (section) requestAnimationFrame(() => document.querySelector(`.sheet [data-section="${section}"]`)?.scrollIntoView({ block: 'start' }));
   }
 
-  openAbout(force = false) {
+  /** About and credits; `section`: scrolled to one of its parts (donate: supporting Mundora). */
+  openAbout(force = false, section?: string) {
     if (!force && this.sheet.isOpen('about')) { this.sheet.close(); return; }
     this.sheet.open('about', t('about'), aboutPanel(this.app), () => this.renderDock());
     this.renderDock();
+    if (section) requestAnimationFrame(() => document.querySelector(`.sheet [data-section="${section}"]`)?.scrollIntoView({ block: 'start' }));
   }
 
   /** Ambient mode's panel: its playlists, the reader's own, and its settings. */

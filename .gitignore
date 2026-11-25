@@ -10,3 +10,11 @@ __pycache__/
 
 # Temporary copies of a few smoke-test sections, made while they run.
 scripts/test/.smoke-*.mjs
+
+# The website's own pages (privacy, support, credits), built from site/ by scripts/site/build.mjs on every build.
+/public/privacy*.html
+/public/support*.html
+/public/credits*.html
+
+# The stores' screenshots, made by scripts/store/screenshots.mjs.
+/store/screenshots/
