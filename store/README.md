@@ -27,8 +27,8 @@ Android 1080×2160 (Play allows at most 2:1), feature graphic 1024×500.
 
 Only the developer accounts' owner can do the steps marked **(you)**.
 
-1. **(you)** Open the developer accounts (decision P6): Apple Developer Program as an individual, Google Play Console
-   with a personal account.
+1. **(you)** Open the developer accounts (decision P6): Apple Developer Program as an individual (still to open),
+   Google Play Console with a personal account (open since November 2026).
 2. **(you)** Choose the support email (decision P12) and add it to both stores' contact details.
 3. **(you)** Create the apps:
    - App Store Connect: bundle id `io.github.divaor.globe`, name "Mundora: Globe & Geography", primary language

@@ -58,12 +58,12 @@ answer differs from Apple's.
 | Horror or fear themes | None | |
 | Profanity or crude humour | None | |
 | Mature or suggestive themes | None | |
-| Sexual content or nudity | **Decision for Diego** | The art guide and the art stories show famous paintings with nudes (The Birth of Venus, Olympia, Venus of Urbino, La maja desnuda). Answering Infrequent/Mild is the honest answer and likely gives 13+; None keeps 9+ but risks a review note. My recommendation: Infrequent/Mild (13+). |
+| Sexual content or nudity | **Infrequent/Mild** (Diego's decision, 25 November 2026) | The art guide and the art stories show famous paintings and sculptures with nudes (The Birth of Venus, Olympia, Venus of Urbino, La maja desnuda). This likely makes the App Store rating 13+. |
 
 ### Google Play (IARC questionnaire)
 
 Category: Reference, News, or Educational. Answer as above: no violence shown in pictures, references to drugs and
-alcohol in a historical context, and non-sexual nudity in classic works of art. No user interaction, no sharing of
+alcohol in a historical context, and nudity in classic works of art, answered as on the App Store (occasional, mild, non-sexual). No user interaction, no sharing of
 location with other users, no purchases.
 
 ## Export compliance (App Store)
