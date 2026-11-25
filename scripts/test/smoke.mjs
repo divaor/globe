@@ -1327,7 +1327,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(d1.length === 8 && JSON.stringify(d1) === JSON.stringify(d2) && d1[0].startsWith('find') && d1.some((x) => x.startsWith('hop')) && d1.some((x) => x.startsWith('order')) && d1.some((x) => x.startsWith('detective')), `the daily challenge has 8 questions, the same in a second browser (${d1.map((x) => x.split(':')[0]).join(', ')})`);
   for (let i = 0; i < 8; i++) {
     const k = await page.evaluate(() => { const q = window.atlas.learn.quiz; return q.qs[q.i].kind; });
-    if (k === 'find' || k === 'where') await page.evaluate(() => [...document.querySelectorAll('.learn-card button')].find((b) => /Show me/.test(b.textContent))?.click());
+    // The questions answered on the map (find, where, and the days' rotating Where does it live? / Where does it grow?)
+    // have Show me.
+    if (['find', 'where', 'region', 'habitat', 'grows'].includes(k)) await page.evaluate(() => [...document.querySelectorAll('.learn-card button')].find((b) => /Show me/.test(b.textContent))?.click());
     else if (k === 'order') { for (let j = 0; j < 3; j++) { await page.evaluate(() => [...document.querySelectorAll('.learn-card .order-row:not(.picked)')][0]?.click()); await page.waitForTimeout(100); } await page.evaluate(() => document.querySelector('.learn-card [data-check]')?.click()); }
     else await page.evaluate(() => { const q = window.atlas.learn.quiz, cur = q.qs[q.i]; const b = [...document.querySelectorAll('.learn-card .quiz-opt')]; (b.find((x) => x.textContent && cur.options && cur.options.indexOf(cur.id) === b.indexOf(x)) ?? b[0])?.click(); });
     await page.waitForTimeout(700);
