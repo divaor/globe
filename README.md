@@ -243,8 +243,8 @@ A backup made as Atlas Globe still opens.
     year to eight years a second); a tap on a site opens its picture, Wikipedia's summary, its year,
     criteria and UNESCO's page, and a country's card counts its sites.
   - Where things were invented: the inventions of the Inventions stories where they were made, by age and field.
-  - Who was born here?: where 34,767 well-known people were born (or died), from Wikidata: the world's best known and
-    everyone the app features elsewhere (15,993, loaded first), then each country's own best known (18,774, loaded
+  - Who was born here?: where 34,765 well-known people were born (or died), from Wikidata: the world's best known and
+    everyone the app features elsewhere (15,993, loaded first), then each country's own best known (18,772, loaded
     in the background and joined to the same dots, places, search and city guides). A dot is a place, in the colour
     of its best-known person's field, bigger for more people; by field (leaders, science, writers, art, music, film
     and stage, sport, thought, explorers) and by when they were born. A tap lists the place's people; a person's card

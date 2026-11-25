@@ -17,14 +17,14 @@ node scripts/data/born/build-born.mjs --check   # in check:data
     (but `born`, `fill` and `i18n`) and asks Wikidata which are humans: the lives of Lives on the map, the people of
     the Time travel stories (each item's `wiki`) and of their sources, the legacies, and the art guide's artists and
     architects. Master the world names no people of its own (its "Born here" clues come from this list).
-- **`more.json`, loaded in the background after it (18,774 people, 2.50 MB):** each country's own best known below
+- **`more.json`, loaded in the background after it (18,772 people, 2.50 MB):** each country's own best known below
   the global list, by the current country (P17) of the place of birth, down to 8 Wikipedias. Each country's share is
   scaled to its population: `capOf(pop)`, 35 people and 2.5 more for each million people, up to 400 (Mexico: 366,
   down to 21 Wikipedias; Spain: 156; Iceland: 36; India, the United States, Brazil: 400). A base of 40 made the file
   2.6 MB; 35 keeps it at 2.5. Only today's countries count (P31 country or sovereign state, without an end date).
   The best known come first, then the older Wikidata item.
-  `ASKED` adds people readers asked for by name, whatever their country's share, if they reach the floor of 8
-  (Andrés Quintana Roo and Aleks Syntek are in; Carlos Loret de Mola, with 4, is not). The same rows as `people.json`,
+  No one is added by hand (v0.47.3): someone below their country's share is not listed (Andrés Quintana Roo, 18
+  Wikipedias, and Aleks Syntek, 8, miss Mexico's, which reaches down to 21). The same rows as `people.json`,
   with places and guide cities of its own; the app joins a place to the first file's when name and point are the same.
 - **Places without coordinates:** a place of birth or death with no coordinates of its own (P625) takes the point
   of the nearest place it lies in, up to three steps up its P131 chain, and keeps its own name: Frida Kahlo was born
@@ -46,6 +46,6 @@ node scripts/data/born/build-born.mjs --check   # in check:data
 - Living people are listed by birthplace only; people known above all for a crime are left out (`DROP`, `DROP_DESC`),
   even when the app features them.
 - **`--check`** fails when either file is out of date, a known person is missing or misplaced (Mozart, Velázquez,
-  Einstein; Frida Kahlo in Coyoacán; Juan Gabriel, Armando Manzanero, Aleks Syntek and Andrés Quintana Roo, born in
-  Mexico), someone the app features is missing, a country's share was not asked far enough down (run `--fetch`
+  Einstein; Frida Kahlo in Coyoacán; Juan Gabriel and Armando Manzanero, born in
+  Mexico; more.json holding only each country's share), someone the app features is missing, a country's share was not asked far enough down (run `--fetch`
   again), or `more.json` passes 2.6 MB (it is 2.50 MB now).
