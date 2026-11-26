@@ -126,6 +126,9 @@ A backup made as Atlas Globe still opens.
   world turns under it) swept them round once a day. Now locked, riding along or following, they are where the
   camera really looks at the moment shown, drifting only as it goes round the orbit (riding along, behind the Sun and
   the planets exactly); free, the camera turns with the world, and they keep still as before.
+- **v0.54.1:** the play bar's count of days round the orbit adds up: the day gone and the days to go now make the
+  turn as shown (they were rounded apart, so the Earth's could read "Day 0 of 365 · 366 to go"), in the planet's own
+  days too; and there is no count for a moment before today.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass
