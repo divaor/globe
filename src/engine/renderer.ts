@@ -696,7 +696,10 @@ export class Renderer {
     for (const o of this.afterShade) { ctx.save(); o(rc); ctx.restore(); }
 
     // ---- labels
-    if (this.baseMap) this.baseLabels(rc);
+    // Zoomed out past the usual end (v0.52.0), the globe is a small ball in space: the map's own names (oceans,
+    // countries, cities) would be bigger than it, so they wait until it is near again.
+    const small = this.view.current.kind === 'globe' && this.view.zoom < this.view.minZoomUsual * 0.9;
+    if (this.baseMap && !small) this.baseLabels(rc);
     if (this.layerLabels) for (const l of this.layers) if (l.ready && l.def.labels) l.def.labels(rc, l);
     for (const f of this.keepOut) for (const b of f()) this.labels.reserve(b[0], b[1], b[2], b[3]);
     this.labels.draw(ctx);

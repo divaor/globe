@@ -249,7 +249,7 @@ export function ambientNamesField(app: App): HTMLElement {
 // ---- The panel --------------------------------------------------------------------------------------
 /** The screensaver panel: playlists to start, the reader's own (add this view, order, remove, share), and the
  * screensaver's settings. `start` starts ambient mode with a playlist ('' for just the filters on the map). */
-export function screensaverPanel(app: App, start: (id: string) => void, toast: (msg: string) => void): HTMLElement {
+export function screensaverPanel(app: App, start: (id: string) => void, toast: (msg: string) => void, tourPanel?: ((start: () => void) => HTMLElement) | null): HTMLElement {
   const root = h('div', { class: 'ss' });
   const render = () => {
     root.replaceChildren();
@@ -265,7 +265,10 @@ export function screensaverPanel(app: App, start: (id: string) => void, toast: (
     root.append(h('div', { class: 'ss-grid' },
       card('', '🖼️', L('Just my filters', 'Solo mis filtros'), L('The globe turns with the filters you have on.', 'El globo gira con los filtros que tienes puestos.')),
       ...PLAYLISTS.map((p) => card(p.id, p.icon, tx(p.name), tx(p.desc), p.items.length)),
+      ...(tourPanel ? [card('space', '🪐', L('Planets and moons', 'Planetas y lunas'), L('From world to world, following each round the Sun or its planet.', 'De un mundo a otro, siguiendo a cada uno alrededor del Sol o de su planeta.'))] : []),
     ));
+    // Planets and moons (v0.52.0): which worlds, how they are followed, how fast time runs.
+    if (tourPanel) root.append(h('h3', { class: 'sec-title', 'data-section': 'tour' }, `🪐 ${L('Planets and moons', 'Planetas y lunas')}`), tourPanel(() => start('space')));
     // The reader's own playlist.
     const mine = myItems();
     const add = h('button', { type: 'button', class: 'pill primary' }, icon(Plus, 16), L('Add this view', 'Agregar esta vista'));

@@ -30,6 +30,7 @@ import { Galaxy } from './sky/galaxy';
 import { Elements } from './sky/elements';
 import { Tonight } from './sky/tonight';
 import { Around } from './space/around';
+import { SpaceTour, tourSettingsPanel } from './space/tour';
 import { worldHook } from './modes/stories';
 import { MapGames } from './play/menu';
 import { Master } from './master/master';
@@ -84,7 +85,11 @@ export async function startFeatures(app: App, shell: Shell, shared: URLSearchPar
   // Around the globe (v0.49.0): the Sun and the Moon beside the Earth, moons around their planets, a moon's planet
   // behind it, Saturn's rings; each one tapped takes you there. Not during a game, a quiz or tour, or ambient mode.
   const around = new Around(app, shell, space);
-  around.enabled = () => !play.host.current && !learn.busy && !app.ambient.on && !tonight.isOpen;
+  // Planets and moons (v0.52.0): the screensaver's tour of the worlds, which keeps the solar system around the globe on.
+  const tour = new SpaceTour(app, space, around);
+  shell.ambient.tour = tour;
+  shell.ambient.tourPanel = (start) => tourSettingsPanel(app, start);
+  around.enabled = () => !play.host.current && !learn.busy && (!app.ambient.on || tour.running) && !tonight.isOpen;
   const hop = play.hop;
   play.host.beforeStart = () => learn.closeAll();
   play.host.exitMode = async () => { await time.modes.find((m) => m.id === app.mode)?.exit(); };

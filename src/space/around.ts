@@ -37,7 +37,7 @@ const DOT: Record<string, string> = {
   ganymede: '#bdb5a8', callisto: '#9a9388', enceladus: '#f2f4f8', titan: '#e3b468', triton: '#d9cbc2', charon: '#b9b2aa',
 };
 /** How fast time runs while playing (days a second). */
-const SPEEDS: { days: number; label: () => string }[] = [
+export const SPEEDS: { days: number; label: () => string }[] = [
   { days: 1 / 24, label: () => L('1 hour/s', '1 hora/s') },
   { days: 1, label: () => L('1 day/s', '1 día/s') },
   { days: 7, label: () => L('1 week/s', '1 semana/s') },
@@ -233,6 +233,11 @@ export class Around {
     this.app.renderer.tickers.delete(this.tick);
     this.renderUi();
   }
+  /** For the planets-and-moons tour (v0.52.0): no first-time hint, a slow turn round the orbit's pole, the playing date. */
+  quiet() { this.hinted = true; }
+  turn(deg: number) { if (this.lock !== 'free') { this.az = wrap(this.az + deg); this.app.renderer.requestRender(); } }
+  dateText(): string { return this.dateEl?.textContent ?? ''; }
+
   /** Back to now, live. */
   now() {
     this.pause();
@@ -372,6 +377,14 @@ export class Around {
       this.info.members.push({ id: m.id, x: p.x, y: p.y, z: p.z, r, on, seeThrough: over });
       const go = () => (m.id === 'earth' ? void this.space.exit() : void this.space.enter(m.id));
       if (!on) { this.edge(ctx, g, p.x, p.y, name, m.id, go); continue; }
+      // Zoomed so far out that it sits on the world's own mark (the Moon on the Earth's): the mark keeps its name
+      // and this one's goes just under it; a tap there still goes to it. (The mark's place is worked out here: the
+      // members behind the world are drawn before the mark is.)
+      if (g.R < 5 && r < 3 && Math.hypot(p.x - g.cx, p.y - g.cy) < 14) {
+        this.label(ctx, name, p.x, g.cy + 24);
+        this.spots.push({ id: m.id, x: p.x, y: p.y, r: 18, go });
+        continue;
+      }
       const a0 = ctx.globalAlpha;
       if (over) ctx.globalAlpha = a0 * 0.32;
       if (r < 3) {
