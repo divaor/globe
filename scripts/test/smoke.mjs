@@ -4791,8 +4791,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(tabs.map((t) => t.id).join() === 'map,explore,today,learn,play' && tabs.map((t) => t.label).join() === 'Map,Explore,Today,Learn,Play'
     && ['map', 'explore', 'learn', 'play'].every((t) => seen[t].open && seen[t].tab === t && seen[t].fits && seen[t].above && seen[t].tiles && seen[t].lit.join() === t && seen[t].closedAgain)
     && L('map') === 'filters,projection,mapstyle,terrain3d,search,ruler,compare,truesize,compare-filters,mydata,export4k' && seen.map.seps.join() === 'Tools'
-    && L('explore') === 'time,deeptime,bigbang,legacy,space,guide,art,nature,inside,deep,ambient' && L('learn') === 'master,quiz,tours,onthisday,progress' && L('play') === 'play,fill,onmap'
-    && seen.me.open && seen.me.under && seen.me.fits && /^settings,backup,share,export,exportphone,(fullscreen,)?about$/.test(L('me')),
+    && L('explore') === 'time,deeptime,bigbang,legacy,space,tonight,guide,art,nature,inside,deep,ambient' && L('learn') === 'master,quiz,tours,onthisday,progress' && L('play') === 'play,fill,onmap'
+    && seen.me.open && seen.me.under && seen.me.fits && /^settings,backup,share,export,exportphone,(fullscreen,)?(donate,)?about$/.test(L('me')),
     `five tabs (${tabs.map((t) => t.label).join(' · ')}), each list above its tab and on screen: Map ${L('map')} (${seen.map.seps}); Explore ${L('explore')}; Learn ${L('learn')}; Play ${L('play')}; top right ${L('me')}`);
   check(escClosed && reach.missing.length === 0 && outsideClosed && deep.open && !deep.menu && deep.lit.join() === 'explore' && zoom === 3,
     `every one of ${reach.n} entries in a list${reach.missing.length ? ` (missing: ${reach.missing.join(', ')})` : ''}; Escape and a tap on the globe close a list; Into the deep opens and lights Explore (${deep.lit}); zoom and locate only (${zoom} buttons)`);
@@ -7243,8 +7243,8 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await p.evaluate(() => { const d = document.querySelector('[data-tonight="date"]'); d.value = '2026-03-02'; d.dispatchEvent(new Event('change')); });
   await p.waitForTimeout(800);
   const ecl = await p.evaluate(() => ({ ...window.atlas.tonight.info, phaseText: document.querySelector('[data-tonight="phase"]')?.textContent ?? '' }));
-  check(noon.renders > r0 && /12:00|12:0\d/.test(noon.when) && ecl.phase === 'full' && ecl.lit > 0.97 && ecl.rise && ecl.set,
-    `the slider to noon ("${noon.when}"); the night of 2 March 2026: "${ecl.phaseText}", ${Math.round(ecl.lit * 100)}% lit, rising ${new Date((ecl.rise - 2440587.5) * 864e5).toISOString().slice(11, 16)} UTC`);
+  check(noon.renders > r0 && /12:\d\d/.test(noon.when) && ecl.phase === 'full' && ecl.lit > 0.97 && ecl.rise && ecl.set,
+    `the slider to the place's solar noon ("${noon.when}"); the night of 2 March 2026: "${ecl.phaseText}", ${Math.round(ecl.lit * 100)}% lit, rising ${new Date((ecl.rise - 2440587.5) * 864e5).toISOString().slice(11, 16)} UTC`);
   // A tap on the globe: Sydney.
   await p.evaluate(() => { window.atlas.app.renderer.view.flyTo({ lon: 151.2, lat: -25 }, 0); window.atlas.app.renderer.requestRender(); });
   await p.waitForTimeout(700);
