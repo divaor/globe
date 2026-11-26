@@ -7425,8 +7425,8 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const p1 = await probe();
   const items = await lock('orbit');
   const p2 = await probe();
-  check(!p0.btn && !p0.bar && p1.btn && p1.bar && items.join('|') === 'Turn freely|Lock to the orbit|Follow the Sun' && p2.lock === 'orbit' && Math.abs(p2.tilt) < 3 && Math.abs(p2.roll) > 3,
-    `the lock button and the play bar show once zoomed out (${items.join(', ')}); locked to the orbit, the Moon's orbit lies level (${p2.tilt?.toFixed(1)}°, the view turned ${p2.roll.toFixed(1)}°)`);
+  check(!p0.btn && !p0.bar && p1.btn && p1.bar && items.join('|') === 'Turn freely|Lock to the orbit|Follow the Sun' && p2.lock === 'orbit' && Math.abs(p2.el - 35) < 1 && Math.abs(p2.tilt) < 3,
+    `the lock button and the play bar show once zoomed out (${items.join(', ')}); locked to the orbit, the camera ${p2.el.toFixed(0)}° above the orbit, the Moon's orbit lies level (${p2.tilt?.toFixed(1)}°; the view turned ${p2.roll.toFixed(1)}°, more or less with the time of day)`);
   await q.mouse.move(200, 330); await q.mouse.down(); await q.mouse.move(270, 330, { steps: 7 }); await q.mouse.up();
   await q.waitForTimeout(900);
   const p3 = await probe();
