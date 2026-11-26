@@ -7508,12 +7508,18 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   // mark keeps its name and the Moon on it gives way.
   const names = async (z) => {
     for (let k = 0; k < 2; k++) { await q.evaluate((z) => { const v = window.atlas.app.renderer.view; v.flyTo({ zoom: z === 'min' ? v.minZoom : z }, 1); window.atlas.app.renderer.requestRender(); }, z); await q.waitForTimeout(600); }
-    return q.evaluate(() => { const a = window.atlas.around; return { drawn: window.atlas.app.renderer.labels.drawn.map((d) => d.text), me: a.info.me, moon: a.info.members.some((m) => m.id === 'moon'), moonSpot: a['spots'].some((s) => s.id === 'moon') }; });
+    return q.evaluate(() => {
+      const a = window.atlas.around, g = a['g'];
+      // The names round the world's mark: each on its own line, none over another.
+      const near = a['boxes'].filter((b) => Math.abs((b[0] + b[2]) / 2 - g.cx) < 80 && b[1] >= g.cy - 2 && b[1] < g.cy + 50);
+      const overlap = near.some((b, i) => near.some((c, j) => j > i && b[0] < c[2] && b[2] > c[0] && b[1] < c[3] && b[3] > c[1]));
+      return { drawn: window.atlas.app.renderer.labels.drawn.map((d) => d.text), me: a.info.me, moonSpot: a['spots'].some((s) => s.id === 'moon'), near: near.length, overlap };
+    });
   };
   const n1 = await names(1.1), n2 = await names(0.3), n3 = await names('min');
   await names(1.1);
-  check(n1.drawn.some((t) => /ocean/i.test(t)) && !n2.drawn.length && !!n3.me && n3.moon && !n3.moonSpot,
-    `the map's names at the usual zoom (${n1.drawn.filter((t) => /ocean/i.test(t)).join(', ')}), none when the globe is small (${n2.drawn.length}); all the way out the Earth's mark keeps its name, the Moon on it gives way`);
+  check(n1.drawn.some((t) => /ocean/i.test(t)) && !n2.drawn.length && !!n3.me && n3.near >= 2 && !n3.overlap && n3.moonSpot,
+    `the map's names at the usual zoom (${n1.drawn.filter((t) => /ocean/i.test(t)).join(', ')}), none when the globe is small (${n2.drawn.length}); all the way out the Earth's mark keeps its name and the Moon's goes under it (${n3.near} names, ${n3.overlap ? 'overlapping' : 'none over another'}), a tap still goes to the Moon`);
   await q.evaluate(() => window.atlas.shell.openScreensaver());
   await q.waitForSelector('[data-tour="start"]', { timeout: 8000 }).catch(() => {});
   const panel = await q.evaluate(() => ({
