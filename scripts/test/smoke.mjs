@@ -7531,14 +7531,14 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
     const t = window.atlas.shell.ambient.tour, a = window.atlas.around.info, v = window.atlas.app.renderer.view;
     return { ...t.info, on: window.atlas.app.ambient.on, amb: document.documentElement.classList.contains('ambient'), surface: window.atlas.space.surface?.id ?? '', mode: window.atlas.app.mode,
       lockNow: a.lock, playing: a.playing, jd: a.jd, zoom: v.zoom, cap: document.querySelector('.amb-caption')?.innerText ?? '', date: document.querySelector('[data-amb="tour-date"]')?.textContent ?? '',
-      bar: !!document.querySelector('.around-bar:not([hidden])')?.getBoundingClientRect().width };
+      bar: (() => { const b = document.querySelector('.around-bar:not([hidden])'); return !!b && b.getBoundingClientRect().width > 0 && Number(getComputedStyle(b).opacity) > 0.05; })() };
   });
   const v1 = await look();
   await q.waitForTimeout(1500);
   const v1b = await look();
   check(v1.on && v1.amb && v1.world === 'moon' && v1.surface === 'moon' && v1.lock === 'planet' && v1.lockNow === 'planet' && v1.playing && v1b.jd - v1.jd > 0.5
     && /Moon/.test(v1.cap) && /Planets and moons · /.test(v1.date) && !v1.bar && Math.abs(Math.log(v1b.zoom / v1.zoom)) > 0.02,
-    `the tour starts on the Moon, following the Earth while a day a second goes by (${(v1b.jd - v1.jd).toFixed(1)} days), gliding (zoom ${v1.zoom.toFixed(2)} → ${v1b.zoom.toFixed(2)}); "${v1.cap.replace(/\s+/g, ' ').slice(0, 70)}…", "${v1.date}", no play bar`);
+    `the tour starts on the Moon (${v1.world}, ${v1.surface}), following the Earth (${v1.lock}, ${v1.lockNow}) while a day a second goes by (${(v1b.jd - v1.jd).toFixed(1)} days), gliding (zoom ${v1.zoom.toFixed(4)} → ${v1b.zoom.toFixed(4)}); "${v1.cap.replace(/\s+/g, ' ').slice(0, 70)}…", "${v1.date}", the play bar ${v1.bar ? 'showing' : 'hidden'}`);
   await q.waitForFunction(() => window.atlas.shell.ambient.tour?.info.visits >= 2, null, { timeout: 20000 }).catch(() => {});
   await q.waitForTimeout(2500);
   const v2 = await look();
