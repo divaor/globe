@@ -4,6 +4,7 @@
 // at launch when it is missing. The rest of the app keeps reading and writing localStorage as before.
 import { App } from '@capacitor/app';
 import { Preferences } from '@capacitor/preferences';
+import { persist } from '../app/persist';
 
 /** The app's keys in Preferences, apart from Preferences' own (its web stand-in keeps them in localStorage too). */
 const PREFIX = 'ls:';
@@ -12,17 +13,23 @@ const own = (k: string) => k.startsWith('CapacitorStorage.');
 const pending = new Map<string, string | null>();
 let timer = 0;
 
-async function flush() {
+// One write after another (v0.50.2): a flush asked for while one runs waits for it, then writes what came since, so
+// awaiting a flush means everything changed until then is in the app's storage.
+let running: Promise<void> = Promise.resolve();
+function flush(): Promise<void> {
   clearTimeout(timer);
   timer = 0;
-  const batch = [...pending];
-  pending.clear();
-  for (const [k, v] of batch) {
-    try {
-      if (v === null) await Preferences.remove({ key: PREFIX + k });
-      else await Preferences.set({ key: PREFIX + k, value: v });
-    } catch { /* tried again with the next change */ }
-  }
+  running = running.then(async () => {
+    const batch = [...pending];
+    pending.clear();
+    for (const [k, v] of batch) {
+      try {
+        if (v === null) await Preferences.remove({ key: PREFIX + k });
+        else await Preferences.set({ key: PREFIX + k, value: v });
+      } catch { /* tried again with the next change */ }
+    }
+  });
+  return running;
 }
 function queue(k: string, v: string | null) {
   if (own(k)) return;
@@ -65,8 +72,9 @@ export async function keepStorage(): Promise<{ restored: number }> {
     if (this === ls) for (let i = 0; i < ls.length; i++) { const k = ls.key(i); if (k) queue(k, null); }
     clearAll.call(this);
   };
-  // Leaving the app: what is still waiting is written now.
+  // Leaving the app: what is still waiting is written now. Starting the page again (a backup brought back) waits for it.
   void App.addListener('pause', () => void flush()).catch(() => {});
+  persist.flush = flush;
   return { restored };
 }
 
