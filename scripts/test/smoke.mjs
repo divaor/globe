@@ -4786,7 +4786,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const deep = await F(() => ({ open: window.atlas.deep.info.open, menu: !document.querySelector('.menu').hidden, lit: [...document.querySelectorAll('.dock .dock-btn.on')].map((b) => b.dataset.dock) }));
   await F(() => window.atlas.shell.sheet.close());
   await page.waitForTimeout(400);
-  const zoom = await F(() => document.querySelectorAll('.zoombar .icon-btn').length);
+  const zoom = await F(() => [...document.querySelectorAll('.zoombar .icon-btn')].filter((b) => b.getBoundingClientRect().width > 0).length);
   const L = (id) => seen[id].rows.join(',');
   check(tabs.map((t) => t.id).join() === 'map,explore,today,learn,play' && tabs.map((t) => t.label).join() === 'Map,Explore,Today,Learn,Play'
     && ['map', 'explore', 'learn', 'play'].every((t) => seen[t].open && seen[t].tab === t && seen[t].fits && seen[t].above && seen[t].tiles && seen[t].lit.join() === t && seen[t].closedAgain)
