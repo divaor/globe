@@ -79,7 +79,8 @@ A backup made as Atlas Globe still opens.
 - **Moving your data into the app (v0.50.2):** bringing back a backup in the iOS or Android app now waits until the
   app's own copy of your data is written in full before starting again, so the copy matches and nothing removed comes
   back. In the apps the file picker takes any file (some phones' pickers greyed out a .json backup); one that isn't a
-  backup is turned away. Checked in `scripts/test/native.mjs` with a slow stand-in for the app's storage.
+  backup is turned away. Checked in `scripts/test/native.mjs` with a slow stand-in for the app's storage. The Apps
+  workflow can also roll an Android build out to Play's testers itself (release *rollout*), not only leave a draft.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass

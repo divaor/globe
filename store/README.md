@@ -39,6 +39,8 @@ Only the developer accounts' owner can do the steps marked **(you)**.
 5. Run **Apps** by hand with *upload* on:
    - iOS goes to TestFlight.
    - Android goes to Play's internal test; choose track *alpha* for the closed test.
+   - Android's release is a draft to roll out in Play Console; choose release *rollout* to send it to that track's
+     testers straight away (v0.50.2).
 6. **(you)** Fill in the listings from `listings/*.json`, the screenshots, and the forms from `forms.md`.
 7. **(you)** Play's closed test: 12 testers who keep the app for 14 days (a personal account needs this before the
    first public release). The testers who speak Spanish, Portuguese, French or German also check those languages.
