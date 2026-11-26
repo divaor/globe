@@ -147,7 +147,8 @@ check(over.alt > 88.5, `the Moon is overhead at ${slon.toFixed(1)}, ${slat.toFix
   // square, its pole the way the orbit turns; following the Sun, the frame's way points at the Sun; a camera's angles
   // come back from its direction.
   let worstMiss = 0, worstAt = '';
-  for (const id of Object.keys(S.BODIES)) {
+  // (Not the Sun itself, v0.54.0: it goes round nothing here.)
+  for (const id of Object.keys(S.BODIES).filter((k) => k !== 'sun')) {
     const o = S.sunOrbit(id, j0), here = S.helio(id, j0), r = Math.hypot(...here);
     const miss = Math.min(...o.map((p) => Math.hypot(p[0] - here[0], p[1] - here[1], p[2] - here[2]))) / r;
     if (miss > worstMiss) { worstMiss = miss; worstAt = id; }
@@ -183,6 +184,24 @@ check(over.alt > 88.5, `the Moon is overhead at ${slon.toFixed(1)}, ${slat.toFix
   const pm = pathSpan("moon"), pe = pathSpan("earth"), pt = pathSpan("titan");
   check(rideOk && pm.through === 0 && pm.next < 1737 && near(pm.across / 384400, 2, 0.12) && pe.next < 6371 && near(pe.across / 149.6e6, 2, 0.05) && near(pt.across / 1221870, 2, 0.06),
     `riding along, ahead is the planet (a moon) or the Sun (a planet); the path round goes through the world (next point ${Math.round(pm.next)} km on the Moon, ${Math.round(pe.next)} km on the Earth) and right round (${(pm.across / 384400).toFixed(2)}, ${(pe.across / 149.6e6).toFixed(2)}, ${(pt.across / 1221870).toFixed(2)} times its orbit's radius; ${pm.n} points)`);
+
+  // The Sun as a world (v0.54.0): at the middle; round it the planets where they are, on orbits that pass through them;
+  // following a planet from it, ahead is the planet; every other world sees the planets but itself and its own planet.
+  const sun = S.systemOf('sun', j0);
+  const sunOk = S.helio('sun', j0).every((x) => x === 0) && sun.sunKm === 0 && sun.members.length === S.PLANETS.length && sun.orbits.length === S.PLANETS.length
+    && sun.members.every((m) => Math.hypot(...m.pos.map((x, k) => x - S.helio(m.id, j0)[k])) < 1)
+    && sun.orbits.every((o) => Math.min(...o.pts.map((p) => Math.hypot(...p.map((x, k) => x - S.helio(o.id, j0)[k])))) / Math.hypot(...S.helio(o.id, j0)) < 0.025);
+  const ff = S.lockFrame('follow', 'sun', j0, 'mars'), toMars = S.helio('mars', j0), tm = Math.hypot(...toMars);
+  const marsAhead = ang(ff.s, toMars.map((x) => x / tm)), marsPole = ang(ff.h, S.orbitPole('mars', j0, 'sun'));
+  const seen = (id) => S.systemOf(id, j0).planets.map((p) => p.id);
+  const planetsOk = !seen('earth').includes('earth') && seen('earth').length === S.PLANETS.length - 1 && !seen('moon').includes('earth') && seen('moon').length === S.PLANETS.length - 1 && seen('io').includes('jupiter') === false
+    && Math.abs(Math.hypot(...S.systemOf('earth', j0).planets.find((p) => p.id === 'venus').pos) - Math.hypot(...S.helio('venus', j0).map((x, k) => x - S.helio('earth', j0)[k]))) < 1;
+  check(sunOk && marsAhead < 3 && marsPole < 1e-6 && planetsOk,
+    `the Sun: at the middle, ${sun.members.length} worlds round it on orbits through them; following Mars from it, Mars ${marsAhead.toFixed(2)}° from ahead, up its orbit's pole; every world sees the planets but itself and its own`);
+  // How far round: half a Martian year in, half way; 400 days of the Earth's, one turn and 35 days.
+  const pM = S.orbitProgress('mars', j0, j0 + S.periodOf('mars', j0) / 2), pE = S.orbitProgress('earth', j0, j0 + 400), pMo = S.orbitProgress('moon', j0, j0 + 10);
+  check(near(pM.frac, 0.5, 1e-9) && pM.laps === 0 && near(pM.period, 687, 1) && pE.laps === 1 && near(pE.day, 400 - pE.period, 1e-9) && near(pE.left, 2 * pE.period - 400, 1e-9) && near(pMo.period, 27.32, 0.02) && near(pMo.day, 10, 1e-9) && S.orbitProgress('sun', j0, j0 + 5) === null && S.orbitProgress('mars', j0, j0 - 5).day === 0,
+    `how far round: Mars half way after ${pM.day.toFixed(1)} of ${pM.period.toFixed(1)} days; the Earth ${pE.laps} turn and ${pE.day.toFixed(1)} days after 400; the Moon day ${pMo.day} of ${pMo.period.toFixed(2)}; none for the Sun`);
 }
 
 console.log(failed ? `\n${failed} check(s) failed` : '\nall Tonight\'s sky checks passed');

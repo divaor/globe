@@ -10,12 +10,18 @@
 // when it is small). A button on the zoom controls locks the view: to the orbit (its pole stays up and the camera stays
 // put in space while the world turns under it), or following the world's planet or the Sun (which then stay put on the
 // screen, so a moon's phases or a planet's seasons go by in front of you). A play bar runs time at a chosen speed.
+//
+// v0.54.0: the Sun is a world too: it shines by itself (no night side; its edge darker, a glow round it), and zoomed out
+// the planets go round it. Its lock follows a planet: the camera rides behind the Sun, the planet ahead with its name,
+// only the Sun's top showing so the planets stay in sight. Riding along any world, the planets show where they are
+// (in front of the Sun when nearer). Names are drawn after every disc, so none goes under another body. While time
+// runs, the bar tells how far round its orbit the world (or the planet followed) has gone since today.
 import { geoRotation } from 'd3-geo';
 import { Orbit, Play, Pause, RotateCcw, Check } from 'lucide';
 import { julian, type V3 } from '../sky/astro';
 import { loadTex, drawDisc, renderWorld, type Tex } from '../sky/tonight-draw';
-import { systemOf, axesOf, BODIES, inFrame, helio, sunOrbit, pathAround, lockFrame, lockCamera, lockAngles, AU_KM, SUN_KM, type System, type Lock } from './system';
-import { worldById, tr, L } from './worlds';
+import { systemOf, axesOf, BODIES, PLANETS, inFrame, helio, sunOrbit, pathAround, lockFrame, lockCamera, lockAngles, orbitProgress, AU_KM, SUN_KM, type System, type Lock } from './system';
+import { worldById, tr, L, loadFacts, type Facts } from './worlds';
 import type { Space } from './space';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
@@ -33,6 +39,7 @@ const NORMAL_MIN = 0.6;
 const RINGS: [number, number, string][] = [[1.24, 1.53, 'rgba(170,152,124,0.28)'], [1.53, 1.95, 'rgba(226,208,170,0.92)'], [1.95, 2.03, 'rgba(90,80,64,0.18)'], [2.03, 2.27, 'rgba(208,190,154,0.72)']];
 const GIANT = new Set(['jupiter', 'saturn']);
 const DOT: Record<string, string> = {
+  sun: '#ffd36b', mercury: '#bdb5ab', venus: '#f0dcae', mars: '#e28b5c', ceres: '#b9b4ad', vesta: '#c8c0b2', uranus: '#a9e3ea',
   earth: '#7fb3ff', moon: '#d8d6cf', jupiter: '#e8cfa8', saturn: '#ead9a6', neptune: '#7ea6ff', pluto: '#d9c4a8', io: '#e8d27a', europa: '#e2d6bf',
   ganymede: '#bdb5a8', callisto: '#9a9388', enceladus: '#f2f4f8', titan: '#e3b468', triton: '#d9cbc2', charon: '#b9b2aa',
 };
@@ -83,6 +90,16 @@ export class Around {
     /** Riding along (v0.53.0): the middle of the view (where what is ahead sits), how far the camera looks down and its
      *  distance from the world (in its radii), and what is ahead on the screen. */
     ride: null as null | { cx: number; cy: number; el: number; L: number; ahead: { id: string; x: number; y: number; r: number } | null },
+    /** Following a planet from the Sun (v0.54.0): which. */
+    target: null as string | null,
+    /** Riding along (v0.54.0): the planets on the screen, and whether each is nearer than the Sun. */
+    planets: [] as { id: string; x: number; y: number; d: number; nearer: boolean }[],
+    /** The names drawn riding along, in the order drawn, and the discs (v0.54.0: names after every disc). */
+    drawn: [] as string[],
+    /** How far round its orbit the world (or the planet followed) has gone since today (v0.54.0). */
+    orbit: null as null | { id: string; laps: number; pct: number; day: number; period: number; left: number; local: number | null; localPeriod: number | null },
+    /** The Sun's own look (v0.54.0): its edge darkened, its glow. */
+    sunlit: false,
   };
 
   // ---- time (v0.51.0): now, or a moment of its own while playing or paused --------------------------------------
@@ -93,6 +110,8 @@ export class Around {
 
   // ---- the lock (v0.51.0) ----------------------------------------------------------------------------------------
   private lock: Lock = 'free';
+  /** On the Sun, the planet followed (v0.54.0). */
+  private target: string | null = null;
   private az = 0;
   private el = ORBIT_EL;
   /** Where the lock last put the camera (a change since then is the reader's drag). */
@@ -101,7 +120,11 @@ export class Around {
   private ease: { from: { lon: number; lat: number; roll: number; shift: number }; t0: number } | null = null;
   private lockWorld = '';
 
+  /** The worlds' facts (their days' lengths, for the orbit's count in their own days). */
+  private facts: Map<string, Facts> | null = null;
+
   constructor(private app: App, private shell: Shell, private space: Space) {
+    void loadFacts().then((f) => { this.facts = f; });
     app.renderer.underlays.add((bg, g) => this.behind(bg, g));
     app.renderer.overlays.add((rc) => this.front(rc));
     shell.tapHandlers.unshift((x, y) => this.tap(x, y));
@@ -149,25 +172,32 @@ export class Around {
 
   // ---- the lock --------------------------------------------------------------------------------------------------
 
-  /** Locks the view (or frees it): to the orbit, following the world's planet, or following the Sun. */
-  setLock(lock: Lock) {
+  /** Locks the view (or frees it): to the orbit, following the world's planet, or following the Sun; on the Sun
+   *  (v0.54.0), following a planet (`target`). */
+  setLock(lock: Lock, target?: string) {
     const view = this.app.renderer.view;
     const id = this.world();
     if (lock === 'planet' && !(id && BODIES[id]?.parent)) lock = 'orbit';
+    // The Sun goes round nothing: from it, a lock follows a planet; elsewhere there is none to follow from.
+    if (id === 'sun' && lock !== 'free') lock = 'follow';
+    if (id !== 'sun' && lock === 'follow') lock = 'ride';
     if (!id || view.current.kind !== 'globe') lock = 'free';
     this.lock = lock;
+    if (lock === 'follow') this.target = target && PLANETS.includes(target) ? target : this.target ?? 'earth';
     this.set = null;
     if (lock !== 'free' && id) {
       // Into the lock smoothly, from where the camera is now.
-      const f = lockFrame(lock, id, this.jd());
+      const f = lockFrame(lock, id, this.jd(), this.target);
       const ax = axesOf(id, this.jd());
       const c = vec([view.lon, view.lat]);
       const cj: V3 = [0, 1, 2].map((k) => c[0] * ax.X[k] + c[1] * ax.Y[k] + c[2] * ax.pole[k]) as V3;
-      if (lock === 'orbit') { this.az = lockAngles(f, cj).az; this.el = ORBIT_EL; } else if (lock === 'ride') { this.az = RIDE_AZ; this.el = rideEl(this.rideL(view)); } else { this.az = FOLLOW_AZ; this.el = FOLLOW_EL; }
+      if (lock === 'orbit') { this.az = lockAngles(f, cj).az; this.el = ORBIT_EL; } else if (lock === 'ride' || lock === 'follow') { this.az = RIDE_AZ; this.el = rideEl(this.rideL(view)); } else { this.az = FOLLOW_AZ; this.el = FOLLOW_EL; }
       this.ease = { from: { lon: view.lon, lat: view.lat, roll: view.roll, shift: view.shiftY }, t0: performance.now() };
       this.lockWorld = id;
-      // Riding along from far out: in close behind it, a few of its radii away.
+      // Riding along from far out: in close behind it, a few of its radii away. Following from the Sun: close, so only
+      // its top shows and the planets ahead stay in sight.
       if (lock === 'ride' && this.rideL(view) > 8) view.flyTo({ zoom: this.rideZoom(5) }, 700);
+      if (lock === 'follow' && this.rideL(view) > 3) view.flyTo({ zoom: this.rideZoom(2) }, 700);
     } else if (view.roll || view.shiftY) {
       // Free again: the roll eases back to none, frame by frame until it has.
       this.app.renderer.tickers.add(this.unroll);
@@ -200,14 +230,22 @@ export class Around {
       return;
     }
     if (id !== this.lockWorld) {
-      // Gone to another world: the lock goes along, from the start.
+      // Gone to another world: the lock goes along, from the start. To the Sun: following the planet come from (its
+      // planet, from a moon); from the Sun to a planet: riding along it, the Sun ahead.
+      const from = this.lockWorld;
       this.lockWorld = id!;
+      if (id === 'sun') {
+        const p = BODIES[from]?.parent ?? from;
+        this.lock = 'follow';
+        if (PLANETS.includes(p)) this.target = p;
+        this.target ??= 'earth';
+      } else if (this.lock === 'follow') this.lock = 'ride';
       if (this.lock === 'planet' && !BODIES[id!]?.parent) this.lock = 'orbit';
-      this.az = this.lock === 'orbit' ? 0 : this.lock === 'ride' ? RIDE_AZ : FOLLOW_AZ; this.el = this.lock === 'orbit' ? ORBIT_EL : FOLLOW_EL;
+      this.az = this.lock === 'orbit' ? 0 : this.lock === 'ride' || this.lock === 'follow' ? RIDE_AZ : FOLLOW_AZ; this.el = this.lock === 'orbit' ? ORBIT_EL : FOLLOW_EL;
       this.set = null;
       this.renderUi();
     }
-    const ride = this.lock === 'ride';
+    const ride = this.lock === 'ride' || this.lock === 'follow';
     if (this.set && !flying && !this.ease) {
       const dl = wrap(view.lon - this.set.lon), dp = view.lat - this.set.lat;
       // Riding along, a drag looks round (the height follows the zoom).
@@ -221,7 +259,7 @@ export class Around {
       shift = this.rideFocal(view) * Math.tan(this.el * RAD);
     }
     const jd = this.jd();
-    const { c, u } = lockCamera(lockFrame(this.lock as Exclude<Lock, 'free'>, id!, jd), this.az, this.el);
+    const { c, u } = lockCamera(lockFrame(this.lock as Exclude<Lock, 'free'>, id!, jd, this.target), this.az, this.el);
     const ax = axesOf(id!, jd);
     const cb = inFrame(ax, c), ub = inFrame(ax, u);
     const lon = Math.atan2(cb[1], cb[0]) / RAD, lat = Math.max(-89, Math.min(89, Math.asin(Math.max(-1, Math.min(1, cb[2]))) / RAD));
@@ -307,18 +345,22 @@ export class Around {
       if (view.zoom < min * 0.5 && !view.animating) view.flyTo({ zoom: Math.max(min, Math.min(NORMAL_MIN, view.zoom)) }, 400);
     }
     // It shows once the zoom has gone all the way out (fading in over the last stretch).
-    this.alpha = this.sys ? (this.lock === 'ride' ? 1 : Math.max(0, Math.min(1, (NORMAL_MIN * 1.12 - g.zoom) / (NORMAL_MIN * 0.12)))) : 0;
-    Object.assign(this.info, { world: id ?? '', on: this.alpha > 0, minZoom: min, fitMoons, sun: null, me: null, members: [], sunOrbit: false, night: false, lock: this.lock, az: this.az, el: this.el, playing: this.playing, jd, speed: this.speed, ride: null });
+    this.alpha = this.sys ? (this.riding() ? 1 : Math.max(0, Math.min(1, (NORMAL_MIN * 1.12 - g.zoom) / (NORMAL_MIN * 0.12)))) : 0;
+    Object.assign(this.info, { world: id ?? '', on: this.alpha > 0, minZoom: min, fitMoons, sun: null, me: null, members: [], sunOrbit: false, night: false, lock: this.lock, az: this.az, el: this.el, playing: this.playing, jd, speed: this.speed, ride: null, target: this.lock === 'follow' ? this.target : null, planets: [], drawn: [], sunlit: false });
   }
+  /** Riding along a world, or following a planet from the Sun (the same camera, v0.53.0 and v0.54.0). */
+  private riding() { return this.lock === 'ride' || this.lock === 'follow'; }
 
   private behind(bg: CanvasRenderingContext2D, g: G) {
     this.g = g;
     this.spots = [];
     this.boxes = [];
+    this.later = [];
     this.update(g);
     if (this.info.world === 'saturn') this.rings(bg, g, false);
+    if (this.info.world === 'sun') this.corona(bg, g);
     if (!this.alpha || !this.sys) { this.wasOn = false; return; }
-    if (this.lock === 'ride') { this.ride(bg, g, false); return; }
+    if (this.riding()) { this.ride(bg, g, false); return; }
     bg.globalAlpha = this.alpha;
     this.orbits(bg, g, false);
     this.members(bg, g, false);
@@ -331,6 +373,7 @@ export class Around {
     if (!g || !this.info.world || rc.view.current.kind !== 'globe' || rc.view.morphing) return;
     const ctx = rc.ctx;
     if (this.info.world === 'saturn') this.rings(ctx, g, true);
+    if (this.info.world === 'sun') this.limb(ctx, g);
     // Locked or playing but zoomed in: the night side still shows.
     if (!this.alpha && this.sys && (this.lock !== 'free' || this.playing)) this.night(ctx, g);
     if (this.alpha && this.sys) {
@@ -338,9 +381,9 @@ export class Around {
       ctx.save();
       ctx.globalAlpha = this.alpha;
       this.night(ctx, g);
-      if (this.lock === 'ride') { this.self(ctx, g); this.ride(ctx, g, true); ctx.restore(); this.info.frames++; return; }
+      if (this.riding()) { this.self(ctx, g); this.ride(ctx, g, true); ctx.restore(); this.info.frames++; return; }
       // The Sun and the world itself first, so the names near them make room for their own.
-      this.sun(ctx, g);
+      if (this.info.world !== 'sun') this.sun(ctx, g);
       this.self(ctx, g);
       this.orbits(ctx, g, true);
       this.members(ctx, g, true);
@@ -355,7 +398,8 @@ export class Around {
   private hint() {
     if (this.hinted) return;
     this.hinted = true;
-    this.shell.toast(L('Keep zooming out to see the moons on their real orbits; tap one to go there.', 'Sigue alejándote para ver las lunas en sus órbitas reales; toca una para ir allí.'), 3200);
+    this.shell.toast(this.info.world === 'sun' ? L('Keep zooming out to see the planets on their real orbits; tap one to go there.', 'Sigue alejándote para ver los planetas en sus órbitas reales; toca uno para ir allí.')
+      : L('Keep zooming out to see the moons on their real orbits; tap one to go there.', 'Sigue alejándote para ver las lunas en sus órbitas reales; toca una para ir allí.'), 3200);
   }
 
   // ---- drawing -----------------------------------------------------------------------------------------------------
@@ -384,7 +428,7 @@ export class Around {
     }
     this.info.orbits = n;
     // Round the Sun: it fades in once the moons' orbits are all in view (nearer, it would be a line through the globe).
-    const k = this.info.fitMoons > 0 ? Math.max(0, Math.min(1, Math.log(this.info.fitMoons / g.zoom) / Math.log(3))) : 0;
+    const k = sys.me !== 'sun' && this.info.fitMoons > 0 ? Math.max(0, Math.min(1, Math.log(this.info.fitMoons / g.zoom) / Math.log(3))) : 0;
     if (k > 0) {
       const here = helio(sys.me, this.jd());
       const a0 = ctx.globalAlpha;
@@ -410,7 +454,8 @@ export class Around {
       const name = this.name(m.id);
       this.info.members.push({ id: m.id, x: p.x, y: p.y, z: p.z, r, on, seeThrough: over });
       const go = () => (m.id === 'earth' ? void this.space.exit() : void this.space.enter(m.id));
-      if (!on) { this.edge(ctx, g, p.x, p.y, name, m.id, go); continue; }
+      // Off the screen: an arrow the way it is (from the Sun, ten would crowd the edges; zooming out shows them).
+      if (!on) { if (sys.me !== 'sun') this.edge(ctx, g, p.x, p.y, name, m.id, go); continue; }
       // Zoomed so far out that it sits on the world's own mark (the Moon on the Earth's): the mark keeps its name
       // and this one's goes just under it; a tap there still goes to it. (The mark's place is worked out here: the
       // members behind the world are drawn before the mark is.)
@@ -492,7 +537,7 @@ export class Around {
     const p = this.screen(g, q);
     const r = (SUN_KM / sys.R) * g.R;
     const label = `${L('The Sun', 'El Sol')} · ${this.km(sys.sunKm)}`;
-    const go = () => this.space.openOrrery?.();
+    const go = () => void this.space.enter('sun');
     const real = p.x + r > 0 && p.x - r < g.w && p.y + r > g.top && p.y - r < g.bottom;
     if (real) {
       // Hidden behind the world looked at (it would take an exact line-up, this far out).
@@ -523,7 +568,7 @@ export class Around {
    *  a moon's phases and a planet's seasons show as time goes by. The line between them is a great circle: on the
    *  screen half the globe's rim and half an ellipse. */
   private night(ctx: CanvasRenderingContext2D, g: G) {
-    if (g.R < 3) return;
+    if (g.R < 3 || this.sys?.me === 'sun') return;
     const sys = this.sys!;
     const s = inFrame(sys.axes, sys.sun);
     const { c, e, n } = this.cam();
@@ -553,16 +598,21 @@ export class Around {
     this.info.me = { x: g.cx, y: g.cy };
   }
 
-  // ---- riding along (v0.53.0) --------------------------------------------------------------------------------------
+  // ---- riding along (v0.53.0), and following a planet from the Sun (v0.54.0) ---------------------------------------
 
   /** Riding along: a camera a few of the world's radii behind it, looking level and straight ahead at what it goes
    *  round (its planet for a moon, the Sun for a planet), so the orbit runs across the middle of the screen, the world
    *  is in front, low down, and everything else is where it would be seen from there, at the size it would look: the
-   *  planet a moon goes round, the other moons, the Sun, the orbits. It moves with the world as time goes by. Drawn in
-   *  two passes: what is further than the world under the globe, the rest over it. */
+   *  planet a moon goes round, the other moons, the Sun, the orbits, and (v0.54.0) the planets that are in view, in
+   *  front of the Sun when nearer. It moves with the world as time goes by. On the Sun (v0.54.0) the same camera
+   *  follows a planet: it rides behind the Sun with the planet ahead, the Sun's top low in front.
+   *  Drawn in two passes: what is further than the world under the globe, the rest over it (on the Sun, everything
+   *  over it: the planets are far beyond it, but none should hide behind it). In each pass the discs go far to near;
+   *  the names come last, over every disc and the globe (those behind the globe left out). */
   private ride(ctx: CanvasRenderingContext2D, g: G, near: boolean) {
     const sys = this.sys!, view = this.app.renderer.view, jd = this.jd();
-    const f = lockFrame('ride', sys.me, jd);
+    const onSun = sys.me === 'sun';
+    const f = lockFrame(onSun ? 'follow' : 'ride', sys.me, jd, this.target);
     const fpx = this.rideFocal(view);
     // The camera as the globe is drawn this frame (while easing in, how far down it looks follows the globe's place).
     const el = Math.atan(Math.max(0, view.shiftY) / fpx);
@@ -582,6 +632,10 @@ export class Around {
     const gh: G = { ...g, cy };
     if (!near) this.info.ride = { cx, cy, el: el / RAD, L: dist, ahead: null };
     const parent = BODIES[sys.me]?.parent ?? null;
+    const ahead = onSun ? this.target : parent ?? 'sun';
+    /** Drawn in this pass. */
+    const mine = (d: number) => (onSun ? near : (d > dW) !== near);
+    const onScreen = (x: number, y: number, r: number) => x + r > 0 && x - r < g.w && y + r > g.top && y - r < g.bottom;
     // Behind the camera: an arrow at the edge, the way it is.
     const behind = (r: V3, name: string, id: string, go: () => void) => {
       if (!near) return;
@@ -589,13 +643,14 @@ export class Around {
       this.edge(ctx, gh, cx + (dx || 0.01) * 1e6, cy + dy * 1e6, name, id, go);
     };
 
-    // The orbits: the world's own (gold), packed close by, and its planet's other moons' (or its own moons').
+    // The orbits: the world's own (gold), packed close by, and its planet's other moons' (or its own moons'); on the
+    // Sun, the planet followed (gold) and the others (faint).
     const line = (pts: V3[], color: string) => {
       ctx.strokeStyle = color; ctx.lineWidth = 1.3; ctx.beginPath();
       let prev: ReturnType<typeof at> | null = null, open = false;
       for (const p of pts) {
         const q = at(p);
-        if (prev && prev.d > nearest && q.d > nearest && (prev.d > dW) === !near && (q.d > dW) === !near) {
+        if (prev && prev.d > nearest && q.d > nearest && mine(prev.d) && mine(q.d)) {
           if (!open) { ctx.moveTo(prev.x, prev.y); open = true; }
           ctx.lineTo(q.x, q.y);
         } else open = false;
@@ -603,52 +658,93 @@ export class Around {
       }
       ctx.stroke();
     };
-    line(pathAround(sys.me, jd), 'rgba(255,214,120,0.6)');
-    for (const o of sys.orbits) if (o.id !== sys.me) line(o.pts, 'rgba(190,210,255,0.36)');
-
-    // The Sun: always far beyond.
-    const sunAt = at([sys.sun[0] * sys.sunKm, sys.sun[1] * sys.sunKm, sys.sun[2] * sys.sunKm]);
-    const sunLabel = `${L('The Sun', 'El Sol')} · ${this.km(sys.sunKm)}`;
-    const toSun = () => this.space.openOrrery?.();
-    if (sunAt.d <= nearest) behind(sunAt.r, sunLabel, 'sun', toSun);
-    else if (!near) {
-      const r = sunAt.k * SUN_KM, glow = Math.max(14, r * 1.9);
-      if (sunAt.x > -glow && sunAt.x < g.w + glow && sunAt.y > g.top - glow && sunAt.y < g.bottom + glow) {
-        const gl = ctx.createRadialGradient(sunAt.x, sunAt.y, 0, sunAt.x, sunAt.y, glow);
-        gl.addColorStop(0, 'rgba(255,250,225,1)'); gl.addColorStop(Math.min(0.9, Math.max(0.2, r / glow)), 'rgba(255,226,140,0.95)'); gl.addColorStop(1, 'rgba(255,170,60,0)');
-        ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(sunAt.x, sunAt.y, glow, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = '#fffbea'; ctx.beginPath(); ctx.arc(sunAt.x, sunAt.y, Math.max(3.5, r), 0, Math.PI * 2); ctx.fill();
-        this.label(ctx, sunLabel, sunAt.x, sunAt.y + Math.max(r, 8) + 6);
-        this.info.sun = { x: sunAt.x, y: sunAt.y, real: true, r };
-        this.spots.push({ id: 'sun', x: sunAt.x, y: sunAt.y, r: Math.max(r, 22), go: toSun });
-      } else this.edge(ctx, gh, sunAt.x, sunAt.y, sunLabel, 'sun', toSun);
+    if (onSun) {
+      // From near the Sun every orbit rings the camera; only the one followed is drawn (the others would cross the sky).
+      const o = sys.orbits.find((x) => x.id === this.target);
+      if (o) line(o.pts, 'rgba(255,214,120,0.6)');
+    } else {
+      line(pathAround(sys.me, jd), 'rgba(255,214,120,0.6)');
+      for (const o of sys.orbits) if (o.id !== sys.me) line(o.pts, 'rgba(190,210,255,0.36)');
     }
-    if (!parent && near && this.info.ride && sunAt.d > nearest) this.info.ride.ahead = { id: 'sun', x: sunAt.x, y: sunAt.y, r: sunAt.k * SUN_KM };
 
-    // The planet it goes round and the other moons, at the size they look from here, turned and lit as they are.
+    // What is drawn this pass, far to near, then the names.
+    // `disc`: how big it is drawn (a nearer one that big covers what is behind it); `rank`: whose name wins a crowded
+    // spot (what is ahead, the Sun, the moons and the planet, then the planets).
+    const items: { id: string; d: number; x: number; y: number; r: number; disc: number; rank: number; draw: () => void; name: string; ny: number; go: () => void }[] = [];
+    const dotAt = (id: string, x: number, y: number) => () => {
+      const gl = ctx.createRadialGradient(x, y, 0, x, y, 9);
+      gl.addColorStop(0, DOT[id] ?? '#cfd3da'); gl.addColorStop(0.3, DOT[id] ?? '#cfd3da'); gl.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(x, y, 9, 0, Math.PI * 2); ctx.fill();
+    };
+    const goTo = (id: string) => () => (id === 'earth' ? void this.space.exit() : void this.space.enter(id));
+
+    // The Sun: always far beyond (not on the Sun itself).
+    let sunD = Infinity;
+    if (!onSun) {
+      const sunAt = at([sys.sun[0] * sys.sunKm, sys.sun[1] * sys.sunKm, sys.sun[2] * sys.sunKm]);
+      sunD = sunAt.d;
+      const sunLabel = `${L('The Sun', 'El Sol')} · ${this.km(sys.sunKm)}`;
+      const toSun = () => void this.space.enter('sun');
+      const r = sunAt.k * SUN_KM, glow = Math.max(14, r * 1.9);
+      if (sunAt.d <= nearest) behind(sunAt.r, sunLabel, 'sun', toSun);
+      else if (!onScreen(sunAt.x, sunAt.y, glow)) { if (near) this.edge(ctx, gh, sunAt.x, sunAt.y, sunLabel, 'sun', toSun); }
+      else {
+        if (near && ahead === 'sun' && this.info.ride) this.info.ride.ahead = { id: 'sun', x: sunAt.x, y: sunAt.y, r };
+        if (mine(sunAt.d)) items.push({ id: 'sun', d: sunAt.d, x: sunAt.x, y: sunAt.y, r: Math.max(r, 22), disc: Math.max(3.5, r), rank: 1, name: sunLabel, ny: sunAt.y + Math.max(r, 8) + 6, go: toSun, draw: () => {
+          const gl = ctx.createRadialGradient(sunAt.x, sunAt.y, 0, sunAt.x, sunAt.y, glow);
+          gl.addColorStop(0, 'rgba(255,250,225,1)'); gl.addColorStop(Math.min(0.9, Math.max(0.2, r / glow)), 'rgba(255,226,140,0.95)'); gl.addColorStop(1, 'rgba(255,170,60,0)');
+          ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(sunAt.x, sunAt.y, glow, 0, Math.PI * 2); ctx.fill();
+          ctx.fillStyle = '#fffbea'; ctx.beginPath(); ctx.arc(sunAt.x, sunAt.y, Math.max(3.5, r), 0, Math.PI * 2); ctx.fill();
+          this.info.sun = { x: sunAt.x, y: sunAt.y, real: true, r };
+        } });
+      }
+    }
+
+    // The planet it goes round and the other moons (on the Sun: the planets), at the size they look from here, turned
+    // and lit as they are. On the Sun only the planet followed gets an arrow when out of sight.
     for (const m of sys.members) {
       const q = at(m.pos);
-      const name = this.name(m.id);
-      const go = () => (m.id === 'earth' ? void this.space.exit() : void this.space.enter(m.id));
-      if (q.d <= nearest) { behind(q.r, name, m.id, go); continue; }
-      if ((q.d > dW) === near) continue;
+      const name = this.name(m.id), go = goTo(m.id);
+      const arrow = !onSun || m.id === this.target;
+      if (q.d <= nearest) { if (arrow) behind(q.r, name, m.id, go); continue; }
       const r = Math.min(600, q.k * m.r);
-      const on = q.x + r > 0 && q.x - r < g.w && q.y + r > g.top && q.y - r < g.bottom;
+      const on = onScreen(q.x, q.y, r);
+      if (m.id === ahead && this.info.ride && near === onSun) this.info.ride.ahead = { id: m.id, x: q.x, y: q.y, r };
+      if (!on) { if (near && arrow) { this.info.members.push({ id: m.id, x: q.x, y: q.y, z: -q.d, r, on, seeThrough: false }); this.edge(ctx, gh, q.x, q.y, name, m.id, go); } continue; }
+      if (!mine(q.d)) continue;
       this.info.members.push({ id: m.id, x: q.x, y: q.y, z: -q.d, r, on, seeThrough: false });
-      if (m.id === parent && this.info.ride && near === false) this.info.ride.ahead = { id: m.id, x: q.x, y: q.y, r };
-      if (!on) { this.edge(ctx, gh, q.x, q.y, name, m.id, go); continue; }
-      if (r < 3) {
-        const gl = ctx.createRadialGradient(q.x, q.y, 0, q.x, q.y, 9);
-        gl.addColorStop(0, DOT[m.id] ?? '#cfd3da'); gl.addColorStop(0.3, DOT[m.id] ?? '#cfd3da'); gl.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(q.x, q.y, 9, 0, Math.PI * 2); ctx.fill();
-      } else {
+      const far = m.id === ahead ? ` · ${this.km(Math.hypot(...m.pos))}` : '';
+      items.push({ id: m.id, d: q.d, x: q.x, y: q.y, r: Math.max(r, 18), disc: r < 3 ? 0 : r, rank: onSun ? 3 : 2, name: name + far, ny: Math.min(g.bottom - 10, q.y + Math.max(r, 6) + 5), go, draw: r < 3 ? dotAt(m.id, q.x, q.y) : () => {
         // Seen along the line from the camera, the orbit's pole at the top (as on the screen).
         const dir = unit3(q.r), up = unit3(cross3(cross3(dir, Y), dir));
         this.rideSphere(ctx, g, m.id, q.x, q.y, r, { dir, up });
-      }
-      const far = m.id === parent ? ` · ${this.km(Math.hypot(...m.pos))}` : '';
-      this.label(ctx, name + far, q.x, Math.min(g.bottom - 10, q.y + Math.max(r, 6) + 5));
-      this.spots.push({ id: m.id, x: q.x, y: q.y, r: Math.max(r, 18), go });
+      } });
+    }
+
+    // The planets in view (v0.54.0): where they are, a dot with its name; one passing the Sun shows in front of it
+    // when it is nearer (drawn later, far to near).
+    if (!onSun) for (const p of sys.planets) {
+      const q = at(p.pos);
+      if (q.d <= nearest || !onScreen(q.x, q.y, 9) || !mine(q.d)) continue;
+      this.info.planets.push({ id: p.id, x: q.x, y: q.y, d: q.d, nearer: q.d < sunD });
+      items.push({ id: p.id, d: q.d, x: q.x, y: q.y, r: 18, disc: 0, rank: 3, name: this.name(p.id), ny: Math.min(g.bottom - 10, q.y + 11), go: goTo(p.id), draw: dotAt(p.id, q.x, q.y) });
+    }
+
+    items.sort((a, b) => b.d - a.d);
+    for (const it of items) {
+      it.draw();
+      this.info.drawn.push(`disc:${it.id}`);
+      // Behind the world's own globe (the far pass), or behind a nearer disc: out of sight, no name, not to be tapped.
+      if (!near && Math.hypot(it.x - g.cx, it.y - g.cy) < g.R) continue;
+      // (The Sun's glow shows round an edge: its name goes only once all of it is hidden.)
+      const glow = it.id === 'sun' ? 14 : 0;
+      if (items.some((o) => o.d < it.d && o.disc >= 3 && Math.hypot(it.x - o.x, it.y - o.y) < o.disc - glow)) continue;
+      this.spots.push({ id: it.id, x: it.x, y: it.y, r: it.r, go: it.go });
+      this.later.push({ id: it.id, s: it.name, x: it.x, y: it.ny, rank: it.id === ahead ? 0 : it.rank, d: it.d });
+    }
+    if (near) {
+      for (const n of this.later.sort((a, b) => a.rank - b.rank || a.d - b.d)) if (this.label(ctx, n.s, n.x, n.y)) this.info.drawn.push(`name:${n.id}`);
+      this.later = [];
     }
   }
 
@@ -699,7 +795,10 @@ export class Around {
     return v >= 1e8 ? L('{0} million km', '{0} millones de km', fmtNumber(Math.round(v / 1e6))) : v >= 1e6 ? L('{0} million km', '{0} millones de km', fmtNumber(v / 1e6, 1)) : L('{0} km', '{0} km', fmtNumber(Math.round(v / 1000) * 1000));
   }
   private boxes: [number, number, number, number][] = [];
-  private label(ctx: CanvasRenderingContext2D, s: string, x: number, y: number) {
+  /** Riding along: the names to draw once every disc is (the far pass's wait for the near pass). */
+  private later: { id: string; s: string; x: number; y: number; rank: number; d: number }[] = [];
+  /** A name under a point, kept clear of the others; false if there was no room for it. */
+  private label(ctx: CanvasRenderingContext2D, s: string, x: number, y: number): boolean {
     ctx.font = '600 11px system-ui, sans-serif'; ctx.textBaseline = 'top';
     const half = ctx.measureText(s).width / 2 + 4;
     const g = this.g!;
@@ -707,12 +806,35 @@ export class Around {
     // One name per spot: a second one that would overlap goes under it, else is left out.
     let ty = y;
     const hit = (t: number) => this.boxes.some((b) => cx - half < b[2] && cx + half > b[0] && t < b[3] && t + 14 > b[1]);
-    if (hit(ty)) { ty = y + 14; if (hit(ty)) return; }
+    if (hit(ty)) { ty = y + 14; if (hit(ty)) return false; }
     this.boxes.push([cx - half, ty, cx + half, ty + 14]);
     y = ty;
     ctx.textAlign = 'center';
     ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(2,6,18,0.85)'; ctx.strokeText(s, cx, y);
     ctx.fillStyle = 'rgba(238,242,252,0.95)'; ctx.fillText(s, cx, y);
+    return true;
+  }
+
+  // ---- the Sun's own look (v0.54.0) ----------------------------------------------------------------------------------
+
+  /** The Sun's glow round its disc, on the background under the globe. */
+  private corona(bg: CanvasRenderingContext2D, g: G) {
+    const view = this.app.renderer.view;
+    if (g.R < 2 || view.current.kind !== 'globe' || view.morphing) return;
+    const r1 = g.R * 2.4;
+    const gl = bg.createRadialGradient(g.cx, g.cy, g.R * 0.98, g.cx, g.cy, r1);
+    gl.addColorStop(0, 'rgba(255,214,140,0.55)'); gl.addColorStop(0.12, 'rgba(255,180,80,0.26)'); gl.addColorStop(0.45, 'rgba(255,150,60,0.07)'); gl.addColorStop(1, 'rgba(255,140,50,0)');
+    bg.fillStyle = gl; bg.beginPath(); bg.arc(g.cx, g.cy, r1, 0, Math.PI * 2); bg.fill();
+  }
+
+  /** The Sun's disc darker toward its edge, as it is seen (there the light comes from higher, cooler gas). */
+  private limb(ctx: CanvasRenderingContext2D, g: G) {
+    const view = this.app.renderer.view;
+    if (g.R < 3 || view.current.kind !== 'globe' || view.morphing) return;
+    const gl = ctx.createRadialGradient(g.cx, g.cy, 0, g.cx, g.cy, g.R);
+    gl.addColorStop(0, 'rgba(90,24,0,0)'); gl.addColorStop(0.55, 'rgba(90,24,0,0.05)'); gl.addColorStop(0.8, 'rgba(90,24,0,0.18)'); gl.addColorStop(0.95, 'rgba(90,24,0,0.36)'); gl.addColorStop(1, 'rgba(90,24,0,0.5)');
+    ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(g.cx, g.cy, g.R, 0, Math.PI * 2); ctx.fill();
+    this.info.sunlit = true;
   }
 
   /** Saturn's rings around its globe: the far half behind it, the near half in front (turned with the view's roll). */
@@ -748,6 +870,8 @@ export class Around {
   private dateEl!: HTMLElement;
   private speedBtn!: HTMLButtonElement;
   private nowBtn!: HTMLButtonElement;
+  /** How far round its orbit (v0.54.0). */
+  private orbitEl!: HTMLElement;
   private shown = false;
 
   private buildUi() {
@@ -767,7 +891,8 @@ export class Around {
     this.speedBtn.addEventListener('click', () => { this.speed = (this.speed + 1) % SPEEDS.length; if (!this.playing) this.play(); else this.renderUi(); });
     this.nowBtn = h('button', { type: 'button', class: 'chip around-now', 'data-around': 'now' }, icon(RotateCcw, 14), h('span', null, L('Now', 'Ahora'))) as HTMLButtonElement;
     this.nowBtn.addEventListener('click', () => this.now());
-    this.bar = h('div', { class: 'around-bar glass', hidden: true, 'data-around': 'bar' }, this.playBtn, h('div', { class: 'around-mid' }, this.dateEl, this.speedBtn), this.nowBtn);
+    this.orbitEl = h('div', { class: 'around-orbit', hidden: true, 'data-around': 'orbit', 'aria-live': 'off' });
+    this.bar = h('div', { class: 'around-bar glass', hidden: true, 'data-around': 'bar' }, this.playBtn, h('div', { class: 'around-mid' }, this.dateEl, this.speedBtn), this.nowBtn, this.orbitEl);
     root.append(this.menu, this.bar);
     this.renderUi();
   }
@@ -776,6 +901,20 @@ export class Around {
     const id = this.world();
     if (!id) return;
     clear(this.menu);
+    const item = (lock: Lock, text: string, target?: string) => {
+      const on = this.lock === lock && (!target || this.target === target);
+      const b = h('button', { type: 'button', role: 'menuitemradio', 'aria-checked': String(on), class: on ? 'on' : '', 'data-lock': lock, ...(target ? { 'data-target': target } : {}) },
+        h('span', { class: 'around-tick' }, on ? icon(Check, 16) : null), h('span', null, text));
+      b.addEventListener('click', () => { this.setLock(lock, target); this.closeMenu(); });
+      return b;
+    };
+    if (id === 'sun') {
+      // On the Sun (v0.54.0): turn freely, or follow a planet from it.
+      this.menu.append(item('free', L('Turn freely', 'Girar libremente')), h('div', { class: 'around-menu-head' }, L('From the Sun, follow:', 'Desde el Sol, seguir a:')),
+        h('div', { class: 'around-grid' }, ...PLANETS.map((p) => item('follow', this.name(p), p))));
+      this.placeMenu();
+      return;
+    }
     const parent = BODIES[id]?.parent;
     const items: [Lock, string][] = [
       ['free', L('Turn freely', 'Girar libremente')],
@@ -784,12 +923,10 @@ export class Around {
       ['sun', L('Follow the Sun', 'Seguir al Sol')],
       ['ride', parent === 'earth' ? L('Ride along, the Earth ahead', 'Ir detrás, con la Tierra adelante') : parent ? L('Ride along, {0} ahead', 'Ir detrás, con {0} adelante', this.name(parent)) : L('Ride along, the Sun ahead', 'Ir detrás, con el Sol adelante')],
     ];
-    for (const [lock, text] of items) {
-      const b = h('button', { type: 'button', role: 'menuitemradio', 'aria-checked': String(this.lock === lock), class: this.lock === lock ? 'on' : '', 'data-lock': lock },
-        h('span', { class: 'around-tick' }, this.lock === lock ? icon(Check, 16) : null), h('span', null, text));
-      b.addEventListener('click', () => { this.setLock(lock); this.closeMenu(); });
-      this.menu.append(b);
-    }
+    for (const [lock, text] of items) this.menu.append(item(lock, text));
+    this.placeMenu();
+  }
+  private placeMenu() {
     const r = this.lockBtn.getBoundingClientRect(), pr = (this.menu.parentElement ?? document.body).getBoundingClientRect();
     this.menu.style.right = `${pr.right - r.left + 8}px`;
     this.menu.style.bottom = `${pr.bottom - r.bottom}px`;
@@ -828,6 +965,47 @@ export class Around {
     const s = this.sim == null ? L('Now', 'Ahora')
       : d.toLocaleString(appLocale(), withTime ? { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' } : { day: 'numeric', month: 'short', year: 'numeric' });
     if (s !== this.lastDate) { this.lastDate = s; this.dateEl.textContent = s; }
+    this.renderOrbit();
+  }
+
+  /** While time runs off today (v0.54.0): how far round its orbit the world has gone since today (on the Sun, the
+   *  planet followed): the part of the turn, the day of it in Earth days and in the planet's own, the days left, and
+   *  the whole turns done. */
+  private lastOrbit = '';
+  private renderOrbit() {
+    if (!this.orbitEl) return;
+    const id = this.world();
+    const subject = this.lock === 'follow' ? this.target : id && id !== 'sun' ? id : null;
+    const p = subject && this.sim != null ? orbitProgress(subject, julian(new Date()), this.jd()) : null;
+    if (!p || !subject) {
+      this.info.orbit = null;
+      if (!this.orbitEl.hidden) { this.orbitEl.hidden = true; this.lastOrbit = ''; }
+      return;
+    }
+    const parent = BODIES[subject]?.parent ?? null;
+    const f = this.facts?.get(subject);
+    // A planet's own day (sunrise to sunrise), for all but the Earth's (the Earth days are the count already).
+    const solarH = !parent && subject !== 'earth' && f ? (f.solarDay ?? (f.day ? Math.abs(f.day) : 0)) : 0;
+    const local = solarH ? (p.day * 24) / solarH : null, localPeriod = solarH ? (p.period * 24) / solarH : null;
+    const frac = Math.floor(p.frac * 1000) / 1000;
+    this.info.orbit = { id: subject, laps: p.laps, pct: frac * 100, day: p.day, period: p.period, left: p.left, local, localPeriod };
+    const n = (v: number, whole: number) => fmtNumber(v, whole < 10 ? 1 : 0);
+    const pct = (Math.floor(frac * 100) / 100).toLocaleString(appLocale(), { style: 'percent', maximumFractionDigits: 0 });
+    const name = this.name(subject);
+    const head = parent === 'earth' ? L('{0} round the Earth: {1}', '{0} alrededor de la Tierra: {1}', name, pct)
+      : parent ? L('{0} round {1}: {2}', '{0} alrededor de {1}: {2}', name, this.name(parent), pct) : L('{0} round the Sun: {1}', '{0} alrededor del Sol: {1}', name, pct);
+    const days = L('Day {0} of {1} since today · {2} to go', 'Día {0} de {1} desde hoy · faltan {2}', n(p.period < 10 ? p.day : Math.floor(p.day), p.period), n(p.period, p.period), n(p.period < 10 ? p.left : Math.ceil(p.left), p.period));
+    const own = local != null && localPeriod != null ? L('In {0} days: {1} of {2}', 'En días de {0}: {1} de {2}', name, n(localPeriod < 10 ? local : Math.floor(local), localPeriod), n(localPeriod, localPeriod)) : '';
+    const laps = p.laps === 1 ? L('1 full orbit since today', '1 vuelta completa desde hoy') : p.laps > 1 ? L('{0} full orbits since today', '{0} vueltas completas desde hoy', fmtNumber(p.laps)) : '';
+    const key = [head, days, own, laps, Math.round(frac * 400)].join('|');
+    if (key === this.lastOrbit) return;
+    this.lastOrbit = key;
+    clear(this.orbitEl);
+    const fill = h('span', { class: 'around-orbit-fill' });
+    fill.style.width = `${(frac * 100).toFixed(2)}%`;
+    this.orbitEl.append(h('span', { class: 'around-orbit-head' }, head), h('span', { class: 'around-orbit-track', role: 'presentation' }, fill), h('span', { class: 'muted' }, days),
+      ...(own ? [h('span', { class: 'muted' }, own)] : []), ...(laps ? [h('span', { class: 'muted' }, laps)] : []));
+    this.orbitEl.hidden = false;
   }
 
   // ---- taps --------------------------------------------------------------------------------------------------------

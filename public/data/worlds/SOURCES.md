@@ -27,8 +27,9 @@ Solar System Treks (trek.nasa.gov) as you zoom in.
 | Callisto | Voyager and Galileo SSI global mosaic, 1 km | NASA/JPL, USGS Astrogeology |
 | Titan | Cassini ISS infrared global mosaic (PIA19658), 4 km | NASA/JPL-Caltech/Space Science Institute, USGS Astrogeology |
 | Enceladus | Cassini global mosaic, 110 m | NASA/JPL/Space Science Institute, via NASA Solar System Treks |
-| Triton | Voyager 2 colour mosaic, filled | NASA/JPL, USGS Astrogeology |
-| Pluto, Charon | New Horizons global mosaics, 300 m (July 2017) | NASA/JHUAPL/SwRI, USGS Astrogeology |
+| Triton | Voyager 2 colour mosaic, filled; the north it never saw painted plain from the ground around it (v0.54.0) | NASA/JPL, USGS Astrogeology |
+| Pluto, Charon | New Horizons global mosaics, 300 m (July 2017); the far south it never saw painted plain from the ground around it (v0.54.0) | NASA/JHUAPL/SwRI, USGS Astrogeology |
+| The Sun | Its look (granules, sunspots and the belts they come in), drawn by `build-worlds.mjs`: not a real day’s Sun, which changes by the hour (v0.54.0) | Computed for the app |
 
 `thumbs/<world>.png` are small round views made from the same maps (the Earth's from the app's Blue Marble).
 

@@ -24,7 +24,7 @@ export interface WorldMap {
 export interface WorldDef {
   id: string;
   name: Text;
-  kind: 'planet' | 'moon' | 'dwarf' | 'asteroid';
+  kind: 'star' | 'planet' | 'moon' | 'dwarf' | 'asteroid';
   parent: string;
   /** Mean radius, km. */
   radius: number;
@@ -60,6 +60,13 @@ const USGS = 'USGS Astrogeology Science Center';
 const SSS = 'Solar System Scope (CC BY 4.0)';
 
 export const WORLDS: WorldDef[] = [
+  {
+    // The Sun (v0.54.0): its look drawn by build-worlds.mjs; it shines by itself (no night side) and the planets go
+    // round it when zoomed out.
+    id: 'sun', name: { en: 'The Sun', es: 'El Sol' }, kind: 'star', parent: '', radius: 695700, names: false, glow: 'rgba(255,178,70,0.9)', face: [0, 8],
+    note: { en: 'Its surface changes by the hour: this map shows how it looks (granules of rising gas, sunspots), not a real day’s. Zoom out to see the planets go round it.', es: 'Su superficie cambia hora a hora: este mapa muestra cómo se ve (gránulos de gas que sube, manchas solares), no un día real. Aléjate para ver los planetas girar a su alrededor.' },
+    maps: [{ id: 'photo', hi: 'sun-4k.jpg', lo: 'sun-2k.jpg', credit: 'Computed from the look of the Sun’s surface (granules, sunspots), not a real day’s' }],
+  },
   {
     id: 'mercury', name: { en: 'Mercury', es: 'Mercurio' }, kind: 'planet', parent: 'sun', radius: 2439.4, names: true, glow: null, face: [160, 20],
     maps: [{ id: 'photo', hi: 'mercury-4k.jpg', lo: 'mercury-2k.jpg', credit: `MESSENGER MDIS global mosaic (NASA/JHUAPL/Carnegie), via ${TREK}`,
@@ -155,16 +162,17 @@ export const WORLDS: WorldDef[] = [
   },
   {
     id: 'triton', name: { en: 'Triton', es: 'Tritón' }, kind: 'moon', parent: 'neptune', radius: 1353.4, names: true, glow: null, face: [0, -30],
-    note: { en: 'Voyager 2 saw only part of Triton in 1989: the rest of this map is filled in.', es: 'La Voyager 2 vio solo una parte de Tritón en 1989: el resto de este mapa está relleno.' },
+    note: { en: 'Voyager 2 saw only Triton’s southern half in 1989; the north, in the dark then, has never been seen and is shown plain.', es: 'La Voyager 2 vio solo la mitad sur de Tritón en 1989; el norte, entonces a oscuras, nunca se ha visto y aparece liso.' },
     maps: [{ id: 'photo', lo: 'triton-2k.jpg', credit: `Voyager 2 colour mosaic (NASA/JPL), ${USGS}` }],
   },
   {
     id: 'pluto', name: { en: 'Pluto', es: 'Plutón' }, kind: 'dwarf', parent: 'sun', radius: 1188.3, names: true, glow: 'rgba(150,185,255,0.22)', face: [180, 20],
-    note: { en: 'New Horizons flew past in 2015 and saw one side well; the far south was in the dark.', es: 'La New Horizons pasó en 2015 y vio bien un lado; el extremo sur estaba a oscuras.' },
+    note: { en: 'New Horizons flew past in 2015 and saw one side well; the far south was in the dark and is shown plain.', es: 'La New Horizons pasó en 2015 y vio bien un lado; el extremo sur estaba a oscuras y aparece liso.' },
     maps: [{ id: 'photo', hi: 'pluto-4k.jpg', lo: 'pluto-2k.jpg', credit: `New Horizons global mosaic (NASA/JHUAPL/SwRI), ${USGS}` }],
   },
   {
     id: 'charon', name: { en: 'Charon', es: 'Caronte' }, kind: 'moon', parent: 'pluto', radius: 606, names: true, glow: null, face: [0, 20],
+    note: { en: 'New Horizons saw Charon in 2015; its far south was in the dark and is shown plain.', es: 'La New Horizons vio a Caronte en 2015; su extremo sur estaba a oscuras y aparece liso.' },
     maps: [{ id: 'photo', lo: 'charon-2k.jpg', credit: `New Horizons global mosaic (NASA/JHUAPL/SwRI), ${USGS}` }],
   },
 ];

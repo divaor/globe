@@ -16,7 +16,7 @@ import type { InfoRow } from '../layers/types';
 import { appLocale, dataLang, wikiHref } from '../app/i18n';
 
 const KIND: Record<WorldDef['kind'], { en: string; es: string }> = {
-  planet: { en: 'Planet', es: 'Planeta' }, moon: { en: 'Moon', es: 'Luna' }, dwarf: { en: 'Dwarf planet', es: 'Planeta enano' }, asteroid: { en: 'Asteroid', es: 'Asteroide' },
+  star: { en: 'Our star', es: 'Nuestra estrella' }, planet: { en: 'Planet', es: 'Planeta' }, moon: { en: 'Moon', es: 'Luna' }, dwarf: { en: 'Dwarf planet', es: 'Planeta enano' }, asteroid: { en: 'Asteroid', es: 'Asteroide' },
 };
 const MAP_NAME: Record<WorldMap['id'], { en: string; es: string }> = {
   photo: { en: 'Surface', es: 'Superficie' }, elev: { en: 'Heights', es: 'Alturas' }, clouds: { en: 'Clouds', es: 'Nubes' },
@@ -160,6 +160,7 @@ export class Space {
     }
     wrap.append(h('p', { class: 'muted small' }, L('Visit other worlds on the globe with their real maps: tap a place for its name and story, and see where every spacecraft landed.', 'Visita otros mundos en el globo con sus mapas reales: toca un lugar para ver su nombre y su historia, y mira dónde aterrizó cada nave.')), top);
     const groups: [string, (w: WorldDef) => boolean][] = [
+      [L('Our star', 'Nuestra estrella'), (w) => w.kind === 'star'],
       [L('Planets', 'Planetas'), (w) => w.kind === 'planet'],
       [L('Moons', 'Lunas'), (w) => w.kind === 'moon'],
       [L('Dwarf planets and asteroids', 'Planetas enanos y asteroides'), (w) => w.kind === 'dwarf' || w.kind === 'asteroid'],
@@ -314,7 +315,7 @@ export class Space {
     if (w && !(this.active && this.surface.id === id)) links.push({ label: L('Visit on the globe', 'Visitar en el globo'), onClick: () => void this.enter(id) });
     if (id === 'earth') links.push({ label: L('Back to the Earth', 'Volver a la Tierra'), onClick: () => { this.closeOrrery?.(); void this.exit(); } });
     const name = f ? tr(f.name) : tr(w!.name);
-    const KIND_OF: Record<string, { en: string; es: string }> = { star: { en: 'Star', es: 'Estrella' }, planet: KIND.planet, dwarf: KIND.dwarf, comet: { en: 'Comet', es: 'Cometa' }, moon: KIND.moon, asteroid: KIND.asteroid };
+    const KIND_OF: Record<string, { en: string; es: string }> = { star: KIND.star, planet: KIND.planet, dwarf: KIND.dwarf, comet: { en: 'Comet', es: 'Cometa' }, moon: KIND.moon, asteroid: KIND.asteroid };
     const sub = w ? ofParent(w) : f ? tr(KIND_OF[f.kind] ?? KIND.planet) : '';
     const ic = id === 'sun' ? '☀️' : id === 'halley' ? '☄️' : id === 'earth' ? '🌍' : '🪐';
     this.shell.card.showCustom(ic, name, sub, rows, links, notes, f?.wiki ? wikiThumb(f.wiki) : undefined);
