@@ -10,6 +10,8 @@ import { Download, Upload, Share2 } from 'lucide';
 import { h, icon, clear, add } from '../ui/dom';
 import { lang, L } from './i18n';
 import { appLocale } from './i18n';
+import { persist } from './persist';
+import { isNative } from '../native/platform';
 
 declare const __APP_VERSION__: string;
 
@@ -113,7 +115,9 @@ export function backupSettings(toast: (m: string) => void): HTMLElement {
     })());
     btns.push(share);
   }
-  const input = h('input', { type: 'file', accept: '.json,application/json', hidden: true, 'data-backup': 'file' }) as HTMLInputElement;
+  // In the apps any file can be picked (v0.50.2): some phones' file pickers don't call a .json file JSON and would grey
+  // it out. A file that isn't a backup is turned away below.
+  const input = h('input', { type: 'file', accept: isNative() ? undefined : '.json,application/json', hidden: true, 'data-backup': 'file' }) as HTMLInputElement;
   const load = h('button', { type: 'button', class: 'pill sm', 'data-backup': 'load' }, icon(Upload, 15), L('Bring back a backup', 'Recuperar un respaldo'));
   load.addEventListener('click', () => input.click());
   input.addEventListener('change', () => void (async () => {
@@ -127,11 +131,13 @@ export function backupSettings(toast: (m: string) => void): HTMLElement {
     const yes = h('button', { type: 'button', class: 'pill sm primary', 'data-backup': 'replace' }, L('Replace this device’s data', 'Reemplazar los datos de este dispositivo'));
     const no = h('button', { type: 'button', class: 'pill sm', 'data-backup': 'cancel' }, L('Cancel', 'Cancelar'));
     no.addEventListener('click', () => clear(status));
-    yes.addEventListener('click', () => {
+    yes.addEventListener('click', () => void (async () => {
       restoreBackup(got.b, got.sealed);
       toast(L('Your data is here. Starting again…', 'Tus datos están aquí. Reiniciando…'));
-      setTimeout(() => location.reload(), 900);
-    });
+      // In the apps, their own copy of the data is written in full before the page starts again (v0.50.2).
+      await Promise.all([persist.flush().catch(() => {}), new Promise((ok) => setTimeout(ok, 900))]);
+      location.reload();
+    })());
     add(status,
       h('p', null, h('strong', null, L('Saved {0}', 'Guardado el {0}', when)), ` (${got.b.version}): ${summary(got.b.data)}.`),
       got.sealed ? null : h('p', { class: 'backup-warn', 'data-backup': 'unsealed' }, L('This file was changed after it was saved: your trip, places, lists and settings come over, but not its badges, streaks and scores (this device keeps its own).', 'Este archivo se modificó después de guardarlo: tu viaje, lugares, listas y ajustes se recuperan, pero no sus insignias, rachas ni puntuaciones (este dispositivo conserva las suyas).')),

@@ -85,5 +85,49 @@ for (const f of ['resources/icon-only.png', 'resources/icon-foreground.png', 're
 check(fs.existsSync(path.join(ROOT, 'ios/App/App/Assets.xcassets/AppIcon.appiconset')) && fs.readdirSync(path.join(ROOT, 'android/app/src/main/res')).some((d) => d.startsWith('mipmap-')),
   'the icon on both');
 
+// ---- The apps' copy of your data (src/native/storage.ts; v0.50.2): with a slow stand-in for the app's storage, what
+// is missing from the page comes back at launch, and a flush (what bringing back a backup waits for before starting
+// the page again) returns only once every change, removals too, is in the app's storage.
+{
+  class Store {
+    constructor() { this.m = new Map(); }
+    get length() { return this.m.size; }
+    key(i) { return [...this.m.keys()][i] ?? null; }
+    getItem(k) { return this.m.has(k) ? this.m.get(k) : null; }
+    setItem(k, v) { this.m.set(k, String(v)); }
+    removeItem(k) { this.m.delete(k); }
+    clear() { this.m.clear(); }
+  }
+  const prefs = new Map([['ls:atlas-globe:trip', '["paris"]'], ['ls:atlas-globe:old', 'x']]);
+  const slow = () => new Promise((ok) => setTimeout(ok, 25));
+  globalThis.__prefs = { prefs, slow };
+  globalThis.Storage = Store;
+  globalThis.window = { localStorage: new Store(), setTimeout, clearTimeout };
+  const V = {
+    '\0entry': `export { keepStorage, flushStorage } from ${JSON.stringify(path.join(ROOT, 'src/native/storage.ts'))}; export { persist } from ${JSON.stringify(path.join(ROOT, 'src/app/persist.ts'))};`,
+    '@capacitor/preferences': `const { prefs, slow } = globalThis.__prefs; export const Preferences = {
+      keys: async () => ({ keys: [...prefs.keys()] }), get: async ({ key }) => ({ value: prefs.has(key) ? prefs.get(key) : null }),
+      set: async ({ key, value }) => { await slow(); prefs.set(key, value); }, remove: async ({ key }) => { await slow(); prefs.delete(key); } };`,
+    '@capacitor/app': 'export const App = { addListener: async () => ({ remove() {} }) };',
+  };
+  const b = await rolldown({ input: '\0entry', platform: 'neutral', logLevel: 'silent', plugins: [{ name: 'stand-ins', resolveId: (id) => (id in V ? id : null), load: (id) => V[id] ?? null }] });
+  const N = await import(`data:text/javascript;base64,${Buffer.from((await b.generate({ format: 'esm' })).output[0].code).toString('base64')}`);
+  const ls = window.localStorage;
+  ls.setItem('atlas-globe:settings', '{"theme":"dark"}');
+  ls.setItem('atlas-globe:old', 'x');
+  const { restored } = await N.keepStorage();
+  check(restored === 1 && ls.getItem('atlas-globe:trip') === '["paris"]', `at launch, what the page lost comes back from the app's storage (${restored})`);
+  // A backup brought back: one key replaced, one removed, a big one added; then the wait before starting again.
+  ls.setItem('atlas-globe:trip', '["lima","cusco"]');
+  ls.removeItem('atlas-globe:old');
+  ls.setItem('atlas-globe:master', 'm'.repeat(200000));
+  const t0 = Date.now();
+  await N.persist.flush();
+  const took = Date.now() - t0;
+  check(prefs.get('ls:atlas-globe:trip') === '["lima","cusco"]' && !prefs.has('ls:atlas-globe:old') && prefs.get('ls:atlas-globe:master')?.length === 200000 && prefs.get('ls:atlas-globe:settings') === '{"theme":"dark"}' && took >= 75,
+    `bringing back a backup waits until the app's storage has every change, the removal too (${took} ms of slow writes)`);
+  delete globalThis.window; delete globalThis.Storage; delete globalThis.__prefs;
+}
+
 console.log(failed ? `\n${failed} native check(s) failed` : '\nnative checks passed');
 process.exit(failed ? 1 : 0);

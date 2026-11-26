@@ -98,7 +98,7 @@
    "en": "1 badge",
    "es": "1 insignia",
    "where": [
-    "src/app/backup.ts:78"
+    "src/app/backup.ts:80"
    ]
   },
   {
@@ -3507,7 +3507,7 @@
    "en": "Backup saved: {0}.",
    "es": "Respaldo guardado: {0}.",
    "where": [
-    "src/app/backup.ts:103"
+    "src/app/backup.ts:105"
    ]
   },
   {
@@ -4395,7 +4395,7 @@
    "en": "Bring back a backup",
    "es": "Recuperar un respaldo",
    "where": [
-    "src/app/backup.ts:117"
+    "src/app/backup.ts:121"
    ]
   },
   {
@@ -4748,7 +4748,7 @@
    "en": "Cancel",
    "es": "Cancelar",
    "where": [
-    "src/app/backup.ts:128",
+    "src/app/backup.ts:132",
     "src/app/i18n.ts:279",
     "src/ui/terrain.ts:129"
    ]
@@ -8158,7 +8158,7 @@
    "en": "Everything this device keeps is replaced by the file’s.",
    "es": "Todo lo que guarda este dispositivo se reemplaza por lo del archivo.",
    "where": [
-    "src/app/backup.ts:138"
+    "src/app/backup.ts:144"
    ]
   },
   {
@@ -17705,7 +17705,7 @@
    "en": "One file with everything this device keeps (badges, streaks and scores, your trip and its places, your countries, settings, playlists, your own data), to bring back on your phone or another computer. Saved offline areas stay on each device.",
    "es": "Un archivo con todo lo que guarda este dispositivo (insignias, rachas y puntuaciones, tu viaje y sus lugares, tus países, ajustes, listas, tus datos propios), para recuperarlo en tu teléfono u otra computadora. Las zonas guardadas sin conexión se quedan en cada dispositivo.",
    "where": [
-    "src/app/backup.ts:142"
+    "src/app/backup.ts:148"
    ]
   },
   {
@@ -20120,7 +20120,7 @@
    "en": "Replace this device’s data",
    "es": "Reemplazar los datos de este dispositivo",
    "where": [
-    "src/app/backup.ts:127"
+    "src/app/backup.ts:131"
    ]
   },
   {
@@ -20683,7 +20683,7 @@
    "en": "Save a backup",
    "es": "Guardar un respaldo",
    "where": [
-    "src/app/backup.ts:95"
+    "src/app/backup.ts:97"
    ]
   },
   {
@@ -20739,7 +20739,7 @@
    "en": "Saved {0}",
    "es": "Guardado el {0}",
    "where": [
-    "src/app/backup.ts:136"
+    "src/app/backup.ts:142"
    ]
   },
   {
@@ -21177,7 +21177,7 @@
    "en": "Send it",
    "es": "Enviarlo",
    "where": [
-    "src/app/backup.ts:109"
+    "src/app/backup.ts:111"
    ]
   },
   {
@@ -27452,7 +27452,7 @@
    "en": "This file was changed after it was saved: your trip, places, lists and settings come over, but not its badges, streaks and scores (this device keeps its own).",
    "es": "Este archivo se modificó después de guardarlo: tu viaje, lugares, listas y ajustes se recuperan, pero no sus insignias, rachas ni puntuaciones (este dispositivo conserva las suyas).",
    "where": [
-    "src/app/backup.ts:137"
+    "src/app/backup.ts:143"
    ]
   },
   {
@@ -27505,7 +27505,7 @@
    "en": "This is not a Mundora backup.",
    "es": "Este no es un respaldo de Mundora.",
    "where": [
-    "src/app/backup.ts:125"
+    "src/app/backup.ts:129"
    ]
   },
   {
@@ -31698,7 +31698,7 @@
    "en": "Your data is here. Starting again…",
    "es": "Tus datos están aquí. Reiniciando…",
    "where": [
-    "src/app/backup.ts:132"
+    "src/app/backup.ts:136"
    ]
   },
   {
@@ -32076,14 +32076,14 @@
    "en": "a trip of {0, plural, one {# city} other {# cities}}",
    "es": "un viaje de {0, plural, one {# ciudad} other {# ciudades}}",
    "where": [
-    "src/app/backup.ts:81"
+    "src/app/backup.ts:83"
    ]
   },
   {
    "en": "a trip of {0, plural, one {# city} other {# cities}} and {1, plural, one {# place} other {# places}}",
    "es": "un viaje de {0, plural, one {# ciudad} other {# ciudades}} y {1, plural, one {# lugar} other {# lugares}}",
    "where": [
-    "src/app/backup.ts:81"
+    "src/app/backup.ts:83"
    ]
   },
   {
@@ -32314,7 +32314,7 @@
    "en": "backup",
    "es": "respaldo",
    "where": [
-    "src/app/backup.ts:89"
+    "src/app/backup.ts:91"
    ]
   },
   {
@@ -33367,7 +33367,7 @@
    "en": "settings only",
    "es": "solo ajustes",
    "where": [
-    "src/app/backup.ts:86"
+    "src/app/backup.ts:88"
    ]
   },
   {
@@ -33865,7 +33865,7 @@
    "en": "your own data",
    "es": "tus datos propios",
    "where": [
-    "src/app/backup.ts:85"
+    "src/app/backup.ts:87"
    ]
   },
   {
@@ -34089,7 +34089,7 @@
    "en": "{0} badges",
    "es": "{0} insignias",
    "where": [
-    "src/app/backup.ts:78"
+    "src/app/backup.ts:80"
    ]
   },
   {
@@ -34223,7 +34223,7 @@
    "en": "{0} countries visited",
    "es": "{0} países visitados",
    "where": [
-    "src/app/backup.ts:83"
+    "src/app/backup.ts:85"
    ]
   },
   {
@@ -34813,7 +34813,7 @@
    "en": "{0} to go",
    "es": "{0} por visitar",
    "where": [
-    "src/app/backup.ts:84"
+    "src/app/backup.ts:86"
    ]
   },
   {
