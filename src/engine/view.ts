@@ -37,7 +37,18 @@ function xFactor(def: ProjectionDef): number {
 export class View {
   w = 800; h = 600; dpr = 1;
   lon = 0; lat = 18; zoom = 1;
+  /** The globe turned about the line of sight (degrees; v0.51.0): a view locked to an orbit keeps the orbit's pole up.
+   *  Flat maps never turn. */
+  roll = 0;
+  /**
+   * Steers the camera each update, after any flight and before the projection is built (v0.51.0): a view locked to an
+   * orbit sets its longitude, latitude and roll here. It is told whether a flight moved the camera this update (so it
+   * can tell a drag from a flight).
+   */
+  steer: ((flying: boolean) => void) | null = null;
   minZoom = 0.6; maxZoom = 400;
+  /** The usual end of zooming out (minZoom may go further, for the solar system around the globe). */
+  readonly minZoomUsual = 0.6;
   /** Pixels at the bottom covered by panels (e.g. a timeline bar); the map centres above them. */
   insetBottom = 0;
   /** Pixels at the top covered by panels (a tour or quiz card); the map centres below them. */
@@ -163,7 +174,9 @@ export class View {
       if (p >= 1) { this.morph = null; this.t = 1; this.a = this.b; }
       busy = true;
     }
+    let flew = false;
     if (this.fly) {
+      flew = true;
       const f = this.fly;
       // A zero duration jumps straight there (0 / 0 would make the camera NaN); a frame stamped just before the
       // flight began must not run it backwards.
@@ -176,6 +189,7 @@ export class View {
       if (p >= 1) { this.fly = null; const cb = this.onDone; this.onDone = null; cb?.(); }
       busy = true;
     }
+    this.steer?.(flew);
     this.lon = wrapLon(this.lon);
     this.zoom = Math.max(this.minZoom, Math.min(this.maxZoom, this.zoom));
     this.clampLat();
@@ -186,6 +200,9 @@ export class View {
   private phi0For(def: ProjectionDef): number {
     return def.kind === 'flat' ? 0 : -this.lat;
   }
+  private rollFor(def: ProjectionDef): number {
+    return def.kind === 'flat' ? 0 : this.roll;
+  }
 
   private build(): void {
     const { a, b, t } = this;
@@ -193,7 +210,7 @@ export class View {
     this.fa = fitScale(a, this.w, H);
     this.fb = fitScale(b, this.w, H);
     const phi0 = lerp(this.phi0For(a), this.phi0For(b), t);
-    this.rotate = [-this.lon, phi0, 0];
+    this.rotate = [-this.lon, phi0, lerp(this.rollFor(a), this.rollFor(b), t)];
     const raw = morphRaw(a.raw, b.raw, t, this.fa, this.fb);
     const p0 = (this.lat + phi0) * RAD;
     const yc = raw(0, Math.max(-Math.PI / 2, Math.min(Math.PI / 2, p0)))[1];
@@ -269,7 +286,9 @@ export class View {
       const y = def.raw(0, this.lat * RAD)[1] + dy / f;
       this.lat = invertY(def, y);
     } else {
-      const k = this.pxPerRadian;
+      // Zoomed out past the usual end (the solar system around the globe, v0.51.0), a drag turns the view no faster
+      // than it does there: at a hundredth of the size, a finger's width would otherwise spin it right round.
+      const k = Math.max(this.pxPerRadian, (this.pxPerRadian / Math.max(1e-12, this.zoom)) * Math.min(0.6, this.minZoomUsual));
       this.lon -= (dx / k) * DEG;
       this.lat += (dy / k) * DEG;
     }

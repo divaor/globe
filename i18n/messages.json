@@ -1,6 +1,6 @@
 {
  "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/data/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
- "count": 4953,
+ "count": 4959,
  "messages": [
   {
    "en": " (below sea level)",
@@ -120,6 +120,7 @@
    "es": "1 día/s",
    "where": [
     "src/sky/sky.ts:23",
+    "src/space/around.ts:42",
     "src/space/orrery.ts:38"
    ]
   },
@@ -127,7 +128,8 @@
    "en": "1 hour/s",
    "es": "1 hora/s",
    "where": [
-    "src/sky/sky.ts:22"
+    "src/sky/sky.ts:22",
+    "src/space/around.ts:41"
    ]
   },
   {
@@ -141,6 +143,7 @@
    "en": "1 month/s",
    "es": "1 mes/s",
    "where": [
+    "src/space/around.ts:44",
     "src/space/orrery.ts:40"
    ]
   },
@@ -148,6 +151,7 @@
    "en": "1 week/s",
    "es": "1 semana/s",
    "where": [
+    "src/space/around.ts:43",
     "src/space/orrery.ts:39"
    ]
   },
@@ -162,6 +166,7 @@
    "en": "1 year/s",
    "es": "1 año/s",
    "where": [
+    "src/space/around.ts:45",
     "src/space/orrery.ts:41"
    ]
   },
@@ -204,6 +209,7 @@
    "en": "10 years/s",
    "es": "10 años/s",
    "where": [
+    "src/space/around.ts:46",
     "src/space/orrery.ts:42"
    ]
   },
@@ -8963,6 +8969,20 @@
    ]
   },
   {
+   "en": "Follow the Earth",
+   "es": "Seguir a la Tierra",
+   "where": [
+    "src/space/around.ts:622"
+   ]
+  },
+  {
+   "en": "Follow the Sun",
+   "es": "Seguir al Sol",
+   "where": [
+    "src/space/around.ts:623"
+   ]
+  },
+  {
    "en": "Follow their life",
    "es": "Seguir su vida",
    "where": [
@@ -8975,6 +8995,13 @@
    "es": "Seguir esta vida",
    "where": [
     "src/play/lifeguess.ts:178"
+   ]
+  },
+  {
+   "en": "Follow {0}",
+   "es": "Seguir a {0}",
+   "where": [
+    "src/space/around.ts:622"
    ]
   },
   {
@@ -12733,7 +12760,7 @@
    "en": "Keep zooming out to see the moons on their real orbits; tap one to go there.",
    "es": "Sigue alejándote para ver las lunas en sus órbitas reales; toca una para ir allí.",
    "where": [
-    "src/space/around.ts:156"
+    "src/space/around.ts:319"
    ]
   },
   {
@@ -13792,6 +13819,21 @@
    "where": [
     "src/app/i18n.ts:96",
     "src/layers/timezones.ts:96"
+   ]
+  },
+  {
+   "en": "Lock the view",
+   "es": "Fijar la vista",
+   "where": [
+    "src/space/around.ts:595",
+    "src/space/around.ts:595"
+   ]
+  },
+  {
+   "en": "Lock to the orbit",
+   "es": "Fijar a la órbita",
+   "where": [
+    "src/space/around.ts:621"
    ]
   },
   {
@@ -17060,7 +17102,8 @@
     "src/sky/sky.ts:207",
     "src/sky/sky.ts:544",
     "src/sky/tonight.ts:262",
-    "src/sky/tonight.ts:493"
+    "src/sky/tonight.ts:493",
+    "src/space/around.ts:607"
    ]
   },
   {
@@ -18515,6 +18558,7 @@
    "where": [
     "src/learn/learn.ts:2655",
     "src/master/master.ts:837",
+    "src/space/around.ts:653",
     "src/ui/audio.ts:203",
     "src/ui/legend.ts:134"
    ]
@@ -24057,7 +24101,7 @@
    "es": "La Tierra",
    "where": [
     "src/deeptime/deeptime.ts:504",
-    "src/space/around.ts:314"
+    "src/space/around.ts:536"
    ]
   },
   {
@@ -24962,7 +25006,7 @@
    "es": "El Sol",
    "where": [
     "src/deeptime/deeptime.ts:672",
-    "src/space/around.ts:271"
+    "src/space/around.ts:447"
    ]
   },
   {
@@ -28363,6 +28407,13 @@
    "where": [
     "src/green/data.ts:156",
     "src/layers/landforms.ts:20"
+   ]
+  },
+  {
+   "en": "Turn freely",
+   "es": "Girar libremente",
+   "where": [
+    "src/space/around.ts:620"
    ]
   },
   {
@@ -33668,6 +33719,7 @@
    "es": "Reproducir",
    "where": [
     "src/learn/learn.ts:2655",
+    "src/space/around.ts:653",
     "src/ui/legend.ts:134"
    ]
   },
@@ -34430,7 +34482,7 @@
    "es": "{0} km",
    "where": [
     "src/learn/learn.ts:342",
-    "src/space/around.ts:316"
+    "src/space/around.ts:538"
    ]
   },
   {
@@ -34515,8 +34567,8 @@
    "en": "{0} million km",
    "es": "{0} millones de km",
    "where": [
-    "src/space/around.ts:316",
-    "src/space/around.ts:316"
+    "src/space/around.ts:538",
+    "src/space/around.ts:538"
    ]
   },
   {

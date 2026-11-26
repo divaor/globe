@@ -142,6 +142,37 @@ check(over.alt > 88.5, `the Moon is overhead at ${slon.toFixed(1)}, ${slat.toFix
   const eq = S.systemOf('earth', jd('2026-03-20T14:46Z')), sq = S.inFrame(eq.axes, eq.sun);
   const sunLat = deg(Math.asin(sq[2])), sunLon = deg(Math.atan2(sq[1], sq[0]));
   check(near(sunLat, 0, 0.3) && near(sunLon, -39.6, 1), `the Sun overhead at ${sunLon.toFixed(1)}, ${sunLat.toFixed(2)} at the March equinox`);
+
+  // Round the Sun and locked views (v0.51.0): each world's orbit round the Sun passes where it is; a locked frame is
+  // square, its pole the way the orbit turns; following the Sun, the frame's way points at the Sun; a camera's angles
+  // come back from its direction.
+  let worstMiss = 0, worstAt = '';
+  for (const id of Object.keys(S.BODIES)) {
+    const o = S.sunOrbit(id, j0), here = S.helio(id, j0), r = Math.hypot(...here);
+    const miss = Math.min(...o.map((p) => Math.hypot(p[0] - here[0], p[1] - here[1], p[2] - here[2]))) / r;
+    if (miss > worstMiss) { worstMiss = miss; worstAt = id; }
+  }
+  check(worstMiss < 0.025, `every world's orbit round the Sun passes where it is (within ${(worstMiss * 100).toFixed(1)}% of its distance; worst ${worstAt})`);
+  const turns = (id, round) => { const h = S.orbitPole(id, j0, round), a = round === 'sun' ? S.helio(id, j0) : S.moonOffset(BODIES_PARENT(id) ? id : FIRST(id), j0), b = round === 'sun' ? S.helio(id, j0 + 1) : S.moonOffset(BODIES_PARENT(id) ? id : FIRST(id), j0 + 0.01);
+    const c = [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]; return c[0] * h[0] + c[1] * h[1] + c[2] * h[2] > 0; };
+  const BODIES_PARENT = (id) => S.BODIES[id].parent, FIRST = (id) => Object.keys(S.BODIES).find((k) => S.BODIES[k].parent === id);
+  check(turns('titan', 'own') && turns('triton', 'own') && turns('earth', 'own') && turns('earth', 'sun') && near(ang(S.orbitPole('triton', j0), S.axesOf('neptune', j0).pole), 157, 2) && ang(S.orbitPole('saturn', j0), S.axesOf('saturn', j0).pole) < 1,
+    'the pole a view locks to is the way the orbit turns (Triton\'s backwards, Saturn\'s moons over its equator)');
+  let squareOk = true, roundOk = true;
+  for (const [lock, id] of [['orbit', 'earth'], ['sun', 'earth'], ['planet', 'moon'], ['planet', 'titan'], ['orbit', 'triton'], ['sun', 'pluto']]) {
+    const f = S.lockFrame(lock, id, j0);
+    const d = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+    if (Math.abs(d(f.h, f.h) - 1) > 1e-9 || Math.abs(d(f.s, f.s) - 1) > 1e-9 || Math.abs(d(f.h, f.s)) > 1e-9) squareOk = false;
+    for (const [az, el] of [[0, 0], [90, 20], [-135, 60], [170, -40]]) {
+      const cam = S.lockCamera(f, az, el), back = S.lockAngles(f, cam.c);
+      if (Math.abs(d(cam.c, cam.u)) > 1e-9 || Math.abs(d(cam.u, cam.u) - 1) > 1e-9 || Math.abs(((back.az - az + 540) % 360) - 180) > 1e-6 || Math.abs(back.el - el) > 1e-6) roundOk = false;
+    }
+  }
+  const fs = S.lockFrame('sun', 'earth', j0), toSun = S.helio('earth', j0).map((x) => -x), tl = Math.hypot(...toSun);
+  const sunInPlane = ang(fs.s, toSun.map((x) => x / tl));
+  const fp = S.lockFrame('planet', 'moon', j0), toEarth = S.moonOffset('moon', j0).map((x) => -x), el2 = Math.hypot(...toEarth);
+  check(squareOk && roundOk && sunInPlane < 0.5 && ang(fp.s, toEarth.map((x) => x / el2)) < 6,
+    `locked frames are square, a camera's angles come back from its direction; following, the frame points at the Sun (${sunInPlane.toFixed(2)}°) or the planet`);
 }
 
 console.log(failed ? `\n${failed} check(s) failed` : '\nall Tonight\'s sky checks passed');

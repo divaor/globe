@@ -187,6 +187,24 @@ html.map-light .brand-name { color: #1d2433; text-shadow: 0 0 6px rgba(255,255,2
 
 /* ---------- zoom */
 .zoombar { position: absolute; right: calc(12px + var(--safe-r)); top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; padding: 4px; border-radius: var(--r-md); gap: 2px; }
+.zoombar .around-lock.on { background: var(--accent-grad); color: #fff; }
+/* Around the globe (v0.51.0): the lock's menu beside the zoom buttons, and the play bar on the left at their height. */
+.around-menu { position: absolute; z-index: 9; display: flex; flex-direction: column; gap: 2px; min-width: 210px; padding: 6px; border-radius: var(--r-md); background: var(--glass-strong); box-shadow: var(--shadow); }
+.around-menu button { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px 0 8px; border: 0; border-radius: var(--r-sm); background: none; color: var(--text); font: inherit; font-size: var(--fs-md); text-align: left; cursor: pointer; }
+.around-menu button:hover { background: var(--chip); }
+.around-menu button.on { font-weight: 700; }
+.around-tick { width: 18px; display: inline-grid; place-items: center; color: var(--accent); }
+.around-bar { position: absolute; z-index: 4; left: calc(12px + var(--safe-l)); bottom: calc(132px + var(--safe-b)); display: flex; align-items: center; gap: 10px; padding: 6px 10px 6px 6px; border-radius: var(--r-lg); max-width: calc(100vw - 100px - var(--safe-l) - var(--safe-r)); }
+.around-bar .tb-play { width: 40px; height: 40px; }
+.around-mid { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; min-width: 0; }
+.around-date { font-size: var(--fs-sm); font-weight: 650; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.around-speed, .around-now { height: 26px; font-size: var(--fs-xs); }
+.around-now { display: inline-flex; align-items: center; gap: 4px; }
+html.mode-world .around-bar { bottom: calc(var(--wd-h, 130px) + 96px + var(--safe-b)); }
+html.orrery-open .around-bar, html.orrery-open .around-menu, html.t3d-open .around-bar { visibility: hidden; }
+/* A message shows above the play bar, not over it. */
+html:has(.around-bar:not([hidden])) .toast { bottom: calc(200px + var(--safe-b)); }
+html.mode-world:has(.around-bar:not([hidden])) .toast { bottom: calc(var(--wd-h, 130px) + 160px + var(--safe-b)); }
 
 /* ---------- dock and chips */
 .dock { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(14px + var(--safe-b)); display: flex; gap: 4px; padding: 6px; border-radius: var(--r-lg); }
@@ -647,6 +665,7 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
   /* While the compact strip is up, the filter chips step aside and the legend and zoom buttons sit above it. */
   html.has-cc .chips { display: none; }
   html.has-cc .legend, html.has-cc .zoombar { bottom: calc(88px + var(--cc-h, 64px) + var(--safe-b)); }
+  html.has-cc .around-bar { bottom: calc(88px + var(--cc-h, 64px) + var(--safe-b)); }
   .toast { bottom: calc(176px + var(--safe-b)); }
   .timebar { bottom: calc(78px + var(--safe-b)); width: calc(100vw - 16px); padding: 8px 10px 6px; }
   .warbar { bottom: calc(78px + var(--safe-b)); width: calc(100vw - 16px); padding: 8px 10px; border-radius: var(--r-lg); }

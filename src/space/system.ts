@@ -4,10 +4,12 @@
 // the moons go round on orbits fitted to JPL Horizons' positions (moon-orbits.json, scripts/data/space/build-moon-
 // orbits.mjs), the Earth's Moon on its own series. Pure functions of a Julian Day, checked by scripts/test/tonight.mjs.
 import { precession, gmst, mul, transpose, vec, dot, cross, norm, moon as moonSeries, eclToEq, RAD, type V3 } from '../sky/astro';
-import { positionOf, positionFromElements } from './orbits';
+import { positionOf, positionFromElements, orbitPath } from './orbits';
 import ORBITS from './moon-orbits.json';
 
 export const AU_KM = 149597870.7;
+/** The Sun's radius (km). */
+export const SUN_KM = 695700;
 const EARTH_KM = 6378.14; // the Moon series' Earth radius
 
 /** Each world's radius (km) and the planet it goes round (null: the Sun). */
@@ -130,4 +132,88 @@ export function systemOf(me: string, jd: number): System | null {
   const h = helio(me, jd);
   const sunKm = Math.hypot(...h);
   return { me, axes: axesOf(me, jd), R: b.r, members, orbits, sun: [-h[0] / sunKm, -h[1] / sunKm, -h[2] / sunKm], sunKm };
+}
+
+// ---- Round the Sun, and views locked to an orbit (v0.51.0) -------------------------------------------------------
+
+const unit = (v: V3): V3 => { const l = Math.hypot(...v) || 1; return [v[0] / l, v[1] / l, v[2] / l]; };
+
+/** The orbit a world goes round the Sun on (its planet's, for a moon): one whole turn, from the Sun (J2000, km). */
+export function sunOrbit(id: string, jd: number, n = 180): V3[] {
+  const p = BODIES[id]?.parent ?? id;
+  if (p === 'vesta') {
+    const per = ORBITS.vesta.per, out: V3[] = [];
+    for (let k = 0; k <= n; k++) { const q = eclToEq(positionFromElements(ORBITS.vesta, jd + (k / n - 0.5) * per) as V3); out.push([q[0] * AU_KM, q[1] * AU_KM, q[2] * AU_KM]); }
+    return out;
+  }
+  return orbitPath(p, jd, n).map((e) => { const q = eclToEq(e as V3); return [q[0] * AU_KM, q[1] * AU_KM, q[2] * AU_KM] as V3; });
+}
+
+/** The moon whose orbit a planet's view locks to: its first (the Moon, Io, Enceladus, Triton, Charon). */
+const firstMoon = (id: string) => Object.keys(BODIES).find((k) => BODIES[k].parent === id) ?? null;
+
+/**
+ * The pole of the orbit a view locks to (J2000 unit vector, the way the orbit turns): for a moon its own orbit round
+ * its planet; for a planet with moons the orbit of its first moon (so its moons' orbits lie flat); else, and always
+ * with `round` 'sun', the orbit round the Sun (its planet's, for a moon).
+ */
+export function orbitPole(id: string, jd: number, round: 'own' | 'sun' = 'own'): V3 {
+  const b = BODIES[id];
+  if (round === 'own') {
+    const m = b?.parent ? id : firstMoon(id);
+    if (m) {
+      // The plane of the orbit as drawn (a whole turn), so it lies flat however the Moon wobbles within a month.
+      const pts = orbitPoints(m, jd, 48), h: V3 = [0, 0, 0];
+      for (let k = 1; k < pts.length; k++) { const c = cross(pts[k - 1], pts[k]); h[0] += c[0]; h[1] += c[1]; h[2] += c[2]; }
+      return unit(h);
+    }
+  }
+  const p = b?.parent ?? id;
+  return unit(cross(helio(p, jd), helio(p, jd + 1)));
+}
+
+export type Lock = 'free' | 'orbit' | 'planet' | 'sun';
+export interface Frame { h: V3; s: V3 }
+
+/**
+ * A locked view's frame: up (the orbit's pole) and the way its angle round the pole is counted from. Locked to the
+ * orbit, that is a fixed way in space (the March equinox), so the world turns and its moons go round under a camera that
+ * stays put; following its planet or the Sun, it is the way to the planet or the Sun, which stays put on the screen.
+ */
+export function lockFrame(lock: Exclude<Lock, 'free'>, id: string, jd: number): Frame {
+  const b = BODIES[id];
+  let h: V3, toward: V3;
+  if (lock === 'planet' && b?.parent) {
+    h = orbitPole(id, jd);
+    const o = moonOffset(id, jd);
+    toward = [-o[0], -o[1], -o[2]];
+  } else if (lock === 'sun') {
+    h = orbitPole(id, jd, 'sun');
+    const p = helio(id, jd);
+    toward = [-p[0], -p[1], -p[2]];
+  } else {
+    h = orbitPole(id, jd);
+    toward = [1, 0, 0];
+  }
+  const d = dot(toward, h);
+  let s: V3 = [toward[0] - d * h[0], toward[1] - d * h[1], toward[2] - d * h[2]];
+  if (Math.hypot(...s) < 1e-6) s = [-h[1], h[0], 0];
+  return { h, s: unit(s) };
+}
+
+/** Where a locked camera looks from and which way is up (J2000 unit vectors): `az` degrees round the pole from the
+ *  frame's way, `el` degrees above the orbit. */
+export function lockCamera(f: Frame, az: number, el: number): { c: V3; u: V3 } {
+  const t = cross(f.h, f.s), A = az * RAD, E = el * RAD;
+  const p: V3 = [0, 1, 2].map((k) => Math.cos(A) * f.s[k] + Math.sin(A) * t[k]) as V3;
+  return {
+    c: [0, 1, 2].map((k) => Math.cos(E) * p[k] + Math.sin(E) * f.h[k]) as V3,
+    u: [0, 1, 2].map((k) => Math.cos(E) * f.h[k] - Math.sin(E) * p[k]) as V3,
+  };
+}
+
+/** A camera direction's angles in a frame (the other way from lockCamera). */
+export function lockAngles(f: Frame, c: V3): { az: number; el: number } {
+  const t = cross(f.h, f.s);
+  return { az: Math.atan2(dot(c, t), dot(c, f.s)) / RAD, el: Math.asin(Math.max(-1, Math.min(1, dot(c, f.h)))) / RAD };
 }
