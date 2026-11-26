@@ -3,7 +3,7 @@ name: Apps
 # The iOS and Android apps (v0.43.0), built from the same code as the website (capacitor.config.ts).
 # Every run checks that both build: an Android app to install (debug APK) and an iOS build for the simulator.
 # Started by hand with "upload", it also sends them to the testers: Android to Play's internal test (or, with track
-# alpha, the closed test) and iOS to TestFlight. Android's release is a draft to roll out in Play Console, or with
+# alpha, the closed test; production, everyone, v0.54.2) and iOS to TestFlight. Android's release is a draft to roll out in Play Console, or with
 # release "rollout" (v0.50.2) it goes out to that track's testers straight away. That needs these repository secrets (Settings → Secrets and variables → Actions):
 #   Android: ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD,
 #            PLAY_SERVICE_ACCOUNT_JSON
@@ -17,9 +17,9 @@ on:
         type: boolean
         default: false
       track:
-        description: "Play's track: internal (internal test) or alpha (closed test: the 12 testers for 14 days, v0.48.0)"
+        description: "Play's track: internal (internal test), alpha (closed test: the 12 testers for 14 days, v0.48.0) or production (everyone, once Play has given production access)"
         type: choice
-        options: [internal, alpha]
+        options: [internal, alpha, production]
         default: internal
       release:
         description: "Play's release: draft (you roll it out in Play Console) or rollout (out to the track's testers now)"

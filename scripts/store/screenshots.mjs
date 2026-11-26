@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// The stores' screenshots (v0.48.0): the same six scenes in every listing language, for the sizes the stores ask for:
+// The stores' screenshots (v0.48.0; the Sun scene since v0.54.2): the same seven scenes in every listing language, for the sizes the stores ask for:
 // iPhone 6.9" (1320×2868), iPad 13" (2064×2752), an Android phone (1080×2160), and Google Play's feature graphic
 // (1024×500). Each screenshot is the app as a phone shows it, under a short caption in the listing's language.
 // They are made from a running copy of the site and are not kept in git (store/screenshots/ is ignored).
@@ -38,6 +38,20 @@ const DEVICES = {
 const SCENES = [
   { id: 'globe', hash: '#p=globe&l=political&c=15,20,1.15' },
   { id: 'maps', hash: '#p=globe&l=koppen&c=20,10,1.2' },
+  // From the Sun, following the Earth: the Sun's top below, the Earth ahead and named, and the count of its year after
+  // a few weeks of play.
+  // (The Sun's note under its name is left out, to leave room for the Sun.)
+  { id: 'space', hash: '#world=sun', wait: 1500, css: '.worldbar .wd-note{display:none}', run: async () => {
+    const until = async (f, ms) => { for (let t = 0; t < ms && !f(); t += 100) await new Promise((r) => setTimeout(r, 100)); };
+    await until(() => window.atlas.space.surface?.id === 'sun' && window.atlas.around.info.sunlit, 20000);
+    await new Promise((r) => setTimeout(r, 1500));
+    const a = window.atlas.around;
+    a.setLock('follow', 'earth');
+    await new Promise((r) => setTimeout(r, 2500));
+    a.play(3);
+    await until(() => (a.info.orbit?.day ?? 0) > 60, 15000);
+    a.pause();
+  } },
   { id: 'deeptime', hash: '#deeptime=66&p=globe', wait: 5000 },
   { id: 'today', hash: '#p=globe&l=political&c=-40,20,1.1', run: () => window.atlas.today.openPanel() },
   { id: 'master', hash: '#p=globe&l=political&c=-60,-15,1.4', run: () => window.atlas.master.start('learn', { scope: 'SA', reverse: false }) },
@@ -46,6 +60,7 @@ const SCENES = [
 /** The captions: two short lines each. */
 const CAPTIONS = {
   globe: { 'en-US': 'The whole world\non one globe', 'es-419': 'Todo el mundo\nen un solo globo', 'es-ES': 'Todo el mundo\nen un solo globo', 'pt-BR': 'O mundo inteiro\nem um só globo', 'fr-FR': 'Le monde entier\nsur un seul globe', 'de-DE': 'Die ganze Welt\nauf einem Globus' },
+  space: { 'en-US': 'Follow the planets\nround the Sun', 'es-419': 'Sigue a los planetas\nalrededor del Sol', 'es-ES': 'Sigue a los planetas\nalrededor del Sol', 'pt-BR': 'Siga os planetas\nao redor do Sol', 'fr-FR': 'Suivez les planètes\nautour du Soleil', 'de-DE': 'Folge den Planeten\num die Sonne' },
   maps: { 'en-US': 'More than 170 maps\nof the world', 'es-419': 'Más de 170 mapas\ndel mundo', 'es-ES': 'Más de 170 mapas\ndel mundo', 'pt-BR': 'Mais de 170 mapas\ndo mundo', 'fr-FR': 'Plus de 170 cartes\ndu monde', 'de-DE': 'Über 170 Karten\nder Welt' },
   deeptime: { 'en-US': 'From the Big Bang\nto today', 'es-419': 'Del Big Bang\nhasta hoy', 'es-ES': 'Del Big Bang\nhasta hoy', 'pt-BR': 'Do Big Bang\naté hoje', 'fr-FR': 'Du Big Bang\nà aujourd’hui', 'de-DE': 'Vom Urknall\nbis heute' },
   today: { 'en-US': 'Something new\nto play every day', 'es-419': 'Algo nuevo\npara jugar cada día', 'es-ES': 'Algo nuevo\npara jugar cada día', 'pt-BR': 'Algo novo\npara jogar todo dia', 'fr-FR': 'Du nouveau\nà jouer chaque jour', 'de-DE': 'Jeden Tag\netwas Neues zum Spielen' },
@@ -70,6 +85,7 @@ async function appShot(dev, loc, scene) {
   const d = DEVICES[dev], L = LOCALES[loc];
   const ctx = await browser.newContext({ viewport: { width: d.w, height: d.h }, deviceScaleFactor: d.dpr, isMobile: d.mobile, hasTouch: true, locale: L.locale, colorScheme: 'dark' });
   await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:welcomed', '1'); localStorage.setItem('atlas-globe:hinted', '1'); } catch { /* */ } });
+  if (scene.css) await ctx.addInitScript((css) => { document.addEventListener('DOMContentLoaded', () => { const st = document.createElement('style'); st.textContent = css; document.head.append(st); }); }, scene.css);
   const page = await ctx.newPage();
   const hash = `${scene.hash}${scene.hash.includes('lang=') ? '' : `&lang=${L.lang}`}`;
   await page.goto(URL_ + hash, { waitUntil: 'networkidle', timeout: 90000 }).catch(() => {});
@@ -91,10 +107,12 @@ async function compose(dev, loc, scene, png) {
   await page.setContent(`<!doctype html><html><head><style>
     html,body{margin:0;width:${d.w}px;height:${d.h}px;overflow:hidden}
     body{background:radial-gradient(120% 80% at 50% 0%,#1d3b78 0%,#0b1630 45%,#060b18 100%);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#fff;display:flex;flex-direction:column;align-items:center}
-    h1{margin:${big ? 56 : 34}px 24px ${big ? 32 : 20}px;font-size:${big ? 54 : 31}px;line-height:1.15;font-weight:800;text-align:center;letter-spacing:-.01em;white-space:pre-line}
+    h1{margin:${big ? 56 : 34}px 24px ${big ? 32 : 20}px;font-size:${big ? 54 : 31}px;line-height:1.15;font-weight:800;text-align:center;letter-spacing:-.01em;white-space:pre;align-self:stretch;overflow:hidden}
     .shot{width:${big ? 80 : 84}%;border-radius:${big ? 28 : 22}px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 0 2px rgba(255,255,255,.12)}
     .shot img{display:block;width:100%}
   </style></head><body><h1>${esc(CAPTIONS[scene.id][loc])}</h1><div class="shot"><img src="data:image/png;base64,${png.toString('base64')}"></div></body></html>`);
+  // Each caption stays on its two lines: a line too long for the width makes the whole caption smaller.
+  await page.evaluate(() => { const h = document.querySelector('h1'); let s = parseFloat(getComputedStyle(h).fontSize); while (h.scrollWidth > h.clientWidth && s > 16) h.style.fontSize = `${--s}px`; });
   await page.waitForTimeout(200);
   const out = await page.screenshot();
   await ctx.close();

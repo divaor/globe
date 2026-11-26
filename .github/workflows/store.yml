@@ -1,0 +1,80 @@
+name: Store
+
+# Google Play's store listing from the repository (v0.54.2): the name and descriptions in store/listings, the app's
+# icon, and the feature graphic and phone screenshots made from this commit's build (scripts/store/screenshots.mjs).
+# Started by hand:
+#   status   what Play has now (each track's releases, the listings, their pictures, the contact details); changes nothing
+#   listing  makes the pictures (kept as the run's artifact, to look at), then sends the listing to Play
+# It uses the Apps workflow's PLAY_SERVICE_ACCOUNT_JSON secret; that service account needs "Manage store presence"
+# in Play Console (Users and permissions).
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "status: what Play has now; listing: make the pictures and send the listing"
+        type: choice
+        options: [status, listing]
+        default: status
+      only:
+        description: "Listing languages (comma-separated, e.g. en-US,es-419); empty for all six"
+        type: string
+        default: ''
+
+concurrency:
+  group: store
+  cancel-in-progress: false
+
+# bash with pipefail: a step that fails fails, even when its output is cut short.
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  play:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      ONLY: ${{ inputs.only }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/store/check.mjs
+      # The pictures as they were reviewed: Inter for the app's system font, colour emoji, Japanese for the guide.
+      - name: Fonts and browser
+        if: inputs.action == 'listing'
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q fonts-inter fonts-noto-color-emoji fonts-ipafont-gothic
+          mkdir -p ~/.config/fontconfig
+          printf '%s\n' '<?xml version="1.0"?>' '<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">' '<fontconfig>' \
+            '  <alias><family>system-ui</family><prefer><family>Inter</family></prefer></alias>' \
+            '  <alias><family>-apple-system</family><prefer><family>Inter</family></prefer></alias>' \
+            '  <alias><family>Segoe UI</family><prefer><family>Inter</family></prefer></alias>' \
+            '  <alias><family>sans-serif</family><prefer><family>Inter</family></prefer></alias>' \
+            '</fontconfig>' > ~/.config/fontconfig/fonts.conf
+          fc-cache -f >/dev/null
+          echo "system-ui is $(fc-match system-ui)"
+          npm install --no-save playwright@1.63.0
+          npx playwright install --with-deps chromium
+      - name: Pictures
+        if: inputs.action == 'listing'
+        run: |
+          npm run build
+          npx vite preview --port 4173 --strictPort > /tmp/preview.log 2>&1 &
+          for i in $(seq 30); do curl -sf -o /dev/null http://localhost:4173/ && break; sleep 2; done
+          node scripts/store/screenshots.mjs --devices android ${ONLY:+--only "$ONLY"}
+      - uses: actions/upload-artifact@v4
+        if: inputs.action == 'listing'
+        with:
+          name: play-pictures
+          path: store/screenshots
+      - name: Play
+        env:
+          PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          ACTION: ${{ inputs.action }}
+        run: node scripts/store/play.mjs "$ACTION" ${ONLY:+--only "$ONLY"}
