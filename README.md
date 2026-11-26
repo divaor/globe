@@ -58,6 +58,10 @@ A backup made as Atlas Globe still opens.
   solar system, where a tapped planet takes you to it. Saturn wears its rings; a planet's moons sit around it (tap one
   to go there); behind a moon, its planet to scale (Saturn is 23 times as wide as Titan; tap it to go back). The globe
   floats in dark space in the light theme too.
+- **The Android app's top (v0.49.1):** the app opened with an Android title bar ("Mundora" over a squeezed splash
+  picture) above the page: edge-to-edge was turned on while the launch theme was still on the window. The app's own
+  theme now comes first, and the launch theme hands over to it (postSplashScreenTheme) with no picture behind the
+  views.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass
