@@ -4,7 +4,7 @@
 // the moons go round on orbits fitted to JPL Horizons' positions (moon-orbits.json, scripts/data/space/build-moon-
 // orbits.mjs), the Earth's Moon on its own series. Pure functions of a Julian Day, checked by scripts/test/tonight.mjs.
 import { precession, gmst, mul, transpose, vec, dot, cross, norm, moon as moonSeries, eclToEq, RAD, type V3 } from '../sky/astro';
-import { positionOf, positionFromElements, orbitPath } from './orbits';
+import { positionOf, positionFromElements, orbitPath, orbitOf } from './orbits';
 import ORBITS from './moon-orbits.json';
 
 export const AU_KM = 149597870.7;
@@ -172,7 +172,7 @@ export function orbitPole(id: string, jd: number, round: 'own' | 'sun' = 'own'):
   return unit(cross(helio(p, jd), helio(p, jd + 1)));
 }
 
-export type Lock = 'free' | 'orbit' | 'planet' | 'sun';
+export type Lock = 'free' | 'orbit' | 'planet' | 'sun' | 'ride';
 export interface Frame { h: V3; s: V3 }
 
 /**
@@ -183,6 +183,8 @@ export interface Frame { h: V3; s: V3 }
 export function lockFrame(lock: Exclude<Lock, 'free'>, id: string, jd: number): Frame {
   const b = BODIES[id];
   let h: V3, toward: V3;
+  // Riding along (v0.53.0): ahead is what it goes round, its planet for a moon and the Sun for a planet.
+  if (lock === 'ride') lock = b?.parent ? 'planet' : 'sun';
   if (lock === 'planet' && b?.parent) {
     h = orbitPole(id, jd);
     const o = moonOffset(id, jd);
@@ -210,6 +212,27 @@ export function lockCamera(f: Frame, az: number, el: number): { c: V3; u: V3 } {
     c: [0, 1, 2].map((k) => Math.cos(E) * p[k] + Math.sin(E) * f.h[k]) as V3,
     u: [0, 1, 2].map((k) => Math.cos(E) * f.h[k] - Math.sin(E) * p[k]) as V3,
   };
+}
+
+/** How long a world takes to go round once (days): a moon round its planet, a planet round the Sun. */
+export function periodOf(id: string, jd: number): number {
+  const b = BODIES[id];
+  if (b?.parent) { const f = FITS[id]; return f ? 360 / Math.abs(f.n) : 27.321661; }
+  if (id === 'vesta') return ORBITS.vesta.per;
+  const o = orbitOf(id, jd);
+  return o ? 365.25 * Math.pow(o.a, 1.5) : 365.25;
+}
+
+/** A world's own path round what it goes round, from where it is now (J2000, km from the world): packed tight close by,
+ *  where a camera riding along sees it from a few radii away, and wider further round (v0.53.0). */
+export function pathAround(id: string, jd: number): V3[] {
+  const P = periodOf(id, jd), b = BODIES[id];
+  const at = (t: number): V3 => (b?.parent ? moonOffset(id, jd + t) : helio(id, jd + t));
+  const here = at(0);
+  const us: number[] = [];
+  for (let u = 2e-6; u < 0.5; u *= 1.3) us.push(u);
+  const ts = [-0.5, ...us.slice().reverse().map((u) => -u), 0, ...us, 0.5].map((u) => u * P);
+  return ts.map((t) => { const p = at(t); return [p[0] - here[0], p[1] - here[1], p[2] - here[2]] as V3; });
 }
 
 /** A camera direction's angles in a frame (the other way from lockCamera). */

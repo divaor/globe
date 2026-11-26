@@ -99,6 +99,14 @@ A backup made as Atlas Globe still opens.
   and the view goes back where it was. Also: zoomed out past the usual end, the map's own names (oceans, countries,
   cities) wait until the globe is near again, instead of being bigger than it; all the way out, the world's own mark
   keeps its name when a moon sits on it, with the moon's name just under it (a tap there still goes to the moon).
+- **Ride along (v0.53.0):** a fourth way to lock the view, on the same button. The camera rides just behind the world,
+  looking level and straight ahead at what it goes round (the Sun for a planet, its planet for a moon), so the orbit
+  runs across the middle of the screen, the world is in front, low down, and what it goes round is ahead in the
+  middle. Everything else is where it would be seen from there and at the size it would look: from the Moon the Earth
+  is a small disc ahead, from Io Jupiter fills a good part of the sky, and the Sun and the other moons go round as time
+  plays. The camera moves with the world, so what is ahead stays ahead through its year. Zooming moves the camera in
+  or back; nearer, it looks further down so what is ahead stays above the world's edge; a drag looks round. The
+  screensaver's Planets and moons tour can ride along too, and its mix takes turns at it.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass

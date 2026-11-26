@@ -173,6 +173,16 @@ check(over.alt > 88.5, `the Moon is overhead at ${slon.toFixed(1)}, ${slat.toFix
   const fp = S.lockFrame('planet', 'moon', j0), toEarth = S.moonOffset('moon', j0).map((x) => -x), el2 = Math.hypot(...toEarth);
   check(squareOk && roundOk && sunInPlane < 0.5 && ang(fp.s, toEarth.map((x) => x / el2)) < 6,
     `locked frames are square, a camera's angles come back from its direction; following, the frame points at the Sun (${sunInPlane.toFixed(2)}°) or the planet`);
+
+  // Riding along (v0.53.0): ahead is the planet for a moon and the Sun for a planet; the world's own path goes through it,
+  // packed tight close by (a camera a few radii behind sees it from there) and right round (about its orbit across).
+  const same = (a, b) => a.h.every((x, k) => Math.abs(x - b.h[k]) < 1e-12) && a.s.every((x, k) => Math.abs(x - b.s[k]) < 1e-12);
+  const rideOk = same(S.lockFrame('ride', 'moon', j0), S.lockFrame('planet', 'moon', j0)) && same(S.lockFrame('ride', 'earth', j0), S.lockFrame('sun', 'earth', j0))
+    && same(S.lockFrame('ride', 'titan', j0), S.lockFrame('planet', 'titan', j0)) && same(S.lockFrame('ride', 'pluto', j0), S.lockFrame('sun', 'pluto', j0));
+  const pathSpan = (id) => { const pts = S.pathAround(id, j0), r = pts.map((p) => Math.hypot(...p)); return { through: Math.min(...r), next: Math.min(...r.filter((x) => x > 0)), across: Math.max(...r), n: pts.length }; };
+  const pm = pathSpan("moon"), pe = pathSpan("earth"), pt = pathSpan("titan");
+  check(rideOk && pm.through === 0 && pm.next < 1737 && near(pm.across / 384400, 2, 0.12) && pe.next < 6371 && near(pe.across / 149.6e6, 2, 0.05) && near(pt.across / 1221870, 2, 0.06),
+    `riding along, ahead is the planet (a moon) or the Sun (a planet); the path round goes through the world (next point ${Math.round(pm.next)} km on the Moon, ${Math.round(pe.next)} km on the Earth) and right round (${(pm.across / 384400).toFixed(2)}, ${(pe.across / 149.6e6).toFixed(2)}, ${(pt.across / 1221870).toFixed(2)} times its orbit's radius; ${pm.n} points)`);
 }
 
 console.log(failed ? `\n${failed} check(s) failed` : '\nall Tonight\'s sky checks passed');

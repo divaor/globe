@@ -1,7 +1,7 @@
 // Planets and moons (v0.52.0): a screensaver tour of the solar system around the globe. It flies from one world to
 // the next (the ones chosen, in order or shuffled), follows each round the Sun or its planet (or locks to its orbit)
 // while time runs at the chosen speed, and glides the camera in or out while it stays, so the views keep changing.
-// Each world's name and a line about it show at the bottom (read aloud when that is on). Started from the screensaver
+// Each world's name and a line about it show at the top (read aloud when that is on). Started from the screensaver
 // panel; ambient mode hides the controls and keeps the screen awake.
 import { Play } from 'lucide';
 import { h, icon, toggle, segmented } from '../ui/dom';
@@ -14,12 +14,14 @@ import type { App } from '../app/app';
 import type { Ticker } from '../engine/renderer';
 
 export { TOUR_ID } from '../ui/ambient';
-export type TourFollow = 'sun' | 'planet' | 'orbit' | 'mix';
+export type TourFollow = 'sun' | 'planet' | 'orbit' | 'ride' | 'mix';
 export interface TourSettings { worlds: string[]; follow: TourFollow; speed: number; shuffle: boolean }
 /** Every world it can visit, from the Sun outwards, each planet followed by its moons. */
 export const TOUR_WORLDS = ['mercury', 'venus', 'earth', 'moon', 'mars', 'ceres', 'vesta', 'jupiter', 'io', 'europa', 'ganymede', 'callisto', 'saturn', 'enceladus', 'titan', 'uranus', 'neptune', 'triton', 'pluto', 'charon'];
 export const DEFAULT_TOUR: TourSettings = { worlds: ['earth', 'moon', 'mars', 'jupiter', 'io', 'europa', 'saturn', 'titan', 'neptune', 'pluto'], follow: 'mix', speed: 1, shuffle: false };
 const isMoon = (id: string) => !!BODIES[id]?.parent;
+/** Five choices may take two lines each on a phone. */
+const wrapSeg = (el: HTMLElement) => { el.classList.add('seg-wrap'); return el; };
 
 /** The tour's settings, as kept (unknown worlds left out; at least one world). */
 export function tourSettings(app: App): TourSettings {
@@ -93,13 +95,12 @@ export class SpaceTour {
     this.timer = window.setTimeout(() => void this.next(caption, secs, me), Math.max(4000, ms - (performance.now() - t0)));
   }
 
-  /** How a world is followed: as chosen, or (a mix) a moon by its planet and a planet by the Sun, every third world
-   *  locked to its orbit instead. */
+  /** How a world is followed: as chosen, or (a mix) in turn a moon by its planet and a planet by the Sun, riding along
+   *  behind it (v0.53.0), and locked to its orbit. */
   private lockFor(follow: TourFollow, id: string, n: number): Lock {
     if (follow === 'planet') return isMoon(id) ? 'planet' : 'sun';
     if (follow !== 'mix') return follow;
-    if (n % 3 === 2) return 'orbit';
-    return isMoon(id) ? 'planet' : 'sun';
+    return ([isMoon(id) ? 'planet' : 'sun', 'ride', 'orbit'] as Lock[])[n % 3];
   }
 
   /** The camera glides in (or out) while the world is shown: from where its neighbourhood shows to where the globe
@@ -107,8 +108,10 @@ export class SpaceTour {
   private startGlide(lock: Lock, zoomIn: boolean, ms: number) {
     const view = this.app.renderer.view;
     const fit = this.around.info.fitMoons;
-    const wide = lock === 'planet' ? Math.max(view.minZoom, fit) : Math.max(view.minZoom, Math.min(0.22, fit * 1.15));
-    const close = 0.95;
+    // Riding along: from well behind the world in close (or back out), what it goes round ahead all the while.
+    const ride = lock === 'ride';
+    const wide = ride ? this.around.rideZoom(12) : lock === 'planet' ? Math.max(view.minZoom, fit) : Math.max(view.minZoom, Math.min(0.22, fit * 1.15));
+    const close = ride ? this.around.rideZoom(2.2) : 0.95;
     const [a, b] = zoomIn ? [wide, close] : [close, wide];
     const t0 = performance.now();
     const ease = (x: number) => x * x * (3 - 2 * x);
@@ -181,12 +184,13 @@ export function tourSettingsPanel(app: App, start: () => void): HTMLElement {
         h('div', { class: 'chip-row' }, pick(L('All', 'Todos'), TOUR_WORLDS, 'data-tour-all'), pick(L('Planets', 'Planetas'), TOUR_WORLDS.filter((id) => !isMoon(id)), 'data-tour-planets'), pick(L('Moons', 'Lunas'), TOUR_WORLDS.filter(isMoon), 'data-tour-moons')),
         h('div', { class: 'chip-row tour-worlds' }, ...TOUR_WORLDS.map(chip))),
       h('div', { class: 'field' }, h('div', { class: 'field-label' }, L('Follow', 'Seguir')),
-        segmented<TourFollow>(s.follow, [
+        wrapSeg(segmented<TourFollow>(s.follow, [
           { value: 'sun', label: L('The Sun', 'El Sol') },
           { value: 'planet', label: L('Its planet', 'Su planeta') },
           { value: 'orbit', label: L('The orbit', 'La órbita') },
+          { value: 'ride', label: L('Ride along', 'Ir detrás') },
           { value: 'mix', label: L('A mix', 'Un poco de todo') },
-        ], (v) => save({ follow: v }))),
+        ], (v) => save({ follow: v })))),
       h('div', { class: 'field' }, h('div', { class: 'field-label' }, L('Time speed', 'Velocidad del tiempo')),
         segmented<string>(String(s.speed), SPEEDS.slice(0, -1).map((sp, i) => ({ value: String(i), label: sp.label() })), (v) => save({ speed: Number(v) }))),
       h('div', { class: 'toggles' }, toggle(s.shuffle, (v) => save({ shuffle: v }), L('Shuffle the worlds', 'Mezclar los mundos'))),
