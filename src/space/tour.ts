@@ -191,7 +191,7 @@ export function tourSettingsPanel(app: App, start: () => void): HTMLElement {
         segmented<string>(String(s.speed), SPEEDS.slice(0, -1).map((sp, i) => ({ value: String(i), label: sp.label() })), (v) => save({ speed: Number(v) }))),
       h('div', { class: 'toggles' }, toggle(s.shuffle, (v) => save({ shuffle: v }), L('Shuffle the worlds', 'Mezclar los mundos'))),
       h('p', { class: 'muted small' }, L('The time on each world is the seconds on each view, in the settings below.', 'El tiempo en cada mundo son los segundos en cada vista, en los ajustes de abajo.')),
-      h('div', { class: 'settings-actions' }, go),
+      h('div', { class: 'tour-actions' }, go),
     );
   };
   render();

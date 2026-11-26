@@ -331,6 +331,7 @@ html:not(.mode-time):not(.has-quiz) .legend.collapsed { display: none; }
 .pill.on { background: var(--chip-on); color: var(--accent); border-color: transparent; }
 .pill:disabled { opacity: .55; cursor: default; }
 .settings-actions { margin: 18px 0 8px; display: flex; gap: 8px; flex-wrap: wrap; }
+.tour-actions { margin: 14px 0 8px; display: flex; gap: 8px; flex-wrap: wrap; }
 /* The credits by group (v0.47.0). */
 .cr-nav { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin: var(--sp-2) 0 var(--sp-3); }
 .cr-group { scroll-margin-top: var(--sp-3); margin-bottom: var(--sp-3); }

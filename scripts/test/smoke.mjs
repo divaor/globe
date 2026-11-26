@@ -1869,8 +1869,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.click('.ss .settings-actions .pill.primary');
   await page.waitForTimeout(300);
   const mine = await page.evaluate(() => JSON.parse(localStorage.getItem('atlas-playlist') || '[]'));
-  check(['', 'planet', 'night', 'restless', 'water', 'life', 'wild', 'green', 'people', 'latam'].every((k) => pls.includes(k)) && mine.length === 1 && mine[0].stack.includes('political'),
-    `ambient mode offers 9 playlists and my own (${pls.length} cards); "Add this view" adds the map to my playlist`);
+  check(['', 'planet', 'night', 'restless', 'water', 'life', 'wild', 'green', 'people', 'latam', 'space'].every((k) => pls.includes(k)) && mine.length === 1 && mine[0].stack.includes('political'),
+    `ambient mode offers 9 playlists, Planets and moons and my own (${pls.length} cards); "Add this view" adds the map to my playlist`);
   await page.evaluate(() => { window.__spoken.length = 0; window.atlas.app.ambient.secs = 4; window.atlas.app.ambient.narrate = true; });
   await page.click('[data-playlist="restless"]');
   // The view's filters load, the map arrives, then the voice reads its line.
