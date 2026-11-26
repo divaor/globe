@@ -1,6 +1,6 @@
 {
  "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/data/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
- "count": 4971,
+ "count": 4975,
  "messages": [
   {
    "en": " (below sea level)",
@@ -918,7 +918,7 @@
    "en": "A mix",
    "es": "Un poco de todo",
    "where": [
-    "src/space/tour.ts:188"
+    "src/space/tour.ts:192"
    ]
   },
   {
@@ -1990,7 +1990,7 @@
     "src/layers/packs/green.ts:385",
     "src/layers/packs/wild.ts:180",
     "src/layers/packs/wild.ts:284",
-    "src/space/tour.ts:181"
+    "src/space/tour.ts:184"
    ]
   },
   {
@@ -8951,7 +8951,7 @@
    "en": "Follow",
    "es": "Seguir",
    "where": [
-    "src/space/tour.ts:183"
+    "src/space/tour.ts:186"
    ]
   },
   {
@@ -8986,14 +8986,14 @@
    "en": "Follow the Earth",
    "es": "Seguir a la Tierra",
    "where": [
-    "src/space/around.ts:635"
+    "src/space/around.ts:783"
    ]
   },
   {
    "en": "Follow the Sun",
    "es": "Seguir al Sol",
    "where": [
-    "src/space/around.ts:636"
+    "src/space/around.ts:784"
    ]
   },
   {
@@ -9015,7 +9015,7 @@
    "en": "Follow {0}",
    "es": "Seguir a {0}",
    "where": [
-    "src/space/around.ts:635"
+    "src/space/around.ts:783"
    ]
   },
   {
@@ -12244,7 +12244,7 @@
    "en": "It flies from world to world, following each round the Sun or its planet while time goes by, and glides in or out as it stays.",
    "es": "Vuela de un mundo a otro, siguiendo a cada uno en su camino alrededor del Sol o de su planeta mientras pasa el tiempo, y se acerca o se aleja mientras se queda.",
    "where": [
-    "src/space/tour.ts:179"
+    "src/space/tour.ts:182"
    ]
   },
   {
@@ -12499,7 +12499,7 @@
    "en": "Its planet",
    "es": "Su planeta",
    "where": [
-    "src/space/tour.ts:186"
+    "src/space/tour.ts:189"
    ]
   },
   {
@@ -12795,7 +12795,7 @@
    "en": "Keep zooming out to see the moons on their real orbits; tap one to go there.",
    "es": "Sigue alejándote para ver las lunas en sus órbitas reales; toca una para ir allí.",
    "where": [
-    "src/space/around.ts:324"
+    "src/space/around.ts:358"
    ]
   },
   {
@@ -13860,15 +13860,15 @@
    "en": "Lock the view",
    "es": "Fijar la vista",
    "where": [
-    "src/space/around.ts:608",
-    "src/space/around.ts:608"
+    "src/space/around.ts:756",
+    "src/space/around.ts:756"
    ]
   },
   {
    "en": "Lock to the orbit",
    "es": "Fijar a la órbita",
    "where": [
-    "src/space/around.ts:634"
+    "src/space/around.ts:782"
    ]
   },
   {
@@ -15293,7 +15293,7 @@
    "where": [
     "src/space/space.ts:164",
     "src/space/space.ts:353",
-    "src/space/tour.ts:181"
+    "src/space/tour.ts:184"
    ]
   },
   {
@@ -17139,7 +17139,7 @@
     "src/sky/sky.ts:544",
     "src/sky/tonight.ts:262",
     "src/sky/tonight.ts:493",
-    "src/space/around.ts:620"
+    "src/space/around.ts:768"
    ]
   },
   {
@@ -18594,7 +18594,7 @@
    "where": [
     "src/learn/learn.ts:2655",
     "src/master/master.ts:837",
-    "src/space/around.ts:666",
+    "src/space/around.ts:815",
     "src/ui/audio.ts:203",
     "src/ui/legend.ts:134"
    ]
@@ -19151,7 +19151,7 @@
    "where": [
     "src/sky/galaxy.ts:352",
     "src/space/space.ts:163",
-    "src/space/tour.ts:181"
+    "src/space/tour.ts:184"
    ]
   },
   {
@@ -20308,6 +20308,34 @@
    "es": "Rica en plancton",
    "where": [
     "src/layers/packs/ocean.ts:480"
+   ]
+  },
+  {
+   "en": "Ride along",
+   "es": "Ir detrás",
+   "where": [
+    "src/space/tour.ts:191"
+   ]
+  },
+  {
+   "en": "Ride along, the Earth ahead",
+   "es": "Ir detrás, con la Tierra adelante",
+   "where": [
+    "src/space/around.ts:785"
+   ]
+  },
+  {
+   "en": "Ride along, the Sun ahead",
+   "es": "Ir detrás, con el Sol adelante",
+   "where": [
+    "src/space/around.ts:785"
+   ]
+  },
+  {
+   "en": "Ride along, {0} ahead",
+   "es": "Ir detrás, con {0} adelante",
+   "where": [
+    "src/space/around.ts:785"
    ]
   },
   {
@@ -21675,7 +21703,7 @@
    "en": "Shuffle the worlds",
    "es": "Mezclar los mundos",
    "where": [
-    "src/space/tour.ts:192"
+    "src/space/tour.ts:196"
    ]
   },
   {
@@ -22535,7 +22563,7 @@
    "en": "Start the tour",
    "es": "Empezar el recorrido",
    "where": [
-    "src/space/tour.ts:176"
+    "src/space/tour.ts:179"
    ]
   },
   {
@@ -24161,9 +24189,9 @@
    "es": "La Tierra",
    "where": [
     "src/deeptime/deeptime.ts:504",
-    "src/space/around.ts:549",
-    "src/space/tour.ts:88",
-    "src/space/tour.ts:159"
+    "src/space/around.ts:697",
+    "src/space/tour.ts:90",
+    "src/space/tour.ts:162"
    ]
   },
   {
@@ -25068,8 +25096,9 @@
    "es": "El Sol",
    "where": [
     "src/deeptime/deeptime.ts:672",
-    "src/space/around.ts:460",
-    "src/space/tour.ts:185"
+    "src/space/around.ts:494",
+    "src/space/around.ts:611",
+    "src/space/tour.ts:188"
    ]
   },
   {
@@ -26614,7 +26643,7 @@
    "en": "The orbit",
    "es": "La órbita",
    "where": [
-    "src/space/tour.ts:187"
+    "src/space/tour.ts:190"
    ]
   },
   {
@@ -27101,7 +27130,7 @@
    "en": "The time on each world is the seconds on each view, in the settings below.",
    "es": "El tiempo en cada mundo son los segundos en cada vista, en los ajustes de abajo.",
    "where": [
-    "src/space/tour.ts:193"
+    "src/space/tour.ts:197"
    ]
   },
   {
@@ -27897,7 +27926,7 @@
    "en": "Time speed",
    "es": "Velocidad del tiempo",
    "where": [
-    "src/space/tour.ts:190"
+    "src/space/tour.ts:194"
    ]
   },
   {
@@ -28497,7 +28526,7 @@
    "en": "Turn freely",
    "es": "Girar libremente",
    "where": [
-    "src/space/around.ts:633"
+    "src/space/around.ts:781"
    ]
   },
   {
@@ -31622,7 +31651,7 @@
    "en": "Worlds",
    "es": "Mundos",
    "where": [
-    "src/space/tour.ts:180"
+    "src/space/tour.ts:183"
    ]
   },
   {
@@ -33810,7 +33839,7 @@
    "es": "Reproducir",
    "where": [
     "src/learn/learn.ts:2655",
-    "src/space/around.ts:666",
+    "src/space/around.ts:815",
     "src/ui/legend.ts:134"
    ]
   },
@@ -34573,7 +34602,7 @@
    "es": "{0} km",
    "where": [
     "src/learn/learn.ts:342",
-    "src/space/around.ts:551"
+    "src/space/around.ts:699"
    ]
   },
   {
@@ -34658,8 +34687,8 @@
    "en": "{0} million km",
    "es": "{0} millones de km",
    "where": [
-    "src/space/around.ts:551",
-    "src/space/around.ts:551"
+    "src/space/around.ts:699",
+    "src/space/around.ts:699"
    ]
   },
   {

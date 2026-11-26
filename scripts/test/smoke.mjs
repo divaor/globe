@@ -7425,7 +7425,7 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const p1 = await probe();
   const items = await lock('orbit');
   const p2 = await probe();
-  check(!p0.btn && !p0.bar && p1.btn && p1.bar && items.join('|') === 'Turn freely|Lock to the orbit|Follow the Sun' && p2.lock === 'orbit' && Math.abs(p2.el - 35) < 1 && Math.abs(p2.tilt) < 3,
+  check(!p0.btn && !p0.bar && p1.btn && p1.bar && items.join('|') === 'Turn freely|Lock to the orbit|Follow the Sun|Ride along, the Sun ahead' && p2.lock === 'orbit' && Math.abs(p2.el - 35) < 1 && Math.abs(p2.tilt) < 3,
     `the lock button and the play bar show once zoomed out (${items.join(', ')}); locked to the orbit, the camera ${p2.el.toFixed(0)}° above the orbit, the Moon's orbit lies level (${p2.tilt?.toFixed(1)}°; the view turned ${p2.roll.toFixed(1)}°, more or less with the time of day)`);
   await q.mouse.move(200, 330); await q.mouse.down(); await q.mouse.move(270, 330, { steps: 7 }); await q.mouse.up();
   await q.waitForTimeout(900);
@@ -7561,8 +7561,8 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await q.waitForFunction(() => window.atlas.shell.ambient.tour?.info.visits >= 3, null, { timeout: 20000 }).catch(() => {});
   await q.waitForTimeout(2500);
   const v3 = await look();
-  check(v2.world === 'mars' && v2.surface === 'mars' && v2.lock === 'sun' && /Mars/.test(v2.cap) && v3.world === 'titan' && v3.surface === 'titan' && v3.lock === 'orbit' && /Titan/.test(v3.cap) && v2.zoomIn !== v1.zoomIn,
-    `then on to Mars, following the Sun (zooming ${v2.zoomIn ? 'in' : 'out'}), and Titan, locked to its orbit`);
+  check(v2.world === 'mars' && v2.surface === 'mars' && v2.lock === 'ride' && /Mars/.test(v2.cap) && v3.world === 'titan' && v3.surface === 'titan' && v3.lock === 'orbit' && /Titan/.test(v3.cap) && v2.zoomIn !== v1.zoomIn,
+    `then on to Mars, riding along behind it with the Sun ahead (v0.53.0; zooming ${v2.zoomIn ? 'in' : 'out'}), and Titan, locked to its orbit`);
   await q.waitForFunction(() => window.atlas.shell.ambient.tour?.info.visits >= 4, null, { timeout: 20000 }).catch(() => {});
   const v4 = await look();
   check(v4.world === 'moon', `round again from the first world (${v4.world})`);
@@ -7574,6 +7574,72 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
     `stopped: back on the Earth where it was (${end.cam.lon.toFixed(0)}°, zoom ${end.cam.zoom.toFixed(2)}), time back to now, the view free`);
   check(!tu.errors.length, `planets and moons: no page errors${tu.errors.length ? ': ' + tu.errors.join(' | ') : ''}`);
   await tu.ctx.close();
+}
+
+// 65. Riding along (v0.53.0): a camera just behind the world, looking level and straight ahead at what it goes round,
+// so the orbit runs across the middle of the screen, the world is in front, low down, and what it goes round is ahead
+// in the middle, at the size it looks from there. On the Earth the Sun is ahead and stays there while the months go by;
+// closer in the camera looks further down so the Sun stays above the Earth's edge; on the Moon the Earth is ahead, a
+// small disc, and stays there while the Sun goes round; on Io, Jupiter ahead is many times bigger; a tap on what is
+// ahead goes there; free again, the globe is back in its usual place.
+{
+  const rd = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-40,15,1.1&lang=en');
+  const q = rd.page;
+  await q.waitForTimeout(800);
+  const at = async (L) => { for (let k = 0; k < 2; k++) { await q.evaluate((L) => { const a = window.atlas.around, v = window.atlas.app.renderer.view; v.flyTo({ zoom: L === 'fit' ? a.info.fitMoons : a.rideZoom(L) }, 1); window.atlas.app.renderer.requestRender(); }, L); await q.waitForTimeout(500); } await q.waitForTimeout(500); };
+  const look = () => q.evaluate(() => {
+    const a = window.atlas.around, g = a['g'], v = window.atlas.app.renderer.view, r = a.info.ride;
+    return { lock: a.info.lock, jd: a.info.jd, ride: r && { cx: r.cx, cy: r.cy, el: r.el, L: r.L, ahead: r.ahead }, globe: { cx: g.cx, cy: g.cy, R: g.R }, shiftY: v.shiftY, sun: a.info.sun, w: g.w, roll: v.roll,
+      spots: a['spots'].map((s) => s.id), bar: !!document.querySelector('.around-bar:not([hidden])')?.getBoundingClientRect().width };
+  });
+  await at('fit');
+  await q.click('[data-around="lock"]'); await q.waitForTimeout(250);
+  const items = await q.$$eval('[data-lock]', (b) => b.map((x) => x.textContent));
+  await q.click('[data-lock="ride"]'); await q.waitForTimeout(1800);
+  const e0 = await look();
+  const mid = (o, r) => !!o && Math.abs(o.x - r.cx) < 6 && Math.abs(o.y - r.cy) < 6;
+  check(items.includes('Ride along, the Sun ahead') && e0.lock === 'ride' && e0.ride?.ahead?.id === 'sun' && mid(e0.ride.ahead, e0.ride) && e0.globe.cy - e0.globe.R > e0.ride.cy + 10 && Math.abs(e0.globe.cx - e0.ride.cx) < 1 && e0.ride.L > 3 && e0.ride.L < 8 && e0.bar,
+    `"Ride along, the Sun ahead": the Sun straight ahead in the middle (${Math.round(e0.ride?.ahead?.x)},${Math.round(e0.ride?.ahead?.y)}), the Earth in front, low down (its top edge ${Math.round(e0.globe.cy - e0.globe.R - e0.ride?.cy)} px under the Sun), ${e0.ride?.L.toFixed(1)} of its radii behind it`);
+  await q.evaluate(() => window.atlas.around.play(3)); await q.waitForTimeout(1500);
+  await q.evaluate(() => window.atlas.around.pause()); await q.waitForTimeout(300);
+  const e1 = await look();
+  check(e1.jd - e0.jd > 20 && mid(e1.ride?.ahead, e1.ride) && e1.ride.ahead.id === 'sun', `riding along at 1 month/s: ${(e1.jd - e0.jd).toFixed(0)} days on, the Sun still straight ahead`);
+  await at(1.7);
+  const e2 = await look();
+  await at(40);
+  const e3 = await look();
+  check(e2.ride.el > e0.ride.el + 5 && e2.globe.cy - e2.globe.R > e2.ride.cy && mid(e2.ride.ahead, e2.ride) && e2.globe.R > e0.globe.R * 2 && e3.globe.R < e0.globe.R / 4 && mid(e3.ride.ahead, e3.ride),
+    `zooming in, the camera comes nearer and looks further down (${e0.ride.el.toFixed(0)}° → ${e2.ride.el.toFixed(0)}°), the Sun still above the Earth's edge; zooming out, it falls back (${e3.ride.L.toFixed(0)} radii), the Sun still ahead`);
+  await q.evaluate(() => window.atlas.around.now());
+  await q.evaluate(() => window.atlas.space.enter('moon'));
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'moon', null, { timeout: 15000 }).catch(() => {});
+  await q.waitForTimeout(2500);
+  await at(5);
+  const m0 = await look();
+  await q.evaluate(() => window.atlas.around.play(2)); await q.waitForTimeout(1500);
+  await q.evaluate(() => window.atlas.around.pause()); await q.waitForTimeout(300);
+  const m1 = await look();
+  const sunMoved = m0.sun && m1.sun ? Math.hypot(m1.sun.x - m0.sun.x, m1.sun.y - m0.sun.y) : 999;
+  check(m0.lock === 'ride' && m0.ride?.ahead?.id === 'earth' && mid(m0.ride.ahead, m0.ride) && m0.ride.ahead.r > 2 && m0.ride.ahead.r < 15 && m1.jd - m0.jd > 5 && mid(m1.ride?.ahead, m1.ride) && sunMoved > 20,
+    `on the Moon (still riding along) the Earth is ahead, a small disc ${m0.ride?.ahead?.r.toFixed(1)} px across from here, and stays there ${(m1.jd - m0.jd).toFixed(0)} days on while the Sun goes round`);
+  await q.evaluate(() => window.atlas.around.now());
+  await q.evaluate(() => window.atlas.space.enter('io'));
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'io', null, { timeout: 15000 }).catch(() => {});
+  await q.waitForTimeout(2500);
+  await at(5);
+  const i0 = await look();
+  check(i0.ride?.ahead?.id === 'jupiter' && mid(i0.ride.ahead, i0.ride) && i0.ride.ahead.r > 8 * m0.ride.ahead.r && i0.spots.includes('jupiter'),
+    `on Io, Jupiter ahead looks ${(i0.ride?.ahead?.r / m0.ride?.ahead?.r).toFixed(0)} times as wide as the Earth from the Moon (${i0.ride?.ahead?.r.toFixed(0)} px)`);
+  await q.mouse.click(i0.ride.ahead.x, i0.ride.ahead.y);
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'jupiter', null, { timeout: 15000 }).catch(() => {});
+  await q.waitForTimeout(2500);
+  const j0 = await look();
+  check(j0.lock === 'ride' && j0.ride?.ahead?.id === 'sun' && mid(j0.ride.ahead, j0.ride), `a tap on Jupiter goes there, still riding along, now with the Sun ahead`);
+  await q.click('[data-around="lock"]'); await q.waitForTimeout(250); await q.click('[data-lock="free"]'); await q.waitForTimeout(1500);
+  const f0 = await look();
+  check(f0.lock === 'free' && Math.abs(f0.shiftY) < 1 && !f0.ride && Math.abs(f0.roll) < 0.5, `free again: the globe back in its usual place (shift ${f0.shiftY.toFixed(1)} px), no roll`);
+  check(!rd.errors.length, `riding along: no page errors${rd.errors.length ? ': ' + rd.errors.join(' | ') : ''}`);
+  await rd.ctx.close();
 }
 
 await browser.close();

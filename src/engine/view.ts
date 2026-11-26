@@ -51,6 +51,9 @@ export class View {
   readonly minZoomUsual = 0.6;
   /** Pixels at the bottom covered by panels (e.g. a timeline bar); the map centres above them. */
   insetBottom = 0;
+  /** Pixels the globe sits below its usual place (v0.53.0: riding along a world, the world is in front, low on the
+   *  screen, with what it goes round ahead in the middle). */
+  shiftY = 0;
   /** Pixels at the top covered by panels (a tour or quiz card); the map centres below them. */
   insetTop = 0;
   /** Pixels at the bottom covered by the phone's keyboard while it is open (v0.43.3): the map centres above it too. */
@@ -214,7 +217,7 @@ export class View {
     const raw = morphRaw(a.raw, b.raw, t, this.fa, this.fb);
     const p0 = (this.lat + phi0) * RAD;
     const yc = raw(0, Math.max(-Math.PI / 2, Math.min(Math.PI / 2, p0)))[1];
-    this.translate = [this.w / 2, this.mapTop + H / 2 + this.zoom * yc];
+    this.translate = [this.w / 2, this.mapTop + H / 2 + this.zoom * yc + this.shiftY];
 
     const ca = a.kind === 'flat' ? 180 : a.clipAngle ?? 180;
     const cb = b.kind === 'flat' ? 180 : b.clipAngle ?? 180;
