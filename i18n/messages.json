@@ -783,8 +783,8 @@
    ]
   },
   {
-   "en": "A gas giant: no solid ground, only clouds. Its rings and two of its moons are drawn around it: tap a moon to go there.",
-   "es": "Un gigante gaseoso: no tiene suelo firme, solo nubes. Sus anillos y dos de sus lunas se dibujan a su alrededor: toca una luna para ir allí.",
+   "en": "A gas giant: no solid ground, only clouds. Its rings are drawn around it; zoom all the way out to see two of its moons on their real orbits, and tap one to go there.",
+   "es": "Un gigante gaseoso: no tiene suelo firme, solo nubes. Sus anillos se dibujan a su alrededor; aléjate del todo para ver dos de sus lunas en sus órbitas reales y toca una para ir allí.",
    "where": [
     "src/space/worlds.ts:133"
    ]
@@ -5994,7 +5994,7 @@
    "en": "Craft",
    "es": "Nave",
    "where": [
-    "src/space/surface.ts:252"
+    "src/space/surface.ts:255"
    ]
   },
   {
@@ -8709,7 +8709,7 @@
    "en": "First",
    "es": "Primero",
    "where": [
-    "src/space/surface.ts:254"
+    "src/space/surface.ts:257"
    ]
   },
   {
@@ -12730,6 +12730,13 @@
    ]
   },
   {
+   "en": "Keep zooming out to see the moons on their real orbits; tap one to go there.",
+   "es": "Sigue alejándote para ver las lunas en sus órbitas reales; toca una para ir allí.",
+   "where": [
+    "src/space/around.ts:152"
+   ]
+  },
+  {
    "en": "Keeps angles for navigation; greatly enlarges the poles.",
    "es": "Conserva los ángulos para navegar; agranda mucho los polos.",
    "where": [
@@ -12786,7 +12793,7 @@
     "src/deeptime/deeptime.ts:945",
     "src/green/cards.ts:88",
     "src/layers/packs/artmap.ts:109",
-    "src/space/surface.ts:267"
+    "src/space/surface.ts:270"
    ]
   },
   {
@@ -15663,7 +15670,7 @@
    "en": "Named after",
    "es": "En honor de",
    "where": [
-    "src/space/surface.ts:271"
+    "src/space/surface.ts:274"
    ]
   },
   {
@@ -17654,7 +17661,7 @@
    "en": "On the surface",
    "es": "En la superficie",
    "where": [
-    "src/space/surface.ts:251"
+    "src/space/surface.ts:254"
    ]
   },
   {
@@ -24050,7 +24057,7 @@
    "es": "La Tierra",
    "where": [
     "src/deeptime/deeptime.ts:504",
-    "src/space/around.ts:174"
+    "src/space/around.ts:299"
    ]
   },
   {
@@ -24617,7 +24624,7 @@
     "src/deeptime/deeptime.ts:676",
     "src/learn/tours.ts:816",
     "src/sky/tonight.ts:238",
-    "src/space/around.ts:215"
+    "src/space/worlds.ts:78"
    ]
   },
   {
@@ -24955,7 +24962,7 @@
    "es": "El Sol",
    "where": [
     "src/deeptime/deeptime.ts:672",
-    "src/space/around.ts:235"
+    "src/space/around.ts:267"
    ]
   },
   {
@@ -29533,7 +29540,7 @@
    "es": "Qué",
    "where": [
     "src/play/menu.ts:168",
-    "src/space/surface.ts:247"
+    "src/space/surface.ts:250"
    ]
   },
   {
@@ -30990,7 +30997,7 @@
    "es": "Quién",
    "where": [
     "src/app/i18n.ts:333",
-    "src/space/surface.ts:248"
+    "src/space/surface.ts:251"
    ]
   },
   {
@@ -33492,13 +33499,6 @@
    ]
   },
   {
-   "en": "the Moon",
-   "es": "la Luna",
-   "where": [
-    "src/space/around.ts:180"
-   ]
-  },
-  {
    "en": "the Pacific",
    "es": "el Pacífico",
    "where": [
@@ -34429,7 +34429,8 @@
    "en": "{0} km",
    "es": "{0} km",
    "where": [
-    "src/learn/learn.ts:342"
+    "src/learn/learn.ts:342",
+    "src/space/around.ts:301"
    ]
   },
   {
@@ -34508,6 +34509,14 @@
    "es": "{0} obras maestras",
    "where": [
     "src/layers/packs/artmap.ts:136"
+   ]
+  },
+  {
+   "en": "{0} million km",
+   "es": "{0} millones de km",
+   "where": [
+    "src/space/around.ts:301",
+    "src/space/around.ts:301"
    ]
   },
   {
@@ -34784,13 +34793,6 @@
    "es": "{0} mosaicos, unos {2}.",
    "where": [
     "src/ui/terrain.ts:102"
-   ]
-  },
-  {
-   "en": "{0} times as wide as {1}",
-   "es": "{0} veces más ancho que {1}",
-   "where": [
-    "src/space/around.ts:180"
    ]
   },
   {

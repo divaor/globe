@@ -130,7 +130,7 @@ export const WORLDS: WorldDef[] = [
   },
   {
     id: 'saturn', name: { en: 'Saturn', es: 'Saturno' }, kind: 'planet', parent: 'sun', radius: 58232, names: false, glow: 'rgba(245,225,180,0.40)', face: [0, 24],
-    note: { en: 'A gas giant: no solid ground, only clouds. Its rings and two of its moons are drawn around it: tap a moon to go there.', es: 'Un gigante gaseoso: no tiene suelo firme, solo nubes. Sus anillos y dos de sus lunas se dibujan a su alrededor: toca una luna para ir allí.' },
+    note: { en: 'A gas giant: no solid ground, only clouds. Its rings are drawn around it; zoom all the way out to see two of its moons on their real orbits, and tap one to go there.', es: 'Un gigante gaseoso: no tiene suelo firme, solo nubes. Sus anillos se dibujan a su alrededor; aléjate del todo para ver dos de sus lunas en sus órbitas reales y toca una para ir allí.' },
     maps: [{ id: 'photo', hi: 'saturn-4k.jpg', lo: 'saturn-2k.jpg', credit: `${SSS}, based on NASA mission images` }],
   },
   {

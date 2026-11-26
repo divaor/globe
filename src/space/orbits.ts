@@ -76,6 +76,12 @@ export function orbitOf(id: string, jd: number): Orbit | null {
   return { a: s.a, e: s.e, I: s.i * RAD, w: s.w * RAD, O: s.om * RAD, M: (s.ma + (360 / s.per) * (jd - s.epoch)) * RAD };
 }
 
+/** Where a body on a small body's osculating elements is (heliocentric ecliptic, au): Vesta, for the solar system around
+ *  the globe (v0.50.0). */
+export function positionFromElements(s: { epoch: number; a: number; e: number; i: number; om: number; w: number; ma: number; per: number }, jd: number): [number, number, number] {
+  return place(s.a, s.e, s.i * RAD, s.w * RAD, s.om * RAD, (s.ma + (360 / s.per) * (jd - s.epoch)) * RAD);
+}
+
 /** Where a body is (heliocentric ecliptic, au). */
 export function positionOf(id: string, jd: number): [number, number, number] | null {
   const o = orbitOf(id, jd);

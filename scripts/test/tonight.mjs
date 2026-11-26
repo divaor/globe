@@ -104,5 +104,45 @@ const [slon, slat] = T.subPoint(jj, m0.dir);
 const over = T.moonAt(jj, slon, slat);
 check(over.alt > 88.5, `the Moon is overhead at ${slon.toFixed(1)}, ${slat.toFixed(1)} (${over.alt.toFixed(1)}° up)`);
 
+// The solar system around the globe (src/space/system.ts, v0.50.0): every moon keeps the same face to its planet (the
+// 0° meridian, on the equator), each orbit lies over its planet's equator (Triton's backwards), the distances are right,
+// and the Earth turns as the clock says.
+{
+  const sb = await rolldown({ input: path.join(ROOT, 'src/space/system.ts'), platform: 'neutral', logLevel: 'silent' });
+  const S = await import(`data:text/javascript;base64,${Buffer.from((await sb.generate({ format: 'esm' })).output[0].code).toString('base64')}`);
+  const deg = (x) => (x * 180) / Math.PI;
+  const ang = (a, b) => deg(Math.acos(Math.max(-1, Math.min(1, a[0] * b[0] + a[1] * b[1] + a[2] * b[2]))));
+  const MOONS = ['moon', 'io', 'europa', 'ganymede', 'callisto', 'enceladus', 'titan', 'triton', 'charon'];
+  let worst = { lat: 0, lon: 0, at: '' }, moonWorst = { lat: 0, lon: 0 };
+  for (const day of ['2026-01-01', '2027-06-15', '2029-03-01']) {
+    for (const id of MOONS) {
+      const s = S.systemOf(id, jd(`${day}T00:00Z`)), q = S.inFrame(s.axes, s.members[0].pos), d = Math.hypot(...q);
+      const lat = Math.abs(deg(Math.asin(q[2] / d))), lon = Math.abs(deg(Math.atan2(q[1], q[0])));
+      if (id === 'moon') moonWorst = { lat: Math.max(moonWorst.lat, lat), lon: Math.max(moonWorst.lon, lon) };
+      else if (lat > worst.lat || lon > worst.lon) worst = { lat: Math.max(worst.lat, lat), lon: Math.max(worst.lon, lon), at: `${id} ${day}` };
+    }
+  }
+  check(worst.lat < 1 && worst.lon < 6, `the moons face their planets: within ${worst.lat.toFixed(2)}° of the equator and ${worst.lon.toFixed(2)}° of the 0° meridian (worst: ${worst.at})`);
+  check(moonWorst.lat < 7 && moonWorst.lon < 8.5, `the Moon faces the Earth within its librations: ${moonWorst.lat.toFixed(1)}° and ${moonWorst.lon.toFixed(1)}°`);
+  const j0 = jd('2026-06-01T00:00Z');
+  const tilt = Object.fromEntries(MOONS.filter((id) => id !== 'moon').map((id) => {
+    const o = S.orbitPoints(id, j0, 24), h = (() => { const a = o[0], b = o[6]; const c = [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]; const l = Math.hypot(...c); return c.map((x) => x / l); })();
+    return [id, ang(h, S.axesOf(S.BODIES[id].parent, j0).pole)];
+  }));
+  check(Object.entries(tilt).every(([id, t]) => (id === 'triton' ? near(t, 157, 1.5) : t < 1)), `the orbits over their planets' equators: ${Object.entries(tilt).map(([id, t]) => `${id} ${t.toFixed(1)}°`).join(', ')}`);
+  const dist = (id, j) => Math.hypot(...S.moonOffset(id, j));
+  const md = span.map((j) => dist('moon', j));
+  check(Math.min(...md) > 355000 && Math.max(...md) < 407500 && near(dist('titan', j0), 1221870, 40000) && near(dist('io', j0), 421700, 3000) && near(dist('charon', j0), 19596, 100),
+    `distances: the Moon ${Math.round(Math.min(...md) / 1000)}–${Math.round(Math.max(...md) / 1000)} thousand km, Titan ${Math.round(dist('titan', j0) / 1000)}, Io ${Math.round(dist('io', j0) / 1000)}, Charon ${Math.round(dist('charon', j0))} km`);
+  const au = (id) => S.systemOf(id, j0).sunKm / S.AU_KM;
+  check(near(au('earth'), 1.014, 0.005) && au('io') > 4.9 && au('io') < 5.5 && au('vesta') > 2.1 && au('vesta') < 2.6 && au('charon') > 29 && au('charon') < 50,
+    `the Sun is ${au('earth').toFixed(3)} au from the Earth on 1 June, ${au('io').toFixed(2)} from Io, ${au('vesta').toFixed(2)} from Vesta, ${au('charon').toFixed(1)} from Charon`);
+  // The 2026 March equinox (20 March, 14:46 UTC): the Sun overhead on the equator, about 40° west (the equation of time:
+  // -7.5 minutes).
+  const eq = S.systemOf('earth', jd('2026-03-20T14:46Z')), sq = S.inFrame(eq.axes, eq.sun);
+  const sunLat = deg(Math.asin(sq[2])), sunLon = deg(Math.atan2(sq[1], sq[0]));
+  check(near(sunLat, 0, 0.3) && near(sunLon, -39.6, 1), `the Sun overhead at ${sunLon.toFixed(1)}, ${sunLat.toFixed(2)} at the March equinox`);
+}
+
 console.log(failed ? `\n${failed} check(s) failed` : '\nall Tonight\'s sky checks passed');
 process.exit(failed ? 1 : 0);
