@@ -283,6 +283,12 @@ export class Sky {
     }
     opt('mw', L('Milky Way', 'Vía Láctea'));
     if (this.frame === 'horizon') { opt('ground', L('Ground', 'Suelo')); opt('daylight', L('Daylight', 'Luz del día')); }
+    // Tonight's sky (v0.49.0): the Moon and the planets from this place tonight, in words and pictures.
+    if (this.space.openTonight && !this.back) {
+      const b = h('button', { type: 'button', class: 'chip', 'data-sky': 'tonight' }, `🌙 ${L('Tonight’s sky', 'El cielo de esta noche')}`);
+      b.addEventListener('click', () => { const p = this.place; this.close(); void window.atlas?.tonight.open({ lon: p.lon, lat: p.lat, jd: this.jd }); });
+      ui.chips.append(b);
+    }
     else chip('horizon', L('From a place', 'Desde un lugar'), false, () => { this.frame = 'horizon'; });
     this.info.frame = this.frame;
   }

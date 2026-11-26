@@ -1,6 +1,6 @@
 {
  "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/data/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
- "count": 4852,
+ "count": 4953,
  "messages": [
   {
    "en": " (below sea level)",
@@ -328,7 +328,7 @@
    "en": "3D view",
    "es": "Vista 3D",
    "where": [
-    "src/space/space.ts:269"
+    "src/space/space.ts:272"
    ]
   },
   {
@@ -711,6 +711,20 @@
    ]
   },
   {
+   "en": "A faint blue dot: it needs a telescope and a star chart.",
+   "es": "Un punto azul y tenue: necesita un telescopio y un mapa del cielo.",
+   "where": [
+    "src/sky/tonight.ts:411"
+   ]
+  },
+  {
+   "en": "A faint blue-green dot: find it with a star chart and binoculars.",
+   "es": "Un punto azul verdoso y tenue: búscalo con un mapa del cielo y binoculares.",
+   "where": [
+    "src/sky/tonight.ts:410"
+   ]
+  },
+  {
    "en": "A famous line in its own language: which book or poem is it from?",
    "es": "Una frase famosa en su propia lengua: ¿de qué libro o poema es?",
    "where": [
@@ -769,8 +783,8 @@
    ]
   },
   {
-   "en": "A gas giant: no solid ground, only clouds. Its rings are shown in the solar system view.",
-   "es": "Un gigante gaseoso: no tiene suelo firme, solo nubes. Sus anillos se ven en la vista del sistema solar.",
+   "en": "A gas giant: no solid ground, only clouds. Its rings and two of its moons are drawn around it: tap a moon to go there.",
+   "es": "Un gigante gaseoso: no tiene suelo firme, solo nubes. Sus anillos y dos de sus lunas se dibujan a su alrededor: toca una luna para ir allí.",
    "where": [
     "src/space/worlds.ts:133"
    ]
@@ -961,7 +975,7 @@
    "en": "A new region to fill in today",
    "es": "Una nueva región para colorear hoy",
    "where": [
-    "src/features.ts:164"
+    "src/features.ts:173"
    ]
   },
   {
@@ -1123,6 +1137,13 @@
    "es": "Una pequeña luna de hielo que lanza chorros de vapor de agua desde grietas cerca de su polo sur, las «rayas de tigre», desde un océano interior.",
    "where": [
     "src/learn/tours.ts:826"
+   ]
+  },
+  {
+   "en": "A small orange disc: dark markings and a white polar cap show from ×150.",
+   "es": "Un pequeño disco naranja: sus manchas oscuras y un casquete polar blanco se ven desde ×150.",
+   "where": [
+    "src/sky/tonight.ts:407"
    ]
   },
   {
@@ -1558,7 +1579,7 @@
    "en": "About this world",
    "es": "Sobre este mundo",
    "where": [
-    "src/space/space.ts:268"
+    "src/space/space.ts:271"
    ]
   },
   {
@@ -1881,7 +1902,7 @@
    "en": "Air",
    "es": "Atmósfera",
    "where": [
-    "src/space/space.ts:350"
+    "src/space/space.ts:353"
    ]
   },
   {
@@ -1982,6 +2003,13 @@
    ]
   },
   {
+   "en": "All at the same magnification, as in a telescope tonight",
+   "es": "Todos al mismo aumento, como en un telescopio esta noche",
+   "where": [
+    "src/sky/tonight.ts:395"
+   ]
+  },
+  {
    "en": "All biomes",
    "es": "Todos los biomas",
    "where": [
@@ -2017,6 +2045,13 @@
    ]
   },
   {
+   "en": "All night",
+   "es": "Toda la noche",
+   "where": [
+    "src/sky/tonight.ts:369"
+   ]
+  },
+  {
    "en": "All of World Heritage",
    "es": "Todo el Patrimonio de la Humanidad",
    "where": [
@@ -2034,7 +2069,7 @@
    "en": "All of time since the Big Bang in one year: where today falls",
    "es": "Todo el tiempo desde el Big Bang en un año: dónde cae hoy",
    "where": [
-    "src/features.ts:208"
+    "src/features.ts:217"
    ]
   },
   {
@@ -2438,6 +2473,13 @@
    "es": "Otra ronda",
    "where": [
     "src/play/tour.ts:261"
+   ]
+  },
+  {
+   "en": "Another night",
+   "es": "Otra noche",
+   "where": [
+    "src/sky/tonight.ts:266"
    ]
   },
   {
@@ -3106,10 +3148,24 @@
    ]
   },
   {
+   "en": "At its highest",
+   "es": "En lo más alto",
+   "where": [
+    "src/sky/tonight.ts:306"
+   ]
+  },
+  {
    "en": "At least 140 people died at the Wall. Germany reunited on 3 October 1990, its parliament voted to return to Berlin, and since 1999 it has met in the rebuilt Reichstag.",
    "es": "Al menos 140 personas murieron en el Muro. Alemania se reunificó el 3 de octubre de 1990, su parlamento votó volver a Berlín y desde 1999 se reúne en el Reichstag reconstruido.",
    "where": [
     "src/learn/tours.ts:245"
+   ]
+  },
+  {
+   "en": "At night",
+   "es": "De noche",
+   "where": [
+    "src/sky/tonight.ts:369"
    ]
   },
   {
@@ -3402,14 +3458,14 @@
    "en": "Back to Earth",
    "es": "Volver a la Tierra",
    "where": [
-    "src/space/space.ts:270"
+    "src/space/space.ts:273"
    ]
   },
   {
    "en": "Back to the Earth",
    "es": "Volver a la Tierra",
    "where": [
-    "src/space/space.ts:310"
+    "src/space/space.ts:313"
    ]
   },
   {
@@ -3584,6 +3640,13 @@
    ]
   },
   {
+   "en": "Before dawn",
+   "es": "Antes del amanecer",
+   "where": [
+    "src/sky/tonight.ts:369"
+   ]
+  },
+  {
    "en": "Before the Inca: Pikillaqta",
    "es": "Antes de los incas: Piquillacta",
    "where": [
@@ -3657,7 +3720,7 @@
    "en": "Below the horizon ({0}°), toward the {1}",
    "es": "Bajo el horizonte ({0}°), hacia {1}",
    "where": [
-    "src/sky/sky.ts:651"
+    "src/sky/sky.ts:657"
    ]
   },
   {
@@ -3756,6 +3819,13 @@
    ]
   },
   {
+   "en": "Best for faint galaxies and nebulae: {0} to {1}, dark and without the Moon.",
+   "es": "Lo mejor para galaxias y nebulosas tenues: de {0} a {1}, oscuro y sin la Luna.",
+   "where": [
+    "src/sky/tonight.ts:476"
+   ]
+  },
+  {
    "en": "Best months",
    "es": "Mejores meses",
    "where": [
@@ -3812,7 +3882,7 @@
    "en": "Best seen",
    "es": "Mejor época",
    "where": [
-    "src/sky/sky.ts:713"
+    "src/sky/sky.ts:719"
    ]
   },
   {
@@ -3841,7 +3911,7 @@
    "es": "Más allá de la Tierra",
    "where": [
     "src/learn/learn.ts:2538",
-    "src/space/space.ts:176"
+    "src/space/space.ts:179"
    ]
   },
   {
@@ -3885,6 +3955,13 @@
    "es": "Miles de millones de galaxias",
    "where": [
     "src/deeptime/deeptime.ts:633"
+   ]
+  },
+  {
+   "en": "Binoculars",
+   "es": "Binoculares",
+   "where": [
+    "src/sky/tonight.ts:443"
    ]
   },
   {
@@ -4286,6 +4363,13 @@
    ]
   },
   {
+   "en": "Bright",
+   "es": "Brillante",
+   "where": [
+    "src/sky/tonight.ts:55"
+   ]
+  },
+  {
    "en": "Bright spot",
    "es": "Mancha brillante",
    "where": [
@@ -4296,15 +4380,15 @@
    "en": "Brightest star",
    "es": "Estrella más brillante",
    "where": [
-    "src/sky/sky.ts:712"
+    "src/sky/sky.ts:718"
    ]
   },
   {
    "en": "Brightness",
    "es": "Brillo",
    "where": [
-    "src/sky/sky.ts:667",
-    "src/sky/sky.ts:676"
+    "src/sky/sky.ts:673",
+    "src/sky/sky.ts:682"
    ]
   },
   {
@@ -4527,6 +4611,13 @@
    ]
   },
   {
+   "en": "By eye",
+   "es": "A simple vista",
+   "where": [
+    "src/sky/tonight.ts:443"
+   ]
+  },
+  {
    "en": "By land",
    "es": "Por tierra",
    "where": [
@@ -4621,6 +4712,7 @@
    "en": "Callisto",
    "es": "Calisto",
    "where": [
+    "src/sky/tonight.ts:48",
     "src/space/worlds.ts:128"
    ]
   },
@@ -4782,7 +4874,7 @@
    "en": "Catalogue",
    "es": "Catálogo",
    "where": [
-    "src/sky/sky.ts:699"
+    "src/sky/sky.ts:705"
    ]
   },
   {
@@ -5042,7 +5134,7 @@
    "en": "Choose a world",
    "es": "Elegir un mundo",
    "where": [
-    "src/space/space.ts:258"
+    "src/space/space.ts:261"
    ]
   },
   {
@@ -5388,7 +5480,7 @@
    "en": "Colour in the world, country by country",
    "es": "Colorea el mundo, país por país",
    "where": [
-    "src/features.ts:99"
+    "src/features.ts:108"
    ]
   },
   {
@@ -5431,7 +5523,14 @@
    "en": "Comet",
    "es": "Cometa",
    "where": [
-    "src/space/space.ts:312"
+    "src/space/space.ts:315"
+   ]
+  },
+  {
+   "en": "Coming phases",
+   "es": "Próximas fases",
+   "where": [
+    "src/sky/tonight.ts:336"
    ]
   },
   {
@@ -5513,10 +5612,10 @@
    "en": "Constellation",
    "es": "Constelación",
    "where": [
-    "src/sky/sky.ts:679",
-    "src/sky/sky.ts:698",
-    "src/sky/sky.ts:722",
-    "src/sky/sky.ts:736"
+    "src/sky/sky.ts:685",
+    "src/sky/sky.ts:704",
+    "src/sky/sky.ts:728",
+    "src/sky/sky.ts:742"
    ]
   },
   {
@@ -5785,6 +5884,7 @@
    "where": [
     "src/green/finder.ts:91",
     "src/legacy/legacy.ts:174",
+    "src/sky/tonight.ts:139",
     "src/wild/finder.ts:141"
    ]
   },
@@ -5856,8 +5956,8 @@
    "en": "Country of the day",
    "es": "País del día",
    "where": [
-    "src/features.ts:128",
-    "src/features.ts:167",
+    "src/features.ts:137",
+    "src/features.ts:176",
     "src/fill/states.ts:313",
     "src/fill/states.ts:553"
    ]
@@ -6196,8 +6296,8 @@
    "en": "Daily challenge",
    "es": "Reto del día",
    "where": [
-    "src/features.ts:152",
-    "src/features.ts:154",
+    "src/features.ts:161",
+    "src/features.ts:163",
     "src/learn/learn.ts:472",
     "src/learn/learn.ts:495",
     "src/learn/learn.ts:497"
@@ -6333,6 +6433,13 @@
    ]
   },
   {
+   "en": "Day",
+   "es": "Día",
+   "where": [
+    "src/sky/tonight.ts:479"
+   ]
+  },
+  {
    "en": "Day and night",
    "es": "Día y noche",
    "where": [
@@ -6393,6 +6500,13 @@
    "es": "Días en {0}",
    "where": [
     "src/guide/export.ts:114"
+   ]
+  },
+  {
+   "en": "Dazzling",
+   "es": "Deslumbrante",
+   "where": [
+    "src/sky/tonight.ts:55"
    ]
   },
   {
@@ -6602,7 +6716,7 @@
    "en": "Designation",
    "es": "Designación",
    "where": [
-    "src/sky/sky.ts:681"
+    "src/sky/sky.ts:687"
    ]
   },
   {
@@ -6681,7 +6795,7 @@
    "es": "Diámetro",
    "where": [
     "src/layers/packs/inside.ts:381",
-    "src/space/space.ts:339"
+    "src/space/space.ts:342"
    ]
   },
   {
@@ -6770,7 +6884,7 @@
     "src/layers/packs/ocean.ts:274",
     "src/layers/packs/ocean.ts:331",
     "src/sky/elements.ts:194",
-    "src/space/space.ts:351"
+    "src/space/space.ts:354"
    ]
   },
   {
@@ -6807,8 +6921,15 @@
    "where": [
     "src/sky/galaxy.ts:350",
     "src/sky/galaxy.ts:360",
-    "src/sky/sky.ts:677",
-    "src/sky/sky.ts:696"
+    "src/sky/sky.ts:683",
+    "src/sky/sky.ts:702"
+   ]
+  },
+  {
+   "en": "Distance: {0} km",
+   "es": "Distancia: {0} km",
+   "where": [
+    "src/sky/tonight.ts:511"
    ]
   },
   {
@@ -7051,7 +7172,7 @@
    "en": "Dwarf planets and asteroids",
    "es": "Planetas enanos y asteroides",
    "where": [
-    "src/space/space.ts:162"
+    "src/space/space.ts:165"
    ]
   },
   {
@@ -7073,7 +7194,10 @@
    "es": "E",
    "where": [
     "src/earth/inside.ts:279",
-    "src/sky/sky.ts:38"
+    "src/sky/sky.ts:38",
+    "src/sky/tonight.ts:53",
+    "src/sky/tonight.ts:119",
+    "src/sky/tonight.ts:244"
    ]
   },
   {
@@ -7229,7 +7353,7 @@
    "es": "Tierra",
    "where": [
     "src/space/orrery.ts:18",
-    "src/space/space.ts:133"
+    "src/space/space.ts:135"
    ]
   },
   {
@@ -7250,8 +7374,8 @@
    "en": "Earth days",
    "es": "días terrestres",
    "where": [
-    "src/space/space.ts:343",
-    "src/space/space.ts:346"
+    "src/space/space.ts:346",
+    "src/space/space.ts:349"
    ]
   },
   {
@@ -7265,7 +7389,7 @@
    "en": "Earth years",
    "es": "años terrestres",
    "where": [
-    "src/space/space.ts:346"
+    "src/space/space.ts:349"
    ]
   },
   {
@@ -7336,6 +7460,13 @@
    "es": "Fácil",
    "where": [
     "src/play/hop.ts:33"
+   ]
+  },
+  {
+   "en": "Easy to see by eye",
+   "es": "Fácil de ver a simple vista",
+   "where": [
+    "src/sky/tonight.ts:56"
    ]
   },
   {
@@ -7441,7 +7572,7 @@
    "en": "Eight questions, the same for everyone today",
    "es": "Ocho preguntas, las mismas para todos hoy",
    "where": [
-    "src/features.ts:154",
+    "src/features.ts:163",
     "src/learn/learn.ts:475",
     "src/learn/learn.ts:496"
    ]
@@ -7713,6 +7844,7 @@
    "es": "Europa",
    "where": [
     "src/learn/tours.ts:822",
+    "src/sky/tonight.ts:48",
     "src/space/worlds.ts:118"
    ]
   },
@@ -8059,6 +8191,13 @@
    ]
   },
   {
+   "en": "Explore the Moon",
+   "es": "Explorar la Luna",
+   "where": [
+    "src/sky/tonight.ts:311"
+   ]
+  },
+  {
    "en": "Explore the world, layer by layer",
    "es": "Explora el mundo, capa a capa",
    "where": [
@@ -8116,6 +8255,20 @@
    ]
   },
   {
+   "en": "Facing north in the middle; south at both ends.",
+   "es": "Mirando al norte en el centro; el sur en ambos extremos.",
+   "where": [
+    "src/sky/tonight.ts:539"
+   ]
+  },
+  {
+   "en": "Facing south in the middle; north at both ends.",
+   "es": "Mirando al sur en el centro; el norte en ambos extremos.",
+   "where": [
+    "src/sky/tonight.ts:539"
+   ]
+  },
+  {
    "en": "Facts",
    "es": "Datos",
    "where": [
@@ -8127,6 +8280,13 @@
    "es": "Aterrizaje fallido",
    "where": [
     "src/space/surface.ts:24"
+   ]
+  },
+  {
+   "en": "Faint: binoculars help",
+   "es": "Tenue: ayudan unos binoculares",
+   "where": [
+    "src/sky/tonight.ts:56"
    ]
   },
   {
@@ -8360,7 +8520,7 @@
    "en": "Fill the map",
    "es": "Llena el mapa",
    "where": [
-    "src/features.ts:99",
+    "src/features.ts:108",
     "src/fill/fill.ts:114",
     "src/fill/fill.ts:586",
     "src/fill/fill.ts:703",
@@ -8379,7 +8539,7 @@
    "en": "Fill the map: the region of the day",
    "es": "Llena el mapa: la región del día",
    "where": [
-    "src/features.ts:164"
+    "src/features.ts:173"
    ]
   },
   {
@@ -8408,7 +8568,7 @@
    "en": "Fill the states: the country of the day",
    "es": "Llena los estados: el país del día",
    "where": [
-    "src/features.ts:169"
+    "src/features.ts:178"
    ]
   },
   {
@@ -8595,6 +8755,14 @@
    ]
   },
   {
+   "en": "First quarter",
+   "es": "Cuarto creciente",
+   "where": [
+    "src/sky/tonight.ts:31",
+    "src/sky/tonight.ts:38"
+   ]
+  },
+  {
    "en": "First route",
    "es": "Primera ruta",
    "where": [
@@ -8605,7 +8773,7 @@
    "en": "First visit",
    "es": "Primera visita",
    "where": [
-    "src/space/space.ts:352"
+    "src/space/space.ts:355"
    ]
   },
   {
@@ -9109,7 +9277,7 @@
    "en": "From a place",
    "es": "Desde un lugar",
    "where": [
-    "src/sky/sky.ts:286"
+    "src/sky/sky.ts:292"
    ]
   },
   {
@@ -9123,7 +9291,7 @@
    "en": "From its planet",
    "es": "De su planeta",
    "where": [
-    "src/space/space.ts:347"
+    "src/space/space.ts:350"
    ]
   },
   {
@@ -9166,9 +9334,9 @@
    "en": "From the Earth",
    "es": "De la Tierra",
    "where": [
-    "src/sky/sky.ts:666",
-    "src/sky/sky.ts:667",
-    "src/space/orrery.ts:318"
+    "src/sky/sky.ts:672",
+    "src/sky/sky.ts:673",
+    "src/space/orrery.ts:321"
    ]
   },
   {
@@ -9190,14 +9358,14 @@
    "es": "Del Sol",
    "where": [
     "src/sky/galaxy.ts:374",
-    "src/space/space.ts:347"
+    "src/space/space.ts:350"
    ]
   },
   {
    "en": "From the Sun on this date",
    "es": "Del Sol en esta fecha",
    "where": [
-    "src/space/orrery.ts:317"
+    "src/space/orrery.ts:320"
    ]
   },
   {
@@ -9271,6 +9439,14 @@
    ]
   },
   {
+   "en": "Full moon",
+   "es": "Luna llena",
+   "where": [
+    "src/sky/tonight.ts:33",
+    "src/sky/tonight.ts:38"
+   ]
+  },
+  {
    "en": "Full screen",
    "es": "Pantalla completa",
    "where": [
@@ -9282,6 +9458,13 @@
    "es": "Globo girando a pantalla completa con tus filtros",
    "where": [
     "src/app/i18n.ts:69"
+   ]
+  },
+  {
+   "en": "Fully dark from {0} to {1}.",
+   "es": "Totalmente oscuro de {0} a {1}.",
+   "where": [
+    "src/sky/tonight.ts:463"
    ]
   },
   {
@@ -9480,6 +9663,7 @@
    "en": "Ganymede",
    "es": "Ganimedes",
    "where": [
+    "src/sky/tonight.ts:48",
     "src/space/worlds.ts:123"
    ]
   },
@@ -9791,7 +9975,7 @@
    "en": "Gravity",
    "es": "Gravedad",
    "where": [
-    "src/space/space.ts:340"
+    "src/space/space.ts:343"
    ]
   },
   {
@@ -10218,7 +10402,7 @@
    "es": "Alturas",
    "where": [
     "src/space/space.ts:22",
-    "src/space/space.ts:100"
+    "src/space/space.ts:102"
    ]
   },
   {
@@ -10604,6 +10788,13 @@
    "where": [
     "src/app/i18n.ts:335",
     "src/play/menu.ts:164"
+   ]
+  },
+  {
+   "en": "How dark it gets",
+   "es": "Qué tan oscuro se pone",
+   "where": [
+    "src/sky/tonight.ts:242"
    ]
   },
   {
@@ -11342,7 +11533,7 @@
    "en": "In it",
    "es": "En ella",
    "where": [
-    "src/sky/sky.ts:719"
+    "src/sky/sky.ts:725"
    ]
   },
   {
@@ -11521,6 +11712,13 @@
    ]
   },
   {
+   "en": "In the evening",
+   "es": "Por la tarde y noche",
+   "where": [
+    "src/sky/tonight.ts:369"
+   ]
+  },
+  {
    "en": "In the first final, at the new Estadio Centenario, the hosts, Uruguay, beat Argentina 4–2.",
    "es": "En la primera final, en el nuevo Estadio Centenario, el anfitrión, Uruguay, venció 4-2 a Argentina.",
    "where": [
@@ -11594,7 +11792,7 @@
    "en": "In the sky now",
    "es": "En el cielo ahora",
    "where": [
-    "src/sky/sky.ts:651"
+    "src/sky/sky.ts:657"
    ]
   },
   {
@@ -11920,6 +12118,7 @@
    "es": "Ío",
    "where": [
     "src/learn/tours.ts:821",
+    "src/sky/tonight.ts:48",
     "src/space/worlds.ts:113"
    ]
   },
@@ -11991,6 +12190,13 @@
    "es": "Vino de: {0}.",
    "where": [
     "src/learn/learn.ts:1913"
+   ]
+  },
+  {
+   "en": "It has phases like the Moon: now {0}% lit.",
+   "es": "Tiene fases como la Luna: ahora iluminado al {0}%.",
+   "where": [
+    "src/sky/tonight.ts:406"
    ]
   },
   {
@@ -12099,6 +12305,13 @@
    ]
   },
   {
+   "en": "It never gets fully dark tonight: the Sun stays less than 18° below the horizon.",
+   "es": "Esta noche nunca oscurece del todo: el Sol no baja más de 18° bajo el horizonte.",
+   "where": [
+    "src/sky/tonight.ts:464"
+   ]
+  },
+  {
    "en": "It was ",
    "es": "Era ",
    "where": [
@@ -12197,6 +12410,13 @@
    "es": "Sus parientes más cercanos entre nuestras plantas (orden {0}).",
    "where": [
     "src/layers/packs/green.ts:214"
+   ]
+  },
+  {
+   "en": "Its cloud belts show from ×40, and its four big moons change places every night.",
+   "es": "Sus bandas de nubes se ven desde ×40, y sus cuatro grandes lunas cambian de lugar cada noche.",
+   "where": [
+    "src/sky/tonight.ts:408"
    ]
   },
   {
@@ -12435,8 +12655,8 @@
     "src/deeptime/deeptime.ts:504",
     "src/learn/tours.ts:820",
     "src/sky/sky.ts:29",
-    "src/space/orrery.ts:21",
-    "src/space/worlds.ts:108"
+    "src/sky/tonight.ts:43",
+    "src/space/orrery.ts:21"
    ]
   },
   {
@@ -12791,7 +13011,7 @@
    "en": "Landings",
    "es": "Aterrizajes",
    "where": [
-    "src/space/space.ts:283"
+    "src/space/space.ts:286"
    ]
   },
   {
@@ -12922,6 +13142,14 @@
    ]
   },
   {
+   "en": "Last quarter",
+   "es": "Cuarto menguante",
+   "where": [
+    "src/sky/tonight.ts:35",
+    "src/sky/tonight.ts:38"
+   ]
+  },
+  {
    "en": "Last seen",
    "es": "Visto por última vez",
    "where": [
@@ -12954,7 +13182,7 @@
    "en": "Latin name",
    "es": "Nombre en latín",
    "where": [
-    "src/sky/sky.ts:709"
+    "src/sky/sky.ts:715"
    ]
   },
   {
@@ -13081,7 +13309,7 @@
    "en": "Legacy of the day",
    "es": "Legado del día",
    "where": [
-    "src/features.ts:212"
+    "src/features.ts:225"
    ]
   },
   {
@@ -13422,7 +13650,7 @@
    "en": "Lit",
    "es": "Iluminada",
    "where": [
-    "src/sky/sky.ts:666"
+    "src/sky/sky.ts:672"
    ]
   },
   {
@@ -13539,6 +13767,7 @@
    "es": "Cargando…",
    "where": [
     "src/guide/guide.ts:452",
+    "src/sky/tonight.ts:419",
     "src/ui/credits.ts:42",
     "src/ui/shell.ts:270"
    ]
@@ -14112,8 +14341,8 @@
    "en": "Map games",
    "es": "Juegos en el mapa",
    "where": [
-    "src/features.ts:177",
-    "src/features.ts:179",
+    "src/features.ts:186",
+    "src/features.ts:188",
     "src/learn/progress.ts:358",
     "src/play/hop.ts:88",
     "src/play/menu.ts:82"
@@ -14225,6 +14454,7 @@
    "where": [
     "src/deeptime/deeptime.ts:504",
     "src/sky/sky.ts:28",
+    "src/sky/tonight.ts:42",
     "src/space/orrery.ts:19",
     "src/space/worlds.ts:88"
    ]
@@ -14324,8 +14554,8 @@
    "en": "Master the world",
    "es": "Domina el mundo",
    "where": [
-    "src/features.ts:114",
-    "src/features.ts:117",
+    "src/features.ts:123",
+    "src/features.ts:126",
     "src/fill/fill.ts:663",
     "src/learn/learn.ts:483",
     "src/master/master.ts:119"
@@ -14611,6 +14841,7 @@
    "where": [
     "src/learn/tours.ts:814",
     "src/sky/sky.ts:26",
+    "src/sky/tonight.ts:40",
     "src/space/orrery.ts:16",
     "src/space/worlds.ts:64"
    ]
@@ -14939,7 +15170,8 @@
    "en": "Moon",
    "es": "Luna",
    "where": [
-    "src/sky/sky.ts:455",
+    "src/sky/sky.ts:461",
+    "src/sky/tonight.ts:533",
     "src/space/space.ts:19"
    ]
   },
@@ -14951,11 +15183,32 @@
    ]
   },
   {
+   "en": "Moon phase",
+   "es": "Fase de la luna",
+   "where": [
+    "src/sky/tonight.ts:94"
+   ]
+  },
+  {
+   "en": "Moon up",
+   "es": "Luna arriba",
+   "where": [
+    "src/sky/tonight.ts:480"
+   ]
+  },
+  {
+   "en": "Moonrise",
+   "es": "Salida de la luna",
+   "where": [
+    "src/sky/tonight.ts:94"
+   ]
+  },
+  {
    "en": "Moons",
    "es": "Lunas",
    "where": [
-    "src/space/space.ts:161",
-    "src/space/space.ts:348"
+    "src/space/space.ts:164",
+    "src/space/space.ts:351"
    ]
   },
   {
@@ -15296,7 +15549,10 @@
    "es": "N",
    "where": [
     "src/earth/inside.ts:279",
-    "src/sky/sky.ts:38"
+    "src/sky/sky.ts:38",
+    "src/sky/tonight.ts:53",
+    "src/sky/tonight.ts:119",
+    "src/sky/tonight.ts:244"
    ]
   },
   {
@@ -15324,14 +15580,16 @@
    "en": "NE",
    "es": "NE",
    "where": [
-    "src/sky/sky.ts:38"
+    "src/sky/sky.ts:38",
+    "src/sky/tonight.ts:53"
    ]
   },
   {
    "en": "NW",
    "es": "NO",
    "where": [
-    "src/sky/sky.ts:38"
+    "src/sky/sky.ts:38",
+    "src/sky/tonight.ts:53"
    ]
   },
   {
@@ -15819,6 +16077,13 @@
    ]
   },
   {
+   "en": "Needs a telescope",
+   "es": "Necesita un telescopio",
+   "where": [
+    "src/sky/tonight.ts:56"
+   ]
+  },
+  {
    "en": "Needs an internet connection ({0}).",
    "es": "Necesita conexión a internet ({0}).",
    "where": [
@@ -15858,6 +16123,7 @@
    "es": "Neptuno",
    "where": [
     "src/sky/sky.ts:32",
+    "src/sky/tonight.ts:46",
     "src/space/orrery.ts:24",
     "src/space/worlds.ts:152"
    ]
@@ -15983,6 +16249,14 @@
    ]
   },
   {
+   "en": "New moon",
+   "es": "Luna nueva",
+   "where": [
+    "src/sky/tonight.ts:29",
+    "src/sky/tonight.ts:38"
+   ]
+  },
+  {
    "en": "New personal best!",
    "es": "¡Nuevo récord personal!",
    "where": [
@@ -16063,6 +16337,13 @@
    "where": [
     "src/fill/fill.ts:502",
     "src/fill/states.ts:414"
+   ]
+  },
+  {
+   "en": "Night",
+   "es": "Noche",
+   "where": [
+    "src/sky/tonight.ts:480"
    ]
   },
   {
@@ -16608,6 +16889,27 @@
    ]
   },
   {
+   "en": "Not tonight: below the horizon at night",
+   "es": "Esta noche no: está bajo el horizonte de noche",
+   "where": [
+    "src/sky/tonight.ts:373"
+   ]
+  },
+  {
+   "en": "Not tonight: the sky doesn’t get dark",
+   "es": "Esta noche no: el cielo no oscurece",
+   "where": [
+    "src/sky/tonight.ts:373"
+   ]
+  },
+  {
+   "en": "Not tonight: too close to the Sun",
+   "es": "Esta noche no: está muy cerca del Sol",
+   "where": [
+    "src/sky/tonight.ts:373"
+   ]
+  },
+  {
    "en": "Not yet",
    "es": "Todavía no",
    "where": [
@@ -16658,6 +16960,20 @@
    "es": "Nada",
    "where": [
     "src/layers/packs/facts.ts:143"
+   ]
+  },
+  {
+   "en": "Nothing bright enough is high in the dark hours tonight.",
+   "es": "Esta noche no hay nada lo bastante brillante en lo alto durante las horas oscuras.",
+   "where": [
+    "src/sky/tonight.ts:438"
+   ]
+  },
+  {
+   "en": "Nothing bright is up now.",
+   "es": "Ahora no hay nada brillante arriba.",
+   "where": [
+    "src/sky/tonight.ts:539"
    ]
   },
   {
@@ -16735,7 +17051,17 @@
    "es": "Ahora",
    "where": [
     "src/sky/sky.ts:207",
-    "src/sky/sky.ts:538"
+    "src/sky/sky.ts:544",
+    "src/sky/tonight.ts:262",
+    "src/sky/tonight.ts:493"
+   ]
+  },
+  {
+   "en": "Now below the horizon",
+   "es": "Ahora bajo el horizonte",
+   "where": [
+    "src/sky/tonight.ts:510",
+    "src/sky/tonight.ts:524"
    ]
   },
   {
@@ -16751,6 +17077,14 @@
    "es": "Suena",
    "where": [
     "src/app/i18n.ts:294"
+   ]
+  },
+  {
+   "en": "Now {0}",
+   "es": "Ahora {0}",
+   "where": [
+    "src/sky/tonight.ts:510",
+    "src/sky/tonight.ts:524"
    ]
   },
   {
@@ -17341,7 +17675,7 @@
    "en": "On this day",
    "es": "Tal día como hoy",
    "where": [
-    "src/features.ts:145",
+    "src/features.ts:154",
     "src/learn/learn.ts:288",
     "src/learn/learn.ts:2839"
    ]
@@ -17406,7 +17740,7 @@
    "en": "One orbit",
    "es": "Una órbita",
    "where": [
-    "src/space/space.ts:346"
+    "src/space/space.ts:349"
    ]
   },
   {
@@ -17434,14 +17768,14 @@
    "en": "One turn",
    "es": "Una vuelta",
    "where": [
-    "src/space/space.ts:344"
+    "src/space/space.ts:347"
    ]
   },
   {
    "en": "One year",
    "es": "Un año",
    "where": [
-    "src/space/space.ts:346"
+    "src/space/space.ts:349"
    ]
   },
   {
@@ -17617,6 +17951,13 @@
    ]
   },
   {
+   "en": "Or tap anywhere on the globe to see its sky.",
+   "es": "O toca cualquier punto del globo para ver su cielo.",
+   "where": [
+    "src/sky/tonight.ts:257"
+   ]
+  },
+  {
    "en": "Order",
    "es": "Orden",
    "where": [
@@ -17634,7 +17975,7 @@
    "en": "Origin",
    "es": "Origen",
    "where": [
-    "src/sky/sky.ts:715"
+    "src/sky/sky.ts:721"
    ]
   },
   {
@@ -17691,7 +18032,7 @@
    "en": "Other worlds",
    "es": "Otros mundos",
    "where": [
-    "src/space/space.ts:51"
+    "src/space/space.ts:53"
    ]
   },
   {
@@ -17742,7 +18083,7 @@
    "where": [
     "src/sky/galaxy.ts:121",
     "src/sky/galaxy.ts:122",
-    "src/space/space.ts:143"
+    "src/space/space.ts:146"
    ]
   },
   {
@@ -18317,6 +18658,13 @@
    ]
   },
   {
+   "en": "Phases of the Moon",
+   "es": "Fases de la luna",
+   "where": [
+    "src/sky/tonight.ts:94"
+   ]
+  },
+  {
    "en": "Philippine Sea: the deepest wreck",
    "es": "Mar de Filipinas: el naufragio más profundo",
    "where": [
@@ -18715,7 +19063,14 @@
    "es": "Planetas",
    "where": [
     "src/sky/galaxy.ts:352",
-    "src/space/space.ts:160"
+    "src/space/space.ts:163"
+   ]
+  },
+  {
+   "en": "Planets tonight",
+   "es": "Planetas esta noche",
+   "where": [
+    "src/sky/tonight.ts:94"
    ]
   },
   {
@@ -18904,6 +19259,13 @@
    ]
   },
   {
+   "en": "Play the night",
+   "es": "Reproducir la noche",
+   "where": [
+    "src/sky/tonight.ts:264"
+   ]
+  },
+  {
    "en": "Play the quake",
    "es": "Reproducir el sismo",
    "where": [
@@ -18960,6 +19322,13 @@
     "src/learn/tours.ts:829",
     "src/space/orrery.ts:25",
     "src/space/worlds.ts:162"
+   ]
+  },
+  {
+   "en": "Point your telescope at",
+   "es": "Apunta tu telescopio a",
+   "where": [
+    "src/sky/tonight.ts:241"
    ]
   },
   {
@@ -19188,9 +19557,9 @@
    "en": "Put it on the map",
    "es": "Ponlo en el mapa",
    "where": [
-    "src/features.ts:100",
-    "src/features.ts:133",
-    "src/features.ts:172",
+    "src/features.ts:109",
+    "src/features.ts:142",
+    "src/features.ts:181",
     "src/onmap/onmap.ts:82",
     "src/onmap/onmap.ts:382"
    ]
@@ -19207,7 +19576,7 @@
    "en": "Put it on the map: today",
    "es": "Ponlo en el mapa: hoy",
    "where": [
-    "src/features.ts:174",
+    "src/features.ts:183",
     "src/onmap/onmap.ts:649"
    ]
   },
@@ -19548,8 +19917,8 @@
    "en": "Region of the day",
    "es": "Región del día",
    "where": [
-    "src/features.ts:122",
-    "src/features.ts:162",
+    "src/features.ts:131",
+    "src/features.ts:171",
     "src/fill/fill.ts:392",
     "src/fill/fill.ts:687"
    ]
@@ -19580,7 +19949,7 @@
    "en": "Relief",
    "es": "Relieve",
    "where": [
-    "src/space/space.ts:101",
+    "src/space/space.ts:103",
     "src/ui/terrain3d.ts:124"
    ]
   },
@@ -19626,42 +19995,42 @@
    "en": "Remind me of Put it on the map’s puzzle",
    "es": "Recuérdame el reto de Ponlo en el mapa",
    "where": [
-    "src/features.ts:173"
+    "src/features.ts:182"
    ]
   },
   {
    "en": "Remind me of the Daily challenge",
    "es": "Recuérdame el Reto del día",
    "where": [
-    "src/features.ts:153"
+    "src/features.ts:162"
    ]
   },
   {
    "en": "Remind me of the country of the day",
    "es": "Recuérdame el país del día",
    "where": [
-    "src/features.ts:168"
+    "src/features.ts:177"
    ]
   },
   {
    "en": "Remind me of the map games’ puzzles",
    "es": "Recuérdame los retos de los juegos en el mapa",
    "where": [
-    "src/features.ts:178"
+    "src/features.ts:187"
    ]
   },
   {
    "en": "Remind me of the region of the day",
    "es": "Recuérdame la región del día",
    "where": [
-    "src/features.ts:163"
+    "src/features.ts:172"
    ]
   },
   {
    "en": "Remind me to practise {0}",
    "es": "Recuérdame practicar {0}",
    "where": [
-    "src/features.ts:158"
+    "src/features.ts:167"
    ]
   },
   {
@@ -19677,7 +20046,7 @@
    "en": "Reminders",
    "es": "Recordatorios",
    "where": [
-    "src/features.ts:150",
+    "src/features.ts:159",
     "src/today/reminders.ts:375"
    ]
   },
@@ -19922,6 +20291,13 @@
    ]
   },
   {
+   "en": "Rises",
+   "es": "Sale",
+   "where": [
+    "src/sky/tonight.ts:305"
+   ]
+  },
+  {
    "en": "River",
    "es": "Río",
    "where": [
@@ -20078,7 +20454,10 @@
    "es": "S",
    "where": [
     "src/earth/inside.ts:279",
-    "src/sky/sky.ts:38"
+    "src/sky/sky.ts:38",
+    "src/sky/tonight.ts:53",
+    "src/sky/tonight.ts:119",
+    "src/sky/tonight.ts:244"
    ]
   },
   {
@@ -20099,14 +20478,16 @@
    "en": "SE",
    "es": "SE",
    "where": [
-    "src/sky/sky.ts:38"
+    "src/sky/sky.ts:38",
+    "src/sky/tonight.ts:53"
    ]
   },
   {
    "en": "SW",
    "es": "SO",
    "where": [
-    "src/sky/sky.ts:38"
+    "src/sky/sky.ts:38",
+    "src/sky/tonight.ts:53"
    ]
   },
   {
@@ -20271,6 +20652,7 @@
    "where": [
     "src/learn/tours.ts:824",
     "src/sky/sky.ts:30",
+    "src/sky/tonight.ts:44",
     "src/space/orrery.ts:22",
     "src/space/worlds.ts:132"
    ]
@@ -20590,7 +20972,7 @@
    "en": "Search places on {0}",
    "es": "Buscar lugares en {0}",
    "where": [
-    "src/space/space.ts:60"
+    "src/space/space.ts:62"
    ]
   },
   {
@@ -20662,7 +21044,8 @@
    "es": "Verlo en el cielo",
    "where": [
     "src/sky/galaxy.ts:343",
-    "src/sky/sky.ts:660"
+    "src/sky/sky.ts:666",
+    "src/sky/tonight.ts:377"
    ]
   },
   {
@@ -20691,6 +21074,13 @@
    "es": "Ver resultado",
    "where": [
     "src/learn/learn.ts:1775"
+   ]
+  },
+  {
+   "en": "See the Moon in the sky",
+   "es": "Ver la Luna en el cielo",
+   "where": [
+    "src/sky/tonight.ts:309"
    ]
   },
   {
@@ -20759,7 +21149,7 @@
    "en": "Seen whole from",
    "es": "Se ve completa desde",
    "where": [
-    "src/sky/sky.ts:714"
+    "src/sky/sky.ts:720"
    ]
   },
   {
@@ -20802,6 +21192,13 @@
    "es": "Septiembre · la meseta de Kaas",
    "where": [
     "src/learn/tours.ts:916"
+   ]
+  },
+  {
+   "en": "Sets",
+   "es": "Se pone",
+   "where": [
+    "src/sky/tonight.ts:307"
    ]
   },
   {
@@ -21152,7 +21549,7 @@
    "en": "Show {0}",
    "es": "Ver {0}",
    "where": [
-    "src/sky/sky.ts:684"
+    "src/sky/sky.ts:690"
    ]
   },
   {
@@ -21364,21 +21761,21 @@
    "en": "Six places in {0} to put on the map",
    "es": "Seis lugares de {0} para poner en el mapa",
    "where": [
-    "src/features.ts:174"
+    "src/features.ts:183"
    ]
   },
   {
    "en": "Six places of a country to put on the map, Wordle style",
    "es": "Seis lugares de un país para poner en el mapa, al estilo Wordle",
    "where": [
-    "src/features.ts:100"
+    "src/features.ts:109"
    ]
   },
   {
    "en": "Six places to put on the map",
    "es": "Seis lugares para poner en el mapa",
    "where": [
-    "src/features.ts:174"
+    "src/features.ts:183"
    ]
   },
   {
@@ -21388,8 +21785,8 @@
     "src/app/i18n.ts:336",
     "src/deeptime/deeptime.ts:926",
     "src/sky/galaxy.ts:362",
-    "src/sky/sky.ts:697",
-    "src/sky/sky.ts:710"
+    "src/sky/sky.ts:703",
+    "src/sky/sky.ts:716"
    ]
   },
   {
@@ -21421,8 +21818,8 @@
    ]
   },
   {
-   "en": "Sizes are not to scale. Tap a world for its facts · pinch or scroll to zoom · drag to move.",
-   "es": "Los tamaños no están a escala. Toca un mundo para ver sus datos · pellizca o usa la rueda para acercar · arrastra para moverte.",
+   "en": "Sizes are not to scale. Tap a planet to go there · pinch or scroll to zoom · drag to move.",
+   "es": "Los tamaños no están a escala. Toca un planeta para ir allí · pellizca o usa la rueda para acercar · arrastra para moverte.",
    "where": [
     "src/space/orrery.ts:113"
    ]
@@ -21650,7 +22047,7 @@
    "en": "Something from the past that we still use today",
    "es": "Algo del pasado que todavía usamos hoy",
    "where": [
-    "src/features.ts:212"
+    "src/features.ts:225"
    ]
   },
   {
@@ -21756,7 +22153,7 @@
    "en": "Space",
    "es": "Espacio",
    "where": [
-    "src/space/space.ts:54"
+    "src/space/space.ts:56"
    ]
   },
   {
@@ -21813,7 +22210,7 @@
    "en": "Space stories",
    "es": "Historias del espacio",
    "where": [
-    "src/space/space.ts:154"
+    "src/space/space.ts:157"
    ]
   },
   {
@@ -21959,9 +22356,9 @@
    "es": "Estrella",
    "where": [
     "src/sky/data.ts:128",
-    "src/sky/sky.ts:688",
-    "src/sky/sky.ts:745",
-    "src/space/space.ts:312"
+    "src/sky/sky.ts:694",
+    "src/sky/sky.ts:751",
+    "src/space/space.ts:315"
    ]
   },
   {
@@ -22322,7 +22719,8 @@
    "en": "Sun",
    "es": "Sol",
    "where": [
-    "src/sky/sky.ts:466"
+    "src/sky/sky.ts:472",
+    "src/sky/tonight.ts:532"
    ]
   },
   {
@@ -22383,6 +22781,13 @@
    ]
   },
   {
+   "en": "Sunset {0} · sunrise {1}",
+   "es": "Puesta del sol {0} · salida del sol {1}",
+   "where": [
+    "src/sky/tonight.ts:461"
+   ]
+  },
+  {
    "en": "Supernova remnant",
    "es": "Remanente de supernova",
    "where": [
@@ -22402,7 +22807,7 @@
    "es": "Superficie",
    "where": [
     "src/space/space.ts:22",
-    "src/space/space.ts:99"
+    "src/space/space.ts:101"
    ]
   },
   {
@@ -22736,6 +23141,13 @@
    ]
   },
   {
+   "en": "Tap one to see it in the sky.",
+   "es": "Toca uno para verlo en el cielo.",
+   "where": [
+    "src/sky/tonight.ts:539"
+   ]
+  },
+  {
    "en": "Tap the capital of {0}",
    "es": "Toca la capital de {0}",
    "where": [
@@ -22937,6 +23349,14 @@
    ]
   },
   {
+   "en": "Telescope",
+   "es": "Telescopio",
+   "where": [
+    "src/sky/tonight.ts:94",
+    "src/sky/tonight.ts:443"
+   ]
+  },
+  {
    "en": "Telescopes in the desert",
    "es": "Telescopios en el desierto",
    "where": [
@@ -22996,7 +23416,7 @@
    "en": "Temperature",
    "es": "Temperatura",
    "where": [
-    "src/space/space.ts:349"
+    "src/space/space.ts:352"
    ]
   },
   {
@@ -23629,7 +24049,8 @@
    "en": "The Earth",
    "es": "La Tierra",
    "where": [
-    "src/deeptime/deeptime.ts:504"
+    "src/deeptime/deeptime.ts:504",
+    "src/space/around.ts:173"
    ]
   },
   {
@@ -24195,7 +24616,29 @@
     "src/deeptime/deeptime.ts:505",
     "src/deeptime/deeptime.ts:676",
     "src/learn/tours.ts:816",
-    "src/space/worlds.ts:78"
+    "src/sky/tonight.ts:238",
+    "src/space/around.ts:214"
+   ]
+  },
+  {
+   "en": "The Moon ({0}% lit) is up through the dark hours: a night for the Moon and the planets.",
+   "es": "La Luna (iluminada al {0}%) está arriba en las horas oscuras: una noche para la Luna y los planetas.",
+   "where": [
+    "src/sky/tonight.ts:477"
+   ]
+  },
+  {
+   "en": "The Moon as it looks from {0}: {1}, {2}% lit",
+   "es": "La Luna como se ve desde {0}: {1}, iluminada al {2}%",
+   "where": [
+    "src/sky/tonight.ts:505"
+   ]
+  },
+  {
+   "en": "The Moon now, the planets and what to see tonight",
+   "es": "La luna ahora, los planetas y qué ver esta noche",
+   "where": [
+    "src/sky/tonight.ts:98"
    ]
   },
   {
@@ -24511,7 +24954,8 @@
    "en": "The Sun",
    "es": "El Sol",
    "where": [
-    "src/deeptime/deeptime.ts:672"
+    "src/deeptime/deeptime.ts:672",
+    "src/space/around.ts:229"
    ]
   },
   {
@@ -24533,6 +24977,20 @@
    "es": "El Sol y sus planetas",
    "where": [
     "src/deeptime/deeptime.ts:64"
+   ]
+  },
+  {
+   "en": "The Sun doesn’t rise: the polar night.",
+   "es": "El Sol no sale: la noche polar.",
+   "where": [
+    "src/sky/tonight.ts:460"
+   ]
+  },
+  {
+   "en": "The Sun doesn’t set tonight: the midnight sun.",
+   "es": "El Sol no se pone esta noche: el sol de medianoche.",
+   "where": [
+    "src/sky/tonight.ts:459"
    ]
   },
   {
@@ -25968,11 +26426,18 @@
    ]
   },
   {
+   "en": "The next 30 nights",
+   "es": "Las próximas 30 noches",
+   "where": [
+    "src/sky/tonight.ts:337"
+   ]
+  },
+  {
    "en": "The night sky",
    "es": "El cielo nocturno",
    "where": [
     "src/sky/sky.ts:216",
-    "src/space/space.ts:142"
+    "src/space/space.ts:145"
    ]
   },
   {
@@ -26074,6 +26539,13 @@
    ]
   },
   {
+   "en": "The planets tonight",
+   "es": "Los planetas esta noche",
+   "where": [
+    "src/sky/tonight.ts:240"
+   ]
+  },
+  {
    "en": "The plants people have seen most within 50 km of a place, with photos.",
    "es": "Las plantas más vistas a menos de 50 km de un lugar, con fotos.",
    "where": [
@@ -26170,6 +26642,13 @@
    "where": [
     "src/layers/packs/green.ts:272",
     "src/layers/packs/wild.ts:230"
+   ]
+  },
+  {
+   "en": "The rings show from ×30. Now open {0}°.",
+   "es": "Los anillos se ven desde ×30. Ahora abiertos {0}°.",
+   "where": [
+    "src/sky/tonight.ts:409"
    ]
   },
   {
@@ -26335,6 +26814,13 @@
    ]
   },
   {
+   "en": "The sky doesn’t get dark enough tonight.",
+   "es": "Esta noche el cielo no oscurece lo suficiente.",
+   "where": [
+    "src/sky/tonight.ts:438"
+   ]
+  },
+  {
    "en": "The smallest planet and the closest to the Sun, scarred by craters. The Caloris basin, 1,500 km across, was blasted out by a huge impact.",
    "es": "El planeta más pequeño y el más cercano al Sol, lleno de cráteres. La cuenca de Caloris, de 1500 km, la abrió un enorme impacto.",
    "where": [
@@ -26347,7 +26833,7 @@
    "where": [
     "src/space/orrery.ts:108",
     "src/space/orrery.ts:109",
-    "src/space/space.ts:137"
+    "src/space/space.ts:139"
    ]
   },
   {
@@ -26916,6 +27402,7 @@
    "es": "Este dispositivo no puede saber dónde estás.",
    "where": [
     "src/green/finder.ts:89",
+    "src/sky/tonight.ts:135",
     "src/wild/finder.ts:139"
    ]
   },
@@ -27272,6 +27759,13 @@
    ]
   },
   {
+   "en": "Time of night",
+   "es": "Hora de la noche",
+   "where": [
+    "src/sky/tonight.ts:280"
+   ]
+  },
+  {
    "en": "Time there now",
    "es": "Hora allí ahora",
    "where": [
@@ -27319,6 +27813,13 @@
    "es": "Tamerlán conquista Asia Central y Persia, los otomanos avanzan por los Balcanes y la dinastía Ming gobierna China.",
    "where": [
     "src/learn/detective.ts:58"
+   ]
+  },
+  {
+   "en": "Tiny and always near the Sun: look low in the twilight. Now {0}% lit.",
+   "es": "Diminuto y siempre cerca del Sol: búscalo bajo, en el crepúsculo. Ahora iluminado al {0}%.",
+   "where": [
+    "src/sky/tonight.ts:405"
    ]
   },
   {
@@ -27428,7 +27929,7 @@
    "en": "Today in deep time",
    "es": "Hoy en el tiempo profundo",
    "where": [
-    "src/features.ts:208"
+    "src/features.ts:217"
    ]
   },
   {
@@ -27498,7 +27999,7 @@
    "en": "Today’s goal: {0} of {1} answers",
    "es": "Meta de hoy: {0} de {1} respuestas",
    "where": [
-    "src/features.ts:115"
+    "src/features.ts:124"
    ]
   },
   {
@@ -27548,6 +28049,24 @@
    "es": "Lengua de una meseta",
    "where": [
     "src/space/worlds.ts:218"
+   ]
+  },
+  {
+   "en": "Tonight’s sky",
+   "es": "El cielo de esta noche",
+   "where": [
+    "src/features.ts:221",
+    "src/sky/sky.ts:288",
+    "src/sky/tonight.ts:87",
+    "src/sky/tonight.ts:94",
+    "src/sky/tonight.ts:98"
+   ]
+  },
+  {
+   "en": "Tonight’s sky from {0}",
+   "es": "El cielo de esta noche desde {0}",
+   "where": [
+    "src/sky/tonight.ts:664"
    ]
   },
   {
@@ -27908,6 +28427,13 @@
    "es": "Doce países firmaron el Tratado Antártico: la Antártida se usaría solo para la paz y la ciencia.",
    "where": [
     "src/learn/tours.ts:554"
+   ]
+  },
+  {
+   "en": "Twilight",
+   "es": "Crepúsculo",
+   "where": [
+    "src/sky/tonight.ts:479"
    ]
   },
   {
@@ -28312,6 +28838,13 @@
    ]
   },
   {
+   "en": "Up now: {0}.",
+   "es": "Arriba ahora: {0}.",
+   "where": [
+    "src/sky/tonight.ts:539"
+   ]
+  },
+  {
    "en": "Updated {0}",
    "es": "Actualizado {0}",
    "where": [
@@ -28337,6 +28870,7 @@
    "es": "Urano",
    "where": [
     "src/sky/sky.ts:31",
+    "src/sky/tonight.ts:45",
     "src/space/orrery.ts:23",
     "src/space/worlds.ts:147"
    ]
@@ -28374,7 +28908,8 @@
    "es": "Usar mi ubicación",
    "where": [
     "src/sky/sky.ts:194",
-    "src/sky/sky.ts:209"
+    "src/sky/sky.ts:209",
+    "src/sky/tonight.ts:255"
    ]
   },
   {
@@ -28454,6 +28989,7 @@
    "where": [
     "src/learn/tours.ts:815",
     "src/sky/sky.ts:27",
+    "src/sky/tonight.ts:41",
     "src/space/orrery.ts:17",
     "src/space/worlds.ts:69"
    ]
@@ -28477,6 +29013,13 @@
    "es": "Versión",
    "where": [
     "src/app/i18n.ts:165"
+   ]
+  },
+  {
+   "en": "Very bright",
+   "es": "Muy brillante",
+   "where": [
+    "src/sky/tonight.ts:55"
    ]
   },
   {
@@ -28595,14 +29138,14 @@
    "en": "Visit on the globe",
    "es": "Visitar en el globo",
    "where": [
-    "src/space/space.ts:309"
+    "src/space/space.ts:312"
    ]
   },
   {
    "en": "Visit other worlds on the globe with their real maps: tap a place for its name and story, and see where every spacecraft landed.",
    "es": "Visita otros mundos en el globo con sus mapas reales: toca un lugar para ver su nombre y su historia, y mira dónde aterrizó cada nave.",
    "where": [
-    "src/space/space.ts:158"
+    "src/space/space.ts:161"
    ]
   },
   {
@@ -28767,6 +29310,20 @@
    ]
   },
   {
+   "en": "Waning crescent",
+   "es": "Luna menguante",
+   "where": [
+    "src/sky/tonight.ts:36"
+   ]
+  },
+  {
+   "en": "Waning gibbous",
+   "es": "Gibosa menguante",
+   "where": [
+    "src/sky/tonight.ts:34"
+   ]
+  },
+  {
    "en": "Wannsee, 1942",
    "es": "Wannsee, 1942",
    "where": [
@@ -28864,6 +29421,20 @@
    "es": "Olas de hasta unos 40 m golpearon el noreste de Japón, y la inundación dejó sin electricidad la central nuclear de Fukushima Daiichi, donde tres reactores se fundieron.",
    "where": [
     "src/learn/tours.ts:662"
+   ]
+  },
+  {
+   "en": "Waxing crescent",
+   "es": "Luna creciente",
+   "where": [
+    "src/sky/tonight.ts:30"
+   ]
+  },
+  {
+   "en": "Waxing gibbous",
+   "es": "Gibosa creciente",
+   "where": [
+    "src/sky/tonight.ts:32"
    ]
   },
   {
@@ -29006,7 +29577,7 @@
    "en": "What happened on this day: events, births and deaths",
    "es": "Lo que pasó un día como hoy: hechos, nacimientos y muertes",
    "where": [
-    "src/features.ts:145"
+    "src/features.ts:154"
    ]
   },
   {
@@ -29030,7 +29601,7 @@
    "where": [
     "src/sky/galaxy.ts:351",
     "src/sky/galaxy.ts:363",
-    "src/sky/sky.ts:678"
+    "src/sky/sky.ts:684"
    ]
   },
   {
@@ -29481,8 +30052,8 @@
    "en": "Where in the galaxy",
    "es": "Dónde está en la galaxia",
    "where": [
-    "src/sky/sky.ts:686",
-    "src/sky/sky.ts:701"
+    "src/sky/sky.ts:692",
+    "src/sky/sky.ts:707"
    ]
   },
   {
@@ -29670,7 +30241,7 @@
    "where": [
     "src/sky/elements.ts:95",
     "src/sky/elements.ts:96",
-    "src/space/space.ts:144"
+    "src/space/space.ts:147"
    ]
   },
   {
@@ -29734,6 +30305,13 @@
    "es": "Dónde se inventaron las cosas y cómo viajaron: los cuatro grandes inventos de China, los relojes, las lentes, el vuelo, el telégrafo y la web, la energía, las cosas de todos los días, los primeros en disputa y los inventos de América Latina.",
    "where": [
     "src/app/i18n.ts:259"
+   ]
+  },
+  {
+   "en": "Where to look",
+   "es": "Hacia dónde mirar",
+   "where": [
+    "src/sky/tonight.ts:239"
    ]
   },
   {
@@ -30807,6 +31385,13 @@
    ]
   },
   {
+   "en": "Worked out on your device for {0} ({1}, {2}). Times in {3}.",
+   "es": "Calculado en tu dispositivo para {0} ({1}, {2}). Horas en {3}.",
+   "where": [
+    "src/sky/tonight.ts:243"
+   ]
+  },
+  {
    "en": "World",
    "es": "Mundo",
    "where": [
@@ -31128,7 +31713,9 @@
    "en": "Your location",
    "es": "Tu ubicación",
    "where": [
-    "src/sky/sky.ts:251"
+    "src/sky/sky.ts:251",
+    "src/sky/tonight.ts:110",
+    "src/sky/tonight.ts:125"
    ]
   },
   {
@@ -31600,6 +32187,13 @@
    ]
   },
   {
+   "en": "almost straight overhead",
+   "es": "casi justo arriba",
+   "where": [
+    "src/sky/tonight.ts:59"
+   ]
+  },
+  {
    "en": "also",
    "es": "también",
    "where": [
@@ -31638,14 +32232,14 @@
    "en": "anywhere north of {0}",
    "es": "cualquier lugar al norte de {0}",
    "where": [
-    "src/sky/sky.ts:796"
+    "src/sky/sky.ts:802"
    ]
   },
   {
    "en": "anywhere south of {0}",
    "es": "cualquier lugar al sur de {0}",
    "where": [
-    "src/sky/sky.ts:797"
+    "src/sky/sky.ts:803"
    ]
   },
   {
@@ -31696,9 +32290,9 @@
    "en": "au",
    "es": "ua",
    "where": [
-    "src/sky/sky.ts:667",
-    "src/space/orrery.ts:317",
-    "src/space/orrery.ts:318"
+    "src/sky/sky.ts:673",
+    "src/space/orrery.ts:320",
+    "src/space/orrery.ts:321"
    ]
   },
   {
@@ -31720,7 +32314,14 @@
    "en": "backwards",
    "es": "al revés",
    "where": [
-    "src/space/space.ts:344"
+    "src/space/space.ts:347"
+   ]
+  },
+  {
+   "en": "below the horizon",
+   "es": "bajo el horizonte",
+   "where": [
+    "src/sky/tonight.ts:59"
    ]
   },
   {
@@ -31740,10 +32341,17 @@
    ]
   },
   {
+   "en": "best at {0}, {1}",
+   "es": "mejor a las {0}, {1}",
+   "where": [
+    "src/sky/tonight.ts:449"
+   ]
+  },
+  {
    "en": "between {0} and {1}",
    "es": "entre {0} y {1}",
    "where": [
-    "src/sky/sky.ts:798"
+    "src/sky/sky.ts:804"
    ]
   },
   {
@@ -31823,6 +32431,13 @@
    "es": "ciudades",
    "where": [
     "src/master/extra.ts:241"
+   ]
+  },
+  {
+   "en": "close to us: a “supermoon”",
+   "es": "cerca de nosotros: una “superluna”",
+   "where": [
+    "src/sky/tonight.ts:511"
    ]
   },
   {
@@ -31998,6 +32613,13 @@
    ]
   },
   {
+   "en": "far from us: it looks a little smaller",
+   "es": "lejos de nosotros: se ve un poco más pequeña",
+   "where": [
+    "src/sky/tonight.ts:511"
+   ]
+  },
+  {
    "en": "first grown",
    "es": "primer cultivo",
    "where": [
@@ -32075,6 +32697,62 @@
    "es": "en total",
    "where": [
     "src/ui/terrain.ts:190"
+   ]
+  },
+  {
+   "en": "in the east",
+   "es": "en el este",
+   "where": [
+    "src/sky/tonight.ts:50"
+   ]
+  },
+  {
+   "en": "in the north",
+   "es": "en el norte",
+   "where": [
+    "src/sky/tonight.ts:50"
+   ]
+  },
+  {
+   "en": "in the north-east",
+   "es": "en el noreste",
+   "where": [
+    "src/sky/tonight.ts:50"
+   ]
+  },
+  {
+   "en": "in the north-west",
+   "es": "en el noroeste",
+   "where": [
+    "src/sky/tonight.ts:51"
+   ]
+  },
+  {
+   "en": "in the south",
+   "es": "en el sur",
+   "where": [
+    "src/sky/tonight.ts:51"
+   ]
+  },
+  {
+   "en": "in the south-east",
+   "es": "en el sureste",
+   "where": [
+    "src/sky/tonight.ts:50"
+   ]
+  },
+  {
+   "en": "in the south-west",
+   "es": "en el suroeste",
+   "where": [
+    "src/sky/tonight.ts:51"
+   ]
+  },
+  {
+   "en": "in the west",
+   "es": "en el oeste",
+   "where": [
+    "src/sky/tonight.ts:51"
    ]
   },
   {
@@ -32170,8 +32848,8 @@
    "es": "años luz",
    "where": [
     "src/sky/galaxy.ts:38",
-    "src/sky/sky.ts:677",
-    "src/sky/sky.ts:696"
+    "src/sky/sky.ts:683",
+    "src/sky/sky.ts:702"
    ]
   },
   {
@@ -32202,8 +32880,8 @@
    "en": "magnitude",
    "es": "magnitud",
    "where": [
-    "src/sky/sky.ts:667",
-    "src/sky/sky.ts:676"
+    "src/sky/sky.ts:673",
+    "src/sky/sky.ts:682"
    ]
   },
   {
@@ -32229,6 +32907,13 @@
    ]
   },
   {
+   "en": "midnight",
+   "es": "medianoche",
+   "where": [
+    "src/sky/tonight.ts:286"
+   ]
+  },
+  {
    "en": "migration",
    "es": "migración",
    "where": [
@@ -32246,9 +32931,9 @@
    "en": "million km",
    "es": "millones de km",
    "where": [
-    "src/sky/sky.ts:667",
-    "src/space/orrery.ts:317",
-    "src/space/space.ts:347"
+    "src/sky/sky.ts:673",
+    "src/space/orrery.ts:320",
+    "src/space/space.ts:350"
    ]
   },
   {
@@ -32256,7 +32941,7 @@
    "es": "millones de años luz",
    "where": [
     "src/sky/galaxy.ts:37",
-    "src/sky/sky.ts:696"
+    "src/sky/sky.ts:702"
    ]
   },
   {
@@ -32426,7 +33111,7 @@
    "en": "of Earth",
    "es": "de la Tierra",
    "where": [
-    "src/space/space.ts:340"
+    "src/space/space.ts:343"
    ]
   },
   {
@@ -32807,6 +33492,13 @@
    ]
   },
   {
+   "en": "the Moon",
+   "es": "la Luna",
+   "where": [
+    "src/space/around.ts:179"
+   ]
+  },
+  {
    "en": "the Pacific",
    "es": "el Pacífico",
    "where": [
@@ -32818,6 +33510,13 @@
    "es": "el océano Austral",
    "where": [
     "src/ocean/depth.ts:74"
+   ]
+  },
+  {
+   "en": "the bright Moon makes it harder",
+   "es": "la Luna brillante lo dificulta",
+   "where": [
+    "src/sky/tonight.ts:449"
    ]
   },
   {
@@ -32929,7 +33628,7 @@
    "en": "thousand km",
    "es": "mil km",
    "where": [
-    "src/space/space.ts:347"
+    "src/space/space.ts:350"
    ]
   },
   {
@@ -32970,6 +33669,13 @@
    "where": [
     "src/learn/learn.ts:2655",
     "src/ui/legend.ts:134"
+   ]
+  },
+  {
+   "en": "to see: {0}",
+   "es": "para ver: {0}",
+   "where": [
+    "src/sky/tonight.ts:713"
    ]
   },
   {
@@ -33146,6 +33852,13 @@
    "es": "tus datos csv",
    "where": [
     "src/ui/filters.ts:82"
+   ]
+  },
+  {
+   "en": "your device’s time",
+   "es": "la hora de tu dispositivo",
+   "where": [
+    "src/sky/tonight.ts:166"
    ]
   },
   {
@@ -33574,7 +34287,7 @@
    "en": "{0} evenings",
    "es": "las noches de {0}",
    "where": [
-    "src/sky/sky.ts:713"
+    "src/sky/sky.ts:719"
    ]
   },
   {
@@ -33970,7 +34683,7 @@
    "en": "{0} puzzles today: {1}…",
    "es": "{0} retos hoy: {1}…",
    "where": [
-    "src/features.ts:179"
+    "src/features.ts:188"
    ]
   },
   {
@@ -34027,7 +34740,7 @@
    "en": "{0} square degrees, {1} of 88",
    "es": "{0} grados cuadrados, el {2}.º de 88",
    "where": [
-    "src/sky/sky.ts:710"
+    "src/sky/sky.ts:716"
    ]
   },
   {
@@ -34074,6 +34787,13 @@
    ]
   },
   {
+   "en": "{0} times as wide as {1}",
+   "es": "{0} veces más ancho que {1}",
+   "where": [
+    "src/space/around.ts:179"
+   ]
+  },
+  {
    "en": "{0} times the air at sea level",
    "es": "{0} veces el aire al nivel del mar",
    "where": [
@@ -34098,7 +34818,7 @@
    "en": "{0} to review",
    "es": "{0} por repasar",
    "where": [
-    "src/features.ts:115"
+    "src/features.ts:124"
    ]
   },
   {
@@ -34236,6 +34956,13 @@
    ]
   },
   {
+   "en": "{0}% lit · {1} days old",
+   "es": "Iluminada al {0}% · {1} días de edad",
+   "where": [
+    "src/sky/tonight.ts:509"
+   ]
+  },
+  {
    "en": "{0}% of today’s",
    "es": "{0}% del actual",
    "where": [
@@ -34254,6 +34981,13 @@
    "es": "{0}, la capital de {1}.",
    "where": [
     "src/master/master.ts:804"
+   ]
+  },
+  {
+   "en": "{0}, {1}% lit",
+   "es": "{0}, iluminada al {1}%",
+   "where": [
+    "src/sky/tonight.ts:712"
    ]
   },
   {
@@ -34322,6 +35056,13 @@
    ]
   },
   {
+   "en": "{0}: {1} to {2} · best at {3}, {4}",
+   "es": "{0}: de {1} a {2} · mejor a las {3}, {4}",
+   "where": [
+    "src/sky/tonight.ts:370"
+   ]
+  },
+  {
    "en": "{0}; part of another site since {1}",
    "es": "{0}; parte de otro sitio desde {1}",
    "where": [
@@ -34352,10 +35093,17 @@
    ]
   },
   {
+   "en": "{0}° up {1}",
+   "es": "{0}° de altura {1}",
+   "where": [
+    "src/sky/tonight.ts:59"
+   ]
+  },
+  {
    "en": "{0}° up, toward the {1}",
    "es": "A {0}° de altura, hacia {1}",
    "where": [
-    "src/sky/sky.ts:651"
+    "src/sky/sky.ts:657"
    ]
   },
   {
@@ -34392,6 +35140,13 @@
    "es": "Plato nacional de {0}",
    "where": [
     "src/guide/guide.ts:526"
+   ]
+  },
+  {
+   "en": "{0}″ wide: at ×{1} it looks as big as the Moon does to your eye.",
+   "es": "{0}″ de ancho: a ×{1} se ve tan grande como la Luna a simple vista.",
+   "where": [
+    "src/sky/tonight.ts:402"
    ]
   },
   {

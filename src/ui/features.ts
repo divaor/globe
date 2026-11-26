@@ -5,7 +5,7 @@ import {
   Luggage, Palette, PawPrint, Pickaxe, Waves, MonitorPlay, History, Orbit, Earth, CircleHelp, Compass, CalendarDays,
   Zap, Medal, Route, PaintBucket, MapPinned, Ruler, Scale, Scaling, ChartScatter, Upload, ImageDown, Monitor, Smartphone,
   Link, Settings, Info, Layers, Layers2, Globe, CalendarCheck, Telescope, GraduationCap, Gamepad2, Wrench, Share2, Bell, Sparkles,
-  Map as MapIcon, Mountain, Search, HardDriveDownload, Maximize, Landmark, Hourglass,
+  Map as MapIcon, Mountain, Search, HardDriveDownload, Maximize, Landmark, Hourglass, MoonStar,
   type IconNode,
 } from 'lucide';
 import { h, icon } from './dom';
@@ -44,6 +44,7 @@ export const FEATURES: Record<string, Feature> = {
   time: { icon: History, hue: 'time' },
   space: { icon: Orbit, hue: 'space' },
   sky: { icon: Sparkles, hue: 'space' },
+  tonight: { icon: MoonStar, hue: 'space' },
   // The map and tools
   map: { icon: MapIcon, hue: 'tools' },
   filters: { icon: Layers, hue: 'tools' },

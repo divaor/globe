@@ -110,7 +110,7 @@ export class Orrery {
       h('div', { class: 'orr-foot glass' },
         h('div', { class: 'orr-row' }, play, input, today),
         speeds, scales,
-        h('div', { class: 'muted small' }, L('Sizes are not to scale. Tap a world for its facts · pinch or scroll to zoom · drag to move.', 'Los tamaños no están a escala. Toca un mundo para ver sus datos · pellizca o usa la rueda para acercar · arrastra para moverte.'))));
+        h('div', { class: 'muted small' }, L('Sizes are not to scale. Tap a planet to go there · pinch or scroll to zoom · drag to move.', 'Los tamaños no están a escala. Toca un planeta para ir allí · pellizca o usa la rueda para acercar · arrastra para moverte.'))));
     this.el = el;
     this.ui = { canvas, date, play, speeds, scales, input };
     document.documentElement.classList.add('orrery-open');
@@ -304,6 +304,9 @@ export class Orrery {
     let best: string | null = null, bd = Infinity;
     for (const s of this.spots) { const d = Math.hypot(s.x - x, s.y - y); if (d < s.r + 8 && d < bd) { bd = d; best = s.id; } }
     if (!best) { this.shell.card.hide(); return null; }
+    // A world with a globe: straight there (v0.49.0), to explore the solar system by tapping; the Earth: home.
+    if (best === 'earth') { this.close(); void this.space.exit(); return best; }
+    if (worldById(best)) { this.close(); void this.space.enter(best); return best; }
     void this.card(best);
     return best;
   }

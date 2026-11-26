@@ -180,6 +180,8 @@ a { color: var(--accent); }
 .brand-name { font-weight: 800; letter-spacing: .02em; font-size: var(--fs-xl); text-shadow: 0 1px 8px rgba(0,0,0,.45); }
 :root[data-theme='light'] .brand-name { text-shadow: none; }
 html.map-light .brand-name { color: #1d2433; text-shadow: 0 0 6px rgba(255,255,255,.85); }
+/* The light theme's globe floats in dark space (v0.49.0). */
+:root[data-theme='light'].space-dark:not(.map-light) .brand-name { color: #f2f5fa; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
 .search-btn { display: flex; align-items: center; gap: 8px; height: 42px; padding: 0 16px 0 13px; border-radius: var(--r-lg); cursor: pointer; color: var(--muted); }
 .search-btn:hover { color: var(--text); }
 
@@ -1676,3 +1678,56 @@ html.dt-cosmos .brand-name { color: #f2f5fa; text-shadow: 0 1px 6px rgba(0,0,0,.
 .about .about-links { font-size: var(--fs-sm); }
 .about .about-donate { margin: var(--sp-3) 0; padding: var(--sp-1) var(--sp-3) var(--sp-3); border: 1px solid var(--line); border-radius: var(--r-md); background: var(--chip); }
 .about .about-donate .sec-title { margin-top: var(--sp-2); }
+
+/* Tonight's sky (v0.49.0): the Moon now, where to look, the planets, what to point a telescope at, the dark hours. */
+.tonight { display: flex; flex-direction: column; gap: var(--sp-2); }
+.tonight .tn-place .chip-row { flex-wrap: wrap; }
+.tonight .tn-where { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tonight .tn-time { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+.tonight .tn-time-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.tonight .tn-when { font-size: var(--fs-lg); }
+.tonight .tn-time-btns { display: inline-flex; align-items: center; gap: 6px; }
+.tonight .tn-date { font: inherit; font-size: var(--fs-sm); color: var(--text); background: var(--chip); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 6px 8px; min-height: 36px; }
+.tonight .tn-bar { position: relative; height: 30px; border-radius: var(--r-sm); overflow: hidden; }
+#app .tonight canvas { position: static; inset: auto; }
+#app .tonight .tn-bar-canvas { position: absolute; inset: 0; display: block; }
+.tonight .tn-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.tonight .tn-ticks { position: relative; height: 16px; font-size: var(--fs-xs); color: var(--muted); }
+.tonight .tn-ticks span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+.tonight .tn-ticks span:first-child { transform: translateX(-20%); }
+.tonight .tn-ticks span:last-child { transform: translateX(-80%); }
+.tonight .tn-moon { display: flex; gap: var(--sp-3); align-items: center; }
+.tonight .tn-moon-frame { flex: none; padding: 8px; border-radius: var(--r-pill); background: radial-gradient(circle at 50% 50%, #10162e 0%, #04060d 70%); box-shadow: inset 0 0 0 1px var(--line); line-height: 0; }
+.tonight .tn-moon-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.tonight .tn-phase { font-size: var(--fs-xl); line-height: 1.2; }
+.tonight .tn-lit { font-weight: var(--fw-semi); }
+.tonight .tn-now { color: var(--accent); font-weight: var(--fw-semi); font-size: var(--fs-sm); }
+.tonight .tn-times { display: flex; flex-direction: column; font-size: var(--fs-sm); }
+.tonight .tn-sub { margin-top: 8px; font-size: var(--fs-sm); font-weight: var(--fw-semi); color: var(--muted); }
+.tonight .tn-phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.tonight .tn-ph { display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; padding: 6px 2px; border-radius: var(--r-sm); background: var(--chip); border: 1px solid var(--line); }
+.tonight .tn-ph-name { font-size: var(--fs-xs); font-weight: var(--fw-semi); line-height: 1.2; }
+.tonight .tn-ph .muted { font-size: var(--fs-xs); }
+.tonight .tn-mini { display: block; border-radius: var(--r-pill); background: #05070f; }
+.tonight .tn-month { display: flex; gap: 4px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.tonight .tn-day { flex: none; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 4px 3px; min-width: 40px; min-height: 44px; border-radius: var(--r-sm); border: 1px solid transparent; background: none; color: var(--text); font-size: var(--fs-xs); cursor: pointer; }
+.tonight .tn-day.on { border-color: var(--accent); }
+.tonight .tn-pano { display: block; width: 100%; border-radius: var(--r-md); cursor: pointer; }
+.tonight .tn-planets { display: flex; flex-direction: column; gap: 8px; }
+.tonight .tn-scale { display: block; border-radius: var(--r-sm); }
+.tonight .tn-planet { padding: var(--sp-3); border-radius: var(--r-md); border: 1px solid var(--line); background: var(--chip); display: flex; flex-direction: column; gap: 6px; }
+.tonight .tn-planet.off { opacity: .72; }
+.tonight .tn-planet-head { display: flex; gap: var(--sp-3); align-items: center; }
+.tonight .tn-planet-frame { flex: none; min-width: 64px; display: flex; justify-content: center; align-items: center; padding: 4px; border-radius: var(--r-sm); background: #05070f; line-height: 0; }
+.tonight .tn-planet-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.tonight .tn-planet-text strong { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
+.tonight .tn-bright { font-size: var(--fs-xs); font-weight: var(--fw-semi); color: var(--muted); }
+.tonight .tn-when-line { font-size: var(--fs-sm); }
+.tonight .tn-jupiter { display: block; border-radius: var(--r-sm); }
+.tonight .tn-how { margin-left: 6px; font-size: var(--fs-xs); font-weight: var(--fw-semi); padding: 1px 6px; border-radius: var(--r-pill); background: var(--chip-on); white-space: nowrap; }
+.tonight .tn-dark p { margin: 0 0 6px; }
+.tonight .tn-legend { display: flex; flex-wrap: wrap; gap: 10px; }
+.tonight .tn-legend i.k { display: inline-block; width: 12px; height: 10px; border-radius: var(--r-xs); margin-right: 4px; vertical-align: -1px; }
+.tonight .tn-legend i.day { background: #8fc0ec; } .tonight .tn-legend i.tw { background: #5a6fae; }
+.tonight .tn-legend i.night { background: #0a0e25; box-shadow: inset 0 0 0 1px var(--line); } .tonight .tn-legend i.moon { background: #ebebe1; }
+.tonight .tn-foot { margin-top: 8px; }

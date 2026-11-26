@@ -7203,6 +7203,143 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await ol.ctx.close();
 }
 
+// 62. Tonight's sky and the solar system to tap through (v0.49.0). Explore → Tonight's sky from a phone in Mexico City
+// (its location allowed): the Moon now (phase, lit, rises and sets, the next four phases, its real face drawn), the
+// sky around the horizon, the seven planets (Jupiter's four moons, Saturn's rings), what to point a telescope at, the
+// dark hours, in the device's own time; the slider and another night (the eclipse full moon of 3 March 2026); a tap
+// on the globe moves the place (Sydney: facing north, its own time zone); the sky view and back; Today's line; the
+// search box; Spanish. Around the globe: the Moon beside the Earth (tap: the Moon, with the Earth behind it to scale;
+// tap the Earth: home), the Sun (tap: the solar system; tap Saturn there: Saturn with its rings and moons; tap Titan:
+// Saturn behind it), nothing during a game; the light theme's globe floats in dark space, its flat maps do not.
+{
+  const tn = await open({ ...devices['Pixel 7'], locale: 'en-GB', timezoneId: 'America/Mexico_City', geolocation: { latitude: 19.43, longitude: -99.13 }, permissions: ['geolocation'] }, '#p=globe&l=political&c=-99,19,1.1&lang=en');
+  const p = tn.page;
+  await p.evaluate(() => window.__menu('Tonight’s sky'));
+  await p.waitForSelector('.tonight [data-tonight="phase"]', { timeout: 15000 }).catch(() => {});
+  await p.waitForFunction(() => window.atlas.tonight.info.place?.mine && window.atlas.tonight.info.targets.length > 0, null, { timeout: 20000 }).catch(() => {});
+  await p.waitForTimeout(1500);
+  const a = await p.evaluate(() => {
+    const i = window.atlas.tonight.info;
+    const c = document.querySelector('.tn-moon-disc'), d = c?.getContext('2d')?.getImageData(0, 0, c.width, c.height).data;
+    let lit = 0; if (d) for (let k = 0; k < d.length; k += 4) if (d[k] + d[k + 1] + d[k + 2] > 150) lit++;
+    return { ...i, moonPx: lit, phaseText: document.querySelector('[data-tonight="phase"]')?.textContent ?? '', now: document.querySelector('[data-tonight="moon-now"]')?.textContent ?? '',
+      planetsShown: document.querySelectorAll('.tn-planet').length, targetsShown: document.querySelectorAll('.tn-target').length, phases: document.querySelectorAll('.tn-ph').length, days: document.querySelectorAll('.tn-day').length,
+      foot: document.querySelector('.tn-foot')?.textContent ?? '', pano: (document.querySelector('.tn-pano')?.width ?? 0) > 0 };
+  });
+  check(a.open && ['new', 'waxing-crescent', 'first-quarter', 'waxing-gibbous', 'full', 'waning-gibbous', 'last-quarter', 'waning-crescent'].includes(a.phase) && a.lit >= 0 && a.lit <= 1 && a.moonPx > 300 && a.next.length === 4 && new Set(a.next).size === 4 && a.phases === 4 && a.days === 30,
+    `Tonight's sky: "${a.phaseText}", ${Math.round(a.lit * 100)}% lit, ${a.age.toFixed(1)} days old (${a.moonPx} lit pixels of its face); ${a.now}; the next phases ${a.next.join(', ')}; 30 nights`);
+  check(a.place?.mine && Math.abs(a.place.lon + 99.1) < 0.2 && /device/.test(a.zone) && a.planetsShown === 7 && a.jupiter.length === 4 && Math.abs(a.ring) < 30 && a.targetsShown >= 4 && a.pano && a.overlay > 0,
+    `from ${a.place?.label} (${a.place?.lat}, ${a.place?.lon}), times in ${a.zone}: 7 planets (${a.visible.length} up tonight: ${a.visible.join(', ')}), Jupiter's moons ${a.jupiter.map((m) => `${m.id} ${m.x.toFixed(1)}`).join(' ')}, Saturn's rings ${a.ring.toFixed(1)}°; ${a.targetsShown} targets (${a.targets.slice(0, 4).join(', ')}…)`);
+  // The slider: noon; another night: the eclipse's full moon.
+  const r0 = a.moonRenders;
+  await p.evaluate(() => { const r = document.querySelector('[data-tonight="slider"]'); r.value = '0'; r.dispatchEvent(new Event('input')); });
+  await p.waitForTimeout(400);
+  const noon = await p.evaluate(() => ({ when: document.querySelector('[data-tonight="when"]')?.textContent ?? '', renders: window.atlas.tonight.info.moonRenders }));
+  await p.evaluate(() => { const d = document.querySelector('[data-tonight="date"]'); d.value = '2026-03-02'; d.dispatchEvent(new Event('change')); });
+  await p.waitForTimeout(800);
+  const ecl = await p.evaluate(() => ({ ...window.atlas.tonight.info, phaseText: document.querySelector('[data-tonight="phase"]')?.textContent ?? '' }));
+  check(noon.renders > r0 && /12:00|12:0\d/.test(noon.when) && ecl.phase === 'full' && ecl.lit > 0.97 && ecl.rise && ecl.set,
+    `the slider to noon ("${noon.when}"); the night of 2 March 2026: "${ecl.phaseText}", ${Math.round(ecl.lit * 100)}% lit, rising ${new Date((ecl.rise - 2440587.5) * 864e5).toISOString().slice(11, 16)} UTC`);
+  // A tap on the globe: Sydney.
+  await p.evaluate(() => { window.atlas.app.renderer.view.flyTo({ lon: 151.2, lat: -25 }, 0); window.atlas.app.renderer.requestRender(); });
+  await p.waitForTimeout(700);
+  const at = await p.evaluate(() => { const v = window.atlas.app.renderer.view.project(151.2, -33.9); const top = document.querySelector('.sheet')?.getBoundingClientRect().top ?? innerHeight; return v ? { x: v[0], y: v[1], top } : null; });
+  if (at && at.y < at.top - 10) await p.mouse.click(at.x, at.y);
+  else await p.evaluate(() => window.atlas.tonight.setPlace(151.2, -33.9));
+  await p.waitForFunction(() => /UTC\+1[01]/.test(window.atlas.tonight.info.zone), null, { timeout: 15000 }).catch(() => {});
+  await p.waitForTimeout(500);
+  const syd = await p.evaluate(() => ({ ...window.atlas.tonight.info.place, zone: window.atlas.tonight.info.zone, cap: document.querySelector('.tn-look .muted')?.textContent ?? '' }));
+  check(!syd.mine && /Australia/.test(syd.label) && /UTC\+1[01]/.test(syd.zone) && /Facing north/.test(syd.cap), `a tap on the globe: ${syd.label} (${syd.lat}, ${syd.lon}), times in ${syd.zone}; "${syd.cap.slice(0, 50)}…"`);
+  // The sky view, and back.
+  await p.click('[data-tonight="moon-sky"]');
+  await p.waitForTimeout(1500);
+  const sky = await p.evaluate(() => ({ open: window.atlas.sky.info.open, lat: window.atlas.sky.info.lat, back: document.querySelector('.sky-back:not([hidden])')?.textContent ?? '' }));
+  await p.click('.sky-back').catch(() => {});
+  await p.waitForTimeout(1200);
+  const backOk = await p.evaluate(() => window.atlas.tonight.isOpen && !window.atlas.sky.info.open);
+  check(sky.open && Math.abs(sky.lat + 33.9) < 0.2 && /Tonight/.test(sky.back) && backOk, `"See the Moon in the sky" opens the sky from Sydney (${sky.lat}); "${sky.back}" comes back`);
+  // The search box and Today.
+  const hit = await p.evaluate(() => window.atlas.shell.search.extra.flatMap((f) => f('moon phase', (n) => (/moon phase/i.test(n) ? 90 : 0))).find((x) => /Tonight/.test(x.label))?.label ?? '');
+  await p.evaluate(() => window.atlas.shell.sheet.close());
+  await p.evaluate(() => window.atlas.today.openPanel());
+  await p.waitForSelector('[data-today-item="tonight"]', { timeout: 10000 }).catch(() => {});
+  const today = await p.evaluate(() => document.querySelector('[data-today-item="tonight"]')?.textContent ?? '');
+  check(hit === 'Tonight’s sky' && /% lit/.test(today), `the search box finds "${hit}" for "moon phase"; Today: "${today.trim()}"`);
+  check(!tn.errors.length, `Tonight's sky: no page errors${tn.errors.length ? ': ' + tn.errors.join(' | ') : ''}`);
+  await tn.ctx.close();
+
+  // In Spanish.
+  const es = await open({ ...devices['Pixel 7'], locale: 'es-MX', timezoneId: 'America/Mexico_City', permissions: [] }, '#p=globe&l=political&c=-99,19,1.1&lang=es');
+  await es.page.evaluate(() => window.atlas.tonight.open({ lon: -99.13, lat: 19.43 }));
+  await es.page.waitForSelector('.tonight [data-tonight="phase"]', { timeout: 15000 }).catch(() => {});
+  await es.page.waitForTimeout(1500);
+  const esT = await es.page.evaluate(() => ({ phase: document.querySelector('[data-tonight="phase"]')?.textContent ?? '', title: document.querySelector('.sheet-title, .sheet h2')?.textContent ?? '', planets: [...document.querySelectorAll('.tn-planet strong')].map((x) => x.textContent ?? '').join(' ') }));
+  check(/Luna|Cuarto|Gibosa/.test(esT.phase) && /Júpiter/.test(esT.planets) && /Saturno/.test(esT.planets), `in Spanish: "${esT.phase}"; ${esT.planets.replace(/\s+/g, ' ').slice(0, 60)}…`);
+  check(!es.errors.length, `Tonight's sky in Spanish: no page errors${es.errors.length ? ': ' + es.errors.join(' | ') : ''}`);
+  await es.ctx.close();
+
+  // Around the globe: the Moon and the Sun beside the Earth, and the worlds they lead to.
+  const ar = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=0,20,1.1&lang=en');
+  const q = ar.page;
+  await q.waitForTimeout(800);
+  const earth = await q.evaluate(() => window.atlas.around.info);
+  check(earth.world === 'earth' && earth.moon && earth.sun, `beside the Earth: the Moon at ${Math.round(earth.moon?.x)},${Math.round(earth.moon?.y)} and the Sun at ${Math.round(earth.sun?.x)},${Math.round(earth.sun?.y)}`);
+  if (earth.moon) await q.mouse.click(earth.moon.x, earth.moon.y);
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'moon' && window.atlas.app.mode === 'world', null, { timeout: 15000 }).catch(() => {});
+  await q.waitForTimeout(1500);
+  const onMoon = await q.evaluate(() => ({ id: window.atlas.space.surface.id, parent: window.atlas.around.info.parent, g: window.atlas.around['g'] }));
+  check(onMoon.id === 'moon' && onMoon.parent?.id === 'earth', `a tap on the Moon goes there, with the Earth behind it, ${(onMoon.parent?.r / onMoon.g?.R).toFixed(2)} times as wide`);
+  if (onMoon.parent && onMoon.g) {
+    // Just inside the Earth's near edge.
+    const pp = onMoon.parent, g = onMoon.g, dx = g.cx - pp.x, dy = g.cy - pp.y, l = Math.hypot(dx, dy);
+    await q.mouse.click(pp.x + (dx / l) * (pp.r - 25), pp.y + (dy / l) * (pp.r - 25));
+  }
+  await q.waitForFunction(() => !window.atlas.app.mode, null, { timeout: 15000 }).catch(() => {});
+  await q.waitForTimeout(1200);
+  const home = await q.evaluate(() => ({ mode: window.atlas.app.mode, sun: window.atlas.around.info.sun }));
+  check(!home.mode && home.sun, `a tap on the Earth behind the Moon comes home`);
+  if (home.sun) await q.mouse.click(home.sun.x, home.sun.y);
+  await q.waitForFunction(() => window.atlas.orrery.isOpen, null, { timeout: 10000 }).catch(() => {});
+  await q.waitForTimeout(1200);
+  const sat = await q.evaluate(() => { const o = window.atlas.orrery, s = o['spots'].find((x) => x.id === 'saturn'), r = document.querySelector('.orr canvas')?.getBoundingClientRect(); return s && r ? { x: r.left + s.x, y: r.top + s.y, open: o.isOpen } : null; });
+  if (sat) await q.mouse.click(sat.x, sat.y);
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'saturn', null, { timeout: 15000 }).catch(() => {});
+  await q.waitForTimeout(2000);
+  const onSat = await q.evaluate(() => ({ id: window.atlas.space.surface.id, orrery: window.atlas.orrery.isOpen, ...window.atlas.around.info }));
+  check(sat?.open && onSat.id === 'saturn' && !onSat.orrery && onSat.rings > 0 && onSat.moons.map((m) => m.id).sort().join() === 'enceladus,titan',
+    `the Sun opens the solar system; a tap on Saturn goes there: its rings drawn, its moons ${onSat.moons.map((m) => m.id).join(' and ')} around it`);
+  const titan = onSat.moons.find((m) => m.id === 'titan');
+  if (titan) await q.mouse.click(titan.x, titan.y);
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'titan', null, { timeout: 15000 }).catch(() => {});
+  await q.waitForTimeout(2500);
+  const onTitan = await q.evaluate(() => {
+    const a = window.atlas.around, c = a['parentCache']?.canvas, d = c?.getContext('2d')?.getImageData(0, 0, c.width, c.height).data;
+    let n = 0; if (d) for (let k = 3; k < d.length; k += 4) if (d[k]) n++;
+    return { id: window.atlas.space.surface.id, parent: a.info.parent?.id, painted: n };
+  });
+  check(onTitan.id === 'titan' && onTitan.parent === 'saturn' && onTitan.painted > 2000, `a tap on Titan goes there, with Saturn behind it to scale (${onTitan.painted} pixels of it on screen)`);
+  await q.evaluate(() => window.atlas.space.exit());
+  await q.waitForTimeout(1200);
+  await q.evaluate(() => window.atlas.play.outline.start());
+  await q.waitForTimeout(1200);
+  const inGame = await q.evaluate(() => window.atlas.around.info.world);
+  check(inGame === '', `nothing to tap around the globe during a game`);
+  check(!ar.errors.length, `around the globe: no page errors${ar.errors.length ? ': ' + ar.errors.join(' | ') : ''}`);
+  await ar.ctx.close();
+
+  // The light theme: the globe floats in dark space, a flat map keeps its paper.
+  const lt = await open({ ...devices['Pixel 7'], colorScheme: 'light' }, '#p=globe&l=political&c=0,20,1.1&lang=en');
+  await lt.page.evaluate(() => { try { window.atlas.app.setTheme?.('light'); } catch { /* the phone's */ } });
+  await lt.page.waitForTimeout(1000);
+  const light = await lt.page.evaluate(() => ({ theme: document.documentElement.dataset.theme, dark: document.documentElement.classList.contains('space-dark'), brand: getComputedStyle(document.querySelector('.brand-name')).color, sun: !!window.atlas.around.info.sun }));
+  await lt.page.evaluate(() => window.atlas.app.setProjection('robinson', false));
+  await lt.page.waitForTimeout(1200);
+  const flat = await lt.page.evaluate(() => document.documentElement.classList.contains('space-dark'));
+  check(light.theme === 'light' && light.dark && /242, 245, 250/.test(light.brand) && light.sun && !flat, `the light theme: dark space around the globe (the name in ${light.brand}, the Sun there); a flat map keeps its paper`);
+  check(!lt.errors.length, `the light theme's space: no page errors${lt.errors.length ? ': ' + lt.errors.join(' | ') : ''}`);
+  await lt.ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

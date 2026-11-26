@@ -1,6 +1,6 @@
-# The stores' forms: what to answer (v0.48.0)
+# The stores' forms: what to answer (v0.49.0)
 
-The answers for App Store Connect and the Google Play Console, checked against the app's code on 25 November 2026.
+The answers for App Store Connect and the Google Play Console, checked against the app's code on 26 November 2026.
 Only the developer account's owner can fill these in. If the app changes how it uses data, update this file and the
 [privacy policy](../site/privacy/en.html) together.
 
@@ -24,8 +24,9 @@ data types, no tracking).
 - Location: What lives here? and What grows here? send a point rounded to about 10 km to iNaturalist to answer the
   question at once. Neither Mundora nor any partner keeps it, which is outside Apple's definition of collection
   ("transmitting data off the device in a way that allows you and/or your third-party partners to access it for a
-  period longer than what is necessary to service the transmitted request in real time"). The sky and Legacies of
-  the past use the location on the device only.
+  period longer than what is necessary to service the transmitted request in real time"). The sky, Tonight's sky and
+  Legacies of the past use the location on the device only (Tonight's sky keeps a position rounded to about 10 km on
+  the device, to open at the reader's place next time).
 - If App Review asks, the answer is the paragraph above.
 
 ## Google Play: Data safety
