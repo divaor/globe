@@ -7293,7 +7293,7 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   // Out (or to `z`) over lon, lat, and what is shown.
   const out = async (lon, lat, z = 0) => {
     for (let k = 0; k < 2; k++) {
-      await q.evaluate(([lon, lat, z]) => { const v = window.atlas.app.renderer.view; v.flyTo({ lon, lat, zoom: Math.max(v.minZoom, z) }, 1); window.atlas.app.renderer.requestRender(); }, [lon, lat, z]);
+      await q.evaluate(([lon, lat, z]) => { const v = window.atlas.app.renderer.view; v.flyTo({ lon, lat, zoom: z === 'fit' ? window.atlas.around.info.fitMoons : Math.max(v.minZoom, z) }, 1); window.atlas.app.renderer.requestRender(); }, [lon, lat, z]);
       await q.waitForTimeout(600);
     }
     await q.waitForTimeout(900);
@@ -7343,7 +7343,9 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const s1 = await out(30, 20);
   check(sat?.open && s0.id === 'saturn' && !s0.orrery && s0.rings > 0 && !s0.on && s1.on && s1.members.map((m) => m.id).sort().join() === 'enceladus,titan' && s1.orbits === 2 && s1.sun,
     `the Sun opens the solar system; a tap on Saturn goes there: its rings drawn (${s0.rings}); zoomed out, ${s1.members.map((m) => m.id).join(' and ')} on ${s1.orbits} orbits and the Sun${s1.sun ? '' : ' (no Sun)'}${s0.on ? ' (shown before zooming out)' : ''}`);
-  const titan = s1.members?.find((m) => m.id === 'titan');
+  // Its moons apart (zoomed out further, they gather on Saturn and its orbit round the Sun shows).
+  const s2 = await out(30, 20, 'fit');
+  const titan = s2.members?.find((m) => m.id === 'titan');
   if (titan) await q.mouse.click(titan.x, titan.y);
   await q.waitForFunction(() => window.atlas.space.surface.id === 'titan', null, { timeout: 15000 }).catch(() => {});
   await q.waitForTimeout(2500);
@@ -7377,6 +7379,120 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   check(light.theme === 'light' && light.dark && /242, 245, 250/.test(light.brand) && light.sun && !flat, `the light theme: dark space around the globe (the name in ${light.brand}, the Sun there); a flat map keeps its paper`);
   check(!lt.errors.length, `the light theme's space: no page errors${lt.errors.length ? ': ' + lt.errors.join(' | ') : ''}`);
   await lt.ctx.close();
+}
+
+// 63. Locked, followed, played (v0.51.0): the solar system around the globe, zoomed out. The lock button on the zoom
+// controls and the play bar show only then; locked to the orbit, the Moon's orbit lies level and a drag turns it round
+// its pole; time plays at a chosen speed and comes back to now; following the Sun, the Sun stays put while the months
+// go by and the night side is shaded; zoomed all the way out, the Earth's orbit round the Sun and the Sun at its real
+// place (tap: the solar system); on the Moon, following the Earth keeps the Earth put while the Sun goes round; free
+// again, the roll eases away and a drag far out turns the view gently; a game hands everything back.
+{
+  const lk = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-40,15,1.1&lang=en');
+  const q = lk.page;
+  await q.waitForTimeout(800);
+  const zoom = async (z) => {
+    for (let k = 0; k < 2; k++) {
+      await q.evaluate((z) => { const v = window.atlas.app.renderer.view; v.flyTo({ zoom: z === 'min' ? v.minZoom : z === 'fit' ? window.atlas.around.info.fitMoons : z }, 1); window.atlas.app.renderer.requestRender(); }, z);
+      await q.waitForTimeout(500);
+    }
+    await q.waitForTimeout(500);
+  };
+  // The tilt of the first orbit on the screen (0: level), the Sun's and the planet's way from the globe's centre.
+  const probe = () => q.evaluate(() => {
+    const a = window.atlas.around, g = a['g'], sys = a['sys'], i = a.info, v = window.atlas.app.renderer.view;
+    const fr = (w) => [0, 1, 2].map((k) => w[0] * [sys.axes.X, sys.axes.Y, sys.axes.pole][k][0] + w[1] * [sys.axes.X, sys.axes.Y, sys.axes.pole][k][1] + w[2] * [sys.axes.X, sys.axes.Y, sys.axes.pole][k][2]);
+    const o = sys?.orbits[0];
+    let tilt = null;
+    if (o) {
+      const pts = o.pts.map((p) => a['screen'](g, fr(p).map((x) => x / sys.R)));
+      const mx = pts.reduce((s, p) => s + p.x, 0) / pts.length, my = pts.reduce((s, p) => s + p.y, 0) / pts.length;
+      let sxx = 0, syy = 0, sxy = 0; for (const p of pts) { sxx += (p.x - mx) ** 2; syy += (p.y - my) ** 2; sxy += (p.x - mx) * (p.y - my); }
+      tilt = (0.5 * Math.atan2(2 * sxy, sxx - syy) * 180) / Math.PI;
+    }
+    const ang = (p) => (p ? (Math.atan2(p.y - g.cy, p.x - g.cx) * 180) / Math.PI : null);
+    const par = i.members.find((m) => m.id === (i.world === 'moon' ? 'earth' : 'x'));
+    const shown = (sel) => { const e = document.querySelector(sel); return !!e && !e.hidden && e.getBoundingClientRect().width > 0; };
+    return { world: i.world, lock: i.lock, az: i.az, el: i.el, roll: v.roll, lon: v.lon, tilt, sunAng: ang(i.sun), sunReal: !!i.sun?.real, sun: i.sun, parAng: ang(par), jd: i.jd, playing: i.playing, night: i.night,
+      sunOrbit: i.sunOrbit, btn: shown('[data-around="lock"]'), bar: shown('[data-around="bar"]'), now: shown('[data-around="now"]'), date: document.querySelector('[data-around="date"]')?.textContent ?? '' };
+  });
+  const lock = async (m) => { await q.click('[data-around="lock"]'); await q.waitForTimeout(250); const items = await q.$$eval('[data-lock]', (b) => b.map((x) => x.textContent)); await q.click(`[data-lock="${m}"]`); await q.waitForTimeout(1000); return items; };
+  const dAng = (a, b) => Math.abs(((a - b + 540) % 360) - 180);
+  const nowJd = () => Date.now() / 86400000 + 2440587.5;
+
+  const p0 = await probe();
+  await zoom('fit');
+  const p1 = await probe();
+  const items = await lock('orbit');
+  const p2 = await probe();
+  check(!p0.btn && !p0.bar && p1.btn && p1.bar && items.join('|') === 'Turn freely|Lock to the orbit|Follow the Sun' && p2.lock === 'orbit' && Math.abs(p2.tilt) < 3 && Math.abs(p2.roll) > 3,
+    `the lock button and the play bar show once zoomed out (${items.join(', ')}); locked to the orbit, the Moon's orbit lies level (${p2.tilt?.toFixed(1)}°, the view turned ${p2.roll.toFixed(1)}°)`);
+  await q.mouse.move(200, 330); await q.mouse.down(); await q.mouse.move(270, 330, { steps: 7 }); await q.mouse.up();
+  await q.waitForTimeout(900);
+  const p3 = await probe();
+  check(dAng(p3.az, p2.az) > 5 && Math.abs(p3.el - p2.el) < 2 && Math.abs(p3.tilt) < 3, `a drag turns it round the orbit's pole (${dAng(p3.az, p2.az).toFixed(0)}°), the orbit still level (${p3.tilt?.toFixed(1)}°)`);
+  await q.click('[data-around="play"]');
+  await q.waitForTimeout(1500);
+  await q.click('[data-around="play"]');
+  await q.waitForTimeout(300);
+  const p4 = await probe();
+  check(!p4.playing && p4.jd - p3.jd > 0.5 && p4.jd - p3.jd < 4 && p4.now && /2026|2027/.test(p4.date), `play at 1 day/s: ${(p4.jd - p3.jd).toFixed(1)} days went by; "${p4.date}", and a way back to now`);
+  await lock('sun');
+  await zoom(0.35);
+  const p5 = await probe();
+  await q.evaluate(() => window.atlas.around.play(3));
+  await q.waitForTimeout(1500);
+  await q.evaluate(() => window.atlas.around.pause());
+  await q.waitForTimeout(300);
+  const p6 = await probe();
+  check(p5.lock === 'sun' && p6.jd - p5.jd > 20 && dAng(p6.sunAng, p5.sunAng) < 3 && p6.night,
+    `following the Sun at 1 month/s: ${(p6.jd - p5.jd).toFixed(0)} days, the Sun kept at ${p5.sunAng?.toFixed(0)}° (now ${p6.sunAng?.toFixed(0)}°), the night side shaded`);
+  await q.click('[data-around="now"]');
+  await q.waitForTimeout(400);
+  const p7 = await probe();
+  check(Math.abs(p7.jd - nowJd()) < 0.01 && !p7.now && p7.date === 'Now', `"Now" goes back to now (${p7.date})`);
+  await zoom('min');
+  const p8 = await probe();
+  check(p8.sunReal && p8.sunOrbit && p8.sun?.r < 3, `zoomed all the way out: the Earth's orbit round the Sun and the Sun at its real place, a dot ${p8.sun?.r.toFixed(2)} px across, named`);
+  if (p8.sun) await q.mouse.click(p8.sun.x, p8.sun.y);
+  await q.waitForFunction(() => window.atlas.orrery.isOpen, null, { timeout: 8000 }).catch(() => {});
+  const orr = await q.evaluate(() => window.atlas.orrery.isOpen);
+  check(orr, 'a tap on the Sun there opens the solar system');
+  await q.evaluate(() => window.atlas.orrery.close?.());
+  await q.waitForTimeout(800);
+  await q.evaluate(() => window.atlas.space.enter('moon'));
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'moon', null, { timeout: 15000 }).catch(() => {});
+  await q.waitForTimeout(2000);
+  await zoom('fit');
+  const moonItems = await lock('planet');
+  await zoom(0.08);
+  const m0 = await probe();
+  await q.evaluate(() => window.atlas.around.play(2));
+  await q.waitForTimeout(1500);
+  await q.evaluate(() => window.atlas.around.pause());
+  await q.waitForTimeout(300);
+  const m1 = await probe();
+  check(moonItems.includes('Follow the Earth') && m1.lock === 'planet' && m1.jd - m0.jd > 5 && dAng(m1.parAng, m0.parAng) < 3 && dAng(m1.sunAng, m0.sunAng) > 20,
+    `on the Moon, following the Earth: ${(m1.jd - m0.jd).toFixed(0)} days, the Earth kept at ${m0.parAng?.toFixed(0)}°, the Sun gone round ${dAng(m1.sunAng, m0.sunAng).toFixed(0)}°`);
+  await q.evaluate(() => window.atlas.around.now());
+  await q.evaluate(() => window.atlas.space.exit());
+  await q.waitForTimeout(1500);
+  await zoom('min');
+  await lock('free');
+  await q.waitForTimeout(800);
+  const f0 = await probe();
+  await q.mouse.move(200, 330); await q.mouse.down(); await q.mouse.move(220, 330, { steps: 4 }); await q.mouse.up();
+  await q.waitForTimeout(700);
+  const f1 = await probe();
+  check(f0.lock === 'free' && Math.abs(f0.roll) < 0.5 && dAng(f1.lon, f0.lon) < 20, `free again, the view's roll eased away (${f0.roll.toFixed(2)}°); far out, a 20 px drag turns it ${dAng(f1.lon, f0.lon).toFixed(0)}° (not right round)`);
+  await lock('orbit');
+  await q.evaluate(() => window.atlas.around.play(1));
+  await q.evaluate(() => window.atlas.play.outline.start());
+  await q.waitForTimeout(1500);
+  const g0 = await probe();
+  check(g0.lock === 'free' && !g0.playing && !g0.btn && !g0.bar, 'a game hands everything back: free, stopped, the button and the bar away');
+  check(!lk.errors.length, `locked, followed, played: no page errors${lk.errors.length ? ': ' + lk.errors.join(' | ') : ''}`);
+  await lk.ctx.close();
 }
 
 await browser.close();

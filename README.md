@@ -81,6 +81,15 @@ A backup made as Atlas Globe still opens.
   back. In the apps the file picker takes any file (some phones' pickers greyed out a .json backup); one that isn't a
   backup is turned away. Checked in `scripts/test/native.mjs` with a slow stand-in for the app's storage. The Apps
   workflow can also roll an Android build out to Play's testers itself (release *rollout*), not only leave a draft.
+- **Locked, followed and played (v0.51.0):** the solar system around the globe, once zoomed out, gets two controls.
+  **The lock** (on the zoom buttons): *Lock to the orbit* keeps the orbit's pole straight up and the camera still in
+  space, so the moons' orbits lie level and stay where they are while the world turns under them; a drag turns the
+  view round the orbit's pole and up or down. *Follow* the planet (from a moon) or *the Sun* keeps that one put on the
+  screen, so a moon's phases or a planet's seasons go by in front of you; you can zoom in and out while it follows.
+  **The play bar** runs time at 1 hour, 1 day, 1 week, 1 month, 1 year or 10 years a second, shows the date, and
+  comes back to now. The globe's night side is shaded while you look out there. Zooming on out past the moons shows
+  the world's own orbit round the Sun, with the Sun at its real place: a dot with its name when it is that small (tap
+  it for the solar system). Far out, a drag no longer spins everything right round.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass
