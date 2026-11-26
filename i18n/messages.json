@@ -128,7 +128,7 @@
    "en": "1 full orbit since today",
    "es": "1 vuelta completa desde hoy",
    "where": [
-    "src/space/around.ts:999"
+    "src/space/around.ts:1032"
    ]
   },
   {
@@ -341,7 +341,7 @@
    "en": "3D view",
    "es": "Vista 3D",
    "where": [
-    "src/space/space.ts:275"
+    "src/space/space.ts:278"
    ]
   },
   {
@@ -1599,7 +1599,7 @@
    "en": "About this world",
    "es": "Sobre este mundo",
    "where": [
-    "src/space/space.ts:274"
+    "src/space/space.ts:277"
    ]
   },
   {
@@ -1922,7 +1922,7 @@
    "en": "Air",
    "es": "Atmósfera",
    "where": [
-    "src/space/space.ts:356"
+    "src/space/space.ts:359"
    ]
   },
   {
@@ -3478,14 +3478,14 @@
    "en": "Back to Earth",
    "es": "Volver a la Tierra",
    "where": [
-    "src/space/space.ts:276"
+    "src/space/space.ts:279"
    ]
   },
   {
    "en": "Back to the Earth",
    "es": "Volver a la Tierra",
    "where": [
-    "src/space/space.ts:316"
+    "src/space/space.ts:319"
    ]
   },
   {
@@ -3740,7 +3740,7 @@
    "en": "Below the horizon ({0}°), toward the {1}",
    "es": "Bajo el horizonte ({0}°), hacia {1}",
    "where": [
-    "src/sky/sky.ts:657"
+    "src/sky/sky.ts:673"
    ]
   },
   {
@@ -3902,7 +3902,7 @@
    "en": "Best seen",
    "es": "Mejor época",
    "where": [
-    "src/sky/sky.ts:719"
+    "src/sky/sky.ts:735"
    ]
   },
   {
@@ -3931,7 +3931,7 @@
    "es": "Más allá de la Tierra",
    "where": [
     "src/learn/learn.ts:2539",
-    "src/space/space.ts:180"
+    "src/space/space.ts:183"
    ]
   },
   {
@@ -4153,7 +4153,7 @@
    "en": "Borders",
    "es": "Límites",
    "where": [
-    "src/sky/sky.ts:282"
+    "src/sky/sky.ts:298"
    ]
   },
   {
@@ -4400,15 +4400,15 @@
    "en": "Brightest star",
    "es": "Estrella más brillante",
    "where": [
-    "src/sky/sky.ts:718"
+    "src/sky/sky.ts:734"
    ]
   },
   {
    "en": "Brightness",
    "es": "Brillo",
    "where": [
-    "src/sky/sky.ts:673",
-    "src/sky/sky.ts:682"
+    "src/sky/sky.ts:689",
+    "src/sky/sky.ts:698"
    ]
   },
   {
@@ -4894,7 +4894,7 @@
    "en": "Catalogue",
    "es": "Catálogo",
    "where": [
-    "src/sky/sky.ts:705"
+    "src/sky/sky.ts:721"
    ]
   },
   {
@@ -5154,7 +5154,7 @@
    "en": "Choose a world",
    "es": "Elegir un mundo",
    "where": [
-    "src/space/space.ts:264"
+    "src/space/space.ts:267"
    ]
   },
   {
@@ -5366,7 +5366,7 @@
    "en": "Close the sky",
    "es": "Cerrar el cielo",
    "where": [
-    "src/sky/sky.ts:197"
+    "src/sky/sky.ts:213"
    ]
   },
   {
@@ -5543,7 +5543,7 @@
    "en": "Comet",
    "es": "Cometa",
    "where": [
-    "src/space/space.ts:318"
+    "src/space/space.ts:321"
    ]
   },
   {
@@ -5632,10 +5632,10 @@
    "en": "Constellation",
    "es": "Constelación",
    "where": [
-    "src/sky/sky.ts:685",
-    "src/sky/sky.ts:704",
-    "src/sky/sky.ts:728",
-    "src/sky/sky.ts:742"
+    "src/sky/sky.ts:701",
+    "src/sky/sky.ts:720",
+    "src/sky/sky.ts:744",
+    "src/sky/sky.ts:758"
    ]
   },
   {
@@ -6435,7 +6435,7 @@
    "en": "Date and time",
    "es": "Fecha y hora",
    "where": [
-    "src/sky/sky.ts:201"
+    "src/sky/sky.ts:217"
    ]
   },
   {
@@ -6491,14 +6491,14 @@
    "en": "Day {0} of {1} since today · {2} to go",
    "es": "Día {0} de {1} desde hoy · faltan {2}",
    "where": [
-    "src/space/around.ts:997"
+    "src/space/around.ts:1030"
    ]
   },
   {
    "en": "Daylight",
    "es": "Luz del día",
    "where": [
-    "src/sky/sky.ts:285"
+    "src/sky/sky.ts:301"
    ]
   },
   {
@@ -6743,7 +6743,7 @@
    "en": "Designation",
    "es": "Designación",
    "where": [
-    "src/sky/sky.ts:687"
+    "src/sky/sky.ts:703"
    ]
   },
   {
@@ -6822,7 +6822,7 @@
    "es": "Diámetro",
    "where": [
     "src/layers/packs/inside.ts:381",
-    "src/space/space.ts:345"
+    "src/space/space.ts:348"
    ]
   },
   {
@@ -6911,7 +6911,7 @@
     "src/layers/packs/ocean.ts:274",
     "src/layers/packs/ocean.ts:331",
     "src/sky/elements.ts:194",
-    "src/space/space.ts:357"
+    "src/space/space.ts:360"
    ]
   },
   {
@@ -6948,8 +6948,8 @@
    "where": [
     "src/sky/galaxy.ts:350",
     "src/sky/galaxy.ts:360",
-    "src/sky/sky.ts:683",
-    "src/sky/sky.ts:702"
+    "src/sky/sky.ts:699",
+    "src/sky/sky.ts:718"
    ]
   },
   {
@@ -7087,7 +7087,7 @@
    "en": "Drag to look around · pinch or scroll to zoom · tap a star, a constellation or a planet.",
    "es": "Arrastra para mirar alrededor · pellizca o usa la rueda para acercar · toca una estrella, una constelación o un planeta.",
    "where": [
-    "src/sky/sky.ts:221"
+    "src/sky/sky.ts:237"
    ]
   },
   {
@@ -7199,7 +7199,7 @@
    "en": "Dwarf planets and asteroids",
    "es": "Planetas enanos y asteroides",
    "where": [
-    "src/space/space.ts:166"
+    "src/space/space.ts:169"
    ]
   },
   {
@@ -7380,7 +7380,7 @@
    "es": "Tierra",
    "where": [
     "src/space/orrery.ts:18",
-    "src/space/space.ts:135"
+    "src/space/space.ts:138"
    ]
   },
   {
@@ -7401,8 +7401,8 @@
    "en": "Earth days",
    "es": "días terrestres",
    "where": [
-    "src/space/space.ts:349",
-    "src/space/space.ts:352"
+    "src/space/space.ts:352",
+    "src/space/space.ts:355"
    ]
   },
   {
@@ -7416,7 +7416,7 @@
    "en": "Earth years",
    "es": "años terrestres",
    "where": [
-    "src/space/space.ts:352"
+    "src/space/space.ts:355"
    ]
   },
   {
@@ -8484,7 +8484,7 @@
    "en": "Figures",
    "es": "Figuras",
    "where": [
-    "src/sky/sky.ts:280"
+    "src/sky/sky.ts:296"
    ]
   },
   {
@@ -8800,7 +8800,7 @@
    "en": "First visit",
    "es": "Primera visita",
    "where": [
-    "src/space/space.ts:358"
+    "src/space/space.ts:361"
    ]
   },
   {
@@ -9000,14 +9000,14 @@
    "en": "Follow the Earth",
    "es": "Seguir a la Tierra",
    "where": [
-    "src/space/around.ts:922"
+    "src/space/around.ts:955"
    ]
   },
   {
    "en": "Follow the Sun",
    "es": "Seguir al Sol",
    "where": [
-    "src/space/around.ts:923"
+    "src/space/around.ts:956"
    ]
   },
   {
@@ -9029,7 +9029,7 @@
    "en": "Follow {0}",
    "es": "Seguir a {0}",
    "where": [
-    "src/space/around.ts:922"
+    "src/space/around.ts:955"
    ]
   },
   {
@@ -9332,7 +9332,7 @@
    "en": "From a place",
    "es": "Desde un lugar",
    "where": [
-    "src/sky/sky.ts:292"
+    "src/sky/sky.ts:308"
    ]
   },
   {
@@ -9346,7 +9346,7 @@
    "en": "From its planet",
    "es": "De su planeta",
    "where": [
-    "src/space/space.ts:353"
+    "src/space/space.ts:356"
    ]
   },
   {
@@ -9389,8 +9389,8 @@
    "en": "From the Earth",
    "es": "De la Tierra",
    "where": [
-    "src/sky/sky.ts:672",
-    "src/sky/sky.ts:673",
+    "src/sky/sky.ts:688",
+    "src/sky/sky.ts:689",
     "src/space/orrery.ts:321"
    ]
   },
@@ -9413,7 +9413,7 @@
    "es": "Del Sol",
    "where": [
     "src/sky/galaxy.ts:374",
-    "src/space/space.ts:353"
+    "src/space/space.ts:356"
    ]
   },
   {
@@ -9427,7 +9427,7 @@
    "en": "From the Sun, follow:",
    "es": "Desde el Sol, seguir a:",
    "where": [
-    "src/space/around.ts:913"
+    "src/space/around.ts:946"
    ]
   },
   {
@@ -10044,7 +10044,7 @@
    "en": "Gravity",
    "es": "Gravedad",
    "where": [
-    "src/space/space.ts:346"
+    "src/space/space.ts:349"
    ]
   },
   {
@@ -10202,7 +10202,7 @@
    "en": "Ground",
    "es": "Suelo",
    "where": [
-    "src/sky/sky.ts:285"
+    "src/sky/sky.ts:301"
    ]
   },
   {
@@ -10471,7 +10471,7 @@
    "es": "Alturas",
    "where": [
     "src/space/space.ts:22",
-    "src/space/space.ts:102"
+    "src/space/space.ts:105"
    ]
   },
   {
@@ -11602,7 +11602,7 @@
    "en": "In it",
    "es": "En ella",
    "where": [
-    "src/sky/sky.ts:725"
+    "src/sky/sky.ts:741"
    ]
   },
   {
@@ -11861,7 +11861,7 @@
    "en": "In the sky now",
    "es": "En el cielo ahora",
    "where": [
-    "src/sky/sky.ts:657"
+    "src/sky/sky.ts:673"
    ]
   },
   {
@@ -11933,7 +11933,7 @@
    "en": "In {0} days: {1} of {2}",
    "es": "En días de {0}: {1} de {2}",
    "where": [
-    "src/space/around.ts:998"
+    "src/space/around.ts:1031"
    ]
   },
   {
@@ -12830,14 +12830,14 @@
    "en": "Keep zooming out to see the moons on their real orbits; tap one to go there.",
    "es": "Sigue alejándote para ver las lunas en sus órbitas reales; toca una para ir allí.",
    "where": [
-    "src/space/around.ts:402"
+    "src/space/around.ts:403"
    ]
   },
   {
    "en": "Keep zooming out to see the planets on their real orbits; tap one to go there.",
    "es": "Sigue alejándote para ver los planetas en sus órbitas reales; toca uno para ir allí.",
    "where": [
-    "src/space/around.ts:401"
+    "src/space/around.ts:402"
    ]
   },
   {
@@ -13122,7 +13122,7 @@
    "en": "Landings",
    "es": "Aterrizajes",
    "where": [
-    "src/space/space.ts:289"
+    "src/space/space.ts:292"
    ]
   },
   {
@@ -13293,7 +13293,7 @@
    "en": "Latin name",
    "es": "Nombre en latín",
    "where": [
-    "src/sky/sky.ts:715"
+    "src/sky/sky.ts:731"
    ]
   },
   {
@@ -13761,7 +13761,7 @@
    "en": "Lit",
    "es": "Iluminada",
    "where": [
-    "src/sky/sky.ts:672"
+    "src/sky/sky.ts:688"
    ]
   },
   {
@@ -13902,15 +13902,15 @@
    "en": "Lock the view",
    "es": "Fijar la vista",
    "where": [
-    "src/space/around.ts:880",
-    "src/space/around.ts:880"
+    "src/space/around.ts:913",
+    "src/space/around.ts:913"
    ]
   },
   {
    "en": "Lock to the orbit",
    "es": "Fijar a la órbita",
    "where": [
-    "src/space/around.ts:921"
+    "src/space/around.ts:954"
    ]
   },
   {
@@ -15124,7 +15124,7 @@
    "en": "Milky Way",
    "es": "Vía Láctea",
    "where": [
-    "src/sky/sky.ts:284"
+    "src/sky/sky.ts:300"
    ]
   },
   {
@@ -15296,7 +15296,7 @@
    "en": "Moon",
    "es": "Luna",
    "where": [
-    "src/sky/sky.ts:461",
+    "src/sky/sky.ts:477",
     "src/sky/tonight.ts:533",
     "src/space/space.ts:19"
    ]
@@ -15333,8 +15333,8 @@
    "en": "Moons",
    "es": "Lunas",
    "where": [
-    "src/space/space.ts:165",
-    "src/space/space.ts:354",
+    "src/space/space.ts:168",
+    "src/space/space.ts:357",
     "src/space/tour.ts:184"
    ]
   },
@@ -15801,7 +15801,7 @@
     "src/fill/states.ts:513",
     "src/legacy/legacy.ts:65",
     "src/play/hop.ts:441",
-    "src/sky/sky.ts:281"
+    "src/sky/sky.ts:297"
    ]
   },
   {
@@ -16947,9 +16947,9 @@
    "en": "Northern sky",
    "es": "Cielo del norte",
    "where": [
-    "src/sky/sky.ts:275",
-    "src/sky/sky.ts:275",
-    "src/sky/sky.ts:276"
+    "src/sky/sky.ts:291",
+    "src/sky/sky.ts:291",
+    "src/sky/sky.ts:292"
    ]
   },
   {
@@ -17184,11 +17184,11 @@
    "en": "Now",
    "es": "Ahora",
    "where": [
-    "src/sky/sky.ts:207",
-    "src/sky/sky.ts:544",
+    "src/sky/sky.ts:223",
+    "src/sky/sky.ts:560",
     "src/sky/tonight.ts:262",
     "src/sky/tonight.ts:493",
-    "src/space/around.ts:892"
+    "src/space/around.ts:925"
    ]
   },
   {
@@ -17875,7 +17875,7 @@
    "en": "One orbit",
    "es": "Una órbita",
    "where": [
-    "src/space/space.ts:352"
+    "src/space/space.ts:355"
    ]
   },
   {
@@ -17903,14 +17903,14 @@
    "en": "One turn",
    "es": "Una vuelta",
    "where": [
-    "src/space/space.ts:350"
+    "src/space/space.ts:353"
    ]
   },
   {
    "en": "One year",
    "es": "Un año",
    "where": [
-    "src/space/space.ts:352"
+    "src/space/space.ts:355"
    ]
   },
   {
@@ -18110,7 +18110,7 @@
    "en": "Origin",
    "es": "Origen",
    "where": [
-    "src/sky/sky.ts:721"
+    "src/sky/sky.ts:737"
    ]
   },
   {
@@ -18167,7 +18167,7 @@
    "en": "Other worlds",
    "es": "Otros mundos",
    "where": [
-    "src/space/space.ts:53"
+    "src/space/space.ts:56"
    ]
   },
   {
@@ -18218,7 +18218,7 @@
    "where": [
     "src/sky/galaxy.ts:121",
     "src/sky/galaxy.ts:122",
-    "src/space/space.ts:146"
+    "src/space/space.ts:149"
    ]
   },
   {
@@ -18254,7 +18254,7 @@
    "es": "Nuestra estrella",
    "where": [
     "src/space/space.ts:19",
-    "src/space/space.ts:163"
+    "src/space/space.ts:166"
    ]
   },
   {
@@ -18651,7 +18651,7 @@
    "where": [
     "src/learn/learn.ts:2656",
     "src/master/master.ts:837",
-    "src/space/around.ts:952",
+    "src/space/around.ts:985",
     "src/ui/audio.ts:203",
     "src/ui/legend.ts:134"
    ]
@@ -19207,7 +19207,7 @@
    "es": "Planetas",
    "where": [
     "src/sky/galaxy.ts:352",
-    "src/space/space.ts:164",
+    "src/space/space.ts:167",
     "src/space/tour.ts:184"
    ]
   },
@@ -20103,7 +20103,7 @@
    "en": "Relief",
    "es": "Relieve",
    "where": [
-    "src/space/space.ts:103",
+    "src/space/space.ts:106",
     "src/ui/terrain3d.ts:124"
    ]
   },
@@ -20378,21 +20378,21 @@
    "en": "Ride along, the Earth ahead",
    "es": "Ir detrás, con la Tierra adelante",
    "where": [
-    "src/space/around.ts:924"
+    "src/space/around.ts:957"
    ]
   },
   {
    "en": "Ride along, the Sun ahead",
    "es": "Ir detrás, con el Sol adelante",
    "where": [
-    "src/space/around.ts:924"
+    "src/space/around.ts:957"
    ]
   },
   {
    "en": "Ride along, {0} ahead",
    "es": "Ir detrás, con {0} adelante",
    "where": [
-    "src/space/around.ts:924"
+    "src/space/around.ts:957"
    ]
   },
   {
@@ -21154,7 +21154,7 @@
    "en": "Search places on {0}",
    "es": "Buscar lugares en {0}",
    "where": [
-    "src/space/space.ts:62"
+    "src/space/space.ts:65"
    ]
   },
   {
@@ -21226,7 +21226,7 @@
    "es": "Verlo en el cielo",
    "where": [
     "src/sky/galaxy.ts:343",
-    "src/sky/sky.ts:666",
+    "src/sky/sky.ts:682",
     "src/sky/tonight.ts:377"
    ]
   },
@@ -21331,7 +21331,7 @@
    "en": "Seen whole from",
    "es": "Se ve completa desde",
    "where": [
-    "src/sky/sky.ts:720"
+    "src/sky/sky.ts:736"
    ]
   },
   {
@@ -21731,7 +21731,7 @@
    "en": "Show {0}",
    "es": "Ver {0}",
    "where": [
-    "src/sky/sky.ts:690"
+    "src/sky/sky.ts:706"
    ]
   },
   {
@@ -21974,8 +21974,8 @@
     "src/app/i18n.ts:336",
     "src/deeptime/deeptime.ts:926",
     "src/sky/galaxy.ts:362",
-    "src/sky/sky.ts:703",
-    "src/sky/sky.ts:716"
+    "src/sky/sky.ts:719",
+    "src/sky/sky.ts:732"
    ]
   },
   {
@@ -22333,16 +22333,16 @@
    "en": "Southern sky",
    "es": "Cielo del sur",
    "where": [
-    "src/sky/sky.ts:277",
-    "src/sky/sky.ts:277",
-    "src/sky/sky.ts:278"
+    "src/sky/sky.ts:293",
+    "src/sky/sky.ts:293",
+    "src/sky/sky.ts:294"
    ]
   },
   {
    "en": "Space",
    "es": "Espacio",
    "where": [
-    "src/space/space.ts:56"
+    "src/space/space.ts:59"
    ]
   },
   {
@@ -22399,7 +22399,7 @@
    "en": "Space stories",
    "es": "Historias del espacio",
    "where": [
-    "src/space/space.ts:157"
+    "src/space/space.ts:160"
    ]
   },
   {
@@ -22545,8 +22545,8 @@
    "es": "Estrella",
    "where": [
     "src/sky/data.ts:128",
-    "src/sky/sky.ts:694",
-    "src/sky/sky.ts:751"
+    "src/sky/sky.ts:710",
+    "src/sky/sky.ts:767"
    ]
   },
   {
@@ -22914,7 +22914,7 @@
    "en": "Sun",
    "es": "Sol",
    "where": [
-    "src/sky/sky.ts:472",
+    "src/sky/sky.ts:488",
     "src/sky/tonight.ts:532"
    ]
   },
@@ -23002,7 +23002,7 @@
    "es": "Superficie",
    "where": [
     "src/space/space.ts:22",
-    "src/space/space.ts:101"
+    "src/space/space.ts:104"
    ]
   },
   {
@@ -23611,7 +23611,7 @@
    "en": "Temperature",
    "es": "Temperatura",
    "where": [
-    "src/space/space.ts:355"
+    "src/space/space.ts:358"
    ]
   },
   {
@@ -24245,7 +24245,7 @@
    "es": "La Tierra",
    "where": [
     "src/deeptime/deeptime.ts:504",
-    "src/space/around.ts:793",
+    "src/space/around.ts:826",
     "src/space/tour.ts:90",
     "src/space/tour.ts:162"
    ]
@@ -25152,8 +25152,8 @@
    "es": "El Sol",
    "where": [
     "src/deeptime/deeptime.ts:672",
-    "src/space/around.ts:539",
-    "src/space/around.ts:686",
+    "src/space/around.ts:540",
+    "src/space/around.ts:681",
     "src/space/tour.ts:188",
     "src/space/worlds.ts:66"
    ]
@@ -26636,8 +26636,8 @@
    "en": "The night sky",
    "es": "El cielo nocturno",
    "where": [
-    "src/sky/sky.ts:216",
-    "src/space/space.ts:145"
+    "src/sky/sky.ts:232",
+    "src/space/space.ts:148"
    ]
   },
   {
@@ -27017,7 +27017,7 @@
    "en": "The sky",
    "es": "El cielo",
    "where": [
-    "src/sky/sky.ts:217"
+    "src/sky/sky.ts:233"
    ]
   },
   {
@@ -27040,7 +27040,7 @@
    "where": [
     "src/space/orrery.ts:108",
     "src/space/orrery.ts:109",
-    "src/space/space.ts:139"
+    "src/space/space.ts:142"
    ]
   },
   {
@@ -28277,7 +28277,7 @@
    "es": "El cielo de esta noche",
    "where": [
     "src/features.ts:226",
-    "src/sky/sky.ts:288",
+    "src/sky/sky.ts:304",
     "src/sky/tonight.ts:87",
     "src/sky/tonight.ts:94",
     "src/sky/tonight.ts:98"
@@ -28583,8 +28583,8 @@
    "en": "Turn freely",
    "es": "Girar libremente",
    "where": [
-    "src/space/around.ts:913",
-    "src/space/around.ts:920"
+    "src/space/around.ts:946",
+    "src/space/around.ts:953"
    ]
   },
   {
@@ -29136,8 +29136,8 @@
    "en": "Use my location",
    "es": "Usar mi ubicación",
    "where": [
-    "src/sky/sky.ts:194",
-    "src/sky/sky.ts:209",
+    "src/sky/sky.ts:210",
+    "src/sky/sky.ts:225",
     "src/sky/tonight.ts:255"
    ]
   },
@@ -29367,14 +29367,14 @@
    "en": "Visit on the globe",
    "es": "Visitar en el globo",
    "where": [
-    "src/space/space.ts:315"
+    "src/space/space.ts:318"
    ]
   },
   {
    "en": "Visit other worlds on the globe with their real maps: tap a place for its name and story, and see where every spacecraft landed.",
    "es": "Visita otros mundos en el globo con sus mapas reales: toca un lugar para ver su nombre y su historia, y mira dónde aterrizó cada nave.",
    "where": [
-    "src/space/space.ts:161"
+    "src/space/space.ts:164"
    ]
   },
   {
@@ -29830,7 +29830,7 @@
    "where": [
     "src/sky/galaxy.ts:351",
     "src/sky/galaxy.ts:363",
-    "src/sky/sky.ts:684"
+    "src/sky/sky.ts:700"
    ]
   },
   {
@@ -30281,8 +30281,8 @@
    "en": "Where in the galaxy",
    "es": "Dónde está en la galaxia",
    "where": [
-    "src/sky/sky.ts:692",
-    "src/sky/sky.ts:707"
+    "src/sky/sky.ts:708",
+    "src/sky/sky.ts:723"
    ]
   },
   {
@@ -30470,7 +30470,7 @@
    "where": [
     "src/sky/elements.ts:95",
     "src/sky/elements.ts:96",
-    "src/space/space.ts:147"
+    "src/space/space.ts:150"
    ]
   },
   {
@@ -31949,7 +31949,7 @@
    "en": "Your location",
    "es": "Tu ubicación",
    "where": [
-    "src/sky/sky.ts:251",
+    "src/sky/sky.ts:267",
     "src/sky/tonight.ts:110",
     "src/sky/tonight.ts:125"
    ]
@@ -32468,14 +32468,14 @@
    "en": "anywhere north of {0}",
    "es": "cualquier lugar al norte de {0}",
    "where": [
-    "src/sky/sky.ts:802"
+    "src/sky/sky.ts:818"
    ]
   },
   {
    "en": "anywhere south of {0}",
    "es": "cualquier lugar al sur de {0}",
    "where": [
-    "src/sky/sky.ts:803"
+    "src/sky/sky.ts:819"
    ]
   },
   {
@@ -32526,7 +32526,7 @@
    "en": "au",
    "es": "ua",
    "where": [
-    "src/sky/sky.ts:673",
+    "src/sky/sky.ts:689",
     "src/space/orrery.ts:320",
     "src/space/orrery.ts:321"
    ]
@@ -32550,7 +32550,7 @@
    "en": "backwards",
    "es": "al revés",
    "where": [
-    "src/space/space.ts:350"
+    "src/space/space.ts:353"
    ]
   },
   {
@@ -32587,7 +32587,7 @@
    "en": "between {0} and {1}",
    "es": "entre {0} y {1}",
    "where": [
-    "src/sky/sky.ts:804"
+    "src/sky/sky.ts:820"
    ]
   },
   {
@@ -33084,8 +33084,8 @@
    "es": "años luz",
    "where": [
     "src/sky/galaxy.ts:38",
-    "src/sky/sky.ts:683",
-    "src/sky/sky.ts:702"
+    "src/sky/sky.ts:699",
+    "src/sky/sky.ts:718"
    ]
   },
   {
@@ -33116,8 +33116,8 @@
    "en": "magnitude",
    "es": "magnitud",
    "where": [
-    "src/sky/sky.ts:673",
-    "src/sky/sky.ts:682"
+    "src/sky/sky.ts:689",
+    "src/sky/sky.ts:698"
    ]
   },
   {
@@ -33167,9 +33167,9 @@
    "en": "million km",
    "es": "millones de km",
    "where": [
-    "src/sky/sky.ts:673",
+    "src/sky/sky.ts:689",
     "src/space/orrery.ts:320",
-    "src/space/space.ts:353"
+    "src/space/space.ts:356"
    ]
   },
   {
@@ -33177,7 +33177,7 @@
    "es": "millones de años luz",
    "where": [
     "src/sky/galaxy.ts:37",
-    "src/sky/sky.ts:702"
+    "src/sky/sky.ts:718"
    ]
   },
   {
@@ -33347,7 +33347,7 @@
    "en": "of Earth",
    "es": "de la Tierra",
    "where": [
-    "src/space/space.ts:346"
+    "src/space/space.ts:349"
    ]
   },
   {
@@ -33857,7 +33857,7 @@
    "en": "thousand km",
    "es": "mil km",
    "where": [
-    "src/space/space.ts:353"
+    "src/space/space.ts:356"
    ]
   },
   {
@@ -33897,7 +33897,7 @@
    "es": "Reproducir",
    "where": [
     "src/learn/learn.ts:2656",
-    "src/space/around.ts:952",
+    "src/space/around.ts:985",
     "src/ui/legend.ts:134"
    ]
   },
@@ -34517,7 +34517,7 @@
    "en": "{0} evenings",
    "es": "las noches de {0}",
    "where": [
-    "src/sky/sky.ts:719"
+    "src/sky/sky.ts:735"
    ]
   },
   {
@@ -34538,7 +34538,7 @@
    "en": "{0} full orbits since today",
    "es": "{0} vueltas completas desde hoy",
    "where": [
-    "src/space/around.ts:999"
+    "src/space/around.ts:1032"
    ]
   },
   {
@@ -34667,7 +34667,7 @@
    "es": "{0} km",
    "where": [
     "src/learn/learn.ts:342",
-    "src/space/around.ts:795"
+    "src/space/around.ts:828"
    ]
   },
   {
@@ -34752,8 +34752,8 @@
    "en": "{0} million km",
    "es": "{0} millones de km",
    "where": [
-    "src/space/around.ts:795",
-    "src/space/around.ts:795"
+    "src/space/around.ts:828",
+    "src/space/around.ts:828"
    ]
   },
   {
@@ -34950,21 +34950,21 @@
    "en": "{0} round the Earth: {1}",
    "es": "{0} alrededor de la Tierra: {1}",
    "where": [
-    "src/space/around.ts:995"
+    "src/space/around.ts:1028"
    ]
   },
   {
    "en": "{0} round the Sun: {1}",
    "es": "{0} alrededor del Sol: {1}",
    "where": [
-    "src/space/around.ts:996"
+    "src/space/around.ts:1029"
    ]
   },
   {
    "en": "{0} round {1}: {2}",
    "es": "{0} alrededor de {1}: {2}",
    "where": [
-    "src/space/around.ts:996"
+    "src/space/around.ts:1029"
    ]
   },
   {
@@ -35007,7 +35007,7 @@
    "en": "{0} square degrees, {1} of 88",
    "es": "{0} grados cuadrados, el {2}.º de 88",
    "where": [
-    "src/sky/sky.ts:716"
+    "src/sky/sky.ts:732"
    ]
   },
   {
@@ -35363,7 +35363,7 @@
    "en": "{0}° up, toward the {1}",
    "es": "A {0}° de altura, hacia {1}",
    "where": [
-    "src/sky/sky.ts:657"
+    "src/sky/sky.ts:673"
    ]
   },
   {
