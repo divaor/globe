@@ -129,6 +129,13 @@ A backup made as Atlas Globe still opens.
 - **v0.54.1:** the play bar's count of days round the orbit adds up: the day gone and the days to go now make the
   turn as shown (they were rounded apart, so the Earth's could read "Day 0 of 365 · 366 to go"), in the planet's own
   days too; and there is no count for a moment before today.
+- **v0.54.2 (the Play listing from the repository):** the store descriptions in all six languages name the solar
+  system (the planets and moons where they are, the Sun as a world, riding along a planet round it); the screenshots
+  gain a seventh scene, following the Earth from the Sun with its year counting, and their captions stay on two lines
+  (a long line makes the caption smaller). The **Store** workflow sends the listing to Google Play: each language's
+  name and descriptions, the app's icon, the feature graphic and the phone screenshots made from that commit's build,
+  and the contact details (`scripts/store/play.mjs`; *status* shows what Play has without changing it). Apps can send
+  a build to Play's production track once Play allows it.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass
