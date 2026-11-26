@@ -96,7 +96,9 @@ A backup made as Atlas Globe still opens.
   them. It flies from one world to the next, follows each while time plays, glides in close and back out while it
   stays, and shows the world's name and a line about it (read aloud when that is on), with the date it is at. The
   time on each world is the seconds on each view in the screensaver's settings. Tap to stop: time comes back to now
-  and the view goes back where it was.
+  and the view goes back where it was. Also: zoomed out past the usual end, the map's own names (oceans, countries,
+  cities) wait until the globe is near again, instead of being bigger than it; all the way out, the world's own mark
+  keeps its name when a moon sits on it.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass

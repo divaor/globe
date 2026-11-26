@@ -377,6 +377,9 @@ export class Around {
       this.info.members.push({ id: m.id, x: p.x, y: p.y, z: p.z, r, on, seeThrough: over });
       const go = () => (m.id === 'earth' ? void this.space.exit() : void this.space.enter(m.id));
       if (!on) { this.edge(ctx, g, p.x, p.y, name, m.id, go); continue; }
+      // Zoomed so far out that it sits on the world's own mark (the Moon on the Earth's): the mark keeps its name.
+      // (Its place, worked out here: the members behind the world are drawn before the mark is.)
+      if (g.R < 5 && r < 3 && Math.hypot(p.x - g.cx, p.y - g.cy) < 14) continue;
       const a0 = ctx.globalAlpha;
       if (over) ctx.globalAlpha = a0 * 0.32;
       if (r < 3) {

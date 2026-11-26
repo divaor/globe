@@ -7504,6 +7504,16 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const tu = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-40,15,1.1&lang=en');
   const q = tu.page;
   await q.waitForTimeout(800);
+  // Zoomed out past the usual end the globe is a small ball: the map's names wait; all the way out, the Earth's own
+  // mark keeps its name and the Moon on it gives way.
+  const names = async (z) => {
+    for (let k = 0; k < 2; k++) { await q.evaluate((z) => { const v = window.atlas.app.renderer.view; v.flyTo({ zoom: z === 'min' ? v.minZoom : z }, 1); window.atlas.app.renderer.requestRender(); }, z); await q.waitForTimeout(600); }
+    return q.evaluate(() => { const a = window.atlas.around; return { drawn: window.atlas.app.renderer.labels.drawn.map((d) => d.text), me: a.info.me, moon: a.info.members.some((m) => m.id === 'moon'), moonSpot: a['spots'].some((s) => s.id === 'moon') }; });
+  };
+  const n1 = await names(1.1), n2 = await names(0.3), n3 = await names('min');
+  await names(1.1);
+  check(n1.drawn.some((t) => /ocean/i.test(t)) && !n2.drawn.length && !!n3.me && n3.moon && !n3.moonSpot,
+    `the map's names at the usual zoom (${n1.drawn.filter((t) => /ocean/i.test(t)).join(', ')}), none when the globe is small (${n2.drawn.length}); all the way out the Earth's mark keeps its name, the Moon on it gives way`);
   await q.evaluate(() => window.atlas.shell.openScreensaver());
   await q.waitForSelector('[data-tour="start"]', { timeout: 8000 }).catch(() => {});
   const panel = await q.evaluate(() => ({
