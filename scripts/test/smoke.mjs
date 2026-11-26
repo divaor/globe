@@ -1595,11 +1595,16 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.click('[data-scale="inner"]');
   await page.waitForTimeout(400);
   const ep = await page.evaluate(() => { const s = window.atlas.orrery.spots?.find?.((x) => x.id === 'earth'); return s ? [s.x, s.y] : null; }).catch(() => null);
-  const tapped = await page.evaluate(() => { const o = window.atlas.orrery; const s = o.spots.find((x) => x.id === 'mars'); return s ? o.tap(s.x, s.y) : null; });
+  // Halley's Comet (no globe to visit) opens its card with its distance; a planet goes straight to its globe (v0.49.0).
+  const tappedH = await page.evaluate(() => { const o = window.atlas.orrery; const s = o.spots.find((x) => x.id === 'halley'); return s ? o.tap(s.x, s.y) : null; });
   await page.waitForTimeout(800);
   const ocard = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
-  check(orr.open && Math.abs(orr.jd - 2446470.5) < 1 && !!ep && tapped === 'mars' && /From the Sun on this date/.test(ocard), `the solar system on 9 February 1986 (JD ${orr.jd}); a tap on Mars opens its card with its distance`);
-  await page.click('.orr-close');
+  const tapped = await page.evaluate(() => { const o = window.atlas.orrery; const s = o.spots.find((x) => x.id === 'mars'); return s ? o.tap(s.x, s.y) : null; });
+  await page.waitForFunction(() => window.atlas.space.surface.id === 'mars' && !window.atlas.orrery.isOpen, null, { timeout: 10000 }).catch(() => {});
+  const went = await page.evaluate(() => ({ id: window.atlas.space.surface.id, open: window.atlas.orrery.isOpen }));
+  check(orr.open && Math.abs(orr.jd - 2446470.5) < 1 && !!ep && tappedH === 'halley' && /From the Sun on this date/.test(ocard) && tapped === 'mars' && went.id === 'mars' && !went.open,
+    `the solar system on 9 February 1986 (JD ${orr.jd}); a tap on Halley's Comet opens its card with its distance, a tap on Mars goes to Mars`);
+  if (went.open) await page.click('.orr-close');
 
   // A space story steps onto the Moon and back to the Earth.
   await page.evaluate(() => window.atlas.space.exit());
