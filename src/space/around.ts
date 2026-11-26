@@ -233,7 +233,10 @@ export class Around {
     if (this.ease) {
       const t = Math.min(1, (performance.now() - this.ease.t0) / 650), k = t * t * (3 - 2 * t), f = this.ease.from;
       to = { lon: wrap(f.lon + wrap(lon - f.lon) * k), lat: f.lat + (lat - f.lat) * k, roll: f.roll + wrap(roll - f.roll) * k, shift: f.shift + (shift - f.shift) * k };
-      if (t >= 1) this.ease = null; else this.app.renderer.requestRender();
+      // Every step drawn, the last one too (it lands the view where the lock puts it; left undrawn, the screen stayed a
+      // few degrees short until something else redrew it).
+      if (t >= 1) this.ease = null;
+      this.app.renderer.requestRender();
     }
     view.lon = to.lon; view.lat = to.lat; view.roll = to.roll; view.shiftY = to.shift;
     this.set = { lon: view.lon, lat: view.lat };
