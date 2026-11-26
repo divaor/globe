@@ -24,7 +24,10 @@ const NORMAL_MIN = 0.6;
 // Saturn's rings in its radii, and how much light they stop: C, B, the Cassini Division, A.
 const RINGS: [number, number, string][] = [[1.24, 1.53, 'rgba(170,152,124,0.28)'], [1.53, 1.95, 'rgba(226,208,170,0.92)'], [1.95, 2.03, 'rgba(90,80,64,0.18)'], [2.03, 2.27, 'rgba(208,190,154,0.72)']];
 const GIANT = new Set(['jupiter', 'saturn']);
-const DOT: Record<string, string> = { earth: '#7fb3ff', moon: '#d8d6cf', jupiter: '#e8cfa8', saturn: '#ead9a6', neptune: '#7ea6ff', pluto: '#d9c4a8' };
+const DOT: Record<string, string> = {
+  earth: '#7fb3ff', moon: '#d8d6cf', jupiter: '#e8cfa8', saturn: '#ead9a6', neptune: '#7ea6ff', pluto: '#d9c4a8', io: '#e8d27a', europa: '#e2d6bf',
+  ganymede: '#bdb5a8', callisto: '#9a9388', enceladus: '#f2f4f8', titan: '#e3b468', triton: '#d9cbc2', charon: '#b9b2aa',
+};
 const dot3 = (a: V3, b: V3) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 
 export class Around {
@@ -39,7 +42,7 @@ export class Around {
   /** Off during a game, a quiz, a tour, ambient mode or Tonight's sky (set by the features). */
   enabled: () => boolean = () => true;
   /** For the smoke test: what is drawn and where. */
-  info = { world: '' as string, on: false, minZoom: NORMAL_MIN, sun: null as null | { x: number; y: number }, members: [] as Shown[], orbits: 0, rings: 0, frames: 0 };
+  info = { world: '' as string, on: false, minZoom: NORMAL_MIN, sun: null as null | { x: number; y: number }, me: null as null | { x: number; y: number }, members: [] as Shown[], orbits: 0, rings: 0, frames: 0 };
 
   constructor(private app: App, private shell: Shell, private space: Space) {
     app.renderer.underlays.add((bg, g) => this.behind(bg, g));
@@ -109,7 +112,7 @@ export class Around {
     }
     // It shows once the zoom has gone all the way out (fading in over the last stretch).
     this.alpha = this.sys ? Math.max(0, Math.min(1, (NORMAL_MIN * 1.12 - g.zoom) / (NORMAL_MIN * 0.12))) : 0;
-    Object.assign(this.info, { world: id ?? '', on: this.alpha > 0, minZoom: min, sun: null, members: [] });
+    Object.assign(this.info, { world: id ?? '', on: this.alpha > 0, minZoom: min, sun: null, me: null, members: [] });
   }
 
   private behind(bg: CanvasRenderingContext2D, g: G) {
@@ -131,11 +134,12 @@ export class Around {
     const ctx = rc.ctx;
     if (this.info.world === 'saturn') this.rings(ctx, g, true);
     if (this.alpha && this.sys) {
-      this.ui = this.app.renderer.boxesOf(document.querySelectorAll('.topbar .brand, .topbar .search-btn, .topbar .me-btn, .zoombar, .chips .fchip, .legend'), 12);
+      this.ui = this.app.renderer.boxesOf(document.querySelectorAll('.topbar .brand, .topbar .search-btn, .topbar .me-btn, .zoombar, .chips .fchip, .legend, .dock, .worldbar'), 12);
       ctx.save();
       ctx.globalAlpha = this.alpha;
-      // The Sun first, so the names near it make room for its own.
+      // The Sun and the world itself first, so the names near them make room for their own.
       this.sun(ctx, g);
+      this.self(ctx, g);
       this.orbits(ctx, g, true);
       this.members(ctx, g, true);
       ctx.restore();
@@ -267,6 +271,17 @@ export class Around {
     this.label(ctx, `${L('The Sun', 'El Sol')} · ${this.km(sys.sunKm)}`, x, Math.min(g.bottom - 10, y + 16));
     this.info.sun = { x, y };
     this.spots.push({ id: 'sun', x, y, r: 26, go: () => this.space.openOrrery?.() });
+  }
+
+  /** The world looked at, once zoomed out so far that its globe is a speck: a glow and its name, to find it by. */
+  private self(ctx: CanvasRenderingContext2D, g: G) {
+    if (g.R >= 5) return;
+    const id = this.sys!.me, col = DOT[id] ?? '#cfd3da';
+    const gl = ctx.createRadialGradient(g.cx, g.cy, 0, g.cx, g.cy, 10);
+    gl.addColorStop(0, col); gl.addColorStop(0.35, col); gl.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(g.cx, g.cy, 10, 0, Math.PI * 2); ctx.fill();
+    this.label(ctx, this.name(id), g.cx, g.cy + 10);
+    this.info.me = { x: g.cx, y: g.cy };
   }
 
   /** Something off the screen: an arrow at the edge the way it is, with its name. */

@@ -7298,7 +7298,7 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
     }
     await q.waitForTimeout(900);
     return q.evaluate(() => {
-      const a = window.atlas.around, g = a['g'], ui = window.atlas.app.renderer.boxesOf(document.querySelectorAll('.topbar .brand, .topbar .search-btn, .topbar .me-btn, .zoombar, .chips .fchip'), 0);
+      const a = window.atlas.around, g = a['g'], ui = window.atlas.app.renderer.boxesOf(document.querySelectorAll('.topbar .brand, .topbar .search-btn, .topbar .me-btn, .zoombar, .chips .fchip, .dock, .worldbar'), 0);
       const under = (p) => !!p && ui.some((b) => p.x > b[0] && p.x < b[2] && p.y > b[1] && p.y < b[3]);
       return { ...a.info, R: g?.R, cx: g?.cx, cy: g?.cy, sunUnder: under(a.info.sun), toast: document.querySelector('.toast')?.textContent ?? '', id: window.atlas.space.surface.id, mode: window.atlas.app.mode };
     });
@@ -7315,8 +7315,8 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const e0 = await out(0, 20);
   const moon = e0.members?.find((m) => m.id === 'moon');
   const mDist = moon ? Math.hypot(moon.x - e0.cx, moon.y - e0.cy, moon.z * e0.R) / e0.R : 0;
-  check(e0.on && moon?.on && close(moon.r / e0.R, 1737.4 / 6371, 0.005) && mDist > 55 && mDist < 64.5 && e0.orbits === 1 && e0.sun && !e0.sunUnder && /Keep zooming out/.test(e0.toast),
-    `zoomed all the way out: the Moon ${mDist.toFixed(1)} Earth radii away, ${(moon?.r / e0.R).toFixed(3)} as wide, on its orbit; the Sun at ${Math.round(e0.sun?.x)},${Math.round(e0.sun?.y)}, clear of the buttons; "${e0.toast}"`);
+  check(e0.on && moon?.on && close(moon.r / e0.R, 1737.4 / 6371, 0.005) && mDist > 55 && mDist < 64.5 && e0.orbits === 1 && e0.sun && !e0.sunUnder && e0.me && /Keep zooming out/.test(e0.toast),
+    `zoomed all the way out: the Moon ${mDist.toFixed(1)} Earth radii away, ${(moon?.r / e0.R).toFixed(3)} as wide, on its orbit; the Earth (${e0.R.toFixed(1)} px) marked; the Sun at ${Math.round(e0.sun?.x)},${Math.round(e0.sun?.y)}, clear of the buttons and the tab bar; "${e0.toast}"`);
   if (moon) await q.mouse.click(moon.x, moon.y);
   await q.waitForFunction(() => window.atlas.space.surface.id === 'moon' && window.atlas.app.mode === 'world', null, { timeout: 15000 }).catch(() => {});
   await q.waitForTimeout(1500);

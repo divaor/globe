@@ -73,6 +73,9 @@ A backup made as Atlas Globe still opens.
   the screen has an arrow at the edge with its name. Tap a moon or a planet to go there, the Sun for the solar system.
   Saturn wears its rings at any zoom. Each moon keeps the same face to its planet, as it really does (checked in
   `scripts/test/tonight.mjs`).
+- **Zoomed all the way out, two touches (v0.50.1):** the world you look at, by then a speck, gets a glow and its name so
+  you can find it among its moons. The Sun and the arrows at the screen's edge also keep clear of the tab bar and the
+  world's bar.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass
