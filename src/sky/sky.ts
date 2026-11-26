@@ -88,7 +88,10 @@ export class Sky {
   private picked: Pick | null = null;
   private spots: { pick: Pick; x: number; y: number; r: number }[] = [];
   /** For tests: what is drawn. */
-  info = { backdrop: 0, open: false, frames: 0, jd: 0, frame: 'horizon' as Frame, lat: 0, lon: 0, stars: 0, visible: [] as string[], sunAlt: 0, focus: null as string | null };
+  info = { backdrop: 0, open: false, frames: 0, jd: 0, frame: 'horizon' as Frame, lat: 0, lon: 0, stars: 0, visible: [] as string[], sunAlt: 0, focus: null as string | null,
+    /** The stars behind the globe: the way the camera looks among them (J2000), and whether the view around the globe
+     *  set it (v0.54.0). */
+    back: null as null | { fwd: number[]; up: number[]; around: boolean } };
 
   constructor(private app: App, private shell: Shell, private space: Space) {
     space.openSky = () => this.open();
@@ -127,6 +130,19 @@ export class Sky {
     const gl = this.gl, v = this.app.renderer.view;
     if (!gl || !this.starsSet || v.current.kind !== 'globe' || v.morphing) return false;
     const jd = julian(new Date());
+    // The camera in space from the view around the globe (v0.54.0): the world shown, at the moment shown, locked or
+    // riding along (J2000, so no precession). Without it, the Earth as it is now.
+    const cam = this.space.skyCamera?.() ?? null;
+    if (cam) {
+      gl.render({
+        w, h, dpr: Math.min(1.5, devicePixelRatio || 1), proj: 'gnomonic', scale: cam.scale ?? Math.max(w, h) * 0.85, cx: w / 2, cy: gy - (cam.lift ?? 0),
+        right: cam.right, up: cam.up, fwd: cam.fwd, prec: [1, 0, 0, 0, 1, 0, 0, 0, 1], mw: 0.6, stars: 0.95, magLimit: 6.2,
+      });
+      bg.drawImage(gl.canvas, 0, 0, w, h);
+      this.info.backdrop++;
+      this.info.back = { fwd: cam.fwd, up: cam.up, around: true };
+      return true;
+    }
     const a = (v.lon + gmst(jd)) * RAD, f = v.lat * RAD;
     const c: V3 = [Math.cos(f) * Math.cos(a), Math.cos(f) * Math.sin(a), Math.sin(f)];
     gl.render({

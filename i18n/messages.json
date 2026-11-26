@@ -1,6 +1,6 @@
 {
  "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/data/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
- "count": 4975,
+ "count": 4987,
  "messages": [
   {
    "en": " (below sea level)",
@@ -84,7 +84,7 @@
    "en": ".",
    "es": ",",
    "where": [
-    "src/learn/learn.ts:1653"
+    "src/learn/learn.ts:1654"
    ]
   },
   {
@@ -120,8 +120,15 @@
    "es": "1 día/s",
    "where": [
     "src/sky/sky.ts:23",
-    "src/space/around.ts:42",
+    "src/space/around.ts:49",
     "src/space/orrery.ts:38"
+   ]
+  },
+  {
+   "en": "1 full orbit since today",
+   "es": "1 vuelta completa desde hoy",
+   "where": [
+    "src/space/around.ts:1032"
    ]
   },
   {
@@ -129,7 +136,7 @@
    "es": "1 hora/s",
    "where": [
     "src/sky/sky.ts:22",
-    "src/space/around.ts:41"
+    "src/space/around.ts:48"
    ]
   },
   {
@@ -143,7 +150,7 @@
    "en": "1 month/s",
    "es": "1 mes/s",
    "where": [
-    "src/space/around.ts:44",
+    "src/space/around.ts:51",
     "src/space/orrery.ts:40"
    ]
   },
@@ -151,7 +158,7 @@
    "en": "1 week/s",
    "es": "1 semana/s",
    "where": [
-    "src/space/around.ts:43",
+    "src/space/around.ts:50",
     "src/space/orrery.ts:39"
    ]
   },
@@ -166,7 +173,7 @@
    "en": "1 year/s",
    "es": "1 año/s",
    "where": [
-    "src/space/around.ts:45",
+    "src/space/around.ts:52",
     "src/space/orrery.ts:41"
    ]
   },
@@ -209,7 +216,7 @@
    "en": "10 years/s",
    "es": "10 años/s",
    "where": [
-    "src/space/around.ts:46",
+    "src/space/around.ts:53",
     "src/space/orrery.ts:42"
    ]
   },
@@ -334,7 +341,7 @@
    "en": "3D view",
    "es": "Vista 3D",
    "where": [
-    "src/space/space.ts:274"
+    "src/space/space.ts:278"
    ]
   },
   {
@@ -785,14 +792,14 @@
    "en": "A gas giant: no solid ground, only clouds that change all the time.",
    "es": "Un gigante gaseoso: no tiene suelo firme, solo nubes que cambian todo el tiempo.",
    "where": [
-    "src/space/worlds.ts:109"
+    "src/space/worlds.ts:116"
    ]
   },
   {
    "en": "A gas giant: no solid ground, only clouds. Its rings are drawn around it; zoom all the way out to see two of its moons on their real orbits, and tap one to go there.",
    "es": "Un gigante gaseoso: no tiene suelo firme, solo nubes. Sus anillos se dibujan a su alrededor; aléjate del todo para ver dos de sus lunas en sus órbitas reales y toca una para ir allí.",
    "where": [
-    "src/space/worlds.ts:133"
+    "src/space/worlds.ts:140"
    ]
   },
   {
@@ -974,14 +981,14 @@
    "en": "A new challenge tomorrow",
    "es": "Mañana hay un reto nuevo",
    "where": [
-    "src/learn/learn.ts:2076"
+    "src/learn/learn.ts:2077"
    ]
   },
   {
    "en": "A new challenge tomorrow.",
    "es": "Mañana hay un reto nuevo.",
    "where": [
-    "src/learn/learn.ts:1588"
+    "src/learn/learn.ts:1589"
    ]
   },
   {
@@ -1205,7 +1212,7 @@
    "en": "A thick orange haze hides Titan: Cassini mapped it through the haze in infrared.",
    "es": "Una bruma naranja y espesa oculta a Titán: la Cassini lo cartografió a través de ella en infrarrojo.",
    "where": [
-    "src/space/worlds.ts:138"
+    "src/space/worlds.ts:145"
    ]
   },
   {
@@ -1310,7 +1317,7 @@
    "en": "A weak link",
    "es": "Una relación débil",
    "where": [
-    "src/learn/learn.ts:2328"
+    "src/learn/learn.ts:2329"
    ]
   },
   {
@@ -1592,7 +1599,7 @@
    "en": "About this world",
    "es": "Sobre este mundo",
    "where": [
-    "src/space/space.ts:273"
+    "src/space/space.ts:277"
    ]
   },
   {
@@ -1627,7 +1634,7 @@
    "en": "Abyss (4 000–6 000 m)",
    "es": "Abismo (4 000–6 000 m)",
    "where": [
-    "src/learn/learn.ts:1445"
+    "src/learn/learn.ts:1446"
    ]
   },
   {
@@ -1655,7 +1662,7 @@
    "en": "Across the countries of the world, how are these two linked?",
    "es": "En los países del mundo, ¿cómo se relacionan estos dos?",
    "where": [
-    "src/learn/learn.ts:2354"
+    "src/learn/learn.ts:2355"
    ]
   },
   {
@@ -1915,7 +1922,7 @@
    "en": "Air",
    "es": "Atmósfera",
    "where": [
-    "src/space/space.ts:355"
+    "src/space/space.ts:359"
    ]
   },
   {
@@ -2359,14 +2366,14 @@
    "en": "An ice giant with the fastest winds in the solar system.",
    "es": "Un gigante helado con los vientos más rápidos del sistema solar.",
    "where": [
-    "src/space/worlds.ts:153"
+    "src/space/worlds.ts:160"
    ]
   },
   {
    "en": "An ice giant wrapped in hazy blue-green clouds, tipped on its side.",
    "es": "Un gigante helado envuelto en nubes de un azul verdoso, inclinado de costado.",
    "where": [
-    "src/space/worlds.ts:148"
+    "src/space/worlds.ts:155"
    ]
   },
   {
@@ -2753,7 +2760,7 @@
    "en": "Arc",
    "es": "Arco",
    "where": [
-    "src/space/worlds.ts:215"
+    "src/space/worlds.ts:223"
    ]
   },
   {
@@ -2957,7 +2964,7 @@
    "en": "Art expert! 🎨",
    "es": "¡Experto en arte! 🎨",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -2979,7 +2986,7 @@
    "es": "Arte del mundo",
    "where": [
     "src/app/i18n.ts:255",
-    "src/learn/learn.ts:2538",
+    "src/learn/learn.ts:2539",
     "src/modes/stories.ts:203"
    ]
   },
@@ -3431,7 +3438,7 @@
    "en": "BC",
    "es": "a. C.",
    "where": [
-    "src/learn/learn.ts:2850",
+    "src/learn/learn.ts:2851",
     "src/space/orrery.ts:55"
    ]
   },
@@ -3471,14 +3478,14 @@
    "en": "Back to Earth",
    "es": "Volver a la Tierra",
    "where": [
-    "src/space/space.ts:275"
+    "src/space/space.ts:279"
    ]
   },
   {
    "en": "Back to the Earth",
    "es": "Volver a la Tierra",
    "where": [
-    "src/space/space.ts:315"
+    "src/space/space.ts:319"
    ]
   },
   {
@@ -3492,7 +3499,7 @@
    "en": "Back to the quiz",
    "es": "Volver al concurso",
    "where": [
-    "src/learn/learn.ts:1764"
+    "src/learn/learn.ts:1765"
    ]
   },
   {
@@ -3733,7 +3740,7 @@
    "en": "Below the horizon ({0}°), toward the {1}",
    "es": "Bajo el horizonte ({0}°), hacia {1}",
    "where": [
-    "src/sky/sky.ts:657"
+    "src/sky/sky.ts:673"
    ]
   },
   {
@@ -3895,7 +3902,7 @@
    "en": "Best seen",
    "es": "Mejor época",
    "where": [
-    "src/sky/sky.ts:719"
+    "src/sky/sky.ts:735"
    ]
   },
   {
@@ -3923,8 +3930,8 @@
    "en": "Beyond Earth",
    "es": "Más allá de la Tierra",
    "where": [
-    "src/learn/learn.ts:2538",
-    "src/space/space.ts:179"
+    "src/learn/learn.ts:2539",
+    "src/space/space.ts:183"
    ]
   },
   {
@@ -4091,7 +4098,7 @@
    "es": "Libros y escritores",
    "where": [
     "src/app/i18n.ts:252",
-    "src/learn/learn.ts:2538",
+    "src/learn/learn.ts:2539",
     "src/modes/stories.ts:202"
    ]
   },
@@ -4106,7 +4113,7 @@
    "en": "Bookworm! 📚",
    "es": "¡Ratón de biblioteca! 📚",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -4146,7 +4153,7 @@
    "en": "Borders",
    "es": "Límites",
    "where": [
-    "src/sky/sky.ts:282"
+    "src/sky/sky.ts:298"
    ]
   },
   {
@@ -4337,7 +4344,7 @@
    "en": "Boulder",
    "es": "Roca",
    "where": [
-    "src/space/worlds.ts:223"
+    "src/space/worlds.ts:231"
    ]
   },
   {
@@ -4386,22 +4393,22 @@
    "en": "Bright spot",
    "es": "Mancha brillante",
    "where": [
-    "src/space/worlds.ts:219"
+    "src/space/worlds.ts:227"
    ]
   },
   {
    "en": "Brightest star",
    "es": "Estrella más brillante",
    "where": [
-    "src/sky/sky.ts:718"
+    "src/sky/sky.ts:734"
    ]
   },
   {
    "en": "Brightness",
    "es": "Brillo",
    "where": [
-    "src/sky/sky.ts:673",
-    "src/sky/sky.ts:682"
+    "src/sky/sky.ts:689",
+    "src/sky/sky.ts:698"
    ]
   },
   {
@@ -4726,7 +4733,7 @@
    "es": "Calisto",
    "where": [
     "src/sky/tonight.ts:48",
-    "src/space/worlds.ts:128"
+    "src/space/worlds.ts:135"
    ]
   },
   {
@@ -4770,14 +4777,14 @@
    "en": "Canyon",
    "es": "Cañón",
    "where": [
-    "src/space/worlds.ts:209"
+    "src/space/worlds.ts:217"
    ]
   },
   {
    "en": "Cape",
    "es": "Cabo",
    "where": [
-    "src/space/worlds.ts:208"
+    "src/space/worlds.ts:216"
    ]
   },
   {
@@ -4887,7 +4894,7 @@
    "en": "Catalogue",
    "es": "Catálogo",
    "where": [
-    "src/sky/sky.ts:705"
+    "src/sky/sky.ts:721"
    ]
   },
   {
@@ -4939,7 +4946,7 @@
    "where": [
     "src/learn/tours.ts:819",
     "src/space/orrery.ts:20",
-    "src/space/worlds.ts:98"
+    "src/space/worlds.ts:105"
    ]
   },
   {
@@ -5002,7 +5009,7 @@
    "en": "Chaos (broken ground)",
    "es": "Caos (terreno quebrado)",
    "where": [
-    "src/space/worlds.ts:211"
+    "src/space/worlds.ts:219"
    ]
   },
   {
@@ -5031,7 +5038,7 @@
    "en": "Charon",
    "es": "Caronte",
    "where": [
-    "src/space/worlds.ts:167"
+    "src/space/worlds.ts:174"
    ]
   },
   {
@@ -5074,8 +5081,8 @@
    "en": "Check",
    "es": "Comprobar",
    "where": [
-    "src/learn/learn.ts:1526",
-    "src/learn/learn.ts:2171",
+    "src/learn/learn.ts:1527",
+    "src/learn/learn.ts:2172",
     "src/master/master.ts:711",
     "src/onmap/onmap.ts:407"
    ]
@@ -5147,7 +5154,7 @@
    "en": "Choose a world",
    "es": "Elegir un mundo",
    "where": [
-    "src/space/space.ts:263"
+    "src/space/space.ts:267"
    ]
   },
   {
@@ -5168,7 +5175,7 @@
    "en": "Chosen by Wikipedia",
    "es": "Elegidos por Wikipedia",
    "where": [
-    "src/learn/learn.ts:2838"
+    "src/learn/learn.ts:2839"
    ]
   },
   {
@@ -5219,7 +5226,7 @@
    "en": "Cities through time",
    "es": "Ciudades a través del tiempo",
    "where": [
-    "src/learn/learn.ts:2538"
+    "src/learn/learn.ts:2539"
    ]
   },
   {
@@ -5359,7 +5366,7 @@
    "en": "Close the sky",
    "es": "Cerrar el cielo",
    "where": [
-    "src/sky/sky.ts:197"
+    "src/sky/sky.ts:213"
    ]
   },
   {
@@ -5536,7 +5543,7 @@
    "en": "Comet",
    "es": "Cometa",
    "where": [
-    "src/space/space.ts:317"
+    "src/space/space.ts:321"
    ]
   },
   {
@@ -5625,10 +5632,10 @@
    "en": "Constellation",
    "es": "Constelación",
    "where": [
-    "src/sky/sky.ts:685",
-    "src/sky/sky.ts:704",
-    "src/sky/sky.ts:728",
-    "src/sky/sky.ts:742"
+    "src/sky/sky.ts:701",
+    "src/sky/sky.ts:720",
+    "src/sky/sky.ts:744",
+    "src/sky/sky.ts:758"
    ]
   },
   {
@@ -5733,7 +5740,7 @@
    "en": "Copied: paste it anywhere",
    "es": "Copiado: pégalo donde quieras",
    "where": [
-    "src/learn/learn.ts:1602"
+    "src/learn/learn.ts:1603"
    ]
   },
   {
@@ -5762,32 +5769,32 @@
    "en": "Corona (an oval ring of ridges)",
    "es": "Corona (un anillo ovalado de crestas)",
    "where": [
-    "src/space/worlds.ts:215"
+    "src/space/worlds.ts:223"
    ]
   },
   {
    "en": "Correct! ",
    "es": "¡Correcto! ",
    "where": [
-    "src/learn/learn.ts:982",
-    "src/learn/learn.ts:989",
-    "src/learn/learn.ts:1064",
-    "src/learn/learn.ts:1069",
-    "src/learn/learn.ts:1736"
+    "src/learn/learn.ts:983",
+    "src/learn/learn.ts:990",
+    "src/learn/learn.ts:1065",
+    "src/learn/learn.ts:1070",
+    "src/learn/learn.ts:1737"
    ]
   },
   {
    "en": "Correct! All four in order.",
    "es": "¡Correcto! Los cuatro en orden.",
    "where": [
-    "src/learn/learn.ts:2204"
+    "src/learn/learn.ts:2205"
    ]
   },
   {
    "en": "Correct! It came from: {0}.",
    "es": "¡Correcto! Vino de: {0}.",
    "where": [
-    "src/learn/learn.ts:1913"
+    "src/learn/learn.ts:1914"
    ]
   },
   {
@@ -5795,21 +5802,21 @@
    "es": "¡Correcto! Es {0}.",
    "where": [
     "src/learn/learn.ts:770",
-    "src/learn/learn.ts:2005"
+    "src/learn/learn.ts:2006"
    ]
   },
   {
    "en": "Correct! {0} {1}",
    "es": "¡Correcto! {0} {1}",
    "where": [
-    "src/learn/learn.ts:1991"
+    "src/learn/learn.ts:1992"
    ]
   },
   {
    "en": "Correct! {0}.",
    "es": "¡Correcto! {0}.",
    "where": [
-    "src/learn/learn.ts:1934"
+    "src/learn/learn.ts:1935"
    ]
   },
   {
@@ -6021,14 +6028,14 @@
    "en": "Crater",
    "es": "Cráter",
    "where": [
-    "src/space/worlds.ts:203"
+    "src/space/worlds.ts:211"
    ]
   },
   {
    "en": "Crater chain",
    "es": "Cadena de cráteres",
    "where": [
-    "src/space/worlds.ts:207"
+    "src/space/worlds.ts:215"
    ]
   },
   {
@@ -6392,7 +6399,7 @@
    "en": "Dark spot",
    "es": "Mancha oscura",
    "where": [
-    "src/space/worlds.ts:213"
+    "src/space/worlds.ts:221"
    ]
   },
   {
@@ -6413,7 +6420,7 @@
    "en": "Data master! 📊",
    "es": "¡Maestro de los datos! 📊",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -6428,7 +6435,7 @@
    "en": "Date and time",
    "es": "Fecha y hora",
    "where": [
-    "src/sky/sky.ts:201"
+    "src/sky/sky.ts:217"
    ]
   },
   {
@@ -6481,10 +6488,17 @@
    ]
   },
   {
+   "en": "Day {0} of {1} since today · {2} to go",
+   "es": "Día {0} de {1} desde hoy · faltan {2}",
+   "where": [
+    "src/space/around.ts:1030"
+   ]
+  },
+  {
    "en": "Daylight",
    "es": "Luz del día",
    "where": [
-    "src/sky/sky.ts:285"
+    "src/sky/sky.ts:301"
    ]
   },
   {
@@ -6577,7 +6591,7 @@
    "en": "Deep digger! ⛏️",
    "es": "¡Gran excavador! ⛏️",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -6729,7 +6743,7 @@
    "en": "Designation",
    "es": "Designación",
    "where": [
-    "src/sky/sky.ts:687"
+    "src/sky/sky.ts:703"
    ]
   },
   {
@@ -6808,7 +6822,7 @@
    "es": "Diámetro",
    "where": [
     "src/layers/packs/inside.ts:381",
-    "src/space/space.ts:344"
+    "src/space/space.ts:348"
    ]
   },
   {
@@ -6880,7 +6894,7 @@
    "en": "Disaster expert! 🌋",
    "es": "¡Experto en desastres! 🌋",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -6897,14 +6911,14 @@
     "src/layers/packs/ocean.ts:274",
     "src/layers/packs/ocean.ts:331",
     "src/sky/elements.ts:194",
-    "src/space/space.ts:356"
+    "src/space/space.ts:360"
    ]
   },
   {
    "en": "Disease detective! 🔬",
    "es": "¡Detective de epidemias! 🔬",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -6934,8 +6948,8 @@
    "where": [
     "src/sky/galaxy.ts:350",
     "src/sky/galaxy.ts:360",
-    "src/sky/sky.ts:683",
-    "src/sky/sky.ts:702"
+    "src/sky/sky.ts:699",
+    "src/sky/sky.ts:718"
    ]
   },
   {
@@ -7066,14 +7080,14 @@
    "en": "Drag the sky to look around it.",
    "es": "Arrastra el cielo para mirar alrededor.",
    "where": [
-    "src/learn/learn.ts:1040"
+    "src/learn/learn.ts:1041"
    ]
   },
   {
    "en": "Drag to look around · pinch or scroll to zoom · tap a star, a constellation or a planet.",
    "es": "Arrastra para mirar alrededor · pellizca o usa la rueda para acercar · toca una estrella, una constelación o un planeta.",
    "where": [
-    "src/sky/sky.ts:221"
+    "src/sky/sky.ts:237"
    ]
   },
   {
@@ -7136,7 +7150,7 @@
    "en": "Dry lake bed",
    "es": "Lecho de lago seco",
    "where": [
-    "src/space/worlds.ts:224"
+    "src/space/worlds.ts:232"
    ]
   },
   {
@@ -7171,7 +7185,7 @@
    "en": "Dunes",
    "es": "Dunas",
    "where": [
-    "src/space/worlds.ts:217"
+    "src/space/worlds.ts:225"
    ]
   },
   {
@@ -7185,7 +7199,7 @@
    "en": "Dwarf planets and asteroids",
    "es": "Planetas enanos y asteroides",
    "where": [
-    "src/space/space.ts:165"
+    "src/space/space.ts:169"
    ]
   },
   {
@@ -7238,7 +7252,7 @@
    "en": "Each colour is a state, an empire or a people of the time. Their names appear when you answer.",
    "es": "Cada color es un Estado, un imperio o un pueblo de la época. Sus nombres aparecen cuando respondes.",
    "where": [
-    "src/learn/learn.ts:2250"
+    "src/learn/learn.ts:2251"
    ]
   },
   {
@@ -7366,7 +7380,7 @@
    "es": "Tierra",
    "where": [
     "src/space/orrery.ts:18",
-    "src/space/space.ts:135"
+    "src/space/space.ts:138"
    ]
   },
   {
@@ -7387,8 +7401,8 @@
    "en": "Earth days",
    "es": "días terrestres",
    "where": [
-    "src/space/space.ts:348",
-    "src/space/space.ts:351"
+    "src/space/space.ts:352",
+    "src/space/space.ts:355"
    ]
   },
   {
@@ -7402,7 +7416,7 @@
    "en": "Earth years",
    "es": "años terrestres",
    "where": [
-    "src/space/space.ts:351"
+    "src/space/space.ts:355"
    ]
   },
   {
@@ -7707,7 +7721,7 @@
    "es": "Encélado",
    "where": [
     "src/learn/tours.ts:826",
-    "src/space/worlds.ts:142"
+    "src/space/worlds.ts:149"
    ]
   },
   {
@@ -7858,7 +7872,7 @@
    "where": [
     "src/learn/tours.ts:822",
     "src/sky/tonight.ts:48",
-    "src/space/worlds.ts:118"
+    "src/space/worlds.ts:125"
    ]
   },
   {
@@ -7897,7 +7911,7 @@
    "en": "Events from Wikipedia (CC BY-SA).",
    "es": "Acontecimientos de Wikipedia (CC BY-SA).",
    "where": [
-    "src/learn/learn.ts:2903"
+    "src/learn/learn.ts:2904"
    ]
   },
   {
@@ -8470,7 +8484,7 @@
    "en": "Figures",
    "es": "Figuras",
    "where": [
-    "src/sky/sky.ts:280"
+    "src/sky/sky.ts:296"
    ]
   },
   {
@@ -8786,7 +8800,7 @@
    "en": "First visit",
    "es": "Primera visita",
    "where": [
-    "src/space/space.ts:357"
+    "src/space/space.ts:361"
    ]
   },
   {
@@ -8986,14 +9000,14 @@
    "en": "Follow the Earth",
    "es": "Seguir a la Tierra",
    "where": [
-    "src/space/around.ts:783"
+    "src/space/around.ts:955"
    ]
   },
   {
    "en": "Follow the Sun",
    "es": "Seguir al Sol",
    "where": [
-    "src/space/around.ts:784"
+    "src/space/around.ts:956"
    ]
   },
   {
@@ -9015,7 +9029,7 @@
    "en": "Follow {0}",
    "es": "Seguir a {0}",
    "where": [
-    "src/space/around.ts:783"
+    "src/space/around.ts:955"
    ]
   },
   {
@@ -9318,7 +9332,7 @@
    "en": "From a place",
    "es": "Desde un lugar",
    "where": [
-    "src/sky/sky.ts:292"
+    "src/sky/sky.ts:308"
    ]
   },
   {
@@ -9332,7 +9346,7 @@
    "en": "From its planet",
    "es": "De su planeta",
    "where": [
-    "src/space/space.ts:352"
+    "src/space/space.ts:356"
    ]
   },
   {
@@ -9375,8 +9389,8 @@
    "en": "From the Earth",
    "es": "De la Tierra",
    "where": [
-    "src/sky/sky.ts:672",
-    "src/sky/sky.ts:673",
+    "src/sky/sky.ts:688",
+    "src/sky/sky.ts:689",
     "src/space/orrery.ts:321"
    ]
   },
@@ -9399,7 +9413,7 @@
    "es": "Del Sol",
    "where": [
     "src/sky/galaxy.ts:374",
-    "src/space/space.ts:352"
+    "src/space/space.ts:356"
    ]
   },
   {
@@ -9407,6 +9421,13 @@
    "es": "Del Sol en esta fecha",
    "where": [
     "src/space/orrery.ts:320"
+   ]
+  },
+  {
+   "en": "From the Sun, follow:",
+   "es": "Desde el Sol, seguir a:",
+   "where": [
+    "src/space/around.ts:946"
    ]
   },
   {
@@ -9448,7 +9469,7 @@
    "en": "From which period are its fossils?",
    "es": "¿De qué periodo son sus fósiles?",
    "where": [
-    "src/learn/learn.ts:1670"
+    "src/learn/learn.ts:1671"
    ]
   },
   {
@@ -9675,7 +9696,7 @@
    "es": "Juegos del mundo",
    "where": [
     "src/app/i18n.ts:231",
-    "src/learn/learn.ts:2538",
+    "src/learn/learn.ts:2539",
     "src/modes/stories.ts:195"
    ]
   },
@@ -9712,7 +9733,7 @@
    "es": "Ganimedes",
    "where": [
     "src/sky/tonight.ts:48",
-    "src/space/worlds.ts:123"
+    "src/space/worlds.ts:130"
    ]
   },
   {
@@ -9775,7 +9796,7 @@
    "en": "Geography master! 🏆",
    "es": "¡Maestro de la geografía! 🏆",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -9817,7 +9838,7 @@
    "en": "Giant ringed basin",
    "es": "Gran cuenca anillada",
    "where": [
-    "src/space/worlds.ts:224"
+    "src/space/worlds.ts:232"
    ]
   },
   {
@@ -9972,7 +9993,7 @@
    "en": "Golden ears! 🎧",
    "es": "¡Oído de oro! 🎧",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -10023,7 +10044,7 @@
    "en": "Gravity",
    "es": "Gravedad",
    "where": [
-    "src/space/space.ts:345"
+    "src/space/space.ts:349"
    ]
   },
   {
@@ -10037,7 +10058,7 @@
    "en": "Great job! 🌍",
    "es": "¡Muy bien! 🌍",
    "where": [
-    "src/learn/learn.ts:2046"
+    "src/learn/learn.ts:2047"
    ]
   },
   {
@@ -10125,7 +10146,7 @@
    "en": "Green thumb! 🌿",
    "es": "¡Mano verde! 🌿",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -10167,7 +10188,7 @@
    "en": "Grooves",
    "es": "Surcos",
    "where": [
-    "src/space/worlds.ts:214"
+    "src/space/worlds.ts:222"
    ]
   },
   {
@@ -10181,7 +10202,7 @@
    "en": "Ground",
    "es": "Suelo",
    "where": [
-    "src/sky/sky.ts:285"
+    "src/sky/sky.ts:301"
    ]
   },
   {
@@ -10246,7 +10267,7 @@
    "es": "Visitas guiadas",
    "where": [
     "src/learn/learn.ts:287",
-    "src/learn/learn.ts:2551",
+    "src/learn/learn.ts:2552",
     "src/learn/progress.ts:364"
    ]
   },
@@ -10450,7 +10471,7 @@
    "es": "Alturas",
    "where": [
     "src/space/space.ts:22",
-    "src/space/space.ts:102"
+    "src/space/space.ts:105"
    ]
   },
   {
@@ -10464,7 +10485,7 @@
    "en": "Heir of the ages! 🏺",
    "es": "¡Heredero de los siglos! 🏺",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -10527,14 +10548,14 @@
    "en": "Here is {0}.",
    "es": "Aquí está {0}.",
    "where": [
-    "src/learn/learn.ts:2005"
+    "src/learn/learn.ts:2006"
    ]
   },
   {
    "en": "Heritage explorer! 🏛️",
    "es": "¡Explorador del patrimonio! 🏛️",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -10555,7 +10576,7 @@
    "en": "Hide the text",
    "es": "Ocultar el texto",
    "where": [
-    "src/learn/learn.ts:2661"
+    "src/learn/learn.ts:2662"
    ]
   },
   {
@@ -10616,7 +10637,7 @@
    "en": "Highland",
    "es": "Tierra alta",
    "where": [
-    "src/space/worlds.ts:208"
+    "src/space/worlds.ts:216"
    ]
   },
   {
@@ -10630,7 +10651,7 @@
    "en": "Hills",
    "es": "Colinas",
    "where": [
-    "src/space/worlds.ts:212"
+    "src/space/worlds.ts:220"
    ]
   },
   {
@@ -10701,7 +10722,7 @@
    "en": "History and culture",
    "es": "Historia y cultura",
    "where": [
-    "src/learn/learn.ts:2538"
+    "src/learn/learn.ts:2539"
    ]
   },
   {
@@ -10715,7 +10736,7 @@
    "en": "History master! 🏆",
    "es": "¡Maestro de la historia! 🏆",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -10750,7 +10771,7 @@
    "en": "Hollow",
    "es": "Hondonada",
    "where": [
-    "src/space/worlds.ts:217"
+    "src/space/worlds.ts:225"
    ]
   },
   {
@@ -11581,7 +11602,7 @@
    "en": "In it",
    "es": "En ella",
    "where": [
-    "src/sky/sky.ts:725"
+    "src/sky/sky.ts:741"
    ]
   },
   {
@@ -11840,14 +11861,14 @@
    "en": "In the sky now",
    "es": "En el cielo ahora",
    "where": [
-    "src/sky/sky.ts:657"
+    "src/sky/sky.ts:673"
    ]
   },
   {
    "en": "In the stories",
    "es": "En las historias",
    "where": [
-    "src/learn/learn.ts:2837"
+    "src/learn/learn.ts:2838"
    ]
   },
   {
@@ -11868,7 +11889,7 @@
    "en": "In which period did it live?",
    "es": "¿En qué periodo vivió?",
    "where": [
-    "src/learn/learn.ts:1670"
+    "src/learn/learn.ts:1671"
    ]
   },
   {
@@ -11906,6 +11927,13 @@
    "es": "En {0}",
    "where": [
     "src/layers/packs/fauna.ts:290"
+   ]
+  },
+  {
+   "en": "In {0} days: {1} of {2}",
+   "es": "En días de {0}: {1} de {2}",
+   "where": [
+    "src/space/around.ts:1031"
    ]
   },
   {
@@ -12142,7 +12170,7 @@
    "where": [
     "src/app/i18n.ts:258",
     "src/layers/packs/heritage.ts:472",
-    "src/learn/learn.ts:2538",
+    "src/learn/learn.ts:2539",
     "src/modes/stories.ts:204",
     "src/play/pin.ts:24"
    ]
@@ -12158,7 +12186,7 @@
    "en": "Inventive mind! 💡",
    "es": "¡Mente inventiva! 💡",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -12167,7 +12195,7 @@
    "where": [
     "src/learn/tours.ts:821",
     "src/sky/tonight.ts:48",
-    "src/space/worlds.ts:113"
+    "src/space/worlds.ts:120"
    ]
   },
   {
@@ -12195,7 +12223,7 @@
    "en": "Island",
    "es": "Isla",
    "where": [
-    "src/space/worlds.ts:219"
+    "src/space/worlds.ts:227"
    ]
   },
   {
@@ -12237,7 +12265,7 @@
    "en": "It came from: {0}.",
    "es": "Vino de: {0}.",
    "where": [
-    "src/learn/learn.ts:1913"
+    "src/learn/learn.ts:1914"
    ]
   },
   {
@@ -12265,7 +12293,7 @@
    "en": "It is best in {0}. ",
    "es": "Su mejor mes es {1}. ",
    "where": [
-    "src/learn/learn.ts:1965"
+    "src/learn/learn.ts:1966"
    ]
   },
   {
@@ -12280,7 +12308,7 @@
    "es": "Está en {0}.",
    "where": [
     "src/fill/fill.ts:469",
-    "src/learn/learn.ts:1979",
+    "src/learn/learn.ts:1980",
     "src/play/outline.ts:115"
    ]
   },
@@ -12335,14 +12363,14 @@
    "en": "It is: ",
    "es": "Es: ",
    "where": [
-    "src/learn/learn.ts:1952"
+    "src/learn/learn.ts:1953"
    ]
   },
   {
    "en": "It is: {0}. ",
    "es": "Es: {0}. ",
    "where": [
-    "src/learn/learn.ts:1919"
+    "src/learn/learn.ts:1920"
    ]
   },
   {
@@ -12370,9 +12398,9 @@
    "en": "It was ",
    "es": "Era ",
    "where": [
-    "src/learn/learn.ts:982",
-    "src/learn/learn.ts:989",
-    "src/learn/learn.ts:1064"
+    "src/learn/learn.ts:983",
+    "src/learn/learn.ts:990",
+    "src/learn/learn.ts:1065"
    ]
   },
   {
@@ -12386,8 +12414,8 @@
    "en": "It was {0}.",
    "es": "Era {0}.",
    "where": [
-    "src/learn/learn.ts:1934",
-    "src/learn/learn.ts:1992",
+    "src/learn/learn.ts:1935",
+    "src/learn/learn.ts:1993",
     "src/play/lifeguess.ts:176",
     "src/play/outline.ts:211"
    ]
@@ -12396,15 +12424,15 @@
    "en": "It was: ",
    "es": "Era: ",
    "where": [
-    "src/learn/learn.ts:1953",
-    "src/learn/learn.ts:1954"
+    "src/learn/learn.ts:1954",
+    "src/learn/learn.ts:1955"
    ]
   },
   {
    "en": "It was: {0}. ",
    "es": "Era: {0}. ",
    "where": [
-    "src/learn/learn.ts:1945"
+    "src/learn/learn.ts:1946"
    ]
   },
   {
@@ -12517,6 +12545,13 @@
    "es": "Su historia",
    "where": [
     "src/legacy/legacy.ts:329"
+   ]
+  },
+  {
+   "en": "Its surface changes by the hour: this map shows how it looks (granules of rising gas, sunspots), not a real day’s. Zoom out to see the planets go round it.",
+   "es": "Su superficie cambia hora a hora: este mapa muestra cómo se ve (gránulos de gas que sube, manchas solares), no un día real. Aléjate para ver los planetas girar a su alrededor.",
+   "where": [
+    "src/space/worlds.ts:67"
    ]
   },
   {
@@ -12671,7 +12706,7 @@
    "es": "Viajes y rutas comerciales",
    "where": [
     "src/app/i18n.ts:234",
-    "src/learn/learn.ts:2538",
+    "src/learn/learn.ts:2539",
     "src/modes/stories.ts:196"
    ]
   },
@@ -12781,7 +12816,7 @@
    "en": "Keep exploring! 🧭",
    "es": "¡Sigue explorando! 🧭",
    "where": [
-    "src/learn/learn.ts:2046"
+    "src/learn/learn.ts:2047"
    ]
   },
   {
@@ -12795,7 +12830,14 @@
    "en": "Keep zooming out to see the moons on their real orbits; tap one to go there.",
    "es": "Sigue alejándote para ver las lunas en sus órbitas reales; toca una para ir allí.",
    "where": [
-    "src/space/around.ts:358"
+    "src/space/around.ts:403"
+   ]
+  },
+  {
+   "en": "Keep zooming out to see the planets on their real orbits; tap one to go there.",
+   "es": "Sigue alejándote para ver los planetas en sus órbitas reales; toca uno para ir allí.",
+   "where": [
+    "src/space/around.ts:402"
    ]
   },
   {
@@ -12995,7 +13037,7 @@
    "en": "Lacus (a small lava \"lake\")",
    "es": "Lacus (un pequeño «lago» de lava)",
    "where": [
-    "src/space/worlds.ts:204"
+    "src/space/worlds.ts:212"
    ]
   },
   {
@@ -13073,14 +13115,14 @@
    "en": "Landing site",
    "es": "Sitio de aterrizaje",
    "where": [
-    "src/space/worlds.ts:222"
+    "src/space/worlds.ts:230"
    ]
   },
   {
    "en": "Landings",
    "es": "Aterrizajes",
    "where": [
-    "src/space/space.ts:288"
+    "src/space/space.ts:292"
    ]
   },
   {
@@ -13094,7 +13136,7 @@
    "en": "Landslide",
    "es": "Deslizamiento",
    "where": [
-    "src/space/worlds.ts:217"
+    "src/space/worlds.ts:225"
    ]
   },
   {
@@ -13118,7 +13160,7 @@
    "en": "Language master! 🗣️",
    "es": "¡Maestro de las lenguas! 🗣️",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -13251,7 +13293,7 @@
    "en": "Latin name",
    "es": "Nombre en latín",
    "where": [
-    "src/sky/sky.ts:715"
+    "src/sky/sky.ts:731"
    ]
   },
   {
@@ -13272,7 +13314,7 @@
    "en": "Lava flow",
    "es": "Colada de lava",
    "where": [
-    "src/space/worlds.ts:212"
+    "src/space/worlds.ts:220"
    ]
   },
   {
@@ -13527,7 +13569,7 @@
    "es": "La vida en el tiempo",
    "where": [
     "src/app/i18n.ts:221",
-    "src/learn/learn.ts:2538",
+    "src/learn/learn.ts:2539",
     "src/modes/stories.ts:194"
    ]
   },
@@ -13550,7 +13592,7 @@
    "en": "Light or dark marking",
    "es": "Mancha clara u oscura",
    "where": [
-    "src/space/worlds.ts:220"
+    "src/space/worlds.ts:228"
    ]
   },
   {
@@ -13606,7 +13648,7 @@
    "en": "Line (a long streak)",
    "es": "Línea (una franja larga)",
    "where": [
-    "src/space/worlds.ts:212"
+    "src/space/worlds.ts:220"
    ]
   },
   {
@@ -13719,14 +13761,14 @@
    "en": "Lit",
    "es": "Iluminada",
    "where": [
-    "src/sky/sky.ts:672"
+    "src/sky/sky.ts:688"
    ]
   },
   {
    "en": "Little or no link",
    "es": "Casi ninguna relación",
    "where": [
-    "src/learn/learn.ts:2329"
+    "src/learn/learn.ts:2330"
    ]
   },
   {
@@ -13860,15 +13902,15 @@
    "en": "Lock the view",
    "es": "Fijar la vista",
    "where": [
-    "src/space/around.ts:756",
-    "src/space/around.ts:756"
+    "src/space/around.ts:913",
+    "src/space/around.ts:913"
    ]
   },
   {
    "en": "Lock to the orbit",
    "es": "Fijar a la órbita",
    "where": [
-    "src/space/around.ts:782"
+    "src/space/around.ts:954"
    ]
   },
   {
@@ -14415,7 +14457,7 @@
    "es": "Mapa",
    "where": [
     "src/compare/compare.ts:342",
-    "src/learn/learn.ts:1766",
+    "src/learn/learn.ts:1767",
     "src/play/host.ts:158",
     "src/ui/mapstyle.ts:10",
     "src/ui/shell.ts:40"
@@ -14522,7 +14564,7 @@
    "en": "Mare (a \"sea\" of dark lava)",
    "es": "Mare (un «mar» de lava oscura)",
    "where": [
-    "src/space/worlds.ts:203"
+    "src/space/worlds.ts:211"
    ]
   },
   {
@@ -14540,7 +14582,7 @@
     "src/sky/sky.ts:28",
     "src/sky/tonight.ts:42",
     "src/space/orrery.ts:19",
-    "src/space/worlds.ts:88"
+    "src/space/worlds.ts:95"
    ]
   },
   {
@@ -14596,7 +14638,7 @@
    "en": "Master detective! 🕵️",
    "es": "¡Gran detective! 🕵️",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -14756,7 +14798,7 @@
    "en": "Maze of valleys",
    "es": "Laberinto de valles",
    "where": [
-    "src/space/worlds.ts:210"
+    "src/space/worlds.ts:218"
    ]
   },
   {
@@ -14792,7 +14834,7 @@
    "en": "Measured down from the ground, or from the sea’s surface for trenches, wrecks and dives.",
    "es": "Medido desde el suelo, o desde la superficie del mar para fosas, naufragios y buceos.",
    "where": [
-    "src/learn/learn.ts:1831"
+    "src/learn/learn.ts:1832"
    ]
   },
   {
@@ -14927,7 +14969,7 @@
     "src/sky/sky.ts:26",
     "src/sky/tonight.ts:40",
     "src/space/orrery.ts:16",
-    "src/space/worlds.ts:64"
+    "src/space/worlds.ts:71"
    ]
   },
   {
@@ -14948,7 +14990,7 @@
    "en": "Mesa (a flat-topped hill)",
    "es": "Mesa (una colina de cima plana)",
    "where": [
-    "src/space/worlds.ts:211"
+    "src/space/worlds.ts:219"
    ]
   },
   {
@@ -15054,7 +15096,7 @@
    "en": "Midnight zone (1 000–4 000 m)",
    "es": "Zona de medianoche (1 000–4 000 m)",
    "where": [
-    "src/learn/learn.ts:1445"
+    "src/learn/learn.ts:1446"
    ]
   },
   {
@@ -15082,7 +15124,7 @@
    "en": "Milky Way",
    "es": "Vía Láctea",
    "where": [
-    "src/sky/sky.ts:284"
+    "src/sky/sky.ts:300"
    ]
   },
   {
@@ -15254,7 +15296,7 @@
    "en": "Moon",
    "es": "Luna",
    "where": [
-    "src/sky/sky.ts:461",
+    "src/sky/sky.ts:477",
     "src/sky/tonight.ts:533",
     "src/space/space.ts:19"
    ]
@@ -15291,8 +15333,8 @@
    "en": "Moons",
    "es": "Lunas",
    "where": [
-    "src/space/space.ts:164",
-    "src/space/space.ts:353",
+    "src/space/space.ts:168",
+    "src/space/space.ts:357",
     "src/space/tour.ts:184"
    ]
   },
@@ -15413,7 +15455,7 @@
    "en": "Mountain",
    "es": "Montaña",
    "where": [
-    "src/space/worlds.ts:206"
+    "src/space/worlds.ts:214"
    ]
   },
   {
@@ -15478,7 +15520,7 @@
    "en": "Mundora · Daily challenge",
    "es": "Mundora · Reto del día",
    "where": [
-    "src/learn/learn.ts:1598"
+    "src/learn/learn.ts:1599"
    ]
   },
   {
@@ -15546,7 +15588,7 @@
    "es": "Música y baile",
    "where": [
     "src/app/i18n.ts:249",
-    "src/learn/learn.ts:2538",
+    "src/learn/learn.ts:2539",
     "src/modes/stories.ts:201"
    ]
   },
@@ -15759,7 +15801,7 @@
     "src/fill/states.ts:513",
     "src/legacy/legacy.ts:65",
     "src/play/hop.ts:441",
-    "src/sky/sky.ts:281"
+    "src/sky/sky.ts:297"
    ]
   },
   {
@@ -15940,7 +15982,7 @@
    "es": "Desastres naturales",
    "where": [
     "src/app/i18n.ts:246",
-    "src/learn/learn.ts:2538",
+    "src/learn/learn.ts:2539",
     "src/modes/stories.ts:200"
    ]
   },
@@ -15994,7 +16036,7 @@
    "en": "Nature expert! 🐾",
    "es": "¡Experto en naturaleza! 🐾",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -16172,14 +16214,14 @@
    "en": "Needs an internet connection ({0}).",
    "es": "Necesita conexión a internet ({0}).",
    "where": [
-    "src/learn/learn.ts:2907"
+    "src/learn/learn.ts:2908"
    ]
   },
   {
    "en": "Needs an internet connection.",
    "es": "Necesita conexión a internet.",
    "where": [
-    "src/learn/learn.ts:2906"
+    "src/learn/learn.ts:2907"
    ]
   },
   {
@@ -16210,7 +16252,7 @@
     "src/sky/sky.ts:32",
     "src/sky/tonight.ts:46",
     "src/space/orrery.ts:24",
-    "src/space/worlds.ts:152"
+    "src/space/worlds.ts:159"
    ]
   },
   {
@@ -16224,7 +16266,7 @@
    "en": "Net-like pattern",
    "es": "Patrón en red",
    "where": [
-    "src/space/worlds.ts:224"
+    "src/space/worlds.ts:232"
    ]
   },
   {
@@ -16249,10 +16291,17 @@
    ]
   },
   {
-   "en": "New Horizons flew past in 2015 and saw one side well; the far south was in the dark.",
-   "es": "La New Horizons pasó en 2015 y vio bien un lado; el extremo sur estaba a oscuras.",
+   "en": "New Horizons flew past in 2015 and saw one side well; the far south was in the dark and is shown plain.",
+   "es": "La New Horizons pasó en 2015 y vio bien un lado; el extremo sur estaba a oscuras y aparece liso.",
    "where": [
-    "src/space/worlds.ts:163"
+    "src/space/worlds.ts:170"
+   ]
+  },
+  {
+   "en": "New Horizons saw Charon in 2015; its far south was in the dark and is shown plain.",
+   "es": "La New Horizons vio a Caronte en 2015; su extremo sur estaba a oscuras y aparece liso.",
+   "where": [
+    "src/space/worlds.ts:175"
    ]
   },
   {
@@ -16345,7 +16394,7 @@
    "en": "New personal best!",
    "es": "¡Nuevo récord personal!",
    "where": [
-    "src/learn/learn.ts:2057"
+    "src/learn/learn.ts:2058"
    ]
   },
   {
@@ -16369,7 +16418,7 @@
     "src/deeptime/deeptime.ts:1143",
     "src/fill/fill.ts:415",
     "src/fill/states.ts:327",
-    "src/learn/learn.ts:1775",
+    "src/learn/learn.ts:1776",
     "src/master/master.ts:835"
    ]
   },
@@ -16898,9 +16947,9 @@
    "en": "Northern sky",
    "es": "Cielo del norte",
    "where": [
-    "src/sky/sky.ts:275",
-    "src/sky/sky.ts:275",
-    "src/sky/sky.ts:276"
+    "src/sky/sky.ts:291",
+    "src/sky/sky.ts:291",
+    "src/sky/sky.ts:292"
    ]
   },
   {
@@ -16963,7 +17012,7 @@
    "en": "Not quite. ",
    "es": "No exactamente. ",
    "where": [
-    "src/learn/learn.ts:1069"
+    "src/learn/learn.ts:1070"
    ]
   },
   {
@@ -17135,11 +17184,11 @@
    "en": "Now",
    "es": "Ahora",
    "where": [
-    "src/sky/sky.ts:207",
-    "src/sky/sky.ts:544",
+    "src/sky/sky.ts:223",
+    "src/sky/sky.ts:560",
     "src/sky/tonight.ts:262",
     "src/sky/tonight.ts:493",
-    "src/space/around.ts:768"
+    "src/space/around.ts:925"
    ]
   },
   {
@@ -17219,7 +17268,7 @@
    "en": "Ocean explorer! 🌊",
    "es": "¡Explorador del océano! 🌊",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -17264,7 +17313,7 @@
    "en": "Oceanus (a vast lava plain)",
    "es": "Oceanus (una gran llanura de lava)",
    "where": [
-    "src/space/worlds.ts:204"
+    "src/space/worlds.ts:212"
    ]
   },
   {
@@ -17299,14 +17348,14 @@
    "en": "Official in {0}",
    "es": "Oficial en {0}",
    "where": [
-    "src/learn/learn.ts:2468"
+    "src/learn/learn.ts:2469"
    ]
   },
   {
    "en": "Official in {0} and {1} more",
    "es": "Oficial en {0} y {1} más",
    "where": [
-    "src/learn/learn.ts:2467"
+    "src/learn/learn.ts:2468"
    ]
   },
   {
@@ -17370,7 +17419,7 @@
    "en": "Oldest first:",
    "es": "Del más antiguo al más reciente:",
    "where": [
-    "src/learn/learn.ts:2146"
+    "src/learn/learn.ts:2147"
    ]
   },
   {
@@ -17763,7 +17812,7 @@
    "where": [
     "src/features.ts:159",
     "src/learn/learn.ts:288",
-    "src/learn/learn.ts:2839"
+    "src/learn/learn.ts:2840"
    ]
   },
   {
@@ -17826,7 +17875,7 @@
    "en": "One orbit",
    "es": "Una órbita",
    "where": [
-    "src/space/space.ts:351"
+    "src/space/space.ts:355"
    ]
   },
   {
@@ -17854,14 +17903,14 @@
    "en": "One turn",
    "es": "Una vuelta",
    "where": [
-    "src/space/space.ts:349"
+    "src/space/space.ts:353"
    ]
   },
   {
    "en": "One year",
    "es": "Un año",
    "where": [
-    "src/space/space.ts:351"
+    "src/space/space.ts:355"
    ]
   },
   {
@@ -18061,7 +18110,7 @@
    "en": "Origin",
    "es": "Origen",
    "where": [
-    "src/sky/sky.ts:721"
+    "src/sky/sky.ts:737"
    ]
   },
   {
@@ -18118,7 +18167,7 @@
    "en": "Other worlds",
    "es": "Otros mundos",
    "where": [
-    "src/space/space.ts:53"
+    "src/space/space.ts:56"
    ]
   },
   {
@@ -18169,7 +18218,7 @@
    "where": [
     "src/sky/galaxy.ts:121",
     "src/sky/galaxy.ts:122",
-    "src/space/space.ts:146"
+    "src/space/space.ts:149"
    ]
   },
   {
@@ -18190,7 +18239,7 @@
    "en": "Our planet",
    "es": "Nuestro planeta",
    "where": [
-    "src/learn/learn.ts:2538"
+    "src/learn/learn.ts:2539"
    ]
   },
   {
@@ -18198,6 +18247,14 @@
    "es": "Nuestra especie",
    "where": [
     "src/learn/tours.ts:407"
+   ]
+  },
+  {
+   "en": "Our star",
+   "es": "Nuestra estrella",
+   "where": [
+    "src/space/space.ts:19",
+    "src/space/space.ts:166"
    ]
   },
   {
@@ -18408,14 +18465,14 @@
    "en": "Palus (a \"marsh\")",
    "es": "Palus (un «pantano»)",
    "where": [
-    "src/space/worlds.ts:205"
+    "src/space/worlds.ts:213"
    ]
   },
   {
    "en": "Pancake-shaped volcano",
    "es": "Volcán en forma de panqueque",
    "where": [
-    "src/space/worlds.ts:216"
+    "src/space/worlds.ts:224"
    ]
   },
   {
@@ -18592,9 +18649,9 @@
    "en": "Pause",
    "es": "Pausa",
    "where": [
-    "src/learn/learn.ts:2655",
+    "src/learn/learn.ts:2656",
     "src/master/master.ts:837",
-    "src/space/around.ts:815",
+    "src/space/around.ts:985",
     "src/ui/audio.ts:203",
     "src/ui/legend.ts:134"
    ]
@@ -19100,7 +19157,7 @@
    "es": "Epidemias y curas",
    "where": [
     "src/app/i18n.ts:243",
-    "src/learn/learn.ts:2538",
+    "src/learn/learn.ts:2539",
     "src/modes/stories.ts:199"
    ]
   },
@@ -19109,7 +19166,7 @@
    "es": "Llanura",
    "where": [
     "src/layers/landforms.ts:15",
-    "src/space/worlds.ts:208"
+    "src/space/worlds.ts:216"
    ]
   },
   {
@@ -19150,7 +19207,7 @@
    "es": "Planetas",
    "where": [
     "src/sky/galaxy.ts:352",
-    "src/space/space.ts:163",
+    "src/space/space.ts:167",
     "src/space/tour.ts:184"
    ]
   },
@@ -19281,7 +19338,7 @@
    "es": "Meseta",
    "where": [
     "src/layers/landforms.ts:13",
-    "src/space/worlds.ts:208"
+    "src/space/worlds.ts:216"
    ]
   },
   {
@@ -19306,7 +19363,7 @@
    "en": "Play again",
    "es": "Jugar otra vez",
    "where": [
-    "src/learn/learn.ts:2050",
+    "src/learn/learn.ts:2051",
     "src/master/master.ts:871",
     "src/master/master.ts:879",
     "src/play/chain.ts:126",
@@ -19402,7 +19459,7 @@
    "en": "Plume",
    "es": "Penacho",
    "where": [
-    "src/space/worlds.ts:222"
+    "src/space/worlds.ts:230"
    ]
   },
   {
@@ -19418,7 +19475,7 @@
    "where": [
     "src/learn/tours.ts:829",
     "src/space/orrery.ts:25",
-    "src/space/worlds.ts:162"
+    "src/space/worlds.ts:169"
    ]
   },
   {
@@ -19688,14 +19745,14 @@
    "en": "Put them in order: tap the oldest first.",
    "es": "Ordénalos: toca primero el más antiguo.",
    "where": [
-    "src/learn/learn.ts:2146"
+    "src/learn/learn.ts:2147"
    ]
   },
   {
    "en": "Put them in order: tap the shallowest first.",
    "es": "Ordénalas: toca primero la menos profunda.",
    "where": [
-    "src/learn/learn.ts:1503"
+    "src/learn/learn.ts:1504"
    ]
   },
   {
@@ -19723,7 +19780,7 @@
    "en": "Question",
    "es": "Pregunta",
    "where": [
-    "src/learn/learn.ts:1798"
+    "src/learn/learn.ts:1799"
    ]
   },
   {
@@ -19732,14 +19789,14 @@
    "where": [
     "src/learn/learn.ts:286",
     "src/learn/learn.ts:459",
-    "src/learn/learn.ts:1766"
+    "src/learn/learn.ts:1767"
    ]
   },
   {
    "en": "Radiating ridges (astrum)",
    "es": "Crestas en estrella (astrum)",
    "where": [
-    "src/space/worlds.ts:216"
+    "src/space/worlds.ts:224"
    ]
   },
   {
@@ -19866,7 +19923,7 @@
    "es": "Leer en voz alta",
    "where": [
     "src/deeptime/deeptime.ts:1145",
-    "src/learn/learn.ts:2670",
+    "src/learn/learn.ts:2671",
     "src/modes/stories.ts:1733",
     "src/ui/ambient.ts:91"
    ]
@@ -20046,7 +20103,7 @@
    "en": "Relief",
    "es": "Relieve",
    "where": [
-    "src/space/space.ts:103",
+    "src/space/space.ts:106",
     "src/ui/terrain3d.ts:124"
    ]
   },
@@ -20062,7 +20119,7 @@
    "es": "Religiones y filosofías",
    "where": [
     "src/app/i18n.ts:237",
-    "src/learn/learn.ts:2538",
+    "src/learn/learn.ts:2539",
     "src/modes/stories.ts:197"
    ]
   },
@@ -20249,7 +20306,7 @@
    "where": [
     "src/app/i18n.ts:204",
     "src/app/i18n.ts:308",
-    "src/learn/learn.ts:2048",
+    "src/learn/learn.ts:2049",
     "src/play/hilo.ts:169",
     "src/play/lifeguess.ts:143"
    ]
@@ -20321,42 +20378,42 @@
    "en": "Ride along, the Earth ahead",
    "es": "Ir detrás, con la Tierra adelante",
    "where": [
-    "src/space/around.ts:785"
+    "src/space/around.ts:957"
    ]
   },
   {
    "en": "Ride along, the Sun ahead",
    "es": "Ir detrás, con el Sol adelante",
    "where": [
-    "src/space/around.ts:785"
+    "src/space/around.ts:957"
    ]
   },
   {
    "en": "Ride along, {0} ahead",
    "es": "Ir detrás, con {0} adelante",
    "where": [
-    "src/space/around.ts:785"
+    "src/space/around.ts:957"
    ]
   },
   {
    "en": "Ridge",
    "es": "Dorso (una cresta)",
    "where": [
-    "src/space/worlds.ts:207"
+    "src/space/worlds.ts:215"
    ]
   },
   {
    "en": "Right where it grows! ",
    "es": "¡Justo donde crece! ",
    "where": [
-    "src/learn/learn.ts:1735"
+    "src/learn/learn.ts:1736"
    ]
   },
   {
    "en": "Right where it lives! ",
    "es": "¡Justo donde vive! ",
    "where": [
-    "src/learn/learn.ts:1740"
+    "src/learn/learn.ts:1741"
    ]
   },
   {
@@ -20384,7 +20441,7 @@
    "en": "Rille (a long narrow channel)",
    "es": "Rima (un canal largo y estrecho)",
    "where": [
-    "src/space/worlds.ts:206"
+    "src/space/worlds.ts:214"
    ]
   },
   {
@@ -20433,7 +20490,7 @@
    "en": "River channel",
    "es": "Cauce de río",
    "where": [
-    "src/space/worlds.ts:220"
+    "src/space/worlds.ts:228"
    ]
   },
   {
@@ -20779,7 +20836,7 @@
     "src/sky/sky.ts:30",
     "src/sky/tonight.ts:44",
     "src/space/orrery.ts:22",
-    "src/space/worlds.ts:132"
+    "src/space/worlds.ts:139"
    ]
   },
   {
@@ -20900,7 +20957,7 @@
    "en": "Scalloped ridge",
    "es": "Cresta festoneada",
    "where": [
-    "src/space/worlds.ts:219"
+    "src/space/worlds.ts:227"
    ]
   },
   {
@@ -20914,14 +20971,14 @@
    "en": "Scarp",
    "es": "Escarpa",
    "where": [
-    "src/space/worlds.ts:213"
+    "src/space/worlds.ts:221"
    ]
   },
   {
    "en": "Scarp (a cliff)",
    "es": "Escarpe (un acantilado)",
    "where": [
-    "src/space/worlds.ts:207"
+    "src/space/worlds.ts:215"
    ]
   },
   {
@@ -21097,7 +21154,7 @@
    "en": "Search places on {0}",
    "es": "Buscar lugares en {0}",
    "where": [
-    "src/space/space.ts:62"
+    "src/space/space.ts:65"
    ]
   },
   {
@@ -21169,7 +21226,7 @@
    "es": "Verlo en el cielo",
    "where": [
     "src/sky/galaxy.ts:343",
-    "src/sky/sky.ts:666",
+    "src/sky/sky.ts:682",
     "src/sky/tonight.ts:377"
    ]
   },
@@ -21177,28 +21234,28 @@
    "en": "See it in the story",
    "es": "Verlo en la historia",
    "where": [
-    "src/learn/learn.ts:1889"
+    "src/learn/learn.ts:1890"
    ]
   },
   {
    "en": "See it on the map",
    "es": "Verlo en el mapa",
    "where": [
-    "src/learn/learn.ts:2367"
+    "src/learn/learn.ts:2368"
    ]
   },
   {
    "en": "See it on the timeline",
    "es": "Verlo en la línea de tiempo",
    "where": [
-    "src/learn/learn.ts:2262"
+    "src/learn/learn.ts:2263"
    ]
   },
   {
    "en": "See result",
    "es": "Ver resultado",
    "where": [
-    "src/learn/learn.ts:1775"
+    "src/learn/learn.ts:1776"
    ]
   },
   {
@@ -21226,7 +21283,7 @@
    "en": "See the families on the map",
    "es": "Ver las familias en el mapa",
    "where": [
-    "src/learn/learn.ts:2494"
+    "src/learn/learn.ts:2495"
    ]
   },
   {
@@ -21234,7 +21291,7 @@
    "es": "Ver el mapa",
    "where": [
     "src/compare/compare.ts:340",
-    "src/learn/learn.ts:1764",
+    "src/learn/learn.ts:1765",
     "src/play/host.ts:156"
    ]
   },
@@ -21274,7 +21331,7 @@
    "en": "Seen whole from",
    "es": "Se ve completa desde",
    "where": [
-    "src/sky/sky.ts:720"
+    "src/sky/sky.ts:736"
    ]
   },
   {
@@ -21377,7 +21434,7 @@
    "en": "Shallowest first:",
    "es": "De la menos a la más profunda:",
    "where": [
-    "src/learn/learn.ts:1503"
+    "src/learn/learn.ts:1504"
    ]
   },
   {
@@ -21388,7 +21445,7 @@
     "src/fill/states.ts:420",
     "src/fill/states.ts:539",
     "src/guide/guide.ts:287",
-    "src/learn/learn.ts:1596"
+    "src/learn/learn.ts:1597"
    ]
   },
   {
@@ -21571,8 +21628,8 @@
     "src/fill/fill.ts:424",
     "src/fill/states.ts:336",
     "src/learn/learn.ts:788",
-    "src/learn/learn.ts:1849",
-    "src/learn/learn.ts:1883"
+    "src/learn/learn.ts:1850",
+    "src/learn/learn.ts:1884"
    ]
   },
   {
@@ -21646,7 +21703,7 @@
    "en": "Show the text",
    "es": "Mostrar el texto",
    "where": [
-    "src/learn/learn.ts:2661"
+    "src/learn/learn.ts:2662"
    ]
   },
   {
@@ -21674,7 +21731,7 @@
    "en": "Show {0}",
    "es": "Ver {0}",
    "where": [
-    "src/sky/sky.ts:690"
+    "src/sky/sky.ts:706"
    ]
   },
   {
@@ -21865,7 +21922,7 @@
    "en": "Sinus (a \"bay\")",
    "es": "Sinus (una «bahía»)",
    "where": [
-    "src/space/worlds.ts:205"
+    "src/space/worlds.ts:213"
    ]
   },
   {
@@ -21917,8 +21974,8 @@
     "src/app/i18n.ts:336",
     "src/deeptime/deeptime.ts:926",
     "src/sky/galaxy.ts:362",
-    "src/sky/sky.ts:703",
-    "src/sky/sky.ts:716"
+    "src/sky/sky.ts:719",
+    "src/sky/sky.ts:732"
    ]
   },
   {
@@ -21995,21 +22052,21 @@
    "en": "Small crater named by the astronauts",
    "es": "Pequeño cráter nombrado por los astronautas",
    "where": [
-    "src/space/worlds.ts:221"
+    "src/space/worlds.ts:229"
    ]
   },
   {
    "en": "Small dark spot",
    "es": "Pequeña mancha oscura",
    "where": [
-    "src/space/worlds.ts:223"
+    "src/space/worlds.ts:231"
    ]
   },
   {
    "en": "Small dome-shaped hill",
    "es": "Colina en forma de domo",
    "where": [
-    "src/space/worlds.ts:209"
+    "src/space/worlds.ts:217"
    ]
   },
   {
@@ -22193,7 +22250,7 @@
    "en": "Something we still use today.",
    "es": "Algo que todavía usamos hoy.",
    "where": [
-    "src/learn/learn.ts:1833"
+    "src/learn/learn.ts:1834"
    ]
   },
   {
@@ -22276,16 +22333,16 @@
    "en": "Southern sky",
    "es": "Cielo del sur",
    "where": [
-    "src/sky/sky.ts:277",
-    "src/sky/sky.ts:277",
-    "src/sky/sky.ts:278"
+    "src/sky/sky.ts:293",
+    "src/sky/sky.ts:293",
+    "src/sky/sky.ts:294"
    ]
   },
   {
    "en": "Space",
    "es": "Espacio",
    "where": [
-    "src/space/space.ts:56"
+    "src/space/space.ts:59"
    ]
   },
   {
@@ -22321,7 +22378,7 @@
    "en": "Space explorer! 🚀",
    "es": "¡Explorador del espacio! 🚀",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -22342,7 +22399,7 @@
    "en": "Space stories",
    "es": "Historias del espacio",
    "where": [
-    "src/space/space.ts:157"
+    "src/space/space.ts:160"
    ]
   },
   {
@@ -22417,7 +22474,7 @@
    "en": "Sports master! 🏆",
    "es": "¡Maestro del deporte! 🏆",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -22488,16 +22545,15 @@
    "es": "Estrella",
    "where": [
     "src/sky/data.ts:128",
-    "src/sky/sky.ts:694",
-    "src/sky/sky.ts:751",
-    "src/space/space.ts:317"
+    "src/sky/sky.ts:710",
+    "src/sky/sky.ts:767"
    ]
   },
   {
    "en": "Star gazer! ✨",
    "es": "¡Observador de estrellas! ✨",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -22532,7 +22588,7 @@
    "en": "Start again",
    "es": "Empezar de nuevo",
    "where": [
-    "src/learn/learn.ts:2655"
+    "src/learn/learn.ts:2656"
    ]
   },
   {
@@ -22554,8 +22610,8 @@
    "es": "Empezar de nuevo",
    "where": [
     "src/fill/states.ts:535",
-    "src/learn/learn.ts:1524",
-    "src/learn/learn.ts:2169",
+    "src/learn/learn.ts:1525",
+    "src/learn/learn.ts:2170",
     "src/master/master.ts:875"
    ]
   },
@@ -22702,7 +22758,7 @@
    "en": "Stop reading aloud",
    "es": "Dejar de leer en voz alta",
    "where": [
-    "src/learn/learn.ts:2670",
+    "src/learn/learn.ts:2671",
     "src/modes/stories.ts:1733"
    ]
   },
@@ -22759,7 +22815,7 @@
    "en": "Strait",
    "es": "Estrecho",
    "where": [
-    "src/space/worlds.ts:223"
+    "src/space/worlds.ts:231"
    ]
   },
   {
@@ -22808,14 +22864,14 @@
    "en": "Strong: one rises, the other falls",
    "es": "Fuerte: uno sube y el otro baja",
    "where": [
-    "src/learn/learn.ts:2330"
+    "src/learn/learn.ts:2331"
    ]
   },
   {
    "en": "Strong: they rise together",
    "es": "Fuerte: suben juntos",
    "where": [
-    "src/learn/learn.ts:2327"
+    "src/learn/learn.ts:2328"
    ]
   },
   {
@@ -22858,7 +22914,7 @@
    "en": "Sun",
    "es": "Sol",
    "where": [
-    "src/sky/sky.ts:472",
+    "src/sky/sky.ts:488",
     "src/sky/tonight.ts:532"
    ]
   },
@@ -22887,7 +22943,7 @@
    "en": "Sunlit zone (0–200 m)",
    "es": "Zona iluminada (0–200 m)",
    "where": [
-    "src/learn/learn.ts:1445"
+    "src/learn/learn.ts:1446"
    ]
   },
   {
@@ -22946,7 +23002,7 @@
    "es": "Superficie",
    "where": [
     "src/space/space.ts:22",
-    "src/space/space.ts:101"
+    "src/space/space.ts:104"
    ]
   },
   {
@@ -23060,7 +23116,7 @@
    "en": "Tap a colour on the map to see its name.",
    "es": "Toca un color en el mapa para ver su nombre.",
    "where": [
-    "src/learn/learn.ts:2270"
+    "src/learn/learn.ts:2271"
    ]
   },
   {
@@ -23124,22 +23180,22 @@
    "en": "Tap a numbered one to take it back.",
    "es": "Toca uno con número para quitarlo.",
    "where": [
-    "src/learn/learn.ts:1538",
-    "src/learn/learn.ts:2174"
+    "src/learn/learn.ts:1539",
+    "src/learn/learn.ts:2175"
    ]
   },
   {
    "en": "Tap a place where it grows wild (within 300 km of its range to score).",
    "es": "Toca un lugar donde crece silvestre (a menos de 300 km de su área para puntuar).",
    "where": [
-    "src/learn/learn.ts:1885"
+    "src/learn/learn.ts:1886"
    ]
   },
   {
    "en": "Tap a place where it lives (within 300 km of its range to score).",
    "es": "Toca un lugar donde vive (a menos de 300 km de su área para puntuar).",
    "where": [
-    "src/learn/learn.ts:1885"
+    "src/learn/learn.ts:1886"
    ]
   },
   {
@@ -23311,7 +23367,7 @@
    "en": "Tap the country on the globe.",
    "es": "Toca el país en el globo.",
    "where": [
-    "src/learn/learn.ts:1851"
+    "src/learn/learn.ts:1852"
    ]
   },
   {
@@ -23383,7 +23439,7 @@
    "en": "Tap the place on the globe (within 500 km to score).",
    "es": "Toca el lugar en el globo (a menos de 500 km para puntuar).",
    "where": [
-    "src/learn/learn.ts:1885"
+    "src/learn/learn.ts:1886"
    ]
   },
   {
@@ -23555,7 +23611,7 @@
    "en": "Temperature",
    "es": "Temperatura",
    "where": [
-    "src/space/space.ts:354"
+    "src/space/space.ts:358"
    ]
   },
   {
@@ -23632,7 +23688,7 @@
    "en": "Tessera (tiled, folded ground)",
    "es": "Tesela (terreno plegado en mosaico)",
    "where": [
-    "src/space/worlds.ts:214"
+    "src/space/worlds.ts:222"
    ]
   },
   {
@@ -24189,7 +24245,7 @@
    "es": "La Tierra",
    "where": [
     "src/deeptime/deeptime.ts:504",
-    "src/space/around.ts:697",
+    "src/space/around.ts:826",
     "src/space/tour.ts:90",
     "src/space/tour.ts:162"
    ]
@@ -24758,7 +24814,7 @@
     "src/deeptime/deeptime.ts:676",
     "src/learn/tours.ts:816",
     "src/sky/tonight.ts:238",
-    "src/space/worlds.ts:78"
+    "src/space/worlds.ts:85"
    ]
   },
   {
@@ -25096,9 +25152,10 @@
    "es": "El Sol",
    "where": [
     "src/deeptime/deeptime.ts:672",
-    "src/space/around.ts:494",
-    "src/space/around.ts:611",
-    "src/space/tour.ts:188"
+    "src/space/around.ts:540",
+    "src/space/around.ts:681",
+    "src/space/tour.ts:188",
+    "src/space/worlds.ts:66"
    ]
   },
   {
@@ -25540,7 +25597,7 @@
    "en": "The capital of {0} is {1}.",
    "es": "La capital de {0} es {1}.",
    "where": [
-    "src/learn/learn.ts:1992"
+    "src/learn/learn.ts:1993"
    ]
   },
   {
@@ -25717,14 +25774,14 @@
    "en": "The day after",
    "es": "El día siguiente",
    "where": [
-    "src/learn/learn.ts:2830"
+    "src/learn/learn.ts:2831"
    ]
   },
   {
    "en": "The day before",
    "es": "El día anterior",
    "where": [
-    "src/learn/learn.ts:2828"
+    "src/learn/learn.ts:2829"
    ]
   },
   {
@@ -26173,7 +26230,7 @@
    "en": "The globe shows the place.",
    "es": "El globo muestra el lugar.",
    "where": [
-    "src/learn/learn.ts:1830"
+    "src/learn/learn.ts:1831"
    ]
   },
   {
@@ -26579,8 +26636,8 @@
    "en": "The night sky",
    "es": "El cielo nocturno",
    "where": [
-    "src/sky/sky.ts:216",
-    "src/space/space.ts:145"
+    "src/sky/sky.ts:232",
+    "src/space/space.ts:148"
    ]
   },
   {
@@ -26960,7 +27017,7 @@
    "en": "The sky",
    "es": "El cielo",
    "where": [
-    "src/sky/sky.ts:217"
+    "src/sky/sky.ts:233"
    ]
   },
   {
@@ -26983,7 +27040,7 @@
    "where": [
     "src/space/orrery.ts:108",
     "src/space/orrery.ts:109",
-    "src/space/space.ts:139"
+    "src/space/space.ts:142"
    ]
   },
   {
@@ -27011,14 +27068,14 @@
    "en": "The stories need a connection the first time.",
    "es": "Las historias necesitan conexión la primera vez.",
    "where": [
-    "src/learn/learn.ts:2855"
+    "src/learn/learn.ts:2856"
    ]
   },
   {
    "en": "The stories tell nothing of this day yet.",
    "es": "Las historias aún no cuentan nada de este día.",
    "where": [
-    "src/learn/learn.ts:2856"
+    "src/learn/learn.ts:2857"
    ]
   },
   {
@@ -27179,7 +27236,7 @@
    "en": "The trenches (below 6 000 m)",
    "es": "Las fosas (más de 6 000 m)",
    "where": [
-    "src/learn/learn.ts:1445"
+    "src/learn/learn.ts:1446"
    ]
   },
   {
@@ -27334,7 +27391,7 @@
    "en": "The world in {0}",
    "es": "El mundo en {0}",
    "where": [
-    "src/learn/learn.ts:2269"
+    "src/learn/learn.ts:2270"
    ]
   },
   {
@@ -27495,7 +27552,7 @@
    "en": "Thick clouds hide the ground: this map was made by the radar of NASA's Magellan probe, colourised.",
    "es": "Unas nubes espesas ocultan el suelo: este mapa lo hizo el radar de la sonda Magallanes de la NASA, coloreado.",
    "where": [
-    "src/space/worlds.ts:70"
+    "src/space/worlds.ts:77"
    ]
   },
   {
@@ -27684,7 +27741,7 @@
    "en": "This quiz could not load its questions; try again in a moment.",
    "es": "Este concurso no pudo cargar sus preguntas; vuelve a intentarlo en un momento.",
    "where": [
-    "src/learn/learn.ts:1785"
+    "src/learn/learn.ts:1786"
    ]
   },
   {
@@ -27720,8 +27777,8 @@
    "en": "This quiz needs the country data; check your connection.",
    "es": "Este concurso necesita los datos de los países; revisa tu conexión.",
    "where": [
-    "src/learn/learn.ts:2300",
-    "src/learn/learn.ts:2397"
+    "src/learn/learn.ts:2301",
+    "src/learn/learn.ts:2398"
    ]
   },
   {
@@ -27912,7 +27969,7 @@
    "en": "Time keeper! ⏳",
    "es": "¡Guardián del tiempo! ⏳",
    "where": [
-    "src/learn/learn.ts:2045"
+    "src/learn/learn.ts:2046"
    ]
   },
   {
@@ -27998,7 +28055,7 @@
    "es": "Titán",
    "where": [
     "src/learn/tours.ts:825",
-    "src/space/worlds.ts:137"
+    "src/space/worlds.ts:144"
    ]
   },
   {
@@ -28212,7 +28269,7 @@
    "en": "Tongue of a plateau",
    "es": "Lengua de una meseta",
    "where": [
-    "src/space/worlds.ts:218"
+    "src/space/worlds.ts:226"
    ]
   },
   {
@@ -28220,7 +28277,7 @@
    "es": "El cielo de esta noche",
    "where": [
     "src/features.ts:226",
-    "src/sky/sky.ts:288",
+    "src/sky/sky.ts:304",
     "src/sky/tonight.ts:87",
     "src/sky/tonight.ts:94",
     "src/sky/tonight.ts:98"
@@ -28383,7 +28440,7 @@
    "es": "Tritón",
    "where": [
     "src/learn/tours.ts:828",
-    "src/space/worlds.ts:157"
+    "src/space/worlds.ts:164"
    ]
   },
   {
@@ -28425,7 +28482,7 @@
    "en": "Trough",
    "es": "Fosa",
    "where": [
-    "src/space/worlds.ts:209"
+    "src/space/worlds.ts:217"
    ]
   },
   {
@@ -28526,7 +28583,8 @@
    "en": "Turn freely",
    "es": "Girar libremente",
    "where": [
-    "src/space/around.ts:781"
+    "src/space/around.ts:946",
+    "src/space/around.ts:953"
    ]
   },
   {
@@ -28561,7 +28619,7 @@
    "en": "Turn the globe to look around.",
    "es": "Gira el globo para mirar.",
    "where": [
-    "src/learn/learn.ts:961"
+    "src/learn/learn.ts:962"
    ]
   },
   {
@@ -28618,7 +28676,7 @@
    "en": "Twilight zone (200–1 000 m)",
    "es": "Penumbra (200–1 000 m)",
    "where": [
-    "src/learn/learn.ts:1445"
+    "src/learn/learn.ts:1446"
    ]
   },
   {
@@ -29043,7 +29101,7 @@
     "src/sky/sky.ts:31",
     "src/sky/tonight.ts:45",
     "src/space/orrery.ts:23",
-    "src/space/worlds.ts:147"
+    "src/space/worlds.ts:154"
    ]
   },
   {
@@ -29078,8 +29136,8 @@
    "en": "Use my location",
    "es": "Usar mi ubicación",
    "where": [
-    "src/sky/sky.ts:194",
-    "src/sky/sky.ts:209",
+    "src/sky/sky.ts:210",
+    "src/sky/sky.ts:225",
     "src/sky/tonight.ts:255"
    ]
   },
@@ -29123,7 +29181,7 @@
    "es": "Valle",
    "where": [
     "src/layers/landforms.ts:19",
-    "src/space/worlds.ts:206"
+    "src/space/worlds.ts:214"
    ]
   },
   {
@@ -29162,7 +29220,7 @@
     "src/sky/sky.ts:27",
     "src/sky/tonight.ts:41",
     "src/space/orrery.ts:17",
-    "src/space/worlds.ts:69"
+    "src/space/worlds.ts:76"
    ]
   },
   {
@@ -29197,14 +29255,14 @@
    "en": "Vesta",
    "es": "Vesta",
    "where": [
-    "src/space/worlds.ts:102"
+    "src/space/worlds.ts:109"
    ]
   },
   {
    "en": "Vesta is not round: here its map is laid on a ball. Black patches near the north pole were in shadow when Dawn visited.",
    "es": "Vesta no es redondo: aquí su mapa cubre una esfera. Las manchas negras cerca del polo norte estaban en sombra cuando la visitó la Dawn.",
    "where": [
-    "src/space/worlds.ts:103"
+    "src/space/worlds.ts:110"
    ]
   },
   {
@@ -29309,14 +29367,14 @@
    "en": "Visit on the globe",
    "es": "Visitar en el globo",
    "where": [
-    "src/space/space.ts:314"
+    "src/space/space.ts:318"
    ]
   },
   {
    "en": "Visit other worlds on the globe with their real maps: tap a place for its name and story, and see where every spacecraft landed.",
    "es": "Visita otros mundos en el globo con sus mapas reales: toca un lugar para ver su nombre y su historia, y mira dónde aterrizó cada nave.",
    "where": [
-    "src/space/space.ts:161"
+    "src/space/space.ts:164"
    ]
   },
   {
@@ -29366,14 +29424,14 @@
    "en": "Volcanic crater (patera)",
    "es": "Cráter volcánico (pátera)",
    "where": [
-    "src/space/worlds.ts:210"
+    "src/space/worlds.ts:218"
    ]
   },
   {
    "en": "Volcanic vent",
    "es": "Centro eruptivo",
    "where": [
-    "src/space/worlds.ts:222"
+    "src/space/worlds.ts:230"
    ]
   },
   {
@@ -29414,10 +29472,10 @@
    ]
   },
   {
-   "en": "Voyager 2 saw only part of Triton in 1989: the rest of this map is filled in.",
-   "es": "La Voyager 2 vio solo una parte de Tritón en 1989: el resto de este mapa está relleno.",
+   "en": "Voyager 2 saw only Triton’s southern half in 1989; the north, in the dark then, has never been seen and is shown plain.",
+   "es": "La Voyager 2 vio solo la mitad sur de Tritón en 1989; el norte, entonces a oscuras, nunca se ha visto y aparece liso.",
    "where": [
-    "src/space/worlds.ts:158"
+    "src/space/worlds.ts:165"
    ]
   },
   {
@@ -29719,7 +29777,7 @@
    "es": "¿Qué estás oyendo?",
    "where": [
     "src/learn/learn.ts:406",
-    "src/learn/learn.ts:1686"
+    "src/learn/learn.ts:1687"
    ]
   },
   {
@@ -29755,7 +29813,7 @@
    "en": "What is the capital of {0}?",
    "es": "¿Cuál es la capital de {0}?",
    "where": [
-    "src/learn/learn.ts:1827",
+    "src/learn/learn.ts:1828",
     "src/master/master.ts:769"
    ]
   },
@@ -29763,7 +29821,7 @@
    "en": "What is under the pin?",
    "es": "¿Qué hay bajo el alfiler?",
    "where": [
-    "src/learn/learn.ts:1437"
+    "src/learn/learn.ts:1438"
    ]
   },
   {
@@ -29772,7 +29830,7 @@
    "where": [
     "src/sky/galaxy.ts:351",
     "src/sky/galaxy.ts:363",
-    "src/sky/sky.ts:684"
+    "src/sky/sky.ts:700"
    ]
   },
   {
@@ -29898,7 +29956,7 @@
    "en": "When did it happen?",
    "es": "¿Cuándo ocurrió?",
    "where": [
-    "src/learn/learn.ts:1678"
+    "src/learn/learn.ts:1679"
    ]
   },
   {
@@ -29912,15 +29970,15 @@
    "en": "When is the best month to see it?",
    "es": "¿Cuál es el mejor mes para verlo?",
    "where": [
-    "src/learn/learn.ts:1836"
+    "src/learn/learn.ts:1837"
    ]
   },
   {
    "en": "When is this map from?",
    "es": "¿De cuándo es este mapa?",
    "where": [
-    "src/learn/learn.ts:1808",
-    "src/learn/learn.ts:2248"
+    "src/learn/learn.ts:1809",
+    "src/learn/learn.ts:2249"
    ]
   },
   {
@@ -29979,42 +30037,42 @@
    "en": "When was it built?",
    "es": "¿Cuándo se construyó?",
    "where": [
-    "src/learn/learn.ts:1678"
+    "src/learn/learn.ts:1679"
    ]
   },
   {
    "en": "When was it completed?",
    "es": "¿Cuándo se terminó?",
    "where": [
-    "src/learn/learn.ts:1678"
+    "src/learn/learn.ts:1679"
    ]
   },
   {
    "en": "When was it first recorded?",
    "es": "¿Cuándo aparece por primera vez?",
    "where": [
-    "src/learn/learn.ts:1678"
+    "src/learn/learn.ts:1679"
    ]
   },
   {
    "en": "When was it invented?",
    "es": "¿Cuándo se inventó?",
    "where": [
-    "src/learn/learn.ts:1678"
+    "src/learn/learn.ts:1679"
    ]
   },
   {
    "en": "When was it made?",
    "es": "¿Cuándo se hizo?",
    "where": [
-    "src/learn/learn.ts:1678"
+    "src/learn/learn.ts:1679"
    ]
   },
   {
    "en": "When was it written?",
    "es": "¿Cuándo se escribió?",
    "where": [
-    "src/learn/learn.ts:1676"
+    "src/learn/learn.ts:1677"
    ]
   },
   {
@@ -30110,7 +30168,7 @@
    "en": "Where did this happen?",
    "es": "¿Dónde ocurrió?",
    "where": [
-    "src/learn/learn.ts:1677"
+    "src/learn/learn.ts:1678"
    ]
   },
   {
@@ -30153,7 +30211,7 @@
    "en": "Where does it live most often?",
    "es": "¿Dónde vive más a menudo?",
    "where": [
-    "src/learn/learn.ts:1457"
+    "src/learn/learn.ts:1458"
    ]
   },
   {
@@ -30167,42 +30225,42 @@
    "en": "Where does this animal live in the wild?",
    "es": "¿Dónde vive este animal en libertad?",
    "where": [
-    "src/learn/learn.ts:1660"
+    "src/learn/learn.ts:1661"
    ]
   },
   {
    "en": "Where does this dish come from?",
    "es": "¿De dónde es este plato?",
    "where": [
-    "src/learn/learn.ts:1677"
+    "src/learn/learn.ts:1678"
    ]
   },
   {
    "en": "Where does this drink come from?",
    "es": "¿De dónde es esta bebida?",
    "where": [
-    "src/learn/learn.ts:1665"
+    "src/learn/learn.ts:1666"
    ]
   },
   {
    "en": "Where does this instrument come from?",
    "es": "¿De dónde es este instrumento?",
    "where": [
-    "src/learn/learn.ts:1675"
+    "src/learn/learn.ts:1676"
    ]
   },
   {
    "en": "Where does this plant grow wild?",
    "es": "¿Dónde crece silvestre esta planta?",
    "where": [
-    "src/learn/learn.ts:1661"
+    "src/learn/learn.ts:1662"
    ]
   },
   {
    "en": "Where does this spice or sauce come from?",
    "es": "¿De dónde es esta especia o salsa?",
    "where": [
-    "src/learn/learn.ts:1666"
+    "src/learn/learn.ts:1667"
    ]
   },
   {
@@ -30223,15 +30281,15 @@
    "en": "Where in the galaxy",
    "es": "Dónde está en la galaxia",
    "where": [
-    "src/sky/sky.ts:692",
-    "src/sky/sky.ts:707"
+    "src/sky/sky.ts:708",
+    "src/sky/sky.ts:723"
    ]
   },
   {
    "en": "Where in the world is this?",
    "es": "¿Dónde está?",
    "where": [
-    "src/learn/learn.ts:1677"
+    "src/learn/learn.ts:1678"
    ]
   },
   {
@@ -30302,9 +30360,9 @@
    "es": "¿Dónde está {0}?",
    "where": [
     "src/learn/learn.ts:785",
-    "src/learn/learn.ts:1803",
-    "src/learn/learn.ts:1807",
-    "src/learn/learn.ts:1824"
+    "src/learn/learn.ts:1804",
+    "src/learn/learn.ts:1808",
+    "src/learn/learn.ts:1825"
    ]
   },
   {
@@ -30412,7 +30470,7 @@
    "where": [
     "src/sky/elements.ts:95",
     "src/sky/elements.ts:96",
-    "src/space/space.ts:147"
+    "src/space/space.ts:150"
    ]
   },
   {
@@ -30496,28 +30554,28 @@
    "en": "Where was most of this element made?",
    "es": "¿Dónde se formó la mayor parte de este elemento?",
    "where": [
-    "src/learn/learn.ts:1043"
+    "src/learn/learn.ts:1044"
    ]
   },
   {
    "en": "Where was this World Cup’s final played?",
    "es": "¿Dónde se jugó la final de este Mundial?",
    "where": [
-    "src/learn/learn.ts:1673"
+    "src/learn/learn.ts:1674"
    ]
   },
   {
    "en": "Where was this animal first tamed?",
    "es": "¿Dónde se domesticó primero este animal?",
    "where": [
-    "src/learn/learn.ts:1669"
+    "src/learn/learn.ts:1670"
    ]
   },
   {
    "en": "Where was this civilization centred?",
    "es": "¿Dónde tenía su centro esta civilización?",
    "where": [
-    "src/learn/learn.ts:1677"
+    "src/learn/learn.ts:1678"
    ]
   },
   {
@@ -30531,35 +30589,35 @@
    "en": "Where was this found?",
    "es": "¿Dónde se encontró?",
    "where": [
-    "src/learn/learn.ts:1677"
+    "src/learn/learn.ts:1678"
    ]
   },
   {
    "en": "Where was this invented?",
    "es": "¿Dónde se inventó?",
    "where": [
-    "src/learn/learn.ts:1677"
+    "src/learn/learn.ts:1678"
    ]
   },
   {
    "en": "Where was this made?",
    "es": "¿Dónde se hizo?",
    "where": [
-    "src/learn/learn.ts:1677"
+    "src/learn/learn.ts:1678"
    ]
   },
   {
    "en": "Where was this style born?",
    "es": "¿Dónde nació este estilo?",
    "where": [
-    "src/learn/learn.ts:1674"
+    "src/learn/learn.ts:1675"
    ]
   },
   {
    "en": "Where were these Games held?",
    "es": "¿Dónde se celebraron estos Juegos?",
    "where": [
-    "src/learn/learn.ts:1673"
+    "src/learn/learn.ts:1674"
    ]
   },
   {
@@ -30608,7 +30666,7 @@
    "en": "Which World Heritage site is this?",
    "es": "¿Qué sitio del Patrimonio Mundial es este?",
    "where": [
-    "src/learn/learn.ts:1689"
+    "src/learn/learn.ts:1690"
    ]
   },
   {
@@ -30643,7 +30701,7 @@
    "en": "Which book or poem is this line from?",
    "es": "¿De qué libro o poema es esta frase?",
    "where": [
-    "src/learn/learn.ts:1687"
+    "src/learn/learn.ts:1688"
    ]
   },
   {
@@ -30678,7 +30736,7 @@
    "en": "Which civilization does this belong to?",
    "es": "¿A qué civilización pertenece?",
    "where": [
-    "src/learn/learn.ts:1680"
+    "src/learn/learn.ts:1681"
    ]
   },
   {
@@ -30692,7 +30750,7 @@
    "en": "Which constellation is this?",
    "es": "¿Qué constelación es esta?",
    "where": [
-    "src/learn/learn.ts:1039"
+    "src/learn/learn.ts:1040"
    ]
   },
   {
@@ -30706,7 +30764,7 @@
    "en": "Which country do you cross from {0} to {1}?",
    "es": "¿Qué país cruzas para ir de {0} a {1}?",
    "where": [
-    "src/learn/learn.ts:1210"
+    "src/learn/learn.ts:1211"
    ]
   },
   {
@@ -30714,21 +30772,21 @@
    "es": "¿De qué país es este plato?",
    "where": [
     "src/learn/learn.ts:395",
-    "src/learn/learn.ts:1679"
+    "src/learn/learn.ts:1680"
    ]
   },
   {
    "en": "Which country does this drink come from?",
    "es": "¿De qué país es esta bebida?",
    "where": [
-    "src/learn/learn.ts:1667"
+    "src/learn/learn.ts:1668"
    ]
   },
   {
    "en": "Which country does this spice or sauce come from?",
    "es": "¿De qué país es esta especia o salsa?",
    "where": [
-    "src/learn/learn.ts:1668"
+    "src/learn/learn.ts:1669"
    ]
   },
   {
@@ -30736,7 +30794,7 @@
    "es": "¿De qué país es esta bandera?",
    "where": [
     "src/learn/learn.ts:386",
-    "src/learn/learn.ts:1825"
+    "src/learn/learn.ts:1826"
    ]
   },
   {
@@ -30793,7 +30851,7 @@
    "en": "Which disaster is it part of?",
    "es": "¿De qué desastre forma parte?",
    "where": [
-    "src/learn/learn.ts:1684"
+    "src/learn/learn.ts:1685"
    ]
   },
   {
@@ -30814,7 +30872,7 @@
    "en": "Which epidemic is it part of?",
    "es": "¿De qué epidemia forma parte?",
    "where": [
-    "src/learn/learn.ts:1683"
+    "src/learn/learn.ts:1684"
    ]
   },
   {
@@ -30828,7 +30886,7 @@
    "en": "Which era does this belong to?",
    "es": "¿A qué época pertenece?",
    "where": [
-    "src/learn/learn.ts:1691"
+    "src/learn/learn.ts:1692"
    ]
   },
   {
@@ -30842,7 +30900,7 @@
    "en": "Which faith or school of thought does it belong to?",
    "es": "¿A qué religión o escuela de pensamiento pertenece?",
    "where": [
-    "src/learn/learn.ts:1682"
+    "src/learn/learn.ts:1683"
    ]
   },
   {
@@ -30856,8 +30914,8 @@
    "en": "Which goes deeper?",
    "es": "¿Cuál llega más hondo?",
    "where": [
-    "src/learn/learn.ts:1831",
-    "src/learn/learn.ts:2097"
+    "src/learn/learn.ts:1832",
+    "src/learn/learn.ts:2098"
    ]
   },
   {
@@ -30934,7 +30992,7 @@
    "en": "Which instrument are you hearing?",
    "es": "¿Qué instrumento estás oyendo?",
    "where": [
-    "src/learn/learn.ts:1686"
+    "src/learn/learn.ts:1687"
    ]
   },
   {
@@ -30976,7 +31034,7 @@
    "en": "Which journey or trade route is it from?",
    "es": "¿De qué viaje o ruta comercial es?",
    "where": [
-    "src/learn/learn.ts:1681"
+    "src/learn/learn.ts:1682"
    ]
   },
   {
@@ -30997,7 +31055,7 @@
    "en": "Which language family does it belong to?",
    "es": "¿A qué familia de lenguas pertenece?",
    "where": [
-    "src/learn/learn.ts:2483"
+    "src/learn/learn.ts:2484"
    ]
   },
   {
@@ -31033,14 +31091,14 @@
    "es": "¿En qué museo está?",
    "where": [
     "src/learn/learn.ts:410",
-    "src/learn/learn.ts:1287"
+    "src/learn/learn.ts:1288"
    ]
   },
   {
    "en": "Which nation topped the medal table?",
    "es": "¿Qué país encabezó el medallero?",
    "where": [
-    "src/learn/learn.ts:1672"
+    "src/learn/learn.ts:1673"
    ]
   },
   {
@@ -31061,7 +31119,7 @@
    "en": "Which of these animals lives here, in the wild?",
    "es": "¿Cuál de estos animales vive aquí, en libertad?",
    "where": [
-    "src/learn/learn.ts:1830"
+    "src/learn/learn.ts:1831"
    ]
   },
   {
@@ -31082,7 +31140,7 @@
    "en": "Which piece are you hearing?",
    "es": "¿Qué obra estás oyendo?",
    "where": [
-    "src/learn/learn.ts:1686"
+    "src/learn/learn.ts:1687"
    ]
   },
   {
@@ -31103,7 +31161,7 @@
    "en": "Which script is this?",
    "es": "¿Qué escritura es esta?",
    "where": [
-    "src/learn/learn.ts:1685"
+    "src/learn/learn.ts:1686"
    ]
   },
   {
@@ -31131,7 +31189,7 @@
    "en": "Which style of music is this?",
    "es": "¿Qué estilo de música es este?",
    "where": [
-    "src/learn/learn.ts:1686"
+    "src/learn/learn.ts:1687"
    ]
   },
   {
@@ -31139,7 +31197,7 @@
    "es": "¿Qué mundo es este?",
    "where": [
     "src/learn/learn.ts:421",
-    "src/learn/learn.ts:958"
+    "src/learn/learn.ts:959"
    ]
   },
   {
@@ -31169,7 +31227,7 @@
    "es": "¿Quién nos dio esto?",
    "where": [
     "src/learn/learn.ts:419",
-    "src/learn/learn.ts:1833",
+    "src/learn/learn.ts:1834",
     "src/legacy/legacy.ts:311"
    ]
   },
@@ -31178,14 +31236,14 @@
    "es": "¿Quién lo inventó?",
    "where": [
     "src/learn/learn.ts:420",
-    "src/learn/learn.ts:1690"
+    "src/learn/learn.ts:1691"
    ]
   },
   {
    "en": "Who landed here, on {0}?",
    "es": "¿Quién aterrizó aquí, en {0}?",
    "where": [
-    "src/learn/learn.ts:959"
+    "src/learn/learn.ts:960"
    ]
   },
   {
@@ -31213,7 +31271,7 @@
    "en": "Who made this?",
    "es": "¿Quién hizo esta obra?",
    "where": [
-    "src/learn/learn.ts:1688"
+    "src/learn/learn.ts:1689"
    ]
   },
   {
@@ -31241,7 +31299,7 @@
    "en": "Who won this World Cup?",
    "es": "¿Quién ganó este Mundial?",
    "where": [
-    "src/learn/learn.ts:1672"
+    "src/learn/learn.ts:1673"
    ]
   },
   {
@@ -31299,7 +31357,7 @@
    "en": "Wide lowland plain",
    "es": "Gran llanura baja",
    "where": [
-    "src/space/worlds.ts:218"
+    "src/space/worlds.ts:226"
    ]
   },
   {
@@ -31348,7 +31406,7 @@
    "en": "Wild world",
    "es": "Mundo salvaje",
    "where": [
-    "src/learn/learn.ts:2538"
+    "src/learn/learn.ts:2539"
    ]
   },
   {
@@ -31398,7 +31456,7 @@
    "en": "Winding ridge",
    "es": "Cresta sinuosa",
    "where": [
-    "src/space/worlds.ts:218"
+    "src/space/worlds.ts:226"
    ]
   },
   {
@@ -31673,7 +31731,7 @@
    "es": "Escritura y lenguas",
    "where": [
     "src/app/i18n.ts:240",
-    "src/learn/learn.ts:2538",
+    "src/learn/learn.ts:2539",
     "src/modes/stories.ts:198"
    ]
   },
@@ -31797,7 +31855,7 @@
    "en": "You tapped {0}, {1} km away.",
    "es": "Tocaste {0}, a {1} km.",
    "where": [
-    "src/learn/learn.ts:2009"
+    "src/learn/learn.ts:2010"
    ]
   },
   {
@@ -31891,7 +31949,7 @@
    "en": "Your location",
    "es": "Tu ubicación",
    "where": [
-    "src/sky/sky.ts:251",
+    "src/sky/sky.ts:267",
     "src/sky/tonight.ts:110",
     "src/sky/tonight.ts:125"
    ]
@@ -31931,7 +31989,7 @@
    "en": "Your review · Master the world",
    "es": "Tu repaso · Domina el mundo",
    "where": [
-    "src/learn/learn.ts:1813"
+    "src/learn/learn.ts:1814"
    ]
   },
   {
@@ -32078,8 +32136,8 @@
    "en": "Done",
    "es": "Terminar",
    "where": [
-    "src/learn/learn.ts:2052",
-    "src/learn/learn.ts:2068"
+    "src/learn/learn.ts:2053",
+    "src/learn/learn.ts:2069"
    ]
   },
   {
@@ -32232,7 +32290,7 @@
    "en": "Streak",
    "es": "Franja",
    "where": [
-    "src/space/worlds.ts:223"
+    "src/space/worlds.ts:231"
    ]
   },
   {
@@ -32410,14 +32468,14 @@
    "en": "anywhere north of {0}",
    "es": "cualquier lugar al norte de {0}",
    "where": [
-    "src/sky/sky.ts:802"
+    "src/sky/sky.ts:818"
    ]
   },
   {
    "en": "anywhere south of {0}",
    "es": "cualquier lugar al sur de {0}",
    "where": [
-    "src/sky/sky.ts:803"
+    "src/sky/sky.ts:819"
    ]
   },
   {
@@ -32461,14 +32519,14 @@
    "en": "atomic number",
    "es": "número atómico",
    "where": [
-    "src/learn/learn.ts:1044"
+    "src/learn/learn.ts:1045"
    ]
   },
   {
    "en": "au",
    "es": "ua",
    "where": [
-    "src/sky/sky.ts:673",
+    "src/sky/sky.ts:689",
     "src/space/orrery.ts:320",
     "src/space/orrery.ts:321"
    ]
@@ -32492,7 +32550,7 @@
    "en": "backwards",
    "es": "al revés",
    "where": [
-    "src/space/space.ts:349"
+    "src/space/space.ts:353"
    ]
   },
   {
@@ -32529,7 +32587,7 @@
    "en": "between {0} and {1}",
    "es": "entre {0} y {1}",
    "where": [
-    "src/sky/sky.ts:804"
+    "src/sky/sky.ts:820"
    ]
   },
   {
@@ -32630,7 +32688,7 @@
    "es": "países",
    "where": [
     "src/compare/compare.ts:40",
-    "src/learn/learn.ts:2372",
+    "src/learn/learn.ts:2373",
     "src/master/master.ts:190"
    ]
   },
@@ -32824,7 +32882,7 @@
    "en": "Correct! All four in order.",
    "es": "¡Correcto! Las cuatro en orden.",
    "where": [
-    "src/learn/learn.ts:1535"
+    "src/learn/learn.ts:1536"
    ]
   },
   {
@@ -32953,7 +33011,7 @@
    "en": "it grows wild in the green squares",
    "es": "crece silvestre en los cuadros verdes",
    "where": [
-    "src/learn/learn.ts:1736"
+    "src/learn/learn.ts:1737"
    ]
   },
   {
@@ -32967,7 +33025,7 @@
    "en": "it lives in the orange squares",
    "es": "vive en los cuadros naranjas",
    "where": [
-    "src/learn/learn.ts:1741"
+    "src/learn/learn.ts:1742"
    ]
   },
   {
@@ -33026,8 +33084,8 @@
    "es": "años luz",
    "where": [
     "src/sky/galaxy.ts:38",
-    "src/sky/sky.ts:683",
-    "src/sky/sky.ts:702"
+    "src/sky/sky.ts:699",
+    "src/sky/sky.ts:718"
    ]
   },
   {
@@ -33058,8 +33116,8 @@
    "en": "magnitude",
    "es": "magnitud",
    "where": [
-    "src/sky/sky.ts:673",
-    "src/sky/sky.ts:682"
+    "src/sky/sky.ts:689",
+    "src/sky/sky.ts:698"
    ]
   },
   {
@@ -33109,9 +33167,9 @@
    "en": "million km",
    "es": "millones de km",
    "where": [
-    "src/sky/sky.ts:673",
+    "src/sky/sky.ts:689",
     "src/space/orrery.ts:320",
-    "src/space/space.ts:352"
+    "src/space/space.ts:356"
    ]
   },
   {
@@ -33119,7 +33177,7 @@
    "es": "millones de años luz",
    "where": [
     "src/sky/galaxy.ts:37",
-    "src/sky/sky.ts:702"
+    "src/sky/sky.ts:718"
    ]
   },
   {
@@ -33212,10 +33270,10 @@
    "es": "sin respuesta",
    "where": [
     "src/learn/learn.ts:769",
-    "src/learn/learn.ts:994",
-    "src/learn/learn.ts:1075",
-    "src/learn/learn.ts:1730",
-    "src/learn/learn.ts:2002"
+    "src/learn/learn.ts:995",
+    "src/learn/learn.ts:1076",
+    "src/learn/learn.ts:1731",
+    "src/learn/learn.ts:2003"
    ]
   },
   {
@@ -33289,7 +33347,7 @@
    "en": "of Earth",
    "es": "de la Tierra",
    "where": [
-    "src/space/space.ts:345"
+    "src/space/space.ts:349"
    ]
   },
   {
@@ -33305,7 +33363,7 @@
    "en": "Landing site",
    "es": "Sitio de alunizaje",
    "where": [
-    "src/space/worlds.ts:221"
+    "src/space/worlds.ts:229"
    ]
   },
   {
@@ -33319,7 +33377,7 @@
    "en": "on the list since {0}",
    "es": "en la lista desde {0}",
    "where": [
-    "src/learn/learn.ts:1954"
+    "src/learn/learn.ts:1955"
    ]
   },
   {
@@ -33500,10 +33558,10 @@
    "es": "correcto",
    "where": [
     "src/learn/learn.ts:803",
-    "src/learn/learn.ts:998",
-    "src/learn/learn.ts:1079",
-    "src/learn/learn.ts:2117",
-    "src/learn/learn.ts:2227"
+    "src/learn/learn.ts:999",
+    "src/learn/learn.ts:1080",
+    "src/learn/learn.ts:2118",
+    "src/learn/learn.ts:2228"
    ]
   },
   {
@@ -33559,7 +33617,7 @@
    "en": "since {0} million years ago",
    "es": "desde hace {0} millones de años",
    "where": [
-    "src/learn/learn.ts:1654"
+    "src/learn/learn.ts:1655"
    ]
   },
   {
@@ -33617,7 +33675,7 @@
    "en": "stops",
    "es": "paradas",
    "where": [
-    "src/learn/learn.ts:2545"
+    "src/learn/learn.ts:2546"
    ]
   },
   {
@@ -33799,7 +33857,7 @@
    "en": "thousand km",
    "es": "mil km",
    "where": [
-    "src/space/space.ts:352"
+    "src/space/space.ts:356"
    ]
   },
   {
@@ -33838,8 +33896,8 @@
    "en": "Play",
    "es": "Reproducir",
    "where": [
-    "src/learn/learn.ts:2655",
-    "src/space/around.ts:815",
+    "src/learn/learn.ts:2656",
+    "src/space/around.ts:985",
     "src/ui/legend.ts:134"
    ]
   },
@@ -33986,10 +34044,10 @@
    "es": "incorrecto",
    "where": [
     "src/learn/learn.ts:803",
-    "src/learn/learn.ts:998",
-    "src/learn/learn.ts:1079",
-    "src/learn/learn.ts:2117",
-    "src/learn/learn.ts:2227"
+    "src/learn/learn.ts:999",
+    "src/learn/learn.ts:1080",
+    "src/learn/learn.ts:2118",
+    "src/learn/learn.ts:2228"
    ]
   },
   {
@@ -34004,19 +34062,19 @@
    "en": "you said {0}",
    "es": "dijiste {0}",
    "where": [
-    "src/learn/learn.ts:994",
-    "src/learn/learn.ts:1075",
-    "src/learn/learn.ts:2094",
-    "src/learn/learn.ts:2101",
-    "src/learn/learn.ts:2226"
+    "src/learn/learn.ts:995",
+    "src/learn/learn.ts:1076",
+    "src/learn/learn.ts:2095",
+    "src/learn/learn.ts:2102",
+    "src/learn/learn.ts:2227"
    ]
   },
   {
    "en": "you: {0}",
    "es": "tú: {0}",
    "where": [
-    "src/learn/learn.ts:1512",
-    "src/learn/learn.ts:2163"
+    "src/learn/learn.ts:1513",
+    "src/learn/learn.ts:2164"
    ]
   },
   {
@@ -34268,7 +34326,7 @@
    "en": "{0} below sea level",
    "es": "{0} bajo el nivel del mar",
    "where": [
-    "src/learn/learn.ts:1424"
+    "src/learn/learn.ts:1425"
    ]
   },
   {
@@ -34459,7 +34517,7 @@
    "en": "{0} evenings",
    "es": "las noches de {0}",
    "where": [
-    "src/sky/sky.ts:719"
+    "src/sky/sky.ts:735"
    ]
   },
   {
@@ -34474,6 +34532,13 @@
    "es": "{0} naufragios famosos con su historia y {1} más de Wikidata (los puntos grises).",
    "where": [
     "src/layers/packs/ocean.ts:417"
+   ]
+  },
+  {
+   "en": "{0} full orbits since today",
+   "es": "{0} vueltas completas desde hoy",
+   "where": [
+    "src/space/around.ts:1032"
    ]
   },
   {
@@ -34602,7 +34667,7 @@
    "es": "{0} km",
    "where": [
     "src/learn/learn.ts:342",
-    "src/space/around.ts:699"
+    "src/space/around.ts:828"
    ]
   },
   {
@@ -34617,28 +34682,28 @@
    "es": "a {0} km",
    "where": [
     "src/deeptime/deeptime.ts:676",
-    "src/learn/learn.ts:1730"
+    "src/learn/learn.ts:1731"
    ]
   },
   {
    "en": "{0} km away. ",
    "es": "A {0} km. ",
    "where": [
-    "src/learn/learn.ts:1733"
+    "src/learn/learn.ts:1734"
    ]
   },
   {
    "en": "{0} km from where it grows. ",
    "es": "A {0} km de donde crece. ",
    "where": [
-    "src/learn/learn.ts:1735"
+    "src/learn/learn.ts:1736"
    ]
   },
   {
    "en": "{0} km from where it lives. ",
    "es": "A {0} km de donde vive. ",
    "where": [
-    "src/learn/learn.ts:1740"
+    "src/learn/learn.ts:1741"
    ]
   },
   {
@@ -34652,7 +34717,7 @@
    "en": "{0} lives here: its range is in orange.",
    "es": "{0} vive aquí: su área está en naranja.",
    "where": [
-    "src/learn/learn.ts:1972"
+    "src/learn/learn.ts:1973"
    ]
   },
   {
@@ -34687,8 +34752,8 @@
    "en": "{0} million km",
    "es": "{0} millones de km",
    "where": [
-    "src/space/around.ts:699",
-    "src/space/around.ts:699"
+    "src/space/around.ts:828",
+    "src/space/around.ts:828"
    ]
   },
   {
@@ -34824,8 +34889,8 @@
    "en": "{0} of {1} in the right place.",
    "es": "{0} de {1} en su lugar.",
    "where": [
-    "src/learn/learn.ts:1535",
-    "src/learn/learn.ts:2204"
+    "src/learn/learn.ts:1536",
+    "src/learn/learn.ts:2205"
    ]
   },
   {
@@ -34882,6 +34947,27 @@
    ]
   },
   {
+   "en": "{0} round the Earth: {1}",
+   "es": "{0} alrededor de la Tierra: {1}",
+   "where": [
+    "src/space/around.ts:1028"
+   ]
+  },
+  {
+   "en": "{0} round the Sun: {1}",
+   "es": "{0} alrededor del Sol: {1}",
+   "where": [
+    "src/space/around.ts:1029"
+   ]
+  },
+  {
+   "en": "{0} round {1}: {2}",
+   "es": "{0} alrededor de {1}: {2}",
+   "where": [
+    "src/space/around.ts:1029"
+   ]
+  },
+  {
    "en": "{0} routes against the clock: up to 240 extra points a route for speed.",
    "es": "{0} rutas contra el reloj: hasta 240 puntos más por ruta por la rapidez.",
    "where": [
@@ -34921,7 +35007,7 @@
    "en": "{0} square degrees, {1} of 88",
    "es": "{0} grados cuadrados, el {2}.º de 88",
    "where": [
-    "src/sky/sky.ts:716"
+    "src/sky/sky.ts:732"
    ]
   },
   {
@@ -35168,7 +35254,7 @@
    "en": "{0}: a language of the {1} family{2, select, none {} other {, like {2}}}.",
    "es": "{0}: una lengua de la familia {1}{2, select, none {} other {, como {2}}}.",
    "where": [
-    "src/learn/learn.ts:2456"
+    "src/learn/learn.ts:2457"
    ]
   },
   {
@@ -35190,7 +35276,7 @@
    "en": "{0}: most often about {1} down, from {2} to {3}. {4}",
    "es": "{0}: casi siempre a unos {1}, de {2} a {3}. {4}",
    "where": [
-    "src/learn/learn.ts:1458"
+    "src/learn/learn.ts:1459"
    ]
   },
   {
@@ -35277,7 +35363,7 @@
    "en": "{0}° up, toward the {1}",
    "es": "A {0}° de altura, hacia {1}",
    "where": [
-    "src/sky/sky.ts:657"
+    "src/sky/sky.ts:673"
    ]
   },
   {
@@ -35298,7 +35384,7 @@
    "en": "{0}–{1} million years ago",
    "es": "hace {0}–{1} millones de años",
    "where": [
-    "src/learn/learn.ts:1654"
+    "src/learn/learn.ts:1655"
    ]
   },
   {

@@ -1,6 +1,7 @@
 // Builds the other worlds' data in public/data/worlds/ from the sources fetched by fetch_worlds.sh:
 //   - <id>-4k.jpg / <id>-2k.jpg: each world's map, equirectangular from 180°W to 180°E (east to the right), 90°N at the top;
-//     <id>-elev-2k.jpg: the Moon's and Mars's colour-shaded heights; venus-clouds-2k.jpg;
+//     <id>-elev-2k.jpg: the Moon's and Mars's colour-shaded heights; venus-clouds-2k.jpg; sun-4k/2k.jpg, drawn here;
+//   - (fill) the parts of Pluto, Charon and Triton no spacecraft saw, painted plain instead of black;
 //   - thumbs/<id>.png: a small round picture of each world, for the Space panel;
 //   - <id>-names.json: the IAU names of its places (see namesOf), for labels, taps and search;
 //   - <id>/h/<z>/<y>/<x>.webp: the Moon's and Mars's heights as Terrarium tiles (lossless WebP, in steps of 16 m; an
@@ -8,7 +9,8 @@
 //     for the 3D view;
 //   - previews (with --preview <dir>): each map with its biggest named places marked, to check that it lines up.
 //
-//   node scripts/data/space/build-worlds.mjs <src> [--only textures,thumbs,names,heights] [--preview <dir>] [--world moon,mars]
+//   node scripts/data/space/build-worlds.mjs <src> [--only textures,fill,thumbs,names,heights] [--preview <dir>] [--world moon,mars]
+//   (the Sun alone needs no sources: --only textures,thumbs --world sun)
 import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -46,13 +48,17 @@ const WORLDS = [
   { id: 'titan', usgs: 'Titan_ISS_P19658_Mosaic_Global_4km', sizes: [4096, 2048], iau: 'TITAN', r: 2574.7, face: 0 },
   { id: 'ceres', usgs: 'Ceres_Dawn_FC_DLR_global_20ppd_Oct2015', sizes: [4096, 2048], iau: 'CERES', r: 469.7, face: 0 },
   { id: 'vesta', trek: 'Vesta_Dawn_HAMO_TrueClr_DLR_global_74ppd_IAU', sizes: [2048], iau: 'VESTA', r: 262.7, face: 0 },
-  { id: 'pluto', usgs: 'Pluto_NewHorizons_Global_Mosaic_300m_Jul2017_8bit', sizes: [4096, 2048], iau: 'PLUTO', r: 1188.3, face: 180 },
-  { id: 'charon', usgs: 'Charon_NewHorizons_Global_Mosaic_300m_Jul2017_8bit', sizes: [2048], iau: 'CHARON', r: 606, face: 0 },
-  { id: 'triton', usgs: 'Triton_Voyager2_ClrMosaic_GlobalFill_600m', sizes: [2048], iau: 'TRITON', r: 1353.4, face: 0 },
+  // `unseen`: parts no spacecraft saw (the far south of Pluto and Charon, Triton's north) are black in the mosaics; the
+  // fill step paints them plain (fillUnseen).
+  { id: 'pluto', usgs: 'Pluto_NewHorizons_Global_Mosaic_300m_Jul2017_8bit', sizes: [4096, 2048], iau: 'PLUTO', r: 1188.3, face: 180, unseen: true },
+  { id: 'charon', usgs: 'Charon_NewHorizons_Global_Mosaic_300m_Jul2017_8bit', sizes: [2048], iau: 'CHARON', r: 606, face: 0, unseen: true },
+  { id: 'triton', usgs: 'Triton_Voyager2_ClrMosaic_GlobalFill_600m', sizes: [2048], iau: 'TRITON', r: 1353.4, face: 0, unseen: true },
   { id: 'jupiter', sss: '8k_jupiter.jpg', sizes: [4096, 2048], r: 69911, face: 0 },
   { id: 'saturn', sss: '8k_saturn.jpg', sizes: [4096, 2048], r: 58232, face: 0 },
   { id: 'uranus', sss: '2k_uranus.jpg', sizes: [2048], r: 25362, face: 0 },
   { id: 'neptune', sss: '2k_neptune.jpg', sizes: [2048], r: 24622, face: 0 },
+  // The Sun (v0.54.0): drawn here (sunMap), with no source to fetch; it lights itself (its thumbnail too).
+  { id: 'sun', drawn: true, sizes: [4096, 2048], r: 695700, face: 0, selfLit: true },
 ].filter((w) => !worldsWanted || worldsWanted.includes(w.id));
 
 const log = (...a) => console.log(...a);
@@ -109,7 +115,211 @@ async function mapOf(w) {
     return sharp(await roll.png().toBuffer());
   }
   if (w.sss) return sharp(path.join(SRC, 'sss', w.sss));
+  if (w.drawn) return sunMap(4096, 2048);
   throw new Error(w.id);
+}
+
+// ---- the Sun (v0.54.0): its look, drawn -----------------------------------------------------------
+
+/** A small seeded random number generator (the same map every build). */
+function rng(seed) {
+  let a = seed >>> 0;
+  return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+}
+const hash3 = (x, y, z, s) => { let h = Math.imul(x, 374761393) ^ Math.imul(y, 668265263) ^ Math.imul(z, 2147483647) ^ Math.imul(s, 1274126177); h = Math.imul(h ^ (h >>> 13), 1274126177); return ((h ^ (h >>> 16)) >>> 0) / 4294967296; };
+
+/**
+ * The Sun's surface as an equirectangular map: granules (cells of hot gas rising, bright, with darker lanes where it
+ * sinks), a gentle larger mottling, and a few groups of sunspots in the two belts where they appear (5–35° north and
+ * south), each a dark core in a lighter rim. Worked out on the sphere, so granules stay round near the poles. The
+ * limb's darkening is not in the map: the app shades the disc as it is seen. Not a real day's Sun, which changes by the
+ * hour, but how its surface looks.
+ */
+async function sunMap(W, H) {
+  const out = Buffer.alloc(W * H * 3);
+  const GR = 110; // granule cells across the sphere's radius
+  const R = rng(20260126);
+  // Sunspot groups: latitude, longitude, spots (offset along the group, size).
+  const spots = [];
+  for (let g = 0; g < 9; g++) {
+    const lat = (R() < 0.5 ? -1 : 1) * (6 + R() * 26), lon = -180 + R() * 360, n = 1 + Math.floor(R() * 4), tilt = (R() - 0.5) * 20;
+    for (let k = 0; k < n; k++) {
+      const along = (k - (n - 1) / 2) * (2.2 + R() * 2.5);
+      spots.push({ lat: lat + Math.sin(tilt * Math.PI / 180) * along * 0.4 + (R() - 0.5), lon: lon + along, r: (k === 0 ? 1.2 : 0.5) + R() * 1.1 });
+    }
+  }
+  const sp = spots.map((s) => { const la = s.lat * Math.PI / 180, lo = s.lon * Math.PI / 180; return { v: [Math.cos(la) * Math.cos(lo), Math.cos(la) * Math.sin(lo), Math.sin(la)], r: s.r * Math.PI / 180 }; });
+  const smooth = (e0, e1, x) => { const t = Math.max(0, Math.min(1, (x - e0) / (e1 - e0))); return t * t * (3 - 2 * t); };
+  // Larger, softer mottling: value noise on the sphere.
+  const vnoise = (x, y, z, s) => {
+    const xi = Math.floor(x), yi = Math.floor(y), zi = Math.floor(z), xf = x - xi, yf = y - yi, zf = z - zi;
+    const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf), w = zf * zf * (3 - 2 * zf);
+    let acc = 0;
+    for (let dz = 0; dz < 2; dz++) for (let dy = 0; dy < 2; dy++) for (let dx = 0; dx < 2; dx++)
+      acc += hash3(xi + dx, yi + dy, zi + dz, s) * (dx ? u : 1 - u) * (dy ? v : 1 - v) * (dz ? w : 1 - w);
+    return acc;
+  };
+  for (let y = 0; y < H; y++) {
+    const lat = (0.5 - (y + 0.5) / H) * Math.PI, cl = Math.cos(lat), sl = Math.sin(lat);
+    for (let x = 0; x < W; x++) {
+      const lon = ((x + 0.5) / W - 0.5) * 2 * Math.PI;
+      const px = cl * Math.cos(lon), py = cl * Math.sin(lon), pz = sl;
+      // Granules: the two nearest jittered cell points (Worley); the lanes are where they are about as near.
+      const gx = px * GR, gy = py * GR, gz = pz * GR, ix = Math.floor(gx), iy = Math.floor(gy), iz = Math.floor(gz);
+      let f1 = 9, f2 = 9;
+      for (let dz = -1; dz <= 1; dz++) for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+        const cx = ix + dx, cy = iy + dy, cz = iz + dz;
+        const qx = cx + hash3(cx, cy, cz, 1), qy = cy + hash3(cx, cy, cz, 2), qz = cz + hash3(cx, cy, cz, 3);
+        const d = (qx - gx) ** 2 + (qy - gy) ** 2 + (qz - gz) ** 2;
+        if (d < f1) { f2 = f1; f1 = d; } else if (d < f2) f2 = d;
+      }
+      const lane = smooth(0.0, 0.22, Math.sqrt(f2) - Math.sqrt(f1));
+      const mott = vnoise(px * 9 + 50, py * 9 + 50, pz * 9 + 50, 7) * 0.6 + vnoise(px * 23 + 50, py * 23 + 50, pz * 23 + 50, 8) * 0.4;
+      let b = 0.80 + 0.22 * lane + 0.16 * (mott - 0.5);
+      // Sunspots: a dark core (umbra) in a lighter rim (penumbra), with faculae (bright patches) around the groups.
+      let umb = 0, pen = 0, fac = 0;
+      for (const s of sp) {
+        const d = Math.acos(Math.max(-1, Math.min(1, px * s.v[0] + py * s.v[1] + pz * s.v[2])));
+        if (d > s.r * 6) continue;
+        const ragged = 1 + 0.18 * (vnoise(px * 120, py * 120, pz * 120, 11) - 0.5);
+        umb = Math.max(umb, 1 - smooth(0.36 * s.r, 0.46 * s.r, d * ragged));
+        pen = Math.max(pen, 1 - smooth(0.85 * s.r, s.r, d * ragged));
+        fac = Math.max(fac, (1 - smooth(s.r, 5 * s.r, d)) * vnoise(px * 40, py * 40, pz * 40, 12));
+      }
+      b *= 1 + 0.10 * fac * (1 - pen);
+      b *= 1 - 0.36 * pen;
+      b *= 1 - 0.55 * umb;
+      // Brightness to colour: deep orange in the lanes and spots, yellow-white in the granules' middles.
+      const t = Math.max(0, Math.min(1.15, b));
+      const o = (y * W + x) * 3;
+      out[o] = Math.min(255, Math.round(60 + 200 * Math.min(1, t * 1.06)));
+      out[o + 1] = Math.min(255, Math.round(10 + 190 * Math.pow(t, 2.2)));
+      out[o + 2] = Math.min(255, Math.round(2 + 90 * Math.pow(t, 5)));
+    }
+  }
+  return sharp(out, { raw: { width: W, height: H, channels: 3 } });
+}
+
+// ---- the parts no spacecraft saw (v0.54.0) ---------------------------------------------------------
+
+/** A box blur (radius r) of a W × H plane: wraps east–west, stops at the poles. Two passes look like a Gaussian. */
+function boxBlur(src, W, H, r) {
+  const tmp = new Float32Array(W * H), out = new Float32Array(W * H), n = 2 * r + 1;
+  for (let y = 0; y < H; y++) {
+    let s = 0;
+    for (let k = -r; k <= r; k++) s += src[y * W + ((k % W) + W) % W];
+    for (let x = 0; x < W; x++) {
+      tmp[y * W + x] = s / n;
+      s += src[y * W + (x + r + 1) % W] - src[y * W + ((x - r) % W + W) % W];
+    }
+  }
+  for (let x = 0; x < W; x++) {
+    let s = 0;
+    for (let k = -r; k <= r; k++) s += tmp[Math.max(0, Math.min(H - 1, k)) * W + x];
+    for (let y = 0; y < H; y++) {
+      out[y * W + x] = s / n;
+      s += tmp[Math.min(H - 1, y + r + 1) * W + x] - tmp[Math.max(0, y - r) * W + x];
+    }
+  }
+  return out;
+}
+
+/**
+ * Paints the parts of a map that no spacecraft saw (left black in the mosaic) the plain colour of the ground around
+ * them, with a soft edge and a faint, even mottling, so the world shows whole without making up what is there. Only
+ * big black areas count (a crater's shadow stays). Run on the written maps; once filled, nothing is left to fill.
+ */
+async function fillUnseen(file) {
+  const { data, info } = await sharp(file).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const W = info.width, H = info.height, N = W * H;
+  const dark = new Uint8Array(N);
+  for (let i = 0; i < N; i++) dark[i] = 0.3 * data[3 * i] + 0.59 * data[3 * i + 1] + 0.11 * data[3 * i + 2] < 14 ? 1 : 0;
+  // The black areas joined up (wrapping east–west); only those bigger than 0.2% of the map.
+  const mask = new Float32Array(N), seen = new Uint8Array(N), stack = new Int32Array(N), comp = new Int32Array(N);
+  let filled = 0;
+  for (let i0 = 0; i0 < N; i0++) {
+    if (!dark[i0] || seen[i0]) continue;
+    let sp = 0, n = 0;
+    stack[sp++] = i0; seen[i0] = 1;
+    while (sp) {
+      const i = stack[--sp]; comp[n++] = i;
+      const x = i % W, y = (i - x) / W;
+      for (const j of [y * W + (x + 1) % W, y * W + (x + W - 1) % W, y > 0 ? i - W : -1, y < H - 1 ? i + W : -1]) {
+        if (j >= 0 && dark[j] && !seen[j]) { seen[j] = 1; stack[sp++] = j; }
+      }
+    }
+    if (n > N * 0.002) { for (let k = 0; k < n; k++) mask[comp[k]] = 1; filled += n; }
+  }
+  if (!filled) { log(`  ${path.basename(file)}: nothing unseen`); return; }
+  // A few pixels wider: the mosaic's edge fades to black over them.
+  const grown = boxBlur(mask, W, H, Math.max(2, Math.round(W / 512)));
+  for (let i = 0; i < N; i++) mask[i] = grown[i] > 0.001 ? 1 : 0;
+  // The colours of the ground around, spread smoothly across them (push-pull: averaged down a pyramid of halved maps,
+  // then each level's gaps taken from the one above), so the fill meets each edge in that edge's own colour.
+  const known = new Float32Array(N);
+  for (let i = 0; i < N; i++) known[i] = mask[i] || dark[i] ? 0 : 1;
+  const levels = [{ W, H, w: known, c: [0, 1, 2].map((k) => Float32Array.from({ length: N }, (_, i) => data[3 * i + k] * known[i])) }];
+  while (levels.at(-1).W > 8) {
+    const p = levels.at(-1), w2 = p.W >> 1, h2 = Math.max(1, p.H >> 1);
+    const w = new Float32Array(w2 * h2), c = [0, 1, 2].map(() => new Float32Array(w2 * h2));
+    for (let y = 0; y < h2; y++) for (let x = 0; x < w2; x++) {
+      const o = y * w2 + x;
+      for (const [dx, dy] of [[0, 0], [1, 0], [0, 1], [1, 1]]) {
+        const i = Math.min(p.H - 1, 2 * y + dy) * p.W + 2 * x + dx;
+        w[o] += p.w[i] / 4;
+        for (let k = 0; k < 3; k++) c[k][o] += p.c[k][i] / 4;
+      }
+    }
+    levels.push({ W: w2, H: h2, w, c });
+  }
+  // The smallest level: what it knows, and its gaps (a pole all unseen) spread in from their neighbours, so a pole takes
+  // the colour of the ground nearest it.
+  const T = levels.at(-1), top = [0, 1, 2].map((k) => Float32Array.from({ length: T.W * T.H }, (_, o) => (T.w[o] > 0 ? T.c[k][o] / T.w[o] : NaN)));
+  const mean = [0, 1, 2].map((k) => { let s = 0, n = 0; for (const v of top[k]) if (!Number.isNaN(v)) { s += v; n++; } return n ? s / n : 0; });
+  const gap = Array.from({ length: T.W * T.H }, (_, o) => !(T.w[o] > 0));
+  for (let k = 0; k < 3; k++) for (let o = 0; o < top[k].length; o++) if (gap[o]) top[k][o] = mean[k];
+  for (let it = 0; it < 400; it++) for (let y = 0; y < T.H; y++) for (let x = 0; x < T.W; x++) {
+    const o = y * T.W + x;
+    if (!gap[o]) continue;
+    const nb = [y * T.W + (x + 1) % T.W, y * T.W + (x + T.W - 1) % T.W, ...(y > 0 ? [o - T.W] : []), ...(y < T.H - 1 ? [o + T.W] : [])];
+    for (let k = 0; k < 3; k++) top[k][o] = nb.reduce((s, j) => s + top[k][j], 0) / nb.length;
+  }
+  // From the top down: where a level knows too little, the level above fills in (bilinear, wrapping east–west).
+  let up = { W: T.W, H: T.H, c: top };
+  for (let l = levels.length - 2; l >= 0; l--) {
+    const L = levels[l], out = [0, 1, 2].map(() => new Float32Array(L.W * L.H));
+    for (let y = 0; y < L.H; y++) for (let x = 0; x < L.W; x++) {
+      const o = y * L.W + x, a = Math.min(1, L.w[o] * 2);
+      let u = [0, 0, 0];
+      if (up) {
+        const fx = (x + 0.5) / 2 - 0.5, fy = Math.max(0, Math.min(up.H - 1, (y + 0.5) / 2 - 0.5));
+        const x0 = Math.floor(fx), y0 = Math.floor(fy), tx = fx - x0, ty = fy - y0, y1 = Math.min(up.H - 1, y0 + 1);
+        const at = (xx, yy, k) => up.c[k][yy * up.W + ((xx % up.W) + up.W) % up.W];
+        u = [0, 1, 2].map((k) => (at(x0, y0, k) * (1 - tx) + at(x0 + 1, y0, k) * tx) * (1 - ty) + (at(x0, y1, k) * (1 - tx) + at(x0 + 1, y1, k) * tx) * ty);
+      }
+      for (let k = 0; k < 3; k++) out[k][o] = L.w[o] > 0 ? a * (L.c[k][o] / L.w[o]) + (1 - a) * u[k] : u[k];
+    }
+    up = { W: L.W, H: L.H, c: out };
+  }
+  // Fully painted inside, fading out just outside the edge, with a faint, even mottling (± 3%, the same every build).
+  const r = Math.max(2, Math.round(W / 256));
+  const a1 = boxBlur(boxBlur(mask, W, H, r), W, H, r);
+  const R = rng(7), gw = 64, gh = 32, grid = Float32Array.from({ length: gw * gh }, () => R() * 2 - 1);
+  for (let i = 0; i < N; i++) {
+    const a = mask[i] ? 1 : Math.min(1, a1[i] * 2);
+    if (a <= 0) continue;
+    const x = i % W, y = (i - x) / W, fx = (x / W) * gw, fy = Math.min(gh - 1.001, (y / H) * (gh - 1));
+    const x0 = Math.floor(fx), y0 = Math.floor(fy), tx = fx - x0, ty = fy - y0, g = (xx, yy) => grid[yy * gw + (xx % gw)];
+    const m = 1 + 0.03 * ((g(x0, y0) * (1 - tx) + g(x0 + 1, y0) * tx) * (1 - ty) + (g(x0, y0 + 1) * (1 - tx) + g(x0 + 1, y0 + 1) * tx) * ty);
+    for (let k = 0; k < 3; k++) data[3 * i + k] = Math.max(0, Math.min(255, Math.round(data[3 * i + k] * (1 - a) + up.c[k][i] * m * a)));
+  }
+  await jpeg(sharp(data, { raw: { width: W, height: H, channels: 3 } })).toFile(file + '.tmp');
+  fs.renameSync(file + '.tmp', file);
+  log(`  ${path.basename(file)}: ${(100 * filled / N).toFixed(1)}% unseen, filled from the ground around`);
+}
+
+async function fillAll() {
+  for (const w of WORLDS.filter((x) => x.unseen)) for (const s of w.sizes) await fillUnseen(path.join(OUT, `${w.id}-${s / 1024}k.jpg`));
 }
 
 async function textures() {
@@ -160,7 +370,8 @@ async function thumbs() {
       const lat = Math.asin(yy), lon = Math.atan2(nx, zz) + lon0;
       const u = ((((lon / (2 * Math.PI) + 0.5) % 1) + 1) % 1) * info.width, v = (0.5 - lat / Math.PI) * info.height;
       const p = (Math.min(info.height - 1, Math.max(0, Math.floor(v))) * info.width + Math.min(info.width - 1, Math.floor(u))) * 3;
-      const lit = 0.35 + 0.75 * Math.max(0, nx * L[0] + ny * L[1] + nz * L[2]);
+      // The Sun shines by itself: no dark side, only its edge a little darker.
+      const lit = w.selfLit ? 0.62 + 0.42 * Math.sqrt(nz) : 0.35 + 0.75 * Math.max(0, nx * L[0] + ny * L[1] + nz * L[2]);
       const edge = Math.min(1, (1 - Math.sqrt(rr)) * S * 0.5);
       for (let k = 0; k < 3; k++) out[o + k] = Math.min(255, data[p + k] * lit);
       out[o + 3] = Math.round(255 * edge);
@@ -340,6 +551,7 @@ async function previews() {
 }
 
 if (want('textures')) await textures();
+if (want('fill')) await fillAll();
 if (want('thumbs')) await thumbs();
 if (want('names')) names();
 if (want('heights')) await heights();

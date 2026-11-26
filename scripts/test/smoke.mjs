@@ -7215,8 +7215,8 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
 // on the globe moves the place (Sydney: facing north, its own time zone); the sky view and back; Today's line; the
 // search box; Spanish. Around the globe (v0.50.0): nothing at the usual zoom; zoomed all the way out, the Moon on its
 // real orbit at its real size and the Sun clear of the buttons (tap the Moon: there; zoomed out there, the Earth to
-// scale, see-through in front of the Moon and solid behind it; tap the Earth: home); the Sun opens the solar system,
-// Saturn there wears its rings, zoomed out its two moons on their orbits; Titan with Saturn in front (see-through) and
+// scale, see-through in front of the Moon and solid behind it; tap the Earth: home); the Sun goes to the Sun (v0.54.0);
+// from the solar system, Saturn wears its rings, zoomed out its two moons on their orbits; Titan with Saturn in front (see-through) and
 // behind; nothing during a game (the zoom back to its usual end); the light theme's globe floats in dark space, its
 // flat maps do not.
 {
@@ -7333,6 +7333,9 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const home = await out(0, 20);
   check(!home.mode && home.sun, `a tap on the Earth comes home`);
   if (home.sun) await q.mouse.click(home.sun.x, home.sun.y);
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'sun', null, { timeout: 10000 }).catch(() => {});
+  const onSun = await q.evaluate(() => window.atlas.space.surface.id);
+  await q.evaluate(() => window.atlas.space.openOrrery?.());
   await q.waitForFunction(() => window.atlas.orrery.isOpen, null, { timeout: 10000 }).catch(() => {});
   await q.waitForTimeout(1200);
   const sat = await q.evaluate(() => { const o = window.atlas.orrery, s = o['spots'].find((x) => x.id === 'saturn'), r = document.querySelector('.orr canvas')?.getBoundingClientRect(); return s && r ? { x: r.left + s.x, y: r.top + s.y, open: o.isOpen } : null; });
@@ -7341,8 +7344,8 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await q.waitForTimeout(2000);
   const s0 = await q.evaluate(() => ({ id: window.atlas.space.surface.id, orrery: window.atlas.orrery.isOpen, ...window.atlas.around.info }));
   const s1 = await out(30, 20);
-  check(sat?.open && s0.id === 'saturn' && !s0.orrery && s0.rings > 0 && !s0.on && s1.on && s1.members.map((m) => m.id).sort().join() === 'enceladus,titan' && s1.orbits === 2 && s1.sun,
-    `the Sun opens the solar system; a tap on Saturn goes there: its rings drawn (${s0.rings}); zoomed out, ${s1.members.map((m) => m.id).join(' and ')} on ${s1.orbits} orbits and the Sun${s1.sun ? '' : ' (no Sun)'}${s0.on ? ' (shown before zooming out)' : ''}`);
+  check(onSun === 'sun' && sat?.open && s0.id === 'saturn' && !s0.orrery && s0.rings > 0 && !s0.on && s1.on && s1.members.map((m) => m.id).sort().join() === 'enceladus,titan' && s1.orbits === 2 && s1.sun,
+    `a tap on the Sun goes to the Sun (${onSun}); in the solar system a tap on Saturn goes there: its rings drawn (${s0.rings}); zoomed out, ${s1.members.map((m) => m.id).join(' and ')} on ${s1.orbits} orbits and the Sun${s1.sun ? '' : ' (no Sun)'}${s0.on ? ' (shown before zooming out)' : ''}`);
   // Its moons apart (zoomed out further, they gather on Saturn and its orbit round the Sun shows).
   const s2 = await out(30, 20, 'fit');
   const titan = s2.members?.find((m) => m.id === 'titan');
@@ -7455,10 +7458,10 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const p8 = await probe();
   check(p8.sunReal && p8.sunOrbit && p8.sun?.r < 3, `zoomed all the way out: the Earth's orbit round the Sun and the Sun at its real place, a dot ${p8.sun?.r.toFixed(2)} px across, named`);
   if (p8.sun) await q.mouse.click(p8.sun.x, p8.sun.y);
-  await q.waitForFunction(() => window.atlas.orrery.isOpen, null, { timeout: 8000 }).catch(() => {});
-  const orr = await q.evaluate(() => window.atlas.orrery.isOpen);
-  check(orr, 'a tap on the Sun there opens the solar system');
-  await q.evaluate(() => window.atlas.orrery.close?.());
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'sun', null, { timeout: 10000 }).catch(() => {});
+  await q.waitForTimeout(1500);
+  const sunNow = await q.evaluate(() => ({ id: window.atlas.space.surface.id, lock: window.atlas.around.info.lock, target: window.atlas.around.info.target }));
+  check(sunNow.id === 'sun' && sunNow.lock === 'follow' && sunNow.target === 'earth', `a tap on the Sun there goes to the Sun, the lock along: following the Earth from it (${sunNow.lock}, ${sunNow.target})`);
   await q.waitForTimeout(800);
   await q.evaluate(() => window.atlas.space.enter('moon'));
   await q.waitForFunction(() => window.atlas.space.surface.id === 'moon', null, { timeout: 15000 }).catch(() => {});
@@ -7640,6 +7643,118 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   check(f0.lock === 'free' && Math.abs(f0.shiftY) < 1 && !f0.ride && Math.abs(f0.roll) < 0.5, `free again: the globe back in its usual place (shift ${f0.shiftY.toFixed(1)} px), no roll`);
   check(!rd.errors.length, `riding along: no page errors${rd.errors.length ? ': ' + rd.errors.join(' | ') : ''}`);
   await rd.ctx.close();
+}
+
+// 66. The Sun and its planets (v0.54.0). The Space panel's first group, "Our star": the Sun on the globe, shining by
+// itself (its edge darker, no night side even while time runs) with its facts; zoomed out, the planets on their real
+// orbits round it. Its lock follows a planet: the camera rides behind the Sun with the planet straight ahead and named,
+// only the Sun's top in sight, its edge under the planet; time plays, the planet stays ahead and the bar counts how far
+// round its orbit it has gone since today, in Earth days and its own; a tap on it goes there, riding along it with the
+// Sun ahead. Riding along the Earth when Venus passes the Sun (24 October 2026), Venus shows in front of it; every name
+// is drawn after every disc (from Io too). Triton, Pluto and Charon show no black where no spacecraft looked.
+{
+  const sn = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-40,15,1.1&lang=en');
+  const q = sn.page;
+  await q.waitForTimeout(800);
+  const at = async (L) => { for (let k = 0; k < 2; k++) { await q.evaluate((L) => { const a = window.atlas.around, v = window.atlas.app.renderer.view; v.flyTo({ zoom: L === 'fit' ? a.info.fitMoons : a.rideZoom(L) }, 1); window.atlas.app.renderer.requestRender(); }, L); await q.waitForTimeout(500); } await q.waitForTimeout(500); };
+  const look = () => q.evaluate(() => {
+    const a = window.atlas.around, g = a['g'], r = a.info.ride;
+    return { world: a.info.world, lock: a.info.lock, target: a.info.target, sunlit: a.info.sunlit, night: a.info.night, jd: a.info.jd, sun: a.info.sun,
+      ride: r && { cx: r.cx, cy: r.cy, el: r.el, L: r.L, ahead: r.ahead }, globe: { cx: g.cx, cy: g.cy, R: g.R, bottom: g.bottom },
+      members: a.info.members.map((m) => ({ id: m.id, on: m.on })), orbits: a.info.orbits, planets: a.info.planets, drawn: a.info.drawn.slice(), orbit: a.info.orbit,
+      orbitText: document.querySelector('[data-around="orbit"]:not([hidden])')?.innerText.replace(/\n/g, ' / ') ?? '' };
+  });
+  const mid = (o, r) => !!o && Math.abs(o.x - r.cx) < 6 && Math.abs(o.y - r.cy) < 6;
+  const namesLast = (d) => { const lastDisc = d.map((x) => x.startsWith('disc:')).lastIndexOf(true), firstName = d.findIndex((x) => x.startsWith('name:')); return firstName < 0 || lastDisc < firstName; };
+  await q.evaluate(() => window.atlas.space.open());
+  await q.waitForSelector('.world-btn[data-world="sun"]', { timeout: 10000 });
+  const firstGroup = await q.$eval('.space-panel .sec-title', (e) => e.textContent);
+  await q.click('.world-btn[data-world="sun"]');
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'sun' && window.atlas.around.info.sunlit, null, { timeout: 20000 }).catch(() => {});
+  await q.waitForTimeout(1500);
+  await q.evaluate(() => window.atlas.around.play(1)); await q.waitForTimeout(700);
+  const s0 = await look();
+  await q.evaluate(() => window.atlas.around.now()); await q.waitForTimeout(300);
+  const wbar = await q.evaluate(() => ({ name: document.querySelector('.worldbar .wd-name')?.textContent, sub: document.querySelector('.worldbar .wd-sub')?.textContent }));
+  await q.click('.worldbar .wd-info'); await q.waitForTimeout(1200);
+  const card = await q.evaluate(() => ({ title: document.querySelector('.card-title')?.textContent, rows: document.querySelector('.card-body')?.textContent ?? '' }));
+  check(firstGroup === 'Our star' && s0.world === 'sun' && s0.sunlit && !s0.night && !s0.orbitText && /The Sun/.test(wbar.name) && wbar.sub === 'Our star' && /Sun/.test(card.title) && /Diameter/.test(card.rows),
+    `the Space panel's first group is "${firstGroup}"; the Sun on the globe shines by itself (its edge darker, no night side while time runs, no orbit to count); its bar "${wbar.name} · ${wbar.sub}", its facts card "${card.title}"`);
+  await q.evaluate(() => window.atlas.shell.card.hide());
+  await at('fit');
+  const s1 = await look();
+  check(s1.orbits === 11 && s1.members.length === 11 && s1.members.filter((m) => m.on).length >= 9, `zoomed out, ${s1.members.length} planets and the like on ${s1.orbits} orbits round it (${s1.members.filter((m) => m.on).map((m) => m.id).join(', ')})`);
+  await q.click('[data-around="lock"]'); await q.waitForTimeout(300);
+  const menu = await q.$$eval('[data-lock]', (b) => b.map((x) => `${x.dataset.lock}${x.dataset.target ? ':' + x.dataset.target : ''}`));
+  await q.click('[data-lock="follow"][data-target="mars"]'); await q.waitForTimeout(2200);
+  const f0 = await look();
+  check(menu.join() === 'free,follow:mercury,follow:venus,follow:earth,follow:mars,follow:vesta,follow:ceres,follow:jupiter,follow:saturn,follow:uranus,follow:neptune,follow:pluto'
+    && f0.lock === 'follow' && f0.target === 'mars' && f0.ride?.ahead?.id === 'mars' && mid(f0.ride.ahead, f0.ride) && f0.globe.cy - f0.globe.R > f0.ride.cy + 20 && f0.globe.cy + f0.globe.R > f0.globe.bottom && f0.drawn.includes('name:mars'),
+    `the Sun's lock: turn freely or follow one of ${menu.length - 1}; following Mars, it is straight ahead in the middle, named, the Sun's top ${Math.round(f0.globe.cy - f0.globe.R - (f0.ride?.cy ?? 0))} px under it and its bottom out of sight (${Math.round(f0.globe.cy + f0.globe.R)} > ${Math.round(f0.globe.bottom)})`);
+  await q.evaluate(() => window.atlas.around.play(3)); await q.waitForTimeout(1500);
+  await q.evaluate(() => window.atlas.around.pause()); await q.waitForTimeout(400);
+  const f1 = await look();
+  const o = f1.orbit;
+  check(mid(f1.ride?.ahead, f1.ride) && f1.ride.ahead.id === 'mars' && o?.id === 'mars' && Math.abs(o.period - 687) < 2 && o.day > 5 && o.day < f1.jd - f0.jd + 1 && Math.abs(o.day + o.left - o.period) < 0.01 && Math.abs(o.localPeriod - 669) < 2
+    && /Mars round the Sun: \d+%/.test(f1.orbitText) && /Day \d+ of 687 since today · \d+ to go/.test(f1.orbitText) && /In Mars days: \d+ of 669/.test(f1.orbitText),
+    `${(f1.jd - f0.jd).toFixed(0)} days on, Mars still straight ahead; the bar: "${f1.orbitText}"`);
+  await q.evaluate(() => window.atlas.around.now()); await q.waitForTimeout(500);
+  const f2 = await look();
+  await q.mouse.click(f2.ride.ahead.x, f2.ride.ahead.y);
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'mars', null, { timeout: 15000 }).catch(() => {});
+  await q.waitForTimeout(2500);
+  const m0 = await look();
+  check(!f2.orbitText && m0.world === 'mars' && m0.lock === 'ride' && m0.ride?.ahead?.id === 'sun' && mid(m0.ride.ahead, m0.ride), `back to now, the count goes; a tap on Mars goes there, riding along it with the Sun ahead`);
+  // The Earth when Venus passes between it and the Sun (24 October 2026).
+  await q.evaluate(() => window.atlas.space.exit());
+  await q.waitForFunction(() => !window.atlas.app.mode, null, { timeout: 15000 }).catch(() => {});
+  await q.waitForTimeout(2000);
+  await q.evaluate(() => { const a = window.atlas.around; a['sim'] = new Date('2026-10-24T00:00Z').getTime() / 86400000 + 2440587.5; a['renderUi'](); window.atlas.app.renderer.requestRender(); });
+  await at(5);
+  const e0 = await look();
+  const venus = e0.planets.find((p) => p.id === 'venus');
+  check(e0.lock === 'ride' && e0.ride?.ahead?.id === 'sun' && venus?.nearer && Math.hypot(venus.x - e0.sun.x, venus.y - e0.sun.y) < 80 && e0.drawn.indexOf('disc:venus') > e0.drawn.indexOf('disc:sun') && namesLast(e0.drawn) && /The Earth round the Sun/.test(e0.orbitText),
+    `riding along the Earth on 24 October 2026, Venus passes the Sun ${Math.round(Math.hypot((venus?.x ?? 0) - (e0.sun?.x ?? 0), (venus?.y ?? 0) - (e0.sun?.y ?? 0)))} px from it, drawn in front (nearer); planets in view: ${e0.planets.map((p) => p.id).join(', ')}; every name after every disc`);
+  // The stars behind: riding along, they stay put while the Earth turns under the camera, drifting only as the camera
+  // goes round the orbit (about a degree a day); free, they keep still while time runs. (Until v0.54.0 they wheeled
+  // round once a day with the Earth's turning.)
+  const back = () => q.evaluate(() => ({ b: window.atlas.sky.info.back, jd: window.atlas.around.info.jd }));
+  const ang = (u, v) => (Math.acos(Math.max(-1, Math.min(1, u[0] * v[0] + u[1] * v[1] + u[2] * v[2]))) * 180) / Math.PI;
+  const playFor = async (speed, ms) => { await q.evaluate((s) => window.atlas.around.play(s), speed); await q.waitForTimeout(ms); await q.evaluate(() => window.atlas.around.pause()); await q.waitForTimeout(400); };
+  const b0 = await back();
+  await playFor(1, 2500);
+  const b1 = await back();
+  await q.click('[data-around="lock"]'); await q.waitForTimeout(250); await q.click('[data-lock="free"]'); await q.waitForTimeout(1500);
+  const b2 = await back();
+  await playFor(1, 2500);
+  const b3 = await back();
+  const ridDays = b1.jd - b0.jd, rideTurn = b0.b && b1.b ? ang(b0.b.fwd, b1.b.fwd) : 999, rideUp = b0.b && b1.b ? ang(b0.b.up, b1.b.up) : 999, freeTurn = b2.b && b3.b ? ang(b2.b.fwd, b3.b.fwd) : 999;
+  check(b0.b?.around && ridDays > 1 && rideTurn < 1.2 * ridDays + 0.5 && rideUp < 1 && b3.jd - b2.jd > 1 && freeTurn < 0.1,
+    `the stars behind: riding along ${ridDays.toFixed(1)} days, they turn ${rideTurn.toFixed(2)}° (the orbit, not the Earth's turning); free, ${(b3.jd - b2.jd).toFixed(1)} days on, ${freeTurn.toFixed(3)}°`);
+  await q.click('[data-around="lock"]'); await q.waitForTimeout(250); await q.click('[data-lock="ride"]'); await q.waitForTimeout(1200);
+  await q.evaluate(() => window.atlas.around.now());
+  await q.evaluate(() => window.atlas.space.enter('io'));
+  await q.waitForFunction(() => window.atlas.space.surface.id === 'io', null, { timeout: 15000 }).catch(() => {});
+  await q.waitForTimeout(2500);
+  await at(4);
+  const i0 = await look();
+  check(i0.ride?.ahead?.id === 'jupiter' && i0.drawn.includes('disc:jupiter') && namesLast(i0.drawn), `on Io every name comes after every disc (${i0.drawn.filter((x) => x.startsWith('name:')).join(', ')})`);
+  await q.click('[data-around="lock"]'); await q.waitForTimeout(250); await q.click('[data-lock="free"]'); await q.waitForTimeout(800);
+  // No black where no spacecraft looked.
+  const black = await q.evaluate(async () => {
+    const out = {};
+    for (const id of ['triton', 'pluto', 'charon']) {
+      const img = new Image(); img.src = `data/worlds/${id}-2k.jpg`; await img.decode();
+      const c = document.createElement('canvas'); c.width = 256; c.height = 128; const x = c.getContext('2d'); x.drawImage(img, 0, 0, 256, 128);
+      const d = x.getImageData(0, 0, 256, 128).data; let n = 0;
+      for (let i = 0; i < d.length; i += 4) if (0.3 * d[i] + 0.59 * d[i + 1] + 0.11 * d[i + 2] < 12) n++;
+      out[id] = n / (256 * 128);
+    }
+    return out;
+  });
+  check(Object.values(black).every((v) => v < 0.01), `no black where no spacecraft looked: ${Object.entries(black).map(([k, v]) => `${k} ${(v * 100).toFixed(1)}%`).join(', ')}`);
+  check(!sn.errors.length, `the Sun and its planets: no page errors${sn.errors.length ? ': ' + sn.errors.join(' | ') : ''}`);
+  await sn.ctx.close();
 }
 
 await browser.close();

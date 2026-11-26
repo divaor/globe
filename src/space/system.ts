@@ -12,8 +12,9 @@ export const AU_KM = 149597870.7;
 export const SUN_KM = 695700;
 const EARTH_KM = 6378.14; // the Moon series' Earth radius
 
-/** Each world's radius (km) and the planet it goes round (null: the Sun). */
+/** Each world's radius (km) and the planet it goes round (null: the Sun; the Sun itself, v0.54.0, goes round nothing here). */
 export const BODIES: Record<string, { r: number; parent: string | null }> = {
+  sun: { r: 695700, parent: null },
   mercury: { r: 2439.4, parent: null }, venus: { r: 6051.8, parent: null }, earth: { r: 6371, parent: null }, moon: { r: 1737.4, parent: 'earth' },
   mars: { r: 3389.5, parent: null }, ceres: { r: 469.7, parent: null }, vesta: { r: 262.7, parent: null },
   jupiter: { r: 69911, parent: null }, io: { r: 1821.6, parent: 'jupiter' }, europa: { r: 1560.8, parent: 'jupiter' }, ganymede: { r: 2634.1, parent: 'jupiter' }, callisto: { r: 2410.3, parent: 'jupiter' },
@@ -27,6 +28,7 @@ const s = (x: number) => Math.sin(x * RAD), c = (x: number) => Math.cos(x * RAD)
 // Jupiter's moons' wobbles.
 const J = (T: number) => [0, 73.32 + 91472.9 * T, 24.62 + 45137.2 * T, 283.9 + 4850.7 * T, 355.8 + 1191.3 * T, 119.9 + 262.1 * T, 229.8 + 64.3 * T, 352.25 + 2382.6 * T, 113.35 + 6070 * T];
 const SPIN: Record<string, Spin> = {
+  sun: (d) => [286.13, 63.87, 84.176 + 14.1844 * d],
   mercury: (d, T) => [281.0103 - 0.0328 * T, 61.4155 - 0.0049 * T, 329.5988 + 6.1385108 * d],
   venus: (d) => [272.76, 67.16, 160.2 - 1.4813688 * d],
   moon: (d, T) => { const E1 = 125.045 - 0.0529921 * d, E2 = 250.089 - 0.1059842 * d, E3 = 260.008 + 13.0120009 * d;
@@ -88,6 +90,7 @@ export function moonOffset(id: string, jd: number): V3 {
 
 /** Where a world is from the Sun (J2000 equatorial, km). */
 export function helio(id: string, jd: number): V3 {
+  if (id === 'sun') return [0, 0, 0];
   const b = BODIES[id];
   if (b?.parent) { const p = helio(b.parent, jd), o = moonOffset(id, jd); return [p[0] + o[0], p[1] + o[1], p[2] + o[2]]; }
   const e = id === 'vesta' ? positionFromElements(ORBITS.vesta, jd) : positionOf(id, jd);
@@ -113,14 +116,35 @@ export interface System {
   members: Member[];
   /** The orbits drawn: each moon's path round its planet, from the world looked at (J2000, km). */
   orbits: { id: string; pts: V3[] }[];
-  /** The Sun: its direction from the world (J2000 unit vector) and how far (km). */
+  /** The Sun: its direction from the world (J2000 unit vector) and how far (km); none on the Sun itself. */
   sun: V3; sunKm: number;
+  /** The planets (and the dwarf planets one can visit) other than the world, its planet, and on the Sun all of them:
+   *  where each is from the world (J2000, km). Drawn riding along (v0.54.0), not in the usual view. */
+  planets: Member[];
 }
 
-/** The world's neighbourhood: its planet and moons, their orbits, and the Sun. */
+/** What goes round the Sun, out from it: the planets and the dwarf planets and asteroid one can visit (v0.54.0). */
+export const PLANETS = ['mercury', 'venus', 'earth', 'mars', 'vesta', 'ceres', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
+
+/** The planets' orbits round the Sun, worked out again once a day (they change slowly). */
+const sunOrbits = new Map<string, { day: number; pts: V3[] }>();
+function sunOrbitOf(id: string, jd: number): V3[] {
+  const day = Math.round(jd), c = sunOrbits.get(id);
+  if (c && c.day === day) return c.pts;
+  const pts = sunOrbit(id, day);
+  sunOrbits.set(id, { day, pts });
+  return pts;
+}
+
+/** The world's neighbourhood: its planet and moons, their orbits, and the Sun. On the Sun (v0.54.0): the planets on
+ *  their orbits round it. */
 export function systemOf(me: string, jd: number): System | null {
   const b = BODIES[me];
   if (!b) return null;
+  if (me === 'sun') {
+    const members = PLANETS.map((id) => ({ id, r: BODIES[id].r, pos: helio(id, jd) }));
+    return { me, axes: axesOf(me, jd), R: b.r, members, orbits: PLANETS.map((id) => ({ id, pts: sunOrbitOf(id, jd) })), sun: [0, 0, 0], sunKm: 0, planets: members };
+  }
   const primary = b.parent ?? me;
   const moons = Object.keys(BODIES).filter((k) => BODIES[k].parent === primary);
   const myOff: V3 = b.parent ? moonOffset(me, jd) : [0, 0, 0];
@@ -131,7 +155,8 @@ export function systemOf(me: string, jd: number): System | null {
   const orbits = moons.map((m) => ({ id: m, pts: orbitPoints(m, jd).map(rel) }));
   const h = helio(me, jd);
   const sunKm = Math.hypot(...h);
-  return { me, axes: axesOf(me, jd), R: b.r, members, orbits, sun: [-h[0] / sunKm, -h[1] / sunKm, -h[2] / sunKm], sunKm };
+  const planets = PLANETS.filter((id) => id !== me && id !== b.parent).map((id) => { const p = helio(id, jd); return { id, r: BODIES[id].r, pos: [p[0] - h[0], p[1] - h[1], p[2] - h[2]] as V3 }; });
+  return { me, axes: axesOf(me, jd), R: b.r, members, orbits, sun: [-h[0] / sunKm, -h[1] / sunKm, -h[2] / sunKm], sunKm, planets };
 }
 
 // ---- Round the Sun, and views locked to an orbit (v0.51.0) -------------------------------------------------------
@@ -172,7 +197,7 @@ export function orbitPole(id: string, jd: number, round: 'own' | 'sun' = 'own'):
   return unit(cross(helio(p, jd), helio(p, jd + 1)));
 }
 
-export type Lock = 'free' | 'orbit' | 'planet' | 'sun' | 'ride';
+export type Lock = 'free' | 'orbit' | 'planet' | 'sun' | 'ride' | 'follow';
 export interface Frame { h: V3; s: V3 }
 
 /**
@@ -180,12 +205,18 @@ export interface Frame { h: V3; s: V3 }
  * orbit, that is a fixed way in space (the March equinox), so the world turns and its moons go round under a camera that
  * stays put; following its planet or the Sun, it is the way to the planet or the Sun, which stays put on the screen.
  */
-export function lockFrame(lock: Exclude<Lock, 'free'>, id: string, jd: number): Frame {
+export function lockFrame(lock: Exclude<Lock, 'free'>, id: string, jd: number, target?: string | null): Frame {
   const b = BODIES[id];
   let h: V3, toward: V3;
   // Riding along (v0.53.0): ahead is what it goes round, its planet for a moon and the Sun for a planet.
   if (lock === 'ride') lock = b?.parent ? 'planet' : 'sun';
-  if (lock === 'planet' && b?.parent) {
+  if (lock === 'follow') {
+    // From the Sun, following a planet (v0.54.0): up is the pole of the planet's orbit, ahead is the planet.
+    const t = target && BODIES[target] && target !== 'sun' ? target : 'earth';
+    h = orbitPole(t, jd, 'sun');
+    const p = helio(t, jd);
+    toward = [p[0] - helio(id, jd)[0], p[1] - helio(id, jd)[1], p[2] - helio(id, jd)[2]];
+  } else if (lock === 'planet' && b?.parent) {
     h = orbitPole(id, jd);
     const o = moonOffset(id, jd);
     toward = [-o[0], -o[1], -o[2]];
@@ -216,6 +247,7 @@ export function lockCamera(f: Frame, az: number, el: number): { c: V3; u: V3 } {
 
 /** How long a world takes to go round once (days): a moon round its planet, a planet round the Sun. */
 export function periodOf(id: string, jd: number): number {
+  if (id === 'sun') return 0;
   const b = BODIES[id];
   if (b?.parent) { const f = FITS[id]; return f ? 360 / Math.abs(f.n) : 27.321661; }
   if (id === 'vesta') return ORBITS.vesta.per;
@@ -239,4 +271,15 @@ export function pathAround(id: string, jd: number): V3[] {
 export function lockAngles(f: Frame, c: V3): { az: number; el: number } {
   const t = cross(f.h, f.s);
   return { az: Math.atan2(dot(c, t), dot(c, f.s)) / RAD, el: Math.asin(Math.max(-1, Math.min(1, dot(c, f.h)))) / RAD };
+}
+
+/**
+ * How far round its orbit a world has gone between two moments (v0.54.0): `laps` whole turns, and the part of the
+ * next (`frac`, 0–1) in days gone (`day`) of its `period`, with `left` days to finish it.
+ */
+export function orbitProgress(id: string, jd0: number, jd: number): { period: number; laps: number; frac: number; day: number; left: number } | null {
+  const period = periodOf(id, jd0);
+  if (!(period > 0)) return null;
+  const gone = Math.max(0, jd - jd0), laps = Math.floor(gone / period), day = gone - laps * period;
+  return { period, laps, frac: day / period, day, left: period - day };
 }

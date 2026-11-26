@@ -194,12 +194,22 @@ html.map-light .brand-name { color: #1d2433; text-shadow: 0 0 6px rgba(255,255,2
 .around-menu button:hover { background: var(--chip); }
 .around-menu button.on { font-weight: 700; }
 .around-tick { width: 18px; display: inline-grid; place-items: center; color: var(--accent); }
-.around-bar { position: absolute; z-index: 4; left: calc(12px + var(--safe-l)); bottom: calc(132px + var(--safe-b)); display: flex; align-items: center; gap: 10px; padding: 6px 10px 6px 6px; border-radius: var(--r-lg); max-width: calc(100vw - 100px - var(--safe-l) - var(--safe-r)); }
+.around-menu-head { padding: 8px 10px 2px; font-size: var(--fs-xs); font-weight: 650; color: var(--muted); }
+.around-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
+.around-menu .around-grid button { min-height: 40px; padding: 0 4px; gap: 2px; justify-content: center; font-size: var(--fs-sm); }
+.around-grid button .around-tick { width: auto; }
+.around-grid button.on { background: var(--chip); }
+.around-bar { position: absolute; z-index: 4; left: calc(12px + var(--safe-l)); bottom: calc(132px + var(--safe-b)); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 6px 10px 6px 6px; border-radius: var(--r-lg); max-width: calc(100vw - 100px - var(--safe-l) - var(--safe-r)); }
 .around-bar .tb-play { width: 40px; height: 40px; }
 .around-mid { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; min-width: 0; }
 .around-date { font-size: var(--fs-sm); font-weight: 650; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 .around-speed, .around-now { height: 26px; font-size: var(--fs-xs); }
 .around-now { display: inline-flex; align-items: center; gap: 4px; }
+.around-orbit { flex: 1 0 100%; display: flex; flex-direction: column; gap: 3px; padding: 0 4px 2px; font-size: var(--fs-xs); line-height: 1.3; }
+.around-orbit[hidden] { display: none; }
+.around-orbit-head { font-size: var(--fs-sm); font-weight: 650; }
+.around-orbit-track { display: block; height: 5px; border-radius: var(--r-xs); background: var(--chip); overflow: hidden; }
+.around-orbit-fill { display: block; height: 100%; background: var(--accent-grad); }
 html.mode-world .around-bar { bottom: calc(var(--wd-h, 130px) + 96px + var(--safe-b)); }
 html.orrery-open .around-bar, html.orrery-open .around-menu, html.t3d-open .around-bar { visibility: hidden; }
 /* A message shows above the play bar, not over it. */

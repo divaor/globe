@@ -109,6 +109,23 @@ A backup made as Atlas Globe still opens.
   screensaver's Planets and moons tour can ride along too, and its mix takes turns at it. Also fixed: locking the view
   (any way) now lands exactly where the lock puts it; the last step of easing in was worked out but not drawn until
   something else redrew the map, so the orbit could stay a few degrees off level.
+- **The Sun and its planets (v0.54.0):** the Sun is a world too, first in the Space panel ("Our star") and a tap away
+  wherever it shows. It shines by itself: its surface (granules and sunspots, drawn for the app; the real one changes
+  by the hour) has no night side, its edge is darker and a glow surrounds it; zoomed out, the planets go round it on
+  their real orbits. Its lock follows a planet: the camera rides behind the Sun with the planet straight ahead and
+  named, only the Sun's top in sight below so the planets stay clear, and the view turns with the planet as time plays;
+  a tap on the planet goes there, riding along it with the Sun ahead (and a tap on the Sun from there comes back,
+  following it). Riding along any world, the planets in view show where they are, in front of the Sun when they pass
+  between. While time runs, the play bar tells how far round its orbit the world (or the planet followed) has gone
+  since today: the share of the turn, the day of it in Earth days and in the planet's own days, the days left, and the
+  whole turns done. Also fixed: riding along, every name is drawn after every disc (the Sun's name went under Jupiter
+  from Io), and a name hidden behind a nearer body goes with it; the parts of Triton, Pluto and Charon no
+  spacecraft saw are painted plain from the ground around them instead of black; and the stars behind the globe no
+  longer wheel round with a planet's turning while time plays. They were lined up by the Earth's clock at the real
+  moment for every world, from the side of the map the camera faced, so a locked camera (which keeps still while the
+  world turns under it) swept them round once a day. Now locked, riding along or following, they are where the
+  camera really looks at the moment shown, drifting only as it goes round the orbit (riding along, behind the Sun and
+  the planets exactly); free, the camera turns with the world, and they keep still as before.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass
@@ -1107,8 +1124,9 @@ from Wikidata (CC0) and Spanish names from Spanish Wikipedia's lists by country;
 "UNESCO World Heritage Sites".
 The other worlds' maps, place names and heights come from NASA (Solar System Treks, LRO, MESSENGER, Magellan,
 Viking, MGS, Galileo, Voyager, Cassini, Dawn, New Horizons), the USGS Astrogeology Science Center and the IAU
-Gazetteer of Planetary Nomenclature, with Solar System Scope's textures (CC BY 4.0) for the giant planets
-(`scripts/data/space/`, `public/data/worlds/SOURCES.md`); the landings, the worlds' facts and the Space exploration
+Gazetteer of Planetary Nomenclature, with Solar System Scope's textures (CC BY 4.0) for the giant planets; the Sun's
+surface is drawn for the app, and the parts of Triton, Pluto and Charon no spacecraft saw are painted plain from the
+ground around them (`scripts/data/space/`, `public/data/worlds/SOURCES.md`); the landings, the worlds' facts and the Space exploration
 stories are written from NASA, ESA, CNSA, ISRO, JAXA and the missions' pages, LROC and Wikipedia, as listed in each.
 The solar system view uses JPL's approximate planet positions (Standish) and its Small-Body Database.
 The sky's stars, constellation figures, borders and names come from d3-celestial (BSD; XHIP, the IAU, Davenhall &

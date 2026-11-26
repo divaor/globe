@@ -935,7 +935,8 @@ export class Learn {
 
   /** Ten worlds, each turned to a random side, and four names to choose from. */
   private async worldQs(n: number): Promise<Q[]> {
-    const ids = WORLDS.map((w) => w.id);
+    // Not the Sun (v0.54.0): no ground to tell it by, and its glow gives it away.
+    const ids = WORLDS.filter((w) => w.kind !== 'star').map((w) => w.id);
     return shuffle(ids.slice()).slice(0, n).map((id) => ({ id, kind: 'world' as QuizKind, options: shuffle([id, ...shuffle(ids.filter((x) => x !== id)).slice(0, 3)]), space: { world: id } }));
   }
 
