@@ -158,6 +158,8 @@ export class WorldSurface {
   private overlay(rc: RenderCtx) {
     this.spots = [];
     if (!this.id || this.bare || this.quiet || !this.showLandings) return;
+    // Zoomed out to the world's neighbourhood (v0.50.0): the globe is small, its markers would hide it.
+    if (rc.view.current.kind === 'globe' && rc.view.zoom < 0.5) return;
     const { ctx, path } = rc;
     // Routes first, under the markers: a dark halo and a bright line.
     for (const l of this.here) {
@@ -189,6 +191,7 @@ export class WorldSurface {
     const w = this.def;
     if (!w || this.bare) return;
     const { view, theme: th, labels } = rc;
+    if (view.current.kind === 'globe' && view.zoom < 0.5) return;
     const R = w.radius;
     const k = view.pxPerRadian;
     // Landing names beside their markers.

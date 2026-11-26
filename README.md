@@ -62,6 +62,17 @@ A backup made as Atlas Globe still opens.
   picture) above the page: edge-to-edge was turned on while the launch theme was still on the window. The app's own
   theme now comes first, and the launch theme hands over to it (postSplashScreenTheme) with no picture behind the
   views.
+- **The solar system when you zoom all the way out (v0.50.0):** the Sun, the moons and the planets no longer sit
+  around the globe at every zoom. They show once you zoom all the way out, and the zoom then goes on until the whole
+  neighbourhood fits. Everything is where it is now, at its real size and distance, in the world's own frame (turn the
+  globe and they turn with it). Around a planet, its moons go round on their real orbits, fitted to JPL Horizons'
+  positions for 2024–2030 (`scripts/data/space/build-moon-orbits.mjs`). Around a moon, its planet shows to scale (Saturn
+  is 23 times as wide as Titan, 1.2 million km away), with its sister moons and all their orbits; the Earth's Moon goes
+  round on its own orbit. The Sun is always there, at the screen's edge the way its light comes from, with its distance.
+  A planet in front of the world you look at turns see-through where it covers it, with its edge drawn. Anything off
+  the screen has an arrow at the edge with its name. Tap a moon or a planet to go there, the Sun for the solar system.
+  Saturn wears its rings at any zoom. Each moon keeps the same face to its planet, as it really does (checked in
+  `scripts/test/tonight.mjs`).
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass

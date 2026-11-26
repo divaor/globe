@@ -7213,9 +7213,12 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
 // sky around the horizon, the seven planets (Jupiter's four moons, Saturn's rings), what to point a telescope at, the
 // dark hours, in the device's own time; the slider and another night (the eclipse full moon of 3 March 2026); a tap
 // on the globe moves the place (Sydney: facing north, its own time zone); the sky view and back; Today's line; the
-// search box; Spanish. Around the globe: the Moon beside the Earth (tap: the Moon, with the Earth behind it to scale;
-// tap the Earth: home), the Sun (tap: the solar system; tap Saturn there: Saturn with its rings and moons; tap Titan:
-// Saturn behind it), nothing during a game; the light theme's globe floats in dark space, its flat maps do not.
+// search box; Spanish. Around the globe (v0.50.0): nothing at the usual zoom; zoomed all the way out, the Moon on its
+// real orbit at its real size and the Sun clear of the buttons (tap the Moon: there; zoomed out there, the Earth to
+// scale, see-through in front of the Moon and solid behind it; tap the Earth: home); the Sun opens the solar system,
+// Saturn there wears its rings, zoomed out its two moons on their orbits; Titan with Saturn in front (see-through) and
+// behind; nothing during a game (the zoom back to its usual end); the light theme's globe floats in dark space, its
+// flat maps do not.
 {
   const tn = await open({ ...devices['Pixel 7'], locale: 'en-GB', timezoneId: 'America/Mexico_City', geolocation: { latitude: 19.43, longitude: -99.13 }, permissions: ['geolocation'] }, '#p=globe&l=political&c=-99,19,1.1&lang=en');
   const p = tn.page;
@@ -7283,26 +7286,52 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   check(!es.errors.length, `Tonight's sky in Spanish: no page errors${es.errors.length ? ': ' + es.errors.join(' | ') : ''}`);
   await es.ctx.close();
 
-  // Around the globe: the Moon and the Sun beside the Earth, and the worlds they lead to.
+  // Around the globe (v0.50.0): the neighbourhood once zoomed all the way out, at its real sizes and places.
   const ar = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=0,20,1.1&lang=en');
   const q = ar.page;
   await q.waitForTimeout(800);
-  const earth = await q.evaluate(() => window.atlas.around.info);
-  check(earth.world === 'earth' && earth.moon && earth.sun, `beside the Earth: the Moon at ${Math.round(earth.moon?.x)},${Math.round(earth.moon?.y)} and the Sun at ${Math.round(earth.sun?.x)},${Math.round(earth.sun?.y)}`);
-  if (earth.moon) await q.mouse.click(earth.moon.x, earth.moon.y);
+  // Out (or to `z`) over lon, lat, and what is shown.
+  const out = async (lon, lat, z = 0) => {
+    for (let k = 0; k < 2; k++) {
+      await q.evaluate(([lon, lat, z]) => { const v = window.atlas.app.renderer.view; v.flyTo({ lon, lat, zoom: Math.max(v.minZoom, z) }, 1); window.atlas.app.renderer.requestRender(); }, [lon, lat, z]);
+      await q.waitForTimeout(600);
+    }
+    await q.waitForTimeout(900);
+    return q.evaluate(() => {
+      const a = window.atlas.around, g = a['g'], ui = window.atlas.app.renderer.boxesOf(document.querySelectorAll('.topbar .brand, .topbar .search-btn, .topbar .me-btn, .zoombar, .chips .fchip'), 0);
+      const under = (p) => !!p && ui.some((b) => p.x > b[0] && p.x < b[2] && p.y > b[1] && p.y < b[3]);
+      return { ...a.info, R: g?.R, cx: g?.cx, cy: g?.cy, sunUnder: under(a.info.sun), toast: document.querySelector('.toast')?.textContent ?? '', id: window.atlas.space.surface.id, mode: window.atlas.app.mode };
+    });
+  };
+  const close = (a, b, tol) => Math.abs(a - b) <= tol;
+  // Where the planet is overhead on a moon (its 0° meridian, give or take the moon's wobbles).
+  const sub = () => q.evaluate(() => {
+    const s = window.atlas.around['sys'], p = s.members[0].pos, a = s.axes, d = (u) => p[0] * u[0] + p[1] * u[1] + p[2] * u[2];
+    const x = d(a.X), y = d(a.Y), z = d(a.pole);
+    return [(Math.atan2(y, x) * 180) / Math.PI, (Math.asin(z / Math.hypot(x, y, z)) * 180) / Math.PI];
+  });
+  const near0 = await q.evaluate(() => ({ ...window.atlas.around.info, zoom: window.atlas.app.renderer.view.zoom }));
+  check(near0.world === 'earth' && !near0.on && !near0.sun && near0.minZoom < 0.6, `at the usual zoom (${near0.zoom.toFixed(1)}) nothing around the Earth; the zoom may go out to ${near0.minZoom.toFixed(3)}`);
+  const e0 = await out(0, 20);
+  const moon = e0.members?.find((m) => m.id === 'moon');
+  const mDist = moon ? Math.hypot(moon.x - e0.cx, moon.y - e0.cy, moon.z * e0.R) / e0.R : 0;
+  check(e0.on && moon?.on && close(moon.r / e0.R, 1737.4 / 6371, 0.005) && mDist > 55 && mDist < 64.5 && e0.orbits === 1 && e0.sun && !e0.sunUnder && /Keep zooming out/.test(e0.toast),
+    `zoomed all the way out: the Moon ${mDist.toFixed(1)} Earth radii away, ${(moon?.r / e0.R).toFixed(3)} as wide, on its orbit; the Sun at ${Math.round(e0.sun?.x)},${Math.round(e0.sun?.y)}, clear of the buttons; "${e0.toast}"`);
+  if (moon) await q.mouse.click(moon.x, moon.y);
   await q.waitForFunction(() => window.atlas.space.surface.id === 'moon' && window.atlas.app.mode === 'world', null, { timeout: 15000 }).catch(() => {});
   await q.waitForTimeout(1500);
-  const onMoon = await q.evaluate(() => ({ id: window.atlas.space.surface.id, parent: window.atlas.around.info.parent, g: window.atlas.around['g'] }));
-  check(onMoon.id === 'moon' && onMoon.parent?.id === 'earth', `a tap on the Moon goes there, with the Earth behind it, ${(onMoon.parent?.r / onMoon.g?.R).toFixed(2)} times as wide`);
-  if (onMoon.parent && onMoon.g) {
-    // Just inside the Earth's near edge.
-    const pp = onMoon.parent, g = onMoon.g, dx = g.cx - pp.x, dy = g.cy - pp.y, l = Math.hypot(dx, dy);
-    await q.mouse.click(pp.x + (dx / l) * (pp.r - 25), pp.y + (dy / l) * (pp.r - 25));
-  }
+  const [mlo, mla] = await sub();
+  const m0 = await out(mlo, mla, 0.12), m1 = await out(mlo + 180, -mla, 0.12);
+  const ef = m0.members?.find((m) => m.id === 'earth'), eb = m1.members?.find((m) => m.id === 'earth');
+  check(m0.id === 'moon' && ef && close(ef.r / m0.R, 6371 / 1737.4, 0.02) && ef.z > 0 && ef.seeThrough && eb?.z < 0 && !eb.seeThrough && m0.sun && m1.sun,
+    `a tap on the Moon goes there (the Earth overhead at ${mlo.toFixed(1)}, ${mla.toFixed(1)}); zoomed out, the Earth ${(ef?.r / m0.R).toFixed(2)} times as wide, see-through in front of it (from the near side) and solid behind it (from the far side); the Sun on both`);
+  const m2 = await out(180, 0);
+  const et = m2.members?.find((m) => m.id === 'earth');
+  if (et?.on) await q.mouse.click(et.x, et.y);
   await q.waitForFunction(() => !window.atlas.app.mode, null, { timeout: 15000 }).catch(() => {});
   await q.waitForTimeout(1200);
-  const home = await q.evaluate(() => ({ mode: window.atlas.app.mode, sun: window.atlas.around.info.sun }));
-  check(!home.mode && home.sun, `a tap on the Earth behind the Moon comes home`);
+  const home = await out(0, 20);
+  check(!home.mode && home.sun, `a tap on the Earth comes home`);
   if (home.sun) await q.mouse.click(home.sun.x, home.sun.y);
   await q.waitForFunction(() => window.atlas.orrery.isOpen, null, { timeout: 10000 }).catch(() => {});
   await q.waitForTimeout(1200);
@@ -7310,25 +7339,29 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   if (sat) await q.mouse.click(sat.x, sat.y);
   await q.waitForFunction(() => window.atlas.space.surface.id === 'saturn', null, { timeout: 15000 }).catch(() => {});
   await q.waitForTimeout(2000);
-  const onSat = await q.evaluate(() => ({ id: window.atlas.space.surface.id, orrery: window.atlas.orrery.isOpen, ...window.atlas.around.info }));
-  check(sat?.open && onSat.id === 'saturn' && !onSat.orrery && onSat.rings > 0 && onSat.moons.map((m) => m.id).sort().join() === 'enceladus,titan',
-    `the Sun opens the solar system; a tap on Saturn goes there: its rings drawn, its moons ${onSat.moons.map((m) => m.id).join(' and ')} around it`);
-  const titan = onSat.moons.find((m) => m.id === 'titan');
+  const s0 = await q.evaluate(() => ({ id: window.atlas.space.surface.id, orrery: window.atlas.orrery.isOpen, ...window.atlas.around.info }));
+  const s1 = await out(30, 20);
+  check(sat?.open && s0.id === 'saturn' && !s0.orrery && s0.rings > 0 && !s0.on && s1.on && s1.members.map((m) => m.id).sort().join() === 'enceladus,titan' && s1.orbits === 2 && s1.sun,
+    `the Sun opens the solar system; a tap on Saturn goes there: its rings drawn (${s0.rings}); zoomed out, ${s1.members.map((m) => m.id).join(' and ')} on ${s1.orbits} orbits and the Sun${s1.sun ? '' : ' (no Sun)'}${s0.on ? ' (shown before zooming out)' : ''}`);
+  const titan = s1.members?.find((m) => m.id === 'titan');
   if (titan) await q.mouse.click(titan.x, titan.y);
   await q.waitForFunction(() => window.atlas.space.surface.id === 'titan', null, { timeout: 15000 }).catch(() => {});
   await q.waitForTimeout(2500);
-  const onTitan = await q.evaluate(() => {
-    const a = window.atlas.around, c = a['parentCache']?.canvas, d = c?.getContext('2d')?.getImageData(0, 0, c.width, c.height).data;
-    let n = 0; if (d) for (let k = 3; k < d.length; k += 4) if (d[k]) n++;
-    return { id: window.atlas.space.surface.id, parent: a.info.parent?.id, painted: n };
-  });
-  check(onTitan.id === 'titan' && onTitan.parent === 'saturn' && onTitan.painted > 2000, `a tap on Titan goes there, with Saturn behind it to scale (${onTitan.painted} pixels of it on screen)`);
+  // Titan keeps its 0° meridian toward Saturn: from over it Saturn is in front, from the far side behind.
+  const [tlo, tla] = await sub();
+  const t0 = await out(tlo, tla, 0.2);
+  const big = await q.evaluate(() => { const c = window.atlas.around['big']?.canvas, d = c?.getContext('2d')?.getImageData(0, 0, c.width, c.height).data; let n = 0; if (d) for (let k = 3; k < d.length; k += 4) if (d[k]) n++; return n; });
+  const t1 = await out(tlo + 180, -tla, 0.03);
+  const sf = t0.members?.find((m) => m.id === 'saturn'), sb = t1.members?.find((m) => m.id === 'saturn');
+  check(t0.id === 'titan' && sf?.seeThrough && sf.z > 0 && close(sf.r / t0.R, 58232 / 2574.7, 0.2) && big > 2000 && sb?.z < 0 && sb.on && !sb.seeThrough && t1.sun,
+    `a tap on Titan goes there (Saturn overhead at ${tlo.toFixed(1)}, ${tla.toFixed(1)}); zoomed out, Saturn ${(sf?.r / t0.R).toFixed(1)} times as wide: see-through in front of it (${big} pixels drawn), behind it from the far side`);
   await q.evaluate(() => window.atlas.space.exit());
   await q.waitForTimeout(1200);
+  await out(0, 20);
   await q.evaluate(() => window.atlas.play.outline.start());
-  await q.waitForTimeout(1200);
-  const inGame = await q.evaluate(() => window.atlas.around.info.world);
-  check(inGame === '', `nothing to tap around the globe during a game`);
+  await q.waitForTimeout(1500);
+  const inGame = await q.evaluate(() => ({ world: window.atlas.around.info.world, min: window.atlas.app.renderer.view.minZoom, zoom: window.atlas.app.renderer.view.zoom }));
+  check(inGame.world === '' && inGame.min === 0.6 && inGame.zoom >= 0.6, `nothing around the globe during a game, the zoom back to its usual end (${inGame.zoom.toFixed(2)})`);
   check(!ar.errors.length, `around the globe: no page errors${ar.errors.length ? ': ' + ar.errors.join(' | ') : ''}`);
   await ar.ctx.close();
 
@@ -7336,6 +7369,7 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const lt = await open({ ...devices['Pixel 7'], colorScheme: 'light' }, '#p=globe&l=political&c=0,20,1.1&lang=en');
   await lt.page.evaluate(() => { try { window.atlas.app.setTheme?.('light'); } catch { /* the phone's */ } });
   await lt.page.waitForTimeout(1000);
+  for (let k = 0; k < 2; k++) { await lt.page.evaluate(() => { const v = window.atlas.app.renderer.view; v.flyTo({ zoom: v.minZoom }, 1); window.atlas.app.renderer.requestRender(); }); await lt.page.waitForTimeout(700); }
   const light = await lt.page.evaluate(() => ({ theme: document.documentElement.dataset.theme, dark: document.documentElement.classList.contains('space-dark'), brand: getComputedStyle(document.querySelector('.brand-name')).color, sun: !!window.atlas.around.info.sun }));
   await lt.page.evaluate(() => window.atlas.app.setProjection('robinson', false));
   await lt.page.waitForTimeout(1200);

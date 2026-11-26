@@ -108,7 +108,7 @@ export class Renderer {
   overlays = new Set<Overlay>();
   /** Drawn on the background behind the globe, after space (v0.49.0: Saturn's far rings, a moon's planet, a moon
    *  passing behind the Earth). Only for the globe, not a flat map. */
-  underlays = new Set<(bg: CanvasRenderingContext2D, g: { w: number; h: number; cx: number; cy: number; R: number; lon: number; lat: number; top: number; bottom: number }) => void>();
+  underlays = new Set<(bg: CanvasRenderingContext2D, g: { w: number; h: number; cx: number; cy: number; R: number; lon: number; lat: number; top: number; bottom: number; zoom: number; fb: number; moving: boolean }) => void>();
   /** Drawn after the globe's shading and rim, before the names (the Earth cut open). */
   afterShade = new Set<Overlay>();
   /**
@@ -473,7 +473,7 @@ export class Renderer {
     const R = view.zoom * view.fb;
     if (view.current.kind === 'globe' && !view.morphing && this.underlays.size) {
       const [lon, lat] = view.center();
-      const g = { w, h, cx: w / 2, cy: view.translate[1], R, lon, lat, top: view.mapTop, bottom: view.mapTop + view.mapH };
+      const g = { w, h, cx: w / 2, cy: view.translate[1], R, lon, lat, top: view.mapTop, bottom: view.mapTop + view.mapH, zoom: view.zoom, fb: view.fb, moving: this.moving || view.animating };
       for (const u of this.underlays) { bg.save(); try { u(bg, g); } catch (e) { console.warn('underlay', e); } bg.restore(); }
     }
     const [cx, cy] = [w / 2, view.translate[1] - (view.current.kind === 'flat' ? 0 : 0)];
