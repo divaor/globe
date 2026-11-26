@@ -7696,7 +7696,8 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const f1 = await look();
   const o = f1.orbit;
   check(mid(f1.ride?.ahead, f1.ride) && f1.ride.ahead.id === 'mars' && o?.id === 'mars' && Math.abs(o.period - 687) < 2 && o.day > 5 && o.day < f1.jd - f0.jd + 1 && Math.abs(o.day + o.left - o.period) < 0.01 && Math.abs(o.localPeriod - 669) < 2
-    && /Mars round the Sun: \d+%/.test(f1.orbitText) && /Day \d+ of 687 since today · \d+ to go/.test(f1.orbitText) && /In Mars days: \d+ of 669/.test(f1.orbitText),
+    && /Mars round the Sun: \d+%/.test(f1.orbitText) && /In Mars days: \d+ of 669/.test(f1.orbitText)
+    && ((m) => !!m && Number(m[1]) + Number(m[3]) === Number(m[2]) && m[2] === '687')(/Day (\d+) of (\d+) since today · (\d+) to go/.exec(f1.orbitText)),
     `${(f1.jd - f0.jd).toFixed(0)} days on, Mars still straight ahead; the bar: "${f1.orbitText}"`);
   await q.evaluate(() => window.atlas.around.now()); await q.waitForTimeout(500);
   const f2 = await look();
@@ -7713,8 +7714,8 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await at(5);
   const e0 = await look();
   const venus = e0.planets.find((p) => p.id === 'venus');
-  check(e0.lock === 'ride' && e0.ride?.ahead?.id === 'sun' && venus?.nearer && Math.hypot(venus.x - e0.sun.x, venus.y - e0.sun.y) < 80 && e0.drawn.indexOf('disc:venus') > e0.drawn.indexOf('disc:sun') && namesLast(e0.drawn) && /The Earth round the Sun/.test(e0.orbitText),
-    `riding along the Earth on 24 October 2026, Venus passes the Sun ${Math.round(Math.hypot((venus?.x ?? 0) - (e0.sun?.x ?? 0), (venus?.y ?? 0) - (e0.sun?.y ?? 0)))} px from it, drawn in front (nearer); planets in view: ${e0.planets.map((p) => p.id).join(', ')}; every name after every disc`);
+  check(e0.lock === 'ride' && e0.ride?.ahead?.id === 'sun' && venus?.nearer && Math.hypot(venus.x - e0.sun.x, venus.y - e0.sun.y) < 80 && e0.drawn.indexOf('disc:venus') > e0.drawn.indexOf('disc:sun') && namesLast(e0.drawn) && !e0.orbitText,
+    `riding along the Earth on 24 October 2026, Venus passes the Sun ${Math.round(Math.hypot((venus?.x ?? 0) - (e0.sun?.x ?? 0), (venus?.y ?? 0) - (e0.sun?.y ?? 0)))} px from it, drawn in front (nearer); planets in view: ${e0.planets.map((p) => p.id).join(', ')}; every name after every disc; no count before today`);
   // The stars behind: riding along, they stay put while the Earth turns under the camera, drifting only as the camera
   // goes round the orbit (about a degree a day); free, they keep still while time runs. (Until v0.54.0 they wheeled
   // round once a day with the Earth's turning.)

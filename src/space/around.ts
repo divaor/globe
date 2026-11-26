@@ -1009,7 +1009,9 @@ export class Around {
     if (!this.orbitEl) return;
     const id = this.world();
     const subject = this.lock === 'follow' ? this.target : id && id !== 'sun' ? id : null;
-    const p = subject && this.sim != null ? orbitProgress(subject, julian(new Date()), this.jd()) : null;
+    // Counted from today: none for a moment before it (v0.54.1).
+    const today = julian(new Date());
+    const p = subject && this.sim != null && this.sim >= today - 1 / 1440 ? orbitProgress(subject, today, this.jd()) : null;
     if (!p || !subject) {
       this.info.orbit = null;
       if (!this.orbitEl.hidden) { this.orbitEl.hidden = true; this.lastOrbit = ''; }
@@ -1023,12 +1025,16 @@ export class Around {
     const frac = Math.floor(p.frac * 1000) / 1000;
     this.info.orbit = { id: subject, laps: p.laps, pct: frac * 100, day: p.day, period: p.period, left: p.left, local, localPeriod };
     const n = (v: number, whole: number) => fmtNumber(v, whole < 10 ? 1 : 0);
+    // Whole days (a turn of 10 days or more) add up: the day gone and the days to go make the turn as shown (v0.54.1:
+    // rounded apart, "Day 0 of 365 · 366 to go").
+    const count = (day: number, turn: number) => (turn < 10 ? [day, turn, turn - day] : (() => { const t = Math.round(turn), d = Math.min(t, Math.floor(day)); return [d, t, t - d]; })());
+    const [dDay, dTurn, dLeft] = count(p.day, p.period);
     const pct = (Math.floor(frac * 100) / 100).toLocaleString(appLocale(), { style: 'percent', maximumFractionDigits: 0 });
     const name = this.name(subject);
     const head = parent === 'earth' ? L('{0} round the Earth: {1}', '{0} alrededor de la Tierra: {1}', name, pct)
       : parent ? L('{0} round {1}: {2}', '{0} alrededor de {1}: {2}', name, this.name(parent), pct) : L('{0} round the Sun: {1}', '{0} alrededor del Sol: {1}', name, pct);
-    const days = L('Day {0} of {1} since today · {2} to go', 'Día {0} de {1} desde hoy · faltan {2}', n(p.period < 10 ? p.day : Math.floor(p.day), p.period), n(p.period, p.period), n(p.period < 10 ? p.left : Math.ceil(p.left), p.period));
-    const own = local != null && localPeriod != null ? L('In {0} days: {1} of {2}', 'En días de {0}: {1} de {2}', name, n(localPeriod < 10 ? local : Math.floor(local), localPeriod), n(localPeriod, localPeriod)) : '';
+    const days = L('Day {0} of {1} since today · {2} to go', 'Día {0} de {1} desde hoy · faltan {2}', n(dDay, p.period), n(dTurn, p.period), n(dLeft, p.period));
+    const own = local != null && localPeriod != null ? (() => { const [a, b] = count(local, localPeriod); return L('In {0} days: {1} of {2}', 'En días de {0}: {1} de {2}', name, n(a, localPeriod), n(b, localPeriod)); })() : '';
     const laps = p.laps === 1 ? L('1 full orbit since today', '1 vuelta completa desde hoy') : p.laps > 1 ? L('{0} full orbits since today', '{0} vueltas completas desde hoy', fmtNumber(p.laps)) : '';
     const key = [head, days, own, laps, Math.round(frac * 400)].join('|');
     if (key === this.lastOrbit) return;
