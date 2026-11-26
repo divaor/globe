@@ -10,7 +10,8 @@ import { hashOf } from './urls';
 /** Light icons over the dark theme and the dark maps; dark icons over the light ones. */
 function barsStyle(): SystemBarsStyle {
   const root = document.documentElement;
-  const light = root.dataset.theme === 'light' || root.classList.contains('map-light');
+  // The light theme's globe floats in dark space (v0.49.0): light icons there.
+  const light = (root.dataset.theme === 'light' && !root.classList.contains('space-dark')) || root.classList.contains('map-light');
   return light ? SystemBarsStyle.Light : SystemBarsStyle.Dark;
 }
 

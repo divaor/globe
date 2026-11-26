@@ -40,6 +40,24 @@ A backup made as Atlas Globe still opens.
   guessing from the phone's language. Today's reads are one list. Typing an answer on a phone (Outline, Master the
   world's outlines, flags and landmarks), the picture shrinks so the card stays above the keyboard. Everything the
   stores ask for is in `store/`: listings, screenshots in every language, and the answers for their forms.
+- **Tonight's sky and the solar system to tap through (v0.49.0):** Explore → Tonight's sky (also from Space, the
+  sky view, Today and the search box): from your location (asked once, kept on the device rounded to about 10 km) or
+  any point tapped on the globe. **The Moon** as it looks from there now, drawn from its real map, lit and turned as you
+  see it (a crescent lies like a bowl near the equator, stands up in the north, turns over in the south), with its
+  phase, how much is lit, its age, where it is ("34° up in the south-east"), when it rises, is highest and sets, its
+  distance, the next four phases and the next 30 nights. **Where to look:** the sky all around the horizon with the
+  Sun, the Moon and the planets. **The planets tonight:** when and where each is best, how bright, and how it looks
+  in a telescope (all side by side at one magnification; Venus's and Mercury's phases, Mars's face, Saturn's rings at
+  their tilt, Jupiter's four big moons where they are tonight). **Point your telescope at:** the best clusters,
+  nebulae and galaxies high in the dark hours, by eye, binoculars or telescope, and the Moon's glare. **How dark it
+  gets:** sunset, the twilights, the dark hours without the Moon. A slider moves through the night (▶ plays it), a
+  date picks another night; the globe shows night, the half of the Earth that sees the Moon, and where it is overhead.
+  Times are the place's own. Worked out on the device (Meeus and the IAU's rotation models, checked against known
+  eclipses, sunrises and Meeus's worked examples in `scripts/test/tonight.mjs`). **Around the globe:** the Moon beside
+  the Earth where it really is and the Sun the way its light comes from: tap the Moon to go there, the Sun for the
+  solar system, where a tapped planet takes you to it. Saturn wears its rings; a planet's moons sit around it (tap one
+  to go there); behind a moon, its planet to scale (Saturn is 23 times as wide as Titan; tap it to go back). The globe
+  floats in dark space in the light theme too.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass

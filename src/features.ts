@@ -28,6 +28,8 @@ import { Orrery } from './space/orrery';
 import { Sky } from './sky/sky';
 import { Galaxy } from './sky/galaxy';
 import { Elements } from './sky/elements';
+import { Tonight } from './sky/tonight';
+import { Around } from './space/around';
 import { worldHook } from './modes/stories';
 import { MapGames } from './play/menu';
 import { Master } from './master/master';
@@ -50,7 +52,7 @@ import { shouldWelcome, showWelcome } from './ui/welcome';
 import { backGesture } from './ui/backnav';
 
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; legacy: Legacies; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders; i18n: { L: typeof L; t: typeof t; tx: typeof tx; nm: typeof nm } } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; tonight: Tonight; around: Around; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants; inside: InsideEarth; deep: DeepSea; legacy: Legacies; master: Master; fill: FillMap; onmap: PutOnMap; today: Today; reminders: Reminders; i18n: { L: typeof L; t: typeof t; tx: typeof tx; nm: typeof nm } } } }
 
 type Native = typeof import('./native/boot') | null;
 
@@ -70,12 +72,19 @@ export async function startFeatures(app: App, shell: Shell, shared: URLSearchPar
   const sky = new Sky(app, shell, space);
   const galaxy = new Galaxy(app, shell, space, sky);
   const elements = new Elements(app, shell, space, sky);
+  // Tonight's sky (v0.49.0): the Moon now, the planets and what to see tonight from any place.
+  const tonight = new Tonight(app, shell, space);
+  tonight.skyView = sky;
   learn.sky = sky;
   learn.elements = elements;
   learn.space = space;
   learn.orrery = orrery;
   // Map games (v0.24.0): a game and a quiz or tour never share the map.
   const play = new MapGames(app, shell);
+  // Around the globe (v0.49.0): the Sun and the Moon beside the Earth, moons around their planets, a moon's planet
+  // behind it, Saturn's rings; each one tapped takes you there. Not during a game, a quiz or tour, or ambient mode.
+  const around = new Around(app, shell, space);
+  around.enabled = () => !play.host.current && !learn.busy && !app.ambient.on && !tonight.isOpen;
   const hop = play.hop;
   play.host.beforeStart = () => learn.closeAll();
   play.host.exitMode = async () => { await time.modes.find((m) => m.id === app.mode)?.exit(); };
@@ -208,6 +217,10 @@ export async function startFeatures(app: App, shell: Shell, shared: URLSearchPar
     card: () => today.line('deeptime', 'deeptime', L('Today in deep time', 'Hoy en el tiempo profundo'), time.deep.dayLine(dayKey()) ?? L('All of time since the Big Bang in one year: where today falls', 'Todo el tiempo desde el Big Bang en un año: dónde cae hoy'), false, () => void time.deep.openDay(dayKey())),
   });
   today.addRead({
+    id: 'tonight', order: 15,
+    card: () => today.line('tonight', 'tonight', L('Tonight’s sky', 'El cielo de esta noche'), tonight.dayLine(), false, () => void tonight.open()),
+  });
+  today.addRead({
     id: 'legacy', order: 20,
     card: () => today.line('legacy', 'legacy', L('Legacy of the day', 'Legado del día'), legacy.dayLine(dayKey()) ?? L('Something from the past that we still use today', 'Algo del pasado que todavía usamos hoy'), false, () => void legacy.openOfTheDay(dayKey())),
   });
@@ -219,7 +232,7 @@ export async function startFeatures(app: App, shell: Shell, shared: URLSearchPar
   app.on('mydata', openMyData);
   shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, group: 'map', onClick: openMyData });
   void myData.init();
-  const atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, legacy, master, fill, onmap, today, reminders, i18n: { L, t, tx, nm }, outside: { fetch: outside, inatLoad, clientName } };
+  const atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, tonight, around, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants, inside, deep, legacy, master, fill, onmap, today, reminders, i18n: { L, t, tx, nm }, outside: { fetch: outside, inatLoad, clientName } };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };
@@ -279,6 +292,12 @@ export async function startFeatures(app: App, shell: Shell, shared: URLSearchPar
     setTimeout(() => void space.enter(world, { map: (shared.get('map') as 'elev' | null) ?? 'photo', camera }), 300);
   }
   // The sky, our galaxy or the elements: #sky=Ori (#sky=1: the sky from where the globe looks), #galaxy=M42, #element=Au.
+  // Tonight's sky: #tonight=1 (here), or #tonight=lon,lat.
+  const tn = shared.get('tonight');
+  if (tn != null) {
+    const c = tn.split(',').map(Number);
+    setTimeout(() => void tonight.open(c.length === 2 && c.every(isFinite) ? { lon: c[0], lat: c[1] } : undefined), 450);
+  }
   const skyAt = shared.get('sky'), galAt = shared.get('galaxy'), elAt = shared.get('element');
   if (skyAt != null) setTimeout(() => sky.open(skyAt && skyAt !== '1' ? { frame: 'celestial', target: skyAt } : {}), 400);
   else if (galAt != null) setTimeout(() => void galaxy.open(galAt && galAt !== '1' ? galAt : undefined), 400);

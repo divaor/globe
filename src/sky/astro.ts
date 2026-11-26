@@ -52,7 +52,7 @@ export function precession(jd: number): M3 {
 
 const EPS0 = 23.4392911 * RAD;
 /** J2000 ecliptic to J2000 equatorial. */
-const eclToEq = (v: V3, eps = EPS0): V3 => [v[0], v[1] * Math.cos(eps) - v[2] * Math.sin(eps), v[1] * Math.sin(eps) + v[2] * Math.cos(eps)];
+export const eclToEq = (v: V3, eps = EPS0): V3 => [v[0], v[1] * Math.cos(eps) - v[2] * Math.sin(eps), v[1] * Math.sin(eps) + v[2] * Math.cos(eps)];
 
 /** J2000 equatorial to galactic (IAU, Hipparcos values). */
 export const TO_GALACTIC: M3 = [

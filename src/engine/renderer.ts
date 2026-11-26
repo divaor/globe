@@ -106,6 +106,9 @@ export class Renderer {
   };
   tickers = new Set<Ticker>();
   overlays = new Set<Overlay>();
+  /** Drawn on the background behind the globe, after space (v0.49.0: Saturn's far rings, a moon's planet, a moon
+   *  passing behind the Earth). Only for the globe, not a flat map. */
+  underlays = new Set<(bg: CanvasRenderingContext2D, g: { w: number; h: number; cx: number; cy: number; R: number; lon: number; lat: number; top: number; bottom: number }) => void>();
   /** Drawn after the globe's shading and rim, before the names (the Earth cut open). */
   afterShade = new Set<Overlay>();
   /**
@@ -468,6 +471,11 @@ export class Renderer {
     bg.setTransform(dpr, 0, 0, dpr, 0, 0);
     this.drawSpace(bg, w, h);
     const R = view.zoom * view.fb;
+    if (view.current.kind === 'globe' && !view.morphing && this.underlays.size) {
+      const [lon, lat] = view.center();
+      const g = { w, h, cx: w / 2, cy: view.translate[1], R, lon, lat, top: view.mapTop, bottom: view.mapTop + view.mapH };
+      for (const u of this.underlays) { bg.save(); try { u(bg, g); } catch (e) { console.warn('underlay', e); } bg.restore(); }
+    }
     const [cx, cy] = [w / 2, view.translate[1] - (view.current.kind === 'flat' ? 0 : 0)];
     const gy = view.translate[1];
     const ws = this.worldStyle;
@@ -697,8 +705,14 @@ export class Renderer {
     if (this.labels.fading) { this.fullDirty = true; if (!this.raf && !this.held) this.raf = requestAnimationFrame((t) => this.frame(t)); }
   }
 
+  private spaceDark = false;
   private drawSpace(bg: CanvasRenderingContext2D, w: number, h: number) {
-    const th = this.theme;
+    // The globe floats in dark space in both themes (v0.49.0): the Sun, the Moon and the stars around it look the same;
+    // flat maps keep the light theme's paper.
+    const globeView = this.view.current.kind === 'globe' && !this.view.morphing;
+    const th = !this.theme.dark && globeView ? THEMES.dark : this.theme;
+    const dark = th !== this.theme;
+    if (dark !== this.spaceDark) { this.spaceDark = dark; document.documentElement.classList.toggle('space-dark', dark); }
     const g = bg.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, Math.hypot(w, h) / 1.6);
     g.addColorStop(0, th.space[0]); g.addColorStop(1, th.space[1]);
     bg.fillStyle = g;

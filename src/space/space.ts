@@ -41,6 +41,8 @@ export class Space {
   openSky: ((show?: import('../sky/sky').SkyShow) => void) | null = null;
   openGalaxy: ((target?: string) => void) | null = null;
   openElements: ((symbol?: string) => void) | null = null;
+  /** Set by Tonight's sky (sky/tonight.ts, v0.49.0). */
+  openTonight: (() => void) | null = null;
   /** The full-screen views (solar system, sky, galaxy, elements): one at a time. */
   closers: { owner: object; close: () => void }[] = [];
   closeOverlays(except?: object) { for (const c of this.closers) if (c.owner !== except) c.close(); }
@@ -139,6 +141,7 @@ export class Space {
       top.append(orr);
     }
     const extra: [string, string, string, (() => void) | null][] = [
+      ['tonight', '🌙 ', L('Tonight’s sky', 'El cielo de esta noche'), this.openTonight ? () => this.openTonight!() : null],
       ['sky', '✨ ', L('The night sky', 'El cielo nocturno'), this.openSky ? () => this.openSky!() : null],
       ['galaxy', '🌌 ', L('Our galaxy', 'Nuestra galaxia'), this.openGalaxy ? () => this.openGalaxy!() : null],
       ['elements', '⚗️ ', L('Where the elements come from', 'De dónde vienen los elementos'), this.openElements ? () => this.openElements!() : null],

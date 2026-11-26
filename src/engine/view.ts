@@ -90,7 +90,7 @@ export class View {
    *  up, whatever is left between the card and the keyboard, v0.43.4: the 200 px reached up under the card). */
   get mapH(): number { return Math.max(this.least, this.h - this.bottom - this.insetTop); }
   /** The top of that area: the top inset, unless the panels leave less than the least between them. */
-  private get mapTop(): number { return Math.max(0, Math.min(this.insetTop, this.h - this.bottom - this.least)); }
+  get mapTop(): number { return Math.max(0, Math.min(this.insetTop, this.h - this.bottom - this.least)); }
   /** The least height for the map. */
   private get least(): number { return this.keyboard ? 48 : 200; }
   /** What covers the bottom: a panel, or the keyboard. */
