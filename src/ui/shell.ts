@@ -360,7 +360,7 @@ export class Shell {
 
   /** Ambient mode's panel: its playlists, the reader's own, and its settings. */
   openScreensaver() {
-    const el = screensaverPanel(this.app, (id) => { this.sheet.close(); void this.ambient.start(id); }, (m) => this.toast(m, 2200));
+    const el = screensaverPanel(this.app, (id) => { this.sheet.close(); void this.ambient.start(id); }, (m) => this.toast(m, 2200), this.ambient.tourPanel);
     this.openPanel('screensaver', t('ambient'), el);
   }
 

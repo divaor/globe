@@ -7495,6 +7495,71 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await lk.ctx.close();
 }
 
+// 64. Planets and moons (v0.52.0): the screensaver's tour of the solar system. Its card and settings in the
+// screensaver's panel (the worlds as chips, All / Planets / Moons, how to follow, the time speed, shuffled); started,
+// it flies to the first world, follows it as chosen while time plays, glides in or out, shows the world's name and a
+// line about it with the date it is at, and after the seconds on each view moves on to the next; stopped, time is back
+// to now, the view free and back on the Earth where it was.
+{
+  const tu = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-40,15,1.1&lang=en');
+  const q = tu.page;
+  await q.waitForTimeout(800);
+  await q.evaluate(() => window.atlas.shell.openScreensaver());
+  await q.waitForSelector('[data-tour="start"]', { timeout: 8000 }).catch(() => {});
+  const panel = await q.evaluate(() => ({
+    card: !!document.querySelector('[data-playlist="space"]'),
+    chips: document.querySelectorAll('[data-tour-world]').length,
+    on: [...document.querySelectorAll('[data-tour-world].on')].map((b) => b.getAttribute('data-tour-world')),
+    follow: [...document.querySelectorAll('[data-tour] .segmented button, [data-tour] [role="radio"]')].map((b) => b.textContent.trim()),
+  }));
+  await q.click('[data-tour-moons]');
+  await q.waitForTimeout(200);
+  const moons = await q.$$eval('[data-tour-world].on', (b) => b.map((x) => x.getAttribute('data-tour-world')));
+  await q.click('[data-tour-world="ceres"]');
+  await q.waitForTimeout(200);
+  const kept = await q.evaluate(() => window.atlas.app.ambient.tour?.worlds ?? []);
+  check(panel.card && panel.chips === 20 && panel.on.join() === 'earth,moon,mars,jupiter,io,europa,saturn,titan,neptune,pluto' && panel.follow.join('|').includes('A mix')
+    && moons.join() === 'moon,io,europa,ganymede,callisto,enceladus,titan,triton,charon' && kept.includes('ceres') && kept.length === 10,
+    `the tour in the screensaver's panel: a card, 20 worlds (${panel.on.length} chosen), Moons picks ${moons.length}, a tap adds Ceres; follow: ${panel.follow.join(', ')}`);
+  // A short tour: the Moon (its planet), Mars (the Sun), Titan (its orbit), 8 s each.
+  await q.evaluate(() => { const a = window.atlas.app.ambient; a.secs = 8; a.narrate = false; a.tour = { worlds: ['moon', 'mars', 'titan'], follow: 'mix', speed: 1, shuffle: false }; });
+  const cam0 = await q.evaluate(() => window.atlas.app.renderer.view.camera());
+  await q.click('[data-tour="start"]');
+  await q.waitForFunction(() => window.atlas.shell.ambient.tour?.info.visits >= 1 && window.atlas.space.surface?.id === 'moon', null, { timeout: 20000 }).catch(() => {});
+  await q.waitForTimeout(2500);
+  const look = () => q.evaluate(() => {
+    const t = window.atlas.shell.ambient.tour, a = window.atlas.around.info, v = window.atlas.app.renderer.view;
+    return { ...t.info, on: window.atlas.app.ambient.on, amb: document.documentElement.classList.contains('ambient'), surface: window.atlas.space.surface?.id ?? '', mode: window.atlas.app.mode,
+      lockNow: a.lock, playing: a.playing, jd: a.jd, zoom: v.zoom, cap: document.querySelector('.amb-caption')?.innerText ?? '', date: document.querySelector('[data-amb="tour-date"]')?.textContent ?? '',
+      bar: !!document.querySelector('.around-bar:not([hidden])')?.getBoundingClientRect().width };
+  });
+  const v1 = await look();
+  await q.waitForTimeout(1500);
+  const v1b = await look();
+  check(v1.on && v1.amb && v1.world === 'moon' && v1.surface === 'moon' && v1.lock === 'planet' && v1.lockNow === 'planet' && v1.playing && v1b.jd - v1.jd > 0.5
+    && /Moon/.test(v1.cap) && /Planets and moons · /.test(v1.date) && !v1.bar && Math.abs(Math.log(v1b.zoom / v1.zoom)) > 0.02,
+    `the tour starts on the Moon, following the Earth while a day a second goes by (${(v1b.jd - v1.jd).toFixed(1)} days), gliding (zoom ${v1.zoom.toFixed(2)} → ${v1b.zoom.toFixed(2)}); "${v1.cap.replace(/\s+/g, ' ').slice(0, 70)}…", "${v1.date}", no play bar`);
+  await q.waitForFunction(() => window.atlas.shell.ambient.tour?.info.visits >= 2, null, { timeout: 20000 }).catch(() => {});
+  await q.waitForTimeout(2500);
+  const v2 = await look();
+  await q.waitForFunction(() => window.atlas.shell.ambient.tour?.info.visits >= 3, null, { timeout: 20000 }).catch(() => {});
+  await q.waitForTimeout(2500);
+  const v3 = await look();
+  check(v2.world === 'mars' && v2.surface === 'mars' && v2.lock === 'sun' && /Mars/.test(v2.cap) && v3.world === 'titan' && v3.surface === 'titan' && v3.lock === 'orbit' && /Titan/.test(v3.cap) && v2.zoomIn !== v1.zoomIn,
+    `then on to Mars, following the Sun (zooming ${v2.zoomIn ? 'in' : 'out'}), and Titan, locked to its orbit`);
+  await q.waitForFunction(() => window.atlas.shell.ambient.tour?.info.visits >= 4, null, { timeout: 20000 }).catch(() => {});
+  const v4 = await look();
+  check(v4.world === 'moon', `round again from the first world (${v4.world})`);
+  await q.evaluate(() => window.atlas.shell.ambient.stop());
+  await q.waitForTimeout(3000);
+  const end = await q.evaluate(() => ({ on: window.atlas.app.ambient.on, mode: window.atlas.app.mode, lock: window.atlas.around.info.lock, playing: window.atlas.around.info.playing, running: window.atlas.shell.ambient.tour?.running, cam: window.atlas.app.renderer.view.camera(), jd: window.atlas.around.info.jd }));
+  const nowJd = Date.now() / 86400000 + 2440587.5;
+  check(!end.on && end.mode !== 'world' && end.lock === 'free' && !end.playing && !end.running && Math.abs(end.jd - nowJd) < 0.01 && Math.abs(end.cam.lon - cam0.lon) < 1 && Math.abs(end.cam.zoom - cam0.zoom) < 0.05,
+    `stopped: back on the Earth where it was (${end.cam.lon.toFixed(0)}°, zoom ${end.cam.zoom.toFixed(2)}), time back to now, the view free`);
+  check(!tu.errors.length, `planets and moons: no page errors${tu.errors.length ? ': ' + tu.errors.join(' | ') : ''}`);
+  await tu.ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

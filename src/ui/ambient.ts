@@ -12,6 +12,16 @@ import type { ProjectionId } from '../engine/projections';
 import { appLocale } from '../app/i18n';
 import { reducedMotion } from '../engine/motion';
 
+/** The planets-and-moons tour's id among the screensaver's playlists (v0.52.0). */
+export const TOUR_ID = 'space';
+/** The tour, as ambient mode sees it (src/space/tour.ts; the space code loads after the globe, so the features set it). */
+export interface AmbientTour {
+  running: boolean;
+  start(caption: (title: string, words: string) => Promise<void> | void, secs: () => number): void;
+  stop(): Promise<void>;
+  dateText(): string;
+}
+
 export class Ambient {
   private ticker: Ticker | null = null;
   private wake: { release: () => Promise<void> } | null = null;
@@ -35,6 +45,10 @@ export class Ambient {
   private run = 0;
   /** The place the globe sways around (a playlist view of a place), and when the sway started. */
   private place: { lon: number; lat: number; zoom: number; t0: number } | null = null;
+  /** Planets and moons (v0.52.0): the tour, and its part of the screensaver panel (set by the features). */
+  tour: AmbientTour | null = null;
+  tourPanel: ((start: () => void) => HTMLElement) | null = null;
+  private touring = false;
   /** Inside the Earth (v0.32.0): cuts the globe open for a playlist's view. */
   cut: { showCut(o: { peel?: number; focus?: string; lon?: number }): void; hideCut(): void } | null = null;
   /** For tests: the playlist and the view shown, and what was read aloud. */
@@ -64,7 +78,7 @@ export class Ambient {
   /** The exit hint, and with a playlist the button to read aloud or not, for a few seconds. */
   private showHint() {
     this.hintEl.classList.add('show');
-    const voice = !!this.list && canSpeak();
+    const voice = (!!this.list || this.touring) && canSpeak();
     if (voice) this.renderVoice();
     this.toolsEl.classList.toggle('show', voice);
     clearTimeout(this.hintTimer);
@@ -119,8 +133,13 @@ export class Ambient {
     // Names keep off the caption (at the top of a phone's screen, over the map) and the clock.
     r.keepOut.add(this.keepNames);
     r.settings.labelScale = this.names.scale * 0.85;
-    this.list = id ? playlist(id) : null;
-    if (this.list) {
+    this.touring = id === TOUR_ID && !!this.tour;
+    this.list = id && !this.touring ? playlist(id) : null;
+    if (this.touring) {
+      // The tour moves the camera itself (and puts the map back when it ends).
+      this.saved = null;
+      if (view.current.kind !== 'globe') app.setProjection('globe');
+    } else if (this.list) {
       this.saved = { stack: app.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, options: { ...l.options } })), projection: app.projection, camera: view.camera() };
     } else {
       this.saved = null;
@@ -137,12 +156,24 @@ export class Ambient {
       else view.lon += (dt / 1000) * 4 * app.ambient.speed * calm;
       return true;
     };
-    app.renderer.tickers.add(this.ticker);
+    if (!this.touring) app.renderer.tickers.add(this.ticker);
     app.interaction.enabled = false;
     this.updateClock();
     this.clockTimer = window.setInterval(() => this.updateClock(), 1000);
     this.info = { playlist: id, index: -1, title: '', words: '', views: 0 };
     if (this.list) { this.idx = -1; void this.next(); }
+    if (this.touring) {
+      const me = ++this.run;
+      this.tour!.start(async (title, words) => {
+        if (me !== this.run || !this.app.ambient.on) return;
+        this.info = { ...this.info, index: this.info.index + 1, title, words, views: this.info.views + 1 };
+        this.caption(title, words);
+        if (this.app.ambient.narrate && canSpeak() && words) {
+          await new Promise((r) => setTimeout(r, 1800));
+          if (me === this.run && this.app.ambient.on) await speak(words, { lang: this.app.lang });
+        }
+      }, () => this.app.ambient.secs);
+    }
     app.renderer.requestRender();
     app.emit('ambient', true);
   }
@@ -219,9 +250,11 @@ export class Ambient {
     // Only the first letter is a capital ("Sábado, 14 de noviembre").
     const date = d.charAt(0).toUpperCase() + d.slice(1);
     // With a playlist its caption names the view; without, the top filter's name shows under the clock.
-    const top = this.list ? null : [...this.app.layers].reverse().find((l) => l.ready && !l.def.hidden);
+    const top = this.list || this.touring ? null : [...this.app.layers].reverse().find((l) => l.ready && !l.def.hidden);
+    // On the tour, the date the worlds are shown at (time runs there).
+    const tour = this.touring && this.tour ? h('div', { class: 'amb-layer', 'data-amb': 'tour-date' }, `🪐 ${L('Planets and moons', 'Planetas y lunas')} · ${this.tour.dateText()}`) : null;
     this.clockEl.replaceChildren(h('div', { class: 'amb-time' }, time), h('div', { class: 'amb-date' }, date),
-      this.list ? h('div', { class: 'amb-layer' }, `${this.list.icon} ${tx(this.list.name)}`) : top ? h('div', { class: 'amb-layer' }, `${top.def.icon} ${tx(top.def.name)}`) : '');
+      tour ?? (this.list ? h('div', { class: 'amb-layer' }, `${this.list.icon} ${tx(this.list.name)}`) : top ? h('div', { class: 'amb-layer' }, `${top.def.icon} ${tx(top.def.name)}`) : ''));
   }
 
   stop() {
@@ -234,7 +267,8 @@ export class Ambient {
     this.place = null;
     clearInterval(this.clockTimer);
     clearTimeout(this.nextTimer);
-    if (this.list) stopSpeaking();
+    if (this.list || this.touring) stopSpeaking();
+    if (this.touring) { void this.tour?.stop(); this.touring = false; }
     this.cut?.hideCut();
     // A playlist changed the map: what was on it before comes back, and is saved again once it is back.
     const release = () => { if (!app.ambient.on) { app.held = null; app.save(); } };

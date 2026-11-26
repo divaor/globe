@@ -1,6 +1,6 @@
 {
  "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/data/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
- "count": 4959,
+ "count": 4971,
  "messages": [
   {
    "en": " (below sea level)",
@@ -334,7 +334,7 @@
    "en": "3D view",
    "es": "Vista 3D",
    "where": [
-    "src/space/space.ts:272"
+    "src/space/space.ts:274"
    ]
   },
   {
@@ -915,6 +915,13 @@
    ]
   },
   {
+   "en": "A mix",
+   "es": "Un poco de todo",
+   "where": [
+    "src/space/tour.ts:183"
+   ]
+  },
+  {
    "en": "A month in a row",
    "es": "Un mes seguido",
    "where": [
@@ -981,7 +988,7 @@
    "en": "A new region to fill in today",
    "es": "Una nueva región para colorear hoy",
    "where": [
-    "src/features.ts:173"
+    "src/features.ts:178"
    ]
   },
   {
@@ -1585,7 +1592,7 @@
    "en": "About this world",
    "es": "Sobre este mundo",
    "where": [
-    "src/space/space.ts:271"
+    "src/space/space.ts:273"
    ]
   },
   {
@@ -1711,7 +1718,7 @@
    "en": "Add this view",
    "es": "Agregar esta vista",
    "where": [
-    "src/ui/playlists.ts:271"
+    "src/ui/playlists.ts:274"
    ]
   },
   {
@@ -1908,7 +1915,7 @@
    "en": "Air",
    "es": "Atmósfera",
    "where": [
-    "src/space/space.ts:353"
+    "src/space/space.ts:355"
    ]
   },
   {
@@ -1983,7 +1990,7 @@
     "src/layers/packs/green.ts:385",
     "src/layers/packs/wild.ts:180",
     "src/layers/packs/wild.ts:284",
-    "src/ui/playlists.ts:244"
+    "src/space/tour.ts:176"
    ]
   },
   {
@@ -2075,7 +2082,7 @@
    "en": "All of time since the Big Bang in one year: where today falls",
    "es": "Todo el tiempo desde el Big Bang en un año: dónde cae hoy",
    "where": [
-    "src/features.ts:217"
+    "src/features.ts:222"
    ]
   },
   {
@@ -3464,14 +3471,14 @@
    "en": "Back to Earth",
    "es": "Volver a la Tierra",
    "where": [
-    "src/space/space.ts:273"
+    "src/space/space.ts:275"
    ]
   },
   {
    "en": "Back to the Earth",
    "es": "Volver a la Tierra",
    "where": [
-    "src/space/space.ts:313"
+    "src/space/space.ts:315"
    ]
   },
   {
@@ -5140,7 +5147,7 @@
    "en": "Choose a world",
    "es": "Elegir un mundo",
    "where": [
-    "src/space/space.ts:261"
+    "src/space/space.ts:263"
    ]
   },
   {
@@ -5486,7 +5493,7 @@
    "en": "Colour in the world, country by country",
    "es": "Colorea el mundo, país por país",
    "where": [
-    "src/features.ts:108"
+    "src/features.ts:113"
    ]
   },
   {
@@ -5529,7 +5536,7 @@
    "en": "Comet",
    "es": "Cometa",
    "where": [
-    "src/space/space.ts:315"
+    "src/space/space.ts:317"
    ]
   },
   {
@@ -5748,7 +5755,7 @@
    "en": "Copy the link:",
    "es": "Copia el enlace:",
    "where": [
-    "src/ui/playlists.ts:290"
+    "src/ui/playlists.ts:293"
    ]
   },
   {
@@ -5962,8 +5969,8 @@
    "en": "Country of the day",
    "es": "País del día",
    "where": [
-    "src/features.ts:137",
-    "src/features.ts:176",
+    "src/features.ts:142",
+    "src/features.ts:181",
     "src/fill/states.ts:313",
     "src/fill/states.ts:553"
    ]
@@ -6302,8 +6309,8 @@
    "en": "Daily challenge",
    "es": "Reto del día",
    "where": [
-    "src/features.ts:161",
-    "src/features.ts:163",
+    "src/features.ts:166",
+    "src/features.ts:168",
     "src/learn/learn.ts:472",
     "src/learn/learn.ts:495",
     "src/learn/learn.ts:497"
@@ -6801,7 +6808,7 @@
    "es": "Diámetro",
    "where": [
     "src/layers/packs/inside.ts:381",
-    "src/space/space.ts:342"
+    "src/space/space.ts:344"
    ]
   },
   {
@@ -6890,7 +6897,7 @@
     "src/layers/packs/ocean.ts:274",
     "src/layers/packs/ocean.ts:331",
     "src/sky/elements.ts:194",
-    "src/space/space.ts:354"
+    "src/space/space.ts:356"
    ]
   },
   {
@@ -7024,7 +7031,7 @@
    "en": "Down",
    "es": "Bajar",
    "where": [
-    "src/ui/playlists.ts:284"
+    "src/ui/playlists.ts:287"
    ]
   },
   {
@@ -7380,8 +7387,8 @@
    "en": "Earth days",
    "es": "días terrestres",
    "where": [
-    "src/space/space.ts:346",
-    "src/space/space.ts:349"
+    "src/space/space.ts:348",
+    "src/space/space.ts:351"
    ]
   },
   {
@@ -7395,7 +7402,7 @@
    "en": "Earth years",
    "es": "años terrestres",
    "where": [
-    "src/space/space.ts:349"
+    "src/space/space.ts:351"
    ]
   },
   {
@@ -7578,7 +7585,7 @@
    "en": "Eight questions, the same for everyone today",
    "es": "Ocho preguntas, las mismas para todos hoy",
    "where": [
-    "src/features.ts:163",
+    "src/features.ts:168",
     "src/learn/learn.ts:475",
     "src/learn/learn.ts:496"
    ]
@@ -8526,7 +8533,7 @@
    "en": "Fill the map",
    "es": "Llena el mapa",
    "where": [
-    "src/features.ts:108",
+    "src/features.ts:113",
     "src/fill/fill.ts:114",
     "src/fill/fill.ts:586",
     "src/fill/fill.ts:703",
@@ -8545,7 +8552,7 @@
    "en": "Fill the map: the region of the day",
    "es": "Llena el mapa: la región del día",
    "where": [
-    "src/features.ts:173"
+    "src/features.ts:178"
    ]
   },
   {
@@ -8574,7 +8581,7 @@
    "en": "Fill the states: the country of the day",
    "es": "Llena los estados: el país del día",
    "where": [
-    "src/features.ts:178"
+    "src/features.ts:183"
    ]
   },
   {
@@ -8779,7 +8786,7 @@
    "en": "First visit",
    "es": "Primera visita",
    "where": [
-    "src/space/space.ts:355"
+    "src/space/space.ts:357"
    ]
   },
   {
@@ -8941,6 +8948,13 @@
    ]
   },
   {
+   "en": "Follow",
+   "es": "Seguir",
+   "where": [
+    "src/space/tour.ts:178"
+   ]
+  },
+  {
    "en": "Follow 10 lives to their last step",
    "es": "Sigue 10 vidas hasta su último paso",
    "where": [
@@ -8972,14 +8986,14 @@
    "en": "Follow the Earth",
    "es": "Seguir a la Tierra",
    "where": [
-    "src/space/around.ts:622"
+    "src/space/around.ts:627"
    ]
   },
   {
    "en": "Follow the Sun",
    "es": "Seguir al Sol",
    "where": [
-    "src/space/around.ts:623"
+    "src/space/around.ts:628"
    ]
   },
   {
@@ -9001,7 +9015,7 @@
    "en": "Follow {0}",
    "es": "Seguir a {0}",
    "where": [
-    "src/space/around.ts:622"
+    "src/space/around.ts:627"
    ]
   },
   {
@@ -9318,7 +9332,7 @@
    "en": "From its planet",
    "es": "De su planeta",
    "where": [
-    "src/space/space.ts:350"
+    "src/space/space.ts:352"
    ]
   },
   {
@@ -9385,7 +9399,7 @@
    "es": "Del Sol",
    "where": [
     "src/sky/galaxy.ts:374",
-    "src/space/space.ts:350"
+    "src/space/space.ts:352"
    ]
   },
   {
@@ -9435,6 +9449,13 @@
    "es": "¿De qué periodo son sus fósiles?",
    "where": [
     "src/learn/learn.ts:1670"
+   ]
+  },
+  {
+   "en": "From world to world, following each round the Sun or its planet.",
+   "es": "De un mundo a otro, siguiendo a cada uno alrededor del Sol o de su planeta.",
+   "where": [
+    "src/ui/playlists.ts:268"
    ]
   },
   {
@@ -10002,7 +10023,7 @@
    "en": "Gravity",
    "es": "Gravedad",
    "where": [
-    "src/space/space.ts:343"
+    "src/space/space.ts:345"
    ]
   },
   {
@@ -12047,7 +12068,7 @@
    "en": "Interactive world map. Drag to rotate, pinch or scroll to zoom, tap a country for details.",
    "es": "Mapa del mundo interactivo. Arrastra para girarlo, pellizca o desplázate para acercarte y toca un país para ver sus datos.",
    "where": [
-    "src/app/app.ts:279"
+    "src/app/app.ts:280"
    ]
   },
   {
@@ -12217,6 +12238,13 @@
    "es": "Vino de: {0}.",
    "where": [
     "src/learn/learn.ts:1913"
+   ]
+  },
+  {
+   "en": "It flies from world to world, following each round the Sun or its planet while time goes by, and glides in or out as it stays.",
+   "es": "Vuela de un mundo a otro, siguiendo a cada uno en su camino alrededor del Sol o de su planeta mientras pasa el tiempo, y se acerca o se aleja mientras se queda.",
+   "where": [
+    "src/space/tour.ts:174"
    ]
   },
   {
@@ -12465,6 +12493,13 @@
    "es": "Su nombre empieza por {0}.",
    "where": [
     "src/play/outline.ts:116"
+   ]
+  },
+  {
+   "en": "Its planet",
+   "es": "Su planeta",
+   "where": [
+    "src/space/tour.ts:181"
    ]
   },
   {
@@ -12760,7 +12795,7 @@
    "en": "Keep zooming out to see the moons on their real orbits; tap one to go there.",
    "es": "Sigue alejándote para ver las lunas en sus órbitas reales; toca una para ir allí.",
    "where": [
-    "src/space/around.ts:319"
+    "src/space/around.ts:324"
    ]
   },
   {
@@ -13045,7 +13080,7 @@
    "en": "Landings",
    "es": "Aterrizajes",
    "where": [
-    "src/space/space.ts:286"
+    "src/space/space.ts:288"
    ]
   },
   {
@@ -13343,7 +13378,7 @@
    "en": "Legacy of the day",
    "es": "Legado del día",
    "where": [
-    "src/features.ts:225"
+    "src/features.ts:230"
    ]
   },
   {
@@ -13593,7 +13628,7 @@
    "es": "Enlace copiado",
    "where": [
     "src/app/i18n.ts:167",
-    "src/ui/playlists.ts:290"
+    "src/ui/playlists.ts:293"
    ]
   },
   {
@@ -13825,15 +13860,15 @@
    "en": "Lock the view",
    "es": "Fijar la vista",
    "where": [
-    "src/space/around.ts:595",
-    "src/space/around.ts:595"
+    "src/space/around.ts:600",
+    "src/space/around.ts:600"
    ]
   },
   {
    "en": "Lock to the orbit",
    "es": "Fijar a la órbita",
    "where": [
-    "src/space/around.ts:621"
+    "src/space/around.ts:626"
    ]
   },
   {
@@ -14390,8 +14425,8 @@
    "en": "Map games",
    "es": "Juegos en el mapa",
    "where": [
-    "src/features.ts:186",
-    "src/features.ts:188",
+    "src/features.ts:191",
+    "src/features.ts:193",
     "src/learn/progress.ts:358",
     "src/play/hop.ts:88",
     "src/play/menu.ts:82"
@@ -14603,8 +14638,8 @@
    "en": "Master the world",
    "es": "Domina el mundo",
    "where": [
-    "src/features.ts:123",
-    "src/features.ts:126",
+    "src/features.ts:128",
+    "src/features.ts:131",
     "src/fill/fill.ts:663",
     "src/learn/learn.ts:483",
     "src/master/master.ts:119"
@@ -15257,7 +15292,8 @@
    "es": "Lunas",
    "where": [
     "src/space/space.ts:164",
-    "src/space/space.ts:351"
+    "src/space/space.ts:353",
+    "src/space/tour.ts:176"
    ]
   },
   {
@@ -15574,7 +15610,7 @@
    "en": "My playlist",
    "es": "Mi lista",
    "where": [
-    "src/ui/playlists.ts:293"
+    "src/ui/playlists.ts:296"
    ]
   },
   {
@@ -17103,7 +17139,7 @@
     "src/sky/sky.ts:544",
     "src/sky/tonight.ts:262",
     "src/sky/tonight.ts:493",
-    "src/space/around.ts:607"
+    "src/space/around.ts:612"
    ]
   },
   {
@@ -17725,7 +17761,7 @@
    "en": "On this day",
    "es": "Tal día como hoy",
    "where": [
-    "src/features.ts:154",
+    "src/features.ts:159",
     "src/learn/learn.ts:288",
     "src/learn/learn.ts:2839"
    ]
@@ -17790,7 +17826,7 @@
    "en": "One orbit",
    "es": "Una órbita",
    "where": [
-    "src/space/space.ts:349"
+    "src/space/space.ts:351"
    ]
   },
   {
@@ -17818,14 +17854,14 @@
    "en": "One turn",
    "es": "Una vuelta",
    "where": [
-    "src/space/space.ts:347"
+    "src/space/space.ts:349"
    ]
   },
   {
    "en": "One year",
    "es": "Un año",
    "where": [
-    "src/space/space.ts:349"
+    "src/space/space.ts:351"
    ]
   },
   {
@@ -18558,7 +18594,7 @@
    "where": [
     "src/learn/learn.ts:2655",
     "src/master/master.ts:837",
-    "src/space/around.ts:653",
+    "src/space/around.ts:658",
     "src/ui/audio.ts:203",
     "src/ui/legend.ts:134"
    ]
@@ -19114,7 +19150,17 @@
    "es": "Planetas",
    "where": [
     "src/sky/galaxy.ts:352",
-    "src/space/space.ts:163"
+    "src/space/space.ts:163",
+    "src/space/tour.ts:176"
+   ]
+  },
+  {
+   "en": "Planets and moons",
+   "es": "Planetas y lunas",
+   "where": [
+    "src/ui/ambient.ts:255",
+    "src/ui/playlists.ts:268",
+    "src/ui/playlists.ts:271"
    ]
   },
   {
@@ -19278,7 +19324,7 @@
    "en": "Play my playlist",
    "es": "Reproducir mi lista",
    "where": [
-    "src/ui/playlists.ts:296"
+    "src/ui/playlists.ts:299"
    ]
   },
   {
@@ -19608,9 +19654,9 @@
    "en": "Put it on the map",
    "es": "Ponlo en el mapa",
    "where": [
-    "src/features.ts:109",
-    "src/features.ts:142",
-    "src/features.ts:181",
+    "src/features.ts:114",
+    "src/features.ts:147",
+    "src/features.ts:186",
     "src/onmap/onmap.ts:82",
     "src/onmap/onmap.ts:382"
    ]
@@ -19627,7 +19673,7 @@
    "en": "Put it on the map: today",
    "es": "Ponlo en el mapa: hoy",
    "where": [
-    "src/features.ts:183",
+    "src/features.ts:188",
     "src/onmap/onmap.ts:649"
    ]
   },
@@ -19822,7 +19868,7 @@
     "src/deeptime/deeptime.ts:1145",
     "src/learn/learn.ts:2670",
     "src/modes/stories.ts:1733",
-    "src/ui/ambient.ts:77"
+    "src/ui/ambient.ts:91"
    ]
   },
   {
@@ -19836,7 +19882,7 @@
    "en": "Read each view aloud",
    "es": "Leer cada vista en voz alta",
    "where": [
-    "src/ui/playlists.ts:307"
+    "src/ui/playlists.ts:310"
    ]
   },
   {
@@ -19968,8 +20014,8 @@
    "en": "Region of the day",
    "es": "Región del día",
    "where": [
-    "src/features.ts:131",
-    "src/features.ts:171",
+    "src/features.ts:136",
+    "src/features.ts:176",
     "src/fill/fill.ts:392",
     "src/fill/fill.ts:687"
    ]
@@ -20046,42 +20092,42 @@
    "en": "Remind me of Put it on the map’s puzzle",
    "es": "Recuérdame el reto de Ponlo en el mapa",
    "where": [
-    "src/features.ts:182"
+    "src/features.ts:187"
    ]
   },
   {
    "en": "Remind me of the Daily challenge",
    "es": "Recuérdame el Reto del día",
    "where": [
-    "src/features.ts:162"
+    "src/features.ts:167"
    ]
   },
   {
    "en": "Remind me of the country of the day",
    "es": "Recuérdame el país del día",
    "where": [
-    "src/features.ts:177"
+    "src/features.ts:182"
    ]
   },
   {
    "en": "Remind me of the map games’ puzzles",
    "es": "Recuérdame los retos de los juegos en el mapa",
    "where": [
-    "src/features.ts:187"
+    "src/features.ts:192"
    ]
   },
   {
    "en": "Remind me of the region of the day",
    "es": "Recuérdame la región del día",
    "where": [
-    "src/features.ts:172"
+    "src/features.ts:177"
    ]
   },
   {
    "en": "Remind me to practise {0}",
    "es": "Recuérdame practicar {0}",
    "where": [
-    "src/features.ts:167"
+    "src/features.ts:172"
    ]
   },
   {
@@ -20097,7 +20143,7 @@
    "en": "Reminders",
    "es": "Recordatorios",
    "where": [
-    "src/features.ts:159",
+    "src/features.ts:164",
     "src/today/reminders.ts:375"
    ]
   },
@@ -20121,7 +20167,7 @@
    "where": [
     "src/app/i18n.ts:32",
     "src/guide/guide.ts:262",
-    "src/ui/playlists.ts:285"
+    "src/ui/playlists.ts:288"
    ]
   },
   {
@@ -20467,8 +20513,8 @@
    "es": "Velocidad de giro",
    "where": [
     "src/app/i18n.ts:70",
-    "src/ui/playlists.ts:304",
-    "src/ui/playlists.ts:304"
+    "src/ui/playlists.ts:307",
+    "src/ui/playlists.ts:307"
    ]
   },
   {
@@ -21058,8 +21104,8 @@
    "en": "Seconds on each view: ",
    "es": "Segundos en cada vista: ",
    "where": [
-    "src/ui/playlists.ts:302",
-    "src/ui/playlists.ts:303"
+    "src/ui/playlists.ts:305",
+    "src/ui/playlists.ts:306"
    ]
   },
   {
@@ -21259,7 +21305,7 @@
     "src/app/i18n.ts:46",
     "src/layers/imagery.ts:89",
     "src/master/master.ts:1134",
-    "src/ui/playlists.ts:301"
+    "src/ui/playlists.ts:304"
    ]
   },
   {
@@ -21551,7 +21597,7 @@
    "en": "Show the clock",
    "es": "Mostrar el reloj",
    "where": [
-    "src/ui/playlists.ts:308"
+    "src/ui/playlists.ts:311"
    ]
   },
   {
@@ -21623,6 +21669,13 @@
    "es": "Se reducen",
    "where": [
     "src/modes/history.ts:346"
+   ]
+  },
+  {
+   "en": "Shuffle the worlds",
+   "es": "Mezclar los mundos",
+   "where": [
+    "src/space/tour.ts:187"
    ]
   },
   {
@@ -21812,21 +21865,21 @@
    "en": "Six places in {0} to put on the map",
    "es": "Seis lugares de {0} para poner en el mapa",
    "where": [
-    "src/features.ts:183"
+    "src/features.ts:188"
    ]
   },
   {
    "en": "Six places of a country to put on the map, Wordle style",
    "es": "Seis lugares de un país para poner en el mapa, al estilo Wordle",
    "where": [
-    "src/features.ts:109"
+    "src/features.ts:114"
    ]
   },
   {
    "en": "Six places to put on the map",
    "es": "Seis lugares para poner en el mapa",
    "where": [
-    "src/features.ts:183"
+    "src/features.ts:188"
    ]
   },
   {
@@ -22098,7 +22151,7 @@
    "en": "Something from the past that we still use today",
    "es": "Algo del pasado que todavía usamos hoy",
    "where": [
-    "src/features.ts:225"
+    "src/features.ts:230"
    ]
   },
   {
@@ -22409,7 +22462,7 @@
     "src/sky/data.ts:128",
     "src/sky/sky.ts:694",
     "src/sky/sky.ts:751",
-    "src/space/space.ts:315"
+    "src/space/space.ts:317"
    ]
   },
   {
@@ -22476,6 +22529,13 @@
     "src/learn/learn.ts:1524",
     "src/learn/learn.ts:2169",
     "src/master/master.ts:875"
+   ]
+  },
+  {
+   "en": "Start the tour",
+   "es": "Empezar el recorrido",
+   "where": [
+    "src/space/tour.ts:171"
    ]
   },
   {
@@ -23467,7 +23527,7 @@
    "en": "Temperature",
    "es": "Temperatura",
    "where": [
-    "src/space/space.ts:352"
+    "src/space/space.ts:354"
    ]
   },
   {
@@ -24101,7 +24161,9 @@
    "es": "La Tierra",
    "where": [
     "src/deeptime/deeptime.ts:504",
-    "src/space/around.ts:536"
+    "src/space/around.ts:541",
+    "src/space/tour.ts:85",
+    "src/space/tour.ts:154"
    ]
   },
   {
@@ -25006,7 +25068,8 @@
    "es": "El Sol",
    "where": [
     "src/deeptime/deeptime.ts:672",
-    "src/space/around.ts:447"
+    "src/space/around.ts:452",
+    "src/space/tour.ts:180"
    ]
   },
   {
@@ -26548,6 +26611,13 @@
    ]
   },
   {
+   "en": "The orbit",
+   "es": "La órbita",
+   "where": [
+    "src/space/tour.ts:182"
+   ]
+  },
+  {
    "en": "The orphan tsunami, 1700",
    "es": "El tsunami huérfano, 1700",
    "where": [
@@ -27025,6 +27095,13 @@
    "es": "El teatro se derribó en 1870, cuando a su lado ya estaba terminada la nueva Ópera de la Corte, hoy Ópera Estatal. Cuando Beethoven murió en 1827, unas 10 000 personas siguieron su ataúd por Viena.",
    "where": [
     "src/learn/tours.ts:253"
+   ]
+  },
+  {
+   "en": "The time on each world is the seconds on each view, in the settings below.",
+   "es": "El tiempo en cada mundo son los segundos en cada vista, en los ajustes de abajo.",
+   "where": [
+    "src/space/tour.ts:188"
    ]
   },
   {
@@ -27817,6 +27894,13 @@
    ]
   },
   {
+   "en": "Time speed",
+   "es": "Velocidad del tiempo",
+   "where": [
+    "src/space/tour.ts:185"
+   ]
+  },
+  {
    "en": "Time there now",
    "es": "Hora allí ahora",
    "where": [
@@ -27980,7 +28064,7 @@
    "en": "Today in deep time",
    "es": "Hoy en el tiempo profundo",
    "where": [
-    "src/features.ts:217"
+    "src/features.ts:222"
    ]
   },
   {
@@ -28050,7 +28134,7 @@
    "en": "Today’s goal: {0} of {1} answers",
    "es": "Meta de hoy: {0} de {1} respuestas",
    "where": [
-    "src/features.ts:124"
+    "src/features.ts:129"
    ]
   },
   {
@@ -28106,7 +28190,7 @@
    "en": "Tonight’s sky",
    "es": "El cielo de esta noche",
    "where": [
-    "src/features.ts:221",
+    "src/features.ts:226",
     "src/sky/sky.ts:288",
     "src/sky/tonight.ts:87",
     "src/sky/tonight.ts:94",
@@ -28413,7 +28497,7 @@
    "en": "Turn freely",
    "es": "Girar libremente",
    "where": [
-    "src/space/around.ts:620"
+    "src/space/around.ts:625"
    ]
   },
   {
@@ -28427,7 +28511,7 @@
    "en": "Turn on filters, move the globe to a place, and add it. Your playlist is kept in this browser.",
    "es": "Pon filtros, mueve el globo a un lugar y agrégalo. Tu lista se guarda en este navegador.",
    "where": [
-    "src/ui/playlists.ts:294"
+    "src/ui/playlists.ts:297"
    ]
   },
   {
@@ -28892,7 +28976,7 @@
    "en": "Up",
    "es": "Subir",
    "where": [
-    "src/ui/playlists.ts:284"
+    "src/ui/playlists.ts:287"
    ]
   },
   {
@@ -29147,7 +29231,7 @@
    "en": "View added to your playlist",
    "es": "Vista agregada a tu lista",
    "where": [
-    "src/ui/playlists.ts:276"
+    "src/ui/playlists.ts:279"
    ]
   },
   {
@@ -29196,7 +29280,7 @@
    "en": "Visit on the globe",
    "es": "Visitar en el globo",
    "where": [
-    "src/space/space.ts:312"
+    "src/space/space.ts:314"
    ]
   },
   {
@@ -29635,7 +29719,7 @@
    "en": "What happened on this day: events, births and deaths",
    "es": "Lo que pasó un día como hoy: hechos, nacimientos y muertes",
    "where": [
-    "src/features.ts:154"
+    "src/features.ts:159"
    ]
   },
   {
@@ -31535,6 +31619,13 @@
    ]
   },
   {
+   "en": "Worlds",
+   "es": "Mundos",
+   "where": [
+    "src/space/tour.ts:175"
+   ]
+  },
+  {
    "en": "Writers",
    "es": "Escritores",
    "where": [
@@ -32372,7 +32463,7 @@
    "en": "backwards",
    "es": "al revés",
    "where": [
-    "src/space/space.ts:347"
+    "src/space/space.ts:349"
    ]
   },
   {
@@ -32991,7 +33082,7 @@
    "where": [
     "src/sky/sky.ts:673",
     "src/space/orrery.ts:320",
-    "src/space/space.ts:350"
+    "src/space/space.ts:352"
    ]
   },
   {
@@ -33169,7 +33260,7 @@
    "en": "of Earth",
    "es": "de la Tierra",
    "where": [
-    "src/space/space.ts:343"
+    "src/space/space.ts:345"
    ]
   },
   {
@@ -33483,7 +33574,7 @@
    "en": "Reading aloud",
    "es": "Leyendo en voz alta",
    "where": [
-    "src/ui/ambient.ts:77"
+    "src/ui/ambient.ts:91"
    ]
   },
   {
@@ -33679,7 +33770,7 @@
    "en": "thousand km",
    "es": "mil km",
    "where": [
-    "src/space/space.ts:350"
+    "src/space/space.ts:352"
    ]
   },
   {
@@ -33719,7 +33810,7 @@
    "es": "Reproducir",
    "where": [
     "src/learn/learn.ts:2655",
-    "src/space/around.ts:653",
+    "src/space/around.ts:658",
     "src/ui/legend.ts:134"
    ]
   },
@@ -34002,7 +34093,7 @@
    "en": "{0, plural, one {# view} other {# views}}",
    "es": "{0, plural, one {# vista} other {# vistas}}",
    "where": [
-    "src/ui/playlists.ts:296"
+    "src/ui/playlists.ts:299"
    ]
   },
   {
@@ -34482,7 +34573,7 @@
    "es": "{0} km",
    "where": [
     "src/learn/learn.ts:342",
-    "src/space/around.ts:538"
+    "src/space/around.ts:543"
    ]
   },
   {
@@ -34567,8 +34658,8 @@
    "en": "{0} million km",
    "es": "{0} millones de km",
    "where": [
-    "src/space/around.ts:538",
-    "src/space/around.ts:538"
+    "src/space/around.ts:543",
+    "src/space/around.ts:543"
    ]
   },
   {
@@ -34744,7 +34835,7 @@
    "en": "{0} puzzles today: {1}…",
    "es": "{0} retos hoy: {1}…",
    "where": [
-    "src/features.ts:188"
+    "src/features.ts:193"
    ]
   },
   {
@@ -34872,7 +34963,7 @@
    "en": "{0} to review",
    "es": "{0} por repasar",
    "where": [
-    "src/features.ts:124"
+    "src/features.ts:129"
    ]
   },
   {

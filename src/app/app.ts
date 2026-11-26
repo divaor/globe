@@ -1,6 +1,7 @@
 // App controller: owns the data store, renderer and interaction; manages the filter stack, the
 // projection, language and theme; persists state to localStorage and the URL (share links).
 import { DataStore } from '../data/store';
+import type { TourSettings } from '../space/tour';
 import { Renderer } from '../engine/renderer';
 import { Interaction } from '../engine/interaction';
 import { PROJECTIONS, type ProjectionId } from '../engine/projections';
@@ -34,7 +35,7 @@ interface Saved {
   quality?: 'auto' | 'high' | 'low';
   gpuMotion?: boolean;
   labelScale?: number;
-  ambient?: { speed: number; cycle: boolean; clock: boolean; playlist?: string; secs?: number; narrate?: boolean; voice?: boolean; names?: AmbientNames };
+  ambient?: { speed: number; cycle: boolean; clock: boolean; playlist?: string; secs?: number; narrate?: boolean; voice?: boolean; names?: AmbientNames; tour?: TourSettings };
   camera?: { lon: number; lat: number; zoom: number };
   /** The map style and the states and provinces (engine/style.ts). */
   view?: { style?: MapStyle; regions?: boolean; regionNames?: boolean };
@@ -63,7 +64,7 @@ export class App {
   selection: string | null = null;
   /** Ambient mode (the screensaver): its playlist ('' for the filters on the map), seconds a view, reading aloud. */
   /** Ambient mode; `names`: the view's own names only (the map's countries, cities and seas hidden), all, or none. */
-  ambient: { on: boolean; speed: number; cycle: boolean; clock: boolean; playlist: string; secs: number; narrate: boolean; names: AmbientNames } = { on: false, speed: 1, cycle: false, clock: true, playlist: '', secs: 40, narrate: false, names: 'view' };
+  ambient: { on: boolean; speed: number; cycle: boolean; clock: boolean; playlist: string; secs: number; narrate: boolean; names: AmbientNames; tour?: TourSettings } = { on: false, speed: 1, cycle: false, clock: true, playlist: '', secs: 40, narrate: false, names: 'view' };
   /** While ambient mode plays (its playlist's filters, fewer names), what is saved is the map from before it. */
   held: Saved | null = null;
   /**
@@ -460,7 +461,7 @@ export class App {
       labels: lent.find((x) => x.labels)?.labels ?? r.settings.labels,
       graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
       labelScale: r.settings.labelScale, namesBack: true,
-      ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, voice: this.ambient.narrate, names: this.ambient.names },
+      ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, voice: this.ambient.narrate, names: this.ambient.names, tour: this.ambient.tour },
       camera: r.view.camera(),
       view: { ...mapView },
     };

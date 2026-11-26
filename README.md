@@ -90,6 +90,13 @@ A backup made as Atlas Globe still opens.
   comes back to now. The globe's night side is shaded while you look out there. Zooming on out past the moons shows
   the world's own orbit round the Sun, with the Sun at its real place: a dot with its name when it is that small (tap
   it for the solar system). Far out, a drag no longer spins everything right round.
+- **Planets and moons (v0.52.0):** a screensaver that tours the solar system. In the screensaver's panel choose the
+  worlds (any of 20 planets, dwarf planets and moons, or all, the planets or the moons), how to follow them (the Sun,
+  their planet, locked to their orbit, or a mix), the time speed (1 hour to 1 year a second) and whether to shuffle
+  them. It flies from one world to the next, follows each while time plays, glides in close and back out while it
+  stays, and shows the world's name and a line about it (read aloud when that is on), with the date it is at. The
+  time on each world is the seconds on each view in the screensaver's settings. Tap to stop: time comes back to now
+  and the view goes back where it was.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass
