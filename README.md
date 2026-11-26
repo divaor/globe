@@ -119,8 +119,13 @@ A backup made as Atlas Globe still opens.
   between. While time runs, the play bar tells how far round its orbit the world (or the planet followed) has gone
   since today: the share of the turn, the day of it in Earth days and in the planet's own days, the days left, and the
   whole turns done. Also fixed: riding along, every name is drawn after every disc (the Sun's name went under Jupiter
-  from Io), and a name hidden behind a nearer body goes with it; and the parts of Triton, Pluto and Charon no
-  spacecraft saw are painted plain from the ground around them instead of black.
+  from Io), and a name hidden behind a nearer body goes with it; the parts of Triton, Pluto and Charon no
+  spacecraft saw are painted plain from the ground around them instead of black; and the stars behind the globe no
+  longer wheel round with a planet's turning while time plays. They were lined up by the Earth's clock at the real
+  moment for every world, from the side of the map the camera faced, so a locked camera (which keeps still while the
+  world turns under it) swept them round once a day. Now locked, riding along or following, they are where the
+  camera really looks at the moment shown, drifting only as it goes round the orbit (riding along, behind the Sun and
+  the planets exactly); free, the camera turns with the world, and they keep still as before.
 - **Fast, sturdy, accessible (v0.47.0):** the globe is on screen in under a second on a mid-range phone on 4G
   (it was six and a half): the rest of the app loads behind it. Text follows the phone's text size (iOS Dynamic Type
   too, and the map's names with it); every button has a 44-point target on a touch screen; text and buttons pass

@@ -7715,6 +7715,23 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   const venus = e0.planets.find((p) => p.id === 'venus');
   check(e0.lock === 'ride' && e0.ride?.ahead?.id === 'sun' && venus?.nearer && Math.hypot(venus.x - e0.sun.x, venus.y - e0.sun.y) < 80 && e0.drawn.indexOf('disc:venus') > e0.drawn.indexOf('disc:sun') && namesLast(e0.drawn) && /The Earth round the Sun/.test(e0.orbitText),
     `riding along the Earth on 24 October 2026, Venus passes the Sun ${Math.round(Math.hypot((venus?.x ?? 0) - (e0.sun?.x ?? 0), (venus?.y ?? 0) - (e0.sun?.y ?? 0)))} px from it, drawn in front (nearer); planets in view: ${e0.planets.map((p) => p.id).join(', ')}; every name after every disc`);
+  // The stars behind: riding along, they stay put while the Earth turns under the camera, drifting only as the camera
+  // goes round the orbit (about a degree a day); free, they keep still while time runs. (Until v0.54.0 they wheeled
+  // round once a day with the Earth's turning.)
+  const back = () => q.evaluate(() => ({ b: window.atlas.sky.info.back, jd: window.atlas.around.info.jd }));
+  const ang = (u, v) => (Math.acos(Math.max(-1, Math.min(1, u[0] * v[0] + u[1] * v[1] + u[2] * v[2]))) * 180) / Math.PI;
+  const playFor = async (speed, ms) => { await q.evaluate((s) => window.atlas.around.play(s), speed); await q.waitForTimeout(ms); await q.evaluate(() => window.atlas.around.pause()); await q.waitForTimeout(400); };
+  const b0 = await back();
+  await playFor(1, 2500);
+  const b1 = await back();
+  await q.click('[data-around="lock"]'); await q.waitForTimeout(250); await q.click('[data-lock="free"]'); await q.waitForTimeout(1500);
+  const b2 = await back();
+  await playFor(1, 2500);
+  const b3 = await back();
+  const ridDays = b1.jd - b0.jd, rideTurn = b0.b && b1.b ? ang(b0.b.fwd, b1.b.fwd) : 999, rideUp = b0.b && b1.b ? ang(b0.b.up, b1.b.up) : 999, freeTurn = b2.b && b3.b ? ang(b2.b.fwd, b3.b.fwd) : 999;
+  check(b0.b?.around && ridDays > 1 && rideTurn < 1.2 * ridDays + 0.5 && rideUp < 1 && b3.jd - b2.jd > 1 && freeTurn < 0.1,
+    `the stars behind: riding along ${ridDays.toFixed(1)} days, they turn ${rideTurn.toFixed(2)}° (the orbit, not the Earth's turning); free, ${(b3.jd - b2.jd).toFixed(1)} days on, ${freeTurn.toFixed(3)}°`);
+  await q.click('[data-around="lock"]'); await q.waitForTimeout(250); await q.click('[data-lock="ride"]'); await q.waitForTimeout(1200);
   await q.evaluate(() => window.atlas.around.now());
   await q.evaluate(() => window.atlas.space.enter('io'));
   await q.waitForFunction(() => window.atlas.space.surface.id === 'io', null, { timeout: 15000 }).catch(() => {});

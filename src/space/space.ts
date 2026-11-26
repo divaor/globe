@@ -43,6 +43,9 @@ export class Space {
   openElements: ((symbol?: string) => void) | null = null;
   /** Set by Tonight's sky (sky/tonight.ts, v0.49.0). */
   openTonight: (() => void) | null = null;
+  /** Set by the view around the globe (around.ts, v0.54.0): the camera in space (J2000) for the stars behind the
+   *  globe, or null for the Earth as it is now. `lift`: how far above the globe's middle the view's middle is (px). */
+  skyCamera: (() => { right: [number, number, number]; up: [number, number, number]; fwd: [number, number, number]; lift?: number; scale?: number } | null) | null = null;
   /** The full-screen views (solar system, sky, galaxy, elements): one at a time. */
   closers: { owner: object; close: () => void }[] = [];
   closeOverlays(except?: object) { for (const c of this.closers) if (c.owner !== except) c.close(); }

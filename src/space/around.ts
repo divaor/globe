@@ -129,6 +129,7 @@ export class Around {
     app.renderer.overlays.add((rc) => this.front(rc));
     shell.tapHandlers.unshift((x, y) => this.tap(x, y));
     app.renderer.view.steer = (flying) => this.steer(flying);
+    space.skyCamera = () => this.skyCamera();
     // The locate button: back to turning freely.
     const reset = app.resetView.bind(app);
     app.resetView = (...a: Parameters<App['resetView']>) => { this.setLock('free'); return reset(...a); };
@@ -612,15 +613,9 @@ export class Around {
   private ride(ctx: CanvasRenderingContext2D, g: G, near: boolean) {
     const sys = this.sys!, view = this.app.renderer.view, jd = this.jd();
     const onSun = sys.me === 'sun';
-    const f = lockFrame(onSun ? 'follow' : 'ride', sys.me, jd, this.target);
-    const fpx = this.rideFocal(view);
-    // The camera as the globe is drawn this frame (while easing in, how far down it looks follows the globe's place).
-    const el = Math.atan(Math.max(0, view.shiftY) / fpx);
+    const { fpx, el, c, F, X, Y } = this.rideAxes(sys.me, jd);
     const cosEl = Math.cos(el);
     const dist = fpx / (Math.max(1e-9, g.R) * Math.max(0.2, cosEl));
-    const { c } = lockCamera(f, this.az, el / RAD);
-    const F = unit3([-(c[0] - dot3(c, f.h) * f.h[0]), -(c[1] - dot3(c, f.h) * f.h[1]), -(c[2] - dot3(c, f.h) * f.h[2])]);
-    const X = cross3(F, f.h), Y = f.h;
     const C: V3 = [c[0] * dist * sys.R, c[1] * dist * sys.R, c[2] * dist * sys.R];
     const cx = g.cx, cy = g.cy - view.shiftY;
     const dW = dist * sys.R * cosEl, nearest = 0.08 * dW;
@@ -746,6 +741,44 @@ export class Around {
       for (const n of this.later.sort((a, b) => a.rank - b.rank || a.d - b.d)) if (this.label(ctx, n.s, n.x, n.y)) this.info.drawn.push(`name:${n.id}`);
       this.later = [];
     }
+  }
+
+  /** The riding camera as the globe is drawn this frame (J2000): its focal length (px), how far down it looks
+   *  (radians; while easing in, it follows the globe's place), its way from the world, and its axes: ahead (level),
+   *  the screen's right and up (the orbit's pole). */
+  private rideAxes(id: string, jd: number) {
+    const view = this.app.renderer.view;
+    const f = lockFrame(id === 'sun' ? 'follow' : 'ride', id, jd, this.target);
+    const fpx = this.rideFocal(view);
+    const el = Math.atan(Math.max(0, view.shiftY) / fpx);
+    const { c } = lockCamera(f, this.az, el / RAD);
+    const F = unit3([-(c[0] - dot3(c, f.h) * f.h[0]), -(c[1] - dot3(c, f.h) * f.h[1]), -(c[2] - dot3(c, f.h) * f.h[2])]);
+    return { fpx, el, c, F, X: cross3(F, f.h), Y: f.h };
+  }
+
+  /**
+   * The camera in space (J2000) for the stars behind the globe (v0.54.0). Locked, riding along or following, it is at
+   * the moment shown: the world turns under the camera while the stars stay put, and they drift only as the lock's
+   * frame goes round the orbit (riding along, with the camera's own look, middle and focal length, so the stars sit
+   * right behind the Sun and the planets). Free, the camera turns with the world, so it is taken at the real moment, as
+   * before: while time runs the stars keep still rather than wheel round once a world's day. Until v0.54.0 the stars
+   * were lined up by the Earth's clock at the real moment for every world, so locked while time ran they wheeled round
+   * with the world's turning.
+   */
+  private skyCamera(): { right: V3; up: V3; fwd: V3; lift?: number; scale?: number } | null {
+    const id = this.world();
+    const view = this.app.renderer.view;
+    if (!id || !BODIES[id] || view.current.kind !== 'globe' || view.morphing) return null;
+    const jd = this.lock === 'free' ? julian(new Date()) : this.jd();
+    if (this.riding()) {
+      const r = this.rideAxes(id, jd);
+      return { right: r.X, up: r.Y, fwd: r.F, lift: view.shiftY, scale: r.fpx };
+    }
+    const ax = axesOf(id, jd);
+    const toJ = (v: V3): V3 => [0, 1, 2].map((k) => v[0] * ax.X[k] + v[1] * ax.Y[k] + v[2] * ax.pole[k]) as V3;
+    this.readCam();
+    const { c, e, n } = this.camv;
+    return { right: toJ(e), up: toJ(n), fwd: toJ([-c[0], -c[1], -c[2]]) };
   }
 
   /** A body's disc as seen from the riding camera (its own picture, kept while the view stays the same). */
