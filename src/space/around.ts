@@ -37,7 +37,7 @@ const DOT: Record<string, string> = {
   ganymede: '#bdb5a8', callisto: '#9a9388', enceladus: '#f2f4f8', titan: '#e3b468', triton: '#d9cbc2', charon: '#b9b2aa',
 };
 /** How fast time runs while playing (days a second). */
-const SPEEDS: { days: number; label: () => string }[] = [
+export const SPEEDS: { days: number; label: () => string }[] = [
   { days: 1 / 24, label: () => L('1 hour/s', '1 hora/s') },
   { days: 1, label: () => L('1 day/s', '1 día/s') },
   { days: 7, label: () => L('1 week/s', '1 semana/s') },
@@ -233,6 +233,11 @@ export class Around {
     this.app.renderer.tickers.delete(this.tick);
     this.renderUi();
   }
+  /** For the planets-and-moons tour (v0.52.0): no first-time hint, a slow turn round the orbit's pole, the playing date. */
+  quiet() { this.hinted = true; }
+  turn(deg: number) { if (this.lock !== 'free') { this.az = wrap(this.az + deg); this.app.renderer.requestRender(); } }
+  dateText(): string { return this.dateEl?.textContent ?? ''; }
+
   /** Back to now, live. */
   now() {
     this.pause();

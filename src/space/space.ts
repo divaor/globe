@@ -182,7 +182,7 @@ export class Space {
   // ---- world mode ---------------------------------------------------------------------------------
 
   /** Shows a world on the globe (from Earth, a story or another world). */
-  async enter(id: string, opts: { map?: WorldMap['id']; camera?: { lon: number; lat: number; zoom: number }; quiz?: boolean } = {}) {
+  async enter(id: string, opts: { map?: WorldMap['id']; camera?: { lon: number; lat: number; zoom: number }; quiz?: boolean; bare?: boolean } = {}) {
     const w = worldById(id);
     if (!w) return;
     const app = this.app;
@@ -199,13 +199,15 @@ export class Space {
       app.renderer.baseMap = false;
       await app.setStack(['world']);
     }
-    this.surface.quiet = false; this.surface.bare = !!opts.quiz;
+    // A quiz, or the screensaver's tour (v0.52.0, `bare`): the world alone, no bar, names or markers.
+    const bare = !!opts.quiz || !!opts.bare;
+    this.surface.quiet = false; this.surface.bare = bare;
     const done = this.surface.set(id, opts.map ?? 'photo');
     const cam = opts.camera ?? { lon: w.face[0], lat: w.face[1], zoom: 1 };
     app.renderer.view.flyTo(cam, opts.quiz ? 500 : 900);
     app.renderer.requestRender();
     // A quiz shows no bar: it would give the answer away.
-    if (opts.quiz) { this.bar?.remove(); this.bar = null; app.renderer.view.insetBottom = 0; } else this.buildBar();
+    if (bare) { this.bar?.remove(); this.bar = null; app.renderer.view.insetBottom = 0; } else this.buildBar();
     app.emit('mode', 'world');
     app.emit('world', id);
     this.saveHash();
