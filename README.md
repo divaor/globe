@@ -129,6 +129,16 @@ A backup made as Atlas Globe still opens.
 - **v0.54.1:** the play bar's count of days round the orbit adds up: the day gone and the days to go now make the
   turn as shown (they were rounded apart, so the Earth's could read "Day 0 of 365 · 366 to go"), in the planet's own
   days too; and there is no count for a moment before today.
+- **The map on the GPU zoomed in too (v0.55.0):** while the map moves, the GPU draws it from a picture of the whole
+  world (land, the filters' colours, lakes, coasts and borders), but past web zoom 3.6 that picture is too coarse, so
+  every moving frame there was drawn as vectors: Regional languages over Central Asia, with its stripes and provinces,
+  moved at 6 to 20 frames a second on a fast phone (62 ms a frame) against 120 zoomed out. Now a **close-up** is painted
+  of the area around the view (the view with a margin, at the moving map's sharpness, the still map's line widths and
+  stripes, the states and provinces drawn in, as solid lines as before), in strips of 256 rows in the page's idle time
+  after a stop, so a touch never waits behind it; the GPU lays it over the world picture while the map moves. A move
+  that leaves its area, or zooms well past its sharpness, draws vectors for a moment and paints a new one at once; with
+  a data grid (rainfall, the satellite picture) there are two, under and over the grid, as for the world. Settings →
+  Show the frame rate reads "GPU" there now.
 - **v0.54.3 (the Android app as smooth as the website, and its splash with the name):** many phones keep an app to
   60 frames a second (30 when the map is still) unless it asks for more, while their browser gets 120: the website
   felt smoother than the app. The app now asks for the screen's fastest refresh rate while the map is touched, and lets

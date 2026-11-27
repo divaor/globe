@@ -1,11 +1,11 @@
 // Draws one frame: space background + ocean (bg canvas), imagery (WebGL canvas), then vector
 // filters, base map lines, overlays, globe shading and labels (fg canvas).
-import { geoPath, geoGraticule10, type GeoPath } from 'd3-geo';
+import { geoDistance, geoPath, geoGraticule10, type GeoPath } from 'd3-geo';
 import { feature } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry } from 'geojson';
 import { View } from './view';
-import { GLRaster, type RasterDraw, type RasterTexture } from './gl';
+import { GLRaster, type RasterDetail, type RasterDraw, type RasterTexture } from './gl';
 import { paintWorld } from './worldtex';
 import { LabelEngine } from './labels';
 import { bboxNear, loadJSON, shapesFrom, type BaseLevel, type DataStore, type LOD, type Line, type Shape } from '../data/store';
@@ -33,6 +33,14 @@ interface Physical { lakes: Shape[]; rivers: Shape<{ sr: number }>[]; glaciers: 
 
 /** The two GPU world textures: under the data grids and over them (see Renderer.planWorld). */
 type WorldSlot = 'under' | 'over';
+/**
+ * The area a close-up holds (see Renderer.closeFit): a cap of angular radius R (radians) around the view's middle,
+ * as a longitude/latitude box (degrees) of W × H picture pixels, `scale` pixels a radian.
+ */
+interface CloseFit { center: [number, number]; R: number; lonC: number; lonHalf: number; lat0: number; lat1: number; scale: number; W: number; H: number }
+/** From this web zoom, moving frames need a close-up: the world textures are too coarse there. */
+const CLOSE_FROM = 3.6;
+const RAD = Math.PI / 180;
 /** What one world texture holds, and the key that says when it must be repainted. */
 interface WorldPart { land: boolean; layers: LayerInstance[]; top: boolean; lakeFill: string | null; key: string }
 type WorldPlan = { under: WorldPart | null; over: WorldPart };
@@ -360,6 +368,110 @@ export class Renderer {
     under: { tex: null, key: '', wanted: '', timer: 0 },
     over: { tex: null, key: '', wanted: '', timer: 0 },
   };
+  /**
+   * Close-ups (v0.55.0). Zoomed in, the world textures are too coarse, and every moving frame was drawn as vectors (a
+   * filter like Regional languages, with its stripes and provinces, at a few frames a second on a fast phone). A
+   * close-up is the same picture of the area around the view only, at the screen's sharpness (worldtex.ts), laid over
+   * the world texture on the GPU (gl.ts, detail mode 4). It is painted when the map stops, for the next move, or as
+   * soon as a move leaves its area or zooms well past its sharpness; until it is there, frames are vectors as before.
+   */
+  private close: Record<WorldSlot, { tex: RasterTexture | null; key: string; fit: CloseFit | null; wanted: string; timer: number; job: { y: number } | null; canvas?: HTMLCanvasElement }> = {
+    under: { tex: null, key: '', fit: null, wanted: '', timer: 0, job: null },
+    over: { tex: null, key: '', fit: null, wanted: '', timer: 0, job: null },
+  };
+
+  /** The area a close-up would hold for the view as it is: around it with a margin, at the moving map's sharpness. */
+  private closeFit(): CloseFit | null {
+    const v = this.view;
+    if (!this.gl || v.morphing) return null;
+    const [lonC, latC] = v.center();
+    const R = Math.min(Math.PI / 2 + 0.3, v.visibleRadius() * 1.3 + 0.04);
+    const Rd = R / RAD;
+    const lat0 = Math.max(-90, latC - Rd), lat1 = Math.min(90, latC + Rd);
+    const lonHalf = Math.abs(latC) + Rd >= 89.5 ? 180 : Math.min(180, Math.asin(Math.min(1, Math.sin(R) / Math.cos(latC * RAD))) / RAD + 0.5);
+    // One picture pixel per pixel of the moving map, within what the GPU and the phone's memory allow.
+    const mem = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
+    const cap = Math.min(mem !== undefined && mem <= 4 ? 2048 : 4096, this.gl.maxTextureSize);
+    const spanX = 2 * lonHalf * RAD, spanY = (lat1 - lat0) * RAD;
+    let scale = v.pxPerRadian * this.motionDpr();
+    if (Math.max(spanX, spanY) * scale > cap) scale = cap / Math.max(spanX, spanY);
+    return { center: [lonC, latC], R, lonC, lonHalf, lat0, lat1, scale, W: Math.max(16, Math.round(spanX * scale)), H: Math.max(16, Math.round(spanY * scale)) };
+  }
+
+  /** Whether a close-up still serves the view: the view inside its area, at about its sharpness. */
+  private closeCovers(fit: CloseFit): boolean {
+    const now = this.closeFit();
+    if (!now) return false;
+    const ratio = fit.scale / now.scale;
+    return ratio > 0.7 && ratio < 2.6 && geoDistance(now.center, fit.center) + this.view.visibleRadius() <= fit.R + 1e-3;
+  }
+
+  /** The level of detail and the lakes a close-up is painted with (as the still map's), and the states' lines. */
+  private closeContent() {
+    const v = this.view;
+    const lod: LOD = v.webZoom >= 5.3 && this.settings.quality !== 'low' ? '10m' : '50m';
+    const level = this.data.best(lod);
+    const phys = (level.lod === '10m' ? this.physical['10m'] : null) ?? this.physical['50m'];
+    const rg = this.baseMap && !this.worldStyle && mapView.regions && v.webZoom >= 2.6 ? regions() : null;
+    return { level, lakes: phys?.lakes ?? [], regions: rg ? { lines: rg.lines, style: this.theme.region } : null };
+  }
+
+  /** What a close-up of this part holds, as a key: the part's own, the level of detail, the lakes and the states. */
+  private closeKey(p: WorldPart): string {
+    const c = this.closeContent();
+    return `${p.key}#${c.level.lod}#${c.lakes.length}#${c.regions ? `R${c.regions.lines.length}${this.theme.region}` : ''}`;
+  }
+
+  /**
+   * Paints and uploads a close-up of the view as it will be then: soon after a stop, in the page's idle time; at once
+   * mid-move. It is painted in strips of 256 rows, each in a task of its own, so a touch waits at most for one strip.
+   */
+  private scheduleClose(slot: WorldSlot, p: WorldPart, key: string, delay: number) {
+    const c = this.close[slot];
+    if (c.wanted === key && (c.timer || c.job)) return;
+    c.wanted = key;
+    clearTimeout(c.timer);
+    c.job = null;
+    const later = (f: () => void) => (delay > 100 && 'requestIdleCallback' in window ? window.requestIdleCallback(f, { timeout: 300 }) : window.setTimeout(f, 0));
+    c.timer = window.setTimeout(() => {
+      c.timer = 0;
+      const fit = this.closeFit();
+      if (!this.gl || !this.lastRc || !fit || c.wanted !== key) return;
+      const v = this.view, rc = this.lastRc, theme = this.theme, highlight = this.highlight;
+      const content = this.closeContent();
+      const cv = c.canvas ?? (c.canvas = document.createElement('canvas'));
+      if (cv.width !== fit.W || cv.height !== fit.H) { cv.width = fit.W; cv.height = fit.H; }
+      const area = {
+        center: fit.center, R: fit.R, lonC: fit.lonC, lat1: fit.lat1, pxPerRadian: v.pxPerRadian, k: fit.scale / v.pxPerRadian, webZoom: v.webZoom,
+        borderWidth: theme.borderWidth * Math.max(0.6, Math.min(1.8, 0.55 + v.webZoom * 0.14)), regions: content.regions,
+      };
+      const job = { y: 0 };
+      c.job = job;
+      const strip = () => {
+        if (c.job !== job || c.wanted !== key || !this.gl) return;
+        const y1 = Math.min(fit.H, job.y + 256);
+        paintWorld(cv, {
+          level: content.level, layers: p.layers, rc, theme, landBase: p.land, top: p.top, lakeFill: p.lakeFill,
+          highlight, lakes: content.lakes, area, rows: [job.y, y1],
+        });
+        job.y = y1;
+        if (job.y < fit.H) { later(strip); return; }
+        c.job = null;
+        c.tex = this.gl.upload(cv, c.tex);
+        c.key = key;
+        c.fit = fit;
+        this.requestRender();
+      };
+      later(strip);
+    }, delay);
+  }
+
+  /** A close-up as a detail over its world texture: a longitude/latitude box of whole degrees (n = 360). */
+  private closeDetail(slot: WorldSlot): RasterDetail | null {
+    const c = this.close[slot], f = c.fit;
+    if (!c.tex || !f) return null;
+    return { tex: c.tex.tex, mode: 4, geo: true, n: 360, x0: f.lonC - f.lonHalf + 180, y0: 90 - f.lat1, nx: 2 * f.lonHalf, ny: f.lat1 - f.lat0, zf: 0 };
+  }
 
   /** Fill layers that can be baked: contiguous in the stack, coloured per country, not animated. */
   private bakeableFills(ready: LayerInstance[]): LayerInstance[] | null {
@@ -537,7 +649,7 @@ export class Renderer {
     // GPU motion: while the map moves (zoomed out, where the textures are sharp enough), land, filter
     // colours, highlight, lakes and borders come from textures the GPU reprojects (see planWorld).
     const plan = this.settings.gpuMotion && this.gl && !this.gl.software && this.baseMap ? this.planWorld(ready, landBase, opaqueBase) : null;
-    let gpu = false;
+    let gpu = false, close = false;
     if (plan) {
       let ready2 = true;
       for (const slot of ['under', 'over'] as const) {
@@ -547,9 +659,22 @@ export class Renderer {
         if (p.key !== w.key) this.scheduleWorld(slot, p);
         if (!w.tex || w.key !== p.key) ready2 = false;
       }
-      gpu = (this.moving || view.animating) && view.webZoom < 3.6 && ready2;
+      const moving = this.moving || view.animating;
+      if (view.webZoom < CLOSE_FROM) gpu = moving && ready2;
+      else if (!view.morphing) {
+        // Zoomed in: the close-ups too, ready and covering the view (painted soon after a stop, at once mid-move).
+        close = true;
+        for (const slot of ['under', 'over'] as const) {
+          const p = plan[slot];
+          if (!p) continue;
+          const c = this.close[slot], key = this.closeKey(p);
+          if (!c.tex || c.key !== key || !c.fit || !this.closeCovers(c.fit)) { close = false; this.scheduleClose(slot, p, key, moving ? 90 : 250); }
+        }
+        gpu = moving && ready2 && close;
+      }
     }
     this.gpuFrame = gpu;
+    const closeUp = gpu && close;
 
     if (landBase && !gpu) this.fillShapes(ctx, countries, th.land);
 
@@ -565,7 +690,7 @@ export class Renderer {
     };
     // In a GPU frame the fills are in the world textures: the 'under' one goes below every data
     // grid, the 'over' one above them all.
-    if (gpu && plan?.under) pending.push({ texture: this.world.under.tex!, opacity: 1 });
+    if (gpu && plan?.under) pending.push({ texture: this.world.under.tex!, opacity: 1, detail: closeUp ? this.closeDetail('under') : null });
     for (const l of ready) {
       if (l.def.kind === 'raster') {
         const d = l.def.raster?.(rc, l);
@@ -590,7 +715,7 @@ export class Renderer {
       }
       ctx.restore();
     }
-    if (gpu) pending.push({ texture: this.world.over.tex!, opacity: 1 });
+    if (gpu) pending.push({ texture: this.world.over.tex!, opacity: 1, detail: closeUp ? this.closeDetail('over') : null });
     flushRasters();
 
     // Highlight from the legend (dim everything else).
@@ -638,8 +763,8 @@ export class Renderer {
     ctx.strokeStyle = th.border; ctx.lineWidth = bw; ctx.stroke();
     }
 
-    // ---- states and provinces: thin dashed lines from country zoom on, fading in
-    if (this.baseMap && !this.worldStyle && mapView.regions) {
+    // ---- states and provinces: thin dashed lines from country zoom on, fading in (in a close-up while it moves)
+    if (this.baseMap && !this.worldStyle && mapView.regions && !closeUp) {
       const rg = regions();
       // The provinces (a large file) are read when the app is idle after the start (features.ts), or here if the map
       // zooms in before that.

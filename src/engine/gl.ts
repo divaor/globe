@@ -116,7 +116,8 @@ uniform float u_opacity;
 uniform vec3 u_sun;
 uniform int u_shade;      // darken the night side
 // Detail mosaic: tiles x0..x0+nx-1, y0..y0+ny-1 of web-map zoom z (n = 2^z tiles across the world).
-uniform int u_dmode;      // 0 none, 1 picture, 2 shaded relief from heights, 3 elevation colours from heights
+uniform int u_dmode;      // 0 none, 1 picture, 2 shaded relief from heights, 3 elevation colours from heights,
+                          // 4 a sharper copy of the same picture (with its transparency) over the area it covers
 uniform sampler2D u_det;
 uniform sampler2D u_dpal; // height -> colour (see heightU)
 uniform vec4 u_dbox;      // x0, y0, nx, ny
@@ -177,7 +178,9 @@ void main() {
     float Y = u_dgeo == 1 ? (0.5 - lat / PI) * u_dn * 0.5 : (1.0 - log(tan(PI / 4.0 + latc / 2.0)) / PI) / 2.0 * u_dn;
     vec2 uv = vec2(mod(X - u_dbox.x, u_dn) / u_dbox.z, (Y - u_dbox.y) / u_dbox.w);
     if (uv.x >= 0.0 && uv.x <= 1.0 && uv.y >= 0.0 && uv.y <= 1.0) {
-      if (u_dmode == 1) {
+      if (u_dmode == 4) {
+        c = texture(u_det, uv);
+      } else if (u_dmode == 1) {
         vec4 dc = texture(u_det, uv);
         if (dc.a > 0.5) c = vec4(dc.rgb, 1.0);
       } else {
@@ -219,8 +222,11 @@ export interface RasterDetail {
   x0: number; y0: number; nx: number; ny: number; n: number;
   /** The tiles are a longitude/latitude grid (n columns, n/2 rows), not Web Mercator. */
   geo?: boolean;
-  /** 1 picture, 2 shaded relief from heights, 3 elevation colours from heights. */
-  mode: 1 | 2 | 3;
+  /**
+   * 1 picture, 2 shaded relief from heights, 3 elevation colours from heights, 4 a sharper copy of the draw's own
+   * picture (the map's close-up, v0.55.0: the whole colour and transparency come from it inside its box).
+   */
+  mode: 1 | 2 | 3 | 4;
   /** Height palette (modes 2 and 3). */
   palette?: RasterPalette;
   /** Slope exaggeration of the shading. */
