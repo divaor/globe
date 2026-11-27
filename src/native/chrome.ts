@@ -1,6 +1,6 @@
 // The apps' frame (v0.43.0): the status bar's icons light or dark with the app's theme and map, the native splash
-// screen hidden as soon as the page's own is, Android's back button, and links to the website opening the app at
-// the same place (app links and universal links).
+// screen hidden as soon as the page's own is up (v0.54.3; it was kept until the app had loaded), Android's back button,
+// and links to the website opening the app at the same place (app links and universal links).
 import { SystemBars, SystemBarsStyle } from '@capacitor/core';
 import { App } from '@capacitor/app';
 import { SplashScreen } from '@capacitor/splash-screen';

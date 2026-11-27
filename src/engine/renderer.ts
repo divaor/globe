@@ -209,6 +209,18 @@ export class Renderer {
     }
     this.raf = requestAnimationFrame((t) => this.frame(t));
   }
+  /** The last full frames: when each was drawn and how long it took (ms), for the frame-rate meter. */
+  private drawn: [number, number][] = [];
+  /**
+   * How the map has been drawing (v0.54.3, Settings → Show the frame rate): full frames in the last second, the mean
+   * time one took (ms, on the page's side: the GPU's part comes after), whether the last came from the GPU's world
+   * texture, and the pixel ratio. Null when no frame was drawn in the last second.
+   */
+  frameStats(now = performance.now()): { fps: number; ms: number; gpu: boolean; dpr: number } | null {
+    const last = this.drawn.filter(([t]) => now - t <= 1000);
+    if (!last.length) return null;
+    return { fps: last.length, ms: last.reduce((a, [, c]) => a + c, 0) / last.length, gpu: this.gpuFrame, dpr: this.view.dpr };
+  }
   /** When the last full frame was drawn and how long it took (ms), for pacing redraws. */
   private drawnAt = 0;
   private drawCost = 0;
@@ -261,6 +273,8 @@ export class Renderer {
       this.drawnAt = performance.now();
       this.drawCost = this.drawnAt - t0;
       this.drawnView = this.viewKey();
+      this.drawn.push([now, this.drawCost]);
+      if (this.drawn.length > 240) this.drawn.splice(0, this.drawn.length - 240);
       this.onFrame?.();
     }
     const fx = this.hasFx();

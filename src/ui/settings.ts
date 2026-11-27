@@ -10,6 +10,7 @@ import { terrainSettings } from './terrain';
 import { backupSettings } from '../app/backup';
 import { ambientNamesField } from './playlists';
 import { isNative } from '../native/platform';
+import { setFpsMeter } from './fpsmeter';
 
 declare const __APP_VERSION__: string;
 
@@ -82,6 +83,8 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
       { value: 'auto', label: t('qualityAuto') }, { value: 'high', label: t('qualityHigh') }, { value: 'low', label: t('qualityLow') },
     ], (v) => { s.quality = v; app.renderer.resize(app.renderer.view.w, app.renderer.view.h); save(); })),
     ...(app.renderer.gl ? [h('div', { class: 'toggles' }, toggle(s.gpuMotion, (v) => { s.gpuMotion = v; app.renderer.requestRender(); save(); }, t('gpuMotion')))] : []),
+    // How fast the map draws, the same on the website and in the apps (v0.54.3).
+    h('div', { class: 'toggles' }, toggle(app.showFps, (v) => { app.showFps = v; setFpsMeter(app, v); save(); }, L('Show the frame rate (how fast the map draws)', 'Mostrar los cuadros por segundo (qué tan rápido se dibuja el mapa)'))),
     h('h3', { class: 'sec-title' }, L('Detailed terrain', 'Relieve detallado')),
     terrainSettings(app, reopen),
     h('h3', { class: 'sec-title' }, L('Reading aloud', 'Lectura en voz alta')),

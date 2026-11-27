@@ -483,6 +483,10 @@ a.cr-lic { color: var(--accent); }
 .amb-voice[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); }
 html.ambient #ui > *:not(.amb-overlay) { opacity: 0; pointer-events: none !important; transition: opacity .6s; }
 
+/* ---------- the frame-rate meter (Settings → Show the frame rate, v0.54.3) */
+.fps-meter { position: fixed; top: calc(68px + var(--safe-t)); left: 50%; transform: translateX(-50%); z-index: 60; pointer-events: none; padding: 3px 10px; border-radius: var(--r-pill); background: rgba(0,0,0,.6); color: #7dffa0; font: 600 12px/1.4 ui-monospace, Menlo, Consolas, monospace; white-space: nowrap; }
+.fps-meter.still { opacity: .55; }
+
 /* ---------- splash */
 #splash { position: fixed; inset: 0; display: grid; place-content: center; justify-items: center; gap: 14px; background: radial-gradient(circle at 50% 45%, #0f2244, #02050c 70%); color: #eaf2ff; z-index: 50; transition: opacity .8s; }
 #splash.hide { opacity: 0; pointer-events: none; }

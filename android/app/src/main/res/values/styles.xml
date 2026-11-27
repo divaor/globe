@@ -17,11 +17,13 @@
         <item name="android:windowBackground">@color/mundora_space</item>
     </style>
 
-    <!-- The launch screen (Android 12's splash API, and the compat library before it): the space colour and the app's
-         icon; then the app's own theme. Only the window gets the splash picture: an android:background here would be
-         drawn behind every view, a title bar's included (v0.49.1). -->
+    <!-- The launch screen (Android 12's splash API, and the compat library before it): the space colour with the page's
+         own splash, the orb and the name (v0.54.3, scripts/app/splash.mjs); then the app's own theme, and the page's
+         splash takes over with the orb and the name in the same place. Only the window gets the splash picture: an
+         android:background here would be drawn behind every view, a title bar's included (v0.49.1). -->
     <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/mundora_space</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_icon</item>
         <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@drawable/splash</item>

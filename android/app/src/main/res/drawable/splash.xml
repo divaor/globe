@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The launch screen behind Android 11 and older's splash (made by scripts/app/splash.mjs): the space colour and, in
+     the middle, the same orb and name as Android 12's splash icon and the page's own splash. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/mundora_space" />
+    <item>
+        <bitmap android:gravity="center" android:src="@drawable/splash_icon" />
+    </item>
+</layer-list>

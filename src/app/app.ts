@@ -34,6 +34,8 @@ interface Saved {
   shading?: boolean;
   quality?: 'auto' | 'high' | 'low';
   gpuMotion?: boolean;
+  /** Settings → Show the frame rate (v0.54.3). */
+  fps?: boolean;
   labelScale?: number;
   ambient?: { speed: number; cycle: boolean; clock: boolean; playlist?: string; secs?: number; narrate?: boolean; voice?: boolean; names?: AmbientNames; tour?: TourSettings };
   camera?: { lon: number; lat: number; zoom: number };
@@ -61,6 +63,8 @@ export class App {
   themeId: 'dark' | 'light' = 'dark';
   /** Like the phone (v0.40.0): the theme follows its dark mode, and changes with it. */
   themeAuto = true;
+  /** Settings → Show the frame rate (v0.54.3, ui/fpsmeter.ts). */
+  showFps = false;
   selection: string | null = null;
   /** Ambient mode (the screensaver): its playlist ('' for the filters on the map), seconds a view, reading aloud. */
   /** Ambient mode; `names`: the view's own names only (the map's countries, cities and seas hidden), all, or none. */
@@ -459,7 +463,7 @@ export class App {
       lang: this.lang, es: this.spanish, langPicked: this.langPicked, theme: this.themeId, themeAuto: this.themeAuto, projection: this.projection,
       active: lent.find((x) => x.active)?.active ?? this.activeNow(),
       labels: lent.find((x) => x.labels)?.labels ?? r.settings.labels,
-      graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
+      graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion, fps: this.showFps || undefined,
       labelScale: r.settings.labelScale, namesBack: true,
       ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, voice: this.ambient.narrate, names: this.ambient.names, tour: this.ambient.tour },
       camera: r.view.camera(),
@@ -548,6 +552,7 @@ export class App {
     if (saved.shading !== undefined) r.settings.shading = saved.shading;
     if (saved.quality) r.settings.quality = saved.quality;
     if (saved.gpuMotion !== undefined) r.settings.gpuMotion = saved.gpuMotion;
+    this.showFps = !!saved.fps;
     if (saved.labelScale) r.settings.labelScale = saved.labelScale;
     if (saved.view) {
       if (saved.view.style && MAP_STYLES.includes(saved.view.style)) mapView.style = saved.view.style;
