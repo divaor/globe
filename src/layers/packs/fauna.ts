@@ -42,7 +42,7 @@ const REALMS: { id: string; en: string; es: string; color: string; emoji: string
 const WALLACE: [number, number][] = [[115.7, -11], [115.8, -8.5], [117.4, -4.5], [118.6, -2], [119.5, 1], [120.5, 4], [122, 6], [126.5, 9], [128.5, 14]];
 
 const realms: LayerDef = {
-  id: 'realms', category: 'fauna', icon: '🧭', kind: 'fill', defaultOpacity: 0.85,
+  id: 'realms', category: 'fauna', icon: '🧭', kind: 'fill', defaultOpacity: 0.85, bakeable: true,
   name: { en: 'Animal realms', es: 'Regiones zoogeográficas' },
   desc: { en: 'The eight biogeographic realms of Wallace: where animal families live, plus the Wallace Line.', es: 'Las ocho regiones biogeográficas de Wallace y la línea de Wallace.' },
   keywords: 'fauna animals wallace realm zoogeography animales reino',

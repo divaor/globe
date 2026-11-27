@@ -28,7 +28,7 @@ async function loadKoppen() {
 function drawClasses(rc: RenderCtx, color: (k: string) => string | null) {
   const { ctx, path } = rc;
   const by = new Map<string, Shape<{ k: string }>[]>();
-  for (const s of kShapes) {
+  for (const s of rc.visibleShapes(kShapes)) {
     const c = color(s.feature.properties.k);
     if (!c) continue;
     let g = by.get(c); if (!g) by.set(c, (g = [])); g.push(s);
@@ -51,7 +51,7 @@ const GROUPS: Record<string, { en: string; es: string }> = {
 };
 
 const koppen: LayerDef = {
-  id: 'koppen', category: 'climate', icon: '🌦️', kind: 'fill', defaultOpacity: 0.9,
+  id: 'koppen', category: 'climate', icon: '🌦️', kind: 'fill', defaultOpacity: 0.9, bakeable: true,
   name: { en: 'Climate zones (Köppen)', es: 'Zonas climáticas (Köppen)' },
   desc: { en: 'The 30 Köppen–Geiger climate types, from rainforest to ice cap.', es: 'Los 30 tipos de clima de Köppen-Geiger, de la selva al casquete polar.' },
   keywords: 'koppen geiger climate tropical desert temperate polar clima desierto templado',
@@ -76,7 +76,7 @@ const koppen: LayerDef = {
 };
 
 const vegetation: LayerDef = {
-  id: 'vegetation', category: 'flora', icon: '🌳', kind: 'fill', defaultOpacity: 0.9,
+  id: 'vegetation', category: 'flora', icon: '🌳', kind: 'fill', defaultOpacity: 0.9, bakeable: true,
   name: { en: 'Vegetation zones (biomes)', es: 'Zonas de vegetación (biomas)' },
   desc: { en: 'Rainforest, savanna, desert, steppe, forests, taiga, tundra and ice, from climate.', es: 'Selva, sabana, desierto, estepa, bosques, taiga, tundra y hielo, según el clima.' },
   keywords: 'biome forest rainforest savanna taiga tundra bioma bosque selva sabana flora plants plantas',

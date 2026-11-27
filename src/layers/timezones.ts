@@ -33,7 +33,7 @@ const fmtOffset = (z: number) => {
 };
 
 export const timezones: LayerDef = {
-  id: 'timezones', category: 'political', icon: '🕒', kind: 'fill', defaultOpacity: 0.6,
+  id: 'timezones', category: 'political', icon: '🕒', kind: 'fill', defaultOpacity: 0.6, bakeable: true,
   name: { en: 'Time zones', es: 'Husos horarios' },
   desc: { en: 'Nominal time zones with the live local time in each.', es: 'Husos horarios con la hora local en vivo de cada uno.' },
   keywords: 'clock hour utc gmt reloj hora',

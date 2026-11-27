@@ -7815,6 +7815,93 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await ctx.close();
 }
 
+// 68. Always on the GPU while the Earth moves (v0.56.0, Settings, off unless turned on). Zoomed in, a moving frame fell
+// back to vectors whenever the close-up didn't cover the view, and painting a new one mid-move held frames up. With
+// the switch on, a move far off the close-up stays on the GPU at once (the close-up where it reaches, the world texture
+// around it), nothing is painted until the map stops, and then a close-up for where it stopped. Six more filters are
+// painted into the world textures (landforms, climate zones, vegetation zones, time zones, plates, animal realms),
+// so they move on the GPU too, with the still frame's colours.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political,regional-languages&c=66,38,5&lang=en');
+  const F = (fn, arg) => page.evaluate(fn, arg);
+  await page.waitForFunction(() => window.atlas?.app.layers.find((l) => l.def.id === 'regional-languages')?.ready, null, { timeout: 60000 }).catch(() => {});
+  // The switch, under Smooth motion: off at first, greyed while Smooth motion is off, and kept.
+  await F(() => window.atlas.shell.openSettings(true));
+  await page.waitForTimeout(800);
+  const sw = { first: await F(() => { const i = document.querySelector('[data-settings="gpu-always"] input'); return i ? { on: i.checked, disabled: i.disabled } : null; }) };
+  await page.tap('[data-settings="gpu-always"]');
+  await page.waitForTimeout(900);
+  sw.on = await F(() => ({ set: window.atlas.app.renderer.settings.gpuAlways, saved: JSON.parse(localStorage.getItem('atlas-globe:v1') || '{}').gpuAlways }));
+  const smooth = '[data-settings="gpu-always"]';
+  sw.greyed = await F((sel) => { const t = document.querySelector(sel).previousElementSibling.querySelector('input'); t.click(); const g = document.querySelector(sel + ' input').disabled; t.click(); return g && !document.querySelector(sel + ' input').disabled; }, smooth);
+  await F(() => window.atlas.shell.sheet.close());
+  await page.waitForTimeout(400);
+  check(sw.first && !sw.first.on && !sw.first.disabled && sw.on.set === true && sw.on.saved === true && sw.greyed,
+    'Settings: "Always on the GPU while the Earth moves", off at first, turns on and is kept, greyed while Smooth motion is off');
+  const r = await F(async () => {
+    const ren = window.atlas.app.renderer, v = ren.view;
+    ren.settings.labels = { countries: false, capitals: false, cities: false, seas: false, values: false };
+    ren.settings.graticule = false;
+    Object.defineProperty(ren.gl, 'software', { value: false, configurable: true });
+    const wait = (ms) => new Promise((res) => setTimeout(res, ms));
+    const c = ren['close'].over;
+    for (let i = 0; i < 80 && !(c.fit && !c.job); i++) { ren.requestRender(); await wait(100); }
+    const first = c.fit;
+    ren.moving = true;
+    for (let i = 0; i < 30 && !ren.gpuFrame; i++) { ren.requestRender(); await wait(100); }
+    const gpu0 = ren.gpuFrame;
+    // Far off the close-up, then three times closer: on the GPU at once, for every frame, and nothing painted.
+    const frames = [];
+    v.panBy(900, 0); ren.requestRender(); await wait(40); frames.push(ren.gpuFrame);
+    for (let i = 0; i < 8; i++) { v.panBy(30, 10); ren.requestRender(); await wait(60); frames.push(ren.gpuFrame); }
+    v.zoomAt(3, v.w / 2, v.h / 2); ren.requestRender(); await wait(40); frames.push(ren.gpuFrame);
+    for (let i = 0; i < 8; i++) { v.panBy(-20, 5); ren.requestRender(); await wait(60); frames.push(ren.gpuFrame); }
+    await wait(600);
+    const paintedMoving = c.fit !== first || !!c.job || !!c.timer;
+    const wz = v.webZoom;
+    // Stopped: a still frame of vectors, then a close-up of where it stopped.
+    ren.moving = false; ren.requestRender(); await wait(300);
+    const still = ren.gpuFrame;
+    for (let i = 0; i < 80 && !(c.fit !== first && !c.job); i++) { ren.requestRender(); await wait(100); }
+    const covers = !!c.fit && c.fit !== first && ren['closeCovers'](c.fit);
+    return { gpu0, frames, paintedMoving, wz, still, covers };
+  });
+  check(r.gpu0 && r.frames.every(Boolean) && !r.paintedMoving && r.wz >= 3.6,
+    `zoomed in (web zoom ${r.wz.toFixed(1)}), a move far off the close-up and three times closer stays on the GPU in every frame (${r.frames.filter(Boolean).length}/${r.frames.length}), with nothing painted while it moves`);
+  check(!r.still && r.covers, 'when the map stops: a still frame of vectors, then a close-up of where it stopped');
+  // The six filters newly painted into the world textures move on the GPU with the still frame's colours.
+  const fills = {};
+  for (const id of ['landforms', 'koppen', 'vegetation', 'timezones', 'plates', 'realms']) {
+    fills[id] = await F(async (id) => {
+      const app = window.atlas.app, ren = app.renderer, v = ren.view;
+      const wait = (ms) => new Promise((res) => setTimeout(res, ms));
+      ren.moving = false;
+      await app.setStack([id]);
+      for (let i = 0; i < 100 && !app.layers.find((l) => l.def.id === id)?.ready; i++) await wait(100);
+      [v.lon, v.lat] = id === 'realms' ? [20, 0] : [10, 30];
+      v.zoom = 2;
+      ren.requestRender(); await wait(500);
+      const pts = [[-0.25, -0.15], [0.2, 0.1], [0, 0.22], [-0.1, 0.05], [0.12, -0.2]].map(([x, y]) => [v.w / 2 + x * v.w, v.midY + y * v.w]);
+      const px = () => pts.map(([x, y]) => {
+        const d = document.getElementById('fg').getContext('2d').getImageData(Math.round(x * v.dpr) - 2, Math.round(y * v.dpr) - 2, 5, 5).data;
+        const m = [0, 0, 0];
+        for (let i = 0; i < d.length; i += 4) for (let k = 0; k < 3; k++) m[k] += d[i + k] / 25;
+        return m;
+      });
+      const still = px();
+      ren.moving = true;
+      for (let i = 0; i < 40 && !ren.gpuFrame; i++) { ren.requestRender(); await wait(100); }
+      const gpu = ren.gpuFrame, moving = px();
+      ren.moving = false; ren.requestRender(); await wait(200);
+      return { gpu, wz: v.webZoom, diff: Math.max(...still.map((s, i) => Math.hypot(...s.map((x, k) => x - moving[i][k])))) };
+    }, id);
+  }
+  check(Object.values(fills).every((f) => f.gpu && f.wz < 3.6 && f.diff < 60),
+    `six more filters move on the GPU with the still frame's colours: ${Object.entries(fills).map(([k, f]) => `${k} ${f.gpu ? 'GPU' : '2D'} ${Math.round(f.diff)}`).join(', ')}`);
+  check(!errors.length, `no page errors, always on the GPU${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

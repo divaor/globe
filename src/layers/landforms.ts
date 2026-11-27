@@ -39,7 +39,7 @@ async function ensure() {
 }
 
 export const landforms: LayerDef = {
-  id: 'landforms', category: 'nature', icon: '🏔️', kind: 'fill', defaultOpacity: 0.7,
+  id: 'landforms', category: 'nature', icon: '🏔️', kind: 'fill', defaultOpacity: 0.7, bakeable: true,
   name: { en: 'Landforms', es: 'Formas del relieve' },
   desc: { en: 'Mountain ranges, deserts, plateaus, plains, basins, peaks and volcanoes.', es: 'Cordilleras, desiertos, mesetas, llanuras, cuencas, picos y volcanes.' },
   keywords: 'mountains desert plateau plain peak volcano montañas desierto meseta llanura pico volcan',
