@@ -133,7 +133,10 @@ A backup made as Atlas Globe still opens.
   60 frames a second (30 when the map is still) unless it asks for more, while their browser gets 120: the website
   felt smoother than the app. The app now asks for the screen's fastest refresh rate while the map is touched, and lets
   the phone choose again three seconds after the last touch and when it leaves the screen (only rates the screen
-  changes to without a blink). The phone's splash shows the page's own: the colour orb with "Mundora" under it, in the
+  changes to without a blink). **Settings → Show the frame rate** puts a small readout under the top bar, the same on
+  the website and in the apps, to compare the two on one phone: while the map moves, the frames it draws a second, the
+  time each takes on the page's side, whether the GPU drew it from its world texture (GPU) or the 2D canvas did (2D),
+  and the pixel ratio; still, the last figures stay, dimmed. The phone's splash shows the page's own: the colour orb with "Mundora" under it, in the
   same place, and gives way to the page's splash as soon as the page is up (it was kept until the app had loaded), so
   the name and "Loading the world…" show while the app loads.
 - **v0.54.2 (the Play listing from the repository):** the store descriptions in all six languages name the solar

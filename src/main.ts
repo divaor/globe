@@ -34,6 +34,7 @@ async function boot() {
   spainView();
   app.on('lang', () => spainView());
   app.renderer.release();
+  if (app.showFps) void import('./ui/fpsmeter').then((m) => m.setFpsMeter(app, true));
   document.getElementById('splash')?.classList.add('hide');
   setTimeout(() => document.getElementById('splash')?.remove(), 900);
   const { startFeatures } = await import('./features');
