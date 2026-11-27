@@ -27,6 +27,12 @@ export interface RenderSettings {
   motionResolution: boolean;
   /** While the map moves, let the GPU draw it from a pre-painted world texture. */
   gpuMotion: boolean;
+  /**
+   * Always on the GPU while the Earth's map moves (v0.56.0): zoomed in, never back to vectors while a close-up is
+   * painted. The last close-up (sharp where it reaches) and the world texture (softer) serve until the map stops, and
+   * close-ups are only painted then, so painting never holds up a moving frame.
+   */
+  gpuAlways: boolean;
 }
 
 interface Physical { lakes: Shape[]; rivers: Shape<{ sr: number }>[]; glaciers: Shape[]; iceshelves: Shape[] }
@@ -110,7 +116,7 @@ export class Renderer {
   moving = false;
   settings: RenderSettings = {
     labels: { countries: true, capitals: true, cities: true, seas: true, values: true },
-    labelScale: 1, graticule: true, rivers: false, shading: true, quality: 'auto', motionResolution: true, gpuMotion: true,
+    labelScale: 1, graticule: true, rivers: false, shading: true, quality: 'auto', motionResolution: true, gpuMotion: true, gpuAlways: false,
   };
   tickers = new Set<Ticker>();
   overlays = new Set<Overlay>();
@@ -375,9 +381,12 @@ export class Renderer {
    * the world texture on the GPU (gl.ts, detail mode 4). It is painted when the map stops, for the next move, or as
    * soon as a move leaves its area or zooms well past its sharpness; until it is there, frames are vectors as before.
    */
-  private close: Record<WorldSlot, { tex: RasterTexture | null; key: string; fit: CloseFit | null; wanted: string; timer: number; job: { y: number } | null; canvas?: HTMLCanvasElement }> = {
-    under: { tex: null, key: '', fit: null, wanted: '', timer: 0, job: null },
-    over: { tex: null, key: '', fit: null, wanted: '', timer: 0, job: null },
+  private close: Record<WorldSlot, {
+    tex: RasterTexture | null; key: string; part: string; fit: CloseFit | null; wanted: string; timer: number;
+    job: { y: number; fit: CloseFit } | null; canvas?: HTMLCanvasElement;
+  }> = {
+    under: { tex: null, key: '', part: '', fit: null, wanted: '', timer: 0, job: null },
+    over: { tex: null, key: '', part: '', fit: null, wanted: '', timer: 0, job: null },
   };
 
   /** The area a close-up would hold for the view as it is: around it with a margin, at the moving map's sharpness. */
@@ -425,10 +434,12 @@ export class Renderer {
   /**
    * Paints and uploads a close-up of the view as it will be then: soon after a stop, in the page's idle time; at once
    * mid-move. It is painted in strips of 256 rows, each in a task of its own, so a touch waits at most for one strip.
+   * Always on the GPU (settings.gpuAlways), a strip waits while the map moves, and one for a place the map has left
+   * since is painted again for where it is.
    */
   private scheduleClose(slot: WorldSlot, p: WorldPart, key: string, delay: number) {
     const c = this.close[slot];
-    if (c.wanted === key && (c.timer || c.job)) return;
+    if (c.wanted === key && (c.timer || (c.job && this.closeCovers(c.job.fit)))) return;
     c.wanted = key;
     clearTimeout(c.timer);
     c.job = null;
@@ -445,10 +456,11 @@ export class Renderer {
         center: fit.center, R: fit.R, lonC: fit.lonC, lat1: fit.lat1, pxPerRadian: v.pxPerRadian, k: fit.scale / v.pxPerRadian, webZoom: v.webZoom,
         borderWidth: theme.borderWidth * Math.max(0.6, Math.min(1.8, 0.55 + v.webZoom * 0.14)), regions: content.regions,
       };
-      const job = { y: 0 };
+      const job = { y: 0, fit };
       c.job = job;
       const strip = () => {
         if (c.job !== job || c.wanted !== key || !this.gl) return;
+        if (this.settings.gpuAlways && (this.moving || this.view.animating)) { window.setTimeout(() => later(strip), 100); return; }
         const y1 = Math.min(fit.H, job.y + 256);
         paintWorld(cv, {
           level: content.level, layers: p.layers, rc, theme, landBase: p.land, top: p.top, lakeFill: p.lakeFill,
@@ -459,6 +471,7 @@ export class Renderer {
         c.job = null;
         c.tex = this.gl.upload(cv, c.tex);
         c.key = key;
+        c.part = p.key;
         c.fit = fit;
         this.requestRender();
       };
@@ -649,7 +662,9 @@ export class Renderer {
     // GPU motion: while the map moves (zoomed out, where the textures are sharp enough), land, filter
     // colours, highlight, lakes and borders come from textures the GPU reprojects (see planWorld).
     const plan = this.settings.gpuMotion && this.gl && !this.gl.software && this.baseMap ? this.planWorld(ready, landBase, opaqueBase) : null;
-    let gpu = false, close = false;
+    let gpu = false;
+    /** The close-ups each world texture is drawn with in a GPU frame. */
+    const closeUp: Record<WorldSlot, boolean> = { under: false, over: false };
     if (plan) {
       let ready2 = true;
       for (const slot of ['under', 'over'] as const) {
@@ -660,21 +675,29 @@ export class Renderer {
         if (!w.tex || w.key !== p.key) ready2 = false;
       }
       const moving = this.moving || view.animating;
+      const always = this.settings.gpuAlways;
       if (view.webZoom < CLOSE_FROM) gpu = moving && ready2;
-      else if (!view.morphing) {
+      else if (!view.morphing || always) {
         // Zoomed in: the close-ups too, ready and covering the view (painted soon after a stop, at once mid-move).
-        close = true;
+        // Always on the GPU: whatever close-up of the same content there is, the world texture around it, and new
+        // ones only once the map stops.
+        let covered = !view.morphing;
         for (const slot of ['under', 'over'] as const) {
           const p = plan[slot];
           if (!p) continue;
           const c = this.close[slot], key = this.closeKey(p);
-          if (!c.tex || c.key !== key || !c.fit || !this.closeCovers(c.fit)) { close = false; this.scheduleClose(slot, p, key, moving ? 90 : 250); }
+          // (Always on the GPU, one painted at another level of detail or before the lakes came will do.)
+          const exact = !!c.tex && !!c.fit && c.key === key;
+          closeUp[slot] = exact || (always && !!c.tex && !!c.fit && c.part === p.key);
+          if (exact && this.closeCovers(c.fit!)) continue;
+          covered = false;
+          if (!always || !moving) this.scheduleClose(slot, p, key, moving ? 90 : 250);
         }
-        gpu = moving && ready2 && close;
+        gpu = moving && ready2 && (covered || always);
       }
     }
     this.gpuFrame = gpu;
-    const closeUp = gpu && close;
+    if (!gpu) closeUp.under = closeUp.over = false;
 
     if (landBase && !gpu) this.fillShapes(ctx, countries, th.land);
 
@@ -690,7 +713,7 @@ export class Renderer {
     };
     // In a GPU frame the fills are in the world textures: the 'under' one goes below every data
     // grid, the 'over' one above them all.
-    if (gpu && plan?.under) pending.push({ texture: this.world.under.tex!, opacity: 1, detail: closeUp ? this.closeDetail('under') : null });
+    if (gpu && plan?.under) pending.push({ texture: this.world.under.tex!, opacity: 1, detail: closeUp.under ? this.closeDetail('under') : null });
     for (const l of ready) {
       if (l.def.kind === 'raster') {
         const d = l.def.raster?.(rc, l);
@@ -715,7 +738,7 @@ export class Renderer {
       }
       ctx.restore();
     }
-    if (gpu) pending.push({ texture: this.world.over.tex!, opacity: 1, detail: closeUp ? this.closeDetail('over') : null });
+    if (gpu) pending.push({ texture: this.world.over.tex!, opacity: 1, detail: closeUp.over ? this.closeDetail('over') : null });
     flushRasters();
 
     // Highlight from the legend (dim everything else).
@@ -764,7 +787,7 @@ export class Renderer {
     }
 
     // ---- states and provinces: thin dashed lines from country zoom on, fading in (in a close-up while it moves)
-    if (this.baseMap && !this.worldStyle && mapView.regions && !closeUp) {
+    if (this.baseMap && !this.worldStyle && mapView.regions && !closeUp.over) {
       const rg = regions();
       // The provinces (a large file) are read when the app is idle after the start (features.ts), or here if the map
       // zooms in before that.

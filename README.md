@@ -139,6 +139,17 @@ A backup made as Atlas Globe still opens.
   that leaves its area, or zooms well past its sharpness, draws vectors for a moment and paints a new one at once; with
   a data grid (rainfall, the satellite picture) there are two, under and over the grid, as for the world. Settings →
   Show the frame rate reads "GPU" there now.
+- **Always on the GPU while the Earth moves (v0.56.0, Settings, off unless turned on):** zoomed in, a moving frame
+  still went back to vectors whenever the close-up didn't cover the view (a move out of its area, a zoom well past its
+  sharpness), and a new close-up painted mid-move held frames up while it was painted. With **Always on the GPU while
+  the Earth moves** on (under Smooth motion), every moving frame of the Earth's map comes from the GPU: the last
+  close-up of the same map where it reaches (painted at another level of detail will do), the world picture around it,
+  softer for a moment; close-ups are painted only once the map stops (a paint under way waits while it moves), so
+  nothing holds a moving frame up. Space and the other worlds are drawn their own way and are not changed. Six more
+  filters are painted into the world pictures, so they move on the GPU too, with or without the switch: Landforms,
+  Climate zones (Köppen), Vegetation zones, Time zones, Tectonic plates and Animal realms (the climate ones also draw
+  only the areas in view). Still drawn as vectors while moving: Flags on the map, National colours and Day and night,
+  whose pictures depend on the view or the time.
 - **v0.54.3 (the Android app as smooth as the website, and its splash with the name):** many phones keep an app to
   60 frames a second (30 when the map is still) unless it asks for more, while their browser gets 120: the website
   felt smoother than the app. The app now asks for the screen's fastest refresh rate while the map is touched, and lets

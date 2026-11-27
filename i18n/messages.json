@@ -1,6 +1,6 @@
 {
  "about": "The app's texts, by their English (scripts/i18n/extract.mjs). A language file, public/data/i18n/<lang>.json, maps each \"en\" (or \"key\", for a text with a context: the same English with another meaning) to its translation; \"es\" is the Spanish, for reference.",
- "count": 4988,
+ "count": 4989,
  "messages": [
   {
    "en": " (below sea level)",
@@ -2276,6 +2276,13 @@
    "es": "También se habla en: {0}",
    "where": [
     "src/fill/fill.ts:413"
+   ]
+  },
+  {
+   "en": "Always on the GPU while the Earth moves: softer for a moment when zoomed in, never slower",
+   "es": "Siempre con la GPU mientras la Tierra se mueve: más borroso por un momento de cerca, nunca más lento",
+   "where": [
+    "src/ui/settings.ts:118"
    ]
   },
   {
@@ -6049,7 +6056,7 @@
    "en": "Credits",
    "es": "Créditos",
    "where": [
-    "src/ui/settings.ts:125"
+    "src/ui/settings.ts:142"
    ]
   },
   {
@@ -6998,7 +7005,7 @@
    "en": "Donate on Ko-fi",
    "es": "Donar en Ko-fi",
    "where": [
-    "src/ui/settings.ts:137"
+    "src/ui/settings.ts:154"
    ]
   },
   {
@@ -8235,7 +8242,7 @@
    "en": "Explore {0} maps, travel through time with hundreds of stories, plan a trip with the travel guide, and learn every country, capital and flag with games and a challenge each day.",
    "es": "Explora {0} mapas, viaja en el tiempo con cientos de historias, planea un viaje con la guía y aprende todos los países, capitales y banderas con juegos y un reto cada día.",
    "where": [
-    "src/ui/settings.ts:114"
+    "src/ui/settings.ts:131"
    ]
   },
   {
@@ -10506,7 +10513,7 @@
    "en": "Hello. This is how the tours and stories will sound.",
    "es": "Hola. Así sonarán las visitas guiadas y las historias.",
    "where": [
-    "src/ui/settings.ts:162"
+    "src/ui/settings.ts:179"
    ]
   },
   {
@@ -10520,7 +10527,7 @@
    "en": "Help and support",
    "es": "Ayuda y soporte",
    "where": [
-    "src/ui/settings.ts:122"
+    "src/ui/settings.ts:139"
    ]
   },
   {
@@ -12096,7 +12103,7 @@
    "en": "Interactive world map. Drag to rotate, pinch or scroll to zoom, tap a country for details.",
    "es": "Mapa del mundo interactivo. Arrastra para girarlo, pellizca o desplázate para acercarte y toca un país para ver sus datos.",
    "where": [
-    "src/app/app.ts:284"
+    "src/app/app.ts:285"
    ]
   },
   {
@@ -14213,7 +14220,7 @@
    "en": "Made by {0}.",
    "es": "Hecho por {0}.",
    "where": [
-    "src/ui/settings.ts:116"
+    "src/ui/settings.ts:133"
    ]
   },
   {
@@ -15499,7 +15506,7 @@
    "en": "Mundora is free and has no ads. If you enjoy it, you can buy me a coffee on Ko-fi: it helps pay for the app stores and the time to keep adding to the globe.",
    "es": "Mundora es gratis y no tiene anuncios. Si te gusta, puedes invitarme un café en Ko-fi: ayuda a pagar las tiendas de apps y el tiempo para seguir agregando cosas al globo.",
    "where": [
-    "src/ui/settings.ts:136"
+    "src/ui/settings.ts:153"
    ]
   },
   {
@@ -15513,7 +15520,7 @@
    "en": "Mundora is the world on one globe: its countries and cities, its nature, its history and its sky.",
    "es": "Mundora es el mundo en un solo globo: sus países y ciudades, su naturaleza, su historia y su cielo.",
    "where": [
-    "src/ui/settings.ts:113"
+    "src/ui/settings.ts:130"
    ]
   },
   {
@@ -16534,7 +16541,7 @@
    "en": "No account and no ads. What you do stays on this device; to take it to another, use Settings → Your data on another device.",
    "es": "Sin cuenta y sin anuncios. Lo que haces se queda en este dispositivo; para llevarlo a otro, usa Ajustes → Tus datos en otro dispositivo.",
    "where": [
-    "src/ui/settings.ts:115"
+    "src/ui/settings.ts:132"
    ]
   },
   {
@@ -17868,7 +17875,7 @@
    "en": "One of your device’s own voices reads; the app records and sends nothing.",
    "es": "Lee una voz de tu dispositivo; la app no graba ni envía nada.",
    "where": [
-    "src/ui/settings.ts:167"
+    "src/ui/settings.ts:184"
    ]
   },
   {
@@ -18047,7 +18054,7 @@
    "en": "Open source (GPL-3.0). Every map and story names its sources; the data keep their own licences.",
    "es": "Código abierto (GPL-3.0). Cada mapa e historia nombra sus fuentes; los datos conservan sus propias licencias.",
    "where": [
-    "src/ui/settings.ts:117"
+    "src/ui/settings.ts:134"
    ]
   },
   {
@@ -19655,7 +19662,7 @@
    "en": "Privacy policy",
    "es": "Política de privacidad",
    "where": [
-    "src/ui/settings.ts:121"
+    "src/ui/settings.ts:138"
    ]
   },
   {
@@ -19974,7 +19981,7 @@
    "en": "Read tours and stories aloud",
    "es": "Leer en voz alta las visitas guiadas y las historias",
    "where": [
-    "src/ui/settings.ts:152"
+    "src/ui/settings.ts:169"
    ]
   },
   {
@@ -22459,7 +22466,7 @@
    "where": [
     "src/app/i18n.ts:172",
     "src/ui/legend.ts:146",
-    "src/ui/settings.ts:165"
+    "src/ui/settings.ts:182"
    ]
   },
   {
@@ -23000,7 +23007,7 @@
    "en": "Support Mundora",
    "es": "Apoya a Mundora",
    "where": [
-    "src/ui/settings.ts:135",
+    "src/ui/settings.ts:152",
     "src/ui/shell.ts:126"
    ]
   },
@@ -27587,7 +27594,7 @@
    "en": "This browser cannot read aloud.",
    "es": "Este navegador no puede leer en voz alta.",
    "where": [
-    "src/ui/settings.ts:145"
+    "src/ui/settings.ts:162"
    ]
   },
   {
@@ -27631,7 +27638,7 @@
    "en": "This device has no voices in {0}. You can add one in the system’s text-to-speech settings.",
    "es": "Este dispositivo no tiene voces en {0}. Puedes agregar una en los ajustes de texto a voz del sistema.",
    "where": [
-    "src/ui/settings.ts:154"
+    "src/ui/settings.ts:171"
    ]
   },
   {
@@ -29416,8 +29423,8 @@
    "en": "Voice",
    "es": "Voz",
    "where": [
-    "src/ui/settings.ts:157",
-    "src/ui/settings.ts:164"
+    "src/ui/settings.ts:174",
+    "src/ui/settings.ts:181"
    ]
   },
   {
@@ -35675,7 +35682,7 @@
    "en": "▶ Try the voice",
    "es": "▶ Probar la voz",
    "where": [
-    "src/ui/settings.ts:161"
+    "src/ui/settings.ts:178"
    ]
   },
   {

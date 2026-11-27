@@ -57,7 +57,7 @@ function gridFor(): typeof arrowGrid {
 }
 
 const tectonics: LayerDef = {
-  id: 'plates', category: 'earth', icon: '🧩', kind: 'fill', defaultOpacity: 0.85,
+  id: 'plates', category: 'earth', icon: '🧩', kind: 'fill', defaultOpacity: 0.85, bakeable: true,
   name: { en: 'Tectonic plates', es: 'Placas tectónicas' },
   desc: { en: 'The 54 plates of the Earth’s crust and how their edges move: ridges, trenches and faults.', es: 'Las 54 placas de la corteza y cómo se mueven sus bordes: dorsales, fosas y fallas.' },
   keywords: 'plates earthquakes ridge subduction fault placas terremotos dorsal falla',

@@ -82,7 +82,7 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     field(t('quality'), segmented<'auto' | 'high' | 'low'>(s.quality, [
       { value: 'auto', label: t('qualityAuto') }, { value: 'high', label: t('qualityHigh') }, { value: 'low', label: t('qualityLow') },
     ], (v) => { s.quality = v; app.renderer.resize(app.renderer.view.w, app.renderer.view.h); save(); })),
-    ...(app.renderer.gl ? [h('div', { class: 'toggles' }, toggle(s.gpuMotion, (v) => { s.gpuMotion = v; app.renderer.requestRender(); save(); }, t('gpuMotion')))] : []),
+    ...(app.renderer.gl ? [gpuToggles(app, save)] : []),
     // How fast the map draws, the same on the website and in the apps (v0.54.3).
     h('div', { class: 'toggles' }, toggle(app.showFps, (v) => { app.showFps = v; setFpsMeter(app, v); save(); }, L('Show the frame rate (how fast the map draws)', 'Mostrar los cuadros por segundo (qué tan rápido se dibuja el mapa)'))),
     h('h3', { class: 'sec-title' }, L('Detailed terrain', 'Relieve detallado')),
@@ -105,6 +105,23 @@ export function settingsPanel(app: App, reopen: () => void, toast: (m: string) =
     isNative() ? null : h('div', { class: 'settings-actions' }, installBtn),
     h('p', { class: 'muted small' }, `${t('version')} ${__APP_VERSION__}`),
   );
+}
+
+/**
+ * Smooth motion (the GPU draws the moving map from textures painted beforehand), and always on the GPU (v0.56.0):
+ * zoomed in, the moving map stays on the GPU while the sharper picture of the area is painted, softer for a moment
+ * instead of slower. Only the Earth's map is drawn this way; it needs smooth motion on.
+ */
+function gpuToggles(app: App, save: () => void): HTMLElement {
+  const s = app.renderer.settings;
+  const always = toggle(s.gpuAlways, (v) => { s.gpuAlways = v; save(); },
+    L('Always on the GPU while the Earth moves: softer for a moment when zoomed in, never slower', 'Siempre con la GPU mientras la Tierra se mueve: más borroso por un momento de cerca, nunca más lento'));
+  always.dataset.settings = 'gpu-always';
+  const input = always.querySelector('input')!;
+  input.disabled = !s.gpuMotion;
+  return h('div', { class: 'toggles' },
+    toggle(s.gpuMotion, (v) => { s.gpuMotion = v; input.disabled = !v; save(); }, t('gpuMotion')),
+    always);
 }
 
 export function aboutPanel(app: App): HTMLElement {

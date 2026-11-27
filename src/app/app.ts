@@ -34,6 +34,7 @@ interface Saved {
   shading?: boolean;
   quality?: 'auto' | 'high' | 'low';
   gpuMotion?: boolean;
+  gpuAlways?: boolean;
   /** Settings → Show the frame rate (v0.54.3). */
   fps?: boolean;
   labelScale?: number;
@@ -463,7 +464,7 @@ export class App {
       lang: this.lang, es: this.spanish, langPicked: this.langPicked, theme: this.themeId, themeAuto: this.themeAuto, projection: this.projection,
       active: lent.find((x) => x.active)?.active ?? this.activeNow(),
       labels: lent.find((x) => x.labels)?.labels ?? r.settings.labels,
-      graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion, fps: this.showFps || undefined,
+      graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion, gpuAlways: r.settings.gpuAlways || undefined, fps: this.showFps || undefined,
       labelScale: r.settings.labelScale, namesBack: true,
       ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, voice: this.ambient.narrate, names: this.ambient.names, tour: this.ambient.tour },
       camera: r.view.camera(),
@@ -552,6 +553,7 @@ export class App {
     if (saved.shading !== undefined) r.settings.shading = saved.shading;
     if (saved.quality) r.settings.quality = saved.quality;
     if (saved.gpuMotion !== undefined) r.settings.gpuMotion = saved.gpuMotion;
+    r.settings.gpuAlways = !!saved.gpuAlways;
     this.showFps = !!saved.fps;
     if (saved.labelScale) r.settings.labelScale = saved.labelScale;
     if (saved.view) {
