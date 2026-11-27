@@ -1,8 +1,9 @@
 // The apps' side of the start (v0.43.0), loaded only inside the iOS and Android apps (main.ts asks platform.ts
-// first). `early` runs before the app is built: the stored progress is put back, a shared link's place goes into
-// the address, and the page is given the phone's share menu, clipboard, file saving, browser, location and (on
-// Android) voices. `ready` runs once the app is up: the native splash goes, the status bar follows the theme, the
-// back button and links work, and a tapped reminder opens Today.
+// first). `early` runs before the app is built: the phone's splash gives way to the page's own (v0.54.3: the same orb
+// and name in the same place, with "Loading the world…" under them, so the name shows while the app loads), the
+// stored progress is put back, a shared link's place goes into the address, and the page is given the phone's share
+// menu, clipboard, file saving, browser, location and (on Android) voices. `ready` runs once the app is up: the status
+// bar follows the theme, the back button and links work, and a tapped reminder opens Today.
 import { keepStorage } from './storage';
 import { installShare } from './share';
 import { installLinks } from './links';
@@ -15,6 +16,7 @@ import { watchAnswers } from './haptics';
 
 export async function early() {
   document.documentElement.classList.add('native', `native-${platform()}`);
+  hideSplash();
   await keepStorage();
   await launchLink();
   installShare();
@@ -24,7 +26,6 @@ export async function early() {
 }
 
 export function ready(o: { back: () => boolean; openToday: () => void }) {
-  hideSplash();
   followTheme();
   backButton(o.back);
   laterLinks();

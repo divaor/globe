@@ -1,7 +1,7 @@
 {
   "name": "globe",
   "private": true,
-  "version": "0.54.2",
+  "version": "0.54.3",
   "description": "Atlas Globe: a detailed, colorful, installable world globe with many map filters, projections, a political timeline and a Pangea animation.",
   "type": "module",
   "license": "GPL-3.0-or-later",
@@ -40,7 +40,7 @@
     "data:space": "node scripts/data/space/build-space.mjs",
     "data:wild": "node scripts/data/wild/build-wild.mjs",
     "data:green": "node scripts/data/green/build-green.mjs",
-    "app:icons": "node scripts/app/icons.mjs --style b && capacitor-assets generate --ios --android --iconBackgroundColor \"#08070f\" --iconBackgroundColorDark \"#08070f\" --splashBackgroundColor \"#0b1220\" --splashBackgroundColorDark \"#0b1220\"",
+    "app:icons": "node scripts/app/icons.mjs --style b && capacitor-assets generate --ios --android --iconBackgroundColor \"#08070f\" --iconBackgroundColorDark \"#08070f\" --splashBackgroundColor \"#0b1220\" --splashBackgroundColorDark \"#0b1220\" && node scripts/app/splash.mjs",
     "app:sync": "npm run build && cap sync",
     "app:android": "npm run app:sync && cd android && ./gradlew assembleDebug",
     "test:native": "node scripts/test/native.mjs",

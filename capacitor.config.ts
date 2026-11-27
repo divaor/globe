@@ -21,7 +21,8 @@ const config: CapacitorConfig = {
     backgroundColor: '#0b1220',
   },
   plugins: {
-    // The page's own splash shows while it starts; the native one hides as soon as the page is drawn.
+    // The phone's splash is the page's own drawn as a picture (scripts/app/splash.mjs, v0.54.3): the orb and the name.
+    // It gives way to the page's as soon as the page is up (src/native/boot.ts), which then shows while the app loads.
     SplashScreen: { launchAutoHide: false, backgroundColor: '#0b1220', showSpinner: false, androidScaleType: 'CENTER_CROP' },
     LocalNotifications: { smallIcon: 'ic_stat_globe', iconColor: '#3fd0e0' },
     // Edge to edge (Capacitor 8's own system bars): the page draws under the status bar and the navigation bar and

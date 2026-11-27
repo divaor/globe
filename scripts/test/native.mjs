@@ -84,6 +84,32 @@ for (const f of ['resources/icon-only.png', 'resources/icon-foreground.png', 're
 }
 check(fs.existsSync(path.join(ROOT, 'ios/App/App/Assets.xcassets/AppIcon.appiconset')) && fs.readdirSync(path.join(ROOT, 'android/app/src/main/res')).some((d) => d.startsWith('mipmap-')),
   'the icon on both');
+// The splash (v0.54.3): the page's orb and name on Android's splash (288 dp at each density), the same in the middle of
+// the launch screen before Android 12 (no launch pictures of a fixed shape left), and the phone's splash giving way to
+// the page's as soon as the page is up.
+{
+  const RES = path.join(ROOT, 'android/app/src/main/res');
+  const styles = fs.readFileSync(path.join(RES, 'values/styles.xml'), 'utf8');
+  const sizes = { mdpi: 288, hdpi: 432, xhdpi: 576, xxhdpi: 864, xxxhdpi: 1152 };
+  const sharp = (await import('sharp')).default;
+  const wrong = [];
+  for (const [d, px] of Object.entries(sizes)) {
+    const f = path.join(RES, `drawable-${d}/splash_icon.png`);
+    const m = fs.existsSync(f) ? await sharp(f).metadata() : null;
+    if (!m || m.width !== px || m.height !== px || !m.hasAlpha) wrong.push(d);
+  }
+  const pictures = fs.readdirSync(RES).filter((d) => d.startsWith('drawable') && fs.existsSync(path.join(RES, d, 'splash.png')));
+  const layer = fs.readFileSync(path.join(RES, 'drawable/splash.xml'), 'utf8');
+  check(/windowSplashScreenAnimatedIcon">@drawable\/splash_icon</.test(styles) && !wrong.length && !pictures.length && /@drawable\/splash_icon/.test(layer) && /@color\/mundora_space/.test(layer),
+    `Android's splash: the orb and the name at every density${wrong.length ? ` (wrong: ${wrong.join(', ')})` : ''}, and in the middle of the older launch screen${pictures.length ? ` (launch pictures left: ${pictures.join(', ')})` : ''}`);
+  const boot = fs.readFileSync(path.join(ROOT, 'src/native/boot.ts'), 'utf8');
+  const early = /export async function early\(\) \{([\s\S]*?)\n\}/.exec(boot)?.[1] ?? '', ready = /export function ready\([^)]*\) \{([\s\S]*?)\n\}/.exec(boot)?.[1] ?? '';
+  check(/hideSplash\(\)/.test(early) && !/hideSplash/.test(ready), 'the phone\'s splash gives way to the page\'s as soon as the page is up, not once the app has loaded');
+  // The screen's fastest rate while touched (MainActivity, v0.54.3).
+  const act = fs.readFileSync(path.join(ROOT, 'android/app/src/main/java/io/github/divaor/globe/MainActivity.java'), 'utf8');
+  check(/preferredDisplayModeId/.test(act) && /dispatchTouchEvent/.test(act) && /getAlternativeRefreshRates/.test(act) && /onPause/.test(act),
+    'Android: the screen\'s fastest refresh rate while the map is touched, back to the phone\'s choice after and when the app leaves');
+}
 
 // ---- The apps' copy of your data (src/native/storage.ts; v0.50.2): with a slow stand-in for the app's storage, what
 // is missing from the page comes back at launch, and a flush (what bringing back a backup waits for before starting

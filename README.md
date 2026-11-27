@@ -129,6 +129,13 @@ A backup made as Atlas Globe still opens.
 - **v0.54.1:** the play bar's count of days round the orbit adds up: the day gone and the days to go now make the
   turn as shown (they were rounded apart, so the Earth's could read "Day 0 of 365 · 366 to go"), in the planet's own
   days too; and there is no count for a moment before today.
+- **v0.54.3 (the Android app as smooth as the website, and its splash with the name):** many phones keep an app to
+  60 frames a second (30 when the map is still) unless it asks for more, while their browser gets 120: the website
+  felt smoother than the app. The app now asks for the screen's fastest refresh rate while the map is touched, and lets
+  the phone choose again three seconds after the last touch and when it leaves the screen (only rates the screen
+  changes to without a blink). The phone's splash shows the page's own: the colour orb with "Mundora" under it, in the
+  same place, and gives way to the page's splash as soon as the page is up (it was kept until the app had loaded), so
+  the name and "Loading the world…" show while the app loads.
 - **v0.54.2 (the Play listing from the repository):** the store descriptions in all six languages name the solar
   system (the planets and moons where they are, the Sun as a world, riding along a planet round it); the screenshots
   gain a seventh scene, following the Earth from the Sun with its year counting, and their captions stay on two lines
@@ -911,8 +918,10 @@ the apps' code: `src/main.ts` imports `src/native/boot.ts` only when `src/native
   - `npm run app:sync` builds the site and copies it into both projects.
   - `npm run app:android` also builds a debug APK (it needs the Android SDK; `android/local.properties` names it).
   - iOS builds on a Mac.
-  - The app icon and splash are drawn by `node scripts/app/icons.mjs` (`--preview <dir>` shows the three styles), then
-    `npm run app:icons` makes every size.
+  - The app icon is drawn by `node scripts/app/icons.mjs` (`--preview <dir>` shows the three styles), then
+    `npm run app:icons` makes every size. The splash is the page's own drawn as pictures by `node scripts/app/splash.mjs`
+    (v0.54.3; `app:icons` runs it last): the orb and the name as Android's splash icon at every density, in the middle
+    of the older Android launch screen, and as iOS's launch picture.
 - **GitHub (`.github/workflows/apps.yml`):**
   - Every change to the apps builds both: an APK and an AAB, and an iOS build for the simulator.
   - Started by hand with "upload", it sends them to Play's internal test and TestFlight, given the secrets listed at
