@@ -7758,6 +7758,63 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await sn.ctx.close();
 }
 
+// 67. Zoomed in, the map moves on the GPU too (v0.55.0). Past web zoom 3.6 the world textures are too coarse, and each
+// moving frame was drawn as vectors (Regional languages over Central Asia: a few frames a second on a fast phone). Now
+// a close-up of the area around the view is painted after a stop (in strips, in idle time) and the GPU moves it: a
+// moving frame there comes from the GPU with the still frame's colours. A move far out of the area falls back to
+// vectors and paints a new close-up; zoomed well in, the same; zoomed out, the world texture again; still, vectors.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political,regional-languages&c=66,38,5&lang=en');
+  await page.waitForFunction(() => window.atlas?.app.layers.find((l) => l.def.id === 'regional-languages')?.ready, null, { timeout: 60000 }).catch(() => {});
+  const r = await page.evaluate(async () => {
+    const ren = window.atlas.app.renderer, v = ren.view;
+    ren.settings.labels = { countries: false, capitals: false, cities: false, seas: false, values: false };
+    ren.settings.graticule = false;
+    // This browser draws WebGL without a GPU; the phones' path is the one checked here.
+    Object.defineProperty(ren.gl, 'software', { value: false, configurable: true });
+    const wait = (ms) => new Promise((res) => setTimeout(res, ms));
+    // The mean colour of a small square around a place (solid regions: Iran, Turkmenistan, Russia, Balochistan).
+    const px = (lon, lat) => {
+      const p = v.project(lon, lat);
+      const d = document.getElementById('fg').getContext('2d').getImageData(Math.round(p[0] * v.dpr) - 3, Math.round(p[1] * v.dpr) - 3, 7, 7).data;
+      const m = [0, 0, 0];
+      for (let i = 0; i < d.length; i += 4) for (let k = 0; k < 3; k++) m[k] += d[i + k] / 49;
+      return m;
+    };
+    const pts = [[55, 32], [58.5, 39.5], [80, 60], [65, 27.5]];
+    ren.requestRender();
+    for (let i = 0; i < 80 && !(ren['close'].over.fit && !ren['close'].over.job); i++) { ren.requestRender(); await wait(100); }
+    const painted = !!ren['close'].over.fit;
+    const still = pts.map(([a, b]) => px(a, b));
+    ren.moving = true;
+    for (let i = 0; i < 30 && !ren.gpuFrame; i++) { ren.requestRender(); await wait(100); }
+    const gpu = ren.gpuFrame, wz = v.webZoom;
+    const moving = pts.map(([a, b]) => px(a, b));
+    // Far off the area: vectors at once, then a new close-up.
+    v.panBy(900, 0); ren.requestRender(); await wait(40);
+    const farAtOnce = ren.gpuFrame;
+    for (let i = 0; i < 60 && !ren.gpuFrame; i++) { ren.requestRender(); await wait(100); }
+    const farLater = ren.gpuFrame;
+    // Three times closer: too blurry, painted again.
+    v.zoomAt(3, v.w / 2, v.h / 2); ren.requestRender(); await wait(40);
+    const inAtOnce = ren.gpuFrame;
+    for (let i = 0; i < 60 && !ren.gpuFrame; i++) { ren.requestRender(); await wait(100); }
+    const inLater = ren.gpuFrame;
+    // Zoomed out: the world texture.
+    v.zoomAt(1 / 8, v.w / 2, v.h / 2); ren.requestRender(); await wait(300);
+    const out = { gpu: ren.gpuFrame, wz: v.webZoom };
+    ren.moving = false; ren.requestRender(); await wait(600);
+    return { painted, gpu, wz, still, moving, farAtOnce, farLater, inAtOnce, inLater, out, stillAfter: ren.gpuFrame };
+  });
+  const worst = Math.max(...r.still.map((s, i) => Math.hypot(...s.map((x, k) => x - r.moving[i][k]))));
+  check(r.painted && r.gpu && r.wz >= 3.6 && worst < 40,
+    `zoomed in (web zoom ${r.wz.toFixed(1)}) on Regional languages, a close-up is painted after the stop and the map moves on the GPU with the still frame's colours (largest difference ${Math.round(worst)})`);
+  check(!r.farAtOnce && r.farLater && !r.inAtOnce && r.inLater && r.out.gpu && r.out.wz < 3.6 && !r.stillAfter,
+    `a move far out of the close-up, or well past its sharpness, draws vectors until a new one is painted, then the GPU again; zoomed out (${r.out.wz.toFixed(1)}) the world texture; still, vectors`);
+  check(!errors.length, `no page errors with close-ups${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);
