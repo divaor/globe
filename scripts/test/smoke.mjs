@@ -1101,6 +1101,11 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(800);
   const got = await page.evaluate(() => ({ score: window.atlas.learn.quiz?.score, fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '' }));
   check(nCountries === 48 && got.score === 1 && /Correct/.test(got.fb), `States and provinces: a tap on ${tgt.n} scores in Mexico (${nCountries} countries; ${got.fb})`);
+  // The map's own state names are hidden while it asks (v0.56.1: COAHUILA was written on Coahuila), on every question.
+  const namesAsked = [await page.evaluate(() => window.atlas.app.renderer.regionLabels)];
+  await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((x) => /Next/.test(x.textContent))?.click());
+  await page.waitForTimeout(400);
+  namesAsked.push(await page.evaluate(() => window.atlas.app.renderer.regionLabels));
   for (let i = 0; i < 30 && !(await page.evaluate(() => !!window.atlas.learn.quiz?.done)); i++) {
     await page.evaluate(() => {
       const b = [...document.querySelectorAll('.learn-card .tool-actions button')];
@@ -1113,6 +1118,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(/Result 1\/10/.test(regRes.head) && regRes.rows === 10 && regRes.shapes === 10, `its result lists the ten states with their shapes (${regRes.head.slice(0, 16)})`);
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
+  const namesAfter = await page.evaluate(() => window.atlas.app.renderer.regionLabels);
+  check(namesAsked.every((x) => x === false) && namesAfter === true, `the map's state names are hidden while the quiz asks (${namesAsked.join(', ')}) and back after it (${namesAfter})`);
   // Where in the world: a tap on the globe is the answer; then the story opens at the item.
   await menu('Quiz');
   await page.evaluate(() => document.querySelector('[data-quiz="where"]').click());
@@ -6890,8 +6897,23 @@ for (const dev of ['Pixel 7', 'iPhone 13']) {
   await page.waitForFunction(() => window.atlas.learn.quiz?.qs?.length, null, { timeout: 15000 }).catch(() => {});
   await page.waitForTimeout(800);
   const oq = await F(() => { const q = window.atlas.learn.quiz; return q && { n: q.qs.length, set: q.qs[0].set?.map((x) => x.name.en) }; });
-  await F(() => window.atlas.learn.stopQuiz?.());
   check(oq?.n === 10 && oq.set?.length === 4, `Which came first?: ${oq?.n} rounds of four (${oq?.set?.join(' / ')})`);
+  // A round played to the end (v0.56.1: Check stopped the round, since its moments have no place on the map): three
+  // taps number the four, Check marks them, Next goes on to the second round.
+  for (let i = 0; i < 3; i++) {
+    await F(() => [...document.querySelectorAll('.learn-card .order-row')].find((r) => !r.classList.contains('picked'))?.click());
+    await page.waitForTimeout(150);
+  }
+  await F(() => document.querySelector('.learn-card [data-check]')?.click());
+  await page.waitForTimeout(500);
+  const checked = await F(() => ({ fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '', marks: document.querySelectorAll('.learn-card .order-row.ok, .learn-card .order-row.bad').length }));
+  await F(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((x) => /Next/.test(x.textContent))?.click());
+  await page.waitForTimeout(500);
+  const second = await F(() => ({ i: window.atlas.learn.quiz?.i, q: document.querySelector('.learn-card .quiz-q')?.textContent ?? '' }));
+  await F(() => window.atlas.learn.stopQuiz?.());
+  check(/in the right place|Correct/.test(checked.fb) && checked.marks === 4 && second.i === 1 && /tap the oldest first/.test(second.q),
+    `Which came first?: Check marks the four (${checked.fb}) and Next goes on to round ${second.i + 1}`);
+  check(!errors.length, `Which came first?: no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
   // A link to a moment.
   const ln = await open({ ...devices['Pixel 7'] }, '#deeptime=66&p=globe&lang=en');

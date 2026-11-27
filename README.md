@@ -150,6 +150,11 @@ A backup made as Atlas Globe still opens.
   Climate zones (Köppen), Vegetation zones, Time zones, Tectonic plates and Animal realms (the climate ones also draw
   only the areas in view). Still drawn as vectors while moving: Flags on the map, National colours and Day and night,
   whose pictures depend on the view or the time.
+- **v0.56.1 (two quiz fixes from the phone test):** Which came first? stopped at Check: the round put its four moments
+  on the map, and moments of deep time have no place, so nothing after Check happened (no marks, no Next). Now they are
+  checked and marked as in Put them in order, and Next goes on. And States and provinces asked for a state with its
+  name written on the map (COAHUILA on Coahuila): the map's own names of states and provinces are now hidden while a map
+  quiz asks, as the country and city names already were, and come back when it ends.
 - **v0.54.3 (the Android app as smooth as the website, and its splash with the name):** many phones keep an app to
   60 frames a second (30 when the map is still) unless it asks for more, while their browser gets 120: the website
   felt smoother than the app. The app now asks for the screen's fastest refresh rate while the map is touched, and lets
