@@ -550,10 +550,25 @@ export class Learn {
     } catch { return null; }
   }
 
+  /** The map's own names of states and provinces as they were before a map quiz hid them (null: not hidden). */
+  private regionNamesWere: boolean | null = null;
+  /**
+   * Hides the map's names of states and provinces while a map quiz asks (v0.56.1: States and provinces asked for
+   * Coahuila with COAHUILA written on it), and puts them back as they were.
+   */
+  private hideRegionNames(hide: boolean) {
+    const r = this.app.renderer;
+    if (hide) {
+      if (this.regionNamesWere == null) { this.regionNamesWere = r.regionLabels; r.regionLabels = false; }
+    } else if (this.regionNamesWere != null) { r.regionLabels = this.regionNamesWere; this.regionNamesWere = null; }
+    r.requestRender();
+  }
+
   /** The map for the question on screen: names hidden and the globe for the map quizzes, Time detective's old borders. */
   private async prepareQuestion() {
     const q = this.quiz;
     if (!q) return;
+    this.hideRegionNames(false);
     const kind = this.qk(), cur = q.qs[q.i];
     this.wildShow = null;
     this.greenShow = null;
@@ -606,6 +621,7 @@ export class Learn {
     if (this.space?.active) await this.space.exit();
     const hide = MAP_QUIZZES.includes(kind);
     this.app.renderer.settings.labels = hide ? { ...q.savedLabels, countries: false, capitals: false, cities: false } : { ...q.savedLabels };
+    this.hideRegionNames(hide);
     if (hide && this.app.renderer.view.current.kind !== 'globe') this.app.setProjection('globe');
     if (kind === 'detective' && cur?.det) {
       await this.time.history.quizMap(cur.det.year, false);
@@ -710,6 +726,7 @@ export class Learn {
     const qs: Q[] = (all ? pick : pick.slice(0, 10)).map((r) => ({ id: r.id }));
     const labels = { ...this.app.renderer.settings.labels };
     Object.assign(this.app.renderer.settings.labels, { countries: false, capitals: false, cities: false });
+    this.hideRegionNames(true);
     this.regions = { a3, list };
     this.focusRegion = null;
     this.quiz = { kind: 'region', region: a3, qs, i: 0, score: 0, answered: false, savedLabels: labels, peek: false, all };
@@ -1747,6 +1764,7 @@ export class Learn {
 
   /** Puts a pin on the item and flies there. */
   private showItem(it: QItem) {
+    if (!it.at) return;
     this.pin = { lon: it.at[0], lat: it.at[1], text: tx(it.name) };
     this.app.flyTo(it.at[0], it.at[1], Math.max(3, this.app.renderer.view.zoom));
     this.app.renderer.requestRender();
@@ -2206,9 +2224,12 @@ export class Learn {
   }
 
   /** Numbered pins on a round's things, oldest first, with the map turned to see them all. */
-  private showSet(right: QItem[]) {
+  private showSet(all: QItem[]) {
     this.pin = null;
-    this.pins = right.map((it, i) => ({ lon: it.at[0], lat: it.at[1], text: `${i + 1}. ${tx(it.name)}` }));
+    // Which came first?'s moments of deep time have no place on the map (v0.56.1: this stopped the round at Check).
+    const right = all.filter((it) => it.at);
+    this.pins = right.map((it) => ({ lon: it.at[0], lat: it.at[1], text: `${all.indexOf(it) + 1}. ${tx(it.name)}` }));
+    if (!right.length) { this.app.renderer.requestRender(); return; }
     const rad = Math.PI / 180;
     const v = right.map((it) => [Math.cos(it.at[1] * rad) * Math.cos(it.at[0] * rad), Math.cos(it.at[1] * rad) * Math.sin(it.at[0] * rad), Math.sin(it.at[1] * rad)]);
     const m = [0, 1, 2].map((k) => v.reduce((a, x) => a + x[k], 0));
@@ -2514,6 +2535,7 @@ export class Learn {
     if (!this.quiz) return;
     stopClip(250, 'card');
     this.app.renderer.settings.labels = { ...this.quiz.savedLabels };
+    this.hideRegionNames(false);
     this.quiz = null;
     this.hopShow = null;
     this.wildShow = null;
